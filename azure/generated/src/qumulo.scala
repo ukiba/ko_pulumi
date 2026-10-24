@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object qumulo:
   /** Manages an Azure Native Qumulo Scalable File System. */
-  def FileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.qumulo.FileSystemArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.qumulo.FileSystemArgs.builder
     conf.logicalName2physicalName(name) match

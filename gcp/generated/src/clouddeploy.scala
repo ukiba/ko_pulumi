@@ -15,7 +15,7 @@ object clouddeploy:
    * * How-to Guides
    *     * [Automate your deployment](https://cloud.google.com/deploy/docs/automation)
    */
-  def Automation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Automation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.clouddeploy.AutomationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.clouddeploy.AutomationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -84,7 +84,7 @@ object clouddeploy:
    * * How-to Guides
    *     * [Define and use a custom target type](https://cloud.google.com/deploy/docs/deploy-app-custom-target)
    */
-  def CustomTargetType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomTargetType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.clouddeploy.CustomTargetTypeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.clouddeploy.CustomTargetTypeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -94,7 +94,7 @@ object clouddeploy:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def CustomTargetTypeIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomTargetTypeIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.clouddeploy.CustomTargetTypeIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.clouddeploy.CustomTargetTypeIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -104,7 +104,7 @@ object clouddeploy:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def CustomTargetTypeIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomTargetTypeIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.clouddeploy.CustomTargetTypeIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.clouddeploy.CustomTargetTypeIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -114,7 +114,7 @@ object clouddeploy:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def CustomTargetTypeIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomTargetTypeIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.clouddeploy.CustomTargetTypeIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.clouddeploy.CustomTargetTypeIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -125,7 +125,7 @@ object clouddeploy:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The Cloud Deploy `DeliveryPipeline` resource */
-  def DeliveryPipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DeliveryPipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.clouddeploy.DeliveryPipelineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.clouddeploy.DeliveryPipelineArgs.builder
     conf.logicalName2physicalName(name) match
@@ -135,7 +135,7 @@ object clouddeploy:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def DeliveryPipelineIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DeliveryPipelineIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.clouddeploy.DeliveryPipelineIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.clouddeploy.DeliveryPipelineIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -145,7 +145,7 @@ object clouddeploy:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def DeliveryPipelineIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DeliveryPipelineIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.clouddeploy.DeliveryPipelineIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.clouddeploy.DeliveryPipelineIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -155,7 +155,7 @@ object clouddeploy:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def DeliveryPipelineIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DeliveryPipelineIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.clouddeploy.DeliveryPipelineIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.clouddeploy.DeliveryPipelineIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -174,7 +174,7 @@ object clouddeploy:
    * * How-to Guides
    *     * [Restrict deploy behavior using policies](https://cloud.google.com/deploy/docs/deploy-policy)
    */
-  def DeployPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DeployPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.clouddeploy.DeployPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.clouddeploy.DeployPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -185,7 +185,7 @@ object clouddeploy:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The Cloud Deploy `Target` resource */
-  def Target(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Target(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.clouddeploy.TargetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.clouddeploy.TargetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -195,7 +195,7 @@ object clouddeploy:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def TargetIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TargetIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.clouddeploy.TargetIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.clouddeploy.TargetIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -205,7 +205,7 @@ object clouddeploy:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def TargetIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TargetIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.clouddeploy.TargetIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.clouddeploy.TargetIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -215,7 +215,7 @@ object clouddeploy:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def TargetIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TargetIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.clouddeploy.TargetIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.clouddeploy.TargetIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match

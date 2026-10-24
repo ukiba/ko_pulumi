@@ -8,7 +8,7 @@ object deploymentmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def labels(args: Endofunction[com.pulumi.gcp.deploymentmanager.inputs.DeploymentLabelArgs.Builder]*):
+    inline def labels(args: Endofunction[com.pulumi.gcp.deploymentmanager.inputs.DeploymentLabelArgs.Builder]*):
         com.pulumi.gcp.deploymentmanager.DeploymentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.deploymentmanager.inputs.DeploymentLabelArgs.builder
       builder.labels(args.map(_(argsBuilder).build)*)
@@ -19,7 +19,7 @@ object deploymentmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def target(args: Endofunction[com.pulumi.gcp.deploymentmanager.inputs.DeploymentTargetArgs.Builder]):
+    inline def target(args: Endofunction[com.pulumi.gcp.deploymentmanager.inputs.DeploymentTargetArgs.Builder]):
         com.pulumi.gcp.deploymentmanager.DeploymentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.deploymentmanager.inputs.DeploymentTargetArgs.builder
       builder.target(args(argsBuilder).build)
@@ -30,7 +30,7 @@ object deploymentmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def labels(args: Endofunction[com.pulumi.gcp.deploymentmanager.inputs.DeploymentLabelArgs.Builder]*):
+    inline def labels(args: Endofunction[com.pulumi.gcp.deploymentmanager.inputs.DeploymentLabelArgs.Builder]*):
         com.pulumi.gcp.deploymentmanager.inputs.DeploymentState.Builder =
       def argsBuilder = com.pulumi.gcp.deploymentmanager.inputs.DeploymentLabelArgs.builder
       builder.labels(args.map(_(argsBuilder).build)*)
@@ -41,7 +41,7 @@ object deploymentmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def target(args: Endofunction[com.pulumi.gcp.deploymentmanager.inputs.DeploymentTargetArgs.Builder]):
+    inline def target(args: Endofunction[com.pulumi.gcp.deploymentmanager.inputs.DeploymentTargetArgs.Builder]):
         com.pulumi.gcp.deploymentmanager.inputs.DeploymentState.Builder =
       val argsBuilder = com.pulumi.gcp.deploymentmanager.inputs.DeploymentTargetArgs.builder
       builder.target(args(argsBuilder).build)
@@ -52,7 +52,7 @@ object deploymentmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.deploymentmanager.inputs.DeploymentTargetConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.deploymentmanager.inputs.DeploymentTargetConfigArgs.Builder]):
         com.pulumi.gcp.deploymentmanager.inputs.DeploymentTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.deploymentmanager.inputs.DeploymentTargetConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -64,7 +64,7 @@ object deploymentmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def imports(args: Endofunction[com.pulumi.gcp.deploymentmanager.inputs.DeploymentTargetImportArgs.Builder]*):
+    inline def imports(args: Endofunction[com.pulumi.gcp.deploymentmanager.inputs.DeploymentTargetImportArgs.Builder]*):
         com.pulumi.gcp.deploymentmanager.inputs.DeploymentTargetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.deploymentmanager.inputs.DeploymentTargetImportArgs.builder
       builder.imports(args.map(_(argsBuilder).build)*)

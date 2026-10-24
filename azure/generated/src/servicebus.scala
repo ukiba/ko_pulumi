@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object servicebus:
   /** Manages a ServiceBus Namespace. */
-  def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.servicebus.NamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.servicebus.NamespaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25,7 +25,7 @@ object servicebus:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a ServiceBus Namespace authorization Rule within a ServiceBus. */
-  def NamespaceAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NamespaceAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.servicebus.NamespaceAuthorizationRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.servicebus.NamespaceAuthorizationRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -42,7 +42,7 @@ object servicebus:
    * 
    * &gt; **Note:** This resource should only be used to create a Customer Managed Key for Service Bus Namespaces with System Assigned identities. The `customerManagedKey` block in `azure.servicebus.Namespace` should be used to create a Customer Managed Key for a Service Bus Namespace with a User Assigned identity.
    */
-  def NamespaceCustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NamespaceCustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.servicebus.NamespaceCustomerManagedKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.servicebus.NamespaceCustomerManagedKeyArgs.builder
     com.pulumi.azure.servicebus.NamespaceCustomerManagedKey(name,
@@ -54,7 +54,7 @@ object servicebus:
    * 
    * &gt; **Note:** Disaster Recovery Config is a Premium SKU only capability.
    */
-  def NamespaceDisasterRecoveryConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NamespaceDisasterRecoveryConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.servicebus.NamespaceDisasterRecoveryConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.servicebus.NamespaceDisasterRecoveryConfigArgs.builder
     conf.logicalName2physicalName(name) match
@@ -65,7 +65,7 @@ object servicebus:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a ServiceBus Queue. */
-  def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.servicebus.QueueArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.servicebus.QueueArgs.builder
     conf.logicalName2physicalName(name) match
@@ -76,7 +76,7 @@ object servicebus:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Authorization Rule for a ServiceBus Queue. */
-  def QueueAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def QueueAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.servicebus.QueueAuthorizationRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.servicebus.QueueAuthorizationRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -216,7 +216,7 @@ object servicebus:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a ServiceBus Subscription. */
-  def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.servicebus.SubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.servicebus.SubscriptionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -227,7 +227,7 @@ object servicebus:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a ServiceBus Subscription Rule. */
-  def SubscriptionRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubscriptionRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.servicebus.SubscriptionRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.servicebus.SubscriptionRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -242,7 +242,7 @@ object servicebus:
    * 
    * &gt; **Note:** Topics can only be created in Namespaces with an SKU of `Standard` or higher.
    */
-  def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.servicebus.TopicArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.servicebus.TopicArgs.builder
     conf.logicalName2physicalName(name) match
@@ -253,7 +253,7 @@ object servicebus:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a ServiceBus Topic authorization Rule within a ServiceBus Topic. */
-  def TopicAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TopicAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.servicebus.TopicAuthorizationRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.servicebus.TopicAuthorizationRuleArgs.builder
     conf.logicalName2physicalName(name) match

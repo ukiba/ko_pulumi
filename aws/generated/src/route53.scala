@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object route53:
   /** Provides a Route53 CIDR collection resource. */
-  def CidrCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CidrCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.CidrCollectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53.CidrCollectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18,7 +18,7 @@ object route53:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route53 CIDR location resource. */
-  def CidrLocation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CidrLocation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.CidrLocationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53.CidrLocationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -29,7 +29,7 @@ object route53:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a [Route53 Delegation Set](https://docs.aws.amazon.com/Route53/latest/APIReference/API-actions-by-function.html#actions-by-function-reusable-delegation-sets) resource. */
-  def DelegationSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DelegationSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.DelegationSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.route53.DelegationSetArgs.builder
     com.pulumi.aws.route53.DelegationSet(name,
@@ -37,7 +37,7 @@ object route53:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route53 health check. */
-  def HealthCheck(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HealthCheck(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.HealthCheckArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53.HealthCheckArgs.builder
     argsBuilder = args(argsBuilder)
@@ -58,7 +58,7 @@ object route53:
    * 
    * &gt; **Note:** Route53 hosted zones are global resources, and as such any `aws.kms.Key` that you use as part of a signing key needs to be located in the `us-east-1` region. In the example below, the main AWS provider declaration is for `us-east-1`, however if you are provisioning your AWS resources in a different region, you will need to specify a provider alias and use that attached to the `aws.kms.Key` resource as described in the provider alias documentation.
    */
-  def HostedZoneDnsSec(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HostedZoneDnsSec(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.HostedZoneDnsSecArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.route53.HostedZoneDnsSecArgs.builder
     com.pulumi.aws.route53.HostedZoneDnsSec(name,
@@ -66,7 +66,7 @@ object route53:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Route 53 Key Signing Key. To manage DNS Security Extensions (DNSSEC) for a Hosted Zone, see the `aws.route53.HostedZoneDnsSec` resource. For more information about managing DNSSEC in Route 53, see the [Route 53 Developer Guide](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec.html). */
-  def KeySigningKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def KeySigningKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.KeySigningKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53.KeySigningKeyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -77,7 +77,7 @@ object route53:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Route 53 Profiles Association. */
-  def ProfilesAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProfilesAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.ProfilesAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53.ProfilesAssociationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -95,7 +95,7 @@ object route53:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Route 53 Profile. */
-  def ProfilesProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProfilesProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.ProfilesProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53.ProfilesProfileArgs.builder
     conf.logicalName2physicalName(name) match
@@ -113,7 +113,7 @@ object route53:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Route 53 Profiles Resource Association. */
-  def ProfilesResourceAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProfilesResourceAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.ProfilesResourceAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53.ProfilesResourceAssociationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -132,7 +132,7 @@ object route53:
    * the Route53 hosted zone must be public.
    * See [Configuring Logging for DNS Queries](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html?console_help=true#query-logs-configuring) for additional details.
    */
-  def QueryLog(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def QueryLog(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.QueryLogArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.route53.QueryLogArgs.builder
     com.pulumi.aws.route53.QueryLog(name,
@@ -140,7 +140,7 @@ object route53:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route53 record resource. */
-  def Record(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Record(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.RecordArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53.RecordArgs.builder
     conf.logicalName2physicalName(name) match
@@ -159,7 +159,7 @@ object route53:
    * 
    * &gt; The default `NS` and `SOA` records created during provisioning of the Route53 Zone __should not be included__ in this resource definition. Adding them will cause persistent drift as the read operation is explicitly configured to ignore writing them to state.
    */
-  def RecordsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RecordsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.RecordsExclusiveArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.route53.RecordsExclusiveArgs.builder
     com.pulumi.aws.route53.RecordsExclusive(name,
@@ -167,7 +167,7 @@ object route53:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route 53 Resolver config resource. */
-  def ResolverConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResolverConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.ResolverConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.route53.ResolverConfigArgs.builder
     com.pulumi.aws.route53.ResolverConfig(name,
@@ -175,7 +175,7 @@ object route53:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route 53 Resolver DNSSEC config resource. */
-  def ResolverDnsSecConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResolverDnsSecConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.ResolverDnsSecConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.route53.ResolverDnsSecConfigArgs.builder
     com.pulumi.aws.route53.ResolverDnsSecConfig(name,
@@ -183,7 +183,7 @@ object route53:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route 53 Resolver endpoint resource. */
-  def ResolverEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResolverEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.ResolverEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53.ResolverEndpointArgs.builder
     conf.logicalName2physicalName(name) match
@@ -201,7 +201,7 @@ object route53:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route 53 Resolver DNS Firewall config resource. */
-  def ResolverFirewallConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResolverFirewallConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.ResolverFirewallConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.route53.ResolverFirewallConfigArgs.builder
     com.pulumi.aws.route53.ResolverFirewallConfig(name,
@@ -209,7 +209,7 @@ object route53:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route 53 Resolver DNS Firewall domain list resource. */
-  def ResolverFirewallDomainList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResolverFirewallDomainList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.ResolverFirewallDomainListArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53.ResolverFirewallDomainListArgs.builder
     conf.logicalName2physicalName(name) match
@@ -227,7 +227,7 @@ object route53:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route 53 Resolver DNS Firewall rule resource. */
-  def ResolverFirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResolverFirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.ResolverFirewallRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53.ResolverFirewallRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -238,7 +238,7 @@ object route53:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route 53 Resolver DNS Firewall rule group resource. */
-  def ResolverFirewallRuleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResolverFirewallRuleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.ResolverFirewallRuleGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53.ResolverFirewallRuleGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -256,7 +256,7 @@ object route53:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route 53 Resolver DNS Firewall rule group association resource. */
-  def ResolverFirewallRuleGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResolverFirewallRuleGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.ResolverFirewallRuleGroupAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53.ResolverFirewallRuleGroupAssociationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -274,7 +274,7 @@ object route53:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route 53 Resolver query logging configuration resource. */
-  def ResolverQueryLogConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResolverQueryLogConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.ResolverQueryLogConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53.ResolverQueryLogConfigArgs.builder
     conf.logicalName2physicalName(name) match
@@ -292,7 +292,7 @@ object route53:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route 53 Resolver query logging configuration association resource. */
-  def ResolverQueryLogConfigAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResolverQueryLogConfigAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.ResolverQueryLogConfigAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.route53.ResolverQueryLogConfigAssociationArgs.builder
     com.pulumi.aws.route53.ResolverQueryLogConfigAssociation(name,
@@ -300,7 +300,7 @@ object route53:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route53 Resolver rule. */
-  def ResolverRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResolverRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.ResolverRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53.ResolverRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -318,7 +318,7 @@ object route53:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route53 Resolver rule association. */
-  def ResolverRuleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResolverRuleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.ResolverRuleAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53.ResolverRuleAssociationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -626,7 +626,7 @@ object route53:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Route53 Traffic Policy. */
-  def TrafficPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TrafficPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.TrafficPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53.TrafficPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -637,7 +637,7 @@ object route53:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route53 traffic policy instance resource. */
-  def TrafficPolicyInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TrafficPolicyInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.TrafficPolicyInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53.TrafficPolicyInstanceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -648,7 +648,7 @@ object route53:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Authorizes a VPC in a different account to be associated with a local Route53 Hosted Zone. */
-  def VpcAssociationAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcAssociationAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.VpcAssociationAuthorizationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.route53.VpcAssociationAuthorizationArgs.builder
     com.pulumi.aws.route53.VpcAssociationAuthorization(name,
@@ -656,7 +656,7 @@ object route53:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Route53 Hosted Zone. For managing DNS Security Extensions (DNSSEC), see the `aws.route53.KeySigningKey` and `aws.route53.HostedZoneDnsSec` resources. */
-  def Zone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Zone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.ZoneArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53.ZoneArgs.builder
     conf.logicalName2physicalName(name) match
@@ -680,7 +680,7 @@ object route53:
    * 
    * &gt; **NOTE:** This provider provides both this standalone Zone VPC Association resource and exclusive VPC associations defined in-line in the `aws.route53.Zone` resource via `vpc` configuration blocks. At this time, you cannot use those in-line VPC associations in conjunction with this resource and the same zone ID otherwise it will cause a perpetual difference in plan output. You can optionally use [`ignoreChanges`](https://www.pulumi.com/docs/intro/concepts/programming-model/#ignorechanges) in the `aws.route53.Zone` resource to manage additional associations via this resource.
    */
-  def ZoneAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZoneAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53.ZoneAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.route53.ZoneAssociationArgs.builder
     com.pulumi.aws.route53.ZoneAssociation(name,

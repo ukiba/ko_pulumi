@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object healthcare:
   /** Manages a Healthcare DICOM Service */
-  def DicomService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DicomService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.healthcare.DicomServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.healthcare.DicomServiceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25,7 +25,7 @@ object healthcare:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Healthcare FHIR (Fast Healthcare Interoperability Resources) Service */
-  def FhirService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FhirService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.healthcare.FhirServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.healthcare.FhirServiceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -124,7 +124,7 @@ object healthcare:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Healthcare Med Tech Service. */
-  def MedtechService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MedtechService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.healthcare.MedtechServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.healthcare.MedtechServiceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -142,7 +142,7 @@ object healthcare:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Healthcare Med Tech Service Fhir Destination. */
-  def MedtechServiceFhirDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MedtechServiceFhirDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.healthcare.MedtechServiceFhirDestinationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.healthcare.MedtechServiceFhirDestinationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -153,7 +153,7 @@ object healthcare:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Healthcare Service. */
-  def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.healthcare.ServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.healthcare.ServiceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -171,7 +171,7 @@ object healthcare:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Healthcare workspace */
-  def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.healthcare.WorkspaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.healthcare.WorkspaceArgs.builder
     conf.logicalName2physicalName(name) match

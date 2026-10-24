@@ -11,7 +11,7 @@ object postgresql:
    * 
    * &gt; **Note:** The `azure.postgresql.ActiveDirectoryAdministrator` resource is deprecated and will be removed in v5.0 of the AzureRM Provider. Azure Database for PostgreSQL Single Server and its sub resources have been retired as of 2025-03-28, please use the `azure.postgresql.FlexibleServerActiveDirectoryAdministrator` resource instead. For more information, see https://techcommunity.microsoft.com/blog/adforpostgresql/retiring-azure-database-for-postgresql-single-server-in-2025/3783783.
    */
-  def ActiveDirectoryAdministrator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ActiveDirectoryAdministrator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.postgresql.ActiveDirectoryAdministratorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.postgresql.ActiveDirectoryAdministratorArgs.builder
     com.pulumi.azure.postgresql.ActiveDirectoryAdministrator(name,
@@ -27,7 +27,7 @@ object postgresql:
    * 
    * &gt; **Note:** Since this resource is provisioned by default, the Azure Provider will not check for the presence of an existing resource prior to attempting to create it.
    */
-  def Configuration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Configuration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.postgresql.ConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.postgresql.ConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -44,7 +44,7 @@ object postgresql:
    * 
    * &gt; **Note:** To mitigate the possibility of accidental data loss it is highly recommended that you use the `preventDestroy` lifecycle argument in your configuration file for this resource. For more information on the `preventDestroy` lifecycle argument please see the terraform documentation.
    */
-  def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.postgresql.DatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.postgresql.DatabaseArgs.builder
     conf.logicalName2physicalName(name) match
@@ -59,7 +59,7 @@ object postgresql:
    * 
    * &gt; **Note:** The `azure.postgresql.FirewallRule` resource is deprecated and will be removed in v5.0 of the AzureRM Provider. Azure Database for PostgreSQL Single Server and its sub resources have been retired as of 2025-03-28, please use the `azure.postgresql.FlexibleServerFirewallRule` resource instead. For more information, see https://techcommunity.microsoft.com/blog/adforpostgresql/retiring-azure-database-for-postgresql-single-server-in-2025/3783783.
    */
-  def FirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.postgresql.FirewallRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.postgresql.FirewallRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -70,7 +70,7 @@ object postgresql:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a PostgreSQL Flexible Server. */
-  def FlexibleServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FlexibleServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.postgresql.FlexibleServerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.postgresql.FlexibleServerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -98,7 +98,7 @@ object postgresql:
    * \$ pulumi import azure:postgresql/flexibleServerActiveDirectoryAdministrator:FlexibleServerActiveDirectoryAdministrator example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myresourcegroup/providers/Microsoft.DBforPostgreSQL/flexibleServers/myserver/administrators/objectId
    * ```
    */
-  def FlexibleServerActiveDirectoryAdministrator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FlexibleServerActiveDirectoryAdministrator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.postgresql.FlexibleServerActiveDirectoryAdministratorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.postgresql.FlexibleServerActiveDirectoryAdministratorArgs.builder
     com.pulumi.azure.postgresql.FlexibleServerActiveDirectoryAdministrator(name,
@@ -106,7 +106,7 @@ object postgresql:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a PostgreSQL Flexible Server Backup. */
-  def FlexibleServerBackup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FlexibleServerBackup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.postgresql.FlexibleServerBackupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.postgresql.FlexibleServerBackupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -121,7 +121,7 @@ object postgresql:
    * 
    * &gt; **Note:** Changes to static server parameters will automatically trigger Azure Flex Server restart. This behavior can be disabled in the provider `features` block by setting the `restartServerOnConfigurationValueChange` field to `false` within the `postgresqlFlexibleServer` block.
    */
-  def FlexibleServerConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FlexibleServerConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.postgresql.FlexibleServerConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.postgresql.FlexibleServerConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -136,7 +136,7 @@ object postgresql:
    * 
    * &gt; **Note:** To mitigate the possibility of accidental data loss it is highly recommended that you use the `preventDestroy` lifecycle argument in your configuration file for this resource. For more information on the `preventDestroy` lifecycle argument please see the terraform documentation.
    */
-  def FlexibleServerDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FlexibleServerDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.postgresql.FlexibleServerDatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.postgresql.FlexibleServerDatabaseArgs.builder
     conf.logicalName2physicalName(name) match
@@ -147,7 +147,7 @@ object postgresql:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a PostgreSQL Flexible Server Firewall Rule. */
-  def FlexibleServerFirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FlexibleServerFirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.postgresql.FlexibleServerFirewallRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.postgresql.FlexibleServerFirewallRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -158,7 +158,7 @@ object postgresql:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Allows you to create a Virtual Endpoint associated with a Postgres Flexible Replica. */
-  def FlexibleServerVirtualEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FlexibleServerVirtualEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.postgresql.FlexibleServerVirtualEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.postgresql.FlexibleServerVirtualEndpointArgs.builder
     conf.logicalName2physicalName(name) match
@@ -214,7 +214,7 @@ object postgresql:
    * 
    * &gt; **Note:** The `azure.postgresql.Server` resource is deprecated and will be removed in v5.0 of the AzureRM Provider. Azure Database for PostgreSQL Single Server and its sub resources have been retired as of 2025-03-28, please use the `azure.postgresql.FlexibleServer` resource instead. For more information, see https://techcommunity.microsoft.com/blog/adforpostgresql/retiring-azure-database-for-postgresql-single-server-in-2025/3783783.
    */
-  def Server(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Server(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.postgresql.ServerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.postgresql.ServerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -236,7 +236,7 @@ object postgresql:
    * 
    * &gt; **Note:** The `azure.postgresql.ServerKey` resource is deprecated and will be removed in v5.0 of the AzureRM Provider. Azure Database for PostgreSQL Single Server and its sub resources have been retired as of 2025-03-28. For more information, see https://techcommunity.microsoft.com/blog/adforpostgresql/retiring-azure-database-for-postgresql-single-server-in-2025/3783783.
    */
-  def ServerKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServerKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.postgresql.ServerKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.postgresql.ServerKeyArgs.builder
     com.pulumi.azure.postgresql.ServerKey(name,
@@ -250,7 +250,7 @@ object postgresql:
    * 
    * &gt; **Note:** PostgreSQL Virtual Network Rules [can only be used with SKU Tiers of `GeneralPurpose` or `MemoryOptimized`](https://docs.microsoft.com/azure/postgresql/concepts-data-access-and-security-vnet)
    */
-  def VirtualNetworkRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VirtualNetworkRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.postgresql.VirtualNetworkRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.postgresql.VirtualNetworkRuleArgs.builder
     conf.logicalName2physicalName(name) match

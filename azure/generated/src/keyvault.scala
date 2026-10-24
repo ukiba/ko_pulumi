@@ -37,7 +37,7 @@ object keyvault:
    * 
    * &gt; **NOTE:** Both Identifiers are unique to this provider and don&#39;t map to an existing object within Azure.
    */
-  def AccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.keyvault.AccessPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.keyvault.AccessPolicyArgs.builder
     com.pulumi.azure.keyvault.AccessPolicy(name,
@@ -45,7 +45,7 @@ object keyvault:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Key Vault Certificate. */
-  @deprecated("azure.keyvault.Certifiate has been deprecated in favor of azure.keyvault.Certificate") def Certifiate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("azure.keyvault.Certifiate has been deprecated in favor of azure.keyvault.Certificate") inline def Certifiate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.keyvault.CertifiateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.keyvault.CertifiateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -63,7 +63,7 @@ object keyvault:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Key Vault Certificate. */
-  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.keyvault.CertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.keyvault.CertificateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -81,7 +81,7 @@ object keyvault:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages Key Vault Certificate Contacts. */
-  def CertificateContacts(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CertificateContacts(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.keyvault.CertificateContactsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.keyvault.CertificateContactsArgs.builder
     com.pulumi.azure.keyvault.CertificateContacts(name,
@@ -89,7 +89,7 @@ object keyvault:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Key Vault Certificate Issuer. */
-  def CertificateIssuer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CertificateIssuer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.keyvault.CertificateIssuerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.keyvault.CertificateIssuerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -100,7 +100,7 @@ object keyvault:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Key Vault Key. */
-  def Key(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Key(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.keyvault.KeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.keyvault.KeyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -126,7 +126,7 @@ object keyvault:
    * 
    * &gt; **Note:** It&#39;s possible to define Key Vault Certificate Contacts both within the `azure.keyvault.KeyVault` resource via the `contact` block and by using the `azure.keyvault.CertificateContacts` resource. However it&#39;s not possible to use both methods to manage Certificate Contacts within a KeyVault, since there&#39;ll be conflicts.
    */
-  def KeyVault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def KeyVault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.keyvault.KeyVaultArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.keyvault.KeyVaultArgs.builder
     conf.logicalName2physicalName(name) match
@@ -375,7 +375,7 @@ object keyvault:
    * 
    * &gt; **Note:** The Azure Provider includes a Feature Toggle which will purge a Key Vault Managed Hardware Security Module resource on destroy, rather than the default soft-delete. See `purgeSoftDeletedHardwareSecurityModulesOnDestroy` for more information.
    */
-  def ManagedHardwareSecurityModule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedHardwareSecurityModule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.keyvault.ManagedHardwareSecurityModuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.keyvault.ManagedHardwareSecurityModuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -397,7 +397,7 @@ object keyvault:
    * 
    * &gt; **Note:** The Azure Provider includes a Feature Toggle which will purge a Key Vault Managed Hardware Security Module Key resource on destroy, rather than the default soft-delete. See `purgeSoftDeletedHardwareSecurityModulesOnDestroy` for more information.
    */
-  def ManagedHardwareSecurityModuleKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedHardwareSecurityModuleKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.keyvault.ManagedHardwareSecurityModuleKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.keyvault.ManagedHardwareSecurityModuleKeyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -415,7 +415,7 @@ object keyvault:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Managed HSM Key rotation policy. */
-  def ManagedHardwareSecurityModuleKeyRotationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedHardwareSecurityModuleKeyRotationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.keyvault.ManagedHardwareSecurityModuleKeyRotationPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.keyvault.ManagedHardwareSecurityModuleKeyRotationPolicyArgs.builder
     com.pulumi.azure.keyvault.ManagedHardwareSecurityModuleKeyRotationPolicy(name,
@@ -423,7 +423,7 @@ object keyvault:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Managed Hardware Security Module Role Assignment. */
-  def ManagedHardwareSecurityModuleRoleAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedHardwareSecurityModuleRoleAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.keyvault.ManagedHardwareSecurityModuleRoleAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.keyvault.ManagedHardwareSecurityModuleRoleAssignmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -434,7 +434,7 @@ object keyvault:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Key Vault Managed Hardware Security Module Role Definition. This resource works together with Managed hardware security module resource. */
-  def ManagedHardwareSecurityModuleRoleDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedHardwareSecurityModuleRoleDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.keyvault.ManagedHardwareSecurityModuleRoleDefinitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.keyvault.ManagedHardwareSecurityModuleRoleDefinitionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -445,7 +445,7 @@ object keyvault:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Key Vault Managed Storage Account. */
-  def ManagedStorageAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedStorageAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.keyvault.ManagedStorageAccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.keyvault.ManagedStorageAccountArgs.builder
     conf.logicalName2physicalName(name) match
@@ -463,7 +463,7 @@ object keyvault:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Key Vault Managed Storage Account SAS Definition. */
-  def ManagedStorageAccountSasTokenDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedStorageAccountSasTokenDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.keyvault.ManagedStorageAccountSasTokenDefinitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.keyvault.ManagedStorageAccountSasTokenDefinitionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -481,7 +481,7 @@ object keyvault:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Key Vault Secret. */
-  def Secret(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Secret(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.keyvault.SecretArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.keyvault.SecretArgs.builder
     conf.logicalName2physicalName(name) match

@@ -9,7 +9,7 @@ object bot:
    * 
    * &gt; **Note:** A bot can only have a single Alexa Channel associated with it.
    */
-  def ChannelAlexa(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ChannelAlexa(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.bot.ChannelAlexaArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.bot.ChannelAlexaArgs.builder
     com.pulumi.azure.bot.ChannelAlexa(name,
@@ -17,7 +17,7 @@ object bot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Directline integration for a Bot Channel */
-  def ChannelDirectLine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ChannelDirectLine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.bot.ChannelDirectLineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.bot.ChannelDirectLineArgs.builder
     com.pulumi.azure.bot.ChannelDirectLine(name,
@@ -25,7 +25,7 @@ object bot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Direct Line Speech integration for a Bot Channel */
-  def ChannelDirectLineSpeech(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ChannelDirectLineSpeech(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.bot.ChannelDirectLineSpeechArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.bot.ChannelDirectLineSpeechArgs.builder
     com.pulumi.azure.bot.ChannelDirectLineSpeech(name,
@@ -37,7 +37,7 @@ object bot:
    * 
    * &gt; **Note:** A bot can only have a single Email Channel associated with it.
    */
-  def ChannelEmail(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ChannelEmail(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.bot.ChannelEmailArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.bot.ChannelEmailArgs.builder
     com.pulumi.azure.bot.ChannelEmail(name,
@@ -49,7 +49,7 @@ object bot:
    * 
    * &gt; **Note:** A bot can only have a single Facebook Channel associated with it.
    */
-  def ChannelFacebook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ChannelFacebook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.bot.ChannelFacebookArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.bot.ChannelFacebookArgs.builder
     com.pulumi.azure.bot.ChannelFacebook(name,
@@ -61,7 +61,7 @@ object bot:
    * 
    * &gt; **Note:** A bot can only have a single Line Channel associated with it.
    */
-  def ChannelLine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ChannelLine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.bot.ChannelLineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.bot.ChannelLineArgs.builder
     com.pulumi.azure.bot.ChannelLine(name,
@@ -73,7 +73,7 @@ object bot:
    * 
    * &gt; **Note:** A bot can only have a single Slack Channel associated with it.
    */
-  def ChannelSlack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ChannelSlack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.bot.ChannelSlackArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.bot.ChannelSlackArgs.builder
     com.pulumi.azure.bot.ChannelSlack(name,
@@ -85,7 +85,7 @@ object bot:
    * 
    * &gt; **Note:** A bot can only have a single SMS Channel associated with it.
    */
-  def ChannelSms(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ChannelSms(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.bot.ChannelSmsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.bot.ChannelSmsArgs.builder
     com.pulumi.azure.bot.ChannelSms(name,
@@ -97,7 +97,7 @@ object bot:
    * 
    * &gt; **Note:** A bot can only have a single MS Teams Channel associated with it.
    */
-  def ChannelTeams(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ChannelTeams(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.bot.ChannelTeamsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.bot.ChannelTeamsArgs.builder
     com.pulumi.azure.bot.ChannelTeams(name,
@@ -105,7 +105,7 @@ object bot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Web Chat integration for a Bot Channel */
-  def ChannelWebChat(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ChannelWebChat(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.bot.ChannelWebChatArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.bot.ChannelWebChatArgs.builder
     com.pulumi.azure.bot.ChannelWebChat(name,
@@ -117,7 +117,7 @@ object bot:
    * 
    * &gt; **Note:** Bot Channels Registration has been [deprecated by Azure](https://learn.microsoft.com/en-us/azure/bot-service/bot-service-resources-faq-azure?view=azure-bot-service-4.0#why-are-web-app-bot-and-bot-channel-registration-being-deprecated). New implementations should use the `azure.bot.ServiceAzureBot` resource.
    */
-  def ChannelsRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ChannelsRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.bot.ChannelsRegistrationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.bot.ChannelsRegistrationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -135,7 +135,7 @@ object bot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Bot Connection. */
-  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.bot.ConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.bot.ConnectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -146,7 +146,7 @@ object bot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Healthbot Service. */
-  def Healthbot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Healthbot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.bot.HealthbotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.bot.HealthbotArgs.builder
     conf.logicalName2physicalName(name) match
@@ -174,7 +174,7 @@ object bot:
    * \$ pulumi import azure:bot/serviceAzureBot:ServiceAzureBot example /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.BotService/botServices/botService1
    * ```
    */
-  def ServiceAzureBot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServiceAzureBot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.bot.ServiceAzureBotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.bot.ServiceAzureBotArgs.builder
     conf.logicalName2physicalName(name) match
@@ -192,7 +192,7 @@ object bot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Bot Web App. */
-  def WebApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WebApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.bot.WebAppArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.bot.WebAppArgs.builder
     conf.logicalName2physicalName(name) match

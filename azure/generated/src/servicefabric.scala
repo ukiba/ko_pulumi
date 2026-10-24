@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object servicefabric:
   /** Manages a Service Fabric Cluster. */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.servicefabric.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.servicefabric.ClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -23,7 +23,7 @@ object servicefabric:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Resource Group. */
-  def ManagedCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.servicefabric.ManagedClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.servicefabric.ManagedClusterArgs.builder
     conf.logicalName2physicalName(name) match

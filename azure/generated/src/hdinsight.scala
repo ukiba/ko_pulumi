@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object hdinsight:
   /** Manages a HDInsight HBase Cluster. */
-  def HBaseCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HBaseCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.hdinsight.HBaseClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.hdinsight.HBaseClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25,7 +25,7 @@ object hdinsight:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a HDInsight Hadoop Cluster. */
-  def HadoopCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HadoopCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.hdinsight.HadoopClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.hdinsight.HadoopClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -60,7 +60,7 @@ object hdinsight:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a HDInsight Interactive Query Cluster. */
-  def InteractiveQueryCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InteractiveQueryCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.hdinsight.InteractiveQueryClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.hdinsight.InteractiveQueryClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -78,7 +78,7 @@ object hdinsight:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a HDInsight Kafka Cluster. */
-  def KafkaCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def KafkaCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.hdinsight.KafkaClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.hdinsight.KafkaClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -96,7 +96,7 @@ object hdinsight:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a HDInsight Spark Cluster. */
-  def SparkCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SparkCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.hdinsight.SparkClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.hdinsight.SparkClusterArgs.builder
     conf.logicalName2physicalName(name) match

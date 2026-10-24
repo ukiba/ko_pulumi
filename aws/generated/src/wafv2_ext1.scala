@@ -7,7 +7,7 @@ object wafv2_ext1:
      * @param regularExpressions One or more blocks of regular expression patterns that you want AWS WAF to search for, such as `B[a{@literal @}]dB[o0]t`. See Regular Expression below for details.
      * @return builder
      */
-    def regularExpressions(args: Endofunction[com.pulumi.aws.wafv2.inputs.RegexPatternSetRegularExpressionArgs.Builder]*):
+    inline def regularExpressions(args: Endofunction[com.pulumi.aws.wafv2.inputs.RegexPatternSetRegularExpressionArgs.Builder]*):
         com.pulumi.aws.wafv2.RegexPatternSetArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RegexPatternSetRegularExpressionArgs.builder
       builder.regularExpressions(args.map(_(argsBuilder).build)*)
@@ -17,7 +17,7 @@ object wafv2_ext1:
      * @param customResponseBodies Custom response bodies that can be referenced by `customResponse` actions. See Custom Response Body below for details.
      * @return builder
      */
-    def customResponseBodies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupCustomResponseBodyArgs.Builder]*):
+    inline def customResponseBodies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupCustomResponseBodyArgs.Builder]*):
         com.pulumi.aws.wafv2.RuleGroupArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupCustomResponseBodyArgs.builder
       builder.customResponseBodies(args.map(_(argsBuilder).build)*)
@@ -26,7 +26,7 @@ object wafv2_ext1:
      * @param monetizationConfig Monetization configuration for the rule group. Required when any rule uses the `monetize` action. See `monetizationConfig` below for details.
      * @return builder
      */
-    def monetizationConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigArgs.Builder]):
+    inline def monetizationConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigArgs.Builder]):
         com.pulumi.aws.wafv2.RuleGroupArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigArgs.builder
       builder.monetizationConfig(args(argsBuilder).build)
@@ -35,7 +35,7 @@ object wafv2_ext1:
      * @param rules Rule blocks used to identify the web requests that you want to `allow`, `block`, or `count`. See Rules below for details.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleArgs.Builder]*):
         com.pulumi.aws.wafv2.RuleGroupArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -44,7 +44,7 @@ object wafv2_ext1:
      * @param visibilityConfig Amazon CloudWatch metrics and web request sample collection configuration. See Visibility Configuration below for details.
      * @return builder
      */
-    def visibilityConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupVisibilityConfigArgs.Builder]):
+    inline def visibilityConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupVisibilityConfigArgs.Builder]):
         com.pulumi.aws.wafv2.RuleGroupArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupVisibilityConfigArgs.builder
       builder.visibilityConfig(args(argsBuilder).build)
@@ -54,7 +54,7 @@ object wafv2_ext1:
      * @param associationConfig Custom configurations for the associations between the web ACL and protected resources. See `associationConfig` below for details.
      * @return builder
      */
-    def associationConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigArgs.Builder]):
+    inline def associationConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigArgs.Builder]):
         com.pulumi.aws.wafv2.WebAclArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigArgs.builder
       builder.associationConfig(args(argsBuilder).build)
@@ -63,7 +63,7 @@ object wafv2_ext1:
      * @param captchaConfig Configuration for how AWS WAF handles CAPTCHA evaluations at the web ACL level (used by [AWS Bot Control](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html)). See `captchaConfig` below for details.
      * @return builder
      */
-    def captchaConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclCaptchaConfigArgs.Builder]):
+    inline def captchaConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclCaptchaConfigArgs.Builder]):
         com.pulumi.aws.wafv2.WebAclArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclCaptchaConfigArgs.builder
       builder.captchaConfig(args(argsBuilder).build)
@@ -72,7 +72,7 @@ object wafv2_ext1:
      * @param challengeConfig Configuration for how AWS WAF handles Challenge evaluations at the web ACL level (used by [AWS Bot Control](https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html)). See `challengeConfig` below for details.
      * @return builder
      */
-    def challengeConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclChallengeConfigArgs.Builder]):
+    inline def challengeConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclChallengeConfigArgs.Builder]):
         com.pulumi.aws.wafv2.WebAclArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclChallengeConfigArgs.builder
       builder.challengeConfig(args(argsBuilder).build)
@@ -81,7 +81,7 @@ object wafv2_ext1:
      * @param customResponseBodies Custom response bodies that can be referenced by `customResponse` actions. See `customResponseBody` below for details.
      * @return builder
      */
-    def customResponseBodies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclCustomResponseBodyArgs.Builder]*):
+    inline def customResponseBodies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclCustomResponseBodyArgs.Builder]*):
         com.pulumi.aws.wafv2.WebAclArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclCustomResponseBodyArgs.builder
       builder.customResponseBodies(args.map(_(argsBuilder).build)*)
@@ -90,7 +90,7 @@ object wafv2_ext1:
      * @param dataProtectionConfig Data protection to apply to the web request data for the web ACL. This is a web ACL level data protection option. See `dataProtectionConfig` below for details.
      * @return builder
      */
-    def dataProtectionConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDataProtectionConfigArgs.Builder]):
+    inline def dataProtectionConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDataProtectionConfigArgs.Builder]):
         com.pulumi.aws.wafv2.WebAclArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclDataProtectionConfigArgs.builder
       builder.dataProtectionConfig(args(argsBuilder).build)
@@ -99,7 +99,7 @@ object wafv2_ext1:
      * @param defaultAction Action to perform if none of the `rules` contained in the WebACL match. See `defaultAction` below for details.
      * @return builder
      */
-    def defaultAction(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDefaultActionArgs.Builder]):
+    inline def defaultAction(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDefaultActionArgs.Builder]):
         com.pulumi.aws.wafv2.WebAclArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclDefaultActionArgs.builder
       builder.defaultAction(args(argsBuilder).build)
@@ -108,7 +108,7 @@ object wafv2_ext1:
      * @param monetizationConfig Monetization configuration for the web ACL. Provide this when any rule in the web ACL uses the `monetize` action. See `monetizationConfig` below for details.
      * @return builder
      */
-    def monetizationConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigArgs.Builder]):
+    inline def monetizationConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigArgs.Builder]):
         com.pulumi.aws.wafv2.WebAclArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigArgs.builder
       builder.monetizationConfig(args(argsBuilder).build)
@@ -117,7 +117,7 @@ object wafv2_ext1:
      * @param rules **`rule` blocks in this resource have several known limitations.** Consider using `aws.wafv2.WebAclRule` to manage rules as separate resources instead. Rule blocks used to identify the web requests that you want to `allow`, `block`, or `count`. See `rule` below for details.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleArgs.Builder]*):
         com.pulumi.aws.wafv2.WebAclArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -126,7 +126,7 @@ object wafv2_ext1:
      * @param visibilityConfig Amazon CloudWatch metrics and web request sample collection configuration. See `visibilityConfig` below for details.
      * @return builder
      */
-    def visibilityConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclVisibilityConfigArgs.Builder]):
+    inline def visibilityConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclVisibilityConfigArgs.Builder]):
         com.pulumi.aws.wafv2.WebAclArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclVisibilityConfigArgs.builder
       builder.visibilityConfig(args(argsBuilder).build)
@@ -136,7 +136,7 @@ object wafv2_ext1:
      * @param loggingFilter Configuration block that specifies which web requests are kept in the logs and which are dropped. It allows filtering based on the rule action and the web request labels applied by matching rules during web ACL evaluation. For more details, refer to the Logging Filter section below.
      * @return builder
      */
-    def loggingFilter(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterArgs.Builder]):
+    inline def loggingFilter(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterArgs.Builder]):
         com.pulumi.aws.wafv2.WebAclLoggingConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterArgs.builder
       builder.loggingFilter(args(argsBuilder).build)
@@ -145,7 +145,7 @@ object wafv2_ext1:
      * @param redactedFields Configuration for parts of the request that you want to keep out of the logs. Up to 100 `redactedFields` blocks are supported. See Redacted Fields below for more details.
      * @return builder
      */
-    def redactedFields(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldArgs.Builder]*):
+    inline def redactedFields(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldArgs.Builder]*):
         com.pulumi.aws.wafv2.WebAclLoggingConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldArgs.builder
       builder.redactedFields(args.map(_(argsBuilder).build)*)
@@ -155,7 +155,7 @@ object wafv2_ext1:
      * @param action Action to take when the rule matches. See Action below. Conflicts with `overrideAction`.
      * @return builder
      */
-    def action(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionArgs.Builder]):
+    inline def action(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionArgs.Builder]):
         com.pulumi.aws.wafv2.WebAclRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionArgs.builder
       builder.action(args(argsBuilder).build)
@@ -164,7 +164,7 @@ object wafv2_ext1:
      * @param captchaConfig CAPTCHA configuration that overrides the web ACL level setting. See Captcha Config below.
      * @return builder
      */
-    def captchaConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleCaptchaConfigArgs.Builder]):
+    inline def captchaConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleCaptchaConfigArgs.Builder]):
         com.pulumi.aws.wafv2.WebAclRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleCaptchaConfigArgs.builder
       builder.captchaConfig(args(argsBuilder).build)
@@ -173,7 +173,7 @@ object wafv2_ext1:
      * @param challengeConfig Challenge configuration that overrides the web ACL level setting. See Challenge Config below.
      * @return builder
      */
-    def challengeConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleChallengeConfigArgs.Builder]):
+    inline def challengeConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleChallengeConfigArgs.Builder]):
         com.pulumi.aws.wafv2.WebAclRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleChallengeConfigArgs.builder
       builder.challengeConfig(args(argsBuilder).build)
@@ -182,7 +182,7 @@ object wafv2_ext1:
      * @param overrideAction Override action for managed rule groups. See Override Action below. Conflicts with `action`.
      * @return builder
      */
-    def overrideAction(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleOverrideActionArgs.Builder]):
+    inline def overrideAction(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleOverrideActionArgs.Builder]):
         com.pulumi.aws.wafv2.WebAclRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleOverrideActionArgs.builder
       builder.overrideAction(args(argsBuilder).build)
@@ -191,7 +191,7 @@ object wafv2_ext1:
      * @param ruleLabels Labels to apply to matching web requests. See Rule Label below.
      * @return builder
      */
-    def ruleLabels(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleRuleLabelArgs.Builder]*):
+    inline def ruleLabels(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleRuleLabelArgs.Builder]*):
         com.pulumi.aws.wafv2.WebAclRuleArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleRuleLabelArgs.builder
       builder.ruleLabels(args.map(_(argsBuilder).build)*)
@@ -200,12 +200,12 @@ object wafv2_ext1:
      * @param statement Rule statement. See Statement below.
      * @return builder
      */
-    def statement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder]):
+    inline def statement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder]):
         com.pulumi.aws.wafv2.WebAclRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.builder
       builder.statement(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleTimeoutsArgs.Builder]):
         com.pulumi.aws.wafv2.WebAclRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -214,7 +214,7 @@ object wafv2_ext1:
      * @param visibilityConfig CloudWatch metrics configuration. See Visibility Config below.
      * @return builder
      */
-    def visibilityConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleVisibilityConfigArgs.Builder]):
+    inline def visibilityConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleVisibilityConfigArgs.Builder]):
         com.pulumi.aws.wafv2.WebAclRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleVisibilityConfigArgs.builder
       builder.visibilityConfig(args(argsBuilder).build)
@@ -224,7 +224,7 @@ object wafv2_ext1:
      * @param managedRuleGroup Managed Rule Group configuration. One of `ruleGroupReference` or `managedRuleGroup` is required. Conflicts with `ruleGroupReference`. See below.
      * @return builder
      */
-    def managedRuleGroup(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupArgs.Builder]):
+    inline def managedRuleGroup(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupArgs.Builder]):
         com.pulumi.aws.wafv2.WebAclRuleGroupAssociationArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupArgs.builder
       builder.managedRuleGroup(args(argsBuilder).build)
@@ -233,12 +233,12 @@ object wafv2_ext1:
      * @param ruleGroupReference Custom Rule Group reference configuration. One of `ruleGroupReference` or `managedRuleGroup` is required. Conflicts with `managedRuleGroup`. See below.
      * @return builder
      */
-    def ruleGroupReference(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceArgs.Builder]):
+    inline def ruleGroupReference(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceArgs.Builder]):
         com.pulumi.aws.wafv2.WebAclRuleGroupAssociationArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceArgs.builder
       builder.ruleGroupReference(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationTimeoutsArgs.Builder]):
         com.pulumi.aws.wafv2.WebAclRuleGroupAssociationArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -247,7 +247,7 @@ object wafv2_ext1:
      * @param visibilityConfig Defines and enables Amazon CloudWatch metrics and web request sample collection. See below.
      * @return builder
      */
-    def visibilityConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationVisibilityConfigArgs.Builder]):
+    inline def visibilityConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationVisibilityConfigArgs.Builder]):
         com.pulumi.aws.wafv2.WebAclRuleGroupAssociationArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationVisibilityConfigArgs.builder
       builder.visibilityConfig(args(argsBuilder).build)
@@ -257,7 +257,7 @@ object wafv2_ext1:
      * @param regularExpressions One or more blocks of regular expression patterns that you want AWS WAF to search for, such as `B[a{@literal @}]dB[o0]t`. See Regular Expression below for details.
      * @return builder
      */
-    def regularExpressions(args: Endofunction[com.pulumi.aws.wafv2.inputs.RegexPatternSetRegularExpressionArgs.Builder]*):
+    inline def regularExpressions(args: Endofunction[com.pulumi.aws.wafv2.inputs.RegexPatternSetRegularExpressionArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RegexPatternSetState.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RegexPatternSetRegularExpressionArgs.builder
       builder.regularExpressions(args.map(_(argsBuilder).build)*)
@@ -267,7 +267,7 @@ object wafv2_ext1:
      * @param cryptoConfig Cryptocurrency payment configuration for the rule group. See `cryptoConfig` below for details.
      * @return builder
      */
-    def cryptoConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigCryptoConfigArgs.Builder]):
+    inline def cryptoConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigCryptoConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigCryptoConfigArgs.builder
       builder.cryptoConfig(args(argsBuilder).build)
@@ -277,7 +277,7 @@ object wafv2_ext1:
      * @param paymentNetworks Blockchain payment networks configured to receive payments. You can specify 1 to 2 networks. See `paymentNetwork` below for details.
      * @return builder
      */
-    def paymentNetworks(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigCryptoConfigPaymentNetworkArgs.Builder]*):
+    inline def paymentNetworks(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigCryptoConfigPaymentNetworkArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigCryptoConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigCryptoConfigPaymentNetworkArgs.builder
       builder.paymentNetworks(args.map(_(argsBuilder).build)*)
@@ -287,7 +287,7 @@ object wafv2_ext1:
      * @param prices Price configuration for this payment network. Currently supports a single price entry. See `prices` below for details.
      * @return builder
      */
-    def prices(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigCryptoConfigPaymentNetworkPricesArgs.Builder]):
+    inline def prices(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigCryptoConfigPaymentNetworkPricesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigCryptoConfigPaymentNetworkArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigCryptoConfigPaymentNetworkPricesArgs.builder
       builder.prices(args(argsBuilder).build)
@@ -297,7 +297,7 @@ object wafv2_ext1:
      * @param customRequestHandling Custom handling for the web request. See Custom Request Handling below for details.
      * @return builder
      */
-    def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionAllowCustomRequestHandlingArgs.Builder]):
+    inline def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionAllowCustomRequestHandlingArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionAllowArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionAllowCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
@@ -307,7 +307,7 @@ object wafv2_ext1:
      * @param insertHeaders `insertHeader` blocks used to define HTTP headers added to the request. See Custom HTTP Header below for details.
      * @return builder
      */
-    def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionAllowCustomRequestHandlingInsertHeaderArgs.Builder]*):
+    inline def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionAllowCustomRequestHandlingInsertHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionAllowCustomRequestHandlingArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionAllowCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
@@ -317,7 +317,7 @@ object wafv2_ext1:
      * @param allow Instructs AWS WAF to allow the web request. See Allow below for details.
      * @return builder
      */
-    def allow(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionAllowArgs.Builder]):
+    inline def allow(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionAllowArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionAllowArgs.builder
       builder.allow(args(argsBuilder).build)
@@ -326,7 +326,7 @@ object wafv2_ext1:
      * @param block Instructs AWS WAF to block the web request. See Block below for details.
      * @return builder
      */
-    def block(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionBlockArgs.Builder]):
+    inline def block(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionBlockArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionBlockArgs.builder
       builder.block(args(argsBuilder).build)
@@ -335,7 +335,7 @@ object wafv2_ext1:
      * @param captcha Instructs AWS WAF to run a `CAPTCHA` check against the web request. See Captcha below for details.
      * @return builder
      */
-    def captcha(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCaptchaArgs.Builder]):
+    inline def captcha(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCaptchaArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCaptchaArgs.builder
       builder.captcha(args(argsBuilder).build)
@@ -344,7 +344,7 @@ object wafv2_ext1:
      * @param challenge Instructs AWS WAF to run a check against the request to verify that the request is coming from a legitimate client session. See Challenge below for details.
      * @return builder
      */
-    def challenge(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionChallengeArgs.Builder]):
+    inline def challenge(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionChallengeArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionChallengeArgs.builder
       builder.challenge(args(argsBuilder).build)
@@ -353,7 +353,7 @@ object wafv2_ext1:
      * @param count Instructs AWS WAF to count the web request and allow it. See Count below for details.
      * @return builder
      */
-    def count(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCountArgs.Builder]):
+    inline def count(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCountArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCountArgs.builder
       builder.count(args(argsBuilder).build)
@@ -362,7 +362,7 @@ object wafv2_ext1:
      * @param monetize Instructs AWS WAF to monetize the web request, charging per request according to the rule group&#39;s `monetizationConfig`. See Monetize below for details.
      * @return builder
      */
-    def monetize(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionMonetizeArgs.Builder]):
+    inline def monetize(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionMonetizeArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionMonetizeArgs.builder
       builder.monetize(args(argsBuilder).build)
@@ -372,7 +372,7 @@ object wafv2_ext1:
      * @param customResponse Custom response for the web request. See Custom Response below for details.
      * @return builder
      */
-    def customResponse(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionBlockCustomResponseArgs.Builder]):
+    inline def customResponse(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionBlockCustomResponseArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionBlockArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionBlockCustomResponseArgs.builder
       builder.customResponse(args(argsBuilder).build)
@@ -382,7 +382,7 @@ object wafv2_ext1:
      * @param responseHeaders `responseHeader` blocks used to define the HTTP response headers added to the response. See Custom HTTP Header below for details.
      * @return builder
      */
-    def responseHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionBlockCustomResponseResponseHeaderArgs.Builder]*):
+    inline def responseHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionBlockCustomResponseResponseHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionBlockCustomResponseArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionBlockCustomResponseResponseHeaderArgs.builder
       builder.responseHeaders(args.map(_(argsBuilder).build)*)
@@ -392,7 +392,7 @@ object wafv2_ext1:
      * @param customRequestHandling Custom handling for the web request. See Custom Request Handling below for details.
      * @return builder
      */
-    def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCaptchaCustomRequestHandlingArgs.Builder]):
+    inline def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCaptchaCustomRequestHandlingArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCaptchaArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCaptchaCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
@@ -402,7 +402,7 @@ object wafv2_ext1:
      * @param insertHeaders `insertHeader` blocks used to define HTTP headers added to the request. See Custom HTTP Header below for details.
      * @return builder
      */
-    def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCaptchaCustomRequestHandlingInsertHeaderArgs.Builder]*):
+    inline def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCaptchaCustomRequestHandlingInsertHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCaptchaCustomRequestHandlingArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCaptchaCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
@@ -412,7 +412,7 @@ object wafv2_ext1:
      * @param customRequestHandling Custom handling for the web request. See Custom Request Handling below for details.
      * @return builder
      */
-    def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionChallengeCustomRequestHandlingArgs.Builder]):
+    inline def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionChallengeCustomRequestHandlingArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionChallengeArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionChallengeCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
@@ -422,7 +422,7 @@ object wafv2_ext1:
      * @param insertHeaders `insertHeader` blocks used to define HTTP headers added to the request. See Custom HTTP Header below for details.
      * @return builder
      */
-    def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionChallengeCustomRequestHandlingInsertHeaderArgs.Builder]*):
+    inline def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionChallengeCustomRequestHandlingInsertHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionChallengeCustomRequestHandlingArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionChallengeCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
@@ -432,7 +432,7 @@ object wafv2_ext1:
      * @param customRequestHandling Custom handling for the web request. See Custom Request Handling below for details.
      * @return builder
      */
-    def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCountCustomRequestHandlingArgs.Builder]):
+    inline def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCountCustomRequestHandlingArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCountArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCountCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
@@ -442,7 +442,7 @@ object wafv2_ext1:
      * @param insertHeaders `insertHeader` blocks used to define HTTP headers added to the request. See Custom HTTP Header below for details.
      * @return builder
      */
-    def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCountCustomRequestHandlingInsertHeaderArgs.Builder]*):
+    inline def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCountCustomRequestHandlingInsertHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCountCustomRequestHandlingArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionCountCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
@@ -452,7 +452,7 @@ object wafv2_ext1:
      * @param action Action that AWS WAF should take on a web request when it matches the rule&#39;s statement. Settings at the `aws.wafv2.WebAcl` level can override the rule action setting. See Action below for details.
      * @return builder
      */
-    def action(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionArgs.Builder]):
+    inline def action(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleActionArgs.builder
       builder.action(args(argsBuilder).build)
@@ -461,7 +461,7 @@ object wafv2_ext1:
      * @param captchaConfig Configuration for how AWS WAF handles CAPTCHA evaluations. See Captcha Configuration below for details.
      * @return builder
      */
-    def captchaConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleCaptchaConfigArgs.Builder]):
+    inline def captchaConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleCaptchaConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleCaptchaConfigArgs.builder
       builder.captchaConfig(args(argsBuilder).build)
@@ -470,7 +470,7 @@ object wafv2_ext1:
      * @param ruleLabels Labels to apply to web requests that match the rule match statement. See Rule Label below for details.
      * @return builder
      */
-    def ruleLabels(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleRuleLabelArgs.Builder]*):
+    inline def ruleLabels(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleRuleLabelArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleRuleLabelArgs.builder
       builder.ruleLabels(args.map(_(argsBuilder).build)*)
@@ -479,7 +479,7 @@ object wafv2_ext1:
      * @param statement AWS WAF processing statement for the rule, for example `byteMatchStatement` or `geoMatchStatement`. See Statement below for details.
      * @return builder
      */
-    def statement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder]):
+    inline def statement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.builder
       builder.statement(args(argsBuilder).build)
@@ -488,7 +488,7 @@ object wafv2_ext1:
      * @param visibilityConfig Amazon CloudWatch metrics and web request sample collection configuration. See Visibility Configuration below for details.
      * @return builder
      */
-    def visibilityConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleVisibilityConfigArgs.Builder]):
+    inline def visibilityConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleVisibilityConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleVisibilityConfigArgs.builder
       builder.visibilityConfig(args(argsBuilder).build)
@@ -498,7 +498,7 @@ object wafv2_ext1:
      * @param immunityTimeProperty Custom immunity time. See Immunity Time Property below for details.
      * @return builder
      */
-    def immunityTimeProperty(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleCaptchaConfigImmunityTimePropertyArgs.Builder]):
+    inline def immunityTimeProperty(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleCaptchaConfigImmunityTimePropertyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleCaptchaConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleCaptchaConfigImmunityTimePropertyArgs.builder
       builder.immunityTimeProperty(args(argsBuilder).build)
@@ -508,7 +508,7 @@ object wafv2_ext1:
      * @param statements Statements to combine with `AND` logic. You can use any statements that can be nested. See Statement above for details.
      * @return builder
      */
-    def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder]*):
+    inline def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementAndStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
@@ -518,7 +518,7 @@ object wafv2_ext1:
      * @param andStatement Logical rule statement used to combine other rule statements with AND logic. See AND Statement below for details.
      * @return builder
      */
-    def andStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementAndStatementArgs.Builder]):
+    inline def andStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementAndStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementAndStatementArgs.builder
       builder.andStatement(args(argsBuilder).build)
@@ -527,7 +527,7 @@ object wafv2_ext1:
      * @param asnMatchStatement Rule statement that inspects web traffic based on the Autonomous System Number (ASN) associated with the request&#39;s IP address. See ASN Match Statement below for details.
      * @return builder
      */
-    def asnMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementAsnMatchStatementArgs.Builder]):
+    inline def asnMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementAsnMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementAsnMatchStatementArgs.builder
       builder.asnMatchStatement(args(argsBuilder).build)
@@ -536,7 +536,7 @@ object wafv2_ext1:
      * @param byteMatchStatement Rule statement that defines a string match search for AWS WAF to apply to web requests. See Byte Match Statement below for details.
      * @return builder
      */
-    def byteMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementArgs.Builder]):
+    inline def byteMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementArgs.builder
       builder.byteMatchStatement(args(argsBuilder).build)
@@ -545,7 +545,7 @@ object wafv2_ext1:
      * @param geoMatchStatement Rule statement used to identify web requests based on country of origin. See GEO Match Statement below for details.
      * @return builder
      */
-    def geoMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementGeoMatchStatementArgs.Builder]):
+    inline def geoMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementGeoMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementGeoMatchStatementArgs.builder
       builder.geoMatchStatement(args(argsBuilder).build)
@@ -554,7 +554,7 @@ object wafv2_ext1:
      * @param ipSetReferenceStatement Rule statement used to detect web requests coming from particular IP addresses or address ranges. See IP Set Reference Statement below for details.
      * @return builder
      */
-    def ipSetReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementIpSetReferenceStatementArgs.Builder]):
+    inline def ipSetReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementIpSetReferenceStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementIpSetReferenceStatementArgs.builder
       builder.ipSetReferenceStatement(args(argsBuilder).build)
@@ -563,7 +563,7 @@ object wafv2_ext1:
      * @param labelMatchStatement Rule statement that defines a string match search against labels that have been added to the web request by rules that have already run in the web ACL. See Label Match Statement below for details.
      * @return builder
      */
-    def labelMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementLabelMatchStatementArgs.Builder]):
+    inline def labelMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementLabelMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementLabelMatchStatementArgs.builder
       builder.labelMatchStatement(args(argsBuilder).build)
@@ -572,7 +572,7 @@ object wafv2_ext1:
      * @param notStatement Logical rule statement used to negate the results of another rule statement. See NOT Statement below for details.
      * @return builder
      */
-    def notStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementNotStatementArgs.Builder]):
+    inline def notStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementNotStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementNotStatementArgs.builder
       builder.notStatement(args(argsBuilder).build)
@@ -581,7 +581,7 @@ object wafv2_ext1:
      * @param orStatement Logical rule statement used to combine other rule statements with OR logic. See OR Statement below for details.
      * @return builder
      */
-    def orStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementOrStatementArgs.Builder]):
+    inline def orStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementOrStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementOrStatementArgs.builder
       builder.orStatement(args(argsBuilder).build)
@@ -590,7 +590,7 @@ object wafv2_ext1:
      * @param rateBasedStatement Rate-based rule tracks the rate of requests for each originating `IP address`, and triggers the rule action when the rate exceeds a limit that you specify on the number of requests in any `5-minute` time span. This statement can not be nested. See Rate Based Statement below for details.
      * @return builder
      */
-    def rateBasedStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementArgs.Builder]):
+    inline def rateBasedStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementArgs.builder
       builder.rateBasedStatement(args(argsBuilder).build)
@@ -599,7 +599,7 @@ object wafv2_ext1:
      * @param regexMatchStatement Rule statement used to search web request components for a match against a single regular expression. See Regex Match Statement below for details.
      * @return builder
      */
-    def regexMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementArgs.Builder]):
+    inline def regexMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementArgs.builder
       builder.regexMatchStatement(args(argsBuilder).build)
@@ -608,7 +608,7 @@ object wafv2_ext1:
      * @param regexPatternSetReferenceStatement Rule statement used to search web request components for matches with regular expressions. See Regex Pattern Set Reference Statement below for details.
      * @return builder
      */
-    def regexPatternSetReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementArgs.Builder]):
+    inline def regexPatternSetReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementArgs.builder
       builder.regexPatternSetReferenceStatement(args(argsBuilder).build)
@@ -617,7 +617,7 @@ object wafv2_ext1:
      * @param sizeConstraintStatement Rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (&gt;) or less than (&lt;). See Size Constraint Statement below for more details.
      * @return builder
      */
-    def sizeConstraintStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementArgs.Builder]):
+    inline def sizeConstraintStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementArgs.builder
       builder.sizeConstraintStatement(args(argsBuilder).build)
@@ -626,7 +626,7 @@ object wafv2_ext1:
      * @param sqliMatchStatement SQL injection match condition identifies the part of web requests, such as the URI or the query string, that you want AWS WAF to inspect. See SQL Injection Match Statement below for details.
      * @return builder
      */
-    def sqliMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementArgs.Builder]):
+    inline def sqliMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementArgs.builder
       builder.sqliMatchStatement(args(argsBuilder).build)
@@ -635,7 +635,7 @@ object wafv2_ext1:
      * @param xssMatchStatement Rule statement that defines a cross-site scripting (XSS) match search for AWS WAF to apply to web requests. See XSS Match Statement below for details.
      * @return builder
      */
-    def xssMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementArgs.Builder]):
+    inline def xssMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementArgs.builder
       builder.xssMatchStatement(args(argsBuilder).build)
@@ -645,7 +645,7 @@ object wafv2_ext1:
      * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that&#39;s reported by the web request origin. See Forwarded IP Config below for more details.
      * @return builder
      */
-    def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementAsnMatchStatementForwardedIpConfigArgs.Builder]):
+    inline def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementAsnMatchStatementForwardedIpConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementAsnMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementAsnMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
@@ -655,7 +655,7 @@ object wafv2_ext1:
      * @param fieldToMatch Part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
      * @return builder
      */
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
@@ -664,7 +664,7 @@ object wafv2_ext1:
      * @param preParseTextTransformations Text transformations to apply to the raw query string before AWS WAF parses the string into individual query arguments, and before any `textTransformation` is applied. Supported only when `fieldToMatch` specifies `singleQueryArgument` or `allQueryArguments`. Maximum of 10. See Pre-Parse Text Transformation below for details.
      * @return builder
      */
-    def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementPreParseTextTransformationArgs.Builder]*):
+    inline def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementPreParseTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementPreParseTextTransformationArgs.builder
       builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
@@ -673,7 +673,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one required. See Text Transformation below for details.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -683,7 +683,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -692,7 +692,7 @@ object wafv2_ext1:
      * @param body Inspect the request body, which immediately follows the request headers.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -701,7 +701,7 @@ object wafv2_ext1:
      * @param cookies Inspect the cookies in the web request. See Cookies below for details.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -710,7 +710,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect the request headers. See Header Order below for details.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -719,7 +719,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below for details.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -728,7 +728,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Inspect the JA3 fingerprint. See `ja3Fingerprint` below for details.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -737,7 +737,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Inspect the JA4 fingerprint. See `ja4Fingerprint` below for details.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -746,7 +746,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body for details.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -755,7 +755,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -764,7 +764,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string. This is the part of a URL that appears after a `?` character, if any.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -773,7 +773,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below for details.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -782,7 +782,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below for details.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -791,7 +791,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect the part of a URL that follows the &#34;#&#34; symbol, providing additional information about the resource. See URI Fragment below for details.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -800,7 +800,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path. This is the part of a web request that identifies a resource, for example, `/images/daily-ad.jpg`.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -810,7 +810,7 @@ object wafv2_ext1:
      * @param matchPatterns Filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
@@ -820,7 +820,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -830,7 +830,7 @@ object wafv2_ext1:
      * @param matchPattern Filter to use to identify the subset of headers to inspect in a web request. See `headers.match_pattern` Block below for details.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
@@ -840,7 +840,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -850,7 +850,7 @@ object wafv2_ext1:
      * @param matchPattern Patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
@@ -860,7 +860,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -870,7 +870,7 @@ object wafv2_ext1:
      * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that&#39;s reported by the web request origin. See Forwarded IP Config below for details.
      * @return builder
      */
-    def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementGeoMatchStatementForwardedIpConfigArgs.Builder]):
+    inline def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementGeoMatchStatementForwardedIpConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementGeoMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementGeoMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
@@ -880,7 +880,7 @@ object wafv2_ext1:
      * @param ipSetForwardedIpConfig Configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that&#39;s reported by the web request origin. See IPSet Forwarded IP Config below for more details.
      * @return builder
      */
-    def ipSetForwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.Builder]):
+    inline def ipSetForwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementIpSetReferenceStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.builder
       builder.ipSetForwardedIpConfig(args(argsBuilder).build)
@@ -890,7 +890,7 @@ object wafv2_ext1:
      * @param statements Statement to negate. You can use any statement that can be nested. See Statement above for details.
      * @return builder
      */
-    def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder]*):
+    inline def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementNotStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
@@ -900,7 +900,7 @@ object wafv2_ext1:
      * @param statements Statements to combine with `OR` logic. You can use any statements that can be nested. See Statement above for details.
      * @return builder
      */
-    def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder]*):
+    inline def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementOrStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
@@ -910,7 +910,7 @@ object wafv2_ext1:
      * @param customKeys Aggregate the request counts using one or more web request components as the aggregate keys. See `customKey` below for details.
      * @return builder
      */
-    def customKeys(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyArgs.Builder]*):
+    inline def customKeys(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyArgs.builder
       builder.customKeys(args.map(_(argsBuilder).build)*)
@@ -919,7 +919,7 @@ object wafv2_ext1:
      * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that&#39;s reported by the web request origin. If `aggregateKeyType` is set to `FORWARDED_IP`, this block is required. See Forwarded IP Config below for details.
      * @return builder
      */
-    def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementForwardedIpConfigArgs.Builder]):
+    inline def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementForwardedIpConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
@@ -928,13 +928,13 @@ object wafv2_ext1:
      * @param scopeDownStatement Optional nested statement that narrows the scope of the rate-based statement to matching web requests. This can be any nestable statement, and you can nest statements at any level below this scope-down statement. See Statement above for details. If `aggregateKeyType` is set to `CONSTANT`, this block is required.
      * @return builder
      */
-    def scopeDownStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementArgs.Builder]):
+    inline def scopeDownStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementArgs.builder
       builder.scopeDownStatement(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyArgs.Builder)
-    def asn(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyAsnArgs.Builder]):
+    inline def asn(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyAsnArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyAsnArgs.builder
       builder.asn(args(argsBuilder).build)
@@ -943,7 +943,7 @@ object wafv2_ext1:
      * @param cookie Use the value of a cookie in the request as an aggregate key. See RateLimit `cookie` below for details.
      * @return builder
      */
-    def cookie(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyCookieArgs.Builder]):
+    inline def cookie(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyCookieArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyCookieArgs.builder
       builder.cookie(args(argsBuilder).build)
@@ -952,7 +952,7 @@ object wafv2_ext1:
      * @param forwardedIp Use the first IP address in an HTTP header as an aggregate key. See `forwardedIp` below for details.
      * @return builder
      */
-    def forwardedIp(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyForwardedIpArgs.Builder]):
+    inline def forwardedIp(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyForwardedIpArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyForwardedIpArgs.builder
       builder.forwardedIp(args(argsBuilder).build)
@@ -961,7 +961,7 @@ object wafv2_ext1:
      * @param header Use the value of a header in the request as an aggregate key. See RateLimit `header` below for details.
      * @return builder
      */
-    def header(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyHeaderArgs.Builder]):
+    inline def header(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyHeaderArgs.builder
       builder.header(args(argsBuilder).build)
@@ -970,7 +970,7 @@ object wafv2_ext1:
      * @param httpMethod Use the request&#39;s HTTP method as an aggregate key. See RateLimit `httpMethod` below for details.
      * @return builder
      */
-    def httpMethod(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyHttpMethodArgs.Builder]):
+    inline def httpMethod(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyHttpMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyHttpMethodArgs.builder
       builder.httpMethod(args(argsBuilder).build)
@@ -979,7 +979,7 @@ object wafv2_ext1:
      * @param ip Use the request&#39;s originating IP address as an aggregate key. See `RateLimit ip` below for details.
      * @return builder
      */
-    def ip(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyIpArgs.Builder]):
+    inline def ip(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyIpArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyIpArgs.builder
       builder.ip(args(argsBuilder).build)
@@ -988,7 +988,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Use the JA3 fingerprint in the request as an aggregate key. See `RateLimit ja3Fingerprint` below for details.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -997,7 +997,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Use the JA4 fingerprint in the request as an aggregate key. See `RateLimit ja4Fingerprint` below for details.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -1006,7 +1006,7 @@ object wafv2_ext1:
      * @param labelNamespace Use the specified label namespace as an aggregate key. See RateLimit `labelNamespace` below for details.
      * @return builder
      */
-    def labelNamespace(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyLabelNamespaceArgs.Builder]):
+    inline def labelNamespace(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyLabelNamespaceArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyLabelNamespaceArgs.builder
       builder.labelNamespace(args(argsBuilder).build)
@@ -1015,7 +1015,7 @@ object wafv2_ext1:
      * @param queryArgument Use the specified query argument as an aggregate key. See RateLimit `queryArgument` below for details.
      * @return builder
      */
-    def queryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyQueryArgumentArgs.Builder]):
+    inline def queryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyQueryArgumentArgs.builder
       builder.queryArgument(args(argsBuilder).build)
@@ -1024,7 +1024,7 @@ object wafv2_ext1:
      * @param queryString Use the request&#39;s query string as an aggregate key. See RateLimit `queryString` below for details.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -1033,7 +1033,7 @@ object wafv2_ext1:
      * @param uriPath Use the request&#39;s URI path as an aggregate key. See RateLimit `uriPath` below for details.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -1043,7 +1043,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. They are used in rate-based rule statements, to transform request components before using them as custom aggregation keys. Atleast one transformation is required.  See Text Transformation above for details.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyCookieTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyCookieTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyCookieArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyCookieTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -1053,7 +1053,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. They are used in rate-based rule statements, to transform request components before using them as custom aggregation keys. Atleast one transformation is required.  See Text Transformation above for details.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyHeaderTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyHeaderTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyHeaderArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyHeaderTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -1063,7 +1063,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. They are used in rate-based rule statements, to transform request components before using them as custom aggregation keys. Atleast one transformation is required. See Text Transformation above for details.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyQueryArgumentTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyQueryArgumentTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyQueryArgumentArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyQueryArgumentTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -1073,7 +1073,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. They are used in rate-based rule statements, to transform request components before using them as custom aggregation keys. Atleast one transformation is required. See Text Transformation above for details.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyQueryStringTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyQueryStringTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyQueryStringArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyQueryStringTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -1083,7 +1083,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. They are used in rate-based rule statements, to transform request components before using them as custom aggregation keys. Atleast one transformation is required. See Text Transformation above for details.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyUriPathTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyUriPathTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyUriPathArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementCustomKeyUriPathTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -1093,7 +1093,7 @@ object wafv2_ext1:
      * @param statements Statements to combine with `AND` logic. You can use any statements that can be nested. See Statement above for details.
      * @return builder
      */
-    def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder]*):
+    inline def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementAndStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
@@ -1103,7 +1103,7 @@ object wafv2_ext1:
      * @param andStatement Logical rule statement used to combine other rule statements with AND logic. See AND Statement below for details.
      * @return builder
      */
-    def andStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementAndStatementArgs.Builder]):
+    inline def andStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementAndStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementAndStatementArgs.builder
       builder.andStatement(args(argsBuilder).build)
@@ -1112,7 +1112,7 @@ object wafv2_ext1:
      * @param asnMatchStatement Rule statement that inspects web traffic based on the Autonomous System Number (ASN) associated with the request&#39;s IP address. See ASN Match Statement below for details.
      * @return builder
      */
-    def asnMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementAsnMatchStatementArgs.Builder]):
+    inline def asnMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementAsnMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementAsnMatchStatementArgs.builder
       builder.asnMatchStatement(args(argsBuilder).build)
@@ -1121,7 +1121,7 @@ object wafv2_ext1:
      * @param byteMatchStatement Rule statement that defines a string match search for AWS WAF to apply to web requests. See Byte Match Statement below for details.
      * @return builder
      */
-    def byteMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementArgs.Builder]):
+    inline def byteMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementArgs.builder
       builder.byteMatchStatement(args(argsBuilder).build)
@@ -1130,7 +1130,7 @@ object wafv2_ext1:
      * @param geoMatchStatement Rule statement used to identify web requests based on country of origin. See GEO Match Statement below for details.
      * @return builder
      */
-    def geoMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementGeoMatchStatementArgs.Builder]):
+    inline def geoMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementGeoMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementGeoMatchStatementArgs.builder
       builder.geoMatchStatement(args(argsBuilder).build)
@@ -1139,7 +1139,7 @@ object wafv2_ext1:
      * @param ipSetReferenceStatement Rule statement used to detect web requests coming from particular IP addresses or address ranges. See IP Set Reference Statement below for details.
      * @return builder
      */
-    def ipSetReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementArgs.Builder]):
+    inline def ipSetReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementArgs.builder
       builder.ipSetReferenceStatement(args(argsBuilder).build)
@@ -1148,7 +1148,7 @@ object wafv2_ext1:
      * @param labelMatchStatement Rule statement that defines a string match search against labels that have been added to the web request by rules that have already run in the web ACL. See Label Match Statement below for details.
      * @return builder
      */
-    def labelMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementLabelMatchStatementArgs.Builder]):
+    inline def labelMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementLabelMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementLabelMatchStatementArgs.builder
       builder.labelMatchStatement(args(argsBuilder).build)
@@ -1157,7 +1157,7 @@ object wafv2_ext1:
      * @param notStatement Logical rule statement used to negate the results of another rule statement. See NOT Statement below for details.
      * @return builder
      */
-    def notStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementNotStatementArgs.Builder]):
+    inline def notStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementNotStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementNotStatementArgs.builder
       builder.notStatement(args(argsBuilder).build)
@@ -1166,7 +1166,7 @@ object wafv2_ext1:
      * @param orStatement Logical rule statement used to combine other rule statements with OR logic. See OR Statement below for details.
      * @return builder
      */
-    def orStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementOrStatementArgs.Builder]):
+    inline def orStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementOrStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementOrStatementArgs.builder
       builder.orStatement(args(argsBuilder).build)
@@ -1175,7 +1175,7 @@ object wafv2_ext1:
      * @param regexMatchStatement Rule statement used to search web request components for a match against a single regular expression. See Regex Match Statement below for details.
      * @return builder
      */
-    def regexMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementArgs.Builder]):
+    inline def regexMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementArgs.builder
       builder.regexMatchStatement(args(argsBuilder).build)
@@ -1184,7 +1184,7 @@ object wafv2_ext1:
      * @param regexPatternSetReferenceStatement Rule statement used to search web request components for matches with regular expressions. See Regex Pattern Set Reference Statement below for details.
      * @return builder
      */
-    def regexPatternSetReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder]):
+    inline def regexPatternSetReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.builder
       builder.regexPatternSetReferenceStatement(args(argsBuilder).build)
@@ -1193,7 +1193,7 @@ object wafv2_ext1:
      * @param sizeConstraintStatement Rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (&gt;) or less than (&lt;). See Size Constraint Statement below for more details.
      * @return builder
      */
-    def sizeConstraintStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementArgs.Builder]):
+    inline def sizeConstraintStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementArgs.builder
       builder.sizeConstraintStatement(args(argsBuilder).build)
@@ -1202,7 +1202,7 @@ object wafv2_ext1:
      * @param sqliMatchStatement SQL injection match condition identifies the part of web requests, such as the URI or the query string, that you want AWS WAF to inspect. See SQL Injection Match Statement below for details.
      * @return builder
      */
-    def sqliMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementArgs.Builder]):
+    inline def sqliMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementArgs.builder
       builder.sqliMatchStatement(args(argsBuilder).build)
@@ -1211,7 +1211,7 @@ object wafv2_ext1:
      * @param xssMatchStatement Rule statement that defines a cross-site scripting (XSS) match search for AWS WAF to apply to web requests. See XSS Match Statement below for details.
      * @return builder
      */
-    def xssMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.Builder]):
+    inline def xssMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.builder
       builder.xssMatchStatement(args(argsBuilder).build)
@@ -1221,7 +1221,7 @@ object wafv2_ext1:
      * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that&#39;s reported by the web request origin. See Forwarded IP Config below for more details.
      * @return builder
      */
-    def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementAsnMatchStatementForwardedIpConfigArgs.Builder]):
+    inline def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementAsnMatchStatementForwardedIpConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementAsnMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementAsnMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
@@ -1231,7 +1231,7 @@ object wafv2_ext1:
      * @param fieldToMatch Part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
      * @return builder
      */
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
@@ -1240,7 +1240,7 @@ object wafv2_ext1:
      * @param preParseTextTransformations Text transformations to apply to the raw query string before AWS WAF parses the string into individual query arguments, and before any `textTransformation` is applied. Supported only when `fieldToMatch` specifies `singleQueryArgument` or `allQueryArguments`. Maximum of 10. See Pre-Parse Text Transformation below for details.
      * @return builder
      */
-    def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementPreParseTextTransformationArgs.Builder]*):
+    inline def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementPreParseTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementPreParseTextTransformationArgs.builder
       builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
@@ -1249,7 +1249,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one required. See Text Transformation below for details.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -1259,7 +1259,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -1268,7 +1268,7 @@ object wafv2_ext1:
      * @param body Inspect the request body, which immediately follows the request headers.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -1277,7 +1277,7 @@ object wafv2_ext1:
      * @param cookies Inspect the cookies in the web request. See Cookies below for details.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -1286,7 +1286,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect the request headers. See Header Order below for details.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -1295,7 +1295,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below for details.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -1304,7 +1304,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Inspect the JA3 fingerprint. See `ja3Fingerprint` below for details.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -1313,7 +1313,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Inspect the JA4 fingerprint. See `ja4Fingerprint` below for details.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -1322,7 +1322,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body for details.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -1331,7 +1331,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -1340,7 +1340,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string. This is the part of a URL that appears after a `?` character, if any.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -1349,7 +1349,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below for details.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -1358,7 +1358,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below for details.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -1367,7 +1367,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect the part of a URL that follows the &#34;#&#34; symbol, providing additional information about the resource. See URI Fragment below for details.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -1376,7 +1376,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path. This is the part of a web request that identifies a resource, for example, `/images/daily-ad.jpg`.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -1386,7 +1386,7 @@ object wafv2_ext1:
      * @param matchPatterns Filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
@@ -1396,7 +1396,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -1406,7 +1406,7 @@ object wafv2_ext1:
      * @param matchPattern Filter to use to identify the subset of headers to inspect in a web request. See `headers.match_pattern` Block below for details.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
@@ -1416,7 +1416,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -1426,7 +1426,7 @@ object wafv2_ext1:
      * @param matchPattern Patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
@@ -1436,7 +1436,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -1446,7 +1446,7 @@ object wafv2_ext1:
      * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that&#39;s reported by the web request origin. See Forwarded IP Config below for details.
      * @return builder
      */
-    def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementGeoMatchStatementForwardedIpConfigArgs.Builder]):
+    inline def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementGeoMatchStatementForwardedIpConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementGeoMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementGeoMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
@@ -1456,7 +1456,7 @@ object wafv2_ext1:
      * @param ipSetForwardedIpConfig Configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that&#39;s reported by the web request origin. See IPSet Forwarded IP Config below for more details.
      * @return builder
      */
-    def ipSetForwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.Builder]):
+    inline def ipSetForwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.builder
       builder.ipSetForwardedIpConfig(args(argsBuilder).build)
@@ -1466,7 +1466,7 @@ object wafv2_ext1:
      * @param statements Statement to negate. You can use any statement that can be nested. See Statement above for details.
      * @return builder
      */
-    def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder]*):
+    inline def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementNotStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
@@ -1476,7 +1476,7 @@ object wafv2_ext1:
      * @param statements Statements to combine with `OR` logic. You can use any statements that can be nested. See Statement above for details.
      * @return builder
      */
-    def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder]*):
+    inline def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementOrStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
@@ -1486,7 +1486,7 @@ object wafv2_ext1:
      * @param fieldToMatch Part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
      * @return builder
      */
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
@@ -1495,7 +1495,7 @@ object wafv2_ext1:
      * @param preParseTextTransformations Text transformations to apply to the raw query string before AWS WAF parses the string into individual query arguments, and before any `textTransformation` is applied. Supported only when `fieldToMatch` specifies `singleQueryArgument` or `allQueryArguments`. Maximum of 10. See Pre-Parse Text Transformation below for details.
      * @return builder
      */
-    def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementPreParseTextTransformationArgs.Builder]*):
+    inline def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementPreParseTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementPreParseTextTransformationArgs.builder
       builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
@@ -1504,7 +1504,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one required. See Text Transformation below for details.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -1514,7 +1514,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -1523,7 +1523,7 @@ object wafv2_ext1:
      * @param body Inspect the request body, which immediately follows the request headers.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -1532,7 +1532,7 @@ object wafv2_ext1:
      * @param cookies Inspect the cookies in the web request. See Cookies below for details.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -1541,7 +1541,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect the request headers. See Header Order below for details.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -1550,7 +1550,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below for details.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -1559,7 +1559,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Inspect the JA3 fingerprint. See `ja3Fingerprint` below for details.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -1568,7 +1568,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Inspect the JA4 fingerprint. See `ja4Fingerprint` below for details.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -1577,7 +1577,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body for details.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -1586,7 +1586,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -1595,7 +1595,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string. This is the part of a URL that appears after a `?` character, if any.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -1604,7 +1604,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below for details.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -1613,7 +1613,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below for details.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -1622,7 +1622,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect the part of a URL that follows the &#34;#&#34; symbol, providing additional information about the resource. See URI Fragment below for details.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -1631,7 +1631,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path. This is the part of a web request that identifies a resource, for example, `/images/daily-ad.jpg`.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -1641,7 +1641,7 @@ object wafv2_ext1:
      * @param matchPatterns Filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
@@ -1651,7 +1651,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -1661,7 +1661,7 @@ object wafv2_ext1:
      * @param matchPattern Filter to use to identify the subset of headers to inspect in a web request. See `headers.match_pattern` Block below for details.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
@@ -1671,7 +1671,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -1681,7 +1681,7 @@ object wafv2_ext1:
      * @param matchPattern Patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
@@ -1691,7 +1691,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -1701,7 +1701,7 @@ object wafv2_ext1:
      * @param fieldToMatch Part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
      * @return builder
      */
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
@@ -1710,7 +1710,7 @@ object wafv2_ext1:
      * @param preParseTextTransformations Text transformations to apply to the raw query string before AWS WAF parses the string into individual query arguments, and before any `textTransformation` is applied. Supported only when `fieldToMatch` specifies `singleQueryArgument` or `allQueryArguments`. Maximum of 10. See Pre-Parse Text Transformation below for details.
      * @return builder
      */
-    def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementPreParseTextTransformationArgs.Builder]*):
+    inline def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementPreParseTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementPreParseTextTransformationArgs.builder
       builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
@@ -1719,7 +1719,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one required. See Text Transformation below for details.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -1729,7 +1729,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -1738,7 +1738,7 @@ object wafv2_ext1:
      * @param body Inspect the request body, which immediately follows the request headers.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -1747,7 +1747,7 @@ object wafv2_ext1:
      * @param cookies Inspect the cookies in the web request. See Cookies below for details.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -1756,7 +1756,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect the request headers. See Header Order below for details.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -1765,7 +1765,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below for details.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -1774,7 +1774,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Inspect the JA3 fingerprint. See `ja3Fingerprint` below for details.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -1783,7 +1783,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Inspect the JA4 fingerprint. See `ja4Fingerprint` below for details.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -1792,7 +1792,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body for details.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -1801,7 +1801,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -1810,7 +1810,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string. This is the part of a URL that appears after a `?` character, if any.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -1819,7 +1819,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below for details.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -1828,7 +1828,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below for details.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -1837,7 +1837,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect the part of a URL that follows the &#34;#&#34; symbol, providing additional information about the resource. See URI Fragment below for details.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -1846,7 +1846,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path. This is the part of a web request that identifies a resource, for example, `/images/daily-ad.jpg`.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -1856,7 +1856,7 @@ object wafv2_ext1:
      * @param matchPatterns Filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
@@ -1866,7 +1866,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -1876,7 +1876,7 @@ object wafv2_ext1:
      * @param matchPattern Filter to use to identify the subset of headers to inspect in a web request. See `headers.match_pattern` Block below for details.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
@@ -1886,7 +1886,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -1896,7 +1896,7 @@ object wafv2_ext1:
      * @param matchPattern Patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
@@ -1906,7 +1906,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -1916,7 +1916,7 @@ object wafv2_ext1:
      * @param fieldToMatch Part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
      * @return builder
      */
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
@@ -1925,7 +1925,7 @@ object wafv2_ext1:
      * @param preParseTextTransformations Text transformations to apply to the raw query string before AWS WAF parses the string into individual query arguments, and before any `textTransformation` is applied. Supported only when `fieldToMatch` specifies `singleQueryArgument` or `allQueryArguments`. Maximum of 10. See Pre-Parse Text Transformation below for details.
      * @return builder
      */
-    def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementPreParseTextTransformationArgs.Builder]*):
+    inline def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementPreParseTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementPreParseTextTransformationArgs.builder
       builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
@@ -1934,7 +1934,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one required. See Text Transformation below for details.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -1944,7 +1944,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -1953,7 +1953,7 @@ object wafv2_ext1:
      * @param body Inspect the request body, which immediately follows the request headers.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -1962,7 +1962,7 @@ object wafv2_ext1:
      * @param cookies Inspect the cookies in the web request. See Cookies below for details.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -1971,7 +1971,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect the request headers. See Header Order below for details.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -1980,7 +1980,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below for details.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -1989,7 +1989,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Inspect the JA3 fingerprint. See `ja3Fingerprint` below for details.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -1998,7 +1998,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Inspect the JA4 fingerprint. See `ja4Fingerprint` below for details.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -2007,7 +2007,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body for details.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -2016,7 +2016,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -2025,7 +2025,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string. This is the part of a URL that appears after a `?` character, if any.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -2034,7 +2034,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below for details.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -2043,7 +2043,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below for details.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -2052,7 +2052,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect the part of a URL that follows the &#34;#&#34; symbol, providing additional information about the resource. See URI Fragment below for details.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -2061,7 +2061,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path. This is the part of a web request that identifies a resource, for example, `/images/daily-ad.jpg`.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -2071,7 +2071,7 @@ object wafv2_ext1:
      * @param matchPatterns Filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
@@ -2081,7 +2081,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -2091,7 +2091,7 @@ object wafv2_ext1:
      * @param matchPattern Filter to use to identify the subset of headers to inspect in a web request. See `headers.match_pattern` Block below for details.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
@@ -2101,7 +2101,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -2111,7 +2111,7 @@ object wafv2_ext1:
      * @param matchPattern Patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
@@ -2121,7 +2121,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -2131,7 +2131,7 @@ object wafv2_ext1:
      * @param fieldToMatch Part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
      * @return builder
      */
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
@@ -2140,7 +2140,7 @@ object wafv2_ext1:
      * @param preParseTextTransformations Text transformations to apply to the raw query string before AWS WAF parses the string into individual query arguments, and before any `textTransformation` is applied. Supported only when `fieldToMatch` specifies `singleQueryArgument` or `allQueryArguments`. Maximum of 10. See Pre-Parse Text Transformation below for details.
      * @return builder
      */
-    def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementPreParseTextTransformationArgs.Builder]*):
+    inline def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementPreParseTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementPreParseTextTransformationArgs.builder
       builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
@@ -2149,7 +2149,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one required. See Text Transformation below for details.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -2159,7 +2159,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -2168,7 +2168,7 @@ object wafv2_ext1:
      * @param body Inspect the request body, which immediately follows the request headers.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -2177,7 +2177,7 @@ object wafv2_ext1:
      * @param cookies Inspect the cookies in the web request. See Cookies below for details.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -2186,7 +2186,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect the request headers. See Header Order below for details.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -2195,7 +2195,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below for details.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -2204,7 +2204,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Inspect the JA3 fingerprint. See `ja3Fingerprint` below for details.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -2213,7 +2213,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Inspect the JA4 fingerprint. See `ja4Fingerprint` below for details.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -2222,7 +2222,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body for details.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -2231,7 +2231,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -2240,7 +2240,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string. This is the part of a URL that appears after a `?` character, if any.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -2249,7 +2249,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below for details.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -2258,7 +2258,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below for details.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -2267,7 +2267,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect the part of a URL that follows the &#34;#&#34; symbol, providing additional information about the resource. See URI Fragment below for details.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -2276,7 +2276,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path. This is the part of a web request that identifies a resource, for example, `/images/daily-ad.jpg`.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -2286,7 +2286,7 @@ object wafv2_ext1:
      * @param matchPatterns Filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
@@ -2296,7 +2296,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -2306,7 +2306,7 @@ object wafv2_ext1:
      * @param matchPattern Filter to use to identify the subset of headers to inspect in a web request. See `headers.match_pattern` Block below for details.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
@@ -2316,7 +2316,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -2326,7 +2326,7 @@ object wafv2_ext1:
      * @param matchPattern Patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
@@ -2336,7 +2336,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -2346,7 +2346,7 @@ object wafv2_ext1:
      * @param fieldToMatch Part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
      * @return builder
      */
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
@@ -2355,7 +2355,7 @@ object wafv2_ext1:
      * @param preParseTextTransformations Text transformations to apply to the raw query string before AWS WAF parses the string into individual query arguments, and before any `textTransformation` is applied. Supported only when `fieldToMatch` specifies `singleQueryArgument` or `allQueryArguments`. Maximum of 10. See Pre-Parse Text Transformation below for details.
      * @return builder
      */
-    def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementPreParseTextTransformationArgs.Builder]*):
+    inline def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementPreParseTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementPreParseTextTransformationArgs.builder
       builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
@@ -2364,7 +2364,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one required. See Text Transformation below for details.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -2374,7 +2374,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -2383,7 +2383,7 @@ object wafv2_ext1:
      * @param body Inspect the request body, which immediately follows the request headers.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -2392,7 +2392,7 @@ object wafv2_ext1:
      * @param cookies Inspect the cookies in the web request. See Cookies below for details.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -2401,7 +2401,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect the request headers. See Header Order below for details.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -2410,7 +2410,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below for details.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -2419,7 +2419,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Inspect the JA3 fingerprint. See `ja3Fingerprint` below for details.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -2428,7 +2428,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Inspect the JA4 fingerprint. See `ja4Fingerprint` below for details.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -2437,7 +2437,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body for details.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -2446,7 +2446,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -2455,7 +2455,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string. This is the part of a URL that appears after a `?` character, if any.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -2464,7 +2464,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below for details.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -2473,7 +2473,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below for details.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -2482,7 +2482,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect the part of a URL that follows the &#34;#&#34; symbol, providing additional information about the resource. See URI Fragment below for details.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -2491,7 +2491,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path. This is the part of a web request that identifies a resource, for example, `/images/daily-ad.jpg`.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -2501,7 +2501,7 @@ object wafv2_ext1:
      * @param matchPatterns Filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
@@ -2511,7 +2511,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -2521,7 +2521,7 @@ object wafv2_ext1:
      * @param matchPattern Filter to use to identify the subset of headers to inspect in a web request. See `headers.match_pattern` Block below for details.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
@@ -2531,7 +2531,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -2541,7 +2541,7 @@ object wafv2_ext1:
      * @param matchPattern Patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
@@ -2551,7 +2551,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -2561,7 +2561,7 @@ object wafv2_ext1:
      * @param fieldToMatch Part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
      * @return builder
      */
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
@@ -2570,7 +2570,7 @@ object wafv2_ext1:
      * @param preParseTextTransformations Text transformations to apply to the raw query string before AWS WAF parses the string into individual query arguments, and before any `textTransformation` is applied. Supported only when `fieldToMatch` specifies `singleQueryArgument` or `allQueryArguments`. Maximum of 10. See Pre-Parse Text Transformation below for details.
      * @return builder
      */
-    def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementPreParseTextTransformationArgs.Builder]*):
+    inline def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementPreParseTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementPreParseTextTransformationArgs.builder
       builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
@@ -2579,7 +2579,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one required. See Text Transformation below for details.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -2589,7 +2589,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -2598,7 +2598,7 @@ object wafv2_ext1:
      * @param body Inspect the request body, which immediately follows the request headers.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -2607,7 +2607,7 @@ object wafv2_ext1:
      * @param cookies Inspect the cookies in the web request. See Cookies below for details.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -2616,7 +2616,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect the request headers. See Header Order below for details.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -2625,7 +2625,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below for details.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -2634,7 +2634,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Inspect the JA3 fingerprint. See `ja3Fingerprint` below for details.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -2643,7 +2643,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Inspect the JA4 fingerprint. See `ja4Fingerprint` below for details.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -2652,7 +2652,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body for details.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -2661,7 +2661,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -2670,7 +2670,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string. This is the part of a URL that appears after a `?` character, if any.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -2679,7 +2679,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below for details.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -2688,7 +2688,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below for details.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -2697,7 +2697,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect the part of a URL that follows the &#34;#&#34; symbol, providing additional information about the resource. See URI Fragment below for details.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -2706,7 +2706,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path. This is the part of a web request that identifies a resource, for example, `/images/daily-ad.jpg`.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -2716,7 +2716,7 @@ object wafv2_ext1:
      * @param matchPatterns Filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
@@ -2726,7 +2726,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -2736,7 +2736,7 @@ object wafv2_ext1:
      * @param matchPattern Filter to use to identify the subset of headers to inspect in a web request. See `headers.match_pattern` Block below for details.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
@@ -2746,7 +2746,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -2756,7 +2756,7 @@ object wafv2_ext1:
      * @param matchPattern Patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
@@ -2766,7 +2766,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -2776,7 +2776,7 @@ object wafv2_ext1:
      * @param fieldToMatch Part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
      * @return builder
      */
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
@@ -2785,7 +2785,7 @@ object wafv2_ext1:
      * @param preParseTextTransformations Text transformations to apply to the raw query string before AWS WAF parses the string into individual query arguments, and before any `textTransformation` is applied. Supported only when `fieldToMatch` specifies `singleQueryArgument` or `allQueryArguments`. Maximum of 10. See Pre-Parse Text Transformation below for details.
      * @return builder
      */
-    def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementPreParseTextTransformationArgs.Builder]*):
+    inline def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementPreParseTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementPreParseTextTransformationArgs.builder
       builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
@@ -2794,7 +2794,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one required. See Text Transformation below for details.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -2804,7 +2804,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -2813,7 +2813,7 @@ object wafv2_ext1:
      * @param body Inspect the request body, which immediately follows the request headers.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -2822,7 +2822,7 @@ object wafv2_ext1:
      * @param cookies Inspect the cookies in the web request. See Cookies below for details.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -2831,7 +2831,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect the request headers. See Header Order below for details.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -2840,7 +2840,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below for details.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -2849,7 +2849,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Inspect the JA3 fingerprint. See `ja3Fingerprint` below for details.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -2858,7 +2858,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Inspect the JA4 fingerprint. See `ja4Fingerprint` below for details.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -2867,7 +2867,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body for details.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -2876,7 +2876,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -2885,7 +2885,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string. This is the part of a URL that appears after a `?` character, if any.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -2894,7 +2894,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below for details.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -2903,7 +2903,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below for details.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -2912,7 +2912,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect the part of a URL that follows the &#34;#&#34; symbol, providing additional information about the resource. See URI Fragment below for details.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -2921,7 +2921,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path. This is the part of a web request that identifies a resource, for example, `/images/daily-ad.jpg`.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -2931,7 +2931,7 @@ object wafv2_ext1:
      * @param matchPatterns Filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
@@ -2941,7 +2941,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -2951,7 +2951,7 @@ object wafv2_ext1:
      * @param matchPattern Filter to use to identify the subset of headers to inspect in a web request. See `headers.match_pattern` Block below for details.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
@@ -2961,7 +2961,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -2971,7 +2971,7 @@ object wafv2_ext1:
      * @param matchPattern Patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
@@ -2981,7 +2981,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -2991,7 +2991,7 @@ object wafv2_ext1:
      * @param fieldToMatch Part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
      * @return builder
      */
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
@@ -3000,7 +3000,7 @@ object wafv2_ext1:
      * @param preParseTextTransformations Text transformations to apply to the raw query string before AWS WAF parses the string into individual query arguments, and before any `textTransformation` is applied. Supported only when `fieldToMatch` specifies `singleQueryArgument` or `allQueryArguments`. Maximum of 10. See Pre-Parse Text Transformation below for details.
      * @return builder
      */
-    def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementPreParseTextTransformationArgs.Builder]*):
+    inline def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementPreParseTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementPreParseTextTransformationArgs.builder
       builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
@@ -3009,7 +3009,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one required. See Text Transformation below for details.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -3019,7 +3019,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -3028,7 +3028,7 @@ object wafv2_ext1:
      * @param body Inspect the request body, which immediately follows the request headers.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -3037,7 +3037,7 @@ object wafv2_ext1:
      * @param cookies Inspect the cookies in the web request. See Cookies below for details.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -3046,7 +3046,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect the request headers. See Header Order below for details.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -3055,7 +3055,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below for details.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -3064,7 +3064,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Inspect the JA3 fingerprint. See `ja3Fingerprint` below for details.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -3073,7 +3073,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Inspect the JA4 fingerprint. See `ja4Fingerprint` below for details.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -3082,7 +3082,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body for details.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -3091,7 +3091,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -3100,7 +3100,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string. This is the part of a URL that appears after a `?` character, if any.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -3109,7 +3109,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below for details.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -3118,7 +3118,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below for details.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -3127,7 +3127,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect the part of a URL that follows the &#34;#&#34; symbol, providing additional information about the resource. See URI Fragment below for details.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -3136,7 +3136,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path. This is the part of a web request that identifies a resource, for example, `/images/daily-ad.jpg`.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -3146,7 +3146,7 @@ object wafv2_ext1:
      * @param matchPatterns Filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
@@ -3156,7 +3156,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -3166,7 +3166,7 @@ object wafv2_ext1:
      * @param matchPattern Filter to use to identify the subset of headers to inspect in a web request. See `headers.match_pattern` Block below for details.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
@@ -3176,7 +3176,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -3186,7 +3186,7 @@ object wafv2_ext1:
      * @param matchPattern Patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
@@ -3196,7 +3196,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -3206,7 +3206,7 @@ object wafv2_ext1:
      * @param fieldToMatch Part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
      * @return builder
      */
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
@@ -3215,7 +3215,7 @@ object wafv2_ext1:
      * @param preParseTextTransformations Text transformations to apply to the raw query string before AWS WAF parses the string into individual query arguments, and before any `textTransformation` is applied. Supported only when `fieldToMatch` specifies `singleQueryArgument` or `allQueryArguments`. Maximum of 10. See Pre-Parse Text Transformation below for details.
      * @return builder
      */
-    def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementPreParseTextTransformationArgs.Builder]*):
+    inline def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementPreParseTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementPreParseTextTransformationArgs.builder
       builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
@@ -3224,7 +3224,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one required. See Text Transformation below for details.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -3234,7 +3234,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -3243,7 +3243,7 @@ object wafv2_ext1:
      * @param body Inspect the request body, which immediately follows the request headers.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -3252,7 +3252,7 @@ object wafv2_ext1:
      * @param cookies Inspect the cookies in the web request. See Cookies below for details.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -3261,7 +3261,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect the request headers. See Header Order below for details.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -3270,7 +3270,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below for details.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -3279,7 +3279,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Inspect the JA3 fingerprint. See `ja3Fingerprint` below for details.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -3288,7 +3288,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Inspect the JA4 fingerprint. See `ja4Fingerprint` below for details.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -3297,7 +3297,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body for details.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -3306,7 +3306,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -3315,7 +3315,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string. This is the part of a URL that appears after a `?` character, if any.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -3324,7 +3324,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below for details.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -3333,7 +3333,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below for details.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -3342,7 +3342,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect the part of a URL that follows the &#34;#&#34; symbol, providing additional information about the resource. See URI Fragment below for details.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -3351,7 +3351,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path. This is the part of a web request that identifies a resource, for example, `/images/daily-ad.jpg`.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -3361,7 +3361,7 @@ object wafv2_ext1:
      * @param matchPatterns Filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
@@ -3371,7 +3371,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -3381,7 +3381,7 @@ object wafv2_ext1:
      * @param matchPattern Filter to use to identify the subset of headers to inspect in a web request. See `headers.match_pattern` Block below for details.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
@@ -3391,7 +3391,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -3401,7 +3401,7 @@ object wafv2_ext1:
      * @param matchPattern Patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
@@ -3411,7 +3411,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -3421,7 +3421,7 @@ object wafv2_ext1:
      * @param fieldToMatch Part of a web request that you want AWS WAF to inspect. See Field to Match below for details.
      * @return builder
      */
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
@@ -3430,7 +3430,7 @@ object wafv2_ext1:
      * @param preParseTextTransformations Text transformations to apply to the raw query string before AWS WAF parses the string into individual query arguments, and before any `textTransformation` is applied. Supported only when `fieldToMatch` specifies `singleQueryArgument` or `allQueryArguments`. Maximum of 10. See Pre-Parse Text Transformation below for details.
      * @return builder
      */
-    def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementPreParseTextTransformationArgs.Builder]*):
+    inline def preParseTextTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementPreParseTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementPreParseTextTransformationArgs.builder
       builder.preParseTextTransformations(args.map(_(argsBuilder).build)*)
@@ -3439,7 +3439,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. At least one required. See Text Transformation below for details.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -3449,7 +3449,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -3458,7 +3458,7 @@ object wafv2_ext1:
      * @param body Inspect the request body, which immediately follows the request headers.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -3467,7 +3467,7 @@ object wafv2_ext1:
      * @param cookies Inspect the cookies in the web request. See Cookies below for details.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -3476,7 +3476,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect the request headers. See Header Order below for details.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -3485,7 +3485,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below for details.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -3494,7 +3494,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Inspect the JA3 fingerprint. See `ja3Fingerprint` below for details.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -3503,7 +3503,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Inspect the JA4 fingerprint. See `ja4Fingerprint` below for details.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -3512,7 +3512,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body for details.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -3521,7 +3521,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -3530,7 +3530,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string. This is the part of a URL that appears after a `?` character, if any.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -3539,7 +3539,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below for details.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -3548,7 +3548,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below for details.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -3557,7 +3557,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect the part of a URL that follows the &#34;#&#34; symbol, providing additional information about the resource. See URI Fragment below for details.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -3566,7 +3566,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path. This is the part of a web request that identifies a resource, for example, `/images/daily-ad.jpg`.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -3576,7 +3576,7 @@ object wafv2_ext1:
      * @param matchPatterns Filter to use to identify the subset of cookies to inspect in a web request. You must specify exactly one setting: either `all`, `includedCookies` or `excludedCookies`. More details: [CookieMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_CookieMatchPattern.html)
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
@@ -3586,7 +3586,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -3596,7 +3596,7 @@ object wafv2_ext1:
      * @param matchPattern Filter to use to identify the subset of headers to inspect in a web request. See `headers.match_pattern` Block below for details.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
@@ -3606,7 +3606,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -3616,7 +3616,7 @@ object wafv2_ext1:
      * @param matchPattern Patterns to look for in the JSON body. You must specify exactly one setting: either `all` or `includedPaths`. See [JsonMatchPattern](https://docs.aws.amazon.com/waf/latest/APIReference/API_JsonMatchPattern.html) for details.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
@@ -3626,7 +3626,7 @@ object wafv2_ext1:
      * @param all Empty configuration block that is used for inspecting all headers.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -3636,7 +3636,7 @@ object wafv2_ext1:
      * @param customResponseBodies Custom response bodies that can be referenced by `customResponse` actions. See Custom Response Body below for details.
      * @return builder
      */
-    def customResponseBodies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupCustomResponseBodyArgs.Builder]*):
+    inline def customResponseBodies(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupCustomResponseBodyArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupState.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupCustomResponseBodyArgs.builder
       builder.customResponseBodies(args.map(_(argsBuilder).build)*)
@@ -3645,7 +3645,7 @@ object wafv2_ext1:
      * @param monetizationConfig Monetization configuration for the rule group. Required when any rule uses the `monetize` action. See `monetizationConfig` below for details.
      * @return builder
      */
-    def monetizationConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigArgs.Builder]):
+    inline def monetizationConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupState.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupMonetizationConfigArgs.builder
       builder.monetizationConfig(args(argsBuilder).build)
@@ -3654,7 +3654,7 @@ object wafv2_ext1:
      * @param rules Rule blocks used to identify the web requests that you want to `allow`, `block`, or `count`. See Rules below for details.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupRuleArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.RuleGroupState.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -3663,7 +3663,7 @@ object wafv2_ext1:
      * @param visibilityConfig Amazon CloudWatch metrics and web request sample collection configuration. See Visibility Configuration below for details.
      * @return builder
      */
-    def visibilityConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupVisibilityConfigArgs.Builder]):
+    inline def visibilityConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.RuleGroupVisibilityConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.RuleGroupState.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.RuleGroupVisibilityConfigArgs.builder
       builder.visibilityConfig(args(argsBuilder).build)
@@ -3673,7 +3673,7 @@ object wafv2_ext1:
      * @param requestBodies Customizes the request body that your protected resource forward to AWS WAF for inspection. See `requestBody` below for details.
      * @return builder
      */
-    def requestBodies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyArgs.Builder]*):
+    inline def requestBodies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyArgs.builder
       builder.requestBodies(args.map(_(argsBuilder).build)*)
@@ -3683,7 +3683,7 @@ object wafv2_ext1:
      * @param apiGateway Customizes the request body that your protected Amazon API Gateway REST APIs forward to AWS WAF for inspection. Applicable only when `scope` is set to `CLOUDFRONT`. See `apiGateway` below for details.
      * @return builder
      */
-    def apiGateway(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyApiGatewayArgs.Builder]):
+    inline def apiGateway(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyApiGatewayArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyApiGatewayArgs.builder
       builder.apiGateway(args(argsBuilder).build)
@@ -3692,7 +3692,7 @@ object wafv2_ext1:
      * @param appRunnerService Customizes the request body that your protected Amazon App Runner services forward to AWS WAF for inspection. Applicable only when `scope` is set to `REGIONAL`. See `appRunnerService` below for details.
      * @return builder
      */
-    def appRunnerService(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyAppRunnerServiceArgs.Builder]):
+    inline def appRunnerService(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyAppRunnerServiceArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyAppRunnerServiceArgs.builder
       builder.appRunnerService(args(argsBuilder).build)
@@ -3701,7 +3701,7 @@ object wafv2_ext1:
      * @param cloudfront Customizes the request body that your protected Amazon CloudFront distributions forward to AWS WAF for inspection. Applicable only when `scope` is set to `REGIONAL`. See `cloudfront` below for details.
      * @return builder
      */
-    def cloudfront(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyCloudfrontArgs.Builder]):
+    inline def cloudfront(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyCloudfrontArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyCloudfrontArgs.builder
       builder.cloudfront(args(argsBuilder).build)
@@ -3710,7 +3710,7 @@ object wafv2_ext1:
      * @param cognitoUserPool Customizes the request body that your protected Amazon Cognito user pools forward to AWS WAF for inspection. Applicable only when `scope` is set to `REGIONAL`. See `cognitoUserPool` below for details.
      * @return builder
      */
-    def cognitoUserPool(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyCognitoUserPoolArgs.Builder]):
+    inline def cognitoUserPool(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyCognitoUserPoolArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyCognitoUserPoolArgs.builder
       builder.cognitoUserPool(args(argsBuilder).build)
@@ -3719,7 +3719,7 @@ object wafv2_ext1:
      * @param verifiedAccessInstance Customizes the request body that your protected AWS Verified Access instances forward to AWS WAF for inspection. Applicable only when `scope` is set to `REGIONAL`. See `verifiedAccessInstance` below for details.
      * @return builder
      */
-    def verifiedAccessInstance(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyVerifiedAccessInstanceArgs.Builder]):
+    inline def verifiedAccessInstance(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyVerifiedAccessInstanceArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclAssociationConfigRequestBodyVerifiedAccessInstanceArgs.builder
       builder.verifiedAccessInstance(args(argsBuilder).build)
@@ -3729,7 +3729,7 @@ object wafv2_ext1:
      * @param immunityTimeProperty Custom immunity time. See `immunityTimeProperty` below for details.
      * @return builder
      */
-    def immunityTimeProperty(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclCaptchaConfigImmunityTimePropertyArgs.Builder]):
+    inline def immunityTimeProperty(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclCaptchaConfigImmunityTimePropertyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclCaptchaConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclCaptchaConfigImmunityTimePropertyArgs.builder
       builder.immunityTimeProperty(args(argsBuilder).build)
@@ -3739,7 +3739,7 @@ object wafv2_ext1:
      * @param immunityTimeProperty Custom immunity time. See `immunityTimeProperty` below for details.
      * @return builder
      */
-    def immunityTimeProperty(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclChallengeConfigImmunityTimePropertyArgs.Builder]):
+    inline def immunityTimeProperty(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclChallengeConfigImmunityTimePropertyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclChallengeConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclChallengeConfigImmunityTimePropertyArgs.builder
       builder.immunityTimeProperty(args(argsBuilder).build)
@@ -3749,7 +3749,7 @@ object wafv2_ext1:
      * @param dataProtections Block for data protection configurations for specific web request field types. See `dataProtection` block for details.
      * @return builder
      */
-    def dataProtections(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDataProtectionConfigDataProtectionArgs.Builder]*):
+    inline def dataProtections(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDataProtectionConfigDataProtectionArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclDataProtectionConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclDataProtectionConfigDataProtectionArgs.builder
       builder.dataProtections(args.map(_(argsBuilder).build)*)
@@ -3759,7 +3759,7 @@ object wafv2_ext1:
      * @param field Field type and optional keys to apply the protection behavior to. See `field` block below for details.
      * @return builder
      */
-    def field(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDataProtectionConfigDataProtectionFieldArgs.Builder]):
+    inline def field(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDataProtectionConfigDataProtectionFieldArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclDataProtectionConfigDataProtectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclDataProtectionConfigDataProtectionFieldArgs.builder
       builder.field(args(argsBuilder).build)
@@ -3769,7 +3769,7 @@ object wafv2_ext1:
      * @param customRequestHandling Custom handling for the web request. See `customRequestHandling` below for details.
      * @return builder
      */
-    def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDefaultActionAllowCustomRequestHandlingArgs.Builder]):
+    inline def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDefaultActionAllowCustomRequestHandlingArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclDefaultActionAllowArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclDefaultActionAllowCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
@@ -3779,7 +3779,7 @@ object wafv2_ext1:
      * @param insertHeaders `insertHeader` blocks used to define HTTP headers added to the request. See `insertHeader` below for details.
      * @return builder
      */
-    def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDefaultActionAllowCustomRequestHandlingInsertHeaderArgs.Builder]*):
+    inline def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDefaultActionAllowCustomRequestHandlingInsertHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclDefaultActionAllowCustomRequestHandlingArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclDefaultActionAllowCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
@@ -3789,7 +3789,7 @@ object wafv2_ext1:
      * @param allow Allows requests by default. See `allow` below for details.
      * @return builder
      */
-    def allow(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDefaultActionAllowArgs.Builder]):
+    inline def allow(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDefaultActionAllowArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclDefaultActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclDefaultActionAllowArgs.builder
       builder.allow(args(argsBuilder).build)
@@ -3798,7 +3798,7 @@ object wafv2_ext1:
      * @param block Blocks requests by default. See `block` below for details.
      * @return builder
      */
-    def block(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDefaultActionBlockArgs.Builder]):
+    inline def block(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDefaultActionBlockArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclDefaultActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclDefaultActionBlockArgs.builder
       builder.block(args(argsBuilder).build)
@@ -3808,7 +3808,7 @@ object wafv2_ext1:
      * @param customResponse Custom response for the web request. See `customResponse` below for details.
      * @return builder
      */
-    def customResponse(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDefaultActionBlockCustomResponseArgs.Builder]):
+    inline def customResponse(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDefaultActionBlockCustomResponseArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclDefaultActionBlockArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclDefaultActionBlockCustomResponseArgs.builder
       builder.customResponse(args(argsBuilder).build)
@@ -3818,7 +3818,7 @@ object wafv2_ext1:
      * @param responseHeaders `responseHeader` blocks used to define the HTTP response headers added to the response. See `responseHeader` below for details.
      * @return builder
      */
-    def responseHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDefaultActionBlockCustomResponseResponseHeaderArgs.Builder]*):
+    inline def responseHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclDefaultActionBlockCustomResponseResponseHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclDefaultActionBlockCustomResponseArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclDefaultActionBlockCustomResponseResponseHeaderArgs.builder
       builder.responseHeaders(args.map(_(argsBuilder).build)*)
@@ -3828,7 +3828,7 @@ object wafv2_ext1:
      * @param filters Filter(s) that you want to apply to the logs. See Filter below for more details.
      * @return builder
      */
-    def filters(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterFilterArgs.Builder]*):
+    inline def filters(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterFilterArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
@@ -3838,7 +3838,7 @@ object wafv2_ext1:
      * @param conditions Match condition(s) for the filter. See Condition below for more details.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterFilterConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterFilterConditionArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterFilterArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterFilterConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -3848,7 +3848,7 @@ object wafv2_ext1:
      * @param actionCondition Configuration for a single action condition. See Action Condition below for more details.
      * @return builder
      */
-    def actionCondition(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterFilterConditionActionConditionArgs.Builder]):
+    inline def actionCondition(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterFilterConditionActionConditionArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterFilterConditionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterFilterConditionActionConditionArgs.builder
       builder.actionCondition(args(argsBuilder).build)
@@ -3857,7 +3857,7 @@ object wafv2_ext1:
      * @param labelNameCondition Condition for a single label name. See Label Name Condition below for more details.
      * @return builder
      */
-    def labelNameCondition(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterFilterConditionLabelNameConditionArgs.Builder]):
+    inline def labelNameCondition(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterFilterConditionLabelNameConditionArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterFilterConditionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterFilterConditionLabelNameConditionArgs.builder
       builder.labelNameCondition(args(argsBuilder).build)
@@ -3867,7 +3867,7 @@ object wafv2_ext1:
      * @param method HTTP method to be redacted. It must be specified as an empty configuration block `{}`. The method indicates the type of operation that the request is asking the origin to perform.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -3876,7 +3876,7 @@ object wafv2_ext1:
      * @param queryString Whether to redact the query string. It must be specified as an empty configuration block `{}`. The query string is the part of a URL that appears after a `?` character, if any.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -3885,7 +3885,7 @@ object wafv2_ext1:
      * @param singleHeader &#34;singleHeader&#34; refers to the redaction of a single header. For more information, please see the details below under Single Header.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -3894,7 +3894,7 @@ object wafv2_ext1:
      * @param uriPath Configuration block that redacts the request URI path. It should be specified as an empty configuration block `{}`. The URI path is the part of a web request that identifies a resource, such as `/images/daily-ad.jpg`.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -3904,7 +3904,7 @@ object wafv2_ext1:
      * @param loggingFilter Configuration block that specifies which web requests are kept in the logs and which are dropped. It allows filtering based on the rule action and the web request labels applied by matching rules during web ACL evaluation. For more details, refer to the Logging Filter section below.
      * @return builder
      */
-    def loggingFilter(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterArgs.Builder]):
+    inline def loggingFilter(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationState.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationLoggingFilterArgs.builder
       builder.loggingFilter(args(argsBuilder).build)
@@ -3913,7 +3913,7 @@ object wafv2_ext1:
      * @param redactedFields Configuration for parts of the request that you want to keep out of the logs. Up to 100 `redactedFields` blocks are supported. See Redacted Fields below for more details.
      * @return builder
      */
-    def redactedFields(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldArgs.Builder]*):
+    inline def redactedFields(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationState.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclLoggingConfigurationRedactedFieldArgs.builder
       builder.redactedFields(args.map(_(argsBuilder).build)*)
@@ -3923,7 +3923,7 @@ object wafv2_ext1:
      * @param cryptoConfig Cryptocurrency payment configuration for the web ACL. See `cryptoConfig` below for details.
      * @return builder
      */
-    def cryptoConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigCryptoConfigArgs.Builder]):
+    inline def cryptoConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigCryptoConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigCryptoConfigArgs.builder
       builder.cryptoConfig(args(argsBuilder).build)
@@ -3933,7 +3933,7 @@ object wafv2_ext1:
      * @param paymentNetworks Blockchain payment networks configured to receive payments. You can specify 1 to 2 networks. See `paymentNetwork` below for details.
      * @return builder
      */
-    def paymentNetworks(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigCryptoConfigPaymentNetworkArgs.Builder]*):
+    inline def paymentNetworks(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigCryptoConfigPaymentNetworkArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigCryptoConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigCryptoConfigPaymentNetworkArgs.builder
       builder.paymentNetworks(args.map(_(argsBuilder).build)*)
@@ -3943,7 +3943,7 @@ object wafv2_ext1:
      * @param prices Price configuration for this payment network. Currently supports a single price entry. See `prices` below for details.
      * @return builder
      */
-    def prices(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigCryptoConfigPaymentNetworkPricesArgs.Builder]):
+    inline def prices(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigCryptoConfigPaymentNetworkPricesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigCryptoConfigPaymentNetworkArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclMonetizationConfigCryptoConfigPaymentNetworkPricesArgs.builder
       builder.prices(args(argsBuilder).build)
@@ -3953,7 +3953,7 @@ object wafv2_ext1:
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
      * @return builder
      */
-    def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionAllowCustomRequestHandlingArgs.Builder]):
+    inline def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionAllowCustomRequestHandlingArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleActionAllowArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionAllowCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
@@ -3963,7 +3963,7 @@ object wafv2_ext1:
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
      * @return builder
      */
-    def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionAllowCustomRequestHandlingInsertHeaderArgs.Builder]*):
+    inline def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionAllowCustomRequestHandlingInsertHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleActionAllowCustomRequestHandlingArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionAllowCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
@@ -3973,7 +3973,7 @@ object wafv2_ext1:
      * @param allow Allow the request. See Allow below.
      * @return builder
      */
-    def allow(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionAllowArgs.Builder]):
+    inline def allow(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionAllowArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionAllowArgs.builder
       builder.allow(args(argsBuilder).build)
@@ -3982,7 +3982,7 @@ object wafv2_ext1:
      * @param block Block the request. See Block below.
      * @return builder
      */
-    def block(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionBlockArgs.Builder]):
+    inline def block(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionBlockArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionBlockArgs.builder
       builder.block(args(argsBuilder).build)
@@ -3991,7 +3991,7 @@ object wafv2_ext1:
      * @param captcha Present a CAPTCHA challenge. See Captcha below.
      * @return builder
      */
-    def captcha(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionCaptchaArgs.Builder]):
+    inline def captcha(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionCaptchaArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionCaptchaArgs.builder
       builder.captcha(args(argsBuilder).build)
@@ -4000,7 +4000,7 @@ object wafv2_ext1:
      * @param challenge Present a silent challenge. See Challenge below.
      * @return builder
      */
-    def challenge(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionChallengeArgs.Builder]):
+    inline def challenge(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionChallengeArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionChallengeArgs.builder
       builder.challenge(args(argsBuilder).build)
@@ -4009,7 +4009,7 @@ object wafv2_ext1:
      * @param count Count the request without blocking. See Count below.
      * @return builder
      */
-    def count(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionCountArgs.Builder]):
+    inline def count(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionCountArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionCountArgs.builder
       builder.count(args(argsBuilder).build)
@@ -4019,7 +4019,7 @@ object wafv2_ext1:
      * @param customResponse Custom response configuration. See Custom Response below.
      * @return builder
      */
-    def customResponse(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionBlockCustomResponseArgs.Builder]):
+    inline def customResponse(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionBlockCustomResponseArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleActionBlockArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionBlockCustomResponseArgs.builder
       builder.customResponse(args(argsBuilder).build)
@@ -4029,7 +4029,7 @@ object wafv2_ext1:
      * @param responseHeaders Custom headers to include in the response. See Response Header below.
      * @return builder
      */
-    def responseHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionBlockCustomResponseResponseHeaderArgs.Builder]*):
+    inline def responseHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionBlockCustomResponseResponseHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleActionBlockCustomResponseArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionBlockCustomResponseResponseHeaderArgs.builder
       builder.responseHeaders(args.map(_(argsBuilder).build)*)
@@ -4039,7 +4039,7 @@ object wafv2_ext1:
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
      * @return builder
      */
-    def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionCaptchaCustomRequestHandlingArgs.Builder]):
+    inline def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionCaptchaCustomRequestHandlingArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleActionCaptchaArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionCaptchaCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
@@ -4049,7 +4049,7 @@ object wafv2_ext1:
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
      * @return builder
      */
-    def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionCaptchaCustomRequestHandlingInsertHeaderArgs.Builder]*):
+    inline def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionCaptchaCustomRequestHandlingInsertHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleActionCaptchaCustomRequestHandlingArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionCaptchaCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
@@ -4059,7 +4059,7 @@ object wafv2_ext1:
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
      * @return builder
      */
-    def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionChallengeCustomRequestHandlingArgs.Builder]):
+    inline def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionChallengeCustomRequestHandlingArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleActionChallengeArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionChallengeCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
@@ -4069,7 +4069,7 @@ object wafv2_ext1:
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
      * @return builder
      */
-    def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionChallengeCustomRequestHandlingInsertHeaderArgs.Builder]*):
+    inline def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionChallengeCustomRequestHandlingInsertHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleActionChallengeCustomRequestHandlingArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionChallengeCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
@@ -4079,7 +4079,7 @@ object wafv2_ext1:
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
      * @return builder
      */
-    def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionCountCustomRequestHandlingArgs.Builder]):
+    inline def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionCountCustomRequestHandlingArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleActionCountArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionCountCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
@@ -4089,7 +4089,7 @@ object wafv2_ext1:
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
      * @return builder
      */
-    def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionCountCustomRequestHandlingInsertHeaderArgs.Builder]*):
+    inline def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionCountCustomRequestHandlingInsertHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleActionCountCustomRequestHandlingArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionCountCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
@@ -4099,7 +4099,7 @@ object wafv2_ext1:
      * @param action Action that AWS WAF should take on a web request when it matches the rule&#39;s statement. This is used only for rules whose **statements do not reference a rule group**. See `action` for details.
      * @return builder
      */
-    def action(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionArgs.Builder]):
+    inline def action(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionArgs.builder
       builder.action(args(argsBuilder).build)
@@ -4108,7 +4108,7 @@ object wafv2_ext1:
      * @param captchaConfig Configuration for how AWS WAF handles CAPTCHA evaluations. See `captchaConfig` below for details.
      * @return builder
      */
-    def captchaConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleCaptchaConfigArgs.Builder]):
+    inline def captchaConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleCaptchaConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleCaptchaConfigArgs.builder
       builder.captchaConfig(args(argsBuilder).build)
@@ -4117,7 +4117,7 @@ object wafv2_ext1:
      * @param challengeConfig Configuration for how AWS WAF handles Challenge evaluations at the rule level. See `challengeConfig` below for details.
      * @return builder
      */
-    def challengeConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleChallengeConfigArgs.Builder]):
+    inline def challengeConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleChallengeConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleChallengeConfigArgs.builder
       builder.challengeConfig(args(argsBuilder).build)
@@ -4126,7 +4126,7 @@ object wafv2_ext1:
      * @param overrideAction Override action to apply to the rules in a rule group. Used only for rule **statements that reference a rule group**, like `ruleGroupReferenceStatement` and `managedRuleGroupStatement`. See `overrideAction` below for details.
      * @return builder
      */
-    def overrideAction(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleOverrideActionArgs.Builder]):
+    inline def overrideAction(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleOverrideActionArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleOverrideActionArgs.builder
       builder.overrideAction(args(argsBuilder).build)
@@ -4135,7 +4135,7 @@ object wafv2_ext1:
      * @param ruleLabels Labels to apply to web requests that match the rule match statement. See `ruleLabel` below for details.
      * @return builder
      */
-    def ruleLabels(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleRuleLabelArgs.Builder]*):
+    inline def ruleLabels(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleRuleLabelArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleRuleLabelArgs.builder
       builder.ruleLabels(args.map(_(argsBuilder).build)*)
@@ -4144,7 +4144,7 @@ object wafv2_ext1:
      * @param statement AWS WAF processing statement for the rule, for example `byteMatchStatement` or `geoMatchStatement`. See `statement` below for details.
      * @return builder
      */
-    def statement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder]):
+    inline def statement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.builder
       builder.statement(args(argsBuilder).build)
@@ -4153,7 +4153,7 @@ object wafv2_ext1:
      * @param visibilityConfig Amazon CloudWatch metrics and web request sample collection configuration. See `visibilityConfig` below for details.
      * @return builder
      */
-    def visibilityConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleVisibilityConfigArgs.Builder]):
+    inline def visibilityConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleVisibilityConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleVisibilityConfigArgs.builder
       builder.visibilityConfig(args(argsBuilder).build)
@@ -4163,7 +4163,7 @@ object wafv2_ext1:
      * @param immunityTimeProperty Immunity time configuration. See Immunity Time Property below.
      * @return builder
      */
-    def immunityTimeProperty(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleCaptchaConfigImmunityTimePropertyArgs.Builder]):
+    inline def immunityTimeProperty(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleCaptchaConfigImmunityTimePropertyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleCaptchaConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleCaptchaConfigImmunityTimePropertyArgs.builder
       builder.immunityTimeProperty(args(argsBuilder).build)
@@ -4173,7 +4173,7 @@ object wafv2_ext1:
      * @param immunityTimeProperty Immunity time configuration. See Immunity Time Property below.
      * @return builder
      */
-    def immunityTimeProperty(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleChallengeConfigImmunityTimePropertyArgs.Builder]):
+    inline def immunityTimeProperty(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleChallengeConfigImmunityTimePropertyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleChallengeConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleChallengeConfigImmunityTimePropertyArgs.builder
       builder.immunityTimeProperty(args(argsBuilder).build)
@@ -4183,7 +4183,7 @@ object wafv2_ext1:
      * @param managedRuleGroupConfigs Additional information that&#39;s used by a managed rule group. Only one rule attribute is allowed in each config. See below.
      * @return builder
      */
-    def managedRuleGroupConfigs(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsArgs.Builder]):
+    inline def managedRuleGroupConfigs(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsArgs.builder
       builder.managedRuleGroupConfigs(args(argsBuilder).build)
@@ -4192,7 +4192,7 @@ object wafv2_ext1:
      * @param ruleActionOverrides Override actions for specific rules within the rule group. See below.
      * @return builder
      */
-    def ruleActionOverrides(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideArgs.Builder]*):
+    inline def ruleActionOverrides(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideArgs.builder
       builder.ruleActionOverrides(args.map(_(argsBuilder).build)*)
@@ -4202,7 +4202,7 @@ object wafv2_ext1:
      * @param awsManagedRulesAcfpRuleSet Additional configuration for using the Account Creation Fraud Prevention managed rule group. Use this to specify information such as the registration page of your application and the type of content to accept or reject from the client. See below.
      * @return builder
      */
-    def awsManagedRulesAcfpRuleSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetArgs.Builder]):
+    inline def awsManagedRulesAcfpRuleSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetArgs.builder
       builder.awsManagedRulesAcfpRuleSet(args(argsBuilder).build)
@@ -4211,7 +4211,7 @@ object wafv2_ext1:
      * @param awsManagedRulesAntiDdosRuleSet Configuration for using the anti-DDoS managed rule group. See below.
      * @return builder
      */
-    def awsManagedRulesAntiDdosRuleSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAntiDdosRuleSetArgs.Builder]):
+    inline def awsManagedRulesAntiDdosRuleSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAntiDdosRuleSetArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAntiDdosRuleSetArgs.builder
       builder.awsManagedRulesAntiDdosRuleSet(args(argsBuilder).build)
@@ -4220,7 +4220,7 @@ object wafv2_ext1:
      * @param awsManagedRulesAtpRuleSet Additional configuration for using the Account Takeover Protection managed rule group. Use this to specify information such as the sign-in page of your application and the type of content to accept or reject from the client. See below.
      * @return builder
      */
-    def awsManagedRulesAtpRuleSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetArgs.Builder]):
+    inline def awsManagedRulesAtpRuleSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetArgs.builder
       builder.awsManagedRulesAtpRuleSet(args(argsBuilder).build)
@@ -4229,7 +4229,7 @@ object wafv2_ext1:
      * @param awsManagedRulesBotControlRuleSet Additional configuration for using the Bot Control managed rule group. Use this to specify the inspection level that you want to use. See below.
      * @return builder
      */
-    def awsManagedRulesBotControlRuleSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesBotControlRuleSetArgs.Builder]):
+    inline def awsManagedRulesBotControlRuleSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesBotControlRuleSetArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesBotControlRuleSetArgs.builder
       builder.awsManagedRulesBotControlRuleSet(args(argsBuilder).build)
@@ -4239,7 +4239,7 @@ object wafv2_ext1:
      * @param requestInspection Criteria for inspecting login requests, used by the ATP rule group to validate credentials usage. See below.
      * @return builder
      */
-    def requestInspection(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder]):
+    inline def requestInspection(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetRequestInspectionArgs.builder
       builder.requestInspection(args(argsBuilder).build)
@@ -4248,7 +4248,7 @@ object wafv2_ext1:
      * @param responseInspection Criteria for inspecting responses to login requests, used by the ATP rule group to track login failure rates. Note that Response Inspection is available only on web ACLs that protect CloudFront distributions. See below.
      * @return builder
      */
-    def responseInspection(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetResponseInspectionArgs.Builder]):
+    inline def responseInspection(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetResponseInspectionArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetResponseInspectionArgs.builder
       builder.responseInspection(args(argsBuilder).build)
@@ -4258,7 +4258,7 @@ object wafv2_ext1:
      * @param addressFields Names of the fields in the request payload that contain your customer&#39;s primary physical address. See below.
      * @return builder
      */
-    def addressFields(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetRequestInspectionAddressFieldsArgs.Builder]):
+    inline def addressFields(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetRequestInspectionAddressFieldsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetRequestInspectionAddressFieldsArgs.builder
       builder.addressFields(args(argsBuilder).build)
@@ -4267,7 +4267,7 @@ object wafv2_ext1:
      * @param emailField Name of the field in the request payload that contains your customer&#39;s email. See below.
      * @return builder
      */
-    def emailField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetRequestInspectionEmailFieldArgs.Builder]):
+    inline def emailField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetRequestInspectionEmailFieldArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetRequestInspectionEmailFieldArgs.builder
       builder.emailField(args(argsBuilder).build)
@@ -4276,7 +4276,7 @@ object wafv2_ext1:
      * @param passwordField Details about your login page password field. See below.
      * @return builder
      */
-    def passwordField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetRequestInspectionPasswordFieldArgs.Builder]):
+    inline def passwordField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetRequestInspectionPasswordFieldArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetRequestInspectionPasswordFieldArgs.builder
       builder.passwordField(args(argsBuilder).build)
@@ -4285,7 +4285,7 @@ object wafv2_ext1:
      * @param phoneNumberFields Names of the fields in the request payload that contain your customer&#39;s primary phone number. See below.
      * @return builder
      */
-    def phoneNumberFields(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetRequestInspectionPhoneNumberFieldsArgs.Builder]):
+    inline def phoneNumberFields(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetRequestInspectionPhoneNumberFieldsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetRequestInspectionPhoneNumberFieldsArgs.builder
       builder.phoneNumberFields(args(argsBuilder).build)
@@ -4294,7 +4294,7 @@ object wafv2_ext1:
      * @param usernameField Details about your login page username field. See below.
      * @return builder
      */
-    def usernameField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetRequestInspectionUsernameFieldArgs.Builder]):
+    inline def usernameField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetRequestInspectionUsernameFieldArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetRequestInspectionUsernameFieldArgs.builder
       builder.usernameField(args(argsBuilder).build)
@@ -4304,7 +4304,7 @@ object wafv2_ext1:
      * @param bodyContains Configures inspection of the response body. See below.
      * @return builder
      */
-    def bodyContains(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetResponseInspectionBodyContainsArgs.Builder]):
+    inline def bodyContains(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetResponseInspectionBodyContainsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetResponseInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetResponseInspectionBodyContainsArgs.builder
       builder.bodyContains(args(argsBuilder).build)
@@ -4313,7 +4313,7 @@ object wafv2_ext1:
      * @param header Configures inspection of the response header. See below.
      * @return builder
      */
-    def header(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetResponseInspectionHeaderArgs.Builder]):
+    inline def header(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetResponseInspectionHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetResponseInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetResponseInspectionHeaderArgs.builder
       builder.header(args(argsBuilder).build)
@@ -4322,7 +4322,7 @@ object wafv2_ext1:
      * @param json Configures inspection of the response JSON. See below.
      * @return builder
      */
-    def json(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetResponseInspectionJsonArgs.Builder]):
+    inline def json(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetResponseInspectionJsonArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetResponseInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetResponseInspectionJsonArgs.builder
       builder.json(args(argsBuilder).build)
@@ -4331,7 +4331,7 @@ object wafv2_ext1:
      * @param statusCode Configures inspection of the response status code. See below.
      * @return builder
      */
-    def statusCode(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetResponseInspectionStatusCodeArgs.Builder]):
+    inline def statusCode(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetResponseInspectionStatusCodeArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetResponseInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAcfpRuleSetResponseInspectionStatusCodeArgs.builder
       builder.statusCode(args(argsBuilder).build)
@@ -4341,7 +4341,7 @@ object wafv2_ext1:
      * @param clientSideActionConfig Configuration for the request handling that&#39;s applied by the managed rule group rules `ChallengeAllDuringEvent` and `ChallengeDDoSRequests` during a distributed denial of service (DDoS) attack. See below.
      * @return builder
      */
-    def clientSideActionConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAntiDdosRuleSetClientSideActionConfigArgs.Builder]):
+    inline def clientSideActionConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAntiDdosRuleSetClientSideActionConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAntiDdosRuleSetArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAntiDdosRuleSetClientSideActionConfigArgs.builder
       builder.clientSideActionConfig(args(argsBuilder).build)
@@ -4351,7 +4351,7 @@ object wafv2_ext1:
      * @param challenge Configuration for the use of the `AWSManagedRulesAntiDDoSRuleSet` rules `ChallengeAllDuringEvent` and `ChallengeDDoSRequests`. See below.
      * @return builder
      */
-    def challenge(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeArgs.Builder]):
+    inline def challenge(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAntiDdosRuleSetClientSideActionConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeArgs.builder
       builder.challenge(args(argsBuilder).build)
@@ -4361,7 +4361,7 @@ object wafv2_ext1:
      * @param exemptUriRegularExpressions Block for the list of the regular expressions to match against the web request URI, used to identify requests that can&#39;t handle a silent browser challenge. See below.
      * @return builder
      */
-    def exemptUriRegularExpressions(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeExemptUriRegularExpressionArgs.Builder]*):
+    inline def exemptUriRegularExpressions(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeExemptUriRegularExpressionArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeExemptUriRegularExpressionArgs.builder
       builder.exemptUriRegularExpressions(args.map(_(argsBuilder).build)*)
@@ -4371,7 +4371,7 @@ object wafv2_ext1:
      * @param requestInspection Criteria for inspecting login requests, used by the ATP rule group to validate credentials usage. See below.
      * @return builder
      */
-    def requestInspection(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetRequestInspectionArgs.Builder]):
+    inline def requestInspection(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetRequestInspectionArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetRequestInspectionArgs.builder
       builder.requestInspection(args(argsBuilder).build)
@@ -4380,7 +4380,7 @@ object wafv2_ext1:
      * @param responseInspection Criteria for inspecting responses to login requests, used by the ATP rule group to track login failure rates. Note that Response Inspection is available only on web ACLs that protect CloudFront distributions. See below.
      * @return builder
      */
-    def responseInspection(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetResponseInspectionArgs.Builder]):
+    inline def responseInspection(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetResponseInspectionArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetResponseInspectionArgs.builder
       builder.responseInspection(args(argsBuilder).build)
@@ -4390,7 +4390,7 @@ object wafv2_ext1:
      * @param passwordField Details about your login page password field. See below.
      * @return builder
      */
-    def passwordField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetRequestInspectionPasswordFieldArgs.Builder]):
+    inline def passwordField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetRequestInspectionPasswordFieldArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetRequestInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetRequestInspectionPasswordFieldArgs.builder
       builder.passwordField(args(argsBuilder).build)
@@ -4399,7 +4399,7 @@ object wafv2_ext1:
      * @param usernameField Details about your login page username field. See below.
      * @return builder
      */
-    def usernameField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetRequestInspectionUsernameFieldArgs.Builder]):
+    inline def usernameField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetRequestInspectionUsernameFieldArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetRequestInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetRequestInspectionUsernameFieldArgs.builder
       builder.usernameField(args(argsBuilder).build)
@@ -4409,7 +4409,7 @@ object wafv2_ext1:
      * @param bodyContains Configures inspection of the response body. See below.
      * @return builder
      */
-    def bodyContains(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetResponseInspectionBodyContainsArgs.Builder]):
+    inline def bodyContains(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetResponseInspectionBodyContainsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetResponseInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetResponseInspectionBodyContainsArgs.builder
       builder.bodyContains(args(argsBuilder).build)
@@ -4418,7 +4418,7 @@ object wafv2_ext1:
      * @param header Configures inspection of the response header. See below.
      * @return builder
      */
-    def header(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetResponseInspectionHeaderArgs.Builder]):
+    inline def header(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetResponseInspectionHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetResponseInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetResponseInspectionHeaderArgs.builder
       builder.header(args(argsBuilder).build)
@@ -4427,7 +4427,7 @@ object wafv2_ext1:
      * @param json Configures inspection of the response JSON. See below.
      * @return builder
      */
-    def json(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetResponseInspectionJsonArgs.Builder]):
+    inline def json(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetResponseInspectionJsonArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetResponseInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetResponseInspectionJsonArgs.builder
       builder.json(args(argsBuilder).build)
@@ -4436,7 +4436,7 @@ object wafv2_ext1:
      * @param statusCode Configures inspection of the response status code. See below.
      * @return builder
      */
-    def statusCode(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetResponseInspectionStatusCodeArgs.Builder]):
+    inline def statusCode(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetResponseInspectionStatusCodeArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetResponseInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupManagedRuleGroupConfigsAwsManagedRulesAtpRuleSetResponseInspectionStatusCodeArgs.builder
       builder.statusCode(args(argsBuilder).build)
@@ -4446,7 +4446,7 @@ object wafv2_ext1:
      * @param customRequestHandling Custom handling for allowed requests. See below.
      * @return builder
      */
-    def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.Builder]):
+    inline def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseAllowArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
@@ -4456,7 +4456,7 @@ object wafv2_ext1:
      * @param insertHeaders Headers to insert into the request. See below.
      * @return builder
      */
-    def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseAllowCustomRequestHandlingInsertHeaderArgs.Builder]*):
+    inline def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseAllowCustomRequestHandlingInsertHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseAllowCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
@@ -4466,7 +4466,7 @@ object wafv2_ext1:
      * @param allow Allow the request. See below.
      * @return builder
      */
-    def allow(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseAllowArgs.Builder]):
+    inline def allow(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseAllowArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseAllowArgs.builder
       builder.allow(args(argsBuilder).build)
@@ -4475,7 +4475,7 @@ object wafv2_ext1:
      * @param block Block the request. See below.
      * @return builder
      */
-    def block(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseBlockArgs.Builder]):
+    inline def block(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseBlockArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseBlockArgs.builder
       builder.block(args(argsBuilder).build)
@@ -4484,7 +4484,7 @@ object wafv2_ext1:
      * @param captcha Require CAPTCHA verification. See below.
      * @return builder
      */
-    def captcha(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCaptchaArgs.Builder]):
+    inline def captcha(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCaptchaArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCaptchaArgs.builder
       builder.captcha(args(argsBuilder).build)
@@ -4493,7 +4493,7 @@ object wafv2_ext1:
      * @param challenge Require challenge verification. See below.
      * @return builder
      */
-    def challenge(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseChallengeArgs.Builder]):
+    inline def challenge(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseChallengeArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseChallengeArgs.builder
       builder.challenge(args(argsBuilder).build)
@@ -4502,7 +4502,7 @@ object wafv2_ext1:
      * @param count Count the request without taking action. See below.
      * @return builder
      */
-    def count(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCountArgs.Builder]):
+    inline def count(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCountArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCountArgs.builder
       builder.count(args(argsBuilder).build)
@@ -4512,7 +4512,7 @@ object wafv2_ext1:
      * @param customResponse Custom response for blocked requests. See below.
      * @return builder
      */
-    def customResponse(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseBlockCustomResponseArgs.Builder]):
+    inline def customResponse(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseBlockCustomResponseArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseBlockArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseBlockCustomResponseArgs.builder
       builder.customResponse(args(argsBuilder).build)
@@ -4522,7 +4522,7 @@ object wafv2_ext1:
      * @param responseHeaders Headers to include in the response. See below.
      * @return builder
      */
-    def responseHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseBlockCustomResponseResponseHeaderArgs.Builder]*):
+    inline def responseHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseBlockCustomResponseResponseHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseBlockCustomResponseArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseBlockCustomResponseResponseHeaderArgs.builder
       builder.responseHeaders(args.map(_(argsBuilder).build)*)
@@ -4532,7 +4532,7 @@ object wafv2_ext1:
      * @param customRequestHandling Custom handling for CAPTCHA requests. See below.
      * @return builder
      */
-    def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.Builder]):
+    inline def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCaptchaArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
@@ -4542,7 +4542,7 @@ object wafv2_ext1:
      * @param insertHeaders Headers to insert into the request. See below.
      * @return builder
      */
-    def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCaptchaCustomRequestHandlingInsertHeaderArgs.Builder]*):
+    inline def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCaptchaCustomRequestHandlingInsertHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCaptchaCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
@@ -4552,7 +4552,7 @@ object wafv2_ext1:
      * @param customRequestHandling Custom handling for challenge requests. See below.
      * @return builder
      */
-    def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.Builder]):
+    inline def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseChallengeArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
@@ -4562,7 +4562,7 @@ object wafv2_ext1:
      * @param insertHeaders Headers to insert into the request. See below.
      * @return builder
      */
-    def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseChallengeCustomRequestHandlingInsertHeaderArgs.Builder]*):
+    inline def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseChallengeCustomRequestHandlingInsertHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseChallengeCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
@@ -4572,7 +4572,7 @@ object wafv2_ext1:
      * @param customRequestHandling Custom handling for counted requests. See below.
      * @return builder
      */
-    def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.Builder]):
+    inline def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCountArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
@@ -4582,7 +4582,7 @@ object wafv2_ext1:
      * @param insertHeaders Headers to insert into the request. See below.
      * @return builder
      */
-    def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCountCustomRequestHandlingInsertHeaderArgs.Builder]*):
+    inline def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCountCustomRequestHandlingInsertHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseCountCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
@@ -4592,7 +4592,7 @@ object wafv2_ext1:
      * @param actionToUse Action to use instead of the rule&#39;s original action. See below.
      * @return builder
      */
-    def actionToUse(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseArgs.Builder]):
+    inline def actionToUse(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupRuleActionOverrideActionToUseArgs.builder
       builder.actionToUse(args(argsBuilder).build)
@@ -4602,7 +4602,7 @@ object wafv2_ext1:
      * @param ruleActionOverrides Override actions for specific rules within the rule group. See below.
      * @return builder
      */
-    def ruleActionOverrides(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideArgs.Builder]*):
+    inline def ruleActionOverrides(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideArgs.builder
       builder.ruleActionOverrides(args.map(_(argsBuilder).build)*)
@@ -4612,7 +4612,7 @@ object wafv2_ext1:
      * @param customRequestHandling Custom handling for allowed requests. See below.
      * @return builder
      */
-    def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.Builder]):
+    inline def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseAllowArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
@@ -4622,7 +4622,7 @@ object wafv2_ext1:
      * @param insertHeaders Headers to insert into the request. See below.
      * @return builder
      */
-    def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseAllowCustomRequestHandlingInsertHeaderArgs.Builder]*):
+    inline def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseAllowCustomRequestHandlingInsertHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseAllowCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
@@ -4632,7 +4632,7 @@ object wafv2_ext1:
      * @param allow Allow the request. See below.
      * @return builder
      */
-    def allow(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseAllowArgs.Builder]):
+    inline def allow(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseAllowArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseAllowArgs.builder
       builder.allow(args(argsBuilder).build)
@@ -4641,7 +4641,7 @@ object wafv2_ext1:
      * @param block Block the request. See below.
      * @return builder
      */
-    def block(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseBlockArgs.Builder]):
+    inline def block(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseBlockArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseBlockArgs.builder
       builder.block(args(argsBuilder).build)
@@ -4650,7 +4650,7 @@ object wafv2_ext1:
      * @param captcha Require CAPTCHA verification. See below.
      * @return builder
      */
-    def captcha(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCaptchaArgs.Builder]):
+    inline def captcha(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCaptchaArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCaptchaArgs.builder
       builder.captcha(args(argsBuilder).build)
@@ -4659,7 +4659,7 @@ object wafv2_ext1:
      * @param challenge Require challenge verification. See below.
      * @return builder
      */
-    def challenge(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseChallengeArgs.Builder]):
+    inline def challenge(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseChallengeArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseChallengeArgs.builder
       builder.challenge(args(argsBuilder).build)
@@ -4668,7 +4668,7 @@ object wafv2_ext1:
      * @param count Count the request without taking action. See below.
      * @return builder
      */
-    def count(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCountArgs.Builder]):
+    inline def count(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCountArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCountArgs.builder
       builder.count(args(argsBuilder).build)
@@ -4678,7 +4678,7 @@ object wafv2_ext1:
      * @param customResponse Custom response for blocked requests. See below.
      * @return builder
      */
-    def customResponse(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseBlockCustomResponseArgs.Builder]):
+    inline def customResponse(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseBlockCustomResponseArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseBlockArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseBlockCustomResponseArgs.builder
       builder.customResponse(args(argsBuilder).build)
@@ -4688,7 +4688,7 @@ object wafv2_ext1:
      * @param responseHeaders Headers to include in the response. See below.
      * @return builder
      */
-    def responseHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseBlockCustomResponseResponseHeaderArgs.Builder]*):
+    inline def responseHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseBlockCustomResponseResponseHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseBlockCustomResponseArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseBlockCustomResponseResponseHeaderArgs.builder
       builder.responseHeaders(args.map(_(argsBuilder).build)*)
@@ -4698,7 +4698,7 @@ object wafv2_ext1:
      * @param customRequestHandling Custom handling for CAPTCHA requests. See below.
      * @return builder
      */
-    def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.Builder]):
+    inline def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCaptchaArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
@@ -4708,7 +4708,7 @@ object wafv2_ext1:
      * @param insertHeaders Headers to insert into the request. See below.
      * @return builder
      */
-    def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCaptchaCustomRequestHandlingInsertHeaderArgs.Builder]*):
+    inline def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCaptchaCustomRequestHandlingInsertHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCaptchaCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
@@ -4718,7 +4718,7 @@ object wafv2_ext1:
      * @param customRequestHandling Custom handling for challenge requests. See below.
      * @return builder
      */
-    def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.Builder]):
+    inline def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseChallengeArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
@@ -4728,7 +4728,7 @@ object wafv2_ext1:
      * @param insertHeaders Headers to insert into the request. See below.
      * @return builder
      */
-    def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseChallengeCustomRequestHandlingInsertHeaderArgs.Builder]*):
+    inline def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseChallengeCustomRequestHandlingInsertHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseChallengeCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
@@ -4738,7 +4738,7 @@ object wafv2_ext1:
      * @param customRequestHandling Custom handling for counted requests. See below.
      * @return builder
      */
-    def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.Builder]):
+    inline def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCountArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
@@ -4748,7 +4748,7 @@ object wafv2_ext1:
      * @param insertHeaders Headers to insert into the request. See below.
      * @return builder
      */
-    def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCountCustomRequestHandlingInsertHeaderArgs.Builder]*):
+    inline def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCountCustomRequestHandlingInsertHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseCountCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
@@ -4758,7 +4758,7 @@ object wafv2_ext1:
      * @param actionToUse Action to use instead of the rule&#39;s original action. See below.
      * @return builder
      */
-    def actionToUse(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseArgs.Builder]):
+    inline def actionToUse(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceRuleActionOverrideActionToUseArgs.builder
       builder.actionToUse(args(argsBuilder).build)
@@ -4768,7 +4768,7 @@ object wafv2_ext1:
      * @param managedRuleGroup Managed Rule Group configuration. One of `ruleGroupReference` or `managedRuleGroup` is required. Conflicts with `ruleGroupReference`. See below.
      * @return builder
      */
-    def managedRuleGroup(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupArgs.Builder]):
+    inline def managedRuleGroup(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationState.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationManagedRuleGroupArgs.builder
       builder.managedRuleGroup(args(argsBuilder).build)
@@ -4777,12 +4777,12 @@ object wafv2_ext1:
      * @param ruleGroupReference Custom Rule Group reference configuration. One of `ruleGroupReference` or `managedRuleGroup` is required. Conflicts with `managedRuleGroup`. See below.
      * @return builder
      */
-    def ruleGroupReference(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceArgs.Builder]):
+    inline def ruleGroupReference(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationState.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationRuleGroupReferenceArgs.builder
       builder.ruleGroupReference(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationTimeoutsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationState.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -4791,7 +4791,7 @@ object wafv2_ext1:
      * @param visibilityConfig Defines and enables Amazon CloudWatch metrics and web request sample collection. See below.
      * @return builder
      */
-    def visibilityConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationVisibilityConfigArgs.Builder]):
+    inline def visibilityConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationVisibilityConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationState.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleGroupAssociationVisibilityConfigArgs.builder
       builder.visibilityConfig(args(argsBuilder).build)
@@ -4801,7 +4801,7 @@ object wafv2_ext1:
      * @param count Override the rule action with count.
      * @return builder
      */
-    def count(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleOverrideActionCountArgs.Builder]):
+    inline def count(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleOverrideActionCountArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleOverrideActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleOverrideActionCountArgs.builder
       builder.count(args(argsBuilder).build)
@@ -4810,7 +4810,7 @@ object wafv2_ext1:
      * @param none Don&#39;t override the rule action.
      * @return builder
      */
-    def none(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleOverrideActionNoneArgs.Builder]):
+    inline def none(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleOverrideActionNoneArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleOverrideActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleOverrideActionNoneArgs.builder
       builder.none(args(argsBuilder).build)
@@ -4820,7 +4820,7 @@ object wafv2_ext1:
      * @param action Action to take when the rule matches. See Action below. Conflicts with `overrideAction`.
      * @return builder
      */
-    def action(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionArgs.Builder]):
+    inline def action(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleActionArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleState.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleActionArgs.builder
       builder.action(args(argsBuilder).build)
@@ -4829,7 +4829,7 @@ object wafv2_ext1:
      * @param captchaConfig CAPTCHA configuration that overrides the web ACL level setting. See Captcha Config below.
      * @return builder
      */
-    def captchaConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleCaptchaConfigArgs.Builder]):
+    inline def captchaConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleCaptchaConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleState.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleCaptchaConfigArgs.builder
       builder.captchaConfig(args(argsBuilder).build)
@@ -4838,7 +4838,7 @@ object wafv2_ext1:
      * @param challengeConfig Challenge configuration that overrides the web ACL level setting. See Challenge Config below.
      * @return builder
      */
-    def challengeConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleChallengeConfigArgs.Builder]):
+    inline def challengeConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleChallengeConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleState.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleChallengeConfigArgs.builder
       builder.challengeConfig(args(argsBuilder).build)
@@ -4847,7 +4847,7 @@ object wafv2_ext1:
      * @param overrideAction Override action for managed rule groups. See Override Action below. Conflicts with `action`.
      * @return builder
      */
-    def overrideAction(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleOverrideActionArgs.Builder]):
+    inline def overrideAction(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleOverrideActionArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleState.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleOverrideActionArgs.builder
       builder.overrideAction(args(argsBuilder).build)
@@ -4856,7 +4856,7 @@ object wafv2_ext1:
      * @param ruleLabels Labels to apply to matching web requests. See Rule Label below.
      * @return builder
      */
-    def ruleLabels(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleRuleLabelArgs.Builder]*):
+    inline def ruleLabels(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleRuleLabelArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleState.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleRuleLabelArgs.builder
       builder.ruleLabels(args.map(_(argsBuilder).build)*)
@@ -4865,12 +4865,12 @@ object wafv2_ext1:
      * @param statement Rule statement. See Statement below.
      * @return builder
      */
-    def statement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder]):
+    inline def statement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleState.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.builder
       builder.statement(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleTimeoutsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleState.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -4879,7 +4879,7 @@ object wafv2_ext1:
      * @param visibilityConfig CloudWatch metrics configuration. See Visibility Config below.
      * @return builder
      */
-    def visibilityConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleVisibilityConfigArgs.Builder]):
+    inline def visibilityConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleVisibilityConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleState.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleVisibilityConfigArgs.builder
       builder.visibilityConfig(args(argsBuilder).build)
@@ -4889,7 +4889,7 @@ object wafv2_ext1:
      * @param statements List of statements to combine. At least one statement is required. Each nested statement supports the same statement types listed above.
      * @return builder
      */
-    def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder]*):
+    inline def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementAndStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
@@ -4899,7 +4899,7 @@ object wafv2_ext1:
      * @param andStatement Logical AND statement that combines multiple statements. See And Statement below.
      * @return builder
      */
-    def andStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementAndStatementArgs.Builder]):
+    inline def andStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementAndStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementAndStatementArgs.builder
       builder.andStatement(args(argsBuilder).build)
@@ -4908,7 +4908,7 @@ object wafv2_ext1:
      * @param asnMatchStatement Match requests based on Autonomous System Number (ASN). See ASN Match Statement below.
      * @return builder
      */
-    def asnMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementAsnMatchStatementArgs.Builder]):
+    inline def asnMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementAsnMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementAsnMatchStatementArgs.builder
       builder.asnMatchStatement(args(argsBuilder).build)
@@ -4917,7 +4917,7 @@ object wafv2_ext1:
      * @param byteMatchStatement Match requests based on byte patterns. See Byte Match Statement below.
      * @return builder
      */
-    def byteMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementArgs.Builder]):
+    inline def byteMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementArgs.builder
       builder.byteMatchStatement(args(argsBuilder).build)
@@ -4926,7 +4926,7 @@ object wafv2_ext1:
      * @param geoMatchStatement Match requests by geographic location. See Geo Match Statement below.
      * @return builder
      */
-    def geoMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementGeoMatchStatementArgs.Builder]):
+    inline def geoMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementGeoMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementGeoMatchStatementArgs.builder
       builder.geoMatchStatement(args(argsBuilder).build)
@@ -4935,7 +4935,7 @@ object wafv2_ext1:
      * @param ipSetReferenceStatement Reference to an IP set. See IP Set Reference Statement below.
      * @return builder
      */
-    def ipSetReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementIpSetReferenceStatementArgs.Builder]):
+    inline def ipSetReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementIpSetReferenceStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementIpSetReferenceStatementArgs.builder
       builder.ipSetReferenceStatement(args(argsBuilder).build)
@@ -4944,7 +4944,7 @@ object wafv2_ext1:
      * @param labelMatchStatement Match requests based on labels. See Label Match Statement below.
      * @return builder
      */
-    def labelMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementLabelMatchStatementArgs.Builder]):
+    inline def labelMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementLabelMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementLabelMatchStatementArgs.builder
       builder.labelMatchStatement(args(argsBuilder).build)
@@ -4953,7 +4953,7 @@ object wafv2_ext1:
      * @param managedRuleGroupStatement Reference to a managed rule group. See Managed Rule Group Statement below.
      * @return builder
      */
-    def managedRuleGroupStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementArgs.Builder]):
+    inline def managedRuleGroupStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementArgs.builder
       builder.managedRuleGroupStatement(args(argsBuilder).build)
@@ -4962,7 +4962,7 @@ object wafv2_ext1:
      * @param notStatement Logical NOT statement that negates a single statement. See Not Statement below.
      * @return builder
      */
-    def notStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementArgs.Builder]):
+    inline def notStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementArgs.builder
       builder.notStatement(args(argsBuilder).build)
@@ -4971,7 +4971,7 @@ object wafv2_ext1:
      * @param orStatement Logical OR statement that combines multiple statements. See Or Statement below.
      * @return builder
      */
-    def orStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementOrStatementArgs.Builder]):
+    inline def orStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementOrStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementOrStatementArgs.builder
       builder.orStatement(args(argsBuilder).build)
@@ -4980,7 +4980,7 @@ object wafv2_ext1:
      * @param rateBasedStatement Rate-based rule to track request rates. See Rate Based Statement below.
      * @return builder
      */
-    def rateBasedStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementArgs.Builder]):
+    inline def rateBasedStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementArgs.builder
       builder.rateBasedStatement(args(argsBuilder).build)
@@ -4989,7 +4989,7 @@ object wafv2_ext1:
      * @param regexMatchStatement Match requests using regex patterns. See Regex Match Statement below.
      * @return builder
      */
-    def regexMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementArgs.Builder]):
+    inline def regexMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementArgs.builder
       builder.regexMatchStatement(args(argsBuilder).build)
@@ -4998,7 +4998,7 @@ object wafv2_ext1:
      * @param regexPatternSetReferenceStatement Reference to a regex pattern set. See Regex Pattern Set Reference Statement below.
      * @return builder
      */
-    def regexPatternSetReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementArgs.Builder]):
+    inline def regexPatternSetReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementArgs.builder
       builder.regexPatternSetReferenceStatement(args(argsBuilder).build)
@@ -5007,7 +5007,7 @@ object wafv2_ext1:
      * @param ruleGroupReferenceStatement Reference to a rule group. See Rule Group Reference Statement below.
      * @return builder
      */
-    def ruleGroupReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementArgs.Builder]):
+    inline def ruleGroupReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementArgs.builder
       builder.ruleGroupReferenceStatement(args(argsBuilder).build)
@@ -5016,7 +5016,7 @@ object wafv2_ext1:
      * @param sizeConstraintStatement Match requests based on size constraints. See Size Constraint Statement below.
      * @return builder
      */
-    def sizeConstraintStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementArgs.Builder]):
+    inline def sizeConstraintStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementArgs.builder
       builder.sizeConstraintStatement(args(argsBuilder).build)
@@ -5025,7 +5025,7 @@ object wafv2_ext1:
      * @param sqliMatchStatement Match requests that appear to contain SQL injection attacks. See SQL Injection Match Statement below.
      * @return builder
      */
-    def sqliMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementArgs.Builder]):
+    inline def sqliMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSqliMatchStatementArgs.builder
       builder.sqliMatchStatement(args(argsBuilder).build)
@@ -5036,7 +5036,7 @@ object wafv2_ext1:
      * &gt; **NOTE:** Logical statements (`andStatement`, `notStatement`, `orStatement`) can be nested up to 3 levels deep. This matches the nesting limit of the `aws.wafv2.WebAcl` resource.
      * @return builder
      */
-    def xssMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementArgs.Builder]):
+    inline def xssMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementXssMatchStatementArgs.builder
       builder.xssMatchStatement(args(argsBuilder).build)
@@ -5046,7 +5046,7 @@ object wafv2_ext1:
      * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header instead of using the web request origin. See Forwarded IP Config below.
      * @return builder
      */
-    def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementAsnMatchStatementForwardedIpConfigArgs.Builder]):
+    inline def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementAsnMatchStatementForwardedIpConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementAsnMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementAsnMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
@@ -5056,7 +5056,7 @@ object wafv2_ext1:
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
      * @return builder
      */
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
@@ -5065,7 +5065,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. See Text Transformation below.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -5075,7 +5075,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -5084,7 +5084,7 @@ object wafv2_ext1:
      * @param body Inspect the request body as plain text. See Body below.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -5093,7 +5093,7 @@ object wafv2_ext1:
      * @param cookies Inspect the request cookies. See Cookies below.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -5102,7 +5102,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect a string containing the list of the request&#39;s header names, ordered as they appear in the web request. See Header Order below.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -5111,7 +5111,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -5120,7 +5120,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Match against the request&#39;s JA3 fingerprint (CloudFront and ALB only). See JA3 Fingerprint below.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -5129,7 +5129,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Match against the request&#39;s JA4 fingerprint (CloudFront and ALB only). See JA4 Fingerprint below.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -5138,7 +5138,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body below.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -5147,7 +5147,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -5156,7 +5156,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -5165,7 +5165,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -5174,7 +5174,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -5183,7 +5183,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect fragments of the request URI. See URI Fragment below.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -5192,7 +5192,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -5202,13 +5202,13 @@ object wafv2_ext1:
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -5218,13 +5218,13 @@ object wafv2_ext1:
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -5234,13 +5234,13 @@ object wafv2_ext1:
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -5250,7 +5250,7 @@ object wafv2_ext1:
      * @param forwardedIpConfig Configuration for inspecting forwarded IP headers. See Forwarded IP Config below.
      * @return builder
      */
-    def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementGeoMatchStatementForwardedIpConfigArgs.Builder]):
+    inline def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementGeoMatchStatementForwardedIpConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementGeoMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementGeoMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
@@ -5260,13 +5260,13 @@ object wafv2_ext1:
      * @param ipSetForwardedIpConfig Configuration for inspecting forwarded IP headers. See IP Set Forwarded IP Config below.
      * @return builder
      */
-    def ipSetForwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.Builder]):
+    inline def ipSetForwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementIpSetReferenceStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.builder
       builder.ipSetForwardedIpConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementArgs.Builder)
-    def managedRuleGroupConfigs(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigArgs.Builder]*):
+    inline def managedRuleGroupConfigs(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigArgs.builder
       builder.managedRuleGroupConfigs(args.map(_(argsBuilder).build)*)
@@ -5275,7 +5275,7 @@ object wafv2_ext1:
      * @param ruleActionOverrides Override actions for specific rules within the managed rule group. See Rule Action Override below.
      * @return builder
      */
-    def ruleActionOverrides(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideArgs.Builder]*):
+    inline def ruleActionOverrides(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideArgs.builder
       builder.ruleActionOverrides(args.map(_(argsBuilder).build)*)
@@ -5284,28 +5284,28 @@ object wafv2_ext1:
      * @param scopeDownStatement Additional statement to narrow the scope of requests that the managed rule group evaluates. See Scope Down Statement below.
      * @return builder
      */
-    def scopeDownStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.Builder]):
+    inline def scopeDownStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.builder
       builder.scopeDownStatement(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigArgs.Builder)
-    def awsManagedRulesAcfpRuleSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetArgs.Builder]):
+    inline def awsManagedRulesAcfpRuleSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetArgs.builder
       builder.awsManagedRulesAcfpRuleSet(args(argsBuilder).build)
 
-    def awsManagedRulesAntiDdosRuleSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetArgs.Builder]):
+    inline def awsManagedRulesAntiDdosRuleSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetArgs.builder
       builder.awsManagedRulesAntiDdosRuleSet(args(argsBuilder).build)
 
-    def awsManagedRulesAtpRuleSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetArgs.Builder]):
+    inline def awsManagedRulesAtpRuleSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetArgs.builder
       builder.awsManagedRulesAtpRuleSet(args(argsBuilder).build)
 
-    def awsManagedRulesBotControlRuleSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesBotControlRuleSetArgs.Builder]):
+    inline def awsManagedRulesBotControlRuleSet(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesBotControlRuleSetArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesBotControlRuleSetArgs.builder
       builder.awsManagedRulesBotControlRuleSet(args(argsBuilder).build)
@@ -5314,7 +5314,7 @@ object wafv2_ext1:
      * @return builder
      * @deprecated Use awsManagedRulesAtpRuleSet request_inspection password_field
      */
-    @deprecated("Use awsManagedRulesAtpRuleSet request_inspection password_field") def passwordField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigPasswordFieldArgs.Builder]):
+    @deprecated("Use awsManagedRulesAtpRuleSet request_inspection password_field") inline def passwordField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigPasswordFieldArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigPasswordFieldArgs.builder
       builder.passwordField(args(argsBuilder).build)
@@ -5323,50 +5323,50 @@ object wafv2_ext1:
      * @return builder
      * @deprecated Use awsManagedRulesAtpRuleSet request_inspection username_field
      */
-    @deprecated("Use awsManagedRulesAtpRuleSet request_inspection username_field") def usernameField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigUsernameFieldArgs.Builder]):
+    @deprecated("Use awsManagedRulesAtpRuleSet request_inspection username_field") inline def usernameField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigUsernameFieldArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigUsernameFieldArgs.builder
       builder.usernameField(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetArgs.Builder)
-    def requestInspection(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder]):
+    inline def requestInspection(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionArgs.builder
       builder.requestInspection(args(argsBuilder).build)
 
-    def responseInspection(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionArgs.Builder]):
+    inline def responseInspection(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionArgs.builder
       builder.responseInspection(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder)
-    def addressFields(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionAddressFieldsArgs.Builder]):
+    inline def addressFields(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionAddressFieldsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionAddressFieldsArgs.builder
       builder.addressFields(args(argsBuilder).build)
 
-    def emailField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionEmailFieldArgs.Builder]):
+    inline def emailField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionEmailFieldArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionEmailFieldArgs.builder
       builder.emailField(args(argsBuilder).build)
 
-    def passwordField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionPasswordFieldArgs.Builder]):
+    inline def passwordField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionPasswordFieldArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionPasswordFieldArgs.builder
       builder.passwordField(args(argsBuilder).build)
 
-    def phoneNumberFields(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionPhoneNumberFieldsArgs.Builder]):
+    inline def phoneNumberFields(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionPhoneNumberFieldsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionPhoneNumberFieldsArgs.builder
       builder.phoneNumberFields(args(argsBuilder).build)
 
-    def usernameField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionUsernameFieldArgs.Builder]):
+    inline def usernameField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionUsernameFieldArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetRequestInspectionUsernameFieldArgs.builder
       builder.usernameField(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionArgs.Builder)
-    def bodyContains(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionBodyContainsArgs.Builder]):
+    inline def bodyContains(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionBodyContainsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionBodyContainsArgs.builder
       builder.bodyContains(args(argsBuilder).build)
@@ -5375,23 +5375,23 @@ object wafv2_ext1:
      * @param header Use a header as an aggregate key. See Custom Key Header below.
      * @return builder
      */
-    def header(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionHeaderArgs.Builder]):
+    inline def header(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionHeaderArgs.builder
       builder.header(args(argsBuilder).build)
 
-    def json(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionJsonArgs.Builder]):
+    inline def json(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionJsonArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionJsonArgs.builder
       builder.json(args(argsBuilder).build)
 
-    def statusCode(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionStatusCodeArgs.Builder]):
+    inline def statusCode(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionStatusCodeArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAcfpRuleSetResponseInspectionStatusCodeArgs.builder
       builder.statusCode(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetArgs.Builder)
-    def clientSideActionConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigArgs.Builder]):
+    inline def clientSideActionConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigArgs.builder
       builder.clientSideActionConfig(args(argsBuilder).build)
@@ -5401,41 +5401,41 @@ object wafv2_ext1:
      * @param challenge Present a silent challenge. See Challenge below.
      * @return builder
      */
-    def challenge(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeArgs.Builder]):
+    inline def challenge(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeArgs.builder
       builder.challenge(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeArgs.Builder)
-    def exemptUriRegularExpressions(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeExemptUriRegularExpressionArgs.Builder]*):
+    inline def exemptUriRegularExpressions(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeExemptUriRegularExpressionArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAntiDdosRuleSetClientSideActionConfigChallengeExemptUriRegularExpressionArgs.builder
       builder.exemptUriRegularExpressions(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetArgs.Builder)
-    def requestInspection(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionArgs.Builder]):
+    inline def requestInspection(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionArgs.builder
       builder.requestInspection(args(argsBuilder).build)
 
-    def responseInspection(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionArgs.Builder]):
+    inline def responseInspection(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionArgs.builder
       builder.responseInspection(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionArgs.Builder)
-    def passwordField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionPasswordFieldArgs.Builder]):
+    inline def passwordField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionPasswordFieldArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionPasswordFieldArgs.builder
       builder.passwordField(args(argsBuilder).build)
 
-    def usernameField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionUsernameFieldArgs.Builder]):
+    inline def usernameField(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionUsernameFieldArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetRequestInspectionUsernameFieldArgs.builder
       builder.usernameField(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionArgs.Builder)
-    def bodyContains(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionBodyContainsArgs.Builder]):
+    inline def bodyContains(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionBodyContainsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionBodyContainsArgs.builder
       builder.bodyContains(args(argsBuilder).build)
@@ -5444,17 +5444,17 @@ object wafv2_ext1:
      * @param header Use a header as an aggregate key. See Custom Key Header below.
      * @return builder
      */
-    def header(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionHeaderArgs.Builder]):
+    inline def header(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionHeaderArgs.builder
       builder.header(args(argsBuilder).build)
 
-    def json(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionJsonArgs.Builder]):
+    inline def json(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionJsonArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionJsonArgs.builder
       builder.json(args(argsBuilder).build)
 
-    def statusCode(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionStatusCodeArgs.Builder]):
+    inline def statusCode(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionStatusCodeArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementManagedRuleGroupConfigAwsManagedRulesAtpRuleSetResponseInspectionStatusCodeArgs.builder
       builder.statusCode(args(argsBuilder).build)
@@ -5464,7 +5464,7 @@ object wafv2_ext1:
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
      * @return builder
      */
-    def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.Builder]):
+    inline def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
@@ -5474,7 +5474,7 @@ object wafv2_ext1:
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
      * @return builder
      */
-    def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingInsertHeaderArgs.Builder]*):
+    inline def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingInsertHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
@@ -5484,7 +5484,7 @@ object wafv2_ext1:
      * @param allow Allow the request. See Allow below.
      * @return builder
      */
-    def allow(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowArgs.Builder]):
+    inline def allow(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseAllowArgs.builder
       builder.allow(args(argsBuilder).build)
@@ -5493,7 +5493,7 @@ object wafv2_ext1:
      * @param block Block the request. See Block below.
      * @return builder
      */
-    def block(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockArgs.Builder]):
+    inline def block(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockArgs.builder
       builder.block(args(argsBuilder).build)
@@ -5502,7 +5502,7 @@ object wafv2_ext1:
      * @param captcha Present a CAPTCHA challenge. See Captcha below.
      * @return builder
      */
-    def captcha(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaArgs.Builder]):
+    inline def captcha(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaArgs.builder
       builder.captcha(args(argsBuilder).build)
@@ -5511,12 +5511,12 @@ object wafv2_ext1:
      * @param challenge Present a silent challenge. See Challenge below.
      * @return builder
      */
-    def challenge(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeArgs.Builder]):
+    inline def challenge(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeArgs.builder
       builder.challenge(args(argsBuilder).build)
 
-    def count(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountArgs.Builder]):
+    inline def count(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountArgs.builder
       builder.count(args(argsBuilder).build)
@@ -5526,7 +5526,7 @@ object wafv2_ext1:
      * @param customResponse Custom response configuration. See Custom Response below.
      * @return builder
      */
-    def customResponse(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockCustomResponseArgs.Builder]):
+    inline def customResponse(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockCustomResponseArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockCustomResponseArgs.builder
       builder.customResponse(args(argsBuilder).build)
@@ -5536,7 +5536,7 @@ object wafv2_ext1:
      * @param responseHeaders Custom headers to include in the response. See Response Header below.
      * @return builder
      */
-    def responseHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockCustomResponseResponseHeaderArgs.Builder]*):
+    inline def responseHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockCustomResponseResponseHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockCustomResponseArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseBlockCustomResponseResponseHeaderArgs.builder
       builder.responseHeaders(args.map(_(argsBuilder).build)*)
@@ -5546,7 +5546,7 @@ object wafv2_ext1:
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
      * @return builder
      */
-    def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.Builder]):
+    inline def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
@@ -5556,7 +5556,7 @@ object wafv2_ext1:
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
      * @return builder
      */
-    def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingInsertHeaderArgs.Builder]*):
+    inline def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingInsertHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
@@ -5566,7 +5566,7 @@ object wafv2_ext1:
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
      * @return builder
      */
-    def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.Builder]):
+    inline def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
@@ -5576,7 +5576,7 @@ object wafv2_ext1:
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
      * @return builder
      */
-    def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingInsertHeaderArgs.Builder]*):
+    inline def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingInsertHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
@@ -5586,7 +5586,7 @@ object wafv2_ext1:
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
      * @return builder
      */
-    def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.Builder]):
+    inline def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
@@ -5596,7 +5596,7 @@ object wafv2_ext1:
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
      * @return builder
      */
-    def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountCustomRequestHandlingInsertHeaderArgs.Builder]*):
+    inline def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountCustomRequestHandlingInsertHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseCountCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
@@ -5606,7 +5606,7 @@ object wafv2_ext1:
      * @param actionToUse Override action to use for the rule. See Action below.
      * @return builder
      */
-    def actionToUse(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseArgs.Builder]):
+    inline def actionToUse(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementRuleActionOverrideActionToUseArgs.builder
       builder.actionToUse(args(argsBuilder).build)
@@ -5616,7 +5616,7 @@ object wafv2_ext1:
      * @param statements List of statements to combine. At least one statement is required. Each nested statement supports the same statement types listed above.
      * @return builder
      */
-    def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.Builder]*):
+    inline def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementAndStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
@@ -5626,7 +5626,7 @@ object wafv2_ext1:
      * @param andStatement Logical AND statement that combines multiple statements. See And Statement above.
      * @return builder
      */
-    def andStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementAndStatementArgs.Builder]):
+    inline def andStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementAndStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementAndStatementArgs.builder
       builder.andStatement(args(argsBuilder).build)
@@ -5635,7 +5635,7 @@ object wafv2_ext1:
      * @param asnMatchStatement Match requests based on Autonomous System Number (ASN). See ASN Match Statement above.
      * @return builder
      */
-    def asnMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementAsnMatchStatementArgs.Builder]):
+    inline def asnMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementAsnMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementAsnMatchStatementArgs.builder
       builder.asnMatchStatement(args(argsBuilder).build)
@@ -5644,7 +5644,7 @@ object wafv2_ext1:
      * @param byteMatchStatement Match requests based on byte patterns. See Byte Match Statement above.
      * @return builder
      */
-    def byteMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementArgs.Builder]):
+    inline def byteMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementArgs.builder
       builder.byteMatchStatement(args(argsBuilder).build)
@@ -5653,7 +5653,7 @@ object wafv2_ext1:
      * @param geoMatchStatement Match requests by geographic location. See Geo Match Statement above.
      * @return builder
      */
-    def geoMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementGeoMatchStatementArgs.Builder]):
+    inline def geoMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementGeoMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementGeoMatchStatementArgs.builder
       builder.geoMatchStatement(args(argsBuilder).build)
@@ -5662,7 +5662,7 @@ object wafv2_ext1:
      * @param ipSetReferenceStatement Reference to an IP set. See IP Set Reference Statement above.
      * @return builder
      */
-    def ipSetReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementIpSetReferenceStatementArgs.Builder]):
+    inline def ipSetReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementIpSetReferenceStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementIpSetReferenceStatementArgs.builder
       builder.ipSetReferenceStatement(args(argsBuilder).build)
@@ -5671,7 +5671,7 @@ object wafv2_ext1:
      * @param labelMatchStatement Match requests based on labels. See Label Match Statement above.
      * @return builder
      */
-    def labelMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementLabelMatchStatementArgs.Builder]):
+    inline def labelMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementLabelMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementLabelMatchStatementArgs.builder
       builder.labelMatchStatement(args(argsBuilder).build)
@@ -5680,7 +5680,7 @@ object wafv2_ext1:
      * @param notStatement Logical NOT statement that negates a single statement. See Not Statement above.
      * @return builder
      */
-    def notStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementNotStatementArgs.Builder]):
+    inline def notStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementNotStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementNotStatementArgs.builder
       builder.notStatement(args(argsBuilder).build)
@@ -5689,7 +5689,7 @@ object wafv2_ext1:
      * @param orStatement Logical OR statement that combines multiple statements. See Or Statement above.
      * @return builder
      */
-    def orStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementOrStatementArgs.Builder]):
+    inline def orStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementOrStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementOrStatementArgs.builder
       builder.orStatement(args(argsBuilder).build)
@@ -5698,7 +5698,7 @@ object wafv2_ext1:
      * @param regexMatchStatement Match requests using regex patterns. See Regex Match Statement above.
      * @return builder
      */
-    def regexMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementArgs.Builder]):
+    inline def regexMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementArgs.builder
       builder.regexMatchStatement(args(argsBuilder).build)
@@ -5707,7 +5707,7 @@ object wafv2_ext1:
      * @param regexPatternSetReferenceStatement Rule statement used to search web request components for matches with regular expressions from a RegexPatternSet.
      * @return builder
      */
-    def regexPatternSetReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder]):
+    inline def regexPatternSetReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.builder
       builder.regexPatternSetReferenceStatement(args(argsBuilder).build)
@@ -5716,7 +5716,7 @@ object wafv2_ext1:
      * @param sizeConstraintStatement Match requests based on size constraints. See Size Constraint Statement above.
      * @return builder
      */
-    def sizeConstraintStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementArgs.Builder]):
+    inline def sizeConstraintStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementArgs.builder
       builder.sizeConstraintStatement(args(argsBuilder).build)
@@ -5725,7 +5725,7 @@ object wafv2_ext1:
      * @param sqliMatchStatement Match requests that appear to contain SQL injection attacks.
      * @return builder
      */
-    def sqliMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementArgs.Builder]):
+    inline def sqliMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementArgs.builder
       builder.sqliMatchStatement(args(argsBuilder).build)
@@ -5736,7 +5736,7 @@ object wafv2_ext1:
      * &gt; **NOTE:** Logical statements (`andStatement`, `notStatement`, `orStatement`) within a scope down statement wrap the leaf statement types listed above.
      * @return builder
      */
-    def xssMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementArgs.Builder]):
+    inline def xssMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementArgs.builder
       builder.xssMatchStatement(args(argsBuilder).build)
@@ -5746,7 +5746,7 @@ object wafv2_ext1:
      * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header instead of using the web request origin. See Forwarded IP Config below.
      * @return builder
      */
-    def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementAsnMatchStatementForwardedIpConfigArgs.Builder]):
+    inline def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementAsnMatchStatementForwardedIpConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementAsnMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementAsnMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
@@ -5756,7 +5756,7 @@ object wafv2_ext1:
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
      * @return builder
      */
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
@@ -5765,7 +5765,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. See Text Transformation below.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -5775,7 +5775,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -5784,7 +5784,7 @@ object wafv2_ext1:
      * @param body Inspect the request body as plain text. See Body below.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -5793,7 +5793,7 @@ object wafv2_ext1:
      * @param cookies Inspect the request cookies. See Cookies below.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -5802,7 +5802,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect a string containing the list of the request&#39;s header names, ordered as they appear in the web request. See Header Order below.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -5811,7 +5811,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -5820,7 +5820,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Match against the request&#39;s JA3 fingerprint (CloudFront and ALB only). See JA3 Fingerprint below.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -5829,7 +5829,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Match against the request&#39;s JA4 fingerprint (CloudFront and ALB only). See JA4 Fingerprint below.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -5838,7 +5838,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body below.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -5847,7 +5847,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -5856,7 +5856,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -5865,7 +5865,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -5874,7 +5874,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -5883,7 +5883,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect fragments of the request URI. See URI Fragment below.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -5892,7 +5892,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -5902,13 +5902,13 @@ object wafv2_ext1:
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -5918,13 +5918,13 @@ object wafv2_ext1:
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -5934,13 +5934,13 @@ object wafv2_ext1:
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -5950,7 +5950,7 @@ object wafv2_ext1:
      * @param forwardedIpConfig Configuration for inspecting forwarded IP headers. See Forwarded IP Config below.
      * @return builder
      */
-    def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementGeoMatchStatementForwardedIpConfigArgs.Builder]):
+    inline def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementGeoMatchStatementForwardedIpConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementGeoMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementGeoMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
@@ -5960,7 +5960,7 @@ object wafv2_ext1:
      * @param ipSetForwardedIpConfig Configuration for inspecting forwarded IP headers. See IP Set Forwarded IP Config below.
      * @return builder
      */
-    def ipSetForwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.Builder]):
+    inline def ipSetForwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementIpSetReferenceStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.builder
       builder.ipSetForwardedIpConfig(args(argsBuilder).build)
@@ -5970,7 +5970,7 @@ object wafv2_ext1:
      * @param statement Single statement to negate. Exactly one statement must be specified.
      * @return builder
      */
-    def statement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.Builder]):
+    inline def statement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementNotStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.builder
       builder.statement(args(argsBuilder).build)
@@ -5980,7 +5980,7 @@ object wafv2_ext1:
      * @param statements List of statements to combine. At least one statement is required. Each nested statement supports the same statement types listed above.
      * @return builder
      */
-    def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.Builder]*):
+    inline def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementOrStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
@@ -5990,7 +5990,7 @@ object wafv2_ext1:
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
      * @return builder
      */
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
@@ -5999,7 +5999,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. See Text Transformation below.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -6009,7 +6009,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -6018,7 +6018,7 @@ object wafv2_ext1:
      * @param body Inspect the request body as plain text. See Body below.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -6027,7 +6027,7 @@ object wafv2_ext1:
      * @param cookies Inspect the request cookies. See Cookies below.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -6036,7 +6036,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect a string containing the list of the request&#39;s header names, ordered as they appear in the web request. See Header Order below.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -6045,7 +6045,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -6054,7 +6054,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Match against the request&#39;s JA3 fingerprint (CloudFront and ALB only). See JA3 Fingerprint below.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -6063,7 +6063,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Match against the request&#39;s JA4 fingerprint (CloudFront and ALB only). See JA4 Fingerprint below.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -6072,7 +6072,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body below.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -6081,7 +6081,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -6090,7 +6090,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -6099,7 +6099,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -6108,7 +6108,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -6117,7 +6117,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect fragments of the request URI. See URI Fragment below.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -6126,7 +6126,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -6136,13 +6136,13 @@ object wafv2_ext1:
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -6152,13 +6152,13 @@ object wafv2_ext1:
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -6168,13 +6168,13 @@ object wafv2_ext1:
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -6184,7 +6184,7 @@ object wafv2_ext1:
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
      * @return builder
      */
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
@@ -6193,7 +6193,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. See Text Transformation below.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -6203,7 +6203,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -6212,7 +6212,7 @@ object wafv2_ext1:
      * @param body Inspect the request body as plain text. See Body below.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -6221,7 +6221,7 @@ object wafv2_ext1:
      * @param cookies Inspect the request cookies. See Cookies below.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -6230,7 +6230,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect a string containing the list of the request&#39;s header names, ordered as they appear in the web request. See Header Order below.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -6239,7 +6239,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -6248,7 +6248,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Match against the request&#39;s JA3 fingerprint (CloudFront and ALB only). See JA3 Fingerprint below.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -6257,7 +6257,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Match against the request&#39;s JA4 fingerprint (CloudFront and ALB only). See JA4 Fingerprint below.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -6266,7 +6266,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body below.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -6275,7 +6275,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -6284,7 +6284,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -6293,7 +6293,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -6302,7 +6302,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -6311,7 +6311,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect fragments of the request URI. See URI Fragment below.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -6320,7 +6320,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -6330,13 +6330,13 @@ object wafv2_ext1:
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -6346,13 +6346,13 @@ object wafv2_ext1:
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -6362,13 +6362,13 @@ object wafv2_ext1:
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -6378,7 +6378,7 @@ object wafv2_ext1:
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
      * @return builder
      */
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
@@ -6387,7 +6387,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. See Text Transformation below.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -6397,7 +6397,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -6406,7 +6406,7 @@ object wafv2_ext1:
      * @param body Inspect the request body as plain text. See Body below.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -6415,7 +6415,7 @@ object wafv2_ext1:
      * @param cookies Inspect the request cookies. See Cookies below.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -6424,7 +6424,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect a string containing the list of the request&#39;s header names, ordered as they appear in the web request. See Header Order below.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -6433,7 +6433,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -6442,7 +6442,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Match against the request&#39;s JA3 fingerprint (CloudFront and ALB only). See JA3 Fingerprint below.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -6451,7 +6451,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Match against the request&#39;s JA4 fingerprint (CloudFront and ALB only). See JA4 Fingerprint below.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -6460,7 +6460,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body below.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -6469,7 +6469,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -6478,7 +6478,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -6487,7 +6487,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -6496,7 +6496,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -6505,7 +6505,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect fragments of the request URI. See URI Fragment below.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -6514,7 +6514,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -6524,13 +6524,13 @@ object wafv2_ext1:
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -6540,13 +6540,13 @@ object wafv2_ext1:
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -6556,24 +6556,24 @@ object wafv2_ext1:
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementArgs.Builder)
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
 
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -6583,7 +6583,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -6592,7 +6592,7 @@ object wafv2_ext1:
      * @param body Inspect the request body as plain text. See Body below.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -6601,7 +6601,7 @@ object wafv2_ext1:
      * @param cookies Inspect the request cookies. See Cookies below.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -6610,7 +6610,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect a string containing the list of the request&#39;s header names, ordered as they appear in the web request. See Header Order below.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -6619,7 +6619,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -6628,7 +6628,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Match against the request&#39;s JA3 fingerprint (CloudFront and ALB only). See JA3 Fingerprint below.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -6637,7 +6637,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Match against the request&#39;s JA4 fingerprint (CloudFront and ALB only). See JA4 Fingerprint below.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -6646,7 +6646,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body below.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -6655,7 +6655,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -6664,7 +6664,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -6673,7 +6673,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -6682,7 +6682,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -6691,7 +6691,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect fragments of the request URI. See URI Fragment below.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -6700,7 +6700,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -6710,13 +6710,13 @@ object wafv2_ext1:
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -6726,13 +6726,13 @@ object wafv2_ext1:
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -6742,24 +6742,24 @@ object wafv2_ext1:
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementArgs.Builder)
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
 
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -6769,7 +6769,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -6778,7 +6778,7 @@ object wafv2_ext1:
      * @param body Inspect the request body as plain text. See Body below.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -6787,7 +6787,7 @@ object wafv2_ext1:
      * @param cookies Inspect the request cookies. See Cookies below.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -6796,7 +6796,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect a string containing the list of the request&#39;s header names, ordered as they appear in the web request. See Header Order below.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -6805,7 +6805,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -6814,7 +6814,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Match against the request&#39;s JA3 fingerprint (CloudFront and ALB only). See JA3 Fingerprint below.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -6823,7 +6823,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Match against the request&#39;s JA4 fingerprint (CloudFront and ALB only). See JA4 Fingerprint below.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -6832,7 +6832,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body below.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -6841,7 +6841,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -6850,7 +6850,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -6859,7 +6859,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -6868,7 +6868,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -6877,7 +6877,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect fragments of the request URI. See URI Fragment below.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -6886,7 +6886,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -6896,13 +6896,13 @@ object wafv2_ext1:
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -6912,13 +6912,13 @@ object wafv2_ext1:
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -6928,13 +6928,13 @@ object wafv2_ext1:
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementManagedRuleGroupStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -6944,7 +6944,7 @@ object wafv2_ext1:
      * @param statement Single statement to negate. Exactly one statement must be specified.
      * @return builder
      */
-    def statement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder]):
+    inline def statement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementNotStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.builder
       builder.statement(args(argsBuilder).build)
@@ -6954,7 +6954,7 @@ object wafv2_ext1:
      * @param statements List of statements to combine. At least one statement is required. Each nested statement supports the same statement types listed above.
      * @return builder
      */
-    def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder]*):
+    inline def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementOrStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
@@ -6964,7 +6964,7 @@ object wafv2_ext1:
      * @param customKeys Aggregate the request counts using one or more web request components as the aggregate keys. See Custom Keys below.
      * @return builder
      */
-    def customKeys(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyArgs.Builder]*):
+    inline def customKeys(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyArgs.builder
       builder.customKeys(args.map(_(argsBuilder).build)*)
@@ -6973,7 +6973,7 @@ object wafv2_ext1:
      * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header instead of using the web request origin. See Forwarded IP Config below.
      * @return builder
      */
-    def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementForwardedIpConfigArgs.Builder]):
+    inline def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementForwardedIpConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
@@ -6982,13 +6982,13 @@ object wafv2_ext1:
      * @param scopeDownStatement Additional statement to narrow the scope of requests that the rate-based rule evaluates. See Scope Down Statement below.
      * @return builder
      */
-    def scopeDownStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.Builder]):
+    inline def scopeDownStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.builder
       builder.scopeDownStatement(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyArgs.Builder)
-    def asn(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyAsnArgs.Builder]):
+    inline def asn(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyAsnArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyAsnArgs.builder
       builder.asn(args(argsBuilder).build)
@@ -6997,7 +6997,7 @@ object wafv2_ext1:
      * @param cookie Use a cookie as an aggregate key. See Custom Key Cookie below.
      * @return builder
      */
-    def cookie(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyCookieArgs.Builder]):
+    inline def cookie(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyCookieArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyCookieArgs.builder
       builder.cookie(args(argsBuilder).build)
@@ -7006,7 +7006,7 @@ object wafv2_ext1:
      * @param forwardedIp Use the forwarded IP address as an aggregate key.
      * @return builder
      */
-    def forwardedIp(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyForwardedIpArgs.Builder]):
+    inline def forwardedIp(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyForwardedIpArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyForwardedIpArgs.builder
       builder.forwardedIp(args(argsBuilder).build)
@@ -7015,7 +7015,7 @@ object wafv2_ext1:
      * @param header Use a header as an aggregate key. See Custom Key Header below.
      * @return builder
      */
-    def header(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyHeaderArgs.Builder]):
+    inline def header(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyHeaderArgs.builder
       builder.header(args(argsBuilder).build)
@@ -7024,7 +7024,7 @@ object wafv2_ext1:
      * @param httpMethod Use the HTTP method as an aggregate key.
      * @return builder
      */
-    def httpMethod(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyHttpMethodArgs.Builder]):
+    inline def httpMethod(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyHttpMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyHttpMethodArgs.builder
       builder.httpMethod(args(argsBuilder).build)
@@ -7033,7 +7033,7 @@ object wafv2_ext1:
      * @param ip Use the IP address as an aggregate key.
      * @return builder
      */
-    def ip(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyIpArgs.Builder]):
+    inline def ip(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyIpArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyIpArgs.builder
       builder.ip(args(argsBuilder).build)
@@ -7042,7 +7042,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Match against the request&#39;s JA3 fingerprint (CloudFront and ALB only). See JA3 Fingerprint below.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -7051,7 +7051,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Match against the request&#39;s JA4 fingerprint (CloudFront and ALB only). See JA4 Fingerprint below.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -7060,7 +7060,7 @@ object wafv2_ext1:
      * @param labelNamespace Use a label namespace as an aggregate key. See Custom Key Label Namespace below.
      * @return builder
      */
-    def labelNamespace(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyLabelNamespaceArgs.Builder]):
+    inline def labelNamespace(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyLabelNamespaceArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyLabelNamespaceArgs.builder
       builder.labelNamespace(args(argsBuilder).build)
@@ -7069,7 +7069,7 @@ object wafv2_ext1:
      * @param queryArgument Use a query argument as an aggregate key. See Custom Key Query Argument below.
      * @return builder
      */
-    def queryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyQueryArgumentArgs.Builder]):
+    inline def queryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyQueryArgumentArgs.builder
       builder.queryArgument(args(argsBuilder).build)
@@ -7078,7 +7078,7 @@ object wafv2_ext1:
      * @param queryString Use the query string as an aggregate key.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -7087,37 +7087,37 @@ object wafv2_ext1:
      * @param uriPath Use the URI path as an aggregate key.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyCookieArgs.Builder)
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyCookieTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyCookieTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyCookieArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyCookieTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyHeaderArgs.Builder)
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyHeaderTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyHeaderTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyHeaderArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyHeaderTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyQueryArgumentArgs.Builder)
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyQueryArgumentTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyQueryArgumentTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyQueryArgumentArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyQueryArgumentTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyQueryStringArgs.Builder)
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyQueryStringTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyQueryStringTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyQueryStringArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyQueryStringTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyUriPathArgs.Builder)
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyUriPathTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyUriPathTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyUriPathArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementCustomKeyUriPathTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -7127,7 +7127,7 @@ object wafv2_ext1:
      * @param statements List of statements to combine. At least one statement is required. Each nested statement supports the same statement types listed above.
      * @return builder
      */
-    def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.Builder]*):
+    inline def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementAndStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
@@ -7137,7 +7137,7 @@ object wafv2_ext1:
      * @param andStatement Logical AND statement that combines multiple statements. See And Statement above.
      * @return builder
      */
-    def andStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementAndStatementArgs.Builder]):
+    inline def andStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementAndStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementAndStatementArgs.builder
       builder.andStatement(args(argsBuilder).build)
@@ -7146,7 +7146,7 @@ object wafv2_ext1:
      * @param asnMatchStatement Match requests based on Autonomous System Number (ASN). See ASN Match Statement above.
      * @return builder
      */
-    def asnMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementAsnMatchStatementArgs.Builder]):
+    inline def asnMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementAsnMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementAsnMatchStatementArgs.builder
       builder.asnMatchStatement(args(argsBuilder).build)
@@ -7155,7 +7155,7 @@ object wafv2_ext1:
      * @param byteMatchStatement Match requests based on byte patterns. See Byte Match Statement above.
      * @return builder
      */
-    def byteMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementArgs.Builder]):
+    inline def byteMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementArgs.builder
       builder.byteMatchStatement(args(argsBuilder).build)
@@ -7164,7 +7164,7 @@ object wafv2_ext1:
      * @param geoMatchStatement Match requests by geographic location. See Geo Match Statement above.
      * @return builder
      */
-    def geoMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementGeoMatchStatementArgs.Builder]):
+    inline def geoMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementGeoMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementGeoMatchStatementArgs.builder
       builder.geoMatchStatement(args(argsBuilder).build)
@@ -7173,7 +7173,7 @@ object wafv2_ext1:
      * @param ipSetReferenceStatement Reference to an IP set. See IP Set Reference Statement above.
      * @return builder
      */
-    def ipSetReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementArgs.Builder]):
+    inline def ipSetReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementArgs.builder
       builder.ipSetReferenceStatement(args(argsBuilder).build)
@@ -7182,7 +7182,7 @@ object wafv2_ext1:
      * @param labelMatchStatement Match requests based on labels. See Label Match Statement above.
      * @return builder
      */
-    def labelMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementLabelMatchStatementArgs.Builder]):
+    inline def labelMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementLabelMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementLabelMatchStatementArgs.builder
       builder.labelMatchStatement(args(argsBuilder).build)
@@ -7191,7 +7191,7 @@ object wafv2_ext1:
      * @param notStatement Logical NOT statement that negates a single statement. See Not Statement above.
      * @return builder
      */
-    def notStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementNotStatementArgs.Builder]):
+    inline def notStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementNotStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementNotStatementArgs.builder
       builder.notStatement(args(argsBuilder).build)
@@ -7200,7 +7200,7 @@ object wafv2_ext1:
      * @param orStatement Logical OR statement that combines multiple statements. See Or Statement above.
      * @return builder
      */
-    def orStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementOrStatementArgs.Builder]):
+    inline def orStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementOrStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementOrStatementArgs.builder
       builder.orStatement(args(argsBuilder).build)
@@ -7209,7 +7209,7 @@ object wafv2_ext1:
      * @param regexMatchStatement Match requests using regex patterns. See Regex Match Statement above.
      * @return builder
      */
-    def regexMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementArgs.Builder]):
+    inline def regexMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementArgs.builder
       builder.regexMatchStatement(args(argsBuilder).build)
@@ -7218,7 +7218,7 @@ object wafv2_ext1:
      * @param regexPatternSetReferenceStatement Rule statement used to search web request components for matches with regular expressions from a RegexPatternSet.
      * @return builder
      */
-    def regexPatternSetReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder]):
+    inline def regexPatternSetReferenceStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.builder
       builder.regexPatternSetReferenceStatement(args(argsBuilder).build)
@@ -7227,7 +7227,7 @@ object wafv2_ext1:
      * @param sizeConstraintStatement Match requests based on size constraints. See Size Constraint Statement above.
      * @return builder
      */
-    def sizeConstraintStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementArgs.Builder]):
+    inline def sizeConstraintStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementArgs.builder
       builder.sizeConstraintStatement(args(argsBuilder).build)
@@ -7236,7 +7236,7 @@ object wafv2_ext1:
      * @param sqliMatchStatement Match requests that appear to contain SQL injection attacks.
      * @return builder
      */
-    def sqliMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementArgs.Builder]):
+    inline def sqliMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementArgs.builder
       builder.sqliMatchStatement(args(argsBuilder).build)
@@ -7247,7 +7247,7 @@ object wafv2_ext1:
      * &gt; **NOTE:** Logical statements (`andStatement`, `notStatement`, `orStatement`) within a scope down statement wrap the leaf statement types listed above.
      * @return builder
      */
-    def xssMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.Builder]):
+    inline def xssMatchStatement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.builder
       builder.xssMatchStatement(args(argsBuilder).build)
@@ -7257,7 +7257,7 @@ object wafv2_ext1:
      * @param forwardedIpConfig Configuration for inspecting IP addresses in an HTTP header instead of using the web request origin. See Forwarded IP Config below.
      * @return builder
      */
-    def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementAsnMatchStatementForwardedIpConfigArgs.Builder]):
+    inline def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementAsnMatchStatementForwardedIpConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementAsnMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementAsnMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
@@ -7267,7 +7267,7 @@ object wafv2_ext1:
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
      * @return builder
      */
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
@@ -7276,7 +7276,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. See Text Transformation below.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -7286,7 +7286,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -7295,7 +7295,7 @@ object wafv2_ext1:
      * @param body Inspect the request body as plain text. See Body below.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -7304,7 +7304,7 @@ object wafv2_ext1:
      * @param cookies Inspect the request cookies. See Cookies below.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -7313,7 +7313,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect a string containing the list of the request&#39;s header names, ordered as they appear in the web request. See Header Order below.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -7322,7 +7322,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -7331,7 +7331,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Match against the request&#39;s JA3 fingerprint (CloudFront and ALB only). See JA3 Fingerprint below.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -7340,7 +7340,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Match against the request&#39;s JA4 fingerprint (CloudFront and ALB only). See JA4 Fingerprint below.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -7349,7 +7349,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body below.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -7358,7 +7358,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -7367,7 +7367,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -7376,7 +7376,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -7385,7 +7385,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -7394,7 +7394,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect fragments of the request URI. See URI Fragment below.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -7403,7 +7403,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -7413,13 +7413,13 @@ object wafv2_ext1:
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -7429,13 +7429,13 @@ object wafv2_ext1:
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -7445,13 +7445,13 @@ object wafv2_ext1:
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementByteMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -7461,7 +7461,7 @@ object wafv2_ext1:
      * @param forwardedIpConfig Configuration for inspecting forwarded IP headers. See Forwarded IP Config below.
      * @return builder
      */
-    def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementGeoMatchStatementForwardedIpConfigArgs.Builder]):
+    inline def forwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementGeoMatchStatementForwardedIpConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementGeoMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementGeoMatchStatementForwardedIpConfigArgs.builder
       builder.forwardedIpConfig(args(argsBuilder).build)
@@ -7471,7 +7471,7 @@ object wafv2_ext1:
      * @param ipSetForwardedIpConfig Configuration for inspecting forwarded IP headers. See IP Set Forwarded IP Config below.
      * @return builder
      */
-    def ipSetForwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.Builder]):
+    inline def ipSetForwardedIpConfig(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementIpSetReferenceStatementIpSetForwardedIpConfigArgs.builder
       builder.ipSetForwardedIpConfig(args(argsBuilder).build)
@@ -7481,7 +7481,7 @@ object wafv2_ext1:
      * @param statement Single statement to negate. Exactly one statement must be specified.
      * @return builder
      */
-    def statement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.Builder]):
+    inline def statement(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementNotStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.builder
       builder.statement(args(argsBuilder).build)
@@ -7491,7 +7491,7 @@ object wafv2_ext1:
      * @param statements List of statements to combine. At least one statement is required. Each nested statement supports the same statement types listed above.
      * @return builder
      */
-    def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.Builder]*):
+    inline def statements(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementOrStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementArgs.builder
       builder.statements(args.map(_(argsBuilder).build)*)
@@ -7501,7 +7501,7 @@ object wafv2_ext1:
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
      * @return builder
      */
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
@@ -7510,7 +7510,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. See Text Transformation below.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -7520,7 +7520,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -7529,7 +7529,7 @@ object wafv2_ext1:
      * @param body Inspect the request body as plain text. See Body below.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -7538,7 +7538,7 @@ object wafv2_ext1:
      * @param cookies Inspect the request cookies. See Cookies below.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -7547,7 +7547,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect a string containing the list of the request&#39;s header names, ordered as they appear in the web request. See Header Order below.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -7556,7 +7556,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -7565,7 +7565,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Match against the request&#39;s JA3 fingerprint (CloudFront and ALB only). See JA3 Fingerprint below.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -7574,7 +7574,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Match against the request&#39;s JA4 fingerprint (CloudFront and ALB only). See JA4 Fingerprint below.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -7583,7 +7583,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body below.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -7592,7 +7592,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -7601,7 +7601,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -7610,7 +7610,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -7619,7 +7619,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -7628,7 +7628,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect fragments of the request URI. See URI Fragment below.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -7637,7 +7637,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -7647,13 +7647,13 @@ object wafv2_ext1:
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -7663,13 +7663,13 @@ object wafv2_ext1:
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -7679,13 +7679,13 @@ object wafv2_ext1:
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -7695,7 +7695,7 @@ object wafv2_ext1:
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
      * @return builder
      */
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
@@ -7704,7 +7704,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. See Text Transformation below.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -7714,7 +7714,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -7723,7 +7723,7 @@ object wafv2_ext1:
      * @param body Inspect the request body as plain text. See Body below.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -7732,7 +7732,7 @@ object wafv2_ext1:
      * @param cookies Inspect the request cookies. See Cookies below.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -7741,7 +7741,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect a string containing the list of the request&#39;s header names, ordered as they appear in the web request. See Header Order below.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -7750,7 +7750,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -7759,7 +7759,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Match against the request&#39;s JA3 fingerprint (CloudFront and ALB only). See JA3 Fingerprint below.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -7768,7 +7768,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Match against the request&#39;s JA4 fingerprint (CloudFront and ALB only). See JA4 Fingerprint below.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -7777,7 +7777,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body below.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -7786,7 +7786,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -7795,7 +7795,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -7804,7 +7804,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -7813,7 +7813,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -7822,7 +7822,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect fragments of the request URI. See URI Fragment below.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -7831,7 +7831,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -7841,13 +7841,13 @@ object wafv2_ext1:
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -7857,13 +7857,13 @@ object wafv2_ext1:
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -7873,13 +7873,13 @@ object wafv2_ext1:
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -7889,7 +7889,7 @@ object wafv2_ext1:
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
      * @return builder
      */
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
@@ -7898,7 +7898,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. See Text Transformation below.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -7908,7 +7908,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -7917,7 +7917,7 @@ object wafv2_ext1:
      * @param body Inspect the request body as plain text. See Body below.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -7926,7 +7926,7 @@ object wafv2_ext1:
      * @param cookies Inspect the request cookies. See Cookies below.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -7935,7 +7935,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect a string containing the list of the request&#39;s header names, ordered as they appear in the web request. See Header Order below.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -7944,7 +7944,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -7953,7 +7953,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Match against the request&#39;s JA3 fingerprint (CloudFront and ALB only). See JA3 Fingerprint below.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -7962,7 +7962,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Match against the request&#39;s JA4 fingerprint (CloudFront and ALB only). See JA4 Fingerprint below.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -7971,7 +7971,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body below.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -7980,7 +7980,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -7989,7 +7989,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -7998,7 +7998,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -8007,7 +8007,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -8016,7 +8016,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect fragments of the request URI. See URI Fragment below.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -8025,7 +8025,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -8035,13 +8035,13 @@ object wafv2_ext1:
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -8051,13 +8051,13 @@ object wafv2_ext1:
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -8067,24 +8067,24 @@ object wafv2_ext1:
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSizeConstraintStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementArgs.Builder)
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
 
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -8094,7 +8094,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -8103,7 +8103,7 @@ object wafv2_ext1:
      * @param body Inspect the request body as plain text. See Body below.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -8112,7 +8112,7 @@ object wafv2_ext1:
      * @param cookies Inspect the request cookies. See Cookies below.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -8121,7 +8121,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect a string containing the list of the request&#39;s header names, ordered as they appear in the web request. See Header Order below.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -8130,7 +8130,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -8139,7 +8139,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Match against the request&#39;s JA3 fingerprint (CloudFront and ALB only). See JA3 Fingerprint below.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -8148,7 +8148,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Match against the request&#39;s JA4 fingerprint (CloudFront and ALB only). See JA4 Fingerprint below.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -8157,7 +8157,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body below.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -8166,7 +8166,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -8175,7 +8175,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -8184,7 +8184,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -8193,7 +8193,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -8202,7 +8202,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect fragments of the request URI. See URI Fragment below.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -8211,7 +8211,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -8221,13 +8221,13 @@ object wafv2_ext1:
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -8237,13 +8237,13 @@ object wafv2_ext1:
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -8253,24 +8253,24 @@ object wafv2_ext1:
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementSqliMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.Builder)
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
 
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -8280,7 +8280,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -8289,7 +8289,7 @@ object wafv2_ext1:
      * @param body Inspect the request body as plain text. See Body below.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -8298,7 +8298,7 @@ object wafv2_ext1:
      * @param cookies Inspect the request cookies. See Cookies below.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -8307,7 +8307,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect a string containing the list of the request&#39;s header names, ordered as they appear in the web request. See Header Order below.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -8316,7 +8316,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -8325,7 +8325,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Match against the request&#39;s JA3 fingerprint (CloudFront and ALB only). See JA3 Fingerprint below.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -8334,7 +8334,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Match against the request&#39;s JA4 fingerprint (CloudFront and ALB only). See JA4 Fingerprint below.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -8343,7 +8343,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body below.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -8352,7 +8352,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -8361,7 +8361,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -8370,7 +8370,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -8379,7 +8379,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -8388,7 +8388,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect fragments of the request URI. See URI Fragment below.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -8397,7 +8397,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -8407,13 +8407,13 @@ object wafv2_ext1:
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -8423,13 +8423,13 @@ object wafv2_ext1:
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -8439,13 +8439,13 @@ object wafv2_ext1:
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRateBasedStatementScopeDownStatementXssMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -8455,7 +8455,7 @@ object wafv2_ext1:
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
      * @return builder
      */
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
@@ -8464,7 +8464,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. See Text Transformation below.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -8474,7 +8474,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -8483,7 +8483,7 @@ object wafv2_ext1:
      * @param body Inspect the request body as plain text. See Body below.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -8492,7 +8492,7 @@ object wafv2_ext1:
      * @param cookies Inspect the request cookies. See Cookies below.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -8501,7 +8501,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect a string containing the list of the request&#39;s header names, ordered as they appear in the web request. See Header Order below.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -8510,7 +8510,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -8519,7 +8519,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Match against the request&#39;s JA3 fingerprint (CloudFront and ALB only). See JA3 Fingerprint below.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -8528,7 +8528,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Match against the request&#39;s JA4 fingerprint (CloudFront and ALB only). See JA4 Fingerprint below.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -8537,7 +8537,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body below.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -8546,7 +8546,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -8555,7 +8555,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -8564,7 +8564,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -8573,7 +8573,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -8582,7 +8582,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect fragments of the request URI. See URI Fragment below.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -8591,7 +8591,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -8601,13 +8601,13 @@ object wafv2_ext1:
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -8617,13 +8617,13 @@ object wafv2_ext1:
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -8633,13 +8633,13 @@ object wafv2_ext1:
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexMatchStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -8649,7 +8649,7 @@ object wafv2_ext1:
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
      * @return builder
      */
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
@@ -8658,7 +8658,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. See Text Transformation below.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)
@@ -8668,7 +8668,7 @@ object wafv2_ext1:
      * @param allQueryArguments Inspect all query arguments.
      * @return builder
      */
-    def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
+    inline def allQueryArguments(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchAllQueryArgumentsArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchAllQueryArgumentsArgs.builder
       builder.allQueryArguments(args(argsBuilder).build)
@@ -8677,7 +8677,7 @@ object wafv2_ext1:
      * @param body Inspect the request body as plain text. See Body below.
      * @return builder
      */
-    def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchBodyArgs.Builder]):
+    inline def body(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchBodyArgs.builder
       builder.body(args(argsBuilder).build)
@@ -8686,7 +8686,7 @@ object wafv2_ext1:
      * @param cookies Inspect the request cookies. See Cookies below.
      * @return builder
      */
-    def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder]):
+    inline def cookies(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.builder
       builder.cookies(args(argsBuilder).build)
@@ -8695,7 +8695,7 @@ object wafv2_ext1:
      * @param headerOrders Inspect a string containing the list of the request&#39;s header names, ordered as they appear in the web request. See Header Order below.
      * @return builder
      */
-    def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderOrderArgs.Builder]*):
+    inline def headerOrders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderOrderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderOrderArgs.builder
       builder.headerOrders(args.map(_(argsBuilder).build)*)
@@ -8704,7 +8704,7 @@ object wafv2_ext1:
      * @param headers Inspect the request headers. See Headers below.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -8713,7 +8713,7 @@ object wafv2_ext1:
      * @param ja3Fingerprint Match against the request&#39;s JA3 fingerprint (CloudFront and ALB only). See JA3 Fingerprint below.
      * @return builder
      */
-    def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchJa3FingerprintArgs.Builder]):
+    inline def ja3Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchJa3FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchJa3FingerprintArgs.builder
       builder.ja3Fingerprint(args(argsBuilder).build)
@@ -8722,7 +8722,7 @@ object wafv2_ext1:
      * @param ja4Fingerprint Match against the request&#39;s JA4 fingerprint (CloudFront and ALB only). See JA4 Fingerprint below.
      * @return builder
      */
-    def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchJa4FingerprintArgs.Builder]):
+    inline def ja4Fingerprint(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchJa4FingerprintArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchJa4FingerprintArgs.builder
       builder.ja4Fingerprint(args(argsBuilder).build)
@@ -8731,7 +8731,7 @@ object wafv2_ext1:
      * @param jsonBody Inspect the request body as JSON. See JSON Body below.
      * @return builder
      */
-    def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder]):
+    inline def jsonBody(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.builder
       builder.jsonBody(args(argsBuilder).build)
@@ -8740,7 +8740,7 @@ object wafv2_ext1:
      * @param method Inspect the HTTP method.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchMethodArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -8749,7 +8749,7 @@ object wafv2_ext1:
      * @param queryString Inspect the query string.
      * @return builder
      */
-    def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchQueryStringArgs.Builder]):
+    inline def queryString(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchQueryStringArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchQueryStringArgs.builder
       builder.queryString(args(argsBuilder).build)
@@ -8758,7 +8758,7 @@ object wafv2_ext1:
      * @param singleHeader Inspect a single header. See Single Header below.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchSingleHeaderArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -8767,7 +8767,7 @@ object wafv2_ext1:
      * @param singleQueryArgument Inspect a single query argument. See Single Query Argument below.
      * @return builder
      */
-    def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
+    inline def singleQueryArgument(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchSingleQueryArgumentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchSingleQueryArgumentArgs.builder
       builder.singleQueryArgument(args(argsBuilder).build)
@@ -8776,7 +8776,7 @@ object wafv2_ext1:
      * @param uriFragment Inspect fragments of the request URI. See URI Fragment below.
      * @return builder
      */
-    def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchUriFragmentArgs.Builder]):
+    inline def uriFragment(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchUriFragmentArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchUriFragmentArgs.builder
       builder.uriFragment(args(argsBuilder).build)
@@ -8785,7 +8785,7 @@ object wafv2_ext1:
      * @param uriPath Inspect the request URI path.
      * @return builder
      */
-    def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.Builder]):
+    inline def uriPath(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchUriPathArgs.builder
       builder.uriPath(args(argsBuilder).build)
@@ -8795,13 +8795,13 @@ object wafv2_ext1:
      * @param matchPatterns Cookies to inspect. See Cookies Match Pattern below.
      * @return builder
      */
-    def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
+    inline def matchPatterns(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.builder
       builder.matchPatterns(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchCookiesMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -8811,13 +8811,13 @@ object wafv2_ext1:
      * @param matchPattern Headers to inspect. See Headers Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchHeaderMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -8827,13 +8827,13 @@ object wafv2_ext1:
      * @param matchPattern JSON content to inspect. See JSON Body Match Pattern below.
      * @return builder
      */
-    def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
+    inline def matchPattern(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.builder
       builder.matchPattern(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder)
-    def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRegexPatternSetReferenceStatementFieldToMatchJsonBodyMatchPatternAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -8843,7 +8843,7 @@ object wafv2_ext1:
      * @param excludedRules Rules to exclude from the rule group. See Excluded Rule below.
      * @return builder
      */
-    def excludedRules(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementExcludedRuleArgs.Builder]*):
+    inline def excludedRules(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementExcludedRuleArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementExcludedRuleArgs.builder
       builder.excludedRules(args.map(_(argsBuilder).build)*)
@@ -8852,7 +8852,7 @@ object wafv2_ext1:
      * @param ruleActionOverrides Override actions for specific rules within the rule group. See Rule Action Override below.
      * @return builder
      */
-    def ruleActionOverrides(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideArgs.Builder]*):
+    inline def ruleActionOverrides(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideArgs.builder
       builder.ruleActionOverrides(args.map(_(argsBuilder).build)*)
@@ -8862,7 +8862,7 @@ object wafv2_ext1:
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
      * @return builder
      */
-    def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.Builder]):
+    inline def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
@@ -8872,7 +8872,7 @@ object wafv2_ext1:
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
      * @return builder
      */
-    def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingInsertHeaderArgs.Builder]*):
+    inline def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingInsertHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
@@ -8882,7 +8882,7 @@ object wafv2_ext1:
      * @param allow Allow the request. See Allow below.
      * @return builder
      */
-    def allow(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowArgs.Builder]):
+    inline def allow(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseAllowArgs.builder
       builder.allow(args(argsBuilder).build)
@@ -8891,7 +8891,7 @@ object wafv2_ext1:
      * @param block Block the request. See Block below.
      * @return builder
      */
-    def block(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockArgs.Builder]):
+    inline def block(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockArgs.builder
       builder.block(args(argsBuilder).build)
@@ -8900,7 +8900,7 @@ object wafv2_ext1:
      * @param captcha Present a CAPTCHA challenge. See Captcha below.
      * @return builder
      */
-    def captcha(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaArgs.Builder]):
+    inline def captcha(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaArgs.builder
       builder.captcha(args(argsBuilder).build)
@@ -8909,12 +8909,12 @@ object wafv2_ext1:
      * @param challenge Present a silent challenge. See Challenge below.
      * @return builder
      */
-    def challenge(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeArgs.Builder]):
+    inline def challenge(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeArgs.builder
       builder.challenge(args(argsBuilder).build)
 
-    def count(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountArgs.Builder]):
+    inline def count(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountArgs.builder
       builder.count(args(argsBuilder).build)
@@ -8924,7 +8924,7 @@ object wafv2_ext1:
      * @param customResponse Custom response configuration. See Custom Response below.
      * @return builder
      */
-    def customResponse(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockCustomResponseArgs.Builder]):
+    inline def customResponse(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockCustomResponseArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockCustomResponseArgs.builder
       builder.customResponse(args(argsBuilder).build)
@@ -8934,7 +8934,7 @@ object wafv2_ext1:
      * @param responseHeaders Custom headers to include in the response. See Response Header below.
      * @return builder
      */
-    def responseHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockCustomResponseResponseHeaderArgs.Builder]*):
+    inline def responseHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockCustomResponseResponseHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockCustomResponseArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseBlockCustomResponseResponseHeaderArgs.builder
       builder.responseHeaders(args.map(_(argsBuilder).build)*)
@@ -8944,7 +8944,7 @@ object wafv2_ext1:
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
      * @return builder
      */
-    def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.Builder]):
+    inline def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
@@ -8954,7 +8954,7 @@ object wafv2_ext1:
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
      * @return builder
      */
-    def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingInsertHeaderArgs.Builder]*):
+    inline def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingInsertHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCaptchaCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
@@ -8964,7 +8964,7 @@ object wafv2_ext1:
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
      * @return builder
      */
-    def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.Builder]):
+    inline def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
@@ -8974,7 +8974,7 @@ object wafv2_ext1:
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
      * @return builder
      */
-    def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingInsertHeaderArgs.Builder]*):
+    inline def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingInsertHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseChallengeCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
@@ -8984,7 +8984,7 @@ object wafv2_ext1:
      * @param customRequestHandling Custom request handling configuration. See Custom Request Handling below.
      * @return builder
      */
-    def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.Builder]):
+    inline def customRequestHandling(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.builder
       builder.customRequestHandling(args(argsBuilder).build)
@@ -8994,7 +8994,7 @@ object wafv2_ext1:
      * @param insertHeaders Custom headers to insert into the request. See Insert Header below.
      * @return builder
      */
-    def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountCustomRequestHandlingInsertHeaderArgs.Builder]*):
+    inline def insertHeaders(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountCustomRequestHandlingInsertHeaderArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountCustomRequestHandlingArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseCountCustomRequestHandlingInsertHeaderArgs.builder
       builder.insertHeaders(args.map(_(argsBuilder).build)*)
@@ -9004,7 +9004,7 @@ object wafv2_ext1:
      * @param actionToUse Override action to use for the rule. See Action below.
      * @return builder
      */
-    def actionToUse(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseArgs.Builder]):
+    inline def actionToUse(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementRuleGroupReferenceStatementRuleActionOverrideActionToUseArgs.builder
       builder.actionToUse(args(argsBuilder).build)
@@ -9014,7 +9014,7 @@ object wafv2_ext1:
      * @param fieldToMatch Part of the web request that you want WAF to inspect. See Field to Match below.
      * @return builder
      */
-    def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementFieldToMatchArgs.Builder]):
+    inline def fieldToMatch(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementFieldToMatchArgs.Builder]):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementArgs.Builder =
       val argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementFieldToMatchArgs.builder
       builder.fieldToMatch(args(argsBuilder).build)
@@ -9023,7 +9023,7 @@ object wafv2_ext1:
      * @param textTransformations Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. See Text Transformation below.
      * @return builder
      */
-    def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementTextTransformationArgs.Builder]*):
+    inline def textTransformations(args: Endofunction[com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementTextTransformationArgs.Builder]*):
         com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementArgs.Builder =
       def argsBuilder = com.pulumi.aws.wafv2.inputs.WebAclRuleStatementSizeConstraintStatementTextTransformationArgs.builder
       builder.textTransformations(args.map(_(argsBuilder).build)*)

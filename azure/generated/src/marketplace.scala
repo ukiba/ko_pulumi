@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object marketplace:
   /** Allows accepting the Legal Terms for a Marketplace Image. */
-  def Agreement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Agreement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.marketplace.AgreementArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.marketplace.AgreementArgs.builder
     com.pulumi.azure.marketplace.Agreement(name,
@@ -32,7 +32,7 @@ object marketplace:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Assigns a given Principal (User or Group) to a given Role in a Private Azure Marketplace. */
-  def RoleAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RoleAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.marketplace.RoleAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.marketplace.RoleAssignmentArgs.builder
     conf.logicalName2physicalName(name) match

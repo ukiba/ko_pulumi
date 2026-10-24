@@ -13,7 +13,7 @@ object projects:
    * 
    * * [API documentation](https://cloud.google.com/access-approval/docs/reference/rest/v1/projects)
    */
-  def AccessApprovalSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccessApprovalSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.projects.AccessApprovalSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.projects.AccessApprovalSettingsArgs.builder
     com.pulumi.gcp.projects.AccessApprovalSettings(name,
@@ -21,7 +21,7 @@ object projects:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The Apikeys Key resource */
-  def ApiKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApiKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.projects.ApiKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.projects.ApiKeyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -47,7 +47,7 @@ object projects:
    * and it is for users who are unable to use constraints. If the default service accounts change their name
    * or additional service accounts are added, this resource will need to be updated.
    */
-  def DefaultServiceAccounts(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DefaultServiceAccounts(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.projects.DefaultServiceAccountsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.projects.DefaultServiceAccountsArgs.builder
     com.pulumi.gcp.projects.DefaultServiceAccounts(name,
@@ -671,7 +671,7 @@ object projects:
    * &gt; **Conditional IAM Bindings**: If you&#39;re importing a IAM binding with a condition block, make sure
    *  to include the title of condition, e.g. `terraform import google_project_iam_binding.my_project &#34;{{your-project-id}} roles/{{role_id}} condition-title&#34;`
    */
-  def IAMAuditConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IAMAuditConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.projects.IAMAuditConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.projects.IAMAuditConfigArgs.builder
     com.pulumi.gcp.projects.IAMAuditConfig(name,
@@ -1295,7 +1295,7 @@ object projects:
    * &gt; **Conditional IAM Bindings**: If you&#39;re importing a IAM binding with a condition block, make sure
    *  to include the title of condition, e.g. `terraform import google_project_iam_binding.my_project &#34;{{your-project-id}} roles/{{role_id}} condition-title&#34;`
    */
-  def IAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.projects.IAMBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.projects.IAMBindingArgs.builder
     com.pulumi.gcp.projects.IAMBinding(name,
@@ -1315,7 +1315,7 @@ object projects:
    *  made available again. This means a deleted role that has been deleted for more than 7 days cannot be changed at all
    *  by the provider, and new roles cannot share that name.
    */
-  def IAMCustomRole(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IAMCustomRole(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.projects.IAMCustomRoleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.projects.IAMCustomRoleArgs.builder
     com.pulumi.gcp.projects.IAMCustomRole(name,
@@ -1939,7 +1939,7 @@ object projects:
    * &gt; **Conditional IAM Bindings**: If you&#39;re importing a IAM binding with a condition block, make sure
    *  to include the title of condition, e.g. `terraform import google_project_iam_binding.my_project &#34;{{your-project-id}} roles/{{role_id}} condition-title&#34;`
    */
-  def IAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.projects.IAMMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.projects.IAMMemberArgs.builder
     com.pulumi.gcp.projects.IAMMember(name,
@@ -2563,7 +2563,7 @@ object projects:
    * &gt; **Conditional IAM Bindings**: If you&#39;re importing a IAM binding with a condition block, make sure
    *  to include the title of condition, e.g. `terraform import google_project_iam_binding.my_project &#34;{{your-project-id}} roles/{{role_id}} condition-title&#34;`
    */
-  def IAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.projects.IAMPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.projects.IAMPolicyArgs.builder
     com.pulumi.gcp.projects.IAMPolicy(name,
@@ -2591,7 +2591,7 @@ object projects:
    * and
    * [API reference](https://docs.cloud.google.com/resource-manager/reference/rest/v1/projects/setIamPolicy).
    */
-  def IamMemberRemove(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IamMemberRemove(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.projects.IamMemberRemoveArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.projects.IamMemberRemoveArgs.builder
     com.pulumi.gcp.projects.IamMemberRemove(name,
@@ -2609,7 +2609,7 @@ object projects:
    * * How-to Guides
    *     * [Introduction to the Organization Policy Service](https://docs.cloud.google.com/resource-manager/docs/organization-policy/overview)
    */
-  def OrganizationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.projects.OrganizationPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.projects.OrganizationPolicyArgs.builder
     com.pulumi.gcp.projects.OrganizationPolicy(name,
@@ -3026,7 +3026,7 @@ object projects:
    * * Terraform guidance
    *     * [User Guide - gcp.projects.Service](https://www.terraform.io/docs/providers/google/guides/google_project_service.html)
    */
-  def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.projects.ServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.projects.ServiceArgs.builder
     com.pulumi.gcp.projects.Service(name,
@@ -3050,7 +3050,7 @@ object projects:
    * 
    * * [API documentation](https://cloud.google.com/service-usage/docs/reference/rest/v1beta1/services/generateServiceIdentity)
    */
-  def ServiceIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServiceIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.projects.ServiceIdentityArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.projects.ServiceIdentityArgs.builder
     com.pulumi.gcp.projects.ServiceIdentity(name,
@@ -3070,7 +3070,7 @@ object projects:
    * they will fight over which bucket the reports should be stored in.  It is
    * safe to have multiple resources with the same backing bucket.
    */
-  def UsageExportBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UsageExportBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.projects.UsageExportBucketArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.projects.UsageExportBucketArgs.builder
     com.pulumi.gcp.projects.UsageExportBucket(name,

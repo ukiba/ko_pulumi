@@ -170,7 +170,7 @@ object cloudidentity:
    * Your account must have the `serviceusage.services.use` permission on the
    * `billingProject` you defined.
    */
-  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudidentity.GroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.cloudidentity.GroupArgs.builder
     com.pulumi.gcp.cloudidentity.Group(name,
@@ -192,7 +192,7 @@ object cloudidentity:
    * Your account must have the `serviceusage.services.use` permission on the
    * `billingProject` you defined.
    */
-  def GroupMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GroupMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudidentity.GroupMembershipArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.cloudidentity.GroupMembershipArgs.builder
     com.pulumi.gcp.cloudidentity.GroupMembership(name,
@@ -213,7 +213,7 @@ object cloudidentity:
    * 
    * &gt; **Note:** This is available only in beta
    */
-  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudidentity.PolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.cloudidentity.PolicyArgs.builder
     com.pulumi.gcp.cloudidentity.Policy(name,

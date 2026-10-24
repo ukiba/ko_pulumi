@@ -40,7 +40,7 @@ object arcregionswitch:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Resource for managing an Amazon ARC Region Switch plan. */
-  def Plan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Plan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.arcregionswitch.PlanArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.arcregionswitch.PlanArgs.builder
     conf.logicalName2physicalName(name) match

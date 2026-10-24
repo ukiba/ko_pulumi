@@ -12,7 +12,7 @@ object cloudasset_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.FolderFeedConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.FolderFeedConditionArgs.Builder]):
         com.pulumi.gcp.cloudasset.FolderFeedArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudasset.inputs.FolderFeedConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -22,7 +22,7 @@ object cloudasset_ext:
      * Structure is documented below.
      * @return builder
      */
-    def feedOutputConfig(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.FolderFeedFeedOutputConfigArgs.Builder]):
+    inline def feedOutputConfig(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.FolderFeedFeedOutputConfigArgs.Builder]):
         com.pulumi.gcp.cloudasset.FolderFeedArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudasset.inputs.FolderFeedFeedOutputConfigArgs.builder
       builder.feedOutputConfig(args(argsBuilder).build)
@@ -37,7 +37,7 @@ object cloudasset_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.OrganizationFeedConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.OrganizationFeedConditionArgs.Builder]):
         com.pulumi.gcp.cloudasset.OrganizationFeedArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudasset.inputs.OrganizationFeedConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -47,7 +47,7 @@ object cloudasset_ext:
      * Structure is documented below.
      * @return builder
      */
-    def feedOutputConfig(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.OrganizationFeedFeedOutputConfigArgs.Builder]):
+    inline def feedOutputConfig(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.OrganizationFeedFeedOutputConfigArgs.Builder]):
         com.pulumi.gcp.cloudasset.OrganizationFeedArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudasset.inputs.OrganizationFeedFeedOutputConfigArgs.builder
       builder.feedOutputConfig(args(argsBuilder).build)
@@ -62,7 +62,7 @@ object cloudasset_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.ProjectFeedConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.ProjectFeedConditionArgs.Builder]):
         com.pulumi.gcp.cloudasset.ProjectFeedArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudasset.inputs.ProjectFeedConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -72,7 +72,7 @@ object cloudasset_ext:
      * Structure is documented below.
      * @return builder
      */
-    def feedOutputConfig(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.ProjectFeedFeedOutputConfigArgs.Builder]):
+    inline def feedOutputConfig(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.ProjectFeedFeedOutputConfigArgs.Builder]):
         com.pulumi.gcp.cloudasset.ProjectFeedArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudasset.inputs.ProjectFeedFeedOutputConfigArgs.builder
       builder.feedOutputConfig(args(argsBuilder).build)
@@ -83,7 +83,7 @@ object cloudasset_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pubsubDestination(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.FolderFeedFeedOutputConfigPubsubDestinationArgs.Builder]):
+    inline def pubsubDestination(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.FolderFeedFeedOutputConfigPubsubDestinationArgs.Builder]):
         com.pulumi.gcp.cloudasset.inputs.FolderFeedFeedOutputConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudasset.inputs.FolderFeedFeedOutputConfigPubsubDestinationArgs.builder
       builder.pubsubDestination(args(argsBuilder).build)
@@ -98,7 +98,7 @@ object cloudasset_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.FolderFeedConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.FolderFeedConditionArgs.Builder]):
         com.pulumi.gcp.cloudasset.inputs.FolderFeedState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudasset.inputs.FolderFeedConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -108,7 +108,7 @@ object cloudasset_ext:
      * Structure is documented below.
      * @return builder
      */
-    def feedOutputConfig(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.FolderFeedFeedOutputConfigArgs.Builder]):
+    inline def feedOutputConfig(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.FolderFeedFeedOutputConfigArgs.Builder]):
         com.pulumi.gcp.cloudasset.inputs.FolderFeedState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudasset.inputs.FolderFeedFeedOutputConfigArgs.builder
       builder.feedOutputConfig(args(argsBuilder).build)
@@ -119,7 +119,7 @@ object cloudasset_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pubsubDestination(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.OrganizationFeedFeedOutputConfigPubsubDestinationArgs.Builder]):
+    inline def pubsubDestination(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.OrganizationFeedFeedOutputConfigPubsubDestinationArgs.Builder]):
         com.pulumi.gcp.cloudasset.inputs.OrganizationFeedFeedOutputConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudasset.inputs.OrganizationFeedFeedOutputConfigPubsubDestinationArgs.builder
       builder.pubsubDestination(args(argsBuilder).build)
@@ -134,7 +134,7 @@ object cloudasset_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.OrganizationFeedConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.OrganizationFeedConditionArgs.Builder]):
         com.pulumi.gcp.cloudasset.inputs.OrganizationFeedState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudasset.inputs.OrganizationFeedConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -144,7 +144,7 @@ object cloudasset_ext:
      * Structure is documented below.
      * @return builder
      */
-    def feedOutputConfig(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.OrganizationFeedFeedOutputConfigArgs.Builder]):
+    inline def feedOutputConfig(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.OrganizationFeedFeedOutputConfigArgs.Builder]):
         com.pulumi.gcp.cloudasset.inputs.OrganizationFeedState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudasset.inputs.OrganizationFeedFeedOutputConfigArgs.builder
       builder.feedOutputConfig(args(argsBuilder).build)
@@ -155,7 +155,7 @@ object cloudasset_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pubsubDestination(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.ProjectFeedFeedOutputConfigPubsubDestinationArgs.Builder]):
+    inline def pubsubDestination(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.ProjectFeedFeedOutputConfigPubsubDestinationArgs.Builder]):
         com.pulumi.gcp.cloudasset.inputs.ProjectFeedFeedOutputConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudasset.inputs.ProjectFeedFeedOutputConfigPubsubDestinationArgs.builder
       builder.pubsubDestination(args(argsBuilder).build)
@@ -170,7 +170,7 @@ object cloudasset_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.ProjectFeedConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.ProjectFeedConditionArgs.Builder]):
         com.pulumi.gcp.cloudasset.inputs.ProjectFeedState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudasset.inputs.ProjectFeedConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -180,7 +180,7 @@ object cloudasset_ext:
      * Structure is documented below.
      * @return builder
      */
-    def feedOutputConfig(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.ProjectFeedFeedOutputConfigArgs.Builder]):
+    inline def feedOutputConfig(args: Endofunction[com.pulumi.gcp.cloudasset.inputs.ProjectFeedFeedOutputConfigArgs.Builder]):
         com.pulumi.gcp.cloudasset.inputs.ProjectFeedState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudasset.inputs.ProjectFeedFeedOutputConfigArgs.builder
       builder.feedOutputConfig(args(argsBuilder).build)

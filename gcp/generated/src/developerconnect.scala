@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object developerconnect:
   /** Description */
-  def AccountConnector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccountConnector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.developerconnect.AccountConnectorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.developerconnect.AccountConnectorArgs.builder
     com.pulumi.gcp.developerconnect.AccountConnector(name,
@@ -21,7 +21,7 @@ object developerconnect:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/developer-connect/docs/overview)
    */
-  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.developerconnect.ConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.developerconnect.ConnectionArgs.builder
     com.pulumi.gcp.developerconnect.Connection(name,
@@ -37,7 +37,7 @@ object developerconnect:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/developer-connect/docs/overview)
    */
-  def GitRepositoryLink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GitRepositoryLink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.developerconnect.GitRepositoryLinkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.developerconnect.GitRepositoryLinkArgs.builder
     com.pulumi.gcp.developerconnect.GitRepositoryLink(name,
@@ -45,7 +45,7 @@ object developerconnect:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Description */
-  def InsightsConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InsightsConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.developerconnect.InsightsConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.developerconnect.InsightsConfigArgs.builder
     com.pulumi.gcp.developerconnect.InsightsConfig(name,

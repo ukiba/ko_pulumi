@@ -11,7 +11,7 @@ object transfer:
    * 
    * &gt; **NOTE:** We suggest using explicit JSON encoding or `aws.iam.getPolicyDocument` when assigning a value to `policy`. They seamlessly translate configuration to JSON, enabling you to maintain consistency within your configuration without the need for context switches. Also, you can sidestep potential complications arising from formatting discrepancies, whitespace inconsistencies, and other nuances inherent to JSON.
    */
-  def Access(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Access(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.transfer.AccessArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.transfer.AccessArgs.builder
     com.pulumi.aws.transfer.Access(name,
@@ -19,7 +19,7 @@ object transfer:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a AWS Transfer AS2 Agreement resource. */
-  def Agreement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Agreement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.transfer.AgreementArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.transfer.AgreementArgs.builder
     argsBuilder = args(argsBuilder)
@@ -34,7 +34,7 @@ object transfer:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a AWS Transfer AS2 Certificate resource. */
-  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.transfer.CertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.transfer.CertificateArgs.builder
     argsBuilder = args(argsBuilder)
@@ -49,7 +49,7 @@ object transfer:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a AWS Transfer AS2 Connector resource. */
-  def Connector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Connector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.transfer.ConnectorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.transfer.ConnectorArgs.builder
     argsBuilder = args(argsBuilder)
@@ -64,7 +64,7 @@ object transfer:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a host key for a server. This is an [_additional server host key_](https://docs.aws.amazon.com/transfer/latest/userguide/server-host-key-add.html). */
-  def HostKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HostKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.transfer.HostKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.transfer.HostKeyArgs.builder
     argsBuilder = args(argsBuilder)
@@ -79,7 +79,7 @@ object transfer:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a AWS Transfer AS2 Profile resource. */
-  def Profile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Profile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.transfer.ProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.transfer.ProfileArgs.builder
     argsBuilder = args(argsBuilder)
@@ -100,7 +100,7 @@ object transfer:
    * 
    * &gt; **NOTE:** Use the `aws.transfer.Tag` resource to manage the system tags used for [custom hostnames](https://docs.aws.amazon.com/transfer/latest/userguide/requirements-dns.html#tag-custom-hostname-cdk).
    */
-  def Server(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Server(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.transfer.ServerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.transfer.ServerArgs.builder
     argsBuilder = args(argsBuilder)
@@ -115,7 +115,7 @@ object transfer:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a AWS Transfer User SSH Key resource. */
-  def SshKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SshKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.transfer.SshKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.transfer.SshKeyArgs.builder
     com.pulumi.aws.transfer.SshKey(name,
@@ -129,7 +129,7 @@ object transfer:
    * 
    * &gt; **NOTE:** This tagging resource does not use the provider `ignoreTags` configuration.
    */
-  def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.transfer.TagArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.transfer.TagArgs.builder
     com.pulumi.aws.transfer.Tag(name,
@@ -180,7 +180,7 @@ object transfer:
    * 
    * &gt; **NOTE:** We suggest using `jsonencode()` or `aws.iam.getPolicyDocument` when assigning a value to `policy`. They seamlessly translate Terraform language into JSON, enabling you to maintain consistency within your configuration without the need for context switches. Also, you can sidestep potential complications arising from formatting discrepancies, whitespace inconsistencies, and other nuances inherent to JSON.
    */
-  def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.transfer.UserArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.transfer.UserArgs.builder
     argsBuilder = args(argsBuilder)
@@ -195,7 +195,7 @@ object transfer:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Transfer Family Web App. */
-  def WebApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WebApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.transfer.WebAppArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.transfer.WebAppArgs.builder
     argsBuilder = args(argsBuilder)
@@ -210,7 +210,7 @@ object transfer:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Transfer Family Web App Customization. */
-  def WebAppCustomization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WebAppCustomization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.transfer.WebAppCustomizationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.transfer.WebAppCustomizationArgs.builder
     com.pulumi.aws.transfer.WebAppCustomization(name,
@@ -218,7 +218,7 @@ object transfer:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a AWS Transfer Workflow resource. */
-  def Workflow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Workflow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.transfer.WorkflowArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.transfer.WorkflowArgs.builder
     argsBuilder = args(argsBuilder)

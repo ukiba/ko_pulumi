@@ -7,7 +7,7 @@ object hpc_ext:
      * @param accessRules One or more `accessRule` blocks (up to three) as defined below.
      * @return builder
      */
-    def accessRules(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheAccessPolicyAccessRuleArgs.Builder]*):
+    inline def accessRules(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheAccessPolicyAccessRuleArgs.Builder]*):
         com.pulumi.azure.hpc.CacheAccessPolicyArgs.Builder =
       def argsBuilder = com.pulumi.azure.hpc.inputs.CacheAccessPolicyAccessRuleArgs.builder
       builder.accessRules(args.map(_(argsBuilder).build)*)
@@ -17,7 +17,7 @@ object hpc_ext:
      * @param defaultAccessPolicy A `defaultAccessPolicy` block as defined below.
      * @return builder
      */
-    def defaultAccessPolicy(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheDefaultAccessPolicyArgs.Builder]):
+    inline def defaultAccessPolicy(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheDefaultAccessPolicyArgs.Builder]):
         com.pulumi.azure.hpc.CacheArgs.Builder =
       val argsBuilder = com.pulumi.azure.hpc.inputs.CacheDefaultAccessPolicyArgs.builder
       builder.defaultAccessPolicy(args(argsBuilder).build)
@@ -26,7 +26,7 @@ object hpc_ext:
      * @param directoryActiveDirectory A `directoryActiveDirectory` block as defined below.
      * @return builder
      */
-    def directoryActiveDirectory(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheDirectoryActiveDirectoryArgs.Builder]):
+    inline def directoryActiveDirectory(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheDirectoryActiveDirectoryArgs.Builder]):
         com.pulumi.azure.hpc.CacheArgs.Builder =
       val argsBuilder = com.pulumi.azure.hpc.inputs.CacheDirectoryActiveDirectoryArgs.builder
       builder.directoryActiveDirectory(args(argsBuilder).build)
@@ -35,7 +35,7 @@ object hpc_ext:
      * @param directoryFlatFile A `directoryFlatFile` block as defined below.
      * @return builder
      */
-    def directoryFlatFile(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheDirectoryFlatFileArgs.Builder]):
+    inline def directoryFlatFile(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheDirectoryFlatFileArgs.Builder]):
         com.pulumi.azure.hpc.CacheArgs.Builder =
       val argsBuilder = com.pulumi.azure.hpc.inputs.CacheDirectoryFlatFileArgs.builder
       builder.directoryFlatFile(args(argsBuilder).build)
@@ -46,7 +46,7 @@ object hpc_ext:
      * &gt; **Note:** Only one of `directoryActiveDirectory`, `directoryFlatFile` and `directoryLdap` can be set.
      * @return builder
      */
-    def directoryLdap(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheDirectoryLdapArgs.Builder]):
+    inline def directoryLdap(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheDirectoryLdapArgs.Builder]):
         com.pulumi.azure.hpc.CacheArgs.Builder =
       val argsBuilder = com.pulumi.azure.hpc.inputs.CacheDirectoryLdapArgs.builder
       builder.directoryLdap(args(argsBuilder).build)
@@ -55,7 +55,7 @@ object hpc_ext:
      * @param dns A `dns` block as defined below.
      * @return builder
      */
-    def dns(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheDnsArgs.Builder]):
+    inline def dns(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheDnsArgs.Builder]):
         com.pulumi.azure.hpc.CacheArgs.Builder =
       val argsBuilder = com.pulumi.azure.hpc.inputs.CacheDnsArgs.builder
       builder.dns(args(argsBuilder).build)
@@ -64,7 +64,7 @@ object hpc_ext:
      * @param identity An `identity` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheIdentityArgs.Builder]):
         com.pulumi.azure.hpc.CacheArgs.Builder =
       val argsBuilder = com.pulumi.azure.hpc.inputs.CacheIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -74,7 +74,7 @@ object hpc_ext:
      * @param namespaceJunctions Can be specified multiple times to define multiple `namespaceJunction`. Each `namespaceJunction` block supports fields documented below.
      * @return builder
      */
-    def namespaceJunctions(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheNfsTargetNamespaceJunctionArgs.Builder]*):
+    inline def namespaceJunctions(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheNfsTargetNamespaceJunctionArgs.Builder]*):
         com.pulumi.azure.hpc.CacheNfsTargetArgs.Builder =
       def argsBuilder = com.pulumi.azure.hpc.inputs.CacheNfsTargetNamespaceJunctionArgs.builder
       builder.namespaceJunctions(args.map(_(argsBuilder).build)*)
@@ -84,7 +84,7 @@ object hpc_ext:
      * @param accessRules One or more `accessRule` blocks (up to three) as defined below.
      * @return builder
      */
-    def accessRules(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheAccessPolicyAccessRuleArgs.Builder]*):
+    inline def accessRules(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheAccessPolicyAccessRuleArgs.Builder]*):
         com.pulumi.azure.hpc.inputs.CacheAccessPolicyState.Builder =
       def argsBuilder = com.pulumi.azure.hpc.inputs.CacheAccessPolicyAccessRuleArgs.builder
       builder.accessRules(args.map(_(argsBuilder).build)*)
@@ -94,7 +94,7 @@ object hpc_ext:
      * @param accessRules One or more `accessRule` blocks (up to three) as defined above.
      * @return builder
      */
-    def accessRules(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheDefaultAccessPolicyAccessRuleArgs.Builder]*):
+    inline def accessRules(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheDefaultAccessPolicyAccessRuleArgs.Builder]*):
         com.pulumi.azure.hpc.inputs.CacheDefaultAccessPolicyArgs.Builder =
       def argsBuilder = com.pulumi.azure.hpc.inputs.CacheDefaultAccessPolicyAccessRuleArgs.builder
       builder.accessRules(args.map(_(argsBuilder).build)*)
@@ -104,7 +104,7 @@ object hpc_ext:
      * @param bind A `bind` block as defined above.
      * @return builder
      */
-    def bind(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheDirectoryLdapBindArgs.Builder]):
+    inline def bind(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheDirectoryLdapBindArgs.Builder]):
         com.pulumi.azure.hpc.inputs.CacheDirectoryLdapArgs.Builder =
       val argsBuilder = com.pulumi.azure.hpc.inputs.CacheDirectoryLdapBindArgs.builder
       builder.bind(args(argsBuilder).build)
@@ -114,7 +114,7 @@ object hpc_ext:
      * @param namespaceJunctions Can be specified multiple times to define multiple `namespaceJunction`. Each `namespaceJunction` block supports fields documented below.
      * @return builder
      */
-    def namespaceJunctions(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheNfsTargetNamespaceJunctionArgs.Builder]*):
+    inline def namespaceJunctions(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheNfsTargetNamespaceJunctionArgs.Builder]*):
         com.pulumi.azure.hpc.inputs.CacheNfsTargetState.Builder =
       def argsBuilder = com.pulumi.azure.hpc.inputs.CacheNfsTargetNamespaceJunctionArgs.builder
       builder.namespaceJunctions(args.map(_(argsBuilder).build)*)
@@ -124,7 +124,7 @@ object hpc_ext:
      * @param defaultAccessPolicy A `defaultAccessPolicy` block as defined below.
      * @return builder
      */
-    def defaultAccessPolicy(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheDefaultAccessPolicyArgs.Builder]):
+    inline def defaultAccessPolicy(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheDefaultAccessPolicyArgs.Builder]):
         com.pulumi.azure.hpc.inputs.CacheState.Builder =
       val argsBuilder = com.pulumi.azure.hpc.inputs.CacheDefaultAccessPolicyArgs.builder
       builder.defaultAccessPolicy(args(argsBuilder).build)
@@ -133,7 +133,7 @@ object hpc_ext:
      * @param directoryActiveDirectory A `directoryActiveDirectory` block as defined below.
      * @return builder
      */
-    def directoryActiveDirectory(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheDirectoryActiveDirectoryArgs.Builder]):
+    inline def directoryActiveDirectory(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheDirectoryActiveDirectoryArgs.Builder]):
         com.pulumi.azure.hpc.inputs.CacheState.Builder =
       val argsBuilder = com.pulumi.azure.hpc.inputs.CacheDirectoryActiveDirectoryArgs.builder
       builder.directoryActiveDirectory(args(argsBuilder).build)
@@ -142,7 +142,7 @@ object hpc_ext:
      * @param directoryFlatFile A `directoryFlatFile` block as defined below.
      * @return builder
      */
-    def directoryFlatFile(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheDirectoryFlatFileArgs.Builder]):
+    inline def directoryFlatFile(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheDirectoryFlatFileArgs.Builder]):
         com.pulumi.azure.hpc.inputs.CacheState.Builder =
       val argsBuilder = com.pulumi.azure.hpc.inputs.CacheDirectoryFlatFileArgs.builder
       builder.directoryFlatFile(args(argsBuilder).build)
@@ -153,7 +153,7 @@ object hpc_ext:
      * &gt; **Note:** Only one of `directoryActiveDirectory`, `directoryFlatFile` and `directoryLdap` can be set.
      * @return builder
      */
-    def directoryLdap(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheDirectoryLdapArgs.Builder]):
+    inline def directoryLdap(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheDirectoryLdapArgs.Builder]):
         com.pulumi.azure.hpc.inputs.CacheState.Builder =
       val argsBuilder = com.pulumi.azure.hpc.inputs.CacheDirectoryLdapArgs.builder
       builder.directoryLdap(args(argsBuilder).build)
@@ -162,7 +162,7 @@ object hpc_ext:
      * @param dns A `dns` block as defined below.
      * @return builder
      */
-    def dns(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheDnsArgs.Builder]):
+    inline def dns(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheDnsArgs.Builder]):
         com.pulumi.azure.hpc.inputs.CacheState.Builder =
       val argsBuilder = com.pulumi.azure.hpc.inputs.CacheDnsArgs.builder
       builder.dns(args(argsBuilder).build)
@@ -171,7 +171,7 @@ object hpc_ext:
      * @param identity An `identity` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.hpc.inputs.CacheIdentityArgs.Builder]):
         com.pulumi.azure.hpc.inputs.CacheState.Builder =
       val argsBuilder = com.pulumi.azure.hpc.inputs.CacheIdentityArgs.builder
       builder.identity(args(argsBuilder).build)

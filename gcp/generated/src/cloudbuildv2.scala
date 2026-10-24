@@ -32,7 +32,7 @@ object cloudbuildv2:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/build/docs)
    */
-  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudbuildv2.ConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudbuildv2.ConnectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -348,7 +348,7 @@ object cloudbuildv2:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ConnectionIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConnectionIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudbuildv2.ConnectionIAMBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudbuildv2.ConnectionIAMBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -664,7 +664,7 @@ object cloudbuildv2:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ConnectionIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConnectionIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudbuildv2.ConnectionIAMMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudbuildv2.ConnectionIAMMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -980,7 +980,7 @@ object cloudbuildv2:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ConnectionIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConnectionIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudbuildv2.ConnectionIAMPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudbuildv2.ConnectionIAMPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -999,7 +999,7 @@ object cloudbuildv2:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/build/docs)
    */
-  def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudbuildv2.RepositoryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudbuildv2.RepositoryArgs.builder
     conf.logicalName2physicalName(name) match

@@ -9,7 +9,7 @@ object agentidentity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authProviderTypeParams(args: Endofunction[com.pulumi.gcp.agentidentity.inputs.AuthProviderAuthProviderTypeParamsArgs.Builder]):
+    inline def authProviderTypeParams(args: Endofunction[com.pulumi.gcp.agentidentity.inputs.AuthProviderAuthProviderTypeParamsArgs.Builder]):
         com.pulumi.gcp.agentidentity.AuthProviderArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agentidentity.inputs.AuthProviderAuthProviderTypeParamsArgs.builder
       builder.authProviderTypeParams(args(argsBuilder).build)
@@ -20,7 +20,7 @@ object agentidentity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiKey(args: Endofunction[com.pulumi.gcp.agentidentity.inputs.AuthProviderAuthProviderTypeParamsApiKeyArgs.Builder]):
+    inline def apiKey(args: Endofunction[com.pulumi.gcp.agentidentity.inputs.AuthProviderAuthProviderTypeParamsApiKeyArgs.Builder]):
         com.pulumi.gcp.agentidentity.inputs.AuthProviderAuthProviderTypeParamsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agentidentity.inputs.AuthProviderAuthProviderTypeParamsApiKeyArgs.builder
       builder.apiKey(args(argsBuilder).build)
@@ -31,7 +31,7 @@ object agentidentity_ext:
      * Since GeminiEnterpriseAuthProviderParams currently takes no subfields, defining this empty block selects the geAuthProvider type.
      * @return builder
      */
-    def geAuthProviders(args: Endofunction[com.pulumi.gcp.agentidentity.inputs.AuthProviderAuthProviderTypeParamsGeAuthProviderArgs.Builder]*):
+    inline def geAuthProviders(args: Endofunction[com.pulumi.gcp.agentidentity.inputs.AuthProviderAuthProviderTypeParamsGeAuthProviderArgs.Builder]*):
         com.pulumi.gcp.agentidentity.inputs.AuthProviderAuthProviderTypeParamsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.agentidentity.inputs.AuthProviderAuthProviderTypeParamsGeAuthProviderArgs.builder
       builder.geAuthProviders(args.map(_(argsBuilder).build)*)
@@ -41,7 +41,7 @@ object agentidentity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def threeLeggedOauth(args: Endofunction[com.pulumi.gcp.agentidentity.inputs.AuthProviderAuthProviderTypeParamsThreeLeggedOauthArgs.Builder]):
+    inline def threeLeggedOauth(args: Endofunction[com.pulumi.gcp.agentidentity.inputs.AuthProviderAuthProviderTypeParamsThreeLeggedOauthArgs.Builder]):
         com.pulumi.gcp.agentidentity.inputs.AuthProviderAuthProviderTypeParamsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agentidentity.inputs.AuthProviderAuthProviderTypeParamsThreeLeggedOauthArgs.builder
       builder.threeLeggedOauth(args(argsBuilder).build)
@@ -51,7 +51,7 @@ object agentidentity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def twoLeggedOauth(args: Endofunction[com.pulumi.gcp.agentidentity.inputs.AuthProviderAuthProviderTypeParamsTwoLeggedOauthArgs.Builder]):
+    inline def twoLeggedOauth(args: Endofunction[com.pulumi.gcp.agentidentity.inputs.AuthProviderAuthProviderTypeParamsTwoLeggedOauthArgs.Builder]):
         com.pulumi.gcp.agentidentity.inputs.AuthProviderAuthProviderTypeParamsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agentidentity.inputs.AuthProviderAuthProviderTypeParamsTwoLeggedOauthArgs.builder
       builder.twoLeggedOauth(args(argsBuilder).build)
@@ -63,7 +63,7 @@ object agentidentity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authProviderTypeParams(args: Endofunction[com.pulumi.gcp.agentidentity.inputs.AuthProviderAuthProviderTypeParamsArgs.Builder]):
+    inline def authProviderTypeParams(args: Endofunction[com.pulumi.gcp.agentidentity.inputs.AuthProviderAuthProviderTypeParamsArgs.Builder]):
         com.pulumi.gcp.agentidentity.inputs.AuthProviderState.Builder =
       val argsBuilder = com.pulumi.gcp.agentidentity.inputs.AuthProviderAuthProviderTypeParamsArgs.builder
       builder.authProviderTypeParams(args(argsBuilder).build)

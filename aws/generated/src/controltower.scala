@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object controltower:
   /** Resource for managing an AWS Control Tower Baseline. */
-  def Baseline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Baseline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.controltower.BaselineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.controltower.BaselineArgs.builder
     argsBuilder = args(argsBuilder)
@@ -25,7 +25,7 @@ object controltower:
    * Allows the application of pre-defined controls to organizational units. For more information on usage, please see the
    * [AWS Control Tower User Guide](https://docs.aws.amazon.com/controltower/latest/userguide/enable-guardrails.html).
    */
-  def ControlTowerControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ControlTowerControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.controltower.ControlTowerControlArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.controltower.ControlTowerControlArgs.builder
     com.pulumi.aws.controltower.ControlTowerControl(name,
@@ -61,7 +61,7 @@ object controltower:
    * \$ pulumi import aws:controltower/landingZone:LandingZone example 1A2B3C4D5E6F7G8H
    * ```
    */
-  def LandingZone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LandingZone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.controltower.LandingZoneArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.controltower.LandingZoneArgs.builder
     argsBuilder = args(argsBuilder)

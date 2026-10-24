@@ -9,7 +9,7 @@ object xray:
    * 
    * &gt; **NOTE:** Removing this resource from the provider has no effect to the encryption configuration within X-Ray.
    */
-  def EncryptionConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EncryptionConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.xray.EncryptionConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.xray.EncryptionConfigArgs.builder
     com.pulumi.aws.xray.EncryptionConfig(name,
@@ -17,7 +17,7 @@ object xray:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates and manages an AWS XRay Group. */
-  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.xray.GroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.xray.GroupArgs.builder
     argsBuilder = args(argsBuilder)
@@ -36,7 +36,7 @@ object xray:
    * 
    * &gt; **Note:** Removing this resource from Terraform has no effect on the indedxing rule within AWS X-Ray.
    */
-  def IndexingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IndexingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.xray.IndexingRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.xray.IndexingRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -47,7 +47,7 @@ object xray:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS X-Ray Resource Policy. */
-  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.xray.ResourcePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.xray.ResourcePolicyArgs.builder
     com.pulumi.aws.xray.ResourcePolicy(name,
@@ -55,7 +55,7 @@ object xray:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates and manages an AWS XRay Sampling Rule. */
-  def SamplingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SamplingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.xray.SamplingRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.xray.SamplingRuleArgs.builder
     argsBuilder = args(argsBuilder)
@@ -74,7 +74,7 @@ object xray:
    * 
    * &gt; **Note:** Removing this resource from Terraform has no effect on the destination configuration within AWS X-Ray.
    */
-  def TraceSegmentDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TraceSegmentDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.xray.TraceSegmentDestinationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.xray.TraceSegmentDestinationArgs.builder
     com.pulumi.aws.xray.TraceSegmentDestination(name,

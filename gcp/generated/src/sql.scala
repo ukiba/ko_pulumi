@@ -10,7 +10,7 @@ object sql:
    * Represents a SQL database inside the Cloud SQL instance, hosted in
    * Google&#39;s cloud.
    */
-  def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.sql.DatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.sql.DatabaseArgs.builder
     conf.logicalName2physicalName(name) match
@@ -33,7 +33,7 @@ object sql:
    * (and run `pulumi update` to write the field to state) in order to destroy an instance.
    * It is recommended to not set this field (or set it to true) until you&#39;re ready to destroy the instance and its databases.
    */
-  def DatabaseInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DatabaseInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.sql.DatabaseInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.sql.DatabaseInstanceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -50,7 +50,7 @@ object sql:
    * 
    * &gt; **Note:** If you let Terraform connect to the instance via [IAM database authentication](https://cloud.google.com/sql/docs/mysql/authentication) to execute the script, the identity account used to apply your Terraform config must exist as an IAM user, IAM service account, or IAM group in the instance. You also need to grant roles or privileges to this IAM account so it has permission to execute statements in your provision scripts. See the example below.
    */
-  def ProvisionScript(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProvisionScript(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.sql.ProvisionScriptArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.sql.ProvisionScriptArgs.builder
     com.pulumi.gcp.sql.ProvisionScript(name,
@@ -64,7 +64,7 @@ object sql:
    * contains no data, requires no configuration or maintenance, and does not
    * affect billing. You cannot update the source representation instance.
    */
-  def SourceRepresentationInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SourceRepresentationInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.sql.SourceRepresentationInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.sql.SourceRepresentationInstanceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -238,7 +238,7 @@ object sql:
    * 
    * Read more about sensitive data in state.
    */
-  def SslCert(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SslCert(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.sql.SslCertArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.sql.SslCertArgs.builder
     com.pulumi.gcp.sql.SslCert(name,
@@ -253,7 +253,7 @@ object sql:
    * 
    * &gt; **Note:** Write-Only argument `passwordWo` is available to use in place of `password`. Write-Only arguments are supported in HashiCorp Terraform 1.11.0 and later. Learn more.
    */
-  def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.sql.UserArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.sql.UserArgs.builder
     conf.logicalName2physicalName(name) match

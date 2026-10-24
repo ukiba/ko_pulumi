@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object networkmonitor:
   /** Resource for managing an AWS Network Monitor Monitor. */
-  def Monitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Monitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmonitor.MonitorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkmonitor.MonitorArgs.builder
     argsBuilder = args(argsBuilder)
@@ -20,7 +20,7 @@ object networkmonitor:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Network Monitor Probe. */
-  def Probe(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Probe(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmonitor.ProbeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkmonitor.ProbeArgs.builder
     argsBuilder = args(argsBuilder)

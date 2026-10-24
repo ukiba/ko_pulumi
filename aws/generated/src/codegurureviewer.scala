@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object codegurureviewer:
   /** Resource for managing an AWS CodeGuru Reviewer Repository Association. */
-  def RepositoryAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RepositoryAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codegurureviewer.RepositoryAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codegurureviewer.RepositoryAssociationArgs.builder
     argsBuilder = args(argsBuilder)

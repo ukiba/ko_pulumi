@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object webpubsub:
   /** Manages an Azure Web PubSub Custom Certificate. */
-  def CustomCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.webpubsub.CustomCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.webpubsub.CustomCertificateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18,7 +18,7 @@ object webpubsub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Web PubSub Custom Domain. */
-  def CustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.webpubsub.CustomDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.webpubsub.CustomDomainArgs.builder
     conf.logicalName2physicalName(name) match
@@ -29,7 +29,7 @@ object webpubsub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the hub settings for a Web Pubsub. */
-  def Hub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Hub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.webpubsub.HubArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.webpubsub.HubArgs.builder
     conf.logicalName2physicalName(name) match
@@ -40,7 +40,7 @@ object webpubsub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Network ACL for a Web Pubsub. */
-  def NetworkAcl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkAcl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.webpubsub.NetworkAclArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.webpubsub.NetworkAclArgs.builder
     com.pulumi.azure.webpubsub.NetworkAcl(name,
@@ -48,7 +48,7 @@ object webpubsub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Web PubSub Service. */
-  def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.webpubsub.ServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.webpubsub.ServiceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -66,7 +66,7 @@ object webpubsub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Shared Private Link Resource for a Web Pubsub service. */
-  def SharedPrivateLinkResource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SharedPrivateLinkResource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.webpubsub.SharedPrivateLinkResourceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.webpubsub.SharedPrivateLinkResourceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -77,7 +77,7 @@ object webpubsub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Web PubSub Service for Socket.IO. */
-  def Socketio(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Socketio(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.webpubsub.SocketioArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.webpubsub.SocketioArgs.builder
     conf.logicalName2physicalName(name) match

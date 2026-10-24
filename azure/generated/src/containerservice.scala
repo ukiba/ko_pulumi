@@ -13,7 +13,7 @@ object containerservice:
    * 
    * &gt; **Note:** All arguments including the client secret will be stored in the raw state as plain-text. [Read more about sensitive data in state](https://www.terraform.io/docs/state/sensitive-data.html).
    */
-  def AutomaticCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AutomaticCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerservice.AutomaticClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerservice.AutomaticClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -31,14 +31,14 @@ object containerservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Deployment Safeguard for a Kubernetes Cluster. */
-  def ClusterDeploymentSafeguard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterDeploymentSafeguard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerservice.ClusterDeploymentSafeguardArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.containerservice.ClusterDeploymentSafeguardArgs.builder
     com.pulumi.azure.containerservice.ClusterDeploymentSafeguard(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def ClusterTrustedAccessRoleBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterTrustedAccessRoleBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerservice.ClusterTrustedAccessRoleBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerservice.ClusterTrustedAccessRoleBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -49,7 +49,7 @@ object containerservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Container Connected Registry. */
-  def ConnectedRegistry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConnectedRegistry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerservice.ConnectedRegistryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerservice.ConnectedRegistryArgs.builder
     conf.logicalName2physicalName(name) match
@@ -225,7 +225,7 @@ object containerservice:
    * 
    * Manages a Kubernetes Fleet Member.
    */
-  def FleetMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FleetMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerservice.FleetMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerservice.FleetMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -236,7 +236,7 @@ object containerservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kubernetes Fleet Update Run. */
-  def FleetUpdateRun(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FleetUpdateRun(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerservice.FleetUpdateRunArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerservice.FleetUpdateRunArgs.builder
     conf.logicalName2physicalName(name) match
@@ -247,7 +247,7 @@ object containerservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kubernetes Fleet Update Strategy. */
-  def FleetUpdateStrategy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FleetUpdateStrategy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerservice.FleetUpdateStrategyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerservice.FleetUpdateStrategyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -258,7 +258,7 @@ object containerservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kubernetes Flux Configuration. */
-  def FluxConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FluxConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerservice.FluxConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerservice.FluxConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -269,7 +269,7 @@ object containerservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages as an Azure Container Group instance. */
-  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerservice.GroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerservice.GroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -291,7 +291,7 @@ object containerservice:
    * 
    * &gt; **Note:** Due to the fast-moving nature of AKS, we recommend using the latest version of the Azure Provider when using AKS.
    */
-  def KubernetesCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def KubernetesCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerservice.KubernetesClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -309,7 +309,7 @@ object containerservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kubernetes Cluster Extension. */
-  def KubernetesClusterExtension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def KubernetesClusterExtension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerservice.KubernetesClusterExtensionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerservice.KubernetesClusterExtensionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -326,7 +326,7 @@ object containerservice:
    * 
    * &gt; **Note:** Changing certain properties is done by cycling the node pool. When cycling it, it doesn\u2019t perform cordon and drain, and it will disrupt rescheduling pods currently running on the previous node pool. `temporaryNameForRotation` must be specified when changing any of the following properties: `fipsEnabled`, `hostEncryptionEnabled`, `kubeletConfig`, `kubeletDiskType`, `linuxOsConfig`, `maxPods`, `nodePublicIpEnabled`, `osDiskSizeGb`, `osDiskType`, `podSubnetId`, `snapshotId`, `ultraSsdEnabled`, `vmSize`, `vnetSubnetId`, `zones`.
    */
-  def KubernetesClusterNodePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def KubernetesClusterNodePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerservice.KubernetesClusterNodePoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerservice.KubernetesClusterNodePoolArgs.builder
     conf.logicalName2physicalName(name) match
@@ -344,7 +344,7 @@ object containerservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kubernetes Fleet Manager. */
-  def KubernetesFleetManager(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def KubernetesFleetManager(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerservice.KubernetesFleetManagerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerservice.KubernetesFleetManagerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -362,7 +362,7 @@ object containerservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Container Registry. */
-  def Registry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Registry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerservice.RegistryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerservice.RegistryArgs.builder
     conf.logicalName2physicalName(name) match
@@ -380,7 +380,7 @@ object containerservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Container Registry Agent Pool. */
-  def RegistryAgentPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegistryAgentPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerservice.RegistryAgentPoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerservice.RegistryAgentPoolArgs.builder
     conf.logicalName2physicalName(name) match
@@ -403,7 +403,7 @@ object containerservice:
    * &gt; **Note:** All arguments including the access key will be stored in the raw state as plain-text.
    * [Read more about sensitive data in state](https://www.terraform.io/docs/state/sensitive-data.html).
    */
-  def RegistryCacheRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegistryCacheRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerservice.RegistryCacheRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerservice.RegistryCacheRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -414,7 +414,7 @@ object containerservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Container Registry Credential Set. */
-  def RegistryCredentialSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegistryCredentialSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerservice.RegistryCredentialSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerservice.RegistryCredentialSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -425,7 +425,7 @@ object containerservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Container Registry scope map.  For more information on scope maps see the [product documentation](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-repository-scoped-permissions). */
-  def RegistryScopeMap(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegistryScopeMap(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerservice.RegistryScopeMapArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerservice.RegistryScopeMapArgs.builder
     conf.logicalName2physicalName(name) match
@@ -436,7 +436,7 @@ object containerservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Container Registry Task. */
-  def RegistryTask(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegistryTask(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerservice.RegistryTaskArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerservice.RegistryTaskArgs.builder
     conf.logicalName2physicalName(name) match
@@ -454,7 +454,7 @@ object containerservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Runs a Container Registry Task Schedule. */
-  def RegistryTaskScheduleRunNow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegistryTaskScheduleRunNow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerservice.RegistryTaskScheduleRunNowArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.containerservice.RegistryTaskScheduleRunNowArgs.builder
     com.pulumi.azure.containerservice.RegistryTaskScheduleRunNow(name,
@@ -462,7 +462,7 @@ object containerservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Container Registry token associated to a scope map. For more information on scope maps and their tokens see the [product documentation](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-repository-scoped-permissions). */
-  def RegistryToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegistryToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerservice.RegistryTokenArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerservice.RegistryTokenArgs.builder
     conf.logicalName2physicalName(name) match
@@ -473,7 +473,7 @@ object containerservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Container Registry Webhook. */
-  def RegistryWebhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegistryWebhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerservice.RegistryWebhookArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerservice.RegistryWebhookArgs.builder
     conf.logicalName2physicalName(name) match
@@ -491,7 +491,7 @@ object containerservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Container Registry Webhook. */
-  @deprecated("azure.containerservice.RegistryWebook has been deprecated in favor of azure.containerservice.RegistryWebhook") def RegistryWebook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("azure.containerservice.RegistryWebook has been deprecated in favor of azure.containerservice.RegistryWebhook") inline def RegistryWebook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerservice.RegistryWebookArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerservice.RegistryWebookArgs.builder
     conf.logicalName2physicalName(name) match
@@ -509,7 +509,7 @@ object containerservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Container Registry Token Password associated with a scope map.  For more information on scope maps and their tokens see the [product documentation](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-repository-scoped-permissions). */
-  def TokenPassword(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TokenPassword(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerservice.TokenPasswordArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.containerservice.TokenPasswordArgs.builder
     com.pulumi.azure.containerservice.TokenPassword(name,

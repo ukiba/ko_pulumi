@@ -11,7 +11,7 @@ object servicequotas:
    * 
    * &gt; **Note:** Due to AWS API limitations, the `notificationArn` attribute cannot be removed once set without recreating the resource. Removing this value from your configuration will trigger resource replacement.
    */
-  def AutoManagement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AutoManagement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicequotas.AutoManagementArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.servicequotas.AutoManagementArgs.builder
     com.pulumi.aws.servicequotas.AutoManagement(name,
@@ -23,7 +23,7 @@ object servicequotas:
    * 
    * &gt; **NOTE:** Global quotas apply to all AWS regions, but can only be accessed in `us-east-1` in the Commercial partition or `us-gov-west-1` in the GovCloud partition. In other regions, the AWS API will return the error `The request failed because the specified service does not exist.`
    */
-  def ServiceQuota(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServiceQuota(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicequotas.ServiceQuotaArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.servicequotas.ServiceQuotaArgs.builder
     com.pulumi.aws.servicequotas.ServiceQuota(name,
@@ -100,7 +100,7 @@ object servicequotas:
    * 
    * &gt; Only the management account of an organization can alter Service Quota templates, and this must be done from the `us-east-1` region.
    */
-  def Template(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Template(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicequotas.TemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.servicequotas.TemplateArgs.builder
     com.pulumi.aws.servicequotas.Template(name,
@@ -112,7 +112,7 @@ object servicequotas:
    * 
    * &gt; Only the management account of an organization can associate Service Quota templates, and this must be done from the `us-east-1` region.
    */
-  def TemplateAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TemplateAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicequotas.TemplateAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.servicequotas.TemplateAssociationArgs.builder
     com.pulumi.aws.servicequotas.TemplateAssociation(name,

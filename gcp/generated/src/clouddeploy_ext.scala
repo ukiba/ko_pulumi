@@ -8,7 +8,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.AutomationRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.AutomationRuleArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.AutomationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.AutomationRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -18,7 +18,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def selector(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.AutomationSelectorArgs.Builder]):
+    inline def selector(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.AutomationSelectorArgs.Builder]):
         com.pulumi.gcp.clouddeploy.AutomationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.AutomationSelectorArgs.builder
       builder.selector(args(argsBuilder).build)
@@ -29,7 +29,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customActions(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeCustomActionsArgs.Builder]):
+    inline def customActions(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeCustomActionsArgs.Builder]):
         com.pulumi.gcp.clouddeploy.CustomTargetTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeCustomActionsArgs.builder
       builder.customActions(args(argsBuilder).build)
@@ -39,19 +39,19 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tasks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeTasksArgs.Builder]):
+    inline def tasks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeTasksArgs.Builder]):
         com.pulumi.gcp.clouddeploy.CustomTargetTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeTasksArgs.builder
       builder.tasks(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.clouddeploy.CustomTargetTypeIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.clouddeploy.CustomTargetTypeIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.clouddeploy.CustomTargetTypeIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.clouddeploy.CustomTargetTypeIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -61,19 +61,19 @@ object clouddeploy_ext:
      * @param serialPipeline SerialPipeline defines a sequential set of stages for a `DeliveryPipeline`.
      * @return builder
      */
-    def serialPipeline(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineArgs.Builder]):
+    inline def serialPipeline(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineArgs.Builder]):
         com.pulumi.gcp.clouddeploy.DeliveryPipelineArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineArgs.builder
       builder.serialPipeline(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.clouddeploy.DeliveryPipelineIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.clouddeploy.DeliveryPipelineIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.clouddeploy.DeliveryPipelineIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.clouddeploy.DeliveryPipelineIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -84,7 +84,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.DeployPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -94,7 +94,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def selectors(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicySelectorArgs.Builder]*):
+    inline def selectors(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicySelectorArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.DeployPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeployPolicySelectorArgs.builder
       builder.selectors(args.map(_(argsBuilder).build)*)
@@ -104,7 +104,7 @@ object clouddeploy_ext:
      * @param anthosCluster Information specifying an Anthos Cluster.
      * @return builder
      */
-    def anthosCluster(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetAnthosClusterArgs.Builder]):
+    inline def anthosCluster(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetAnthosClusterArgs.Builder]):
         com.pulumi.gcp.clouddeploy.TargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.TargetAnthosClusterArgs.builder
       builder.anthosCluster(args(argsBuilder).build)
@@ -113,7 +113,7 @@ object clouddeploy_ext:
      * @param associatedEntities Optional. Map of entity IDs to their associated entities. Associated entities allows specifying places other than the deployment target for specific features. For example, the Gateway API canary can be configured to deploy the HTTPRoute to a different cluster(s) than the deployment cluster using associated entities. An entity ID must consist of lower-case letters, numbers, and hyphens, start with a letter and end with a letter or a number, and have a max length of 63 characters. In other words, it must match the following regex: `^a-z?\$`.
      * @return builder
      */
-    def associatedEntities(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetAssociatedEntityArgs.Builder]*):
+    inline def associatedEntities(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetAssociatedEntityArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.TargetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.TargetAssociatedEntityArgs.builder
       builder.associatedEntities(args.map(_(argsBuilder).build)*)
@@ -122,7 +122,7 @@ object clouddeploy_ext:
      * @param customTarget Optional. Information specifying a Custom Target.
      * @return builder
      */
-    def customTarget(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetCustomTargetArgs.Builder]):
+    inline def customTarget(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetCustomTargetArgs.Builder]):
         com.pulumi.gcp.clouddeploy.TargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.TargetCustomTargetArgs.builder
       builder.customTarget(args(argsBuilder).build)
@@ -131,7 +131,7 @@ object clouddeploy_ext:
      * @param executionConfigs Configurations for all execution that relates to this `Target`. Each `ExecutionEnvironmentUsage` value may only be used in a single configuration; using the same value multiple times is an error. When one or more configurations are specified, they must include the `RENDER` and `DEPLOY` `ExecutionEnvironmentUsage` values. When no configurations are specified, execution will use the default specified in `DefaultPool`.
      * @return builder
      */
-    def executionConfigs(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetExecutionConfigArgs.Builder]*):
+    inline def executionConfigs(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetExecutionConfigArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.TargetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.TargetExecutionConfigArgs.builder
       builder.executionConfigs(args.map(_(argsBuilder).build)*)
@@ -140,7 +140,7 @@ object clouddeploy_ext:
      * @param gke Information specifying a GKE Cluster.
      * @return builder
      */
-    def gke(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetGkeArgs.Builder]):
+    inline def gke(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetGkeArgs.Builder]):
         com.pulumi.gcp.clouddeploy.TargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.TargetGkeArgs.builder
       builder.gke(args(argsBuilder).build)
@@ -149,7 +149,7 @@ object clouddeploy_ext:
      * @param multiTarget Information specifying a multiTarget.
      * @return builder
      */
-    def multiTarget(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetMultiTargetArgs.Builder]):
+    inline def multiTarget(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetMultiTargetArgs.Builder]):
         com.pulumi.gcp.clouddeploy.TargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.TargetMultiTargetArgs.builder
       builder.multiTarget(args(argsBuilder).build)
@@ -158,19 +158,19 @@ object clouddeploy_ext:
      * @param run Information specifying a Cloud Run deployment target.
      * @return builder
      */
-    def run(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetRunArgs.Builder]):
+    inline def run(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetRunArgs.Builder]):
         com.pulumi.gcp.clouddeploy.TargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.TargetRunArgs.builder
       builder.run(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.clouddeploy.TargetIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.clouddeploy.TargetIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.TargetIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.clouddeploy.TargetIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.clouddeploy.TargetIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.TargetIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -181,7 +181,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def advanceRolloutRule(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.AutomationRuleAdvanceRolloutRuleArgs.Builder]):
+    inline def advanceRolloutRule(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.AutomationRuleAdvanceRolloutRuleArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.AutomationRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.AutomationRuleAdvanceRolloutRuleArgs.builder
       builder.advanceRolloutRule(args(argsBuilder).build)
@@ -191,7 +191,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def promoteReleaseRule(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.AutomationRulePromoteReleaseRuleArgs.Builder]):
+    inline def promoteReleaseRule(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.AutomationRulePromoteReleaseRuleArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.AutomationRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.AutomationRulePromoteReleaseRuleArgs.builder
       builder.promoteReleaseRule(args(argsBuilder).build)
@@ -201,7 +201,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def repairRolloutRule(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.AutomationRuleRepairRolloutRuleArgs.Builder]):
+    inline def repairRolloutRule(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.AutomationRuleRepairRolloutRuleArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.AutomationRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.AutomationRuleRepairRolloutRuleArgs.builder
       builder.repairRolloutRule(args(argsBuilder).build)
@@ -211,7 +211,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timedPromoteReleaseRule(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.AutomationRuleTimedPromoteReleaseRuleArgs.Builder]):
+    inline def timedPromoteReleaseRule(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.AutomationRuleTimedPromoteReleaseRuleArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.AutomationRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.AutomationRuleTimedPromoteReleaseRuleArgs.builder
       builder.timedPromoteReleaseRule(args(argsBuilder).build)
@@ -222,7 +222,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def repairPhases(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.AutomationRuleRepairRolloutRuleRepairPhaseArgs.Builder]*):
+    inline def repairPhases(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.AutomationRuleRepairRolloutRuleRepairPhaseArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.AutomationRuleRepairRolloutRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.AutomationRuleRepairRolloutRuleRepairPhaseArgs.builder
       builder.repairPhases(args.map(_(argsBuilder).build)*)
@@ -233,7 +233,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def retry(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.AutomationRuleRepairRolloutRuleRepairPhaseRetryArgs.Builder]):
+    inline def retry(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.AutomationRuleRepairRolloutRuleRepairPhaseRetryArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.AutomationRuleRepairRolloutRuleRepairPhaseArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.AutomationRuleRepairRolloutRuleRepairPhaseRetryArgs.builder
       builder.retry(args(argsBuilder).build)
@@ -243,7 +243,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rollback(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.AutomationRuleRepairRolloutRuleRepairPhaseRollbackArgs.Builder]):
+    inline def rollback(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.AutomationRuleRepairRolloutRuleRepairPhaseRollbackArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.AutomationRuleRepairRolloutRuleRepairPhaseArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.AutomationRuleRepairRolloutRuleRepairPhaseRollbackArgs.builder
       builder.rollback(args(argsBuilder).build)
@@ -254,7 +254,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def targets(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.AutomationSelectorTargetArgs.Builder]*):
+    inline def targets(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.AutomationSelectorTargetArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.AutomationSelectorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.AutomationSelectorTargetArgs.builder
       builder.targets(args.map(_(argsBuilder).build)*)
@@ -265,7 +265,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.AutomationRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.AutomationRuleArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.AutomationState.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.AutomationRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -275,7 +275,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def selector(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.AutomationSelectorArgs.Builder]):
+    inline def selector(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.AutomationSelectorArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.AutomationState.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.AutomationSelectorArgs.builder
       builder.selector(args(argsBuilder).build)
@@ -286,7 +286,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def includeSkaffoldModules(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeCustomActionsIncludeSkaffoldModuleArgs.Builder]*):
+    inline def includeSkaffoldModules(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeCustomActionsIncludeSkaffoldModuleArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeCustomActionsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeCustomActionsIncludeSkaffoldModuleArgs.builder
       builder.includeSkaffoldModules(args.map(_(argsBuilder).build)*)
@@ -297,7 +297,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def git(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeCustomActionsIncludeSkaffoldModuleGitArgs.Builder]):
+    inline def git(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeCustomActionsIncludeSkaffoldModuleGitArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeCustomActionsIncludeSkaffoldModuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeCustomActionsIncludeSkaffoldModuleGitArgs.builder
       builder.git(args(argsBuilder).build)
@@ -307,7 +307,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleCloudBuildRepo(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeCustomActionsIncludeSkaffoldModuleGoogleCloudBuildRepoArgs.Builder]):
+    inline def googleCloudBuildRepo(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeCustomActionsIncludeSkaffoldModuleGoogleCloudBuildRepoArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeCustomActionsIncludeSkaffoldModuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeCustomActionsIncludeSkaffoldModuleGoogleCloudBuildRepoArgs.builder
       builder.googleCloudBuildRepo(args(argsBuilder).build)
@@ -317,19 +317,19 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleCloudStorage(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeCustomActionsIncludeSkaffoldModuleGoogleCloudStorageArgs.Builder]):
+    inline def googleCloudStorage(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeCustomActionsIncludeSkaffoldModuleGoogleCloudStorageArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeCustomActionsIncludeSkaffoldModuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeCustomActionsIncludeSkaffoldModuleGoogleCloudStorageArgs.builder
       builder.googleCloudStorage(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -340,7 +340,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customActions(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeCustomActionsArgs.Builder]):
+    inline def customActions(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeCustomActionsArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeState.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeCustomActionsArgs.builder
       builder.customActions(args(argsBuilder).build)
@@ -350,7 +350,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tasks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeTasksArgs.Builder]):
+    inline def tasks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeTasksArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeState.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeTasksArgs.builder
       builder.tasks(args(argsBuilder).build)
@@ -361,7 +361,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deploy(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeTasksDeployArgs.Builder]):
+    inline def deploy(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeTasksDeployArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeTasksArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeTasksDeployArgs.builder
       builder.deploy(args(argsBuilder).build)
@@ -371,7 +371,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def render(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeTasksRenderArgs.Builder]):
+    inline def render(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeTasksRenderArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeTasksArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeTasksRenderArgs.builder
       builder.render(args(argsBuilder).build)
@@ -382,7 +382,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def container(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeTasksDeployContainerArgs.Builder]):
+    inline def container(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeTasksDeployContainerArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeTasksDeployArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeTasksDeployContainerArgs.builder
       builder.container(args(argsBuilder).build)
@@ -393,7 +393,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def container(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeTasksRenderContainerArgs.Builder]):
+    inline def container(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeTasksRenderContainerArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeTasksRenderArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.CustomTargetTypeTasksRenderContainerArgs.builder
       builder.container(args(argsBuilder).build)
@@ -403,7 +403,7 @@ object clouddeploy_ext:
      * @param pipelineReadyConditions Details around the Pipeline&#39;s overall status.
      * @return builder
      */
-    def pipelineReadyConditions(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineConditionPipelineReadyConditionArgs.Builder]*):
+    inline def pipelineReadyConditions(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineConditionPipelineReadyConditionArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineConditionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineConditionPipelineReadyConditionArgs.builder
       builder.pipelineReadyConditions(args.map(_(argsBuilder).build)*)
@@ -412,7 +412,7 @@ object clouddeploy_ext:
      * @param targetsPresentConditions Details around targets enumerated in the pipeline.
      * @return builder
      */
-    def targetsPresentConditions(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineConditionTargetsPresentConditionArgs.Builder]*):
+    inline def targetsPresentConditions(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineConditionTargetsPresentConditionArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineConditionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineConditionTargetsPresentConditionArgs.builder
       builder.targetsPresentConditions(args.map(_(argsBuilder).build)*)
@@ -421,19 +421,19 @@ object clouddeploy_ext:
      * @param targetsTypeConditions Details on the whether the targets enumerated in the pipeline are of the same type.
      * @return builder
      */
-    def targetsTypeConditions(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineConditionTargetsTypeConditionArgs.Builder]*):
+    inline def targetsTypeConditions(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineConditionTargetsTypeConditionArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineConditionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineConditionTargetsTypeConditionArgs.builder
       builder.targetsTypeConditions(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -443,7 +443,7 @@ object clouddeploy_ext:
      * @param stages Each stage specifies configuration for a `Target`. The ordering of this list defines the promotion flow.
      * @return builder
      */
-    def stages(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageArgs.Builder]*):
+    inline def stages(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageArgs.builder
       builder.stages(args.map(_(argsBuilder).build)*)
@@ -453,7 +453,7 @@ object clouddeploy_ext:
      * @param deployParameters Optional. The deploy parameters to use for the target in this stage.
      * @return builder
      */
-    def deployParameters(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageDeployParameterArgs.Builder]*):
+    inline def deployParameters(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageDeployParameterArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageDeployParameterArgs.builder
       builder.deployParameters(args.map(_(argsBuilder).build)*)
@@ -462,7 +462,7 @@ object clouddeploy_ext:
      * @param strategy Optional. The strategy to use for a `Rollout` to this stage.
      * @return builder
      */
-    def strategy(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyArgs.Builder]):
+    inline def strategy(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyArgs.builder
       builder.strategy(args(argsBuilder).build)
@@ -472,7 +472,7 @@ object clouddeploy_ext:
      * @param canary Canary deployment strategy provides progressive percentage based deployments to a Target.
      * @return builder
      */
-    def canary(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryArgs.Builder]):
+    inline def canary(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryArgs.builder
       builder.canary(args(argsBuilder).build)
@@ -481,7 +481,7 @@ object clouddeploy_ext:
      * @param standard Standard deployment strategy executes a single deploy and allows verifying the deployment.
      * @return builder
      */
-    def standard(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardArgs.Builder]):
+    inline def standard(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardArgs.builder
       builder.standard(args(argsBuilder).build)
@@ -491,7 +491,7 @@ object clouddeploy_ext:
      * @param canaryDeployment Configures the progressive based deployment for a Target.
      * @return builder
      */
-    def canaryDeployment(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentArgs.Builder]):
+    inline def canaryDeployment(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentArgs.builder
       builder.canaryDeployment(args(argsBuilder).build)
@@ -500,7 +500,7 @@ object clouddeploy_ext:
      * @param customCanaryDeployment Configures the progressive based deployment for a Target, but allows customizing at the phase level where a phase represents each of the percentage deployments.
      * @return builder
      */
-    def customCanaryDeployment(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentArgs.Builder]):
+    inline def customCanaryDeployment(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentArgs.builder
       builder.customCanaryDeployment(args(argsBuilder).build)
@@ -509,7 +509,7 @@ object clouddeploy_ext:
      * @param runtimeConfig Optional. Runtime specific configurations for the deployment strategy. The runtime configuration is used to determine how Cloud Deploy will split traffic to enable a progressive deployment.
      * @return builder
      */
-    def runtimeConfig(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigArgs.Builder]):
+    inline def runtimeConfig(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigArgs.builder
       builder.runtimeConfig(args(argsBuilder).build)
@@ -519,7 +519,7 @@ object clouddeploy_ext:
      * @param customChecks Optional. Custom analysis checks from 3P metric providers.
      * @return builder
      */
-    def customChecks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentAnalysisCustomCheckArgs.Builder]*):
+    inline def customChecks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentAnalysisCustomCheckArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentAnalysisArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentAnalysisCustomCheckArgs.builder
       builder.customChecks(args.map(_(argsBuilder).build)*)
@@ -528,7 +528,7 @@ object clouddeploy_ext:
      * @param googleCloud Optional. Google Cloud - based analysis checks.
      * @return builder
      */
-    def googleCloud(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentAnalysisGoogleCloudArgs.Builder]):
+    inline def googleCloud(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentAnalysisGoogleCloudArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentAnalysisArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentAnalysisGoogleCloudArgs.builder
       builder.googleCloud(args(argsBuilder).build)
@@ -538,7 +538,7 @@ object clouddeploy_ext:
      * @param task Required. The Task to be run for this custom check.
      * @return builder
      */
-    def task(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentAnalysisCustomCheckTaskArgs.Builder]):
+    inline def task(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentAnalysisCustomCheckTaskArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentAnalysisCustomCheckArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentAnalysisCustomCheckTaskArgs.builder
       builder.task(args(argsBuilder).build)
@@ -548,7 +548,7 @@ object clouddeploy_ext:
      * @param container Optional. This task is represented by a container that is executed in the Cloud Build execution environment.
      * @return builder
      */
-    def container(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentAnalysisCustomCheckTaskContainerArgs.Builder]):
+    inline def container(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentAnalysisCustomCheckTaskContainerArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentAnalysisCustomCheckTaskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentAnalysisCustomCheckTaskContainerArgs.builder
       builder.container(args(argsBuilder).build)
@@ -558,7 +558,7 @@ object clouddeploy_ext:
      * @param alertPolicyChecks Optional. A list of Cloud Monitoring Alert Policy checks to perform as part of the analysis.
      * @return builder
      */
-    def alertPolicyChecks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentAnalysisGoogleCloudAlertPolicyCheckArgs.Builder]*):
+    inline def alertPolicyChecks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentAnalysisGoogleCloudAlertPolicyCheckArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentAnalysisGoogleCloudArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentAnalysisGoogleCloudAlertPolicyCheckArgs.builder
       builder.alertPolicyChecks(args.map(_(argsBuilder).build)*)
@@ -568,7 +568,7 @@ object clouddeploy_ext:
      * @param analysis Optional. Configuration for the analysis job.
      * @return builder
      */
-    def analysis(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentAnalysisArgs.Builder]):
+    inline def analysis(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentAnalysisArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentAnalysisArgs.builder
       builder.analysis(args(argsBuilder).build)
@@ -577,7 +577,7 @@ object clouddeploy_ext:
      * @param postdeploy Optional. Configuration for the postdeploy job of the last phase. If this is not configured, postdeploy job will not be present.
      * @return builder
      */
-    def postdeploy(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentPostdeployArgs.Builder]):
+    inline def postdeploy(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentPostdeployArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentPostdeployArgs.builder
       builder.postdeploy(args(argsBuilder).build)
@@ -586,7 +586,7 @@ object clouddeploy_ext:
      * @param predeploy Optional. Configuration for the predeploy job of the first phase. If this is not configured, predeploy job will not be present.
      * @return builder
      */
-    def predeploy(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentPredeployArgs.Builder]):
+    inline def predeploy(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentPredeployArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentPredeployArgs.builder
       builder.predeploy(args(argsBuilder).build)
@@ -595,7 +595,7 @@ object clouddeploy_ext:
      * @param verifyConfig Optional. Configuration for the verify job.
      * @return builder
      */
-    def verifyConfig(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentVerifyConfigArgs.Builder]):
+    inline def verifyConfig(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentVerifyConfigArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentVerifyConfigArgs.builder
       builder.verifyConfig(args(argsBuilder).build)
@@ -605,7 +605,7 @@ object clouddeploy_ext:
      * @param tasks Optional. The tasks that will run as a part of the verify job. The tasks are executed sequentially in the order specified.
      * @return builder
      */
-    def tasks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentVerifyConfigTaskArgs.Builder]*):
+    inline def tasks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentVerifyConfigTaskArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentVerifyConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentVerifyConfigTaskArgs.builder
       builder.tasks(args.map(_(argsBuilder).build)*)
@@ -615,7 +615,7 @@ object clouddeploy_ext:
      * @param container Optional. This task is represented by a container that is executed in the Cloud Build execution environment.
      * @return builder
      */
-    def container(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentVerifyConfigTaskContainerArgs.Builder]):
+    inline def container(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentVerifyConfigTaskContainerArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentVerifyConfigTaskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCanaryDeploymentVerifyConfigTaskContainerArgs.builder
       builder.container(args(argsBuilder).build)
@@ -625,7 +625,7 @@ object clouddeploy_ext:
      * @param phaseConfigs Required. Configuration for each phase in the canary deployment in the order executed.
      * @return builder
      */
-    def phaseConfigs(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigArgs.Builder]*):
+    inline def phaseConfigs(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigArgs.builder
       builder.phaseConfigs(args.map(_(argsBuilder).build)*)
@@ -635,7 +635,7 @@ object clouddeploy_ext:
      * @param customChecks Optional. Custom analysis checks from 3P metric providers.
      * @return builder
      */
-    def customChecks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigAnalysisCustomCheckArgs.Builder]*):
+    inline def customChecks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigAnalysisCustomCheckArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigAnalysisArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigAnalysisCustomCheckArgs.builder
       builder.customChecks(args.map(_(argsBuilder).build)*)
@@ -644,7 +644,7 @@ object clouddeploy_ext:
      * @param googleCloud Optional. Google Cloud - based analysis checks.
      * @return builder
      */
-    def googleCloud(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigAnalysisGoogleCloudArgs.Builder]):
+    inline def googleCloud(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigAnalysisGoogleCloudArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigAnalysisArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigAnalysisGoogleCloudArgs.builder
       builder.googleCloud(args(argsBuilder).build)
@@ -654,7 +654,7 @@ object clouddeploy_ext:
      * @param task Required. The Task to be run for this custom check.
      * @return builder
      */
-    def task(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigAnalysisCustomCheckTaskArgs.Builder]):
+    inline def task(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigAnalysisCustomCheckTaskArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigAnalysisCustomCheckArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigAnalysisCustomCheckTaskArgs.builder
       builder.task(args(argsBuilder).build)
@@ -664,7 +664,7 @@ object clouddeploy_ext:
      * @param container Optional. This task is represented by a container that is executed in the Cloud Build execution environment.
      * @return builder
      */
-    def container(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigAnalysisCustomCheckTaskContainerArgs.Builder]):
+    inline def container(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigAnalysisCustomCheckTaskContainerArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigAnalysisCustomCheckTaskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigAnalysisCustomCheckTaskContainerArgs.builder
       builder.container(args(argsBuilder).build)
@@ -674,7 +674,7 @@ object clouddeploy_ext:
      * @param alertPolicyChecks Optional. A list of Cloud Monitoring Alert Policy checks to perform as part of the analysis.
      * @return builder
      */
-    def alertPolicyChecks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigAnalysisGoogleCloudAlertPolicyCheckArgs.Builder]*):
+    inline def alertPolicyChecks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigAnalysisGoogleCloudAlertPolicyCheckArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigAnalysisGoogleCloudArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigAnalysisGoogleCloudAlertPolicyCheckArgs.builder
       builder.alertPolicyChecks(args.map(_(argsBuilder).build)*)
@@ -684,7 +684,7 @@ object clouddeploy_ext:
      * @param analysis Optional. Configuration for the analysis job.
      * @return builder
      */
-    def analysis(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigAnalysisArgs.Builder]):
+    inline def analysis(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigAnalysisArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigAnalysisArgs.builder
       builder.analysis(args(argsBuilder).build)
@@ -693,7 +693,7 @@ object clouddeploy_ext:
      * @param postdeploy Optional. Configuration for the postdeploy job of this phase. If this is not configured, postdeploy job will not be present for this phase.
      * @return builder
      */
-    def postdeploy(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigPostdeployArgs.Builder]):
+    inline def postdeploy(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigPostdeployArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigPostdeployArgs.builder
       builder.postdeploy(args(argsBuilder).build)
@@ -702,7 +702,7 @@ object clouddeploy_ext:
      * @param predeploy Optional. Configuration for the predeploy job of this phase. If this is not configured, predeploy job will not be present for this phase.
      * @return builder
      */
-    def predeploy(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigPredeployArgs.Builder]):
+    inline def predeploy(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigPredeployArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigPredeployArgs.builder
       builder.predeploy(args(argsBuilder).build)
@@ -711,7 +711,7 @@ object clouddeploy_ext:
      * @param verifyConfig Optional. Configuration for the verify job.
      * @return builder
      */
-    def verifyConfig(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigVerifyConfigArgs.Builder]):
+    inline def verifyConfig(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigVerifyConfigArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigVerifyConfigArgs.builder
       builder.verifyConfig(args(argsBuilder).build)
@@ -721,7 +721,7 @@ object clouddeploy_ext:
      * @param tasks Optional. The tasks that will run as a part of the verify job. The tasks are executed sequentially in the order specified.
      * @return builder
      */
-    def tasks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigVerifyConfigTaskArgs.Builder]*):
+    inline def tasks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigVerifyConfigTaskArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigVerifyConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigVerifyConfigTaskArgs.builder
       builder.tasks(args.map(_(argsBuilder).build)*)
@@ -731,7 +731,7 @@ object clouddeploy_ext:
      * @param container Optional. This task is represented by a container that is executed in the Cloud Build execution environment.
      * @return builder
      */
-    def container(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigVerifyConfigTaskContainerArgs.Builder]):
+    inline def container(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigVerifyConfigTaskContainerArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigVerifyConfigTaskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryCustomCanaryDeploymentPhaseConfigVerifyConfigTaskContainerArgs.builder
       builder.container(args(argsBuilder).build)
@@ -741,7 +741,7 @@ object clouddeploy_ext:
      * @param cloudRun Cloud Run runtime configuration.
      * @return builder
      */
-    def cloudRun(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigCloudRunArgs.Builder]):
+    inline def cloudRun(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigCloudRunArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigCloudRunArgs.builder
       builder.cloudRun(args(argsBuilder).build)
@@ -750,7 +750,7 @@ object clouddeploy_ext:
      * @param kubernetes Kubernetes runtime configuration.
      * @return builder
      */
-    def kubernetes(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesArgs.Builder]):
+    inline def kubernetes(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesArgs.builder
       builder.kubernetes(args(argsBuilder).build)
@@ -760,7 +760,7 @@ object clouddeploy_ext:
      * @param gatewayServiceMesh Kubernetes Gateway API service mesh configuration.
      * @return builder
      */
-    def gatewayServiceMesh(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesGatewayServiceMeshArgs.Builder]):
+    inline def gatewayServiceMesh(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesGatewayServiceMeshArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesGatewayServiceMeshArgs.builder
       builder.gatewayServiceMesh(args(argsBuilder).build)
@@ -769,7 +769,7 @@ object clouddeploy_ext:
      * @param serviceNetworking Kubernetes Service networking configuration.
      * @return builder
      */
-    def serviceNetworking(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesServiceNetworkingArgs.Builder]):
+    inline def serviceNetworking(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesServiceNetworkingArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesServiceNetworkingArgs.builder
       builder.serviceNetworking(args(argsBuilder).build)
@@ -779,7 +779,7 @@ object clouddeploy_ext:
      * @param routeDestinations Optional. Route destinations allow configuring the Gateway API HTTPRoute to be deployed to additional clusters. This option is available for multi-cluster service mesh set ups that require the route to exist in the clusters that call the service. If unspecified, the HTTPRoute will only be deployed to the Target cluster.
      * @return builder
      */
-    def routeDestinations(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesGatewayServiceMeshRouteDestinationsArgs.Builder]):
+    inline def routeDestinations(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesGatewayServiceMeshRouteDestinationsArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesGatewayServiceMeshArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyCanaryRuntimeConfigKubernetesGatewayServiceMeshRouteDestinationsArgs.builder
       builder.routeDestinations(args(argsBuilder).build)
@@ -789,7 +789,7 @@ object clouddeploy_ext:
      * @param customChecks Optional. Custom analysis checks from 3P metric providers.
      * @return builder
      */
-    def customChecks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardAnalysisCustomCheckArgs.Builder]*):
+    inline def customChecks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardAnalysisCustomCheckArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardAnalysisArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardAnalysisCustomCheckArgs.builder
       builder.customChecks(args.map(_(argsBuilder).build)*)
@@ -798,7 +798,7 @@ object clouddeploy_ext:
      * @param googleCloud Optional. Google Cloud - based analysis checks.
      * @return builder
      */
-    def googleCloud(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardAnalysisGoogleCloudArgs.Builder]):
+    inline def googleCloud(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardAnalysisGoogleCloudArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardAnalysisArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardAnalysisGoogleCloudArgs.builder
       builder.googleCloud(args(argsBuilder).build)
@@ -808,7 +808,7 @@ object clouddeploy_ext:
      * @param task Required. The Task to be run for this custom check.
      * @return builder
      */
-    def task(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardAnalysisCustomCheckTaskArgs.Builder]):
+    inline def task(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardAnalysisCustomCheckTaskArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardAnalysisCustomCheckArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardAnalysisCustomCheckTaskArgs.builder
       builder.task(args(argsBuilder).build)
@@ -818,7 +818,7 @@ object clouddeploy_ext:
      * @param container Optional. This task is represented by a container that is executed in the Cloud Build execution environment.
      * @return builder
      */
-    def container(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardAnalysisCustomCheckTaskContainerArgs.Builder]):
+    inline def container(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardAnalysisCustomCheckTaskContainerArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardAnalysisCustomCheckTaskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardAnalysisCustomCheckTaskContainerArgs.builder
       builder.container(args(argsBuilder).build)
@@ -828,7 +828,7 @@ object clouddeploy_ext:
      * @param alertPolicyChecks Optional. A list of Cloud Monitoring Alert Policy checks to perform as part of the analysis.
      * @return builder
      */
-    def alertPolicyChecks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardAnalysisGoogleCloudAlertPolicyCheckArgs.Builder]*):
+    inline def alertPolicyChecks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardAnalysisGoogleCloudAlertPolicyCheckArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardAnalysisGoogleCloudArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardAnalysisGoogleCloudAlertPolicyCheckArgs.builder
       builder.alertPolicyChecks(args.map(_(argsBuilder).build)*)
@@ -838,7 +838,7 @@ object clouddeploy_ext:
      * @param analysis Optional. Configuration for the analysis job.
      * @return builder
      */
-    def analysis(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardAnalysisArgs.Builder]):
+    inline def analysis(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardAnalysisArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardAnalysisArgs.builder
       builder.analysis(args(argsBuilder).build)
@@ -847,7 +847,7 @@ object clouddeploy_ext:
      * @param postdeploy Optional. Configuration for the postdeploy job. If this is not configured, postdeploy job will not be present.
      * @return builder
      */
-    def postdeploy(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardPostdeployArgs.Builder]):
+    inline def postdeploy(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardPostdeployArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardPostdeployArgs.builder
       builder.postdeploy(args(argsBuilder).build)
@@ -856,7 +856,7 @@ object clouddeploy_ext:
      * @param predeploy Optional. Configuration for the predeploy job. If this is not configured, predeploy job will not be present.
      * @return builder
      */
-    def predeploy(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardPredeployArgs.Builder]):
+    inline def predeploy(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardPredeployArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardPredeployArgs.builder
       builder.predeploy(args(argsBuilder).build)
@@ -865,7 +865,7 @@ object clouddeploy_ext:
      * @param verifyConfig Optional. Configuration for the verify job.
      * @return builder
      */
-    def verifyConfig(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardVerifyConfigArgs.Builder]):
+    inline def verifyConfig(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardVerifyConfigArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardVerifyConfigArgs.builder
       builder.verifyConfig(args(argsBuilder).build)
@@ -875,7 +875,7 @@ object clouddeploy_ext:
      * @param tasks Optional. The tasks that will run as a part of the postdeploy job. Only one of `actions` or `tasks` can be specified.
      * @return builder
      */
-    def tasks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardPostdeployTaskArgs.Builder]*):
+    inline def tasks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardPostdeployTaskArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardPostdeployArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardPostdeployTaskArgs.builder
       builder.tasks(args.map(_(argsBuilder).build)*)
@@ -885,7 +885,7 @@ object clouddeploy_ext:
      * @param container Optional. This task is represented by a container that is executed in the Cloud Build execution environment.
      * @return builder
      */
-    def container(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardPostdeployTaskContainerArgs.Builder]):
+    inline def container(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardPostdeployTaskContainerArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardPostdeployTaskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardPostdeployTaskContainerArgs.builder
       builder.container(args(argsBuilder).build)
@@ -895,7 +895,7 @@ object clouddeploy_ext:
      * @param tasks Optional. The tasks that will run as a part of the predeploy job. Only one of `actions` or `tasks` can be specified.
      * @return builder
      */
-    def tasks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardPredeployTaskArgs.Builder]*):
+    inline def tasks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardPredeployTaskArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardPredeployArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardPredeployTaskArgs.builder
       builder.tasks(args.map(_(argsBuilder).build)*)
@@ -905,7 +905,7 @@ object clouddeploy_ext:
      * @param container Optional. This task is represented by a container that is executed in the Cloud Build execution environment.
      * @return builder
      */
-    def container(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardPredeployTaskContainerArgs.Builder]):
+    inline def container(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardPredeployTaskContainerArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardPredeployTaskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardPredeployTaskContainerArgs.builder
       builder.container(args(argsBuilder).build)
@@ -915,7 +915,7 @@ object clouddeploy_ext:
      * @param tasks Optional. The tasks that will run as a part of the verify job. The tasks are executed sequentially in the order specified.
      * @return builder
      */
-    def tasks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardVerifyConfigTaskArgs.Builder]*):
+    inline def tasks(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardVerifyConfigTaskArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardVerifyConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardVerifyConfigTaskArgs.builder
       builder.tasks(args.map(_(argsBuilder).build)*)
@@ -925,7 +925,7 @@ object clouddeploy_ext:
      * @param container Optional. This task is represented by a container that is executed in the Cloud Build execution environment.
      * @return builder
      */
-    def container(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardVerifyConfigTaskContainerArgs.Builder]):
+    inline def container(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardVerifyConfigTaskContainerArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardVerifyConfigTaskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineStageStrategyStandardVerifyConfigTaskContainerArgs.builder
       builder.container(args(argsBuilder).build)
@@ -935,7 +935,7 @@ object clouddeploy_ext:
      * @param conditions Output only. Information around the state of the Delivery Pipeline.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineConditionArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineState.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -944,7 +944,7 @@ object clouddeploy_ext:
      * @param serialPipeline SerialPipeline defines a sequential set of stages for a `DeliveryPipeline`.
      * @return builder
      */
-    def serialPipeline(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineArgs.Builder]):
+    inline def serialPipeline(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineState.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeliveryPipelineSerialPipelineArgs.builder
       builder.serialPipeline(args(argsBuilder).build)
@@ -955,7 +955,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rolloutRestriction(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionArgs.Builder]):
+    inline def rolloutRestriction(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionArgs.builder
       builder.rolloutRestriction(args(argsBuilder).build)
@@ -966,7 +966,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeWindows(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsArgs.Builder]):
+    inline def timeWindows(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsArgs.builder
       builder.timeWindows(args(argsBuilder).build)
@@ -977,7 +977,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oneTimeWindows(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsOneTimeWindowArgs.Builder]*):
+    inline def oneTimeWindows(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsOneTimeWindowArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsOneTimeWindowArgs.builder
       builder.oneTimeWindows(args.map(_(argsBuilder).build)*)
@@ -987,7 +987,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def weeklyWindows(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsWeeklyWindowArgs.Builder]*):
+    inline def weeklyWindows(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsWeeklyWindowArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsWeeklyWindowArgs.builder
       builder.weeklyWindows(args.map(_(argsBuilder).build)*)
@@ -998,7 +998,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endDate(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsOneTimeWindowEndDateArgs.Builder]):
+    inline def endDate(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsOneTimeWindowEndDateArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsOneTimeWindowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsOneTimeWindowEndDateArgs.builder
       builder.endDate(args(argsBuilder).build)
@@ -1008,7 +1008,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endTime(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsOneTimeWindowEndTimeArgs.Builder]):
+    inline def endTime(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsOneTimeWindowEndTimeArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsOneTimeWindowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsOneTimeWindowEndTimeArgs.builder
       builder.endTime(args(argsBuilder).build)
@@ -1018,7 +1018,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def startDate(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsOneTimeWindowStartDateArgs.Builder]):
+    inline def startDate(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsOneTimeWindowStartDateArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsOneTimeWindowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsOneTimeWindowStartDateArgs.builder
       builder.startDate(args(argsBuilder).build)
@@ -1028,7 +1028,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def startTime(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsOneTimeWindowStartTimeArgs.Builder]):
+    inline def startTime(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsOneTimeWindowStartTimeArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsOneTimeWindowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsOneTimeWindowStartTimeArgs.builder
       builder.startTime(args(argsBuilder).build)
@@ -1039,7 +1039,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endTime(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsWeeklyWindowEndTimeArgs.Builder]):
+    inline def endTime(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsWeeklyWindowEndTimeArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsWeeklyWindowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsWeeklyWindowEndTimeArgs.builder
       builder.endTime(args(argsBuilder).build)
@@ -1049,7 +1049,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def startTime(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsWeeklyWindowStartTimeArgs.Builder]):
+    inline def startTime(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsWeeklyWindowStartTimeArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsWeeklyWindowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleRolloutRestrictionTimeWindowsWeeklyWindowStartTimeArgs.builder
       builder.startTime(args(argsBuilder).build)
@@ -1060,7 +1060,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deliveryPipeline(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicySelectorDeliveryPipelineArgs.Builder]):
+    inline def deliveryPipeline(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicySelectorDeliveryPipelineArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeployPolicySelectorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeployPolicySelectorDeliveryPipelineArgs.builder
       builder.deliveryPipeline(args(argsBuilder).build)
@@ -1070,7 +1070,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def target(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicySelectorTargetArgs.Builder]):
+    inline def target(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicySelectorTargetArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.DeployPolicySelectorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeployPolicySelectorTargetArgs.builder
       builder.target(args(argsBuilder).build)
@@ -1081,7 +1081,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.DeployPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeployPolicyRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -1091,7 +1091,7 @@ object clouddeploy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def selectors(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicySelectorArgs.Builder]*):
+    inline def selectors(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.DeployPolicySelectorArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.DeployPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.DeployPolicySelectorArgs.builder
       builder.selectors(args.map(_(argsBuilder).build)*)
@@ -1101,7 +1101,7 @@ object clouddeploy_ext:
      * @param anthosClusters Optional. Information specifying Anthos clusters as associated entities.
      * @return builder
      */
-    def anthosClusters(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetAssociatedEntityAnthosClusterArgs.Builder]*):
+    inline def anthosClusters(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetAssociatedEntityAnthosClusterArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.TargetAssociatedEntityArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.TargetAssociatedEntityAnthosClusterArgs.builder
       builder.anthosClusters(args.map(_(argsBuilder).build)*)
@@ -1110,7 +1110,7 @@ object clouddeploy_ext:
      * @param gkeClusters Optional. Information specifying GKE clusters as associated entities.
      * @return builder
      */
-    def gkeClusters(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetAssociatedEntityGkeClusterArgs.Builder]*):
+    inline def gkeClusters(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetAssociatedEntityGkeClusterArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.TargetAssociatedEntityArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.TargetAssociatedEntityGkeClusterArgs.builder
       builder.gkeClusters(args.map(_(argsBuilder).build)*)
@@ -1120,7 +1120,7 @@ object clouddeploy_ext:
      * @param defaultPool Optional. Use default Cloud Build pool.
      * @return builder
      */
-    def defaultPool(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetExecutionConfigDefaultPoolArgs.Builder]):
+    inline def defaultPool(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetExecutionConfigDefaultPoolArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.TargetExecutionConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.TargetExecutionConfigDefaultPoolArgs.builder
       builder.defaultPool(args(argsBuilder).build)
@@ -1129,19 +1129,19 @@ object clouddeploy_ext:
      * @param privatePool Optional. Use private Cloud Build pool.
      * @return builder
      */
-    def privatePool(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetExecutionConfigPrivatePoolArgs.Builder]):
+    inline def privatePool(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetExecutionConfigPrivatePoolArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.TargetExecutionConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.TargetExecutionConfigPrivatePoolArgs.builder
       builder.privatePool(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.clouddeploy.inputs.TargetIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.TargetIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.TargetIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.clouddeploy.inputs.TargetIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.TargetIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.TargetIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1151,7 +1151,7 @@ object clouddeploy_ext:
      * @param anthosCluster Information specifying an Anthos Cluster.
      * @return builder
      */
-    def anthosCluster(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetAnthosClusterArgs.Builder]):
+    inline def anthosCluster(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetAnthosClusterArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.TargetState.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.TargetAnthosClusterArgs.builder
       builder.anthosCluster(args(argsBuilder).build)
@@ -1160,7 +1160,7 @@ object clouddeploy_ext:
      * @param associatedEntities Optional. Map of entity IDs to their associated entities. Associated entities allows specifying places other than the deployment target for specific features. For example, the Gateway API canary can be configured to deploy the HTTPRoute to a different cluster(s) than the deployment cluster using associated entities. An entity ID must consist of lower-case letters, numbers, and hyphens, start with a letter and end with a letter or a number, and have a max length of 63 characters. In other words, it must match the following regex: `^a-z?\$`.
      * @return builder
      */
-    def associatedEntities(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetAssociatedEntityArgs.Builder]*):
+    inline def associatedEntities(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetAssociatedEntityArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.TargetState.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.TargetAssociatedEntityArgs.builder
       builder.associatedEntities(args.map(_(argsBuilder).build)*)
@@ -1169,7 +1169,7 @@ object clouddeploy_ext:
      * @param customTarget Optional. Information specifying a Custom Target.
      * @return builder
      */
-    def customTarget(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetCustomTargetArgs.Builder]):
+    inline def customTarget(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetCustomTargetArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.TargetState.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.TargetCustomTargetArgs.builder
       builder.customTarget(args(argsBuilder).build)
@@ -1178,7 +1178,7 @@ object clouddeploy_ext:
      * @param executionConfigs Configurations for all execution that relates to this `Target`. Each `ExecutionEnvironmentUsage` value may only be used in a single configuration; using the same value multiple times is an error. When one or more configurations are specified, they must include the `RENDER` and `DEPLOY` `ExecutionEnvironmentUsage` values. When no configurations are specified, execution will use the default specified in `DefaultPool`.
      * @return builder
      */
-    def executionConfigs(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetExecutionConfigArgs.Builder]*):
+    inline def executionConfigs(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetExecutionConfigArgs.Builder]*):
         com.pulumi.gcp.clouddeploy.inputs.TargetState.Builder =
       def argsBuilder = com.pulumi.gcp.clouddeploy.inputs.TargetExecutionConfigArgs.builder
       builder.executionConfigs(args.map(_(argsBuilder).build)*)
@@ -1187,7 +1187,7 @@ object clouddeploy_ext:
      * @param gke Information specifying a GKE Cluster.
      * @return builder
      */
-    def gke(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetGkeArgs.Builder]):
+    inline def gke(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetGkeArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.TargetState.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.TargetGkeArgs.builder
       builder.gke(args(argsBuilder).build)
@@ -1196,7 +1196,7 @@ object clouddeploy_ext:
      * @param multiTarget Information specifying a multiTarget.
      * @return builder
      */
-    def multiTarget(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetMultiTargetArgs.Builder]):
+    inline def multiTarget(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetMultiTargetArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.TargetState.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.TargetMultiTargetArgs.builder
       builder.multiTarget(args(argsBuilder).build)
@@ -1205,7 +1205,7 @@ object clouddeploy_ext:
      * @param run Information specifying a Cloud Run deployment target.
      * @return builder
      */
-    def run(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetRunArgs.Builder]):
+    inline def run(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetRunArgs.Builder]):
         com.pulumi.gcp.clouddeploy.inputs.TargetState.Builder =
       val argsBuilder = com.pulumi.gcp.clouddeploy.inputs.TargetRunArgs.builder
       builder.run(args(argsBuilder).build)

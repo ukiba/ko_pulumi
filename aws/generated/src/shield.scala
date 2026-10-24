@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object shield:
   /** Resource for managing an AWS Shield Application Layer Automatic Response for automatic DDoS mitigation. */
-  def ApplicationLayerAutomaticResponse(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApplicationLayerAutomaticResponse(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.shield.ApplicationLayerAutomaticResponseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.shield.ApplicationLayerAutomaticResponseArgs.builder
     com.pulumi.aws.shield.ApplicationLayerAutomaticResponse(name,
@@ -18,7 +18,7 @@ object shield:
    * Resource for managing an AWS Shield DRT Access Log Bucket Association.
    * Up to 10 log buckets can be associated for DRT Access sharing with the Shield Response Team (SRT).
    */
-  def DrtAccessLogBucketAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DrtAccessLogBucketAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.shield.DrtAccessLogBucketAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.shield.DrtAccessLogBucketAssociationArgs.builder
     com.pulumi.aws.shield.DrtAccessLogBucketAssociation(name,
@@ -29,7 +29,7 @@ object shield:
    * Authorizes the Shield Response Team (SRT) using the specified role, to access your AWS account to assist with DDoS attack mitigation during potential attacks.
    * For more information see [Configure AWS SRT Support](https://docs.aws.amazon.com/waf/latest/developerguide/authorize-srt.html)
    */
-  def DrtAccessRoleArnAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DrtAccessRoleArnAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.shield.DrtAccessRoleArnAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.shield.DrtAccessRoleArnAssociationArgs.builder
     com.pulumi.aws.shield.DrtAccessRoleArnAssociation(name,
@@ -40,7 +40,7 @@ object shield:
    * Resource for managing a AWS Shield Proactive Engagement.
    * Proactive engagement authorizes the Shield Response Team (SRT) to use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support.
    */
-  def ProactiveEngagement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProactiveEngagement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.shield.ProactiveEngagementArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.shield.ProactiveEngagementArgs.builder
     com.pulumi.aws.shield.ProactiveEngagement(name,
@@ -51,7 +51,7 @@ object shield:
    * Enables AWS Shield Advanced for a specific AWS resource.
    * The resource can be an Amazon CloudFront distribution, Elastic Load Balancing load balancer, AWS Global Accelerator accelerator, Elastic IP Address, or an Amazon Route 53 hosted zone.
    */
-  def Protection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Protection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.shield.ProtectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.shield.ProtectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -73,7 +73,7 @@ object shield:
    * This resource grouping improves the accuracy of detection and reduces false positives. For more information see
    * [Managing AWS Shield Advanced protection groups](https://docs.aws.amazon.com/waf/latest/developerguide/manage-protection-group.html)
    */
-  def ProtectionGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProtectionGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.shield.ProtectionGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.shield.ProtectionGroupArgs.builder
     argsBuilder = args(argsBuilder)
@@ -93,7 +93,7 @@ object shield:
    * 
    * Blog post: [AWS Shield Advanced now supports Health Based Detection](https://aws.amazon.com/about-aws/whats-new/2020/02/aws-shield-advanced-now-supports-health-based-detection/)
    */
-  def ProtectionHealthCheckAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProtectionHealthCheckAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.shield.ProtectionHealthCheckAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.shield.ProtectionHealthCheckAssociationArgs.builder
     com.pulumi.aws.shield.ProtectionHealthCheckAssociation(name,
@@ -124,7 +124,7 @@ object shield:
    * 
    * &gt; Destruction of this resource will set `autoRenew` to `DISABLED`. Automatic renewal can only be disabled during the last 30 days of a subscription. To unsubscribe outside of this window, you must contact AWS Support. Set `skipDestroy` to `true` to skip modifying the `autoRenew` argument during destruction.
    */
-  def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.shield.SubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.shield.SubscriptionArgs.builder
     com.pulumi.aws.shield.Subscription(name,

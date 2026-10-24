@@ -11,7 +11,7 @@ object organizations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def enrolledServices(args: Endofunction[com.pulumi.gcp.organizations.inputs.AccessApprovalSettingsEnrolledServiceArgs.Builder]*):
+    inline def enrolledServices(args: Endofunction[com.pulumi.gcp.organizations.inputs.AccessApprovalSettingsEnrolledServiceArgs.Builder]*):
         com.pulumi.gcp.organizations.AccessApprovalSettingsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.organizations.inputs.AccessApprovalSettingsEnrolledServiceArgs.builder
       builder.enrolledServices(args.map(_(argsBuilder).build)*)
@@ -22,7 +22,7 @@ object organizations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.organizations.inputs.IAMBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.organizations.inputs.IAMBindingConditionArgs.Builder]):
         com.pulumi.gcp.organizations.IAMBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.IAMBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -33,7 +33,7 @@ object organizations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.organizations.inputs.IAMMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.organizations.inputs.IAMMemberConditionArgs.Builder]):
         com.pulumi.gcp.organizations.IAMMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.IAMMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -43,7 +43,7 @@ object organizations_ext:
      * @param auditLogConfigs The configuration for logging of each type of permission.  This can be specified multiple times.  Structure is documented below.
      * @return builder
      */
-    def auditLogConfigs(args: Endofunction[com.pulumi.gcp.organizations.inputs.IamAuditConfigAuditLogConfigArgs.Builder]*):
+    inline def auditLogConfigs(args: Endofunction[com.pulumi.gcp.organizations.inputs.IamAuditConfigAuditLogConfigArgs.Builder]*):
         com.pulumi.gcp.organizations.IamAuditConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.organizations.inputs.IamAuditConfigAuditLogConfigArgs.builder
       builder.auditLogConfigs(args.map(_(argsBuilder).build)*)
@@ -54,7 +54,7 @@ object organizations_ext:
      * below.
      * @return builder
      */
-    def booleanPolicy(args: Endofunction[com.pulumi.gcp.organizations.inputs.PolicyBooleanPolicyArgs.Builder]):
+    inline def booleanPolicy(args: Endofunction[com.pulumi.gcp.organizations.inputs.PolicyBooleanPolicyArgs.Builder]):
         com.pulumi.gcp.organizations.PolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.PolicyBooleanPolicyArgs.builder
       builder.booleanPolicy(args(argsBuilder).build)
@@ -63,7 +63,7 @@ object organizations_ext:
      * @param listPolicy A policy that can define specific values that are allowed or denied for the given constraint. It can also be used to allow or deny all values. Structure is documented below.
      * @return builder
      */
-    def listPolicy(args: Endofunction[com.pulumi.gcp.organizations.inputs.PolicyListPolicyArgs.Builder]):
+    inline def listPolicy(args: Endofunction[com.pulumi.gcp.organizations.inputs.PolicyListPolicyArgs.Builder]):
         com.pulumi.gcp.organizations.PolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.PolicyListPolicyArgs.builder
       builder.listPolicy(args(argsBuilder).build)
@@ -75,7 +75,7 @@ object organizations_ext:
      * effectively be unset. This is represented in the UI as the constraint being &#39;Inherited&#39;.
      * @return builder
      */
-    def restorePolicy(args: Endofunction[com.pulumi.gcp.organizations.inputs.PolicyRestorePolicyArgs.Builder]):
+    inline def restorePolicy(args: Endofunction[com.pulumi.gcp.organizations.inputs.PolicyRestorePolicyArgs.Builder]):
         com.pulumi.gcp.organizations.PolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.PolicyRestorePolicyArgs.builder
       builder.restorePolicy(args(argsBuilder).build)
@@ -89,7 +89,7 @@ object organizations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def enrolledServices(args: Endofunction[com.pulumi.gcp.organizations.inputs.AccessApprovalSettingsEnrolledServiceArgs.Builder]*):
+    inline def enrolledServices(args: Endofunction[com.pulumi.gcp.organizations.inputs.AccessApprovalSettingsEnrolledServiceArgs.Builder]*):
         com.pulumi.gcp.organizations.inputs.AccessApprovalSettingsState.Builder =
       def argsBuilder = com.pulumi.gcp.organizations.inputs.AccessApprovalSettingsEnrolledServiceArgs.builder
       builder.enrolledServices(args.map(_(argsBuilder).build)*)
@@ -99,7 +99,7 @@ object organizations_ext:
      * @param auditConfigs A nested configuration block that defines logging additional configuration for your project. This field is only supported on `gcp.projects.IAMPolicy`, `gcp.folder.IAMPolicy` and `gcp.organizations.IAMPolicy`.
      * @return builder
      */
-    def auditConfigs(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyAuditConfigArgs.Builder]*):
+    inline def auditConfigs(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyAuditConfigArgs.Builder]*):
         com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.organizations.inputs.GetIAMPolicyAuditConfigArgs.builder
       builder.auditConfigs(args.map(_(argsBuilder).build)*)
@@ -113,7 +113,7 @@ object organizations_ext:
      * each accept the following arguments:
      * @return builder
      */
-    def bindings(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs.Builder]*):
+    inline def bindings(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs.Builder]*):
         com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs.builder
       builder.bindings(args.map(_(argsBuilder).build)*)
@@ -123,7 +123,7 @@ object organizations_ext:
      * @param auditLogConfigs A nested block that defines the operations you&#39;d like to log.
      * @return builder
      */
-    def auditLogConfigs(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyAuditConfigAuditLogConfig.Builder]*):
+    inline def auditLogConfigs(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyAuditConfigAuditLogConfig.Builder]*):
         com.pulumi.gcp.organizations.inputs.GetIAMPolicyAuditConfig.Builder =
       def argsBuilder = com.pulumi.gcp.organizations.inputs.GetIAMPolicyAuditConfigAuditLogConfig.builder
       builder.auditLogConfigs(args.map(_(argsBuilder).build)*)
@@ -133,7 +133,7 @@ object organizations_ext:
      * @param auditLogConfigs A nested block that defines the operations you&#39;d like to log.
      * @return builder
      */
-    def auditLogConfigs(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyAuditConfigAuditLogConfigArgs.Builder]*):
+    inline def auditLogConfigs(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyAuditConfigAuditLogConfigArgs.Builder]*):
         com.pulumi.gcp.organizations.inputs.GetIAMPolicyAuditConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.organizations.inputs.GetIAMPolicyAuditConfigAuditLogConfigArgs.builder
       builder.auditLogConfigs(args.map(_(argsBuilder).build)*)
@@ -143,7 +143,7 @@ object organizations_ext:
      * @param condition An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding. Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingCondition.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingCondition.Builder]):
         com.pulumi.gcp.organizations.inputs.GetIAMPolicyBinding.Builder =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingCondition.builder
       builder.condition(args(argsBuilder).build)
@@ -153,7 +153,7 @@ object organizations_ext:
      * @param condition An [IAM Condition](https://cloud.google.com/iam/docs/conditions-overview) for a given binding. Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingConditionArgs.Builder]):
         com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetIAMPolicyBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -163,7 +163,7 @@ object organizations_ext:
      * @param auditConfigs A nested configuration block that defines logging additional configuration for your project. This field is only supported on `gcp.projects.IAMPolicy`, `gcp.folder.IAMPolicy` and `gcp.organizations.IAMPolicy`.
      * @return builder
      */
-    def auditConfigs(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyAuditConfig.Builder]*):
+    inline def auditConfigs(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyAuditConfig.Builder]*):
         com.pulumi.gcp.organizations.inputs.GetIAMPolicyPlainArgs.Builder =
       def argsBuilder = com.pulumi.gcp.organizations.inputs.GetIAMPolicyAuditConfig.builder
       builder.auditConfigs(args.map(_(argsBuilder).build)*)
@@ -177,7 +177,7 @@ object organizations_ext:
      * each accept the following arguments:
      * @return builder
      */
-    def bindings(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyBinding.Builder]*):
+    inline def bindings(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyBinding.Builder]*):
         com.pulumi.gcp.organizations.inputs.GetIAMPolicyPlainArgs.Builder =
       def argsBuilder = com.pulumi.gcp.organizations.inputs.GetIAMPolicyBinding.builder
       builder.bindings(args.map(_(argsBuilder).build)*)
@@ -188,7 +188,7 @@ object organizations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.organizations.inputs.IAMBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.organizations.inputs.IAMBindingConditionArgs.Builder]):
         com.pulumi.gcp.organizations.inputs.IAMBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.IAMBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -199,7 +199,7 @@ object organizations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.organizations.inputs.IAMMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.organizations.inputs.IAMMemberConditionArgs.Builder]):
         com.pulumi.gcp.organizations.inputs.IAMMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.IAMMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -209,7 +209,7 @@ object organizations_ext:
      * @param auditLogConfigs The configuration for logging of each type of permission.  This can be specified multiple times.  Structure is documented below.
      * @return builder
      */
-    def auditLogConfigs(args: Endofunction[com.pulumi.gcp.organizations.inputs.IamAuditConfigAuditLogConfigArgs.Builder]*):
+    inline def auditLogConfigs(args: Endofunction[com.pulumi.gcp.organizations.inputs.IamAuditConfigAuditLogConfigArgs.Builder]*):
         com.pulumi.gcp.organizations.inputs.IamAuditConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.organizations.inputs.IamAuditConfigAuditLogConfigArgs.builder
       builder.auditLogConfigs(args.map(_(argsBuilder).build)*)
@@ -219,7 +219,7 @@ object organizations_ext:
      * @param allow or `deny` - (Optional) One or the other must be set.
      * @return builder
      */
-    def allow(args: Endofunction[com.pulumi.gcp.organizations.inputs.PolicyListPolicyAllowArgs.Builder]):
+    inline def allow(args: Endofunction[com.pulumi.gcp.organizations.inputs.PolicyListPolicyAllowArgs.Builder]):
         com.pulumi.gcp.organizations.inputs.PolicyListPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.PolicyListPolicyAllowArgs.builder
       builder.allow(args(argsBuilder).build)
@@ -228,7 +228,7 @@ object organizations_ext:
      * @param deny One or the other must be set.
      * @return builder
      */
-    def deny(args: Endofunction[com.pulumi.gcp.organizations.inputs.PolicyListPolicyDenyArgs.Builder]):
+    inline def deny(args: Endofunction[com.pulumi.gcp.organizations.inputs.PolicyListPolicyDenyArgs.Builder]):
         com.pulumi.gcp.organizations.inputs.PolicyListPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.PolicyListPolicyDenyArgs.builder
       builder.deny(args(argsBuilder).build)
@@ -239,7 +239,7 @@ object organizations_ext:
      * below.
      * @return builder
      */
-    def booleanPolicy(args: Endofunction[com.pulumi.gcp.organizations.inputs.PolicyBooleanPolicyArgs.Builder]):
+    inline def booleanPolicy(args: Endofunction[com.pulumi.gcp.organizations.inputs.PolicyBooleanPolicyArgs.Builder]):
         com.pulumi.gcp.organizations.inputs.PolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.PolicyBooleanPolicyArgs.builder
       builder.booleanPolicy(args(argsBuilder).build)
@@ -248,7 +248,7 @@ object organizations_ext:
      * @param listPolicy A policy that can define specific values that are allowed or denied for the given constraint. It can also be used to allow or deny all values. Structure is documented below.
      * @return builder
      */
-    def listPolicy(args: Endofunction[com.pulumi.gcp.organizations.inputs.PolicyListPolicyArgs.Builder]):
+    inline def listPolicy(args: Endofunction[com.pulumi.gcp.organizations.inputs.PolicyListPolicyArgs.Builder]):
         com.pulumi.gcp.organizations.inputs.PolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.PolicyListPolicyArgs.builder
       builder.listPolicy(args(argsBuilder).build)
@@ -260,7 +260,7 @@ object organizations_ext:
      * effectively be unset. This is represented in the UI as the constraint being &#39;Inherited&#39;.
      * @return builder
      */
-    def restorePolicy(args: Endofunction[com.pulumi.gcp.organizations.inputs.PolicyRestorePolicyArgs.Builder]):
+    inline def restorePolicy(args: Endofunction[com.pulumi.gcp.organizations.inputs.PolicyRestorePolicyArgs.Builder]):
         com.pulumi.gcp.organizations.inputs.PolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.PolicyRestorePolicyArgs.builder
       builder.restorePolicy(args(argsBuilder).build)

@@ -7,7 +7,7 @@ object datastream_ext:
      * @param bigqueryProfile BigQuery warehouse profile.
      * @return builder
      */
-    def bigqueryProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileBigqueryProfileArgs.Builder]):
+    inline def bigqueryProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileBigqueryProfileArgs.Builder]):
         com.pulumi.gcp.datastream.ConnectionProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfileBigqueryProfileArgs.builder
       builder.bigqueryProfile(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def forwardSshConnectivity(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileForwardSshConnectivityArgs.Builder]):
+    inline def forwardSshConnectivity(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileForwardSshConnectivityArgs.Builder]):
         com.pulumi.gcp.datastream.ConnectionProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfileForwardSshConnectivityArgs.builder
       builder.forwardSshConnectivity(args(argsBuilder).build)
@@ -27,7 +27,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gcsProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileGcsProfileArgs.Builder]):
+    inline def gcsProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileGcsProfileArgs.Builder]):
         com.pulumi.gcp.datastream.ConnectionProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfileGcsProfileArgs.builder
       builder.gcsProfile(args(argsBuilder).build)
@@ -37,7 +37,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mongodbProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileMongodbProfileArgs.Builder]):
+    inline def mongodbProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileMongodbProfileArgs.Builder]):
         com.pulumi.gcp.datastream.ConnectionProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfileMongodbProfileArgs.builder
       builder.mongodbProfile(args(argsBuilder).build)
@@ -47,7 +47,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mysqlProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileMysqlProfileArgs.Builder]):
+    inline def mysqlProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileMysqlProfileArgs.Builder]):
         com.pulumi.gcp.datastream.ConnectionProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfileMysqlProfileArgs.builder
       builder.mysqlProfile(args(argsBuilder).build)
@@ -57,7 +57,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oracleProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileOracleProfileArgs.Builder]):
+    inline def oracleProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileOracleProfileArgs.Builder]):
         com.pulumi.gcp.datastream.ConnectionProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfileOracleProfileArgs.builder
       builder.oracleProfile(args(argsBuilder).build)
@@ -67,7 +67,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def postgresqlProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfilePostgresqlProfileArgs.Builder]):
+    inline def postgresqlProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfilePostgresqlProfileArgs.Builder]):
         com.pulumi.gcp.datastream.ConnectionProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfilePostgresqlProfileArgs.builder
       builder.postgresqlProfile(args(argsBuilder).build)
@@ -77,7 +77,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def privateConnectivity(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfilePrivateConnectivityArgs.Builder]):
+    inline def privateConnectivity(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfilePrivateConnectivityArgs.Builder]):
         com.pulumi.gcp.datastream.ConnectionProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfilePrivateConnectivityArgs.builder
       builder.privateConnectivity(args(argsBuilder).build)
@@ -88,7 +88,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def salesforceProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileSalesforceProfileArgs.Builder]):
+    inline def salesforceProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileSalesforceProfileArgs.Builder]):
         com.pulumi.gcp.datastream.ConnectionProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfileSalesforceProfileArgs.builder
       builder.salesforceProfile(args(argsBuilder).build)
@@ -99,7 +99,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def spannerProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileSpannerProfileArgs.Builder]):
+    inline def spannerProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileSpannerProfileArgs.Builder]):
         com.pulumi.gcp.datastream.ConnectionProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfileSpannerProfileArgs.builder
       builder.spannerProfile(args(argsBuilder).build)
@@ -109,7 +109,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sqlServerProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileSqlServerProfileArgs.Builder]):
+    inline def sqlServerProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileSqlServerProfileArgs.Builder]):
         com.pulumi.gcp.datastream.ConnectionProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfileSqlServerProfileArgs.builder
       builder.sqlServerProfile(args(argsBuilder).build)
@@ -121,7 +121,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscInterfaceConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.PrivateConnectionPscInterfaceConfigArgs.Builder]):
+    inline def pscInterfaceConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.PrivateConnectionPscInterfaceConfigArgs.Builder]):
         com.pulumi.gcp.datastream.PrivateConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.PrivateConnectionPscInterfaceConfigArgs.builder
       builder.pscInterfaceConfig(args(argsBuilder).build)
@@ -132,7 +132,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcPeeringConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.PrivateConnectionVpcPeeringConfigArgs.Builder]):
+    inline def vpcPeeringConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.PrivateConnectionVpcPeeringConfigArgs.Builder]):
         com.pulumi.gcp.datastream.PrivateConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.PrivateConnectionVpcPeeringConfigArgs.builder
       builder.vpcPeeringConfig(args(argsBuilder).build)
@@ -143,7 +143,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def backfillAll(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllArgs.Builder]):
+    inline def backfillAll(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllArgs.Builder]):
         com.pulumi.gcp.datastream.StreamArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllArgs.builder
       builder.backfillAll(args(argsBuilder).build)
@@ -152,7 +152,7 @@ object datastream_ext:
      * @param backfillNone Backfill strategy to disable automatic backfill for the Stream&#39;s objects.
      * @return builder
      */
-    def backfillNone(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillNoneArgs.Builder]):
+    inline def backfillNone(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillNoneArgs.Builder]):
         com.pulumi.gcp.datastream.StreamArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillNoneArgs.builder
       builder.backfillNone(args(argsBuilder).build)
@@ -162,7 +162,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinationConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamDestinationConfigArgs.Builder]):
+    inline def destinationConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamDestinationConfigArgs.Builder]):
         com.pulumi.gcp.datastream.StreamArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamDestinationConfigArgs.builder
       builder.destinationConfig(args(argsBuilder).build)
@@ -172,7 +172,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ruleSets(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetArgs.Builder]*):
+    inline def ruleSets(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetArgs.Builder]*):
         com.pulumi.gcp.datastream.StreamArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamRuleSetArgs.builder
       builder.ruleSets(args.map(_(argsBuilder).build)*)
@@ -182,7 +182,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sourceConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigArgs.Builder]):
+    inline def sourceConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigArgs.Builder]):
         com.pulumi.gcp.datastream.StreamArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigArgs.builder
       builder.sourceConfig(args(argsBuilder).build)
@@ -193,7 +193,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hostAddresses(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileMongodbProfileHostAddressArgs.Builder]*):
+    inline def hostAddresses(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileMongodbProfileHostAddressArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.ConnectionProfileMongodbProfileArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfileMongodbProfileHostAddressArgs.builder
       builder.hostAddresses(args.map(_(argsBuilder).build)*)
@@ -203,7 +203,7 @@ object datastream_ext:
      * standard_connection_Format.
      * @return builder
      */
-    def srvConnectionFormat(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileMongodbProfileSrvConnectionFormatArgs.Builder]):
+    inline def srvConnectionFormat(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileMongodbProfileSrvConnectionFormatArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.ConnectionProfileMongodbProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfileMongodbProfileSrvConnectionFormatArgs.builder
       builder.srvConnectionFormat(args(argsBuilder).build)
@@ -213,7 +213,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sslConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileMongodbProfileSslConfigArgs.Builder]):
+    inline def sslConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileMongodbProfileSslConfigArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.ConnectionProfileMongodbProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfileMongodbProfileSslConfigArgs.builder
       builder.sslConfig(args(argsBuilder).build)
@@ -224,7 +224,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def standardConnectionFormat(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileMongodbProfileStandardConnectionFormatArgs.Builder]):
+    inline def standardConnectionFormat(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileMongodbProfileStandardConnectionFormatArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.ConnectionProfileMongodbProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfileMongodbProfileStandardConnectionFormatArgs.builder
       builder.standardConnectionFormat(args(argsBuilder).build)
@@ -235,7 +235,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sslConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileMysqlProfileSslConfigArgs.Builder]):
+    inline def sslConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileMysqlProfileSslConfigArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.ConnectionProfileMysqlProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfileMysqlProfileSslConfigArgs.builder
       builder.sslConfig(args(argsBuilder).build)
@@ -246,7 +246,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sslConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfilePostgresqlProfileSslConfigArgs.Builder]):
+    inline def sslConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfilePostgresqlProfileSslConfigArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.ConnectionProfilePostgresqlProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfilePostgresqlProfileSslConfigArgs.builder
       builder.sslConfig(args(argsBuilder).build)
@@ -258,7 +258,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serverAndClientVerification(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfilePostgresqlProfileSslConfigServerAndClientVerificationArgs.Builder]):
+    inline def serverAndClientVerification(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfilePostgresqlProfileSslConfigServerAndClientVerificationArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.ConnectionProfilePostgresqlProfileSslConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfilePostgresqlProfileSslConfigServerAndClientVerificationArgs.builder
       builder.serverAndClientVerification(args(argsBuilder).build)
@@ -269,7 +269,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serverVerification(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfilePostgresqlProfileSslConfigServerVerificationArgs.Builder]):
+    inline def serverVerification(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfilePostgresqlProfileSslConfigServerVerificationArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.ConnectionProfilePostgresqlProfileSslConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfilePostgresqlProfileSslConfigServerVerificationArgs.builder
       builder.serverVerification(args(argsBuilder).build)
@@ -280,7 +280,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauth2ClientCredentials(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileSalesforceProfileOauth2ClientCredentialsArgs.Builder]):
+    inline def oauth2ClientCredentials(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileSalesforceProfileOauth2ClientCredentialsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.ConnectionProfileSalesforceProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfileSalesforceProfileOauth2ClientCredentialsArgs.builder
       builder.oauth2ClientCredentials(args(argsBuilder).build)
@@ -290,7 +290,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def userCredentials(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileSalesforceProfileUserCredentialsArgs.Builder]):
+    inline def userCredentials(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileSalesforceProfileUserCredentialsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.ConnectionProfileSalesforceProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfileSalesforceProfileUserCredentialsArgs.builder
       builder.userCredentials(args(argsBuilder).build)
@@ -300,7 +300,7 @@ object datastream_ext:
      * @param bigqueryProfile BigQuery warehouse profile.
      * @return builder
      */
-    def bigqueryProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileBigqueryProfileArgs.Builder]):
+    inline def bigqueryProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileBigqueryProfileArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.ConnectionProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfileBigqueryProfileArgs.builder
       builder.bigqueryProfile(args(argsBuilder).build)
@@ -310,7 +310,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def forwardSshConnectivity(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileForwardSshConnectivityArgs.Builder]):
+    inline def forwardSshConnectivity(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileForwardSshConnectivityArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.ConnectionProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfileForwardSshConnectivityArgs.builder
       builder.forwardSshConnectivity(args(argsBuilder).build)
@@ -320,7 +320,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gcsProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileGcsProfileArgs.Builder]):
+    inline def gcsProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileGcsProfileArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.ConnectionProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfileGcsProfileArgs.builder
       builder.gcsProfile(args(argsBuilder).build)
@@ -330,7 +330,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mongodbProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileMongodbProfileArgs.Builder]):
+    inline def mongodbProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileMongodbProfileArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.ConnectionProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfileMongodbProfileArgs.builder
       builder.mongodbProfile(args(argsBuilder).build)
@@ -340,7 +340,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mysqlProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileMysqlProfileArgs.Builder]):
+    inline def mysqlProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileMysqlProfileArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.ConnectionProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfileMysqlProfileArgs.builder
       builder.mysqlProfile(args(argsBuilder).build)
@@ -350,7 +350,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oracleProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileOracleProfileArgs.Builder]):
+    inline def oracleProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileOracleProfileArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.ConnectionProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfileOracleProfileArgs.builder
       builder.oracleProfile(args(argsBuilder).build)
@@ -360,7 +360,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def postgresqlProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfilePostgresqlProfileArgs.Builder]):
+    inline def postgresqlProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfilePostgresqlProfileArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.ConnectionProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfilePostgresqlProfileArgs.builder
       builder.postgresqlProfile(args(argsBuilder).build)
@@ -370,7 +370,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def privateConnectivity(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfilePrivateConnectivityArgs.Builder]):
+    inline def privateConnectivity(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfilePrivateConnectivityArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.ConnectionProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfilePrivateConnectivityArgs.builder
       builder.privateConnectivity(args(argsBuilder).build)
@@ -381,7 +381,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def salesforceProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileSalesforceProfileArgs.Builder]):
+    inline def salesforceProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileSalesforceProfileArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.ConnectionProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfileSalesforceProfileArgs.builder
       builder.salesforceProfile(args(argsBuilder).build)
@@ -392,7 +392,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def spannerProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileSpannerProfileArgs.Builder]):
+    inline def spannerProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileSpannerProfileArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.ConnectionProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfileSpannerProfileArgs.builder
       builder.spannerProfile(args(argsBuilder).build)
@@ -402,7 +402,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sqlServerProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileSqlServerProfileArgs.Builder]):
+    inline def sqlServerProfile(args: Endofunction[com.pulumi.gcp.datastream.inputs.ConnectionProfileSqlServerProfileArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.ConnectionProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.ConnectionProfileSqlServerProfileArgs.builder
       builder.sqlServerProfile(args(argsBuilder).build)
@@ -413,7 +413,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errors(args: Endofunction[com.pulumi.gcp.datastream.inputs.PrivateConnectionErrorArgs.Builder]*):
+    inline def errors(args: Endofunction[com.pulumi.gcp.datastream.inputs.PrivateConnectionErrorArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.PrivateConnectionState.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.PrivateConnectionErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
@@ -424,7 +424,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscInterfaceConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.PrivateConnectionPscInterfaceConfigArgs.Builder]):
+    inline def pscInterfaceConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.PrivateConnectionPscInterfaceConfigArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.PrivateConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.PrivateConnectionPscInterfaceConfigArgs.builder
       builder.pscInterfaceConfig(args(argsBuilder).build)
@@ -435,7 +435,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcPeeringConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.PrivateConnectionVpcPeeringConfigArgs.Builder]):
+    inline def vpcPeeringConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.PrivateConnectionVpcPeeringConfigArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.PrivateConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.PrivateConnectionVpcPeeringConfigArgs.builder
       builder.vpcPeeringConfig(args(argsBuilder).build)
@@ -446,7 +446,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mongodbExcludedObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllMongodbExcludedObjectsArgs.Builder]):
+    inline def mongodbExcludedObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllMongodbExcludedObjectsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllMongodbExcludedObjectsArgs.builder
       builder.mongodbExcludedObjects(args(argsBuilder).build)
@@ -456,7 +456,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mysqlExcludedObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllMysqlExcludedObjectsArgs.Builder]):
+    inline def mysqlExcludedObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllMysqlExcludedObjectsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllMysqlExcludedObjectsArgs.builder
       builder.mysqlExcludedObjects(args(argsBuilder).build)
@@ -466,7 +466,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oracleExcludedObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllOracleExcludedObjectsArgs.Builder]):
+    inline def oracleExcludedObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllOracleExcludedObjectsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllOracleExcludedObjectsArgs.builder
       builder.oracleExcludedObjects(args(argsBuilder).build)
@@ -476,7 +476,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def postgresqlExcludedObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllPostgresqlExcludedObjectsArgs.Builder]):
+    inline def postgresqlExcludedObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllPostgresqlExcludedObjectsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllPostgresqlExcludedObjectsArgs.builder
       builder.postgresqlExcludedObjects(args(argsBuilder).build)
@@ -486,7 +486,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def salesforceExcludedObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllSalesforceExcludedObjectsArgs.Builder]):
+    inline def salesforceExcludedObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllSalesforceExcludedObjectsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllSalesforceExcludedObjectsArgs.builder
       builder.salesforceExcludedObjects(args(argsBuilder).build)
@@ -496,7 +496,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def spannerExcludedObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllSpannerExcludedObjectsArgs.Builder]):
+    inline def spannerExcludedObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllSpannerExcludedObjectsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllSpannerExcludedObjectsArgs.builder
       builder.spannerExcludedObjects(args(argsBuilder).build)
@@ -506,7 +506,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sqlServerExcludedObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllSqlServerExcludedObjectsArgs.Builder]):
+    inline def sqlServerExcludedObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllSqlServerExcludedObjectsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllSqlServerExcludedObjectsArgs.builder
       builder.sqlServerExcludedObjects(args(argsBuilder).build)
@@ -517,7 +517,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def databases(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllMongodbExcludedObjectsDatabaseArgs.Builder]*):
+    inline def databases(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllMongodbExcludedObjectsDatabaseArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllMongodbExcludedObjectsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllMongodbExcludedObjectsDatabaseArgs.builder
       builder.databases(args.map(_(argsBuilder).build)*)
@@ -528,7 +528,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def collections(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllMongodbExcludedObjectsDatabaseCollectionArgs.Builder]*):
+    inline def collections(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllMongodbExcludedObjectsDatabaseCollectionArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllMongodbExcludedObjectsDatabaseArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllMongodbExcludedObjectsDatabaseCollectionArgs.builder
       builder.collections(args.map(_(argsBuilder).build)*)
@@ -539,7 +539,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fields(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllMongodbExcludedObjectsDatabaseCollectionFieldArgs.Builder]*):
+    inline def fields(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllMongodbExcludedObjectsDatabaseCollectionFieldArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllMongodbExcludedObjectsDatabaseCollectionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllMongodbExcludedObjectsDatabaseCollectionFieldArgs.builder
       builder.fields(args.map(_(argsBuilder).build)*)
@@ -550,7 +550,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mysqlDatabases(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseArgs.Builder]*):
+    inline def mysqlDatabases(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllMysqlExcludedObjectsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseArgs.builder
       builder.mysqlDatabases(args.map(_(argsBuilder).build)*)
@@ -561,7 +561,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mysqlTables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTableArgs.Builder]*):
+    inline def mysqlTables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTableArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTableArgs.builder
       builder.mysqlTables(args.map(_(argsBuilder).build)*)
@@ -572,7 +572,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mysqlColumns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTableMysqlColumnArgs.Builder]*):
+    inline def mysqlColumns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTableMysqlColumnArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTableArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllMysqlExcludedObjectsMysqlDatabaseMysqlTableMysqlColumnArgs.builder
       builder.mysqlColumns(args.map(_(argsBuilder).build)*)
@@ -583,7 +583,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oracleSchemas(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllOracleExcludedObjectsOracleSchemaArgs.Builder]*):
+    inline def oracleSchemas(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllOracleExcludedObjectsOracleSchemaArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllOracleExcludedObjectsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllOracleExcludedObjectsOracleSchemaArgs.builder
       builder.oracleSchemas(args.map(_(argsBuilder).build)*)
@@ -594,7 +594,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oracleTables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTableArgs.Builder]*):
+    inline def oracleTables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTableArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllOracleExcludedObjectsOracleSchemaArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTableArgs.builder
       builder.oracleTables(args.map(_(argsBuilder).build)*)
@@ -605,7 +605,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oracleColumns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTableOracleColumnArgs.Builder]*):
+    inline def oracleColumns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTableOracleColumnArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTableArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllOracleExcludedObjectsOracleSchemaOracleTableOracleColumnArgs.builder
       builder.oracleColumns(args.map(_(argsBuilder).build)*)
@@ -616,7 +616,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def postgresqlSchemas(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllPostgresqlExcludedObjectsPostgresqlSchemaArgs.Builder]*):
+    inline def postgresqlSchemas(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllPostgresqlExcludedObjectsPostgresqlSchemaArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllPostgresqlExcludedObjectsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllPostgresqlExcludedObjectsPostgresqlSchemaArgs.builder
       builder.postgresqlSchemas(args.map(_(argsBuilder).build)*)
@@ -627,7 +627,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def postgresqlTables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllPostgresqlExcludedObjectsPostgresqlSchemaPostgresqlTableArgs.Builder]*):
+    inline def postgresqlTables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllPostgresqlExcludedObjectsPostgresqlSchemaPostgresqlTableArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllPostgresqlExcludedObjectsPostgresqlSchemaArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllPostgresqlExcludedObjectsPostgresqlSchemaPostgresqlTableArgs.builder
       builder.postgresqlTables(args.map(_(argsBuilder).build)*)
@@ -638,7 +638,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def postgresqlColumns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllPostgresqlExcludedObjectsPostgresqlSchemaPostgresqlTablePostgresqlColumnArgs.Builder]*):
+    inline def postgresqlColumns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllPostgresqlExcludedObjectsPostgresqlSchemaPostgresqlTablePostgresqlColumnArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllPostgresqlExcludedObjectsPostgresqlSchemaPostgresqlTableArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllPostgresqlExcludedObjectsPostgresqlSchemaPostgresqlTablePostgresqlColumnArgs.builder
       builder.postgresqlColumns(args.map(_(argsBuilder).build)*)
@@ -649,7 +649,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def objects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllSalesforceExcludedObjectsObjectArgs.Builder]*):
+    inline def objects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllSalesforceExcludedObjectsObjectArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllSalesforceExcludedObjectsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllSalesforceExcludedObjectsObjectArgs.builder
       builder.objects(args.map(_(argsBuilder).build)*)
@@ -660,7 +660,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fields(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllSalesforceExcludedObjectsObjectFieldArgs.Builder]*):
+    inline def fields(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllSalesforceExcludedObjectsObjectFieldArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllSalesforceExcludedObjectsObjectArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllSalesforceExcludedObjectsObjectFieldArgs.builder
       builder.fields(args.map(_(argsBuilder).build)*)
@@ -671,7 +671,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def schemas(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllSpannerExcludedObjectsSchemaArgs.Builder]*):
+    inline def schemas(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllSpannerExcludedObjectsSchemaArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllSpannerExcludedObjectsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllSpannerExcludedObjectsSchemaArgs.builder
       builder.schemas(args.map(_(argsBuilder).build)*)
@@ -682,7 +682,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllSpannerExcludedObjectsSchemaTableArgs.Builder]*):
+    inline def tables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllSpannerExcludedObjectsSchemaTableArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllSpannerExcludedObjectsSchemaArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllSpannerExcludedObjectsSchemaTableArgs.builder
       builder.tables(args.map(_(argsBuilder).build)*)
@@ -693,7 +693,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def columns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllSpannerExcludedObjectsSchemaTableColumnArgs.Builder]*):
+    inline def columns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllSpannerExcludedObjectsSchemaTableColumnArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllSpannerExcludedObjectsSchemaTableArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllSpannerExcludedObjectsSchemaTableColumnArgs.builder
       builder.columns(args.map(_(argsBuilder).build)*)
@@ -704,7 +704,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def schemas(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllSqlServerExcludedObjectsSchemaArgs.Builder]*):
+    inline def schemas(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllSqlServerExcludedObjectsSchemaArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllSqlServerExcludedObjectsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllSqlServerExcludedObjectsSchemaArgs.builder
       builder.schemas(args.map(_(argsBuilder).build)*)
@@ -715,7 +715,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllSqlServerExcludedObjectsSchemaTableArgs.Builder]*):
+    inline def tables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllSqlServerExcludedObjectsSchemaTableArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllSqlServerExcludedObjectsSchemaArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllSqlServerExcludedObjectsSchemaTableArgs.builder
       builder.tables(args.map(_(argsBuilder).build)*)
@@ -726,7 +726,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def columns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllSqlServerExcludedObjectsSchemaTableColumnArgs.Builder]*):
+    inline def columns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllSqlServerExcludedObjectsSchemaTableColumnArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamBackfillAllSqlServerExcludedObjectsSchemaTableArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllSqlServerExcludedObjectsSchemaTableColumnArgs.builder
       builder.columns(args.map(_(argsBuilder).build)*)
@@ -737,7 +737,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigqueryDestinationConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigArgs.Builder]):
+    inline def bigqueryDestinationConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamDestinationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigArgs.builder
       builder.bigqueryDestinationConfig(args(argsBuilder).build)
@@ -747,7 +747,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gcsDestinationConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamDestinationConfigGcsDestinationConfigArgs.Builder]):
+    inline def gcsDestinationConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamDestinationConfigGcsDestinationConfigArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamDestinationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamDestinationConfigGcsDestinationConfigArgs.builder
       builder.gcsDestinationConfig(args(argsBuilder).build)
@@ -759,7 +759,7 @@ object datastream_ext:
      * historical state of the data.
      * @return builder
      */
-    def appendOnly(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigAppendOnlyArgs.Builder]):
+    inline def appendOnly(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigAppendOnlyArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigAppendOnlyArgs.builder
       builder.appendOnly(args(argsBuilder).build)
@@ -769,7 +769,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def blmtConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigBlmtConfigArgs.Builder]):
+    inline def blmtConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigBlmtConfigArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigBlmtConfigArgs.builder
       builder.blmtConfig(args(argsBuilder).build)
@@ -780,7 +780,7 @@ object datastream_ext:
      * in the source database. With Merge mode, no historical record of the change events is kept.
      * @return builder
      */
-    def merge(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigMergeArgs.Builder]):
+    inline def merge(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigMergeArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigMergeArgs.builder
       builder.merge(args(argsBuilder).build)
@@ -790,7 +790,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def singleTargetDataset(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigSingleTargetDatasetArgs.Builder]):
+    inline def singleTargetDataset(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigSingleTargetDatasetArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigSingleTargetDatasetArgs.builder
       builder.singleTargetDataset(args(argsBuilder).build)
@@ -800,7 +800,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sourceHierarchyDatasets(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsArgs.Builder]):
+    inline def sourceHierarchyDatasets(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsArgs.builder
       builder.sourceHierarchyDatasets(args(argsBuilder).build)
@@ -811,7 +811,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def datasetTemplate(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsDatasetTemplateArgs.Builder]):
+    inline def datasetTemplate(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsDatasetTemplateArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamDestinationConfigBigqueryDestinationConfigSourceHierarchyDatasetsDatasetTemplateArgs.builder
       builder.datasetTemplate(args(argsBuilder).build)
@@ -821,7 +821,7 @@ object datastream_ext:
      * @param avroFileFormat AVRO file format configuration.
      * @return builder
      */
-    def avroFileFormat(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamDestinationConfigGcsDestinationConfigAvroFileFormatArgs.Builder]):
+    inline def avroFileFormat(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamDestinationConfigGcsDestinationConfigAvroFileFormatArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamDestinationConfigGcsDestinationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamDestinationConfigGcsDestinationConfigAvroFileFormatArgs.builder
       builder.avroFileFormat(args(argsBuilder).build)
@@ -831,7 +831,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def jsonFileFormat(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamDestinationConfigGcsDestinationConfigJsonFileFormatArgs.Builder]):
+    inline def jsonFileFormat(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamDestinationConfigGcsDestinationConfigJsonFileFormatArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamDestinationConfigGcsDestinationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamDestinationConfigGcsDestinationConfigJsonFileFormatArgs.builder
       builder.jsonFileFormat(args(argsBuilder).build)
@@ -842,7 +842,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customizationRules(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetCustomizationRuleArgs.Builder]*):
+    inline def customizationRules(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetCustomizationRuleArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamRuleSetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamRuleSetCustomizationRuleArgs.builder
       builder.customizationRules(args.map(_(argsBuilder).build)*)
@@ -852,7 +852,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def objectFilter(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterArgs.Builder]):
+    inline def objectFilter(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamRuleSetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterArgs.builder
       builder.objectFilter(args(argsBuilder).build)
@@ -863,7 +863,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigqueryClustering(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetCustomizationRuleBigqueryClusteringArgs.Builder]):
+    inline def bigqueryClustering(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetCustomizationRuleBigqueryClusteringArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamRuleSetCustomizationRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamRuleSetCustomizationRuleBigqueryClusteringArgs.builder
       builder.bigqueryClustering(args(argsBuilder).build)
@@ -873,7 +873,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigqueryPartitioning(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetCustomizationRuleBigqueryPartitioningArgs.Builder]):
+    inline def bigqueryPartitioning(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetCustomizationRuleBigqueryPartitioningArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamRuleSetCustomizationRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamRuleSetCustomizationRuleBigqueryPartitioningArgs.builder
       builder.bigqueryPartitioning(args(argsBuilder).build)
@@ -884,7 +884,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingestionTimePartition(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetCustomizationRuleBigqueryPartitioningIngestionTimePartitionArgs.Builder]):
+    inline def ingestionTimePartition(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetCustomizationRuleBigqueryPartitioningIngestionTimePartitionArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamRuleSetCustomizationRuleBigqueryPartitioningArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamRuleSetCustomizationRuleBigqueryPartitioningIngestionTimePartitionArgs.builder
       builder.ingestionTimePartition(args(argsBuilder).build)
@@ -894,7 +894,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def integerRangePartition(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetCustomizationRuleBigqueryPartitioningIntegerRangePartitionArgs.Builder]):
+    inline def integerRangePartition(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetCustomizationRuleBigqueryPartitioningIntegerRangePartitionArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamRuleSetCustomizationRuleBigqueryPartitioningArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamRuleSetCustomizationRuleBigqueryPartitioningIntegerRangePartitionArgs.builder
       builder.integerRangePartition(args(argsBuilder).build)
@@ -904,7 +904,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeUnitPartition(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetCustomizationRuleBigqueryPartitioningTimeUnitPartitionArgs.Builder]):
+    inline def timeUnitPartition(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetCustomizationRuleBigqueryPartitioningTimeUnitPartitionArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamRuleSetCustomizationRuleBigqueryPartitioningArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamRuleSetCustomizationRuleBigqueryPartitioningTimeUnitPartitionArgs.builder
       builder.timeUnitPartition(args(argsBuilder).build)
@@ -915,7 +915,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sourceObjectIdentifier(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierArgs.Builder]):
+    inline def sourceObjectIdentifier(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierArgs.builder
       builder.sourceObjectIdentifier(args(argsBuilder).build)
@@ -926,7 +926,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mongodbIdentifier(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierMongodbIdentifierArgs.Builder]):
+    inline def mongodbIdentifier(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierMongodbIdentifierArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierMongodbIdentifierArgs.builder
       builder.mongodbIdentifier(args(argsBuilder).build)
@@ -936,7 +936,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mysqlIdentifier(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierMysqlIdentifierArgs.Builder]):
+    inline def mysqlIdentifier(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierMysqlIdentifierArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierMysqlIdentifierArgs.builder
       builder.mysqlIdentifier(args(argsBuilder).build)
@@ -946,7 +946,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oracleIdentifier(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierOracleIdentifierArgs.Builder]):
+    inline def oracleIdentifier(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierOracleIdentifierArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierOracleIdentifierArgs.builder
       builder.oracleIdentifier(args(argsBuilder).build)
@@ -956,7 +956,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def postgresqlIdentifier(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierPostgresqlIdentifierArgs.Builder]):
+    inline def postgresqlIdentifier(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierPostgresqlIdentifierArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierPostgresqlIdentifierArgs.builder
       builder.postgresqlIdentifier(args(argsBuilder).build)
@@ -966,7 +966,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def salesforceIdentifier(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierSalesforceIdentifierArgs.Builder]):
+    inline def salesforceIdentifier(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierSalesforceIdentifierArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierSalesforceIdentifierArgs.builder
       builder.salesforceIdentifier(args(argsBuilder).build)
@@ -976,7 +976,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def spannerIdentifier(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierSpannerIdentifierArgs.Builder]):
+    inline def spannerIdentifier(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierSpannerIdentifierArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierSpannerIdentifierArgs.builder
       builder.spannerIdentifier(args(argsBuilder).build)
@@ -986,7 +986,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sqlServerIdentifier(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierSqlServerIdentifierArgs.Builder]):
+    inline def sqlServerIdentifier(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierSqlServerIdentifierArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamRuleSetObjectFilterSourceObjectIdentifierSqlServerIdentifierArgs.builder
       builder.sqlServerIdentifier(args(argsBuilder).build)
@@ -997,7 +997,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mongodbSourceConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigArgs.Builder]):
+    inline def mongodbSourceConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigArgs.builder
       builder.mongodbSourceConfig(args(argsBuilder).build)
@@ -1007,7 +1007,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mysqlSourceConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigArgs.Builder]):
+    inline def mysqlSourceConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigArgs.builder
       builder.mysqlSourceConfig(args(argsBuilder).build)
@@ -1017,7 +1017,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oracleSourceConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigArgs.Builder]):
+    inline def oracleSourceConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigArgs.builder
       builder.oracleSourceConfig(args(argsBuilder).build)
@@ -1027,7 +1027,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def postgresqlSourceConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigArgs.Builder]):
+    inline def postgresqlSourceConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigArgs.builder
       builder.postgresqlSourceConfig(args(argsBuilder).build)
@@ -1037,7 +1037,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def salesforceSourceConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigArgs.Builder]):
+    inline def salesforceSourceConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigArgs.builder
       builder.salesforceSourceConfig(args(argsBuilder).build)
@@ -1047,7 +1047,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def spannerSourceConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigArgs.Builder]):
+    inline def spannerSourceConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigArgs.builder
       builder.spannerSourceConfig(args(argsBuilder).build)
@@ -1057,7 +1057,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sqlServerSourceConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigArgs.Builder]):
+    inline def sqlServerSourceConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigArgs.builder
       builder.sqlServerSourceConfig(args(argsBuilder).build)
@@ -1068,7 +1068,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def excludeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigExcludeObjectsArgs.Builder]):
+    inline def excludeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigExcludeObjectsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigExcludeObjectsArgs.builder
       builder.excludeObjects(args(argsBuilder).build)
@@ -1078,7 +1078,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def includeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigIncludeObjectsArgs.Builder]):
+    inline def includeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigIncludeObjectsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigIncludeObjectsArgs.builder
       builder.includeObjects(args(argsBuilder).build)
@@ -1089,7 +1089,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def databases(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigExcludeObjectsDatabaseArgs.Builder]*):
+    inline def databases(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigExcludeObjectsDatabaseArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigExcludeObjectsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigExcludeObjectsDatabaseArgs.builder
       builder.databases(args.map(_(argsBuilder).build)*)
@@ -1100,7 +1100,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def collections(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigExcludeObjectsDatabaseCollectionArgs.Builder]*):
+    inline def collections(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigExcludeObjectsDatabaseCollectionArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigExcludeObjectsDatabaseArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigExcludeObjectsDatabaseCollectionArgs.builder
       builder.collections(args.map(_(argsBuilder).build)*)
@@ -1111,7 +1111,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fields(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigExcludeObjectsDatabaseCollectionFieldArgs.Builder]*):
+    inline def fields(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigExcludeObjectsDatabaseCollectionFieldArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigExcludeObjectsDatabaseCollectionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigExcludeObjectsDatabaseCollectionFieldArgs.builder
       builder.fields(args.map(_(argsBuilder).build)*)
@@ -1122,7 +1122,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def databases(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigIncludeObjectsDatabaseArgs.Builder]*):
+    inline def databases(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigIncludeObjectsDatabaseArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigIncludeObjectsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigIncludeObjectsDatabaseArgs.builder
       builder.databases(args.map(_(argsBuilder).build)*)
@@ -1133,7 +1133,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def collections(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigIncludeObjectsDatabaseCollectionArgs.Builder]*):
+    inline def collections(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigIncludeObjectsDatabaseCollectionArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigIncludeObjectsDatabaseArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigIncludeObjectsDatabaseCollectionArgs.builder
       builder.collections(args.map(_(argsBuilder).build)*)
@@ -1144,7 +1144,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fields(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigIncludeObjectsDatabaseCollectionFieldArgs.Builder]*):
+    inline def fields(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigIncludeObjectsDatabaseCollectionFieldArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigIncludeObjectsDatabaseCollectionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigMongodbSourceConfigIncludeObjectsDatabaseCollectionFieldArgs.builder
       builder.fields(args.map(_(argsBuilder).build)*)
@@ -1154,7 +1154,7 @@ object datastream_ext:
      * @param binaryLogPosition CDC reader reads from binary logs replication cdc method.
      * @return builder
      */
-    def binaryLogPosition(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigBinaryLogPositionArgs.Builder]):
+    inline def binaryLogPosition(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigBinaryLogPositionArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigBinaryLogPositionArgs.builder
       builder.binaryLogPosition(args(argsBuilder).build)
@@ -1164,7 +1164,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def excludeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigExcludeObjectsArgs.Builder]):
+    inline def excludeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigExcludeObjectsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigExcludeObjectsArgs.builder
       builder.excludeObjects(args(argsBuilder).build)
@@ -1173,7 +1173,7 @@ object datastream_ext:
      * @param gtid CDC reader reads from gtid based replication.
      * @return builder
      */
-    def gtid(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigGtidArgs.Builder]):
+    inline def gtid(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigGtidArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigGtidArgs.builder
       builder.gtid(args(argsBuilder).build)
@@ -1183,7 +1183,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def includeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigIncludeObjectsArgs.Builder]):
+    inline def includeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigIncludeObjectsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigIncludeObjectsArgs.builder
       builder.includeObjects(args(argsBuilder).build)
@@ -1194,7 +1194,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mysqlDatabases(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseArgs.Builder]*):
+    inline def mysqlDatabases(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigExcludeObjectsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseArgs.builder
       builder.mysqlDatabases(args.map(_(argsBuilder).build)*)
@@ -1205,7 +1205,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mysqlTables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTableArgs.Builder]*):
+    inline def mysqlTables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTableArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTableArgs.builder
       builder.mysqlTables(args.map(_(argsBuilder).build)*)
@@ -1216,7 +1216,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mysqlColumns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTableMysqlColumnArgs.Builder]*):
+    inline def mysqlColumns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTableMysqlColumnArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTableArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigExcludeObjectsMysqlDatabaseMysqlTableMysqlColumnArgs.builder
       builder.mysqlColumns(args.map(_(argsBuilder).build)*)
@@ -1227,7 +1227,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mysqlDatabases(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabaseArgs.Builder]*):
+    inline def mysqlDatabases(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabaseArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigIncludeObjectsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabaseArgs.builder
       builder.mysqlDatabases(args.map(_(argsBuilder).build)*)
@@ -1238,7 +1238,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mysqlTables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabaseMysqlTableArgs.Builder]*):
+    inline def mysqlTables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabaseMysqlTableArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabaseArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabaseMysqlTableArgs.builder
       builder.mysqlTables(args.map(_(argsBuilder).build)*)
@@ -1249,7 +1249,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mysqlColumns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabaseMysqlTableMysqlColumnArgs.Builder]*):
+    inline def mysqlColumns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabaseMysqlTableMysqlColumnArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabaseMysqlTableArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigMysqlSourceConfigIncludeObjectsMysqlDatabaseMysqlTableMysqlColumnArgs.builder
       builder.mysqlColumns(args.map(_(argsBuilder).build)*)
@@ -1259,7 +1259,7 @@ object datastream_ext:
      * @param dropLargeObjects Configuration to drop large object values.
      * @return builder
      */
-    def dropLargeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigDropLargeObjectsArgs.Builder]):
+    inline def dropLargeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigDropLargeObjectsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigDropLargeObjectsArgs.builder
       builder.dropLargeObjects(args(argsBuilder).build)
@@ -1269,7 +1269,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def excludeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigExcludeObjectsArgs.Builder]):
+    inline def excludeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigExcludeObjectsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigExcludeObjectsArgs.builder
       builder.excludeObjects(args(argsBuilder).build)
@@ -1279,7 +1279,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def includeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigIncludeObjectsArgs.Builder]):
+    inline def includeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigIncludeObjectsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigIncludeObjectsArgs.builder
       builder.includeObjects(args(argsBuilder).build)
@@ -1288,7 +1288,7 @@ object datastream_ext:
      * @param streamLargeObjects Configuration to drop large object values.
      * @return builder
      */
-    def streamLargeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigStreamLargeObjectsArgs.Builder]):
+    inline def streamLargeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigStreamLargeObjectsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigStreamLargeObjectsArgs.builder
       builder.streamLargeObjects(args(argsBuilder).build)
@@ -1299,7 +1299,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oracleSchemas(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchemaArgs.Builder]*):
+    inline def oracleSchemas(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchemaArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigExcludeObjectsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchemaArgs.builder
       builder.oracleSchemas(args.map(_(argsBuilder).build)*)
@@ -1310,7 +1310,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oracleTables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchemaOracleTableArgs.Builder]*):
+    inline def oracleTables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchemaOracleTableArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchemaArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchemaOracleTableArgs.builder
       builder.oracleTables(args.map(_(argsBuilder).build)*)
@@ -1321,7 +1321,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oracleColumns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchemaOracleTableOracleColumnArgs.Builder]*):
+    inline def oracleColumns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchemaOracleTableOracleColumnArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchemaOracleTableArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigExcludeObjectsOracleSchemaOracleTableOracleColumnArgs.builder
       builder.oracleColumns(args.map(_(argsBuilder).build)*)
@@ -1332,7 +1332,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oracleSchemas(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigIncludeObjectsOracleSchemaArgs.Builder]*):
+    inline def oracleSchemas(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigIncludeObjectsOracleSchemaArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigIncludeObjectsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigIncludeObjectsOracleSchemaArgs.builder
       builder.oracleSchemas(args.map(_(argsBuilder).build)*)
@@ -1343,7 +1343,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oracleTables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigIncludeObjectsOracleSchemaOracleTableArgs.Builder]*):
+    inline def oracleTables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigIncludeObjectsOracleSchemaOracleTableArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigIncludeObjectsOracleSchemaArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigIncludeObjectsOracleSchemaOracleTableArgs.builder
       builder.oracleTables(args.map(_(argsBuilder).build)*)
@@ -1354,7 +1354,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oracleColumns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigIncludeObjectsOracleSchemaOracleTableOracleColumnArgs.Builder]*):
+    inline def oracleColumns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigIncludeObjectsOracleSchemaOracleTableOracleColumnArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigIncludeObjectsOracleSchemaOracleTableArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigOracleSourceConfigIncludeObjectsOracleSchemaOracleTableOracleColumnArgs.builder
       builder.oracleColumns(args.map(_(argsBuilder).build)*)
@@ -1365,7 +1365,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def excludeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigExcludeObjectsArgs.Builder]):
+    inline def excludeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigExcludeObjectsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigExcludeObjectsArgs.builder
       builder.excludeObjects(args(argsBuilder).build)
@@ -1375,7 +1375,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def includeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigIncludeObjectsArgs.Builder]):
+    inline def includeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigIncludeObjectsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigIncludeObjectsArgs.builder
       builder.includeObjects(args(argsBuilder).build)
@@ -1386,7 +1386,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def postgresqlSchemas(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchemaArgs.Builder]*):
+    inline def postgresqlSchemas(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchemaArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigExcludeObjectsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchemaArgs.builder
       builder.postgresqlSchemas(args.map(_(argsBuilder).build)*)
@@ -1397,7 +1397,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def postgresqlTables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchemaPostgresqlTableArgs.Builder]*):
+    inline def postgresqlTables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchemaPostgresqlTableArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchemaArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchemaPostgresqlTableArgs.builder
       builder.postgresqlTables(args.map(_(argsBuilder).build)*)
@@ -1408,7 +1408,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def postgresqlColumns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchemaPostgresqlTablePostgresqlColumnArgs.Builder]*):
+    inline def postgresqlColumns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchemaPostgresqlTablePostgresqlColumnArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchemaPostgresqlTableArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigExcludeObjectsPostgresqlSchemaPostgresqlTablePostgresqlColumnArgs.builder
       builder.postgresqlColumns(args.map(_(argsBuilder).build)*)
@@ -1419,7 +1419,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def postgresqlSchemas(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigIncludeObjectsPostgresqlSchemaArgs.Builder]*):
+    inline def postgresqlSchemas(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigIncludeObjectsPostgresqlSchemaArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigIncludeObjectsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigIncludeObjectsPostgresqlSchemaArgs.builder
       builder.postgresqlSchemas(args.map(_(argsBuilder).build)*)
@@ -1430,7 +1430,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def postgresqlTables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigIncludeObjectsPostgresqlSchemaPostgresqlTableArgs.Builder]*):
+    inline def postgresqlTables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigIncludeObjectsPostgresqlSchemaPostgresqlTableArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigIncludeObjectsPostgresqlSchemaArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigIncludeObjectsPostgresqlSchemaPostgresqlTableArgs.builder
       builder.postgresqlTables(args.map(_(argsBuilder).build)*)
@@ -1441,7 +1441,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def postgresqlColumns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigIncludeObjectsPostgresqlSchemaPostgresqlTablePostgresqlColumnArgs.Builder]*):
+    inline def postgresqlColumns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigIncludeObjectsPostgresqlSchemaPostgresqlTablePostgresqlColumnArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigIncludeObjectsPostgresqlSchemaPostgresqlTableArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigPostgresqlSourceConfigIncludeObjectsPostgresqlSchemaPostgresqlTablePostgresqlColumnArgs.builder
       builder.postgresqlColumns(args.map(_(argsBuilder).build)*)
@@ -1452,7 +1452,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def excludeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigExcludeObjectsArgs.Builder]):
+    inline def excludeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigExcludeObjectsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigExcludeObjectsArgs.builder
       builder.excludeObjects(args(argsBuilder).build)
@@ -1462,7 +1462,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def includeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigIncludeObjectsArgs.Builder]):
+    inline def includeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigIncludeObjectsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigIncludeObjectsArgs.builder
       builder.includeObjects(args(argsBuilder).build)
@@ -1473,7 +1473,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def objects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigExcludeObjectsObjectArgs.Builder]*):
+    inline def objects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigExcludeObjectsObjectArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigExcludeObjectsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigExcludeObjectsObjectArgs.builder
       builder.objects(args.map(_(argsBuilder).build)*)
@@ -1484,7 +1484,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fields(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigExcludeObjectsObjectFieldArgs.Builder]*):
+    inline def fields(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigExcludeObjectsObjectFieldArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigExcludeObjectsObjectArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigExcludeObjectsObjectFieldArgs.builder
       builder.fields(args.map(_(argsBuilder).build)*)
@@ -1495,7 +1495,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def objects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigIncludeObjectsObjectArgs.Builder]*):
+    inline def objects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigIncludeObjectsObjectArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigIncludeObjectsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigIncludeObjectsObjectArgs.builder
       builder.objects(args.map(_(argsBuilder).build)*)
@@ -1506,7 +1506,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fields(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigIncludeObjectsObjectFieldArgs.Builder]*):
+    inline def fields(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigIncludeObjectsObjectFieldArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigIncludeObjectsObjectArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSalesforceSourceConfigIncludeObjectsObjectFieldArgs.builder
       builder.fields(args.map(_(argsBuilder).build)*)
@@ -1517,7 +1517,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def excludeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigExcludeObjectsArgs.Builder]):
+    inline def excludeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigExcludeObjectsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigExcludeObjectsArgs.builder
       builder.excludeObjects(args(argsBuilder).build)
@@ -1527,7 +1527,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def includeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigIncludeObjectsArgs.Builder]):
+    inline def includeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigIncludeObjectsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigIncludeObjectsArgs.builder
       builder.includeObjects(args(argsBuilder).build)
@@ -1538,7 +1538,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def schemas(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigExcludeObjectsSchemaArgs.Builder]*):
+    inline def schemas(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigExcludeObjectsSchemaArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigExcludeObjectsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigExcludeObjectsSchemaArgs.builder
       builder.schemas(args.map(_(argsBuilder).build)*)
@@ -1549,7 +1549,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigExcludeObjectsSchemaTableArgs.Builder]*):
+    inline def tables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigExcludeObjectsSchemaTableArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigExcludeObjectsSchemaArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigExcludeObjectsSchemaTableArgs.builder
       builder.tables(args.map(_(argsBuilder).build)*)
@@ -1560,7 +1560,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def columns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigExcludeObjectsSchemaTableColumnArgs.Builder]*):
+    inline def columns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigExcludeObjectsSchemaTableColumnArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigExcludeObjectsSchemaTableArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigExcludeObjectsSchemaTableColumnArgs.builder
       builder.columns(args.map(_(argsBuilder).build)*)
@@ -1571,7 +1571,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def schemas(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigIncludeObjectsSchemaArgs.Builder]*):
+    inline def schemas(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigIncludeObjectsSchemaArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigIncludeObjectsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigIncludeObjectsSchemaArgs.builder
       builder.schemas(args.map(_(argsBuilder).build)*)
@@ -1582,7 +1582,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigIncludeObjectsSchemaTableArgs.Builder]*):
+    inline def tables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigIncludeObjectsSchemaTableArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigIncludeObjectsSchemaArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigIncludeObjectsSchemaTableArgs.builder
       builder.tables(args.map(_(argsBuilder).build)*)
@@ -1593,7 +1593,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def columns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigIncludeObjectsSchemaTableColumnArgs.Builder]*):
+    inline def columns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigIncludeObjectsSchemaTableColumnArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigIncludeObjectsSchemaTableArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSpannerSourceConfigIncludeObjectsSchemaTableColumnArgs.builder
       builder.columns(args.map(_(argsBuilder).build)*)
@@ -1603,7 +1603,7 @@ object datastream_ext:
      * @param changeTables CDC reader reads from change tables.
      * @return builder
      */
-    def changeTables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigChangeTablesArgs.Builder]):
+    inline def changeTables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigChangeTablesArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigChangeTablesArgs.builder
       builder.changeTables(args(argsBuilder).build)
@@ -1613,7 +1613,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def excludeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigExcludeObjectsArgs.Builder]):
+    inline def excludeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigExcludeObjectsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigExcludeObjectsArgs.builder
       builder.excludeObjects(args(argsBuilder).build)
@@ -1623,7 +1623,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def includeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigIncludeObjectsArgs.Builder]):
+    inline def includeObjects(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigIncludeObjectsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigIncludeObjectsArgs.builder
       builder.includeObjects(args(argsBuilder).build)
@@ -1632,7 +1632,7 @@ object datastream_ext:
      * @param transactionLogs CDC reader reads from transaction logs.
      * @return builder
      */
-    def transactionLogs(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigTransactionLogsArgs.Builder]):
+    inline def transactionLogs(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigTransactionLogsArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigTransactionLogsArgs.builder
       builder.transactionLogs(args(argsBuilder).build)
@@ -1643,7 +1643,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def schemas(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigExcludeObjectsSchemaArgs.Builder]*):
+    inline def schemas(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigExcludeObjectsSchemaArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigExcludeObjectsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigExcludeObjectsSchemaArgs.builder
       builder.schemas(args.map(_(argsBuilder).build)*)
@@ -1654,7 +1654,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigExcludeObjectsSchemaTableArgs.Builder]*):
+    inline def tables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigExcludeObjectsSchemaTableArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigExcludeObjectsSchemaArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigExcludeObjectsSchemaTableArgs.builder
       builder.tables(args.map(_(argsBuilder).build)*)
@@ -1665,7 +1665,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def columns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigExcludeObjectsSchemaTableColumnArgs.Builder]*):
+    inline def columns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigExcludeObjectsSchemaTableColumnArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigExcludeObjectsSchemaTableArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigExcludeObjectsSchemaTableColumnArgs.builder
       builder.columns(args.map(_(argsBuilder).build)*)
@@ -1676,7 +1676,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def schemas(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigIncludeObjectsSchemaArgs.Builder]*):
+    inline def schemas(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigIncludeObjectsSchemaArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigIncludeObjectsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigIncludeObjectsSchemaArgs.builder
       builder.schemas(args.map(_(argsBuilder).build)*)
@@ -1687,7 +1687,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigIncludeObjectsSchemaTableArgs.Builder]*):
+    inline def tables(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigIncludeObjectsSchemaTableArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigIncludeObjectsSchemaArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigIncludeObjectsSchemaTableArgs.builder
       builder.tables(args.map(_(argsBuilder).build)*)
@@ -1698,7 +1698,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def columns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigIncludeObjectsSchemaTableColumnArgs.Builder]*):
+    inline def columns(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigIncludeObjectsSchemaTableColumnArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigIncludeObjectsSchemaTableArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigSqlServerSourceConfigIncludeObjectsSchemaTableColumnArgs.builder
       builder.columns(args.map(_(argsBuilder).build)*)
@@ -1709,7 +1709,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def backfillAll(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllArgs.Builder]):
+    inline def backfillAll(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillAllArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamState.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillAllArgs.builder
       builder.backfillAll(args(argsBuilder).build)
@@ -1718,7 +1718,7 @@ object datastream_ext:
      * @param backfillNone Backfill strategy to disable automatic backfill for the Stream&#39;s objects.
      * @return builder
      */
-    def backfillNone(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillNoneArgs.Builder]):
+    inline def backfillNone(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamBackfillNoneArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamState.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamBackfillNoneArgs.builder
       builder.backfillNone(args(argsBuilder).build)
@@ -1728,7 +1728,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinationConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamDestinationConfigArgs.Builder]):
+    inline def destinationConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamDestinationConfigArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamState.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamDestinationConfigArgs.builder
       builder.destinationConfig(args(argsBuilder).build)
@@ -1738,7 +1738,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ruleSets(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetArgs.Builder]*):
+    inline def ruleSets(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamRuleSetArgs.Builder]*):
         com.pulumi.gcp.datastream.inputs.StreamState.Builder =
       def argsBuilder = com.pulumi.gcp.datastream.inputs.StreamRuleSetArgs.builder
       builder.ruleSets(args.map(_(argsBuilder).build)*)
@@ -1748,7 +1748,7 @@ object datastream_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sourceConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigArgs.Builder]):
+    inline def sourceConfig(args: Endofunction[com.pulumi.gcp.datastream.inputs.StreamSourceConfigArgs.Builder]):
         com.pulumi.gcp.datastream.inputs.StreamState.Builder =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.StreamSourceConfigArgs.builder
       builder.sourceConfig(args(argsBuilder).build)

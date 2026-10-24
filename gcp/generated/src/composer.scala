@@ -187,7 +187,7 @@ object composer:
    *     [Troubleshooting pages](https://docs.cloud.google.com/composer/docs/composer-3/troubleshooting-environment-creation)
    *     if you encounter problems.
    */
-  def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.composer.EnvironmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.composer.EnvironmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -205,7 +205,7 @@ object composer:
    * 
    * * [API documentation](https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments.userWorkloadsConfigMaps)
    */
-  def UserWorkloadsConfigMap(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UserWorkloadsConfigMap(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.composer.UserWorkloadsConfigMapArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.composer.UserWorkloadsConfigMapArgs.builder
     conf.logicalName2physicalName(name) match
@@ -219,7 +219,7 @@ object composer:
    * User workloads Secret used by Airflow tasks that run with Kubernetes Executor
    * or KubernetesPodOperator. Intended for Managed Airflow (Gen 3) Environments.
    */
-  def UserWorkloadsSecret(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UserWorkloadsSecret(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.composer.UserWorkloadsSecretArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.composer.UserWorkloadsSecretArgs.builder
     conf.logicalName2physicalName(name) match

@@ -8,7 +8,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ontapSource(args: Endofunction[com.pulumi.gcp.netapp.inputs.BackupOntapSourceArgs.Builder]):
+    inline def ontapSource(args: Endofunction[com.pulumi.gcp.netapp.inputs.BackupOntapSourceArgs.Builder]):
         com.pulumi.gcp.netapp.BackupArgs.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.BackupOntapSourceArgs.builder
       builder.ontapSource(args(argsBuilder).build)
@@ -19,7 +19,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def backupRetentionPolicy(args: Endofunction[com.pulumi.gcp.netapp.inputs.BackupVaultBackupRetentionPolicyArgs.Builder]):
+    inline def backupRetentionPolicy(args: Endofunction[com.pulumi.gcp.netapp.inputs.BackupVaultBackupRetentionPolicyArgs.Builder]):
         com.pulumi.gcp.netapp.BackupVaultArgs.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.BackupVaultBackupRetentionPolicyArgs.builder
       builder.backupRetentionPolicy(args(argsBuilder).build)
@@ -30,7 +30,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def backupConfig(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeBackupConfigArgs.Builder]):
+    inline def backupConfig(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeBackupConfigArgs.Builder]):
         com.pulumi.gcp.netapp.VolumeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeBackupConfigArgs.builder
       builder.backupConfig(args(argsBuilder).build)
@@ -41,7 +41,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def blockDevices(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeBlockDeviceArgs.Builder]*):
+    inline def blockDevices(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeBlockDeviceArgs.Builder]*):
         com.pulumi.gcp.netapp.VolumeArgs.Builder =
       def argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeBlockDeviceArgs.builder
       builder.blockDevices(args.map(_(argsBuilder).build)*)
@@ -51,7 +51,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cacheParameters(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeCacheParametersArgs.Builder]):
+    inline def cacheParameters(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeCacheParametersArgs.Builder]):
         com.pulumi.gcp.netapp.VolumeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeCacheParametersArgs.builder
       builder.cacheParameters(args(argsBuilder).build)
@@ -61,7 +61,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def exportPolicy(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeExportPolicyArgs.Builder]):
+    inline def exportPolicy(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeExportPolicyArgs.Builder]):
         com.pulumi.gcp.netapp.VolumeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeExportPolicyArgs.builder
       builder.exportPolicy(args(argsBuilder).build)
@@ -73,7 +73,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hybridReplicationParameters(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeHybridReplicationParametersArgs.Builder]):
+    inline def hybridReplicationParameters(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeHybridReplicationParametersArgs.Builder]):
         com.pulumi.gcp.netapp.VolumeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeHybridReplicationParametersArgs.builder
       builder.hybridReplicationParameters(args(argsBuilder).build)
@@ -85,7 +85,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def largeCapacityConfig(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeLargeCapacityConfigArgs.Builder]):
+    inline def largeCapacityConfig(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeLargeCapacityConfigArgs.Builder]):
         com.pulumi.gcp.netapp.VolumeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeLargeCapacityConfigArgs.builder
       builder.largeCapacityConfig(args(argsBuilder).build)
@@ -95,7 +95,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def restoreParameters(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeRestoreParametersArgs.Builder]):
+    inline def restoreParameters(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeRestoreParametersArgs.Builder]):
         com.pulumi.gcp.netapp.VolumeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeRestoreParametersArgs.builder
       builder.restoreParameters(args(argsBuilder).build)
@@ -106,7 +106,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def snapshotPolicy(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeSnapshotPolicyArgs.Builder]):
+    inline def snapshotPolicy(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeSnapshotPolicyArgs.Builder]):
         com.pulumi.gcp.netapp.VolumeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeSnapshotPolicyArgs.builder
       builder.snapshotPolicy(args(argsBuilder).build)
@@ -116,7 +116,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tieringPolicy(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeTieringPolicyArgs.Builder]):
+    inline def tieringPolicy(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeTieringPolicyArgs.Builder]):
         com.pulumi.gcp.netapp.VolumeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeTieringPolicyArgs.builder
       builder.tieringPolicy(args(argsBuilder).build)
@@ -127,7 +127,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinationVolumeParameters(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeReplicationDestinationVolumeParametersArgs.Builder]):
+    inline def destinationVolumeParameters(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeReplicationDestinationVolumeParametersArgs.Builder]):
         com.pulumi.gcp.netapp.VolumeReplicationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeReplicationDestinationVolumeParametersArgs.builder
       builder.destinationVolumeParameters(args(argsBuilder).build)
@@ -138,7 +138,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ontapSource(args: Endofunction[com.pulumi.gcp.netapp.inputs.BackupOntapSourceArgs.Builder]):
+    inline def ontapSource(args: Endofunction[com.pulumi.gcp.netapp.inputs.BackupOntapSourceArgs.Builder]):
         com.pulumi.gcp.netapp.inputs.BackupState.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.BackupOntapSourceArgs.builder
       builder.ontapSource(args(argsBuilder).build)
@@ -149,7 +149,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def backupRetentionPolicy(args: Endofunction[com.pulumi.gcp.netapp.inputs.BackupVaultBackupRetentionPolicyArgs.Builder]):
+    inline def backupRetentionPolicy(args: Endofunction[com.pulumi.gcp.netapp.inputs.BackupVaultBackupRetentionPolicyArgs.Builder]):
         com.pulumi.gcp.netapp.inputs.BackupVaultState.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.BackupVaultBackupRetentionPolicyArgs.builder
       builder.backupRetentionPolicy(args(argsBuilder).build)
@@ -160,7 +160,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cacheConfig(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeCacheParametersCacheConfigArgs.Builder]):
+    inline def cacheConfig(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeCacheParametersCacheConfigArgs.Builder]):
         com.pulumi.gcp.netapp.inputs.VolumeCacheParametersArgs.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeCacheParametersCacheConfigArgs.builder
       builder.cacheConfig(args(argsBuilder).build)
@@ -171,7 +171,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeExportPolicyRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeExportPolicyRuleArgs.Builder]*):
         com.pulumi.gcp.netapp.inputs.VolumeExportPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeExportPolicyRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -182,7 +182,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tieringPolicy(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeReplicationDestinationVolumeParametersTieringPolicyArgs.Builder]):
+    inline def tieringPolicy(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeReplicationDestinationVolumeParametersTieringPolicyArgs.Builder]):
         com.pulumi.gcp.netapp.inputs.VolumeReplicationDestinationVolumeParametersArgs.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeReplicationDestinationVolumeParametersTieringPolicyArgs.builder
       builder.tieringPolicy(args(argsBuilder).build)
@@ -193,7 +193,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinationVolumeParameters(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeReplicationDestinationVolumeParametersArgs.Builder]):
+    inline def destinationVolumeParameters(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeReplicationDestinationVolumeParametersArgs.Builder]):
         com.pulumi.gcp.netapp.inputs.VolumeReplicationState.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeReplicationDestinationVolumeParametersArgs.builder
       builder.destinationVolumeParameters(args(argsBuilder).build)
@@ -203,7 +203,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hybridPeeringDetails(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeReplicationHybridPeeringDetailArgs.Builder]*):
+    inline def hybridPeeringDetails(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeReplicationHybridPeeringDetailArgs.Builder]*):
         com.pulumi.gcp.netapp.inputs.VolumeReplicationState.Builder =
       def argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeReplicationHybridPeeringDetailArgs.builder
       builder.hybridPeeringDetails(args.map(_(argsBuilder).build)*)
@@ -213,7 +213,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hybridReplicationUserCommands(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeReplicationHybridReplicationUserCommandArgs.Builder]*):
+    inline def hybridReplicationUserCommands(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeReplicationHybridReplicationUserCommandArgs.Builder]*):
         com.pulumi.gcp.netapp.inputs.VolumeReplicationState.Builder =
       def argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeReplicationHybridReplicationUserCommandArgs.builder
       builder.hybridReplicationUserCommands(args.map(_(argsBuilder).build)*)
@@ -223,7 +223,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transferStats(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeReplicationTransferStatArgs.Builder]*):
+    inline def transferStats(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeReplicationTransferStatArgs.Builder]*):
         com.pulumi.gcp.netapp.inputs.VolumeReplicationState.Builder =
       def argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeReplicationTransferStatArgs.builder
       builder.transferStats(args.map(_(argsBuilder).build)*)
@@ -234,7 +234,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dailySchedule(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeSnapshotPolicyDailyScheduleArgs.Builder]):
+    inline def dailySchedule(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeSnapshotPolicyDailyScheduleArgs.Builder]):
         com.pulumi.gcp.netapp.inputs.VolumeSnapshotPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeSnapshotPolicyDailyScheduleArgs.builder
       builder.dailySchedule(args(argsBuilder).build)
@@ -244,7 +244,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hourlySchedule(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeSnapshotPolicyHourlyScheduleArgs.Builder]):
+    inline def hourlySchedule(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeSnapshotPolicyHourlyScheduleArgs.Builder]):
         com.pulumi.gcp.netapp.inputs.VolumeSnapshotPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeSnapshotPolicyHourlyScheduleArgs.builder
       builder.hourlySchedule(args(argsBuilder).build)
@@ -254,7 +254,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def monthlySchedule(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeSnapshotPolicyMonthlyScheduleArgs.Builder]):
+    inline def monthlySchedule(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeSnapshotPolicyMonthlyScheduleArgs.Builder]):
         com.pulumi.gcp.netapp.inputs.VolumeSnapshotPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeSnapshotPolicyMonthlyScheduleArgs.builder
       builder.monthlySchedule(args(argsBuilder).build)
@@ -264,7 +264,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def weeklySchedule(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeSnapshotPolicyWeeklyScheduleArgs.Builder]):
+    inline def weeklySchedule(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeSnapshotPolicyWeeklyScheduleArgs.Builder]):
         com.pulumi.gcp.netapp.inputs.VolumeSnapshotPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeSnapshotPolicyWeeklyScheduleArgs.builder
       builder.weeklySchedule(args(argsBuilder).build)
@@ -275,7 +275,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def backupConfig(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeBackupConfigArgs.Builder]):
+    inline def backupConfig(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeBackupConfigArgs.Builder]):
         com.pulumi.gcp.netapp.inputs.VolumeState.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeBackupConfigArgs.builder
       builder.backupConfig(args(argsBuilder).build)
@@ -286,7 +286,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def blockDevices(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeBlockDeviceArgs.Builder]*):
+    inline def blockDevices(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeBlockDeviceArgs.Builder]*):
         com.pulumi.gcp.netapp.inputs.VolumeState.Builder =
       def argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeBlockDeviceArgs.builder
       builder.blockDevices(args.map(_(argsBuilder).build)*)
@@ -296,7 +296,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cacheParameters(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeCacheParametersArgs.Builder]):
+    inline def cacheParameters(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeCacheParametersArgs.Builder]):
         com.pulumi.gcp.netapp.inputs.VolumeState.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeCacheParametersArgs.builder
       builder.cacheParameters(args(argsBuilder).build)
@@ -306,7 +306,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def exportPolicy(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeExportPolicyArgs.Builder]):
+    inline def exportPolicy(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeExportPolicyArgs.Builder]):
         com.pulumi.gcp.netapp.inputs.VolumeState.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeExportPolicyArgs.builder
       builder.exportPolicy(args(argsBuilder).build)
@@ -318,7 +318,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hybridReplicationParameters(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeHybridReplicationParametersArgs.Builder]):
+    inline def hybridReplicationParameters(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeHybridReplicationParametersArgs.Builder]):
         com.pulumi.gcp.netapp.inputs.VolumeState.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeHybridReplicationParametersArgs.builder
       builder.hybridReplicationParameters(args(argsBuilder).build)
@@ -330,7 +330,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def largeCapacityConfig(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeLargeCapacityConfigArgs.Builder]):
+    inline def largeCapacityConfig(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeLargeCapacityConfigArgs.Builder]):
         com.pulumi.gcp.netapp.inputs.VolumeState.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeLargeCapacityConfigArgs.builder
       builder.largeCapacityConfig(args(argsBuilder).build)
@@ -340,7 +340,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mountOptions(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeMountOptionArgs.Builder]*):
+    inline def mountOptions(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeMountOptionArgs.Builder]*):
         com.pulumi.gcp.netapp.inputs.VolumeState.Builder =
       def argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeMountOptionArgs.builder
       builder.mountOptions(args.map(_(argsBuilder).build)*)
@@ -350,7 +350,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def restoreParameters(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeRestoreParametersArgs.Builder]):
+    inline def restoreParameters(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeRestoreParametersArgs.Builder]):
         com.pulumi.gcp.netapp.inputs.VolumeState.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeRestoreParametersArgs.builder
       builder.restoreParameters(args(argsBuilder).build)
@@ -361,7 +361,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def snapshotPolicy(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeSnapshotPolicyArgs.Builder]):
+    inline def snapshotPolicy(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeSnapshotPolicyArgs.Builder]):
         com.pulumi.gcp.netapp.inputs.VolumeState.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeSnapshotPolicyArgs.builder
       builder.snapshotPolicy(args(argsBuilder).build)
@@ -371,7 +371,7 @@ object netapp_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tieringPolicy(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeTieringPolicyArgs.Builder]):
+    inline def tieringPolicy(args: Endofunction[com.pulumi.gcp.netapp.inputs.VolumeTieringPolicyArgs.Builder]):
         com.pulumi.gcp.netapp.inputs.VolumeState.Builder =
       val argsBuilder = com.pulumi.gcp.netapp.inputs.VolumeTieringPolicyArgs.builder
       builder.tieringPolicy(args(argsBuilder).build)

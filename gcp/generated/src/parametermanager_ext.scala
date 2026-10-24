@@ -8,7 +8,7 @@ object parametermanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def policyMembers(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.ParameterPolicyMemberArgs.Builder]*):
+    inline def policyMembers(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.ParameterPolicyMemberArgs.Builder]*):
         com.pulumi.gcp.parametermanager.inputs.ParameterState.Builder =
       def argsBuilder = com.pulumi.gcp.parametermanager.inputs.ParameterPolicyMemberArgs.builder
       builder.policyMembers(args.map(_(argsBuilder).build)*)
@@ -19,7 +19,7 @@ object parametermanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def policyMembers(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.RegionalParameterPolicyMemberArgs.Builder]*):
+    inline def policyMembers(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.RegionalParameterPolicyMemberArgs.Builder]*):
         com.pulumi.gcp.parametermanager.inputs.RegionalParameterState.Builder =
       def argsBuilder = com.pulumi.gcp.parametermanager.inputs.RegionalParameterPolicyMemberArgs.builder
       builder.policyMembers(args.map(_(argsBuilder).build)*)

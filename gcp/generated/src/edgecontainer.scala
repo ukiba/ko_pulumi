@@ -13,7 +13,7 @@ object edgecontainer:
    * * How-to Guides
    *     * [Create and manage clusters](https://cloud.google.com/distributed-cloud/edge/latest/docs/clusters)
    */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.edgecontainer.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.edgecontainer.ClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -32,7 +32,7 @@ object edgecontainer:
    * * How-to Guides
    *     * [Google Distributed Cloud Edge](https://cloud.google.com/distributed-cloud/edge/latest/docs)
    */
-  def NodePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NodePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.edgecontainer.NodePoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.edgecontainer.NodePoolArgs.builder
     conf.logicalName2physicalName(name) match
@@ -51,7 +51,7 @@ object edgecontainer:
    * * How-to Guides
    *     * [Google Distributed Cloud Edge](https://cloud.google.com/distributed-cloud/edge/latest/docs)
    */
-  def VpnConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpnConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.edgecontainer.VpnConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.edgecontainer.VpnConnectionArgs.builder
     conf.logicalName2physicalName(name) match

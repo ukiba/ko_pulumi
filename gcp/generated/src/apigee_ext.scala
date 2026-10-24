@@ -8,7 +8,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def addonsConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigArgs.Builder]):
+    inline def addonsConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigArgs.Builder]):
         com.pulumi.gcp.apigee.AddonsConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigArgs.builder
       builder.addonsConfig(args(argsBuilder).build)
@@ -20,7 +20,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attributes(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductAttributeArgs.Builder]*):
+    inline def attributes(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductAttributeArgs.Builder]*):
         com.pulumi.gcp.apigee.ApiProductArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.ApiProductAttributeArgs.builder
       builder.attributes(args.map(_(argsBuilder).build)*)
@@ -30,7 +30,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def graphqlOperationGroup(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductGraphqlOperationGroupArgs.Builder]):
+    inline def graphqlOperationGroup(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductGraphqlOperationGroupArgs.Builder]):
         com.pulumi.gcp.apigee.ApiProductArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.ApiProductGraphqlOperationGroupArgs.builder
       builder.graphqlOperationGroup(args(argsBuilder).build)
@@ -40,7 +40,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def grpcOperationGroup(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductGrpcOperationGroupArgs.Builder]):
+    inline def grpcOperationGroup(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductGrpcOperationGroupArgs.Builder]):
         com.pulumi.gcp.apigee.ApiProductArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.ApiProductGrpcOperationGroupArgs.builder
       builder.grpcOperationGroup(args(argsBuilder).build)
@@ -51,7 +51,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operationGroup(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductOperationGroupArgs.Builder]):
+    inline def operationGroup(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductOperationGroupArgs.Builder]):
         com.pulumi.gcp.apigee.ApiProductArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.ApiProductOperationGroupArgs.builder
       builder.operationGroup(args(argsBuilder).build)
@@ -62,7 +62,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attributes(args: Endofunction[com.pulumi.gcp.apigee.inputs.AppGroupAttributeArgs.Builder]*):
+    inline def attributes(args: Endofunction[com.pulumi.gcp.apigee.inputs.AppGroupAttributeArgs.Builder]*):
         com.pulumi.gcp.apigee.AppGroupArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.AppGroupAttributeArgs.builder
       builder.attributes(args.map(_(argsBuilder).build)*)
@@ -73,7 +73,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def datastoreConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.DatastoreDatastoreConfigArgs.Builder]):
+    inline def datastoreConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.DatastoreDatastoreConfigArgs.Builder]):
         com.pulumi.gcp.apigee.DatastoreArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.DatastoreDatastoreConfigArgs.builder
       builder.datastoreConfig(args(argsBuilder).build)
@@ -84,7 +84,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attributes(args: Endofunction[com.pulumi.gcp.apigee.inputs.DeveloperAppAttributeArgs.Builder]*):
+    inline def attributes(args: Endofunction[com.pulumi.gcp.apigee.inputs.DeveloperAppAttributeArgs.Builder]*):
         com.pulumi.gcp.apigee.DeveloperAppArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.DeveloperAppAttributeArgs.builder
       builder.attributes(args.map(_(argsBuilder).build)*)
@@ -95,7 +95,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attributes(args: Endofunction[com.pulumi.gcp.apigee.inputs.DeveloperAttributeArgs.Builder]*):
+    inline def attributes(args: Endofunction[com.pulumi.gcp.apigee.inputs.DeveloperAttributeArgs.Builder]*):
         com.pulumi.gcp.apigee.DeveloperArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.DeveloperAttributeArgs.builder
       builder.attributes(args.map(_(argsBuilder).build)*)
@@ -106,7 +106,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def peeringConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.DnsZonePeeringConfigArgs.Builder]):
+    inline def peeringConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.DnsZonePeeringConfigArgs.Builder]):
         com.pulumi.gcp.apigee.DnsZoneArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.DnsZonePeeringConfigArgs.builder
       builder.peeringConfig(args(argsBuilder).build)
@@ -117,7 +117,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clientIpResolutionConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.EnvironmentClientIpResolutionConfigArgs.Builder]):
+    inline def clientIpResolutionConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.EnvironmentClientIpResolutionConfigArgs.Builder]):
         com.pulumi.gcp.apigee.EnvironmentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.EnvironmentClientIpResolutionConfigArgs.builder
       builder.clientIpResolutionConfig(args(argsBuilder).build)
@@ -127,7 +127,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.EnvironmentNodeConfigArgs.Builder]):
+    inline def nodeConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.EnvironmentNodeConfigArgs.Builder]):
         com.pulumi.gcp.apigee.EnvironmentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.EnvironmentNodeConfigArgs.builder
       builder.nodeConfig(args(argsBuilder).build)
@@ -137,19 +137,19 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.apigee.inputs.EnvironmentPropertiesArgs.Builder]):
+    inline def properties(args: Endofunction[com.pulumi.gcp.apigee.inputs.EnvironmentPropertiesArgs.Builder]):
         com.pulumi.gcp.apigee.EnvironmentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.EnvironmentPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.apigee.EnvironmentIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.apigee.inputs.EnvironmentIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.apigee.inputs.EnvironmentIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.apigee.EnvironmentIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.EnvironmentIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.apigee.EnvironmentIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.apigee.inputs.EnvironmentIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.apigee.inputs.EnvironmentIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.apigee.EnvironmentIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.EnvironmentIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -161,13 +161,13 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accessLoggingConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.InstanceAccessLoggingConfigArgs.Builder]):
+    inline def accessLoggingConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.InstanceAccessLoggingConfigArgs.Builder]):
         com.pulumi.gcp.apigee.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.InstanceAccessLoggingConfigArgs.builder
       builder.accessLoggingConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.apigee.KeystoresAliasesKeyCertFileArgs.Builder)
-    def timeouts(args: Endofunction[com.pulumi.gcp.apigee.inputs.KeystoresAliasesKeyCertFileTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.gcp.apigee.inputs.KeystoresAliasesKeyCertFileTimeoutsArgs.Builder]):
         com.pulumi.gcp.apigee.KeystoresAliasesKeyCertFileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.KeystoresAliasesKeyCertFileTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -178,7 +178,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def subject(args: Endofunction[com.pulumi.gcp.apigee.inputs.KeystoresAliasesSelfSignedCertSubjectArgs.Builder]):
+    inline def subject(args: Endofunction[com.pulumi.gcp.apigee.inputs.KeystoresAliasesSelfSignedCertSubjectArgs.Builder]):
         com.pulumi.gcp.apigee.KeystoresAliasesSelfSignedCertArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.KeystoresAliasesSelfSignedCertSubjectArgs.builder
       builder.subject(args(argsBuilder).build)
@@ -188,7 +188,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def subjectAlternativeDnsNames(args: Endofunction[com.pulumi.gcp.apigee.inputs.KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNamesArgs.Builder]):
+    inline def subjectAlternativeDnsNames(args: Endofunction[com.pulumi.gcp.apigee.inputs.KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNamesArgs.Builder]):
         com.pulumi.gcp.apigee.KeystoresAliasesSelfSignedCertArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNamesArgs.builder
       builder.subjectAlternativeDnsNames(args(argsBuilder).build)
@@ -199,7 +199,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.apigee.inputs.OrganizationPropertiesArgs.Builder]):
+    inline def properties(args: Endofunction[com.pulumi.gcp.apigee.inputs.OrganizationPropertiesArgs.Builder]):
         com.pulumi.gcp.apigee.OrganizationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.OrganizationPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
@@ -209,7 +209,7 @@ object apigee_ext:
      * @param allow Allow a request through if it matches this SecurityAction.
      * @return builder
      */
-    def allow(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityActionAllowArgs.Builder]):
+    inline def allow(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityActionAllowArgs.Builder]):
         com.pulumi.gcp.apigee.SecurityActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.SecurityActionAllowArgs.builder
       builder.allow(args(argsBuilder).build)
@@ -219,7 +219,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditionConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityActionConditionConfigArgs.Builder]):
+    inline def conditionConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityActionConditionConfigArgs.Builder]):
         com.pulumi.gcp.apigee.SecurityActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.SecurityActionConditionConfigArgs.builder
       builder.conditionConfig(args(argsBuilder).build)
@@ -229,7 +229,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deny(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityActionDenyArgs.Builder]):
+    inline def deny(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityActionDenyArgs.Builder]):
         com.pulumi.gcp.apigee.SecurityActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.SecurityActionDenyArgs.builder
       builder.deny(args(argsBuilder).build)
@@ -239,7 +239,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def flag(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityActionFlagArgs.Builder]):
+    inline def flag(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityActionFlagArgs.Builder]):
         com.pulumi.gcp.apigee.SecurityActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.SecurityActionFlagArgs.builder
       builder.flag(args(argsBuilder).build)
@@ -250,7 +250,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def feedbackContexts(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityFeedbackFeedbackContextArgs.Builder]*):
+    inline def feedbackContexts(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityFeedbackFeedbackContextArgs.Builder]*):
         com.pulumi.gcp.apigee.SecurityFeedbackArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.SecurityFeedbackFeedbackContextArgs.builder
       builder.feedbackContexts(args.map(_(argsBuilder).build)*)
@@ -260,7 +260,7 @@ object apigee_ext:
      * @param includeAllResources A nested object resource.
      * @return builder
      */
-    def includeAllResources(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityMonitoringConditionIncludeAllResourcesArgs.Builder]):
+    inline def includeAllResources(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityMonitoringConditionIncludeAllResourcesArgs.Builder]):
         com.pulumi.gcp.apigee.SecurityMonitoringConditionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.SecurityMonitoringConditionIncludeAllResourcesArgs.builder
       builder.includeAllResources(args(argsBuilder).build)
@@ -271,7 +271,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def profileAssessmentConfigs(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityProfileV2ProfileAssessmentConfigArgs.Builder]*):
+    inline def profileAssessmentConfigs(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityProfileV2ProfileAssessmentConfigArgs.Builder]*):
         com.pulumi.gcp.apigee.SecurityProfileV2Args.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.SecurityProfileV2ProfileAssessmentConfigArgs.builder
       builder.profileAssessmentConfigs(args.map(_(argsBuilder).build)*)
@@ -282,7 +282,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sSlInfo(args: Endofunction[com.pulumi.gcp.apigee.inputs.TargetServerSSlInfoArgs.Builder]):
+    inline def sSlInfo(args: Endofunction[com.pulumi.gcp.apigee.inputs.TargetServerSSlInfoArgs.Builder]):
         com.pulumi.gcp.apigee.TargetServerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.TargetServerSSlInfoArgs.builder
       builder.sSlInfo(args(argsBuilder).build)
@@ -293,7 +293,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def advancedApiOpsConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigAdvancedApiOpsConfigArgs.Builder]):
+    inline def advancedApiOpsConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigAdvancedApiOpsConfigArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigAdvancedApiOpsConfigArgs.builder
       builder.advancedApiOpsConfig(args(argsBuilder).build)
@@ -303,7 +303,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiSecurityConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigApiSecurityConfigArgs.Builder]):
+    inline def apiSecurityConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigApiSecurityConfigArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigApiSecurityConfigArgs.builder
       builder.apiSecurityConfig(args(argsBuilder).build)
@@ -313,7 +313,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectorsPlatformConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigConnectorsPlatformConfigArgs.Builder]):
+    inline def connectorsPlatformConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigConnectorsPlatformConfigArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigConnectorsPlatformConfigArgs.builder
       builder.connectorsPlatformConfig(args(argsBuilder).build)
@@ -323,7 +323,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def integrationConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigIntegrationConfigArgs.Builder]):
+    inline def integrationConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigIntegrationConfigArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigIntegrationConfigArgs.builder
       builder.integrationConfig(args(argsBuilder).build)
@@ -333,7 +333,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def monetizationConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigMonetizationConfigArgs.Builder]):
+    inline def monetizationConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigMonetizationConfigArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigMonetizationConfigArgs.builder
       builder.monetizationConfig(args(argsBuilder).build)
@@ -344,7 +344,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def addonsConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigArgs.Builder]):
+    inline def addonsConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.AddonsConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.AddonsConfigAddonsConfigArgs.builder
       builder.addonsConfig(args(argsBuilder).build)
@@ -355,7 +355,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operationConfigs(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductGraphqlOperationGroupOperationConfigArgs.Builder]*):
+    inline def operationConfigs(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductGraphqlOperationGroupOperationConfigArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.ApiProductGraphqlOperationGroupArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.ApiProductGraphqlOperationGroupOperationConfigArgs.builder
       builder.operationConfigs(args.map(_(argsBuilder).build)*)
@@ -366,7 +366,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attributes(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductGraphqlOperationGroupOperationConfigAttributeArgs.Builder]*):
+    inline def attributes(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductGraphqlOperationGroupOperationConfigAttributeArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.ApiProductGraphqlOperationGroupOperationConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.ApiProductGraphqlOperationGroupOperationConfigAttributeArgs.builder
       builder.attributes(args.map(_(argsBuilder).build)*)
@@ -377,7 +377,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operations(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductGraphqlOperationGroupOperationConfigOperationArgs.Builder]*):
+    inline def operations(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductGraphqlOperationGroupOperationConfigOperationArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.ApiProductGraphqlOperationGroupOperationConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.ApiProductGraphqlOperationGroupOperationConfigOperationArgs.builder
       builder.operations(args.map(_(argsBuilder).build)*)
@@ -387,7 +387,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def quota(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductGraphqlOperationGroupOperationConfigQuotaArgs.Builder]):
+    inline def quota(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductGraphqlOperationGroupOperationConfigQuotaArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.ApiProductGraphqlOperationGroupOperationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.ApiProductGraphqlOperationGroupOperationConfigQuotaArgs.builder
       builder.quota(args(argsBuilder).build)
@@ -398,7 +398,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operationConfigs(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductGrpcOperationGroupOperationConfigArgs.Builder]*):
+    inline def operationConfigs(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductGrpcOperationGroupOperationConfigArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.ApiProductGrpcOperationGroupArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.ApiProductGrpcOperationGroupOperationConfigArgs.builder
       builder.operationConfigs(args.map(_(argsBuilder).build)*)
@@ -409,7 +409,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attributes(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductGrpcOperationGroupOperationConfigAttributeArgs.Builder]*):
+    inline def attributes(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductGrpcOperationGroupOperationConfigAttributeArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.ApiProductGrpcOperationGroupOperationConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.ApiProductGrpcOperationGroupOperationConfigAttributeArgs.builder
       builder.attributes(args.map(_(argsBuilder).build)*)
@@ -419,7 +419,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def quota(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductGrpcOperationGroupOperationConfigQuotaArgs.Builder]):
+    inline def quota(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductGrpcOperationGroupOperationConfigQuotaArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.ApiProductGrpcOperationGroupOperationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.ApiProductGrpcOperationGroupOperationConfigQuotaArgs.builder
       builder.quota(args(argsBuilder).build)
@@ -430,7 +430,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operationConfigs(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductOperationGroupOperationConfigArgs.Builder]*):
+    inline def operationConfigs(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductOperationGroupOperationConfigArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.ApiProductOperationGroupArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.ApiProductOperationGroupOperationConfigArgs.builder
       builder.operationConfigs(args.map(_(argsBuilder).build)*)
@@ -441,7 +441,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attributes(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductOperationGroupOperationConfigAttributeArgs.Builder]*):
+    inline def attributes(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductOperationGroupOperationConfigAttributeArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.ApiProductOperationGroupOperationConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.ApiProductOperationGroupOperationConfigAttributeArgs.builder
       builder.attributes(args.map(_(argsBuilder).build)*)
@@ -452,7 +452,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operations(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductOperationGroupOperationConfigOperationArgs.Builder]*):
+    inline def operations(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductOperationGroupOperationConfigOperationArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.ApiProductOperationGroupOperationConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.ApiProductOperationGroupOperationConfigOperationArgs.builder
       builder.operations(args.map(_(argsBuilder).build)*)
@@ -462,7 +462,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def quota(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductOperationGroupOperationConfigQuotaArgs.Builder]):
+    inline def quota(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductOperationGroupOperationConfigQuotaArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.ApiProductOperationGroupOperationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.ApiProductOperationGroupOperationConfigQuotaArgs.builder
       builder.quota(args(argsBuilder).build)
@@ -474,7 +474,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attributes(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductAttributeArgs.Builder]*):
+    inline def attributes(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductAttributeArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.ApiProductState.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.ApiProductAttributeArgs.builder
       builder.attributes(args.map(_(argsBuilder).build)*)
@@ -484,7 +484,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def graphqlOperationGroup(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductGraphqlOperationGroupArgs.Builder]):
+    inline def graphqlOperationGroup(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductGraphqlOperationGroupArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.ApiProductState.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.ApiProductGraphqlOperationGroupArgs.builder
       builder.graphqlOperationGroup(args(argsBuilder).build)
@@ -494,7 +494,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def grpcOperationGroup(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductGrpcOperationGroupArgs.Builder]):
+    inline def grpcOperationGroup(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductGrpcOperationGroupArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.ApiProductState.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.ApiProductGrpcOperationGroupArgs.builder
       builder.grpcOperationGroup(args(argsBuilder).build)
@@ -505,7 +505,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operationGroup(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductOperationGroupArgs.Builder]):
+    inline def operationGroup(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiProductOperationGroupArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.ApiProductState.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.ApiProductOperationGroupArgs.builder
       builder.operationGroup(args(argsBuilder).build)
@@ -516,7 +516,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metaDatas(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiMetaDataArgs.Builder]*):
+    inline def metaDatas(args: Endofunction[com.pulumi.gcp.apigee.inputs.ApiMetaDataArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.ApiState.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.ApiMetaDataArgs.builder
       builder.metaDatas(args.map(_(argsBuilder).build)*)
@@ -527,7 +527,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attributes(args: Endofunction[com.pulumi.gcp.apigee.inputs.AppGroupAttributeArgs.Builder]*):
+    inline def attributes(args: Endofunction[com.pulumi.gcp.apigee.inputs.AppGroupAttributeArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.AppGroupState.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.AppGroupAttributeArgs.builder
       builder.attributes(args.map(_(argsBuilder).build)*)
@@ -538,7 +538,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def datastoreConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.DatastoreDatastoreConfigArgs.Builder]):
+    inline def datastoreConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.DatastoreDatastoreConfigArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.DatastoreState.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.DatastoreDatastoreConfigArgs.builder
       builder.datastoreConfig(args(argsBuilder).build)
@@ -548,7 +548,7 @@ object apigee_ext:
      * @param apiProducts List of API products associated with the developer app.
      * @return builder
      */
-    def apiProducts(args: Endofunction[com.pulumi.gcp.apigee.inputs.DeveloperAppCredentialApiProductArgs.Builder]*):
+    inline def apiProducts(args: Endofunction[com.pulumi.gcp.apigee.inputs.DeveloperAppCredentialApiProductArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.DeveloperAppCredentialArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.DeveloperAppCredentialApiProductArgs.builder
       builder.apiProducts(args.map(_(argsBuilder).build)*)
@@ -558,7 +558,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attributes(args: Endofunction[com.pulumi.gcp.apigee.inputs.DeveloperAppCredentialAttributeArgs.Builder]*):
+    inline def attributes(args: Endofunction[com.pulumi.gcp.apigee.inputs.DeveloperAppCredentialAttributeArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.DeveloperAppCredentialArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.DeveloperAppCredentialAttributeArgs.builder
       builder.attributes(args.map(_(argsBuilder).build)*)
@@ -569,7 +569,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attributes(args: Endofunction[com.pulumi.gcp.apigee.inputs.DeveloperAppAttributeArgs.Builder]*):
+    inline def attributes(args: Endofunction[com.pulumi.gcp.apigee.inputs.DeveloperAppAttributeArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.DeveloperAppState.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.DeveloperAppAttributeArgs.builder
       builder.attributes(args.map(_(argsBuilder).build)*)
@@ -580,7 +580,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def credentials(args: Endofunction[com.pulumi.gcp.apigee.inputs.DeveloperAppCredentialArgs.Builder]*):
+    inline def credentials(args: Endofunction[com.pulumi.gcp.apigee.inputs.DeveloperAppCredentialArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.DeveloperAppState.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.DeveloperAppCredentialArgs.builder
       builder.credentials(args.map(_(argsBuilder).build)*)
@@ -591,7 +591,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attributes(args: Endofunction[com.pulumi.gcp.apigee.inputs.DeveloperAttributeArgs.Builder]*):
+    inline def attributes(args: Endofunction[com.pulumi.gcp.apigee.inputs.DeveloperAttributeArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.DeveloperState.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.DeveloperAttributeArgs.builder
       builder.attributes(args.map(_(argsBuilder).build)*)
@@ -602,7 +602,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def peeringConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.DnsZonePeeringConfigArgs.Builder]):
+    inline def peeringConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.DnsZonePeeringConfigArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.DnsZoneState.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.DnsZonePeeringConfigArgs.builder
       builder.peeringConfig(args(argsBuilder).build)
@@ -613,19 +613,19 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headerIndexAlgorithm(args: Endofunction[com.pulumi.gcp.apigee.inputs.EnvironmentClientIpResolutionConfigHeaderIndexAlgorithmArgs.Builder]):
+    inline def headerIndexAlgorithm(args: Endofunction[com.pulumi.gcp.apigee.inputs.EnvironmentClientIpResolutionConfigHeaderIndexAlgorithmArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.EnvironmentClientIpResolutionConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.EnvironmentClientIpResolutionConfigHeaderIndexAlgorithmArgs.builder
       builder.headerIndexAlgorithm(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.apigee.inputs.EnvironmentIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.apigee.inputs.EnvironmentIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.apigee.inputs.EnvironmentIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.EnvironmentIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.EnvironmentIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.apigee.inputs.EnvironmentIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.apigee.inputs.EnvironmentIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.apigee.inputs.EnvironmentIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.EnvironmentIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.EnvironmentIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -636,7 +636,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.apigee.inputs.EnvironmentPropertiesPropertyArgs.Builder]*):
+    inline def properties(args: Endofunction[com.pulumi.gcp.apigee.inputs.EnvironmentPropertiesPropertyArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.EnvironmentPropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.EnvironmentPropertiesPropertyArgs.builder
       builder.properties(args.map(_(argsBuilder).build)*)
@@ -647,7 +647,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clientIpResolutionConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.EnvironmentClientIpResolutionConfigArgs.Builder]):
+    inline def clientIpResolutionConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.EnvironmentClientIpResolutionConfigArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.EnvironmentState.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.EnvironmentClientIpResolutionConfigArgs.builder
       builder.clientIpResolutionConfig(args(argsBuilder).build)
@@ -657,7 +657,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.EnvironmentNodeConfigArgs.Builder]):
+    inline def nodeConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.EnvironmentNodeConfigArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.EnvironmentState.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.EnvironmentNodeConfigArgs.builder
       builder.nodeConfig(args(argsBuilder).build)
@@ -667,7 +667,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.apigee.inputs.EnvironmentPropertiesArgs.Builder]):
+    inline def properties(args: Endofunction[com.pulumi.gcp.apigee.inputs.EnvironmentPropertiesArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.EnvironmentState.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.EnvironmentPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
@@ -679,7 +679,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accessLoggingConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.InstanceAccessLoggingConfigArgs.Builder]):
+    inline def accessLoggingConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.InstanceAccessLoggingConfigArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.InstanceAccessLoggingConfigArgs.builder
       builder.accessLoggingConfig(args(argsBuilder).build)
@@ -690,12 +690,12 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def certsInfos(args: Endofunction[com.pulumi.gcp.apigee.inputs.KeystoresAliasesKeyCertFileCertsInfoArgs.Builder]*):
+    inline def certsInfos(args: Endofunction[com.pulumi.gcp.apigee.inputs.KeystoresAliasesKeyCertFileCertsInfoArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.KeystoresAliasesKeyCertFileState.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.KeystoresAliasesKeyCertFileCertsInfoArgs.builder
       builder.certsInfos(args.map(_(argsBuilder).build)*)
 
-    def timeouts(args: Endofunction[com.pulumi.gcp.apigee.inputs.KeystoresAliasesKeyCertFileTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.gcp.apigee.inputs.KeystoresAliasesKeyCertFileTimeoutsArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.KeystoresAliasesKeyCertFileState.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.KeystoresAliasesKeyCertFileTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -707,7 +707,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def certInfos(args: Endofunction[com.pulumi.gcp.apigee.inputs.KeystoresAliasesPkcs12CertsInfoCertInfoArgs.Builder]*):
+    inline def certInfos(args: Endofunction[com.pulumi.gcp.apigee.inputs.KeystoresAliasesPkcs12CertsInfoCertInfoArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.KeystoresAliasesPkcs12CertsInfoArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.KeystoresAliasesPkcs12CertsInfoCertInfoArgs.builder
       builder.certInfos(args.map(_(argsBuilder).build)*)
@@ -718,7 +718,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def certsInfos(args: Endofunction[com.pulumi.gcp.apigee.inputs.KeystoresAliasesPkcs12CertsInfoArgs.Builder]*):
+    inline def certsInfos(args: Endofunction[com.pulumi.gcp.apigee.inputs.KeystoresAliasesPkcs12CertsInfoArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.KeystoresAliasesPkcs12State.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.KeystoresAliasesPkcs12CertsInfoArgs.builder
       builder.certsInfos(args.map(_(argsBuilder).build)*)
@@ -730,7 +730,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def certInfos(args: Endofunction[com.pulumi.gcp.apigee.inputs.KeystoresAliasesSelfSignedCertCertsInfoCertInfoArgs.Builder]*):
+    inline def certInfos(args: Endofunction[com.pulumi.gcp.apigee.inputs.KeystoresAliasesSelfSignedCertCertsInfoCertInfoArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.KeystoresAliasesSelfSignedCertCertsInfoArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.KeystoresAliasesSelfSignedCertCertsInfoCertInfoArgs.builder
       builder.certInfos(args.map(_(argsBuilder).build)*)
@@ -741,7 +741,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def certsInfos(args: Endofunction[com.pulumi.gcp.apigee.inputs.KeystoresAliasesSelfSignedCertCertsInfoArgs.Builder]*):
+    inline def certsInfos(args: Endofunction[com.pulumi.gcp.apigee.inputs.KeystoresAliasesSelfSignedCertCertsInfoArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.KeystoresAliasesSelfSignedCertState.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.KeystoresAliasesSelfSignedCertCertsInfoArgs.builder
       builder.certsInfos(args.map(_(argsBuilder).build)*)
@@ -751,7 +751,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def subject(args: Endofunction[com.pulumi.gcp.apigee.inputs.KeystoresAliasesSelfSignedCertSubjectArgs.Builder]):
+    inline def subject(args: Endofunction[com.pulumi.gcp.apigee.inputs.KeystoresAliasesSelfSignedCertSubjectArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.KeystoresAliasesSelfSignedCertState.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.KeystoresAliasesSelfSignedCertSubjectArgs.builder
       builder.subject(args(argsBuilder).build)
@@ -761,7 +761,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def subjectAlternativeDnsNames(args: Endofunction[com.pulumi.gcp.apigee.inputs.KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNamesArgs.Builder]):
+    inline def subjectAlternativeDnsNames(args: Endofunction[com.pulumi.gcp.apigee.inputs.KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNamesArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.KeystoresAliasesSelfSignedCertState.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.KeystoresAliasesSelfSignedCertSubjectAlternativeDnsNamesArgs.builder
       builder.subjectAlternativeDnsNames(args(argsBuilder).build)
@@ -772,7 +772,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.apigee.inputs.OrganizationPropertiesPropertyArgs.Builder]*):
+    inline def properties(args: Endofunction[com.pulumi.gcp.apigee.inputs.OrganizationPropertiesPropertyArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.OrganizationPropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.OrganizationPropertiesPropertyArgs.builder
       builder.properties(args.map(_(argsBuilder).build)*)
@@ -783,7 +783,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.apigee.inputs.OrganizationPropertiesArgs.Builder]):
+    inline def properties(args: Endofunction[com.pulumi.gcp.apigee.inputs.OrganizationPropertiesArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.OrganizationState.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.OrganizationPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
@@ -796,7 +796,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityActionFlagHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityActionFlagHeaderArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.SecurityActionFlagArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.SecurityActionFlagHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -806,7 +806,7 @@ object apigee_ext:
      * @param allow Allow a request through if it matches this SecurityAction.
      * @return builder
      */
-    def allow(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityActionAllowArgs.Builder]):
+    inline def allow(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityActionAllowArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.SecurityActionState.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.SecurityActionAllowArgs.builder
       builder.allow(args(argsBuilder).build)
@@ -816,7 +816,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditionConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityActionConditionConfigArgs.Builder]):
+    inline def conditionConfig(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityActionConditionConfigArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.SecurityActionState.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.SecurityActionConditionConfigArgs.builder
       builder.conditionConfig(args(argsBuilder).build)
@@ -826,7 +826,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deny(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityActionDenyArgs.Builder]):
+    inline def deny(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityActionDenyArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.SecurityActionState.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.SecurityActionDenyArgs.builder
       builder.deny(args(argsBuilder).build)
@@ -836,7 +836,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def flag(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityActionFlagArgs.Builder]):
+    inline def flag(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityActionFlagArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.SecurityActionState.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.SecurityActionFlagArgs.builder
       builder.flag(args(argsBuilder).build)
@@ -847,7 +847,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def feedbackContexts(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityFeedbackFeedbackContextArgs.Builder]*):
+    inline def feedbackContexts(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityFeedbackFeedbackContextArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.SecurityFeedbackState.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.SecurityFeedbackFeedbackContextArgs.builder
       builder.feedbackContexts(args.map(_(argsBuilder).build)*)
@@ -857,7 +857,7 @@ object apigee_ext:
      * @param includeAllResources A nested object resource.
      * @return builder
      */
-    def includeAllResources(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityMonitoringConditionIncludeAllResourcesArgs.Builder]):
+    inline def includeAllResources(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityMonitoringConditionIncludeAllResourcesArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.SecurityMonitoringConditionState.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.SecurityMonitoringConditionIncludeAllResourcesArgs.builder
       builder.includeAllResources(args(argsBuilder).build)
@@ -868,7 +868,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def profileAssessmentConfigs(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityProfileV2ProfileAssessmentConfigArgs.Builder]*):
+    inline def profileAssessmentConfigs(args: Endofunction[com.pulumi.gcp.apigee.inputs.SecurityProfileV2ProfileAssessmentConfigArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.SecurityProfileV2State.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.SecurityProfileV2ProfileAssessmentConfigArgs.builder
       builder.profileAssessmentConfigs(args.map(_(argsBuilder).build)*)
@@ -879,7 +879,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metaDatas(args: Endofunction[com.pulumi.gcp.apigee.inputs.SharedflowMetaDataArgs.Builder]*):
+    inline def metaDatas(args: Endofunction[com.pulumi.gcp.apigee.inputs.SharedflowMetaDataArgs.Builder]*):
         com.pulumi.gcp.apigee.inputs.SharedflowState.Builder =
       def argsBuilder = com.pulumi.gcp.apigee.inputs.SharedflowMetaDataArgs.builder
       builder.metaDatas(args.map(_(argsBuilder).build)*)
@@ -890,7 +890,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def commonName(args: Endofunction[com.pulumi.gcp.apigee.inputs.TargetServerSSlInfoCommonNameArgs.Builder]):
+    inline def commonName(args: Endofunction[com.pulumi.gcp.apigee.inputs.TargetServerSSlInfoCommonNameArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.TargetServerSSlInfoArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.TargetServerSSlInfoCommonNameArgs.builder
       builder.commonName(args(argsBuilder).build)
@@ -901,7 +901,7 @@ object apigee_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sSlInfo(args: Endofunction[com.pulumi.gcp.apigee.inputs.TargetServerSSlInfoArgs.Builder]):
+    inline def sSlInfo(args: Endofunction[com.pulumi.gcp.apigee.inputs.TargetServerSSlInfoArgs.Builder]):
         com.pulumi.gcp.apigee.inputs.TargetServerState.Builder =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.TargetServerSSlInfoArgs.builder
       builder.sSlInfo(args(argsBuilder).build)

@@ -11,7 +11,7 @@ object hpc:
    * 
    * &gt; **Note:** By request of the service team the provider no longer automatically registers the `Microsoft.StorageCache` Resource Provider for this resource. To register it you can run `az provider register --namespace &#39;Microsoft.StorageCache&#39;`.
    */
-  def Cache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.hpc.CacheArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.hpc.CacheArgs.builder
     conf.logicalName2physicalName(name) match
@@ -33,7 +33,7 @@ object hpc:
    * 
    * &gt; **Note:** The `azure.hpc.CacheAccessPolicy` resource has been deprecated because the service is retiring on 2025-09-30. This resource will be removed in v5.0 of the AzureRM Provider. See https://aka.ms/hpccacheretirement for more information.
    */
-  def CacheAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CacheAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.hpc.CacheAccessPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.hpc.CacheAccessPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -60,7 +60,7 @@ object hpc:
    * \$ pulumi import azure:hpc/cacheBlobNfsTarget:CacheBlobNfsTarget example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.StorageCache/caches/cache1/storageTargets/target1
    * ```
    */
-  def CacheBlobNfsTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CacheBlobNfsTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.hpc.CacheBlobNfsTargetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.hpc.CacheBlobNfsTargetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -85,7 +85,7 @@ object hpc:
    * \$ pulumi import azure:hpc/cacheBlobTarget:CacheBlobTarget example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.StorageCache/caches/cache1/storageTargets/target1
    * ```
    */
-  def CacheBlobTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CacheBlobTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.hpc.CacheBlobTargetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.hpc.CacheBlobTargetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -102,7 +102,7 @@ object hpc:
    * 
    * &gt; **Note:** By request of the service team the provider no longer automatically registering the `Microsoft.StorageCache` Resource Provider for this resource. To register it you can run `az provider register --namespace &#39;Microsoft.StorageCache&#39;`.
    */
-  def CacheNfsTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CacheNfsTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.hpc.CacheNfsTargetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.hpc.CacheNfsTargetArgs.builder
     conf.logicalName2physicalName(name) match

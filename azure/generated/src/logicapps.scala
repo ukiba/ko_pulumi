@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object logicapps:
   /** Manages a Custom Action within a Logic App Workflow */
-  def ActionCustom(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ActionCustom(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.logicapps.ActionCustomArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.logicapps.ActionCustomArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18,7 +18,7 @@ object logicapps:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an HTTP Action within a Logic App Workflow */
-  def ActionHttp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ActionHttp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.logicapps.ActionHttpArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.logicapps.ActionHttpArgs.builder
     conf.logicalName2physicalName(name) match
@@ -29,7 +29,7 @@ object logicapps:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Logic App Integration Account. */
-  def IntegrationAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IntegrationAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.logicapps.IntegrationAccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.logicapps.IntegrationAccountArgs.builder
     conf.logicalName2physicalName(name) match
@@ -47,7 +47,7 @@ object logicapps:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Logic App Integration Account Agreement. */
-  def IntegrationAccountAgreement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IntegrationAccountAgreement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.logicapps.IntegrationAccountAgreementArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.logicapps.IntegrationAccountAgreementArgs.builder
     conf.logicalName2physicalName(name) match
@@ -58,7 +58,7 @@ object logicapps:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Logic App Integration Account Assembly. */
-  def IntegrationAccountAssembly(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IntegrationAccountAssembly(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.logicapps.IntegrationAccountAssemblyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.logicapps.IntegrationAccountAssemblyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -69,7 +69,7 @@ object logicapps:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Logic App Integration Account Batch Configuration. */
-  def IntegrationAccountBatchConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IntegrationAccountBatchConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.logicapps.IntegrationAccountBatchConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.logicapps.IntegrationAccountBatchConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -80,7 +80,7 @@ object logicapps:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Logic App Integration Account Certificate. */
-  def IntegrationAccountCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IntegrationAccountCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.logicapps.IntegrationAccountCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.logicapps.IntegrationAccountCertificateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -91,7 +91,7 @@ object logicapps:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Logic App Integration Account Map. */
-  def IntegrationAccountMap(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IntegrationAccountMap(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.logicapps.IntegrationAccountMapArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.logicapps.IntegrationAccountMapArgs.builder
     conf.logicalName2physicalName(name) match
@@ -102,7 +102,7 @@ object logicapps:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Logic App Integration Account Partner. */
-  def IntegrationAccountPartner(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IntegrationAccountPartner(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.logicapps.IntegrationAccountPartnerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.logicapps.IntegrationAccountPartnerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -113,7 +113,7 @@ object logicapps:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Logic App Integration Account Schema. */
-  def IntegrationAccountSchema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IntegrationAccountSchema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.logicapps.IntegrationAccountSchemaArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.logicapps.IntegrationAccountSchemaArgs.builder
     conf.logicalName2physicalName(name) match
@@ -124,7 +124,7 @@ object logicapps:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Logic App Integration Account Session. */
-  def IntegrationAccountSession(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IntegrationAccountSession(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.logicapps.IntegrationAccountSessionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.logicapps.IntegrationAccountSessionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -184,7 +184,7 @@ object logicapps:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Logic App (Standard / Single Tenant) */
-  def Standard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Standard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.logicapps.StandardArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.logicapps.StandardArgs.builder
     conf.logicalName2physicalName(name) match
@@ -202,7 +202,7 @@ object logicapps:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Custom Trigger within a Logic App Workflow */
-  def TriggerCustom(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TriggerCustom(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.logicapps.TriggerCustomArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.logicapps.TriggerCustomArgs.builder
     conf.logicalName2physicalName(name) match
@@ -213,7 +213,7 @@ object logicapps:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a HTTP Request Trigger within a Logic App Workflow */
-  def TriggerHttpRequest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TriggerHttpRequest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.logicapps.TriggerHttpRequestArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.logicapps.TriggerHttpRequestArgs.builder
     conf.logicalName2physicalName(name) match
@@ -224,7 +224,7 @@ object logicapps:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Recurrence Trigger within a Logic App Workflow */
-  def TriggerRecurrence(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TriggerRecurrence(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.logicapps.TriggerRecurrenceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.logicapps.TriggerRecurrenceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -235,7 +235,7 @@ object logicapps:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Logic App Workflow. */
-  def Workflow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Workflow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.logicapps.WorkflowArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.logicapps.WorkflowArgs.builder
     conf.logicalName2physicalName(name) match

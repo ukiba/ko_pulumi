@@ -48,7 +48,7 @@ object cloudquota:
    * * How-to Guides
    *     * [Cloud Quotas Overview](https://cloud.google.com/docs/quotas/overview)
    */
-  def SQuotaAdjusterSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SQuotaAdjusterSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudquota.SQuotaAdjusterSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.cloudquota.SQuotaAdjusterSettingsArgs.builder
     com.pulumi.gcp.cloudquota.SQuotaAdjusterSettings(name,
@@ -64,7 +64,7 @@ object cloudquota:
    * * How-to Guides
    *     * [Cloud Quotas Overview](https://cloud.google.com/docs/quotas/overview)
    */
-  def SQuotaPreference(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SQuotaPreference(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudquota.SQuotaPreferenceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudquota.SQuotaPreferenceArgs.builder
     conf.logicalName2physicalName(name) match

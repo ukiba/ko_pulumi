@@ -7,7 +7,7 @@ object appfabric_ext:
      * @param credential Credentials for the application, such as an API key or OAuth2 client ID and secret. Specify credentials that match the authorization type for your request. For example, if the authorization type for your request is OAuth2 (`oauth2`), then you should provide only the OAuth2 credentials. See `credential` Block for details.
      * @return builder
      */
-    def credential(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationCredentialArgs.Builder]):
+    inline def credential(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationCredentialArgs.Builder]):
         com.pulumi.aws.appfabric.AppAuthorizationArgs.Builder =
       val argsBuilder = com.pulumi.aws.appfabric.inputs.AppAuthorizationCredentialArgs.builder
       builder.credential(args(argsBuilder).build)
@@ -18,12 +18,12 @@ object appfabric_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def tenants(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationTenantArgs.Builder]*):
+    inline def tenants(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationTenantArgs.Builder]*):
         com.pulumi.aws.appfabric.AppAuthorizationArgs.Builder =
       def argsBuilder = com.pulumi.aws.appfabric.inputs.AppAuthorizationTenantArgs.builder
       builder.tenants(args.map(_(argsBuilder).build)*)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationTimeoutsArgs.Builder]):
         com.pulumi.aws.appfabric.AppAuthorizationArgs.Builder =
       val argsBuilder = com.pulumi.aws.appfabric.inputs.AppAuthorizationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -33,12 +33,12 @@ object appfabric_ext:
      * @param authRequest OAuth2 authorization information. Required if the app authorization for the request is configured with an OAuth2 (`oauth2`) authorization type. See `authRequest` Block for details.
      * @return builder
      */
-    def authRequest(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationConnectionAuthRequestArgs.Builder]):
+    inline def authRequest(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationConnectionAuthRequestArgs.Builder]):
         com.pulumi.aws.appfabric.AppAuthorizationConnectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.appfabric.inputs.AppAuthorizationConnectionAuthRequestArgs.builder
       builder.authRequest(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationConnectionTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationConnectionTimeoutsArgs.Builder]):
         com.pulumi.aws.appfabric.AppAuthorizationConnectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.appfabric.inputs.AppAuthorizationConnectionTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -48,7 +48,7 @@ object appfabric_ext:
      * @param destinationConfiguration Configuration for the destination of ingested data. See `destinationConfiguration` Block below.
      * @return builder
      */
-    def destinationConfiguration(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationArgs.Builder]):
+    inline def destinationConfiguration(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationArgs.Builder]):
         com.pulumi.aws.appfabric.IngestionDestinationArgs.Builder =
       val argsBuilder = com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationArgs.builder
       builder.destinationConfiguration(args(argsBuilder).build)
@@ -59,12 +59,12 @@ object appfabric_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def processingConfiguration(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationProcessingConfigurationArgs.Builder]):
+    inline def processingConfiguration(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationProcessingConfigurationArgs.Builder]):
         com.pulumi.aws.appfabric.IngestionDestinationArgs.Builder =
       val argsBuilder = com.pulumi.aws.appfabric.inputs.IngestionDestinationProcessingConfigurationArgs.builder
       builder.processingConfiguration(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationTimeoutsArgs.Builder]):
         com.pulumi.aws.appfabric.IngestionDestinationArgs.Builder =
       val argsBuilder = com.pulumi.aws.appfabric.inputs.IngestionDestinationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -74,7 +74,7 @@ object appfabric_ext:
      * @param authRequest OAuth2 authorization information. Required if the app authorization for the request is configured with an OAuth2 (`oauth2`) authorization type. See `authRequest` Block for details.
      * @return builder
      */
-    def authRequest(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationConnectionAuthRequestArgs.Builder]):
+    inline def authRequest(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationConnectionAuthRequestArgs.Builder]):
         com.pulumi.aws.appfabric.inputs.AppAuthorizationConnectionState.Builder =
       val argsBuilder = com.pulumi.aws.appfabric.inputs.AppAuthorizationConnectionAuthRequestArgs.builder
       builder.authRequest(args(argsBuilder).build)
@@ -83,12 +83,12 @@ object appfabric_ext:
      * @param tenants Information about an application tenant. See `tenant` Block below.
      * @return builder
      */
-    def tenants(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationConnectionTenantArgs.Builder]*):
+    inline def tenants(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationConnectionTenantArgs.Builder]*):
         com.pulumi.aws.appfabric.inputs.AppAuthorizationConnectionState.Builder =
       def argsBuilder = com.pulumi.aws.appfabric.inputs.AppAuthorizationConnectionTenantArgs.builder
       builder.tenants(args.map(_(argsBuilder).build)*)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationConnectionTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationConnectionTimeoutsArgs.Builder]):
         com.pulumi.aws.appfabric.inputs.AppAuthorizationConnectionState.Builder =
       val argsBuilder = com.pulumi.aws.appfabric.inputs.AppAuthorizationConnectionTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -98,7 +98,7 @@ object appfabric_ext:
      * @param apiKeyCredentials API key credential information. See `apiKeyCredential` Block for details.
      * @return builder
      */
-    def apiKeyCredentials(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationCredentialApiKeyCredentialArgs.Builder]*):
+    inline def apiKeyCredentials(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationCredentialApiKeyCredentialArgs.Builder]*):
         com.pulumi.aws.appfabric.inputs.AppAuthorizationCredentialArgs.Builder =
       def argsBuilder = com.pulumi.aws.appfabric.inputs.AppAuthorizationCredentialApiKeyCredentialArgs.builder
       builder.apiKeyCredentials(args.map(_(argsBuilder).build)*)
@@ -107,7 +107,7 @@ object appfabric_ext:
      * @param oauth2Credential OAuth2 client credential information. See `oauth2Credential` Block for details.
      * @return builder
      */
-    def oauth2Credential(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationCredentialOauth2CredentialArgs.Builder]):
+    inline def oauth2Credential(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationCredentialOauth2CredentialArgs.Builder]):
         com.pulumi.aws.appfabric.inputs.AppAuthorizationCredentialArgs.Builder =
       val argsBuilder = com.pulumi.aws.appfabric.inputs.AppAuthorizationCredentialOauth2CredentialArgs.builder
       builder.oauth2Credential(args(argsBuilder).build)
@@ -117,7 +117,7 @@ object appfabric_ext:
      * @param credential Credentials for the application, such as an API key or OAuth2 client ID and secret. Specify credentials that match the authorization type for your request. For example, if the authorization type for your request is OAuth2 (`oauth2`), then you should provide only the OAuth2 credentials. See `credential` Block for details.
      * @return builder
      */
-    def credential(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationCredentialArgs.Builder]):
+    inline def credential(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationCredentialArgs.Builder]):
         com.pulumi.aws.appfabric.inputs.AppAuthorizationState.Builder =
       val argsBuilder = com.pulumi.aws.appfabric.inputs.AppAuthorizationCredentialArgs.builder
       builder.credential(args(argsBuilder).build)
@@ -128,12 +128,12 @@ object appfabric_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def tenants(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationTenantArgs.Builder]*):
+    inline def tenants(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationTenantArgs.Builder]*):
         com.pulumi.aws.appfabric.inputs.AppAuthorizationState.Builder =
       def argsBuilder = com.pulumi.aws.appfabric.inputs.AppAuthorizationTenantArgs.builder
       builder.tenants(args.map(_(argsBuilder).build)*)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.appfabric.inputs.AppAuthorizationTimeoutsArgs.Builder]):
         com.pulumi.aws.appfabric.inputs.AppAuthorizationState.Builder =
       val argsBuilder = com.pulumi.aws.appfabric.inputs.AppAuthorizationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -143,7 +143,7 @@ object appfabric_ext:
      * @param auditLog Audit log destination configuration. See `destination_configuration.audit_log` Block below.
      * @return builder
      */
-    def auditLog(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogArgs.Builder]):
+    inline def auditLog(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogArgs.Builder]):
         com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogArgs.builder
       builder.auditLog(args(argsBuilder).build)
@@ -153,7 +153,7 @@ object appfabric_ext:
      * @param destination Destination for the audit log. Only one destination, either `firehoseStream` or `s3Bucket`, can be specified. See `destination_configuration.audit_log.destination` Block below.
      * @return builder
      */
-    def destination(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogDestinationArgs.Builder]):
+    inline def destination(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogDestinationArgs.Builder]):
         com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogArgs.Builder =
       val argsBuilder = com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogDestinationArgs.builder
       builder.destination(args(argsBuilder).build)
@@ -163,7 +163,7 @@ object appfabric_ext:
      * @param firehoseStream Amazon Data Firehose delivery stream destination. See `destination_configuration.audit_log.destination.firehose_stream` Block below.
      * @return builder
      */
-    def firehoseStream(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogDestinationFirehoseStreamArgs.Builder]):
+    inline def firehoseStream(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogDestinationFirehoseStreamArgs.Builder]):
         com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogDestinationArgs.Builder =
       val argsBuilder = com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogDestinationFirehoseStreamArgs.builder
       builder.firehoseStream(args(argsBuilder).build)
@@ -172,7 +172,7 @@ object appfabric_ext:
      * @param s3Bucket Amazon S3 bucket destination. See `destination_configuration.audit_log.destination.s3_bucket` Block below.
      * @return builder
      */
-    def s3Bucket(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogDestinationS3BucketArgs.Builder]):
+    inline def s3Bucket(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogDestinationS3BucketArgs.Builder]):
         com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogDestinationArgs.Builder =
       val argsBuilder = com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationAuditLogDestinationS3BucketArgs.builder
       builder.s3Bucket(args(argsBuilder).build)
@@ -182,7 +182,7 @@ object appfabric_ext:
      * @param auditLog Audit log processing configuration. See `processing_configuration.audit_log` Block below.
      * @return builder
      */
-    def auditLog(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationProcessingConfigurationAuditLogArgs.Builder]):
+    inline def auditLog(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationProcessingConfigurationAuditLogArgs.Builder]):
         com.pulumi.aws.appfabric.inputs.IngestionDestinationProcessingConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.appfabric.inputs.IngestionDestinationProcessingConfigurationAuditLogArgs.builder
       builder.auditLog(args(argsBuilder).build)
@@ -192,7 +192,7 @@ object appfabric_ext:
      * @param destinationConfiguration Configuration for the destination of ingested data. See `destinationConfiguration` Block below.
      * @return builder
      */
-    def destinationConfiguration(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationArgs.Builder]):
+    inline def destinationConfiguration(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationArgs.Builder]):
         com.pulumi.aws.appfabric.inputs.IngestionDestinationState.Builder =
       val argsBuilder = com.pulumi.aws.appfabric.inputs.IngestionDestinationDestinationConfigurationArgs.builder
       builder.destinationConfiguration(args(argsBuilder).build)
@@ -203,12 +203,12 @@ object appfabric_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def processingConfiguration(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationProcessingConfigurationArgs.Builder]):
+    inline def processingConfiguration(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationProcessingConfigurationArgs.Builder]):
         com.pulumi.aws.appfabric.inputs.IngestionDestinationState.Builder =
       val argsBuilder = com.pulumi.aws.appfabric.inputs.IngestionDestinationProcessingConfigurationArgs.builder
       builder.processingConfiguration(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.appfabric.inputs.IngestionDestinationTimeoutsArgs.Builder]):
         com.pulumi.aws.appfabric.inputs.IngestionDestinationState.Builder =
       val argsBuilder = com.pulumi.aws.appfabric.inputs.IngestionDestinationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)

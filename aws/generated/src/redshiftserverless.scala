@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object redshiftserverless:
   /** Resource for managing an AWS Redshift Serverless Custom Domain Association. */
-  def CustomDomainAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomDomainAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.redshiftserverless.CustomDomainAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.redshiftserverless.CustomDomainAssociationArgs.builder
     com.pulumi.aws.redshiftserverless.CustomDomainAssociation(name,
@@ -15,7 +15,7 @@ object redshiftserverless:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a new Amazon Redshift Serverless Endpoint Access. */
-  def EndpointAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EndpointAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.redshiftserverless.EndpointAccessArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.redshiftserverless.EndpointAccessArgs.builder
     com.pulumi.aws.redshiftserverless.EndpointAccess(name,
@@ -27,7 +27,7 @@ object redshiftserverless:
    * 
    * &gt; **Note:** Write-Only argument `adminPasswordWo` is available to use in place of `adminPassword`. Write-Only arguments are supported in HashiCorp Terraform 1.11.0 and later. Learn more.
    */
-  def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.redshiftserverless.NamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.redshiftserverless.NamespaceArgs.builder
     argsBuilder = args(argsBuilder)
@@ -91,7 +91,7 @@ object redshiftserverless:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Creates a new Amazon Redshift Serverless Resource Policy. */
-  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.redshiftserverless.ResourcePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.redshiftserverless.ResourcePolicyArgs.builder
     com.pulumi.aws.redshiftserverless.ResourcePolicy(name,
@@ -99,7 +99,7 @@ object redshiftserverless:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a new Amazon Redshift Serverless Snapshot. */
-  def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.redshiftserverless.SnapshotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.redshiftserverless.SnapshotArgs.builder
     com.pulumi.aws.redshiftserverless.Snapshot(name,
@@ -107,7 +107,7 @@ object redshiftserverless:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a new Amazon Redshift Serverless Usage Limit. */
-  def UsageLimit(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UsageLimit(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.redshiftserverless.UsageLimitArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.redshiftserverless.UsageLimitArgs.builder
     com.pulumi.aws.redshiftserverless.UsageLimit(name,
@@ -115,7 +115,7 @@ object redshiftserverless:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a new Amazon Redshift Serverless Workgroup. */
-  def Workgroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Workgroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.redshiftserverless.WorkgroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.redshiftserverless.WorkgroupArgs.builder
     argsBuilder = args(argsBuilder)

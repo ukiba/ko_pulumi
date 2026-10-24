@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object imagebuilder:
   /** Manages an Image Builder Component. */
-  def Component(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Component(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.imagebuilder.ComponentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.imagebuilder.ComponentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25,7 +25,7 @@ object imagebuilder:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Image Builder Container Recipe. */
-  def ContainerRecipe(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ContainerRecipe(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.imagebuilder.ContainerRecipeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.imagebuilder.ContainerRecipeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -43,7 +43,7 @@ object imagebuilder:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Image Builder Distribution Configuration. */
-  def DistributionConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DistributionConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.imagebuilder.DistributionConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.imagebuilder.DistributionConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -61,7 +61,7 @@ object imagebuilder:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Image Builder Image. */
-  def Image(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Image(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.imagebuilder.ImageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.imagebuilder.ImageArgs.builder
     argsBuilder = args(argsBuilder)
@@ -90,7 +90,7 @@ object imagebuilder:
    * \$ pulumi import aws:imagebuilder/imagePipeline:ImagePipeline example arn:aws:imagebuilder:us-east-1:123456789012:image-pipeline/example
    * ```
    */
-  def ImagePipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ImagePipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.imagebuilder.ImagePipelineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.imagebuilder.ImagePipelineArgs.builder
     conf.logicalName2physicalName(name) match
@@ -108,7 +108,7 @@ object imagebuilder:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Image Builder Image Recipe. */
-  def ImageRecipe(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ImageRecipe(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.imagebuilder.ImageRecipeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.imagebuilder.ImageRecipeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -335,7 +335,7 @@ object imagebuilder:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an Image Builder Infrastructure Configuration. */
-  def InfrastructureConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InfrastructureConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.imagebuilder.InfrastructureConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.imagebuilder.InfrastructureConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -353,7 +353,7 @@ object imagebuilder:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Image Builder Lifecycle Policy. */
-  def LifecyclePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LifecyclePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.imagebuilder.LifecyclePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.imagebuilder.LifecyclePolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -375,7 +375,7 @@ object imagebuilder:
    * 
    * &gt; Image Builder manages the workflows for the distribution stage. Therefore, using the DISTRIBUTION workflow type results in an error.
    */
-  def Workflow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Workflow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.imagebuilder.WorkflowArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.imagebuilder.WorkflowArgs.builder
     conf.logicalName2physicalName(name) match

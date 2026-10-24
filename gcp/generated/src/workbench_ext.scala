@@ -8,19 +8,19 @@ object workbench_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gceSetup(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupArgs.Builder]):
+    inline def gceSetup(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupArgs.Builder]):
         com.pulumi.gcp.workbench.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.workbench.inputs.InstanceGceSetupArgs.builder
       builder.gceSetup(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.workbench.InstanceIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.workbench.InstanceIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.workbench.inputs.InstanceIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.workbench.InstanceIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.workbench.InstanceIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.workbench.inputs.InstanceIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -33,7 +33,7 @@ object workbench_ext:
      * Structure is documented below.
      * @return builder
      */
-    def acceleratorConfigs(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupAcceleratorConfigArgs.Builder]*):
+    inline def acceleratorConfigs(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupAcceleratorConfigArgs.Builder]*):
         com.pulumi.gcp.workbench.inputs.InstanceGceSetupArgs.Builder =
       def argsBuilder = com.pulumi.gcp.workbench.inputs.InstanceGceSetupAcceleratorConfigArgs.builder
       builder.acceleratorConfigs(args.map(_(argsBuilder).build)*)
@@ -43,7 +43,7 @@ object workbench_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bootDisk(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupBootDiskArgs.Builder]):
+    inline def bootDisk(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupBootDiskArgs.Builder]):
         com.pulumi.gcp.workbench.inputs.InstanceGceSetupArgs.Builder =
       val argsBuilder = com.pulumi.gcp.workbench.inputs.InstanceGceSetupBootDiskArgs.builder
       builder.bootDisk(args(argsBuilder).build)
@@ -53,7 +53,7 @@ object workbench_ext:
      * Structure is documented below.
      * @return builder
      */
-    def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupConfidentialInstanceConfigArgs.Builder]):
+    inline def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupConfidentialInstanceConfigArgs.Builder]):
         com.pulumi.gcp.workbench.inputs.InstanceGceSetupArgs.Builder =
       val argsBuilder = com.pulumi.gcp.workbench.inputs.InstanceGceSetupConfidentialInstanceConfigArgs.builder
       builder.confidentialInstanceConfig(args(argsBuilder).build)
@@ -63,7 +63,7 @@ object workbench_ext:
      * Structure is documented below.
      * @return builder
      */
-    def containerImage(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupContainerImageArgs.Builder]):
+    inline def containerImage(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupContainerImageArgs.Builder]):
         com.pulumi.gcp.workbench.inputs.InstanceGceSetupArgs.Builder =
       val argsBuilder = com.pulumi.gcp.workbench.inputs.InstanceGceSetupContainerImageArgs.builder
       builder.containerImage(args(argsBuilder).build)
@@ -73,7 +73,7 @@ object workbench_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataDisks(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupDataDisksArgs.Builder]):
+    inline def dataDisks(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupDataDisksArgs.Builder]):
         com.pulumi.gcp.workbench.inputs.InstanceGceSetupArgs.Builder =
       val argsBuilder = com.pulumi.gcp.workbench.inputs.InstanceGceSetupDataDisksArgs.builder
       builder.dataDisks(args(argsBuilder).build)
@@ -83,7 +83,7 @@ object workbench_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkInterfaces(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupNetworkInterfaceArgs.Builder]*):
+    inline def networkInterfaces(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupNetworkInterfaceArgs.Builder]*):
         com.pulumi.gcp.workbench.inputs.InstanceGceSetupArgs.Builder =
       def argsBuilder = com.pulumi.gcp.workbench.inputs.InstanceGceSetupNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
@@ -93,7 +93,7 @@ object workbench_ext:
      * Structure is documented below.
      * @return builder
      */
-    def reservationAffinity(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupReservationAffinityArgs.Builder]):
+    inline def reservationAffinity(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupReservationAffinityArgs.Builder]):
         com.pulumi.gcp.workbench.inputs.InstanceGceSetupArgs.Builder =
       val argsBuilder = com.pulumi.gcp.workbench.inputs.InstanceGceSetupReservationAffinityArgs.builder
       builder.reservationAffinity(args(argsBuilder).build)
@@ -103,7 +103,7 @@ object workbench_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceAccounts(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupServiceAccountArgs.Builder]*):
+    inline def serviceAccounts(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupServiceAccountArgs.Builder]*):
         com.pulumi.gcp.workbench.inputs.InstanceGceSetupArgs.Builder =
       def argsBuilder = com.pulumi.gcp.workbench.inputs.InstanceGceSetupServiceAccountArgs.builder
       builder.serviceAccounts(args.map(_(argsBuilder).build)*)
@@ -115,7 +115,7 @@ object workbench_ext:
      * Structure is documented below.
      * @return builder
      */
-    def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupShieldedInstanceConfigArgs.Builder]):
+    inline def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupShieldedInstanceConfigArgs.Builder]):
         com.pulumi.gcp.workbench.inputs.InstanceGceSetupArgs.Builder =
       val argsBuilder = com.pulumi.gcp.workbench.inputs.InstanceGceSetupShieldedInstanceConfigArgs.builder
       builder.shieldedInstanceConfig(args(argsBuilder).build)
@@ -126,7 +126,7 @@ object workbench_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vmImage(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupVmImageArgs.Builder]):
+    inline def vmImage(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupVmImageArgs.Builder]):
         com.pulumi.gcp.workbench.inputs.InstanceGceSetupArgs.Builder =
       val argsBuilder = com.pulumi.gcp.workbench.inputs.InstanceGceSetupVmImageArgs.builder
       builder.vmImage(args(argsBuilder).build)
@@ -140,19 +140,19 @@ object workbench_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accessConfigs(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupNetworkInterfaceAccessConfigArgs.Builder]*):
+    inline def accessConfigs(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupNetworkInterfaceAccessConfigArgs.Builder]*):
         com.pulumi.gcp.workbench.inputs.InstanceGceSetupNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.workbench.inputs.InstanceGceSetupNetworkInterfaceAccessConfigArgs.builder
       builder.accessConfigs(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.workbench.inputs.InstanceIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.workbench.inputs.InstanceIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.workbench.inputs.InstanceIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.workbench.inputs.InstanceIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.workbench.inputs.InstanceIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.workbench.inputs.InstanceIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -163,7 +163,7 @@ object workbench_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gceSetup(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupArgs.Builder]):
+    inline def gceSetup(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceGceSetupArgs.Builder]):
         com.pulumi.gcp.workbench.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.workbench.inputs.InstanceGceSetupArgs.builder
       builder.gceSetup(args(argsBuilder).build)
@@ -174,7 +174,7 @@ object workbench_ext:
      * &#34;-1&#34;, &#34;jupyterlabStatus&#34;: &#34;-1&#34;, &#34;updated&#34;: &#34;2020-10-18 09:40:03.573409&#34; }&#39;
      * @return builder
      */
-    def healthInfos(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceHealthInfoArgs.Builder]*):
+    inline def healthInfos(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceHealthInfoArgs.Builder]*):
         com.pulumi.gcp.workbench.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.workbench.inputs.InstanceHealthInfoArgs.builder
       builder.healthInfos(args.map(_(argsBuilder).build)*)
@@ -184,7 +184,7 @@ object workbench_ext:
      * Structure is documented below.
      * @return builder
      */
-    def upgradeHistories(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceUpgradeHistoryArgs.Builder]*):
+    inline def upgradeHistories(args: Endofunction[com.pulumi.gcp.workbench.inputs.InstanceUpgradeHistoryArgs.Builder]*):
         com.pulumi.gcp.workbench.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.workbench.inputs.InstanceUpgradeHistoryArgs.builder
       builder.upgradeHistories(args.map(_(argsBuilder).build)*)

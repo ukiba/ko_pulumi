@@ -8,7 +8,7 @@ object cloudbuildv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bitbucketCloudConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketCloudConfigArgs.Builder]):
+    inline def bitbucketCloudConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketCloudConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuildv2.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketCloudConfigArgs.builder
       builder.bitbucketCloudConfig(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object cloudbuildv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bitbucketDataCenterConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketDataCenterConfigArgs.Builder]):
+    inline def bitbucketDataCenterConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketDataCenterConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuildv2.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketDataCenterConfigArgs.builder
       builder.bitbucketDataCenterConfig(args(argsBuilder).build)
@@ -28,7 +28,7 @@ object cloudbuildv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def githubConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGithubConfigArgs.Builder]):
+    inline def githubConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGithubConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuildv2.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGithubConfigArgs.builder
       builder.githubConfig(args(argsBuilder).build)
@@ -38,7 +38,7 @@ object cloudbuildv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def githubEnterpriseConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGithubEnterpriseConfigArgs.Builder]):
+    inline def githubEnterpriseConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGithubEnterpriseConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuildv2.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGithubEnterpriseConfigArgs.builder
       builder.githubEnterpriseConfig(args(argsBuilder).build)
@@ -48,19 +48,19 @@ object cloudbuildv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gitlabConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGitlabConfigArgs.Builder]):
+    inline def gitlabConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGitlabConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuildv2.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGitlabConfigArgs.builder
       builder.gitlabConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.cloudbuildv2.ConnectionIAMBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionIAMBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionIAMBindingConditionArgs.Builder]):
         com.pulumi.gcp.cloudbuildv2.ConnectionIAMBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.ConnectionIAMBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.cloudbuildv2.ConnectionIAMMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionIAMMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionIAMMemberConditionArgs.Builder]):
         com.pulumi.gcp.cloudbuildv2.ConnectionIAMMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.ConnectionIAMMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -71,7 +71,7 @@ object cloudbuildv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authorizerCredential(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketCloudConfigAuthorizerCredentialArgs.Builder]):
+    inline def authorizerCredential(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketCloudConfigAuthorizerCredentialArgs.Builder]):
         com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketCloudConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketCloudConfigAuthorizerCredentialArgs.builder
       builder.authorizerCredential(args(argsBuilder).build)
@@ -81,7 +81,7 @@ object cloudbuildv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def readAuthorizerCredential(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketCloudConfigReadAuthorizerCredentialArgs.Builder]):
+    inline def readAuthorizerCredential(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketCloudConfigReadAuthorizerCredentialArgs.Builder]):
         com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketCloudConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketCloudConfigReadAuthorizerCredentialArgs.builder
       builder.readAuthorizerCredential(args(argsBuilder).build)
@@ -92,7 +92,7 @@ object cloudbuildv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authorizerCredential(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketDataCenterConfigAuthorizerCredentialArgs.Builder]):
+    inline def authorizerCredential(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketDataCenterConfigAuthorizerCredentialArgs.Builder]):
         com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketDataCenterConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketDataCenterConfigAuthorizerCredentialArgs.builder
       builder.authorizerCredential(args(argsBuilder).build)
@@ -102,7 +102,7 @@ object cloudbuildv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def readAuthorizerCredential(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketDataCenterConfigReadAuthorizerCredentialArgs.Builder]):
+    inline def readAuthorizerCredential(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketDataCenterConfigReadAuthorizerCredentialArgs.Builder]):
         com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketDataCenterConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketDataCenterConfigReadAuthorizerCredentialArgs.builder
       builder.readAuthorizerCredential(args(argsBuilder).build)
@@ -112,7 +112,7 @@ object cloudbuildv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketDataCenterConfigServiceDirectoryConfigArgs.Builder]):
+    inline def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketDataCenterConfigServiceDirectoryConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketDataCenterConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketDataCenterConfigServiceDirectoryConfigArgs.builder
       builder.serviceDirectoryConfig(args(argsBuilder).build)
@@ -123,7 +123,7 @@ object cloudbuildv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authorizerCredential(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGithubConfigAuthorizerCredentialArgs.Builder]):
+    inline def authorizerCredential(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGithubConfigAuthorizerCredentialArgs.Builder]):
         com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGithubConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGithubConfigAuthorizerCredentialArgs.builder
       builder.authorizerCredential(args(argsBuilder).build)
@@ -134,7 +134,7 @@ object cloudbuildv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGithubEnterpriseConfigServiceDirectoryConfigArgs.Builder]):
+    inline def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGithubEnterpriseConfigServiceDirectoryConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGithubEnterpriseConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGithubEnterpriseConfigServiceDirectoryConfigArgs.builder
       builder.serviceDirectoryConfig(args(argsBuilder).build)
@@ -145,7 +145,7 @@ object cloudbuildv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authorizerCredential(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGitlabConfigAuthorizerCredentialArgs.Builder]):
+    inline def authorizerCredential(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGitlabConfigAuthorizerCredentialArgs.Builder]):
         com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGitlabConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGitlabConfigAuthorizerCredentialArgs.builder
       builder.authorizerCredential(args(argsBuilder).build)
@@ -155,7 +155,7 @@ object cloudbuildv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def readAuthorizerCredential(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGitlabConfigReadAuthorizerCredentialArgs.Builder]):
+    inline def readAuthorizerCredential(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGitlabConfigReadAuthorizerCredentialArgs.Builder]):
         com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGitlabConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGitlabConfigReadAuthorizerCredentialArgs.builder
       builder.readAuthorizerCredential(args(argsBuilder).build)
@@ -165,19 +165,19 @@ object cloudbuildv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGitlabConfigServiceDirectoryConfigArgs.Builder]):
+    inline def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGitlabConfigServiceDirectoryConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGitlabConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGitlabConfigServiceDirectoryConfigArgs.builder
       builder.serviceDirectoryConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.cloudbuildv2.inputs.ConnectionIAMBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionIAMBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionIAMBindingConditionArgs.Builder]):
         com.pulumi.gcp.cloudbuildv2.inputs.ConnectionIAMBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.ConnectionIAMBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.cloudbuildv2.inputs.ConnectionIAMMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionIAMMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionIAMMemberConditionArgs.Builder]):
         com.pulumi.gcp.cloudbuildv2.inputs.ConnectionIAMMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.ConnectionIAMMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -188,7 +188,7 @@ object cloudbuildv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bitbucketCloudConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketCloudConfigArgs.Builder]):
+    inline def bitbucketCloudConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketCloudConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuildv2.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketCloudConfigArgs.builder
       builder.bitbucketCloudConfig(args(argsBuilder).build)
@@ -198,7 +198,7 @@ object cloudbuildv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bitbucketDataCenterConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketDataCenterConfigArgs.Builder]):
+    inline def bitbucketDataCenterConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketDataCenterConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuildv2.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.ConnectionBitbucketDataCenterConfigArgs.builder
       builder.bitbucketDataCenterConfig(args(argsBuilder).build)
@@ -208,7 +208,7 @@ object cloudbuildv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def githubConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGithubConfigArgs.Builder]):
+    inline def githubConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGithubConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuildv2.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGithubConfigArgs.builder
       builder.githubConfig(args(argsBuilder).build)
@@ -218,7 +218,7 @@ object cloudbuildv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def githubEnterpriseConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGithubEnterpriseConfigArgs.Builder]):
+    inline def githubEnterpriseConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGithubEnterpriseConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuildv2.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGithubEnterpriseConfigArgs.builder
       builder.githubEnterpriseConfig(args(argsBuilder).build)
@@ -228,7 +228,7 @@ object cloudbuildv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gitlabConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGitlabConfigArgs.Builder]):
+    inline def gitlabConfig(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGitlabConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuildv2.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.ConnectionGitlabConfigArgs.builder
       builder.gitlabConfig(args(argsBuilder).build)
@@ -238,7 +238,7 @@ object cloudbuildv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def installationStates(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionInstallationStateArgs.Builder]*):
+    inline def installationStates(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.ConnectionInstallationStateArgs.Builder]*):
         com.pulumi.gcp.cloudbuildv2.inputs.ConnectionState.Builder =
       def argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.ConnectionInstallationStateArgs.builder
       builder.installationStates(args.map(_(argsBuilder).build)*)

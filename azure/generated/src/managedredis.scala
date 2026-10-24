@@ -17,7 +17,7 @@ object managedredis:
    * \$ pulumi import azure:managedredis/accessPolicyAssignment:AccessPolicyAssignment example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.Cache/redisEnterprise/redis1/databases/default/accessPolicyAssignments/00000000-0000-0000-0000-000000000000
    * ```
    */
-  def AccessPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccessPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.managedredis.AccessPolicyAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.managedredis.AccessPolicyAssignmentArgs.builder
     com.pulumi.azure.managedredis.AccessPolicyAssignment(name,
@@ -29,7 +29,7 @@ object managedredis:
    * 
    * &gt; **Note:** This resource manages the geo-replication group membership for Managed Redis databases. All databases to be linked must have `geoReplicationGroupName` provided with the same value. Linking will [discard cache data and cause temporary outage](https://learn.microsoft.com/azure/redis/how-to-active-geo-replication#add-an-existing-instance-to-an-active-geo-replication-group).
    */
-  def GeoReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GeoReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.managedredis.GeoReplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.managedredis.GeoReplicationArgs.builder
     com.pulumi.azure.managedredis.GeoReplication(name,
@@ -37,7 +37,7 @@ object managedredis:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a [Managed Redis](https://learn.microsoft.com/azure/redis/overview). This resource supersedes azure.redis.EnterpriseCluster and azure.redis.EnterpriseDatabase resources. Please refer to the migration guide for more information on migrating from Redis Enterprise to Managed Redis: [Migrating from Redis Enterprise to Managed Redis](https://learn.microsoft.com/azure/redis/migrate/migrate-overview). */
-  def ManagedRedis(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedRedis(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.managedredis.ManagedRedisArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.managedredis.ManagedRedisArgs.builder
     conf.logicalName2physicalName(name) match

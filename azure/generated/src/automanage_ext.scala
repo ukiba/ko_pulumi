@@ -7,7 +7,7 @@ object automanage_ext:
      * @param antimalware A `antimalware` block as defined below.
      * @return builder
      */
-    def antimalware(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationAntimalwareArgs.Builder]):
+    inline def antimalware(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationAntimalwareArgs.Builder]):
         com.pulumi.azure.automanage.ConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.azure.automanage.inputs.ConfigurationAntimalwareArgs.builder
       builder.antimalware(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object automanage_ext:
      * @param azureSecurityBaseline A `azureSecurityBaseline` block as defined below.
      * @return builder
      */
-    def azureSecurityBaseline(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationAzureSecurityBaselineArgs.Builder]):
+    inline def azureSecurityBaseline(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationAzureSecurityBaselineArgs.Builder]):
         com.pulumi.azure.automanage.ConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.azure.automanage.inputs.ConfigurationAzureSecurityBaselineArgs.builder
       builder.azureSecurityBaseline(args(argsBuilder).build)
@@ -25,7 +25,7 @@ object automanage_ext:
      * @param backup A `backup` block as defined below.
      * @return builder
      */
-    def backup(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationBackupArgs.Builder]):
+    inline def backup(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationBackupArgs.Builder]):
         com.pulumi.azure.automanage.ConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.azure.automanage.inputs.ConfigurationBackupArgs.builder
       builder.backup(args(argsBuilder).build)
@@ -35,7 +35,7 @@ object automanage_ext:
      * @param exclusions A `exclusions` block as defined below.
      * @return builder
      */
-    def exclusions(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationAntimalwareExclusionsArgs.Builder]):
+    inline def exclusions(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationAntimalwareExclusionsArgs.Builder]):
         com.pulumi.azure.automanage.inputs.ConfigurationAntimalwareArgs.Builder =
       val argsBuilder = com.pulumi.azure.automanage.inputs.ConfigurationAntimalwareExclusionsArgs.builder
       builder.exclusions(args(argsBuilder).build)
@@ -45,7 +45,7 @@ object automanage_ext:
      * @param retentionPolicy A `retentionPolicy` block as defined below.
      * @return builder
      */
-    def retentionPolicy(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationBackupRetentionPolicyArgs.Builder]):
+    inline def retentionPolicy(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationBackupRetentionPolicyArgs.Builder]):
         com.pulumi.azure.automanage.inputs.ConfigurationBackupArgs.Builder =
       val argsBuilder = com.pulumi.azure.automanage.inputs.ConfigurationBackupRetentionPolicyArgs.builder
       builder.retentionPolicy(args(argsBuilder).build)
@@ -54,7 +54,7 @@ object automanage_ext:
      * @param schedulePolicy A `schedulePolicy` block as defined below.
      * @return builder
      */
-    def schedulePolicy(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationBackupSchedulePolicyArgs.Builder]):
+    inline def schedulePolicy(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationBackupSchedulePolicyArgs.Builder]):
         com.pulumi.azure.automanage.inputs.ConfigurationBackupArgs.Builder =
       val argsBuilder = com.pulumi.azure.automanage.inputs.ConfigurationBackupSchedulePolicyArgs.builder
       builder.schedulePolicy(args(argsBuilder).build)
@@ -64,7 +64,7 @@ object automanage_ext:
      * @param dailySchedule A `dailySchedule` block as defined below.
      * @return builder
      */
-    def dailySchedule(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationBackupRetentionPolicyDailyScheduleArgs.Builder]):
+    inline def dailySchedule(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationBackupRetentionPolicyDailyScheduleArgs.Builder]):
         com.pulumi.azure.automanage.inputs.ConfigurationBackupRetentionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.azure.automanage.inputs.ConfigurationBackupRetentionPolicyDailyScheduleArgs.builder
       builder.dailySchedule(args(argsBuilder).build)
@@ -73,7 +73,7 @@ object automanage_ext:
      * @param weeklySchedule A `weeklySchedule` block as defined below.
      * @return builder
      */
-    def weeklySchedule(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationBackupRetentionPolicyWeeklyScheduleArgs.Builder]):
+    inline def weeklySchedule(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationBackupRetentionPolicyWeeklyScheduleArgs.Builder]):
         com.pulumi.azure.automanage.inputs.ConfigurationBackupRetentionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.azure.automanage.inputs.ConfigurationBackupRetentionPolicyWeeklyScheduleArgs.builder
       builder.weeklySchedule(args(argsBuilder).build)
@@ -83,7 +83,7 @@ object automanage_ext:
      * @param retentionDuration A `retentionDuration` block as defined below.
      * @return builder
      */
-    def retentionDuration(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationBackupRetentionPolicyDailyScheduleRetentionDurationArgs.Builder]):
+    inline def retentionDuration(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationBackupRetentionPolicyDailyScheduleRetentionDurationArgs.Builder]):
         com.pulumi.azure.automanage.inputs.ConfigurationBackupRetentionPolicyDailyScheduleArgs.Builder =
       val argsBuilder = com.pulumi.azure.automanage.inputs.ConfigurationBackupRetentionPolicyDailyScheduleRetentionDurationArgs.builder
       builder.retentionDuration(args(argsBuilder).build)
@@ -93,7 +93,7 @@ object automanage_ext:
      * @param retentionDuration A `retentionDuration` block as defined below.
      * @return builder
      */
-    def retentionDuration(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationBackupRetentionPolicyWeeklyScheduleRetentionDurationArgs.Builder]):
+    inline def retentionDuration(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationBackupRetentionPolicyWeeklyScheduleRetentionDurationArgs.Builder]):
         com.pulumi.azure.automanage.inputs.ConfigurationBackupRetentionPolicyWeeklyScheduleArgs.Builder =
       val argsBuilder = com.pulumi.azure.automanage.inputs.ConfigurationBackupRetentionPolicyWeeklyScheduleRetentionDurationArgs.builder
       builder.retentionDuration(args(argsBuilder).build)
@@ -103,7 +103,7 @@ object automanage_ext:
      * @param antimalware A `antimalware` block as defined below.
      * @return builder
      */
-    def antimalware(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationAntimalwareArgs.Builder]):
+    inline def antimalware(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationAntimalwareArgs.Builder]):
         com.pulumi.azure.automanage.inputs.ConfigurationState.Builder =
       val argsBuilder = com.pulumi.azure.automanage.inputs.ConfigurationAntimalwareArgs.builder
       builder.antimalware(args(argsBuilder).build)
@@ -112,7 +112,7 @@ object automanage_ext:
      * @param azureSecurityBaseline A `azureSecurityBaseline` block as defined below.
      * @return builder
      */
-    def azureSecurityBaseline(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationAzureSecurityBaselineArgs.Builder]):
+    inline def azureSecurityBaseline(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationAzureSecurityBaselineArgs.Builder]):
         com.pulumi.azure.automanage.inputs.ConfigurationState.Builder =
       val argsBuilder = com.pulumi.azure.automanage.inputs.ConfigurationAzureSecurityBaselineArgs.builder
       builder.azureSecurityBaseline(args(argsBuilder).build)
@@ -121,7 +121,7 @@ object automanage_ext:
      * @param backup A `backup` block as defined below.
      * @return builder
      */
-    def backup(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationBackupArgs.Builder]):
+    inline def backup(args: Endofunction[com.pulumi.azure.automanage.inputs.ConfigurationBackupArgs.Builder]):
         com.pulumi.azure.automanage.inputs.ConfigurationState.Builder =
       val argsBuilder = com.pulumi.azure.automanage.inputs.ConfigurationBackupArgs.builder
       builder.backup(args(argsBuilder).build)

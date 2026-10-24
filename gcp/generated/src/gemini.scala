@@ -15,7 +15,7 @@ object gemini:
    * * How-to Guides
    *     * [Gemini Code Assist overview](https://cloud.google.com/gemini/docs/codeassist/overview)
    */
-  def CodeRepositoryIndex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CodeRepositoryIndex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gemini.CodeRepositoryIndexArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gemini.CodeRepositoryIndexArgs.builder
     com.pulumi.gcp.gemini.CodeRepositoryIndex(name,
@@ -23,7 +23,7 @@ object gemini:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The resource for managing CodeTools settings for Admin Control. */
-  def CodeToolsSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CodeToolsSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gemini.CodeToolsSettingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gemini.CodeToolsSettingArgs.builder
     com.pulumi.gcp.gemini.CodeToolsSetting(name,
@@ -37,7 +37,7 @@ object gemini:
    * * How-to Guides
    *     * [Gemini Cloud Assist overview](https://cloud.google.com/gemini/docs/cloud-assist/overview)
    */
-  def CodeToolsSettingBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CodeToolsSettingBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gemini.CodeToolsSettingBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gemini.CodeToolsSettingBindingArgs.builder
     com.pulumi.gcp.gemini.CodeToolsSettingBinding(name,
@@ -61,7 +61,7 @@ object gemini:
    * * How-to Guides
    *     * [Conversational Analytics API overview](https://cloud.google.com/gemini/data-agents/conversational-analytics-api/overview)
    */
-  def DataAnalyticsDataAgent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataAnalyticsDataAgent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gemini.DataAnalyticsDataAgentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gemini.DataAnalyticsDataAgentArgs.builder
     com.pulumi.gcp.gemini.DataAnalyticsDataAgent(name,
@@ -374,7 +374,7 @@ object gemini:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DataAnalyticsDataAgentIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataAnalyticsDataAgentIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamBindingArgs.builder
     com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamBinding(name,
@@ -687,7 +687,7 @@ object gemini:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DataAnalyticsDataAgentIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataAnalyticsDataAgentIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamMemberArgs.builder
     com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamMember(name,
@@ -1000,7 +1000,7 @@ object gemini:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DataAnalyticsDataAgentIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataAnalyticsDataAgentIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamPolicyArgs.builder
     com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamPolicy(name,
@@ -1008,7 +1008,7 @@ object gemini:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The resource for managing DataSharingWithGoogle settings for Admin Control. */
-  def DataSharingWithGoogleSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataSharingWithGoogleSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gemini.DataSharingWithGoogleSettingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gemini.DataSharingWithGoogleSettingArgs.builder
     com.pulumi.gcp.gemini.DataSharingWithGoogleSetting(name,
@@ -1022,7 +1022,7 @@ object gemini:
    * * How-to Guides
    *     * [Gemini Cloud Assist overview](https://cloud.google.com/gemini/docs/cloud-assist/overview)
    */
-  def DataSharingWithGoogleSettingBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataSharingWithGoogleSettingBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gemini.DataSharingWithGoogleSettingBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gemini.DataSharingWithGoogleSettingBindingArgs.builder
     com.pulumi.gcp.gemini.DataSharingWithGoogleSettingBinding(name,
@@ -1038,7 +1038,7 @@ object gemini:
    * * How-to Guides
    *     * [Gemini Cloud Assist overview](https://cloud.google.com/gemini/docs/cloud-assist/overview)
    */
-  def GdaObservabilitySetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GdaObservabilitySetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gemini.GdaObservabilitySettingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gemini.GdaObservabilitySettingArgs.builder
     com.pulumi.gcp.gemini.GdaObservabilitySetting(name,
@@ -1054,7 +1054,7 @@ object gemini:
    * * How-to Guides
    *     * [Gemini Cloud Assist overview](https://cloud.google.com/gemini/docs/cloud-assist/overview)
    */
-  def GdaObservabilitySettingBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GdaObservabilitySettingBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gemini.GdaObservabilitySettingBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gemini.GdaObservabilitySettingBindingArgs.builder
     com.pulumi.gcp.gemini.GdaObservabilitySettingBinding(name,
@@ -1095,7 +1095,7 @@ object gemini:
           invokeOptions(InvokeOptions.builder).build)
 
   /** The resource for managing GeminiGcpEnablement settings for Admin Control. */
-  def GeminiGcpEnablementSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GeminiGcpEnablementSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gemini.GeminiGcpEnablementSettingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gemini.GeminiGcpEnablementSettingArgs.builder
     com.pulumi.gcp.gemini.GeminiGcpEnablementSetting(name,
@@ -1109,7 +1109,7 @@ object gemini:
    * * How-to Guides
    *     * [Gemini Cloud Assist overview](https://cloud.google.com/gemini/docs/cloud-assist/overview)
    */
-  def GeminiGcpEnablementSettingBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GeminiGcpEnablementSettingBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gemini.GeminiGcpEnablementSettingBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gemini.GeminiGcpEnablementSettingBindingArgs.builder
     com.pulumi.gcp.gemini.GeminiGcpEnablementSettingBinding(name,
@@ -1125,7 +1125,7 @@ object gemini:
    * * How-to Guides
    *     * [Gemini in BigQuery overview](https://cloud.google.com/gemini/docs/bigquery/overview)
    */
-  def GibqObservabilitySetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GibqObservabilitySetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gemini.GibqObservabilitySettingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gemini.GibqObservabilitySettingArgs.builder
     com.pulumi.gcp.gemini.GibqObservabilitySetting(name,
@@ -1139,7 +1139,7 @@ object gemini:
    * * How-to Guides
    *     * [Gemini Cloud Assist overview](https://cloud.google.com/gemini/docs/cloud-assist/overview)
    */
-  def GibqObservabilitySettingBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GibqObservabilitySettingBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gemini.GibqObservabilitySettingBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gemini.GibqObservabilitySettingBindingArgs.builder
     com.pulumi.gcp.gemini.GibqObservabilitySettingBinding(name,
@@ -1147,7 +1147,7 @@ object gemini:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The resource for managing Logging settings for Admin Control. */
-  def LoggingSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LoggingSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gemini.LoggingSettingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gemini.LoggingSettingArgs.builder
     com.pulumi.gcp.gemini.LoggingSetting(name,
@@ -1161,7 +1161,7 @@ object gemini:
    * * How-to Guides
    *     * [Gemini Cloud Assist overview](https://cloud.google.com/gemini/docs/cloud-assist/overview)
    */
-  def LoggingSettingBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LoggingSettingBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gemini.LoggingSettingBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gemini.LoggingSettingBindingArgs.builder
     com.pulumi.gcp.gemini.LoggingSettingBinding(name,
@@ -1169,7 +1169,7 @@ object gemini:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The resource for managing ReleaseChannel settings for Admin Control. */
-  def ReleaseChannelSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ReleaseChannelSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gemini.ReleaseChannelSettingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gemini.ReleaseChannelSettingArgs.builder
     com.pulumi.gcp.gemini.ReleaseChannelSetting(name,
@@ -1183,7 +1183,7 @@ object gemini:
    * * How-to Guides
    *     * [Gemini Cloud Assist overview](https://cloud.google.com/gemini/docs/cloud-assist/overview)
    */
-  def ReleaseChannelSettingBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ReleaseChannelSettingBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gemini.ReleaseChannelSettingBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gemini.ReleaseChannelSettingBindingArgs.builder
     com.pulumi.gcp.gemini.ReleaseChannelSettingBinding(name,
@@ -1197,7 +1197,7 @@ object gemini:
    * 
    * * [API documentation](https://cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeRepositoryIndexes.repositoryGroups)
    */
-  def RepositoryGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RepositoryGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gemini.RepositoryGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gemini.RepositoryGroupArgs.builder
     com.pulumi.gcp.gemini.RepositoryGroup(name,
@@ -1516,7 +1516,7 @@ object gemini:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RepositoryGroupIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RepositoryGroupIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gemini.RepositoryGroupIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gemini.RepositoryGroupIamBindingArgs.builder
     com.pulumi.gcp.gemini.RepositoryGroupIamBinding(name,
@@ -1835,7 +1835,7 @@ object gemini:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RepositoryGroupIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RepositoryGroupIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gemini.RepositoryGroupIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gemini.RepositoryGroupIamMemberArgs.builder
     com.pulumi.gcp.gemini.RepositoryGroupIamMember(name,
@@ -2154,7 +2154,7 @@ object gemini:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RepositoryGroupIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RepositoryGroupIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gemini.RepositoryGroupIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gemini.RepositoryGroupIamPolicyArgs.builder
     com.pulumi.gcp.gemini.RepositoryGroupIamPolicy(name,

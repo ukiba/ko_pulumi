@@ -11,7 +11,7 @@ object s3control:
    * Each access grant has its own ID and gives an IAM user or role or a directory user, or group (the grantee) access to a registered location. You determine the level of access, such as `READ` or `READWRITE`.
    * Before you can create a grant, you must have an S3 Access Grants instance in the same Region as the S3 data.
    */
-  def AccessGrant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccessGrant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3control.AccessGrantArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3control.AccessGrantArgs.builder
     argsBuilder = args(argsBuilder)
@@ -29,7 +29,7 @@ object s3control:
    * Provides a resource to manage an S3 Access Grants instance, which serves as a logical grouping for access grants.
    * You can have one S3 Access Grants instance per Region in your account.
    */
-  def AccessGrantsInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccessGrantsInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3control.AccessGrantsInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3control.AccessGrantsInstanceArgs.builder
     argsBuilder = args(argsBuilder)
@@ -47,7 +47,7 @@ object s3control:
    * Provides a resource to manage an S3 Access Grants instance resource policy.
    * Use a resource policy to manage cross-account access to your S3 Access Grants instance.
    */
-  def AccessGrantsInstanceResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccessGrantsInstanceResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3control.AccessGrantsInstanceResourcePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3control.AccessGrantsInstanceResourcePolicyArgs.builder
     com.pulumi.aws.s3control.AccessGrantsInstanceResourcePolicy(name,
@@ -60,7 +60,7 @@ object s3control:
    * The S3 data must be in the same Region as your S3 Access Grants instance.
    * When you register a location, you must include the IAM role that has permission to manage the S3 location that you are registering.
    */
-  def AccessGrantsLocation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccessGrantsLocation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3control.AccessGrantsLocationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3control.AccessGrantsLocationArgs.builder
     argsBuilder = args(argsBuilder)
@@ -79,7 +79,7 @@ object s3control:
    * 
    * &gt; **NOTE on Access Points and Access Point Policies:** The provider provides both a standalone Access Point Policy resource and an Access Point resource with a resource policy defined in-line. You cannot use an Access Point with in-line resource policy in conjunction with an Access Point Policy resource. Doing so will cause a conflict of policies and will overwrite the access point&#39;s resource policy.
    */
-  def AccessPointPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccessPointPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3control.AccessPointPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3control.AccessPointPolicyArgs.builder
     com.pulumi.aws.s3control.AccessPointPolicy(name,
@@ -91,7 +91,7 @@ object s3control:
    * 
    * &gt; This functionality is for managing [S3 on Outposts](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html). To manage S3 Buckets in an AWS Partition, see the `aws.s3.Bucket` resource.
    */
-  def Bucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Bucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3control.BucketArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3control.BucketArgs.builder
     argsBuilder = args(argsBuilder)
@@ -112,7 +112,7 @@ object s3control:
    * 
    * &gt; This functionality is for managing [S3 on Outposts](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html). To manage S3 Bucket Lifecycle Configurations in an AWS Partition, see the `aws.s3.Bucket` resource.
    */
-  def BucketLifecycleConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketLifecycleConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3control.BucketLifecycleConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3control.BucketLifecycleConfigurationArgs.builder
     com.pulumi.aws.s3control.BucketLifecycleConfiguration(name,
@@ -124,7 +124,7 @@ object s3control:
    * 
    * &gt; This functionality is for managing [S3 on Outposts](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html). To manage S3 Bucket Policies in an AWS Partition, see the `aws.s3.BucketPolicy` resource.
    */
-  def BucketPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3control.BucketPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3control.BucketPolicyArgs.builder
     com.pulumi.aws.s3control.BucketPolicy(name,
@@ -140,7 +140,7 @@ object s3control:
    * 
    * &gt; Terraform manages access point scopes for directory buckets with the standalone `aws.s3control.DirectoryBucketAccessPointScope` resource. The `aws.s3.AccessPoint` resource does not support an in-line scope.
    */
-  def DirectoryBucketAccessPointScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DirectoryBucketAccessPointScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3control.DirectoryBucketAccessPointScopeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3control.DirectoryBucketAccessPointScopeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -157,7 +157,7 @@ object s3control:
    * 
    * For more information, see the documentation on [Multi-Region Access Points](https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPoints.html).
    */
-  def MultiRegionAccessPoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MultiRegionAccessPoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3control.MultiRegionAccessPointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3control.MultiRegionAccessPointArgs.builder
     com.pulumi.aws.s3control.MultiRegionAccessPoint(name,
@@ -165,7 +165,7 @@ object s3control:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage an S3 Multi-Region Access Point access control policy. */
-  def MultiRegionAccessPointPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MultiRegionAccessPointPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3control.MultiRegionAccessPointPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3control.MultiRegionAccessPointPolicyArgs.builder
     com.pulumi.aws.s3control.MultiRegionAccessPointPolicy(name,
@@ -177,7 +177,7 @@ object s3control:
    * 
    * &gt; Note: Destruction of this resource only removes it from state. It __does not__ alter the configured traffic routing percentages.
    */
-  def MultiRegionAccessPointRoutes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MultiRegionAccessPointRoutes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3control.MultiRegionAccessPointRoutesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3control.MultiRegionAccessPointRoutesArgs.builder
     com.pulumi.aws.s3control.MultiRegionAccessPointRoutes(name,
@@ -188,7 +188,7 @@ object s3control:
    * Provides a resource to manage an S3 Object Lambda Access Point.
    * An Object Lambda access point is associated with exactly one standard access point and thus one Amazon S3 bucket.
    */
-  def ObjectLambdaAccessPoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ObjectLambdaAccessPoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3control.ObjectLambdaAccessPointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3control.ObjectLambdaAccessPointArgs.builder
     conf.logicalName2physicalName(name) match
@@ -199,7 +199,7 @@ object s3control:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage an S3 Object Lambda Access Point resource policy. */
-  def ObjectLambdaAccessPointPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ObjectLambdaAccessPointPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3control.ObjectLambdaAccessPointPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3control.ObjectLambdaAccessPointPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -259,7 +259,7 @@ object s3control:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides a resource to manage an S3 Storage Lens configuration. */
-  def StorageLensConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StorageLensConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3control.StorageLensConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3control.StorageLensConfigurationArgs.builder
     argsBuilder = args(argsBuilder)

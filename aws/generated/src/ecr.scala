@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object ecr:
   /** Provides a resource to manage AWS ECR account settings */
-  def AccountSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccountSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecr.AccountSettingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ecr.AccountSettingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -175,7 +175,7 @@ object ecr:
    * 
    * &gt; **NOTE:** The AWS ECR API seems to reorder rules based on `rulePriority`. If you define multiple rules that are not sorted in ascending `rulePriority` order in the this provider code, the resource will be flagged for recreation every deployment.
    */
-  def LifecyclePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LifecyclePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecr.LifecyclePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ecr.LifecyclePolicyArgs.builder
     com.pulumi.aws.ecr.LifecyclePolicy(name,
@@ -188,7 +188,7 @@ object ecr:
    * More information about pull through cache rules, including the set of supported
    * upstream repositories, see [Using pull through cache rules](https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache.html).
    */
-  def PullThroughCacheRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PullThroughCacheRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecr.PullThroughCacheRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ecr.PullThroughCacheRuleArgs.builder
     com.pulumi.aws.ecr.PullThroughCacheRule(name,
@@ -196,7 +196,7 @@ object ecr:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS ECR (Elastic Container Registry) Pull Time Update Exclusion. */
-  def PullTimeUpdateExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PullTimeUpdateExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecr.PullTimeUpdateExclusionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ecr.PullTimeUpdateExclusionArgs.builder
     com.pulumi.aws.ecr.PullTimeUpdateExclusion(name,
@@ -208,7 +208,7 @@ object ecr:
    * 
    * &gt; **NOTE on ECR Registry Policies:** While the AWS Management Console interface may suggest the ability to define multiple policies by creating multiple statements, ECR registry policies are effectively managed as singular entities at the regional level by the AWS APIs. Therefore, the `aws.ecr.RegistryPolicy` resource should be configured only once per region with all necessary statements defined in the same policy. Attempting to define multiple `aws.ecr.RegistryPolicy` resources may result in perpetual differences, with one policy overriding another.
    */
-  def RegistryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegistryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecr.RegistryPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ecr.RegistryPolicyArgs.builder
     com.pulumi.aws.ecr.RegistryPolicy(name,
@@ -216,7 +216,7 @@ object ecr:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Elastic Container Registry Scanning Configuration. Can&#39;t be completely deleted, instead reverts to the default `BASIC` scanning configuration without rules. */
-  def RegistryScanningConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegistryScanningConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecr.RegistryScanningConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ecr.RegistryScanningConfigurationArgs.builder
     com.pulumi.aws.ecr.RegistryScanningConfiguration(name,
@@ -224,7 +224,7 @@ object ecr:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Elastic Container Registry Replication Configuration. */
-  def ReplicationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ReplicationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecr.ReplicationConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ecr.ReplicationConfigurationArgs.builder
     com.pulumi.aws.ecr.ReplicationConfiguration(name,
@@ -232,7 +232,7 @@ object ecr:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Elastic Container Registry Repository. */
-  def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecr.RepositoryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ecr.RepositoryArgs.builder
     conf.logicalName2physicalName(name) match
@@ -250,7 +250,7 @@ object ecr:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Elastic Container Registry Repository Creation Template. */
-  def RepositoryCreationTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RepositoryCreationTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecr.RepositoryCreationTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ecr.RepositoryCreationTemplateArgs.builder
     com.pulumi.aws.ecr.RepositoryCreationTemplate(name,
@@ -262,7 +262,7 @@ object ecr:
    * 
    * Note that currently only one policy may be applied to a repository.
    */
-  def RepositoryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RepositoryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecr.RepositoryPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ecr.RepositoryPolicyArgs.builder
     com.pulumi.aws.ecr.RepositoryPolicy(name,

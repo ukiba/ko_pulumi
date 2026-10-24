@@ -7,7 +7,7 @@ object cloudsearch_ext:
      * @param endpointOptions Domain endpoint options. Documented below.
      * @return builder
      */
-    def endpointOptions(args: Endofunction[com.pulumi.aws.cloudsearch.inputs.DomainEndpointOptionsArgs.Builder]):
+    inline def endpointOptions(args: Endofunction[com.pulumi.aws.cloudsearch.inputs.DomainEndpointOptionsArgs.Builder]):
         com.pulumi.aws.cloudsearch.DomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudsearch.inputs.DomainEndpointOptionsArgs.builder
       builder.endpointOptions(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object cloudsearch_ext:
      * @param indexFields The index fields for documents added to the domain. Documented below.
      * @return builder
      */
-    def indexFields(args: Endofunction[com.pulumi.aws.cloudsearch.inputs.DomainIndexFieldArgs.Builder]*):
+    inline def indexFields(args: Endofunction[com.pulumi.aws.cloudsearch.inputs.DomainIndexFieldArgs.Builder]*):
         com.pulumi.aws.cloudsearch.DomainArgs.Builder =
       def argsBuilder = com.pulumi.aws.cloudsearch.inputs.DomainIndexFieldArgs.builder
       builder.indexFields(args.map(_(argsBuilder).build)*)
@@ -25,7 +25,7 @@ object cloudsearch_ext:
      * @param scalingParameters Domain scaling parameters. Documented below.
      * @return builder
      */
-    def scalingParameters(args: Endofunction[com.pulumi.aws.cloudsearch.inputs.DomainScalingParametersArgs.Builder]):
+    inline def scalingParameters(args: Endofunction[com.pulumi.aws.cloudsearch.inputs.DomainScalingParametersArgs.Builder]):
         com.pulumi.aws.cloudsearch.DomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudsearch.inputs.DomainScalingParametersArgs.builder
       builder.scalingParameters(args(argsBuilder).build)
@@ -35,7 +35,7 @@ object cloudsearch_ext:
      * @param endpointOptions Domain endpoint options. Documented below.
      * @return builder
      */
-    def endpointOptions(args: Endofunction[com.pulumi.aws.cloudsearch.inputs.DomainEndpointOptionsArgs.Builder]):
+    inline def endpointOptions(args: Endofunction[com.pulumi.aws.cloudsearch.inputs.DomainEndpointOptionsArgs.Builder]):
         com.pulumi.aws.cloudsearch.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.cloudsearch.inputs.DomainEndpointOptionsArgs.builder
       builder.endpointOptions(args(argsBuilder).build)
@@ -44,7 +44,7 @@ object cloudsearch_ext:
      * @param indexFields The index fields for documents added to the domain. Documented below.
      * @return builder
      */
-    def indexFields(args: Endofunction[com.pulumi.aws.cloudsearch.inputs.DomainIndexFieldArgs.Builder]*):
+    inline def indexFields(args: Endofunction[com.pulumi.aws.cloudsearch.inputs.DomainIndexFieldArgs.Builder]*):
         com.pulumi.aws.cloudsearch.inputs.DomainState.Builder =
       def argsBuilder = com.pulumi.aws.cloudsearch.inputs.DomainIndexFieldArgs.builder
       builder.indexFields(args.map(_(argsBuilder).build)*)
@@ -53,7 +53,7 @@ object cloudsearch_ext:
      * @param scalingParameters Domain scaling parameters. Documented below.
      * @return builder
      */
-    def scalingParameters(args: Endofunction[com.pulumi.aws.cloudsearch.inputs.DomainScalingParametersArgs.Builder]):
+    inline def scalingParameters(args: Endofunction[com.pulumi.aws.cloudsearch.inputs.DomainScalingParametersArgs.Builder]):
         com.pulumi.aws.cloudsearch.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.cloudsearch.inputs.DomainScalingParametersArgs.builder
       builder.scalingParameters(args(argsBuilder).build)

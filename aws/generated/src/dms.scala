@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object dms:
   /** Provides a DMS (Data Migration Service) certificate resource. DMS certificates can be created, deleted, and imported. */
-  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dms.CertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.dms.CertificateArgs.builder
     argsBuilder = args(argsBuilder)
@@ -22,7 +22,7 @@ object dms:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS DMS (Database Migration) Data Provider. A data provider stores the database engine and connection settings for a database used in a migration project. Creating a data provider does not create a database. */
-  def DataProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dms.DataProviderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.dms.DataProviderArgs.builder
     conf.logicalName2physicalName(name) match
@@ -176,7 +176,7 @@ object dms:
    * \$ pulumi import aws:dms/endpoint:Endpoint test test-dms-endpoint-tf
    * ```
    */
-  def Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dms.EndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.dms.EndpointArgs.builder
     argsBuilder = args(argsBuilder)
@@ -191,7 +191,7 @@ object dms:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a DMS (Data Migration Service) event subscription resource. */
-  def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dms.EventSubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.dms.EventSubscriptionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -209,7 +209,7 @@ object dms:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS DMS (Database Migration) Instance Profile. An instance profile provides network and encryption information to DMS Schema Conversion for use in connecting to a data provider. */
-  def InstanceProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dms.InstanceProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.dms.InstanceProfileArgs.builder
     conf.logicalName2physicalName(name) match
@@ -231,7 +231,7 @@ object dms:
    * 
    * Create an instance profile and data providers before creating a migration project.
    */
-  def MigrationProject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MigrationProject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dms.MigrationProjectArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.dms.MigrationProjectArgs.builder
     conf.logicalName2physicalName(name) match
@@ -253,7 +253,7 @@ object dms:
    * 
    * &gt; **NOTE:** Changing most arguments will stop the replication if it is running. You can set `startReplication` to resume the replication afterwards.
    */
-  def ReplicationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ReplicationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dms.ReplicationConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.dms.ReplicationConfigArgs.builder
     argsBuilder = args(argsBuilder)
@@ -268,7 +268,7 @@ object dms:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a DMS (Data Migration Service) replication instance resource. DMS replication instances can be created, updated, deleted, and imported. */
-  def ReplicationInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ReplicationInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dms.ReplicationInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.dms.ReplicationInstanceArgs.builder
     argsBuilder = args(argsBuilder)
@@ -287,7 +287,7 @@ object dms:
    * 
    * &gt; **Note:** AWS requires a special IAM role called `dms-vpc-role` when using this resource. See the example below to create it as part of your configuration.
    */
-  def ReplicationSubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ReplicationSubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dms.ReplicationSubnetGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.dms.ReplicationSubnetGroupArgs.builder
     argsBuilder = args(argsBuilder)
@@ -306,7 +306,7 @@ object dms:
    * 
    * &gt; **NOTE:** Changing most arguments will stop the task if it is running. You can set `startReplicationTask` to resume the task afterwards.
    */
-  def ReplicationTask(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ReplicationTask(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dms.ReplicationTaskArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.dms.ReplicationTaskArgs.builder
     argsBuilder = args(argsBuilder)
@@ -327,7 +327,7 @@ object dms:
    * 
    * &gt; **Note:** Some of this resource&#39;s arguments have default values that come from the AWS Provider. Other default values are provided by AWS and subject to change without notice. When relying on AWS defaults, the provider state will often have a zero value. For example, the AWS Provider does not provide a default for `cdcMaxBatchInterval` but the AWS default is `60` (seconds). However, the provider state will show `0` since this is the value return by AWS when no value is present. Below, we aim to flag the defaults that come from AWS (_e.g._, &#34;AWS default...&#34;).
    */
-  def S3Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def S3Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dms.S3EndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.dms.S3EndpointArgs.builder
     argsBuilder = args(argsBuilder)

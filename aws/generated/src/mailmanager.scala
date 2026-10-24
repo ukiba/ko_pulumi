@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object mailmanager:
   /** Manages an AWS SES Mail Manager Archive. */
-  def Archive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Archive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.mailmanager.ArchiveArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.mailmanager.ArchiveArgs.builder
     conf.logicalName2physicalName(name) match
@@ -23,7 +23,7 @@ object mailmanager:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS SES Mail Manager Ingress Point. */
-  def IngressPoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IngressPoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.mailmanager.IngressPointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.mailmanager.IngressPointArgs.builder
     conf.logicalName2physicalName(name) match
@@ -41,7 +41,7 @@ object mailmanager:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS SES Mail Manager Relay. */
-  def Relay(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Relay(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.mailmanager.RelayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.mailmanager.RelayArgs.builder
     conf.logicalName2physicalName(name) match
@@ -59,7 +59,7 @@ object mailmanager:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS SES Mail Manager Rule Set. */
-  def RuleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RuleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.mailmanager.RuleSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.mailmanager.RuleSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -77,7 +77,7 @@ object mailmanager:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an SES Mail Manager Traffic Policy. */
-  def TrafficPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TrafficPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.mailmanager.TrafficPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.mailmanager.TrafficPolicyArgs.builder
     conf.logicalName2physicalName(name) match

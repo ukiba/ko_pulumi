@@ -52,7 +52,7 @@ object ecrpublic:
    * 
    * &gt; **NOTE:** This resource can only be used in the `us-east-1` region.
    */
-  def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecrpublic.RepositoryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ecrpublic.RepositoryArgs.builder
     argsBuilder = args(argsBuilder)
@@ -73,7 +73,7 @@ object ecrpublic:
    * 
    * &gt; **NOTE:** This resource can only be used in the `us-east-1` region.
    */
-  def RepositoryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RepositoryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecrpublic.RepositoryPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ecrpublic.RepositoryPolicyArgs.builder
     com.pulumi.aws.ecrpublic.RepositoryPolicy(name,

@@ -17,7 +17,7 @@ object stack:
    * \$ pulumi import azure:stack/hciCluster:HciCluster example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.AzureStackHCI/clusters/cluster1
    * ```
    */
-  def HciCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HciCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.stack.HciClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.stack.HciClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -49,7 +49,7 @@ object stack:
    * \$ pulumi import azure:stack/hciDeploymentSetting:HciDeploymentSetting example /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/group1/providers/Microsoft.AzureStackHCI/clusters/clus1/deploymentSettings/default
    * ```
    */
-  def HciDeploymentSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HciDeploymentSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.stack.HciDeploymentSettingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.stack.HciDeploymentSettingArgs.builder
     com.pulumi.azure.stack.HciDeploymentSetting(name,
@@ -57,7 +57,7 @@ object stack:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Stack HCI Extension. */
-  def HciExtension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HciExtension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.stack.HciExtensionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.stack.HciExtensionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -68,7 +68,7 @@ object stack:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Stack HCI Logical Network. */
-  def HciLogicalNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HciLogicalNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.stack.HciLogicalNetworkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.stack.HciLogicalNetworkArgs.builder
     conf.logicalName2physicalName(name) match
@@ -96,7 +96,7 @@ object stack:
    * \$ pulumi import azure:stack/hciMarketplaceGalleryImage:HciMarketplaceGalleryImage example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg1/providers/Microsoft.AzureStackHCI/marketplaceGalleryImages/image1
    * ```
    */
-  def HciMarketplaceGalleryImage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HciMarketplaceGalleryImage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.stack.HciMarketplaceGalleryImageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.stack.HciMarketplaceGalleryImageArgs.builder
     conf.logicalName2physicalName(name) match
@@ -114,7 +114,7 @@ object stack:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Stack HCI Network Interface. */
-  def HciNetworkInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HciNetworkInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.stack.HciNetworkInterfaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.stack.HciNetworkInterfaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -132,7 +132,7 @@ object stack:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Stack HCI Storage Path. */
-  def HciStoragePath(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HciStoragePath(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.stack.HciStoragePathArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.stack.HciStoragePathArgs.builder
     conf.logicalName2physicalName(name) match
@@ -150,7 +150,7 @@ object stack:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Stack HCI Virtual Hard Disk. */
-  def HciVirtualHardDisk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HciVirtualHardDisk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.stack.HciVirtualHardDiskArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.stack.HciVirtualHardDiskArgs.builder
     conf.logicalName2physicalName(name) match

@@ -9,7 +9,7 @@ object filestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def directoryServices(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceDirectoryServicesArgs.Builder]):
+    inline def directoryServices(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceDirectoryServicesArgs.Builder]):
         com.pulumi.gcp.filestore.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.filestore.inputs.InstanceDirectoryServicesArgs.builder
       builder.directoryServices(args(argsBuilder).build)
@@ -20,7 +20,7 @@ object filestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fileShares(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceFileSharesArgs.Builder]):
+    inline def fileShares(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceFileSharesArgs.Builder]):
         com.pulumi.gcp.filestore.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.filestore.inputs.InstanceFileSharesArgs.builder
       builder.fileShares(args(argsBuilder).build)
@@ -31,7 +31,7 @@ object filestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def initialReplication(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceInitialReplicationArgs.Builder]):
+    inline def initialReplication(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceInitialReplicationArgs.Builder]):
         com.pulumi.gcp.filestore.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.filestore.inputs.InstanceInitialReplicationArgs.builder
       builder.initialReplication(args(argsBuilder).build)
@@ -42,7 +42,7 @@ object filestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networks(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceNetworkArgs.Builder]*):
+    inline def networks(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceNetworkArgs.Builder]*):
         com.pulumi.gcp.filestore.InstanceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.filestore.inputs.InstanceNetworkArgs.builder
       builder.networks(args.map(_(argsBuilder).build)*)
@@ -53,7 +53,7 @@ object filestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def performanceConfig(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstancePerformanceConfigArgs.Builder]):
+    inline def performanceConfig(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstancePerformanceConfigArgs.Builder]):
         com.pulumi.gcp.filestore.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.filestore.inputs.InstancePerformanceConfigArgs.builder
       builder.performanceConfig(args(argsBuilder).build)
@@ -64,7 +64,7 @@ object filestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ldap(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceDirectoryServicesLdapArgs.Builder]):
+    inline def ldap(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceDirectoryServicesLdapArgs.Builder]):
         com.pulumi.gcp.filestore.inputs.InstanceDirectoryServicesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.filestore.inputs.InstanceDirectoryServicesLdapArgs.builder
       builder.ldap(args(argsBuilder).build)
@@ -75,7 +75,7 @@ object filestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def replicas(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceEffectiveReplicationReplicaArgs.Builder]*):
+    inline def replicas(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceEffectiveReplicationReplicaArgs.Builder]*):
         com.pulumi.gcp.filestore.inputs.InstanceEffectiveReplicationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.filestore.inputs.InstanceEffectiveReplicationReplicaArgs.builder
       builder.replicas(args.map(_(argsBuilder).build)*)
@@ -86,7 +86,7 @@ object filestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nfsExportOptions(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceFileSharesNfsExportOptionArgs.Builder]*):
+    inline def nfsExportOptions(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceFileSharesNfsExportOptionArgs.Builder]*):
         com.pulumi.gcp.filestore.inputs.InstanceFileSharesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.filestore.inputs.InstanceFileSharesNfsExportOptionArgs.builder
       builder.nfsExportOptions(args.map(_(argsBuilder).build)*)
@@ -97,7 +97,7 @@ object filestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def replicas(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceInitialReplicationReplicaArgs.Builder]*):
+    inline def replicas(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceInitialReplicationReplicaArgs.Builder]*):
         com.pulumi.gcp.filestore.inputs.InstanceInitialReplicationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.filestore.inputs.InstanceInitialReplicationReplicaArgs.builder
       builder.replicas(args.map(_(argsBuilder).build)*)
@@ -109,7 +109,7 @@ object filestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscConfig(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceNetworkPscConfigArgs.Builder]):
+    inline def pscConfig(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceNetworkPscConfigArgs.Builder]):
         com.pulumi.gcp.filestore.inputs.InstanceNetworkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.filestore.inputs.InstanceNetworkPscConfigArgs.builder
       builder.pscConfig(args(argsBuilder).build)
@@ -122,7 +122,7 @@ object filestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fixedIops(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstancePerformanceConfigFixedIopsArgs.Builder]):
+    inline def fixedIops(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstancePerformanceConfigFixedIopsArgs.Builder]):
         com.pulumi.gcp.filestore.inputs.InstancePerformanceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.filestore.inputs.InstancePerformanceConfigFixedIopsArgs.builder
       builder.fixedIops(args(argsBuilder).build)
@@ -133,7 +133,7 @@ object filestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def iopsPerTb(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstancePerformanceConfigIopsPerTbArgs.Builder]):
+    inline def iopsPerTb(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstancePerformanceConfigIopsPerTbArgs.Builder]):
         com.pulumi.gcp.filestore.inputs.InstancePerformanceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.filestore.inputs.InstancePerformanceConfigIopsPerTbArgs.builder
       builder.iopsPerTb(args(argsBuilder).build)
@@ -145,7 +145,7 @@ object filestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def directoryServices(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceDirectoryServicesArgs.Builder]):
+    inline def directoryServices(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceDirectoryServicesArgs.Builder]):
         com.pulumi.gcp.filestore.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.filestore.inputs.InstanceDirectoryServicesArgs.builder
       builder.directoryServices(args(argsBuilder).build)
@@ -155,7 +155,7 @@ object filestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def effectiveReplications(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceEffectiveReplicationArgs.Builder]*):
+    inline def effectiveReplications(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceEffectiveReplicationArgs.Builder]*):
         com.pulumi.gcp.filestore.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.filestore.inputs.InstanceEffectiveReplicationArgs.builder
       builder.effectiveReplications(args.map(_(argsBuilder).build)*)
@@ -166,7 +166,7 @@ object filestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fileShares(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceFileSharesArgs.Builder]):
+    inline def fileShares(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceFileSharesArgs.Builder]):
         com.pulumi.gcp.filestore.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.filestore.inputs.InstanceFileSharesArgs.builder
       builder.fileShares(args(argsBuilder).build)
@@ -177,7 +177,7 @@ object filestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def initialReplication(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceInitialReplicationArgs.Builder]):
+    inline def initialReplication(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceInitialReplicationArgs.Builder]):
         com.pulumi.gcp.filestore.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.filestore.inputs.InstanceInitialReplicationArgs.builder
       builder.initialReplication(args(argsBuilder).build)
@@ -188,7 +188,7 @@ object filestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networks(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceNetworkArgs.Builder]*):
+    inline def networks(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstanceNetworkArgs.Builder]*):
         com.pulumi.gcp.filestore.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.filestore.inputs.InstanceNetworkArgs.builder
       builder.networks(args.map(_(argsBuilder).build)*)
@@ -199,7 +199,7 @@ object filestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def performanceConfig(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstancePerformanceConfigArgs.Builder]):
+    inline def performanceConfig(args: Endofunction[com.pulumi.gcp.filestore.inputs.InstancePerformanceConfigArgs.Builder]):
         com.pulumi.gcp.filestore.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.filestore.inputs.InstancePerformanceConfigArgs.builder
       builder.performanceConfig(args(argsBuilder).build)

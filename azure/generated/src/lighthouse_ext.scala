@@ -7,7 +7,7 @@ object lighthouse_ext:
      * @param authorizations An `authorization` block as defined below.
      * @return builder
      */
-    def authorizations(args: Endofunction[com.pulumi.azure.lighthouse.inputs.DefinitionAuthorizationArgs.Builder]*):
+    inline def authorizations(args: Endofunction[com.pulumi.azure.lighthouse.inputs.DefinitionAuthorizationArgs.Builder]*):
         com.pulumi.azure.lighthouse.DefinitionArgs.Builder =
       def argsBuilder = com.pulumi.azure.lighthouse.inputs.DefinitionAuthorizationArgs.builder
       builder.authorizations(args.map(_(argsBuilder).build)*)
@@ -16,7 +16,7 @@ object lighthouse_ext:
      * @param eligibleAuthorizations An `eligibleAuthorization` block as defined below.
      * @return builder
      */
-    def eligibleAuthorizations(args: Endofunction[com.pulumi.azure.lighthouse.inputs.DefinitionEligibleAuthorizationArgs.Builder]*):
+    inline def eligibleAuthorizations(args: Endofunction[com.pulumi.azure.lighthouse.inputs.DefinitionEligibleAuthorizationArgs.Builder]*):
         com.pulumi.azure.lighthouse.DefinitionArgs.Builder =
       def argsBuilder = com.pulumi.azure.lighthouse.inputs.DefinitionEligibleAuthorizationArgs.builder
       builder.eligibleAuthorizations(args.map(_(argsBuilder).build)*)
@@ -25,7 +25,7 @@ object lighthouse_ext:
      * @param plan A `plan` block as defined below.
      * @return builder
      */
-    def plan(args: Endofunction[com.pulumi.azure.lighthouse.inputs.DefinitionPlanArgs.Builder]):
+    inline def plan(args: Endofunction[com.pulumi.azure.lighthouse.inputs.DefinitionPlanArgs.Builder]):
         com.pulumi.azure.lighthouse.DefinitionArgs.Builder =
       val argsBuilder = com.pulumi.azure.lighthouse.inputs.DefinitionPlanArgs.builder
       builder.plan(args(argsBuilder).build)
@@ -35,7 +35,7 @@ object lighthouse_ext:
      * @param justInTimeAccessPolicy A `justInTimeAccessPolicy` block as defined below.
      * @return builder
      */
-    def justInTimeAccessPolicy(args: Endofunction[com.pulumi.azure.lighthouse.inputs.DefinitionEligibleAuthorizationJustInTimeAccessPolicyArgs.Builder]):
+    inline def justInTimeAccessPolicy(args: Endofunction[com.pulumi.azure.lighthouse.inputs.DefinitionEligibleAuthorizationJustInTimeAccessPolicyArgs.Builder]):
         com.pulumi.azure.lighthouse.inputs.DefinitionEligibleAuthorizationArgs.Builder =
       val argsBuilder = com.pulumi.azure.lighthouse.inputs.DefinitionEligibleAuthorizationJustInTimeAccessPolicyArgs.builder
       builder.justInTimeAccessPolicy(args(argsBuilder).build)
@@ -45,7 +45,7 @@ object lighthouse_ext:
      * @param approvers An `approver` block as defined below.
      * @return builder
      */
-    def approvers(args: Endofunction[com.pulumi.azure.lighthouse.inputs.DefinitionEligibleAuthorizationJustInTimeAccessPolicyApproverArgs.Builder]*):
+    inline def approvers(args: Endofunction[com.pulumi.azure.lighthouse.inputs.DefinitionEligibleAuthorizationJustInTimeAccessPolicyApproverArgs.Builder]*):
         com.pulumi.azure.lighthouse.inputs.DefinitionEligibleAuthorizationJustInTimeAccessPolicyArgs.Builder =
       def argsBuilder = com.pulumi.azure.lighthouse.inputs.DefinitionEligibleAuthorizationJustInTimeAccessPolicyApproverArgs.builder
       builder.approvers(args.map(_(argsBuilder).build)*)
@@ -55,7 +55,7 @@ object lighthouse_ext:
      * @param authorizations An `authorization` block as defined below.
      * @return builder
      */
-    def authorizations(args: Endofunction[com.pulumi.azure.lighthouse.inputs.DefinitionAuthorizationArgs.Builder]*):
+    inline def authorizations(args: Endofunction[com.pulumi.azure.lighthouse.inputs.DefinitionAuthorizationArgs.Builder]*):
         com.pulumi.azure.lighthouse.inputs.DefinitionState.Builder =
       def argsBuilder = com.pulumi.azure.lighthouse.inputs.DefinitionAuthorizationArgs.builder
       builder.authorizations(args.map(_(argsBuilder).build)*)
@@ -64,7 +64,7 @@ object lighthouse_ext:
      * @param eligibleAuthorizations An `eligibleAuthorization` block as defined below.
      * @return builder
      */
-    def eligibleAuthorizations(args: Endofunction[com.pulumi.azure.lighthouse.inputs.DefinitionEligibleAuthorizationArgs.Builder]*):
+    inline def eligibleAuthorizations(args: Endofunction[com.pulumi.azure.lighthouse.inputs.DefinitionEligibleAuthorizationArgs.Builder]*):
         com.pulumi.azure.lighthouse.inputs.DefinitionState.Builder =
       def argsBuilder = com.pulumi.azure.lighthouse.inputs.DefinitionEligibleAuthorizationArgs.builder
       builder.eligibleAuthorizations(args.map(_(argsBuilder).build)*)
@@ -73,7 +73,7 @@ object lighthouse_ext:
      * @param plan A `plan` block as defined below.
      * @return builder
      */
-    def plan(args: Endofunction[com.pulumi.azure.lighthouse.inputs.DefinitionPlanArgs.Builder]):
+    inline def plan(args: Endofunction[com.pulumi.azure.lighthouse.inputs.DefinitionPlanArgs.Builder]):
         com.pulumi.azure.lighthouse.inputs.DefinitionState.Builder =
       val argsBuilder = com.pulumi.azure.lighthouse.inputs.DefinitionPlanArgs.builder
       builder.plan(args(argsBuilder).build)

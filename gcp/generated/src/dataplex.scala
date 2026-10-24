@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object dataplex:
   /** An Aspect Type is a template for creating Aspects. */
-  def AspectType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AspectType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.AspectTypeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.AspectTypeArgs.builder
     com.pulumi.gcp.dataplex.AspectType(name,
@@ -320,7 +320,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AspectTypeIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AspectTypeIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.AspectTypeIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.AspectTypeIamBindingArgs.builder
     com.pulumi.gcp.dataplex.AspectTypeIamBinding(name,
@@ -633,7 +633,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AspectTypeIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AspectTypeIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.AspectTypeIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.AspectTypeIamMemberArgs.builder
     com.pulumi.gcp.dataplex.AspectTypeIamMember(name,
@@ -946,7 +946,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AspectTypeIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AspectTypeIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.AspectTypeIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.AspectTypeIamPolicyArgs.builder
     com.pulumi.gcp.dataplex.AspectTypeIamPolicy(name,
@@ -954,7 +954,7 @@ object dataplex:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The Dataplex Asset resource */
-  def Asset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Asset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.AssetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.dataplex.AssetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1282,7 +1282,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AssetIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AssetIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.AssetIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.AssetIamBindingArgs.builder
     com.pulumi.gcp.dataplex.AssetIamBinding(name,
@@ -1607,7 +1607,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AssetIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AssetIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.AssetIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.AssetIamMemberArgs.builder
     com.pulumi.gcp.dataplex.AssetIamMember(name,
@@ -1932,7 +1932,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AssetIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AssetIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.AssetIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.AssetIamPolicyArgs.builder
     com.pulumi.gcp.dataplex.AssetIamPolicy(name,
@@ -1953,7 +1953,7 @@ object dataplex:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dataplex/docs)
    */
-  def DataAsset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataAsset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.DataAssetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.DataAssetArgs.builder
     com.pulumi.gcp.dataplex.DataAsset(name,
@@ -1970,7 +1970,7 @@ object dataplex:
    * * How-to Guides
    *     * [Introduction to Data Products](https://cloud.google.com/dataplex/docs/data-products-overview)
    */
-  def DataProduct(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataProduct(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.DataProductArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.DataProductArgs.builder
     com.pulumi.gcp.dataplex.DataProduct(name,
@@ -1986,7 +1986,7 @@ object dataplex:
    * * How-to Guides
    *     * [Official Documentation](https://docs.cloud.google.com/dataplex/docs/manage-data-products)
    */
-  def DataProductDataAsset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataProductDataAsset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.DataProductDataAssetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.DataProductDataAssetArgs.builder
     com.pulumi.gcp.dataplex.DataProductDataAsset(name,
@@ -2299,7 +2299,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DataProductIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataProductIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.DataProductIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.DataProductIamBindingArgs.builder
     com.pulumi.gcp.dataplex.DataProductIamBinding(name,
@@ -2612,7 +2612,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DataProductIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataProductIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.DataProductIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.DataProductIamMemberArgs.builder
     com.pulumi.gcp.dataplex.DataProductIamMember(name,
@@ -2925,7 +2925,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DataProductIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataProductIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.DataProductIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.DataProductIamPolicyArgs.builder
     com.pulumi.gcp.dataplex.DataProductIamPolicy(name,
@@ -3198,7 +3198,7 @@ object dataplex:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dataplex/docs)
    */
-  def Datascan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Datascan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.DatascanArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.DatascanArgs.builder
     com.pulumi.gcp.dataplex.Datascan(name,
@@ -3511,7 +3511,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DatascanIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DatascanIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.DatascanIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.DatascanIamBindingArgs.builder
     com.pulumi.gcp.dataplex.DatascanIamBinding(name,
@@ -3824,7 +3824,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DatascanIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DatascanIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.DatascanIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.DatascanIamMemberArgs.builder
     com.pulumi.gcp.dataplex.DatascanIamMember(name,
@@ -4137,7 +4137,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DatascanIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DatascanIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.DatascanIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.DatascanIamPolicyArgs.builder
     com.pulumi.gcp.dataplex.DatascanIamPolicy(name,
@@ -4162,7 +4162,7 @@ object dataplex:
    * * How-to Guides
    *     * [Manage entries and ingest custom sources](https://cloud.google.com/dataplex/docs/ingest-custom-sources)
    */
-  def Entry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Entry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.EntryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.EntryArgs.builder
     com.pulumi.gcp.dataplex.Entry(name,
@@ -4170,7 +4170,7 @@ object dataplex:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** An Entry Group represents a logical grouping of one or more Entries. */
-  def EntryGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EntryGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.EntryGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.EntryGroupArgs.builder
     com.pulumi.gcp.dataplex.EntryGroup(name,
@@ -4483,7 +4483,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def EntryGroupIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EntryGroupIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.EntryGroupIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.EntryGroupIamBindingArgs.builder
     com.pulumi.gcp.dataplex.EntryGroupIamBinding(name,
@@ -4796,7 +4796,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def EntryGroupIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EntryGroupIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.EntryGroupIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.EntryGroupIamMemberArgs.builder
     com.pulumi.gcp.dataplex.EntryGroupIamMember(name,
@@ -5109,7 +5109,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def EntryGroupIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EntryGroupIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.EntryGroupIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.EntryGroupIamPolicyArgs.builder
     com.pulumi.gcp.dataplex.EntryGroupIamPolicy(name,
@@ -5125,7 +5125,7 @@ object dataplex:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dataplex/docs)
    */
-  def EntryLink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EntryLink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.EntryLinkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.EntryLinkArgs.builder
     com.pulumi.gcp.dataplex.EntryLink(name,
@@ -5133,7 +5133,7 @@ object dataplex:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** An Entry Type is a template for creating Entries. */
-  def EntryType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EntryType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.EntryTypeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.EntryTypeArgs.builder
     com.pulumi.gcp.dataplex.EntryType(name,
@@ -5446,7 +5446,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def EntryTypeIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EntryTypeIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.EntryTypeIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.EntryTypeIamBindingArgs.builder
     com.pulumi.gcp.dataplex.EntryTypeIamBinding(name,
@@ -5759,7 +5759,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def EntryTypeIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EntryTypeIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.EntryTypeIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.EntryTypeIamMemberArgs.builder
     com.pulumi.gcp.dataplex.EntryTypeIamMember(name,
@@ -6072,7 +6072,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def EntryTypeIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EntryTypeIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.EntryTypeIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.EntryTypeIamPolicyArgs.builder
     com.pulumi.gcp.dataplex.EntryTypeIamPolicy(name,
@@ -6080,7 +6080,7 @@ object dataplex:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Represents a collection of categories and terms defined by the user. Glossary is a top level resource and is the GCP parent resource of all the categories and terms within it. */
-  def Glossary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Glossary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.GlossaryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.GlossaryArgs.builder
     com.pulumi.gcp.dataplex.Glossary(name,
@@ -6088,7 +6088,7 @@ object dataplex:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Represents a collection of categories and terms within a Glossary that are related to each other. */
-  def GlossaryCategory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GlossaryCategory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.GlossaryCategoryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.GlossaryCategoryArgs.builder
     com.pulumi.gcp.dataplex.GlossaryCategory(name,
@@ -6401,7 +6401,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def GlossaryIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GlossaryIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.GlossaryIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.GlossaryIamBindingArgs.builder
     com.pulumi.gcp.dataplex.GlossaryIamBinding(name,
@@ -6714,7 +6714,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def GlossaryIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GlossaryIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.GlossaryIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.GlossaryIamMemberArgs.builder
     com.pulumi.gcp.dataplex.GlossaryIamMember(name,
@@ -7027,7 +7027,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def GlossaryIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GlossaryIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.GlossaryIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.GlossaryIamPolicyArgs.builder
     com.pulumi.gcp.dataplex.GlossaryIamPolicy(name,
@@ -7035,7 +7035,7 @@ object dataplex:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Represents a collection of terms within a Glossary that are related to each other. */
-  def GlossaryTerm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GlossaryTerm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.GlossaryTermArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.GlossaryTermArgs.builder
     com.pulumi.gcp.dataplex.GlossaryTerm(name,
@@ -7043,7 +7043,7 @@ object dataplex:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The Dataplex Lake resource */
-  def Lake(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Lake(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.LakeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.dataplex.LakeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -7359,7 +7359,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def LakeIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LakeIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.LakeIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.LakeIamBindingArgs.builder
     com.pulumi.gcp.dataplex.LakeIamBinding(name,
@@ -7672,7 +7672,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def LakeIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LakeIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.LakeIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.LakeIamMemberArgs.builder
     com.pulumi.gcp.dataplex.LakeIamMember(name,
@@ -7985,7 +7985,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def LakeIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LakeIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.LakeIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.LakeIamPolicyArgs.builder
     com.pulumi.gcp.dataplex.LakeIamPolicy(name,
@@ -7993,7 +7993,7 @@ object dataplex:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A Dataplex Metadata Feed monitors Dataplex metadata entries in a specified scope and publishes notifications of changes to a Cloud Pub/Sub topic. */
-  def MetadataFeed(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MetadataFeed(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.MetadataFeedArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.MetadataFeedArgs.builder
     com.pulumi.gcp.dataplex.MetadataFeed(name,
@@ -8009,7 +8009,7 @@ object dataplex:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dataplex/docs)
    */
-  def Task(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Task(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.TaskArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.TaskArgs.builder
     com.pulumi.gcp.dataplex.Task(name,
@@ -8328,7 +8328,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TaskIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TaskIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.TaskIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.TaskIamBindingArgs.builder
     com.pulumi.gcp.dataplex.TaskIamBinding(name,
@@ -8647,7 +8647,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TaskIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TaskIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.TaskIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.TaskIamMemberArgs.builder
     com.pulumi.gcp.dataplex.TaskIamMember(name,
@@ -8966,7 +8966,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TaskIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TaskIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.TaskIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.TaskIamPolicyArgs.builder
     com.pulumi.gcp.dataplex.TaskIamPolicy(name,
@@ -8974,7 +8974,7 @@ object dataplex:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The Dataplex Zone resource */
-  def Zone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Zone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.ZoneArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.dataplex.ZoneArgs.builder
     conf.logicalName2physicalName(name) match
@@ -9296,7 +9296,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ZoneIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZoneIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.ZoneIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.ZoneIamBindingArgs.builder
     com.pulumi.gcp.dataplex.ZoneIamBinding(name,
@@ -9615,7 +9615,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ZoneIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZoneIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.ZoneIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.ZoneIamMemberArgs.builder
     com.pulumi.gcp.dataplex.ZoneIamMember(name,
@@ -9934,7 +9934,7 @@ object dataplex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ZoneIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZoneIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataplex.ZoneIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataplex.ZoneIamPolicyArgs.builder
     com.pulumi.gcp.dataplex.ZoneIamPolicy(name,

@@ -24,7 +24,7 @@ object databoxedge:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Databox Edge Device. */
-  def Device(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Device(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.databoxedge.DeviceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.databoxedge.DeviceArgs.builder
     conf.logicalName2physicalName(name) match

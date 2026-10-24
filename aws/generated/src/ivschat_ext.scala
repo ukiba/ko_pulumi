@@ -7,7 +7,7 @@ object ivschat_ext:
      * @param destinationConfiguration Object containing destination configuration for where chat activity will be logged. This object must contain exactly one of the following children arguments:
      * @return builder
      */
-    def destinationConfiguration(args: Endofunction[com.pulumi.aws.ivschat.inputs.LoggingConfigurationDestinationConfigurationArgs.Builder]):
+    inline def destinationConfiguration(args: Endofunction[com.pulumi.aws.ivschat.inputs.LoggingConfigurationDestinationConfigurationArgs.Builder]):
         com.pulumi.aws.ivschat.LoggingConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.ivschat.inputs.LoggingConfigurationDestinationConfigurationArgs.builder
       builder.destinationConfiguration(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object ivschat_ext:
      * review of messages.
      * @return builder
      */
-    def messageReviewHandler(args: Endofunction[com.pulumi.aws.ivschat.inputs.RoomMessageReviewHandlerArgs.Builder]):
+    inline def messageReviewHandler(args: Endofunction[com.pulumi.aws.ivschat.inputs.RoomMessageReviewHandlerArgs.Builder]):
         com.pulumi.aws.ivschat.RoomArgs.Builder =
       val argsBuilder = com.pulumi.aws.ivschat.inputs.RoomMessageReviewHandlerArgs.builder
       builder.messageReviewHandler(args(argsBuilder).build)
@@ -28,7 +28,7 @@ object ivschat_ext:
      * @param cloudwatchLogs An Amazon CloudWatch Logs destination configuration where chat activity will be logged.
      * @return builder
      */
-    def cloudwatchLogs(args: Endofunction[com.pulumi.aws.ivschat.inputs.LoggingConfigurationDestinationConfigurationCloudwatchLogsArgs.Builder]):
+    inline def cloudwatchLogs(args: Endofunction[com.pulumi.aws.ivschat.inputs.LoggingConfigurationDestinationConfigurationCloudwatchLogsArgs.Builder]):
         com.pulumi.aws.ivschat.inputs.LoggingConfigurationDestinationConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.ivschat.inputs.LoggingConfigurationDestinationConfigurationCloudwatchLogsArgs.builder
       builder.cloudwatchLogs(args(argsBuilder).build)
@@ -37,7 +37,7 @@ object ivschat_ext:
      * @param firehose An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.
      * @return builder
      */
-    def firehose(args: Endofunction[com.pulumi.aws.ivschat.inputs.LoggingConfigurationDestinationConfigurationFirehoseArgs.Builder]):
+    inline def firehose(args: Endofunction[com.pulumi.aws.ivschat.inputs.LoggingConfigurationDestinationConfigurationFirehoseArgs.Builder]):
         com.pulumi.aws.ivschat.inputs.LoggingConfigurationDestinationConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.ivschat.inputs.LoggingConfigurationDestinationConfigurationFirehoseArgs.builder
       builder.firehose(args(argsBuilder).build)
@@ -46,7 +46,7 @@ object ivschat_ext:
      * @param s3 An Amazon S3 destination configuration where chat activity will be logged.
      * @return builder
      */
-    def s3(args: Endofunction[com.pulumi.aws.ivschat.inputs.LoggingConfigurationDestinationConfigurationS3Args.Builder]):
+    inline def s3(args: Endofunction[com.pulumi.aws.ivschat.inputs.LoggingConfigurationDestinationConfigurationS3Args.Builder]):
         com.pulumi.aws.ivschat.inputs.LoggingConfigurationDestinationConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.ivschat.inputs.LoggingConfigurationDestinationConfigurationS3Args.builder
       builder.s3(args(argsBuilder).build)
@@ -56,7 +56,7 @@ object ivschat_ext:
      * @param destinationConfiguration Object containing destination configuration for where chat activity will be logged. This object must contain exactly one of the following children arguments:
      * @return builder
      */
-    def destinationConfiguration(args: Endofunction[com.pulumi.aws.ivschat.inputs.LoggingConfigurationDestinationConfigurationArgs.Builder]):
+    inline def destinationConfiguration(args: Endofunction[com.pulumi.aws.ivschat.inputs.LoggingConfigurationDestinationConfigurationArgs.Builder]):
         com.pulumi.aws.ivschat.inputs.LoggingConfigurationState.Builder =
       val argsBuilder = com.pulumi.aws.ivschat.inputs.LoggingConfigurationDestinationConfigurationArgs.builder
       builder.destinationConfiguration(args(argsBuilder).build)
@@ -67,7 +67,7 @@ object ivschat_ext:
      * review of messages.
      * @return builder
      */
-    def messageReviewHandler(args: Endofunction[com.pulumi.aws.ivschat.inputs.RoomMessageReviewHandlerArgs.Builder]):
+    inline def messageReviewHandler(args: Endofunction[com.pulumi.aws.ivschat.inputs.RoomMessageReviewHandlerArgs.Builder]):
         com.pulumi.aws.ivschat.inputs.RoomState.Builder =
       val argsBuilder = com.pulumi.aws.ivschat.inputs.RoomMessageReviewHandlerArgs.builder
       builder.messageReviewHandler(args(argsBuilder).build)

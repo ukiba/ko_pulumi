@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object maintenance:
   /** Manages a maintenance assignment to Dedicated Host. */
-  def AssignmentDedicatedHost(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AssignmentDedicatedHost(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.maintenance.AssignmentDedicatedHostArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.maintenance.AssignmentDedicatedHostArgs.builder
     com.pulumi.azure.maintenance.AssignmentDedicatedHost(name,
@@ -27,7 +27,7 @@ object maintenance:
    * \$ pulumi import azure:maintenance/assignmentDynamicScope:AssignmentDynamicScope example /subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Maintenance/configurationAssignments/assignmentName
    * ```
    */
-  def AssignmentDynamicScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AssignmentDynamicScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.maintenance.AssignmentDynamicScopeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.maintenance.AssignmentDynamicScopeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -38,7 +38,7 @@ object maintenance:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a maintenance assignment to virtual machine. */
-  def AssignmentVirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AssignmentVirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.maintenance.AssignmentVirtualMachineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.maintenance.AssignmentVirtualMachineArgs.builder
     com.pulumi.azure.maintenance.AssignmentVirtualMachine(name,
@@ -46,7 +46,7 @@ object maintenance:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a maintenance assignment to a virtual machine scale set. */
-  def AssignmentVirtualMachineScaleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AssignmentVirtualMachineScaleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.maintenance.AssignmentVirtualMachineScaleSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.maintenance.AssignmentVirtualMachineScaleSetArgs.builder
     com.pulumi.azure.maintenance.AssignmentVirtualMachineScaleSet(name,
@@ -54,7 +54,7 @@ object maintenance:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a maintenance configuration. */
-  def Configuration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Configuration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.maintenance.ConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.maintenance.ConfigurationArgs.builder
     conf.logicalName2physicalName(name) match

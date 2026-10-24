@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object networkflowmonitor:
   /** Manages a Network Flow Monitor Monitor. */
-  def Monitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Monitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkflowmonitor.MonitorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkflowmonitor.MonitorArgs.builder
     argsBuilder = args(argsBuilder)
@@ -20,7 +20,7 @@ object networkflowmonitor:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Flow Monitor Scope. */
-  def Scope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Scope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkflowmonitor.ScopeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkflowmonitor.ScopeArgs.builder
     argsBuilder = args(argsBuilder)

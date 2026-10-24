@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object iot:
   /** Creates and manages an AWS IoT Authorizer. */
-  def Authorizer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Authorizer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iot.AuthorizerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iot.AuthorizerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25,7 +25,7 @@ object iot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS IoT Billing Group. */
-  def BillingGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BillingGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iot.BillingGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iot.BillingGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -43,7 +43,7 @@ object iot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates and manages an AWS IoT CA Certificate. */
-  def CaCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CaCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iot.CaCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iot.CaCertificateArgs.builder
     argsBuilder = args(argsBuilder)
@@ -58,7 +58,7 @@ object iot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates and manages an AWS IoT certificate. */
-  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iot.CertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iot.CertificateArgs.builder
     com.pulumi.aws.iot.Certificate(name,
@@ -66,7 +66,7 @@ object iot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates and manages an AWS IoT domain configuration. */
-  def DomainConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DomainConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iot.DomainConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iot.DomainConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -88,7 +88,7 @@ object iot:
    * 
    * &gt; **NOTE:** Deleting this resource does not disable the event configurations, the resource in simply removed from state instead.
    */
-  def EventConfigurations(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EventConfigurations(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iot.EventConfigurationsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iot.EventConfigurationsArgs.builder
     com.pulumi.aws.iot.EventConfigurations(name,
@@ -96,7 +96,7 @@ object iot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Managing [IoT Thing indexing](https://docs.aws.amazon.com/iot/latest/developerguide/managing-index.html). */
-  def IndexingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IndexingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iot.IndexingConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iot.IndexingConfigurationArgs.builder
     com.pulumi.aws.iot.IndexingConfiguration(name,
@@ -137,7 +137,7 @@ object iot:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides a resource to manage [default logging options](https://docs.aws.amazon.com/iot/latest/developerguide/configure-logging.html#configure-logging-console). */
-  def LoggingOptions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LoggingOptions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iot.LoggingOptionsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iot.LoggingOptionsArgs.builder
     com.pulumi.aws.iot.LoggingOptions(name,
@@ -149,7 +149,7 @@ object iot:
    * 
    * &gt; **NOTE on policy versions:** Updating this resource creates a new, default policy version. If updating the resource would exceed the maximum number of versions (5), the oldest non-default version of the policy is deleted before the new policy version is created.
    */
-  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iot.PolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iot.PolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -167,7 +167,7 @@ object iot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an IoT policy attachment. */
-  def PolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iot.PolicyAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iot.PolicyAttachmentArgs.builder
     com.pulumi.aws.iot.PolicyAttachment(name,
@@ -175,7 +175,7 @@ object iot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an IoT fleet provisioning template. For more info, see the AWS documentation on [fleet provisioning](https://docs.aws.amazon.com/iot/latest/developerguide/provision-wo-cert.html). */
-  def ProvisioningTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProvisioningTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iot.ProvisioningTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iot.ProvisioningTemplateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -193,7 +193,7 @@ object iot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an IoT role alias. */
-  def RoleAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RoleAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iot.RoleAliasArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iot.RoleAliasArgs.builder
     argsBuilder = args(argsBuilder)
@@ -208,7 +208,7 @@ object iot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates and manages an AWS IoT Thing. */
-  def Thing(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Thing(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iot.ThingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iot.ThingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -219,7 +219,7 @@ object iot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS IoT Thing Group. */
-  def ThingGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ThingGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iot.ThingGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iot.ThingGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -237,7 +237,7 @@ object iot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Adds an IoT Thing to an IoT Thing Group. */
-  def ThingGroupMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ThingGroupMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iot.ThingGroupMembershipArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iot.ThingGroupMembershipArgs.builder
     com.pulumi.aws.iot.ThingGroupMembership(name,
@@ -245,7 +245,7 @@ object iot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Attaches Principal to AWS IoT Thing. */
-  def ThingPrincipalAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ThingPrincipalAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iot.ThingPrincipalAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iot.ThingPrincipalAttachmentArgs.builder
     com.pulumi.aws.iot.ThingPrincipalAttachment(name,
@@ -253,7 +253,7 @@ object iot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates and manages an AWS IoT Thing Type. */
-  def ThingType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ThingType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iot.ThingTypeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iot.ThingTypeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -271,7 +271,7 @@ object iot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates and manages an AWS IoT topic rule. */
-  def TopicRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TopicRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iot.TopicRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iot.TopicRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -288,7 +288,7 @@ object iot:
         argsBuilder.build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def TopicRuleDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TopicRuleDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.iot.TopicRuleDestinationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iot.TopicRuleDestinationArgs.builder
     com.pulumi.aws.iot.TopicRuleDestination(name,

@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object loadtest:
   /** Manages a Load Test Service. */
-  def LoadTest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LoadTest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.loadtest.LoadTestArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.loadtest.LoadTestArgs.builder
     conf.logicalName2physicalName(name) match

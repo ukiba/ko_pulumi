@@ -16,7 +16,7 @@ object ebs:
    * 
    * &gt; **NOTE:** Destroying this resource will reset the default CMK to the account&#39;s AWS-managed default CMK for EBS.
    */
-  def DefaultKmsKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DefaultKmsKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ebs.DefaultKmsKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ebs.DefaultKmsKeyArgs.builder
     com.pulumi.aws.ebs.DefaultKmsKey(name,
@@ -145,7 +145,7 @@ object ebs:
    * 
    * &gt; **NOTE:** Removing this resource disables default EBS encryption.
    */
-  def EncryptionByDefault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EncryptionByDefault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ebs.EncryptionByDefaultArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ebs.EncryptionByDefaultArgs.builder
     com.pulumi.aws.ebs.EncryptionByDefault(name,
@@ -153,7 +153,7 @@ object ebs:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an EBS (Elastic Block Storage) Fast Snapshot Restore. */
-  def FastSnapshotRestore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FastSnapshotRestore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ebs.FastSnapshotRestoreArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ebs.FastSnapshotRestoreArgs.builder
     com.pulumi.aws.ebs.FastSnapshotRestore(name,
@@ -161,7 +161,7 @@ object ebs:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a Snapshot of an EBS Volume. */
-  def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ebs.SnapshotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ebs.SnapshotArgs.builder
     argsBuilder = args(argsBuilder)
@@ -180,7 +180,7 @@ object ebs:
    * 
    * &gt; **NOTE:** Removing this Terraform resource disables blocking.
    */
-  def SnapshotBlockPublicAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SnapshotBlockPublicAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ebs.SnapshotBlockPublicAccessArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ebs.SnapshotBlockPublicAccessArgs.builder
     com.pulumi.aws.ebs.SnapshotBlockPublicAccess(name,
@@ -188,7 +188,7 @@ object ebs:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a Snapshot of a snapshot. */
-  def SnapshotCopy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SnapshotCopy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ebs.SnapshotCopyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ebs.SnapshotCopyArgs.builder
     argsBuilder = args(argsBuilder)
@@ -203,7 +203,7 @@ object ebs:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Imports a disk image from S3 as a Snapshot. */
-  def SnapshotImport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SnapshotImport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ebs.SnapshotImportArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ebs.SnapshotImportArgs.builder
     argsBuilder = args(argsBuilder)
@@ -218,7 +218,7 @@ object ebs:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a single EBS volume. */
-  def Volume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Volume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ebs.VolumeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ebs.VolumeArgs.builder
     argsBuilder = args(argsBuilder)
@@ -233,7 +233,7 @@ object ebs:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a copy of an existing Amazon EBS volume. */
-  def VolumeCopy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VolumeCopy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ebs.VolumeCopyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ebs.VolumeCopyArgs.builder
     argsBuilder = args(argsBuilder)

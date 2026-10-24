@@ -7,7 +7,7 @@ object backup_ext:
      * @param backup Configures the Policy backup frequency and times as documented in the `backup` block below.
      * @return builder
      */
-    def backup(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyFileShareBackupArgs.Builder]):
+    inline def backup(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyFileShareBackupArgs.Builder]):
         com.pulumi.azure.backup.PolicyFileShareArgs.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyFileShareBackupArgs.builder
       builder.backup(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object backup_ext:
      * @param retentionDaily Configures the policy daily retention as documented in the `retentionDaily` block below.
      * @return builder
      */
-    def retentionDaily(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyFileShareRetentionDailyArgs.Builder]):
+    inline def retentionDaily(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyFileShareRetentionDailyArgs.Builder]):
         com.pulumi.azure.backup.PolicyFileShareArgs.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyFileShareRetentionDailyArgs.builder
       builder.retentionDaily(args(argsBuilder).build)
@@ -25,7 +25,7 @@ object backup_ext:
      * @param retentionMonthly Configures the policy monthly retention as documented in the `retentionMonthly` block below.
      * @return builder
      */
-    def retentionMonthly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyFileShareRetentionMonthlyArgs.Builder]):
+    inline def retentionMonthly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyFileShareRetentionMonthlyArgs.Builder]):
         com.pulumi.azure.backup.PolicyFileShareArgs.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyFileShareRetentionMonthlyArgs.builder
       builder.retentionMonthly(args(argsBuilder).build)
@@ -34,7 +34,7 @@ object backup_ext:
      * @param retentionWeekly Configures the policy weekly retention as documented in the `retentionWeekly` block below.
      * @return builder
      */
-    def retentionWeekly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyFileShareRetentionWeeklyArgs.Builder]):
+    inline def retentionWeekly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyFileShareRetentionWeeklyArgs.Builder]):
         com.pulumi.azure.backup.PolicyFileShareArgs.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyFileShareRetentionWeeklyArgs.builder
       builder.retentionWeekly(args(argsBuilder).build)
@@ -43,7 +43,7 @@ object backup_ext:
      * @param retentionYearly Configures the policy yearly retention as documented in the `retentionYearly` block below.
      * @return builder
      */
-    def retentionYearly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyFileShareRetentionYearlyArgs.Builder]):
+    inline def retentionYearly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyFileShareRetentionYearlyArgs.Builder]):
         com.pulumi.azure.backup.PolicyFileShareArgs.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyFileShareRetentionYearlyArgs.builder
       builder.retentionYearly(args(argsBuilder).build)
@@ -53,7 +53,7 @@ object backup_ext:
      * @param backup Configures the Policy backup frequency, times &amp; days as documented in the `backup` block below.
      * @return builder
      */
-    def backup(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMBackupArgs.Builder]):
+    inline def backup(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMBackupArgs.Builder]):
         com.pulumi.azure.backup.PolicyVMArgs.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyVMBackupArgs.builder
       builder.backup(args(argsBuilder).build)
@@ -62,7 +62,7 @@ object backup_ext:
      * @param instantRestoreResourceGroup Specifies the instant restore resource group name as documented in the `instantRestoreResourceGroup` block below.
      * @return builder
      */
-    def instantRestoreResourceGroup(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMInstantRestoreResourceGroupArgs.Builder]):
+    inline def instantRestoreResourceGroup(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMInstantRestoreResourceGroupArgs.Builder]):
         com.pulumi.azure.backup.PolicyVMArgs.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyVMInstantRestoreResourceGroupArgs.builder
       builder.instantRestoreResourceGroup(args(argsBuilder).build)
@@ -71,7 +71,7 @@ object backup_ext:
      * @param retentionDaily Configures the policy daily retention as documented in the `retentionDaily` block below. Required when backup frequency is `Daily`.
      * @return builder
      */
-    def retentionDaily(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMRetentionDailyArgs.Builder]):
+    inline def retentionDaily(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMRetentionDailyArgs.Builder]):
         com.pulumi.azure.backup.PolicyVMArgs.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyVMRetentionDailyArgs.builder
       builder.retentionDaily(args(argsBuilder).build)
@@ -80,7 +80,7 @@ object backup_ext:
      * @param retentionMonthly Configures the policy monthly retention as documented in the `retentionMonthly` block below.
      * @return builder
      */
-    def retentionMonthly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMRetentionMonthlyArgs.Builder]):
+    inline def retentionMonthly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMRetentionMonthlyArgs.Builder]):
         com.pulumi.azure.backup.PolicyVMArgs.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyVMRetentionMonthlyArgs.builder
       builder.retentionMonthly(args(argsBuilder).build)
@@ -89,7 +89,7 @@ object backup_ext:
      * @param retentionWeekly Configures the policy weekly retention as documented in the `retentionWeekly` block below. Required when backup frequency is `Weekly`.
      * @return builder
      */
-    def retentionWeekly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMRetentionWeeklyArgs.Builder]):
+    inline def retentionWeekly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMRetentionWeeklyArgs.Builder]):
         com.pulumi.azure.backup.PolicyVMArgs.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyVMRetentionWeeklyArgs.builder
       builder.retentionWeekly(args(argsBuilder).build)
@@ -98,7 +98,7 @@ object backup_ext:
      * @param retentionYearly Configures the policy yearly retention as documented in the `retentionYearly` block below.
      * @return builder
      */
-    def retentionYearly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMRetentionYearlyArgs.Builder]):
+    inline def retentionYearly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMRetentionYearlyArgs.Builder]):
         com.pulumi.azure.backup.PolicyVMArgs.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyVMRetentionYearlyArgs.builder
       builder.retentionYearly(args(argsBuilder).build)
@@ -107,7 +107,7 @@ object backup_ext:
      * @param tieringPolicy A `tieringPolicy` block as defined below.
      * @return builder
      */
-    def tieringPolicy(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMTieringPolicyArgs.Builder]):
+    inline def tieringPolicy(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMTieringPolicyArgs.Builder]):
         com.pulumi.azure.backup.PolicyVMArgs.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyVMTieringPolicyArgs.builder
       builder.tieringPolicy(args(argsBuilder).build)
@@ -117,7 +117,7 @@ object backup_ext:
      * @param protectionPolicies One or more `protectionPolicy` blocks as defined below.
      * @return builder
      */
-    def protectionPolicies(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyArgs.Builder]*):
+    inline def protectionPolicies(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyArgs.Builder]*):
         com.pulumi.azure.backup.PolicyVMWorkloadArgs.Builder =
       def argsBuilder = com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyArgs.builder
       builder.protectionPolicies(args.map(_(argsBuilder).build)*)
@@ -126,7 +126,7 @@ object backup_ext:
      * @param settings A `settings` block as defined below.
      * @return builder
      */
-    def settings(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMWorkloadSettingsArgs.Builder]):
+    inline def settings(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMWorkloadSettingsArgs.Builder]):
         com.pulumi.azure.backup.PolicyVMWorkloadArgs.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyVMWorkloadSettingsArgs.builder
       builder.settings(args(argsBuilder).build)
@@ -136,7 +136,7 @@ object backup_ext:
      * @param hourly A `hourly` block defined as below. This is required when `frequency` is set to `Hourly`.
      * @return builder
      */
-    def hourly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyFileShareBackupHourlyArgs.Builder]):
+    inline def hourly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyFileShareBackupHourlyArgs.Builder]):
         com.pulumi.azure.backup.inputs.PolicyFileShareBackupArgs.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyFileShareBackupHourlyArgs.builder
       builder.hourly(args(argsBuilder).build)
@@ -146,7 +146,7 @@ object backup_ext:
      * @param backup Configures the Policy backup frequency and times as documented in the `backup` block below.
      * @return builder
      */
-    def backup(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyFileShareBackupArgs.Builder]):
+    inline def backup(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyFileShareBackupArgs.Builder]):
         com.pulumi.azure.backup.inputs.PolicyFileShareState.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyFileShareBackupArgs.builder
       builder.backup(args(argsBuilder).build)
@@ -155,7 +155,7 @@ object backup_ext:
      * @param retentionDaily Configures the policy daily retention as documented in the `retentionDaily` block below.
      * @return builder
      */
-    def retentionDaily(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyFileShareRetentionDailyArgs.Builder]):
+    inline def retentionDaily(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyFileShareRetentionDailyArgs.Builder]):
         com.pulumi.azure.backup.inputs.PolicyFileShareState.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyFileShareRetentionDailyArgs.builder
       builder.retentionDaily(args(argsBuilder).build)
@@ -164,7 +164,7 @@ object backup_ext:
      * @param retentionMonthly Configures the policy monthly retention as documented in the `retentionMonthly` block below.
      * @return builder
      */
-    def retentionMonthly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyFileShareRetentionMonthlyArgs.Builder]):
+    inline def retentionMonthly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyFileShareRetentionMonthlyArgs.Builder]):
         com.pulumi.azure.backup.inputs.PolicyFileShareState.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyFileShareRetentionMonthlyArgs.builder
       builder.retentionMonthly(args(argsBuilder).build)
@@ -173,7 +173,7 @@ object backup_ext:
      * @param retentionWeekly Configures the policy weekly retention as documented in the `retentionWeekly` block below.
      * @return builder
      */
-    def retentionWeekly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyFileShareRetentionWeeklyArgs.Builder]):
+    inline def retentionWeekly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyFileShareRetentionWeeklyArgs.Builder]):
         com.pulumi.azure.backup.inputs.PolicyFileShareState.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyFileShareRetentionWeeklyArgs.builder
       builder.retentionWeekly(args(argsBuilder).build)
@@ -182,7 +182,7 @@ object backup_ext:
      * @param retentionYearly Configures the policy yearly retention as documented in the `retentionYearly` block below.
      * @return builder
      */
-    def retentionYearly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyFileShareRetentionYearlyArgs.Builder]):
+    inline def retentionYearly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyFileShareRetentionYearlyArgs.Builder]):
         com.pulumi.azure.backup.inputs.PolicyFileShareState.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyFileShareRetentionYearlyArgs.builder
       builder.retentionYearly(args(argsBuilder).build)
@@ -192,7 +192,7 @@ object backup_ext:
      * @param backup Configures the Policy backup frequency, times &amp; days as documented in the `backup` block below.
      * @return builder
      */
-    def backup(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMBackupArgs.Builder]):
+    inline def backup(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMBackupArgs.Builder]):
         com.pulumi.azure.backup.inputs.PolicyVMState.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyVMBackupArgs.builder
       builder.backup(args(argsBuilder).build)
@@ -201,7 +201,7 @@ object backup_ext:
      * @param instantRestoreResourceGroup Specifies the instant restore resource group name as documented in the `instantRestoreResourceGroup` block below.
      * @return builder
      */
-    def instantRestoreResourceGroup(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMInstantRestoreResourceGroupArgs.Builder]):
+    inline def instantRestoreResourceGroup(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMInstantRestoreResourceGroupArgs.Builder]):
         com.pulumi.azure.backup.inputs.PolicyVMState.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyVMInstantRestoreResourceGroupArgs.builder
       builder.instantRestoreResourceGroup(args(argsBuilder).build)
@@ -210,7 +210,7 @@ object backup_ext:
      * @param retentionDaily Configures the policy daily retention as documented in the `retentionDaily` block below. Required when backup frequency is `Daily`.
      * @return builder
      */
-    def retentionDaily(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMRetentionDailyArgs.Builder]):
+    inline def retentionDaily(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMRetentionDailyArgs.Builder]):
         com.pulumi.azure.backup.inputs.PolicyVMState.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyVMRetentionDailyArgs.builder
       builder.retentionDaily(args(argsBuilder).build)
@@ -219,7 +219,7 @@ object backup_ext:
      * @param retentionMonthly Configures the policy monthly retention as documented in the `retentionMonthly` block below.
      * @return builder
      */
-    def retentionMonthly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMRetentionMonthlyArgs.Builder]):
+    inline def retentionMonthly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMRetentionMonthlyArgs.Builder]):
         com.pulumi.azure.backup.inputs.PolicyVMState.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyVMRetentionMonthlyArgs.builder
       builder.retentionMonthly(args(argsBuilder).build)
@@ -228,7 +228,7 @@ object backup_ext:
      * @param retentionWeekly Configures the policy weekly retention as documented in the `retentionWeekly` block below. Required when backup frequency is `Weekly`.
      * @return builder
      */
-    def retentionWeekly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMRetentionWeeklyArgs.Builder]):
+    inline def retentionWeekly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMRetentionWeeklyArgs.Builder]):
         com.pulumi.azure.backup.inputs.PolicyVMState.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyVMRetentionWeeklyArgs.builder
       builder.retentionWeekly(args(argsBuilder).build)
@@ -237,7 +237,7 @@ object backup_ext:
      * @param retentionYearly Configures the policy yearly retention as documented in the `retentionYearly` block below.
      * @return builder
      */
-    def retentionYearly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMRetentionYearlyArgs.Builder]):
+    inline def retentionYearly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMRetentionYearlyArgs.Builder]):
         com.pulumi.azure.backup.inputs.PolicyVMState.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyVMRetentionYearlyArgs.builder
       builder.retentionYearly(args(argsBuilder).build)
@@ -246,7 +246,7 @@ object backup_ext:
      * @param tieringPolicy A `tieringPolicy` block as defined below.
      * @return builder
      */
-    def tieringPolicy(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMTieringPolicyArgs.Builder]):
+    inline def tieringPolicy(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMTieringPolicyArgs.Builder]):
         com.pulumi.azure.backup.inputs.PolicyVMState.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyVMTieringPolicyArgs.builder
       builder.tieringPolicy(args(argsBuilder).build)
@@ -256,7 +256,7 @@ object backup_ext:
      * @param archivedRestorePoint An `archivedRestorePoint` block as defined below.
      * @return builder
      */
-    def archivedRestorePoint(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMTieringPolicyArchivedRestorePointArgs.Builder]):
+    inline def archivedRestorePoint(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMTieringPolicyArchivedRestorePointArgs.Builder]):
         com.pulumi.azure.backup.inputs.PolicyVMTieringPolicyArgs.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyVMTieringPolicyArchivedRestorePointArgs.builder
       builder.archivedRestorePoint(args(argsBuilder).build)
@@ -266,7 +266,7 @@ object backup_ext:
      * @param backup A `backup` block as defined below.
      * @return builder
      */
-    def backup(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyBackupArgs.Builder]):
+    inline def backup(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyBackupArgs.Builder]):
         com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyBackupArgs.builder
       builder.backup(args(argsBuilder).build)
@@ -275,7 +275,7 @@ object backup_ext:
      * @param retentionDaily A `retentionDaily` block as defined below.
      * @return builder
      */
-    def retentionDaily(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyRetentionDailyArgs.Builder]):
+    inline def retentionDaily(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyRetentionDailyArgs.Builder]):
         com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyRetentionDailyArgs.builder
       builder.retentionDaily(args(argsBuilder).build)
@@ -284,7 +284,7 @@ object backup_ext:
      * @param retentionMonthly A `retentionMonthly` block as defined below.
      * @return builder
      */
-    def retentionMonthly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyRetentionMonthlyArgs.Builder]):
+    inline def retentionMonthly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyRetentionMonthlyArgs.Builder]):
         com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyRetentionMonthlyArgs.builder
       builder.retentionMonthly(args(argsBuilder).build)
@@ -293,7 +293,7 @@ object backup_ext:
      * @param retentionWeekly A `retentionWeekly` block as defined below.
      * @return builder
      */
-    def retentionWeekly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyRetentionWeeklyArgs.Builder]):
+    inline def retentionWeekly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyRetentionWeeklyArgs.Builder]):
         com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyRetentionWeeklyArgs.builder
       builder.retentionWeekly(args(argsBuilder).build)
@@ -302,7 +302,7 @@ object backup_ext:
      * @param retentionYearly A `retentionYearly` block as defined below.
      * @return builder
      */
-    def retentionYearly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyRetentionYearlyArgs.Builder]):
+    inline def retentionYearly(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyRetentionYearlyArgs.Builder]):
         com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyRetentionYearlyArgs.builder
       builder.retentionYearly(args(argsBuilder).build)
@@ -311,7 +311,7 @@ object backup_ext:
      * @param simpleRetention A `simpleRetention` block as defined below.
      * @return builder
      */
-    def simpleRetention(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicySimpleRetentionArgs.Builder]):
+    inline def simpleRetention(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicySimpleRetentionArgs.Builder]):
         com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicySimpleRetentionArgs.builder
       builder.simpleRetention(args(argsBuilder).build)
@@ -321,7 +321,7 @@ object backup_ext:
      * @param protectionPolicies One or more `protectionPolicy` blocks as defined below.
      * @return builder
      */
-    def protectionPolicies(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyArgs.Builder]*):
+    inline def protectionPolicies(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyArgs.Builder]*):
         com.pulumi.azure.backup.inputs.PolicyVMWorkloadState.Builder =
       def argsBuilder = com.pulumi.azure.backup.inputs.PolicyVMWorkloadProtectionPolicyArgs.builder
       builder.protectionPolicies(args.map(_(argsBuilder).build)*)
@@ -330,7 +330,7 @@ object backup_ext:
      * @param settings A `settings` block as defined below.
      * @return builder
      */
-    def settings(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMWorkloadSettingsArgs.Builder]):
+    inline def settings(args: Endofunction[com.pulumi.azure.backup.inputs.PolicyVMWorkloadSettingsArgs.Builder]):
         com.pulumi.azure.backup.inputs.PolicyVMWorkloadState.Builder =
       val argsBuilder = com.pulumi.azure.backup.inputs.PolicyVMWorkloadSettingsArgs.builder
       builder.settings(args(argsBuilder).build)

@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object waf:
   /** Manages a Azure Web Application Firewall Policy instance. */
-  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.waf.PolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.waf.PolicyArgs.builder
     conf.logicalName2physicalName(name) match

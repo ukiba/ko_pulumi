@@ -8,7 +8,7 @@ object siteverification_ext:
      * Structure is documented below.
      * @return builder
      */
-    def site(args: Endofunction[com.pulumi.gcp.siteverification.inputs.WebResourceSiteArgs.Builder]):
+    inline def site(args: Endofunction[com.pulumi.gcp.siteverification.inputs.WebResourceSiteArgs.Builder]):
         com.pulumi.gcp.siteverification.WebResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.siteverification.inputs.WebResourceSiteArgs.builder
       builder.site(args(argsBuilder).build)
@@ -19,7 +19,7 @@ object siteverification_ext:
      * Structure is documented below.
      * @return builder
      */
-    def site(args: Endofunction[com.pulumi.gcp.siteverification.inputs.WebResourceSiteArgs.Builder]):
+    inline def site(args: Endofunction[com.pulumi.gcp.siteverification.inputs.WebResourceSiteArgs.Builder]):
         com.pulumi.gcp.siteverification.inputs.WebResourceState.Builder =
       val argsBuilder = com.pulumi.gcp.siteverification.inputs.WebResourceSiteArgs.builder
       builder.site(args(argsBuilder).build)

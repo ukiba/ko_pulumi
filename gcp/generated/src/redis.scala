@@ -91,7 +91,7 @@ object redis:
    *           * Manually update `crossClusterReplicationConfig` field in the configuration file(s) for those clusters with the latest value from the state.
    *           * Execute `pulumi preview` once again. This should not generate any diff, confirming the configuration is in sync with the infrastructure.
    */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.redis.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.redis.ClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -120,7 +120,7 @@ object redis:
    * \$ pulumi import gcp:redis/clusterAclPolicy:ClusterAclPolicy default {{location}}/{{acl_policy_id}}
    * ```
    */
-  def ClusterAclPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterAclPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.redis.ClusterAclPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.redis.ClusterAclPolicyArgs.builder
     com.pulumi.gcp.redis.ClusterAclPolicy(name,
@@ -140,7 +140,7 @@ object redis:
    * If the corresponding forwarding rule is represented in your terraform configuration it is recommended to delete that
    * `gcp.compute.ForwardingRule` resource at the same time.
    */
-  def ClusterUserCreatedConnections(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterUserCreatedConnections(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.redis.ClusterUserCreatedConnectionsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.redis.ClusterUserCreatedConnectionsArgs.builder
     conf.logicalName2physicalName(name) match
@@ -159,7 +159,7 @@ object redis:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/memorystore/docs/redis/)
    */
-  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.redis.InstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.redis.InstanceArgs.builder
     conf.logicalName2physicalName(name) match

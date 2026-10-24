@@ -17,7 +17,7 @@ object neptune:
    * `applyImmediately` flag to instruct the service to apply the change immediately
    * (see documentation below).
    */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.neptune.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.neptune.ClusterArgs.builder
     argsBuilder = args(argsBuilder)
@@ -32,7 +32,7 @@ object neptune:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Neptune Cluster Endpoint Resource. */
-  def ClusterEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.neptune.ClusterEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.neptune.ClusterEndpointArgs.builder
     argsBuilder = args(argsBuilder)
@@ -52,7 +52,7 @@ object neptune:
    * You can simply add neptune instances and Neptune manages the replication. You can use the count
    * meta-parameter to make multiple instances and join them all to the same Neptune Cluster, or you may specify different Cluster Instance resources with various `instanceClass` sizes.
    */
-  def ClusterInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.neptune.ClusterInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.neptune.ClusterInstanceArgs.builder
     argsBuilder = args(argsBuilder)
@@ -67,7 +67,7 @@ object neptune:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Neptune Cluster Parameter Group */
-  def ClusterParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.neptune.ClusterParameterGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.neptune.ClusterParameterGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -85,14 +85,14 @@ object neptune:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Neptune database cluster snapshot. */
-  def ClusterSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.neptune.ClusterSnapshotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.neptune.ClusterSnapshotArgs.builder
     com.pulumi.aws.neptune.ClusterSnapshot(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.neptune.EventSubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.neptune.EventSubscriptionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -114,7 +114,7 @@ object neptune:
    * 
    * More information about Neptune Global Clusters can be found in the [Neptune User Guide](https://docs.aws.amazon.com/neptune/latest/userguide/neptune-global-database.html).
    */
-  def GlobalCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GlobalCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.neptune.GlobalClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.neptune.GlobalClusterArgs.builder
     com.pulumi.aws.neptune.GlobalCluster(name,
@@ -163,7 +163,7 @@ object neptune:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Neptune Parameter Group */
-  def ParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.neptune.ParameterGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.neptune.ParameterGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -181,7 +181,7 @@ object neptune:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Neptune subnet group resource. */
-  def SubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.neptune.SubnetGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.neptune.SubnetGroupArgs.builder
     conf.logicalName2physicalName(name) match

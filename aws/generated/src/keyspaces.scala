@@ -9,7 +9,7 @@ object keyspaces:
    * 
    * More information about keyspaces can be found in the [Keyspaces User Guide](https://docs.aws.amazon.com/keyspaces/latest/devguide/what-is-keyspaces.html).
    */
-  def Keyspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Keyspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.keyspaces.KeyspaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.keyspaces.KeyspaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -31,7 +31,7 @@ object keyspaces:
    * 
    * More information about Keyspaces tables can be found in the [Keyspaces Developer Guide](https://docs.aws.amazon.com/keyspaces/latest/devguide/working-with-tables.html).
    */
-  def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.keyspaces.TableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.keyspaces.TableArgs.builder
     argsBuilder = args(argsBuilder)

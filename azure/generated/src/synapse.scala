@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object synapse:
   /** Allows you to Manages a Synapse Firewall Rule. */
-  def FirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.synapse.FirewallRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.synapse.FirewallRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18,7 +18,7 @@ object synapse:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse Azure Integration Runtime. */
-  def IntegrationRuntimeAzure(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IntegrationRuntimeAzure(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.synapse.IntegrationRuntimeAzureArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.synapse.IntegrationRuntimeAzureArgs.builder
     conf.logicalName2physicalName(name) match
@@ -29,7 +29,7 @@ object synapse:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse Self-hosted Integration Runtime. */
-  def IntegrationRuntimeSelfHosted(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IntegrationRuntimeSelfHosted(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.synapse.IntegrationRuntimeSelfHostedArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.synapse.IntegrationRuntimeSelfHostedArgs.builder
     conf.logicalName2physicalName(name) match
@@ -40,7 +40,7 @@ object synapse:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse Linked Service. */
-  def LinkedService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LinkedService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.synapse.LinkedServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.synapse.LinkedServiceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -51,7 +51,7 @@ object synapse:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse Managed Private Endpoint. */
-  def ManagedPrivateEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedPrivateEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.synapse.ManagedPrivateEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.synapse.ManagedPrivateEndpointArgs.builder
     conf.logicalName2physicalName(name) match
@@ -62,7 +62,7 @@ object synapse:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse Private Link Hub. */
-  def PrivateLinkHub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PrivateLinkHub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.synapse.PrivateLinkHubArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.synapse.PrivateLinkHubArgs.builder
     conf.logicalName2physicalName(name) match
@@ -80,7 +80,7 @@ object synapse:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse Role Assignment. */
-  def RoleAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RoleAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.synapse.RoleAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.synapse.RoleAssignmentArgs.builder
     com.pulumi.azure.synapse.RoleAssignment(name,
@@ -88,7 +88,7 @@ object synapse:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse Spark Pool. */
-  def SparkPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SparkPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.synapse.SparkPoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.synapse.SparkPoolArgs.builder
     conf.logicalName2physicalName(name) match
@@ -106,7 +106,7 @@ object synapse:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse SQL Pool. */
-  def SqlPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SqlPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.synapse.SqlPoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.synapse.SqlPoolArgs.builder
     conf.logicalName2physicalName(name) match
@@ -124,7 +124,7 @@ object synapse:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse SQL Pool Extended Auditing Policy. */
-  def SqlPoolExtendedAuditingPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SqlPoolExtendedAuditingPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.synapse.SqlPoolExtendedAuditingPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.synapse.SqlPoolExtendedAuditingPolicyArgs.builder
     com.pulumi.azure.synapse.SqlPoolExtendedAuditingPolicy(name,
@@ -132,7 +132,7 @@ object synapse:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Security Alert Policy for a Synapse SQL Pool. */
-  def SqlPoolSecurityAlertPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SqlPoolSecurityAlertPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.synapse.SqlPoolSecurityAlertPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.synapse.SqlPoolSecurityAlertPolicyArgs.builder
     com.pulumi.azure.synapse.SqlPoolSecurityAlertPolicy(name,
@@ -140,7 +140,7 @@ object synapse:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Vulnerability Assessment for a Synapse SQL Pool. */
-  def SqlPoolVulnerabilityAssessment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SqlPoolVulnerabilityAssessment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.synapse.SqlPoolVulnerabilityAssessmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.synapse.SqlPoolVulnerabilityAssessmentArgs.builder
     com.pulumi.azure.synapse.SqlPoolVulnerabilityAssessment(name,
@@ -148,7 +148,7 @@ object synapse:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse SQL Pool Vulnerability Assessment Rule Baseline. */
-  def SqlPoolVulnerabilityAssessmentBaseline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SqlPoolVulnerabilityAssessmentBaseline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.synapse.SqlPoolVulnerabilityAssessmentBaselineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.synapse.SqlPoolVulnerabilityAssessmentBaselineArgs.builder
     conf.logicalName2physicalName(name) match
@@ -159,7 +159,7 @@ object synapse:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse SQL Pool Workload Classifier. */
-  def SqlPoolWorkloadClassifier(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SqlPoolWorkloadClassifier(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.synapse.SqlPoolWorkloadClassifierArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.synapse.SqlPoolWorkloadClassifierArgs.builder
     conf.logicalName2physicalName(name) match
@@ -170,7 +170,7 @@ object synapse:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse SQL Pool Workload Group. */
-  def SqlPoolWorkloadGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SqlPoolWorkloadGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.synapse.SqlPoolWorkloadGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.synapse.SqlPoolWorkloadGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -198,7 +198,7 @@ object synapse:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Synapse Workspace. */
-  def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.synapse.WorkspaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.synapse.WorkspaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -216,7 +216,7 @@ object synapse:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Active Directory Administrator setting for a Synapse Workspace */
-  def WorkspaceAadAdmin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkspaceAadAdmin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.synapse.WorkspaceAadAdminArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.synapse.WorkspaceAadAdminArgs.builder
     com.pulumi.azure.synapse.WorkspaceAadAdmin(name,
@@ -224,7 +224,7 @@ object synapse:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse Workspace Extended Auditing Policy. */
-  def WorkspaceExtendedAuditingPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkspaceExtendedAuditingPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.synapse.WorkspaceExtendedAuditingPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.synapse.WorkspaceExtendedAuditingPolicyArgs.builder
     com.pulumi.azure.synapse.WorkspaceExtendedAuditingPolicy(name,
@@ -236,7 +236,7 @@ object synapse:
    * 
    * &gt; **Note:** Keys that are actively protecting a workspace cannot be deleted. When the keys resource is deleted, if the key is inactive it will be deleted, if it is active it will not be deleted.
    */
-  def WorkspaceKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkspaceKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.synapse.WorkspaceKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.synapse.WorkspaceKeyArgs.builder
     com.pulumi.azure.synapse.WorkspaceKey(name,
@@ -244,7 +244,7 @@ object synapse:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Security Alert Policy for a Synapse Workspace. */
-  def WorkspaceSecurityAlertPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkspaceSecurityAlertPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.synapse.WorkspaceSecurityAlertPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.synapse.WorkspaceSecurityAlertPolicyArgs.builder
     com.pulumi.azure.synapse.WorkspaceSecurityAlertPolicy(name,
@@ -252,7 +252,7 @@ object synapse:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Active Directory SQL Administrator setting for a Synapse Workspace */
-  def WorkspaceSqlAadAdmin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkspaceSqlAadAdmin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.synapse.WorkspaceSqlAadAdminArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.synapse.WorkspaceSqlAadAdminArgs.builder
     com.pulumi.azure.synapse.WorkspaceSqlAadAdmin(name,
@@ -260,7 +260,7 @@ object synapse:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Vulnerability Assessment for a Synapse Workspace. */
-  def WorkspaceVulnerabilityAssessment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkspaceVulnerabilityAssessment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.synapse.WorkspaceVulnerabilityAssessmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.synapse.WorkspaceVulnerabilityAssessmentArgs.builder
     com.pulumi.azure.synapse.WorkspaceVulnerabilityAssessment(name,

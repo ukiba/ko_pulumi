@@ -7,7 +7,7 @@ object codecommit_ext:
      * @param triggers The name of the trigger.
      * @return builder
      */
-    def triggers(args: Endofunction[com.pulumi.aws.codecommit.inputs.TriggerTriggerArgs.Builder]*):
+    inline def triggers(args: Endofunction[com.pulumi.aws.codecommit.inputs.TriggerTriggerArgs.Builder]*):
         com.pulumi.aws.codecommit.TriggerArgs.Builder =
       def argsBuilder = com.pulumi.aws.codecommit.inputs.TriggerTriggerArgs.builder
       builder.triggers(args.map(_(argsBuilder).build)*)
@@ -17,7 +17,7 @@ object codecommit_ext:
      * @param triggers The name of the trigger.
      * @return builder
      */
-    def triggers(args: Endofunction[com.pulumi.aws.codecommit.inputs.TriggerTriggerArgs.Builder]*):
+    inline def triggers(args: Endofunction[com.pulumi.aws.codecommit.inputs.TriggerTriggerArgs.Builder]*):
         com.pulumi.aws.codecommit.inputs.TriggerState.Builder =
       def argsBuilder = com.pulumi.aws.codecommit.inputs.TriggerTriggerArgs.builder
       builder.triggers(args.map(_(argsBuilder).build)*)

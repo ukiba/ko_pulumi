@@ -21,7 +21,7 @@ object backupdisasterrecovery:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/backup-disaster-recovery/docs)
    */
-  def AutoProtectionPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AutoProtectionPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.AutoProtectionPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.AutoProtectionPolicyArgs.builder
     com.pulumi.gcp.backupdisasterrecovery.AutoProtectionPolicy(name,
@@ -37,7 +37,7 @@ object backupdisasterrecovery:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/backup-disaster-recovery/docs)
    */
-  def BackupPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackupPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.BackupPlanArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.BackupPlanArgs.builder
     com.pulumi.gcp.backupdisasterrecovery.BackupPlan(name,
@@ -53,7 +53,7 @@ object backupdisasterrecovery:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/backup-disaster-recovery/docs)
    */
-  def BackupPlanAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackupPlanAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.BackupPlanAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.BackupPlanAssociationArgs.builder
     com.pulumi.gcp.backupdisasterrecovery.BackupPlanAssociation(name,
@@ -61,7 +61,7 @@ object backupdisasterrecovery:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Container to store and organize immutable and indelible backups. */
-  def BackupVault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackupVault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.BackupVaultArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.BackupVaultArgs.builder
     com.pulumi.gcp.backupdisasterrecovery.BackupVault(name,
@@ -246,7 +246,7 @@ object backupdisasterrecovery:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/backup-disaster-recovery/docs)
    */
-  def ManagementServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagementServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.ManagementServerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.backupdisasterrecovery.ManagementServerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -261,7 +261,7 @@ object backupdisasterrecovery:
    * Creating this resource will initiate a restore operation from a specified backup.
    * The resource represents the restore operation and its result.
    */
-  @deprecated("calls deprecated com.pulumi.gcp.backupdisasterrecovery.RestoreWorkloadArgs.Builder.name: `name` is deprecated and will be removed in a future major release. The backup is identified by the parameters (location, backup_vault_id, data_source_id, backup_id).") def RestoreWorkload(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("calls deprecated com.pulumi.gcp.backupdisasterrecovery.RestoreWorkloadArgs.Builder.name: `name` is deprecated and will be removed in a future major release. The backup is identified by the parameters (location, backup_vault_id, data_source_id, backup_id).") inline def RestoreWorkload(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.RestoreWorkloadArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.backupdisasterrecovery.RestoreWorkloadArgs.builder
     conf.logicalName2physicalName(name) match
@@ -278,7 +278,7 @@ object backupdisasterrecovery:
    * 
    * * [API documentation](https://cloud.google.com/backup-disaster-recovery/docs/reference/rest/v1/projects.locations.serviceConfig)
    */
-  def ServiceConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServiceConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.ServiceConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.ServiceConfigArgs.builder
     com.pulumi.gcp.backupdisasterrecovery.ServiceConfig(name,

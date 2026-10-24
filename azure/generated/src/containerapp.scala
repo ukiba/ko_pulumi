@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object containerapp:
   /** Manages a Container App. */
-  def App(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def App(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerapp.AppArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerapp.AppArgs.builder
     conf.logicalName2physicalName(name) match
@@ -90,7 +90,7 @@ object containerapp:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Container App Custom Domain. */
-  def CustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerapp.CustomDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerapp.CustomDomainArgs.builder
     conf.logicalName2physicalName(name) match
@@ -101,7 +101,7 @@ object containerapp:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Container App Environment. */
-  def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerapp.EnvironmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerapp.EnvironmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -119,7 +119,7 @@ object containerapp:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Container App Environment Certificate. */
-  def EnvironmentCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EnvironmentCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerapp.EnvironmentCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerapp.EnvironmentCertificateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -137,7 +137,7 @@ object containerapp:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Container App Environment Custom Domain Suffix. */
-  def EnvironmentCustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EnvironmentCustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerapp.EnvironmentCustomDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.containerapp.EnvironmentCustomDomainArgs.builder
     com.pulumi.azure.containerapp.EnvironmentCustomDomain(name,
@@ -145,7 +145,7 @@ object containerapp:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Dapr Component for a Container App Environment. */
-  def EnvironmentDaprComponent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EnvironmentDaprComponent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerapp.EnvironmentDaprComponentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerapp.EnvironmentDaprComponentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -156,7 +156,7 @@ object containerapp:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Container App Environment Managed Certificate. */
-  def EnvironmentManagedCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EnvironmentManagedCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerapp.EnvironmentManagedCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerapp.EnvironmentManagedCertificateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -174,7 +174,7 @@ object containerapp:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Container App Environment Storage. */
-  def EnvironmentStorage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EnvironmentStorage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerapp.EnvironmentStorageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerapp.EnvironmentStorageArgs.builder
     conf.logicalName2physicalName(name) match
@@ -185,7 +185,7 @@ object containerapp:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Container App Job. */
-  def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.containerapp.JobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.containerapp.JobArgs.builder
     conf.logicalName2physicalName(name) match

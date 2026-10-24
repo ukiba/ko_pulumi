@@ -35,7 +35,7 @@ object cloudhsmv2:
    * If you need to delete a cluster, you have to remove its HSM modules first.
    * To initialize cluster, you have to add an HSM instance to the cluster, then sign CSR and upload it.
    */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudhsmv2.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudhsmv2.ClusterArgs.builder
     argsBuilder = args(argsBuilder)
@@ -50,7 +50,7 @@ object cloudhsmv2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates an HSM module in Amazon CloudHSM v2 cluster. */
-  def Hsm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Hsm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudhsmv2.HsmArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.cloudhsmv2.HsmArgs.builder
     com.pulumi.aws.cloudhsmv2.Hsm(name,

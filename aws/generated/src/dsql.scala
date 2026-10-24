@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object dsql:
   /** Resource for managing an Amazon Aurora DSQL Cluster. */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dsql.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.dsql.ClusterArgs.builder
     argsBuilder = args(argsBuilder)
@@ -20,7 +20,7 @@ object dsql:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an Amazon Aurora DSQL Cluster Peering. */
-  def ClusterPeering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterPeering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dsql.ClusterPeeringArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.dsql.ClusterPeeringArgs.builder
     com.pulumi.aws.dsql.ClusterPeering(name,
@@ -34,7 +34,7 @@ object dsql:
    * 
    * &gt; Aurora DSQL resource-based policy changes are eventually consistent and typically take effect within one minute.
    */
-  def ClusterPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dsql.ClusterPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.dsql.ClusterPolicyArgs.builder
     com.pulumi.aws.dsql.ClusterPolicy(name,

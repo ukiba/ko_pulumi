@@ -15,7 +15,7 @@ object securesourcemanager:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/secure-source-manager/docs/overview)
    */
-  def BranchRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BranchRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securesourcemanager.BranchRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securesourcemanager.BranchRuleArgs.builder
     com.pulumi.gcp.securesourcemanager.BranchRule(name,
@@ -29,7 +29,7 @@ object securesourcemanager:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/secure-source-manager/docs/overview)
    */
-  def Hook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Hook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securesourcemanager.HookArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securesourcemanager.HookArgs.builder
     com.pulumi.gcp.securesourcemanager.Hook(name,
@@ -45,28 +45,28 @@ object securesourcemanager:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/secure-source-manager/docs/create-instance)
    */
-  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securesourcemanager.InstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securesourcemanager.InstanceArgs.builder
     com.pulumi.gcp.securesourcemanager.Instance(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def InstanceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securesourcemanager.InstanceIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securesourcemanager.InstanceIamBindingArgs.builder
     com.pulumi.gcp.securesourcemanager.InstanceIamBinding(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def InstanceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securesourcemanager.InstanceIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securesourcemanager.InstanceIamMemberArgs.builder
     com.pulumi.gcp.securesourcemanager.InstanceIamMember(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def InstanceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securesourcemanager.InstanceIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securesourcemanager.InstanceIamPolicyArgs.builder
     com.pulumi.gcp.securesourcemanager.InstanceIamPolicy(name,
@@ -82,7 +82,7 @@ object securesourcemanager:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/secure-source-manager/docs/overview)
    */
-  def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securesourcemanager.RepositoryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securesourcemanager.RepositoryArgs.builder
     com.pulumi.gcp.securesourcemanager.Repository(name,
@@ -395,7 +395,7 @@ object securesourcemanager:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RepositoryIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RepositoryIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securesourcemanager.RepositoryIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securesourcemanager.RepositoryIamBindingArgs.builder
     com.pulumi.gcp.securesourcemanager.RepositoryIamBinding(name,
@@ -708,7 +708,7 @@ object securesourcemanager:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RepositoryIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RepositoryIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securesourcemanager.RepositoryIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securesourcemanager.RepositoryIamMemberArgs.builder
     com.pulumi.gcp.securesourcemanager.RepositoryIamMember(name,
@@ -1021,7 +1021,7 @@ object securesourcemanager:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RepositoryIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RepositoryIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securesourcemanager.RepositoryIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securesourcemanager.RepositoryIamPolicyArgs.builder
     com.pulumi.gcp.securesourcemanager.RepositoryIamPolicy(name,

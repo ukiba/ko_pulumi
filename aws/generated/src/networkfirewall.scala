@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object networkfirewall:
   /** Manages an AWS Network Firewall Container Association. A container association links Amazon ECS or Amazon EKS clusters to Network Firewall, resolving container IP addresses into a dynamic IP set you can reference from stateful rule groups. */
-  def ContainerAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ContainerAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkfirewall.ContainerAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkfirewall.ContainerAssociationArgs.builder
     argsBuilder = args(argsBuilder)
@@ -22,7 +22,7 @@ object networkfirewall:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Network Firewall Firewall Resource */
-  def Firewall(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Firewall(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkfirewall.FirewallArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkfirewall.FirewallArgs.builder
     conf.logicalName2physicalName(name) match
@@ -40,7 +40,7 @@ object networkfirewall:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Network Firewall Firewall Policy Resource */
-  def FirewallPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FirewallPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkfirewall.FirewallPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkfirewall.FirewallPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -65,7 +65,7 @@ object networkfirewall:
    * 
    * &gt; **NOTE:** If the `transitGatewayId` argument in the `aws.networkfirewall.Firewall` resource is used to attach a firewall to a transit gateway in a cross-account setup (where **Auto accept shared attachments** is disabled), the resource will be considered created when the transit gateway attachment is in the *Pending Acceptance* state and the firewall is in the *Provisioning* status. At this point, you can use the `aws.networkfirewall.FirewallTransitGatewayAttachmentAccepter` resource to finalize the network firewall deployment. Once the transit gateway attachment reaches the *Available* state, the firewall status *Ready*.
    */
-  def FirewallTransitGatewayAttachmentAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FirewallTransitGatewayAttachmentAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkfirewall.FirewallTransitGatewayAttachmentAccepterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.networkfirewall.FirewallTransitGatewayAttachmentAccepterArgs.builder
     com.pulumi.aws.networkfirewall.FirewallTransitGatewayAttachmentAccepter(name,
@@ -73,7 +73,7 @@ object networkfirewall:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Network Firewall Logging Configuration Resource */
-  def LoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkfirewall.LoggingConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.networkfirewall.LoggingConfigurationArgs.builder
     com.pulumi.aws.networkfirewall.LoggingConfiguration(name,
@@ -130,7 +130,7 @@ object networkfirewall:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides an AWS Network Firewall Resource Policy Resource for a rule group or firewall policy. */
-  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkfirewall.ResourcePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.networkfirewall.ResourcePolicyArgs.builder
     com.pulumi.aws.networkfirewall.ResourcePolicy(name,
@@ -138,7 +138,7 @@ object networkfirewall:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Network Firewall Rule Group Resource */
-  def RuleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RuleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkfirewall.RuleGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkfirewall.RuleGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -156,7 +156,7 @@ object networkfirewall:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Network Firewall TLS Inspection Configuration. */
-  def TlsInspectionConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TlsInspectionConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkfirewall.TlsInspectionConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkfirewall.TlsInspectionConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -178,7 +178,7 @@ object networkfirewall:
    * 
    * Use `aws.networkfirewall.VpcEndpointAssociation` to establish new firewall endpoints in any Availability Zone where the firewall is already being used. The first use of a firewall in an Availability Zone must be defined by `aws.networkfirewall.Firewall` resource and `subnetMapping` argument.
    */
-  def VpcEndpointAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcEndpointAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkfirewall.VpcEndpointAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkfirewall.VpcEndpointAssociationArgs.builder
     argsBuilder = args(argsBuilder)

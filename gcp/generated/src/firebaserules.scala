@@ -8,7 +8,7 @@ object firebaserules:
    * For more information, see:
    * * [Get started with Firebase Security Rules](https://firebase.google.com/docs/rules/get-started)
    */
-  def Release(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Release(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebaserules.ReleaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.firebaserules.ReleaseArgs.builder
     conf.logicalName2physicalName(name) match
@@ -22,7 +22,7 @@ object firebaserules:
    * For more information, see:
    * * [Get started with Firebase Security Rules](https://firebase.google.com/docs/rules/get-started)
    */
-  def Ruleset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Ruleset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebaserules.RulesetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebaserules.RulesetArgs.builder
     com.pulumi.gcp.firebaserules.Ruleset(name,

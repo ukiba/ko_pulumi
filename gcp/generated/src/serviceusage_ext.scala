@@ -8,7 +8,7 @@ object serviceusage_ext:
      * Structure is documented below.
      * @return builder
      */
-    def enableRules(args: Endofunction[com.pulumi.gcp.serviceusage.inputs.V2ConsumerPolicyEnableRuleArgs.Builder]*):
+    inline def enableRules(args: Endofunction[com.pulumi.gcp.serviceusage.inputs.V2ConsumerPolicyEnableRuleArgs.Builder]*):
         com.pulumi.gcp.serviceusage.V2ConsumerPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.serviceusage.inputs.V2ConsumerPolicyEnableRuleArgs.builder
       builder.enableRules(args.map(_(argsBuilder).build)*)
@@ -19,7 +19,7 @@ object serviceusage_ext:
      * Structure is documented below.
      * @return builder
      */
-    def enableRules(args: Endofunction[com.pulumi.gcp.serviceusage.inputs.V2ConsumerPolicyEnableRuleArgs.Builder]*):
+    inline def enableRules(args: Endofunction[com.pulumi.gcp.serviceusage.inputs.V2ConsumerPolicyEnableRuleArgs.Builder]*):
         com.pulumi.gcp.serviceusage.inputs.V2ConsumerPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.serviceusage.inputs.V2ConsumerPolicyEnableRuleArgs.builder
       builder.enableRules(args.map(_(argsBuilder).build)*)

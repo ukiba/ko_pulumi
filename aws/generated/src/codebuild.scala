@@ -24,7 +24,7 @@ object codebuild:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides a CodeBuild Fleet Resource. */
-  def Fleet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Fleet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codebuild.FleetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codebuild.FleetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -46,7 +46,7 @@ object codebuild:
    * `aws.codebuild.Webhook` resource, which manages the webhook to the
    * source (e.g., the &#34;rebuild every time a code change is pushed&#34; option in the CodeBuild web console).
    */
-  def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codebuild.ProjectArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codebuild.ProjectArgs.builder
     conf.logicalName2physicalName(name) match
@@ -64,7 +64,7 @@ object codebuild:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CodeBuild Report Groups Resource. */
-  def ReportGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ReportGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codebuild.ReportGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codebuild.ReportGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -82,7 +82,7 @@ object codebuild:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CodeBuild Resource Policy Resource. */
-  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codebuild.ResourcePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.codebuild.ResourcePolicyArgs.builder
     com.pulumi.aws.codebuild.ResourcePolicy(name,
@@ -97,7 +97,7 @@ object codebuild:
    * Therefore, when you define `aws.codebuild.SourceCredential`,
    * `aws.codebuild.Project` resource defined in the same module will use it.
    */
-  def SourceCredential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SourceCredential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codebuild.SourceCredentialArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.codebuild.SourceCredentialArgs.builder
     com.pulumi.aws.codebuild.SourceCredential(name,
@@ -105,7 +105,7 @@ object codebuild:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a CodeBuild webhook, which is an endpoint accepted by the CodeBuild service to trigger builds from source code repositories. Depending on the source type of the CodeBuild project, the CodeBuild service may also automatically create and delete the actual repository webhook as well. */
-  def Webhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Webhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codebuild.WebhookArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.codebuild.WebhookArgs.builder
     com.pulumi.aws.codebuild.Webhook(name,

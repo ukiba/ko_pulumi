@@ -8,7 +8,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customEnvironmentSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecArgs.Builder]):
+    inline def customEnvironmentSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecArgs.Builder]):
         com.pulumi.gcp.colab.NotebookExecutionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecArgs.builder
       builder.customEnvironmentSpec(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataformRepositorySource(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionDataformRepositorySourceArgs.Builder]):
+    inline def dataformRepositorySource(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionDataformRepositorySourceArgs.Builder]):
         com.pulumi.gcp.colab.NotebookExecutionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.NotebookExecutionDataformRepositorySourceArgs.builder
       builder.dataformRepositorySource(args(argsBuilder).build)
@@ -28,7 +28,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def directNotebookSource(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionDirectNotebookSourceArgs.Builder]):
+    inline def directNotebookSource(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionDirectNotebookSourceArgs.Builder]):
         com.pulumi.gcp.colab.NotebookExecutionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.NotebookExecutionDirectNotebookSourceArgs.builder
       builder.directNotebookSource(args(argsBuilder).build)
@@ -38,7 +38,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gcsNotebookSource(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionGcsNotebookSourceArgs.Builder]):
+    inline def gcsNotebookSource(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionGcsNotebookSourceArgs.Builder]):
         com.pulumi.gcp.colab.NotebookExecutionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.NotebookExecutionGcsNotebookSourceArgs.builder
       builder.gcsNotebookSource(args(argsBuilder).build)
@@ -48,7 +48,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def workbenchRuntime(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionWorkbenchRuntimeArgs.Builder]):
+    inline def workbenchRuntime(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionWorkbenchRuntimeArgs.Builder]):
         com.pulumi.gcp.colab.NotebookExecutionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.NotebookExecutionWorkbenchRuntimeArgs.builder
       builder.workbenchRuntime(args(argsBuilder).build)
@@ -59,7 +59,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def notebookRuntimeTemplateRef(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeNotebookRuntimeTemplateRefArgs.Builder]):
+    inline def notebookRuntimeTemplateRef(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeNotebookRuntimeTemplateRefArgs.Builder]):
         com.pulumi.gcp.colab.RuntimeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.RuntimeNotebookRuntimeTemplateRefArgs.builder
       builder.notebookRuntimeTemplateRef(args(argsBuilder).build)
@@ -70,7 +70,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataPersistentDiskSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateDataPersistentDiskSpecArgs.Builder]):
+    inline def dataPersistentDiskSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateDataPersistentDiskSpecArgs.Builder]):
         com.pulumi.gcp.colab.RuntimeTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.RuntimeTemplateDataPersistentDiskSpecArgs.builder
       builder.dataPersistentDiskSpec(args(argsBuilder).build)
@@ -80,7 +80,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.colab.RuntimeTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.RuntimeTemplateEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -90,7 +90,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def eucConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateEucConfigArgs.Builder]):
+    inline def eucConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateEucConfigArgs.Builder]):
         com.pulumi.gcp.colab.RuntimeTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.RuntimeTemplateEucConfigArgs.builder
       builder.eucConfig(args(argsBuilder).build)
@@ -100,7 +100,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def idleShutdownConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateIdleShutdownConfigArgs.Builder]):
+    inline def idleShutdownConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateIdleShutdownConfigArgs.Builder]):
         com.pulumi.gcp.colab.RuntimeTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.RuntimeTemplateIdleShutdownConfigArgs.builder
       builder.idleShutdownConfig(args(argsBuilder).build)
@@ -110,7 +110,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def machineSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateMachineSpecArgs.Builder]):
+    inline def machineSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateMachineSpecArgs.Builder]):
         com.pulumi.gcp.colab.RuntimeTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.RuntimeTemplateMachineSpecArgs.builder
       builder.machineSpec(args(argsBuilder).build)
@@ -120,7 +120,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateNetworkSpecArgs.Builder]):
+    inline def networkSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateNetworkSpecArgs.Builder]):
         com.pulumi.gcp.colab.RuntimeTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.RuntimeTemplateNetworkSpecArgs.builder
       builder.networkSpec(args(argsBuilder).build)
@@ -130,7 +130,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def shieldedVmConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateShieldedVmConfigArgs.Builder]):
+    inline def shieldedVmConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateShieldedVmConfigArgs.Builder]):
         com.pulumi.gcp.colab.RuntimeTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.RuntimeTemplateShieldedVmConfigArgs.builder
       builder.shieldedVmConfig(args(argsBuilder).build)
@@ -140,19 +140,19 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def softwareConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateSoftwareConfigArgs.Builder]):
+    inline def softwareConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateSoftwareConfigArgs.Builder]):
         com.pulumi.gcp.colab.RuntimeTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.RuntimeTemplateSoftwareConfigArgs.builder
       builder.softwareConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.colab.RuntimeTemplateIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.colab.RuntimeTemplateIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.RuntimeTemplateIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.colab.RuntimeTemplateIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.colab.RuntimeTemplateIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.RuntimeTemplateIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -163,7 +163,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def createNotebookExecutionJobRequest(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestArgs.Builder]):
+    inline def createNotebookExecutionJobRequest(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestArgs.Builder]):
         com.pulumi.gcp.colab.ScheduleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestArgs.builder
       builder.createNotebookExecutionJobRequest(args(argsBuilder).build)
@@ -173,7 +173,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def createPipelineJobRequest(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestArgs.Builder]):
+    inline def createPipelineJobRequest(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestArgs.Builder]):
         com.pulumi.gcp.colab.ScheduleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestArgs.builder
       builder.createPipelineJobRequest(args(argsBuilder).build)
@@ -184,7 +184,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def machineSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecMachineSpecArgs.Builder]):
+    inline def machineSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecMachineSpecArgs.Builder]):
         com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecMachineSpecArgs.builder
       builder.machineSpec(args(argsBuilder).build)
@@ -194,7 +194,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecNetworkSpecArgs.Builder]):
+    inline def networkSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecNetworkSpecArgs.Builder]):
         com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecNetworkSpecArgs.builder
       builder.networkSpec(args(argsBuilder).build)
@@ -204,7 +204,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def persistentDiskSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecPersistentDiskSpecArgs.Builder]):
+    inline def persistentDiskSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecPersistentDiskSpecArgs.Builder]):
         com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecPersistentDiskSpecArgs.builder
       builder.persistentDiskSpec(args(argsBuilder).build)
@@ -214,7 +214,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecShieldedInstanceConfigArgs.Builder]):
+    inline def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecShieldedInstanceConfigArgs.Builder]):
         com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecShieldedInstanceConfigArgs.builder
       builder.shieldedInstanceConfig(args(argsBuilder).build)
@@ -225,7 +225,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customEnvironmentSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecArgs.Builder]):
+    inline def customEnvironmentSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecArgs.Builder]):
         com.pulumi.gcp.colab.inputs.NotebookExecutionState.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.NotebookExecutionCustomEnvironmentSpecArgs.builder
       builder.customEnvironmentSpec(args(argsBuilder).build)
@@ -235,7 +235,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataformRepositorySource(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionDataformRepositorySourceArgs.Builder]):
+    inline def dataformRepositorySource(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionDataformRepositorySourceArgs.Builder]):
         com.pulumi.gcp.colab.inputs.NotebookExecutionState.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.NotebookExecutionDataformRepositorySourceArgs.builder
       builder.dataformRepositorySource(args(argsBuilder).build)
@@ -245,7 +245,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def directNotebookSource(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionDirectNotebookSourceArgs.Builder]):
+    inline def directNotebookSource(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionDirectNotebookSourceArgs.Builder]):
         com.pulumi.gcp.colab.inputs.NotebookExecutionState.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.NotebookExecutionDirectNotebookSourceArgs.builder
       builder.directNotebookSource(args(argsBuilder).build)
@@ -255,7 +255,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gcsNotebookSource(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionGcsNotebookSourceArgs.Builder]):
+    inline def gcsNotebookSource(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionGcsNotebookSourceArgs.Builder]):
         com.pulumi.gcp.colab.inputs.NotebookExecutionState.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.NotebookExecutionGcsNotebookSourceArgs.builder
       builder.gcsNotebookSource(args(argsBuilder).build)
@@ -265,7 +265,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def workbenchRuntime(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionWorkbenchRuntimeArgs.Builder]):
+    inline def workbenchRuntime(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionWorkbenchRuntimeArgs.Builder]):
         com.pulumi.gcp.colab.inputs.NotebookExecutionState.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.NotebookExecutionWorkbenchRuntimeArgs.builder
       builder.workbenchRuntime(args(argsBuilder).build)
@@ -276,7 +276,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vmImage(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionWorkbenchRuntimeVmImageArgs.Builder]):
+    inline def vmImage(args: Endofunction[com.pulumi.gcp.colab.inputs.NotebookExecutionWorkbenchRuntimeVmImageArgs.Builder]):
         com.pulumi.gcp.colab.inputs.NotebookExecutionWorkbenchRuntimeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.NotebookExecutionWorkbenchRuntimeVmImageArgs.builder
       builder.vmImage(args(argsBuilder).build)
@@ -287,19 +287,19 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def notebookRuntimeTemplateRef(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeNotebookRuntimeTemplateRefArgs.Builder]):
+    inline def notebookRuntimeTemplateRef(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeNotebookRuntimeTemplateRefArgs.Builder]):
         com.pulumi.gcp.colab.inputs.RuntimeState.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.RuntimeNotebookRuntimeTemplateRefArgs.builder
       builder.notebookRuntimeTemplateRef(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.colab.inputs.RuntimeTemplateIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.colab.inputs.RuntimeTemplateIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.RuntimeTemplateIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.colab.inputs.RuntimeTemplateIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.colab.inputs.RuntimeTemplateIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.RuntimeTemplateIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -310,7 +310,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def colabImage(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateSoftwareConfigColabImageArgs.Builder]):
+    inline def colabImage(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateSoftwareConfigColabImageArgs.Builder]):
         com.pulumi.gcp.colab.inputs.RuntimeTemplateSoftwareConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.RuntimeTemplateSoftwareConfigColabImageArgs.builder
       builder.colabImage(args(argsBuilder).build)
@@ -320,7 +320,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def envs(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateSoftwareConfigEnvArgs.Builder]*):
+    inline def envs(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateSoftwareConfigEnvArgs.Builder]*):
         com.pulumi.gcp.colab.inputs.RuntimeTemplateSoftwareConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.colab.inputs.RuntimeTemplateSoftwareConfigEnvArgs.builder
       builder.envs(args.map(_(argsBuilder).build)*)
@@ -330,7 +330,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def postStartupScriptConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateSoftwareConfigPostStartupScriptConfigArgs.Builder]):
+    inline def postStartupScriptConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateSoftwareConfigPostStartupScriptConfigArgs.Builder]):
         com.pulumi.gcp.colab.inputs.RuntimeTemplateSoftwareConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.RuntimeTemplateSoftwareConfigPostStartupScriptConfigArgs.builder
       builder.postStartupScriptConfig(args(argsBuilder).build)
@@ -341,7 +341,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataPersistentDiskSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateDataPersistentDiskSpecArgs.Builder]):
+    inline def dataPersistentDiskSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateDataPersistentDiskSpecArgs.Builder]):
         com.pulumi.gcp.colab.inputs.RuntimeTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.RuntimeTemplateDataPersistentDiskSpecArgs.builder
       builder.dataPersistentDiskSpec(args(argsBuilder).build)
@@ -351,7 +351,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.colab.inputs.RuntimeTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.RuntimeTemplateEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -361,7 +361,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def eucConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateEucConfigArgs.Builder]):
+    inline def eucConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateEucConfigArgs.Builder]):
         com.pulumi.gcp.colab.inputs.RuntimeTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.RuntimeTemplateEucConfigArgs.builder
       builder.eucConfig(args(argsBuilder).build)
@@ -371,7 +371,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def idleShutdownConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateIdleShutdownConfigArgs.Builder]):
+    inline def idleShutdownConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateIdleShutdownConfigArgs.Builder]):
         com.pulumi.gcp.colab.inputs.RuntimeTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.RuntimeTemplateIdleShutdownConfigArgs.builder
       builder.idleShutdownConfig(args(argsBuilder).build)
@@ -381,7 +381,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def machineSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateMachineSpecArgs.Builder]):
+    inline def machineSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateMachineSpecArgs.Builder]):
         com.pulumi.gcp.colab.inputs.RuntimeTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.RuntimeTemplateMachineSpecArgs.builder
       builder.machineSpec(args(argsBuilder).build)
@@ -391,7 +391,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateNetworkSpecArgs.Builder]):
+    inline def networkSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateNetworkSpecArgs.Builder]):
         com.pulumi.gcp.colab.inputs.RuntimeTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.RuntimeTemplateNetworkSpecArgs.builder
       builder.networkSpec(args(argsBuilder).build)
@@ -401,7 +401,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def shieldedVmConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateShieldedVmConfigArgs.Builder]):
+    inline def shieldedVmConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateShieldedVmConfigArgs.Builder]):
         com.pulumi.gcp.colab.inputs.RuntimeTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.RuntimeTemplateShieldedVmConfigArgs.builder
       builder.shieldedVmConfig(args(argsBuilder).build)
@@ -411,7 +411,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def softwareConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateSoftwareConfigArgs.Builder]):
+    inline def softwareConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.RuntimeTemplateSoftwareConfigArgs.Builder]):
         com.pulumi.gcp.colab.inputs.RuntimeTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.RuntimeTemplateSoftwareConfigArgs.builder
       builder.softwareConfig(args(argsBuilder).build)
@@ -422,7 +422,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def notebookExecutionJob(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder]):
+    inline def notebookExecutionJob(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder]):
         com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.builder
       builder.notebookExecutionJob(args(argsBuilder).build)
@@ -433,7 +433,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customEnvironmentSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecArgs.Builder]):
+    inline def customEnvironmentSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecArgs.Builder]):
         com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecArgs.builder
       builder.customEnvironmentSpec(args(argsBuilder).build)
@@ -443,7 +443,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataformRepositorySource(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobDataformRepositorySourceArgs.Builder]):
+    inline def dataformRepositorySource(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobDataformRepositorySourceArgs.Builder]):
         com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobDataformRepositorySourceArgs.builder
       builder.dataformRepositorySource(args(argsBuilder).build)
@@ -453,7 +453,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -463,7 +463,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gcsNotebookSource(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobGcsNotebookSourceArgs.Builder]):
+    inline def gcsNotebookSource(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobGcsNotebookSourceArgs.Builder]):
         com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobGcsNotebookSourceArgs.builder
       builder.gcsNotebookSource(args(argsBuilder).build)
@@ -472,7 +472,7 @@ object colab_ext:
      * @param workbenchRuntime Configuration for a Workbench Instances-based environment.
      * @return builder
      */
-    def workbenchRuntime(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobWorkbenchRuntimeArgs.Builder]):
+    inline def workbenchRuntime(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobWorkbenchRuntimeArgs.Builder]):
         com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobWorkbenchRuntimeArgs.builder
       builder.workbenchRuntime(args(argsBuilder).build)
@@ -483,7 +483,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def machineSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecMachineSpecArgs.Builder]):
+    inline def machineSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecMachineSpecArgs.Builder]):
         com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecMachineSpecArgs.builder
       builder.machineSpec(args(argsBuilder).build)
@@ -493,7 +493,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecNetworkSpecArgs.Builder]):
+    inline def networkSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecNetworkSpecArgs.Builder]):
         com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecNetworkSpecArgs.builder
       builder.networkSpec(args(argsBuilder).build)
@@ -503,7 +503,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def persistentDiskSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecPersistentDiskSpecArgs.Builder]):
+    inline def persistentDiskSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecPersistentDiskSpecArgs.Builder]):
         com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecPersistentDiskSpecArgs.builder
       builder.persistentDiskSpec(args(argsBuilder).build)
@@ -514,7 +514,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def reservationAffinity(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecMachineSpecReservationAffinityArgs.Builder]):
+    inline def reservationAffinity(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecMachineSpecReservationAffinityArgs.Builder]):
         com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecMachineSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestNotebookExecutionJobCustomEnvironmentSpecMachineSpecReservationAffinityArgs.builder
       builder.reservationAffinity(args(argsBuilder).build)
@@ -525,7 +525,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pipelineJob(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobArgs.Builder]):
+    inline def pipelineJob(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobArgs.Builder]):
         com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobArgs.builder
       builder.pipelineJob(args(argsBuilder).build)
@@ -536,7 +536,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -546,7 +546,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscInterfaceConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobPscInterfaceConfigArgs.Builder]):
+    inline def pscInterfaceConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobPscInterfaceConfigArgs.Builder]):
         com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobPscInterfaceConfigArgs.builder
       builder.pscInterfaceConfig(args(argsBuilder).build)
@@ -556,7 +556,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def runtimeConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobRuntimeConfigArgs.Builder]):
+    inline def runtimeConfig(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobRuntimeConfigArgs.Builder]):
         com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobRuntimeConfigArgs.builder
       builder.runtimeConfig(args(argsBuilder).build)
@@ -567,7 +567,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def templateMetadatas(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobTemplateMetadataArgs.Builder]*):
+    inline def templateMetadatas(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobTemplateMetadataArgs.Builder]*):
         com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobArgs.Builder =
       def argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobTemplateMetadataArgs.builder
       builder.templateMetadatas(args.map(_(argsBuilder).build)*)
@@ -578,7 +578,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dnsPeeringConfigs(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobPscInterfaceConfigDnsPeeringConfigArgs.Builder]*):
+    inline def dnsPeeringConfigs(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobPscInterfaceConfigDnsPeeringConfigArgs.Builder]*):
         com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobPscInterfaceConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestPipelineJobPscInterfaceConfigDnsPeeringConfigArgs.builder
       builder.dnsPeeringConfigs(args.map(_(argsBuilder).build)*)
@@ -589,7 +589,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def createNotebookExecutionJobRequest(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestArgs.Builder]):
+    inline def createNotebookExecutionJobRequest(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestArgs.Builder]):
         com.pulumi.gcp.colab.inputs.ScheduleState.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreateNotebookExecutionJobRequestArgs.builder
       builder.createNotebookExecutionJobRequest(args(argsBuilder).build)
@@ -599,7 +599,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def createPipelineJobRequest(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestArgs.Builder]):
+    inline def createPipelineJobRequest(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestArgs.Builder]):
         com.pulumi.gcp.colab.inputs.ScheduleState.Builder =
       val argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleCreatePipelineJobRequestArgs.builder
       builder.createPipelineJobRequest(args(argsBuilder).build)
@@ -609,7 +609,7 @@ object colab_ext:
      * Structure is documented below.
      * @return builder
      */
-    def lastScheduledRunResponses(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleLastScheduledRunResponseArgs.Builder]*):
+    inline def lastScheduledRunResponses(args: Endofunction[com.pulumi.gcp.colab.inputs.ScheduleLastScheduledRunResponseArgs.Builder]*):
         com.pulumi.gcp.colab.inputs.ScheduleState.Builder =
       def argsBuilder = com.pulumi.gcp.colab.inputs.ScheduleLastScheduledRunResponseArgs.builder
       builder.lastScheduledRunResponses(args.map(_(argsBuilder).build)*)

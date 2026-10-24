@@ -7,7 +7,7 @@ object amplify_ext:
      * @param autoBranchCreationConfig Automated branch creation configuration for an Amplify app. See `autoBranchCreationConfig` Block for details.
      * @return builder
      */
-    def autoBranchCreationConfig(args: Endofunction[com.pulumi.aws.amplify.inputs.AppAutoBranchCreationConfigArgs.Builder]):
+    inline def autoBranchCreationConfig(args: Endofunction[com.pulumi.aws.amplify.inputs.AppAutoBranchCreationConfigArgs.Builder]):
         com.pulumi.aws.amplify.AppArgs.Builder =
       val argsBuilder = com.pulumi.aws.amplify.inputs.AppAutoBranchCreationConfigArgs.builder
       builder.autoBranchCreationConfig(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object amplify_ext:
      * @param cacheConfig Cache configuration for the Amplify app. See `cacheConfig` Block for details.
      * @return builder
      */
-    def cacheConfig(args: Endofunction[com.pulumi.aws.amplify.inputs.AppCacheConfigArgs.Builder]):
+    inline def cacheConfig(args: Endofunction[com.pulumi.aws.amplify.inputs.AppCacheConfigArgs.Builder]):
         com.pulumi.aws.amplify.AppArgs.Builder =
       val argsBuilder = com.pulumi.aws.amplify.inputs.AppCacheConfigArgs.builder
       builder.cacheConfig(args(argsBuilder).build)
@@ -25,7 +25,7 @@ object amplify_ext:
      * @param customRules Custom rewrite and redirect rules for an Amplify app. See `customRule` Block for details.
      * @return builder
      */
-    def customRules(args: Endofunction[com.pulumi.aws.amplify.inputs.AppCustomRuleArgs.Builder]*):
+    inline def customRules(args: Endofunction[com.pulumi.aws.amplify.inputs.AppCustomRuleArgs.Builder]*):
         com.pulumi.aws.amplify.AppArgs.Builder =
       def argsBuilder = com.pulumi.aws.amplify.inputs.AppCustomRuleArgs.builder
       builder.customRules(args.map(_(argsBuilder).build)*)
@@ -34,7 +34,7 @@ object amplify_ext:
      * @param jobConfig Used to configure the [Amplify Application build instance compute type](https://docs.aws.amazon.com/amplify/latest/APIReference/API_JobConfig.html#amplify-Type-JobConfig-buildComputeType). See `jobConfig` Block for details.
      * @return builder
      */
-    def jobConfig(args: Endofunction[com.pulumi.aws.amplify.inputs.AppJobConfigArgs.Builder]):
+    inline def jobConfig(args: Endofunction[com.pulumi.aws.amplify.inputs.AppJobConfigArgs.Builder]):
         com.pulumi.aws.amplify.AppArgs.Builder =
       val argsBuilder = com.pulumi.aws.amplify.inputs.AppJobConfigArgs.builder
       builder.jobConfig(args(argsBuilder).build)
@@ -44,7 +44,7 @@ object amplify_ext:
      * @param certificateSettings The type of SSL/TLS certificate to use for your custom domain. If you don&#39;t specify a certificate type, Amplify uses the default certificate that it provisions and manages for you.
      * @return builder
      */
-    def certificateSettings(args: Endofunction[com.pulumi.aws.amplify.inputs.DomainAssociationCertificateSettingsArgs.Builder]):
+    inline def certificateSettings(args: Endofunction[com.pulumi.aws.amplify.inputs.DomainAssociationCertificateSettingsArgs.Builder]):
         com.pulumi.aws.amplify.DomainAssociationArgs.Builder =
       val argsBuilder = com.pulumi.aws.amplify.inputs.DomainAssociationCertificateSettingsArgs.builder
       builder.certificateSettings(args(argsBuilder).build)
@@ -53,7 +53,7 @@ object amplify_ext:
      * @param subDomains Setting for the subdomain. Documented below.
      * @return builder
      */
-    def subDomains(args: Endofunction[com.pulumi.aws.amplify.inputs.DomainAssociationSubDomainArgs.Builder]*):
+    inline def subDomains(args: Endofunction[com.pulumi.aws.amplify.inputs.DomainAssociationSubDomainArgs.Builder]*):
         com.pulumi.aws.amplify.DomainAssociationArgs.Builder =
       def argsBuilder = com.pulumi.aws.amplify.inputs.DomainAssociationSubDomainArgs.builder
       builder.subDomains(args.map(_(argsBuilder).build)*)
@@ -63,7 +63,7 @@ object amplify_ext:
      * @param autoBranchCreationConfig Automated branch creation configuration for an Amplify app. See `autoBranchCreationConfig` Block for details.
      * @return builder
      */
-    def autoBranchCreationConfig(args: Endofunction[com.pulumi.aws.amplify.inputs.AppAutoBranchCreationConfigArgs.Builder]):
+    inline def autoBranchCreationConfig(args: Endofunction[com.pulumi.aws.amplify.inputs.AppAutoBranchCreationConfigArgs.Builder]):
         com.pulumi.aws.amplify.inputs.AppState.Builder =
       val argsBuilder = com.pulumi.aws.amplify.inputs.AppAutoBranchCreationConfigArgs.builder
       builder.autoBranchCreationConfig(args(argsBuilder).build)
@@ -72,7 +72,7 @@ object amplify_ext:
      * @param cacheConfig Cache configuration for the Amplify app. See `cacheConfig` Block for details.
      * @return builder
      */
-    def cacheConfig(args: Endofunction[com.pulumi.aws.amplify.inputs.AppCacheConfigArgs.Builder]):
+    inline def cacheConfig(args: Endofunction[com.pulumi.aws.amplify.inputs.AppCacheConfigArgs.Builder]):
         com.pulumi.aws.amplify.inputs.AppState.Builder =
       val argsBuilder = com.pulumi.aws.amplify.inputs.AppCacheConfigArgs.builder
       builder.cacheConfig(args(argsBuilder).build)
@@ -81,7 +81,7 @@ object amplify_ext:
      * @param customRules Custom rewrite and redirect rules for an Amplify app. See `customRule` Block for details.
      * @return builder
      */
-    def customRules(args: Endofunction[com.pulumi.aws.amplify.inputs.AppCustomRuleArgs.Builder]*):
+    inline def customRules(args: Endofunction[com.pulumi.aws.amplify.inputs.AppCustomRuleArgs.Builder]*):
         com.pulumi.aws.amplify.inputs.AppState.Builder =
       def argsBuilder = com.pulumi.aws.amplify.inputs.AppCustomRuleArgs.builder
       builder.customRules(args.map(_(argsBuilder).build)*)
@@ -90,7 +90,7 @@ object amplify_ext:
      * @param jobConfig Used to configure the [Amplify Application build instance compute type](https://docs.aws.amazon.com/amplify/latest/APIReference/API_JobConfig.html#amplify-Type-JobConfig-buildComputeType). See `jobConfig` Block for details.
      * @return builder
      */
-    def jobConfig(args: Endofunction[com.pulumi.aws.amplify.inputs.AppJobConfigArgs.Builder]):
+    inline def jobConfig(args: Endofunction[com.pulumi.aws.amplify.inputs.AppJobConfigArgs.Builder]):
         com.pulumi.aws.amplify.inputs.AppState.Builder =
       val argsBuilder = com.pulumi.aws.amplify.inputs.AppJobConfigArgs.builder
       builder.jobConfig(args(argsBuilder).build)
@@ -99,7 +99,7 @@ object amplify_ext:
      * @param productionBranches Describes the information about a production branch for an Amplify app. A `productionBranch` block is documented below.
      * @return builder
      */
-    def productionBranches(args: Endofunction[com.pulumi.aws.amplify.inputs.AppProductionBranchArgs.Builder]*):
+    inline def productionBranches(args: Endofunction[com.pulumi.aws.amplify.inputs.AppProductionBranchArgs.Builder]*):
         com.pulumi.aws.amplify.inputs.AppState.Builder =
       def argsBuilder = com.pulumi.aws.amplify.inputs.AppProductionBranchArgs.builder
       builder.productionBranches(args.map(_(argsBuilder).build)*)
@@ -109,7 +109,7 @@ object amplify_ext:
      * @param certificateSettings The type of SSL/TLS certificate to use for your custom domain. If you don&#39;t specify a certificate type, Amplify uses the default certificate that it provisions and manages for you.
      * @return builder
      */
-    def certificateSettings(args: Endofunction[com.pulumi.aws.amplify.inputs.DomainAssociationCertificateSettingsArgs.Builder]):
+    inline def certificateSettings(args: Endofunction[com.pulumi.aws.amplify.inputs.DomainAssociationCertificateSettingsArgs.Builder]):
         com.pulumi.aws.amplify.inputs.DomainAssociationState.Builder =
       val argsBuilder = com.pulumi.aws.amplify.inputs.DomainAssociationCertificateSettingsArgs.builder
       builder.certificateSettings(args(argsBuilder).build)
@@ -118,7 +118,7 @@ object amplify_ext:
      * @param subDomains Setting for the subdomain. Documented below.
      * @return builder
      */
-    def subDomains(args: Endofunction[com.pulumi.aws.amplify.inputs.DomainAssociationSubDomainArgs.Builder]*):
+    inline def subDomains(args: Endofunction[com.pulumi.aws.amplify.inputs.DomainAssociationSubDomainArgs.Builder]*):
         com.pulumi.aws.amplify.inputs.DomainAssociationState.Builder =
       def argsBuilder = com.pulumi.aws.amplify.inputs.DomainAssociationSubDomainArgs.builder
       builder.subDomains(args.map(_(argsBuilder).build)*)

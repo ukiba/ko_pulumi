@@ -20,7 +20,7 @@ object certificateauthority:
    * (and run `pulumi up` to write the field to state) in order to destroy a CertificateAuthority.
    * It is recommended to not set this field (or set it to true) until you&#39;re ready to destroy.
    */
-  def Authority(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Authority(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.certificateauthority.AuthorityArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.certificateauthority.AuthorityArgs.builder
     com.pulumi.gcp.certificateauthority.Authority(name,
@@ -38,7 +38,7 @@ object certificateauthority:
    * * How-to Guides
    *     * [Certificate Authority Service Overview](https://cloud.google.com/certificate-authority-service/docs/overview)
    */
-  def CaPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CaPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.certificateauthority.CaPoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.certificateauthority.CaPoolArgs.builder
     conf.logicalName2physicalName(name) match
@@ -605,7 +605,7 @@ object certificateauthority:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def CaPoolIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CaPoolIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.certificateauthority.CaPoolIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.certificateauthority.CaPoolIamBindingArgs.builder
     com.pulumi.gcp.certificateauthority.CaPoolIamBinding(name,
@@ -1169,7 +1169,7 @@ object certificateauthority:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def CaPoolIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CaPoolIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.certificateauthority.CaPoolIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.certificateauthority.CaPoolIamMemberArgs.builder
     com.pulumi.gcp.certificateauthority.CaPoolIamMember(name,
@@ -1733,7 +1733,7 @@ object certificateauthority:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def CaPoolIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CaPoolIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.certificateauthority.CaPoolIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.certificateauthority.CaPoolIamPolicyArgs.builder
     com.pulumi.gcp.certificateauthority.CaPoolIamPolicy(name,
@@ -1746,7 +1746,7 @@ object certificateauthority:
    * &gt; **Note:** The Certificate Authority that is referenced by this resource **must** be
    * `tier = &#34;ENTERPRISE&#34;`
    */
-  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.certificateauthority.CertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.certificateauthority.CertificateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1767,7 +1767,7 @@ object certificateauthority:
    *     * [Official Documentation](https://cloud.google.com/certificate-authority-service)
    *     * [Understanding Certificate Templates](https://cloud.google.com/certificate-authority-service/docs/certificate-template)
    */
-  def CertificateTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CertificateTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.certificateauthority.CertificateTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.certificateauthority.CertificateTemplateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2334,7 +2334,7 @@ object certificateauthority:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def CertificateTemplateIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CertificateTemplateIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.certificateauthority.CertificateTemplateIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.certificateauthority.CertificateTemplateIamBindingArgs.builder
     com.pulumi.gcp.certificateauthority.CertificateTemplateIamBinding(name,
@@ -2898,7 +2898,7 @@ object certificateauthority:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def CertificateTemplateIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CertificateTemplateIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.certificateauthority.CertificateTemplateIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.certificateauthority.CertificateTemplateIamMemberArgs.builder
     com.pulumi.gcp.certificateauthority.CertificateTemplateIamMember(name,
@@ -3462,7 +3462,7 @@ object certificateauthority:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def CertificateTemplateIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CertificateTemplateIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.certificateauthority.CertificateTemplateIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.certificateauthority.CertificateTemplateIamPolicyArgs.builder
     com.pulumi.gcp.certificateauthority.CertificateTemplateIamPolicy(name,

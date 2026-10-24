@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object apimanagement:
   /** Manages an API within an API Management Service. */
-  def Api(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Api(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.ApiArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.apimanagement.ApiArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18,7 +18,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a API Management Service API Diagnostics Logs. */
-  def ApiDiagnostic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApiDiagnostic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.ApiDiagnosticArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.ApiDiagnosticArgs.builder
     com.pulumi.azure.apimanagement.ApiDiagnostic(name,
@@ -26,7 +26,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Operation within an API Management Service. */
-  def ApiOperation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApiOperation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.ApiOperationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.ApiOperationArgs.builder
     com.pulumi.azure.apimanagement.ApiOperation(name,
@@ -34,7 +34,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management API Operation Policy */
-  def ApiOperationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApiOperationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.ApiOperationPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.ApiOperationPolicyArgs.builder
     com.pulumi.azure.apimanagement.ApiOperationPolicy(name,
@@ -42,7 +42,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a API Management API Operation Tag. */
-  def ApiOperationTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApiOperationTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.ApiOperationTagArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.apimanagement.ApiOperationTagArgs.builder
     conf.logicalName2physicalName(name) match
@@ -53,7 +53,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management API Policy */
-  def ApiPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApiPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.ApiPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.ApiPolicyArgs.builder
     com.pulumi.azure.apimanagement.ApiPolicy(name,
@@ -61,7 +61,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a API Management API Release. */
-  def ApiRelease(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApiRelease(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.ApiReleaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.apimanagement.ApiReleaseArgs.builder
     conf.logicalName2physicalName(name) match
@@ -72,7 +72,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Schema within an API Management Service. */
-  def ApiSchema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApiSchema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.ApiSchemaArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.ApiSchemaArgs.builder
     com.pulumi.azure.apimanagement.ApiSchema(name,
@@ -80,7 +80,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Assignment of an API Management API Tag to an API. */
-  def ApiTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApiTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.ApiTagArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.apimanagement.ApiTagArgs.builder
     conf.logicalName2physicalName(name) match
@@ -91,7 +91,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Tag Description within an API Management Service. */
-  def ApiTagDescription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApiTagDescription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.ApiTagDescriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.ApiTagDescriptionArgs.builder
     com.pulumi.azure.apimanagement.ApiTagDescription(name,
@@ -99,7 +99,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Version Set within an API Management Service. */
-  def ApiVersionSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApiVersionSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.ApiVersionSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.apimanagement.ApiVersionSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -271,7 +271,7 @@ object apimanagement:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an Authorization Server within an API Management Service. */
-  def AuthorizationServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AuthorizationServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.AuthorizationServerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.apimanagement.AuthorizationServerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -282,7 +282,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a backend within an API Management Service. */
-  def Backend(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Backend(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.BackendArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.apimanagement.BackendArgs.builder
     conf.logicalName2physicalName(name) match
@@ -293,7 +293,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Certificate within an API Management Service. */
-  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.CertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.apimanagement.CertificateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -310,7 +310,7 @@ object apimanagement:
    * 
    * &gt; **Note:** It&#39;s possible to define Custom Domains both within the `azure.apimanagement.Service` resource via the `hostnameConfigurations` block and by using this resource. However it&#39;s not possible to use both methods to manage Custom Domains within an API Management Service, since there will be conflicts.
    */
-  def CustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.CustomDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.CustomDomainArgs.builder
     com.pulumi.azure.apimanagement.CustomDomain(name,
@@ -318,7 +318,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Service Diagnostic. */
-  def Diagnostic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Diagnostic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.DiagnosticArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.DiagnosticArgs.builder
     com.pulumi.azure.apimanagement.Diagnostic(name,
@@ -326,7 +326,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a API Management Email Template. */
-  def EmailTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EmailTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.EmailTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.EmailTemplateArgs.builder
     com.pulumi.azure.apimanagement.EmailTemplate(name,
@@ -334,7 +334,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Gateway. */
-  def Gateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Gateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.GatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.apimanagement.GatewayArgs.builder
     conf.logicalName2physicalName(name) match
@@ -345,7 +345,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a API Management Gateway API. */
-  def GatewayApi(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GatewayApi(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.GatewayApiArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.GatewayApiArgs.builder
     com.pulumi.azure.apimanagement.GatewayApi(name,
@@ -353,7 +353,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Gateway Certificate Authority. */
-  def GatewayCertificateAuthority(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GatewayCertificateAuthority(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.GatewayCertificateAuthorityArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.GatewayCertificateAuthorityArgs.builder
     com.pulumi.azure.apimanagement.GatewayCertificateAuthority(name,
@@ -361,7 +361,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Gateway Host Name Configuration. */
-  def GatewayHostNameConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GatewayHostNameConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.GatewayHostNameConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.apimanagement.GatewayHostNameConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -372,7 +372,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Global Schema within an API Management Service. */
-  def GlobalSchema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GlobalSchema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.GlobalSchemaArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.GlobalSchemaArgs.builder
     com.pulumi.azure.apimanagement.GlobalSchema(name,
@@ -380,7 +380,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Group. */
-  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.GroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.apimanagement.GroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -391,7 +391,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management User Assignment to a Group. */
-  def GroupUser(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GroupUser(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.GroupUserArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.GroupUserArgs.builder
     com.pulumi.azure.apimanagement.GroupUser(name,
@@ -399,7 +399,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management AAD Identity Provider. */
-  def IdentityProviderAad(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IdentityProviderAad(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.IdentityProviderAadArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.IdentityProviderAadArgs.builder
     com.pulumi.azure.apimanagement.IdentityProviderAad(name,
@@ -407,7 +407,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Azure AD B2C Identity Provider. */
-  def IdentityProviderAadb2c(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IdentityProviderAadb2c(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.IdentityProviderAadb2cArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.IdentityProviderAadb2cArgs.builder
     com.pulumi.azure.apimanagement.IdentityProviderAadb2c(name,
@@ -415,7 +415,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Facebook Identity Provider. */
-  def IdentityProviderFacebook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IdentityProviderFacebook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.IdentityProviderFacebookArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.IdentityProviderFacebookArgs.builder
     com.pulumi.azure.apimanagement.IdentityProviderFacebook(name,
@@ -423,7 +423,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Google Identity Provider. */
-  def IdentityProviderGoogle(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IdentityProviderGoogle(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.IdentityProviderGoogleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.IdentityProviderGoogleArgs.builder
     com.pulumi.azure.apimanagement.IdentityProviderGoogle(name,
@@ -431,7 +431,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Microsoft Identity Provider. */
-  def IdentityProviderMicrosoft(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IdentityProviderMicrosoft(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.IdentityProviderMicrosoftArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.IdentityProviderMicrosoftArgs.builder
     com.pulumi.azure.apimanagement.IdentityProviderMicrosoft(name,
@@ -439,7 +439,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Twitter Identity Provider. */
-  def IdentityProviderTwitter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IdentityProviderTwitter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.IdentityProviderTwitterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.IdentityProviderTwitterArgs.builder
     com.pulumi.azure.apimanagement.IdentityProviderTwitter(name,
@@ -447,7 +447,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Logger within an API Management Service. */
-  def Logger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Logger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.LoggerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.apimanagement.LoggerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -458,7 +458,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Named Value. */
-  def NamedValue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NamedValue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.NamedValueArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.apimanagement.NamedValueArgs.builder
     conf.logicalName2physicalName(name) match
@@ -469,7 +469,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a API Management Notification Recipient Email. */
-  def NotificationRecipientEmail(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NotificationRecipientEmail(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.NotificationRecipientEmailArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.NotificationRecipientEmailArgs.builder
     com.pulumi.azure.apimanagement.NotificationRecipientEmail(name,
@@ -477,7 +477,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a API Management Notification Recipient User. */
-  def NotificationRecipientUser(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NotificationRecipientUser(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.NotificationRecipientUserArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.NotificationRecipientUserArgs.builder
     com.pulumi.azure.apimanagement.NotificationRecipientUser(name,
@@ -485,7 +485,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an OpenID Connect Provider within a API Management Service. */
-  def OpenIdConnectProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OpenIdConnectProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.OpenIdConnectProviderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.apimanagement.OpenIdConnectProviderArgs.builder
     conf.logicalName2physicalName(name) match
@@ -500,7 +500,7 @@ object apimanagement:
    * 
    * &gt; **Note:** This resource will, upon creation, **overwrite any existing policy in the API Management service**, as there is no feasible way to test whether the policy has been modified from the default. Similarly, when this resource is destroyed, the API Management service will revert to its default policy.
    */
-  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.PolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.PolicyArgs.builder
     com.pulumi.azure.apimanagement.Policy(name,
@@ -508,7 +508,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Api Management Policy Fragment. */
-  def PolicyFragment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PolicyFragment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.PolicyFragmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.apimanagement.PolicyFragmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -519,7 +519,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Product. */
-  def Product(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Product(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.ProductArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.ProductArgs.builder
     com.pulumi.azure.apimanagement.Product(name,
@@ -527,7 +527,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management API Assignment to a Product. */
-  def ProductApi(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProductApi(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.ProductApiArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.ProductApiArgs.builder
     com.pulumi.azure.apimanagement.ProductApi(name,
@@ -535,7 +535,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Product Assignment to a Group. */
-  def ProductGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProductGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.ProductGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.ProductGroupArgs.builder
     com.pulumi.azure.apimanagement.ProductGroup(name,
@@ -543,7 +543,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Product Policy */
-  def ProductPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProductPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.ProductPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.ProductPolicyArgs.builder
     com.pulumi.azure.apimanagement.ProductPolicy(name,
@@ -551,7 +551,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Product tag */
-  def ProductTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProductTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.ProductTagArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.apimanagement.ProductTagArgs.builder
     conf.logicalName2physicalName(name) match
@@ -562,7 +562,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a API Management Redis Cache. */
-  def RedisCache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RedisCache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.RedisCacheArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.apimanagement.RedisCacheArgs.builder
     conf.logicalName2physicalName(name) match
@@ -583,7 +583,7 @@ object apimanagement:
    * 
    * &gt; **Note:** It&#39;s possible to define Custom Domains both within the `azure.apimanagement.Service` resource via the `hostnameConfigurations` block and by using the `azure.apimanagement.CustomDomain` resource. However it&#39;s not possible to use both methods to manage Custom Domains within an API Management Service, since there&#39;ll be conflicts.
    */
-  def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.ServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.apimanagement.ServiceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -601,7 +601,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure API Management Standalone Gateway. */
-  def StandaloneGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StandaloneGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.StandaloneGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.apimanagement.StandaloneGatewayArgs.builder
     conf.logicalName2physicalName(name) match
@@ -619,7 +619,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Subscription within a API Management Service. */
-  def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.SubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.SubscriptionArgs.builder
     com.pulumi.azure.apimanagement.Subscription(name,
@@ -627,7 +627,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a API Management Tag. */
-  def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.TagArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.apimanagement.TagArgs.builder
     conf.logicalName2physicalName(name) match
@@ -638,7 +638,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management User. */
-  def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.UserArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.UserArgs.builder
     com.pulumi.azure.apimanagement.User(name,
@@ -650,7 +650,7 @@ object apimanagement:
    * 
    * &gt; **Note:** This resource is currently available only when using the Classic Premium SKU of `azure.apimanagement.Service`. For more details, refer to [Federated API Management with Workspaces](https://learn.microsoft.com/en-us/azure/api-management/workspaces-overview).
    */
-  def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.WorkspaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.apimanagement.WorkspaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -661,7 +661,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Version Set within an API Management Workspace. */
-  def WorkspaceApiVersionSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkspaceApiVersionSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.WorkspaceApiVersionSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.apimanagement.WorkspaceApiVersionSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -672,7 +672,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Certificate within an API Management Workspace. */
-  def WorkspaceCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkspaceCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.WorkspaceCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.apimanagement.WorkspaceCertificateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -683,7 +683,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Workspace Named Value. */
-  def WorkspaceNamedValue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkspaceNamedValue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.WorkspaceNamedValueArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.apimanagement.WorkspaceNamedValueArgs.builder
     conf.logicalName2physicalName(name) match
@@ -694,7 +694,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Workspace Policy. */
-  def WorkspacePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkspacePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.WorkspacePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.apimanagement.WorkspacePolicyArgs.builder
     com.pulumi.azure.apimanagement.WorkspacePolicy(name,
@@ -702,7 +702,7 @@ object apimanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Workspace Policy Fragment. */
-  def WorkspacePolicyFragment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkspacePolicyFragment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.apimanagement.WorkspacePolicyFragmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.apimanagement.WorkspacePolicyFragmentArgs.builder
     conf.logicalName2physicalName(name) match

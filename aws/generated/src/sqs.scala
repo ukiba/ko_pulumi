@@ -11,7 +11,7 @@ object sqs:
    * 
    * &gt; AWS will hang indefinitely, leading to a `timeout while waiting` error, when creating or updating an `aws.sqs.Queue` with an associated `aws.sqs.QueuePolicy` if `Version = &#34;2012-10-17&#34;` is not explicitly set in the policy.
    */
-  def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sqs.QueueArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sqs.QueueArgs.builder
     conf.logicalName2physicalName(name) match
@@ -33,7 +33,7 @@ object sqs:
    * 
    * &gt; AWS will hang indefinitely when creating or updating an `aws.sqs.Queue` with an associated policy if `Version = &#34;2012-10-17&#34;` is not explicitly set in the policy. See below for an example of how to avoid this issue.
    */
-  def QueuePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def QueuePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sqs.QueuePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.sqs.QueuePolicyArgs.builder
     com.pulumi.aws.sqs.QueuePolicy(name,
@@ -41,7 +41,7 @@ object sqs:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SQS Queue Redrive Allow Policy resource. */
-  def RedriveAllowPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RedriveAllowPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sqs.RedriveAllowPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.sqs.RedriveAllowPolicyArgs.builder
     com.pulumi.aws.sqs.RedriveAllowPolicy(name,
@@ -56,7 +56,7 @@ object sqs:
    * dead letter queue for a standard or FIFO queue, but need
    * the dead letter queue to exist before setting the redrive policy.
    */
-  def RedrivePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RedrivePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sqs.RedrivePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.sqs.RedrivePolicyArgs.builder
     com.pulumi.aws.sqs.RedrivePolicy(name,

@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object inspector:
   /** Provides an Inspector Classic Assessment Target */
-  def AssessmentTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AssessmentTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.inspector.AssessmentTargetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.inspector.AssessmentTargetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18,7 +18,7 @@ object inspector:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Inspector Classic Assessment Template */
-  def AssessmentTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AssessmentTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.inspector.AssessmentTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.inspector.AssessmentTemplateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -61,7 +61,7 @@ object inspector:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides an Amazon Inspector Classic Resource Group. */
-  def ResourceGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourceGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.inspector.ResourceGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.inspector.ResourceGroupArgs.builder
     argsBuilder = args(argsBuilder)

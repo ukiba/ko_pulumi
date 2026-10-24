@@ -11,7 +11,7 @@ object synthetics:
    * 
    * &gt; **NOTE:** When you create a canary, AWS creates supporting implicit resources. See the Amazon CloudWatch Synthetics documentation on [DeleteCanary](https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html) for a full list. Neither AWS nor this provider deletes these implicit resources automatically when the canary is deleted. Before deleting a canary, ensure you have all the information about the canary that you need to delete the implicit resources using the AWS Console, or AWS CLI.
    */
-  def Canary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Canary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.synthetics.CanaryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.synthetics.CanaryArgs.builder
     conf.logicalName2physicalName(name) match
@@ -29,7 +29,7 @@ object synthetics:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Synthetics Group resource. */
-  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.synthetics.GroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.synthetics.GroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -47,7 +47,7 @@ object synthetics:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Synthetics Group Association resource. */
-  def GroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.synthetics.GroupAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.synthetics.GroupAssociationArgs.builder
     com.pulumi.aws.synthetics.GroupAssociation(name,

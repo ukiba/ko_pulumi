@@ -8,7 +8,7 @@ object cloudquota_ext:
      * Structure is documented below.
      * @return builder
      */
-    def quotaConfig(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.SQuotaPreferenceQuotaConfigArgs.Builder]):
+    inline def quotaConfig(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.SQuotaPreferenceQuotaConfigArgs.Builder]):
         com.pulumi.gcp.cloudquota.SQuotaPreferenceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudquota.inputs.SQuotaPreferenceQuotaConfigArgs.builder
       builder.quotaConfig(args(argsBuilder).build)
@@ -19,7 +19,7 @@ object cloudquota_ext:
      * Structure is documented below.
      * @return builder
      */
-    def quotaConfig(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.SQuotaPreferenceQuotaConfigArgs.Builder]):
+    inline def quotaConfig(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.SQuotaPreferenceQuotaConfigArgs.Builder]):
         com.pulumi.gcp.cloudquota.inputs.SQuotaPreferenceState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudquota.inputs.SQuotaPreferenceQuotaConfigArgs.builder
       builder.quotaConfig(args(argsBuilder).build)

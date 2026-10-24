@@ -18,7 +18,7 @@ object parametermanager:
    * * How-to Guides
    *     * [Work with parameter tags](https://docs.cloud.google.com/secret-manager/parameter-manager/docs/create-and-manage-tags)
    */
-  def Parameter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Parameter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.parametermanager.ParameterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.parametermanager.ParameterArgs.builder
     com.pulumi.gcp.parametermanager.Parameter(name,
@@ -32,7 +32,7 @@ object parametermanager:
    * 
    * * [API documentation](https://cloud.google.com/secret-manager/parameter-manager/docs/reference/rest/v1/projects.locations.parameters.versions)
    */
-  def ParameterVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ParameterVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.parametermanager.ParameterVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.parametermanager.ParameterVersionArgs.builder
     com.pulumi.gcp.parametermanager.ParameterVersion(name,
@@ -188,7 +188,7 @@ object parametermanager:
    * * How-to Guides
    *     * [Work with parameter tags](https://docs.cloud.google.com/secret-manager/parameter-manager/docs/create-and-manage-tags)
    */
-  def RegionalParameter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionalParameter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.parametermanager.RegionalParameterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.parametermanager.RegionalParameterArgs.builder
     com.pulumi.gcp.parametermanager.RegionalParameter(name,
@@ -202,7 +202,7 @@ object parametermanager:
    * 
    * * [API documentation](https://cloud.google.com/secret-manager/parameter-manager/docs/reference/rest/v1/projects.locations.parameters.versions)
    */
-  def RegionalParameterVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionalParameterVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.parametermanager.RegionalParameterVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.parametermanager.RegionalParameterVersionArgs.builder
     com.pulumi.gcp.parametermanager.RegionalParameterVersion(name,
@@ -215,7 +215,7 @@ object parametermanager:
    * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
    * See Provider Versions for more details on beta resources.
    */
-  def Template(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Template(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.parametermanager.TemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.parametermanager.TemplateArgs.builder
     com.pulumi.gcp.parametermanager.Template(name,

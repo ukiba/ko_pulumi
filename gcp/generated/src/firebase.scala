@@ -21,7 +21,7 @@ object firebase:
    * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `generative_language_config.api_key_wo`.
    * Read more about Write-only Arguments.
    */
-  def AiLogicConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiLogicConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.AiLogicConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.AiLogicConfigArgs.builder
     com.pulumi.gcp.firebase.AiLogicConfig(name,
@@ -42,7 +42,7 @@ object firebase:
    *     * [Product documentation for Firebase AI Logic](https://firebase.google.com/docs/ai-logic)
    *     * [Specification for Dotprompt format](https://google.github.io/dotprompt/getting-started)
    */
-  def AiLogicPromptTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiLogicPromptTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.AiLogicPromptTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.AiLogicPromptTemplateArgs.builder
     com.pulumi.gcp.firebase.AiLogicPromptTemplate(name,
@@ -57,7 +57,7 @@ object firebase:
    * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
    * See Provider Versions for more details on beta resources.
    */
-  def AiLogicPromptTemplateLock(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiLogicPromptTemplateLock(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.AiLogicPromptTemplateLockArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.AiLogicPromptTemplateLockArgs.builder
     com.pulumi.gcp.firebase.AiLogicPromptTemplateLock(name,
@@ -76,7 +76,7 @@ object firebase:
    * * How-to Guides
    *     * [Official Documentation](https://firebase.google.com/docs/android/setup)
    */
-  def AndroidApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AndroidApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.AndroidAppArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.AndroidAppArgs.builder
     com.pulumi.gcp.firebase.AndroidApp(name,
@@ -93,7 +93,7 @@ object firebase:
    * * How-to Guides
    *     * [Official Documentation](https://firebase.google.com/docs/app-check)
    */
-  def AppCheckAppAttestConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AppCheckAppAttestConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.AppCheckAppAttestConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.AppCheckAppAttestConfigArgs.builder
     com.pulumi.gcp.firebase.AppCheckAppAttestConfig(name,
@@ -112,7 +112,7 @@ object firebase:
    * * How-to Guides
    *     * [Official Documentation](https://firebase.google.com/docs/app-check)
    */
-  def AppCheckDebugToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AppCheckDebugToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.AppCheckDebugTokenArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.AppCheckDebugTokenArgs.builder
     com.pulumi.gcp.firebase.AppCheckDebugToken(name,
@@ -129,7 +129,7 @@ object firebase:
    * * How-to Guides
    *     * [Official Documentation](https://firebase.google.com/docs/app-check)
    */
-  def AppCheckDeviceCheckConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AppCheckDeviceCheckConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.AppCheckDeviceCheckConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.AppCheckDeviceCheckConfigArgs.builder
     com.pulumi.gcp.firebase.AppCheckDeviceCheckConfig(name,
@@ -146,7 +146,7 @@ object firebase:
    * * How-to Guides
    *     * [Official Documentation](https://firebase.google.com/docs/app-check)
    */
-  def AppCheckPlayIntegrityConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AppCheckPlayIntegrityConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.AppCheckPlayIntegrityConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.AppCheckPlayIntegrityConfigArgs.builder
     com.pulumi.gcp.firebase.AppCheckPlayIntegrityConfig(name,
@@ -162,7 +162,7 @@ object firebase:
    * * How-to Guides
    *     * [Official Documentation](https://firebase.google.com/docs/app-check)
    */
-  def AppCheckRecaptchaEnterpriseConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AppCheckRecaptchaEnterpriseConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.AppCheckRecaptchaEnterpriseConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.AppCheckRecaptchaEnterpriseConfigArgs.builder
     com.pulumi.gcp.firebase.AppCheckRecaptchaEnterpriseConfig(name,
@@ -178,7 +178,7 @@ object firebase:
    * * How-to Guides
    *     * [Official Documentation](https://firebase.google.com/docs/app-check)
    */
-  def AppCheckRecaptchaV3Config(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AppCheckRecaptchaV3Config(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.AppCheckRecaptchaV3ConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.AppCheckRecaptchaV3ConfigArgs.builder
     com.pulumi.gcp.firebase.AppCheckRecaptchaV3Config(name,
@@ -194,7 +194,7 @@ object firebase:
    * * How-to Guides
    *     * [Official Documentation](https://firebase.google.com/docs/app-check)
    */
-  def AppCheckResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AppCheckResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.AppCheckResourcePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.AppCheckResourcePolicyArgs.builder
     com.pulumi.gcp.firebase.AppCheckResourcePolicy(name,
@@ -210,7 +210,7 @@ object firebase:
    * * How-to Guides
    *     * [Official Documentation](https://firebase.google.com/docs/app-check)
    */
-  def AppCheckServiceConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AppCheckServiceConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.AppCheckServiceConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.AppCheckServiceConfigArgs.builder
     com.pulumi.gcp.firebase.AppCheckServiceConfig(name,
@@ -218,7 +218,7 @@ object firebase:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A Backend is the primary resource of App Hosting. */
-  def AppHostingBackend(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AppHostingBackend(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.AppHostingBackendArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.AppHostingBackendArgs.builder
     com.pulumi.gcp.firebase.AppHostingBackend(name,
@@ -231,7 +231,7 @@ object firebase:
    * container image, a Cloud Build invocation that built the image, and the
    * Cloud Run revision that uses that image.
    */
-  def AppHostingBuild(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AppHostingBuild(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.AppHostingBuildArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.AppHostingBuildArgs.builder
     com.pulumi.gcp.firebase.AppHostingBuild(name,
@@ -239,7 +239,7 @@ object firebase:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A domain name that is associated with a backend. */
-  def AppHostingDefaultDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AppHostingDefaultDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.AppHostingDefaultDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.AppHostingDefaultDomainArgs.builder
     com.pulumi.gcp.firebase.AppHostingDefaultDomain(name,
@@ -247,7 +247,7 @@ object firebase:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A domain name that is associated with a backend. */
-  def AppHostingDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AppHostingDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.AppHostingDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.AppHostingDomainArgs.builder
     com.pulumi.gcp.firebase.AppHostingDomain(name,
@@ -255,7 +255,7 @@ object firebase:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Controls traffic configuration for a backend. */
-  def AppHostingTraffic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AppHostingTraffic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.AppHostingTrafficArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.AppHostingTrafficArgs.builder
     com.pulumi.gcp.firebase.AppHostingTraffic(name,
@@ -274,7 +274,7 @@ object firebase:
    * * How-to Guides
    *     * [Official Documentation](https://firebase.google.com/docs/ios/setup)
    */
-  def AppleApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AppleApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.AppleAppArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.AppleAppArgs.builder
     com.pulumi.gcp.firebase.AppleApp(name,
@@ -290,7 +290,7 @@ object firebase:
    * * How-to Guides
    *     * [Official Documentation](https://firebase.google.com/docs/data-connect)
    */
-  def DataConnectService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataConnectService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.DataConnectServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.DataConnectServiceArgs.builder
     com.pulumi.gcp.firebase.DataConnectService(name,
@@ -309,7 +309,7 @@ object firebase:
    * * How-to Guides
    *     * [Official Documentation](https://firebase.google.com/products/realtime-database)
    */
-  def DatabaseInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DatabaseInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.DatabaseInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.DatabaseInstanceArgs.builder
     com.pulumi.gcp.firebase.DatabaseInstance(name,
@@ -326,7 +326,7 @@ object firebase:
    * * How-to Guides
    *     * [Official Documentation](https://firebase.google.com/products/extensions)
    */
-  def ExtensionsInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ExtensionsInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.ExtensionsInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.ExtensionsInstanceArgs.builder
     com.pulumi.gcp.firebase.ExtensionsInstance(name,
@@ -580,7 +580,7 @@ object firebase:
    * * How-to Guides
    *     * [Official Documentation](https://firebase.google.com/docs/hosting)
    */
-  def HostingChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HostingChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.HostingChannelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.HostingChannelArgs.builder
     com.pulumi.gcp.firebase.HostingChannel(name,
@@ -601,7 +601,7 @@ object firebase:
    * * How-to Guides
    *     * [Official Documentation](https://firebase.google.com/docs/hosting)
    */
-  def HostingCustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HostingCustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.HostingCustomDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.HostingCustomDomainArgs.builder
     com.pulumi.gcp.firebase.HostingCustomDomain(name,
@@ -620,7 +620,7 @@ object firebase:
    * * How-to Guides
    *     * [Official Documentation](https://firebase.google.com/docs/hosting)
    */
-  def HostingRelease(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HostingRelease(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.HostingReleaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.HostingReleaseArgs.builder
     com.pulumi.gcp.firebase.HostingRelease(name,
@@ -639,7 +639,7 @@ object firebase:
    * * How-to Guides
    *     * [Official Documentation](https://firebase.google.com/docs/hosting)
    */
-  def HostingSite(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HostingSite(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.HostingSiteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.HostingSiteArgs.builder
     com.pulumi.gcp.firebase.HostingSite(name,
@@ -658,7 +658,7 @@ object firebase:
    * * How-to Guides
    *     * [Official Documentation](https://firebase.google.com/docs/hosting)
    */
-  def HostingVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HostingVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.HostingVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.HostingVersionArgs.builder
     com.pulumi.gcp.firebase.HostingVersion(name,
@@ -684,7 +684,7 @@ object firebase:
    * with `userProjectOverride = true` unless you wish for your quota
    * project to be different from the Firebase project.
    */
-  def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.ProjectArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.ProjectArgs.builder
     com.pulumi.gcp.firebase.Project(name,
@@ -700,7 +700,7 @@ object firebase:
    * * How-to Guides
    *     * [Remote Config Introduction](https://firebase.google.com/docs/remote-config)
    */
-  def RemoteConfigRemoteConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RemoteConfigRemoteConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.RemoteConfigRemoteConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.RemoteConfigRemoteConfigArgs.builder
     com.pulumi.gcp.firebase.RemoteConfigRemoteConfig(name,
@@ -720,7 +720,7 @@ object firebase:
    * * How-to Guides
    *     * [Official Documentation](https://firebase.google.com/docs/storage/)
    */
-  def StorageBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StorageBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.StorageBucketArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.StorageBucketArgs.builder
     com.pulumi.gcp.firebase.StorageBucket(name,
@@ -740,7 +740,7 @@ object firebase:
    * * How-to Guides
    *     * [Official Documentation](https://firebase.google.com/docs/storage/)
    */
-  def StorageDefaultBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StorageDefaultBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.StorageDefaultBucketArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.StorageDefaultBucketArgs.builder
     com.pulumi.gcp.firebase.StorageDefaultBucket(name,
@@ -759,7 +759,7 @@ object firebase:
    * * How-to Guides
    *     * [Official Documentation](https://firebase.google.com/)
    */
-  def WebApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WebApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firebase.WebAppArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firebase.WebAppArgs.builder
     com.pulumi.gcp.firebase.WebApp(name,

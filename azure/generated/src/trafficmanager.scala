@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object trafficmanager:
   /** Manages a Traffic Manager Profile to which multiple endpoints can be attached. */
-  @deprecated("azure.trafficmanager.Profile has been deprecated in favor of azure.network.TrafficManagerProfile") def Profile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("azure.trafficmanager.Profile has been deprecated in favor of azure.network.TrafficManagerProfile") inline def Profile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.trafficmanager.ProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.trafficmanager.ProfileArgs.builder
     conf.logicalName2physicalName(name) match

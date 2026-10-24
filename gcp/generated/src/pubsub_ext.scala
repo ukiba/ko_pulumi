@@ -8,7 +8,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deliveryConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.LiteSubscriptionDeliveryConfigArgs.Builder]):
+    inline def deliveryConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.LiteSubscriptionDeliveryConfigArgs.Builder]):
         com.pulumi.gcp.pubsub.LiteSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.LiteSubscriptionDeliveryConfigArgs.builder
       builder.deliveryConfig(args(argsBuilder).build)
@@ -19,7 +19,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def partitionConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.LiteTopicPartitionConfigArgs.Builder]):
+    inline def partitionConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.LiteTopicPartitionConfigArgs.Builder]):
         com.pulumi.gcp.pubsub.LiteTopicArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.LiteTopicPartitionConfigArgs.builder
       builder.partitionConfig(args(argsBuilder).build)
@@ -29,7 +29,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def reservationConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.LiteTopicReservationConfigArgs.Builder]):
+    inline def reservationConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.LiteTopicReservationConfigArgs.Builder]):
         com.pulumi.gcp.pubsub.LiteTopicArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.LiteTopicReservationConfigArgs.builder
       builder.reservationConfig(args(argsBuilder).build)
@@ -39,19 +39,19 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def retentionConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.LiteTopicRetentionConfigArgs.Builder]):
+    inline def retentionConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.LiteTopicRetentionConfigArgs.Builder]):
         com.pulumi.gcp.pubsub.LiteTopicArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.LiteTopicRetentionConfigArgs.builder
       builder.retentionConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.pubsub.SchemaIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SchemaIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SchemaIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.pubsub.SchemaIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SchemaIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.pubsub.SchemaIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SchemaIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SchemaIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.pubsub.SchemaIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SchemaIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -64,7 +64,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigqueryConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionBigqueryConfigArgs.Builder]):
+    inline def bigqueryConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionBigqueryConfigArgs.Builder]):
         com.pulumi.gcp.pubsub.SubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SubscriptionBigqueryConfigArgs.builder
       builder.bigqueryConfig(args(argsBuilder).build)
@@ -76,7 +76,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudStorageConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionCloudStorageConfigArgs.Builder]):
+    inline def cloudStorageConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionCloudStorageConfigArgs.Builder]):
         com.pulumi.gcp.pubsub.SubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SubscriptionCloudStorageConfigArgs.builder
       builder.cloudStorageConfig(args(argsBuilder).build)
@@ -92,7 +92,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deadLetterPolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionDeadLetterPolicyArgs.Builder]):
+    inline def deadLetterPolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionDeadLetterPolicyArgs.Builder]):
         com.pulumi.gcp.pubsub.SubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SubscriptionDeadLetterPolicyArgs.builder
       builder.deadLetterPolicy(args(argsBuilder).build)
@@ -108,7 +108,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def expirationPolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionExpirationPolicyArgs.Builder]):
+    inline def expirationPolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionExpirationPolicyArgs.Builder]):
         com.pulumi.gcp.pubsub.SubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SubscriptionExpirationPolicyArgs.builder
       builder.expirationPolicy(args(argsBuilder).build)
@@ -119,7 +119,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def messageTransforms(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionMessageTransformArgs.Builder]*):
+    inline def messageTransforms(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionMessageTransformArgs.Builder]*):
         com.pulumi.gcp.pubsub.SubscriptionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.pubsub.inputs.SubscriptionMessageTransformArgs.builder
       builder.messageTransforms(args.map(_(argsBuilder).build)*)
@@ -131,7 +131,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pushConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionPushConfigArgs.Builder]):
+    inline def pushConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionPushConfigArgs.Builder]):
         com.pulumi.gcp.pubsub.SubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SubscriptionPushConfigArgs.builder
       builder.pushConfig(args(argsBuilder).build)
@@ -143,19 +143,19 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def retryPolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionRetryPolicyArgs.Builder]):
+    inline def retryPolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionRetryPolicyArgs.Builder]):
         com.pulumi.gcp.pubsub.SubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SubscriptionRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.pubsub.SubscriptionIAMBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionIAMBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionIAMBindingConditionArgs.Builder]):
         com.pulumi.gcp.pubsub.SubscriptionIAMBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SubscriptionIAMBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.pubsub.SubscriptionIAMMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionIAMMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionIAMMemberConditionArgs.Builder]):
         com.pulumi.gcp.pubsub.SubscriptionIAMMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SubscriptionIAMMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -166,7 +166,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingestionDataSourceSettings(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsArgs.Builder]):
+    inline def ingestionDataSourceSettings(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsArgs.Builder]):
         com.pulumi.gcp.pubsub.TopicArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsArgs.builder
       builder.ingestionDataSourceSettings(args(argsBuilder).build)
@@ -178,7 +178,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def messageStoragePolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicMessageStoragePolicyArgs.Builder]):
+    inline def messageStoragePolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicMessageStoragePolicyArgs.Builder]):
         com.pulumi.gcp.pubsub.TopicArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.TopicMessageStoragePolicyArgs.builder
       builder.messageStoragePolicy(args(argsBuilder).build)
@@ -189,7 +189,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def messageTransforms(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicMessageTransformArgs.Builder]*):
+    inline def messageTransforms(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicMessageTransformArgs.Builder]*):
         com.pulumi.gcp.pubsub.TopicArgs.Builder =
       def argsBuilder = com.pulumi.gcp.pubsub.inputs.TopicMessageTransformArgs.builder
       builder.messageTransforms(args.map(_(argsBuilder).build)*)
@@ -199,19 +199,19 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def schemaSettings(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicSchemaSettingsArgs.Builder]):
+    inline def schemaSettings(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicSchemaSettingsArgs.Builder]):
         com.pulumi.gcp.pubsub.TopicArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.TopicSchemaSettingsArgs.builder
       builder.schemaSettings(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.pubsub.TopicIAMBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIAMBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIAMBindingConditionArgs.Builder]):
         com.pulumi.gcp.pubsub.TopicIAMBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.TopicIAMBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.pubsub.TopicIAMMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIAMMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIAMMemberConditionArgs.Builder]):
         com.pulumi.gcp.pubsub.TopicIAMMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.TopicIAMMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -222,7 +222,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deliveryConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.LiteSubscriptionDeliveryConfigArgs.Builder]):
+    inline def deliveryConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.LiteSubscriptionDeliveryConfigArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.LiteSubscriptionState.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.LiteSubscriptionDeliveryConfigArgs.builder
       builder.deliveryConfig(args(argsBuilder).build)
@@ -233,7 +233,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def capacity(args: Endofunction[com.pulumi.gcp.pubsub.inputs.LiteTopicPartitionConfigCapacityArgs.Builder]):
+    inline def capacity(args: Endofunction[com.pulumi.gcp.pubsub.inputs.LiteTopicPartitionConfigCapacityArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.LiteTopicPartitionConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.LiteTopicPartitionConfigCapacityArgs.builder
       builder.capacity(args(argsBuilder).build)
@@ -244,7 +244,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def partitionConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.LiteTopicPartitionConfigArgs.Builder]):
+    inline def partitionConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.LiteTopicPartitionConfigArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.LiteTopicState.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.LiteTopicPartitionConfigArgs.builder
       builder.partitionConfig(args(argsBuilder).build)
@@ -254,7 +254,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def reservationConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.LiteTopicReservationConfigArgs.Builder]):
+    inline def reservationConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.LiteTopicReservationConfigArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.LiteTopicState.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.LiteTopicReservationConfigArgs.builder
       builder.reservationConfig(args(argsBuilder).build)
@@ -264,19 +264,19 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def retentionConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.LiteTopicRetentionConfigArgs.Builder]):
+    inline def retentionConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.LiteTopicRetentionConfigArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.LiteTopicState.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.LiteTopicRetentionConfigArgs.builder
       builder.retentionConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.pubsub.inputs.SchemaIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SchemaIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SchemaIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.SchemaIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SchemaIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.pubsub.inputs.SchemaIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SchemaIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SchemaIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.SchemaIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SchemaIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -287,7 +287,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def avroConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionCloudStorageConfigAvroConfigArgs.Builder]):
+    inline def avroConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionCloudStorageConfigAvroConfigArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.SubscriptionCloudStorageConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SubscriptionCloudStorageConfigAvroConfigArgs.builder
       builder.avroConfig(args(argsBuilder).build)
@@ -297,19 +297,19 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def textConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionCloudStorageConfigTextConfigArgs.Builder]):
+    inline def textConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionCloudStorageConfigTextConfigArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.SubscriptionCloudStorageConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SubscriptionCloudStorageConfigTextConfigArgs.builder
       builder.textConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.pubsub.inputs.SubscriptionIAMBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionIAMBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionIAMBindingConditionArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.SubscriptionIAMBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SubscriptionIAMBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.pubsub.inputs.SubscriptionIAMMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionIAMMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionIAMMemberConditionArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.SubscriptionIAMMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SubscriptionIAMMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -320,7 +320,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def unstructuredInference(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionMessageTransformAiInferenceUnstructuredInferenceArgs.Builder]):
+    inline def unstructuredInference(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionMessageTransformAiInferenceUnstructuredInferenceArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.SubscriptionMessageTransformAiInferenceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SubscriptionMessageTransformAiInferenceUnstructuredInferenceArgs.builder
       builder.unstructuredInference(args(argsBuilder).build)
@@ -333,7 +333,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def aiInference(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionMessageTransformAiInferenceArgs.Builder]):
+    inline def aiInference(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionMessageTransformAiInferenceArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.SubscriptionMessageTransformArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SubscriptionMessageTransformAiInferenceArgs.builder
       builder.aiInference(args(argsBuilder).build)
@@ -344,7 +344,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def javascriptUdf(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionMessageTransformJavascriptUdfArgs.Builder]):
+    inline def javascriptUdf(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionMessageTransformJavascriptUdfArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.SubscriptionMessageTransformArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SubscriptionMessageTransformJavascriptUdfArgs.builder
       builder.javascriptUdf(args(argsBuilder).build)
@@ -356,7 +356,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def noWrapper(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionPushConfigNoWrapperArgs.Builder]):
+    inline def noWrapper(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionPushConfigNoWrapperArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.SubscriptionPushConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SubscriptionPushConfigNoWrapperArgs.builder
       builder.noWrapper(args(argsBuilder).build)
@@ -367,7 +367,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oidcToken(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionPushConfigOidcTokenArgs.Builder]):
+    inline def oidcToken(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionPushConfigOidcTokenArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.SubscriptionPushConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SubscriptionPushConfigOidcTokenArgs.builder
       builder.oidcToken(args(argsBuilder).build)
@@ -380,7 +380,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigqueryConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionBigqueryConfigArgs.Builder]):
+    inline def bigqueryConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionBigqueryConfigArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.SubscriptionState.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SubscriptionBigqueryConfigArgs.builder
       builder.bigqueryConfig(args(argsBuilder).build)
@@ -392,7 +392,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudStorageConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionCloudStorageConfigArgs.Builder]):
+    inline def cloudStorageConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionCloudStorageConfigArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.SubscriptionState.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SubscriptionCloudStorageConfigArgs.builder
       builder.cloudStorageConfig(args(argsBuilder).build)
@@ -408,7 +408,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deadLetterPolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionDeadLetterPolicyArgs.Builder]):
+    inline def deadLetterPolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionDeadLetterPolicyArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.SubscriptionState.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SubscriptionDeadLetterPolicyArgs.builder
       builder.deadLetterPolicy(args(argsBuilder).build)
@@ -424,7 +424,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def expirationPolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionExpirationPolicyArgs.Builder]):
+    inline def expirationPolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionExpirationPolicyArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.SubscriptionState.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SubscriptionExpirationPolicyArgs.builder
       builder.expirationPolicy(args(argsBuilder).build)
@@ -435,7 +435,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def messageTransforms(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionMessageTransformArgs.Builder]*):
+    inline def messageTransforms(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionMessageTransformArgs.Builder]*):
         com.pulumi.gcp.pubsub.inputs.SubscriptionState.Builder =
       def argsBuilder = com.pulumi.gcp.pubsub.inputs.SubscriptionMessageTransformArgs.builder
       builder.messageTransforms(args.map(_(argsBuilder).build)*)
@@ -447,7 +447,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pushConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionPushConfigArgs.Builder]):
+    inline def pushConfig(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionPushConfigArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.SubscriptionState.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SubscriptionPushConfigArgs.builder
       builder.pushConfig(args(argsBuilder).build)
@@ -459,19 +459,19 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def retryPolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionRetryPolicyArgs.Builder]):
+    inline def retryPolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.SubscriptionRetryPolicyArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.SubscriptionState.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.SubscriptionRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.pubsub.inputs.TopicIAMBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIAMBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIAMBindingConditionArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.TopicIAMBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.TopicIAMBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.pubsub.inputs.TopicIAMMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIAMMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIAMMemberConditionArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.TopicIAMMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.TopicIAMMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -482,7 +482,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def awsKinesis(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsAwsKinesisArgs.Builder]):
+    inline def awsKinesis(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsAwsKinesisArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsAwsKinesisArgs.builder
       builder.awsKinesis(args(argsBuilder).build)
@@ -492,7 +492,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def awsMsk(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsAwsMskArgs.Builder]):
+    inline def awsMsk(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsAwsMskArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsAwsMskArgs.builder
       builder.awsMsk(args(argsBuilder).build)
@@ -502,7 +502,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def azureEventHubs(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsAzureEventHubsArgs.Builder]):
+    inline def azureEventHubs(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsAzureEventHubsArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsAzureEventHubsArgs.builder
       builder.azureEventHubs(args(argsBuilder).build)
@@ -512,7 +512,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudStorage(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsCloudStorageArgs.Builder]):
+    inline def cloudStorage(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsCloudStorageArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsCloudStorageArgs.builder
       builder.cloudStorage(args(argsBuilder).build)
@@ -522,7 +522,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def confluentCloud(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsConfluentCloudArgs.Builder]):
+    inline def confluentCloud(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsConfluentCloudArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsConfluentCloudArgs.builder
       builder.confluentCloud(args(argsBuilder).build)
@@ -533,7 +533,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def platformLogsSettings(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsPlatformLogsSettingsArgs.Builder]):
+    inline def platformLogsSettings(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsPlatformLogsSettingsArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsPlatformLogsSettingsArgs.builder
       builder.platformLogsSettings(args(argsBuilder).build)
@@ -544,7 +544,7 @@ object pubsub_ext:
      * bytes of each object will be set to the `data` field of a Pub/Sub message.
      * @return builder
      */
-    def avroFormat(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsCloudStorageAvroFormatArgs.Builder]):
+    inline def avroFormat(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsCloudStorageAvroFormatArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsCloudStorageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsCloudStorageAvroFormatArgs.builder
       builder.avroFormat(args(argsBuilder).build)
@@ -556,7 +556,7 @@ object pubsub_ext:
      * will be restored when publishing.
      * @return builder
      */
-    def pubsubAvroFormat(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsCloudStoragePubsubAvroFormatArgs.Builder]):
+    inline def pubsubAvroFormat(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsCloudStoragePubsubAvroFormatArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsCloudStorageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsCloudStoragePubsubAvroFormatArgs.builder
       builder.pubsubAvroFormat(args(argsBuilder).build)
@@ -568,7 +568,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def textFormat(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsCloudStorageTextFormatArgs.Builder]):
+    inline def textFormat(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsCloudStorageTextFormatArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsCloudStorageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsCloudStorageTextFormatArgs.builder
       builder.textFormat(args(argsBuilder).build)
@@ -579,7 +579,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def unstructuredInference(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicMessageTransformAiInferenceUnstructuredInferenceArgs.Builder]):
+    inline def unstructuredInference(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicMessageTransformAiInferenceUnstructuredInferenceArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.TopicMessageTransformAiInferenceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.TopicMessageTransformAiInferenceUnstructuredInferenceArgs.builder
       builder.unstructuredInference(args(argsBuilder).build)
@@ -592,7 +592,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def aiInference(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicMessageTransformAiInferenceArgs.Builder]):
+    inline def aiInference(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicMessageTransformAiInferenceArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.TopicMessageTransformArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.TopicMessageTransformAiInferenceArgs.builder
       builder.aiInference(args(argsBuilder).build)
@@ -603,7 +603,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def javascriptUdf(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicMessageTransformJavascriptUdfArgs.Builder]):
+    inline def javascriptUdf(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicMessageTransformJavascriptUdfArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.TopicMessageTransformArgs.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.TopicMessageTransformJavascriptUdfArgs.builder
       builder.javascriptUdf(args(argsBuilder).build)
@@ -614,7 +614,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingestionDataSourceSettings(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsArgs.Builder]):
+    inline def ingestionDataSourceSettings(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.TopicState.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.TopicIngestionDataSourceSettingsArgs.builder
       builder.ingestionDataSourceSettings(args(argsBuilder).build)
@@ -626,7 +626,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def messageStoragePolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicMessageStoragePolicyArgs.Builder]):
+    inline def messageStoragePolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicMessageStoragePolicyArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.TopicState.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.TopicMessageStoragePolicyArgs.builder
       builder.messageStoragePolicy(args(argsBuilder).build)
@@ -637,7 +637,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def messageTransforms(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicMessageTransformArgs.Builder]*):
+    inline def messageTransforms(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicMessageTransformArgs.Builder]*):
         com.pulumi.gcp.pubsub.inputs.TopicState.Builder =
       def argsBuilder = com.pulumi.gcp.pubsub.inputs.TopicMessageTransformArgs.builder
       builder.messageTransforms(args.map(_(argsBuilder).build)*)
@@ -647,7 +647,7 @@ object pubsub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def schemaSettings(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicSchemaSettingsArgs.Builder]):
+    inline def schemaSettings(args: Endofunction[com.pulumi.gcp.pubsub.inputs.TopicSchemaSettingsArgs.Builder]):
         com.pulumi.gcp.pubsub.inputs.TopicState.Builder =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.TopicSchemaSettingsArgs.builder
       builder.schemaSettings(args(argsBuilder).build)

@@ -12,7 +12,7 @@ object storage:
    * caches are co-located with the customers compute engines to provide
    * cost efficiency.
    */
-  def AnywhereCache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AnywhereCache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.AnywhereCacheArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.storage.AnywhereCacheArgs.builder
     com.pulumi.gcp.storage.AnywhereCache(name,
@@ -24,7 +24,7 @@ object storage:
    * seamless experience to perform single batch operations on millions of GCS objects in a
    * serverless manner.
    */
-  def BatchOperationsJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BatchOperationsJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.BatchOperationsJobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.storage.BatchOperationsJobArgs.builder
     com.pulumi.gcp.storage.BatchOperationsJob(name,
@@ -43,7 +43,7 @@ object storage:
    * **Note**: If the project id is not set on the resource or in the provider block it will be dynamically
    * determined which will require enabling the compute api.
    */
-  def Bucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Bucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.BucketArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.storage.BucketArgs.builder
     conf.logicalName2physicalName(name) match
@@ -65,7 +65,7 @@ object storage:
    * 
    * **NOTE** This resource will not remove the `project-owners-&lt;project_id&gt;` entity from the `OWNER` role.
    */
-  def BucketACL(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketACL(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.BucketACLArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.storage.BucketACLArgs.builder
     com.pulumi.gcp.storage.BucketACL(name,
@@ -96,7 +96,7 @@ object storage:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/storage/docs/access-control/lists)
    */
-  def BucketAccessControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketAccessControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.BucketAccessControlArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.storage.BucketAccessControlArgs.builder
     com.pulumi.gcp.storage.BucketAccessControl(name,
@@ -629,7 +629,7 @@ object storage:
    * }
    * </pre>
    */
-  def BucketIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.BucketIAMBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.storage.BucketIAMBindingArgs.builder
     com.pulumi.gcp.storage.BucketIAMBinding(name,
@@ -1162,7 +1162,7 @@ object storage:
    * }
    * </pre>
    */
-  def BucketIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.BucketIAMMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.storage.BucketIAMMemberArgs.builder
     com.pulumi.gcp.storage.BucketIAMMember(name,
@@ -1695,7 +1695,7 @@ object storage:
    * }
    * </pre>
    */
-  def BucketIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.BucketIAMPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.storage.BucketIAMPolicyArgs.builder
     com.pulumi.gcp.storage.BucketIAMPolicy(name,
@@ -1714,7 +1714,7 @@ object storage:
    * 
    * * `gcp.storage.getBucketObjectContent`: Retrieves the content within a specified bucket object in Google Cloud Storage Service (GCS)
    */
-  def BucketObject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketObject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.BucketObjectArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.storage.BucketObjectArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1732,7 +1732,7 @@ object storage:
    * &gt; **Warning:** Storage Intelligence Config is a singleton resource which cannot be created or deleted. A single instance of Storage Intelligence Config exist for each GCP Folder. Terraform does not create or destroy this resource.
    * Terraform resource creation for this resource is simply an update operation on existing resource with specified properties, absense of any optional field in the create operation will result in clearance of that field. Terraform deletion won&#39;t have any effect on this resource rather it will only remove it from the state file.
    */
-  def ControlFolderIntelligenceConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ControlFolderIntelligenceConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.ControlFolderIntelligenceConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.storage.ControlFolderIntelligenceConfigArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1750,7 +1750,7 @@ object storage:
    * &gt; **Warning:** Storage Intelligence is a singleton resource which cannot be created or deleted. A single instance of Storage Intelligence exist for each GCP Organization. Terraform does not create or destroy this resource.
    * Terraform resource creation for this resource is simply an update operation on existing resource with specified properties, absence of any optional field in the create operation will result in clearance of that field. Terraform deletion won&#39;t have any effect on this resource rather it will only remove it from the state file.
    */
-  def ControlOrganizationIntelligenceConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ControlOrganizationIntelligenceConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.ControlOrganizationIntelligenceConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.storage.ControlOrganizationIntelligenceConfigArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1768,7 +1768,7 @@ object storage:
    * &gt; **Warning:** Storage Intelligence Config is a singleton resource which cannot be created or deleted. A single instance of Storage Intelligence Config exist for each GCP Project. Terraform does not create or destroy this resource.
    * Terraform resource creation for this resource is simply an update operation on existing resource with specified properties, absence of any optional field in the create operation will result in clearance of that field. Terraform deletion won&#39;t have any effect on this resource rather it will only remove it from the state file.
    */
-  def ControlProjectIntelligenceConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ControlProjectIntelligenceConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.ControlProjectIntelligenceConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.storage.ControlProjectIntelligenceConfigArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1793,7 +1793,7 @@ object storage:
    * &gt; Want fine-grained control over default object ACLs? Use `gcp.storage.DefaultObjectAccessControl`
    * to control individual role entity pairs.
    */
-  def DefaultObjectACL(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DefaultObjectACL(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.DefaultObjectACLArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.storage.DefaultObjectACLArgs.builder
     com.pulumi.gcp.storage.DefaultObjectACL(name,
@@ -1821,7 +1821,7 @@ object storage:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/storage/docs/access-control/create-manage-lists)
    */
-  def DefaultObjectAccessControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DefaultObjectAccessControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.DefaultObjectAccessControlArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.storage.DefaultObjectAccessControlArgs.builder
     com.pulumi.gcp.storage.DefaultObjectAccessControl(name,
@@ -1839,7 +1839,7 @@ object storage:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/storage/docs/folders-overview)
    */
-  def Folder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Folder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.FolderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.storage.FolderArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1850,7 +1850,7 @@ object storage:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** An SFTP Server resource supporting internal and external connectivity configurations. */
-  def FtpServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FtpServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.FtpServerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.storage.FtpServerArgs.builder
     com.pulumi.gcp.storage.FtpServer(name,
@@ -1858,7 +1858,7 @@ object storage:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A Storage FTP User resource supporting directory mappings and user credentials for an SFTP Server. */
-  def FtpUser(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FtpUser(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.FtpUserArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.storage.FtpUserArgs.builder
     com.pulumi.gcp.storage.FtpUser(name,
@@ -1878,7 +1878,7 @@ object storage:
    * 
    * On import, the `secret` value will not be retrieved.
    */
-  def HmacKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HmacKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.HmacKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.storage.HmacKeyArgs.builder
     com.pulumi.gcp.storage.HmacKey(name,
@@ -1894,7 +1894,7 @@ object storage:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/storage/docs/insights/datasets)
    */
-  def InsightsDatasetConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InsightsDatasetConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.InsightsDatasetConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.storage.InsightsDatasetConfigArgs.builder
     com.pulumi.gcp.storage.InsightsDatasetConfig(name,
@@ -1910,7 +1910,7 @@ object storage:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/storage/docs/insights/using-storage-insights)
    */
-  def InsightsReportConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InsightsReportConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.InsightsReportConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.storage.InsightsReportConfigArgs.builder
     com.pulumi.gcp.storage.InsightsReportConfig(name,
@@ -1936,7 +1936,7 @@ object storage:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/storage/docs/managed-folders)
    */
-  def ManagedFolder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedFolder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.ManagedFolderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.storage.ManagedFolderArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2514,7 +2514,7 @@ object storage:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ManagedFolderIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedFolderIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.ManagedFolderIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.storage.ManagedFolderIamBindingArgs.builder
     com.pulumi.gcp.storage.ManagedFolderIamBinding(name,
@@ -3089,7 +3089,7 @@ object storage:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ManagedFolderIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedFolderIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.ManagedFolderIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.storage.ManagedFolderIamMemberArgs.builder
     com.pulumi.gcp.storage.ManagedFolderIamMember(name,
@@ -3664,7 +3664,7 @@ object storage:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ManagedFolderIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedFolderIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.ManagedFolderIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.storage.ManagedFolderIamPolicyArgs.builder
     com.pulumi.gcp.storage.ManagedFolderIamPolicy(name,
@@ -3689,7 +3689,7 @@ object storage:
    * &gt; **NOTE**: This resource can affect your storage IAM policy. If you are using this in the same config as your storage IAM policy resources, consider
    * making this resource dependent on those IAM resources via `dependsOn`. This will safeguard against errors due to IAM race conditions.
    */
-  def Notification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Notification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.NotificationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.storage.NotificationArgs.builder
     com.pulumi.gcp.storage.Notification(name,
@@ -3709,7 +3709,7 @@ object storage:
    * &gt; Want fine-grained control over object ACLs? Use `gcp.storage.ObjectAccessControl` to control individual
    * role entity pairs.
    */
-  def ObjectACL(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ObjectACL(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.ObjectACLArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.storage.ObjectACLArgs.builder
     com.pulumi.gcp.storage.ObjectACL(name,
@@ -3736,7 +3736,7 @@ object storage:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/storage/docs/access-control/create-manage-lists)
    */
-  def ObjectAccessControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ObjectAccessControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.ObjectAccessControlArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.storage.ObjectAccessControlArgs.builder
     com.pulumi.gcp.storage.ObjectAccessControl(name,
@@ -4271,7 +4271,7 @@ object storage:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/storage-transfer/docs/on-prem-agent-pools)
    */
-  def TransferAgentPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TransferAgentPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.TransferAgentPoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.storage.TransferAgentPoolArgs.builder
     conf.logicalName2physicalName(name) match
@@ -4291,7 +4291,7 @@ object storage:
    * * How-to Guides
    *     * [Configuring Access to Data Sources and Sinks](https://cloud.google.com/storage-transfer/docs/configure-access)
    */
-  def TransferJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TransferJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.storage.TransferJobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.storage.TransferJobArgs.builder
     conf.logicalName2physicalName(name) match

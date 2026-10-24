@@ -892,7 +892,7 @@ object dns:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DnsManagedZoneIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DnsManagedZoneIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dns.DnsManagedZoneIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dns.DnsManagedZoneIamBindingArgs.builder
     com.pulumi.gcp.dns.DnsManagedZoneIamBinding(name,
@@ -1468,7 +1468,7 @@ object dns:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DnsManagedZoneIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DnsManagedZoneIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dns.DnsManagedZoneIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dns.DnsManagedZoneIamMemberArgs.builder
     com.pulumi.gcp.dns.DnsManagedZoneIamMember(name,
@@ -2044,7 +2044,7 @@ object dns:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DnsManagedZoneIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DnsManagedZoneIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dns.DnsManagedZoneIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dns.DnsManagedZoneIamPolicyArgs.builder
     com.pulumi.gcp.dns.DnsManagedZoneIamPolicy(name,
@@ -2062,7 +2062,7 @@ object dns:
    * * How-to Guides
    *     * [Managing Zones](https://cloud.google.com/dns/zones/)
    */
-  def ManagedZone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedZone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dns.ManagedZoneArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.dns.ManagedZoneArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2082,7 +2082,7 @@ object dns:
    * * How-to Guides
    *     * [Using DNS server policies](https://cloud.google.com/dns/zones/#using-dns-server-policies)
    */
-  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dns.PolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.dns.PolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2098,7 +2098,7 @@ object dns:
    * 
    * &gt; **Note:** The provider treats this resource as an authoritative record set. This means existing records (including the default records) for the given type will be overwritten when you create this resource in Terraform. In addition, the Google Cloud DNS API requires NS and SOA records to be present at all times, so Terraform will not actually remove NS or SOA records on the root of the zone during destroy but will report that it did.
    */
-  def RecordSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RecordSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dns.RecordSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.dns.RecordSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2112,7 +2112,7 @@ object dns:
    * A Response Policy is a collection of selectors that apply to queries
    * made against one or more Virtual Private Cloud networks.
    */
-  def ResponsePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResponsePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dns.ResponsePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dns.ResponsePolicyArgs.builder
     com.pulumi.gcp.dns.ResponsePolicy(name,
@@ -2125,7 +2125,7 @@ object dns:
    * Each DNS query subject to a Response Policy matches at most one ResponsePolicyRule,
    * as identified by the dnsName field with the longest matching suffix.
    */
-  def ResponsePolicyRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResponsePolicyRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dns.ResponsePolicyRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dns.ResponsePolicyRuleArgs.builder
     com.pulumi.gcp.dns.ResponsePolicyRule(name,

@@ -8,7 +8,7 @@ object datalineage_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingestion(args: Endofunction[com.pulumi.gcp.datalineage.inputs.ConfigIngestionArgs.Builder]):
+    inline def ingestion(args: Endofunction[com.pulumi.gcp.datalineage.inputs.ConfigIngestionArgs.Builder]):
         com.pulumi.gcp.datalineage.ConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datalineage.inputs.ConfigIngestionArgs.builder
       builder.ingestion(args(argsBuilder).build)
@@ -19,7 +19,7 @@ object datalineage_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.datalineage.inputs.ConfigIngestionRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.datalineage.inputs.ConfigIngestionRuleArgs.Builder]*):
         com.pulumi.gcp.datalineage.inputs.ConfigIngestionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datalineage.inputs.ConfigIngestionRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -30,7 +30,7 @@ object datalineage_ext:
      * Structure is documented below.
      * @return builder
      */
-    def integrationSelector(args: Endofunction[com.pulumi.gcp.datalineage.inputs.ConfigIngestionRuleIntegrationSelectorArgs.Builder]):
+    inline def integrationSelector(args: Endofunction[com.pulumi.gcp.datalineage.inputs.ConfigIngestionRuleIntegrationSelectorArgs.Builder]):
         com.pulumi.gcp.datalineage.inputs.ConfigIngestionRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datalineage.inputs.ConfigIngestionRuleIntegrationSelectorArgs.builder
       builder.integrationSelector(args(argsBuilder).build)
@@ -40,7 +40,7 @@ object datalineage_ext:
      * Structure is documented below.
      * @return builder
      */
-    def lineageEnablement(args: Endofunction[com.pulumi.gcp.datalineage.inputs.ConfigIngestionRuleLineageEnablementArgs.Builder]):
+    inline def lineageEnablement(args: Endofunction[com.pulumi.gcp.datalineage.inputs.ConfigIngestionRuleLineageEnablementArgs.Builder]):
         com.pulumi.gcp.datalineage.inputs.ConfigIngestionRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datalineage.inputs.ConfigIngestionRuleLineageEnablementArgs.builder
       builder.lineageEnablement(args(argsBuilder).build)
@@ -51,7 +51,7 @@ object datalineage_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingestion(args: Endofunction[com.pulumi.gcp.datalineage.inputs.ConfigIngestionArgs.Builder]):
+    inline def ingestion(args: Endofunction[com.pulumi.gcp.datalineage.inputs.ConfigIngestionArgs.Builder]):
         com.pulumi.gcp.datalineage.inputs.ConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.datalineage.inputs.ConfigIngestionArgs.builder
       builder.ingestion(args(argsBuilder).build)

@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object applicationinsights:
   /** Provides a ApplicationInsights Application resource. */
-  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.applicationinsights.ApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.applicationinsights.ApplicationArgs.builder
     argsBuilder = args(argsBuilder)

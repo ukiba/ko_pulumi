@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object consumption:
   /** Manages a Consumption Budget for a Management Group. */
-  def BudgetManagementGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BudgetManagementGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.consumption.BudgetManagementGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.consumption.BudgetManagementGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18,7 +18,7 @@ object consumption:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Resource Group Consumption Budget. */
-  def BudgetResourceGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BudgetResourceGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.consumption.BudgetResourceGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.consumption.BudgetResourceGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -29,7 +29,7 @@ object consumption:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Subscription Consumption Budget. */
-  def BudgetSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BudgetSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.consumption.BudgetSubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.consumption.BudgetSubscriptionArgs.builder
     conf.logicalName2physicalName(name) match

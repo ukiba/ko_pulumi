@@ -15,7 +15,7 @@ object eventarc:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/eventarc/standard/docs/third-parties/create-channels)
    */
-  def Channel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Channel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.eventarc.ChannelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.eventarc.ChannelArgs.builder
     conf.logicalName2physicalName(name) match
@@ -34,7 +34,7 @@ object eventarc:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/eventarc/advanced/docs/receive-events/create-enrollment)
    */
-  def Enrollment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Enrollment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.eventarc.EnrollmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.eventarc.EnrollmentArgs.builder
     com.pulumi.gcp.eventarc.Enrollment(name,
@@ -67,7 +67,7 @@ object eventarc:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/eventarc/advanced/docs/publish-events/publish-events-google-sources)
    */
-  def GoogleApiSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GoogleApiSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.eventarc.GoogleApiSourceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.eventarc.GoogleApiSourceArgs.builder
     com.pulumi.gcp.eventarc.GoogleApiSource(name,
@@ -83,7 +83,7 @@ object eventarc:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/eventarc/docs/use-cmek#enable-cmek-google-channel)
    */
-  def GoogleChannelConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GoogleChannelConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.eventarc.GoogleChannelConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.eventarc.GoogleChannelConfigArgs.builder
     conf.logicalName2physicalName(name) match
@@ -102,7 +102,7 @@ object eventarc:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/eventarc/advanced/docs/publish-events/create-bus)
    */
-  def MessageBus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MessageBus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.eventarc.MessageBusArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.eventarc.MessageBusArgs.builder
     com.pulumi.gcp.eventarc.MessageBus(name,
@@ -118,7 +118,7 @@ object eventarc:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/eventarc/advanced/docs/receive-events/create-enrollment)
    */
-  def Pipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Pipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.eventarc.PipelineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.eventarc.PipelineArgs.builder
     com.pulumi.gcp.eventarc.Pipeline(name,
@@ -431,7 +431,7 @@ object eventarc:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def PipelineIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PipelineIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.eventarc.PipelineIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.eventarc.PipelineIamBindingArgs.builder
     com.pulumi.gcp.eventarc.PipelineIamBinding(name,
@@ -744,7 +744,7 @@ object eventarc:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def PipelineIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PipelineIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.eventarc.PipelineIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.eventarc.PipelineIamMemberArgs.builder
     com.pulumi.gcp.eventarc.PipelineIamMember(name,
@@ -1057,7 +1057,7 @@ object eventarc:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def PipelineIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PipelineIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.eventarc.PipelineIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.eventarc.PipelineIamPolicyArgs.builder
     com.pulumi.gcp.eventarc.PipelineIamPolicy(name,
@@ -1073,7 +1073,7 @@ object eventarc:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/eventarc/standard/docs/overview#eventarc-triggers)
    */
-  def Trigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Trigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.eventarc.TriggerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.eventarc.TriggerArgs.builder
     conf.logicalName2physicalName(name) match

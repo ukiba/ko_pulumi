@@ -8,7 +8,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultAction(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyDefaultActionArgs.Builder]):
+    inline def defaultAction(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyDefaultActionArgs.Builder]):
         com.pulumi.gcp.dataloss.PreventionContentPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyDefaultActionArgs.builder
       builder.defaultAction(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def failedToScanSupportedFileType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyFailedToScanSupportedFileTypeArgs.Builder]):
+    inline def failedToScanSupportedFileType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyFailedToScanSupportedFileTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.PreventionContentPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyFailedToScanSupportedFileTypeArgs.builder
       builder.failedToScanSupportedFileType(args(argsBuilder).build)
@@ -28,7 +28,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inputTooLarge(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInputTooLargeArgs.Builder]):
+    inline def inputTooLarge(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInputTooLargeArgs.Builder]):
         com.pulumi.gcp.dataloss.PreventionContentPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInputTooLargeArgs.builder
       builder.inputTooLarge(args(argsBuilder).build)
@@ -38,7 +38,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inspectConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigArgs.Builder]):
+    inline def inspectConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.PreventionContentPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigArgs.builder
       builder.inspectConfig(args(argsBuilder).build)
@@ -48,7 +48,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loggingConfigs(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyLoggingConfigArgs.Builder]*):
+    inline def loggingConfigs(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyLoggingConfigArgs.Builder]*):
         com.pulumi.gcp.dataloss.PreventionContentPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyLoggingConfigArgs.builder
       builder.loggingConfigs(args.map(_(argsBuilder).build)*)
@@ -58,7 +58,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleArgs.Builder]*):
         com.pulumi.gcp.dataloss.PreventionContentPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -68,7 +68,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def unsupportedFileType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyUnsupportedFileTypeArgs.Builder]):
+    inline def unsupportedFileType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyUnsupportedFileTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.PreventionContentPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyUnsupportedFileTypeArgs.builder
       builder.unsupportedFileType(args(argsBuilder).build)
@@ -79,7 +79,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deidentifyConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigArgs.Builder]):
+    inline def deidentifyConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.PreventionDeidentifyTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigArgs.builder
       builder.deidentifyConfig(args(argsBuilder).build)
@@ -90,7 +90,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def actions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionArgs.Builder]*):
+    inline def actions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionArgs.Builder]*):
         com.pulumi.gcp.dataloss.PreventionDiscoveryConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionArgs.builder
       builder.actions(args.map(_(argsBuilder).build)*)
@@ -100,7 +100,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def orgConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigOrgConfigArgs.Builder]):
+    inline def orgConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigOrgConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.PreventionDiscoveryConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigOrgConfigArgs.builder
       builder.orgConfig(args(argsBuilder).build)
@@ -110,7 +110,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def otherCloudStartingLocation(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigOtherCloudStartingLocationArgs.Builder]):
+    inline def otherCloudStartingLocation(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigOtherCloudStartingLocationArgs.Builder]):
         com.pulumi.gcp.dataloss.PreventionDiscoveryConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigOtherCloudStartingLocationArgs.builder
       builder.otherCloudStartingLocation(args(argsBuilder).build)
@@ -120,7 +120,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def targets(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetArgs.Builder]*):
+    inline def targets(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetArgs.Builder]*):
         com.pulumi.gcp.dataloss.PreventionDiscoveryConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetArgs.builder
       builder.targets(args.map(_(argsBuilder).build)*)
@@ -131,7 +131,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inspectConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigArgs.Builder]):
+    inline def inspectConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.PreventionInspectTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigArgs.builder
       builder.inspectConfig(args(argsBuilder).build)
@@ -142,7 +142,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inspectJob(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobArgs.Builder]):
+    inline def inspectJob(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobArgs.Builder]):
         com.pulumi.gcp.dataloss.PreventionJobTriggerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobArgs.builder
       builder.inspectJob(args(argsBuilder).build)
@@ -152,7 +152,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def triggers(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerTriggerArgs.Builder]*):
+    inline def triggers(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerTriggerArgs.Builder]*):
         com.pulumi.gcp.dataloss.PreventionJobTriggerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerTriggerArgs.builder
       builder.triggers(args.map(_(argsBuilder).build)*)
@@ -163,7 +163,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dictionary(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeDictionaryArgs.Builder]):
+    inline def dictionary(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeDictionaryArgs.Builder]):
         com.pulumi.gcp.dataloss.PreventionStoredInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeDictionaryArgs.builder
       builder.dictionary(args(argsBuilder).build)
@@ -173,7 +173,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def largeCustomDictionary(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryArgs.Builder]):
+    inline def largeCustomDictionary(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryArgs.Builder]):
         com.pulumi.gcp.dataloss.PreventionStoredInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryArgs.builder
       builder.largeCustomDictionary(args(argsBuilder).build)
@@ -183,7 +183,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def regex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeRegexArgs.Builder]):
+    inline def regex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeRegexArgs.Builder]):
         com.pulumi.gcp.dataloss.PreventionStoredInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeRegexArgs.builder
       builder.regex(args(argsBuilder).build)
@@ -194,7 +194,7 @@ object dataloss_ext:
      * A list of messages that carry the error details.
      * @return builder
      */
-    def details(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyErrorDetailArgs.Builder]*):
+    inline def details(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyErrorDetailArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyErrorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyErrorDetailArgs.builder
       builder.details(args.map(_(argsBuilder).build)*)
@@ -205,7 +205,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeArgs.Builder]*):
+    inline def customInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeArgs.builder
       builder.customInfoTypes(args.map(_(argsBuilder).build)*)
@@ -218,7 +218,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigInfoTypeArgs.Builder]*):
+    inline def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigInfoTypeArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigInfoTypeArgs.builder
       builder.infoTypes(args.map(_(argsBuilder).build)*)
@@ -228,7 +228,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def limits(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsArgs.Builder]):
+    inline def limits(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsArgs.builder
       builder.limits(args(argsBuilder).build)
@@ -240,7 +240,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def minLikelihoodPerInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigMinLikelihoodPerInfoTypeArgs.Builder]*):
+    inline def minLikelihoodPerInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigMinLikelihoodPerInfoTypeArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigMinLikelihoodPerInfoTypeArgs.builder
       builder.minLikelihoodPerInfoTypes(args.map(_(argsBuilder).build)*)
@@ -251,7 +251,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ruleSets(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetArgs.Builder]*):
+    inline def ruleSets(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetArgs.builder
       builder.ruleSets(args.map(_(argsBuilder).build)*)
@@ -263,7 +263,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def detectionRules(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleArgs.Builder]*):
+    inline def detectionRules(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleArgs.builder
       builder.detectionRules(args.map(_(argsBuilder).build)*)
@@ -273,7 +273,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dictionary(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDictionaryArgs.Builder]):
+    inline def dictionary(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDictionaryArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDictionaryArgs.builder
       builder.dictionary(args(argsBuilder).build)
@@ -283,7 +283,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fileLabelInfoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeArgs.Builder]):
+    inline def fileLabelInfoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeArgs.builder
       builder.fileLabelInfoType(args(argsBuilder).build)
@@ -296,7 +296,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeInfoTypeArgs.Builder]):
+    inline def infoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeInfoTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeInfoTypeArgs.builder
       builder.infoType(args(argsBuilder).build)
@@ -306,7 +306,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metadataKeyValueExpression(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeMetadataKeyValueExpressionArgs.Builder]):
+    inline def metadataKeyValueExpression(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeMetadataKeyValueExpressionArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeMetadataKeyValueExpressionArgs.builder
       builder.metadataKeyValueExpression(args(argsBuilder).build)
@@ -316,7 +316,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def regex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeRegexArgs.Builder]):
+    inline def regex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeRegexArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeRegexArgs.builder
       builder.regex(args(argsBuilder).build)
@@ -326,7 +326,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -336,7 +336,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def storedType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeStoredTypeArgs.Builder]):
+    inline def storedType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeStoredTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeStoredTypeArgs.builder
       builder.storedType(args(argsBuilder).build)
@@ -345,7 +345,7 @@ object dataloss_ext:
      * @param surrogateType Message for detecting output from deidentification transformations that support reversing.
      * @return builder
      */
-    def surrogateType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeSurrogateTypeArgs.Builder]):
+    inline def surrogateType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeSurrogateTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeSurrogateTypeArgs.builder
       builder.surrogateType(args(argsBuilder).build)
@@ -356,7 +356,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hotwordRule(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleArgs.Builder]):
+    inline def hotwordRule(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleArgs.builder
       builder.hotwordRule(args(argsBuilder).build)
@@ -367,7 +367,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hotwordRegex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleHotwordRegexArgs.Builder]):
+    inline def hotwordRegex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleHotwordRegexArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleHotwordRegexArgs.builder
       builder.hotwordRegex(args(argsBuilder).build)
@@ -377,7 +377,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def likelihoodAdjustment(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleLikelihoodAdjustmentArgs.Builder]):
+    inline def likelihoodAdjustment(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleLikelihoodAdjustmentArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleLikelihoodAdjustmentArgs.builder
       builder.likelihoodAdjustment(args(argsBuilder).build)
@@ -388,7 +388,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def proximity(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleProximityArgs.Builder]):
+    inline def proximity(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleProximityArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDetectionRuleHotwordRuleProximityArgs.builder
       builder.proximity(args(argsBuilder).build)
@@ -399,7 +399,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudStoragePath(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDictionaryCloudStoragePathArgs.Builder]):
+    inline def cloudStoragePath(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDictionaryCloudStoragePathArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDictionaryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDictionaryCloudStoragePathArgs.builder
       builder.cloudStoragePath(args(argsBuilder).build)
@@ -409,7 +409,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def wordList(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDictionaryWordListArgs.Builder]):
+    inline def wordList(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDictionaryWordListArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDictionaryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeDictionaryWordListArgs.builder
       builder.wordList(args(argsBuilder).build)
@@ -420,7 +420,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleDriveLabel(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeGoogleDriveLabelArgs.Builder]):
+    inline def googleDriveLabel(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeGoogleDriveLabelArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeGoogleDriveLabelArgs.builder
       builder.googleDriveLabel(args(argsBuilder).build)
@@ -430,7 +430,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityLabel(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeSensitivityLabelArgs.Builder]):
+    inline def sensitivityLabel(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeSensitivityLabelArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeSensitivityLabelArgs.builder
       builder.sensitivityLabel(args(argsBuilder).build)
@@ -441,7 +441,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def labelFieldsToMatches(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeGoogleDriveLabelLabelFieldsToMatchArgs.Builder]*):
+    inline def labelFieldsToMatches(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeGoogleDriveLabelLabelFieldsToMatchArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeGoogleDriveLabelArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeFileLabelInfoTypeGoogleDriveLabelLabelFieldsToMatchArgs.builder
       builder.labelFieldsToMatches(args.map(_(argsBuilder).build)*)
@@ -452,7 +452,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigCustomInfoTypeInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -463,7 +463,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -474,7 +474,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maxFindingsPerInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsMaxFindingsPerInfoTypeArgs.Builder]*):
+    inline def maxFindingsPerInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsMaxFindingsPerInfoTypeArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsMaxFindingsPerInfoTypeArgs.builder
       builder.maxFindingsPerInfoTypes(args.map(_(argsBuilder).build)*)
@@ -487,7 +487,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeArgs.Builder]):
+    inline def infoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsMaxFindingsPerInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeArgs.builder
       builder.infoType(args(argsBuilder).build)
@@ -498,7 +498,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -510,7 +510,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigMinLikelihoodPerInfoTypeInfoTypeArgs.Builder]):
+    inline def infoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigMinLikelihoodPerInfoTypeInfoTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigMinLikelihoodPerInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigMinLikelihoodPerInfoTypeInfoTypeArgs.builder
       builder.infoType(args(argsBuilder).build)
@@ -521,7 +521,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigMinLikelihoodPerInfoTypeInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigMinLikelihoodPerInfoTypeInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigMinLikelihoodPerInfoTypeInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigMinLikelihoodPerInfoTypeInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -532,7 +532,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetInfoTypeArgs.Builder]*):
+    inline def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetInfoTypeArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetInfoTypeArgs.builder
       builder.infoTypes(args.map(_(argsBuilder).build)*)
@@ -542,7 +542,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -553,7 +553,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -564,7 +564,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def imageContainmentType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeArgs.Builder]):
+    inline def imageContainmentType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeArgs.builder
       builder.imageContainmentType(args(argsBuilder).build)
@@ -574,7 +574,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsInfoTypeArgs.Builder]*):
+    inline def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsInfoTypeArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsInfoTypeArgs.builder
       builder.infoTypes(args.map(_(argsBuilder).build)*)
@@ -584,7 +584,7 @@ object dataloss_ext:
      * @param encloses Defines a condition where one bounding box encloses another.
      * @return builder
      */
-    def encloses(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeEnclosesArgs.Builder]):
+    inline def encloses(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeEnclosesArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeEnclosesArgs.builder
       builder.encloses(args(argsBuilder).build)
@@ -593,7 +593,7 @@ object dataloss_ext:
      * @param fullyInside Defines a condition where one bounding box is fully inside another.
      * @return builder
      */
-    def fullyInside(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeFullyInsideArgs.Builder]):
+    inline def fullyInside(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeFullyInsideArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeFullyInsideArgs.builder
       builder.fullyInside(args(argsBuilder).build)
@@ -602,7 +602,7 @@ object dataloss_ext:
      * @param overlaps Defines a condition for overlapping bounding boxes.
      * @return builder
      */
-    def overlaps(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeOverlapsArgs.Builder]):
+    inline def overlaps(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeOverlapsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsImageContainmentTypeOverlapsArgs.builder
       builder.overlaps(args(argsBuilder).build)
@@ -613,7 +613,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -624,7 +624,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByMatchingInfoTypesInfoTypeArgs.Builder]*):
+    inline def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByMatchingInfoTypesInfoTypeArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByMatchingInfoTypesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByMatchingInfoTypesInfoTypeArgs.builder
       builder.infoTypes(args.map(_(argsBuilder).build)*)
@@ -635,7 +635,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByMatchingInfoTypesInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByMatchingInfoTypesInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByMatchingInfoTypesInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByMatchingInfoTypesInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -646,7 +646,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def adjustByImageFindings(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsArgs.Builder]):
+    inline def adjustByImageFindings(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByImageFindingsArgs.builder
       builder.adjustByImageFindings(args(argsBuilder).build)
@@ -656,7 +656,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def adjustByMatchingInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByMatchingInfoTypesArgs.Builder]):
+    inline def adjustByMatchingInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByMatchingInfoTypesArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleAdjustByMatchingInfoTypesArgs.builder
       builder.adjustByMatchingInfoTypes(args(argsBuilder).build)
@@ -666,7 +666,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def likelihoodAdjustment(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleLikelihoodAdjustmentArgs.Builder]):
+    inline def likelihoodAdjustment(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleLikelihoodAdjustmentArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleLikelihoodAdjustmentArgs.builder
       builder.likelihoodAdjustment(args(argsBuilder).build)
@@ -677,7 +677,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def adjustmentRule(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleArgs.Builder]):
+    inline def adjustmentRule(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleAdjustmentRuleArgs.builder
       builder.adjustmentRule(args(argsBuilder).build)
@@ -687,7 +687,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def exclusionRule(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleArgs.Builder]):
+    inline def exclusionRule(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleArgs.builder
       builder.exclusionRule(args(argsBuilder).build)
@@ -697,7 +697,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hotwordRule(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleArgs.Builder]):
+    inline def hotwordRule(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleArgs.builder
       builder.hotwordRule(args(argsBuilder).build)
@@ -708,7 +708,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dictionary(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleDictionaryArgs.Builder]):
+    inline def dictionary(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleDictionaryArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleDictionaryArgs.builder
       builder.dictionary(args(argsBuilder).build)
@@ -719,7 +719,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def excludeByHotword(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordArgs.Builder]):
+    inline def excludeByHotword(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordArgs.builder
       builder.excludeByHotword(args(argsBuilder).build)
@@ -729,7 +729,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def excludeByImageFindings(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsArgs.Builder]):
+    inline def excludeByImageFindings(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsArgs.builder
       builder.excludeByImageFindings(args(argsBuilder).build)
@@ -739,7 +739,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def excludeInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesArgs.Builder]):
+    inline def excludeInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesArgs.builder
       builder.excludeInfoTypes(args(argsBuilder).build)
@@ -749,7 +749,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def regex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleRegexArgs.Builder]):
+    inline def regex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleRegexArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleRegexArgs.builder
       builder.regex(args(argsBuilder).build)
@@ -760,7 +760,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudStoragePath(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleDictionaryCloudStoragePathArgs.Builder]):
+    inline def cloudStoragePath(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleDictionaryCloudStoragePathArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleDictionaryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleDictionaryCloudStoragePathArgs.builder
       builder.cloudStoragePath(args(argsBuilder).build)
@@ -770,7 +770,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def wordList(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleDictionaryWordListArgs.Builder]):
+    inline def wordList(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleDictionaryWordListArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleDictionaryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleDictionaryWordListArgs.builder
       builder.wordList(args(argsBuilder).build)
@@ -781,7 +781,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hotwordRegex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordHotwordRegexArgs.Builder]):
+    inline def hotwordRegex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordHotwordRegexArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordHotwordRegexArgs.builder
       builder.hotwordRegex(args(argsBuilder).build)
@@ -795,7 +795,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def proximity(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordProximityArgs.Builder]):
+    inline def proximity(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordProximityArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordProximityArgs.builder
       builder.proximity(args(argsBuilder).build)
@@ -806,7 +806,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def imageContainmentType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeArgs.Builder]):
+    inline def imageContainmentType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeArgs.builder
       builder.imageContainmentType(args(argsBuilder).build)
@@ -816,7 +816,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsInfoTypeArgs.Builder]*):
+    inline def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsInfoTypeArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsInfoTypeArgs.builder
       builder.infoTypes(args.map(_(argsBuilder).build)*)
@@ -826,7 +826,7 @@ object dataloss_ext:
      * @param encloses Defines a condition where one bounding box encloses another.
      * @return builder
      */
-    def encloses(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeEnclosesArgs.Builder]):
+    inline def encloses(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeEnclosesArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeEnclosesArgs.builder
       builder.encloses(args(argsBuilder).build)
@@ -835,7 +835,7 @@ object dataloss_ext:
      * @param fullyInside Defines a condition where one bounding box is fully inside another.
      * @return builder
      */
-    def fullyInside(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeFullyInsideArgs.Builder]):
+    inline def fullyInside(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeFullyInsideArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeFullyInsideArgs.builder
       builder.fullyInside(args(argsBuilder).build)
@@ -844,7 +844,7 @@ object dataloss_ext:
      * @param overlaps Defines a condition for overlapping bounding boxes.
      * @return builder
      */
-    def overlaps(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeOverlapsArgs.Builder]):
+    inline def overlaps(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeOverlapsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsImageContainmentTypeOverlapsArgs.builder
       builder.overlaps(args(argsBuilder).build)
@@ -855,7 +855,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeByImageFindingsInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -866,7 +866,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeArgs.Builder]*):
+    inline def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeArgs.builder
       builder.infoTypes(args.map(_(argsBuilder).build)*)
@@ -877,7 +877,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -888,7 +888,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hotwordRegex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleHotwordRegexArgs.Builder]):
+    inline def hotwordRegex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleHotwordRegexArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleHotwordRegexArgs.builder
       builder.hotwordRegex(args(argsBuilder).build)
@@ -898,7 +898,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def likelihoodAdjustment(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleLikelihoodAdjustmentArgs.Builder]):
+    inline def likelihoodAdjustment(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleLikelihoodAdjustmentArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleLikelihoodAdjustmentArgs.builder
       builder.likelihoodAdjustment(args(argsBuilder).build)
@@ -909,7 +909,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def proximity(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleProximityArgs.Builder]):
+    inline def proximity(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleProximityArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigRuleSetRuleHotwordRuleProximityArgs.builder
       builder.proximity(args(argsBuilder).build)
@@ -920,7 +920,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def logToBigQuery(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyLoggingConfigLogToBigQueryArgs.Builder]):
+    inline def logToBigQuery(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyLoggingConfigLogToBigQueryArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyLoggingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyLoggingConfigLogToBigQueryArgs.builder
       builder.logToBigQuery(args(argsBuilder).build)
@@ -931,7 +931,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def action(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleActionArgs.Builder]):
+    inline def action(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleActionArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleActionArgs.builder
       builder.action(args(argsBuilder).build)
@@ -941,7 +941,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -952,7 +952,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoTypeCondition(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionInfoTypeConditionArgs.Builder]):
+    inline def infoTypeCondition(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionInfoTypeConditionArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionInfoTypeConditionArgs.builder
       builder.infoTypeCondition(args(argsBuilder).build)
@@ -962,7 +962,7 @@ object dataloss_ext:
      * @param anyInfoType Match any info type.
      * @return builder
      */
-    def anyInfoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionInfoTypeConditionAnyInfoTypeArgs.Builder]):
+    inline def anyInfoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionInfoTypeConditionAnyInfoTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionInfoTypeConditionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionInfoTypeConditionAnyInfoTypeArgs.builder
       builder.anyInfoType(args(argsBuilder).build)
@@ -972,7 +972,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionInfoTypeConditionInfoTypesArgs.Builder]):
+    inline def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionInfoTypeConditionInfoTypesArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionInfoTypeConditionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleConditionInfoTypeConditionInfoTypesArgs.builder
       builder.infoTypes(args(argsBuilder).build)
@@ -983,7 +983,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultAction(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyDefaultActionArgs.Builder]):
+    inline def defaultAction(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyDefaultActionArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyDefaultActionArgs.builder
       builder.defaultAction(args(argsBuilder).build)
@@ -993,7 +993,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errors(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyErrorArgs.Builder]*):
+    inline def errors(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyErrorArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
@@ -1003,7 +1003,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def failedToScanSupportedFileType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyFailedToScanSupportedFileTypeArgs.Builder]):
+    inline def failedToScanSupportedFileType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyFailedToScanSupportedFileTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyFailedToScanSupportedFileTypeArgs.builder
       builder.failedToScanSupportedFileType(args(argsBuilder).build)
@@ -1013,7 +1013,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inputTooLarge(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInputTooLargeArgs.Builder]):
+    inline def inputTooLarge(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInputTooLargeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInputTooLargeArgs.builder
       builder.inputTooLarge(args(argsBuilder).build)
@@ -1023,7 +1023,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inspectConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigArgs.Builder]):
+    inline def inspectConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyInspectConfigArgs.builder
       builder.inspectConfig(args(argsBuilder).build)
@@ -1033,7 +1033,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loggingConfigs(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyLoggingConfigArgs.Builder]*):
+    inline def loggingConfigs(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyLoggingConfigArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyLoggingConfigArgs.builder
       builder.loggingConfigs(args.map(_(argsBuilder).build)*)
@@ -1043,7 +1043,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -1053,7 +1053,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def unsupportedFileType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyUnsupportedFileTypeArgs.Builder]):
+    inline def unsupportedFileType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyUnsupportedFileTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionContentPolicyUnsupportedFileTypeArgs.builder
       builder.unsupportedFileType(args(argsBuilder).build)
@@ -1064,7 +1064,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def imageTransformations(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsArgs.Builder]):
+    inline def imageTransformations(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsArgs.builder
       builder.imageTransformations(args(argsBuilder).build)
@@ -1074,7 +1074,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoTypeTransformations(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsArgs.Builder]):
+    inline def infoTypeTransformations(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsArgs.builder
       builder.infoTypeTransformations(args(argsBuilder).build)
@@ -1084,7 +1084,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def recordTransformations(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsArgs.Builder]):
+    inline def recordTransformations(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsArgs.builder
       builder.recordTransformations(args(argsBuilder).build)
@@ -1095,7 +1095,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transforms(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformArgs.Builder]*):
+    inline def transforms(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformArgs.builder
       builder.transforms(args.map(_(argsBuilder).build)*)
@@ -1105,7 +1105,7 @@ object dataloss_ext:
      * @param allInfoTypes Apply transformation to all findings not specified in other ImageTransformation&#39;s selectedInfoTypes.
      * @return builder
      */
-    def allInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllInfoTypesArgs.Builder]):
+    inline def allInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllInfoTypesArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllInfoTypesArgs.builder
       builder.allInfoTypes(args(argsBuilder).build)
@@ -1114,7 +1114,7 @@ object dataloss_ext:
      * @param allText Apply transformation to all text that doesn&#39;t match an infoType.
      * @return builder
      */
-    def allText(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllTextArgs.Builder]):
+    inline def allText(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllTextArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformAllTextArgs.builder
       builder.allText(args(argsBuilder).build)
@@ -1124,7 +1124,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def redactionColor(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformRedactionColorArgs.Builder]):
+    inline def redactionColor(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformRedactionColorArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformRedactionColorArgs.builder
       builder.redactionColor(args(argsBuilder).build)
@@ -1134,7 +1134,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def selectedInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesArgs.Builder]):
+    inline def selectedInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesArgs.builder
       builder.selectedInfoTypes(args(argsBuilder).build)
@@ -1146,7 +1146,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoTypeArgs.Builder]*):
+    inline def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoTypeArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoTypeArgs.builder
       builder.infoTypes(args.map(_(argsBuilder).build)*)
@@ -1157,7 +1157,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigImageTransformationsTransformSelectedInfoTypesInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -1168,7 +1168,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transformations(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationArgs.Builder]*):
+    inline def transformations(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationArgs.builder
       builder.transformations(args.map(_(argsBuilder).build)*)
@@ -1180,7 +1180,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationInfoTypeArgs.Builder]*):
+    inline def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationInfoTypeArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationInfoTypeArgs.builder
       builder.infoTypes(args.map(_(argsBuilder).build)*)
@@ -1191,7 +1191,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def primitiveTransformation(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder]):
+    inline def primitiveTransformation(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationArgs.builder
       builder.primitiveTransformation(args(argsBuilder).build)
@@ -1202,7 +1202,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -1216,7 +1216,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bucketingConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigArgs.Builder]):
+    inline def bucketingConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigArgs.builder
       builder.bucketingConfig(args(argsBuilder).build)
@@ -1226,7 +1226,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def characterMaskConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCharacterMaskConfigArgs.Builder]):
+    inline def characterMaskConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCharacterMaskConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCharacterMaskConfigArgs.builder
       builder.characterMaskConfig(args(argsBuilder).build)
@@ -1236,7 +1236,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cryptoDeterministicConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigArgs.Builder]):
+    inline def cryptoDeterministicConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigArgs.builder
       builder.cryptoDeterministicConfig(args(argsBuilder).build)
@@ -1249,7 +1249,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cryptoHashConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigArgs.Builder]):
+    inline def cryptoHashConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigArgs.builder
       builder.cryptoHashConfig(args(argsBuilder).build)
@@ -1260,7 +1260,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cryptoReplaceFfxFpeConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigArgs.Builder]):
+    inline def cryptoReplaceFfxFpeConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigArgs.builder
       builder.cryptoReplaceFfxFpeConfig(args(argsBuilder).build)
@@ -1270,7 +1270,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dateShiftConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigArgs.Builder]):
+    inline def dateShiftConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigArgs.builder
       builder.dateShiftConfig(args(argsBuilder).build)
@@ -1284,7 +1284,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fixedSizeBucketingConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigArgs.Builder]):
+    inline def fixedSizeBucketingConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigArgs.builder
       builder.fixedSizeBucketingConfig(args(argsBuilder).build)
@@ -1293,7 +1293,7 @@ object dataloss_ext:
      * @param redactConfig Redact a given value. For example, if used with an InfoTypeTransformation transforming PHONE_NUMBER, and input &#39;My phone number is 206-555-0123&#39;, the output would be &#39;My phone number is &#39;.
      * @return builder
      */
-    def redactConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationRedactConfigArgs.Builder]):
+    inline def redactConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationRedactConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationRedactConfigArgs.builder
       builder.redactConfig(args(argsBuilder).build)
@@ -1303,7 +1303,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def replaceConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigArgs.Builder]):
+    inline def replaceConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigArgs.builder
       builder.replaceConfig(args(argsBuilder).build)
@@ -1313,7 +1313,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def replaceDictionaryConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceDictionaryConfigArgs.Builder]):
+    inline def replaceDictionaryConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceDictionaryConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceDictionaryConfigArgs.builder
       builder.replaceDictionaryConfig(args(argsBuilder).build)
@@ -1323,7 +1323,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timePartConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationTimePartConfigArgs.Builder]):
+    inline def timePartConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationTimePartConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationTimePartConfigArgs.builder
       builder.timePartConfig(args(argsBuilder).build)
@@ -1335,7 +1335,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def buckets(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketArgs.Builder]*):
+    inline def buckets(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketArgs.builder
       builder.buckets(args.map(_(argsBuilder).build)*)
@@ -1347,7 +1347,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def max(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMaxArgs.Builder]):
+    inline def max(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMaxArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMaxArgs.builder
       builder.max(args(argsBuilder).build)
@@ -1358,7 +1358,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def min(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinArgs.Builder]):
+    inline def min(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinArgs.builder
       builder.min(args(argsBuilder).build)
@@ -1369,7 +1369,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def replacementValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueArgs.Builder]):
+    inline def replacementValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueArgs.builder
       builder.replacementValue(args(argsBuilder).build)
@@ -1380,7 +1380,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMaxDateValueArgs.Builder]):
+    inline def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMaxDateValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMaxArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMaxDateValueArgs.builder
       builder.dateValue(args(argsBuilder).build)
@@ -1390,7 +1390,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMaxTimeValueArgs.Builder]):
+    inline def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMaxTimeValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMaxArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMaxTimeValueArgs.builder
       builder.timeValue(args(argsBuilder).build)
@@ -1401,7 +1401,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinDateValueArgs.Builder]):
+    inline def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinDateValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinDateValueArgs.builder
       builder.dateValue(args(argsBuilder).build)
@@ -1411,7 +1411,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinTimeValueArgs.Builder]):
+    inline def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinTimeValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinTimeValueArgs.builder
       builder.timeValue(args(argsBuilder).build)
@@ -1422,7 +1422,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueDateValueArgs.Builder]):
+    inline def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueDateValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueDateValueArgs.builder
       builder.dateValue(args(argsBuilder).build)
@@ -1432,7 +1432,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueTimeValueArgs.Builder]):
+    inline def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueTimeValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueTimeValueArgs.builder
       builder.timeValue(args(argsBuilder).build)
@@ -1443,7 +1443,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def charactersToIgnores(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCharacterMaskConfigCharactersToIgnoreArgs.Builder]*):
+    inline def charactersToIgnores(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCharacterMaskConfigCharactersToIgnoreArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCharacterMaskConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCharacterMaskConfigCharactersToIgnoreArgs.builder
       builder.charactersToIgnores(args.map(_(argsBuilder).build)*)
@@ -1459,7 +1459,7 @@ object dataloss_ext:
      *    Structure is documented below.
      * @return builder
      */
-    def context(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigContextArgs.Builder]):
+    inline def context(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigContextArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigContextArgs.builder
       builder.context(args(argsBuilder).build)
@@ -1469,7 +1469,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cryptoKey(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyArgs.Builder]):
+    inline def cryptoKey(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyArgs.builder
       builder.cryptoKey(args(argsBuilder).build)
@@ -1486,7 +1486,7 @@ object dataloss_ext:
      *     Structure is documented below.
      * @return builder
      */
-    def surrogateInfoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigSurrogateInfoTypeArgs.Builder]):
+    inline def surrogateInfoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigSurrogateInfoTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigSurrogateInfoTypeArgs.builder
       builder.surrogateInfoType(args(argsBuilder).build)
@@ -1500,7 +1500,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def kmsWrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyKmsWrappedArgs.Builder]):
+    inline def kmsWrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyKmsWrappedArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyKmsWrappedArgs.builder
       builder.kmsWrapped(args(argsBuilder).build)
@@ -1510,7 +1510,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transient_(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyTransientArgs.Builder]):
+    inline def transient_(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyTransientArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyTransientArgs.builder
       builder.transient_(args(argsBuilder).build)
@@ -1520,7 +1520,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def unwrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyUnwrappedArgs.Builder]):
+    inline def unwrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyUnwrappedArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyUnwrappedArgs.builder
       builder.unwrapped(args(argsBuilder).build)
@@ -1531,7 +1531,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigSurrogateInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigSurrogateInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigSurrogateInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigSurrogateInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -1542,7 +1542,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cryptoKey(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyArgs.Builder]):
+    inline def cryptoKey(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyArgs.builder
       builder.cryptoKey(args(argsBuilder).build)
@@ -1556,7 +1556,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def kmsWrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyKmsWrappedArgs.Builder]):
+    inline def kmsWrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyKmsWrappedArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyKmsWrappedArgs.builder
       builder.kmsWrapped(args(argsBuilder).build)
@@ -1566,7 +1566,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transient_(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyTransientArgs.Builder]):
+    inline def transient_(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyTransientArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyTransientArgs.builder
       builder.transient_(args(argsBuilder).build)
@@ -1576,7 +1576,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def unwrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyUnwrappedArgs.Builder]):
+    inline def unwrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyUnwrappedArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyUnwrappedArgs.builder
       builder.unwrapped(args(argsBuilder).build)
@@ -1595,7 +1595,7 @@ object dataloss_ext:
      *     Structure is documented below.
      * @return builder
      */
-    def context(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigContextArgs.Builder]):
+    inline def context(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigContextArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigContextArgs.builder
       builder.context(args(argsBuilder).build)
@@ -1605,7 +1605,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cryptoKey(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyArgs.Builder]):
+    inline def cryptoKey(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyArgs.builder
       builder.cryptoKey(args(argsBuilder).build)
@@ -1618,7 +1618,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def surrogateInfoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigSurrogateInfoTypeArgs.Builder]):
+    inline def surrogateInfoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigSurrogateInfoTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigSurrogateInfoTypeArgs.builder
       builder.surrogateInfoType(args(argsBuilder).build)
@@ -1632,7 +1632,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def kmsWrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyKmsWrappedArgs.Builder]):
+    inline def kmsWrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyKmsWrappedArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyKmsWrappedArgs.builder
       builder.kmsWrapped(args(argsBuilder).build)
@@ -1642,7 +1642,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transient_(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyTransientArgs.Builder]):
+    inline def transient_(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyTransientArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyTransientArgs.builder
       builder.transient_(args(argsBuilder).build)
@@ -1652,7 +1652,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def unwrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyUnwrappedArgs.Builder]):
+    inline def unwrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyUnwrappedArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyUnwrappedArgs.builder
       builder.unwrapped(args(argsBuilder).build)
@@ -1663,7 +1663,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigSurrogateInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigSurrogateInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigSurrogateInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigSurrogateInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -1675,7 +1675,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def context(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigContextArgs.Builder]):
+    inline def context(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigContextArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigContextArgs.builder
       builder.context(args(argsBuilder).build)
@@ -1685,7 +1685,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cryptoKey(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyArgs.Builder]):
+    inline def cryptoKey(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyArgs.builder
       builder.cryptoKey(args(argsBuilder).build)
@@ -1699,7 +1699,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def kmsWrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyKmsWrappedArgs.Builder]):
+    inline def kmsWrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyKmsWrappedArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyKmsWrappedArgs.builder
       builder.kmsWrapped(args(argsBuilder).build)
@@ -1709,7 +1709,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transient_(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyTransientArgs.Builder]):
+    inline def transient_(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyTransientArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyTransientArgs.builder
       builder.transient_(args(argsBuilder).build)
@@ -1719,7 +1719,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def unwrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyUnwrappedArgs.Builder]):
+    inline def unwrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyUnwrappedArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyUnwrappedArgs.builder
       builder.unwrapped(args(argsBuilder).build)
@@ -1732,7 +1732,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def lowerBound(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigLowerBoundArgs.Builder]):
+    inline def lowerBound(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigLowerBoundArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigLowerBoundArgs.builder
       builder.lowerBound(args(argsBuilder).build)
@@ -1744,7 +1744,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def upperBound(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigUpperBoundArgs.Builder]):
+    inline def upperBound(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigUpperBoundArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigUpperBoundArgs.builder
       builder.upperBound(args(argsBuilder).build)
@@ -1756,7 +1756,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def newValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueArgs.Builder]):
+    inline def newValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueArgs.builder
       builder.newValue(args(argsBuilder).build)
@@ -1767,7 +1767,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueDateValueArgs.Builder]):
+    inline def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueDateValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueDateValueArgs.builder
       builder.dateValue(args(argsBuilder).build)
@@ -1777,7 +1777,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueTimeValueArgs.Builder]):
+    inline def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueTimeValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueTimeValueArgs.builder
       builder.timeValue(args(argsBuilder).build)
@@ -1788,7 +1788,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def wordList(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceDictionaryConfigWordListArgs.Builder]):
+    inline def wordList(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceDictionaryConfigWordListArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceDictionaryConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigInfoTypeTransformationsTransformationPrimitiveTransformationReplaceDictionaryConfigWordListArgs.builder
       builder.wordList(args(argsBuilder).build)
@@ -1799,7 +1799,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fieldTransformations(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationArgs.Builder]*):
+    inline def fieldTransformations(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationArgs.builder
       builder.fieldTransformations(args.map(_(argsBuilder).build)*)
@@ -1809,7 +1809,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def recordSuppressions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionArgs.Builder]*):
+    inline def recordSuppressions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionArgs.builder
       builder.recordSuppressions(args.map(_(argsBuilder).build)*)
@@ -1823,7 +1823,7 @@ object dataloss_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1834,7 +1834,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fields(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationFieldArgs.Builder]*):
+    inline def fields(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationFieldArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationFieldArgs.builder
       builder.fields(args.map(_(argsBuilder).build)*)
@@ -1845,7 +1845,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoTypeTransformations(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsArgs.Builder]):
+    inline def infoTypeTransformations(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsArgs.builder
       builder.infoTypeTransformations(args(argsBuilder).build)
@@ -1857,7 +1857,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def primitiveTransformation(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationArgs.Builder]):
+    inline def primitiveTransformation(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationArgs.builder
       builder.primitiveTransformation(args(argsBuilder).build)
@@ -1868,7 +1868,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def expressions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsArgs.Builder]):
+    inline def expressions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsArgs.builder
       builder.expressions(args(argsBuilder).build)
@@ -1879,7 +1879,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsArgs.Builder]):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsArgs.builder
       builder.conditions(args(argsBuilder).build)
@@ -1890,7 +1890,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -1901,7 +1901,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def field(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionFieldArgs.Builder]):
+    inline def field(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionFieldArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionFieldArgs.builder
       builder.field(args(argsBuilder).build)
@@ -1911,7 +1911,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def value(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionValueArgs.Builder]):
+    inline def value(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionValueArgs.builder
       builder.value(args(argsBuilder).build)
@@ -1922,7 +1922,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionValueDateValueArgs.Builder]):
+    inline def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionValueDateValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionValueDateValueArgs.builder
       builder.dateValue(args(argsBuilder).build)
@@ -1932,7 +1932,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionValueTimeValueArgs.Builder]):
+    inline def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionValueTimeValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationConditionExpressionsConditionsConditionValueTimeValueArgs.builder
       builder.timeValue(args(argsBuilder).build)
@@ -1943,7 +1943,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transformations(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationArgs.Builder]*):
+    inline def transformations(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationArgs.builder
       builder.transformations(args.map(_(argsBuilder).build)*)
@@ -1955,7 +1955,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationInfoTypeArgs.Builder]*):
+    inline def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationInfoTypeArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationInfoTypeArgs.builder
       builder.infoTypes(args.map(_(argsBuilder).build)*)
@@ -1966,7 +1966,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def primitiveTransformation(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder]):
+    inline def primitiveTransformation(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationArgs.builder
       builder.primitiveTransformation(args(argsBuilder).build)
@@ -1977,7 +1977,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -1991,7 +1991,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bucketingConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigArgs.Builder]):
+    inline def bucketingConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigArgs.builder
       builder.bucketingConfig(args(argsBuilder).build)
@@ -2001,7 +2001,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def characterMaskConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCharacterMaskConfigArgs.Builder]):
+    inline def characterMaskConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCharacterMaskConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCharacterMaskConfigArgs.builder
       builder.characterMaskConfig(args(argsBuilder).build)
@@ -2011,7 +2011,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cryptoDeterministicConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigArgs.Builder]):
+    inline def cryptoDeterministicConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigArgs.builder
       builder.cryptoDeterministicConfig(args(argsBuilder).build)
@@ -2024,7 +2024,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cryptoHashConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigArgs.Builder]):
+    inline def cryptoHashConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigArgs.builder
       builder.cryptoHashConfig(args(argsBuilder).build)
@@ -2035,7 +2035,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cryptoReplaceFfxFpeConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigArgs.Builder]):
+    inline def cryptoReplaceFfxFpeConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigArgs.builder
       builder.cryptoReplaceFfxFpeConfig(args(argsBuilder).build)
@@ -2045,7 +2045,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dateShiftConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigArgs.Builder]):
+    inline def dateShiftConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigArgs.builder
       builder.dateShiftConfig(args(argsBuilder).build)
@@ -2059,7 +2059,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fixedSizeBucketingConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigArgs.Builder]):
+    inline def fixedSizeBucketingConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigArgs.builder
       builder.fixedSizeBucketingConfig(args(argsBuilder).build)
@@ -2068,7 +2068,7 @@ object dataloss_ext:
      * @param redactConfig Redact a given value. For example, if used with an InfoTypeTransformation transforming PHONE_NUMBER, and input &#39;My phone number is 206-555-0123&#39;, the output would be &#39;My phone number is &#39;.
      * @return builder
      */
-    def redactConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationRedactConfigArgs.Builder]):
+    inline def redactConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationRedactConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationRedactConfigArgs.builder
       builder.redactConfig(args(argsBuilder).build)
@@ -2078,7 +2078,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def replaceConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigArgs.Builder]):
+    inline def replaceConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigArgs.builder
       builder.replaceConfig(args(argsBuilder).build)
@@ -2088,7 +2088,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def replaceDictionaryConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationReplaceDictionaryConfigArgs.Builder]):
+    inline def replaceDictionaryConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationReplaceDictionaryConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationReplaceDictionaryConfigArgs.builder
       builder.replaceDictionaryConfig(args(argsBuilder).build)
@@ -2097,7 +2097,7 @@ object dataloss_ext:
      * @param replaceWithInfoTypeConfig Replace each matching finding with the name of the info type.
      * @return builder
      */
-    def replaceWithInfoTypeConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationReplaceWithInfoTypeConfigArgs.Builder]):
+    inline def replaceWithInfoTypeConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationReplaceWithInfoTypeConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationReplaceWithInfoTypeConfigArgs.builder
       builder.replaceWithInfoTypeConfig(args(argsBuilder).build)
@@ -2107,7 +2107,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timePartConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationTimePartConfigArgs.Builder]):
+    inline def timePartConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationTimePartConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationTimePartConfigArgs.builder
       builder.timePartConfig(args(argsBuilder).build)
@@ -2119,7 +2119,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def buckets(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketArgs.Builder]*):
+    inline def buckets(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketArgs.builder
       builder.buckets(args.map(_(argsBuilder).build)*)
@@ -2131,7 +2131,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def max(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMaxArgs.Builder]):
+    inline def max(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMaxArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMaxArgs.builder
       builder.max(args(argsBuilder).build)
@@ -2142,7 +2142,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def min(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinArgs.Builder]):
+    inline def min(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinArgs.builder
       builder.min(args(argsBuilder).build)
@@ -2153,7 +2153,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def replacementValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueArgs.Builder]):
+    inline def replacementValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueArgs.builder
       builder.replacementValue(args(argsBuilder).build)
@@ -2164,7 +2164,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMaxDateValueArgs.Builder]):
+    inline def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMaxDateValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMaxArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMaxDateValueArgs.builder
       builder.dateValue(args(argsBuilder).build)
@@ -2174,7 +2174,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMaxTimeValueArgs.Builder]):
+    inline def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMaxTimeValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMaxArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMaxTimeValueArgs.builder
       builder.timeValue(args(argsBuilder).build)
@@ -2185,7 +2185,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinDateValueArgs.Builder]):
+    inline def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinDateValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinDateValueArgs.builder
       builder.dateValue(args(argsBuilder).build)
@@ -2195,7 +2195,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinTimeValueArgs.Builder]):
+    inline def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinTimeValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketMinTimeValueArgs.builder
       builder.timeValue(args(argsBuilder).build)
@@ -2206,7 +2206,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueDateValueArgs.Builder]):
+    inline def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueDateValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueDateValueArgs.builder
       builder.dateValue(args(argsBuilder).build)
@@ -2216,7 +2216,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueTimeValueArgs.Builder]):
+    inline def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueTimeValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueTimeValueArgs.builder
       builder.timeValue(args(argsBuilder).build)
@@ -2227,7 +2227,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def charactersToIgnores(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCharacterMaskConfigCharactersToIgnoreArgs.Builder]*):
+    inline def charactersToIgnores(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCharacterMaskConfigCharactersToIgnoreArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCharacterMaskConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCharacterMaskConfigCharactersToIgnoreArgs.builder
       builder.charactersToIgnores(args.map(_(argsBuilder).build)*)
@@ -2243,7 +2243,7 @@ object dataloss_ext:
      *    Structure is documented below.
      * @return builder
      */
-    def context(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigContextArgs.Builder]):
+    inline def context(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigContextArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigContextArgs.builder
       builder.context(args(argsBuilder).build)
@@ -2253,7 +2253,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cryptoKey(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyArgs.Builder]):
+    inline def cryptoKey(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyArgs.builder
       builder.cryptoKey(args(argsBuilder).build)
@@ -2270,7 +2270,7 @@ object dataloss_ext:
      *     Structure is documented below.
      * @return builder
      */
-    def surrogateInfoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigSurrogateInfoTypeArgs.Builder]):
+    inline def surrogateInfoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigSurrogateInfoTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigSurrogateInfoTypeArgs.builder
       builder.surrogateInfoType(args(argsBuilder).build)
@@ -2284,7 +2284,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def kmsWrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyKmsWrappedArgs.Builder]):
+    inline def kmsWrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyKmsWrappedArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyKmsWrappedArgs.builder
       builder.kmsWrapped(args(argsBuilder).build)
@@ -2294,7 +2294,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transient_(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyTransientArgs.Builder]):
+    inline def transient_(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyTransientArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyTransientArgs.builder
       builder.transient_(args(argsBuilder).build)
@@ -2304,7 +2304,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def unwrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyUnwrappedArgs.Builder]):
+    inline def unwrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyUnwrappedArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyUnwrappedArgs.builder
       builder.unwrapped(args(argsBuilder).build)
@@ -2315,7 +2315,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigSurrogateInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigSurrogateInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigSurrogateInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoDeterministicConfigSurrogateInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -2326,7 +2326,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cryptoKey(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyArgs.Builder]):
+    inline def cryptoKey(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyArgs.builder
       builder.cryptoKey(args(argsBuilder).build)
@@ -2340,7 +2340,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def kmsWrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyKmsWrappedArgs.Builder]):
+    inline def kmsWrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyKmsWrappedArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyKmsWrappedArgs.builder
       builder.kmsWrapped(args(argsBuilder).build)
@@ -2350,7 +2350,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transient_(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyTransientArgs.Builder]):
+    inline def transient_(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyTransientArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyTransientArgs.builder
       builder.transient_(args(argsBuilder).build)
@@ -2360,7 +2360,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def unwrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyUnwrappedArgs.Builder]):
+    inline def unwrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyUnwrappedArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyUnwrappedArgs.builder
       builder.unwrapped(args(argsBuilder).build)
@@ -2379,7 +2379,7 @@ object dataloss_ext:
      *     Structure is documented below.
      * @return builder
      */
-    def context(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigContextArgs.Builder]):
+    inline def context(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigContextArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigContextArgs.builder
       builder.context(args(argsBuilder).build)
@@ -2389,7 +2389,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cryptoKey(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyArgs.Builder]):
+    inline def cryptoKey(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyArgs.builder
       builder.cryptoKey(args(argsBuilder).build)
@@ -2402,7 +2402,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def surrogateInfoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigSurrogateInfoTypeArgs.Builder]):
+    inline def surrogateInfoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigSurrogateInfoTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigSurrogateInfoTypeArgs.builder
       builder.surrogateInfoType(args(argsBuilder).build)
@@ -2416,7 +2416,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def kmsWrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyKmsWrappedArgs.Builder]):
+    inline def kmsWrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyKmsWrappedArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyKmsWrappedArgs.builder
       builder.kmsWrapped(args(argsBuilder).build)
@@ -2426,7 +2426,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transient_(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyTransientArgs.Builder]):
+    inline def transient_(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyTransientArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyTransientArgs.builder
       builder.transient_(args(argsBuilder).build)
@@ -2436,7 +2436,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def unwrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyUnwrappedArgs.Builder]):
+    inline def unwrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyUnwrappedArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyUnwrappedArgs.builder
       builder.unwrapped(args(argsBuilder).build)
@@ -2447,7 +2447,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigSurrogateInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigSurrogateInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigSurrogateInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigSurrogateInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -2459,7 +2459,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def context(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigContextArgs.Builder]):
+    inline def context(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigContextArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigContextArgs.builder
       builder.context(args(argsBuilder).build)
@@ -2469,7 +2469,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cryptoKey(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyArgs.Builder]):
+    inline def cryptoKey(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyArgs.builder
       builder.cryptoKey(args(argsBuilder).build)
@@ -2483,7 +2483,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def kmsWrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyKmsWrappedArgs.Builder]):
+    inline def kmsWrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyKmsWrappedArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyKmsWrappedArgs.builder
       builder.kmsWrapped(args(argsBuilder).build)
@@ -2493,7 +2493,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transient_(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyTransientArgs.Builder]):
+    inline def transient_(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyTransientArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyTransientArgs.builder
       builder.transient_(args(argsBuilder).build)
@@ -2503,7 +2503,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def unwrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyUnwrappedArgs.Builder]):
+    inline def unwrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyUnwrappedArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationDateShiftConfigCryptoKeyUnwrappedArgs.builder
       builder.unwrapped(args(argsBuilder).build)
@@ -2516,7 +2516,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def lowerBound(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigLowerBoundArgs.Builder]):
+    inline def lowerBound(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigLowerBoundArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigLowerBoundArgs.builder
       builder.lowerBound(args(argsBuilder).build)
@@ -2528,7 +2528,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def upperBound(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigUpperBoundArgs.Builder]):
+    inline def upperBound(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigUpperBoundArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationFixedSizeBucketingConfigUpperBoundArgs.builder
       builder.upperBound(args(argsBuilder).build)
@@ -2540,7 +2540,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def newValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueArgs.Builder]):
+    inline def newValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueArgs.builder
       builder.newValue(args(argsBuilder).build)
@@ -2551,7 +2551,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueDateValueArgs.Builder]):
+    inline def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueDateValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueDateValueArgs.builder
       builder.dateValue(args(argsBuilder).build)
@@ -2561,7 +2561,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueTimeValueArgs.Builder]):
+    inline def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueTimeValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationReplaceConfigNewValueTimeValueArgs.builder
       builder.timeValue(args(argsBuilder).build)
@@ -2572,7 +2572,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def wordList(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationReplaceDictionaryConfigWordListArgs.Builder]):
+    inline def wordList(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationReplaceDictionaryConfigWordListArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationReplaceDictionaryConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationInfoTypeTransformationsTransformationPrimitiveTransformationReplaceDictionaryConfigWordListArgs.builder
       builder.wordList(args(argsBuilder).build)
@@ -2586,7 +2586,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bucketingConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigArgs.Builder]):
+    inline def bucketingConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigArgs.builder
       builder.bucketingConfig(args(argsBuilder).build)
@@ -2596,7 +2596,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def characterMaskConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCharacterMaskConfigArgs.Builder]):
+    inline def characterMaskConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCharacterMaskConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCharacterMaskConfigArgs.builder
       builder.characterMaskConfig(args(argsBuilder).build)
@@ -2606,7 +2606,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cryptoDeterministicConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigArgs.Builder]):
+    inline def cryptoDeterministicConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigArgs.builder
       builder.cryptoDeterministicConfig(args(argsBuilder).build)
@@ -2619,7 +2619,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cryptoHashConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoHashConfigArgs.Builder]):
+    inline def cryptoHashConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoHashConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoHashConfigArgs.builder
       builder.cryptoHashConfig(args(argsBuilder).build)
@@ -2630,7 +2630,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cryptoReplaceFfxFpeConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigArgs.Builder]):
+    inline def cryptoReplaceFfxFpeConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigArgs.builder
       builder.cryptoReplaceFfxFpeConfig(args(argsBuilder).build)
@@ -2640,7 +2640,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dateShiftConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationDateShiftConfigArgs.Builder]):
+    inline def dateShiftConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationDateShiftConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationDateShiftConfigArgs.builder
       builder.dateShiftConfig(args(argsBuilder).build)
@@ -2654,7 +2654,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fixedSizeBucketingConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigArgs.Builder]):
+    inline def fixedSizeBucketingConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigArgs.builder
       builder.fixedSizeBucketingConfig(args(argsBuilder).build)
@@ -2663,7 +2663,7 @@ object dataloss_ext:
      * @param redactConfig Redact a given value. For example, if used with an InfoTypeTransformation transforming PHONE_NUMBER, and input &#39;My phone number is 206-555-0123&#39;, the output would be &#39;My phone number is &#39;.
      * @return builder
      */
-    def redactConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationRedactConfigArgs.Builder]):
+    inline def redactConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationRedactConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationRedactConfigArgs.builder
       builder.redactConfig(args(argsBuilder).build)
@@ -2673,7 +2673,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def replaceConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigArgs.Builder]):
+    inline def replaceConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigArgs.builder
       builder.replaceConfig(args(argsBuilder).build)
@@ -2683,7 +2683,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def replaceDictionaryConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceDictionaryConfigArgs.Builder]):
+    inline def replaceDictionaryConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceDictionaryConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceDictionaryConfigArgs.builder
       builder.replaceDictionaryConfig(args(argsBuilder).build)
@@ -2693,7 +2693,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timePartConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationTimePartConfigArgs.Builder]):
+    inline def timePartConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationTimePartConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationTimePartConfigArgs.builder
       builder.timePartConfig(args(argsBuilder).build)
@@ -2705,7 +2705,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def buckets(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketArgs.Builder]*):
+    inline def buckets(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketArgs.builder
       builder.buckets(args.map(_(argsBuilder).build)*)
@@ -2717,7 +2717,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def max(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxArgs.Builder]):
+    inline def max(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxArgs.builder
       builder.max(args(argsBuilder).build)
@@ -2728,7 +2728,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def min(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMinArgs.Builder]):
+    inline def min(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMinArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMinArgs.builder
       builder.min(args(argsBuilder).build)
@@ -2739,7 +2739,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def replacementValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueArgs.Builder]):
+    inline def replacementValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueArgs.builder
       builder.replacementValue(args(argsBuilder).build)
@@ -2750,7 +2750,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxDateValueArgs.Builder]):
+    inline def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxDateValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxDateValueArgs.builder
       builder.dateValue(args(argsBuilder).build)
@@ -2760,7 +2760,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxTimeValueArgs.Builder]):
+    inline def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxTimeValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMaxTimeValueArgs.builder
       builder.timeValue(args(argsBuilder).build)
@@ -2771,7 +2771,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMinDateValueArgs.Builder]):
+    inline def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMinDateValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMinArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMinDateValueArgs.builder
       builder.dateValue(args(argsBuilder).build)
@@ -2781,7 +2781,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMinTimeValueArgs.Builder]):
+    inline def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMinTimeValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMinArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketMinTimeValueArgs.builder
       builder.timeValue(args(argsBuilder).build)
@@ -2792,7 +2792,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueDateValueArgs.Builder]):
+    inline def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueDateValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueDateValueArgs.builder
       builder.dateValue(args(argsBuilder).build)
@@ -2802,7 +2802,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueTimeValueArgs.Builder]):
+    inline def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueTimeValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationBucketingConfigBucketReplacementValueTimeValueArgs.builder
       builder.timeValue(args(argsBuilder).build)
@@ -2813,7 +2813,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def charactersToIgnores(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCharacterMaskConfigCharactersToIgnoreArgs.Builder]*):
+    inline def charactersToIgnores(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCharacterMaskConfigCharactersToIgnoreArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCharacterMaskConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCharacterMaskConfigCharactersToIgnoreArgs.builder
       builder.charactersToIgnores(args.map(_(argsBuilder).build)*)
@@ -2829,7 +2829,7 @@ object dataloss_ext:
      *    Structure is documented below.
      * @return builder
      */
-    def context(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigContextArgs.Builder]):
+    inline def context(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigContextArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigContextArgs.builder
       builder.context(args(argsBuilder).build)
@@ -2839,7 +2839,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cryptoKey(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyArgs.Builder]):
+    inline def cryptoKey(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyArgs.builder
       builder.cryptoKey(args(argsBuilder).build)
@@ -2856,7 +2856,7 @@ object dataloss_ext:
      *     Structure is documented below.
      * @return builder
      */
-    def surrogateInfoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigSurrogateInfoTypeArgs.Builder]):
+    inline def surrogateInfoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigSurrogateInfoTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigSurrogateInfoTypeArgs.builder
       builder.surrogateInfoType(args(argsBuilder).build)
@@ -2870,7 +2870,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def kmsWrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyKmsWrappedArgs.Builder]):
+    inline def kmsWrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyKmsWrappedArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyKmsWrappedArgs.builder
       builder.kmsWrapped(args(argsBuilder).build)
@@ -2880,7 +2880,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transient_(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyTransientArgs.Builder]):
+    inline def transient_(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyTransientArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyTransientArgs.builder
       builder.transient_(args(argsBuilder).build)
@@ -2890,7 +2890,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def unwrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyUnwrappedArgs.Builder]):
+    inline def unwrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyUnwrappedArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigCryptoKeyUnwrappedArgs.builder
       builder.unwrapped(args(argsBuilder).build)
@@ -2901,7 +2901,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigSurrogateInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigSurrogateInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigSurrogateInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoDeterministicConfigSurrogateInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -2912,7 +2912,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cryptoKey(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyArgs.Builder]):
+    inline def cryptoKey(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoHashConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyArgs.builder
       builder.cryptoKey(args(argsBuilder).build)
@@ -2926,7 +2926,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def kmsWrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyKmsWrappedArgs.Builder]):
+    inline def kmsWrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyKmsWrappedArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyKmsWrappedArgs.builder
       builder.kmsWrapped(args(argsBuilder).build)
@@ -2936,7 +2936,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transient_(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyTransientArgs.Builder]):
+    inline def transient_(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyTransientArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyTransientArgs.builder
       builder.transient_(args(argsBuilder).build)
@@ -2946,7 +2946,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def unwrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyUnwrappedArgs.Builder]):
+    inline def unwrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyUnwrappedArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoHashConfigCryptoKeyUnwrappedArgs.builder
       builder.unwrapped(args(argsBuilder).build)
@@ -2965,7 +2965,7 @@ object dataloss_ext:
      *     Structure is documented below.
      * @return builder
      */
-    def context(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigContextArgs.Builder]):
+    inline def context(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigContextArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigContextArgs.builder
       builder.context(args(argsBuilder).build)
@@ -2975,7 +2975,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cryptoKey(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyArgs.Builder]):
+    inline def cryptoKey(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyArgs.builder
       builder.cryptoKey(args(argsBuilder).build)
@@ -2988,7 +2988,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def surrogateInfoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigSurrogateInfoTypeArgs.Builder]):
+    inline def surrogateInfoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigSurrogateInfoTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigSurrogateInfoTypeArgs.builder
       builder.surrogateInfoType(args(argsBuilder).build)
@@ -3002,7 +3002,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def kmsWrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyKmsWrappedArgs.Builder]):
+    inline def kmsWrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyKmsWrappedArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyKmsWrappedArgs.builder
       builder.kmsWrapped(args(argsBuilder).build)
@@ -3012,7 +3012,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transient_(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyTransientArgs.Builder]):
+    inline def transient_(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyTransientArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyTransientArgs.builder
       builder.transient_(args(argsBuilder).build)
@@ -3022,7 +3022,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def unwrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyUnwrappedArgs.Builder]):
+    inline def unwrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyUnwrappedArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigCryptoKeyUnwrappedArgs.builder
       builder.unwrapped(args(argsBuilder).build)
@@ -3033,7 +3033,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigSurrogateInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigSurrogateInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigSurrogateInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationCryptoReplaceFfxFpeConfigSurrogateInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -3045,7 +3045,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def context(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationDateShiftConfigContextArgs.Builder]):
+    inline def context(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationDateShiftConfigContextArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationDateShiftConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationDateShiftConfigContextArgs.builder
       builder.context(args(argsBuilder).build)
@@ -3055,7 +3055,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cryptoKey(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationDateShiftConfigCryptoKeyArgs.Builder]):
+    inline def cryptoKey(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationDateShiftConfigCryptoKeyArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationDateShiftConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationDateShiftConfigCryptoKeyArgs.builder
       builder.cryptoKey(args(argsBuilder).build)
@@ -3069,7 +3069,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def kmsWrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationDateShiftConfigCryptoKeyKmsWrappedArgs.Builder]):
+    inline def kmsWrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationDateShiftConfigCryptoKeyKmsWrappedArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationDateShiftConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationDateShiftConfigCryptoKeyKmsWrappedArgs.builder
       builder.kmsWrapped(args(argsBuilder).build)
@@ -3079,7 +3079,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transient_(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationDateShiftConfigCryptoKeyTransientArgs.Builder]):
+    inline def transient_(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationDateShiftConfigCryptoKeyTransientArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationDateShiftConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationDateShiftConfigCryptoKeyTransientArgs.builder
       builder.transient_(args(argsBuilder).build)
@@ -3089,7 +3089,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def unwrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationDateShiftConfigCryptoKeyUnwrappedArgs.Builder]):
+    inline def unwrapped(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationDateShiftConfigCryptoKeyUnwrappedArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationDateShiftConfigCryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationDateShiftConfigCryptoKeyUnwrappedArgs.builder
       builder.unwrapped(args(argsBuilder).build)
@@ -3102,7 +3102,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def lowerBound(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigLowerBoundArgs.Builder]):
+    inline def lowerBound(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigLowerBoundArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigLowerBoundArgs.builder
       builder.lowerBound(args(argsBuilder).build)
@@ -3114,7 +3114,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def upperBound(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigUpperBoundArgs.Builder]):
+    inline def upperBound(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigUpperBoundArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigUpperBoundArgs.builder
       builder.upperBound(args(argsBuilder).build)
@@ -3125,7 +3125,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigLowerBoundDateValueArgs.Builder]):
+    inline def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigLowerBoundDateValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigLowerBoundArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigLowerBoundDateValueArgs.builder
       builder.dateValue(args(argsBuilder).build)
@@ -3135,7 +3135,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigLowerBoundTimeValueArgs.Builder]):
+    inline def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigLowerBoundTimeValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigLowerBoundArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigLowerBoundTimeValueArgs.builder
       builder.timeValue(args(argsBuilder).build)
@@ -3146,7 +3146,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigUpperBoundDateValueArgs.Builder]):
+    inline def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigUpperBoundDateValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigUpperBoundArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigUpperBoundDateValueArgs.builder
       builder.dateValue(args(argsBuilder).build)
@@ -3156,7 +3156,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigUpperBoundTimeValueArgs.Builder]):
+    inline def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigUpperBoundTimeValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigUpperBoundArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationFixedSizeBucketingConfigUpperBoundTimeValueArgs.builder
       builder.timeValue(args(argsBuilder).build)
@@ -3168,7 +3168,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def newValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueArgs.Builder]):
+    inline def newValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueArgs.builder
       builder.newValue(args(argsBuilder).build)
@@ -3179,7 +3179,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueDateValueArgs.Builder]):
+    inline def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueDateValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueDateValueArgs.builder
       builder.dateValue(args(argsBuilder).build)
@@ -3189,7 +3189,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueTimeValueArgs.Builder]):
+    inline def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueTimeValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceConfigNewValueTimeValueArgs.builder
       builder.timeValue(args(argsBuilder).build)
@@ -3200,7 +3200,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def wordList(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceDictionaryConfigWordListArgs.Builder]):
+    inline def wordList(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceDictionaryConfigWordListArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceDictionaryConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsFieldTransformationPrimitiveTransformationReplaceDictionaryConfigWordListArgs.builder
       builder.wordList(args(argsBuilder).build)
@@ -3211,7 +3211,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -3222,7 +3222,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def expressions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsArgs.Builder]):
+    inline def expressions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsArgs.builder
       builder.expressions(args(argsBuilder).build)
@@ -3233,7 +3233,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditionsArgs.Builder]):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditionsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditionsArgs.builder
       builder.conditions(args(argsBuilder).build)
@@ -3244,7 +3244,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditionsConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditionsConditionArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditionsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditionsConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -3255,7 +3255,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def field(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditionsConditionFieldArgs.Builder]):
+    inline def field(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditionsConditionFieldArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditionsConditionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditionsConditionFieldArgs.builder
       builder.field(args(argsBuilder).build)
@@ -3265,7 +3265,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def value(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditionsConditionValueArgs.Builder]):
+    inline def value(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditionsConditionValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditionsConditionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditionsConditionValueArgs.builder
       builder.value(args(argsBuilder).build)
@@ -3276,7 +3276,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditionsConditionValueDateValueArgs.Builder]):
+    inline def dateValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditionsConditionValueDateValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditionsConditionValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditionsConditionValueDateValueArgs.builder
       builder.dateValue(args(argsBuilder).build)
@@ -3286,7 +3286,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditionsConditionValueTimeValueArgs.Builder]):
+    inline def timeValue(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditionsConditionValueTimeValueArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditionsConditionValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigRecordTransformationsRecordSuppressionConditionExpressionsConditionsConditionValueTimeValueArgs.builder
       builder.timeValue(args(argsBuilder).build)
@@ -3297,7 +3297,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deidentifyConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigArgs.Builder]):
+    inline def deidentifyConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDeidentifyTemplateDeidentifyConfigArgs.builder
       builder.deidentifyConfig(args(argsBuilder).build)
@@ -3308,7 +3308,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def exportData(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionExportDataArgs.Builder]):
+    inline def exportData(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionExportDataArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionExportDataArgs.builder
       builder.exportData(args(argsBuilder).build)
@@ -3318,7 +3318,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pubSubNotification(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionPubSubNotificationArgs.Builder]):
+    inline def pubSubNotification(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionPubSubNotificationArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionPubSubNotificationArgs.builder
       builder.pubSubNotification(args(argsBuilder).build)
@@ -3327,7 +3327,7 @@ object dataloss_ext:
      * @param publishToChronicle Publishes generated data profiles to Google Security Operations. For more information, see [Use Sensitive Data Protection data in context-aware analytics](https://cloud.google.com/chronicle/docs/detection/usecase-dlp-high-risk-user-download).
      * @return builder
      */
-    def publishToChronicle(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionPublishToChronicleArgs.Builder]):
+    inline def publishToChronicle(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionPublishToChronicleArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionPublishToChronicleArgs.builder
       builder.publishToChronicle(args(argsBuilder).build)
@@ -3336,7 +3336,7 @@ object dataloss_ext:
      * @param publishToDataplexCatalog Publish a portion of each profile to Dataplex Universal Catalog with the aspect type Sensitive Data Protection Profile.
      * @return builder
      */
-    def publishToDataplexCatalog(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionPublishToDataplexCatalogArgs.Builder]):
+    inline def publishToDataplexCatalog(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionPublishToDataplexCatalogArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionPublishToDataplexCatalogArgs.builder
       builder.publishToDataplexCatalog(args(argsBuilder).build)
@@ -3345,7 +3345,7 @@ object dataloss_ext:
      * @param publishToScc Publishes findings to Security Command Center for each data profile.
      * @return builder
      */
-    def publishToScc(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionPublishToSccArgs.Builder]):
+    inline def publishToScc(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionPublishToSccArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionPublishToSccArgs.builder
       builder.publishToScc(args(argsBuilder).build)
@@ -3355,7 +3355,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tagResources(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionTagResourcesArgs.Builder]):
+    inline def tagResources(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionTagResourcesArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionTagResourcesArgs.builder
       builder.tagResources(args(argsBuilder).build)
@@ -3368,7 +3368,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def profileTable(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionExportDataProfileTableArgs.Builder]):
+    inline def profileTable(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionExportDataProfileTableArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionExportDataArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionExportDataProfileTableArgs.builder
       builder.profileTable(args(argsBuilder).build)
@@ -3378,7 +3378,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sampleFindingsTable(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionExportDataSampleFindingsTableArgs.Builder]):
+    inline def sampleFindingsTable(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionExportDataSampleFindingsTableArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionExportDataArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionExportDataSampleFindingsTableArgs.builder
       builder.sampleFindingsTable(args(argsBuilder).build)
@@ -3389,7 +3389,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pubsubCondition(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionPubSubNotificationPubsubConditionArgs.Builder]):
+    inline def pubsubCondition(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionPubSubNotificationPubsubConditionArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionPubSubNotificationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionPubSubNotificationPubsubConditionArgs.builder
       builder.pubsubCondition(args(argsBuilder).build)
@@ -3400,7 +3400,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def expressions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionPubSubNotificationPubsubConditionExpressionsArgs.Builder]):
+    inline def expressions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionPubSubNotificationPubsubConditionExpressionsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionPubSubNotificationPubsubConditionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionPubSubNotificationPubsubConditionExpressionsArgs.builder
       builder.expressions(args(argsBuilder).build)
@@ -3411,7 +3411,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionPubSubNotificationPubsubConditionExpressionsConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionPubSubNotificationPubsubConditionExpressionsConditionArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionPubSubNotificationPubsubConditionExpressionsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionPubSubNotificationPubsubConditionExpressionsConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -3422,7 +3422,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tagConditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionTagResourcesTagConditionArgs.Builder]*):
+    inline def tagConditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionTagResourcesTagConditionArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionTagResourcesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionTagResourcesTagConditionArgs.builder
       builder.tagConditions(args.map(_(argsBuilder).build)*)
@@ -3433,7 +3433,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionTagResourcesTagConditionSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionTagResourcesTagConditionSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionTagResourcesTagConditionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionTagResourcesTagConditionSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -3443,7 +3443,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tag(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionTagResourcesTagConditionTagArgs.Builder]):
+    inline def tag(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionTagResourcesTagConditionTagArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionTagResourcesTagConditionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionTagResourcesTagConditionTagArgs.builder
       builder.tag(args(argsBuilder).build)
@@ -3453,7 +3453,7 @@ object dataloss_ext:
      * @param details A list of messages that carry the error details.
      * @return builder
      */
-    def details(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigErrorDetailsArgs.Builder]):
+    inline def details(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigErrorDetailsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigErrorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigErrorDetailsArgs.builder
       builder.details(args(argsBuilder).build)
@@ -3464,7 +3464,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def location(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigOrgConfigLocationArgs.Builder]):
+    inline def location(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigOrgConfigLocationArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigOrgConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigOrgConfigLocationArgs.builder
       builder.location(args(argsBuilder).build)
@@ -3475,7 +3475,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def awsLocation(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigOtherCloudStartingLocationAwsLocationArgs.Builder]):
+    inline def awsLocation(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigOtherCloudStartingLocationAwsLocationArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigOtherCloudStartingLocationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigOtherCloudStartingLocationAwsLocationArgs.builder
       builder.awsLocation(args(argsBuilder).build)
@@ -3486,7 +3486,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def actions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionArgs.Builder]*):
+    inline def actions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigActionArgs.builder
       builder.actions(args.map(_(argsBuilder).build)*)
@@ -3496,7 +3496,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errors(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigErrorArgs.Builder]*):
+    inline def errors(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigErrorArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
@@ -3506,7 +3506,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def orgConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigOrgConfigArgs.Builder]):
+    inline def orgConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigOrgConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigOrgConfigArgs.builder
       builder.orgConfig(args(argsBuilder).build)
@@ -3516,7 +3516,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def otherCloudStartingLocation(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigOtherCloudStartingLocationArgs.Builder]):
+    inline def otherCloudStartingLocation(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigOtherCloudStartingLocationArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigOtherCloudStartingLocationArgs.builder
       builder.otherCloudStartingLocation(args(argsBuilder).build)
@@ -3526,7 +3526,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def targets(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetArgs.Builder]*):
+    inline def targets(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetArgs.builder
       builder.targets(args.map(_(argsBuilder).build)*)
@@ -3537,7 +3537,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigQueryTarget(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetArgs.Builder]):
+    inline def bigQueryTarget(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetArgs.builder
       builder.bigQueryTarget(args(argsBuilder).build)
@@ -3547,7 +3547,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudSqlTarget(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetArgs.Builder]):
+    inline def cloudSqlTarget(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetArgs.builder
       builder.cloudSqlTarget(args(argsBuilder).build)
@@ -3557,7 +3557,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudStorageTarget(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetArgs.Builder]):
+    inline def cloudStorageTarget(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetArgs.builder
       builder.cloudStorageTarget(args(argsBuilder).build)
@@ -3567,7 +3567,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def otherCloudTarget(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetArgs.Builder]):
+    inline def otherCloudTarget(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetArgs.builder
       builder.otherCloudTarget(args(argsBuilder).build)
@@ -3576,7 +3576,7 @@ object dataloss_ext:
      * @param secretsTarget Discovery target that looks for credentials and secrets stored in cloud resource metadata and reports them as vulnerabilities to Security Command Center. Only one target of this type is allowed.
      * @return builder
      */
-    def secretsTarget(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetSecretsTargetArgs.Builder]):
+    inline def secretsTarget(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetSecretsTargetArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetSecretsTargetArgs.builder
       builder.secretsTarget(args(argsBuilder).build)
@@ -3587,7 +3587,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cadence(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetCadenceArgs.Builder]):
+    inline def cadence(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetCadenceArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetCadenceArgs.builder
       builder.cadence(args(argsBuilder).build)
@@ -3597,7 +3597,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetConditionsArgs.Builder]):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetConditionsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetConditionsArgs.builder
       builder.conditions(args(argsBuilder).build)
@@ -3606,7 +3606,7 @@ object dataloss_ext:
      * @param disabled Tables that match this filter will not have profiles created.
      * @return builder
      */
-    def disabled(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetDisabledArgs.Builder]):
+    inline def disabled(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetDisabledArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetDisabledArgs.builder
       builder.disabled(args(argsBuilder).build)
@@ -3616,7 +3616,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def filter(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetFilterArgs.Builder]):
+    inline def filter(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetFilterArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetFilterArgs.builder
       builder.filter(args(argsBuilder).build)
@@ -3627,7 +3627,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inspectTemplateModifiedCadence(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetCadenceInspectTemplateModifiedCadenceArgs.Builder]):
+    inline def inspectTemplateModifiedCadence(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetCadenceInspectTemplateModifiedCadenceArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetCadenceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetCadenceInspectTemplateModifiedCadenceArgs.builder
       builder.inspectTemplateModifiedCadence(args(argsBuilder).build)
@@ -3637,7 +3637,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def schemaModifiedCadence(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetCadenceSchemaModifiedCadenceArgs.Builder]):
+    inline def schemaModifiedCadence(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetCadenceSchemaModifiedCadenceArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetCadenceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetCadenceSchemaModifiedCadenceArgs.builder
       builder.schemaModifiedCadence(args(argsBuilder).build)
@@ -3647,7 +3647,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tableModifiedCadence(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetCadenceTableModifiedCadenceArgs.Builder]):
+    inline def tableModifiedCadence(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetCadenceTableModifiedCadenceArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetCadenceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetCadenceTableModifiedCadenceArgs.builder
       builder.tableModifiedCadence(args(argsBuilder).build)
@@ -3658,7 +3658,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def orConditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetConditionsOrConditionsArgs.Builder]):
+    inline def orConditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetConditionsOrConditionsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetConditionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetConditionsOrConditionsArgs.builder
       builder.orConditions(args(argsBuilder).build)
@@ -3668,7 +3668,7 @@ object dataloss_ext:
      * Each value may be one of: `DATABASE_RESOURCE_TYPE_ALL_SUPPORTED_TYPES`, `DATABASE_RESOURCE_TYPE_TABLE`.
      * @return builder
      */
-    def types(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetConditionsTypesArgs.Builder]):
+    inline def types(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetConditionsTypesArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetConditionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetConditionsTypesArgs.builder
       builder.types(args(argsBuilder).build)
@@ -3678,7 +3678,7 @@ object dataloss_ext:
      * @param otherTables Catch-all. This should always be the last filter in the list because anything above it will apply first.
      * @return builder
      */
-    def otherTables(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetFilterOtherTablesArgs.Builder]):
+    inline def otherTables(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetFilterOtherTablesArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetFilterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetFilterOtherTablesArgs.builder
       builder.otherTables(args(argsBuilder).build)
@@ -3688,7 +3688,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tableReference(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetFilterTableReferenceArgs.Builder]):
+    inline def tableReference(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetFilterTableReferenceArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetFilterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetFilterTableReferenceArgs.builder
       builder.tableReference(args(argsBuilder).build)
@@ -3698,7 +3698,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tables(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetFilterTablesArgs.Builder]):
+    inline def tables(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetFilterTablesArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetFilterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetFilterTablesArgs.builder
       builder.tables(args(argsBuilder).build)
@@ -3709,7 +3709,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def includeRegexes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetFilterTablesIncludeRegexesArgs.Builder]):
+    inline def includeRegexes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetFilterTablesIncludeRegexesArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetFilterTablesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetFilterTablesIncludeRegexesArgs.builder
       builder.includeRegexes(args(argsBuilder).build)
@@ -3720,7 +3720,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def patterns(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetFilterTablesIncludeRegexesPatternArgs.Builder]*):
+    inline def patterns(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetFilterTablesIncludeRegexesPatternArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetFilterTablesIncludeRegexesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetBigQueryTargetFilterTablesIncludeRegexesPatternArgs.builder
       builder.patterns(args.map(_(argsBuilder).build)*)
@@ -3731,7 +3731,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetConditionsArgs.Builder]):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetConditionsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetConditionsArgs.builder
       builder.conditions(args(argsBuilder).build)
@@ -3740,7 +3740,7 @@ object dataloss_ext:
      * @param disabled Disable profiling for database resources that match this filter.
      * @return builder
      */
-    def disabled(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetDisabledArgs.Builder]):
+    inline def disabled(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetDisabledArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetDisabledArgs.builder
       builder.disabled(args(argsBuilder).build)
@@ -3750,7 +3750,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def filter(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetFilterArgs.Builder]):
+    inline def filter(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetFilterArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetFilterArgs.builder
       builder.filter(args(argsBuilder).build)
@@ -3760,7 +3760,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def generationCadence(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetGenerationCadenceArgs.Builder]):
+    inline def generationCadence(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetGenerationCadenceArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetGenerationCadenceArgs.builder
       builder.generationCadence(args(argsBuilder).build)
@@ -3771,7 +3771,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def collection(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetFilterCollectionArgs.Builder]):
+    inline def collection(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetFilterCollectionArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetFilterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetFilterCollectionArgs.builder
       builder.collection(args(argsBuilder).build)
@@ -3781,7 +3781,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def databaseResourceReference(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetFilterDatabaseResourceReferenceArgs.Builder]):
+    inline def databaseResourceReference(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetFilterDatabaseResourceReferenceArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetFilterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetFilterDatabaseResourceReferenceArgs.builder
       builder.databaseResourceReference(args(argsBuilder).build)
@@ -3790,7 +3790,7 @@ object dataloss_ext:
      * @param others Match discovery resources not covered by any other filter.
      * @return builder
      */
-    def others(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetFilterOthersArgs.Builder]):
+    inline def others(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetFilterOthersArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetFilterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetFilterOthersArgs.builder
       builder.others(args(argsBuilder).build)
@@ -3801,7 +3801,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def includeRegexes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetFilterCollectionIncludeRegexesArgs.Builder]):
+    inline def includeRegexes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetFilterCollectionIncludeRegexesArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetFilterCollectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetFilterCollectionIncludeRegexesArgs.builder
       builder.includeRegexes(args(argsBuilder).build)
@@ -3812,7 +3812,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def patterns(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetFilterCollectionIncludeRegexesPatternArgs.Builder]*):
+    inline def patterns(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetFilterCollectionIncludeRegexesPatternArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetFilterCollectionIncludeRegexesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetFilterCollectionIncludeRegexesPatternArgs.builder
       builder.patterns(args.map(_(argsBuilder).build)*)
@@ -3823,7 +3823,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inspectTemplateModifiedCadence(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetGenerationCadenceInspectTemplateModifiedCadenceArgs.Builder]):
+    inline def inspectTemplateModifiedCadence(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetGenerationCadenceInspectTemplateModifiedCadenceArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetGenerationCadenceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetGenerationCadenceInspectTemplateModifiedCadenceArgs.builder
       builder.inspectTemplateModifiedCadence(args(argsBuilder).build)
@@ -3833,7 +3833,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def schemaModifiedCadence(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetGenerationCadenceSchemaModifiedCadenceArgs.Builder]):
+    inline def schemaModifiedCadence(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetGenerationCadenceSchemaModifiedCadenceArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetGenerationCadenceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudSqlTargetGenerationCadenceSchemaModifiedCadenceArgs.builder
       builder.schemaModifiedCadence(args(argsBuilder).build)
@@ -3844,7 +3844,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetConditionsArgs.Builder]):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetConditionsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetConditionsArgs.builder
       builder.conditions(args(argsBuilder).build)
@@ -3853,7 +3853,7 @@ object dataloss_ext:
      * @param disabled Disable profiling for buckets that match this filter.
      * @return builder
      */
-    def disabled(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetDisabledArgs.Builder]):
+    inline def disabled(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetDisabledArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetDisabledArgs.builder
       builder.disabled(args(argsBuilder).build)
@@ -3863,7 +3863,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def filter(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterArgs.Builder]):
+    inline def filter(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterArgs.builder
       builder.filter(args(argsBuilder).build)
@@ -3873,7 +3873,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def generationCadence(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetGenerationCadenceArgs.Builder]):
+    inline def generationCadence(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetGenerationCadenceArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetGenerationCadenceArgs.builder
       builder.generationCadence(args(argsBuilder).build)
@@ -3884,7 +3884,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudStorageConditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetConditionsCloudStorageConditionsArgs.Builder]):
+    inline def cloudStorageConditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetConditionsCloudStorageConditionsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetConditionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetConditionsCloudStorageConditionsArgs.builder
       builder.cloudStorageConditions(args(argsBuilder).build)
@@ -3895,7 +3895,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudStorageResourceReference(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCloudStorageResourceReferenceArgs.Builder]):
+    inline def cloudStorageResourceReference(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCloudStorageResourceReferenceArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCloudStorageResourceReferenceArgs.builder
       builder.cloudStorageResourceReference(args(argsBuilder).build)
@@ -3905,7 +3905,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def collection(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionArgs.Builder]):
+    inline def collection(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionArgs.builder
       builder.collection(args(argsBuilder).build)
@@ -3914,7 +3914,7 @@ object dataloss_ext:
      * @param others Match discovery resources not covered by any other filter.
      * @return builder
      */
-    def others(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterOthersArgs.Builder]):
+    inline def others(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterOthersArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterOthersArgs.builder
       builder.others(args(argsBuilder).build)
@@ -3925,7 +3925,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def includeRegexes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionIncludeRegexesArgs.Builder]):
+    inline def includeRegexes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionIncludeRegexesArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionIncludeRegexesArgs.builder
       builder.includeRegexes(args(argsBuilder).build)
@@ -3937,7 +3937,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def includeTags(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionIncludeTagsArgs.Builder]):
+    inline def includeTags(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionIncludeTagsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionIncludeTagsArgs.builder
       builder.includeTags(args(argsBuilder).build)
@@ -3948,7 +3948,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def patterns(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionIncludeRegexesPatternArgs.Builder]*):
+    inline def patterns(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionIncludeRegexesPatternArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionIncludeRegexesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionIncludeRegexesPatternArgs.builder
       builder.patterns(args.map(_(argsBuilder).build)*)
@@ -3959,7 +3959,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudStorageRegex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionIncludeRegexesPatternCloudStorageRegexArgs.Builder]):
+    inline def cloudStorageRegex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionIncludeRegexesPatternCloudStorageRegexArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionIncludeRegexesPatternArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionIncludeRegexesPatternCloudStorageRegexArgs.builder
       builder.cloudStorageRegex(args(argsBuilder).build)
@@ -3970,7 +3970,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tagFilters(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionIncludeTagsTagFilterArgs.Builder]*):
+    inline def tagFilters(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionIncludeTagsTagFilterArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionIncludeTagsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetFilterCollectionIncludeTagsTagFilterArgs.builder
       builder.tagFilters(args.map(_(argsBuilder).build)*)
@@ -3981,7 +3981,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inspectTemplateModifiedCadence(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetGenerationCadenceInspectTemplateModifiedCadenceArgs.Builder]):
+    inline def inspectTemplateModifiedCadence(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetGenerationCadenceInspectTemplateModifiedCadenceArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetGenerationCadenceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetCloudStorageTargetGenerationCadenceInspectTemplateModifiedCadenceArgs.builder
       builder.inspectTemplateModifiedCadence(args(argsBuilder).build)
@@ -3992,7 +3992,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetConditionsArgs.Builder]):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetConditionsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetConditionsArgs.builder
       builder.conditions(args(argsBuilder).build)
@@ -4002,7 +4002,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataSourceType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetDataSourceTypeArgs.Builder]):
+    inline def dataSourceType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetDataSourceTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetDataSourceTypeArgs.builder
       builder.dataSourceType(args(argsBuilder).build)
@@ -4011,7 +4011,7 @@ object dataloss_ext:
      * @param disabled Disable profiling for resources that match this filter.
      * @return builder
      */
-    def disabled(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetDisabledArgs.Builder]):
+    inline def disabled(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetDisabledArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetDisabledArgs.builder
       builder.disabled(args(argsBuilder).build)
@@ -4021,7 +4021,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def filter(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterArgs.Builder]):
+    inline def filter(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterArgs.builder
       builder.filter(args(argsBuilder).build)
@@ -4031,7 +4031,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def generationCadence(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetGenerationCadenceArgs.Builder]):
+    inline def generationCadence(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetGenerationCadenceArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetGenerationCadenceArgs.builder
       builder.generationCadence(args(argsBuilder).build)
@@ -4044,7 +4044,7 @@ object dataloss_ext:
      * &lt;a name=&#34;nestedTargetsOtherCloudTargetConditionsAmazonS3BucketConditions&#34;&gt;&lt;/a&gt;The `amazonS3BucketConditions` block supports:
      * @return builder
      */
-    def amazonS3BucketConditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetConditionsAmazonS3BucketConditionsArgs.Builder]):
+    inline def amazonS3BucketConditions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetConditionsAmazonS3BucketConditionsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetConditionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetConditionsAmazonS3BucketConditionsArgs.builder
       builder.amazonS3BucketConditions(args(argsBuilder).build)
@@ -4055,7 +4055,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def collection(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterCollectionArgs.Builder]):
+    inline def collection(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterCollectionArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterCollectionArgs.builder
       builder.collection(args(argsBuilder).build)
@@ -4064,7 +4064,7 @@ object dataloss_ext:
      * @param others Match discovery resources not covered by any other filter.
      * @return builder
      */
-    def others(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterOthersArgs.Builder]):
+    inline def others(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterOthersArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterOthersArgs.builder
       builder.others(args(argsBuilder).build)
@@ -4074,7 +4074,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def singleResource(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterSingleResourceArgs.Builder]):
+    inline def singleResource(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterSingleResourceArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterSingleResourceArgs.builder
       builder.singleResource(args(argsBuilder).build)
@@ -4085,7 +4085,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def includeRegexes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterCollectionIncludeRegexesArgs.Builder]):
+    inline def includeRegexes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterCollectionIncludeRegexesArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterCollectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterCollectionIncludeRegexesArgs.builder
       builder.includeRegexes(args(argsBuilder).build)
@@ -4096,7 +4096,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def patterns(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterCollectionIncludeRegexesPatternArgs.Builder]*):
+    inline def patterns(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterCollectionIncludeRegexesPatternArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterCollectionIncludeRegexesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterCollectionIncludeRegexesPatternArgs.builder
       builder.patterns(args.map(_(argsBuilder).build)*)
@@ -4106,7 +4106,7 @@ object dataloss_ext:
      * @param awsAccountRegex The AWS account regex
      * @return builder
      */
-    def awsAccountRegex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterCollectionIncludeRegexesPatternAmazonS3BucketRegexAwsAccountRegexArgs.Builder]):
+    inline def awsAccountRegex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterCollectionIncludeRegexesPatternAmazonS3BucketRegexAwsAccountRegexArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterCollectionIncludeRegexesPatternAmazonS3BucketRegexArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterCollectionIncludeRegexesPatternAmazonS3BucketRegexAwsAccountRegexArgs.builder
       builder.awsAccountRegex(args(argsBuilder).build)
@@ -4119,7 +4119,7 @@ object dataloss_ext:
      * &lt;a name=&#34;nestedTargetsOtherCloudTargetFilterCollectionIncludeRegexesPatternsAmazonS3BucketRegex&#34;&gt;&lt;/a&gt;The `amazonS3BucketRegex` block supports:
      * @return builder
      */
-    def amazonS3BucketRegex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterCollectionIncludeRegexesPatternAmazonS3BucketRegexArgs.Builder]):
+    inline def amazonS3BucketRegex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterCollectionIncludeRegexesPatternAmazonS3BucketRegexArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterCollectionIncludeRegexesPatternArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterCollectionIncludeRegexesPatternAmazonS3BucketRegexArgs.builder
       builder.amazonS3BucketRegex(args(argsBuilder).build)
@@ -4129,7 +4129,7 @@ object dataloss_ext:
      * @param awsAccount The AWS account.
      * @return builder
      */
-    def awsAccount(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterSingleResourceAmazonS3BucketAwsAccountArgs.Builder]):
+    inline def awsAccount(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterSingleResourceAmazonS3BucketAwsAccountArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterSingleResourceAmazonS3BucketArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterSingleResourceAmazonS3BucketAwsAccountArgs.builder
       builder.awsAccount(args(argsBuilder).build)
@@ -4142,7 +4142,7 @@ object dataloss_ext:
      * &lt;a name=&#34;nestedTargetsOtherCloudTargetFilterSingleResourceAmazonS3Bucket&#34;&gt;&lt;/a&gt;The `amazonS3Bucket` block supports:
      * @return builder
      */
-    def amazonS3Bucket(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterSingleResourceAmazonS3BucketArgs.Builder]):
+    inline def amazonS3Bucket(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterSingleResourceAmazonS3BucketArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterSingleResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetFilterSingleResourceAmazonS3BucketArgs.builder
       builder.amazonS3Bucket(args(argsBuilder).build)
@@ -4153,7 +4153,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inspectTemplateModifiedCadence(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetGenerationCadenceInspectTemplateModifiedCadenceArgs.Builder]):
+    inline def inspectTemplateModifiedCadence(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetGenerationCadenceInspectTemplateModifiedCadenceArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetGenerationCadenceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionDiscoveryConfigTargetOtherCloudTargetGenerationCadenceInspectTemplateModifiedCadenceArgs.builder
       builder.inspectTemplateModifiedCadence(args(argsBuilder).build)
@@ -4164,7 +4164,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeArgs.Builder]*):
+    inline def customInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeArgs.builder
       builder.customInfoTypes(args.map(_(argsBuilder).build)*)
@@ -4177,7 +4177,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigInfoTypeArgs.Builder]*):
+    inline def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigInfoTypeArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigInfoTypeArgs.builder
       builder.infoTypes(args.map(_(argsBuilder).build)*)
@@ -4187,7 +4187,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def limits(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigLimitsArgs.Builder]):
+    inline def limits(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigLimitsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigLimitsArgs.builder
       builder.limits(args(argsBuilder).build)
@@ -4199,7 +4199,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def minLikelihoodPerInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigMinLikelihoodPerInfoTypeArgs.Builder]*):
+    inline def minLikelihoodPerInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigMinLikelihoodPerInfoTypeArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigMinLikelihoodPerInfoTypeArgs.builder
       builder.minLikelihoodPerInfoTypes(args.map(_(argsBuilder).build)*)
@@ -4210,7 +4210,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ruleSets(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetArgs.Builder]*):
+    inline def ruleSets(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetArgs.builder
       builder.ruleSets(args.map(_(argsBuilder).build)*)
@@ -4221,7 +4221,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dictionary(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryArgs.Builder]):
+    inline def dictionary(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryArgs.builder
       builder.dictionary(args(argsBuilder).build)
@@ -4234,7 +4234,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeInfoTypeArgs.Builder]):
+    inline def infoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeInfoTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeInfoTypeArgs.builder
       builder.infoType(args(argsBuilder).build)
@@ -4244,7 +4244,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def regex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeRegexArgs.Builder]):
+    inline def regex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeRegexArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeRegexArgs.builder
       builder.regex(args(argsBuilder).build)
@@ -4254,7 +4254,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -4264,7 +4264,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def storedType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeStoredTypeArgs.Builder]):
+    inline def storedType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeStoredTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeStoredTypeArgs.builder
       builder.storedType(args(argsBuilder).build)
@@ -4273,7 +4273,7 @@ object dataloss_ext:
      * @param surrogateType Message for detecting output from deidentification transformations that support reversing.
      * @return builder
      */
-    def surrogateType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeSurrogateTypeArgs.Builder]):
+    inline def surrogateType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeSurrogateTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeSurrogateTypeArgs.builder
       builder.surrogateType(args(argsBuilder).build)
@@ -4284,7 +4284,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudStoragePath(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryCloudStoragePathArgs.Builder]):
+    inline def cloudStoragePath(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryCloudStoragePathArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryCloudStoragePathArgs.builder
       builder.cloudStoragePath(args(argsBuilder).build)
@@ -4294,7 +4294,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def wordList(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryWordListArgs.Builder]):
+    inline def wordList(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryWordListArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeDictionaryWordListArgs.builder
       builder.wordList(args(argsBuilder).build)
@@ -4305,7 +4305,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigCustomInfoTypeInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -4316,7 +4316,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -4327,7 +4327,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maxFindingsPerInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeArgs.Builder]*):
+    inline def maxFindingsPerInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigLimitsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeArgs.builder
       builder.maxFindingsPerInfoTypes(args.map(_(argsBuilder).build)*)
@@ -4340,7 +4340,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeArgs.Builder]):
+    inline def infoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeArgs.builder
       builder.infoType(args(argsBuilder).build)
@@ -4351,7 +4351,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -4363,7 +4363,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigMinLikelihoodPerInfoTypeInfoTypeArgs.Builder]):
+    inline def infoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigMinLikelihoodPerInfoTypeInfoTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigMinLikelihoodPerInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigMinLikelihoodPerInfoTypeInfoTypeArgs.builder
       builder.infoType(args(argsBuilder).build)
@@ -4374,7 +4374,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetInfoTypeArgs.Builder]*):
+    inline def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetInfoTypeArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetInfoTypeArgs.builder
       builder.infoTypes(args.map(_(argsBuilder).build)*)
@@ -4384,7 +4384,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -4395,7 +4395,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -4406,7 +4406,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def exclusionRule(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleArgs.Builder]):
+    inline def exclusionRule(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleArgs.builder
       builder.exclusionRule(args(argsBuilder).build)
@@ -4416,7 +4416,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hotwordRule(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleArgs.Builder]):
+    inline def hotwordRule(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleArgs.builder
       builder.hotwordRule(args(argsBuilder).build)
@@ -4427,7 +4427,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dictionary(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryArgs.Builder]):
+    inline def dictionary(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryArgs.builder
       builder.dictionary(args(argsBuilder).build)
@@ -4438,7 +4438,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def excludeByHotword(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordArgs.Builder]):
+    inline def excludeByHotword(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordArgs.builder
       builder.excludeByHotword(args(argsBuilder).build)
@@ -4448,7 +4448,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def excludeInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesArgs.Builder]):
+    inline def excludeInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesArgs.builder
       builder.excludeInfoTypes(args(argsBuilder).build)
@@ -4458,7 +4458,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def regex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleRegexArgs.Builder]):
+    inline def regex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleRegexArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleRegexArgs.builder
       builder.regex(args(argsBuilder).build)
@@ -4469,7 +4469,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudStoragePath(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryCloudStoragePathArgs.Builder]):
+    inline def cloudStoragePath(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryCloudStoragePathArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryCloudStoragePathArgs.builder
       builder.cloudStoragePath(args(argsBuilder).build)
@@ -4479,7 +4479,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def wordList(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryWordListArgs.Builder]):
+    inline def wordList(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryWordListArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleDictionaryWordListArgs.builder
       builder.wordList(args(argsBuilder).build)
@@ -4490,7 +4490,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hotwordRegex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordHotwordRegexArgs.Builder]):
+    inline def hotwordRegex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordHotwordRegexArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordHotwordRegexArgs.builder
       builder.hotwordRegex(args(argsBuilder).build)
@@ -4504,7 +4504,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def proximity(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordProximityArgs.Builder]):
+    inline def proximity(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordProximityArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordProximityArgs.builder
       builder.proximity(args(argsBuilder).build)
@@ -4515,7 +4515,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeArgs.Builder]*):
+    inline def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeArgs.builder
       builder.infoTypes(args.map(_(argsBuilder).build)*)
@@ -4526,7 +4526,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -4537,7 +4537,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hotwordRegex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleHotwordRegexArgs.Builder]):
+    inline def hotwordRegex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleHotwordRegexArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleHotwordRegexArgs.builder
       builder.hotwordRegex(args(argsBuilder).build)
@@ -4547,7 +4547,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def likelihoodAdjustment(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleLikelihoodAdjustmentArgs.Builder]):
+    inline def likelihoodAdjustment(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleLikelihoodAdjustmentArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleLikelihoodAdjustmentArgs.builder
       builder.likelihoodAdjustment(args(argsBuilder).build)
@@ -4561,7 +4561,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def proximity(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleProximityArgs.Builder]):
+    inline def proximity(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleProximityArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigRuleSetRuleHotwordRuleProximityArgs.builder
       builder.proximity(args(argsBuilder).build)
@@ -4572,7 +4572,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inspectConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigArgs.Builder]):
+    inline def inspectConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionInspectTemplateInspectConfigArgs.builder
       builder.inspectConfig(args(argsBuilder).build)
@@ -4583,7 +4583,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deidentify(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionDeidentifyArgs.Builder]):
+    inline def deidentify(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionDeidentifyArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionDeidentifyArgs.builder
       builder.deidentify(args(argsBuilder).build)
@@ -4592,7 +4592,7 @@ object dataloss_ext:
      * @param jobNotificationEmails Sends an email when the job completes. The email goes to IAM project owners and technical Essential Contacts.
      * @return builder
      */
-    def jobNotificationEmails(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionJobNotificationEmailsArgs.Builder]):
+    inline def jobNotificationEmails(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionJobNotificationEmailsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionJobNotificationEmailsArgs.builder
       builder.jobNotificationEmails(args(argsBuilder).build)
@@ -4602,7 +4602,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pubSub(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionPubSubArgs.Builder]):
+    inline def pubSub(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionPubSubArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionPubSubArgs.builder
       builder.pubSub(args(argsBuilder).build)
@@ -4611,7 +4611,7 @@ object dataloss_ext:
      * @param publishFindingsToDataplexCatalog Publish findings of a DlpJob as an aspect to Dataplex Universal Catalog.
      * @return builder
      */
-    def publishFindingsToDataplexCatalog(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionPublishFindingsToDataplexCatalogArgs.Builder]):
+    inline def publishFindingsToDataplexCatalog(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionPublishFindingsToDataplexCatalogArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionPublishFindingsToDataplexCatalogArgs.builder
       builder.publishFindingsToDataplexCatalog(args(argsBuilder).build)
@@ -4620,7 +4620,7 @@ object dataloss_ext:
      * @param publishSummaryToCscc Publish the result summary of a DlpJob to the Cloud Security Command Center.
      * @return builder
      */
-    def publishSummaryToCscc(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionPublishSummaryToCsccArgs.Builder]):
+    inline def publishSummaryToCscc(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionPublishSummaryToCsccArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionPublishSummaryToCsccArgs.builder
       builder.publishSummaryToCscc(args(argsBuilder).build)
@@ -4629,7 +4629,7 @@ object dataloss_ext:
      * @param publishToStackdriver Enable Stackdriver metric dlp.googleapis.com/findingCount.
      * @return builder
      */
-    def publishToStackdriver(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionPublishToStackdriverArgs.Builder]):
+    inline def publishToStackdriver(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionPublishToStackdriverArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionPublishToStackdriverArgs.builder
       builder.publishToStackdriver(args(argsBuilder).build)
@@ -4639,7 +4639,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def saveFindings(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionSaveFindingsArgs.Builder]):
+    inline def saveFindings(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionSaveFindingsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionSaveFindingsArgs.builder
       builder.saveFindings(args(argsBuilder).build)
@@ -4650,7 +4650,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transformationConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionDeidentifyTransformationConfigArgs.Builder]):
+    inline def transformationConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionDeidentifyTransformationConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionDeidentifyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionDeidentifyTransformationConfigArgs.builder
       builder.transformationConfig(args(argsBuilder).build)
@@ -4660,7 +4660,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transformationDetailsStorageConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfigArgs.Builder]):
+    inline def transformationDetailsStorageConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionDeidentifyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfigArgs.builder
       builder.transformationDetailsStorageConfig(args(argsBuilder).build)
@@ -4671,7 +4671,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def table(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfigTableArgs.Builder]):
+    inline def table(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfigTableArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionDeidentifyTransformationDetailsStorageConfigTableArgs.builder
       builder.table(args(argsBuilder).build)
@@ -4682,7 +4682,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def outputConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigArgs.Builder]):
+    inline def outputConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionSaveFindingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigArgs.builder
       builder.outputConfig(args(argsBuilder).build)
@@ -4697,7 +4697,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def storagePath(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigStoragePathArgs.Builder]):
+    inline def storagePath(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigStoragePathArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigStoragePathArgs.builder
       builder.storagePath(args(argsBuilder).build)
@@ -4707,7 +4707,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def table(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigTableArgs.Builder]):
+    inline def table(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigTableArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionSaveFindingsOutputConfigTableArgs.builder
       builder.table(args(argsBuilder).build)
@@ -4718,7 +4718,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def actions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionArgs.Builder]*):
+    inline def actions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobActionArgs.builder
       builder.actions(args.map(_(argsBuilder).build)*)
@@ -4728,7 +4728,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inspectConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigArgs.Builder]):
+    inline def inspectConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigArgs.builder
       builder.inspectConfig(args(argsBuilder).build)
@@ -4738,7 +4738,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def storageConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigArgs.Builder]):
+    inline def storageConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigArgs.builder
       builder.storageConfig(args(argsBuilder).build)
@@ -4749,7 +4749,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeArgs.Builder]*):
+    inline def customInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeArgs.builder
       builder.customInfoTypes(args.map(_(argsBuilder).build)*)
@@ -4762,7 +4762,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigInfoTypeArgs.Builder]*):
+    inline def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigInfoTypeArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigInfoTypeArgs.builder
       builder.infoTypes(args.map(_(argsBuilder).build)*)
@@ -4772,7 +4772,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def limits(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigLimitsArgs.Builder]):
+    inline def limits(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigLimitsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigLimitsArgs.builder
       builder.limits(args(argsBuilder).build)
@@ -4783,7 +4783,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ruleSets(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetArgs.Builder]*):
+    inline def ruleSets(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetArgs.builder
       builder.ruleSets(args.map(_(argsBuilder).build)*)
@@ -4794,7 +4794,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dictionary(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionaryArgs.Builder]):
+    inline def dictionary(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionaryArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionaryArgs.builder
       builder.dictionary(args(argsBuilder).build)
@@ -4807,7 +4807,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeInfoTypeArgs.Builder]):
+    inline def infoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeInfoTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeInfoTypeArgs.builder
       builder.infoType(args(argsBuilder).build)
@@ -4817,7 +4817,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def regex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeRegexArgs.Builder]):
+    inline def regex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeRegexArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeRegexArgs.builder
       builder.regex(args(argsBuilder).build)
@@ -4827,7 +4827,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -4837,7 +4837,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def storedType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeStoredTypeArgs.Builder]):
+    inline def storedType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeStoredTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeStoredTypeArgs.builder
       builder.storedType(args(argsBuilder).build)
@@ -4846,7 +4846,7 @@ object dataloss_ext:
      * @param surrogateType Message for detecting output from deidentification transformations that support reversing.
      * @return builder
      */
-    def surrogateType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSurrogateTypeArgs.Builder]):
+    inline def surrogateType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSurrogateTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeSurrogateTypeArgs.builder
       builder.surrogateType(args(argsBuilder).build)
@@ -4857,7 +4857,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudStoragePath(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionaryCloudStoragePathArgs.Builder]):
+    inline def cloudStoragePath(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionaryCloudStoragePathArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionaryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionaryCloudStoragePathArgs.builder
       builder.cloudStoragePath(args(argsBuilder).build)
@@ -4867,7 +4867,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def wordList(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionaryWordListArgs.Builder]):
+    inline def wordList(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionaryWordListArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionaryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeDictionaryWordListArgs.builder
       builder.wordList(args(argsBuilder).build)
@@ -4878,7 +4878,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigCustomInfoTypeInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -4889,7 +4889,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -4900,7 +4900,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maxFindingsPerInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigLimitsMaxFindingsPerInfoTypeArgs.Builder]*):
+    inline def maxFindingsPerInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigLimitsMaxFindingsPerInfoTypeArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigLimitsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigLimitsMaxFindingsPerInfoTypeArgs.builder
       builder.maxFindingsPerInfoTypes(args.map(_(argsBuilder).build)*)
@@ -4913,7 +4913,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeArgs.Builder]):
+    inline def infoType(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigLimitsMaxFindingsPerInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeArgs.builder
       builder.infoType(args(argsBuilder).build)
@@ -4924,7 +4924,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigLimitsMaxFindingsPerInfoTypeInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -4935,7 +4935,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetInfoTypeArgs.Builder]*):
+    inline def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetInfoTypeArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetInfoTypeArgs.builder
       builder.infoTypes(args.map(_(argsBuilder).build)*)
@@ -4945,7 +4945,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -4956,7 +4956,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -4967,7 +4967,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def exclusionRule(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleArgs.Builder]):
+    inline def exclusionRule(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleArgs.builder
       builder.exclusionRule(args(argsBuilder).build)
@@ -4977,7 +4977,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hotwordRule(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleHotwordRuleArgs.Builder]):
+    inline def hotwordRule(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleHotwordRuleArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleHotwordRuleArgs.builder
       builder.hotwordRule(args(argsBuilder).build)
@@ -4988,7 +4988,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dictionary(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleDictionaryArgs.Builder]):
+    inline def dictionary(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleDictionaryArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleDictionaryArgs.builder
       builder.dictionary(args(argsBuilder).build)
@@ -4998,7 +4998,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def excludeByHotword(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordArgs.Builder]):
+    inline def excludeByHotword(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordArgs.builder
       builder.excludeByHotword(args(argsBuilder).build)
@@ -5008,7 +5008,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def excludeInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesArgs.Builder]):
+    inline def excludeInfoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesArgs.builder
       builder.excludeInfoTypes(args(argsBuilder).build)
@@ -5018,7 +5018,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def regex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleRegexArgs.Builder]):
+    inline def regex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleRegexArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleRegexArgs.builder
       builder.regex(args(argsBuilder).build)
@@ -5029,7 +5029,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudStoragePath(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleDictionaryCloudStoragePathArgs.Builder]):
+    inline def cloudStoragePath(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleDictionaryCloudStoragePathArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleDictionaryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleDictionaryCloudStoragePathArgs.builder
       builder.cloudStoragePath(args(argsBuilder).build)
@@ -5039,7 +5039,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def wordList(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleDictionaryWordListArgs.Builder]):
+    inline def wordList(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleDictionaryWordListArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleDictionaryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleDictionaryWordListArgs.builder
       builder.wordList(args(argsBuilder).build)
@@ -5050,7 +5050,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hotwordRegex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordHotwordRegexArgs.Builder]):
+    inline def hotwordRegex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordHotwordRegexArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordHotwordRegexArgs.builder
       builder.hotwordRegex(args(argsBuilder).build)
@@ -5064,7 +5064,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def proximity(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordProximityArgs.Builder]):
+    inline def proximity(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordProximityArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeByHotwordProximityArgs.builder
       builder.proximity(args(argsBuilder).build)
@@ -5075,7 +5075,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeArgs.Builder]*):
+    inline def infoTypes(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeArgs.builder
       builder.infoTypes(args.map(_(argsBuilder).build)*)
@@ -5086,7 +5086,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeSensitivityScoreArgs.Builder]):
+    inline def sensitivityScore(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeSensitivityScoreArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleExclusionRuleExcludeInfoTypesInfoTypeSensitivityScoreArgs.builder
       builder.sensitivityScore(args(argsBuilder).build)
@@ -5097,7 +5097,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hotwordRegex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleHotwordRuleHotwordRegexArgs.Builder]):
+    inline def hotwordRegex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleHotwordRuleHotwordRegexArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleHotwordRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleHotwordRuleHotwordRegexArgs.builder
       builder.hotwordRegex(args(argsBuilder).build)
@@ -5107,7 +5107,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def likelihoodAdjustment(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleHotwordRuleLikelihoodAdjustmentArgs.Builder]):
+    inline def likelihoodAdjustment(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleHotwordRuleLikelihoodAdjustmentArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleHotwordRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleHotwordRuleLikelihoodAdjustmentArgs.builder
       builder.likelihoodAdjustment(args(argsBuilder).build)
@@ -5121,7 +5121,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def proximity(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleHotwordRuleProximityArgs.Builder]):
+    inline def proximity(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleHotwordRuleProximityArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleHotwordRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobInspectConfigRuleSetRuleHotwordRuleProximityArgs.builder
       builder.proximity(args(argsBuilder).build)
@@ -5132,7 +5132,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigQueryOptions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigBigQueryOptionsArgs.Builder]):
+    inline def bigQueryOptions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigBigQueryOptionsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigBigQueryOptionsArgs.builder
       builder.bigQueryOptions(args(argsBuilder).build)
@@ -5142,7 +5142,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudStorageOptions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsArgs.Builder]):
+    inline def cloudStorageOptions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsArgs.builder
       builder.cloudStorageOptions(args(argsBuilder).build)
@@ -5152,7 +5152,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def datastoreOptions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigDatastoreOptionsArgs.Builder]):
+    inline def datastoreOptions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigDatastoreOptionsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigDatastoreOptionsArgs.builder
       builder.datastoreOptions(args(argsBuilder).build)
@@ -5162,7 +5162,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hybridOptions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigHybridOptionsArgs.Builder]):
+    inline def hybridOptions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigHybridOptionsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigHybridOptionsArgs.builder
       builder.hybridOptions(args(argsBuilder).build)
@@ -5172,7 +5172,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timespanConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigTimespanConfigArgs.Builder]):
+    inline def timespanConfig(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigTimespanConfigArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigTimespanConfigArgs.builder
       builder.timespanConfig(args(argsBuilder).build)
@@ -5184,7 +5184,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def excludedFields(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigBigQueryOptionsExcludedFieldArgs.Builder]*):
+    inline def excludedFields(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigBigQueryOptionsExcludedFieldArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigBigQueryOptionsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigBigQueryOptionsExcludedFieldArgs.builder
       builder.excludedFields(args.map(_(argsBuilder).build)*)
@@ -5195,7 +5195,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def identifyingFields(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigBigQueryOptionsIdentifyingFieldArgs.Builder]*):
+    inline def identifyingFields(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigBigQueryOptionsIdentifyingFieldArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigBigQueryOptionsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigBigQueryOptionsIdentifyingFieldArgs.builder
       builder.identifyingFields(args.map(_(argsBuilder).build)*)
@@ -5205,7 +5205,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def includedFields(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigBigQueryOptionsIncludedFieldArgs.Builder]*):
+    inline def includedFields(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigBigQueryOptionsIncludedFieldArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigBigQueryOptionsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigBigQueryOptionsIncludedFieldArgs.builder
       builder.includedFields(args.map(_(argsBuilder).build)*)
@@ -5215,7 +5215,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tableReference(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigBigQueryOptionsTableReferenceArgs.Builder]):
+    inline def tableReference(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigBigQueryOptionsTableReferenceArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigBigQueryOptionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigBigQueryOptionsTableReferenceArgs.builder
       builder.tableReference(args(argsBuilder).build)
@@ -5226,7 +5226,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fileSet(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsFileSetArgs.Builder]):
+    inline def fileSet(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsFileSetArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsFileSetArgs.builder
       builder.fileSet(args(argsBuilder).build)
@@ -5237,7 +5237,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def regexFileSet(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsFileSetRegexFileSetArgs.Builder]):
+    inline def regexFileSet(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsFileSetRegexFileSetArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsFileSetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigCloudStorageOptionsFileSetRegexFileSetArgs.builder
       builder.regexFileSet(args(argsBuilder).build)
@@ -5248,7 +5248,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def kind(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigDatastoreOptionsKindArgs.Builder]):
+    inline def kind(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigDatastoreOptionsKindArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigDatastoreOptionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigDatastoreOptionsKindArgs.builder
       builder.kind(args(argsBuilder).build)
@@ -5259,7 +5259,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def partitionId(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigDatastoreOptionsPartitionIdArgs.Builder]):
+    inline def partitionId(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigDatastoreOptionsPartitionIdArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigDatastoreOptionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigDatastoreOptionsPartitionIdArgs.builder
       builder.partitionId(args(argsBuilder).build)
@@ -5270,7 +5270,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tableOptions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigHybridOptionsTableOptionsArgs.Builder]):
+    inline def tableOptions(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigHybridOptionsTableOptionsArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigHybridOptionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigHybridOptionsTableOptionsArgs.builder
       builder.tableOptions(args(argsBuilder).build)
@@ -5283,7 +5283,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def identifyingFields(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigHybridOptionsTableOptionsIdentifyingFieldArgs.Builder]*):
+    inline def identifyingFields(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigHybridOptionsTableOptionsIdentifyingFieldArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigHybridOptionsTableOptionsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigHybridOptionsTableOptionsIdentifyingFieldArgs.builder
       builder.identifyingFields(args.map(_(argsBuilder).build)*)
@@ -5294,7 +5294,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timestampField(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigTimespanConfigTimestampFieldArgs.Builder]):
+    inline def timestampField(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigTimespanConfigTimestampFieldArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigTimespanConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobStorageConfigTimespanConfigTimestampFieldArgs.builder
       builder.timestampField(args(argsBuilder).build)
@@ -5305,7 +5305,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inspectJob(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobArgs.Builder]):
+    inline def inspectJob(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerState.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerInspectJobArgs.builder
       builder.inspectJob(args(argsBuilder).build)
@@ -5315,7 +5315,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def triggers(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerTriggerArgs.Builder]*):
+    inline def triggers(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerTriggerArgs.Builder]*):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerState.Builder =
       def argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerTriggerArgs.builder
       builder.triggers(args.map(_(argsBuilder).build)*)
@@ -5325,7 +5325,7 @@ object dataloss_ext:
      * @param manual For use with hybrid jobs. Jobs must be manually created and finished.
      * @return builder
      */
-    def manual(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerTriggerManualArgs.Builder]):
+    inline def manual(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerTriggerManualArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerTriggerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerTriggerManualArgs.builder
       builder.manual(args(argsBuilder).build)
@@ -5335,7 +5335,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def schedule(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerTriggerScheduleArgs.Builder]):
+    inline def schedule(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerTriggerScheduleArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerTriggerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionJobTriggerTriggerScheduleArgs.builder
       builder.schedule(args(argsBuilder).build)
@@ -5346,7 +5346,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudStoragePath(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeDictionaryCloudStoragePathArgs.Builder]):
+    inline def cloudStoragePath(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeDictionaryCloudStoragePathArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeDictionaryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeDictionaryCloudStoragePathArgs.builder
       builder.cloudStoragePath(args(argsBuilder).build)
@@ -5356,7 +5356,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def wordList(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeDictionaryWordListArgs.Builder]):
+    inline def wordList(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeDictionaryWordListArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeDictionaryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeDictionaryWordListArgs.builder
       builder.wordList(args(argsBuilder).build)
@@ -5367,7 +5367,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigQueryField(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldArgs.Builder]):
+    inline def bigQueryField(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldArgs.builder
       builder.bigQueryField(args(argsBuilder).build)
@@ -5377,7 +5377,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudStorageFileSet(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryCloudStorageFileSetArgs.Builder]):
+    inline def cloudStorageFileSet(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryCloudStorageFileSetArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryCloudStorageFileSetArgs.builder
       builder.cloudStorageFileSet(args(argsBuilder).build)
@@ -5388,7 +5388,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def outputPath(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryOutputPathArgs.Builder]):
+    inline def outputPath(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryOutputPathArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryOutputPathArgs.builder
       builder.outputPath(args(argsBuilder).build)
@@ -5399,7 +5399,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def field(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldFieldArgs.Builder]):
+    inline def field(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldFieldArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldFieldArgs.builder
       builder.field(args(argsBuilder).build)
@@ -5409,7 +5409,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def table(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldTableArgs.Builder]):
+    inline def table(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldTableArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryBigQueryFieldTableArgs.builder
       builder.table(args(argsBuilder).build)
@@ -5420,7 +5420,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dictionary(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeDictionaryArgs.Builder]):
+    inline def dictionary(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeDictionaryArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeState.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeDictionaryArgs.builder
       builder.dictionary(args(argsBuilder).build)
@@ -5430,7 +5430,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def largeCustomDictionary(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryArgs.Builder]):
+    inline def largeCustomDictionary(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeState.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeLargeCustomDictionaryArgs.builder
       builder.largeCustomDictionary(args(argsBuilder).build)
@@ -5440,7 +5440,7 @@ object dataloss_ext:
      * Structure is documented below.
      * @return builder
      */
-    def regex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeRegexArgs.Builder]):
+    inline def regex(args: Endofunction[com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeRegexArgs.Builder]):
         com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeState.Builder =
       val argsBuilder = com.pulumi.gcp.dataloss.inputs.PreventionStoredInfoTypeRegexArgs.builder
       builder.regex(args(argsBuilder).build)

@@ -9,12 +9,12 @@ object invoicing_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.aws.invoicing.inputs.InvoiceUnitRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.aws.invoicing.inputs.InvoiceUnitRuleArgs.Builder]*):
         com.pulumi.aws.invoicing.InvoiceUnitArgs.Builder =
       def argsBuilder = com.pulumi.aws.invoicing.inputs.InvoiceUnitRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.invoicing.inputs.InvoiceUnitTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.invoicing.inputs.InvoiceUnitTimeoutsArgs.Builder]):
         com.pulumi.aws.invoicing.InvoiceUnitArgs.Builder =
       val argsBuilder = com.pulumi.aws.invoicing.inputs.InvoiceUnitTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -26,12 +26,12 @@ object invoicing_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.aws.invoicing.inputs.InvoiceUnitRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.aws.invoicing.inputs.InvoiceUnitRuleArgs.Builder]*):
         com.pulumi.aws.invoicing.inputs.InvoiceUnitState.Builder =
       def argsBuilder = com.pulumi.aws.invoicing.inputs.InvoiceUnitRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.invoicing.inputs.InvoiceUnitTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.invoicing.inputs.InvoiceUnitTimeoutsArgs.Builder]):
         com.pulumi.aws.invoicing.inputs.InvoiceUnitState.Builder =
       val argsBuilder = com.pulumi.aws.invoicing.inputs.InvoiceUnitTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)

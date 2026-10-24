@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object directoryservice:
   /** Provides a conditional forwarder for managed Microsoft AD in AWS Directory Service. */
-  def ConditionalForwarder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConditionalForwarder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directoryservice.ConditionalForwarderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.directoryservice.ConditionalForwarderArgs.builder
     com.pulumi.aws.directoryservice.ConditionalForwarder(name,
@@ -15,7 +15,7 @@ object directoryservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Simple or Managed Microsoft directory in AWS Directory Service. */
-  def Directory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Directory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directoryservice.DirectoryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directoryservice.DirectoryArgs.builder
     conf.logicalName2physicalName(name) match
@@ -56,7 +56,7 @@ object directoryservice:
    * 
    * &gt; Adding an IPv6 route (`cidrIpv6`) requires the directory&#39;s network type to be dual-stack (IPv4 and IPv6). Enabling IPv6 support on a directory is a one-way operation performed outside of Terraform; see [Updating directory network type](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_update-directory-type.html).
    */
-  def IpRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IpRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directoryservice.IpRouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.directoryservice.IpRouteArgs.builder
     com.pulumi.aws.directoryservice.IpRoute(name,
@@ -72,7 +72,7 @@ object directoryservice:
    * 
    * &gt; Adding an IPv6 route (`cidrIpv6`) requires the directory&#39;s network type to be dual-stack (IPv4 and IPv6). Enabling IPv6 support on a directory is a one-way operation performed outside of Terraform; see [Updating directory network type](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_update-directory-type.html).
    */
-  def IpRoutesExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IpRoutesExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directoryservice.IpRoutesExclusiveArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.directoryservice.IpRoutesExclusiveArgs.builder
     com.pulumi.aws.directoryservice.IpRoutesExclusive(name,
@@ -80,7 +80,7 @@ object directoryservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Log subscription for AWS Directory Service that pushes logs to CloudWatch. */
-  def LogSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LogSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directoryservice.LogSubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.directoryservice.LogSubscriptionArgs.builder
     com.pulumi.aws.directoryservice.LogSubscription(name,
@@ -88,7 +88,7 @@ object directoryservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a directory&#39;s multi-factor authentication (MFA) using a Remote Authentication Dial In User Service (RADIUS) server. */
-  def RadiusSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RadiusSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directoryservice.RadiusSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.directoryservice.RadiusSettingsArgs.builder
     com.pulumi.aws.directoryservice.RadiusSettings(name,
@@ -99,7 +99,7 @@ object directoryservice:
    * Manages a replicated Region and directory for Multi-Region replication.
    * Multi-Region replication is only supported for the Enterprise Edition of AWS Managed Microsoft AD.
    */
-  def ServiceRegion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServiceRegion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directoryservice.ServiceRegionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directoryservice.ServiceRegionArgs.builder
     argsBuilder = args(argsBuilder)
@@ -114,7 +114,7 @@ object directoryservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a directory in your account (directory owner) shared with another account (directory consumer). */
-  def SharedDirectory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SharedDirectory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directoryservice.SharedDirectoryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.directoryservice.SharedDirectoryArgs.builder
     com.pulumi.aws.directoryservice.SharedDirectory(name,
@@ -126,7 +126,7 @@ object directoryservice:
    * 
    * &gt; **NOTE:** Destroying this resource removes the shared directory from the consumer account only.
    */
-  def SharedDirectoryAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SharedDirectoryAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directoryservice.SharedDirectoryAccepterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.directoryservice.SharedDirectoryAccepterArgs.builder
     com.pulumi.aws.directoryservice.SharedDirectoryAccepter(name,
@@ -142,7 +142,7 @@ object directoryservice:
    * If a Trust has only been created on one side, it will be in the state `VerifyFailed`.
    * Once the second Trust is created, the first will update to the correct state.
    */
-  def Trust(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Trust(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directoryservice.TrustArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.directoryservice.TrustArgs.builder
     com.pulumi.aws.directoryservice.Trust(name,

@@ -25,7 +25,7 @@ object memorystore:
    * \$ pulumi import gcp:memorystore/aclPolicy:AclPolicy default {{location}}/{{acl_policy_id}}
    * ```
    */
-  def AclPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AclPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.memorystore.AclPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.memorystore.AclPolicyArgs.builder
     com.pulumi.gcp.memorystore.AclPolicy(name,
@@ -41,7 +41,7 @@ object memorystore:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/memorystore/docs/valkey/create-instances)
    */
-  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.memorystore.InstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.memorystore.InstanceArgs.builder
     com.pulumi.gcp.memorystore.Instance(name,
@@ -61,7 +61,7 @@ object memorystore:
    * If the corresponding forwarding rule is represented in your terraform configuration it is recommended to delete that
    * `gcp.compute.ForwardingRule` resource at the same time.
    */
-  def InstanceDesiredUserCreatedEndpoints(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceDesiredUserCreatedEndpoints(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.memorystore.InstanceDesiredUserCreatedEndpointsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.memorystore.InstanceDesiredUserCreatedEndpointsArgs.builder
     conf.logicalName2physicalName(name) match

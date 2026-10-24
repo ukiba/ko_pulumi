@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object glue:
   /** Manages an AWS Glue Catalog. */
-  def Catalog(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Catalog(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.CatalogArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.CatalogArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25,7 +25,7 @@ object glue:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Glue Catalog Database Resource. You can refer to the [Glue Developer Guide](http://docs.aws.amazon.com/glue/latest/dg/populate-data-catalog.html) for a full explanation of the Glue Data Catalog functionality */
-  def CatalogDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CatalogDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.CatalogDatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.CatalogDatabaseArgs.builder
     conf.logicalName2physicalName(name) match
@@ -43,7 +43,7 @@ object glue:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Glue Catalog Table Resource. You can refer to the [Glue Developer Guide](http://docs.aws.amazon.com/glue/latest/dg/populate-data-catalog.html) for a full explanation of the Glue Data Catalog functionality. */
-  def CatalogTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CatalogTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.CatalogTableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.CatalogTableArgs.builder
     conf.logicalName2physicalName(name) match
@@ -54,7 +54,7 @@ object glue:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Glue Catalog Table Optimizer. */
-  def CatalogTableOptimizer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CatalogTableOptimizer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.CatalogTableOptimizerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.glue.CatalogTableOptimizerArgs.builder
     com.pulumi.aws.glue.CatalogTableOptimizer(name,
@@ -66,7 +66,7 @@ object glue:
    * 
    * &gt; **NOTE:** It is only valid to create one type of classifier (CSV, grok, JSON, or XML). Changing classifier types will recreate the classifier.
    */
-  def Classifier(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Classifier(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.ClassifierArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.ClassifierArgs.builder
     conf.logicalName2physicalName(name) match
@@ -77,7 +77,7 @@ object glue:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Glue Connection. */
-  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.ConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.ConnectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -95,7 +95,7 @@ object glue:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Glue Crawler. More information can be found in the [AWS Glue Developer Guide](https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html) */
-  def Crawler(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Crawler(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.CrawlerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.CrawlerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -113,7 +113,7 @@ object glue:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Glue Data Catalog Encryption Settings resource. */
-  def DataCatalogEncryptionSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataCatalogEncryptionSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.DataCatalogEncryptionSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.glue.DataCatalogEncryptionSettingsArgs.builder
     com.pulumi.aws.glue.DataCatalogEncryptionSettings(name,
@@ -121,7 +121,7 @@ object glue:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Glue Data Quality Ruleset Resource. You can refer to the [Glue Developer Guide](https://docs.aws.amazon.com/glue/latest/dg/glue-data-quality.html) for a full explanation of the Glue Data Quality Ruleset functionality */
-  def DataQualityRuleset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataQualityRuleset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.DataQualityRulesetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.DataQualityRulesetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -139,7 +139,7 @@ object glue:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Glue Development Endpoint resource. */
-  def DevEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DevEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.DevEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.DevEndpointArgs.builder
     conf.logicalName2physicalName(name) match
@@ -258,7 +258,7 @@ object glue:
    * 
    * &gt; Glue functionality, such as monitoring and logging of jobs, is typically managed with the `defaultArguments` argument. See the [Special Parameters Used by AWS Glue](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html) topic in the Glue developer guide for additional information.
    */
-  def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.JobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.JobArgs.builder
     conf.logicalName2physicalName(name) match
@@ -276,7 +276,7 @@ object glue:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Glue ML Transform resource. */
-  def MLTransform(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MLTransform(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.MLTransformArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.MLTransformArgs.builder
     conf.logicalName2physicalName(name) match
@@ -294,14 +294,14 @@ object glue:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Glue Partition Resource. */
-  def Partition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Partition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.PartitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.glue.PartitionArgs.builder
     com.pulumi.aws.glue.Partition(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def PartitionIndex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PartitionIndex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.PartitionIndexArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.glue.PartitionIndexArgs.builder
     com.pulumi.aws.glue.PartitionIndex(name,
@@ -309,7 +309,7 @@ object glue:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Glue Registry resource. */
-  def Registry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Registry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.RegistryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.RegistryArgs.builder
     argsBuilder = args(argsBuilder)
@@ -324,7 +324,7 @@ object glue:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Glue resource policy. Only one can exist per region. */
-  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.ResourcePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.glue.ResourcePolicyArgs.builder
     com.pulumi.aws.glue.ResourcePolicy(name,
@@ -332,7 +332,7 @@ object glue:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Glue Schema resource. */
-  def Schema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Schema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.SchemaArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.SchemaArgs.builder
     argsBuilder = args(argsBuilder)
@@ -347,7 +347,7 @@ object glue:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Glue Security Configuration. */
-  def SecurityConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecurityConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.SecurityConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.SecurityConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -358,7 +358,7 @@ object glue:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Glue Trigger resource. */
-  def Trigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Trigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.TriggerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.TriggerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -376,7 +376,7 @@ object glue:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Glue User Defined Function Resource. */
-  def UserDefinedFunction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UserDefinedFunction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.UserDefinedFunctionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.UserDefinedFunctionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -391,7 +391,7 @@ object glue:
    * The workflow graph (DAG) can be build using the `aws.glue.Trigger` resource.
    * See the example below for creating a graph with four nodes (two triggers and two jobs).
    */
-  def Workflow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Workflow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.glue.WorkflowArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.glue.WorkflowArgs.builder
     conf.logicalName2physicalName(name) match

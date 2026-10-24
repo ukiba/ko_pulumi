@@ -7,7 +7,7 @@ object compute_ext:
      * @param ipConfiguration A `ipConfiguration` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def ipConfiguration(args: Endofunction[com.pulumi.azure.compute.inputs.BastionHostIpConfigurationArgs.Builder]):
+    inline def ipConfiguration(args: Endofunction[com.pulumi.azure.compute.inputs.BastionHostIpConfigurationArgs.Builder]):
         com.pulumi.azure.compute.BastionHostArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.BastionHostIpConfigurationArgs.builder
       builder.ipConfiguration(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object compute_ext:
      * @param sku A `sku` block as defined below.
      * @return builder
      */
-    def sku(args: Endofunction[com.pulumi.azure.compute.inputs.CapacityReservationSkuArgs.Builder]):
+    inline def sku(args: Endofunction[com.pulumi.azure.compute.inputs.CapacityReservationSkuArgs.Builder]):
         com.pulumi.azure.compute.CapacityReservationArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.CapacityReservationSkuArgs.builder
       builder.sku(args(argsBuilder).build)
@@ -27,7 +27,7 @@ object compute_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.compute.inputs.DiskEncryptionSetIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.compute.inputs.DiskEncryptionSetIdentityArgs.Builder]):
         com.pulumi.azure.compute.DiskEncryptionSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.DiskEncryptionSetIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -39,7 +39,7 @@ object compute_ext:
      * &gt; **Note:** `protectedSettingsFromKeyVault` cannot be used with `protectedSettings`
      * @return builder
      */
-    def protectedSettingsFromKeyVault(args: Endofunction[com.pulumi.azure.compute.inputs.ExtensionProtectedSettingsFromKeyVaultArgs.Builder]):
+    inline def protectedSettingsFromKeyVault(args: Endofunction[com.pulumi.azure.compute.inputs.ExtensionProtectedSettingsFromKeyVaultArgs.Builder]):
         com.pulumi.azure.compute.ExtensionArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ExtensionProtectedSettingsFromKeyVaultArgs.builder
       builder.protectedSettingsFromKeyVault(args(argsBuilder).build)
@@ -49,7 +49,7 @@ object compute_ext:
      * @param manageAction A `manageAction` block as defined below.
      * @return builder
      */
-    def manageAction(args: Endofunction[com.pulumi.azure.compute.inputs.GalleryApplicationVersionManageActionArgs.Builder]):
+    inline def manageAction(args: Endofunction[com.pulumi.azure.compute.inputs.GalleryApplicationVersionManageActionArgs.Builder]):
         com.pulumi.azure.compute.GalleryApplicationVersionArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.GalleryApplicationVersionManageActionArgs.builder
       builder.manageAction(args(argsBuilder).build)
@@ -58,7 +58,7 @@ object compute_ext:
      * @param source A `source` block as defined below.
      * @return builder
      */
-    def source(args: Endofunction[com.pulumi.azure.compute.inputs.GalleryApplicationVersionSourceArgs.Builder]):
+    inline def source(args: Endofunction[com.pulumi.azure.compute.inputs.GalleryApplicationVersionSourceArgs.Builder]):
         com.pulumi.azure.compute.GalleryApplicationVersionArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.GalleryApplicationVersionSourceArgs.builder
       builder.source(args(argsBuilder).build)
@@ -67,7 +67,7 @@ object compute_ext:
      * @param targetRegions One or more `targetRegion` blocks as defined below.
      * @return builder
      */
-    def targetRegions(args: Endofunction[com.pulumi.azure.compute.inputs.GalleryApplicationVersionTargetRegionArgs.Builder]*):
+    inline def targetRegions(args: Endofunction[com.pulumi.azure.compute.inputs.GalleryApplicationVersionTargetRegionArgs.Builder]*):
         com.pulumi.azure.compute.GalleryApplicationVersionArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.GalleryApplicationVersionTargetRegionArgs.builder
       builder.targetRegions(args.map(_(argsBuilder).build)*)
@@ -79,7 +79,7 @@ object compute_ext:
      * &gt; **Note:** `dataDisk` cannot be set together with `sourceVirtualMachineId`.
      * @return builder
      */
-    def dataDisks(args: Endofunction[com.pulumi.azure.compute.inputs.ImageDataDiskArgs.Builder]*):
+    inline def dataDisks(args: Endofunction[com.pulumi.azure.compute.inputs.ImageDataDiskArgs.Builder]*):
         com.pulumi.azure.compute.ImageArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.ImageDataDiskArgs.builder
       builder.dataDisks(args.map(_(argsBuilder).build)*)
@@ -90,7 +90,7 @@ object compute_ext:
      * &gt; **Note:** `osDisk` cannot be set together with `sourceVirtualMachineId`.
      * @return builder
      */
-    def osDisk(args: Endofunction[com.pulumi.azure.compute.inputs.ImageOsDiskArgs.Builder]):
+    inline def osDisk(args: Endofunction[com.pulumi.azure.compute.inputs.ImageOsDiskArgs.Builder]):
         com.pulumi.azure.compute.ImageArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ImageOsDiskArgs.builder
       builder.osDisk(args(argsBuilder).build)
@@ -100,7 +100,7 @@ object compute_ext:
      * @param additionalCapabilities A `additionalCapabilities` block as defined below.
      * @return builder
      */
-    def additionalCapabilities(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineAdditionalCapabilitiesArgs.Builder]):
+    inline def additionalCapabilities(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineAdditionalCapabilitiesArgs.Builder]):
         com.pulumi.azure.compute.LinuxVirtualMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineAdditionalCapabilitiesArgs.builder
       builder.additionalCapabilities(args(argsBuilder).build)
@@ -111,7 +111,7 @@ object compute_ext:
      * &gt; **NOTE:** One of either `adminPassword` or `adminSshKey` must be specified.
      * @return builder
      */
-    def adminSshKeys(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineAdminSshKeyArgs.Builder]*):
+    inline def adminSshKeys(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineAdminSshKeyArgs.Builder]*):
         com.pulumi.azure.compute.LinuxVirtualMachineArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineAdminSshKeyArgs.builder
       builder.adminSshKeys(args.map(_(argsBuilder).build)*)
@@ -120,7 +120,7 @@ object compute_ext:
      * @param bootDiagnostics A `bootDiagnostics` block as defined below.
      * @return builder
      */
-    def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineBootDiagnosticsArgs.Builder]):
+    inline def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineBootDiagnosticsArgs.Builder]):
         com.pulumi.azure.compute.LinuxVirtualMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineBootDiagnosticsArgs.builder
       builder.bootDiagnostics(args(argsBuilder).build)
@@ -131,7 +131,7 @@ object compute_ext:
      * &gt; **Note** Gallery Application Assignments can be defined either directly on `azure.compute.LinuxVirtualMachine` resource, or using the `azure.compute.GalleryApplicationAssignment` resource - but the two approaches cannot be used together. If both are used with the same Virtual Machine, spurious changes will occur. If `azure.compute.GalleryApplicationAssignment` is used, it&#39;s recommended to use `ignoreChanges` for the `galleryApplication` block on the corresponding `azure.compute.LinuxVirtualMachine` resource, to avoid a persistent diff when using this resource.
      * @return builder
      */
-    def galleryApplications(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineGalleryApplicationArgs.Builder]*):
+    inline def galleryApplications(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineGalleryApplicationArgs.Builder]*):
         com.pulumi.azure.compute.LinuxVirtualMachineArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineGalleryApplicationArgs.builder
       builder.galleryApplications(args.map(_(argsBuilder).build)*)
@@ -140,7 +140,7 @@ object compute_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineIdentityArgs.Builder]):
         com.pulumi.azure.compute.LinuxVirtualMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -149,7 +149,7 @@ object compute_ext:
      * @param osDisk A `osDisk` block as defined below.
      * @return builder
      */
-    def osDisk(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineOsDiskArgs.Builder]):
+    inline def osDisk(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineOsDiskArgs.Builder]):
         com.pulumi.azure.compute.LinuxVirtualMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineOsDiskArgs.builder
       builder.osDisk(args(argsBuilder).build)
@@ -158,7 +158,7 @@ object compute_ext:
      * @param osImageNotification A `osImageNotification` block as defined below.
      * @return builder
      */
-    def osImageNotification(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineOsImageNotificationArgs.Builder]):
+    inline def osImageNotification(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineOsImageNotificationArgs.Builder]):
         com.pulumi.azure.compute.LinuxVirtualMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineOsImageNotificationArgs.builder
       builder.osImageNotification(args(argsBuilder).build)
@@ -167,7 +167,7 @@ object compute_ext:
      * @param plan A `plan` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def plan(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachinePlanArgs.Builder]):
+    inline def plan(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachinePlanArgs.Builder]):
         com.pulumi.azure.compute.LinuxVirtualMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachinePlanArgs.builder
       builder.plan(args(argsBuilder).build)
@@ -176,7 +176,7 @@ object compute_ext:
      * @param secrets One or more `secret` blocks as defined below.
      * @return builder
      */
-    def secrets(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineSecretArgs.Builder]*):
+    inline def secrets(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineSecretArgs.Builder]*):
         com.pulumi.azure.compute.LinuxVirtualMachineArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineSecretArgs.builder
       builder.secrets(args.map(_(argsBuilder).build)*)
@@ -187,7 +187,7 @@ object compute_ext:
      * &gt; **NOTE:** One of either `sourceImageId` or `sourceImageReference` must be set.
      * @return builder
      */
-    def sourceImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineSourceImageReferenceArgs.Builder]):
+    inline def sourceImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineSourceImageReferenceArgs.Builder]):
         com.pulumi.azure.compute.LinuxVirtualMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineSourceImageReferenceArgs.builder
       builder.sourceImageReference(args(argsBuilder).build)
@@ -196,7 +196,7 @@ object compute_ext:
      * @param terminationNotification A `terminationNotification` block as defined below.
      * @return builder
      */
-    def terminationNotification(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineTerminationNotificationArgs.Builder]):
+    inline def terminationNotification(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineTerminationNotificationArgs.Builder]):
         com.pulumi.azure.compute.LinuxVirtualMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineTerminationNotificationArgs.builder
       builder.terminationNotification(args(argsBuilder).build)
@@ -206,7 +206,7 @@ object compute_ext:
      * @param additionalCapabilities An `additionalCapabilities` block as defined below.
      * @return builder
      */
-    def additionalCapabilities(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetAdditionalCapabilitiesArgs.Builder]):
+    inline def additionalCapabilities(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetAdditionalCapabilitiesArgs.Builder]):
         com.pulumi.azure.compute.LinuxVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetAdditionalCapabilitiesArgs.builder
       builder.additionalCapabilities(args(argsBuilder).build)
@@ -217,7 +217,7 @@ object compute_ext:
      * &gt; **Note:** One of either `adminPassword` or `adminSshKey` must be specified.
      * @return builder
      */
-    def adminSshKeys(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetAdminSshKeyArgs.Builder]*):
+    inline def adminSshKeys(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetAdminSshKeyArgs.Builder]*):
         com.pulumi.azure.compute.LinuxVirtualMachineScaleSetArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetAdminSshKeyArgs.builder
       builder.adminSshKeys(args.map(_(argsBuilder).build)*)
@@ -228,7 +228,7 @@ object compute_ext:
      * &gt; **Note:** For more information about Automatic Instance Repair, please refer to the [product documentation](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-instance-repairs).
      * @return builder
      */
-    def automaticInstanceRepair(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetAutomaticInstanceRepairArgs.Builder]):
+    inline def automaticInstanceRepair(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetAutomaticInstanceRepairArgs.Builder]):
         com.pulumi.azure.compute.LinuxVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetAutomaticInstanceRepairArgs.builder
       builder.automaticInstanceRepair(args(argsBuilder).build)
@@ -237,7 +237,7 @@ object compute_ext:
      * @param automaticOsUpgradePolicy An `automaticOsUpgradePolicy` block as defined below. This can only be specified when `upgradeMode` is set to either `Automatic` or `Rolling`.
      * @return builder
      */
-    def automaticOsUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetAutomaticOsUpgradePolicyArgs.Builder]):
+    inline def automaticOsUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetAutomaticOsUpgradePolicyArgs.Builder]):
         com.pulumi.azure.compute.LinuxVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetAutomaticOsUpgradePolicyArgs.builder
       builder.automaticOsUpgradePolicy(args(argsBuilder).build)
@@ -246,7 +246,7 @@ object compute_ext:
      * @param bootDiagnostics A `bootDiagnostics` block as defined below.
      * @return builder
      */
-    def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetBootDiagnosticsArgs.Builder]):
+    inline def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetBootDiagnosticsArgs.Builder]):
         com.pulumi.azure.compute.LinuxVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetBootDiagnosticsArgs.builder
       builder.bootDiagnostics(args(argsBuilder).build)
@@ -255,7 +255,7 @@ object compute_ext:
      * @param dataDisks One or more `dataDisk` blocks as defined below.
      * @return builder
      */
-    def dataDisks(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetDataDiskArgs.Builder]*):
+    inline def dataDisks(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetDataDiskArgs.Builder]*):
         com.pulumi.azure.compute.LinuxVirtualMachineScaleSetArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetDataDiskArgs.builder
       builder.dataDisks(args.map(_(argsBuilder).build)*)
@@ -264,7 +264,7 @@ object compute_ext:
      * @param extensions One or more `extension` blocks as defined below
      * @return builder
      */
-    def extensions(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetExtensionArgs.Builder]*):
+    inline def extensions(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetExtensionArgs.Builder]*):
         com.pulumi.azure.compute.LinuxVirtualMachineScaleSetArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetExtensionArgs.builder
       builder.extensions(args.map(_(argsBuilder).build)*)
@@ -273,7 +273,7 @@ object compute_ext:
      * @param galleryApplications One or more `galleryApplication` blocks as defined below.
      * @return builder
      */
-    def galleryApplications(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetGalleryApplicationArgs.Builder]*):
+    inline def galleryApplications(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetGalleryApplicationArgs.Builder]*):
         com.pulumi.azure.compute.LinuxVirtualMachineScaleSetArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetGalleryApplicationArgs.builder
       builder.galleryApplications(args.map(_(argsBuilder).build)*)
@@ -282,7 +282,7 @@ object compute_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetIdentityArgs.Builder]):
         com.pulumi.azure.compute.LinuxVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -291,7 +291,7 @@ object compute_ext:
      * @param networkInterfaces One or more `networkInterface` blocks as defined below.
      * @return builder
      */
-    def networkInterfaces(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetNetworkInterfaceArgs.Builder]*):
+    inline def networkInterfaces(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetNetworkInterfaceArgs.Builder]*):
         com.pulumi.azure.compute.LinuxVirtualMachineScaleSetArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
@@ -300,7 +300,7 @@ object compute_ext:
      * @param osDisk An `osDisk` block as defined below.
      * @return builder
      */
-    def osDisk(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetOsDiskArgs.Builder]):
+    inline def osDisk(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetOsDiskArgs.Builder]):
         com.pulumi.azure.compute.LinuxVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetOsDiskArgs.builder
       builder.osDisk(args(argsBuilder).build)
@@ -311,7 +311,7 @@ object compute_ext:
      * &gt; **Note:** When using an image from Azure Marketplace a `plan` must be specified.
      * @return builder
      */
-    def plan(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetPlanArgs.Builder]):
+    inline def plan(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetPlanArgs.Builder]):
         com.pulumi.azure.compute.LinuxVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetPlanArgs.builder
       builder.plan(args(argsBuilder).build)
@@ -320,7 +320,7 @@ object compute_ext:
      * @param rollingUpgradePolicy A `rollingUpgradePolicy` block as defined below. This is Required and can only be specified when `upgradeMode` is set to `Automatic` or `Rolling`. Changing this forces a new resource to be created.
      * @return builder
      */
-    def rollingUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetRollingUpgradePolicyArgs.Builder]):
+    inline def rollingUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetRollingUpgradePolicyArgs.Builder]):
         com.pulumi.azure.compute.LinuxVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetRollingUpgradePolicyArgs.builder
       builder.rollingUpgradePolicy(args(argsBuilder).build)
@@ -329,7 +329,7 @@ object compute_ext:
      * @param scaleIn A `scaleIn` block as defined below.
      * @return builder
      */
-    def scaleIn(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetScaleInArgs.Builder]):
+    inline def scaleIn(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetScaleInArgs.Builder]):
         com.pulumi.azure.compute.LinuxVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetScaleInArgs.builder
       builder.scaleIn(args(argsBuilder).build)
@@ -338,7 +338,7 @@ object compute_ext:
      * @param secrets One or more `secret` blocks as defined below.
      * @return builder
      */
-    def secrets(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetSecretArgs.Builder]*):
+    inline def secrets(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetSecretArgs.Builder]*):
         com.pulumi.azure.compute.LinuxVirtualMachineScaleSetArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetSecretArgs.builder
       builder.secrets(args.map(_(argsBuilder).build)*)
@@ -349,7 +349,7 @@ object compute_ext:
      * &gt; **Note:** One of either `sourceImageId` or `sourceImageReference` must be set.
      * @return builder
      */
-    def sourceImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetSourceImageReferenceArgs.Builder]):
+    inline def sourceImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetSourceImageReferenceArgs.Builder]):
         com.pulumi.azure.compute.LinuxVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetSourceImageReferenceArgs.builder
       builder.sourceImageReference(args(argsBuilder).build)
@@ -358,7 +358,7 @@ object compute_ext:
      * @param spotRestore A `spotRestore` block as defined below.
      * @return builder
      */
-    def spotRestore(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetSpotRestoreArgs.Builder]):
+    inline def spotRestore(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetSpotRestoreArgs.Builder]):
         com.pulumi.azure.compute.LinuxVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetSpotRestoreArgs.builder
       builder.spotRestore(args(argsBuilder).build)
@@ -367,7 +367,7 @@ object compute_ext:
      * @param terminationNotification A `terminationNotification` block as defined below.
      * @return builder
      */
-    def terminationNotification(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetTerminationNotificationArgs.Builder]):
+    inline def terminationNotification(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetTerminationNotificationArgs.Builder]):
         com.pulumi.azure.compute.LinuxVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetTerminationNotificationArgs.builder
       builder.terminationNotification(args(argsBuilder).build)
@@ -379,7 +379,7 @@ object compute_ext:
      * &gt; **NOTE:** Removing `encryptionSettings` forces a new resource to be created.
      * @return builder
      */
-    def encryptionSettings(args: Endofunction[com.pulumi.azure.compute.inputs.ManagedDiskEncryptionSettingsArgs.Builder]):
+    inline def encryptionSettings(args: Endofunction[com.pulumi.azure.compute.inputs.ManagedDiskEncryptionSettingsArgs.Builder]):
         com.pulumi.azure.compute.ManagedDiskArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ManagedDiskEncryptionSettingsArgs.builder
       builder.encryptionSettings(args(argsBuilder).build)
@@ -389,7 +389,7 @@ object compute_ext:
      * @param additionalCapabilities An `additionalCapabilities` block as defined below.
      * @return builder
      */
-    def additionalCapabilities(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetAdditionalCapabilitiesArgs.Builder]):
+    inline def additionalCapabilities(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetAdditionalCapabilitiesArgs.Builder]):
         com.pulumi.azure.compute.OrchestratedVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetAdditionalCapabilitiesArgs.builder
       builder.additionalCapabilities(args(argsBuilder).build)
@@ -400,7 +400,7 @@ object compute_ext:
      * &gt; **Note:** To enable the `automaticInstanceRepair`, the Orchestrated Virtual Machine Scale Set must have a valid [Application Health Extension](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-health-extension).
      * @return builder
      */
-    def automaticInstanceRepair(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetAutomaticInstanceRepairArgs.Builder]):
+    inline def automaticInstanceRepair(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetAutomaticInstanceRepairArgs.Builder]):
         com.pulumi.azure.compute.OrchestratedVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetAutomaticInstanceRepairArgs.builder
       builder.automaticInstanceRepair(args(argsBuilder).build)
@@ -409,7 +409,7 @@ object compute_ext:
      * @param bootDiagnostics A `bootDiagnostics` block as defined below.
      * @return builder
      */
-    def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetBootDiagnosticsArgs.Builder]):
+    inline def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetBootDiagnosticsArgs.Builder]):
         com.pulumi.azure.compute.OrchestratedVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetBootDiagnosticsArgs.builder
       builder.bootDiagnostics(args(argsBuilder).build)
@@ -418,7 +418,7 @@ object compute_ext:
      * @param dataDisks One or more `dataDisk` blocks as defined below.
      * @return builder
      */
-    def dataDisks(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetDataDiskArgs.Builder]*):
+    inline def dataDisks(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetDataDiskArgs.Builder]*):
         com.pulumi.azure.compute.OrchestratedVirtualMachineScaleSetArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetDataDiskArgs.builder
       builder.dataDisks(args.map(_(argsBuilder).build)*)
@@ -427,7 +427,7 @@ object compute_ext:
      * @param extensions One or more `extension` blocks as defined below
      * @return builder
      */
-    def extensions(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetExtensionArgs.Builder]*):
+    inline def extensions(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetExtensionArgs.Builder]*):
         com.pulumi.azure.compute.OrchestratedVirtualMachineScaleSetArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetExtensionArgs.builder
       builder.extensions(args.map(_(argsBuilder).build)*)
@@ -436,7 +436,7 @@ object compute_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetIdentityArgs.Builder]):
         com.pulumi.azure.compute.OrchestratedVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -445,7 +445,7 @@ object compute_ext:
      * @param networkInterfaces One or more `networkInterface` blocks as defined below.
      * @return builder
      */
-    def networkInterfaces(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetNetworkInterfaceArgs.Builder]*):
+    inline def networkInterfaces(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetNetworkInterfaceArgs.Builder]*):
         com.pulumi.azure.compute.OrchestratedVirtualMachineScaleSetArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
@@ -454,7 +454,7 @@ object compute_ext:
      * @param osDisk An `osDisk` block as defined below.
      * @return builder
      */
-    def osDisk(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsDiskArgs.Builder]):
+    inline def osDisk(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsDiskArgs.Builder]):
         com.pulumi.azure.compute.OrchestratedVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsDiskArgs.builder
       builder.osDisk(args(argsBuilder).build)
@@ -463,7 +463,7 @@ object compute_ext:
      * @param osProfile An `osProfile` block as defined below.
      * @return builder
      */
-    def osProfile(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileArgs.Builder]):
+    inline def osProfile(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileArgs.Builder]):
         com.pulumi.azure.compute.OrchestratedVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileArgs.builder
       builder.osProfile(args(argsBuilder).build)
@@ -472,7 +472,7 @@ object compute_ext:
      * @param plan A `plan` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def plan(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetPlanArgs.Builder]):
+    inline def plan(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetPlanArgs.Builder]):
         com.pulumi.azure.compute.OrchestratedVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetPlanArgs.builder
       builder.plan(args(argsBuilder).build)
@@ -483,7 +483,7 @@ object compute_ext:
      * &gt; **Note:** `priorityMix` can only be specified when `priority` is set to `Spot`.
      * @return builder
      */
-    def priorityMix(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetPriorityMixArgs.Builder]):
+    inline def priorityMix(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetPriorityMixArgs.Builder]):
         com.pulumi.azure.compute.OrchestratedVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetPriorityMixArgs.builder
       builder.priorityMix(args(argsBuilder).build)
@@ -494,7 +494,7 @@ object compute_ext:
      * &gt; **Note:** `rollingUpgradePolicy` is required when `upgradeMode` is set to `Rolling`, cannot be specified when `upgradeMode` is set to `Manual`, and requires a valid application health extension when `upgradeMode` is set to `Rolling`.
      * @return builder
      */
-    def rollingUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetRollingUpgradePolicyArgs.Builder]):
+    inline def rollingUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetRollingUpgradePolicyArgs.Builder]):
         com.pulumi.azure.compute.OrchestratedVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetRollingUpgradePolicyArgs.builder
       builder.rollingUpgradePolicy(args(argsBuilder).build)
@@ -507,7 +507,7 @@ object compute_ext:
      * &gt; **Note:** The `skuProfile` feature may be subject to Azure service limitations for particular regions and VM size combinations. While `skuProfile` can be updated after deployment, it cannot be removed. Removing `skuProfile` from the configuration after deployment triggers the creation of a new resource. Additionally, modifying `skuProfile` settings may result in instance disruption, as changes to allocation strategies or VM sizes can require Azure to redistribute or recreate instances.
      * @return builder
      */
-    def skuProfile(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetSkuProfileArgs.Builder]):
+    inline def skuProfile(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetSkuProfileArgs.Builder]):
         com.pulumi.azure.compute.OrchestratedVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetSkuProfileArgs.builder
       builder.skuProfile(args(argsBuilder).build)
@@ -518,7 +518,7 @@ object compute_ext:
      * &gt; **Note:** `sourceImageId` and `sourceImageReference` are mutually exclusive and only one of them may be specified.
      * @return builder
      */
-    def sourceImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetSourceImageReferenceArgs.Builder]):
+    inline def sourceImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetSourceImageReferenceArgs.Builder]):
         com.pulumi.azure.compute.OrchestratedVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetSourceImageReferenceArgs.builder
       builder.sourceImageReference(args(argsBuilder).build)
@@ -527,7 +527,7 @@ object compute_ext:
      * @param terminationNotification A `terminationNotification` block as defined below.
      * @return builder
      */
-    def terminationNotification(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetTerminationNotificationArgs.Builder]):
+    inline def terminationNotification(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetTerminationNotificationArgs.Builder]):
         com.pulumi.azure.compute.OrchestratedVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetTerminationNotificationArgs.builder
       builder.terminationNotification(args(argsBuilder).build)
@@ -537,7 +537,7 @@ object compute_ext:
      * @param filters One or more `filter` blocks as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def filters(args: Endofunction[com.pulumi.azure.compute.inputs.PacketCaptureFilterArgs.Builder]*):
+    inline def filters(args: Endofunction[com.pulumi.azure.compute.inputs.PacketCaptureFilterArgs.Builder]*):
         com.pulumi.azure.compute.PacketCaptureArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.PacketCaptureFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
@@ -546,7 +546,7 @@ object compute_ext:
      * @param storageLocation A `storageLocation` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def storageLocation(args: Endofunction[com.pulumi.azure.compute.inputs.PacketCaptureStorageLocationArgs.Builder]):
+    inline def storageLocation(args: Endofunction[com.pulumi.azure.compute.inputs.PacketCaptureStorageLocationArgs.Builder]):
         com.pulumi.azure.compute.PacketCaptureArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.PacketCaptureStorageLocationArgs.builder
       builder.storageLocation(args(argsBuilder).build)
@@ -556,7 +556,7 @@ object compute_ext:
      * @param errorBlobManagedIdentity An `errorBlobManagedIdentity` block as defined below. User-assigned managed Identity that has access to errorBlobUri storage blob.
      * @return builder
      */
-    def errorBlobManagedIdentity(args: Endofunction[com.pulumi.azure.compute.inputs.RunCommandErrorBlobManagedIdentityArgs.Builder]):
+    inline def errorBlobManagedIdentity(args: Endofunction[com.pulumi.azure.compute.inputs.RunCommandErrorBlobManagedIdentityArgs.Builder]):
         com.pulumi.azure.compute.RunCommandArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.RunCommandErrorBlobManagedIdentityArgs.builder
       builder.errorBlobManagedIdentity(args(argsBuilder).build)
@@ -565,7 +565,7 @@ object compute_ext:
      * @param outputBlobManagedIdentity An `outputBlobManagedIdentity` block as defined below. User-assigned managed Identity that has access to outputBlobUri storage blob.
      * @return builder
      */
-    def outputBlobManagedIdentity(args: Endofunction[com.pulumi.azure.compute.inputs.RunCommandOutputBlobManagedIdentityArgs.Builder]):
+    inline def outputBlobManagedIdentity(args: Endofunction[com.pulumi.azure.compute.inputs.RunCommandOutputBlobManagedIdentityArgs.Builder]):
         com.pulumi.azure.compute.RunCommandArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.RunCommandOutputBlobManagedIdentityArgs.builder
       builder.outputBlobManagedIdentity(args(argsBuilder).build)
@@ -574,7 +574,7 @@ object compute_ext:
      * @param parameters A list of `parameter` blocks as defined below. The parameters used by the script.
      * @return builder
      */
-    def parameters(args: Endofunction[com.pulumi.azure.compute.inputs.RunCommandParameterArgs.Builder]*):
+    inline def parameters(args: Endofunction[com.pulumi.azure.compute.inputs.RunCommandParameterArgs.Builder]*):
         com.pulumi.azure.compute.RunCommandArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.RunCommandParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
@@ -583,7 +583,7 @@ object compute_ext:
      * @param protectedParameters A list of `protectedParameter` blocks as defined below. The protected parameters used by the script.
      * @return builder
      */
-    def protectedParameters(args: Endofunction[com.pulumi.azure.compute.inputs.RunCommandProtectedParameterArgs.Builder]*):
+    inline def protectedParameters(args: Endofunction[com.pulumi.azure.compute.inputs.RunCommandProtectedParameterArgs.Builder]*):
         com.pulumi.azure.compute.RunCommandArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.RunCommandProtectedParameterArgs.builder
       builder.protectedParameters(args.map(_(argsBuilder).build)*)
@@ -592,7 +592,7 @@ object compute_ext:
      * @param source A `source` block as defined below. The source of the run command script.
      * @return builder
      */
-    def source(args: Endofunction[com.pulumi.azure.compute.inputs.RunCommandSourceArgs.Builder]):
+    inline def source(args: Endofunction[com.pulumi.azure.compute.inputs.RunCommandSourceArgs.Builder]):
         com.pulumi.azure.compute.RunCommandArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.RunCommandSourceArgs.builder
       builder.source(args(argsBuilder).build)
@@ -602,7 +602,7 @@ object compute_ext:
      * @param bootDiagnostics A `bootDiagnostics` block as referenced below.
      * @return builder
      */
-    def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetBootDiagnosticsArgs.Builder]):
+    inline def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetBootDiagnosticsArgs.Builder]):
         com.pulumi.azure.compute.ScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetBootDiagnosticsArgs.builder
       builder.bootDiagnostics(args(argsBuilder).build)
@@ -611,7 +611,7 @@ object compute_ext:
      * @param extensions Can be specified multiple times to add extension profiles to the scale set. Each `extension` block supports the fields documented below.
      * @return builder
      */
-    def extensions(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetExtensionArgs.Builder]*):
+    inline def extensions(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetExtensionArgs.Builder]*):
         com.pulumi.azure.compute.ScaleSetArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetExtensionArgs.builder
       builder.extensions(args.map(_(argsBuilder).build)*)
@@ -620,7 +620,7 @@ object compute_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetIdentityArgs.Builder]):
         com.pulumi.azure.compute.ScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -629,7 +629,7 @@ object compute_ext:
      * @param networkProfiles A collection of `networkProfile` blocks as documented below.
      * @return builder
      */
-    def networkProfiles(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetNetworkProfileArgs.Builder]*):
+    inline def networkProfiles(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetNetworkProfileArgs.Builder]*):
         com.pulumi.azure.compute.ScaleSetArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetNetworkProfileArgs.builder
       builder.networkProfiles(args.map(_(argsBuilder).build)*)
@@ -638,7 +638,7 @@ object compute_ext:
      * @param osProfile A `osProfile` block as documented below.
      * @return builder
      */
-    def osProfile(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetOsProfileArgs.Builder]):
+    inline def osProfile(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetOsProfileArgs.Builder]):
         com.pulumi.azure.compute.ScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetOsProfileArgs.builder
       builder.osProfile(args(argsBuilder).build)
@@ -647,7 +647,7 @@ object compute_ext:
      * @param osProfileLinuxConfig A `osProfileLinuxConfig` block as documented below.
      * @return builder
      */
-    def osProfileLinuxConfig(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetOsProfileLinuxConfigArgs.Builder]):
+    inline def osProfileLinuxConfig(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetOsProfileLinuxConfigArgs.Builder]):
         com.pulumi.azure.compute.ScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetOsProfileLinuxConfigArgs.builder
       builder.osProfileLinuxConfig(args(argsBuilder).build)
@@ -656,7 +656,7 @@ object compute_ext:
      * @param osProfileSecrets A collection of `osProfileSecrets` blocks as documented below.
      * @return builder
      */
-    def osProfileSecrets(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetOsProfileSecretArgs.Builder]*):
+    inline def osProfileSecrets(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetOsProfileSecretArgs.Builder]*):
         com.pulumi.azure.compute.ScaleSetArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetOsProfileSecretArgs.builder
       builder.osProfileSecrets(args.map(_(argsBuilder).build)*)
@@ -665,7 +665,7 @@ object compute_ext:
      * @param osProfileWindowsConfig A `osProfileWindowsConfig` block as documented below.
      * @return builder
      */
-    def osProfileWindowsConfig(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetOsProfileWindowsConfigArgs.Builder]):
+    inline def osProfileWindowsConfig(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetOsProfileWindowsConfigArgs.Builder]):
         com.pulumi.azure.compute.ScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetOsProfileWindowsConfigArgs.builder
       builder.osProfileWindowsConfig(args(argsBuilder).build)
@@ -674,7 +674,7 @@ object compute_ext:
      * @param plan A `plan` block as documented below.
      * @return builder
      */
-    def plan(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetPlanArgs.Builder]):
+    inline def plan(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetPlanArgs.Builder]):
         com.pulumi.azure.compute.ScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetPlanArgs.builder
       builder.plan(args(argsBuilder).build)
@@ -683,7 +683,7 @@ object compute_ext:
      * @param rollingUpgradePolicy A `rollingUpgradePolicy` block as defined below. This is only applicable when the `upgradePolicyMode` is `Rolling`.
      * @return builder
      */
-    def rollingUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetRollingUpgradePolicyArgs.Builder]):
+    inline def rollingUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetRollingUpgradePolicyArgs.Builder]):
         com.pulumi.azure.compute.ScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetRollingUpgradePolicyArgs.builder
       builder.rollingUpgradePolicy(args(argsBuilder).build)
@@ -692,7 +692,7 @@ object compute_ext:
      * @param sku A `sku` block as documented below.
      * @return builder
      */
-    def sku(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetSkuArgs.Builder]):
+    inline def sku(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetSkuArgs.Builder]):
         com.pulumi.azure.compute.ScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetSkuArgs.builder
       builder.sku(args(argsBuilder).build)
@@ -701,7 +701,7 @@ object compute_ext:
      * @param storageProfileDataDisks A `storageProfileDataDisk` block as documented below.
      * @return builder
      */
-    def storageProfileDataDisks(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetStorageProfileDataDiskArgs.Builder]*):
+    inline def storageProfileDataDisks(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetStorageProfileDataDiskArgs.Builder]*):
         com.pulumi.azure.compute.ScaleSetArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetStorageProfileDataDiskArgs.builder
       builder.storageProfileDataDisks(args.map(_(argsBuilder).build)*)
@@ -710,7 +710,7 @@ object compute_ext:
      * @param storageProfileImageReference A `storageProfileImageReference` block as documented below.
      * @return builder
      */
-    def storageProfileImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetStorageProfileImageReferenceArgs.Builder]):
+    inline def storageProfileImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetStorageProfileImageReferenceArgs.Builder]):
         com.pulumi.azure.compute.ScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetStorageProfileImageReferenceArgs.builder
       builder.storageProfileImageReference(args(argsBuilder).build)
@@ -719,7 +719,7 @@ object compute_ext:
      * @param storageProfileOsDisk A `storageProfileOsDisk` block as documented below.
      * @return builder
      */
-    def storageProfileOsDisk(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetStorageProfileOsDiskArgs.Builder]):
+    inline def storageProfileOsDisk(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetStorageProfileOsDiskArgs.Builder]):
         com.pulumi.azure.compute.ScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetStorageProfileOsDiskArgs.builder
       builder.storageProfileOsDisk(args(argsBuilder).build)
@@ -729,7 +729,7 @@ object compute_ext:
      * @param filters One or more `filter` blocks as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def filters(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetPacketCaptureFilterArgs.Builder]*):
+    inline def filters(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetPacketCaptureFilterArgs.Builder]*):
         com.pulumi.azure.compute.ScaleSetPacketCaptureArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetPacketCaptureFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
@@ -738,7 +738,7 @@ object compute_ext:
      * @param machineScope A `machineScope` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def machineScope(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetPacketCaptureMachineScopeArgs.Builder]):
+    inline def machineScope(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetPacketCaptureMachineScopeArgs.Builder]):
         com.pulumi.azure.compute.ScaleSetPacketCaptureArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetPacketCaptureMachineScopeArgs.builder
       builder.machineScope(args(argsBuilder).build)
@@ -747,7 +747,7 @@ object compute_ext:
      * @param storageLocation A `storageLocation` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def storageLocation(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetPacketCaptureStorageLocationArgs.Builder]):
+    inline def storageLocation(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetPacketCaptureStorageLocationArgs.Builder]):
         com.pulumi.azure.compute.ScaleSetPacketCaptureArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetPacketCaptureStorageLocationArgs.builder
       builder.storageLocation(args(argsBuilder).build)
@@ -757,7 +757,7 @@ object compute_ext:
      * @param elasticityProfile An `elasticityProfile` block as defined below.
      * @return builder
      */
-    def elasticityProfile(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetStandbyPoolElasticityProfileArgs.Builder]):
+    inline def elasticityProfile(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetStandbyPoolElasticityProfileArgs.Builder]):
         com.pulumi.azure.compute.ScaleSetStandbyPoolArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetStandbyPoolElasticityProfileArgs.builder
       builder.elasticityProfile(args(argsBuilder).build)
@@ -767,7 +767,7 @@ object compute_ext:
      * @param identifier An `identifier` block as defined below.
      * @return builder
      */
-    def identifier(args: Endofunction[com.pulumi.azure.compute.inputs.SharedImageIdentifierArgs.Builder]):
+    inline def identifier(args: Endofunction[com.pulumi.azure.compute.inputs.SharedImageIdentifierArgs.Builder]):
         com.pulumi.azure.compute.SharedImageArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.SharedImageIdentifierArgs.builder
       builder.identifier(args(argsBuilder).build)
@@ -776,7 +776,7 @@ object compute_ext:
      * @param purchasePlan A `purchasePlan` block as defined below.
      * @return builder
      */
-    def purchasePlan(args: Endofunction[com.pulumi.azure.compute.inputs.SharedImagePurchasePlanArgs.Builder]):
+    inline def purchasePlan(args: Endofunction[com.pulumi.azure.compute.inputs.SharedImagePurchasePlanArgs.Builder]):
         com.pulumi.azure.compute.SharedImageArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.SharedImagePurchasePlanArgs.builder
       builder.purchasePlan(args(argsBuilder).build)
@@ -786,7 +786,7 @@ object compute_ext:
      * @param sharing A `sharing` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def sharing(args: Endofunction[com.pulumi.azure.compute.inputs.SharedImageGallerySharingArgs.Builder]):
+    inline def sharing(args: Endofunction[com.pulumi.azure.compute.inputs.SharedImageGallerySharingArgs.Builder]):
         com.pulumi.azure.compute.SharedImageGalleryArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.SharedImageGallerySharingArgs.builder
       builder.sharing(args(argsBuilder).build)
@@ -796,7 +796,7 @@ object compute_ext:
      * @param targetRegions One or more `targetRegion` blocks as documented below.
      * @return builder
      */
-    def targetRegions(args: Endofunction[com.pulumi.azure.compute.inputs.SharedImageVersionTargetRegionArgs.Builder]*):
+    inline def targetRegions(args: Endofunction[com.pulumi.azure.compute.inputs.SharedImageVersionTargetRegionArgs.Builder]*):
         com.pulumi.azure.compute.SharedImageVersionArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.SharedImageVersionTargetRegionArgs.builder
       builder.targetRegions(args.map(_(argsBuilder).build)*)
@@ -808,7 +808,7 @@ object compute_ext:
      * &gt; **Note:** Removing `encryptionSettings` forces a new resource to be created.
      * @return builder
      */
-    def encryptionSettings(args: Endofunction[com.pulumi.azure.compute.inputs.SnapshotEncryptionSettingsArgs.Builder]):
+    inline def encryptionSettings(args: Endofunction[com.pulumi.azure.compute.inputs.SnapshotEncryptionSettingsArgs.Builder]):
         com.pulumi.azure.compute.SnapshotArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.SnapshotEncryptionSettingsArgs.builder
       builder.encryptionSettings(args(argsBuilder).build)
@@ -818,7 +818,7 @@ object compute_ext:
      * @param additionalCapabilities An `additionalCapabilities` block as defined below.
      * @return builder
      */
-    def additionalCapabilities(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineAdditionalCapabilitiesArgs.Builder]):
+    inline def additionalCapabilities(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineAdditionalCapabilitiesArgs.Builder]):
         com.pulumi.azure.compute.VirtualMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineAdditionalCapabilitiesArgs.builder
       builder.additionalCapabilities(args(argsBuilder).build)
@@ -827,7 +827,7 @@ object compute_ext:
      * @param bootDiagnostics A `bootDiagnostics` block as defined below.
      * @return builder
      */
-    def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineBootDiagnosticsArgs.Builder]):
+    inline def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineBootDiagnosticsArgs.Builder]):
         com.pulumi.azure.compute.VirtualMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineBootDiagnosticsArgs.builder
       builder.bootDiagnostics(args(argsBuilder).build)
@@ -836,7 +836,7 @@ object compute_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineIdentityArgs.Builder]):
         com.pulumi.azure.compute.VirtualMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -845,7 +845,7 @@ object compute_ext:
      * @param osProfile An `osProfile` block as defined below. Required when `createOption` in the `storageOsDisk` block is set to `FromImage`.
      * @return builder
      */
-    def osProfile(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineOsProfileArgs.Builder]):
+    inline def osProfile(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineOsProfileArgs.Builder]):
         com.pulumi.azure.compute.VirtualMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineOsProfileArgs.builder
       builder.osProfile(args(argsBuilder).build)
@@ -854,7 +854,7 @@ object compute_ext:
      * @param osProfileLinuxConfig (Required, when a Linux machine) An `osProfileLinuxConfig` block as defined below.
      * @return builder
      */
-    def osProfileLinuxConfig(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineOsProfileLinuxConfigArgs.Builder]):
+    inline def osProfileLinuxConfig(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineOsProfileLinuxConfigArgs.Builder]):
         com.pulumi.azure.compute.VirtualMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineOsProfileLinuxConfigArgs.builder
       builder.osProfileLinuxConfig(args(argsBuilder).build)
@@ -863,7 +863,7 @@ object compute_ext:
      * @param osProfileSecrets One or more `osProfileSecrets` blocks as defined below.
      * @return builder
      */
-    def osProfileSecrets(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineOsProfileSecretArgs.Builder]*):
+    inline def osProfileSecrets(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineOsProfileSecretArgs.Builder]*):
         com.pulumi.azure.compute.VirtualMachineArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineOsProfileSecretArgs.builder
       builder.osProfileSecrets(args.map(_(argsBuilder).build)*)
@@ -872,7 +872,7 @@ object compute_ext:
      * @param osProfileWindowsConfig (Required, when a Windows machine) An `osProfileWindowsConfig` block as defined below.
      * @return builder
      */
-    def osProfileWindowsConfig(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineOsProfileWindowsConfigArgs.Builder]):
+    inline def osProfileWindowsConfig(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineOsProfileWindowsConfigArgs.Builder]):
         com.pulumi.azure.compute.VirtualMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineOsProfileWindowsConfigArgs.builder
       builder.osProfileWindowsConfig(args(argsBuilder).build)
@@ -881,7 +881,7 @@ object compute_ext:
      * @param plan A `plan` block as defined below.
      * @return builder
      */
-    def plan(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachinePlanArgs.Builder]):
+    inline def plan(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachinePlanArgs.Builder]):
         com.pulumi.azure.compute.VirtualMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachinePlanArgs.builder
       builder.plan(args(argsBuilder).build)
@@ -892,7 +892,7 @@ object compute_ext:
      * &gt; **Please Note:** Data Disks can also be attached either using this block or the `azure.compute.DataDiskAttachment` resource - but not both.
      * @return builder
      */
-    def storageDataDisks(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineStorageDataDiskArgs.Builder]*):
+    inline def storageDataDisks(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineStorageDataDiskArgs.Builder]*):
         com.pulumi.azure.compute.VirtualMachineArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineStorageDataDiskArgs.builder
       builder.storageDataDisks(args.map(_(argsBuilder).build)*)
@@ -901,7 +901,7 @@ object compute_ext:
      * @param storageImageReference A `storageImageReference` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def storageImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineStorageImageReferenceArgs.Builder]):
+    inline def storageImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineStorageImageReferenceArgs.Builder]):
         com.pulumi.azure.compute.VirtualMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineStorageImageReferenceArgs.builder
       builder.storageImageReference(args(argsBuilder).build)
@@ -910,7 +910,7 @@ object compute_ext:
      * @param storageOsDisk A `storageOsDisk` block as defined below.
      * @return builder
      */
-    def storageOsDisk(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineStorageOsDiskArgs.Builder]):
+    inline def storageOsDisk(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineStorageOsDiskArgs.Builder]):
         com.pulumi.azure.compute.VirtualMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineStorageOsDiskArgs.builder
       builder.storageOsDisk(args(argsBuilder).build)
@@ -922,7 +922,7 @@ object compute_ext:
      * &gt; **Note:** `protectedSettingsFromKeyVault` cannot be used with `protectedSettings`
      * @return builder
      */
-    def protectedSettingsFromKeyVault(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineScaleSetExtensionProtectedSettingsFromKeyVaultArgs.Builder]):
+    inline def protectedSettingsFromKeyVault(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineScaleSetExtensionProtectedSettingsFromKeyVaultArgs.Builder]):
         com.pulumi.azure.compute.VirtualMachineScaleSetExtensionArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineScaleSetExtensionProtectedSettingsFromKeyVaultArgs.builder
       builder.protectedSettingsFromKeyVault(args(argsBuilder).build)
@@ -932,7 +932,7 @@ object compute_ext:
      * @param additionalCapabilities A `additionalCapabilities` block as defined below.
      * @return builder
      */
-    def additionalCapabilities(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineAdditionalCapabilitiesArgs.Builder]):
+    inline def additionalCapabilities(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineAdditionalCapabilitiesArgs.Builder]):
         com.pulumi.azure.compute.WindowsVirtualMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineAdditionalCapabilitiesArgs.builder
       builder.additionalCapabilities(args(argsBuilder).build)
@@ -941,7 +941,7 @@ object compute_ext:
      * @param additionalUnattendContents One or more `additionalUnattendContent` blocks as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def additionalUnattendContents(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineAdditionalUnattendContentArgs.Builder]*):
+    inline def additionalUnattendContents(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineAdditionalUnattendContentArgs.Builder]*):
         com.pulumi.azure.compute.WindowsVirtualMachineArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineAdditionalUnattendContentArgs.builder
       builder.additionalUnattendContents(args.map(_(argsBuilder).build)*)
@@ -950,7 +950,7 @@ object compute_ext:
      * @param bootDiagnostics A `bootDiagnostics` block as defined below.
      * @return builder
      */
-    def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineBootDiagnosticsArgs.Builder]):
+    inline def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineBootDiagnosticsArgs.Builder]):
         com.pulumi.azure.compute.WindowsVirtualMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineBootDiagnosticsArgs.builder
       builder.bootDiagnostics(args(argsBuilder).build)
@@ -961,7 +961,7 @@ object compute_ext:
      * &gt; **Note** Gallery Application Assignments can be defined either directly on `azure.compute.WindowsVirtualMachine` resource, or using the `azure.compute.GalleryApplicationAssignment` resource - but the two approaches cannot be used together. If both are used with the same Virtual Machine, spurious changes will occur. If `azure.compute.GalleryApplicationAssignment` is used, it&#39;s recommended to use `ignoreChanges` for the `galleryApplication` block on the corresponding `azure.compute.WindowsVirtualMachine` resource, to avoid a persistent diff when using this resource.
      * @return builder
      */
-    def galleryApplications(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineGalleryApplicationArgs.Builder]*):
+    inline def galleryApplications(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineGalleryApplicationArgs.Builder]*):
         com.pulumi.azure.compute.WindowsVirtualMachineArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineGalleryApplicationArgs.builder
       builder.galleryApplications(args.map(_(argsBuilder).build)*)
@@ -970,7 +970,7 @@ object compute_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineIdentityArgs.Builder]):
         com.pulumi.azure.compute.WindowsVirtualMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -979,7 +979,7 @@ object compute_ext:
      * @param osDisk An `osDisk` block as defined below.
      * @return builder
      */
-    def osDisk(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineOsDiskArgs.Builder]):
+    inline def osDisk(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineOsDiskArgs.Builder]):
         com.pulumi.azure.compute.WindowsVirtualMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineOsDiskArgs.builder
       builder.osDisk(args(argsBuilder).build)
@@ -988,7 +988,7 @@ object compute_ext:
      * @param osImageNotification A `osImageNotification` block as defined below.
      * @return builder
      */
-    def osImageNotification(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineOsImageNotificationArgs.Builder]):
+    inline def osImageNotification(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineOsImageNotificationArgs.Builder]):
         com.pulumi.azure.compute.WindowsVirtualMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineOsImageNotificationArgs.builder
       builder.osImageNotification(args(argsBuilder).build)
@@ -997,7 +997,7 @@ object compute_ext:
      * @param plan A `plan` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def plan(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachinePlanArgs.Builder]):
+    inline def plan(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachinePlanArgs.Builder]):
         com.pulumi.azure.compute.WindowsVirtualMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachinePlanArgs.builder
       builder.plan(args(argsBuilder).build)
@@ -1006,7 +1006,7 @@ object compute_ext:
      * @param secrets One or more `secret` blocks as defined below.
      * @return builder
      */
-    def secrets(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineSecretArgs.Builder]*):
+    inline def secrets(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineSecretArgs.Builder]*):
         com.pulumi.azure.compute.WindowsVirtualMachineArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineSecretArgs.builder
       builder.secrets(args.map(_(argsBuilder).build)*)
@@ -1017,7 +1017,7 @@ object compute_ext:
      * &gt; **NOTE:** One of either `sourceImageId` or `sourceImageReference` must be set.
      * @return builder
      */
-    def sourceImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineSourceImageReferenceArgs.Builder]):
+    inline def sourceImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineSourceImageReferenceArgs.Builder]):
         com.pulumi.azure.compute.WindowsVirtualMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineSourceImageReferenceArgs.builder
       builder.sourceImageReference(args(argsBuilder).build)
@@ -1026,7 +1026,7 @@ object compute_ext:
      * @param terminationNotification A `terminationNotification` block as defined below.
      * @return builder
      */
-    def terminationNotification(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineTerminationNotificationArgs.Builder]):
+    inline def terminationNotification(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineTerminationNotificationArgs.Builder]):
         com.pulumi.azure.compute.WindowsVirtualMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineTerminationNotificationArgs.builder
       builder.terminationNotification(args(argsBuilder).build)
@@ -1035,7 +1035,7 @@ object compute_ext:
      * @param winrmListeners One or more `winrmListener` blocks as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def winrmListeners(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineWinrmListenerArgs.Builder]*):
+    inline def winrmListeners(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineWinrmListenerArgs.Builder]*):
         com.pulumi.azure.compute.WindowsVirtualMachineArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineWinrmListenerArgs.builder
       builder.winrmListeners(args.map(_(argsBuilder).build)*)
@@ -1045,7 +1045,7 @@ object compute_ext:
      * @param additionalCapabilities An `additionalCapabilities` block as defined below.
      * @return builder
      */
-    def additionalCapabilities(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetAdditionalCapabilitiesArgs.Builder]):
+    inline def additionalCapabilities(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetAdditionalCapabilitiesArgs.Builder]):
         com.pulumi.azure.compute.WindowsVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetAdditionalCapabilitiesArgs.builder
       builder.additionalCapabilities(args(argsBuilder).build)
@@ -1054,7 +1054,7 @@ object compute_ext:
      * @param additionalUnattendContents One or more `additionalUnattendContent` blocks as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def additionalUnattendContents(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetAdditionalUnattendContentArgs.Builder]*):
+    inline def additionalUnattendContents(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetAdditionalUnattendContentArgs.Builder]*):
         com.pulumi.azure.compute.WindowsVirtualMachineScaleSetArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetAdditionalUnattendContentArgs.builder
       builder.additionalUnattendContents(args.map(_(argsBuilder).build)*)
@@ -1065,7 +1065,7 @@ object compute_ext:
      * &gt; **Note:** For more information about Automatic Instance Repair, please refer to [this doc](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-instance-repairs).
      * @return builder
      */
-    def automaticInstanceRepair(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetAutomaticInstanceRepairArgs.Builder]):
+    inline def automaticInstanceRepair(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetAutomaticInstanceRepairArgs.Builder]):
         com.pulumi.azure.compute.WindowsVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetAutomaticInstanceRepairArgs.builder
       builder.automaticInstanceRepair(args(argsBuilder).build)
@@ -1074,7 +1074,7 @@ object compute_ext:
      * @param automaticOsUpgradePolicy An `automaticOsUpgradePolicy` block as defined below. This can only be specified when `upgradeMode` is set to either `Automatic` or `Rolling`.
      * @return builder
      */
-    def automaticOsUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetAutomaticOsUpgradePolicyArgs.Builder]):
+    inline def automaticOsUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetAutomaticOsUpgradePolicyArgs.Builder]):
         com.pulumi.azure.compute.WindowsVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetAutomaticOsUpgradePolicyArgs.builder
       builder.automaticOsUpgradePolicy(args(argsBuilder).build)
@@ -1083,7 +1083,7 @@ object compute_ext:
      * @param bootDiagnostics A `bootDiagnostics` block as defined below.
      * @return builder
      */
-    def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetBootDiagnosticsArgs.Builder]):
+    inline def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetBootDiagnosticsArgs.Builder]):
         com.pulumi.azure.compute.WindowsVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetBootDiagnosticsArgs.builder
       builder.bootDiagnostics(args(argsBuilder).build)
@@ -1092,7 +1092,7 @@ object compute_ext:
      * @param dataDisks One or more `dataDisk` blocks as defined below.
      * @return builder
      */
-    def dataDisks(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetDataDiskArgs.Builder]*):
+    inline def dataDisks(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetDataDiskArgs.Builder]*):
         com.pulumi.azure.compute.WindowsVirtualMachineScaleSetArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetDataDiskArgs.builder
       builder.dataDisks(args.map(_(argsBuilder).build)*)
@@ -1101,7 +1101,7 @@ object compute_ext:
      * @param extensions One or more `extension` blocks as defined below
      * @return builder
      */
-    def extensions(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetExtensionArgs.Builder]*):
+    inline def extensions(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetExtensionArgs.Builder]*):
         com.pulumi.azure.compute.WindowsVirtualMachineScaleSetArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetExtensionArgs.builder
       builder.extensions(args.map(_(argsBuilder).build)*)
@@ -1110,7 +1110,7 @@ object compute_ext:
      * @param galleryApplications One or more `galleryApplication` blocks as defined below.
      * @return builder
      */
-    def galleryApplications(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetGalleryApplicationArgs.Builder]*):
+    inline def galleryApplications(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetGalleryApplicationArgs.Builder]*):
         com.pulumi.azure.compute.WindowsVirtualMachineScaleSetArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetGalleryApplicationArgs.builder
       builder.galleryApplications(args.map(_(argsBuilder).build)*)
@@ -1119,7 +1119,7 @@ object compute_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetIdentityArgs.Builder]):
         com.pulumi.azure.compute.WindowsVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -1128,7 +1128,7 @@ object compute_ext:
      * @param networkInterfaces One or more `networkInterface` blocks as defined below.
      * @return builder
      */
-    def networkInterfaces(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetNetworkInterfaceArgs.Builder]*):
+    inline def networkInterfaces(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetNetworkInterfaceArgs.Builder]*):
         com.pulumi.azure.compute.WindowsVirtualMachineScaleSetArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
@@ -1137,7 +1137,7 @@ object compute_ext:
      * @param osDisk An `osDisk` block as defined below.
      * @return builder
      */
-    def osDisk(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetOsDiskArgs.Builder]):
+    inline def osDisk(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetOsDiskArgs.Builder]):
         com.pulumi.azure.compute.WindowsVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetOsDiskArgs.builder
       builder.osDisk(args(argsBuilder).build)
@@ -1148,7 +1148,7 @@ object compute_ext:
      * &gt; **Note:** When using an image from Azure Marketplace a `plan` must be specified.
      * @return builder
      */
-    def plan(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetPlanArgs.Builder]):
+    inline def plan(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetPlanArgs.Builder]):
         com.pulumi.azure.compute.WindowsVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetPlanArgs.builder
       builder.plan(args(argsBuilder).build)
@@ -1157,7 +1157,7 @@ object compute_ext:
      * @param rollingUpgradePolicy A `rollingUpgradePolicy` block as defined below. This is Required and can only be specified when `upgradeMode` is set to `Automatic` or `Rolling`. Changing this forces a new resource to be created.
      * @return builder
      */
-    def rollingUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetRollingUpgradePolicyArgs.Builder]):
+    inline def rollingUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetRollingUpgradePolicyArgs.Builder]):
         com.pulumi.azure.compute.WindowsVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetRollingUpgradePolicyArgs.builder
       builder.rollingUpgradePolicy(args(argsBuilder).build)
@@ -1166,7 +1166,7 @@ object compute_ext:
      * @param scaleIn A `scaleIn` block as defined below.
      * @return builder
      */
-    def scaleIn(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetScaleInArgs.Builder]):
+    inline def scaleIn(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetScaleInArgs.Builder]):
         com.pulumi.azure.compute.WindowsVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetScaleInArgs.builder
       builder.scaleIn(args(argsBuilder).build)
@@ -1175,7 +1175,7 @@ object compute_ext:
      * @param secrets One or more `secret` blocks as defined below.
      * @return builder
      */
-    def secrets(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetSecretArgs.Builder]*):
+    inline def secrets(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetSecretArgs.Builder]*):
         com.pulumi.azure.compute.WindowsVirtualMachineScaleSetArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetSecretArgs.builder
       builder.secrets(args.map(_(argsBuilder).build)*)
@@ -1186,7 +1186,7 @@ object compute_ext:
      * &gt; **Note:** One of either `sourceImageId` or `sourceImageReference` must be set.
      * @return builder
      */
-    def sourceImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetSourceImageReferenceArgs.Builder]):
+    inline def sourceImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetSourceImageReferenceArgs.Builder]):
         com.pulumi.azure.compute.WindowsVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetSourceImageReferenceArgs.builder
       builder.sourceImageReference(args(argsBuilder).build)
@@ -1195,7 +1195,7 @@ object compute_ext:
      * @param spotRestore A `spotRestore` block as defined below.
      * @return builder
      */
-    def spotRestore(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetSpotRestoreArgs.Builder]):
+    inline def spotRestore(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetSpotRestoreArgs.Builder]):
         com.pulumi.azure.compute.WindowsVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetSpotRestoreArgs.builder
       builder.spotRestore(args(argsBuilder).build)
@@ -1204,7 +1204,7 @@ object compute_ext:
      * @param terminationNotification A `terminationNotification` block as defined below.
      * @return builder
      */
-    def terminationNotification(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetTerminationNotificationArgs.Builder]):
+    inline def terminationNotification(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetTerminationNotificationArgs.Builder]):
         com.pulumi.azure.compute.WindowsVirtualMachineScaleSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetTerminationNotificationArgs.builder
       builder.terminationNotification(args(argsBuilder).build)
@@ -1213,7 +1213,7 @@ object compute_ext:
      * @param winrmListeners One or more `winrmListener` blocks as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def winrmListeners(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetWinrmListenerArgs.Builder]*):
+    inline def winrmListeners(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetWinrmListenerArgs.Builder]*):
         com.pulumi.azure.compute.WindowsVirtualMachineScaleSetArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetWinrmListenerArgs.builder
       builder.winrmListeners(args.map(_(argsBuilder).build)*)
@@ -1223,7 +1223,7 @@ object compute_ext:
      * @param ipConfiguration A `ipConfiguration` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def ipConfiguration(args: Endofunction[com.pulumi.azure.compute.inputs.BastionHostIpConfigurationArgs.Builder]):
+    inline def ipConfiguration(args: Endofunction[com.pulumi.azure.compute.inputs.BastionHostIpConfigurationArgs.Builder]):
         com.pulumi.azure.compute.inputs.BastionHostState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.BastionHostIpConfigurationArgs.builder
       builder.ipConfiguration(args(argsBuilder).build)
@@ -1233,7 +1233,7 @@ object compute_ext:
      * @param sku A `sku` block as defined below.
      * @return builder
      */
-    def sku(args: Endofunction[com.pulumi.azure.compute.inputs.CapacityReservationSkuArgs.Builder]):
+    inline def sku(args: Endofunction[com.pulumi.azure.compute.inputs.CapacityReservationSkuArgs.Builder]):
         com.pulumi.azure.compute.inputs.CapacityReservationState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.CapacityReservationSkuArgs.builder
       builder.sku(args(argsBuilder).build)
@@ -1243,7 +1243,7 @@ object compute_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.compute.inputs.DiskEncryptionSetIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.compute.inputs.DiskEncryptionSetIdentityArgs.Builder]):
         com.pulumi.azure.compute.inputs.DiskEncryptionSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.DiskEncryptionSetIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -1255,7 +1255,7 @@ object compute_ext:
      * &gt; **Note:** `protectedSettingsFromKeyVault` cannot be used with `protectedSettings`
      * @return builder
      */
-    def protectedSettingsFromKeyVault(args: Endofunction[com.pulumi.azure.compute.inputs.ExtensionProtectedSettingsFromKeyVaultArgs.Builder]):
+    inline def protectedSettingsFromKeyVault(args: Endofunction[com.pulumi.azure.compute.inputs.ExtensionProtectedSettingsFromKeyVaultArgs.Builder]):
         com.pulumi.azure.compute.inputs.ExtensionState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ExtensionProtectedSettingsFromKeyVaultArgs.builder
       builder.protectedSettingsFromKeyVault(args(argsBuilder).build)
@@ -1265,7 +1265,7 @@ object compute_ext:
      * @param manageAction A `manageAction` block as defined below.
      * @return builder
      */
-    def manageAction(args: Endofunction[com.pulumi.azure.compute.inputs.GalleryApplicationVersionManageActionArgs.Builder]):
+    inline def manageAction(args: Endofunction[com.pulumi.azure.compute.inputs.GalleryApplicationVersionManageActionArgs.Builder]):
         com.pulumi.azure.compute.inputs.GalleryApplicationVersionState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.GalleryApplicationVersionManageActionArgs.builder
       builder.manageAction(args(argsBuilder).build)
@@ -1274,7 +1274,7 @@ object compute_ext:
      * @param source A `source` block as defined below.
      * @return builder
      */
-    def source(args: Endofunction[com.pulumi.azure.compute.inputs.GalleryApplicationVersionSourceArgs.Builder]):
+    inline def source(args: Endofunction[com.pulumi.azure.compute.inputs.GalleryApplicationVersionSourceArgs.Builder]):
         com.pulumi.azure.compute.inputs.GalleryApplicationVersionState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.GalleryApplicationVersionSourceArgs.builder
       builder.source(args(argsBuilder).build)
@@ -1283,7 +1283,7 @@ object compute_ext:
      * @param targetRegions One or more `targetRegion` blocks as defined below.
      * @return builder
      */
-    def targetRegions(args: Endofunction[com.pulumi.azure.compute.inputs.GalleryApplicationVersionTargetRegionArgs.Builder]*):
+    inline def targetRegions(args: Endofunction[com.pulumi.azure.compute.inputs.GalleryApplicationVersionTargetRegionArgs.Builder]*):
         com.pulumi.azure.compute.inputs.GalleryApplicationVersionState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.GalleryApplicationVersionTargetRegionArgs.builder
       builder.targetRegions(args.map(_(argsBuilder).build)*)
@@ -1295,7 +1295,7 @@ object compute_ext:
      * &gt; **Note:** `dataDisk` cannot be set together with `sourceVirtualMachineId`.
      * @return builder
      */
-    def dataDisks(args: Endofunction[com.pulumi.azure.compute.inputs.ImageDataDiskArgs.Builder]*):
+    inline def dataDisks(args: Endofunction[com.pulumi.azure.compute.inputs.ImageDataDiskArgs.Builder]*):
         com.pulumi.azure.compute.inputs.ImageState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.ImageDataDiskArgs.builder
       builder.dataDisks(args.map(_(argsBuilder).build)*)
@@ -1306,7 +1306,7 @@ object compute_ext:
      * &gt; **Note:** `osDisk` cannot be set together with `sourceVirtualMachineId`.
      * @return builder
      */
-    def osDisk(args: Endofunction[com.pulumi.azure.compute.inputs.ImageOsDiskArgs.Builder]):
+    inline def osDisk(args: Endofunction[com.pulumi.azure.compute.inputs.ImageOsDiskArgs.Builder]):
         com.pulumi.azure.compute.inputs.ImageState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ImageOsDiskArgs.builder
       builder.osDisk(args(argsBuilder).build)
@@ -1318,7 +1318,7 @@ object compute_ext:
      * &gt; **NOTE:** `diffDiskSettings` can only be set when `caching` is set to `ReadOnly`. More information can be found [here](https://docs.microsoft.com/azure/virtual-machines/ephemeral-os-disks-deploy#vm-template-deployment). Additionally, this property cannot be set when an existing Managed Disk is used to create the Virtual Machine by setting `osManagedDiskId`.
      * @return builder
      */
-    def diffDiskSettings(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineOsDiskDiffDiskSettingsArgs.Builder]):
+    inline def diffDiskSettings(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineOsDiskDiffDiskSettingsArgs.Builder]):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineOsDiskArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineOsDiskDiffDiskSettingsArgs.builder
       builder.diffDiskSettings(args(argsBuilder).build)
@@ -1330,7 +1330,7 @@ object compute_ext:
      * &gt; **Note:** `protectedSettingsFromKeyVault` cannot be used with `protectedSettings`
      * @return builder
      */
-    def protectedSettingsFromKeyVault(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetExtensionProtectedSettingsFromKeyVaultArgs.Builder]):
+    inline def protectedSettingsFromKeyVault(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetExtensionProtectedSettingsFromKeyVaultArgs.Builder]):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetExtensionArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetExtensionProtectedSettingsFromKeyVaultArgs.builder
       builder.protectedSettingsFromKeyVault(args(argsBuilder).build)
@@ -1340,7 +1340,7 @@ object compute_ext:
      * @param ipConfigurations One or more `ipConfiguration` blocks as defined above.
      * @return builder
      */
-    def ipConfigurations(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetNetworkInterfaceIpConfigurationArgs.Builder]*):
+    inline def ipConfigurations(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetNetworkInterfaceIpConfigurationArgs.Builder]*):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetNetworkInterfaceIpConfigurationArgs.builder
       builder.ipConfigurations(args.map(_(argsBuilder).build)*)
@@ -1350,7 +1350,7 @@ object compute_ext:
      * @param publicIpAddresses A `publicIpAddress` block as defined below.
      * @return builder
      */
-    def publicIpAddresses(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpAddressArgs.Builder]*):
+    inline def publicIpAddresses(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpAddressArgs.Builder]*):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetNetworkInterfaceIpConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpAddressArgs.builder
       builder.publicIpAddresses(args.map(_(argsBuilder).build)*)
@@ -1360,7 +1360,7 @@ object compute_ext:
      * @param ipTags One or more `ipTag` blocks as defined above. Changing this forces a new resource to be created.
      * @return builder
      */
-    def ipTags(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpAddressIpTagArgs.Builder]*):
+    inline def ipTags(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpAddressIpTagArgs.Builder]*):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpAddressArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpAddressIpTagArgs.builder
       builder.ipTags(args.map(_(argsBuilder).build)*)
@@ -1370,7 +1370,7 @@ object compute_ext:
      * @param diffDiskSettings A `diffDiskSettings` block as defined above. Changing this forces a new resource to be created.
      * @return builder
      */
-    def diffDiskSettings(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetOsDiskDiffDiskSettingsArgs.Builder]):
+    inline def diffDiskSettings(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetOsDiskDiffDiskSettingsArgs.Builder]):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetOsDiskArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetOsDiskDiffDiskSettingsArgs.builder
       builder.diffDiskSettings(args(argsBuilder).build)
@@ -1380,7 +1380,7 @@ object compute_ext:
      * @param certificates One or more `certificate` blocks as defined above.
      * @return builder
      */
-    def certificates(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetSecretCertificateArgs.Builder]*):
+    inline def certificates(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetSecretCertificateArgs.Builder]*):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetSecretArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetSecretCertificateArgs.builder
       builder.certificates(args.map(_(argsBuilder).build)*)
@@ -1390,7 +1390,7 @@ object compute_ext:
      * @param additionalCapabilities An `additionalCapabilities` block as defined below.
      * @return builder
      */
-    def additionalCapabilities(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetAdditionalCapabilitiesArgs.Builder]):
+    inline def additionalCapabilities(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetAdditionalCapabilitiesArgs.Builder]):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetAdditionalCapabilitiesArgs.builder
       builder.additionalCapabilities(args(argsBuilder).build)
@@ -1401,7 +1401,7 @@ object compute_ext:
      * &gt; **Note:** One of either `adminPassword` or `adminSshKey` must be specified.
      * @return builder
      */
-    def adminSshKeys(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetAdminSshKeyArgs.Builder]*):
+    inline def adminSshKeys(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetAdminSshKeyArgs.Builder]*):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetAdminSshKeyArgs.builder
       builder.adminSshKeys(args.map(_(argsBuilder).build)*)
@@ -1412,7 +1412,7 @@ object compute_ext:
      * &gt; **Note:** For more information about Automatic Instance Repair, please refer to the [product documentation](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-instance-repairs).
      * @return builder
      */
-    def automaticInstanceRepair(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetAutomaticInstanceRepairArgs.Builder]):
+    inline def automaticInstanceRepair(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetAutomaticInstanceRepairArgs.Builder]):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetAutomaticInstanceRepairArgs.builder
       builder.automaticInstanceRepair(args(argsBuilder).build)
@@ -1421,7 +1421,7 @@ object compute_ext:
      * @param automaticOsUpgradePolicy An `automaticOsUpgradePolicy` block as defined below. This can only be specified when `upgradeMode` is set to either `Automatic` or `Rolling`.
      * @return builder
      */
-    def automaticOsUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetAutomaticOsUpgradePolicyArgs.Builder]):
+    inline def automaticOsUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetAutomaticOsUpgradePolicyArgs.Builder]):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetAutomaticOsUpgradePolicyArgs.builder
       builder.automaticOsUpgradePolicy(args(argsBuilder).build)
@@ -1430,7 +1430,7 @@ object compute_ext:
      * @param bootDiagnostics A `bootDiagnostics` block as defined below.
      * @return builder
      */
-    def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetBootDiagnosticsArgs.Builder]):
+    inline def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetBootDiagnosticsArgs.Builder]):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetBootDiagnosticsArgs.builder
       builder.bootDiagnostics(args(argsBuilder).build)
@@ -1439,7 +1439,7 @@ object compute_ext:
      * @param dataDisks One or more `dataDisk` blocks as defined below.
      * @return builder
      */
-    def dataDisks(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetDataDiskArgs.Builder]*):
+    inline def dataDisks(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetDataDiskArgs.Builder]*):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetDataDiskArgs.builder
       builder.dataDisks(args.map(_(argsBuilder).build)*)
@@ -1448,7 +1448,7 @@ object compute_ext:
      * @param extensions One or more `extension` blocks as defined below
      * @return builder
      */
-    def extensions(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetExtensionArgs.Builder]*):
+    inline def extensions(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetExtensionArgs.Builder]*):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetExtensionArgs.builder
       builder.extensions(args.map(_(argsBuilder).build)*)
@@ -1457,7 +1457,7 @@ object compute_ext:
      * @param galleryApplications One or more `galleryApplication` blocks as defined below.
      * @return builder
      */
-    def galleryApplications(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetGalleryApplicationArgs.Builder]*):
+    inline def galleryApplications(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetGalleryApplicationArgs.Builder]*):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetGalleryApplicationArgs.builder
       builder.galleryApplications(args.map(_(argsBuilder).build)*)
@@ -1466,7 +1466,7 @@ object compute_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetIdentityArgs.Builder]):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -1475,7 +1475,7 @@ object compute_ext:
      * @param networkInterfaces One or more `networkInterface` blocks as defined below.
      * @return builder
      */
-    def networkInterfaces(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetNetworkInterfaceArgs.Builder]*):
+    inline def networkInterfaces(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetNetworkInterfaceArgs.Builder]*):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
@@ -1484,7 +1484,7 @@ object compute_ext:
      * @param osDisk An `osDisk` block as defined below.
      * @return builder
      */
-    def osDisk(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetOsDiskArgs.Builder]):
+    inline def osDisk(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetOsDiskArgs.Builder]):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetOsDiskArgs.builder
       builder.osDisk(args(argsBuilder).build)
@@ -1495,7 +1495,7 @@ object compute_ext:
      * &gt; **Note:** When using an image from Azure Marketplace a `plan` must be specified.
      * @return builder
      */
-    def plan(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetPlanArgs.Builder]):
+    inline def plan(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetPlanArgs.Builder]):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetPlanArgs.builder
       builder.plan(args(argsBuilder).build)
@@ -1504,7 +1504,7 @@ object compute_ext:
      * @param rollingUpgradePolicy A `rollingUpgradePolicy` block as defined below. This is Required and can only be specified when `upgradeMode` is set to `Automatic` or `Rolling`. Changing this forces a new resource to be created.
      * @return builder
      */
-    def rollingUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetRollingUpgradePolicyArgs.Builder]):
+    inline def rollingUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetRollingUpgradePolicyArgs.Builder]):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetRollingUpgradePolicyArgs.builder
       builder.rollingUpgradePolicy(args(argsBuilder).build)
@@ -1513,7 +1513,7 @@ object compute_ext:
      * @param scaleIn A `scaleIn` block as defined below.
      * @return builder
      */
-    def scaleIn(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetScaleInArgs.Builder]):
+    inline def scaleIn(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetScaleInArgs.Builder]):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetScaleInArgs.builder
       builder.scaleIn(args(argsBuilder).build)
@@ -1522,7 +1522,7 @@ object compute_ext:
      * @param secrets One or more `secret` blocks as defined below.
      * @return builder
      */
-    def secrets(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetSecretArgs.Builder]*):
+    inline def secrets(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetSecretArgs.Builder]*):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetSecretArgs.builder
       builder.secrets(args.map(_(argsBuilder).build)*)
@@ -1533,7 +1533,7 @@ object compute_ext:
      * &gt; **Note:** One of either `sourceImageId` or `sourceImageReference` must be set.
      * @return builder
      */
-    def sourceImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetSourceImageReferenceArgs.Builder]):
+    inline def sourceImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetSourceImageReferenceArgs.Builder]):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetSourceImageReferenceArgs.builder
       builder.sourceImageReference(args(argsBuilder).build)
@@ -1542,7 +1542,7 @@ object compute_ext:
      * @param spotRestore A `spotRestore` block as defined below.
      * @return builder
      */
-    def spotRestore(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetSpotRestoreArgs.Builder]):
+    inline def spotRestore(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetSpotRestoreArgs.Builder]):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetSpotRestoreArgs.builder
       builder.spotRestore(args(argsBuilder).build)
@@ -1551,7 +1551,7 @@ object compute_ext:
      * @param terminationNotification A `terminationNotification` block as defined below.
      * @return builder
      */
-    def terminationNotification(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetTerminationNotificationArgs.Builder]):
+    inline def terminationNotification(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetTerminationNotificationArgs.Builder]):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineScaleSetTerminationNotificationArgs.builder
       builder.terminationNotification(args(argsBuilder).build)
@@ -1561,7 +1561,7 @@ object compute_ext:
      * @param certificates One or more `certificate` blocks as defined above.
      * @return builder
      */
-    def certificates(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineSecretCertificateArgs.Builder]*):
+    inline def certificates(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineSecretCertificateArgs.Builder]*):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineSecretArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineSecretCertificateArgs.builder
       builder.certificates(args.map(_(argsBuilder).build)*)
@@ -1571,7 +1571,7 @@ object compute_ext:
      * @param additionalCapabilities A `additionalCapabilities` block as defined below.
      * @return builder
      */
-    def additionalCapabilities(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineAdditionalCapabilitiesArgs.Builder]):
+    inline def additionalCapabilities(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineAdditionalCapabilitiesArgs.Builder]):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineAdditionalCapabilitiesArgs.builder
       builder.additionalCapabilities(args(argsBuilder).build)
@@ -1582,7 +1582,7 @@ object compute_ext:
      * &gt; **NOTE:** One of either `adminPassword` or `adminSshKey` must be specified.
      * @return builder
      */
-    def adminSshKeys(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineAdminSshKeyArgs.Builder]*):
+    inline def adminSshKeys(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineAdminSshKeyArgs.Builder]*):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineAdminSshKeyArgs.builder
       builder.adminSshKeys(args.map(_(argsBuilder).build)*)
@@ -1591,7 +1591,7 @@ object compute_ext:
      * @param bootDiagnostics A `bootDiagnostics` block as defined below.
      * @return builder
      */
-    def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineBootDiagnosticsArgs.Builder]):
+    inline def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineBootDiagnosticsArgs.Builder]):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineBootDiagnosticsArgs.builder
       builder.bootDiagnostics(args(argsBuilder).build)
@@ -1602,7 +1602,7 @@ object compute_ext:
      * &gt; **Note** Gallery Application Assignments can be defined either directly on `azure.compute.LinuxVirtualMachine` resource, or using the `azure.compute.GalleryApplicationAssignment` resource - but the two approaches cannot be used together. If both are used with the same Virtual Machine, spurious changes will occur. If `azure.compute.GalleryApplicationAssignment` is used, it&#39;s recommended to use `ignoreChanges` for the `galleryApplication` block on the corresponding `azure.compute.LinuxVirtualMachine` resource, to avoid a persistent diff when using this resource.
      * @return builder
      */
-    def galleryApplications(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineGalleryApplicationArgs.Builder]*):
+    inline def galleryApplications(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineGalleryApplicationArgs.Builder]*):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineGalleryApplicationArgs.builder
       builder.galleryApplications(args.map(_(argsBuilder).build)*)
@@ -1611,7 +1611,7 @@ object compute_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineIdentityArgs.Builder]):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -1620,7 +1620,7 @@ object compute_ext:
      * @param osDisk A `osDisk` block as defined below.
      * @return builder
      */
-    def osDisk(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineOsDiskArgs.Builder]):
+    inline def osDisk(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineOsDiskArgs.Builder]):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineOsDiskArgs.builder
       builder.osDisk(args(argsBuilder).build)
@@ -1629,7 +1629,7 @@ object compute_ext:
      * @param osImageNotification A `osImageNotification` block as defined below.
      * @return builder
      */
-    def osImageNotification(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineOsImageNotificationArgs.Builder]):
+    inline def osImageNotification(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineOsImageNotificationArgs.Builder]):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineOsImageNotificationArgs.builder
       builder.osImageNotification(args(argsBuilder).build)
@@ -1638,7 +1638,7 @@ object compute_ext:
      * @param plan A `plan` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def plan(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachinePlanArgs.Builder]):
+    inline def plan(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachinePlanArgs.Builder]):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachinePlanArgs.builder
       builder.plan(args(argsBuilder).build)
@@ -1647,7 +1647,7 @@ object compute_ext:
      * @param secrets One or more `secret` blocks as defined below.
      * @return builder
      */
-    def secrets(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineSecretArgs.Builder]*):
+    inline def secrets(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineSecretArgs.Builder]*):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineSecretArgs.builder
       builder.secrets(args.map(_(argsBuilder).build)*)
@@ -1658,7 +1658,7 @@ object compute_ext:
      * &gt; **NOTE:** One of either `sourceImageId` or `sourceImageReference` must be set.
      * @return builder
      */
-    def sourceImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineSourceImageReferenceArgs.Builder]):
+    inline def sourceImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineSourceImageReferenceArgs.Builder]):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineSourceImageReferenceArgs.builder
       builder.sourceImageReference(args(argsBuilder).build)
@@ -1667,7 +1667,7 @@ object compute_ext:
      * @param terminationNotification A `terminationNotification` block as defined below.
      * @return builder
      */
-    def terminationNotification(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineTerminationNotificationArgs.Builder]):
+    inline def terminationNotification(args: Endofunction[com.pulumi.azure.compute.inputs.LinuxVirtualMachineTerminationNotificationArgs.Builder]):
         com.pulumi.azure.compute.inputs.LinuxVirtualMachineState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.LinuxVirtualMachineTerminationNotificationArgs.builder
       builder.terminationNotification(args(argsBuilder).build)
@@ -1677,7 +1677,7 @@ object compute_ext:
      * @param diskEncryptionKey A `diskEncryptionKey` block as defined above.
      * @return builder
      */
-    def diskEncryptionKey(args: Endofunction[com.pulumi.azure.compute.inputs.ManagedDiskEncryptionSettingsDiskEncryptionKeyArgs.Builder]):
+    inline def diskEncryptionKey(args: Endofunction[com.pulumi.azure.compute.inputs.ManagedDiskEncryptionSettingsDiskEncryptionKeyArgs.Builder]):
         com.pulumi.azure.compute.inputs.ManagedDiskEncryptionSettingsArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ManagedDiskEncryptionSettingsDiskEncryptionKeyArgs.builder
       builder.diskEncryptionKey(args(argsBuilder).build)
@@ -1686,7 +1686,7 @@ object compute_ext:
      * @param keyEncryptionKey A `keyEncryptionKey` block as defined below.
      * @return builder
      */
-    def keyEncryptionKey(args: Endofunction[com.pulumi.azure.compute.inputs.ManagedDiskEncryptionSettingsKeyEncryptionKeyArgs.Builder]):
+    inline def keyEncryptionKey(args: Endofunction[com.pulumi.azure.compute.inputs.ManagedDiskEncryptionSettingsKeyEncryptionKeyArgs.Builder]):
         com.pulumi.azure.compute.inputs.ManagedDiskEncryptionSettingsArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ManagedDiskEncryptionSettingsKeyEncryptionKeyArgs.builder
       builder.keyEncryptionKey(args(argsBuilder).build)
@@ -1698,7 +1698,7 @@ object compute_ext:
      * &gt; **NOTE:** Removing `encryptionSettings` forces a new resource to be created.
      * @return builder
      */
-    def encryptionSettings(args: Endofunction[com.pulumi.azure.compute.inputs.ManagedDiskEncryptionSettingsArgs.Builder]):
+    inline def encryptionSettings(args: Endofunction[com.pulumi.azure.compute.inputs.ManagedDiskEncryptionSettingsArgs.Builder]):
         com.pulumi.azure.compute.inputs.ManagedDiskState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ManagedDiskEncryptionSettingsArgs.builder
       builder.encryptionSettings(args(argsBuilder).build)
@@ -1710,7 +1710,7 @@ object compute_ext:
      * &gt; **Note:** `protectedSettingsFromKeyVault` cannot be used with `protectedSettings`.
      * @return builder
      */
-    def protectedSettingsFromKeyVault(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetExtensionProtectedSettingsFromKeyVaultArgs.Builder]):
+    inline def protectedSettingsFromKeyVault(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetExtensionProtectedSettingsFromKeyVaultArgs.Builder]):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetExtensionArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetExtensionProtectedSettingsFromKeyVaultArgs.builder
       builder.protectedSettingsFromKeyVault(args(argsBuilder).build)
@@ -1720,7 +1720,7 @@ object compute_ext:
      * @param ipConfigurations One or more `ipConfiguration` blocks as defined above.
      * @return builder
      */
-    def ipConfigurations(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetNetworkInterfaceIpConfigurationArgs.Builder]*):
+    inline def ipConfigurations(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetNetworkInterfaceIpConfigurationArgs.Builder]*):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetNetworkInterfaceIpConfigurationArgs.builder
       builder.ipConfigurations(args.map(_(argsBuilder).build)*)
@@ -1730,7 +1730,7 @@ object compute_ext:
      * @param publicIpAddresses A `publicIpAddress` block as defined below.
      * @return builder
      */
-    def publicIpAddresses(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpAddressArgs.Builder]*):
+    inline def publicIpAddresses(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpAddressArgs.Builder]*):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetNetworkInterfaceIpConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpAddressArgs.builder
       builder.publicIpAddresses(args.map(_(argsBuilder).build)*)
@@ -1740,7 +1740,7 @@ object compute_ext:
      * @param ipTags One or more `ipTag` blocks as defined above. Changing this forces a new resource to be created.
      * @return builder
      */
-    def ipTags(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpAddressIpTagArgs.Builder]*):
+    inline def ipTags(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpAddressIpTagArgs.Builder]*):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpAddressArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpAddressIpTagArgs.builder
       builder.ipTags(args.map(_(argsBuilder).build)*)
@@ -1750,7 +1750,7 @@ object compute_ext:
      * @param diffDiskSettings A `diffDiskSettings` block as defined above. Changing this forces a new resource to be created.
      * @return builder
      */
-    def diffDiskSettings(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsDiskDiffDiskSettingsArgs.Builder]):
+    inline def diffDiskSettings(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsDiskDiffDiskSettingsArgs.Builder]):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsDiskArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsDiskDiffDiskSettingsArgs.builder
       builder.diffDiskSettings(args(argsBuilder).build)
@@ -1760,7 +1760,7 @@ object compute_ext:
      * @param linuxConfiguration A `linuxConfiguration` block as defined above.
      * @return builder
      */
-    def linuxConfiguration(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationArgs.Builder]):
+    inline def linuxConfiguration(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationArgs.Builder]):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationArgs.builder
       builder.linuxConfiguration(args(argsBuilder).build)
@@ -1769,7 +1769,7 @@ object compute_ext:
      * @param windowsConfiguration A `windowsConfiguration` block as defined below.
      * @return builder
      */
-    def windowsConfiguration(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationArgs.Builder]):
+    inline def windowsConfiguration(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationArgs.Builder]):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationArgs.builder
       builder.windowsConfiguration(args(argsBuilder).build)
@@ -1779,7 +1779,7 @@ object compute_ext:
      * @param adminSshKeys An `adminSshKey` block as defined above.
      * @return builder
      */
-    def adminSshKeys(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationAdminSshKeyArgs.Builder]*):
+    inline def adminSshKeys(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationAdminSshKeyArgs.Builder]*):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationAdminSshKeyArgs.builder
       builder.adminSshKeys(args.map(_(argsBuilder).build)*)
@@ -1788,7 +1788,7 @@ object compute_ext:
      * @param secrets One or more `secret` blocks as defined below.
      * @return builder
      */
-    def secrets(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationSecretArgs.Builder]*):
+    inline def secrets(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationSecretArgs.Builder]*):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationSecretArgs.builder
       builder.secrets(args.map(_(argsBuilder).build)*)
@@ -1798,7 +1798,7 @@ object compute_ext:
      * @param certificates One or more `certificate` blocks as defined above.
      * @return builder
      */
-    def certificates(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationSecretCertificateArgs.Builder]*):
+    inline def certificates(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationSecretCertificateArgs.Builder]*):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationSecretArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationSecretCertificateArgs.builder
       builder.certificates(args.map(_(argsBuilder).build)*)
@@ -1808,7 +1808,7 @@ object compute_ext:
      * @param additionalUnattendContents One or more `additionalUnattendContent` blocks as defined above. Changing this forces a new resource to be created.
      * @return builder
      */
-    def additionalUnattendContents(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationAdditionalUnattendContentArgs.Builder]*):
+    inline def additionalUnattendContents(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationAdditionalUnattendContentArgs.Builder]*):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationAdditionalUnattendContentArgs.builder
       builder.additionalUnattendContents(args.map(_(argsBuilder).build)*)
@@ -1817,7 +1817,7 @@ object compute_ext:
      * @param secrets One or more `secret` blocks as defined above.
      * @return builder
      */
-    def secrets(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationSecretArgs.Builder]*):
+    inline def secrets(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationSecretArgs.Builder]*):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationSecretArgs.builder
       builder.secrets(args.map(_(argsBuilder).build)*)
@@ -1826,7 +1826,7 @@ object compute_ext:
      * @param winrmListeners One or more `winrmListener` blocks as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def winrmListeners(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationWinrmListenerArgs.Builder]*):
+    inline def winrmListeners(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationWinrmListenerArgs.Builder]*):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationWinrmListenerArgs.builder
       builder.winrmListeners(args.map(_(argsBuilder).build)*)
@@ -1836,7 +1836,7 @@ object compute_ext:
      * @param certificates One or more `certificate` blocks as defined above.
      * @return builder
      */
-    def certificates(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationSecretCertificateArgs.Builder]*):
+    inline def certificates(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationSecretCertificateArgs.Builder]*):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationSecretArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileWindowsConfigurationSecretCertificateArgs.builder
       builder.certificates(args.map(_(argsBuilder).build)*)
@@ -1848,7 +1848,7 @@ object compute_ext:
      * &gt; **Note:** When `allocationStrategy` is set to `Prioritized`, you must use the `virtualMachineSize` block to specify rank values.
      * @return builder
      */
-    def virtualMachineSizes(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetSkuProfileVirtualMachineSizeArgs.Builder]*):
+    inline def virtualMachineSizes(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetSkuProfileVirtualMachineSizeArgs.Builder]*):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetSkuProfileArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetSkuProfileVirtualMachineSizeArgs.builder
       builder.virtualMachineSizes(args.map(_(argsBuilder).build)*)
@@ -1858,7 +1858,7 @@ object compute_ext:
      * @param additionalCapabilities An `additionalCapabilities` block as defined below.
      * @return builder
      */
-    def additionalCapabilities(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetAdditionalCapabilitiesArgs.Builder]):
+    inline def additionalCapabilities(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetAdditionalCapabilitiesArgs.Builder]):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetAdditionalCapabilitiesArgs.builder
       builder.additionalCapabilities(args(argsBuilder).build)
@@ -1869,7 +1869,7 @@ object compute_ext:
      * &gt; **Note:** To enable the `automaticInstanceRepair`, the Orchestrated Virtual Machine Scale Set must have a valid [Application Health Extension](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-health-extension).
      * @return builder
      */
-    def automaticInstanceRepair(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetAutomaticInstanceRepairArgs.Builder]):
+    inline def automaticInstanceRepair(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetAutomaticInstanceRepairArgs.Builder]):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetAutomaticInstanceRepairArgs.builder
       builder.automaticInstanceRepair(args(argsBuilder).build)
@@ -1878,7 +1878,7 @@ object compute_ext:
      * @param bootDiagnostics A `bootDiagnostics` block as defined below.
      * @return builder
      */
-    def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetBootDiagnosticsArgs.Builder]):
+    inline def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetBootDiagnosticsArgs.Builder]):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetBootDiagnosticsArgs.builder
       builder.bootDiagnostics(args(argsBuilder).build)
@@ -1887,7 +1887,7 @@ object compute_ext:
      * @param dataDisks One or more `dataDisk` blocks as defined below.
      * @return builder
      */
-    def dataDisks(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetDataDiskArgs.Builder]*):
+    inline def dataDisks(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetDataDiskArgs.Builder]*):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetDataDiskArgs.builder
       builder.dataDisks(args.map(_(argsBuilder).build)*)
@@ -1896,7 +1896,7 @@ object compute_ext:
      * @param extensions One or more `extension` blocks as defined below
      * @return builder
      */
-    def extensions(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetExtensionArgs.Builder]*):
+    inline def extensions(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetExtensionArgs.Builder]*):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetExtensionArgs.builder
       builder.extensions(args.map(_(argsBuilder).build)*)
@@ -1905,7 +1905,7 @@ object compute_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetIdentityArgs.Builder]):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -1914,7 +1914,7 @@ object compute_ext:
      * @param networkInterfaces One or more `networkInterface` blocks as defined below.
      * @return builder
      */
-    def networkInterfaces(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetNetworkInterfaceArgs.Builder]*):
+    inline def networkInterfaces(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetNetworkInterfaceArgs.Builder]*):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
@@ -1923,7 +1923,7 @@ object compute_ext:
      * @param osDisk An `osDisk` block as defined below.
      * @return builder
      */
-    def osDisk(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsDiskArgs.Builder]):
+    inline def osDisk(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsDiskArgs.Builder]):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsDiskArgs.builder
       builder.osDisk(args(argsBuilder).build)
@@ -1932,7 +1932,7 @@ object compute_ext:
      * @param osProfile An `osProfile` block as defined below.
      * @return builder
      */
-    def osProfile(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileArgs.Builder]):
+    inline def osProfile(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileArgs.Builder]):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetOsProfileArgs.builder
       builder.osProfile(args(argsBuilder).build)
@@ -1941,7 +1941,7 @@ object compute_ext:
      * @param plan A `plan` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def plan(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetPlanArgs.Builder]):
+    inline def plan(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetPlanArgs.Builder]):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetPlanArgs.builder
       builder.plan(args(argsBuilder).build)
@@ -1952,7 +1952,7 @@ object compute_ext:
      * &gt; **Note:** `priorityMix` can only be specified when `priority` is set to `Spot`.
      * @return builder
      */
-    def priorityMix(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetPriorityMixArgs.Builder]):
+    inline def priorityMix(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetPriorityMixArgs.Builder]):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetPriorityMixArgs.builder
       builder.priorityMix(args(argsBuilder).build)
@@ -1963,7 +1963,7 @@ object compute_ext:
      * &gt; **Note:** `rollingUpgradePolicy` is required when `upgradeMode` is set to `Rolling`, cannot be specified when `upgradeMode` is set to `Manual`, and requires a valid application health extension when `upgradeMode` is set to `Rolling`.
      * @return builder
      */
-    def rollingUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetRollingUpgradePolicyArgs.Builder]):
+    inline def rollingUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetRollingUpgradePolicyArgs.Builder]):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetRollingUpgradePolicyArgs.builder
       builder.rollingUpgradePolicy(args(argsBuilder).build)
@@ -1976,7 +1976,7 @@ object compute_ext:
      * &gt; **Note:** The `skuProfile` feature may be subject to Azure service limitations for particular regions and VM size combinations. While `skuProfile` can be updated after deployment, it cannot be removed. Removing `skuProfile` from the configuration after deployment triggers the creation of a new resource. Additionally, modifying `skuProfile` settings may result in instance disruption, as changes to allocation strategies or VM sizes can require Azure to redistribute or recreate instances.
      * @return builder
      */
-    def skuProfile(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetSkuProfileArgs.Builder]):
+    inline def skuProfile(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetSkuProfileArgs.Builder]):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetSkuProfileArgs.builder
       builder.skuProfile(args(argsBuilder).build)
@@ -1987,7 +1987,7 @@ object compute_ext:
      * &gt; **Note:** `sourceImageId` and `sourceImageReference` are mutually exclusive and only one of them may be specified.
      * @return builder
      */
-    def sourceImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetSourceImageReferenceArgs.Builder]):
+    inline def sourceImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetSourceImageReferenceArgs.Builder]):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetSourceImageReferenceArgs.builder
       builder.sourceImageReference(args(argsBuilder).build)
@@ -1996,7 +1996,7 @@ object compute_ext:
      * @param terminationNotification A `terminationNotification` block as defined below.
      * @return builder
      */
-    def terminationNotification(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetTerminationNotificationArgs.Builder]):
+    inline def terminationNotification(args: Endofunction[com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetTerminationNotificationArgs.Builder]):
         com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.OrchestratedVirtualMachineScaleSetTerminationNotificationArgs.builder
       builder.terminationNotification(args(argsBuilder).build)
@@ -2006,7 +2006,7 @@ object compute_ext:
      * @param filters One or more `filter` blocks as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def filters(args: Endofunction[com.pulumi.azure.compute.inputs.PacketCaptureFilterArgs.Builder]*):
+    inline def filters(args: Endofunction[com.pulumi.azure.compute.inputs.PacketCaptureFilterArgs.Builder]*):
         com.pulumi.azure.compute.inputs.PacketCaptureState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.PacketCaptureFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
@@ -2015,7 +2015,7 @@ object compute_ext:
      * @param storageLocation A `storageLocation` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def storageLocation(args: Endofunction[com.pulumi.azure.compute.inputs.PacketCaptureStorageLocationArgs.Builder]):
+    inline def storageLocation(args: Endofunction[com.pulumi.azure.compute.inputs.PacketCaptureStorageLocationArgs.Builder]):
         com.pulumi.azure.compute.inputs.PacketCaptureState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.PacketCaptureStorageLocationArgs.builder
       builder.storageLocation(args(argsBuilder).build)
@@ -2025,7 +2025,7 @@ object compute_ext:
      * @param scriptUriManagedIdentity A `scriptUriManagedIdentity` block as defined above.
      * @return builder
      */
-    def scriptUriManagedIdentity(args: Endofunction[com.pulumi.azure.compute.inputs.RunCommandSourceScriptUriManagedIdentityArgs.Builder]):
+    inline def scriptUriManagedIdentity(args: Endofunction[com.pulumi.azure.compute.inputs.RunCommandSourceScriptUriManagedIdentityArgs.Builder]):
         com.pulumi.azure.compute.inputs.RunCommandSourceArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.RunCommandSourceScriptUriManagedIdentityArgs.builder
       builder.scriptUriManagedIdentity(args(argsBuilder).build)
@@ -2035,12 +2035,12 @@ object compute_ext:
      * @param errorBlobManagedIdentity An `errorBlobManagedIdentity` block as defined below. User-assigned managed Identity that has access to errorBlobUri storage blob.
      * @return builder
      */
-    def errorBlobManagedIdentity(args: Endofunction[com.pulumi.azure.compute.inputs.RunCommandErrorBlobManagedIdentityArgs.Builder]):
+    inline def errorBlobManagedIdentity(args: Endofunction[com.pulumi.azure.compute.inputs.RunCommandErrorBlobManagedIdentityArgs.Builder]):
         com.pulumi.azure.compute.inputs.RunCommandState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.RunCommandErrorBlobManagedIdentityArgs.builder
       builder.errorBlobManagedIdentity(args(argsBuilder).build)
 
-    def instanceViews(args: Endofunction[com.pulumi.azure.compute.inputs.RunCommandInstanceViewArgs.Builder]*):
+    inline def instanceViews(args: Endofunction[com.pulumi.azure.compute.inputs.RunCommandInstanceViewArgs.Builder]*):
         com.pulumi.azure.compute.inputs.RunCommandState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.RunCommandInstanceViewArgs.builder
       builder.instanceViews(args.map(_(argsBuilder).build)*)
@@ -2049,7 +2049,7 @@ object compute_ext:
      * @param outputBlobManagedIdentity An `outputBlobManagedIdentity` block as defined below. User-assigned managed Identity that has access to outputBlobUri storage blob.
      * @return builder
      */
-    def outputBlobManagedIdentity(args: Endofunction[com.pulumi.azure.compute.inputs.RunCommandOutputBlobManagedIdentityArgs.Builder]):
+    inline def outputBlobManagedIdentity(args: Endofunction[com.pulumi.azure.compute.inputs.RunCommandOutputBlobManagedIdentityArgs.Builder]):
         com.pulumi.azure.compute.inputs.RunCommandState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.RunCommandOutputBlobManagedIdentityArgs.builder
       builder.outputBlobManagedIdentity(args(argsBuilder).build)
@@ -2058,7 +2058,7 @@ object compute_ext:
      * @param parameters A list of `parameter` blocks as defined below. The parameters used by the script.
      * @return builder
      */
-    def parameters(args: Endofunction[com.pulumi.azure.compute.inputs.RunCommandParameterArgs.Builder]*):
+    inline def parameters(args: Endofunction[com.pulumi.azure.compute.inputs.RunCommandParameterArgs.Builder]*):
         com.pulumi.azure.compute.inputs.RunCommandState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.RunCommandParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
@@ -2067,7 +2067,7 @@ object compute_ext:
      * @param protectedParameters A list of `protectedParameter` blocks as defined below. The protected parameters used by the script.
      * @return builder
      */
-    def protectedParameters(args: Endofunction[com.pulumi.azure.compute.inputs.RunCommandProtectedParameterArgs.Builder]*):
+    inline def protectedParameters(args: Endofunction[com.pulumi.azure.compute.inputs.RunCommandProtectedParameterArgs.Builder]*):
         com.pulumi.azure.compute.inputs.RunCommandState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.RunCommandProtectedParameterArgs.builder
       builder.protectedParameters(args.map(_(argsBuilder).build)*)
@@ -2076,7 +2076,7 @@ object compute_ext:
      * @param source A `source` block as defined below. The source of the run command script.
      * @return builder
      */
-    def source(args: Endofunction[com.pulumi.azure.compute.inputs.RunCommandSourceArgs.Builder]):
+    inline def source(args: Endofunction[com.pulumi.azure.compute.inputs.RunCommandSourceArgs.Builder]):
         com.pulumi.azure.compute.inputs.RunCommandState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.RunCommandSourceArgs.builder
       builder.source(args(argsBuilder).build)
@@ -2086,7 +2086,7 @@ object compute_ext:
      * @param dnsSettings A `dnsSettings` block as documented below.
      * @return builder
      */
-    def dnsSettings(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetNetworkProfileDnsSettingsArgs.Builder]):
+    inline def dnsSettings(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetNetworkProfileDnsSettingsArgs.Builder]):
         com.pulumi.azure.compute.inputs.ScaleSetNetworkProfileArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetNetworkProfileDnsSettingsArgs.builder
       builder.dnsSettings(args(argsBuilder).build)
@@ -2095,7 +2095,7 @@ object compute_ext:
      * @param ipConfigurations An `ipConfiguration` block as documented below.
      * @return builder
      */
-    def ipConfigurations(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetNetworkProfileIpConfigurationArgs.Builder]*):
+    inline def ipConfigurations(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetNetworkProfileIpConfigurationArgs.Builder]*):
         com.pulumi.azure.compute.inputs.ScaleSetNetworkProfileArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetNetworkProfileIpConfigurationArgs.builder
       builder.ipConfigurations(args.map(_(argsBuilder).build)*)
@@ -2105,7 +2105,7 @@ object compute_ext:
      * @param publicIpAddressConfiguration Describes a virtual machines scale set IP Configuration&#39;s PublicIPAddress configuration. The `publicIpAddressConfiguration` block is documented below.
      * @return builder
      */
-    def publicIpAddressConfiguration(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetNetworkProfileIpConfigurationPublicIpAddressConfigurationArgs.Builder]):
+    inline def publicIpAddressConfiguration(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetNetworkProfileIpConfigurationPublicIpAddressConfigurationArgs.Builder]):
         com.pulumi.azure.compute.inputs.ScaleSetNetworkProfileIpConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetNetworkProfileIpConfigurationPublicIpAddressConfigurationArgs.builder
       builder.publicIpAddressConfiguration(args(argsBuilder).build)
@@ -2119,7 +2119,7 @@ object compute_ext:
      * &gt; **NOTE:** At least one `sshKeys` block is required if `disablePasswordAuthentication` is set to `true`.
      * @return builder
      */
-    def sshKeys(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetOsProfileLinuxConfigSshKeyArgs.Builder]*):
+    inline def sshKeys(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetOsProfileLinuxConfigSshKeyArgs.Builder]*):
         com.pulumi.azure.compute.inputs.ScaleSetOsProfileLinuxConfigArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetOsProfileLinuxConfigSshKeyArgs.builder
       builder.sshKeys(args.map(_(argsBuilder).build)*)
@@ -2129,7 +2129,7 @@ object compute_ext:
      * @param vaultCertificates (Required, on Windows machines) One or more `vaultCertificates` blocks as defined below.
      * @return builder
      */
-    def vaultCertificates(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetOsProfileSecretVaultCertificateArgs.Builder]*):
+    inline def vaultCertificates(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetOsProfileSecretVaultCertificateArgs.Builder]*):
         com.pulumi.azure.compute.inputs.ScaleSetOsProfileSecretArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetOsProfileSecretVaultCertificateArgs.builder
       builder.vaultCertificates(args.map(_(argsBuilder).build)*)
@@ -2139,7 +2139,7 @@ object compute_ext:
      * @param additionalUnattendConfigs An `additionalUnattendConfig` block as documented below.
      * @return builder
      */
-    def additionalUnattendConfigs(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetOsProfileWindowsConfigAdditionalUnattendConfigArgs.Builder]*):
+    inline def additionalUnattendConfigs(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetOsProfileWindowsConfigAdditionalUnattendConfigArgs.Builder]*):
         com.pulumi.azure.compute.inputs.ScaleSetOsProfileWindowsConfigArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetOsProfileWindowsConfigAdditionalUnattendConfigArgs.builder
       builder.additionalUnattendConfigs(args.map(_(argsBuilder).build)*)
@@ -2148,7 +2148,7 @@ object compute_ext:
      * @param winrms A collection of `winrm` blocks as documented below.
      * @return builder
      */
-    def winrms(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetOsProfileWindowsConfigWinrmArgs.Builder]*):
+    inline def winrms(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetOsProfileWindowsConfigWinrmArgs.Builder]*):
         com.pulumi.azure.compute.inputs.ScaleSetOsProfileWindowsConfigArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetOsProfileWindowsConfigWinrmArgs.builder
       builder.winrms(args.map(_(argsBuilder).build)*)
@@ -2158,7 +2158,7 @@ object compute_ext:
      * @param filters One or more `filter` blocks as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def filters(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetPacketCaptureFilterArgs.Builder]*):
+    inline def filters(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetPacketCaptureFilterArgs.Builder]*):
         com.pulumi.azure.compute.inputs.ScaleSetPacketCaptureState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetPacketCaptureFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
@@ -2167,7 +2167,7 @@ object compute_ext:
      * @param machineScope A `machineScope` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def machineScope(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetPacketCaptureMachineScopeArgs.Builder]):
+    inline def machineScope(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetPacketCaptureMachineScopeArgs.Builder]):
         com.pulumi.azure.compute.inputs.ScaleSetPacketCaptureState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetPacketCaptureMachineScopeArgs.builder
       builder.machineScope(args(argsBuilder).build)
@@ -2176,7 +2176,7 @@ object compute_ext:
      * @param storageLocation A `storageLocation` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def storageLocation(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetPacketCaptureStorageLocationArgs.Builder]):
+    inline def storageLocation(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetPacketCaptureStorageLocationArgs.Builder]):
         com.pulumi.azure.compute.inputs.ScaleSetPacketCaptureState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetPacketCaptureStorageLocationArgs.builder
       builder.storageLocation(args(argsBuilder).build)
@@ -2186,7 +2186,7 @@ object compute_ext:
      * @param elasticityProfile An `elasticityProfile` block as defined below.
      * @return builder
      */
-    def elasticityProfile(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetStandbyPoolElasticityProfileArgs.Builder]):
+    inline def elasticityProfile(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetStandbyPoolElasticityProfileArgs.Builder]):
         com.pulumi.azure.compute.inputs.ScaleSetStandbyPoolState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetStandbyPoolElasticityProfileArgs.builder
       builder.elasticityProfile(args(argsBuilder).build)
@@ -2196,7 +2196,7 @@ object compute_ext:
      * @param bootDiagnostics A `bootDiagnostics` block as referenced below.
      * @return builder
      */
-    def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetBootDiagnosticsArgs.Builder]):
+    inline def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetBootDiagnosticsArgs.Builder]):
         com.pulumi.azure.compute.inputs.ScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetBootDiagnosticsArgs.builder
       builder.bootDiagnostics(args(argsBuilder).build)
@@ -2205,7 +2205,7 @@ object compute_ext:
      * @param extensions Can be specified multiple times to add extension profiles to the scale set. Each `extension` block supports the fields documented below.
      * @return builder
      */
-    def extensions(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetExtensionArgs.Builder]*):
+    inline def extensions(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetExtensionArgs.Builder]*):
         com.pulumi.azure.compute.inputs.ScaleSetState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetExtensionArgs.builder
       builder.extensions(args.map(_(argsBuilder).build)*)
@@ -2214,7 +2214,7 @@ object compute_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetIdentityArgs.Builder]):
         com.pulumi.azure.compute.inputs.ScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -2223,7 +2223,7 @@ object compute_ext:
      * @param networkProfiles A collection of `networkProfile` blocks as documented below.
      * @return builder
      */
-    def networkProfiles(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetNetworkProfileArgs.Builder]*):
+    inline def networkProfiles(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetNetworkProfileArgs.Builder]*):
         com.pulumi.azure.compute.inputs.ScaleSetState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetNetworkProfileArgs.builder
       builder.networkProfiles(args.map(_(argsBuilder).build)*)
@@ -2232,7 +2232,7 @@ object compute_ext:
      * @param osProfile A `osProfile` block as documented below.
      * @return builder
      */
-    def osProfile(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetOsProfileArgs.Builder]):
+    inline def osProfile(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetOsProfileArgs.Builder]):
         com.pulumi.azure.compute.inputs.ScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetOsProfileArgs.builder
       builder.osProfile(args(argsBuilder).build)
@@ -2241,7 +2241,7 @@ object compute_ext:
      * @param osProfileLinuxConfig A `osProfileLinuxConfig` block as documented below.
      * @return builder
      */
-    def osProfileLinuxConfig(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetOsProfileLinuxConfigArgs.Builder]):
+    inline def osProfileLinuxConfig(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetOsProfileLinuxConfigArgs.Builder]):
         com.pulumi.azure.compute.inputs.ScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetOsProfileLinuxConfigArgs.builder
       builder.osProfileLinuxConfig(args(argsBuilder).build)
@@ -2250,7 +2250,7 @@ object compute_ext:
      * @param osProfileSecrets A collection of `osProfileSecrets` blocks as documented below.
      * @return builder
      */
-    def osProfileSecrets(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetOsProfileSecretArgs.Builder]*):
+    inline def osProfileSecrets(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetOsProfileSecretArgs.Builder]*):
         com.pulumi.azure.compute.inputs.ScaleSetState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetOsProfileSecretArgs.builder
       builder.osProfileSecrets(args.map(_(argsBuilder).build)*)
@@ -2259,7 +2259,7 @@ object compute_ext:
      * @param osProfileWindowsConfig A `osProfileWindowsConfig` block as documented below.
      * @return builder
      */
-    def osProfileWindowsConfig(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetOsProfileWindowsConfigArgs.Builder]):
+    inline def osProfileWindowsConfig(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetOsProfileWindowsConfigArgs.Builder]):
         com.pulumi.azure.compute.inputs.ScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetOsProfileWindowsConfigArgs.builder
       builder.osProfileWindowsConfig(args(argsBuilder).build)
@@ -2268,7 +2268,7 @@ object compute_ext:
      * @param plan A `plan` block as documented below.
      * @return builder
      */
-    def plan(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetPlanArgs.Builder]):
+    inline def plan(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetPlanArgs.Builder]):
         com.pulumi.azure.compute.inputs.ScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetPlanArgs.builder
       builder.plan(args(argsBuilder).build)
@@ -2277,7 +2277,7 @@ object compute_ext:
      * @param rollingUpgradePolicy A `rollingUpgradePolicy` block as defined below. This is only applicable when the `upgradePolicyMode` is `Rolling`.
      * @return builder
      */
-    def rollingUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetRollingUpgradePolicyArgs.Builder]):
+    inline def rollingUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetRollingUpgradePolicyArgs.Builder]):
         com.pulumi.azure.compute.inputs.ScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetRollingUpgradePolicyArgs.builder
       builder.rollingUpgradePolicy(args(argsBuilder).build)
@@ -2286,7 +2286,7 @@ object compute_ext:
      * @param sku A `sku` block as documented below.
      * @return builder
      */
-    def sku(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetSkuArgs.Builder]):
+    inline def sku(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetSkuArgs.Builder]):
         com.pulumi.azure.compute.inputs.ScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetSkuArgs.builder
       builder.sku(args(argsBuilder).build)
@@ -2295,7 +2295,7 @@ object compute_ext:
      * @param storageProfileDataDisks A `storageProfileDataDisk` block as documented below.
      * @return builder
      */
-    def storageProfileDataDisks(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetStorageProfileDataDiskArgs.Builder]*):
+    inline def storageProfileDataDisks(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetStorageProfileDataDiskArgs.Builder]*):
         com.pulumi.azure.compute.inputs.ScaleSetState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetStorageProfileDataDiskArgs.builder
       builder.storageProfileDataDisks(args.map(_(argsBuilder).build)*)
@@ -2304,7 +2304,7 @@ object compute_ext:
      * @param storageProfileImageReference A `storageProfileImageReference` block as documented below.
      * @return builder
      */
-    def storageProfileImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetStorageProfileImageReferenceArgs.Builder]):
+    inline def storageProfileImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetStorageProfileImageReferenceArgs.Builder]):
         com.pulumi.azure.compute.inputs.ScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetStorageProfileImageReferenceArgs.builder
       builder.storageProfileImageReference(args(argsBuilder).build)
@@ -2313,7 +2313,7 @@ object compute_ext:
      * @param storageProfileOsDisk A `storageProfileOsDisk` block as documented below.
      * @return builder
      */
-    def storageProfileOsDisk(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetStorageProfileOsDiskArgs.Builder]):
+    inline def storageProfileOsDisk(args: Endofunction[com.pulumi.azure.compute.inputs.ScaleSetStorageProfileOsDiskArgs.Builder]):
         com.pulumi.azure.compute.inputs.ScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.ScaleSetStorageProfileOsDiskArgs.builder
       builder.storageProfileOsDisk(args(argsBuilder).build)
@@ -2325,7 +2325,7 @@ object compute_ext:
      * &gt; **Note:** `communityGallery` must be set when `permission` is set to `Community`.
      * @return builder
      */
-    def communityGallery(args: Endofunction[com.pulumi.azure.compute.inputs.SharedImageGallerySharingCommunityGalleryArgs.Builder]):
+    inline def communityGallery(args: Endofunction[com.pulumi.azure.compute.inputs.SharedImageGallerySharingCommunityGalleryArgs.Builder]):
         com.pulumi.azure.compute.inputs.SharedImageGallerySharingArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.SharedImageGallerySharingCommunityGalleryArgs.builder
       builder.communityGallery(args(argsBuilder).build)
@@ -2335,7 +2335,7 @@ object compute_ext:
      * @param sharing A `sharing` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def sharing(args: Endofunction[com.pulumi.azure.compute.inputs.SharedImageGallerySharingArgs.Builder]):
+    inline def sharing(args: Endofunction[com.pulumi.azure.compute.inputs.SharedImageGallerySharingArgs.Builder]):
         com.pulumi.azure.compute.inputs.SharedImageGalleryState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.SharedImageGallerySharingArgs.builder
       builder.sharing(args(argsBuilder).build)
@@ -2345,7 +2345,7 @@ object compute_ext:
      * @param identifier An `identifier` block as defined below.
      * @return builder
      */
-    def identifier(args: Endofunction[com.pulumi.azure.compute.inputs.SharedImageIdentifierArgs.Builder]):
+    inline def identifier(args: Endofunction[com.pulumi.azure.compute.inputs.SharedImageIdentifierArgs.Builder]):
         com.pulumi.azure.compute.inputs.SharedImageState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.SharedImageIdentifierArgs.builder
       builder.identifier(args(argsBuilder).build)
@@ -2354,7 +2354,7 @@ object compute_ext:
      * @param purchasePlan A `purchasePlan` block as defined below.
      * @return builder
      */
-    def purchasePlan(args: Endofunction[com.pulumi.azure.compute.inputs.SharedImagePurchasePlanArgs.Builder]):
+    inline def purchasePlan(args: Endofunction[com.pulumi.azure.compute.inputs.SharedImagePurchasePlanArgs.Builder]):
         com.pulumi.azure.compute.inputs.SharedImageState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.SharedImagePurchasePlanArgs.builder
       builder.purchasePlan(args(argsBuilder).build)
@@ -2364,7 +2364,7 @@ object compute_ext:
      * @param targetRegions One or more `targetRegion` blocks as documented below.
      * @return builder
      */
-    def targetRegions(args: Endofunction[com.pulumi.azure.compute.inputs.SharedImageVersionTargetRegionArgs.Builder]*):
+    inline def targetRegions(args: Endofunction[com.pulumi.azure.compute.inputs.SharedImageVersionTargetRegionArgs.Builder]*):
         com.pulumi.azure.compute.inputs.SharedImageVersionState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.SharedImageVersionTargetRegionArgs.builder
       builder.targetRegions(args.map(_(argsBuilder).build)*)
@@ -2374,7 +2374,7 @@ object compute_ext:
      * @param diskEncryptionKey A `diskEncryptionKey` block as defined below.
      * @return builder
      */
-    def diskEncryptionKey(args: Endofunction[com.pulumi.azure.compute.inputs.SnapshotEncryptionSettingsDiskEncryptionKeyArgs.Builder]):
+    inline def diskEncryptionKey(args: Endofunction[com.pulumi.azure.compute.inputs.SnapshotEncryptionSettingsDiskEncryptionKeyArgs.Builder]):
         com.pulumi.azure.compute.inputs.SnapshotEncryptionSettingsArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.SnapshotEncryptionSettingsDiskEncryptionKeyArgs.builder
       builder.diskEncryptionKey(args(argsBuilder).build)
@@ -2383,7 +2383,7 @@ object compute_ext:
      * @param keyEncryptionKey A `keyEncryptionKey` block as defined below.
      * @return builder
      */
-    def keyEncryptionKey(args: Endofunction[com.pulumi.azure.compute.inputs.SnapshotEncryptionSettingsKeyEncryptionKeyArgs.Builder]):
+    inline def keyEncryptionKey(args: Endofunction[com.pulumi.azure.compute.inputs.SnapshotEncryptionSettingsKeyEncryptionKeyArgs.Builder]):
         com.pulumi.azure.compute.inputs.SnapshotEncryptionSettingsArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.SnapshotEncryptionSettingsKeyEncryptionKeyArgs.builder
       builder.keyEncryptionKey(args(argsBuilder).build)
@@ -2395,7 +2395,7 @@ object compute_ext:
      * &gt; **Note:** Removing `encryptionSettings` forces a new resource to be created.
      * @return builder
      */
-    def encryptionSettings(args: Endofunction[com.pulumi.azure.compute.inputs.SnapshotEncryptionSettingsArgs.Builder]):
+    inline def encryptionSettings(args: Endofunction[com.pulumi.azure.compute.inputs.SnapshotEncryptionSettingsArgs.Builder]):
         com.pulumi.azure.compute.inputs.SnapshotState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.SnapshotEncryptionSettingsArgs.builder
       builder.encryptionSettings(args(argsBuilder).build)
@@ -2405,7 +2405,7 @@ object compute_ext:
      * @param sshKeys One or more `sshKeys` blocks as defined below. This field is required if `disablePasswordAuthentication` is set to `true`.
      * @return builder
      */
-    def sshKeys(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineOsProfileLinuxConfigSshKeyArgs.Builder]*):
+    inline def sshKeys(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineOsProfileLinuxConfigSshKeyArgs.Builder]*):
         com.pulumi.azure.compute.inputs.VirtualMachineOsProfileLinuxConfigArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineOsProfileLinuxConfigSshKeyArgs.builder
       builder.sshKeys(args.map(_(argsBuilder).build)*)
@@ -2415,7 +2415,7 @@ object compute_ext:
      * @param vaultCertificates One or more `vaultCertificates` blocks as defined below.
      * @return builder
      */
-    def vaultCertificates(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineOsProfileSecretVaultCertificateArgs.Builder]*):
+    inline def vaultCertificates(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineOsProfileSecretVaultCertificateArgs.Builder]*):
         com.pulumi.azure.compute.inputs.VirtualMachineOsProfileSecretArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineOsProfileSecretVaultCertificateArgs.builder
       builder.vaultCertificates(args.map(_(argsBuilder).build)*)
@@ -2425,7 +2425,7 @@ object compute_ext:
      * @param additionalUnattendConfigs An `additionalUnattendConfig` block as defined below.
      * @return builder
      */
-    def additionalUnattendConfigs(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineOsProfileWindowsConfigAdditionalUnattendConfigArgs.Builder]*):
+    inline def additionalUnattendConfigs(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineOsProfileWindowsConfigAdditionalUnattendConfigArgs.Builder]*):
         com.pulumi.azure.compute.inputs.VirtualMachineOsProfileWindowsConfigArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineOsProfileWindowsConfigAdditionalUnattendConfigArgs.builder
       builder.additionalUnattendConfigs(args.map(_(argsBuilder).build)*)
@@ -2434,7 +2434,7 @@ object compute_ext:
      * @param winrms One or more `winrm` blocks as defined below.
      * @return builder
      */
-    def winrms(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineOsProfileWindowsConfigWinrmArgs.Builder]*):
+    inline def winrms(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineOsProfileWindowsConfigWinrmArgs.Builder]*):
         com.pulumi.azure.compute.inputs.VirtualMachineOsProfileWindowsConfigArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineOsProfileWindowsConfigWinrmArgs.builder
       builder.winrms(args.map(_(argsBuilder).build)*)
@@ -2446,7 +2446,7 @@ object compute_ext:
      * &gt; **Note:** `protectedSettingsFromKeyVault` cannot be used with `protectedSettings`
      * @return builder
      */
-    def protectedSettingsFromKeyVault(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineScaleSetExtensionProtectedSettingsFromKeyVaultArgs.Builder]):
+    inline def protectedSettingsFromKeyVault(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineScaleSetExtensionProtectedSettingsFromKeyVaultArgs.Builder]):
         com.pulumi.azure.compute.inputs.VirtualMachineScaleSetExtensionState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineScaleSetExtensionProtectedSettingsFromKeyVaultArgs.builder
       builder.protectedSettingsFromKeyVault(args(argsBuilder).build)
@@ -2456,7 +2456,7 @@ object compute_ext:
      * @param additionalCapabilities An `additionalCapabilities` block as defined below.
      * @return builder
      */
-    def additionalCapabilities(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineAdditionalCapabilitiesArgs.Builder]):
+    inline def additionalCapabilities(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineAdditionalCapabilitiesArgs.Builder]):
         com.pulumi.azure.compute.inputs.VirtualMachineState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineAdditionalCapabilitiesArgs.builder
       builder.additionalCapabilities(args(argsBuilder).build)
@@ -2465,7 +2465,7 @@ object compute_ext:
      * @param bootDiagnostics A `bootDiagnostics` block as defined below.
      * @return builder
      */
-    def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineBootDiagnosticsArgs.Builder]):
+    inline def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineBootDiagnosticsArgs.Builder]):
         com.pulumi.azure.compute.inputs.VirtualMachineState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineBootDiagnosticsArgs.builder
       builder.bootDiagnostics(args(argsBuilder).build)
@@ -2474,7 +2474,7 @@ object compute_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineIdentityArgs.Builder]):
         com.pulumi.azure.compute.inputs.VirtualMachineState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -2483,7 +2483,7 @@ object compute_ext:
      * @param osProfile An `osProfile` block as defined below. Required when `createOption` in the `storageOsDisk` block is set to `FromImage`.
      * @return builder
      */
-    def osProfile(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineOsProfileArgs.Builder]):
+    inline def osProfile(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineOsProfileArgs.Builder]):
         com.pulumi.azure.compute.inputs.VirtualMachineState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineOsProfileArgs.builder
       builder.osProfile(args(argsBuilder).build)
@@ -2492,7 +2492,7 @@ object compute_ext:
      * @param osProfileLinuxConfig (Required, when a Linux machine) An `osProfileLinuxConfig` block as defined below.
      * @return builder
      */
-    def osProfileLinuxConfig(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineOsProfileLinuxConfigArgs.Builder]):
+    inline def osProfileLinuxConfig(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineOsProfileLinuxConfigArgs.Builder]):
         com.pulumi.azure.compute.inputs.VirtualMachineState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineOsProfileLinuxConfigArgs.builder
       builder.osProfileLinuxConfig(args(argsBuilder).build)
@@ -2501,7 +2501,7 @@ object compute_ext:
      * @param osProfileSecrets One or more `osProfileSecrets` blocks as defined below.
      * @return builder
      */
-    def osProfileSecrets(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineOsProfileSecretArgs.Builder]*):
+    inline def osProfileSecrets(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineOsProfileSecretArgs.Builder]*):
         com.pulumi.azure.compute.inputs.VirtualMachineState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineOsProfileSecretArgs.builder
       builder.osProfileSecrets(args.map(_(argsBuilder).build)*)
@@ -2510,7 +2510,7 @@ object compute_ext:
      * @param osProfileWindowsConfig (Required, when a Windows machine) An `osProfileWindowsConfig` block as defined below.
      * @return builder
      */
-    def osProfileWindowsConfig(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineOsProfileWindowsConfigArgs.Builder]):
+    inline def osProfileWindowsConfig(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineOsProfileWindowsConfigArgs.Builder]):
         com.pulumi.azure.compute.inputs.VirtualMachineState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineOsProfileWindowsConfigArgs.builder
       builder.osProfileWindowsConfig(args(argsBuilder).build)
@@ -2519,7 +2519,7 @@ object compute_ext:
      * @param plan A `plan` block as defined below.
      * @return builder
      */
-    def plan(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachinePlanArgs.Builder]):
+    inline def plan(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachinePlanArgs.Builder]):
         com.pulumi.azure.compute.inputs.VirtualMachineState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachinePlanArgs.builder
       builder.plan(args(argsBuilder).build)
@@ -2530,7 +2530,7 @@ object compute_ext:
      * &gt; **Please Note:** Data Disks can also be attached either using this block or the `azure.compute.DataDiskAttachment` resource - but not both.
      * @return builder
      */
-    def storageDataDisks(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineStorageDataDiskArgs.Builder]*):
+    inline def storageDataDisks(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineStorageDataDiskArgs.Builder]*):
         com.pulumi.azure.compute.inputs.VirtualMachineState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineStorageDataDiskArgs.builder
       builder.storageDataDisks(args.map(_(argsBuilder).build)*)
@@ -2539,7 +2539,7 @@ object compute_ext:
      * @param storageImageReference A `storageImageReference` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def storageImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineStorageImageReferenceArgs.Builder]):
+    inline def storageImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineStorageImageReferenceArgs.Builder]):
         com.pulumi.azure.compute.inputs.VirtualMachineState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineStorageImageReferenceArgs.builder
       builder.storageImageReference(args(argsBuilder).build)
@@ -2548,7 +2548,7 @@ object compute_ext:
      * @param storageOsDisk A `storageOsDisk` block as defined below.
      * @return builder
      */
-    def storageOsDisk(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineStorageOsDiskArgs.Builder]):
+    inline def storageOsDisk(args: Endofunction[com.pulumi.azure.compute.inputs.VirtualMachineStorageOsDiskArgs.Builder]):
         com.pulumi.azure.compute.inputs.VirtualMachineState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.VirtualMachineStorageOsDiskArgs.builder
       builder.storageOsDisk(args(argsBuilder).build)
@@ -2560,7 +2560,7 @@ object compute_ext:
      * &gt; **NOTE:** `diffDiskSettings` can only be set when `caching` is set to `ReadOnly`. More information can be found [here](https://docs.microsoft.com/azure/virtual-machines/ephemeral-os-disks-deploy#vm-template-deployment). Additionally, this property cannot be set when an existing Managed Disk is used to create the Virtual Machine by setting `osManagedDiskId`.
      * @return builder
      */
-    def diffDiskSettings(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineOsDiskDiffDiskSettingsArgs.Builder]):
+    inline def diffDiskSettings(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineOsDiskDiffDiskSettingsArgs.Builder]):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineOsDiskArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineOsDiskDiffDiskSettingsArgs.builder
       builder.diffDiskSettings(args(argsBuilder).build)
@@ -2572,7 +2572,7 @@ object compute_ext:
      * &gt; **Note:** `protectedSettingsFromKeyVault` cannot be used with `protectedSettings`
      * @return builder
      */
-    def protectedSettingsFromKeyVault(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetExtensionProtectedSettingsFromKeyVaultArgs.Builder]):
+    inline def protectedSettingsFromKeyVault(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetExtensionProtectedSettingsFromKeyVaultArgs.Builder]):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetExtensionArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetExtensionProtectedSettingsFromKeyVaultArgs.builder
       builder.protectedSettingsFromKeyVault(args(argsBuilder).build)
@@ -2582,7 +2582,7 @@ object compute_ext:
      * @param ipConfigurations One or more `ipConfiguration` blocks as defined above.
      * @return builder
      */
-    def ipConfigurations(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetNetworkInterfaceIpConfigurationArgs.Builder]*):
+    inline def ipConfigurations(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetNetworkInterfaceIpConfigurationArgs.Builder]*):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetNetworkInterfaceIpConfigurationArgs.builder
       builder.ipConfigurations(args.map(_(argsBuilder).build)*)
@@ -2592,7 +2592,7 @@ object compute_ext:
      * @param publicIpAddresses A `publicIpAddress` block as defined below.
      * @return builder
      */
-    def publicIpAddresses(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpAddressArgs.Builder]*):
+    inline def publicIpAddresses(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpAddressArgs.Builder]*):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetNetworkInterfaceIpConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpAddressArgs.builder
       builder.publicIpAddresses(args.map(_(argsBuilder).build)*)
@@ -2602,7 +2602,7 @@ object compute_ext:
      * @param ipTags One or more `ipTag` blocks as defined above. Changing this forces a new resource to be created.
      * @return builder
      */
-    def ipTags(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpAddressIpTagArgs.Builder]*):
+    inline def ipTags(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpAddressIpTagArgs.Builder]*):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpAddressArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetNetworkInterfaceIpConfigurationPublicIpAddressIpTagArgs.builder
       builder.ipTags(args.map(_(argsBuilder).build)*)
@@ -2612,7 +2612,7 @@ object compute_ext:
      * @param diffDiskSettings A `diffDiskSettings` block as defined above. Changing this forces a new resource to be created.
      * @return builder
      */
-    def diffDiskSettings(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetOsDiskDiffDiskSettingsArgs.Builder]):
+    inline def diffDiskSettings(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetOsDiskDiffDiskSettingsArgs.Builder]):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetOsDiskArgs.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetOsDiskDiffDiskSettingsArgs.builder
       builder.diffDiskSettings(args(argsBuilder).build)
@@ -2622,7 +2622,7 @@ object compute_ext:
      * @param certificates One or more `certificate` blocks as defined above.
      * @return builder
      */
-    def certificates(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetSecretCertificateArgs.Builder]*):
+    inline def certificates(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetSecretCertificateArgs.Builder]*):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetSecretArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetSecretCertificateArgs.builder
       builder.certificates(args.map(_(argsBuilder).build)*)
@@ -2632,7 +2632,7 @@ object compute_ext:
      * @param additionalCapabilities An `additionalCapabilities` block as defined below.
      * @return builder
      */
-    def additionalCapabilities(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetAdditionalCapabilitiesArgs.Builder]):
+    inline def additionalCapabilities(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetAdditionalCapabilitiesArgs.Builder]):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetAdditionalCapabilitiesArgs.builder
       builder.additionalCapabilities(args(argsBuilder).build)
@@ -2641,7 +2641,7 @@ object compute_ext:
      * @param additionalUnattendContents One or more `additionalUnattendContent` blocks as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def additionalUnattendContents(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetAdditionalUnattendContentArgs.Builder]*):
+    inline def additionalUnattendContents(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetAdditionalUnattendContentArgs.Builder]*):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetAdditionalUnattendContentArgs.builder
       builder.additionalUnattendContents(args.map(_(argsBuilder).build)*)
@@ -2652,7 +2652,7 @@ object compute_ext:
      * &gt; **Note:** For more information about Automatic Instance Repair, please refer to [this doc](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-instance-repairs).
      * @return builder
      */
-    def automaticInstanceRepair(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetAutomaticInstanceRepairArgs.Builder]):
+    inline def automaticInstanceRepair(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetAutomaticInstanceRepairArgs.Builder]):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetAutomaticInstanceRepairArgs.builder
       builder.automaticInstanceRepair(args(argsBuilder).build)
@@ -2661,7 +2661,7 @@ object compute_ext:
      * @param automaticOsUpgradePolicy An `automaticOsUpgradePolicy` block as defined below. This can only be specified when `upgradeMode` is set to either `Automatic` or `Rolling`.
      * @return builder
      */
-    def automaticOsUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetAutomaticOsUpgradePolicyArgs.Builder]):
+    inline def automaticOsUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetAutomaticOsUpgradePolicyArgs.Builder]):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetAutomaticOsUpgradePolicyArgs.builder
       builder.automaticOsUpgradePolicy(args(argsBuilder).build)
@@ -2670,7 +2670,7 @@ object compute_ext:
      * @param bootDiagnostics A `bootDiagnostics` block as defined below.
      * @return builder
      */
-    def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetBootDiagnosticsArgs.Builder]):
+    inline def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetBootDiagnosticsArgs.Builder]):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetBootDiagnosticsArgs.builder
       builder.bootDiagnostics(args(argsBuilder).build)
@@ -2679,7 +2679,7 @@ object compute_ext:
      * @param dataDisks One or more `dataDisk` blocks as defined below.
      * @return builder
      */
-    def dataDisks(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetDataDiskArgs.Builder]*):
+    inline def dataDisks(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetDataDiskArgs.Builder]*):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetDataDiskArgs.builder
       builder.dataDisks(args.map(_(argsBuilder).build)*)
@@ -2688,7 +2688,7 @@ object compute_ext:
      * @param extensions One or more `extension` blocks as defined below
      * @return builder
      */
-    def extensions(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetExtensionArgs.Builder]*):
+    inline def extensions(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetExtensionArgs.Builder]*):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetExtensionArgs.builder
       builder.extensions(args.map(_(argsBuilder).build)*)
@@ -2697,7 +2697,7 @@ object compute_ext:
      * @param galleryApplications One or more `galleryApplication` blocks as defined below.
      * @return builder
      */
-    def galleryApplications(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetGalleryApplicationArgs.Builder]*):
+    inline def galleryApplications(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetGalleryApplicationArgs.Builder]*):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetGalleryApplicationArgs.builder
       builder.galleryApplications(args.map(_(argsBuilder).build)*)
@@ -2706,7 +2706,7 @@ object compute_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetIdentityArgs.Builder]):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -2715,7 +2715,7 @@ object compute_ext:
      * @param networkInterfaces One or more `networkInterface` blocks as defined below.
      * @return builder
      */
-    def networkInterfaces(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetNetworkInterfaceArgs.Builder]*):
+    inline def networkInterfaces(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetNetworkInterfaceArgs.Builder]*):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
@@ -2724,7 +2724,7 @@ object compute_ext:
      * @param osDisk An `osDisk` block as defined below.
      * @return builder
      */
-    def osDisk(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetOsDiskArgs.Builder]):
+    inline def osDisk(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetOsDiskArgs.Builder]):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetOsDiskArgs.builder
       builder.osDisk(args(argsBuilder).build)
@@ -2735,7 +2735,7 @@ object compute_ext:
      * &gt; **Note:** When using an image from Azure Marketplace a `plan` must be specified.
      * @return builder
      */
-    def plan(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetPlanArgs.Builder]):
+    inline def plan(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetPlanArgs.Builder]):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetPlanArgs.builder
       builder.plan(args(argsBuilder).build)
@@ -2744,7 +2744,7 @@ object compute_ext:
      * @param rollingUpgradePolicy A `rollingUpgradePolicy` block as defined below. This is Required and can only be specified when `upgradeMode` is set to `Automatic` or `Rolling`. Changing this forces a new resource to be created.
      * @return builder
      */
-    def rollingUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetRollingUpgradePolicyArgs.Builder]):
+    inline def rollingUpgradePolicy(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetRollingUpgradePolicyArgs.Builder]):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetRollingUpgradePolicyArgs.builder
       builder.rollingUpgradePolicy(args(argsBuilder).build)
@@ -2753,7 +2753,7 @@ object compute_ext:
      * @param scaleIn A `scaleIn` block as defined below.
      * @return builder
      */
-    def scaleIn(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetScaleInArgs.Builder]):
+    inline def scaleIn(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetScaleInArgs.Builder]):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetScaleInArgs.builder
       builder.scaleIn(args(argsBuilder).build)
@@ -2762,7 +2762,7 @@ object compute_ext:
      * @param secrets One or more `secret` blocks as defined below.
      * @return builder
      */
-    def secrets(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetSecretArgs.Builder]*):
+    inline def secrets(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetSecretArgs.Builder]*):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetSecretArgs.builder
       builder.secrets(args.map(_(argsBuilder).build)*)
@@ -2773,7 +2773,7 @@ object compute_ext:
      * &gt; **Note:** One of either `sourceImageId` or `sourceImageReference` must be set.
      * @return builder
      */
-    def sourceImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetSourceImageReferenceArgs.Builder]):
+    inline def sourceImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetSourceImageReferenceArgs.Builder]):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetSourceImageReferenceArgs.builder
       builder.sourceImageReference(args(argsBuilder).build)
@@ -2782,7 +2782,7 @@ object compute_ext:
      * @param spotRestore A `spotRestore` block as defined below.
      * @return builder
      */
-    def spotRestore(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetSpotRestoreArgs.Builder]):
+    inline def spotRestore(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetSpotRestoreArgs.Builder]):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetSpotRestoreArgs.builder
       builder.spotRestore(args(argsBuilder).build)
@@ -2791,7 +2791,7 @@ object compute_ext:
      * @param terminationNotification A `terminationNotification` block as defined below.
      * @return builder
      */
-    def terminationNotification(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetTerminationNotificationArgs.Builder]):
+    inline def terminationNotification(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetTerminationNotificationArgs.Builder]):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetTerminationNotificationArgs.builder
       builder.terminationNotification(args(argsBuilder).build)
@@ -2800,7 +2800,7 @@ object compute_ext:
      * @param winrmListeners One or more `winrmListener` blocks as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def winrmListeners(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetWinrmListenerArgs.Builder]*):
+    inline def winrmListeners(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetWinrmListenerArgs.Builder]*):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineScaleSetWinrmListenerArgs.builder
       builder.winrmListeners(args.map(_(argsBuilder).build)*)
@@ -2810,7 +2810,7 @@ object compute_ext:
      * @param certificates One or more `certificate` blocks as defined above.
      * @return builder
      */
-    def certificates(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineSecretCertificateArgs.Builder]*):
+    inline def certificates(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineSecretCertificateArgs.Builder]*):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineSecretArgs.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineSecretCertificateArgs.builder
       builder.certificates(args.map(_(argsBuilder).build)*)
@@ -2820,7 +2820,7 @@ object compute_ext:
      * @param additionalCapabilities A `additionalCapabilities` block as defined below.
      * @return builder
      */
-    def additionalCapabilities(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineAdditionalCapabilitiesArgs.Builder]):
+    inline def additionalCapabilities(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineAdditionalCapabilitiesArgs.Builder]):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineAdditionalCapabilitiesArgs.builder
       builder.additionalCapabilities(args(argsBuilder).build)
@@ -2829,7 +2829,7 @@ object compute_ext:
      * @param additionalUnattendContents One or more `additionalUnattendContent` blocks as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def additionalUnattendContents(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineAdditionalUnattendContentArgs.Builder]*):
+    inline def additionalUnattendContents(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineAdditionalUnattendContentArgs.Builder]*):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineAdditionalUnattendContentArgs.builder
       builder.additionalUnattendContents(args.map(_(argsBuilder).build)*)
@@ -2838,7 +2838,7 @@ object compute_ext:
      * @param bootDiagnostics A `bootDiagnostics` block as defined below.
      * @return builder
      */
-    def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineBootDiagnosticsArgs.Builder]):
+    inline def bootDiagnostics(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineBootDiagnosticsArgs.Builder]):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineBootDiagnosticsArgs.builder
       builder.bootDiagnostics(args(argsBuilder).build)
@@ -2849,7 +2849,7 @@ object compute_ext:
      * &gt; **Note** Gallery Application Assignments can be defined either directly on `azure.compute.WindowsVirtualMachine` resource, or using the `azure.compute.GalleryApplicationAssignment` resource - but the two approaches cannot be used together. If both are used with the same Virtual Machine, spurious changes will occur. If `azure.compute.GalleryApplicationAssignment` is used, it&#39;s recommended to use `ignoreChanges` for the `galleryApplication` block on the corresponding `azure.compute.WindowsVirtualMachine` resource, to avoid a persistent diff when using this resource.
      * @return builder
      */
-    def galleryApplications(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineGalleryApplicationArgs.Builder]*):
+    inline def galleryApplications(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineGalleryApplicationArgs.Builder]*):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineGalleryApplicationArgs.builder
       builder.galleryApplications(args.map(_(argsBuilder).build)*)
@@ -2858,7 +2858,7 @@ object compute_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineIdentityArgs.Builder]):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -2867,7 +2867,7 @@ object compute_ext:
      * @param osDisk An `osDisk` block as defined below.
      * @return builder
      */
-    def osDisk(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineOsDiskArgs.Builder]):
+    inline def osDisk(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineOsDiskArgs.Builder]):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineOsDiskArgs.builder
       builder.osDisk(args(argsBuilder).build)
@@ -2876,7 +2876,7 @@ object compute_ext:
      * @param osImageNotification A `osImageNotification` block as defined below.
      * @return builder
      */
-    def osImageNotification(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineOsImageNotificationArgs.Builder]):
+    inline def osImageNotification(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineOsImageNotificationArgs.Builder]):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineOsImageNotificationArgs.builder
       builder.osImageNotification(args(argsBuilder).build)
@@ -2885,7 +2885,7 @@ object compute_ext:
      * @param plan A `plan` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def plan(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachinePlanArgs.Builder]):
+    inline def plan(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachinePlanArgs.Builder]):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachinePlanArgs.builder
       builder.plan(args(argsBuilder).build)
@@ -2894,7 +2894,7 @@ object compute_ext:
      * @param secrets One or more `secret` blocks as defined below.
      * @return builder
      */
-    def secrets(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineSecretArgs.Builder]*):
+    inline def secrets(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineSecretArgs.Builder]*):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineSecretArgs.builder
       builder.secrets(args.map(_(argsBuilder).build)*)
@@ -2905,7 +2905,7 @@ object compute_ext:
      * &gt; **NOTE:** One of either `sourceImageId` or `sourceImageReference` must be set.
      * @return builder
      */
-    def sourceImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineSourceImageReferenceArgs.Builder]):
+    inline def sourceImageReference(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineSourceImageReferenceArgs.Builder]):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineSourceImageReferenceArgs.builder
       builder.sourceImageReference(args(argsBuilder).build)
@@ -2914,7 +2914,7 @@ object compute_ext:
      * @param terminationNotification A `terminationNotification` block as defined below.
      * @return builder
      */
-    def terminationNotification(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineTerminationNotificationArgs.Builder]):
+    inline def terminationNotification(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineTerminationNotificationArgs.Builder]):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineState.Builder =
       val argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineTerminationNotificationArgs.builder
       builder.terminationNotification(args(argsBuilder).build)
@@ -2923,7 +2923,7 @@ object compute_ext:
      * @param winrmListeners One or more `winrmListener` blocks as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def winrmListeners(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineWinrmListenerArgs.Builder]*):
+    inline def winrmListeners(args: Endofunction[com.pulumi.azure.compute.inputs.WindowsVirtualMachineWinrmListenerArgs.Builder]*):
         com.pulumi.azure.compute.inputs.WindowsVirtualMachineState.Builder =
       def argsBuilder = com.pulumi.azure.compute.inputs.WindowsVirtualMachineWinrmListenerArgs.builder
       builder.winrmListeners(args.map(_(argsBuilder).build)*)

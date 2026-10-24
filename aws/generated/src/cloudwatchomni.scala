@@ -11,7 +11,7 @@ object cloudwatchomni:
    * 
    * &gt; **NOTE:** A domain cannot be deleted while it contains spaces.
    */
-  def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudwatchomni.DomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudwatchomni.DomainArgs.builder
     conf.logicalName2physicalName(name) match
@@ -28,7 +28,7 @@ object cloudwatchomni:
    * 
    * &gt; **NOTE:** CloudWatch Omni is not available in every region. In unsupported regions the API returns `AccessDeniedException`.
    */
-  def Space(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Space(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudwatchomni.SpaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudwatchomni.SpaceArgs.builder
     conf.logicalName2physicalName(name) match

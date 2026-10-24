@@ -16,7 +16,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def keyAccessJustificationsPolicy(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyKeyAccessJustificationsPolicyArgs.Builder]):
+    inline def keyAccessJustificationsPolicy(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyKeyAccessJustificationsPolicyArgs.Builder]):
         com.pulumi.gcp.kms.CryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.CryptoKeyKeyAccessJustificationsPolicyArgs.builder
       builder.keyAccessJustificationsPolicy(args(argsBuilder).build)
@@ -26,7 +26,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def versionTemplate(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyVersionTemplateArgs.Builder]):
+    inline def versionTemplate(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyVersionTemplateArgs.Builder]):
         com.pulumi.gcp.kms.CryptoKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.CryptoKeyVersionTemplateArgs.builder
       builder.versionTemplate(args(argsBuilder).build)
@@ -37,7 +37,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyIAMBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyIAMBindingConditionArgs.Builder]):
         com.pulumi.gcp.kms.CryptoKeyIAMBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.CryptoKeyIAMBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -48,7 +48,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyIAMMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyIAMMemberConditionArgs.Builder]):
         com.pulumi.gcp.kms.CryptoKeyIAMMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.CryptoKeyIAMMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -59,7 +59,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def externalProtectionLevelOptions(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyVersionExternalProtectionLevelOptionsArgs.Builder]):
+    inline def externalProtectionLevelOptions(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyVersionExternalProtectionLevelOptionsArgs.Builder]):
         com.pulumi.gcp.kms.CryptoKeyVersionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.CryptoKeyVersionExternalProtectionLevelOptionsArgs.builder
       builder.externalProtectionLevelOptions(args(argsBuilder).build)
@@ -70,7 +70,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceResolvers(args: Endofunction[com.pulumi.gcp.kms.inputs.EkmConnectionServiceResolverArgs.Builder]*):
+    inline def serviceResolvers(args: Endofunction[com.pulumi.gcp.kms.inputs.EkmConnectionServiceResolverArgs.Builder]*):
         com.pulumi.gcp.kms.EkmConnectionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.kms.inputs.EkmConnectionServiceResolverArgs.builder
       builder.serviceResolvers(args.map(_(argsBuilder).build)*)
@@ -81,7 +81,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.kms.inputs.EkmConnectionIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.kms.inputs.EkmConnectionIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.kms.EkmConnectionIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.EkmConnectionIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -92,7 +92,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.kms.inputs.EkmConnectionIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.kms.inputs.EkmConnectionIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.kms.EkmConnectionIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.EkmConnectionIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -105,7 +105,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultKeyAccessJustificationPolicy(args: Endofunction[com.pulumi.gcp.kms.inputs.FolderKajPolicyConfigDefaultKeyAccessJustificationPolicyArgs.Builder]):
+    inline def defaultKeyAccessJustificationPolicy(args: Endofunction[com.pulumi.gcp.kms.inputs.FolderKajPolicyConfigDefaultKeyAccessJustificationPolicyArgs.Builder]):
         com.pulumi.gcp.kms.FolderKajPolicyConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.FolderKajPolicyConfigDefaultKeyAccessJustificationPolicyArgs.builder
       builder.defaultKeyAccessJustificationPolicy(args(argsBuilder).build)
@@ -116,7 +116,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.kms.inputs.KeyRingIAMBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.kms.inputs.KeyRingIAMBindingConditionArgs.Builder]):
         com.pulumi.gcp.kms.KeyRingIAMBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.KeyRingIAMBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -127,7 +127,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.kms.inputs.KeyRingIAMMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.kms.inputs.KeyRingIAMMemberConditionArgs.Builder]):
         com.pulumi.gcp.kms.KeyRingIAMMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.KeyRingIAMMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -140,7 +140,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultKeyAccessJustificationPolicy(args: Endofunction[com.pulumi.gcp.kms.inputs.OrganizationKajPolicyConfigDefaultKeyAccessJustificationPolicyArgs.Builder]):
+    inline def defaultKeyAccessJustificationPolicy(args: Endofunction[com.pulumi.gcp.kms.inputs.OrganizationKajPolicyConfigDefaultKeyAccessJustificationPolicyArgs.Builder]):
         com.pulumi.gcp.kms.OrganizationKajPolicyConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.OrganizationKajPolicyConfigDefaultKeyAccessJustificationPolicyArgs.builder
       builder.defaultKeyAccessJustificationPolicy(args(argsBuilder).build)
@@ -153,7 +153,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultKeyAccessJustificationPolicy(args: Endofunction[com.pulumi.gcp.kms.inputs.ProjectKajPolicyConfigDefaultKeyAccessJustificationPolicyArgs.Builder]):
+    inline def defaultKeyAccessJustificationPolicy(args: Endofunction[com.pulumi.gcp.kms.inputs.ProjectKajPolicyConfigDefaultKeyAccessJustificationPolicyArgs.Builder]):
         com.pulumi.gcp.kms.ProjectKajPolicyConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.ProjectKajPolicyConfigDefaultKeyAccessJustificationPolicyArgs.builder
       builder.defaultKeyAccessJustificationPolicy(args(argsBuilder).build)
@@ -164,7 +164,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyIAMBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyIAMBindingConditionArgs.Builder]):
         com.pulumi.gcp.kms.inputs.CryptoKeyIAMBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.CryptoKeyIAMBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -175,7 +175,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyIAMMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyIAMMemberConditionArgs.Builder]):
         com.pulumi.gcp.kms.inputs.CryptoKeyIAMMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.CryptoKeyIAMMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -194,7 +194,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def keyAccessJustificationsPolicy(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyKeyAccessJustificationsPolicyArgs.Builder]):
+    inline def keyAccessJustificationsPolicy(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyKeyAccessJustificationsPolicyArgs.Builder]):
         com.pulumi.gcp.kms.inputs.CryptoKeyState.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.CryptoKeyKeyAccessJustificationsPolicyArgs.builder
       builder.keyAccessJustificationsPolicy(args(argsBuilder).build)
@@ -205,7 +205,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def primaries(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyPrimaryArgs.Builder]*):
+    inline def primaries(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyPrimaryArgs.Builder]*):
         com.pulumi.gcp.kms.inputs.CryptoKeyState.Builder =
       def argsBuilder = com.pulumi.gcp.kms.inputs.CryptoKeyPrimaryArgs.builder
       builder.primaries(args.map(_(argsBuilder).build)*)
@@ -215,7 +215,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def versionTemplate(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyVersionTemplateArgs.Builder]):
+    inline def versionTemplate(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyVersionTemplateArgs.Builder]):
         com.pulumi.gcp.kms.inputs.CryptoKeyState.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.CryptoKeyVersionTemplateArgs.builder
       builder.versionTemplate(args(argsBuilder).build)
@@ -226,7 +226,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def certChains(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyVersionAttestationCertChainsArgs.Builder]):
+    inline def certChains(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyVersionAttestationCertChainsArgs.Builder]):
         com.pulumi.gcp.kms.inputs.CryptoKeyVersionAttestationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.CryptoKeyVersionAttestationCertChainsArgs.builder
       builder.certChains(args(argsBuilder).build)
@@ -237,7 +237,7 @@ object kms_ext:
      * @return builder
      * @deprecated `externalProtectionLevelOptions` is being un-nested from the `attestation` field. Please use the top level `externalProtectionLevelOptions` field instead.
      */
-    @deprecated("`externalProtectionLevelOptions` is being un-nested from the `attestation` field. Please use the top level `externalProtectionLevelOptions` field instead.") def externalProtectionLevelOptions(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyVersionAttestationExternalProtectionLevelOptionsArgs.Builder]):
+    @deprecated("`externalProtectionLevelOptions` is being un-nested from the `attestation` field. Please use the top level `externalProtectionLevelOptions` field instead.") inline def externalProtectionLevelOptions(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyVersionAttestationExternalProtectionLevelOptionsArgs.Builder]):
         com.pulumi.gcp.kms.inputs.CryptoKeyVersionAttestationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.CryptoKeyVersionAttestationExternalProtectionLevelOptionsArgs.builder
       builder.externalProtectionLevelOptions(args(argsBuilder).build)
@@ -249,7 +249,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attestations(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyVersionAttestationArgs.Builder]*):
+    inline def attestations(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyVersionAttestationArgs.Builder]*):
         com.pulumi.gcp.kms.inputs.CryptoKeyVersionState.Builder =
       def argsBuilder = com.pulumi.gcp.kms.inputs.CryptoKeyVersionAttestationArgs.builder
       builder.attestations(args.map(_(argsBuilder).build)*)
@@ -259,7 +259,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def externalProtectionLevelOptions(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyVersionExternalProtectionLevelOptionsArgs.Builder]):
+    inline def externalProtectionLevelOptions(args: Endofunction[com.pulumi.gcp.kms.inputs.CryptoKeyVersionExternalProtectionLevelOptionsArgs.Builder]):
         com.pulumi.gcp.kms.inputs.CryptoKeyVersionState.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.CryptoKeyVersionExternalProtectionLevelOptionsArgs.builder
       builder.externalProtectionLevelOptions(args(argsBuilder).build)
@@ -270,7 +270,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.kms.inputs.EkmConnectionIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.kms.inputs.EkmConnectionIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.kms.inputs.EkmConnectionIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.EkmConnectionIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -281,7 +281,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.kms.inputs.EkmConnectionIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.kms.inputs.EkmConnectionIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.kms.inputs.EkmConnectionIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.EkmConnectionIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -292,7 +292,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serverCertificates(args: Endofunction[com.pulumi.gcp.kms.inputs.EkmConnectionServiceResolverServerCertificateArgs.Builder]*):
+    inline def serverCertificates(args: Endofunction[com.pulumi.gcp.kms.inputs.EkmConnectionServiceResolverServerCertificateArgs.Builder]*):
         com.pulumi.gcp.kms.inputs.EkmConnectionServiceResolverArgs.Builder =
       def argsBuilder = com.pulumi.gcp.kms.inputs.EkmConnectionServiceResolverServerCertificateArgs.builder
       builder.serverCertificates(args.map(_(argsBuilder).build)*)
@@ -303,7 +303,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceResolvers(args: Endofunction[com.pulumi.gcp.kms.inputs.EkmConnectionServiceResolverArgs.Builder]*):
+    inline def serviceResolvers(args: Endofunction[com.pulumi.gcp.kms.inputs.EkmConnectionServiceResolverArgs.Builder]*):
         com.pulumi.gcp.kms.inputs.EkmConnectionState.Builder =
       def argsBuilder = com.pulumi.gcp.kms.inputs.EkmConnectionServiceResolverArgs.builder
       builder.serviceResolvers(args.map(_(argsBuilder).build)*)
@@ -316,7 +316,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultKeyAccessJustificationPolicy(args: Endofunction[com.pulumi.gcp.kms.inputs.FolderKajPolicyConfigDefaultKeyAccessJustificationPolicyArgs.Builder]):
+    inline def defaultKeyAccessJustificationPolicy(args: Endofunction[com.pulumi.gcp.kms.inputs.FolderKajPolicyConfigDefaultKeyAccessJustificationPolicyArgs.Builder]):
         com.pulumi.gcp.kms.inputs.FolderKajPolicyConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.FolderKajPolicyConfigDefaultKeyAccessJustificationPolicyArgs.builder
       builder.defaultKeyAccessJustificationPolicy(args(argsBuilder).build)
@@ -327,7 +327,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.kms.inputs.KeyRingIAMBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.kms.inputs.KeyRingIAMBindingConditionArgs.Builder]):
         com.pulumi.gcp.kms.inputs.KeyRingIAMBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.KeyRingIAMBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -338,7 +338,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.kms.inputs.KeyRingIAMMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.kms.inputs.KeyRingIAMMemberConditionArgs.Builder]):
         com.pulumi.gcp.kms.inputs.KeyRingIAMMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.KeyRingIAMMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -351,7 +351,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attestations(args: Endofunction[com.pulumi.gcp.kms.inputs.KeyRingImportJobAttestationArgs.Builder]*):
+    inline def attestations(args: Endofunction[com.pulumi.gcp.kms.inputs.KeyRingImportJobAttestationArgs.Builder]*):
         com.pulumi.gcp.kms.inputs.KeyRingImportJobState.Builder =
       def argsBuilder = com.pulumi.gcp.kms.inputs.KeyRingImportJobAttestationArgs.builder
       builder.attestations(args.map(_(argsBuilder).build)*)
@@ -361,7 +361,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def publicKeys(args: Endofunction[com.pulumi.gcp.kms.inputs.KeyRingImportJobPublicKeyArgs.Builder]*):
+    inline def publicKeys(args: Endofunction[com.pulumi.gcp.kms.inputs.KeyRingImportJobPublicKeyArgs.Builder]*):
         com.pulumi.gcp.kms.inputs.KeyRingImportJobState.Builder =
       def argsBuilder = com.pulumi.gcp.kms.inputs.KeyRingImportJobPublicKeyArgs.builder
       builder.publicKeys(args.map(_(argsBuilder).build)*)
@@ -374,7 +374,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultKeyAccessJustificationPolicy(args: Endofunction[com.pulumi.gcp.kms.inputs.OrganizationKajPolicyConfigDefaultKeyAccessJustificationPolicyArgs.Builder]):
+    inline def defaultKeyAccessJustificationPolicy(args: Endofunction[com.pulumi.gcp.kms.inputs.OrganizationKajPolicyConfigDefaultKeyAccessJustificationPolicyArgs.Builder]):
         com.pulumi.gcp.kms.inputs.OrganizationKajPolicyConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.OrganizationKajPolicyConfigDefaultKeyAccessJustificationPolicyArgs.builder
       builder.defaultKeyAccessJustificationPolicy(args(argsBuilder).build)
@@ -387,7 +387,7 @@ object kms_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultKeyAccessJustificationPolicy(args: Endofunction[com.pulumi.gcp.kms.inputs.ProjectKajPolicyConfigDefaultKeyAccessJustificationPolicyArgs.Builder]):
+    inline def defaultKeyAccessJustificationPolicy(args: Endofunction[com.pulumi.gcp.kms.inputs.ProjectKajPolicyConfigDefaultKeyAccessJustificationPolicyArgs.Builder]):
         com.pulumi.gcp.kms.inputs.ProjectKajPolicyConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.kms.inputs.ProjectKajPolicyConfigDefaultKeyAccessJustificationPolicyArgs.builder
       builder.defaultKeyAccessJustificationPolicy(args(argsBuilder).build)

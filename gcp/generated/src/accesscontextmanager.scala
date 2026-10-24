@@ -22,7 +22,7 @@ object accesscontextmanager:
    * Your account must have the `serviceusage.services.use` permission on the
    * `billingProject` you defined.
    */
-  def AccessLevel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccessLevel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.accesscontextmanager.AccessLevelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.accesscontextmanager.AccessLevelArgs.builder
     conf.logicalName2physicalName(name) match
@@ -54,7 +54,7 @@ object accesscontextmanager:
    * Your account must have the `serviceusage.services.use` permission on the
    * `billingProject` you defined.
    */
-  def AccessLevelCondition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccessLevelCondition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.accesscontextmanager.AccessLevelConditionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.AccessLevelConditionArgs.builder
     com.pulumi.gcp.accesscontextmanager.AccessLevelCondition(name,
@@ -78,7 +78,7 @@ object accesscontextmanager:
    * preexisting rules, as the plan will correctly display the complete changes to your access policy if the
    * resource is present in state.
    */
-  def AccessLevels(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccessLevels(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.accesscontextmanager.AccessLevelsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.AccessLevelsArgs.builder
     com.pulumi.gcp.accesscontextmanager.AccessLevels(name,
@@ -107,7 +107,7 @@ object accesscontextmanager:
    * &gt; **Note:** When importing this resource by ID, use only the numeric access policy ID
    * (for example, `123456789`) and omit the `accessPolicies/` prefix.
    */
-  def AccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.accesscontextmanager.AccessPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.AccessPolicyArgs.builder
     com.pulumi.gcp.accesscontextmanager.AccessPolicy(name,
@@ -407,7 +407,7 @@ object accesscontextmanager:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AccessPolicyIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccessPolicyIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.accesscontextmanager.AccessPolicyIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.accesscontextmanager.AccessPolicyIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -710,7 +710,7 @@ object accesscontextmanager:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AccessPolicyIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccessPolicyIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.accesscontextmanager.AccessPolicyIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.accesscontextmanager.AccessPolicyIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1013,7 +1013,7 @@ object accesscontextmanager:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AccessPolicyIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccessPolicyIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.accesscontextmanager.AccessPolicyIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.accesscontextmanager.AccessPolicyIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1091,7 +1091,7 @@ object accesscontextmanager:
    * Your account must have the `serviceusage.services.use` permission on the
    * `billingProject` you defined.
    */
-  def AuthorizedOrgsDesc(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AuthorizedOrgsDesc(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.accesscontextmanager.AuthorizedOrgsDescArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.accesscontextmanager.AuthorizedOrgsDescArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1120,7 +1120,7 @@ object accesscontextmanager:
    * \$ pulumi import gcp:accesscontextmanager/egressPolicy:EgressPolicy default {{egress_policy_name}}/{{resource}}
    * ```
    */
-  def EgressPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EgressPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.accesscontextmanager.EgressPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.EgressPolicyArgs.builder
     com.pulumi.gcp.accesscontextmanager.EgressPolicy(name,
@@ -1134,7 +1134,7 @@ object accesscontextmanager:
    * 
    * * [API documentation](https://cloud.google.com/access-context-manager/docs/reference/rest/v1/organizations.gcpUserAccessBindings)
    */
-  def GcpUserAccessBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GcpUserAccessBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.accesscontextmanager.GcpUserAccessBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.GcpUserAccessBindingArgs.builder
     com.pulumi.gcp.accesscontextmanager.GcpUserAccessBinding(name,
@@ -1160,7 +1160,7 @@ object accesscontextmanager:
    * \$ pulumi import gcp:accesscontextmanager/ingressPolicy:IngressPolicy default {{ingress_policy_name}}/{{resource}}
    * ```
    */
-  def IngressPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IngressPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.accesscontextmanager.IngressPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.IngressPolicyArgs.builder
     com.pulumi.gcp.accesscontextmanager.IngressPolicy(name,
@@ -1191,7 +1191,7 @@ object accesscontextmanager:
    * Your account must have the `serviceusage.services.use` permission on the
    * `billingProject` you defined.
    */
-  def ServicePerimeter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServicePerimeter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.accesscontextmanager.ServicePerimeterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.accesscontextmanager.ServicePerimeterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1221,7 +1221,7 @@ object accesscontextmanager:
    * * How-to Guides
    *     * [Guide to Ingress and Egress Rules](https://cloud.google.com/vpc-service-controls/docs/ingress-egress-rules)
    */
-  def ServicePerimeterDryRunEgressPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServicePerimeterDryRunEgressPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.accesscontextmanager.ServicePerimeterDryRunEgressPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.ServicePerimeterDryRunEgressPolicyArgs.builder
     com.pulumi.gcp.accesscontextmanager.ServicePerimeterDryRunEgressPolicy(name,
@@ -1249,7 +1249,7 @@ object accesscontextmanager:
    * * How-to Guides
    *     * [Guide to Ingress and Egress Rules](https://cloud.google.com/vpc-service-controls/docs/ingress-egress-rules)
    */
-  def ServicePerimeterDryRunIngressPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServicePerimeterDryRunIngressPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.accesscontextmanager.ServicePerimeterDryRunIngressPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.ServicePerimeterDryRunIngressPolicyArgs.builder
     com.pulumi.gcp.accesscontextmanager.ServicePerimeterDryRunIngressPolicy(name,
@@ -1279,7 +1279,7 @@ object accesscontextmanager:
    * Your account must have the `serviceusage.services.use` permission on the
    * `billingProject` you defined.
    */
-  def ServicePerimeterDryRunResource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServicePerimeterDryRunResource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.accesscontextmanager.ServicePerimeterDryRunResourceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.ServicePerimeterDryRunResourceArgs.builder
     com.pulumi.gcp.accesscontextmanager.ServicePerimeterDryRunResource(name,
@@ -1306,7 +1306,7 @@ object accesscontextmanager:
    * * How-to Guides
    *     * [Guide to Ingress and Egress Rules](https://cloud.google.com/vpc-service-controls/docs/ingress-egress-rules)
    */
-  def ServicePerimeterEgressPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServicePerimeterEgressPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.accesscontextmanager.ServicePerimeterEgressPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.ServicePerimeterEgressPolicyArgs.builder
     com.pulumi.gcp.accesscontextmanager.ServicePerimeterEgressPolicy(name,
@@ -1334,7 +1334,7 @@ object accesscontextmanager:
    * * How-to Guides
    *     * [Guide to Ingress and Egress Rules](https://cloud.google.com/vpc-service-controls/docs/ingress-egress-rules)
    */
-  def ServicePerimeterIngressPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServicePerimeterIngressPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.accesscontextmanager.ServicePerimeterIngressPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.ServicePerimeterIngressPolicyArgs.builder
     com.pulumi.gcp.accesscontextmanager.ServicePerimeterIngressPolicy(name,
@@ -1364,7 +1364,7 @@ object accesscontextmanager:
    * Your account must have the `serviceusage.services.use` permission on the
    * `billingProject` you defined.
    */
-  def ServicePerimeterResource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServicePerimeterResource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.accesscontextmanager.ServicePerimeterResourceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.ServicePerimeterResourceArgs.builder
     com.pulumi.gcp.accesscontextmanager.ServicePerimeterResource(name,
@@ -1383,7 +1383,7 @@ object accesscontextmanager:
    *     * [Guide to Ingress and Egress Rules](https://cloud.google.com/vpc-service-controls/docs/ingress-egress-rules)
    *     * [Service Perimeter Quickstart](https://cloud.google.com/vpc-service-controls/docs/quickstart)
    */
-  def ServicePerimeters(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServicePerimeters(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.accesscontextmanager.ServicePerimetersArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.ServicePerimetersArgs.builder
     com.pulumi.gcp.accesscontextmanager.ServicePerimeters(name,

@@ -8,7 +8,7 @@ object privilegedaccessmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def additionalNotificationTargets(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementAdditionalNotificationTargetsArgs.Builder]):
+    inline def additionalNotificationTargets(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementAdditionalNotificationTargetsArgs.Builder]):
         com.pulumi.gcp.privilegedaccessmanager.EntitlementArgs.Builder =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementAdditionalNotificationTargetsArgs.builder
       builder.additionalNotificationTargets(args(argsBuilder).build)
@@ -19,7 +19,7 @@ object privilegedaccessmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def approvalWorkflow(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementApprovalWorkflowArgs.Builder]):
+    inline def approvalWorkflow(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementApprovalWorkflowArgs.Builder]):
         com.pulumi.gcp.privilegedaccessmanager.EntitlementArgs.Builder =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementApprovalWorkflowArgs.builder
       builder.approvalWorkflow(args(argsBuilder).build)
@@ -29,7 +29,7 @@ object privilegedaccessmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def eligibleUsers(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementEligibleUserArgs.Builder]*):
+    inline def eligibleUsers(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementEligibleUserArgs.Builder]*):
         com.pulumi.gcp.privilegedaccessmanager.EntitlementArgs.Builder =
       def argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementEligibleUserArgs.builder
       builder.eligibleUsers(args.map(_(argsBuilder).build)*)
@@ -39,7 +39,7 @@ object privilegedaccessmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def privilegedAccess(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementPrivilegedAccessArgs.Builder]):
+    inline def privilegedAccess(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementPrivilegedAccessArgs.Builder]):
         com.pulumi.gcp.privilegedaccessmanager.EntitlementArgs.Builder =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementPrivilegedAccessArgs.builder
       builder.privilegedAccess(args(argsBuilder).build)
@@ -49,7 +49,7 @@ object privilegedaccessmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def requesterJustificationConfig(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementRequesterJustificationConfigArgs.Builder]):
+    inline def requesterJustificationConfig(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementRequesterJustificationConfigArgs.Builder]):
         com.pulumi.gcp.privilegedaccessmanager.EntitlementArgs.Builder =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementRequesterJustificationConfigArgs.builder
       builder.requesterJustificationConfig(args(argsBuilder).build)
@@ -60,7 +60,7 @@ object privilegedaccessmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def emailNotificationSettings(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsArgs.Builder]):
+    inline def emailNotificationSettings(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsArgs.Builder]):
         com.pulumi.gcp.privilegedaccessmanager.SettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsArgs.builder
       builder.emailNotificationSettings(args(argsBuilder).build)
@@ -70,7 +70,7 @@ object privilegedaccessmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceAccountApproverSettings(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsServiceAccountApproverSettingsArgs.Builder]):
+    inline def serviceAccountApproverSettings(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsServiceAccountApproverSettingsArgs.Builder]):
         com.pulumi.gcp.privilegedaccessmanager.SettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsServiceAccountApproverSettingsArgs.builder
       builder.serviceAccountApproverSettings(args(argsBuilder).build)
@@ -87,7 +87,7 @@ object privilegedaccessmanager_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def manualApprovals(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementApprovalWorkflowManualApprovalsArgs.Builder]):
+    inline def manualApprovals(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementApprovalWorkflowManualApprovalsArgs.Builder]):
         com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementApprovalWorkflowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementApprovalWorkflowManualApprovalsArgs.builder
       builder.manualApprovals(args(argsBuilder).build)
@@ -98,7 +98,7 @@ object privilegedaccessmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def steps(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementApprovalWorkflowManualApprovalsStepArgs.Builder]*):
+    inline def steps(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementApprovalWorkflowManualApprovalsStepArgs.Builder]*):
         com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementApprovalWorkflowManualApprovalsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementApprovalWorkflowManualApprovalsStepArgs.builder
       builder.steps(args.map(_(argsBuilder).build)*)
@@ -109,7 +109,7 @@ object privilegedaccessmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def approvers(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementApprovalWorkflowManualApprovalsStepApproversArgs.Builder]):
+    inline def approvers(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementApprovalWorkflowManualApprovalsStepApproversArgs.Builder]):
         com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementApprovalWorkflowManualApprovalsStepArgs.Builder =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementApprovalWorkflowManualApprovalsStepApproversArgs.builder
       builder.approvers(args(argsBuilder).build)
@@ -120,7 +120,7 @@ object privilegedaccessmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gcpIamAccess(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementPrivilegedAccessGcpIamAccessArgs.Builder]):
+    inline def gcpIamAccess(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementPrivilegedAccessGcpIamAccessArgs.Builder]):
         com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementPrivilegedAccessArgs.Builder =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementPrivilegedAccessGcpIamAccessArgs.builder
       builder.gcpIamAccess(args(argsBuilder).build)
@@ -131,7 +131,7 @@ object privilegedaccessmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def roleBindings(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementPrivilegedAccessGcpIamAccessRoleBindingArgs.Builder]*):
+    inline def roleBindings(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementPrivilegedAccessGcpIamAccessRoleBindingArgs.Builder]*):
         com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementPrivilegedAccessGcpIamAccessArgs.Builder =
       def argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementPrivilegedAccessGcpIamAccessRoleBindingArgs.builder
       builder.roleBindings(args.map(_(argsBuilder).build)*)
@@ -141,7 +141,7 @@ object privilegedaccessmanager_ext:
      * @param notMandatory The justification is not mandatory but can be provided in any of the supported formats.
      * @return builder
      */
-    def notMandatory(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementRequesterJustificationConfigNotMandatoryArgs.Builder]):
+    inline def notMandatory(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementRequesterJustificationConfigNotMandatoryArgs.Builder]):
         com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementRequesterJustificationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementRequesterJustificationConfigNotMandatoryArgs.builder
       builder.notMandatory(args(argsBuilder).build)
@@ -150,7 +150,7 @@ object privilegedaccessmanager_ext:
      * @param unstructured The requester has to provide a justification in the form of free flowing text.
      * @return builder
      */
-    def unstructured(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementRequesterJustificationConfigUnstructuredArgs.Builder]):
+    inline def unstructured(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementRequesterJustificationConfigUnstructuredArgs.Builder]):
         com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementRequesterJustificationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementRequesterJustificationConfigUnstructuredArgs.builder
       builder.unstructured(args(argsBuilder).build)
@@ -161,7 +161,7 @@ object privilegedaccessmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def additionalNotificationTargets(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementAdditionalNotificationTargetsArgs.Builder]):
+    inline def additionalNotificationTargets(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementAdditionalNotificationTargetsArgs.Builder]):
         com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementState.Builder =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementAdditionalNotificationTargetsArgs.builder
       builder.additionalNotificationTargets(args(argsBuilder).build)
@@ -172,7 +172,7 @@ object privilegedaccessmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def approvalWorkflow(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementApprovalWorkflowArgs.Builder]):
+    inline def approvalWorkflow(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementApprovalWorkflowArgs.Builder]):
         com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementState.Builder =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementApprovalWorkflowArgs.builder
       builder.approvalWorkflow(args(argsBuilder).build)
@@ -182,7 +182,7 @@ object privilegedaccessmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def eligibleUsers(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementEligibleUserArgs.Builder]*):
+    inline def eligibleUsers(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementEligibleUserArgs.Builder]*):
         com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementState.Builder =
       def argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementEligibleUserArgs.builder
       builder.eligibleUsers(args.map(_(argsBuilder).build)*)
@@ -192,7 +192,7 @@ object privilegedaccessmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def privilegedAccess(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementPrivilegedAccessArgs.Builder]):
+    inline def privilegedAccess(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementPrivilegedAccessArgs.Builder]):
         com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementState.Builder =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementPrivilegedAccessArgs.builder
       builder.privilegedAccess(args(argsBuilder).build)
@@ -202,7 +202,7 @@ object privilegedaccessmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def requesterJustificationConfig(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementRequesterJustificationConfigArgs.Builder]):
+    inline def requesterJustificationConfig(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementRequesterJustificationConfigArgs.Builder]):
         com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementState.Builder =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.EntitlementRequesterJustificationConfigArgs.builder
       builder.requesterJustificationConfig(args(argsBuilder).build)
@@ -213,7 +213,7 @@ object privilegedaccessmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customNotificationBehavior(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsCustomNotificationBehaviorArgs.Builder]):
+    inline def customNotificationBehavior(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsCustomNotificationBehaviorArgs.Builder]):
         com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsCustomNotificationBehaviorArgs.builder
       builder.customNotificationBehavior(args(argsBuilder).build)
@@ -222,7 +222,7 @@ object privilegedaccessmanager_ext:
      * @param disableAllNotifications This option indicates that all email notifications are disabled.
      * @return builder
      */
-    def disableAllNotifications(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsDisableAllNotificationsArgs.Builder]):
+    inline def disableAllNotifications(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsDisableAllNotificationsArgs.Builder]):
         com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsDisableAllNotificationsArgs.builder
       builder.disableAllNotifications(args(argsBuilder).build)
@@ -233,7 +233,7 @@ object privilegedaccessmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def adminNotifications(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsCustomNotificationBehaviorAdminNotificationsArgs.Builder]):
+    inline def adminNotifications(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsCustomNotificationBehaviorAdminNotificationsArgs.Builder]):
         com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsCustomNotificationBehaviorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsCustomNotificationBehaviorAdminNotificationsArgs.builder
       builder.adminNotifications(args(argsBuilder).build)
@@ -243,7 +243,7 @@ object privilegedaccessmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def approverNotifications(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsCustomNotificationBehaviorApproverNotificationsArgs.Builder]):
+    inline def approverNotifications(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsCustomNotificationBehaviorApproverNotificationsArgs.Builder]):
         com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsCustomNotificationBehaviorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsCustomNotificationBehaviorApproverNotificationsArgs.builder
       builder.approverNotifications(args(argsBuilder).build)
@@ -253,7 +253,7 @@ object privilegedaccessmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def requesterNotifications(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsCustomNotificationBehaviorRequesterNotificationsArgs.Builder]):
+    inline def requesterNotifications(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsCustomNotificationBehaviorRequesterNotificationsArgs.Builder]):
         com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsCustomNotificationBehaviorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsCustomNotificationBehaviorRequesterNotificationsArgs.builder
       builder.requesterNotifications(args(argsBuilder).build)
@@ -264,7 +264,7 @@ object privilegedaccessmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def emailNotificationSettings(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsArgs.Builder]):
+    inline def emailNotificationSettings(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsArgs.Builder]):
         com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsState.Builder =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsEmailNotificationSettingsArgs.builder
       builder.emailNotificationSettings(args(argsBuilder).build)
@@ -274,7 +274,7 @@ object privilegedaccessmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceAccountApproverSettings(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsServiceAccountApproverSettingsArgs.Builder]):
+    inline def serviceAccountApproverSettings(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsServiceAccountApproverSettingsArgs.Builder]):
         com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsState.Builder =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.SettingsServiceAccountApproverSettingsArgs.builder
       builder.serviceAccountApproverSettings(args(argsBuilder).build)

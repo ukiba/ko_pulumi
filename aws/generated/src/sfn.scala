@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object sfn:
   /** Provides a Step Function Activity resource */
-  def Activity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Activity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sfn.ActivityArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sfn.ActivityArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25,7 +25,7 @@ object sfn:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Step Function State Machine Alias. */
-  def Alias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Alias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sfn.AliasArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sfn.AliasArgs.builder
     conf.logicalName2physicalName(name) match
@@ -109,7 +109,7 @@ object sfn:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides a Step Function State Machine resource */
-  def StateMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StateMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sfn.StateMachineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sfn.StateMachineArgs.builder
     conf.logicalName2physicalName(name) match

@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object bcmdata:
   /** Resource for managing an AWS BCM Data Exports Export. */
-  def Export(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Export(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bcmdata.ExportArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bcmdata.ExportArgs.builder
     argsBuilder = args(argsBuilder)

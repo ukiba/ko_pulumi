@@ -11,7 +11,7 @@ object networkmanager:
    * 
    * Use this resource to accept cross-account attachments in AWS Network Manager. When an attachment is created in one account and needs to be accepted by another account that owns the core network, this resource handles the acceptance process.
    */
-  def AttachmentAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AttachmentAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.AttachmentAccepterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.networkmanager.AttachmentAccepterArgs.builder
     com.pulumi.aws.networkmanager.AttachmentAccepter(name,
@@ -19,7 +19,7 @@ object networkmanager:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Associates a routing policy label to a Network Manager Cloud WAN&#39;s attachment outside of the attachment creation. This is useful in multi-account environments where only the Cloud WAN core network owner account can apply a routing policy label. */
-  def AttachmentRoutingPolicyLabel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AttachmentRoutingPolicyLabel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.AttachmentRoutingPolicyLabelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.networkmanager.AttachmentRoutingPolicyLabelArgs.builder
     com.pulumi.aws.networkmanager.AttachmentRoutingPolicyLabel(name,
@@ -31,7 +31,7 @@ object networkmanager:
    * 
    * Use this resource to create a Connect attachment in AWS Network Manager. Connect attachments enable you to connect your on-premises networks to your core network through a VPC or Transit Gateway attachment.
    */
-  def ConnectAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConnectAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.ConnectAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkmanager.ConnectAttachmentArgs.builder
     argsBuilder = args(argsBuilder)
@@ -50,7 +50,7 @@ object networkmanager:
    * 
    * Use this resource to create a Connect peer in AWS Network Manager. Connect peers establish BGP sessions with your on-premises networks through Connect attachments, enabling dynamic routing between your core network and external networks.
    */
-  def ConnectPeer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConnectPeer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.ConnectPeerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkmanager.ConnectPeerArgs.builder
     argsBuilder = args(argsBuilder)
@@ -69,7 +69,7 @@ object networkmanager:
    * 
    * Use this resource to create a connection between two devices in your global network.
    */
-  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.ConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkmanager.ConnectionArgs.builder
     argsBuilder = args(argsBuilder)
@@ -88,7 +88,7 @@ object networkmanager:
    * 
    * Use this resource to create and manage a core network within a global network.
    */
-  def CoreNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CoreNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.CoreNetworkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkmanager.CoreNetworkArgs.builder
     argsBuilder = args(argsBuilder)
@@ -109,7 +109,7 @@ object networkmanager:
    * 
    * &gt; **NOTE:** Deleting this resource will not delete the current policy defined in this resource. Deleting this resource will also not revert the current `LIVE` policy to the previous version.
    */
-  def CoreNetworkPolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CoreNetworkPolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.CoreNetworkPolicyAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.networkmanager.CoreNetworkPolicyAttachmentArgs.builder
     com.pulumi.aws.networkmanager.CoreNetworkPolicyAttachment(name,
@@ -121,7 +121,7 @@ object networkmanager:
    * 
    * Use this resource to associate a customer gateway with a device and optionally, with a link. If you specify a link, it must be associated with the specified device.
    */
-  def CustomerGatewayAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomerGatewayAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.CustomerGatewayAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.networkmanager.CustomerGatewayAssociationArgs.builder
     com.pulumi.aws.networkmanager.CustomerGatewayAssociation(name,
@@ -133,7 +133,7 @@ object networkmanager:
    * 
    * Use this resource to create a device in a global network. If you specify both a site ID and a location, the location of the site is used for visualization in the Network Manager console.
    */
-  def Device(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Device(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.DeviceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkmanager.DeviceArgs.builder
     argsBuilder = args(argsBuilder)
@@ -152,7 +152,7 @@ object networkmanager:
    * 
    * Use this resource to create and manage a Direct Connect Gateway attachment to a Cloud WAN core network.
    */
-  def DxGatewayAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DxGatewayAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.DxGatewayAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkmanager.DxGatewayAttachmentArgs.builder
     argsBuilder = args(argsBuilder)
@@ -171,7 +171,7 @@ object networkmanager:
    * 
    * Use this resource to create and manage a global network, which is a single private network that acts as the high-level container for your network objects.
    */
-  def GlobalNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GlobalNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.GlobalNetworkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkmanager.GlobalNetworkArgs.builder
     argsBuilder = args(argsBuilder)
@@ -186,7 +186,7 @@ object networkmanager:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager link. Use this resource to create a link for a site. */
-  def Link(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Link(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.LinkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkmanager.LinkArgs.builder
     argsBuilder = args(argsBuilder)
@@ -201,7 +201,7 @@ object networkmanager:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager link association. Associates a link to a device. A device can be associated to multiple links and a link can be associated to multiple devices. The device and link must be in the same global network and the same site. */
-  def LinkAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LinkAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.LinkAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.networkmanager.LinkAssociationArgs.builder
     com.pulumi.aws.networkmanager.LinkAssociation(name,
@@ -414,7 +414,7 @@ object networkmanager:
    * 
    * &gt; **NOTE:** The prefix list must be defined in the [Cloud WAN home region](https://docs.aws.amazon.com/network-manager/latest/cloudwan/what-is-cloudwan.html#cloudwan-home-region) (us-west-2). Although defined in the Cloud WAN home region, the prefix-list based policy will apply globally to all the relevant core network edges (regions) in your core network.
    */
-  def PrefixListAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PrefixListAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.PrefixListAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.networkmanager.PrefixListAssociationArgs.builder
     com.pulumi.aws.networkmanager.PrefixListAssociation(name,
@@ -422,7 +422,7 @@ object networkmanager:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager site. Use this resource to create a site in a global network. */
-  def Site(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Site(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.SiteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkmanager.SiteArgs.builder
     argsBuilder = args(argsBuilder)
@@ -437,7 +437,7 @@ object networkmanager:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager site-to-site VPN attachment. */
-  def SiteToSiteVpnAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SiteToSiteVpnAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.SiteToSiteVpnAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkmanager.SiteToSiteVpnAttachmentArgs.builder
     argsBuilder = args(argsBuilder)
@@ -452,7 +452,7 @@ object networkmanager:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager transit gateway Connect peer association. Associates a transit gateway Connect peer with a device, and optionally, with a link. If you specify a link, it must be associated with the specified device. */
-  def TransitGatewayConnectPeerAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TransitGatewayConnectPeerAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.TransitGatewayConnectPeerAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.networkmanager.TransitGatewayConnectPeerAssociationArgs.builder
     com.pulumi.aws.networkmanager.TransitGatewayConnectPeerAssociation(name,
@@ -460,7 +460,7 @@ object networkmanager:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager transit gateway peering connection. Creates a peering connection between an AWS Cloud WAN core network and an AWS Transit Gateway. */
-  def TransitGatewayPeering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TransitGatewayPeering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.TransitGatewayPeeringArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkmanager.TransitGatewayPeeringArgs.builder
     argsBuilder = args(argsBuilder)
@@ -475,7 +475,7 @@ object networkmanager:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager transit gateway registration. Registers a transit gateway to a global network. The transit gateway can be in any AWS Region, but it must be owned by the same AWS account that owns the global network. You cannot register a transit gateway in more than one global network. */
-  def TransitGatewayRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TransitGatewayRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.TransitGatewayRegistrationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.networkmanager.TransitGatewayRegistrationArgs.builder
     com.pulumi.aws.networkmanager.TransitGatewayRegistration(name,
@@ -483,7 +483,7 @@ object networkmanager:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager transit gateway route table attachment. */
-  def TransitGatewayRouteTableAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TransitGatewayRouteTableAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.TransitGatewayRouteTableAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkmanager.TransitGatewayRouteTableAttachmentArgs.builder
     argsBuilder = args(argsBuilder)
@@ -498,7 +498,7 @@ object networkmanager:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager VPC attachment. */
-  def VpcAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.networkmanager.VpcAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkmanager.VpcAttachmentArgs.builder
     argsBuilder = args(argsBuilder)

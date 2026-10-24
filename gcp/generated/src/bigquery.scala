@@ -13,7 +13,7 @@ object bigquery:
    * 
    * * [API documentation](https://cloud.google.com/bigtable/docs/reference/admin/rest/v2/projects.instances.appProfiles)
    */
-  @deprecated("gcp.bigquery.AppProfile has been deprecated in favor of gcp.bigtable.AppProfile") def AppProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("gcp.bigquery.AppProfile has been deprecated in favor of gcp.bigtable.AppProfile") inline def AppProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.AppProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.AppProfileArgs.builder
     com.pulumi.gcp.bigquery.AppProfile(name,
@@ -29,7 +29,7 @@ object bigquery:
    * * How-to Guides
    *     * [Introduction to Reservations](https://cloud.google.com/bigquery/docs/reservations-intro)
    */
-  def BiReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BiReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.BiReservationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.BiReservationArgs.builder
     com.pulumi.gcp.bigquery.BiReservation(name,
@@ -330,7 +330,7 @@ object bigquery:
    * * How-to Guides
    *     * [Introduction to Reservations](https://cloud.google.com/bigquery/docs/reservations-intro)
    */
-  def CapacityCommitment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CapacityCommitment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.CapacityCommitmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.CapacityCommitmentArgs.builder
     com.pulumi.gcp.bigquery.CapacityCommitment(name,
@@ -349,7 +349,7 @@ object bigquery:
    * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `cloud_sql.credential.password_wo`.
    * Read more about Write-only Arguments.
    */
-  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.ConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.ConnectionArgs.builder
     com.pulumi.gcp.bigquery.Connection(name,
@@ -662,7 +662,7 @@ object bigquery:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ConnectionIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConnectionIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.ConnectionIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.ConnectionIamBindingArgs.builder
     com.pulumi.gcp.bigquery.ConnectionIamBinding(name,
@@ -975,7 +975,7 @@ object bigquery:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ConnectionIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConnectionIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.ConnectionIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.ConnectionIamMemberArgs.builder
     com.pulumi.gcp.bigquery.ConnectionIamMember(name,
@@ -1288,7 +1288,7 @@ object bigquery:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ConnectionIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConnectionIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.ConnectionIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.ConnectionIamPolicyArgs.builder
     com.pulumi.gcp.bigquery.ConnectionIamPolicy(name,
@@ -1308,7 +1308,7 @@ object bigquery:
    * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `sensitive_params.secret_access_key_wo`.
    * Read more about Write-only Arguments.
    */
-  def DataTransferConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataTransferConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.DataTransferConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.DataTransferConfigArgs.builder
     com.pulumi.gcp.bigquery.DataTransferConfig(name,
@@ -1334,7 +1334,7 @@ object bigquery:
    *     * [Export your carbon footprint](https://cloud.google.com/carbon-footprint/docs/export)
    *     * [Working with transfers](https://cloud.google.com/bigquery/docs/working-with-transfers)
    */
-  def DataTransferDataSourceEnrollment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataTransferDataSourceEnrollment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.DataTransferDataSourceEnrollmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.DataTransferDataSourceEnrollmentArgs.builder
     com.pulumi.gcp.bigquery.DataTransferDataSourceEnrollment(name,
@@ -1350,7 +1350,7 @@ object bigquery:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/bigquery/docs/column-data-masking-intro)
    */
-  def Datapolicyv2DataPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Datapolicyv2DataPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyArgs.builder
     com.pulumi.gcp.bigquery.Datapolicyv2DataPolicy(name,
@@ -1663,7 +1663,7 @@ object bigquery:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def Datapolicyv2DataPolicyIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Datapolicyv2DataPolicyIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamBindingArgs.builder
     com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamBinding(name,
@@ -1976,7 +1976,7 @@ object bigquery:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def Datapolicyv2DataPolicyIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Datapolicyv2DataPolicyIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamMemberArgs.builder
     com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamMember(name,
@@ -2289,7 +2289,7 @@ object bigquery:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def Datapolicyv2DataPolicyIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Datapolicyv2DataPolicyIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamPolicyArgs.builder
     com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamPolicy(name,
@@ -2309,7 +2309,7 @@ object bigquery:
    * The API does accept both formats but it will always return the legacy format which results in Terraform
    * showing permanent diff on each plan and apply operation.
    */
-  def Dataset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Dataset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.DatasetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.DatasetArgs.builder
     com.pulumi.gcp.bigquery.Dataset(name,
@@ -2336,7 +2336,7 @@ object bigquery:
    * The API does accept both formats but it will always return the legacy format which results in Terraform
    * showing permanent diff on each plan and apply operation.
    */
-  def DatasetAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DatasetAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.DatasetAccessArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.DatasetAccessArgs.builder
     com.pulumi.gcp.bigquery.DatasetAccess(name,
@@ -2930,7 +2930,7 @@ object bigquery:
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DatasetIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DatasetIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.DatasetIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.DatasetIamBindingArgs.builder
     com.pulumi.gcp.bigquery.DatasetIamBinding(name,
@@ -3524,7 +3524,7 @@ object bigquery:
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DatasetIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DatasetIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.DatasetIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.DatasetIamMemberArgs.builder
     com.pulumi.gcp.bigquery.DatasetIamMember(name,
@@ -4118,7 +4118,7 @@ object bigquery:
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DatasetIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DatasetIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.DatasetIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.DatasetIamPolicyArgs.builder
     com.pulumi.gcp.bigquery.DatasetIamPolicy(name,
@@ -4431,7 +4431,7 @@ object bigquery:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def IamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.IamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.IamBindingArgs.builder
     com.pulumi.gcp.bigquery.IamBinding(name,
@@ -4744,7 +4744,7 @@ object bigquery:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def IamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.IamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.IamMemberArgs.builder
     com.pulumi.gcp.bigquery.IamMember(name,
@@ -5057,7 +5057,7 @@ object bigquery:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def IamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.IamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.IamPolicyArgs.builder
     com.pulumi.gcp.bigquery.IamPolicy(name,
@@ -5074,7 +5074,7 @@ object bigquery:
    * * How-to Guides
    *     * [BigQuery Jobs Intro](https://cloud.google.com/bigquery/docs/jobs-overview)
    */
-  def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.JobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.JobArgs.builder
     com.pulumi.gcp.bigquery.Job(name,
@@ -5090,7 +5090,7 @@ object bigquery:
    * * How-to Guides
    *     * [Introduction to Reservations](https://cloud.google.com/bigquery/docs/reservations-intro)
    */
-  def Reservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Reservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.ReservationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.bigquery.ReservationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -5109,7 +5109,7 @@ object bigquery:
    * * How-to Guides
    *     * [Work with reservation assignments](https://cloud.google.com/bigquery/docs/reservations-assignments)
    */
-  def ReservationAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ReservationAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.ReservationAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.ReservationAssignmentArgs.builder
     com.pulumi.gcp.bigquery.ReservationAssignment(name,
@@ -5123,7 +5123,7 @@ object bigquery:
    * 
    * * [API documentation](https://cloud.google.com/bigquery/docs/reference/reservations/rest/v1/projects.locations.reservationGroups)
    */
-  def ReservationGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ReservationGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.ReservationGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.bigquery.ReservationGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -5142,7 +5142,7 @@ object bigquery:
    * * How-to Guides
    *     * [Routines Intro](https://cloud.google.com/bigquery/docs/reference/rest/v2/routines)
    */
-  def Routine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Routine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.RoutineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.RoutineArgs.builder
     com.pulumi.gcp.bigquery.Routine(name,
@@ -5455,7 +5455,7 @@ object bigquery:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RoutineIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RoutineIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.RoutineIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.RoutineIamBindingArgs.builder
     com.pulumi.gcp.bigquery.RoutineIamBinding(name,
@@ -5768,7 +5768,7 @@ object bigquery:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RoutineIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RoutineIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.RoutineIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.RoutineIamMemberArgs.builder
     com.pulumi.gcp.bigquery.RoutineIamMember(name,
@@ -6081,7 +6081,7 @@ object bigquery:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RoutineIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RoutineIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.RoutineIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.RoutineIamPolicyArgs.builder
     com.pulumi.gcp.bigquery.RoutineIamPolicy(name,
@@ -6089,7 +6089,7 @@ object bigquery:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Represents access on a subset of rows on the specified table, defined by its filter predicate. Access to the subset of rows is controlled by its IAM policy. */
-  def RowAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RowAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.RowAccessPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.RowAccessPolicyArgs.builder
     com.pulumi.gcp.bigquery.RowAccessPolicy(name,
@@ -6105,7 +6105,7 @@ object bigquery:
    * (and run `pulumi update` to write the field to state) in order to destroy an instance.
    * It is recommended to not set this field (or set it to true) until you&#39;re ready to destroy.
    */
-  def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquery.TableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.TableArgs.builder
     com.pulumi.gcp.bigquery.Table(name,

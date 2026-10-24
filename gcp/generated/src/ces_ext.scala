@@ -11,7 +11,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def afterAgentCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentAfterAgentCallbackArgs.Builder]*):
+    inline def afterAgentCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentAfterAgentCallbackArgs.Builder]*):
         com.pulumi.gcp.ces.AgentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AgentAfterAgentCallbackArgs.builder
       builder.afterAgentCallbacks(args.map(_(argsBuilder).build)*)
@@ -25,7 +25,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def afterModelCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentAfterModelCallbackArgs.Builder]*):
+    inline def afterModelCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentAfterModelCallbackArgs.Builder]*):
         com.pulumi.gcp.ces.AgentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AgentAfterModelCallbackArgs.builder
       builder.afterModelCallbacks(args.map(_(argsBuilder).build)*)
@@ -39,7 +39,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def afterToolCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentAfterToolCallbackArgs.Builder]*):
+    inline def afterToolCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentAfterToolCallbackArgs.Builder]*):
         com.pulumi.gcp.ces.AgentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AgentAfterToolCallbackArgs.builder
       builder.afterToolCallbacks(args.map(_(argsBuilder).build)*)
@@ -52,7 +52,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def beforeAgentCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentBeforeAgentCallbackArgs.Builder]*):
+    inline def beforeAgentCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentBeforeAgentCallbackArgs.Builder]*):
         com.pulumi.gcp.ces.AgentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AgentBeforeAgentCallbackArgs.builder
       builder.beforeAgentCallbacks(args.map(_(argsBuilder).build)*)
@@ -66,7 +66,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def beforeModelCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentBeforeModelCallbackArgs.Builder]*):
+    inline def beforeModelCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentBeforeModelCallbackArgs.Builder]*):
         com.pulumi.gcp.ces.AgentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AgentBeforeModelCallbackArgs.builder
       builder.beforeModelCallbacks(args.map(_(argsBuilder).build)*)
@@ -80,7 +80,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def beforeToolCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentBeforeToolCallbackArgs.Builder]*):
+    inline def beforeToolCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentBeforeToolCallbackArgs.Builder]*):
         com.pulumi.gcp.ces.AgentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AgentBeforeToolCallbackArgs.builder
       builder.beforeToolCallbacks(args.map(_(argsBuilder).build)*)
@@ -90,7 +90,7 @@ object ces_ext:
      * the agent to perform the task using a large language model.
      * @return builder
      */
-    def llmAgent(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentLlmAgentArgs.Builder]):
+    inline def llmAgent(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentLlmAgentArgs.Builder]):
         com.pulumi.gcp.ces.AgentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AgentLlmAgentArgs.builder
       builder.llmAgent(args(argsBuilder).build)
@@ -100,7 +100,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentModelSettingsArgs.Builder]):
+    inline def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentModelSettingsArgs.Builder]):
         com.pulumi.gcp.ces.AgentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AgentModelSettingsArgs.builder
       builder.modelSettings(args(argsBuilder).build)
@@ -111,7 +111,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def remoteA2aAgent(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentArgs.Builder]):
+    inline def remoteA2aAgent(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentArgs.Builder]):
         com.pulumi.gcp.ces.AgentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentArgs.builder
       builder.remoteA2aAgent(args(argsBuilder).build)
@@ -125,7 +125,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def remoteDialogflowAgent(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteDialogflowAgentArgs.Builder]):
+    inline def remoteDialogflowAgent(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteDialogflowAgentArgs.Builder]):
         com.pulumi.gcp.ces.AgentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AgentRemoteDialogflowAgentArgs.builder
       builder.remoteDialogflowAgent(args(argsBuilder).build)
@@ -135,7 +135,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolsets(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentToolsetArgs.Builder]*):
+    inline def toolsets(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentToolsetArgs.Builder]*):
         com.pulumi.gcp.ces.AgentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AgentToolsetArgs.builder
       builder.toolsets(args.map(_(argsBuilder).build)*)
@@ -146,7 +146,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transferRules(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentTransferRuleArgs.Builder]*):
+    inline def transferRules(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentTransferRuleArgs.Builder]*):
         com.pulumi.gcp.ces.AgentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AgentTransferRuleArgs.builder
       builder.transferRules(args.map(_(argsBuilder).build)*)
@@ -158,7 +158,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def audioProcessingConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AppAudioProcessingConfigArgs.Builder]):
+    inline def audioProcessingConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AppAudioProcessingConfigArgs.Builder]):
         com.pulumi.gcp.ces.AppArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppAudioProcessingConfigArgs.builder
       builder.audioProcessingConfig(args(argsBuilder).build)
@@ -168,7 +168,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clientCertificateSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppClientCertificateSettingsArgs.Builder]):
+    inline def clientCertificateSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppClientCertificateSettingsArgs.Builder]):
         com.pulumi.gcp.ces.AppArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppClientCertificateSettingsArgs.builder
       builder.clientCertificateSettings(args(argsBuilder).build)
@@ -178,7 +178,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataStoreSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppDataStoreSettingsArgs.Builder]):
+    inline def dataStoreSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppDataStoreSettingsArgs.Builder]):
         com.pulumi.gcp.ces.AppArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppDataStoreSettingsArgs.builder
       builder.dataStoreSettings(args(argsBuilder).build)
@@ -189,7 +189,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultChannelProfile(args: Endofunction[com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileArgs.Builder]):
+    inline def defaultChannelProfile(args: Endofunction[com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileArgs.Builder]):
         com.pulumi.gcp.ces.AppArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileArgs.builder
       builder.defaultChannelProfile(args(argsBuilder).build)
@@ -199,7 +199,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errorHandlingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppErrorHandlingSettingsArgs.Builder]):
+    inline def errorHandlingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppErrorHandlingSettingsArgs.Builder]):
         com.pulumi.gcp.ces.AppArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppErrorHandlingSettingsArgs.builder
       builder.errorHandlingSettings(args(argsBuilder).build)
@@ -209,7 +209,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def evaluationMetricsThresholds(args: Endofunction[com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsArgs.Builder]):
+    inline def evaluationMetricsThresholds(args: Endofunction[com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsArgs.Builder]):
         com.pulumi.gcp.ces.AppArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsArgs.builder
       builder.evaluationMetricsThresholds(args(argsBuilder).build)
@@ -219,7 +219,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def languageSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppLanguageSettingsArgs.Builder]):
+    inline def languageSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppLanguageSettingsArgs.Builder]):
         com.pulumi.gcp.ces.AppArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppLanguageSettingsArgs.builder
       builder.languageSettings(args(argsBuilder).build)
@@ -229,7 +229,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loggingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppLoggingSettingsArgs.Builder]):
+    inline def loggingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppLoggingSettingsArgs.Builder]):
         com.pulumi.gcp.ces.AppArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppLoggingSettingsArgs.builder
       builder.loggingSettings(args(argsBuilder).build)
@@ -239,7 +239,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppModelSettingsArgs.Builder]):
+    inline def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppModelSettingsArgs.Builder]):
         com.pulumi.gcp.ces.AppArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppModelSettingsArgs.builder
       builder.modelSettings(args(argsBuilder).build)
@@ -249,7 +249,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeZoneSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppTimeZoneSettingsArgs.Builder]):
+    inline def timeZoneSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppTimeZoneSettingsArgs.Builder]):
         com.pulumi.gcp.ces.AppArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppTimeZoneSettingsArgs.builder
       builder.timeZoneSettings(args(argsBuilder).build)
@@ -259,7 +259,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def variableDeclarations(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVariableDeclarationArgs.Builder]*):
+    inline def variableDeclarations(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVariableDeclarationArgs.Builder]*):
         com.pulumi.gcp.ces.AppArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVariableDeclarationArgs.builder
       builder.variableDeclarations(args.map(_(argsBuilder).build)*)
@@ -269,7 +269,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcScSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVpcScSettingsArgs.Builder]):
+    inline def vpcScSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVpcScSettingsArgs.Builder]):
         com.pulumi.gcp.ces.AppArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppVpcScSettingsArgs.builder
       builder.vpcScSettings(args(argsBuilder).build)
@@ -281,7 +281,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def channelProfile(args: Endofunction[com.pulumi.gcp.ces.inputs.DeploymentChannelProfileArgs.Builder]):
+    inline def channelProfile(args: Endofunction[com.pulumi.gcp.ces.inputs.DeploymentChannelProfileArgs.Builder]):
         com.pulumi.gcp.ces.DeploymentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.DeploymentChannelProfileArgs.builder
       builder.channelProfile(args(argsBuilder).build)
@@ -291,7 +291,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def instagramCredentials(args: Endofunction[com.pulumi.gcp.ces.inputs.DeploymentInstagramCredentialsArgs.Builder]):
+    inline def instagramCredentials(args: Endofunction[com.pulumi.gcp.ces.inputs.DeploymentInstagramCredentialsArgs.Builder]):
         com.pulumi.gcp.ces.DeploymentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.DeploymentInstagramCredentialsArgs.builder
       builder.instagramCredentials(args(argsBuilder).build)
@@ -301,7 +301,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def whatsappCredentials(args: Endofunction[com.pulumi.gcp.ces.inputs.DeploymentWhatsappCredentialsArgs.Builder]):
+    inline def whatsappCredentials(args: Endofunction[com.pulumi.gcp.ces.inputs.DeploymentWhatsappCredentialsArgs.Builder]):
         com.pulumi.gcp.ces.DeploymentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.DeploymentWhatsappCredentialsArgs.builder
       builder.whatsappCredentials(args(argsBuilder).build)
@@ -312,7 +312,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def golden(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenArgs.Builder]):
+    inline def golden(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenArgs.Builder]):
         com.pulumi.gcp.ces.EvaluationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenArgs.builder
       builder.golden(args(argsBuilder).build)
@@ -322,7 +322,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scenario(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioArgs.Builder]):
+    inline def scenario(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioArgs.Builder]):
         com.pulumi.gcp.ces.EvaluationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationScenarioArgs.builder
       builder.scenario(args(argsBuilder).build)
@@ -333,7 +333,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def messages(args: Endofunction[com.pulumi.gcp.ces.inputs.ExampleMessageArgs.Builder]*):
+    inline def messages(args: Endofunction[com.pulumi.gcp.ces.inputs.ExampleMessageArgs.Builder]*):
         com.pulumi.gcp.ces.ExampleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ExampleMessageArgs.builder
       builder.messages(args.map(_(argsBuilder).build)*)
@@ -344,7 +344,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def action(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailActionArgs.Builder]):
+    inline def action(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailActionArgs.Builder]):
         com.pulumi.gcp.ces.GuardrailArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailActionArgs.builder
       builder.action(args(argsBuilder).build)
@@ -355,7 +355,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def codeCallback(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailCodeCallbackArgs.Builder]):
+    inline def codeCallback(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailCodeCallbackArgs.Builder]):
         com.pulumi.gcp.ces.GuardrailArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailCodeCallbackArgs.builder
       builder.codeCallback(args(argsBuilder).build)
@@ -365,7 +365,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def contentFilter(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailContentFilterArgs.Builder]):
+    inline def contentFilter(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailContentFilterArgs.Builder]):
         com.pulumi.gcp.ces.GuardrailArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailContentFilterArgs.builder
       builder.contentFilter(args(argsBuilder).build)
@@ -376,7 +376,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def llmPolicy(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailLlmPolicyArgs.Builder]):
+    inline def llmPolicy(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailLlmPolicyArgs.Builder]):
         com.pulumi.gcp.ces.GuardrailArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailLlmPolicyArgs.builder
       builder.llmPolicy(args(argsBuilder).build)
@@ -387,7 +387,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def llmPromptSecurity(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailLlmPromptSecurityArgs.Builder]):
+    inline def llmPromptSecurity(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailLlmPromptSecurityArgs.Builder]):
         com.pulumi.gcp.ces.GuardrailArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailLlmPromptSecurityArgs.builder
       builder.llmPromptSecurity(args(argsBuilder).build)
@@ -399,7 +399,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modelSafety(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailModelSafetyArgs.Builder]):
+    inline def modelSafety(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailModelSafetyArgs.Builder]):
         com.pulumi.gcp.ces.GuardrailArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailModelSafetyArgs.builder
       builder.modelSafety(args(argsBuilder).build)
@@ -410,7 +410,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endpointControlPolicy(args: Endofunction[com.pulumi.gcp.ces.inputs.SecuritySettingsEndpointControlPolicyArgs.Builder]):
+    inline def endpointControlPolicy(args: Endofunction[com.pulumi.gcp.ces.inputs.SecuritySettingsEndpointControlPolicyArgs.Builder]):
         com.pulumi.gcp.ces.SecuritySettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.SecuritySettingsEndpointControlPolicyArgs.builder
       builder.endpointControlPolicy(args(argsBuilder).build)
@@ -421,7 +421,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def agentTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolAgentToolArgs.Builder]):
+    inline def agentTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolAgentToolArgs.Builder]):
         com.pulumi.gcp.ces.ToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolAgentToolArgs.builder
       builder.agentTool(args(argsBuilder).build)
@@ -434,7 +434,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clientFunction(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolClientFunctionArgs.Builder]):
+    inline def clientFunction(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolClientFunctionArgs.Builder]):
         com.pulumi.gcp.ces.ToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolClientFunctionArgs.builder
       builder.clientFunction(args(argsBuilder).build)
@@ -447,7 +447,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataStoreTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolArgs.Builder]):
+    inline def dataStoreTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolArgs.Builder]):
         com.pulumi.gcp.ces.ToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolArgs.builder
       builder.dataStoreTool(args(argsBuilder).build)
@@ -458,7 +458,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fileSearchTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolFileSearchToolArgs.Builder]):
+    inline def fileSearchTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolFileSearchToolArgs.Builder]):
         com.pulumi.gcp.ces.ToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolFileSearchToolArgs.builder
       builder.fileSearchTool(args(argsBuilder).build)
@@ -470,7 +470,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleSearchTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolGoogleSearchToolArgs.Builder]):
+    inline def googleSearchTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolGoogleSearchToolArgs.Builder]):
         com.pulumi.gcp.ces.ToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolGoogleSearchToolArgs.builder
       builder.googleSearchTool(args(argsBuilder).build)
@@ -480,7 +480,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pythonFunction(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolPythonFunctionArgs.Builder]):
+    inline def pythonFunction(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolPythonFunctionArgs.Builder]):
         com.pulumi.gcp.ces.ToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolPythonFunctionArgs.builder
       builder.pythonFunction(args(argsBuilder).build)
@@ -490,7 +490,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolFakeConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolToolFakeConfigArgs.Builder]):
+    inline def toolFakeConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolToolFakeConfigArgs.Builder]):
         com.pulumi.gcp.ces.ToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolToolFakeConfigArgs.builder
       builder.toolFakeConfig(args(argsBuilder).build)
@@ -500,7 +500,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def widgetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolWidgetToolArgs.Builder]):
+    inline def widgetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolWidgetToolArgs.Builder]):
         com.pulumi.gcp.ces.ToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolWidgetToolArgs.builder
       builder.widgetTool(args(argsBuilder).build)
@@ -511,7 +511,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectorToolset(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetArgs.Builder]):
+    inline def connectorToolset(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetArgs.Builder]):
         com.pulumi.gcp.ces.ToolsetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetArgs.builder
       builder.connectorToolset(args(argsBuilder).build)
@@ -522,7 +522,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mcpToolset(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetArgs.Builder]):
+    inline def mcpToolset(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetArgs.Builder]):
         com.pulumi.gcp.ces.ToolsetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetArgs.builder
       builder.mcpToolset(args(argsBuilder).build)
@@ -533,7 +533,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def openApiToolset(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetArgs.Builder]):
+    inline def openApiToolset(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetArgs.Builder]):
         com.pulumi.gcp.ces.ToolsetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetArgs.builder
       builder.openApiToolset(args(argsBuilder).build)
@@ -543,7 +543,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolFakeConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetToolFakeConfigArgs.Builder]):
+    inline def toolFakeConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetToolFakeConfigArgs.Builder]):
         com.pulumi.gcp.ces.ToolsetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetToolFakeConfigArgs.builder
       builder.toolFakeConfig(args(argsBuilder).build)
@@ -556,7 +556,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def skills(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigAgentCardSkillArgs.Builder]*):
+    inline def skills(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigAgentCardSkillArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigAgentCardArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigAgentCardSkillArgs.builder
       builder.skills(args.map(_(argsBuilder).build)*)
@@ -566,7 +566,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def supportedInterfaces(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigAgentCardSupportedInterfaceArgs.Builder]*):
+    inline def supportedInterfaces(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigAgentCardSupportedInterfaceArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigAgentCardArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigAgentCardSupportedInterfaceArgs.builder
       builder.supportedInterfaces(args.map(_(argsBuilder).build)*)
@@ -577,7 +577,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiKeyConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationApiKeyConfigArgs.Builder]):
+    inline def apiKeyConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationApiKeyConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationApiKeyConfigArgs.builder
       builder.apiKeyConfig(args(argsBuilder).build)
@@ -587,7 +587,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bearerTokenConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationBearerTokenConfigArgs.Builder]):
+    inline def bearerTokenConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationBearerTokenConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationBearerTokenConfigArgs.builder
       builder.bearerTokenConfig(args(argsBuilder).build)
@@ -597,7 +597,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauthConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationOauthConfigArgs.Builder]):
+    inline def oauthConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationOauthConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationOauthConfigArgs.builder
       builder.oauthConfig(args(argsBuilder).build)
@@ -607,7 +607,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceAccountAuthConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationServiceAccountAuthConfigArgs.Builder]):
+    inline def serviceAccountAuthConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationServiceAccountAuthConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationServiceAccountAuthConfigArgs.builder
       builder.serviceAccountAuthConfig(args(argsBuilder).build)
@@ -617,7 +617,7 @@ object ces_ext:
      * @param agentCard The full agent card defined inline.
      * @return builder
      */
-    def agentCard(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigAgentCardArgs.Builder]):
+    inline def agentCard(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigAgentCardArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigAgentCardArgs.builder
       builder.agentCard(args(argsBuilder).build)
@@ -627,7 +627,7 @@ object ces_ext:
      * Optional if the registry reference already handles authentication.
      * @return builder
      */
-    def apiAuthentication(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationArgs.Builder]):
+    inline def apiAuthentication(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigApiAuthenticationArgs.builder
       builder.apiAuthentication(args(argsBuilder).build)
@@ -637,7 +637,7 @@ object ces_ext:
      * @param a2aConfig The A2A connection configuration.
      * @return builder
      */
-    def a2aConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigArgs.Builder]):
+    inline def a2aConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentA2aConfigArgs.builder
       builder.a2aConfig(args(argsBuilder).build)
@@ -651,7 +651,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def afterAgentCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentAfterAgentCallbackArgs.Builder]*):
+    inline def afterAgentCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentAfterAgentCallbackArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AgentState.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AgentAfterAgentCallbackArgs.builder
       builder.afterAgentCallbacks(args.map(_(argsBuilder).build)*)
@@ -665,7 +665,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def afterModelCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentAfterModelCallbackArgs.Builder]*):
+    inline def afterModelCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentAfterModelCallbackArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AgentState.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AgentAfterModelCallbackArgs.builder
       builder.afterModelCallbacks(args.map(_(argsBuilder).build)*)
@@ -679,7 +679,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def afterToolCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentAfterToolCallbackArgs.Builder]*):
+    inline def afterToolCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentAfterToolCallbackArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AgentState.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AgentAfterToolCallbackArgs.builder
       builder.afterToolCallbacks(args.map(_(argsBuilder).build)*)
@@ -692,7 +692,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def beforeAgentCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentBeforeAgentCallbackArgs.Builder]*):
+    inline def beforeAgentCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentBeforeAgentCallbackArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AgentState.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AgentBeforeAgentCallbackArgs.builder
       builder.beforeAgentCallbacks(args.map(_(argsBuilder).build)*)
@@ -706,7 +706,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def beforeModelCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentBeforeModelCallbackArgs.Builder]*):
+    inline def beforeModelCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentBeforeModelCallbackArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AgentState.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AgentBeforeModelCallbackArgs.builder
       builder.beforeModelCallbacks(args.map(_(argsBuilder).build)*)
@@ -720,7 +720,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def beforeToolCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentBeforeToolCallbackArgs.Builder]*):
+    inline def beforeToolCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentBeforeToolCallbackArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AgentState.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AgentBeforeToolCallbackArgs.builder
       builder.beforeToolCallbacks(args.map(_(argsBuilder).build)*)
@@ -730,7 +730,7 @@ object ces_ext:
      * the agent to perform the task using a large language model.
      * @return builder
      */
-    def llmAgent(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentLlmAgentArgs.Builder]):
+    inline def llmAgent(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentLlmAgentArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AgentState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AgentLlmAgentArgs.builder
       builder.llmAgent(args(argsBuilder).build)
@@ -740,7 +740,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentModelSettingsArgs.Builder]):
+    inline def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentModelSettingsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AgentState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AgentModelSettingsArgs.builder
       builder.modelSettings(args(argsBuilder).build)
@@ -751,7 +751,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def remoteA2aAgent(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentArgs.Builder]):
+    inline def remoteA2aAgent(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AgentState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AgentRemoteA2aAgentArgs.builder
       builder.remoteA2aAgent(args(argsBuilder).build)
@@ -765,7 +765,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def remoteDialogflowAgent(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteDialogflowAgentArgs.Builder]):
+    inline def remoteDialogflowAgent(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentRemoteDialogflowAgentArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AgentState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AgentRemoteDialogflowAgentArgs.builder
       builder.remoteDialogflowAgent(args(argsBuilder).build)
@@ -775,7 +775,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolsets(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentToolsetArgs.Builder]*):
+    inline def toolsets(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentToolsetArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AgentState.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AgentToolsetArgs.builder
       builder.toolsets(args.map(_(argsBuilder).build)*)
@@ -786,7 +786,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transferRules(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentTransferRuleArgs.Builder]*):
+    inline def transferRules(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentTransferRuleArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AgentState.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AgentTransferRuleArgs.builder
       builder.transferRules(args.map(_(argsBuilder).build)*)
@@ -798,7 +798,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deterministicTransfer(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentTransferRuleDeterministicTransferArgs.Builder]):
+    inline def deterministicTransfer(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentTransferRuleDeterministicTransferArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AgentTransferRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AgentTransferRuleDeterministicTransferArgs.builder
       builder.deterministicTransfer(args(argsBuilder).build)
@@ -808,7 +808,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def disablePlannerTransfer(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentTransferRuleDisablePlannerTransferArgs.Builder]):
+    inline def disablePlannerTransfer(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentTransferRuleDisablePlannerTransferArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AgentTransferRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AgentTransferRuleDisablePlannerTransferArgs.builder
       builder.disablePlannerTransfer(args(argsBuilder).build)
@@ -820,7 +820,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def expressionCondition(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentTransferRuleDeterministicTransferExpressionConditionArgs.Builder]):
+    inline def expressionCondition(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentTransferRuleDeterministicTransferExpressionConditionArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AgentTransferRuleDeterministicTransferArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AgentTransferRuleDeterministicTransferExpressionConditionArgs.builder
       builder.expressionCondition(args(argsBuilder).build)
@@ -831,7 +831,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pythonCodeCondition(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentTransferRuleDeterministicTransferPythonCodeConditionArgs.Builder]):
+    inline def pythonCodeCondition(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentTransferRuleDeterministicTransferPythonCodeConditionArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AgentTransferRuleDeterministicTransferArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AgentTransferRuleDeterministicTransferPythonCodeConditionArgs.builder
       builder.pythonCodeCondition(args(argsBuilder).build)
@@ -843,7 +843,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def expressionCondition(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentTransferRuleDisablePlannerTransferExpressionConditionArgs.Builder]):
+    inline def expressionCondition(args: Endofunction[com.pulumi.gcp.ces.inputs.AgentTransferRuleDisablePlannerTransferExpressionConditionArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AgentTransferRuleDisablePlannerTransferArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AgentTransferRuleDisablePlannerTransferExpressionConditionArgs.builder
       builder.expressionCondition(args(argsBuilder).build)
@@ -855,7 +855,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ambientSoundConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AppAudioProcessingConfigAmbientSoundConfigArgs.Builder]):
+    inline def ambientSoundConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AppAudioProcessingConfigAmbientSoundConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppAudioProcessingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppAudioProcessingConfigAmbientSoundConfigArgs.builder
       builder.ambientSoundConfig(args(argsBuilder).build)
@@ -865,7 +865,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bargeInConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AppAudioProcessingConfigBargeInConfigArgs.Builder]):
+    inline def bargeInConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AppAudioProcessingConfigBargeInConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppAudioProcessingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppAudioProcessingConfigBargeInConfigArgs.builder
       builder.bargeInConfig(args(argsBuilder).build)
@@ -881,7 +881,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def synthesizeSpeechConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppAudioProcessingConfigSynthesizeSpeechConfigArgs.Builder]*):
+    inline def synthesizeSpeechConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppAudioProcessingConfigSynthesizeSpeechConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppAudioProcessingConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppAudioProcessingConfigSynthesizeSpeechConfigArgs.builder
       builder.synthesizeSpeechConfigs(args.map(_(argsBuilder).build)*)
@@ -895,7 +895,7 @@ object ces_ext:
      * &lt;a name=&#34;nestedDataStoreSettingsEngines&#34;&gt;&lt;/a&gt;The `engines` block contains:
      * @return builder
      */
-    def engines(args: Endofunction[com.pulumi.gcp.ces.inputs.AppDataStoreSettingsEngineArgs.Builder]*):
+    inline def engines(args: Endofunction[com.pulumi.gcp.ces.inputs.AppDataStoreSettingsEngineArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppDataStoreSettingsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppDataStoreSettingsEngineArgs.builder
       builder.engines(args.map(_(argsBuilder).build)*)
@@ -906,7 +906,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def personaProperty(args: Endofunction[com.pulumi.gcp.ces.inputs.AppDefaultChannelProfilePersonaPropertyArgs.Builder]):
+    inline def personaProperty(args: Endofunction[com.pulumi.gcp.ces.inputs.AppDefaultChannelProfilePersonaPropertyArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppDefaultChannelProfilePersonaPropertyArgs.builder
       builder.personaProperty(args(argsBuilder).build)
@@ -916,7 +916,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def webWidgetConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileWebWidgetConfigArgs.Builder]):
+    inline def webWidgetConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileWebWidgetConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileWebWidgetConfigArgs.builder
       builder.webWidgetConfig(args(argsBuilder).build)
@@ -926,7 +926,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def whatsappConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileWhatsappConfigArgs.Builder]):
+    inline def whatsappConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileWhatsappConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileWhatsappConfigArgs.builder
       builder.whatsappConfig(args(argsBuilder).build)
@@ -937,7 +937,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def securitySettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileWebWidgetConfigSecuritySettingsArgs.Builder]):
+    inline def securitySettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileWebWidgetConfigSecuritySettingsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileWebWidgetConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileWebWidgetConfigSecuritySettingsArgs.builder
       builder.securitySettings(args(argsBuilder).build)
@@ -949,7 +949,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endSessionConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AppErrorHandlingSettingsEndSessionConfigArgs.Builder]):
+    inline def endSessionConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AppErrorHandlingSettingsEndSessionConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppErrorHandlingSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppErrorHandlingSettingsEndSessionConfigArgs.builder
       builder.endSessionConfig(args(argsBuilder).build)
@@ -959,7 +959,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fallbackResponseConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AppErrorHandlingSettingsFallbackResponseConfigArgs.Builder]):
+    inline def fallbackResponseConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AppErrorHandlingSettingsFallbackResponseConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppErrorHandlingSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppErrorHandlingSettingsFallbackResponseConfigArgs.builder
       builder.fallbackResponseConfig(args(argsBuilder).build)
@@ -970,7 +970,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def goldenEvaluationMetricsThresholds(args: Endofunction[com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsGoldenEvaluationMetricsThresholdsArgs.Builder]):
+    inline def goldenEvaluationMetricsThresholds(args: Endofunction[com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsGoldenEvaluationMetricsThresholdsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsGoldenEvaluationMetricsThresholdsArgs.builder
       builder.goldenEvaluationMetricsThresholds(args(argsBuilder).build)
@@ -981,7 +981,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def expectationLevelMetricsThresholds(args: Endofunction[com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsGoldenEvaluationMetricsThresholdsExpectationLevelMetricsThresholdsArgs.Builder]):
+    inline def expectationLevelMetricsThresholds(args: Endofunction[com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsGoldenEvaluationMetricsThresholdsExpectationLevelMetricsThresholdsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsGoldenEvaluationMetricsThresholdsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsGoldenEvaluationMetricsThresholdsExpectationLevelMetricsThresholdsArgs.builder
       builder.expectationLevelMetricsThresholds(args(argsBuilder).build)
@@ -993,7 +993,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolMatchingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsGoldenEvaluationMetricsThresholdsToolMatchingSettingsArgs.Builder]):
+    inline def toolMatchingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsGoldenEvaluationMetricsThresholdsToolMatchingSettingsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsGoldenEvaluationMetricsThresholdsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsGoldenEvaluationMetricsThresholdsToolMatchingSettingsArgs.builder
       builder.toolMatchingSettings(args(argsBuilder).build)
@@ -1003,7 +1003,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def turnLevelMetricsThresholds(args: Endofunction[com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsGoldenEvaluationMetricsThresholdsTurnLevelMetricsThresholdsArgs.Builder]):
+    inline def turnLevelMetricsThresholds(args: Endofunction[com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsGoldenEvaluationMetricsThresholdsTurnLevelMetricsThresholdsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsGoldenEvaluationMetricsThresholdsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsGoldenEvaluationMetricsThresholdsTurnLevelMetricsThresholdsArgs.builder
       builder.turnLevelMetricsThresholds(args(argsBuilder).build)
@@ -1014,7 +1014,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def audioRecordingConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AppLoggingSettingsAudioRecordingConfigArgs.Builder]):
+    inline def audioRecordingConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AppLoggingSettingsAudioRecordingConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppLoggingSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppLoggingSettingsAudioRecordingConfigArgs.builder
       builder.audioRecordingConfig(args(argsBuilder).build)
@@ -1024,7 +1024,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigqueryExportSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppLoggingSettingsBigqueryExportSettingsArgs.Builder]):
+    inline def bigqueryExportSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppLoggingSettingsBigqueryExportSettingsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppLoggingSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppLoggingSettingsBigqueryExportSettingsArgs.builder
       builder.bigqueryExportSettings(args(argsBuilder).build)
@@ -1034,7 +1034,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudLoggingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppLoggingSettingsCloudLoggingSettingsArgs.Builder]):
+    inline def cloudLoggingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppLoggingSettingsCloudLoggingSettingsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppLoggingSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppLoggingSettingsCloudLoggingSettingsArgs.builder
       builder.cloudLoggingSettings(args(argsBuilder).build)
@@ -1044,7 +1044,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conversationLoggingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppLoggingSettingsConversationLoggingSettingsArgs.Builder]):
+    inline def conversationLoggingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppLoggingSettingsConversationLoggingSettingsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppLoggingSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppLoggingSettingsConversationLoggingSettingsArgs.builder
       builder.conversationLoggingSettings(args(argsBuilder).build)
@@ -1055,7 +1055,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metricAnalysisSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppLoggingSettingsMetricAnalysisSettingsArgs.Builder]):
+    inline def metricAnalysisSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppLoggingSettingsMetricAnalysisSettingsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppLoggingSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppLoggingSettingsMetricAnalysisSettingsArgs.builder
       builder.metricAnalysisSettings(args(argsBuilder).build)
@@ -1065,7 +1065,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def redactionConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AppLoggingSettingsRedactionConfigArgs.Builder]):
+    inline def redactionConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AppLoggingSettingsRedactionConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppLoggingSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppLoggingSettingsRedactionConfigArgs.builder
       builder.redactionConfig(args(argsBuilder).build)
@@ -1077,7 +1077,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def audioProcessingConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AppAudioProcessingConfigArgs.Builder]):
+    inline def audioProcessingConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.AppAudioProcessingConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppAudioProcessingConfigArgs.builder
       builder.audioProcessingConfig(args(argsBuilder).build)
@@ -1087,7 +1087,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clientCertificateSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppClientCertificateSettingsArgs.Builder]):
+    inline def clientCertificateSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppClientCertificateSettingsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppClientCertificateSettingsArgs.builder
       builder.clientCertificateSettings(args(argsBuilder).build)
@@ -1097,7 +1097,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataStoreSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppDataStoreSettingsArgs.Builder]):
+    inline def dataStoreSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppDataStoreSettingsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppDataStoreSettingsArgs.builder
       builder.dataStoreSettings(args(argsBuilder).build)
@@ -1108,7 +1108,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultChannelProfile(args: Endofunction[com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileArgs.Builder]):
+    inline def defaultChannelProfile(args: Endofunction[com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppDefaultChannelProfileArgs.builder
       builder.defaultChannelProfile(args(argsBuilder).build)
@@ -1118,7 +1118,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errorHandlingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppErrorHandlingSettingsArgs.Builder]):
+    inline def errorHandlingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppErrorHandlingSettingsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppErrorHandlingSettingsArgs.builder
       builder.errorHandlingSettings(args(argsBuilder).build)
@@ -1128,7 +1128,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def evaluationMetricsThresholds(args: Endofunction[com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsArgs.Builder]):
+    inline def evaluationMetricsThresholds(args: Endofunction[com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppEvaluationMetricsThresholdsArgs.builder
       builder.evaluationMetricsThresholds(args(argsBuilder).build)
@@ -1138,7 +1138,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def languageSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppLanguageSettingsArgs.Builder]):
+    inline def languageSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppLanguageSettingsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppLanguageSettingsArgs.builder
       builder.languageSettings(args(argsBuilder).build)
@@ -1148,7 +1148,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loggingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppLoggingSettingsArgs.Builder]):
+    inline def loggingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppLoggingSettingsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppLoggingSettingsArgs.builder
       builder.loggingSettings(args(argsBuilder).build)
@@ -1158,7 +1158,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppModelSettingsArgs.Builder]):
+    inline def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppModelSettingsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppModelSettingsArgs.builder
       builder.modelSettings(args(argsBuilder).build)
@@ -1168,7 +1168,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeZoneSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppTimeZoneSettingsArgs.Builder]):
+    inline def timeZoneSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppTimeZoneSettingsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppTimeZoneSettingsArgs.builder
       builder.timeZoneSettings(args(argsBuilder).build)
@@ -1178,7 +1178,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def variableDeclarations(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVariableDeclarationArgs.Builder]*):
+    inline def variableDeclarations(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVariableDeclarationArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppState.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVariableDeclarationArgs.builder
       builder.variableDeclarations(args.map(_(argsBuilder).build)*)
@@ -1188,7 +1188,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcScSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVpcScSettingsArgs.Builder]):
+    inline def vpcScSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVpcScSettingsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppVpcScSettingsArgs.builder
       builder.vpcScSettings(args(argsBuilder).build)
@@ -1199,7 +1199,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def schema(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVariableDeclarationSchemaArgs.Builder]):
+    inline def schema(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVariableDeclarationSchemaArgs.Builder]):
         com.pulumi.gcp.ces.inputs.AppVariableDeclarationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.AppVariableDeclarationSchemaArgs.builder
       builder.schema(args(argsBuilder).build)
@@ -1214,7 +1214,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def afterAgentCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentAfterAgentCallbackArgs.Builder]*):
+    inline def afterAgentCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentAfterAgentCallbackArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentAfterAgentCallbackArgs.builder
       builder.afterAgentCallbacks(args.map(_(argsBuilder).build)*)
@@ -1229,7 +1229,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def afterModelCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentAfterModelCallbackArgs.Builder]*):
+    inline def afterModelCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentAfterModelCallbackArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentAfterModelCallbackArgs.builder
       builder.afterModelCallbacks(args.map(_(argsBuilder).build)*)
@@ -1244,7 +1244,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def afterToolCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentAfterToolCallbackArgs.Builder]*):
+    inline def afterToolCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentAfterToolCallbackArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentAfterToolCallbackArgs.builder
       builder.afterToolCallbacks(args.map(_(argsBuilder).build)*)
@@ -1258,7 +1258,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def beforeAgentCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentBeforeAgentCallbackArgs.Builder]*):
+    inline def beforeAgentCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentBeforeAgentCallbackArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentBeforeAgentCallbackArgs.builder
       builder.beforeAgentCallbacks(args.map(_(argsBuilder).build)*)
@@ -1273,7 +1273,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def beforeModelCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentBeforeModelCallbackArgs.Builder]*):
+    inline def beforeModelCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentBeforeModelCallbackArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentBeforeModelCallbackArgs.builder
       builder.beforeModelCallbacks(args.map(_(argsBuilder).build)*)
@@ -1288,7 +1288,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def beforeToolCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentBeforeToolCallbackArgs.Builder]*):
+    inline def beforeToolCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentBeforeToolCallbackArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentBeforeToolCallbackArgs.builder
       builder.beforeToolCallbacks(args.map(_(argsBuilder).build)*)
@@ -1299,7 +1299,7 @@ object ces_ext:
      * the agent to perform the task using a large language model.
      * @return builder
      */
-    def llmAgents(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentLlmAgentArgs.Builder]*):
+    inline def llmAgents(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentLlmAgentArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentLlmAgentArgs.builder
       builder.llmAgents(args.map(_(argsBuilder).build)*)
@@ -1310,7 +1310,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentModelSettingArgs.Builder]*):
+    inline def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentModelSettingArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentModelSettingArgs.builder
       builder.modelSettings(args.map(_(argsBuilder).build)*)
@@ -1325,7 +1325,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def remoteDialogflowAgents(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentRemoteDialogflowAgentArgs.Builder]*):
+    inline def remoteDialogflowAgents(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentRemoteDialogflowAgentArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentRemoteDialogflowAgentArgs.builder
       builder.remoteDialogflowAgents(args.map(_(argsBuilder).build)*)
@@ -1336,7 +1336,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolsets(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentToolsetArgs.Builder]*):
+    inline def toolsets(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentToolsetArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentToolsetArgs.builder
       builder.toolsets(args.map(_(argsBuilder).build)*)
@@ -1348,7 +1348,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transferRules(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleArgs.Builder]*):
+    inline def transferRules(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleArgs.builder
       builder.transferRules(args.map(_(argsBuilder).build)*)
@@ -1361,7 +1361,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deterministicTransfers(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDeterministicTransferArgs.Builder]*):
+    inline def deterministicTransfers(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDeterministicTransferArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDeterministicTransferArgs.builder
       builder.deterministicTransfers(args.map(_(argsBuilder).build)*)
@@ -1372,7 +1372,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def disablePlannerTransfers(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDisablePlannerTransferArgs.Builder]*):
+    inline def disablePlannerTransfers(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDisablePlannerTransferArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDisablePlannerTransferArgs.builder
       builder.disablePlannerTransfers(args.map(_(argsBuilder).build)*)
@@ -1385,7 +1385,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def expressionConditions(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDeterministicTransferExpressionConditionArgs.Builder]*):
+    inline def expressionConditions(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDeterministicTransferExpressionConditionArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDeterministicTransferArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDeterministicTransferExpressionConditionArgs.builder
       builder.expressionConditions(args.map(_(argsBuilder).build)*)
@@ -1397,7 +1397,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pythonCodeConditions(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDeterministicTransferPythonCodeConditionArgs.Builder]*):
+    inline def pythonCodeConditions(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDeterministicTransferPythonCodeConditionArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDeterministicTransferArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDeterministicTransferPythonCodeConditionArgs.builder
       builder.pythonCodeConditions(args.map(_(argsBuilder).build)*)
@@ -1410,7 +1410,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def expressionConditions(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDisablePlannerTransferExpressionConditionArgs.Builder]*):
+    inline def expressionConditions(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDisablePlannerTransferExpressionConditionArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDisablePlannerTransferArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentTransferRuleDisablePlannerTransferExpressionConditionArgs.builder
       builder.expressionConditions(args.map(_(argsBuilder).build)*)
@@ -1423,7 +1423,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def audioProcessingConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppAudioProcessingConfigArgs.Builder]*):
+    inline def audioProcessingConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppAudioProcessingConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppAudioProcessingConfigArgs.builder
       builder.audioProcessingConfigs(args.map(_(argsBuilder).build)*)
@@ -1434,7 +1434,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clientCertificateSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppClientCertificateSettingArgs.Builder]*):
+    inline def clientCertificateSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppClientCertificateSettingArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppClientCertificateSettingArgs.builder
       builder.clientCertificateSettings(args.map(_(argsBuilder).build)*)
@@ -1445,7 +1445,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataStoreSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDataStoreSettingArgs.Builder]*):
+    inline def dataStoreSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDataStoreSettingArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDataStoreSettingArgs.builder
       builder.dataStoreSettings(args.map(_(argsBuilder).build)*)
@@ -1457,7 +1457,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultChannelProfiles(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDefaultChannelProfileArgs.Builder]*):
+    inline def defaultChannelProfiles(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDefaultChannelProfileArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDefaultChannelProfileArgs.builder
       builder.defaultChannelProfiles(args.map(_(argsBuilder).build)*)
@@ -1468,7 +1468,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errorHandlingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppErrorHandlingSettingArgs.Builder]*):
+    inline def errorHandlingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppErrorHandlingSettingArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppErrorHandlingSettingArgs.builder
       builder.errorHandlingSettings(args.map(_(argsBuilder).build)*)
@@ -1479,7 +1479,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def evaluationMetricsThresholds(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppEvaluationMetricsThresholdArgs.Builder]*):
+    inline def evaluationMetricsThresholds(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppEvaluationMetricsThresholdArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppEvaluationMetricsThresholdArgs.builder
       builder.evaluationMetricsThresholds(args.map(_(argsBuilder).build)*)
@@ -1490,7 +1490,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def languageSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLanguageSettingArgs.Builder]*):
+    inline def languageSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLanguageSettingArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLanguageSettingArgs.builder
       builder.languageSettings(args.map(_(argsBuilder).build)*)
@@ -1501,7 +1501,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loggingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingArgs.Builder]*):
+    inline def loggingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingArgs.builder
       builder.loggingSettings(args.map(_(argsBuilder).build)*)
@@ -1512,7 +1512,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppModelSettingArgs.Builder]*):
+    inline def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppModelSettingArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppModelSettingArgs.builder
       builder.modelSettings(args.map(_(argsBuilder).build)*)
@@ -1523,7 +1523,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeZoneSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppTimeZoneSettingArgs.Builder]*):
+    inline def timeZoneSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppTimeZoneSettingArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppTimeZoneSettingArgs.builder
       builder.timeZoneSettings(args.map(_(argsBuilder).build)*)
@@ -1534,7 +1534,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def variableDeclarations(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppVariableDeclarationArgs.Builder]*):
+    inline def variableDeclarations(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppVariableDeclarationArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppVariableDeclarationArgs.builder
       builder.variableDeclarations(args.map(_(argsBuilder).build)*)
@@ -1545,7 +1545,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcScSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppVpcScSettingArgs.Builder]*):
+    inline def vpcScSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppVpcScSettingArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppVpcScSettingArgs.builder
       builder.vpcScSettings(args.map(_(argsBuilder).build)*)
@@ -1558,7 +1558,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ambientSoundConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppAudioProcessingConfigAmbientSoundConfigArgs.Builder]*):
+    inline def ambientSoundConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppAudioProcessingConfigAmbientSoundConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppAudioProcessingConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppAudioProcessingConfigAmbientSoundConfigArgs.builder
       builder.ambientSoundConfigs(args.map(_(argsBuilder).build)*)
@@ -1569,7 +1569,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bargeInConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppAudioProcessingConfigBargeInConfigArgs.Builder]*):
+    inline def bargeInConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppAudioProcessingConfigBargeInConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppAudioProcessingConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppAudioProcessingConfigBargeInConfigArgs.builder
       builder.bargeInConfigs(args.map(_(argsBuilder).build)*)
@@ -1586,7 +1586,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def synthesizeSpeechConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppAudioProcessingConfigSynthesizeSpeechConfigArgs.Builder]*):
+    inline def synthesizeSpeechConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppAudioProcessingConfigSynthesizeSpeechConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppAudioProcessingConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppAudioProcessingConfigSynthesizeSpeechConfigArgs.builder
       builder.synthesizeSpeechConfigs(args.map(_(argsBuilder).build)*)
@@ -1598,7 +1598,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def engines(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDataStoreSettingEngineArgs.Builder]*):
+    inline def engines(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDataStoreSettingEngineArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDataStoreSettingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDataStoreSettingEngineArgs.builder
       builder.engines(args.map(_(argsBuilder).build)*)
@@ -1610,7 +1610,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def personaProperties(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDefaultChannelProfilePersonaPropertyArgs.Builder]*):
+    inline def personaProperties(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDefaultChannelProfilePersonaPropertyArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDefaultChannelProfileArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDefaultChannelProfilePersonaPropertyArgs.builder
       builder.personaProperties(args.map(_(argsBuilder).build)*)
@@ -1621,7 +1621,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def webWidgetConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDefaultChannelProfileWebWidgetConfigArgs.Builder]*):
+    inline def webWidgetConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDefaultChannelProfileWebWidgetConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDefaultChannelProfileArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDefaultChannelProfileWebWidgetConfigArgs.builder
       builder.webWidgetConfigs(args.map(_(argsBuilder).build)*)
@@ -1632,7 +1632,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def whatsappConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDefaultChannelProfileWhatsappConfigArgs.Builder]*):
+    inline def whatsappConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDefaultChannelProfileWhatsappConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDefaultChannelProfileArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppDefaultChannelProfileWhatsappConfigArgs.builder
       builder.whatsappConfigs(args.map(_(argsBuilder).build)*)
@@ -1645,7 +1645,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endSessionConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppErrorHandlingSettingEndSessionConfigArgs.Builder]*):
+    inline def endSessionConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppErrorHandlingSettingEndSessionConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppErrorHandlingSettingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppErrorHandlingSettingEndSessionConfigArgs.builder
       builder.endSessionConfigs(args.map(_(argsBuilder).build)*)
@@ -1656,7 +1656,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fallbackResponseConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppErrorHandlingSettingFallbackResponseConfigArgs.Builder]*):
+    inline def fallbackResponseConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppErrorHandlingSettingFallbackResponseConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppErrorHandlingSettingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppErrorHandlingSettingFallbackResponseConfigArgs.builder
       builder.fallbackResponseConfigs(args.map(_(argsBuilder).build)*)
@@ -1668,7 +1668,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def goldenEvaluationMetricsThresholds(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppEvaluationMetricsThresholdGoldenEvaluationMetricsThresholdArgs.Builder]*):
+    inline def goldenEvaluationMetricsThresholds(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppEvaluationMetricsThresholdGoldenEvaluationMetricsThresholdArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppEvaluationMetricsThresholdArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppEvaluationMetricsThresholdGoldenEvaluationMetricsThresholdArgs.builder
       builder.goldenEvaluationMetricsThresholds(args.map(_(argsBuilder).build)*)
@@ -1680,7 +1680,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def expectationLevelMetricsThresholds(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppEvaluationMetricsThresholdGoldenEvaluationMetricsThresholdExpectationLevelMetricsThresholdArgs.Builder]*):
+    inline def expectationLevelMetricsThresholds(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppEvaluationMetricsThresholdGoldenEvaluationMetricsThresholdExpectationLevelMetricsThresholdArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppEvaluationMetricsThresholdGoldenEvaluationMetricsThresholdArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppEvaluationMetricsThresholdGoldenEvaluationMetricsThresholdExpectationLevelMetricsThresholdArgs.builder
       builder.expectationLevelMetricsThresholds(args.map(_(argsBuilder).build)*)
@@ -1693,7 +1693,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolMatchingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppEvaluationMetricsThresholdGoldenEvaluationMetricsThresholdToolMatchingSettingArgs.Builder]*):
+    inline def toolMatchingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppEvaluationMetricsThresholdGoldenEvaluationMetricsThresholdToolMatchingSettingArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppEvaluationMetricsThresholdGoldenEvaluationMetricsThresholdArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppEvaluationMetricsThresholdGoldenEvaluationMetricsThresholdToolMatchingSettingArgs.builder
       builder.toolMatchingSettings(args.map(_(argsBuilder).build)*)
@@ -1704,7 +1704,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def turnLevelMetricsThresholds(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppEvaluationMetricsThresholdGoldenEvaluationMetricsThresholdTurnLevelMetricsThresholdArgs.Builder]*):
+    inline def turnLevelMetricsThresholds(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppEvaluationMetricsThresholdGoldenEvaluationMetricsThresholdTurnLevelMetricsThresholdArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppEvaluationMetricsThresholdGoldenEvaluationMetricsThresholdArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppEvaluationMetricsThresholdGoldenEvaluationMetricsThresholdTurnLevelMetricsThresholdArgs.builder
       builder.turnLevelMetricsThresholds(args.map(_(argsBuilder).build)*)
@@ -1716,7 +1716,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def audioRecordingConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingAudioRecordingConfigArgs.Builder]*):
+    inline def audioRecordingConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingAudioRecordingConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingAudioRecordingConfigArgs.builder
       builder.audioRecordingConfigs(args.map(_(argsBuilder).build)*)
@@ -1727,7 +1727,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigqueryExportSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingBigqueryExportSettingArgs.Builder]*):
+    inline def bigqueryExportSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingBigqueryExportSettingArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingBigqueryExportSettingArgs.builder
       builder.bigqueryExportSettings(args.map(_(argsBuilder).build)*)
@@ -1738,7 +1738,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudLoggingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingCloudLoggingSettingArgs.Builder]*):
+    inline def cloudLoggingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingCloudLoggingSettingArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingCloudLoggingSettingArgs.builder
       builder.cloudLoggingSettings(args.map(_(argsBuilder).build)*)
@@ -1749,7 +1749,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conversationLoggingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingConversationLoggingSettingArgs.Builder]*):
+    inline def conversationLoggingSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingConversationLoggingSettingArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingConversationLoggingSettingArgs.builder
       builder.conversationLoggingSettings(args.map(_(argsBuilder).build)*)
@@ -1761,7 +1761,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metricAnalysisSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingMetricAnalysisSettingArgs.Builder]*):
+    inline def metricAnalysisSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingMetricAnalysisSettingArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingMetricAnalysisSettingArgs.builder
       builder.metricAnalysisSettings(args.map(_(argsBuilder).build)*)
@@ -1772,7 +1772,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def redactionConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingRedactionConfigArgs.Builder]*):
+    inline def redactionConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingRedactionConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppLoggingSettingRedactionConfigArgs.builder
       builder.redactionConfigs(args.map(_(argsBuilder).build)*)
@@ -1784,7 +1784,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def schemas(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppVariableDeclarationSchemaArgs.Builder]*):
+    inline def schemas(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppVariableDeclarationSchemaArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppVariableDeclarationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppVariableDeclarationSchemaArgs.builder
       builder.schemas(args.map(_(argsBuilder).build)*)
@@ -1796,7 +1796,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def agents(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentArgs.Builder]*):
+    inline def agents(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAgentArgs.builder
       builder.agents(args.map(_(argsBuilder).build)*)
@@ -1805,7 +1805,7 @@ object ces_ext:
      * @param apps Resource ID segment making up resource `name`. It identifies the resource within its parent collection as described in https://google.aip.dev/122.
      * @return builder
      */
-    def apps(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppArgs.Builder]*):
+    inline def apps(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotAppArgs.builder
       builder.apps(args.map(_(argsBuilder).build)*)
@@ -1816,7 +1816,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def examples(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleArgs.Builder]*):
+    inline def examples(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleArgs.builder
       builder.examples(args.map(_(argsBuilder).build)*)
@@ -1828,7 +1828,7 @@ object ces_ext:
      * `projects/{project}/locations/{location}/apps/{app}/guardrails/{guardrail}`
      * @return builder
      */
-    def guardrails(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailArgs.Builder]*):
+    inline def guardrails(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailArgs.builder
       builder.guardrails(args.map(_(argsBuilder).build)*)
@@ -1839,7 +1839,7 @@ object ces_ext:
      * Format: `projects/{project}/locations/{location}/apps/{app}/tools/{tool}`
      * @return builder
      */
-    def tools(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolArgs.Builder]*):
+    inline def tools(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolArgs.builder
       builder.tools(args.map(_(argsBuilder).build)*)
@@ -1850,7 +1850,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolsets(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetArgs.Builder]*):
+    inline def toolsets(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetArgs.builder
       builder.toolsets(args.map(_(argsBuilder).build)*)
@@ -1862,7 +1862,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def messages(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageArgs.Builder]*):
+    inline def messages(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageArgs.builder
       builder.messages(args.map(_(argsBuilder).build)*)
@@ -1874,7 +1874,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def chunks(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkArgs.Builder]*):
+    inline def chunks(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkArgs.builder
       builder.chunks(args.map(_(argsBuilder).build)*)
@@ -1887,7 +1887,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def agentTransfers(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkAgentTransferArgs.Builder]*):
+    inline def agentTransfers(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkAgentTransferArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkAgentTransferArgs.builder
       builder.agentTransfers(args.map(_(argsBuilder).build)*)
@@ -1898,7 +1898,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def images(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkImageArgs.Builder]*):
+    inline def images(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkImageArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkImageArgs.builder
       builder.images(args.map(_(argsBuilder).build)*)
@@ -1909,7 +1909,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolCalls(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkToolCallArgs.Builder]*):
+    inline def toolCalls(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkToolCallArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkToolCallArgs.builder
       builder.toolCalls(args.map(_(argsBuilder).build)*)
@@ -1920,7 +1920,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolResponses(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkToolResponseArgs.Builder]*):
+    inline def toolResponses(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkToolResponseArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkToolResponseArgs.builder
       builder.toolResponses(args.map(_(argsBuilder).build)*)
@@ -1932,7 +1932,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolsetTools(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkToolCallToolsetToolArgs.Builder]*):
+    inline def toolsetTools(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkToolCallToolsetToolArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkToolCallArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkToolCallToolsetToolArgs.builder
       builder.toolsetTools(args.map(_(argsBuilder).build)*)
@@ -1944,7 +1944,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolsetTools(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkToolResponseToolsetToolArgs.Builder]*):
+    inline def toolsetTools(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkToolResponseToolsetToolArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkToolResponseArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotExampleMessageChunkToolResponseToolsetToolArgs.builder
       builder.toolsetTools(args.map(_(argsBuilder).build)*)
@@ -1956,7 +1956,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def generativeAnswers(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailActionGenerativeAnswerArgs.Builder]*):
+    inline def generativeAnswers(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailActionGenerativeAnswerArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailActionGenerativeAnswerArgs.builder
       builder.generativeAnswers(args.map(_(argsBuilder).build)*)
@@ -1967,7 +1967,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def respondImmediatelies(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailActionRespondImmediatelyArgs.Builder]*):
+    inline def respondImmediatelies(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailActionRespondImmediatelyArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailActionRespondImmediatelyArgs.builder
       builder.respondImmediatelies(args.map(_(argsBuilder).build)*)
@@ -1978,7 +1978,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transferAgents(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailActionTransferAgentArgs.Builder]*):
+    inline def transferAgents(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailActionTransferAgentArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailActionTransferAgentArgs.builder
       builder.transferAgents(args.map(_(argsBuilder).build)*)
@@ -1991,7 +1991,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def responses(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailActionRespondImmediatelyResponseArgs.Builder]*):
+    inline def responses(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailActionRespondImmediatelyResponseArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailActionRespondImmediatelyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailActionRespondImmediatelyResponseArgs.builder
       builder.responses(args.map(_(argsBuilder).build)*)
@@ -2003,7 +2003,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def actions(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailActionArgs.Builder]*):
+    inline def actions(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailActionArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailActionArgs.builder
       builder.actions(args.map(_(argsBuilder).build)*)
@@ -2015,7 +2015,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def codeCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailCodeCallbackArgs.Builder]*):
+    inline def codeCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailCodeCallbackArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailCodeCallbackArgs.builder
       builder.codeCallbacks(args.map(_(argsBuilder).build)*)
@@ -2026,7 +2026,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def contentFilters(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailContentFilterArgs.Builder]*):
+    inline def contentFilters(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailContentFilterArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailContentFilterArgs.builder
       builder.contentFilters(args.map(_(argsBuilder).build)*)
@@ -2038,7 +2038,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def llmPolicies(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailLlmPolicyArgs.Builder]*):
+    inline def llmPolicies(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailLlmPolicyArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailLlmPolicyArgs.builder
       builder.llmPolicies(args.map(_(argsBuilder).build)*)
@@ -2050,7 +2050,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def llmPromptSecurities(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailLlmPromptSecurityArgs.Builder]*):
+    inline def llmPromptSecurities(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailLlmPromptSecurityArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailLlmPromptSecurityArgs.builder
       builder.llmPromptSecurities(args.map(_(argsBuilder).build)*)
@@ -2063,7 +2063,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modelSafeties(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailModelSafetyArgs.Builder]*):
+    inline def modelSafeties(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailModelSafetyArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailModelSafetyArgs.builder
       builder.modelSafeties(args.map(_(argsBuilder).build)*)
@@ -2076,7 +2076,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def afterAgentCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailCodeCallbackAfterAgentCallbackArgs.Builder]*):
+    inline def afterAgentCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailCodeCallbackAfterAgentCallbackArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailCodeCallbackArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailCodeCallbackAfterAgentCallbackArgs.builder
       builder.afterAgentCallbacks(args.map(_(argsBuilder).build)*)
@@ -2088,7 +2088,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def afterModelCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailCodeCallbackAfterModelCallbackArgs.Builder]*):
+    inline def afterModelCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailCodeCallbackAfterModelCallbackArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailCodeCallbackArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailCodeCallbackAfterModelCallbackArgs.builder
       builder.afterModelCallbacks(args.map(_(argsBuilder).build)*)
@@ -2100,7 +2100,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def beforeAgentCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailCodeCallbackBeforeAgentCallbackArgs.Builder]*):
+    inline def beforeAgentCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailCodeCallbackBeforeAgentCallbackArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailCodeCallbackArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailCodeCallbackBeforeAgentCallbackArgs.builder
       builder.beforeAgentCallbacks(args.map(_(argsBuilder).build)*)
@@ -2112,7 +2112,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def beforeModelCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailCodeCallbackBeforeModelCallbackArgs.Builder]*):
+    inline def beforeModelCallbacks(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailCodeCallbackBeforeModelCallbackArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailCodeCallbackArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailCodeCallbackBeforeModelCallbackArgs.builder
       builder.beforeModelCallbacks(args.map(_(argsBuilder).build)*)
@@ -2124,7 +2124,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailLlmPolicyModelSettingArgs.Builder]*):
+    inline def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailLlmPolicyModelSettingArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailLlmPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailLlmPolicyModelSettingArgs.builder
       builder.modelSettings(args.map(_(argsBuilder).build)*)
@@ -2137,7 +2137,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customPolicies(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailLlmPromptSecurityCustomPolicyArgs.Builder]*):
+    inline def customPolicies(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailLlmPromptSecurityCustomPolicyArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailLlmPromptSecurityArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailLlmPromptSecurityCustomPolicyArgs.builder
       builder.customPolicies(args.map(_(argsBuilder).build)*)
@@ -2148,7 +2148,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailLlmPromptSecurityDefaultSettingArgs.Builder]*):
+    inline def defaultSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailLlmPromptSecurityDefaultSettingArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailLlmPromptSecurityArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailLlmPromptSecurityDefaultSettingArgs.builder
       builder.defaultSettings(args.map(_(argsBuilder).build)*)
@@ -2160,7 +2160,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailLlmPromptSecurityCustomPolicyModelSettingArgs.Builder]*):
+    inline def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailLlmPromptSecurityCustomPolicyModelSettingArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailLlmPromptSecurityCustomPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailLlmPromptSecurityCustomPolicyModelSettingArgs.builder
       builder.modelSettings(args.map(_(argsBuilder).build)*)
@@ -2172,7 +2172,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def safetySettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailModelSafetySafetySettingArgs.Builder]*):
+    inline def safetySettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailModelSafetySafetySettingArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailModelSafetyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotGuardrailModelSafetySafetySettingArgs.builder
       builder.safetySettings(args.map(_(argsBuilder).build)*)
@@ -2187,7 +2187,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clientFunctions(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolClientFunctionArgs.Builder]*):
+    inline def clientFunctions(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolClientFunctionArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolClientFunctionArgs.builder
       builder.clientFunctions(args.map(_(argsBuilder).build)*)
@@ -2201,7 +2201,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataStoreTools(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolArgs.Builder]*):
+    inline def dataStoreTools(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolArgs.builder
       builder.dataStoreTools(args.map(_(argsBuilder).build)*)
@@ -2214,7 +2214,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleSearchTools(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolGoogleSearchToolArgs.Builder]*):
+    inline def googleSearchTools(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolGoogleSearchToolArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolGoogleSearchToolArgs.builder
       builder.googleSearchTools(args.map(_(argsBuilder).build)*)
@@ -2225,7 +2225,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def openApiTools(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolArgs.Builder]*):
+    inline def openApiTools(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolArgs.builder
       builder.openApiTools(args.map(_(argsBuilder).build)*)
@@ -2236,7 +2236,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pythonFunctions(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolPythonFunctionArgs.Builder]*):
+    inline def pythonFunctions(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolPythonFunctionArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolPythonFunctionArgs.builder
       builder.pythonFunctions(args.map(_(argsBuilder).build)*)
@@ -2247,7 +2247,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def systemTools(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolSystemToolArgs.Builder]*):
+    inline def systemTools(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolSystemToolArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolSystemToolArgs.builder
       builder.systemTools(args.map(_(argsBuilder).build)*)
@@ -2259,7 +2259,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameters(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolClientFunctionParameterArgs.Builder]*):
+    inline def parameters(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolClientFunctionParameterArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolClientFunctionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolClientFunctionParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
@@ -2270,7 +2270,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def responses(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolClientFunctionResponseArgs.Builder]*):
+    inline def responses(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolClientFunctionResponseArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolClientFunctionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolClientFunctionResponseArgs.builder
       builder.responses(args.map(_(argsBuilder).build)*)
@@ -2282,7 +2282,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def boostSpecs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolBoostSpecArgs.Builder]*):
+    inline def boostSpecs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolBoostSpecArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolBoostSpecArgs.builder
       builder.boostSpecs(args.map(_(argsBuilder).build)*)
@@ -2294,7 +2294,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def engineSources(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolEngineSourceArgs.Builder]*):
+    inline def engineSources(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolEngineSourceArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolEngineSourceArgs.builder
       builder.engineSources(args.map(_(argsBuilder).build)*)
@@ -2305,7 +2305,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modalityConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolModalityConfigArgs.Builder]*):
+    inline def modalityConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolModalityConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolModalityConfigArgs.builder
       builder.modalityConfigs(args.map(_(argsBuilder).build)*)
@@ -2317,7 +2317,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def specs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolBoostSpecSpecArgs.Builder]*):
+    inline def specs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolBoostSpecSpecArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolBoostSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolBoostSpecSpecArgs.builder
       builder.specs(args.map(_(argsBuilder).build)*)
@@ -2329,7 +2329,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditionBoostSpecs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolBoostSpecSpecConditionBoostSpecArgs.Builder]*):
+    inline def conditionBoostSpecs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolBoostSpecSpecConditionBoostSpecArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolBoostSpecSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolBoostSpecSpecConditionBoostSpecArgs.builder
       builder.conditionBoostSpecs(args.map(_(argsBuilder).build)*)
@@ -2343,7 +2343,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def boostControlSpecs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolBoostSpecSpecConditionBoostSpecBoostControlSpecArgs.Builder]*):
+    inline def boostControlSpecs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolBoostSpecSpecConditionBoostSpecBoostControlSpecArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolBoostSpecSpecConditionBoostSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolBoostSpecSpecConditionBoostSpecBoostControlSpecArgs.builder
       builder.boostControlSpecs(args.map(_(argsBuilder).build)*)
@@ -2357,7 +2357,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def controlPoints(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolBoostSpecSpecConditionBoostSpecBoostControlSpecControlPointArgs.Builder]*):
+    inline def controlPoints(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolBoostSpecSpecConditionBoostSpecBoostControlSpecControlPointArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolBoostSpecSpecConditionBoostSpecBoostControlSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolBoostSpecSpecConditionBoostSpecBoostControlSpecControlPointArgs.builder
       builder.controlPoints(args.map(_(argsBuilder).build)*)
@@ -2371,7 +2371,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataStoreSources(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolEngineSourceDataStoreSourceArgs.Builder]*):
+    inline def dataStoreSources(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolEngineSourceDataStoreSourceArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolEngineSourceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolEngineSourceDataStoreSourceArgs.builder
       builder.dataStoreSources(args.map(_(argsBuilder).build)*)
@@ -2383,7 +2383,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataStores(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolEngineSourceDataStoreSourceDataStoreArgs.Builder]*):
+    inline def dataStores(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolEngineSourceDataStoreSourceDataStoreArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolEngineSourceDataStoreSourceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolEngineSourceDataStoreSourceDataStoreArgs.builder
       builder.dataStores(args.map(_(argsBuilder).build)*)
@@ -2395,7 +2395,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectorConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolEngineSourceDataStoreSourceDataStoreConnectorConfigArgs.Builder]*):
+    inline def connectorConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolEngineSourceDataStoreSourceDataStoreConnectorConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolEngineSourceDataStoreSourceDataStoreArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolEngineSourceDataStoreSourceDataStoreConnectorConfigArgs.builder
       builder.connectorConfigs(args.map(_(argsBuilder).build)*)
@@ -2407,7 +2407,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def groundingConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolModalityConfigGroundingConfigArgs.Builder]*):
+    inline def groundingConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolModalityConfigGroundingConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolModalityConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolModalityConfigGroundingConfigArgs.builder
       builder.groundingConfigs(args.map(_(argsBuilder).build)*)
@@ -2418,7 +2418,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rewriterConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolModalityConfigRewriterConfigArgs.Builder]*):
+    inline def rewriterConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolModalityConfigRewriterConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolModalityConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolModalityConfigRewriterConfigArgs.builder
       builder.rewriterConfigs(args.map(_(argsBuilder).build)*)
@@ -2429,7 +2429,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def summarizationConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolModalityConfigSummarizationConfigArgs.Builder]*):
+    inline def summarizationConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolModalityConfigSummarizationConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolModalityConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolModalityConfigSummarizationConfigArgs.builder
       builder.summarizationConfigs(args.map(_(argsBuilder).build)*)
@@ -2441,7 +2441,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolModalityConfigRewriterConfigModelSettingArgs.Builder]*):
+    inline def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolModalityConfigRewriterConfigModelSettingArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolModalityConfigRewriterConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolModalityConfigRewriterConfigModelSettingArgs.builder
       builder.modelSettings(args.map(_(argsBuilder).build)*)
@@ -2453,7 +2453,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolModalityConfigSummarizationConfigModelSettingArgs.Builder]*):
+    inline def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolModalityConfigSummarizationConfigModelSettingArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolModalityConfigSummarizationConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolDataStoreToolModalityConfigSummarizationConfigModelSettingArgs.builder
       builder.modelSettings(args.map(_(argsBuilder).build)*)
@@ -2465,7 +2465,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiKeyConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolApiAuthenticationApiKeyConfigArgs.Builder]*):
+    inline def apiKeyConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolApiAuthenticationApiKeyConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolApiAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolApiAuthenticationApiKeyConfigArgs.builder
       builder.apiKeyConfigs(args.map(_(argsBuilder).build)*)
@@ -2476,7 +2476,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolApiAuthenticationOauthConfigArgs.Builder]*):
+    inline def oauthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolApiAuthenticationOauthConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolApiAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolApiAuthenticationOauthConfigArgs.builder
       builder.oauthConfigs(args.map(_(argsBuilder).build)*)
@@ -2487,7 +2487,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceAccountAuthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolApiAuthenticationServiceAccountAuthConfigArgs.Builder]*):
+    inline def serviceAccountAuthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolApiAuthenticationServiceAccountAuthConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolApiAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolApiAuthenticationServiceAccountAuthConfigArgs.builder
       builder.serviceAccountAuthConfigs(args.map(_(argsBuilder).build)*)
@@ -2499,7 +2499,7 @@ object ces_ext:
      * from service agent.
      * @return builder
      */
-    def serviceAgentIdTokenAuthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolApiAuthenticationServiceAgentIdTokenAuthConfigArgs.Builder]*):
+    inline def serviceAgentIdTokenAuthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolApiAuthenticationServiceAgentIdTokenAuthConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolApiAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolApiAuthenticationServiceAgentIdTokenAuthConfigArgs.builder
       builder.serviceAgentIdTokenAuthConfigs(args.map(_(argsBuilder).build)*)
@@ -2511,7 +2511,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiAuthentications(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolApiAuthenticationArgs.Builder]*):
+    inline def apiAuthentications(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolApiAuthenticationArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolApiAuthenticationArgs.builder
       builder.apiAuthentications(args.map(_(argsBuilder).build)*)
@@ -2522,7 +2522,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectoryConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolServiceDirectoryConfigArgs.Builder]*):
+    inline def serviceDirectoryConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolServiceDirectoryConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolServiceDirectoryConfigArgs.builder
       builder.serviceDirectoryConfigs(args.map(_(argsBuilder).build)*)
@@ -2533,7 +2533,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tlsConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolTlsConfigArgs.Builder]*):
+    inline def tlsConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolTlsConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolTlsConfigArgs.builder
       builder.tlsConfigs(args.map(_(argsBuilder).build)*)
@@ -2546,7 +2546,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def caCerts(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolTlsConfigCaCertArgs.Builder]*):
+    inline def caCerts(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolTlsConfigCaCertArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolTlsConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolOpenApiToolTlsConfigCaCertArgs.builder
       builder.caCerts(args.map(_(argsBuilder).build)*)
@@ -2559,7 +2559,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def openApiToolsets(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetArgs.Builder]*):
+    inline def openApiToolsets(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetArgs.builder
       builder.openApiToolsets(args.map(_(argsBuilder).build)*)
@@ -2571,7 +2571,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiKeyConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetApiAuthenticationApiKeyConfigArgs.Builder]*):
+    inline def apiKeyConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetApiAuthenticationApiKeyConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetApiAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetApiAuthenticationApiKeyConfigArgs.builder
       builder.apiKeyConfigs(args.map(_(argsBuilder).build)*)
@@ -2582,7 +2582,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bearerTokenConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetApiAuthenticationBearerTokenConfigArgs.Builder]*):
+    inline def bearerTokenConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetApiAuthenticationBearerTokenConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetApiAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetApiAuthenticationBearerTokenConfigArgs.builder
       builder.bearerTokenConfigs(args.map(_(argsBuilder).build)*)
@@ -2593,7 +2593,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetApiAuthenticationOauthConfigArgs.Builder]*):
+    inline def oauthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetApiAuthenticationOauthConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetApiAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetApiAuthenticationOauthConfigArgs.builder
       builder.oauthConfigs(args.map(_(argsBuilder).build)*)
@@ -2604,7 +2604,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceAccountAuthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetApiAuthenticationServiceAccountAuthConfigArgs.Builder]*):
+    inline def serviceAccountAuthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetApiAuthenticationServiceAccountAuthConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetApiAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetApiAuthenticationServiceAccountAuthConfigArgs.builder
       builder.serviceAccountAuthConfigs(args.map(_(argsBuilder).build)*)
@@ -2616,7 +2616,7 @@ object ces_ext:
      * from service agent.
      * @return builder
      */
-    def serviceAgentIdTokenAuthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetApiAuthenticationServiceAgentIdTokenAuthConfigArgs.Builder]*):
+    inline def serviceAgentIdTokenAuthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetApiAuthenticationServiceAgentIdTokenAuthConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetApiAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetApiAuthenticationServiceAgentIdTokenAuthConfigArgs.builder
       builder.serviceAgentIdTokenAuthConfigs(args.map(_(argsBuilder).build)*)
@@ -2628,7 +2628,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiAuthentications(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetApiAuthenticationArgs.Builder]*):
+    inline def apiAuthentications(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetApiAuthenticationArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetApiAuthenticationArgs.builder
       builder.apiAuthentications(args.map(_(argsBuilder).build)*)
@@ -2639,7 +2639,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectoryConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetServiceDirectoryConfigArgs.Builder]*):
+    inline def serviceDirectoryConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetServiceDirectoryConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetServiceDirectoryConfigArgs.builder
       builder.serviceDirectoryConfigs(args.map(_(argsBuilder).build)*)
@@ -2650,7 +2650,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tlsConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetTlsConfigArgs.Builder]*):
+    inline def tlsConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetTlsConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetTlsConfigArgs.builder
       builder.tlsConfigs(args.map(_(argsBuilder).build)*)
@@ -2663,7 +2663,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def caCerts(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetTlsConfigCaCertArgs.Builder]*):
+    inline def caCerts(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetTlsConfigCaCertArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetTlsConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotToolsetOpenApiToolsetTlsConfigCaCertArgs.builder
       builder.caCerts(args.map(_(argsBuilder).build)*)
@@ -2674,7 +2674,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def snapshots(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotArgs.Builder]*):
+    inline def snapshots(args: Endofunction[com.pulumi.gcp.ces.inputs.AppVersionSnapshotArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.AppVersionState.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.AppVersionSnapshotArgs.builder
       builder.snapshots(args.map(_(argsBuilder).build)*)
@@ -2685,7 +2685,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def personaProperty(args: Endofunction[com.pulumi.gcp.ces.inputs.DeploymentChannelProfilePersonaPropertyArgs.Builder]):
+    inline def personaProperty(args: Endofunction[com.pulumi.gcp.ces.inputs.DeploymentChannelProfilePersonaPropertyArgs.Builder]):
         com.pulumi.gcp.ces.inputs.DeploymentChannelProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.DeploymentChannelProfilePersonaPropertyArgs.builder
       builder.personaProperty(args(argsBuilder).build)
@@ -2695,7 +2695,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def webWidgetConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.DeploymentChannelProfileWebWidgetConfigArgs.Builder]):
+    inline def webWidgetConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.DeploymentChannelProfileWebWidgetConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.DeploymentChannelProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.DeploymentChannelProfileWebWidgetConfigArgs.builder
       builder.webWidgetConfig(args(argsBuilder).build)
@@ -2705,7 +2705,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def whatsappConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.DeploymentChannelProfileWhatsappConfigArgs.Builder]):
+    inline def whatsappConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.DeploymentChannelProfileWhatsappConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.DeploymentChannelProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.DeploymentChannelProfileWhatsappConfigArgs.builder
       builder.whatsappConfig(args(argsBuilder).build)
@@ -2716,7 +2716,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def securitySettings(args: Endofunction[com.pulumi.gcp.ces.inputs.DeploymentChannelProfileWebWidgetConfigSecuritySettingsArgs.Builder]):
+    inline def securitySettings(args: Endofunction[com.pulumi.gcp.ces.inputs.DeploymentChannelProfileWebWidgetConfigSecuritySettingsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.DeploymentChannelProfileWebWidgetConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.DeploymentChannelProfileWebWidgetConfigSecuritySettingsArgs.builder
       builder.securitySettings(args(argsBuilder).build)
@@ -2728,7 +2728,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def channelProfile(args: Endofunction[com.pulumi.gcp.ces.inputs.DeploymentChannelProfileArgs.Builder]):
+    inline def channelProfile(args: Endofunction[com.pulumi.gcp.ces.inputs.DeploymentChannelProfileArgs.Builder]):
         com.pulumi.gcp.ces.inputs.DeploymentState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.DeploymentChannelProfileArgs.builder
       builder.channelProfile(args(argsBuilder).build)
@@ -2738,7 +2738,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def instagramCredentials(args: Endofunction[com.pulumi.gcp.ces.inputs.DeploymentInstagramCredentialsArgs.Builder]):
+    inline def instagramCredentials(args: Endofunction[com.pulumi.gcp.ces.inputs.DeploymentInstagramCredentialsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.DeploymentState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.DeploymentInstagramCredentialsArgs.builder
       builder.instagramCredentials(args(argsBuilder).build)
@@ -2748,7 +2748,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def whatsappCredentials(args: Endofunction[com.pulumi.gcp.ces.inputs.DeploymentWhatsappCredentialsArgs.Builder]):
+    inline def whatsappCredentials(args: Endofunction[com.pulumi.gcp.ces.inputs.DeploymentWhatsappCredentialsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.DeploymentState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.DeploymentWhatsappCredentialsArgs.builder
       builder.whatsappCredentials(args(argsBuilder).build)
@@ -2759,7 +2759,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def turns(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnArgs.Builder]*):
+    inline def turns(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnArgs.builder
       builder.turns(args.map(_(argsBuilder).build)*)
@@ -2771,7 +2771,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rootSpans(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnRootSpanArgs.Builder]*):
+    inline def rootSpans(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnRootSpanArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnRootSpanArgs.builder
       builder.rootSpans(args.map(_(argsBuilder).build)*)
@@ -2783,7 +2783,7 @@ object ces_ext:
      * &lt;a name=&#34;nestedGoldenTurnsRootSpan&#34;&gt;&lt;/a&gt;The `rootSpan` block contains:
      * @return builder
      */
-    def steps(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepArgs.Builder]*):
+    inline def steps(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepArgs.builder
       builder.steps(args.map(_(argsBuilder).build)*)
@@ -2794,7 +2794,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def agentTransfer(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepAgentTransferArgs.Builder]):
+    inline def agentTransfer(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepAgentTransferArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepAgentTransferArgs.builder
       builder.agentTransfer(args(argsBuilder).build)
@@ -2804,7 +2804,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def expectation(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationArgs.Builder]):
+    inline def expectation(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationArgs.builder
       builder.expectation(args(argsBuilder).build)
@@ -2814,7 +2814,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def userInput(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputArgs.Builder]):
+    inline def userInput(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputArgs.builder
       builder.userInput(args(argsBuilder).build)
@@ -2825,7 +2825,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def chunks(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkArgs.Builder]*):
+    inline def chunks(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkArgs.builder
       builder.chunks(args.map(_(argsBuilder).build)*)
@@ -2836,7 +2836,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def agentTransfer(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkAgentTransferArgs.Builder]):
+    inline def agentTransfer(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkAgentTransferArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkAgentTransferArgs.builder
       builder.agentTransfer(args(argsBuilder).build)
@@ -2846,7 +2846,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def blob(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkBlobArgs.Builder]):
+    inline def blob(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkBlobArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkBlobArgs.builder
       builder.blob(args(argsBuilder).build)
@@ -2856,7 +2856,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def image(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkImageArgs.Builder]):
+    inline def image(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkImageArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkImageArgs.builder
       builder.image(args(argsBuilder).build)
@@ -2866,7 +2866,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolCall(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkToolCallArgs.Builder]):
+    inline def toolCall(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkToolCallArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkToolCallArgs.builder
       builder.toolCall(args(argsBuilder).build)
@@ -2876,7 +2876,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolResponse(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkToolResponseArgs.Builder]):
+    inline def toolResponse(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkToolResponseArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkToolResponseArgs.builder
       builder.toolResponse(args(argsBuilder).build)
@@ -2887,7 +2887,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolsetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkToolCallToolsetToolArgs.Builder]):
+    inline def toolsetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkToolCallToolsetToolArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkToolCallArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkToolCallToolsetToolArgs.builder
       builder.toolsetTool(args(argsBuilder).build)
@@ -2898,7 +2898,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolsetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkToolResponseToolsetToolArgs.Builder]):
+    inline def toolsetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkToolResponseToolsetToolArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkToolResponseArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseChunkToolResponseToolsetToolArgs.builder
       builder.toolsetTool(args(argsBuilder).build)
@@ -2909,7 +2909,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def agentResponse(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseArgs.Builder]):
+    inline def agentResponse(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentResponseArgs.builder
       builder.agentResponse(args(argsBuilder).build)
@@ -2919,7 +2919,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def agentTransfer(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentTransferArgs.Builder]):
+    inline def agentTransfer(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentTransferArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationAgentTransferArgs.builder
       builder.agentTransfer(args(argsBuilder).build)
@@ -2929,7 +2929,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mockToolResponse(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationMockToolResponseArgs.Builder]):
+    inline def mockToolResponse(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationMockToolResponseArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationMockToolResponseArgs.builder
       builder.mockToolResponse(args(argsBuilder).build)
@@ -2939,7 +2939,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolCall(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationToolCallArgs.Builder]):
+    inline def toolCall(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationToolCallArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationToolCallArgs.builder
       builder.toolCall(args(argsBuilder).build)
@@ -2949,7 +2949,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolResponse(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationToolResponseArgs.Builder]):
+    inline def toolResponse(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationToolResponseArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationToolResponseArgs.builder
       builder.toolResponse(args(argsBuilder).build)
@@ -2959,7 +2959,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def updatedVariables(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationUpdatedVariablesArgs.Builder]):
+    inline def updatedVariables(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationUpdatedVariablesArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationUpdatedVariablesArgs.builder
       builder.updatedVariables(args(argsBuilder).build)
@@ -2970,7 +2970,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolsetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationMockToolResponseToolsetToolArgs.Builder]):
+    inline def toolsetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationMockToolResponseToolsetToolArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationMockToolResponseArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationMockToolResponseToolsetToolArgs.builder
       builder.toolsetTool(args(argsBuilder).build)
@@ -2981,7 +2981,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolsetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationToolCallToolsetToolArgs.Builder]):
+    inline def toolsetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationToolCallToolsetToolArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationToolCallArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationToolCallToolsetToolArgs.builder
       builder.toolsetTool(args(argsBuilder).build)
@@ -2992,7 +2992,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolsetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationToolResponseToolsetToolArgs.Builder]):
+    inline def toolsetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationToolResponseToolsetToolArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationToolResponseArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepExpectationToolResponseToolsetToolArgs.builder
       builder.toolsetTool(args(argsBuilder).build)
@@ -3003,7 +3003,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def blob(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputBlobArgs.Builder]):
+    inline def blob(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputBlobArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputBlobArgs.builder
       builder.blob(args(argsBuilder).build)
@@ -3013,7 +3013,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def event(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputEventArgs.Builder]):
+    inline def event(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputEventArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputEventArgs.builder
       builder.event(args(argsBuilder).build)
@@ -3023,7 +3023,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def image(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputImageArgs.Builder]):
+    inline def image(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputImageArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputImageArgs.builder
       builder.image(args(argsBuilder).build)
@@ -3033,7 +3033,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolResponses(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputToolResponsesArgs.Builder]):
+    inline def toolResponses(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputToolResponsesArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputToolResponsesArgs.builder
       builder.toolResponses(args(argsBuilder).build)
@@ -3044,7 +3044,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolResponses(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputToolResponsesToolResponseArgs.Builder]*):
+    inline def toolResponses(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputToolResponsesToolResponseArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputToolResponsesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputToolResponsesToolResponseArgs.builder
       builder.toolResponses(args.map(_(argsBuilder).build)*)
@@ -3055,7 +3055,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolsetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputToolResponsesToolResponseToolsetToolArgs.Builder]):
+    inline def toolsetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputToolResponsesToolResponseToolsetToolArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputToolResponsesToolResponseArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenTurnStepUserInputToolResponsesToolResponseToolsetToolArgs.builder
       builder.toolsetTool(args(argsBuilder).build)
@@ -3066,7 +3066,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scenarioExpectations(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationArgs.Builder]*):
+    inline def scenarioExpectations(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.EvaluationScenarioArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationArgs.builder
       builder.scenarioExpectations(args.map(_(argsBuilder).build)*)
@@ -3076,7 +3076,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def userFacts(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioUserFactArgs.Builder]*):
+    inline def userFacts(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioUserFactArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.EvaluationScenarioArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationScenarioUserFactArgs.builder
       builder.userFacts(args.map(_(argsBuilder).build)*)
@@ -3087,7 +3087,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def chunks(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkArgs.Builder]*):
+    inline def chunks(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkArgs.builder
       builder.chunks(args.map(_(argsBuilder).build)*)
@@ -3098,7 +3098,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def agentTransfer(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkAgentTransferArgs.Builder]):
+    inline def agentTransfer(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkAgentTransferArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkAgentTransferArgs.builder
       builder.agentTransfer(args(argsBuilder).build)
@@ -3108,7 +3108,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def blob(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkBlobArgs.Builder]):
+    inline def blob(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkBlobArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkBlobArgs.builder
       builder.blob(args(argsBuilder).build)
@@ -3118,7 +3118,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def image(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkImageArgs.Builder]):
+    inline def image(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkImageArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkImageArgs.builder
       builder.image(args(argsBuilder).build)
@@ -3128,7 +3128,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolCall(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkToolCallArgs.Builder]):
+    inline def toolCall(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkToolCallArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkToolCallArgs.builder
       builder.toolCall(args(argsBuilder).build)
@@ -3138,7 +3138,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolResponse(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkToolResponseArgs.Builder]):
+    inline def toolResponse(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkToolResponseArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkToolResponseArgs.builder
       builder.toolResponse(args(argsBuilder).build)
@@ -3149,7 +3149,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolsetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkToolCallToolsetToolArgs.Builder]):
+    inline def toolsetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkToolCallToolsetToolArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkToolCallArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkToolCallToolsetToolArgs.builder
       builder.toolsetTool(args(argsBuilder).build)
@@ -3160,7 +3160,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolsetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkToolResponseToolsetToolArgs.Builder]):
+    inline def toolsetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkToolResponseToolsetToolArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkToolResponseArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseChunkToolResponseToolsetToolArgs.builder
       builder.toolsetTool(args(argsBuilder).build)
@@ -3171,7 +3171,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def agentResponse(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseArgs.Builder]):
+    inline def agentResponse(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationAgentResponseArgs.builder
       builder.agentResponse(args(argsBuilder).build)
@@ -3181,7 +3181,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolExpectation(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationToolExpectationArgs.Builder]):
+    inline def toolExpectation(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationToolExpectationArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationToolExpectationArgs.builder
       builder.toolExpectation(args(argsBuilder).build)
@@ -3192,7 +3192,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def expectedToolCall(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationToolExpectationExpectedToolCallArgs.Builder]):
+    inline def expectedToolCall(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationToolExpectationExpectedToolCallArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationToolExpectationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationToolExpectationExpectedToolCallArgs.builder
       builder.expectedToolCall(args(argsBuilder).build)
@@ -3202,7 +3202,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mockToolResponse(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationToolExpectationMockToolResponseArgs.Builder]):
+    inline def mockToolResponse(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationToolExpectationMockToolResponseArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationToolExpectationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationToolExpectationMockToolResponseArgs.builder
       builder.mockToolResponse(args(argsBuilder).build)
@@ -3213,7 +3213,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolsetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationToolExpectationExpectedToolCallToolsetToolArgs.Builder]):
+    inline def toolsetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationToolExpectationExpectedToolCallToolsetToolArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationToolExpectationExpectedToolCallArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationToolExpectationExpectedToolCallToolsetToolArgs.builder
       builder.toolsetTool(args(argsBuilder).build)
@@ -3224,7 +3224,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolsetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationToolExpectationMockToolResponseToolsetToolArgs.Builder]):
+    inline def toolsetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationToolExpectationMockToolResponseToolsetToolArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationToolExpectationMockToolResponseArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationScenarioScenarioExpectationToolExpectationMockToolResponseToolsetToolArgs.builder
       builder.toolsetTool(args(argsBuilder).build)
@@ -3235,7 +3235,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def golden(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenArgs.Builder]):
+    inline def golden(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationGoldenArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationGoldenArgs.builder
       builder.golden(args(argsBuilder).build)
@@ -3245,7 +3245,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scenario(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioArgs.Builder]):
+    inline def scenario(args: Endofunction[com.pulumi.gcp.ces.inputs.EvaluationScenarioArgs.Builder]):
         com.pulumi.gcp.ces.inputs.EvaluationState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.EvaluationScenarioArgs.builder
       builder.scenario(args(argsBuilder).build)
@@ -3256,7 +3256,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def chunks(args: Endofunction[com.pulumi.gcp.ces.inputs.ExampleMessageChunkArgs.Builder]*):
+    inline def chunks(args: Endofunction[com.pulumi.gcp.ces.inputs.ExampleMessageChunkArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ExampleMessageArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ExampleMessageChunkArgs.builder
       builder.chunks(args.map(_(argsBuilder).build)*)
@@ -3268,7 +3268,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def agentTransfer(args: Endofunction[com.pulumi.gcp.ces.inputs.ExampleMessageChunkAgentTransferArgs.Builder]):
+    inline def agentTransfer(args: Endofunction[com.pulumi.gcp.ces.inputs.ExampleMessageChunkAgentTransferArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ExampleMessageChunkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ExampleMessageChunkAgentTransferArgs.builder
       builder.agentTransfer(args(argsBuilder).build)
@@ -3278,7 +3278,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def blob(args: Endofunction[com.pulumi.gcp.ces.inputs.ExampleMessageChunkBlobArgs.Builder]):
+    inline def blob(args: Endofunction[com.pulumi.gcp.ces.inputs.ExampleMessageChunkBlobArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ExampleMessageChunkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ExampleMessageChunkBlobArgs.builder
       builder.blob(args(argsBuilder).build)
@@ -3288,7 +3288,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def image(args: Endofunction[com.pulumi.gcp.ces.inputs.ExampleMessageChunkImageArgs.Builder]):
+    inline def image(args: Endofunction[com.pulumi.gcp.ces.inputs.ExampleMessageChunkImageArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ExampleMessageChunkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ExampleMessageChunkImageArgs.builder
       builder.image(args(argsBuilder).build)
@@ -3298,7 +3298,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolCall(args: Endofunction[com.pulumi.gcp.ces.inputs.ExampleMessageChunkToolCallArgs.Builder]):
+    inline def toolCall(args: Endofunction[com.pulumi.gcp.ces.inputs.ExampleMessageChunkToolCallArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ExampleMessageChunkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ExampleMessageChunkToolCallArgs.builder
       builder.toolCall(args(argsBuilder).build)
@@ -3308,7 +3308,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolResponse(args: Endofunction[com.pulumi.gcp.ces.inputs.ExampleMessageChunkToolResponseArgs.Builder]):
+    inline def toolResponse(args: Endofunction[com.pulumi.gcp.ces.inputs.ExampleMessageChunkToolResponseArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ExampleMessageChunkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ExampleMessageChunkToolResponseArgs.builder
       builder.toolResponse(args(argsBuilder).build)
@@ -3319,7 +3319,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolsetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ExampleMessageChunkToolCallToolsetToolArgs.Builder]):
+    inline def toolsetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ExampleMessageChunkToolCallToolsetToolArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ExampleMessageChunkToolCallArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ExampleMessageChunkToolCallToolsetToolArgs.builder
       builder.toolsetTool(args(argsBuilder).build)
@@ -3330,7 +3330,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolsetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ExampleMessageChunkToolResponseToolsetToolArgs.Builder]):
+    inline def toolsetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ExampleMessageChunkToolResponseToolsetToolArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ExampleMessageChunkToolResponseArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ExampleMessageChunkToolResponseToolsetToolArgs.builder
       builder.toolsetTool(args(argsBuilder).build)
@@ -3341,7 +3341,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def messages(args: Endofunction[com.pulumi.gcp.ces.inputs.ExampleMessageArgs.Builder]*):
+    inline def messages(args: Endofunction[com.pulumi.gcp.ces.inputs.ExampleMessageArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ExampleState.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ExampleMessageArgs.builder
       builder.messages(args.map(_(argsBuilder).build)*)
@@ -3352,7 +3352,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def generativeAnswer(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailActionGenerativeAnswerArgs.Builder]):
+    inline def generativeAnswer(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailActionGenerativeAnswerArgs.Builder]):
         com.pulumi.gcp.ces.inputs.GuardrailActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailActionGenerativeAnswerArgs.builder
       builder.generativeAnswer(args(argsBuilder).build)
@@ -3362,7 +3362,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def respondImmediately(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailActionRespondImmediatelyArgs.Builder]):
+    inline def respondImmediately(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailActionRespondImmediatelyArgs.Builder]):
         com.pulumi.gcp.ces.inputs.GuardrailActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailActionRespondImmediatelyArgs.builder
       builder.respondImmediately(args(argsBuilder).build)
@@ -3372,7 +3372,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transferAgent(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailActionTransferAgentArgs.Builder]):
+    inline def transferAgent(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailActionTransferAgentArgs.Builder]):
         com.pulumi.gcp.ces.inputs.GuardrailActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailActionTransferAgentArgs.builder
       builder.transferAgent(args(argsBuilder).build)
@@ -3384,7 +3384,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def responses(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailActionRespondImmediatelyResponseArgs.Builder]*):
+    inline def responses(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailActionRespondImmediatelyResponseArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.GuardrailActionRespondImmediatelyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailActionRespondImmediatelyResponseArgs.builder
       builder.responses(args.map(_(argsBuilder).build)*)
@@ -3396,7 +3396,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def afterAgentCallback(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailCodeCallbackAfterAgentCallbackArgs.Builder]):
+    inline def afterAgentCallback(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailCodeCallbackAfterAgentCallbackArgs.Builder]):
         com.pulumi.gcp.ces.inputs.GuardrailCodeCallbackArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailCodeCallbackAfterAgentCallbackArgs.builder
       builder.afterAgentCallback(args(argsBuilder).build)
@@ -3407,7 +3407,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def afterModelCallback(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailCodeCallbackAfterModelCallbackArgs.Builder]):
+    inline def afterModelCallback(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailCodeCallbackAfterModelCallbackArgs.Builder]):
         com.pulumi.gcp.ces.inputs.GuardrailCodeCallbackArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailCodeCallbackAfterModelCallbackArgs.builder
       builder.afterModelCallback(args(argsBuilder).build)
@@ -3418,7 +3418,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def beforeAgentCallback(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailCodeCallbackBeforeAgentCallbackArgs.Builder]):
+    inline def beforeAgentCallback(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailCodeCallbackBeforeAgentCallbackArgs.Builder]):
         com.pulumi.gcp.ces.inputs.GuardrailCodeCallbackArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailCodeCallbackBeforeAgentCallbackArgs.builder
       builder.beforeAgentCallback(args(argsBuilder).build)
@@ -3429,7 +3429,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def beforeModelCallback(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailCodeCallbackBeforeModelCallbackArgs.Builder]):
+    inline def beforeModelCallback(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailCodeCallbackBeforeModelCallbackArgs.Builder]):
         com.pulumi.gcp.ces.inputs.GuardrailCodeCallbackArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailCodeCallbackBeforeModelCallbackArgs.builder
       builder.beforeModelCallback(args(argsBuilder).build)
@@ -3440,7 +3440,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailLlmPolicyModelSettingsArgs.Builder]):
+    inline def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailLlmPolicyModelSettingsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.GuardrailLlmPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailLlmPolicyModelSettingsArgs.builder
       builder.modelSettings(args(argsBuilder).build)
@@ -3452,7 +3452,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customPolicy(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailLlmPromptSecurityCustomPolicyArgs.Builder]):
+    inline def customPolicy(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailLlmPromptSecurityCustomPolicyArgs.Builder]):
         com.pulumi.gcp.ces.inputs.GuardrailLlmPromptSecurityArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailLlmPromptSecurityCustomPolicyArgs.builder
       builder.customPolicy(args(argsBuilder).build)
@@ -3462,7 +3462,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailLlmPromptSecurityDefaultSettingsArgs.Builder]):
+    inline def defaultSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailLlmPromptSecurityDefaultSettingsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.GuardrailLlmPromptSecurityArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailLlmPromptSecurityDefaultSettingsArgs.builder
       builder.defaultSettings(args(argsBuilder).build)
@@ -3473,7 +3473,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailLlmPromptSecurityCustomPolicyModelSettingsArgs.Builder]):
+    inline def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailLlmPromptSecurityCustomPolicyModelSettingsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.GuardrailLlmPromptSecurityCustomPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailLlmPromptSecurityCustomPolicyModelSettingsArgs.builder
       builder.modelSettings(args(argsBuilder).build)
@@ -3484,7 +3484,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def safetySettings(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailModelSafetySafetySettingArgs.Builder]*):
+    inline def safetySettings(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailModelSafetySafetySettingArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.GuardrailModelSafetyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailModelSafetySafetySettingArgs.builder
       builder.safetySettings(args.map(_(argsBuilder).build)*)
@@ -3495,7 +3495,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def action(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailActionArgs.Builder]):
+    inline def action(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailActionArgs.Builder]):
         com.pulumi.gcp.ces.inputs.GuardrailState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailActionArgs.builder
       builder.action(args(argsBuilder).build)
@@ -3506,7 +3506,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def codeCallback(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailCodeCallbackArgs.Builder]):
+    inline def codeCallback(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailCodeCallbackArgs.Builder]):
         com.pulumi.gcp.ces.inputs.GuardrailState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailCodeCallbackArgs.builder
       builder.codeCallback(args(argsBuilder).build)
@@ -3516,7 +3516,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def contentFilter(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailContentFilterArgs.Builder]):
+    inline def contentFilter(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailContentFilterArgs.Builder]):
         com.pulumi.gcp.ces.inputs.GuardrailState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailContentFilterArgs.builder
       builder.contentFilter(args(argsBuilder).build)
@@ -3527,7 +3527,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def llmPolicy(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailLlmPolicyArgs.Builder]):
+    inline def llmPolicy(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailLlmPolicyArgs.Builder]):
         com.pulumi.gcp.ces.inputs.GuardrailState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailLlmPolicyArgs.builder
       builder.llmPolicy(args(argsBuilder).build)
@@ -3538,7 +3538,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def llmPromptSecurity(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailLlmPromptSecurityArgs.Builder]):
+    inline def llmPromptSecurity(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailLlmPromptSecurityArgs.Builder]):
         com.pulumi.gcp.ces.inputs.GuardrailState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailLlmPromptSecurityArgs.builder
       builder.llmPromptSecurity(args(argsBuilder).build)
@@ -3550,7 +3550,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modelSafety(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailModelSafetyArgs.Builder]):
+    inline def modelSafety(args: Endofunction[com.pulumi.gcp.ces.inputs.GuardrailModelSafetyArgs.Builder]):
         com.pulumi.gcp.ces.inputs.GuardrailState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.GuardrailModelSafetyArgs.builder
       builder.modelSafety(args(argsBuilder).build)
@@ -3561,7 +3561,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endpointControlPolicy(args: Endofunction[com.pulumi.gcp.ces.inputs.SecuritySettingsEndpointControlPolicyArgs.Builder]):
+    inline def endpointControlPolicy(args: Endofunction[com.pulumi.gcp.ces.inputs.SecuritySettingsEndpointControlPolicyArgs.Builder]):
         com.pulumi.gcp.ces.inputs.SecuritySettingsState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.SecuritySettingsEndpointControlPolicyArgs.builder
       builder.endpointControlPolicy(args(argsBuilder).build)
@@ -3572,7 +3572,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameters(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolClientFunctionParametersArgs.Builder]):
+    inline def parameters(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolClientFunctionParametersArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolClientFunctionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolClientFunctionParametersArgs.builder
       builder.parameters(args(argsBuilder).build)
@@ -3582,7 +3582,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def response(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolClientFunctionResponseArgs.Builder]):
+    inline def response(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolClientFunctionResponseArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolClientFunctionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolClientFunctionResponseArgs.builder
       builder.response(args(argsBuilder).build)
@@ -3594,7 +3594,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entityOperations(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolConnectorToolActionEntityOperationArgs.Builder]*):
+    inline def entityOperations(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolConnectorToolActionEntityOperationArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolConnectorToolActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolConnectorToolActionEntityOperationArgs.builder
       builder.entityOperations(args.map(_(argsBuilder).build)*)
@@ -3606,7 +3606,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def actions(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolConnectorToolActionArgs.Builder]*):
+    inline def actions(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolConnectorToolActionArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolConnectorToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolConnectorToolActionArgs.builder
       builder.actions(args.map(_(argsBuilder).build)*)
@@ -3617,7 +3617,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def boostSpecs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolBoostSpecArgs.Builder]*):
+    inline def boostSpecs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolBoostSpecArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolDataStoreToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolBoostSpecArgs.builder
       builder.boostSpecs(args.map(_(argsBuilder).build)*)
@@ -3627,7 +3627,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataStoreSource(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolDataStoreSourceArgs.Builder]):
+    inline def dataStoreSource(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolDataStoreSourceArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolDataStoreToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolDataStoreSourceArgs.builder
       builder.dataStoreSource(args(argsBuilder).build)
@@ -3638,7 +3638,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def engineSource(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolEngineSourceArgs.Builder]):
+    inline def engineSource(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolEngineSourceArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolDataStoreToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolEngineSourceArgs.builder
       builder.engineSource(args(argsBuilder).build)
@@ -3648,7 +3648,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modalityConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigArgs.Builder]*):
+    inline def modalityConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolDataStoreToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigArgs.builder
       builder.modalityConfigs(args.map(_(argsBuilder).build)*)
@@ -3659,7 +3659,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def specs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolBoostSpecSpecArgs.Builder]*):
+    inline def specs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolBoostSpecSpecArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolDataStoreToolBoostSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolBoostSpecSpecArgs.builder
       builder.specs(args.map(_(argsBuilder).build)*)
@@ -3670,7 +3670,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditionBoostSpecs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolBoostSpecSpecConditionBoostSpecArgs.Builder]*):
+    inline def conditionBoostSpecs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolBoostSpecSpecConditionBoostSpecArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolDataStoreToolBoostSpecSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolBoostSpecSpecConditionBoostSpecArgs.builder
       builder.conditionBoostSpecs(args.map(_(argsBuilder).build)*)
@@ -3683,7 +3683,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def boostControlSpec(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolBoostSpecSpecConditionBoostSpecBoostControlSpecArgs.Builder]):
+    inline def boostControlSpec(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolBoostSpecSpecConditionBoostSpecBoostControlSpecArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolDataStoreToolBoostSpecSpecConditionBoostSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolBoostSpecSpecConditionBoostSpecBoostControlSpecArgs.builder
       builder.boostControlSpec(args(argsBuilder).build)
@@ -3696,7 +3696,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def controlPoints(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolBoostSpecSpecConditionBoostSpecBoostControlSpecControlPointArgs.Builder]*):
+    inline def controlPoints(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolBoostSpecSpecConditionBoostSpecBoostControlSpecControlPointArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolDataStoreToolBoostSpecSpecConditionBoostSpecBoostControlSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolBoostSpecSpecConditionBoostSpecBoostControlSpecControlPointArgs.builder
       builder.controlPoints(args.map(_(argsBuilder).build)*)
@@ -3707,7 +3707,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataStore(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolDataStoreSourceDataStoreArgs.Builder]):
+    inline def dataStore(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolDataStoreSourceDataStoreArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolDataStoreToolDataStoreSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolDataStoreSourceDataStoreArgs.builder
       builder.dataStore(args(argsBuilder).build)
@@ -3719,7 +3719,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectorConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolDataStoreSourceDataStoreConnectorConfigArgs.Builder]*):
+    inline def connectorConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolDataStoreSourceDataStoreConnectorConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolDataStoreToolDataStoreSourceDataStoreArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolDataStoreSourceDataStoreConnectorConfigArgs.builder
       builder.connectorConfigs(args.map(_(argsBuilder).build)*)
@@ -3732,7 +3732,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataStoreSources(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolEngineSourceDataStoreSourceArgs.Builder]*):
+    inline def dataStoreSources(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolEngineSourceDataStoreSourceArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolDataStoreToolEngineSourceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolEngineSourceDataStoreSourceArgs.builder
       builder.dataStoreSources(args.map(_(argsBuilder).build)*)
@@ -3743,7 +3743,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataStore(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolEngineSourceDataStoreSourceDataStoreArgs.Builder]):
+    inline def dataStore(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolEngineSourceDataStoreSourceDataStoreArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolDataStoreToolEngineSourceDataStoreSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolEngineSourceDataStoreSourceDataStoreArgs.builder
       builder.dataStore(args(argsBuilder).build)
@@ -3755,7 +3755,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectorConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolEngineSourceDataStoreSourceDataStoreConnectorConfigArgs.Builder]*):
+    inline def connectorConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolEngineSourceDataStoreSourceDataStoreConnectorConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolDataStoreToolEngineSourceDataStoreSourceDataStoreArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolEngineSourceDataStoreSourceDataStoreConnectorConfigArgs.builder
       builder.connectorConfigs(args.map(_(argsBuilder).build)*)
@@ -3766,7 +3766,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def groundingConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigGroundingConfigArgs.Builder]):
+    inline def groundingConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigGroundingConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigGroundingConfigArgs.builder
       builder.groundingConfig(args(argsBuilder).build)
@@ -3776,7 +3776,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rewriterConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigRewriterConfigArgs.Builder]):
+    inline def rewriterConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigRewriterConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigRewriterConfigArgs.builder
       builder.rewriterConfig(args(argsBuilder).build)
@@ -3786,7 +3786,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def snippetsConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigSnippetsConfigArgs.Builder]):
+    inline def snippetsConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigSnippetsConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigSnippetsConfigArgs.builder
       builder.snippetsConfig(args(argsBuilder).build)
@@ -3796,7 +3796,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def summarizationConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigSummarizationConfigArgs.Builder]):
+    inline def summarizationConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigSummarizationConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigSummarizationConfigArgs.builder
       builder.summarizationConfig(args(argsBuilder).build)
@@ -3807,7 +3807,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigRewriterConfigModelSettingsArgs.Builder]):
+    inline def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigRewriterConfigModelSettingsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigRewriterConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigRewriterConfigModelSettingsArgs.builder
       builder.modelSettings(args(argsBuilder).build)
@@ -3818,7 +3818,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigSummarizationConfigModelSettingsArgs.Builder]):
+    inline def modelSettings(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigSummarizationConfigModelSettingsArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigSummarizationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolModalityConfigSummarizationConfigModelSettingsArgs.builder
       builder.modelSettings(args(argsBuilder).build)
@@ -3830,7 +3830,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def promptConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolGoogleSearchToolPromptConfigArgs.Builder]):
+    inline def promptConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolGoogleSearchToolPromptConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolGoogleSearchToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolGoogleSearchToolPromptConfigArgs.builder
       builder.promptConfig(args(argsBuilder).build)
@@ -3842,7 +3842,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiKeyConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationApiKeyConfigArgs.Builder]*):
+    inline def apiKeyConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationApiKeyConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationApiKeyConfigArgs.builder
       builder.apiKeyConfigs(args.map(_(argsBuilder).build)*)
@@ -3853,7 +3853,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bearerTokenConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationBearerTokenConfigArgs.Builder]*):
+    inline def bearerTokenConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationBearerTokenConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationBearerTokenConfigArgs.builder
       builder.bearerTokenConfigs(args.map(_(argsBuilder).build)*)
@@ -3864,7 +3864,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationOauthConfigArgs.Builder]*):
+    inline def oauthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationOauthConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationOauthConfigArgs.builder
       builder.oauthConfigs(args.map(_(argsBuilder).build)*)
@@ -3875,7 +3875,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceAccountAuthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationServiceAccountAuthConfigArgs.Builder]*):
+    inline def serviceAccountAuthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationServiceAccountAuthConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationServiceAccountAuthConfigArgs.builder
       builder.serviceAccountAuthConfigs(args.map(_(argsBuilder).build)*)
@@ -3887,7 +3887,7 @@ object ces_ext:
      * from service agent.
      * @return builder
      */
-    def serviceAgentIdTokenAuthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationServiceAgentIdTokenAuthConfigArgs.Builder]*):
+    inline def serviceAgentIdTokenAuthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationServiceAgentIdTokenAuthConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationServiceAgentIdTokenAuthConfigArgs.builder
       builder.serviceAgentIdTokenAuthConfigs(args.map(_(argsBuilder).build)*)
@@ -3899,7 +3899,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiAuthentications(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationArgs.Builder]*):
+    inline def apiAuthentications(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolMcpToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolMcpToolApiAuthenticationArgs.builder
       builder.apiAuthentications(args.map(_(argsBuilder).build)*)
@@ -3910,7 +3910,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectoryConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolServiceDirectoryConfigArgs.Builder]*):
+    inline def serviceDirectoryConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolServiceDirectoryConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolMcpToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolMcpToolServiceDirectoryConfigArgs.builder
       builder.serviceDirectoryConfigs(args.map(_(argsBuilder).build)*)
@@ -3921,7 +3921,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tlsConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolTlsConfigArgs.Builder]*):
+    inline def tlsConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolTlsConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolMcpToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolMcpToolTlsConfigArgs.builder
       builder.tlsConfigs(args.map(_(argsBuilder).build)*)
@@ -3934,7 +3934,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def caCerts(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolTlsConfigCaCertArgs.Builder]*):
+    inline def caCerts(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolTlsConfigCaCertArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolMcpToolTlsConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolMcpToolTlsConfigCaCertArgs.builder
       builder.caCerts(args.map(_(argsBuilder).build)*)
@@ -3946,7 +3946,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiKeyConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolOpenApiToolApiAuthenticationApiKeyConfigArgs.Builder]*):
+    inline def apiKeyConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolOpenApiToolApiAuthenticationApiKeyConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolOpenApiToolApiAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolOpenApiToolApiAuthenticationApiKeyConfigArgs.builder
       builder.apiKeyConfigs(args.map(_(argsBuilder).build)*)
@@ -3957,7 +3957,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bearerTokenConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolOpenApiToolApiAuthenticationBearerTokenConfigArgs.Builder]*):
+    inline def bearerTokenConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolOpenApiToolApiAuthenticationBearerTokenConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolOpenApiToolApiAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolOpenApiToolApiAuthenticationBearerTokenConfigArgs.builder
       builder.bearerTokenConfigs(args.map(_(argsBuilder).build)*)
@@ -3968,7 +3968,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolOpenApiToolApiAuthenticationOauthConfigArgs.Builder]*):
+    inline def oauthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolOpenApiToolApiAuthenticationOauthConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolOpenApiToolApiAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolOpenApiToolApiAuthenticationOauthConfigArgs.builder
       builder.oauthConfigs(args.map(_(argsBuilder).build)*)
@@ -3979,7 +3979,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceAccountAuthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolOpenApiToolApiAuthenticationServiceAccountAuthConfigArgs.Builder]*):
+    inline def serviceAccountAuthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolOpenApiToolApiAuthenticationServiceAccountAuthConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolOpenApiToolApiAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolOpenApiToolApiAuthenticationServiceAccountAuthConfigArgs.builder
       builder.serviceAccountAuthConfigs(args.map(_(argsBuilder).build)*)
@@ -3991,7 +3991,7 @@ object ces_ext:
      * from service agent.
      * @return builder
      */
-    def serviceAgentIdTokenAuthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolOpenApiToolApiAuthenticationServiceAgentIdTokenAuthConfigArgs.Builder]*):
+    inline def serviceAgentIdTokenAuthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolOpenApiToolApiAuthenticationServiceAgentIdTokenAuthConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolOpenApiToolApiAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolOpenApiToolApiAuthenticationServiceAgentIdTokenAuthConfigArgs.builder
       builder.serviceAgentIdTokenAuthConfigs(args.map(_(argsBuilder).build)*)
@@ -4003,7 +4003,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiAuthentications(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolOpenApiToolApiAuthenticationArgs.Builder]*):
+    inline def apiAuthentications(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolOpenApiToolApiAuthenticationArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolOpenApiToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolOpenApiToolApiAuthenticationArgs.builder
       builder.apiAuthentications(args.map(_(argsBuilder).build)*)
@@ -4014,7 +4014,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectoryConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolOpenApiToolServiceDirectoryConfigArgs.Builder]*):
+    inline def serviceDirectoryConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolOpenApiToolServiceDirectoryConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolOpenApiToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolOpenApiToolServiceDirectoryConfigArgs.builder
       builder.serviceDirectoryConfigs(args.map(_(argsBuilder).build)*)
@@ -4025,7 +4025,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tlsConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolOpenApiToolTlsConfigArgs.Builder]*):
+    inline def tlsConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolOpenApiToolTlsConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolOpenApiToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolOpenApiToolTlsConfigArgs.builder
       builder.tlsConfigs(args.map(_(argsBuilder).build)*)
@@ -4038,7 +4038,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def caCerts(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolOpenApiToolTlsConfigCaCertArgs.Builder]*):
+    inline def caCerts(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolOpenApiToolTlsConfigCaCertArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolOpenApiToolTlsConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolOpenApiToolTlsConfigCaCertArgs.builder
       builder.caCerts(args.map(_(argsBuilder).build)*)
@@ -4049,7 +4049,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolPythonFunctionServiceDirectoryConfigArgs.Builder]):
+    inline def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolPythonFunctionServiceDirectoryConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolPythonFunctionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolPythonFunctionServiceDirectoryConfigArgs.builder
       builder.serviceDirectoryConfig(args(argsBuilder).build)
@@ -4063,7 +4063,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def skills(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolAgentCardSkillArgs.Builder]*):
+    inline def skills(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolAgentCardSkillArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolAgentCardArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolAgentCardSkillArgs.builder
       builder.skills(args.map(_(argsBuilder).build)*)
@@ -4074,7 +4074,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def supportedInterfaces(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolAgentCardSupportedInterfaceArgs.Builder]*):
+    inline def supportedInterfaces(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolAgentCardSupportedInterfaceArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolAgentCardArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolAgentCardSupportedInterfaceArgs.builder
       builder.supportedInterfaces(args.map(_(argsBuilder).build)*)
@@ -4086,7 +4086,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiKeyConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationApiKeyConfigArgs.Builder]*):
+    inline def apiKeyConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationApiKeyConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationApiKeyConfigArgs.builder
       builder.apiKeyConfigs(args.map(_(argsBuilder).build)*)
@@ -4097,7 +4097,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bearerTokenConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationBearerTokenConfigArgs.Builder]*):
+    inline def bearerTokenConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationBearerTokenConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationBearerTokenConfigArgs.builder
       builder.bearerTokenConfigs(args.map(_(argsBuilder).build)*)
@@ -4108,7 +4108,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationOauthConfigArgs.Builder]*):
+    inline def oauthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationOauthConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationOauthConfigArgs.builder
       builder.oauthConfigs(args.map(_(argsBuilder).build)*)
@@ -4119,7 +4119,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceAccountAuthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationServiceAccountAuthConfigArgs.Builder]*):
+    inline def serviceAccountAuthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationServiceAccountAuthConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationServiceAccountAuthConfigArgs.builder
       builder.serviceAccountAuthConfigs(args.map(_(argsBuilder).build)*)
@@ -4131,7 +4131,7 @@ object ces_ext:
      * from service agent.
      * @return builder
      */
-    def serviceAgentIdTokenAuthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationServiceAgentIdTokenAuthConfigArgs.Builder]*):
+    inline def serviceAgentIdTokenAuthConfigs(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationServiceAgentIdTokenAuthConfigArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationServiceAgentIdTokenAuthConfigArgs.builder
       builder.serviceAgentIdTokenAuthConfigs(args.map(_(argsBuilder).build)*)
@@ -4143,7 +4143,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def agentCards(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolAgentCardArgs.Builder]*):
+    inline def agentCards(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolAgentCardArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolAgentCardArgs.builder
       builder.agentCards(args.map(_(argsBuilder).build)*)
@@ -4154,7 +4154,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiAuthentications(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationArgs.Builder]*):
+    inline def apiAuthentications(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolApiAuthenticationArgs.builder
       builder.apiAuthentications(args.map(_(argsBuilder).build)*)
@@ -4165,7 +4165,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def agentTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolAgentToolArgs.Builder]):
+    inline def agentTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolAgentToolArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolAgentToolArgs.builder
       builder.agentTool(args(argsBuilder).build)
@@ -4178,7 +4178,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clientFunction(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolClientFunctionArgs.Builder]):
+    inline def clientFunction(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolClientFunctionArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolClientFunctionArgs.builder
       builder.clientFunction(args(argsBuilder).build)
@@ -4188,7 +4188,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectorTools(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolConnectorToolArgs.Builder]*):
+    inline def connectorTools(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolConnectorToolArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolState.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolConnectorToolArgs.builder
       builder.connectorTools(args.map(_(argsBuilder).build)*)
@@ -4201,7 +4201,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataStoreTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolArgs.Builder]):
+    inline def dataStoreTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolDataStoreToolArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolDataStoreToolArgs.builder
       builder.dataStoreTool(args(argsBuilder).build)
@@ -4212,7 +4212,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fileSearchTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolFileSearchToolArgs.Builder]):
+    inline def fileSearchTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolFileSearchToolArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolFileSearchToolArgs.builder
       builder.fileSearchTool(args(argsBuilder).build)
@@ -4224,7 +4224,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleSearchTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolGoogleSearchToolArgs.Builder]):
+    inline def googleSearchTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolGoogleSearchToolArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolGoogleSearchToolArgs.builder
       builder.googleSearchTool(args(argsBuilder).build)
@@ -4234,7 +4234,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mcpTools(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolArgs.Builder]*):
+    inline def mcpTools(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolMcpToolArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolState.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolMcpToolArgs.builder
       builder.mcpTools(args.map(_(argsBuilder).build)*)
@@ -4244,7 +4244,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def openApiTools(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolOpenApiToolArgs.Builder]*):
+    inline def openApiTools(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolOpenApiToolArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolState.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolOpenApiToolArgs.builder
       builder.openApiTools(args.map(_(argsBuilder).build)*)
@@ -4254,7 +4254,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pythonFunction(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolPythonFunctionArgs.Builder]):
+    inline def pythonFunction(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolPythonFunctionArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolPythonFunctionArgs.builder
       builder.pythonFunction(args(argsBuilder).build)
@@ -4264,7 +4264,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def remoteAgentTools(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolArgs.Builder]*):
+    inline def remoteAgentTools(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolState.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolRemoteAgentToolArgs.builder
       builder.remoteAgentTools(args.map(_(argsBuilder).build)*)
@@ -4274,7 +4274,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def systemTools(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolSystemToolArgs.Builder]*):
+    inline def systemTools(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolSystemToolArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolState.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolSystemToolArgs.builder
       builder.systemTools(args.map(_(argsBuilder).build)*)
@@ -4284,7 +4284,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolFakeConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolToolFakeConfigArgs.Builder]):
+    inline def toolFakeConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolToolFakeConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolToolFakeConfigArgs.builder
       builder.toolFakeConfig(args(argsBuilder).build)
@@ -4294,7 +4294,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def widgetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolWidgetToolArgs.Builder]):
+    inline def widgetTool(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolWidgetToolArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolWidgetToolArgs.builder
       builder.widgetTool(args(argsBuilder).build)
@@ -4305,7 +4305,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def codeBlock(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolToolFakeConfigCodeBlockArgs.Builder]):
+    inline def codeBlock(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolToolFakeConfigCodeBlockArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolToolFakeConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolToolFakeConfigCodeBlockArgs.builder
       builder.codeBlock(args(argsBuilder).build)
@@ -4317,7 +4317,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataMapping(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolWidgetToolDataMappingArgs.Builder]):
+    inline def dataMapping(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolWidgetToolDataMappingArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolWidgetToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolWidgetToolDataMappingArgs.builder
       builder.dataMapping(args(argsBuilder).build)
@@ -4327,7 +4327,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameters(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolWidgetToolParametersArgs.Builder]):
+    inline def parameters(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolWidgetToolParametersArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolWidgetToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolWidgetToolParametersArgs.builder
       builder.parameters(args(argsBuilder).build)
@@ -4337,7 +4337,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def textResponseConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolWidgetToolTextResponseConfigArgs.Builder]):
+    inline def textResponseConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolWidgetToolTextResponseConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolWidgetToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolWidgetToolTextResponseConfigArgs.builder
       builder.textResponseConfig(args(argsBuilder).build)
@@ -4349,7 +4349,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pythonFunction(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolWidgetToolDataMappingPythonFunctionArgs.Builder]):
+    inline def pythonFunction(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolWidgetToolDataMappingPythonFunctionArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolWidgetToolDataMappingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolWidgetToolDataMappingPythonFunctionArgs.builder
       builder.pythonFunction(args(argsBuilder).build)
@@ -4360,7 +4360,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetAuthConfigArgs.Builder]):
+    inline def authConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetAuthConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetAuthConfigArgs.builder
       builder.authConfig(args(argsBuilder).build)
@@ -4370,7 +4370,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectorActions(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetConnectorActionArgs.Builder]*):
+    inline def connectorActions(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetConnectorActionArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetConnectorActionArgs.builder
       builder.connectorActions(args.map(_(argsBuilder).build)*)
@@ -4381,7 +4381,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauth2AuthCodeConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetAuthConfigOauth2AuthCodeConfigArgs.Builder]):
+    inline def oauth2AuthCodeConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetAuthConfigOauth2AuthCodeConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetAuthConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetAuthConfigOauth2AuthCodeConfigArgs.builder
       builder.oauth2AuthCodeConfig(args(argsBuilder).build)
@@ -4393,7 +4393,7 @@ object ces_ext:
      * &lt;a name=&#34;nestedConnectorToolsetAuthConfigOauth2AuthCodeConfig&#34;&gt;&lt;/a&gt;The `oauth2AuthCodeConfig` block supports:
      * @return builder
      */
-    def oauth2JwtBearerConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetAuthConfigOauth2JwtBearerConfigArgs.Builder]):
+    inline def oauth2JwtBearerConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetAuthConfigOauth2JwtBearerConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetAuthConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetAuthConfigOauth2JwtBearerConfigArgs.builder
       builder.oauth2JwtBearerConfig(args(argsBuilder).build)
@@ -4404,7 +4404,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entityOperation(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetConnectorActionEntityOperationArgs.Builder]):
+    inline def entityOperation(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetConnectorActionEntityOperationArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetConnectorActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetConnectorActionEntityOperationArgs.builder
       builder.entityOperation(args(argsBuilder).build)
@@ -4415,7 +4415,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiKeyConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetApiAuthenticationApiKeyConfigArgs.Builder]):
+    inline def apiKeyConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetApiAuthenticationApiKeyConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetApiAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetApiAuthenticationApiKeyConfigArgs.builder
       builder.apiKeyConfig(args(argsBuilder).build)
@@ -4425,7 +4425,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bearerTokenConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetApiAuthenticationBearerTokenConfigArgs.Builder]):
+    inline def bearerTokenConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetApiAuthenticationBearerTokenConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetApiAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetApiAuthenticationBearerTokenConfigArgs.builder
       builder.bearerTokenConfig(args(argsBuilder).build)
@@ -4435,7 +4435,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauthConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetApiAuthenticationOauthConfigArgs.Builder]):
+    inline def oauthConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetApiAuthenticationOauthConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetApiAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetApiAuthenticationOauthConfigArgs.builder
       builder.oauthConfig(args(argsBuilder).build)
@@ -4445,7 +4445,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceAccountAuthConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetApiAuthenticationServiceAccountAuthConfigArgs.Builder]):
+    inline def serviceAccountAuthConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetApiAuthenticationServiceAccountAuthConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetApiAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetApiAuthenticationServiceAccountAuthConfigArgs.builder
       builder.serviceAccountAuthConfig(args(argsBuilder).build)
@@ -4456,7 +4456,7 @@ object ces_ext:
      * from service agent.
      * @return builder
      */
-    def serviceAgentIdTokenAuthConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetApiAuthenticationServiceAgentIdTokenAuthConfigArgs.Builder]):
+    inline def serviceAgentIdTokenAuthConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetApiAuthenticationServiceAgentIdTokenAuthConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetApiAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetApiAuthenticationServiceAgentIdTokenAuthConfigArgs.builder
       builder.serviceAgentIdTokenAuthConfig(args(argsBuilder).build)
@@ -4469,7 +4469,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiAuthentication(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetApiAuthenticationArgs.Builder]):
+    inline def apiAuthentication(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetApiAuthenticationArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetApiAuthenticationArgs.builder
       builder.apiAuthentication(args(argsBuilder).build)
@@ -4480,7 +4480,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetServiceDirectoryConfigArgs.Builder]):
+    inline def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetServiceDirectoryConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetServiceDirectoryConfigArgs.builder
       builder.serviceDirectoryConfig(args(argsBuilder).build)
@@ -4491,7 +4491,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tlsConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetTlsConfigArgs.Builder]):
+    inline def tlsConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetTlsConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetTlsConfigArgs.builder
       builder.tlsConfig(args(argsBuilder).build)
@@ -4501,7 +4501,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolOverrides(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetToolOverrideArgs.Builder]*):
+    inline def toolOverrides(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetToolOverrideArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetToolOverrideArgs.builder
       builder.toolOverrides(args.map(_(argsBuilder).build)*)
@@ -4513,7 +4513,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def caCerts(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetTlsConfigCaCertArgs.Builder]*):
+    inline def caCerts(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetTlsConfigCaCertArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetTlsConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetTlsConfigCaCertArgs.builder
       builder.caCerts(args.map(_(argsBuilder).build)*)
@@ -4524,7 +4524,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiKeyConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetApiAuthenticationApiKeyConfigArgs.Builder]):
+    inline def apiKeyConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetApiAuthenticationApiKeyConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetApiAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetApiAuthenticationApiKeyConfigArgs.builder
       builder.apiKeyConfig(args(argsBuilder).build)
@@ -4534,7 +4534,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bearerTokenConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetApiAuthenticationBearerTokenConfigArgs.Builder]):
+    inline def bearerTokenConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetApiAuthenticationBearerTokenConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetApiAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetApiAuthenticationBearerTokenConfigArgs.builder
       builder.bearerTokenConfig(args(argsBuilder).build)
@@ -4544,7 +4544,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauthConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetApiAuthenticationOauthConfigArgs.Builder]):
+    inline def oauthConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetApiAuthenticationOauthConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetApiAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetApiAuthenticationOauthConfigArgs.builder
       builder.oauthConfig(args(argsBuilder).build)
@@ -4554,7 +4554,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceAccountAuthConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetApiAuthenticationServiceAccountAuthConfigArgs.Builder]):
+    inline def serviceAccountAuthConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetApiAuthenticationServiceAccountAuthConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetApiAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetApiAuthenticationServiceAccountAuthConfigArgs.builder
       builder.serviceAccountAuthConfig(args(argsBuilder).build)
@@ -4565,7 +4565,7 @@ object ces_ext:
      * from service agent.
      * @return builder
      */
-    def serviceAgentIdTokenAuthConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetApiAuthenticationServiceAgentIdTokenAuthConfigArgs.Builder]):
+    inline def serviceAgentIdTokenAuthConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetApiAuthenticationServiceAgentIdTokenAuthConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetApiAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetApiAuthenticationServiceAgentIdTokenAuthConfigArgs.builder
       builder.serviceAgentIdTokenAuthConfig(args(argsBuilder).build)
@@ -4576,7 +4576,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiAuthentication(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetApiAuthenticationArgs.Builder]):
+    inline def apiAuthentication(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetApiAuthenticationArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetApiAuthenticationArgs.builder
       builder.apiAuthentication(args(argsBuilder).build)
@@ -4586,7 +4586,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetServiceDirectoryConfigArgs.Builder]):
+    inline def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetServiceDirectoryConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetServiceDirectoryConfigArgs.builder
       builder.serviceDirectoryConfig(args(argsBuilder).build)
@@ -4596,7 +4596,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tlsConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetTlsConfigArgs.Builder]):
+    inline def tlsConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetTlsConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetTlsConfigArgs.builder
       builder.tlsConfig(args(argsBuilder).build)
@@ -4608,7 +4608,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def caCerts(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetTlsConfigCaCertArgs.Builder]*):
+    inline def caCerts(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetTlsConfigCaCertArgs.Builder]*):
         com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetTlsConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetTlsConfigCaCertArgs.builder
       builder.caCerts(args.map(_(argsBuilder).build)*)
@@ -4619,7 +4619,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectorToolset(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetArgs.Builder]):
+    inline def connectorToolset(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolsetState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetConnectorToolsetArgs.builder
       builder.connectorToolset(args(argsBuilder).build)
@@ -4630,7 +4630,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mcpToolset(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetArgs.Builder]):
+    inline def mcpToolset(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolsetState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetMcpToolsetArgs.builder
       builder.mcpToolset(args(argsBuilder).build)
@@ -4641,7 +4641,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def openApiToolset(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetArgs.Builder]):
+    inline def openApiToolset(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolsetState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetOpenApiToolsetArgs.builder
       builder.openApiToolset(args(argsBuilder).build)
@@ -4651,7 +4651,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolFakeConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetToolFakeConfigArgs.Builder]):
+    inline def toolFakeConfig(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetToolFakeConfigArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolsetState.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetToolFakeConfigArgs.builder
       builder.toolFakeConfig(args(argsBuilder).build)
@@ -4662,7 +4662,7 @@ object ces_ext:
      * Structure is documented below.
      * @return builder
      */
-    def codeBlock(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetToolFakeConfigCodeBlockArgs.Builder]):
+    inline def codeBlock(args: Endofunction[com.pulumi.gcp.ces.inputs.ToolsetToolFakeConfigCodeBlockArgs.Builder]):
         com.pulumi.gcp.ces.inputs.ToolsetToolFakeConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.ces.inputs.ToolsetToolFakeConfigCodeBlockArgs.builder
       builder.codeBlock(args(argsBuilder).build)

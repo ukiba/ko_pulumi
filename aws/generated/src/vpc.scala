@@ -12,7 +12,7 @@ object vpc:
    * &gt; When using this resource, the `privateDnsEnabled` argument should be omitted on the parent `aws.ec2.VpcEndpoint` resource.
    * Setting the value both places can lead to unintended behavior and persistent differences.
    */
-  def EndpointPrivateDns(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EndpointPrivateDns(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpc.EndpointPrivateDnsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.vpc.EndpointPrivateDnsArgs.builder
     com.pulumi.aws.vpc.EndpointPrivateDns(name,
@@ -28,7 +28,7 @@ object vpc:
    * 
    * &gt; Destruction of this resource will not stop the verification process, only remove the resource from state.
    */
-  def EndpointServicePrivateDnsVerification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EndpointServicePrivateDnsVerification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpc.EndpointServicePrivateDnsVerificationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.vpc.EndpointServicePrivateDnsVerificationArgs.builder
     com.pulumi.aws.vpc.EndpointServicePrivateDnsVerification(name,
@@ -36,7 +36,7 @@ object vpc:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource for managing a VPC Route Server. */
-  def RouteServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RouteServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpc.RouteServerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.vpc.RouteServerArgs.builder
     argsBuilder = args(argsBuilder)
@@ -51,7 +51,7 @@ object vpc:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource for managing a VPC Route Server Endpoint. */
-  def RouteServerEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RouteServerEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpc.RouteServerEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.vpc.RouteServerEndpointArgs.builder
     argsBuilder = args(argsBuilder)
@@ -66,7 +66,7 @@ object vpc:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource for managing a VPC Route Server Peer. */
-  def RouteServerPeer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RouteServerPeer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpc.RouteServerPeerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.vpc.RouteServerPeerArgs.builder
     argsBuilder = args(argsBuilder)
@@ -81,7 +81,7 @@ object vpc:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource for managing propagation between VPC route server and a route table. */
-  def RouteServerPropagation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RouteServerPropagation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpc.RouteServerPropagationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.vpc.RouteServerPropagationArgs.builder
     com.pulumi.aws.vpc.RouteServerPropagation(name,
@@ -89,7 +89,7 @@ object vpc:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource for managing association between VPC route server and a VPC. */
-  def RouteServerVpcAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RouteServerVpcAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpc.RouteServerVpcAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.vpc.RouteServerVpcAssociationArgs.builder
     com.pulumi.aws.vpc.RouteServerVpcAssociation(name,
@@ -105,7 +105,7 @@ object vpc:
    * 
    * &gt; **WARNING:** You should not use the `aws.vpc.SecurityGroupEgressRule` and `aws.vpc.SecurityGroupIngressRule` resources in conjunction with the `aws.ec2.SecurityGroup` resource with _in-line rules_ (using the `ingress` and `egress` arguments of `aws.ec2.SecurityGroup`) or the `aws.ec2.SecurityGroupRule` resource. Doing so may cause rule conflicts, perpetual differences, and result in rules being overwritten.
    */
-  def SecurityGroupEgressRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecurityGroupEgressRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpc.SecurityGroupEgressRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.vpc.SecurityGroupEgressRuleArgs.builder
     argsBuilder = args(argsBuilder)
@@ -128,7 +128,7 @@ object vpc:
    * 
    * &gt; **WARNING:** You should not use the `aws.vpc.SecurityGroupEgressRule` and `aws.vpc.SecurityGroupIngressRule` resources in conjunction with the `aws.ec2.SecurityGroup` resource with _in-line rules_ (using the `ingress` and `egress` arguments of `aws.ec2.SecurityGroup`) or the `aws.ec2.SecurityGroupRule` resource. Doing so may cause rule conflicts, perpetual differences, and result in rules being overwritten.
    */
-  def SecurityGroupIngressRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecurityGroupIngressRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpc.SecurityGroupIngressRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.vpc.SecurityGroupIngressRuleArgs.builder
     argsBuilder = args(argsBuilder)
@@ -143,7 +143,7 @@ object vpc:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing Security Group VPC Associations. */
-  def SecurityGroupVpcAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecurityGroupVpcAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpc.SecurityGroupVpcAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.vpc.SecurityGroupVpcAssociationArgs.builder
     com.pulumi.aws.vpc.SecurityGroupVpcAssociation(name,

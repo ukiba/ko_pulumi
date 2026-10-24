@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object mskconnect:
   /** Provides an Amazon MSK Connect Connector resource. */
-  def Connector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Connector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.mskconnect.ConnectorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.mskconnect.ConnectorArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25,7 +25,7 @@ object mskconnect:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Amazon MSK Connect Custom Plugin Resource. */
-  def CustomPlugin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomPlugin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.mskconnect.CustomPluginArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.mskconnect.CustomPluginArgs.builder
     conf.logicalName2physicalName(name) match
@@ -92,7 +92,7 @@ object mskconnect:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides an Amazon MSK Connect Worker Configuration Resource. */
-  def WorkerConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkerConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.mskconnect.WorkerConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.mskconnect.WorkerConfigurationArgs.builder
     conf.logicalName2physicalName(name) match

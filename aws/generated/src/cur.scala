@@ -40,7 +40,7 @@ object cur:
    * 
    * &gt; *NOTE:* The AWS Cost and Usage Report service is only available in `us-east-1` currently.
    */
-  def ReportDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ReportDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cur.ReportDefinitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cur.ReportDefinitionArgs.builder
     argsBuilder = args(argsBuilder)

@@ -100,7 +100,7 @@ object appconfig:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides an AppConfig Application resource. */
-  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appconfig.ApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appconfig.ApplicationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -118,7 +118,7 @@ object appconfig:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppConfig Configuration Profile resource. */
-  def ConfigurationProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConfigurationProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appconfig.ConfigurationProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appconfig.ConfigurationProfileArgs.builder
     conf.logicalName2physicalName(name) match
@@ -136,7 +136,7 @@ object appconfig:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppConfig Deployment resource for an `aws.appconfig.Application` resource. */
-  def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appconfig.DeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appconfig.DeploymentArgs.builder
     argsBuilder = args(argsBuilder)
@@ -151,7 +151,7 @@ object appconfig:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppConfig Deployment Strategy resource. */
-  def DeploymentStrategy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DeploymentStrategy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appconfig.DeploymentStrategyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appconfig.DeploymentStrategyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -169,7 +169,7 @@ object appconfig:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppConfig Environment resource for an `aws.appconfig.Application` resource. One or more environments can be defined for an application. */
-  def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appconfig.EnvironmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appconfig.EnvironmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -187,7 +187,7 @@ object appconfig:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Amazon AppIntegrations Event Integration resource. */
-  def EventIntegration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EventIntegration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appconfig.EventIntegrationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appconfig.EventIntegrationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -205,7 +205,7 @@ object appconfig:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppConfig Extension resource. */
-  def Extension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Extension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appconfig.ExtensionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appconfig.ExtensionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -223,7 +223,7 @@ object appconfig:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Associates an AppConfig Extension with a Resource. */
-  def ExtensionAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ExtensionAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appconfig.ExtensionAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.appconfig.ExtensionAssociationArgs.builder
     com.pulumi.aws.appconfig.ExtensionAssociation(name,
@@ -231,7 +231,7 @@ object appconfig:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppConfig Hosted Configuration Version resource. */
-  def HostedConfigurationVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HostedConfigurationVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appconfig.HostedConfigurationVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.appconfig.HostedConfigurationVersionArgs.builder
     com.pulumi.aws.appconfig.HostedConfigurationVersion(name,

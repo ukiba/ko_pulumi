@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object datadog:
   /** Manages a datadog Monitor. */
-  def Monitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Monitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.datadog.MonitorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.datadog.MonitorArgs.builder
     conf.logicalName2physicalName(name) match
@@ -23,7 +23,7 @@ object datadog:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages SingleSignOn on the datadog Monitor. */
-  def MonitorSsoConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MonitorSsoConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.datadog.MonitorSsoConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.datadog.MonitorSsoConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -34,7 +34,7 @@ object datadog:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages TagRules on the datadog Monitor. */
-  def MonitorTagRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MonitorTagRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.datadog.MonitorTagRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.datadog.MonitorTagRuleArgs.builder
     conf.logicalName2physicalName(name) match

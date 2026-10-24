@@ -7,7 +7,7 @@ object directoryservice_ext:
      * @param connectSettings Connector related information about the directory. Fields documented below.
      * @return builder
      */
-    def connectSettings(args: Endofunction[com.pulumi.aws.directoryservice.inputs.DirectoryConnectSettingsArgs.Builder]):
+    inline def connectSettings(args: Endofunction[com.pulumi.aws.directoryservice.inputs.DirectoryConnectSettingsArgs.Builder]):
         com.pulumi.aws.directoryservice.DirectoryArgs.Builder =
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.DirectoryConnectSettingsArgs.builder
       builder.connectSettings(args(argsBuilder).build)
@@ -16,13 +16,13 @@ object directoryservice_ext:
      * @param vpcSettings VPC related information about the directory. Fields documented below.
      * @return builder
      */
-    def vpcSettings(args: Endofunction[com.pulumi.aws.directoryservice.inputs.DirectoryVpcSettingsArgs.Builder]):
+    inline def vpcSettings(args: Endofunction[com.pulumi.aws.directoryservice.inputs.DirectoryVpcSettingsArgs.Builder]):
         com.pulumi.aws.directoryservice.DirectoryArgs.Builder =
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.DirectoryVpcSettingsArgs.builder
       builder.vpcSettings(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.directoryservice.IpRouteArgs.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.directoryservice.inputs.IpRouteTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.directoryservice.inputs.IpRouteTimeoutsArgs.Builder]):
         com.pulumi.aws.directoryservice.IpRouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.IpRouteTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -32,12 +32,12 @@ object directoryservice_ext:
      * @param ipRoutes Set of IP routes the directory should have. Omit all `ipRoute` blocks to remove every IP route from the directory. See `ipRoute` Block below.
      * @return builder
      */
-    def ipRoutes(args: Endofunction[com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveIpRouteArgs.Builder]*):
+    inline def ipRoutes(args: Endofunction[com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveIpRouteArgs.Builder]*):
         com.pulumi.aws.directoryservice.IpRoutesExclusiveArgs.Builder =
       def argsBuilder = com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveIpRouteArgs.builder
       builder.ipRoutes(args.map(_(argsBuilder).build)*)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveTimeoutsArgs.Builder]):
         com.pulumi.aws.directoryservice.IpRoutesExclusiveArgs.Builder =
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -47,7 +47,7 @@ object directoryservice_ext:
      * @param vpcSettings VPC information in the replicated Region. Detailed below.
      * @return builder
      */
-    def vpcSettings(args: Endofunction[com.pulumi.aws.directoryservice.inputs.ServiceRegionVpcSettingsArgs.Builder]):
+    inline def vpcSettings(args: Endofunction[com.pulumi.aws.directoryservice.inputs.ServiceRegionVpcSettingsArgs.Builder]):
         com.pulumi.aws.directoryservice.ServiceRegionArgs.Builder =
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.ServiceRegionVpcSettingsArgs.builder
       builder.vpcSettings(args(argsBuilder).build)
@@ -59,7 +59,7 @@ object directoryservice_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def target(args: Endofunction[com.pulumi.aws.directoryservice.inputs.SharedDirectoryTargetArgs.Builder]):
+    inline def target(args: Endofunction[com.pulumi.aws.directoryservice.inputs.SharedDirectoryTargetArgs.Builder]):
         com.pulumi.aws.directoryservice.SharedDirectoryArgs.Builder =
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.SharedDirectoryTargetArgs.builder
       builder.target(args(argsBuilder).build)
@@ -69,7 +69,7 @@ object directoryservice_ext:
      * @param connectSettings Connector related information about the directory. Fields documented below.
      * @return builder
      */
-    def connectSettings(args: Endofunction[com.pulumi.aws.directoryservice.inputs.DirectoryConnectSettingsArgs.Builder]):
+    inline def connectSettings(args: Endofunction[com.pulumi.aws.directoryservice.inputs.DirectoryConnectSettingsArgs.Builder]):
         com.pulumi.aws.directoryservice.inputs.DirectoryState.Builder =
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.DirectoryConnectSettingsArgs.builder
       builder.connectSettings(args(argsBuilder).build)
@@ -78,13 +78,13 @@ object directoryservice_ext:
      * @param vpcSettings VPC related information about the directory. Fields documented below.
      * @return builder
      */
-    def vpcSettings(args: Endofunction[com.pulumi.aws.directoryservice.inputs.DirectoryVpcSettingsArgs.Builder]):
+    inline def vpcSettings(args: Endofunction[com.pulumi.aws.directoryservice.inputs.DirectoryVpcSettingsArgs.Builder]):
         com.pulumi.aws.directoryservice.inputs.DirectoryState.Builder =
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.DirectoryVpcSettingsArgs.builder
       builder.vpcSettings(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.directoryservice.inputs.IpRouteState.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.directoryservice.inputs.IpRouteTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.directoryservice.inputs.IpRouteTimeoutsArgs.Builder]):
         com.pulumi.aws.directoryservice.inputs.IpRouteState.Builder =
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.IpRouteTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -94,12 +94,12 @@ object directoryservice_ext:
      * @param ipRoutes Set of IP routes the directory should have. Omit all `ipRoute` blocks to remove every IP route from the directory. See `ipRoute` Block below.
      * @return builder
      */
-    def ipRoutes(args: Endofunction[com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveIpRouteArgs.Builder]*):
+    inline def ipRoutes(args: Endofunction[com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveIpRouteArgs.Builder]*):
         com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveState.Builder =
       def argsBuilder = com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveIpRouteArgs.builder
       builder.ipRoutes(args.map(_(argsBuilder).build)*)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveTimeoutsArgs.Builder]):
         com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveState.Builder =
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.IpRoutesExclusiveTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -109,7 +109,7 @@ object directoryservice_ext:
      * @param vpcSettings VPC information in the replicated Region. Detailed below.
      * @return builder
      */
-    def vpcSettings(args: Endofunction[com.pulumi.aws.directoryservice.inputs.ServiceRegionVpcSettingsArgs.Builder]):
+    inline def vpcSettings(args: Endofunction[com.pulumi.aws.directoryservice.inputs.ServiceRegionVpcSettingsArgs.Builder]):
         com.pulumi.aws.directoryservice.inputs.ServiceRegionState.Builder =
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.ServiceRegionVpcSettingsArgs.builder
       builder.vpcSettings(args(argsBuilder).build)
@@ -121,7 +121,7 @@ object directoryservice_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def target(args: Endofunction[com.pulumi.aws.directoryservice.inputs.SharedDirectoryTargetArgs.Builder]):
+    inline def target(args: Endofunction[com.pulumi.aws.directoryservice.inputs.SharedDirectoryTargetArgs.Builder]):
         com.pulumi.aws.directoryservice.inputs.SharedDirectoryState.Builder =
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.SharedDirectoryTargetArgs.builder
       builder.target(args(argsBuilder).build)

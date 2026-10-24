@@ -48,7 +48,7 @@ object bigqueryanalyticshub:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/bigquery/docs/analytics-hub-introduction)
    */
-  def DataExchange(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataExchange(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.DataExchangeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.DataExchangeArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.DataExchange(name,
@@ -361,7 +361,7 @@ object bigqueryanalyticshub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DataExchangeIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataExchangeIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamBindingArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamBinding(name,
@@ -674,7 +674,7 @@ object bigqueryanalyticshub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DataExchangeIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataExchangeIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamMemberArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamMember(name,
@@ -987,7 +987,7 @@ object bigqueryanalyticshub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DataExchangeIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataExchangeIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamPolicyArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamPolicy(name,
@@ -1009,7 +1009,7 @@ object bigqueryanalyticshub:
    * &gt; **Note:** When importing the resource with `pulumi import`, provide the destination/subscriber&#39;s project and location
    * in the format projects/{{subscriber_project}}/locations/{{subscriber_location}}/subscriptions/{{subscription_id}}
    */
-  def DataExchangeSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataExchangeSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.DataExchangeSubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.DataExchangeSubscriptionArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.DataExchangeSubscription(name,
@@ -1025,7 +1025,7 @@ object bigqueryanalyticshub:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/bigquery/docs/analytics-hub-introduction)
    */
-  def Listing(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Listing(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.ListingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.ListingArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.Listing(name,
@@ -1344,7 +1344,7 @@ object bigqueryanalyticshub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ListingIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ListingIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.ListingIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.ListingIamBindingArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.ListingIamBinding(name,
@@ -1663,7 +1663,7 @@ object bigqueryanalyticshub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ListingIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ListingIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.ListingIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.ListingIamMemberArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.ListingIamMember(name,
@@ -1982,7 +1982,7 @@ object bigqueryanalyticshub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ListingIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ListingIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.ListingIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.ListingIamPolicyArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.ListingIamPolicy(name,
@@ -2001,7 +2001,7 @@ object bigqueryanalyticshub:
    * &gt; **Note:** When importing the resource with `pulumi import`, provide the destination project and location
    * in the format projects/{{destination_project}}/locations/{{destination_location}}/subscriptions/{{subscription_id}}
    */
-  def ListingSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ListingSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.ListingSubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.ListingSubscriptionArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.ListingSubscription(name,
@@ -2020,7 +2020,7 @@ object bigqueryanalyticshub:
    * * How-to Guides
    *     * [Use query templates](https://docs.cloud.google.com/bigquery/docs/query-templates)
    */
-  def QueryTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def QueryTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.QueryTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.QueryTemplateArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.QueryTemplate(name,

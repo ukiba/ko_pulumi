@@ -194,7 +194,7 @@ object cdn:
    * 
    * &gt; **Note:** Support for the CDN (classic) `sku` `Standard_Microsoft` and `Standard_ChinaCdn` will be deprecated from Azure on `October 1, 2025` and will no longer be available, however modifications to existing CDN (classic) resources will continue to be supported until the API reaches full retirement on `September 30, 2027`.
    */
-  def Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cdn.EndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cdn.EndpointArgs.builder
     conf.logicalName2physicalName(name) match
@@ -220,7 +220,7 @@ object cdn:
    * 
    * &gt; **Note:** Support for the CDN (classic) `sku` values `Standard_Microsoft` and `Standard_ChinaCdn` will be deprecated from Azure on `October 1, 2025` and will no longer be available, however, modifications to existing CDN (classic) resources will continue to be supported until the API reaches full retirement on `September 30, 2027`.
    */
-  def EndpointCustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EndpointCustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cdn.EndpointCustomDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cdn.EndpointCustomDomainArgs.builder
     conf.logicalName2physicalName(name) match
@@ -235,7 +235,7 @@ object cdn:
    * 
    * &gt; **Note:** This resource creates the Front Door Rule Set in batch mode and manages the full ordered batch rule collection for it. Any change to the configured `rule` blocks sends the desired final ordered rule list to the Resource Provider in a single request.
    */
-  def FrontdoorBatchRuleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FrontdoorBatchRuleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cdn.FrontdoorBatchRuleSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cdn.FrontdoorBatchRuleSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -250,7 +250,7 @@ object cdn:
    * 
    * &gt; **Note:** If you are using Terraform to manage your DNS Auth and DNS CNAME records for your Custom Domain you will need to add configuration blocks for both the `azure.dns.TxtRecord` (see the `Example DNS Auth TXT Record Usage` below) and the `azure.dns.CNameRecord` (see the `Example CNAME Record Usage` below) to your configuration file.
    */
-  def FrontdoorCustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FrontdoorCustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cdn.FrontdoorCustomDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cdn.FrontdoorCustomDomainArgs.builder
     conf.logicalName2physicalName(name) match
@@ -265,7 +265,7 @@ object cdn:
    * 
    * &gt; **Note:** Domain ownership validation for Azure Front Door custom domains is performed asynchronously by the service (typically transitioning through states like `Submitting` and `Pending` before becoming `Approved`). For details on the required `_dnsauth` TXT record and the possible validation states, see the Azure Front Door documentation on [domain validation](https://learn.microsoft.com/azure/frontdoor/domain#domain-validation).
    */
-  def FrontdoorCustomDomainAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FrontdoorCustomDomainAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cdn.FrontdoorCustomDomainAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.cdn.FrontdoorCustomDomainAssociationArgs.builder
     com.pulumi.azure.cdn.FrontdoorCustomDomainAssociation(name,
@@ -273,7 +273,7 @@ object cdn:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Front Door (standard/premium) Endpoint. */
-  def FrontdoorEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FrontdoorEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cdn.FrontdoorEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cdn.FrontdoorEndpointArgs.builder
     conf.logicalName2physicalName(name) match
@@ -291,7 +291,7 @@ object cdn:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Front Door (standard/premium) Firewall Policy instance. */
-  def FrontdoorFirewallPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FrontdoorFirewallPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cdn.FrontdoorFirewallPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cdn.FrontdoorFirewallPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -313,7 +313,7 @@ object cdn:
    * 
    * &gt; **Note:** If you are attempting to implement an Origin that uses its own Private Link Service with a Load Balancer the Profile resource in your configuration file **must** have a `dependsOn` meta-argument which references the `azure.privatedns.LinkService`, see `Example Usage With Private Link Service` below.
    */
-  def FrontdoorOrigin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FrontdoorOrigin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cdn.FrontdoorOriginArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cdn.FrontdoorOriginArgs.builder
     conf.logicalName2physicalName(name) match
@@ -324,7 +324,7 @@ object cdn:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Front Door (standard/premium) Origin Group. */
-  def FrontdoorOriginGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FrontdoorOriginGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cdn.FrontdoorOriginGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cdn.FrontdoorOriginGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -335,7 +335,7 @@ object cdn:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Front Door (standard/premium) Profile which contains a collection of endpoints and origin groups. */
-  def FrontdoorProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FrontdoorProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cdn.FrontdoorProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cdn.FrontdoorProfileArgs.builder
     conf.logicalName2physicalName(name) match
@@ -357,7 +357,7 @@ object cdn:
    * 
    * &gt; **Note:** The `azure.cdn.FrontdoorRoute` resource must **explicitly** reference its associated `azure.cdn.FrontdoorOrigin` resource(s). This can be achieved either by using a `dependsOn` meta-argument that points to the `azure.cdn.FrontdoorOrigin` resource(s), or by specifying the `azure.cdn.FrontdoorOrigin` IDs via the `cdnFrontdoorOriginIds` field.
    */
-  def FrontdoorRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FrontdoorRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cdn.FrontdoorRouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cdn.FrontdoorRouteArgs.builder
     conf.logicalName2physicalName(name) match
@@ -374,7 +374,7 @@ object cdn:
    * 
    * &gt; **Note:** This resource cannot be used to manage individual rules for a rule set provisioned in batch mode, to manage rules for a batch mode rule set, use `azure.cdn.FrontdoorBatchRuleSet`.
    */
-  def FrontdoorRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FrontdoorRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cdn.FrontdoorRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cdn.FrontdoorRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -389,7 +389,7 @@ object cdn:
    * 
    * &gt; **Note:** This resource creates the Front Door Rule Set in non-batch mode and individual rules are managed using `azure.cdn.FrontdoorRule`.
    */
-  def FrontdoorRuleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FrontdoorRuleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cdn.FrontdoorRuleSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cdn.FrontdoorRuleSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -426,7 +426,7 @@ object cdn:
    * \$ pulumi import azure:cdn/frontdoorSecret:FrontdoorSecret example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/resourceGroup1/providers/Microsoft.Cdn/profiles/profile1/secrets/secrets1
    * ```
    */
-  def FrontdoorSecret(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FrontdoorSecret(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cdn.FrontdoorSecretArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cdn.FrontdoorSecretArgs.builder
     conf.logicalName2physicalName(name) match
@@ -437,7 +437,7 @@ object cdn:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Front Door (standard/premium) Security Policy. */
-  def FrontdoorSecurityPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FrontdoorSecurityPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cdn.FrontdoorSecurityPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cdn.FrontdoorSecurityPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -458,7 +458,7 @@ object cdn:
    * 
    * &gt; **Note:** Support for the CDN (classic) `sku` `Standard_Microsoft` and `Standard_ChinaCdn` will be deprecated from Azure on `October 1, 2025` and will no longer be available, however modifications to existing CDN (classic) resources will continue to be supported until the API reaches full retirement on `September 30, 2027`.
    */
-  def Profile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Profile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cdn.ProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cdn.ProfileArgs.builder
     conf.logicalName2physicalName(name) match

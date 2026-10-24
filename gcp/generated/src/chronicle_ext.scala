@@ -8,7 +8,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entityGraphSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportEntityGraphSettingsArgs.Builder]):
+    inline def entityGraphSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportEntityGraphSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.BigQueryExportArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.BigQueryExportEntityGraphSettingsArgs.builder
       builder.entityGraphSettings(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def iocMatchesSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportIocMatchesSettingsArgs.Builder]):
+    inline def iocMatchesSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportIocMatchesSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.BigQueryExportArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.BigQueryExportIocMatchesSettingsArgs.builder
       builder.iocMatchesSettings(args(argsBuilder).build)
@@ -28,7 +28,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ruleDetectionsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportRuleDetectionsSettingsArgs.Builder]):
+    inline def ruleDetectionsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportRuleDetectionsSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.BigQueryExportArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.BigQueryExportRuleDetectionsSettingsArgs.builder
       builder.ruleDetectionsSettings(args(argsBuilder).build)
@@ -38,7 +38,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def udmEventsAggregatesSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportUdmEventsAggregatesSettingsArgs.Builder]):
+    inline def udmEventsAggregatesSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportUdmEventsAggregatesSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.BigQueryExportArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.BigQueryExportUdmEventsAggregatesSettingsArgs.builder
       builder.udmEventsAggregatesSettings(args(argsBuilder).build)
@@ -48,7 +48,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def udmEventsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportUdmEventsSettingsArgs.Builder]):
+    inline def udmEventsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportUdmEventsSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.BigQueryExportArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.BigQueryExportUdmEventsSettingsArgs.builder
       builder.udmEventsSettings(args(argsBuilder).build)
@@ -59,7 +59,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def chartLayout(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartChartLayoutArgs.Builder]):
+    inline def chartLayout(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartChartLayoutArgs.Builder]):
         com.pulumi.gcp.chronicle.DashboardChartArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartChartLayoutArgs.builder
       builder.chartLayout(args(argsBuilder).build)
@@ -69,7 +69,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dashboardChart(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartArgs.Builder]):
+    inline def dashboardChart(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartArgs.Builder]):
         com.pulumi.gcp.chronicle.DashboardChartArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartArgs.builder
       builder.dashboardChart(args(argsBuilder).build)
@@ -79,7 +79,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dashboardQuery(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardQueryArgs.Builder]):
+    inline def dashboardQuery(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardQueryArgs.Builder]):
         com.pulumi.gcp.chronicle.DashboardChartArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardQueryArgs.builder
       builder.dashboardQuery(args(argsBuilder).build)
@@ -95,7 +95,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allowedDataAccessLabels(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataAccessScopeAllowedDataAccessLabelArgs.Builder]*):
+    inline def allowedDataAccessLabels(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataAccessScopeAllowedDataAccessLabelArgs.Builder]*):
         com.pulumi.gcp.chronicle.DataAccessScopeArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DataAccessScopeAllowedDataAccessLabelArgs.builder
       builder.allowedDataAccessLabels(args.map(_(argsBuilder).build)*)
@@ -109,7 +109,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deniedDataAccessLabels(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataAccessScopeDeniedDataAccessLabelArgs.Builder]*):
+    inline def deniedDataAccessLabels(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataAccessScopeDeniedDataAccessLabelArgs.Builder]*):
         com.pulumi.gcp.chronicle.DataAccessScopeArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DataAccessScopeDeniedDataAccessLabelArgs.builder
       builder.deniedDataAccessLabels(args.map(_(argsBuilder).build)*)
@@ -120,7 +120,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingestionLabels(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataExportIngestionLabelArgs.Builder]*):
+    inline def ingestionLabels(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataExportIngestionLabelArgs.Builder]*):
         com.pulumi.gcp.chronicle.DataExportArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DataExportIngestionLabelArgs.builder
       builder.ingestionLabels(args.map(_(argsBuilder).build)*)
@@ -131,7 +131,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def columnInfos(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataTableColumnInfoArgs.Builder]*):
+    inline def columnInfos(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataTableColumnInfoArgs.Builder]*):
         com.pulumi.gcp.chronicle.DataTableArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DataTableColumnInfoArgs.builder
       builder.columnInfos(args.map(_(argsBuilder).build)*)
@@ -141,7 +141,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scopeInfo(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataTableScopeInfoArgs.Builder]):
+    inline def scopeInfo(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataTableScopeInfoArgs.Builder]):
         com.pulumi.gcp.chronicle.DataTableArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DataTableScopeInfoArgs.builder
       builder.scopeInfo(args(argsBuilder).build)
@@ -152,7 +152,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dynamicParameters(args: Endofunction[com.pulumi.gcp.chronicle.inputs.EnvironmentDynamicParameterArgs.Builder]*):
+    inline def dynamicParameters(args: Endofunction[com.pulumi.gcp.chronicle.inputs.EnvironmentDynamicParameterArgs.Builder]*):
         com.pulumi.gcp.chronicle.EnvironmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.EnvironmentDynamicParameterArgs.builder
       builder.dynamicParameters(args.map(_(argsBuilder).build)*)
@@ -164,7 +164,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def details(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder]):
+    inline def details(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder]):
         com.pulumi.gcp.chronicle.FeedArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.builder
       builder.details(args(argsBuilder).build)
@@ -177,7 +177,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def failureDetails(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedFailureDetailsArgs.Builder]):
+    inline def failureDetails(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedFailureDetailsArgs.Builder]):
         com.pulumi.gcp.chronicle.FeedArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedFailureDetailsArgs.builder
       builder.failureDetails(args(argsBuilder).build)
@@ -190,7 +190,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def outcomeFilters(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FindingsRefinementOutcomeFilterArgs.Builder]*):
+    inline def outcomeFilters(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FindingsRefinementOutcomeFilterArgs.Builder]*):
         com.pulumi.gcp.chronicle.FindingsRefinementArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.FindingsRefinementOutcomeFilterArgs.builder
       builder.outcomeFilters(args.map(_(argsBuilder).build)*)
@@ -201,7 +201,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def detectionExclusionApplication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FindingsRefinementDeploymentDetectionExclusionApplicationArgs.Builder]):
+    inline def detectionExclusionApplication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FindingsRefinementDeploymentDetectionExclusionApplicationArgs.Builder]):
         com.pulumi.gcp.chronicle.FindingsRefinementDeploymentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FindingsRefinementDeploymentDetectionExclusionApplicationArgs.builder
       builder.detectionExclusionApplication(args(argsBuilder).build)
@@ -212,7 +212,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def charts(args: Endofunction[com.pulumi.gcp.chronicle.inputs.NativeDashboardChartArgs.Builder]*):
+    inline def charts(args: Endofunction[com.pulumi.gcp.chronicle.inputs.NativeDashboardChartArgs.Builder]*):
         com.pulumi.gcp.chronicle.NativeDashboardArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.NativeDashboardChartArgs.builder
       builder.charts(args.map(_(argsBuilder).build)*)
@@ -222,7 +222,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def filters(args: Endofunction[com.pulumi.gcp.chronicle.inputs.NativeDashboardFilterArgs.Builder]*):
+    inline def filters(args: Endofunction[com.pulumi.gcp.chronicle.inputs.NativeDashboardFilterArgs.Builder]*):
         com.pulumi.gcp.chronicle.NativeDashboardArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.NativeDashboardFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
@@ -233,7 +233,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def lowCode(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserLowCodeArgs.Builder]):
+    inline def lowCode(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserLowCodeArgs.Builder]):
         com.pulumi.gcp.chronicle.ParserArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserLowCodeArgs.builder
       builder.lowCode(args(argsBuilder).build)
@@ -244,7 +244,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def versionInfo(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserVersionInfoArgs.Builder]):
+    inline def versionInfo(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserVersionInfoArgs.Builder]):
         com.pulumi.gcp.chronicle.ParserArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserVersionInfoArgs.builder
       builder.versionInfo(args(argsBuilder).build)
@@ -255,7 +255,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dynamicParsing(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserExtensionDynamicParsingArgs.Builder]):
+    inline def dynamicParsing(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserExtensionDynamicParsingArgs.Builder]):
         com.pulumi.gcp.chronicle.ParserExtensionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserExtensionDynamicParsingArgs.builder
       builder.dynamicParsing(args(argsBuilder).build)
@@ -265,7 +265,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fieldExtractors(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserExtensionFieldExtractorsArgs.Builder]):
+    inline def fieldExtractors(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserExtensionFieldExtractorsArgs.Builder]):
         com.pulumi.gcp.chronicle.ParserExtensionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserExtensionFieldExtractorsArgs.builder
       builder.fieldExtractors(args(argsBuilder).build)
@@ -280,7 +280,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entries(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ReferenceListEntryArgs.Builder]*):
+    inline def entries(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ReferenceListEntryArgs.Builder]*):
         com.pulumi.gcp.chronicle.ReferenceListArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.ReferenceListEntryArgs.builder
       builder.entries(args.map(_(argsBuilder).build)*)
@@ -290,7 +290,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scopeInfo(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ReferenceListScopeInfoArgs.Builder]):
+    inline def scopeInfo(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ReferenceListScopeInfoArgs.Builder]):
         com.pulumi.gcp.chronicle.ReferenceListArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.ReferenceListScopeInfoArgs.builder
       builder.scopeInfo(args(argsBuilder).build)
@@ -305,7 +305,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def processInterval(args: Endofunction[com.pulumi.gcp.chronicle.inputs.RetrohuntProcessIntervalArgs.Builder]):
+    inline def processInterval(args: Endofunction[com.pulumi.gcp.chronicle.inputs.RetrohuntProcessIntervalArgs.Builder]):
         com.pulumi.gcp.chronicle.RetrohuntArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.RetrohuntProcessIntervalArgs.builder
       builder.processInterval(args(argsBuilder).build)
@@ -317,7 +317,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scheduleCustomizations(args: Endofunction[com.pulumi.gcp.chronicle.inputs.RuleDeploymentScheduleCustomizationsArgs.Builder]):
+    inline def scheduleCustomizations(args: Endofunction[com.pulumi.gcp.chronicle.inputs.RuleDeploymentScheduleCustomizationsArgs.Builder]):
         com.pulumi.gcp.chronicle.RuleDeploymentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.RuleDeploymentScheduleCustomizationsArgs.builder
       builder.scheduleCustomizations(args(argsBuilder).build)
@@ -328,7 +328,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entityPopulationMechanism(args: Endofunction[com.pulumi.gcp.chronicle.inputs.WatchlistEntityPopulationMechanismArgs.Builder]):
+    inline def entityPopulationMechanism(args: Endofunction[com.pulumi.gcp.chronicle.inputs.WatchlistEntityPopulationMechanismArgs.Builder]):
         com.pulumi.gcp.chronicle.WatchlistArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.WatchlistEntityPopulationMechanismArgs.builder
       builder.entityPopulationMechanism(args(argsBuilder).build)
@@ -338,7 +338,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def watchlistUserPreferences(args: Endofunction[com.pulumi.gcp.chronicle.inputs.WatchlistWatchlistUserPreferencesArgs.Builder]):
+    inline def watchlistUserPreferences(args: Endofunction[com.pulumi.gcp.chronicle.inputs.WatchlistWatchlistUserPreferencesArgs.Builder]):
         com.pulumi.gcp.chronicle.WatchlistArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.WatchlistWatchlistUserPreferencesArgs.builder
       builder.watchlistUserPreferences(args(argsBuilder).build)
@@ -349,7 +349,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entityGraphSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportEntityGraphSettingsArgs.Builder]):
+    inline def entityGraphSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportEntityGraphSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.BigQueryExportState.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.BigQueryExportEntityGraphSettingsArgs.builder
       builder.entityGraphSettings(args(argsBuilder).build)
@@ -359,7 +359,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def iocMatchesSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportIocMatchesSettingsArgs.Builder]):
+    inline def iocMatchesSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportIocMatchesSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.BigQueryExportState.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.BigQueryExportIocMatchesSettingsArgs.builder
       builder.iocMatchesSettings(args(argsBuilder).build)
@@ -369,7 +369,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ruleDetectionsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportRuleDetectionsSettingsArgs.Builder]):
+    inline def ruleDetectionsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportRuleDetectionsSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.BigQueryExportState.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.BigQueryExportRuleDetectionsSettingsArgs.builder
       builder.ruleDetectionsSettings(args(argsBuilder).build)
@@ -379,7 +379,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def udmEventsAggregatesSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportUdmEventsAggregatesSettingsArgs.Builder]):
+    inline def udmEventsAggregatesSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportUdmEventsAggregatesSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.BigQueryExportState.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.BigQueryExportUdmEventsAggregatesSettingsArgs.builder
       builder.udmEventsAggregatesSettings(args(argsBuilder).build)
@@ -389,7 +389,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def udmEventsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportUdmEventsSettingsArgs.Builder]):
+    inline def udmEventsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.BigQueryExportUdmEventsSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.BigQueryExportState.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.BigQueryExportUdmEventsSettingsArgs.builder
       builder.udmEventsSettings(args(argsBuilder).build)
@@ -400,7 +400,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def chartDatasource(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartChartDatasourceArgs.Builder]):
+    inline def chartDatasource(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartChartDatasourceArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartChartDatasourceArgs.builder
       builder.chartDatasource(args(argsBuilder).build)
@@ -410,7 +410,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def drillDownConfig(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigArgs.Builder]):
+    inline def drillDownConfig(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigArgs.builder
       builder.drillDownConfig(args(argsBuilder).build)
@@ -420,7 +420,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def visualization(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationArgs.Builder]):
+    inline def visualization(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationArgs.builder
       builder.visualization(args(argsBuilder).build)
@@ -430,7 +430,7 @@ object chronicle_ext:
      * @param leftDrillDowns Structure is documented below.
      * @return builder
      */
-    def leftDrillDowns(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownArgs.Builder]*):
+    inline def leftDrillDowns(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownArgs.builder
       builder.leftDrillDowns(args.map(_(argsBuilder).build)*)
@@ -439,7 +439,7 @@ object chronicle_ext:
      * @param rightDrillDowns Structure is documented below.
      * @return builder
      */
-    def rightDrillDowns(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownArgs.Builder]*):
+    inline def rightDrillDowns(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownArgs.builder
       builder.rightDrillDowns(args.map(_(argsBuilder).build)*)
@@ -450,7 +450,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownCustomSettingsArgs.Builder]):
+    inline def customSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownCustomSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownCustomSettingsArgs.builder
       builder.customSettings(args(argsBuilder).build)
@@ -460,7 +460,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownDefaultSettingsArgs.Builder]):
+    inline def defaultSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownDefaultSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownDefaultSettingsArgs.builder
       builder.defaultSettings(args(argsBuilder).build)
@@ -471,7 +471,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def externalLink(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownCustomSettingsExternalLinkArgs.Builder]):
+    inline def externalLink(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownCustomSettingsExternalLinkArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownCustomSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownCustomSettingsExternalLinkArgs.builder
       builder.externalLink(args(argsBuilder).build)
@@ -481,7 +481,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def filter(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownCustomSettingsFilterArgs.Builder]):
+    inline def filter(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownCustomSettingsFilterArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownCustomSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownCustomSettingsFilterArgs.builder
       builder.filter(args(argsBuilder).build)
@@ -491,7 +491,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def query(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownCustomSettingsQueryArgs.Builder]):
+    inline def query(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownCustomSettingsQueryArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownCustomSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownCustomSettingsQueryArgs.builder
       builder.query(args(argsBuilder).build)
@@ -501,7 +501,7 @@ object chronicle_ext:
      * @param dashboardFilters Structure is documented below.
      * @return builder
      */
-    def dashboardFilters(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownCustomSettingsFilterDashboardFilterArgs.Builder]*):
+    inline def dashboardFilters(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownCustomSettingsFilterDashboardFilterArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownCustomSettingsFilterArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownCustomSettingsFilterDashboardFilterArgs.builder
       builder.dashboardFilters(args.map(_(argsBuilder).build)*)
@@ -511,7 +511,7 @@ object chronicle_ext:
      * @param filterOperatorAndValues Structure is documented below.
      * @return builder
      */
-    def filterOperatorAndValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownCustomSettingsFilterDashboardFilterFilterOperatorAndValueArgs.Builder]*):
+    inline def filterOperatorAndValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownCustomSettingsFilterDashboardFilterFilterOperatorAndValueArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownCustomSettingsFilterDashboardFilterArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigLeftDrillDownCustomSettingsFilterDashboardFilterFilterOperatorAndValueArgs.builder
       builder.filterOperatorAndValues(args.map(_(argsBuilder).build)*)
@@ -522,7 +522,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownCustomSettingsArgs.Builder]):
+    inline def customSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownCustomSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownCustomSettingsArgs.builder
       builder.customSettings(args(argsBuilder).build)
@@ -532,7 +532,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownDefaultSettingsArgs.Builder]):
+    inline def defaultSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownDefaultSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownDefaultSettingsArgs.builder
       builder.defaultSettings(args(argsBuilder).build)
@@ -543,7 +543,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def externalLink(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownCustomSettingsExternalLinkArgs.Builder]):
+    inline def externalLink(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownCustomSettingsExternalLinkArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownCustomSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownCustomSettingsExternalLinkArgs.builder
       builder.externalLink(args(argsBuilder).build)
@@ -553,7 +553,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def filter(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownCustomSettingsFilterArgs.Builder]):
+    inline def filter(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownCustomSettingsFilterArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownCustomSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownCustomSettingsFilterArgs.builder
       builder.filter(args(argsBuilder).build)
@@ -563,7 +563,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def query(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownCustomSettingsQueryArgs.Builder]):
+    inline def query(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownCustomSettingsQueryArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownCustomSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownCustomSettingsQueryArgs.builder
       builder.query(args(argsBuilder).build)
@@ -573,7 +573,7 @@ object chronicle_ext:
      * @param dashboardFilters Structure is documented below.
      * @return builder
      */
-    def dashboardFilters(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownCustomSettingsFilterDashboardFilterArgs.Builder]*):
+    inline def dashboardFilters(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownCustomSettingsFilterDashboardFilterArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownCustomSettingsFilterArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownCustomSettingsFilterDashboardFilterArgs.builder
       builder.dashboardFilters(args.map(_(argsBuilder).build)*)
@@ -583,7 +583,7 @@ object chronicle_ext:
      * @param filterOperatorAndValues Structure is documented below.
      * @return builder
      */
-    def filterOperatorAndValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownCustomSettingsFilterDashboardFilterFilterOperatorAndValueArgs.Builder]*):
+    inline def filterOperatorAndValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownCustomSettingsFilterDashboardFilterFilterOperatorAndValueArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownCustomSettingsFilterDashboardFilterArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartDrillDownConfigRightDrillDownCustomSettingsFilterDashboardFilterFilterOperatorAndValueArgs.builder
       builder.filterOperatorAndValues(args.map(_(argsBuilder).build)*)
@@ -594,7 +594,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def button(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationButtonArgs.Builder]):
+    inline def button(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationButtonArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationButtonArgs.builder
       builder.button(args(argsBuilder).build)
@@ -603,7 +603,7 @@ object chronicle_ext:
      * @param columnDefs Structure is documented below.
      * @return builder
      */
-    def columnDefs(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationColumnDefArgs.Builder]*):
+    inline def columnDefs(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationColumnDefArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationColumnDefArgs.builder
       builder.columnDefs(args.map(_(argsBuilder).build)*)
@@ -613,7 +613,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleMapsConfig(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationGoogleMapsConfigArgs.Builder]):
+    inline def googleMapsConfig(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationGoogleMapsConfigArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationGoogleMapsConfigArgs.builder
       builder.googleMapsConfig(args(argsBuilder).build)
@@ -622,7 +622,7 @@ object chronicle_ext:
      * @param legends Structure is documented below.
      * @return builder
      */
-    def legends(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationLegendArgs.Builder]*):
+    inline def legends(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationLegendArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationLegendArgs.builder
       builder.legends(args.map(_(argsBuilder).build)*)
@@ -632,7 +632,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def markdown(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationMarkdownArgs.Builder]):
+    inline def markdown(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationMarkdownArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationMarkdownArgs.builder
       builder.markdown(args(argsBuilder).build)
@@ -641,7 +641,7 @@ object chronicle_ext:
      * @param series Structure is documented below.
      * @return builder
      */
-    def series(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesArgs.Builder]*):
+    inline def series(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesArgs.builder
       builder.series(args.map(_(argsBuilder).build)*)
@@ -651,7 +651,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tableConfig(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationTableConfigArgs.Builder]):
+    inline def tableConfig(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationTableConfigArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationTableConfigArgs.builder
       builder.tableConfig(args(argsBuilder).build)
@@ -661,7 +661,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tooltip(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationTooltipArgs.Builder]):
+    inline def tooltip(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationTooltipArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationTooltipArgs.builder
       builder.tooltip(args(argsBuilder).build)
@@ -670,7 +670,7 @@ object chronicle_ext:
      * @param visualMaps Structure is documented below.
      * @return builder
      */
-    def visualMaps(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationVisualMapArgs.Builder]*):
+    inline def visualMaps(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationVisualMapArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationVisualMapArgs.builder
       builder.visualMaps(args.map(_(argsBuilder).build)*)
@@ -679,7 +679,7 @@ object chronicle_ext:
      * @param xAxes Structure is documented below.
      * @return builder
      */
-    def xAxes(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationXAxisArgs.Builder]*):
+    inline def xAxes(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationXAxisArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationXAxisArgs.builder
       builder.xAxes(args.map(_(argsBuilder).build)*)
@@ -688,7 +688,7 @@ object chronicle_ext:
      * @param yAxes Structure is documented below.
      * @return builder
      */
-    def yAxes(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationYAxisArgs.Builder]*):
+    inline def yAxes(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationYAxisArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationYAxisArgs.builder
       builder.yAxes(args.map(_(argsBuilder).build)*)
@@ -699,7 +699,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationButtonPropertiesArgs.Builder]):
+    inline def properties(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationButtonPropertiesArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationButtonArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationButtonPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
@@ -710,7 +710,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationGoogleMapsConfigDataSettingsArgs.Builder]):
+    inline def dataSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationGoogleMapsConfigDataSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationGoogleMapsConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationGoogleMapsConfigDataSettingsArgs.builder
       builder.dataSettings(args(argsBuilder).build)
@@ -720,7 +720,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mapPosition(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationGoogleMapsConfigMapPositionArgs.Builder]):
+    inline def mapPosition(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationGoogleMapsConfigMapPositionArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationGoogleMapsConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationGoogleMapsConfigMapPositionArgs.builder
       builder.mapPosition(args(argsBuilder).build)
@@ -730,7 +730,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pointSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationGoogleMapsConfigPointSettingsArgs.Builder]):
+    inline def pointSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationGoogleMapsConfigPointSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationGoogleMapsConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationGoogleMapsConfigPointSettingsArgs.builder
       builder.pointSettings(args(argsBuilder).build)
@@ -741,7 +741,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationMarkdownPropertiesArgs.Builder]):
+    inline def properties(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationMarkdownPropertiesArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationMarkdownArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationMarkdownPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
@@ -752,7 +752,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def areaStyle(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesAreaStyleArgs.Builder]):
+    inline def areaStyle(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesAreaStyleArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesAreaStyleArgs.builder
       builder.areaStyle(args(argsBuilder).build)
@@ -762,7 +762,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataLabel(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesDataLabelArgs.Builder]):
+    inline def dataLabel(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesDataLabelArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesDataLabelArgs.builder
       builder.dataLabel(args(argsBuilder).build)
@@ -772,7 +772,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encode(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesEncodeArgs.Builder]):
+    inline def encode(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesEncodeArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesEncodeArgs.builder
       builder.encode(args(argsBuilder).build)
@@ -782,7 +782,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gaugeConfig(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesGaugeConfigArgs.Builder]):
+    inline def gaugeConfig(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesGaugeConfigArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesGaugeConfigArgs.builder
       builder.gaugeConfig(args(argsBuilder).build)
@@ -792,7 +792,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def itemColors(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesItemColorsArgs.Builder]):
+    inline def itemColors(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesItemColorsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesItemColorsArgs.builder
       builder.itemColors(args(argsBuilder).build)
@@ -802,7 +802,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def itemStyle(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesItemStyleArgs.Builder]):
+    inline def itemStyle(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesItemStyleArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesItemStyleArgs.builder
       builder.itemStyle(args(argsBuilder).build)
@@ -812,7 +812,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metricTrendConfig(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesMetricTrendConfigArgs.Builder]):
+    inline def metricTrendConfig(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesMetricTrendConfigArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesMetricTrendConfigArgs.builder
       builder.metricTrendConfig(args(argsBuilder).build)
@@ -823,7 +823,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def baseValue(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesGaugeConfigBaseValueArgs.Builder]):
+    inline def baseValue(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesGaugeConfigBaseValueArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesGaugeConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesGaugeConfigBaseValueArgs.builder
       builder.baseValue(args(argsBuilder).build)
@@ -833,7 +833,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def limitValue(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesGaugeConfigLimitValueArgs.Builder]):
+    inline def limitValue(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesGaugeConfigLimitValueArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesGaugeConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesGaugeConfigLimitValueArgs.builder
       builder.limitValue(args(argsBuilder).build)
@@ -842,7 +842,7 @@ object chronicle_ext:
      * @param thresholdValues Structure is documented below.
      * @return builder
      */
-    def thresholdValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesGaugeConfigThresholdValueArgs.Builder]*):
+    inline def thresholdValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesGaugeConfigThresholdValueArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesGaugeConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesGaugeConfigThresholdValueArgs.builder
       builder.thresholdValues(args.map(_(argsBuilder).build)*)
@@ -852,7 +852,7 @@ object chronicle_ext:
      * @param colors Structure is documented below.
      * @return builder
      */
-    def colors(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesItemColorsColorArgs.Builder]*):
+    inline def colors(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesItemColorsColorArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesItemColorsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesItemColorsColorArgs.builder
       builder.colors(args.map(_(argsBuilder).build)*)
@@ -863,7 +863,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def value(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesItemColorsColorValueArgs.Builder]):
+    inline def value(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesItemColorsColorValueArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesItemColorsColorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationSeriesItemColorsColorValueArgs.builder
       builder.value(args(argsBuilder).build)
@@ -873,7 +873,7 @@ object chronicle_ext:
      * @param columnRenderTypeSettings Structure is documented below.
      * @return builder
      */
-    def columnRenderTypeSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationTableConfigColumnRenderTypeSettingArgs.Builder]*):
+    inline def columnRenderTypeSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationTableConfigColumnRenderTypeSettingArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationTableConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationTableConfigColumnRenderTypeSettingArgs.builder
       builder.columnRenderTypeSettings(args.map(_(argsBuilder).build)*)
@@ -882,7 +882,7 @@ object chronicle_ext:
      * @param columnTooltipSettings Structure is documented below.
      * @return builder
      */
-    def columnTooltipSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationTableConfigColumnTooltipSettingArgs.Builder]*):
+    inline def columnTooltipSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationTableConfigColumnTooltipSettingArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationTableConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationTableConfigColumnTooltipSettingArgs.builder
       builder.columnTooltipSettings(args.map(_(argsBuilder).build)*)
@@ -892,7 +892,7 @@ object chronicle_ext:
      * @param pieces Structure is documented below.
      * @return builder
      */
-    def pieces(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationVisualMapPieceArgs.Builder]*):
+    inline def pieces(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationVisualMapPieceArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationVisualMapArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartVisualizationVisualMapPieceArgs.builder
       builder.pieces(args.map(_(argsBuilder).build)*)
@@ -903,7 +903,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def input(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardQueryInputArgs.Builder]):
+    inline def input(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardQueryInputArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardQueryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardQueryInputArgs.builder
       builder.input(args(argsBuilder).build)
@@ -914,7 +914,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def relativeTime(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardQueryInputRelativeTimeArgs.Builder]):
+    inline def relativeTime(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardQueryInputRelativeTimeArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardQueryInputArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardQueryInputRelativeTimeArgs.builder
       builder.relativeTime(args(argsBuilder).build)
@@ -924,7 +924,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeWindow(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardQueryInputTimeWindowArgs.Builder]):
+    inline def timeWindow(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardQueryInputTimeWindowArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardQueryInputArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardQueryInputTimeWindowArgs.builder
       builder.timeWindow(args(argsBuilder).build)
@@ -935,7 +935,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def chartLayout(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartChartLayoutArgs.Builder]):
+    inline def chartLayout(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartChartLayoutArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartState.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartChartLayoutArgs.builder
       builder.chartLayout(args(argsBuilder).build)
@@ -945,7 +945,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dashboardChart(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartArgs.Builder]):
+    inline def dashboardChart(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartState.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardChartArgs.builder
       builder.dashboardChart(args(argsBuilder).build)
@@ -955,7 +955,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dashboardQuery(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardQueryArgs.Builder]):
+    inline def dashboardQuery(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardQueryArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DashboardChartState.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DashboardChartDashboardQueryArgs.builder
       builder.dashboardQuery(args(argsBuilder).build)
@@ -966,7 +966,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingestionLabel(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataAccessScopeAllowedDataAccessLabelIngestionLabelArgs.Builder]):
+    inline def ingestionLabel(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataAccessScopeAllowedDataAccessLabelIngestionLabelArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DataAccessScopeAllowedDataAccessLabelArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DataAccessScopeAllowedDataAccessLabelIngestionLabelArgs.builder
       builder.ingestionLabel(args(argsBuilder).build)
@@ -977,7 +977,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingestionLabel(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataAccessScopeDeniedDataAccessLabelIngestionLabelArgs.Builder]):
+    inline def ingestionLabel(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataAccessScopeDeniedDataAccessLabelIngestionLabelArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DataAccessScopeDeniedDataAccessLabelArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DataAccessScopeDeniedDataAccessLabelIngestionLabelArgs.builder
       builder.ingestionLabel(args(argsBuilder).build)
@@ -993,7 +993,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allowedDataAccessLabels(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataAccessScopeAllowedDataAccessLabelArgs.Builder]*):
+    inline def allowedDataAccessLabels(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataAccessScopeAllowedDataAccessLabelArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.DataAccessScopeState.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DataAccessScopeAllowedDataAccessLabelArgs.builder
       builder.allowedDataAccessLabels(args.map(_(argsBuilder).build)*)
@@ -1007,7 +1007,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deniedDataAccessLabels(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataAccessScopeDeniedDataAccessLabelArgs.Builder]*):
+    inline def deniedDataAccessLabels(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataAccessScopeDeniedDataAccessLabelArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.DataAccessScopeState.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DataAccessScopeDeniedDataAccessLabelArgs.builder
       builder.deniedDataAccessLabels(args.map(_(argsBuilder).build)*)
@@ -1018,7 +1018,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataExportStatuses(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataExportDataExportStatusArgs.Builder]*):
+    inline def dataExportStatuses(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataExportDataExportStatusArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.DataExportState.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DataExportDataExportStatusArgs.builder
       builder.dataExportStatuses(args.map(_(argsBuilder).build)*)
@@ -1028,7 +1028,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingestionLabels(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataExportIngestionLabelArgs.Builder]*):
+    inline def ingestionLabels(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataExportIngestionLabelArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.DataExportState.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DataExportIngestionLabelArgs.builder
       builder.ingestionLabels(args.map(_(argsBuilder).build)*)
@@ -1039,7 +1039,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def columnInfos(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataTableColumnInfoArgs.Builder]*):
+    inline def columnInfos(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataTableColumnInfoArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.DataTableState.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.DataTableColumnInfoArgs.builder
       builder.columnInfos(args.map(_(argsBuilder).build)*)
@@ -1049,7 +1049,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scopeInfo(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataTableScopeInfoArgs.Builder]):
+    inline def scopeInfo(args: Endofunction[com.pulumi.gcp.chronicle.inputs.DataTableScopeInfoArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.DataTableState.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.DataTableScopeInfoArgs.builder
       builder.scopeInfo(args(argsBuilder).build)
@@ -1060,7 +1060,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dynamicParameters(args: Endofunction[com.pulumi.gcp.chronicle.inputs.EnvironmentDynamicParameterArgs.Builder]*):
+    inline def dynamicParameters(args: Endofunction[com.pulumi.gcp.chronicle.inputs.EnvironmentDynamicParameterArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.EnvironmentState.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.EnvironmentDynamicParameterArgs.builder
       builder.dynamicParameters(args.map(_(argsBuilder).build)*)
@@ -1070,7 +1070,7 @@ object chronicle_ext:
      * @param authentication Amazon S3 auth.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonS3SettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonS3SettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonS3SettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonS3SettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -1080,7 +1080,7 @@ object chronicle_ext:
      * @param authentication A message containing fields used to authenticate with Amazon S3.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonS3V2SettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonS3V2SettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonS3V2SettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonS3V2SettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -1091,7 +1091,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accessKeySecretAuth(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonS3V2SettingsAuthenticationAccessKeySecretAuthArgs.Builder]):
+    inline def accessKeySecretAuth(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonS3V2SettingsAuthenticationAccessKeySecretAuthArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonS3V2SettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonS3V2SettingsAuthenticationAccessKeySecretAuthArgs.builder
       builder.accessKeySecretAuth(args(argsBuilder).build)
@@ -1101,7 +1101,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def awsIamRoleAuth(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonS3V2SettingsAuthenticationAwsIamRoleAuthArgs.Builder]):
+    inline def awsIamRoleAuth(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonS3V2SettingsAuthenticationAwsIamRoleAuthArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonS3V2SettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonS3V2SettingsAuthenticationAwsIamRoleAuthArgs.builder
       builder.awsIamRoleAuth(args(argsBuilder).build)
@@ -1112,7 +1112,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -1123,7 +1123,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def additionalS3AccessKeySecretAuth(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsSettingsAuthenticationAdditionalS3AccessKeySecretAuthArgs.Builder]):
+    inline def additionalS3AccessKeySecretAuth(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsSettingsAuthenticationAdditionalS3AccessKeySecretAuthArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsSettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsSettingsAuthenticationAdditionalS3AccessKeySecretAuthArgs.builder
       builder.additionalS3AccessKeySecretAuth(args(argsBuilder).build)
@@ -1135,7 +1135,7 @@ object chronicle_ext:
      * &lt;a name=&#34;nestedDetailsAmazonSqsSettingsAuthenticationAdditionalS3AccessKeySecretAuth&#34;&gt;&lt;/a&gt;The `additionalS3AccessKeySecretAuth` block supports:
      * @return builder
      */
-    def sqsAccessKeySecretAuth(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsSettingsAuthenticationSqsAccessKeySecretAuthArgs.Builder]):
+    inline def sqsAccessKeySecretAuth(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsSettingsAuthenticationSqsAccessKeySecretAuthArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsSettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsSettingsAuthenticationSqsAccessKeySecretAuthArgs.builder
       builder.sqsAccessKeySecretAuth(args(argsBuilder).build)
@@ -1145,7 +1145,7 @@ object chronicle_ext:
      * @param authentication A message containing fields used to authenticate with Amazon SQS.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsV2SettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsV2SettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsV2SettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsV2SettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -1156,7 +1156,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def awsIamRoleAuth(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsV2SettingsAuthenticationAwsIamRoleAuthArgs.Builder]):
+    inline def awsIamRoleAuth(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsV2SettingsAuthenticationAwsIamRoleAuthArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsV2SettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsV2SettingsAuthenticationAwsIamRoleAuthArgs.builder
       builder.awsIamRoleAuth(args(argsBuilder).build)
@@ -1166,7 +1166,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sqsV2AccessKeySecretAuth(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsV2SettingsAuthenticationSqsV2AccessKeySecretAuthArgs.Builder]):
+    inline def sqsV2AccessKeySecretAuth(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsV2SettingsAuthenticationSqsV2AccessKeySecretAuthArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsV2SettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsV2SettingsAuthenticationSqsV2AccessKeySecretAuthArgs.builder
       builder.sqsV2AccessKeySecretAuth(args(argsBuilder).build)
@@ -1177,7 +1177,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAnomaliSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAnomaliSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsAnomaliSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAnomaliSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -1187,7 +1187,7 @@ object chronicle_ext:
      * @param amazonKinesisFirehoseSettings Settings required by Amazon Kinesis Firehose Feeds(HTTP-Push).
      * @return builder
      */
-    def amazonKinesisFirehoseSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonKinesisFirehoseSettingsArgs.Builder]):
+    inline def amazonKinesisFirehoseSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonKinesisFirehoseSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonKinesisFirehoseSettingsArgs.builder
       builder.amazonKinesisFirehoseSettings(args(argsBuilder).build)
@@ -1197,7 +1197,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def amazonS3Settings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonS3SettingsArgs.Builder]):
+    inline def amazonS3Settings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonS3SettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonS3SettingsArgs.builder
       builder.amazonS3Settings(args(argsBuilder).build)
@@ -1207,7 +1207,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def amazonS3V2Settings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonS3V2SettingsArgs.Builder]):
+    inline def amazonS3V2Settings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonS3V2SettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonS3V2SettingsArgs.builder
       builder.amazonS3V2Settings(args(argsBuilder).build)
@@ -1217,7 +1217,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def amazonSqsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsSettingsArgs.Builder]):
+    inline def amazonSqsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsSettingsArgs.builder
       builder.amazonSqsSettings(args(argsBuilder).build)
@@ -1227,7 +1227,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def amazonSqsV2Settings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsV2SettingsArgs.Builder]):
+    inline def amazonSqsV2Settings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsV2SettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAmazonSqsV2SettingsArgs.builder
       builder.amazonSqsV2Settings(args(argsBuilder).build)
@@ -1237,7 +1237,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def anomaliSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAnomaliSettingsArgs.Builder]):
+    inline def anomaliSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAnomaliSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAnomaliSettingsArgs.builder
       builder.anomaliSettings(args(argsBuilder).build)
@@ -1247,7 +1247,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def awsEc2HostsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsEc2HostsSettingsArgs.Builder]):
+    inline def awsEc2HostsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsEc2HostsSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsEc2HostsSettingsArgs.builder
       builder.awsEc2HostsSettings(args(argsBuilder).build)
@@ -1257,7 +1257,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def awsEc2InstancesSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsEc2InstancesSettingsArgs.Builder]):
+    inline def awsEc2InstancesSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsEc2InstancesSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsEc2InstancesSettingsArgs.builder
       builder.awsEc2InstancesSettings(args(argsBuilder).build)
@@ -1267,7 +1267,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def awsEc2VpcsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsEc2VpcsSettingsArgs.Builder]):
+    inline def awsEc2VpcsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsEc2VpcsSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsEc2VpcsSettingsArgs.builder
       builder.awsEc2VpcsSettings(args(argsBuilder).build)
@@ -1277,7 +1277,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def awsIamSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsIamSettingsArgs.Builder]):
+    inline def awsIamSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsIamSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsIamSettingsArgs.builder
       builder.awsIamSettings(args(argsBuilder).build)
@@ -1287,7 +1287,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def azureAdAuditSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureAdAuditSettingsArgs.Builder]):
+    inline def azureAdAuditSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureAdAuditSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureAdAuditSettingsArgs.builder
       builder.azureAdAuditSettings(args(argsBuilder).build)
@@ -1297,7 +1297,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def azureAdContextSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureAdContextSettingsArgs.Builder]):
+    inline def azureAdContextSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureAdContextSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureAdContextSettingsArgs.builder
       builder.azureAdContextSettings(args(argsBuilder).build)
@@ -1307,7 +1307,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def azureAdSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureAdSettingsArgs.Builder]):
+    inline def azureAdSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureAdSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureAdSettingsArgs.builder
       builder.azureAdSettings(args(argsBuilder).build)
@@ -1317,7 +1317,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def azureBlobStoreSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureBlobStoreSettingsArgs.Builder]):
+    inline def azureBlobStoreSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureBlobStoreSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureBlobStoreSettingsArgs.builder
       builder.azureBlobStoreSettings(args(argsBuilder).build)
@@ -1327,7 +1327,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def azureBlobStoreV2Settings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureBlobStoreV2SettingsArgs.Builder]):
+    inline def azureBlobStoreV2Settings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureBlobStoreV2SettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureBlobStoreV2SettingsArgs.builder
       builder.azureBlobStoreV2Settings(args(argsBuilder).build)
@@ -1337,7 +1337,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def azureEventHubSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureEventHubSettingsArgs.Builder]):
+    inline def azureEventHubSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureEventHubSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureEventHubSettingsArgs.builder
       builder.azureEventHubSettings(args(argsBuilder).build)
@@ -1347,7 +1347,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def azureMdmIntuneSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureMdmIntuneSettingsArgs.Builder]):
+    inline def azureMdmIntuneSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureMdmIntuneSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureMdmIntuneSettingsArgs.builder
       builder.azureMdmIntuneSettings(args(argsBuilder).build)
@@ -1357,7 +1357,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudPassageSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsCloudPassageSettingsArgs.Builder]):
+    inline def cloudPassageSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsCloudPassageSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsCloudPassageSettingsArgs.builder
       builder.cloudPassageSettings(args(argsBuilder).build)
@@ -1367,7 +1367,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cortexXdrSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsCortexXdrSettingsArgs.Builder]):
+    inline def cortexXdrSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsCortexXdrSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsCortexXdrSettingsArgs.builder
       builder.cortexXdrSettings(args(argsBuilder).build)
@@ -1377,7 +1377,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def crowdstrikeAlertsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsCrowdstrikeAlertsSettingsArgs.Builder]):
+    inline def crowdstrikeAlertsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsCrowdstrikeAlertsSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsCrowdstrikeAlertsSettingsArgs.builder
       builder.crowdstrikeAlertsSettings(args(argsBuilder).build)
@@ -1387,7 +1387,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def crowdstrikeDetectsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsCrowdstrikeDetectsSettingsArgs.Builder]):
+    inline def crowdstrikeDetectsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsCrowdstrikeDetectsSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsCrowdstrikeDetectsSettingsArgs.builder
       builder.crowdstrikeDetectsSettings(args(argsBuilder).build)
@@ -1397,7 +1397,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dummyLogTypeSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsDummyLogTypeSettingsArgs.Builder]):
+    inline def dummyLogTypeSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsDummyLogTypeSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsDummyLogTypeSettingsArgs.builder
       builder.dummyLogTypeSettings(args(argsBuilder).build)
@@ -1407,7 +1407,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def duoAuthSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsDuoAuthSettingsArgs.Builder]):
+    inline def duoAuthSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsDuoAuthSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsDuoAuthSettingsArgs.builder
       builder.duoAuthSettings(args(argsBuilder).build)
@@ -1417,7 +1417,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def duoUserContextSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsDuoUserContextSettingsArgs.Builder]):
+    inline def duoUserContextSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsDuoUserContextSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsDuoUserContextSettingsArgs.builder
       builder.duoUserContextSettings(args(argsBuilder).build)
@@ -1427,7 +1427,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def foxItStixSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsFoxItStixSettingsArgs.Builder]):
+    inline def foxItStixSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsFoxItStixSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsFoxItStixSettingsArgs.builder
       builder.foxItStixSettings(args(argsBuilder).build)
@@ -1437,7 +1437,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gcsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsGcsSettingsArgs.Builder]):
+    inline def gcsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsGcsSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsGcsSettingsArgs.builder
       builder.gcsSettings(args(argsBuilder).build)
@@ -1448,7 +1448,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gcsV2Settings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsGcsV2SettingsArgs.Builder]):
+    inline def gcsV2Settings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsGcsV2SettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsGcsV2SettingsArgs.builder
       builder.gcsV2Settings(args(argsBuilder).build)
@@ -1458,7 +1458,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleCloudIdentityDeviceUsersSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDeviceUsersSettingsArgs.Builder]):
+    inline def googleCloudIdentityDeviceUsersSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDeviceUsersSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDeviceUsersSettingsArgs.builder
       builder.googleCloudIdentityDeviceUsersSettings(args(argsBuilder).build)
@@ -1468,7 +1468,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleCloudIdentityDevicesSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDevicesSettingsArgs.Builder]):
+    inline def googleCloudIdentityDevicesSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDevicesSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDevicesSettingsArgs.builder
       builder.googleCloudIdentityDevicesSettings(args(argsBuilder).build)
@@ -1479,7 +1479,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleCloudStorageEventDrivenSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudStorageEventDrivenSettingsArgs.Builder]):
+    inline def googleCloudStorageEventDrivenSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudStorageEventDrivenSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudStorageEventDrivenSettingsArgs.builder
       builder.googleCloudStorageEventDrivenSettings(args(argsBuilder).build)
@@ -1489,7 +1489,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsHttpSettingsArgs.Builder]):
+    inline def httpSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsHttpSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsHttpSettingsArgs.builder
       builder.httpSettings(args(argsBuilder).build)
@@ -1499,7 +1499,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpsPushAmazonKinesisFirehoseSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsHttpsPushAmazonKinesisFirehoseSettingsArgs.Builder]):
+    inline def httpsPushAmazonKinesisFirehoseSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsHttpsPushAmazonKinesisFirehoseSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsHttpsPushAmazonKinesisFirehoseSettingsArgs.builder
       builder.httpsPushAmazonKinesisFirehoseSettings(args(argsBuilder).build)
@@ -1509,7 +1509,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpsPushGoogleCloudPubsubSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsHttpsPushGoogleCloudPubsubSettingsArgs.Builder]):
+    inline def httpsPushGoogleCloudPubsubSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsHttpsPushGoogleCloudPubsubSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsHttpsPushGoogleCloudPubsubSettingsArgs.builder
       builder.httpsPushGoogleCloudPubsubSettings(args(argsBuilder).build)
@@ -1519,7 +1519,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpsPushWebhookSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsHttpsPushWebhookSettingsArgs.Builder]):
+    inline def httpsPushWebhookSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsHttpsPushWebhookSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsHttpsPushWebhookSettingsArgs.builder
       builder.httpsPushWebhookSettings(args(argsBuilder).build)
@@ -1529,7 +1529,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def impervaWafSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsImpervaWafSettingsArgs.Builder]):
+    inline def impervaWafSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsImpervaWafSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsImpervaWafSettingsArgs.builder
       builder.impervaWafSettings(args(argsBuilder).build)
@@ -1539,7 +1539,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mandiantIocSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsMandiantIocSettingsArgs.Builder]):
+    inline def mandiantIocSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsMandiantIocSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsMandiantIocSettingsArgs.builder
       builder.mandiantIocSettings(args(argsBuilder).build)
@@ -1549,7 +1549,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def microsoftGraphAlertSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsMicrosoftGraphAlertSettingsArgs.Builder]):
+    inline def microsoftGraphAlertSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsMicrosoftGraphAlertSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsMicrosoftGraphAlertSettingsArgs.builder
       builder.microsoftGraphAlertSettings(args(argsBuilder).build)
@@ -1559,7 +1559,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def microsoftSecurityCenterAlertSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsMicrosoftSecurityCenterAlertSettingsArgs.Builder]):
+    inline def microsoftSecurityCenterAlertSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsMicrosoftSecurityCenterAlertSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsMicrosoftSecurityCenterAlertSettingsArgs.builder
       builder.microsoftSecurityCenterAlertSettings(args(argsBuilder).build)
@@ -1569,7 +1569,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mimecastMailSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsMimecastMailSettingsArgs.Builder]):
+    inline def mimecastMailSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsMimecastMailSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsMimecastMailSettingsArgs.builder
       builder.mimecastMailSettings(args(argsBuilder).build)
@@ -1579,7 +1579,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mimecastMailV2Settings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsMimecastMailV2SettingsArgs.Builder]):
+    inline def mimecastMailV2Settings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsMimecastMailV2SettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsMimecastMailV2SettingsArgs.builder
       builder.mimecastMailV2Settings(args(argsBuilder).build)
@@ -1589,7 +1589,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def netskopeAlertSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsNetskopeAlertSettingsArgs.Builder]):
+    inline def netskopeAlertSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsNetskopeAlertSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsNetskopeAlertSettingsArgs.builder
       builder.netskopeAlertSettings(args(argsBuilder).build)
@@ -1599,7 +1599,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def netskopeAlertV2Settings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsNetskopeAlertV2SettingsArgs.Builder]):
+    inline def netskopeAlertV2Settings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsNetskopeAlertV2SettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsNetskopeAlertV2SettingsArgs.builder
       builder.netskopeAlertV2Settings(args(argsBuilder).build)
@@ -1609,7 +1609,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def office365Settings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsOffice365SettingsArgs.Builder]):
+    inline def office365Settings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsOffice365SettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsOffice365SettingsArgs.builder
       builder.office365Settings(args(argsBuilder).build)
@@ -1619,7 +1619,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oktaSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsOktaSettingsArgs.Builder]):
+    inline def oktaSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsOktaSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsOktaSettingsArgs.builder
       builder.oktaSettings(args(argsBuilder).build)
@@ -1629,7 +1629,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oktaUserContextSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsOktaUserContextSettingsArgs.Builder]):
+    inline def oktaUserContextSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsOktaUserContextSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsOktaUserContextSettingsArgs.builder
       builder.oktaUserContextSettings(args(argsBuilder).build)
@@ -1639,7 +1639,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def panIocSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsPanIocSettingsArgs.Builder]):
+    inline def panIocSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsPanIocSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsPanIocSettingsArgs.builder
       builder.panIocSettings(args(argsBuilder).build)
@@ -1649,7 +1649,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def panPrismaCloudSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsPanPrismaCloudSettingsArgs.Builder]):
+    inline def panPrismaCloudSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsPanPrismaCloudSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsPanPrismaCloudSettingsArgs.builder
       builder.panPrismaCloudSettings(args(argsBuilder).build)
@@ -1659,7 +1659,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def proofpointMailSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsProofpointMailSettingsArgs.Builder]):
+    inline def proofpointMailSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsProofpointMailSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsProofpointMailSettingsArgs.builder
       builder.proofpointMailSettings(args(argsBuilder).build)
@@ -1669,7 +1669,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def proofpointOnDemandSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsProofpointOnDemandSettingsArgs.Builder]):
+    inline def proofpointOnDemandSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsProofpointOnDemandSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsProofpointOnDemandSettingsArgs.builder
       builder.proofpointOnDemandSettings(args(argsBuilder).build)
@@ -1679,7 +1679,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pubsubSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsPubsubSettingsArgs.Builder]):
+    inline def pubsubSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsPubsubSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsPubsubSettingsArgs.builder
       builder.pubsubSettings(args(argsBuilder).build)
@@ -1689,7 +1689,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def qualysScanSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsQualysScanSettingsArgs.Builder]):
+    inline def qualysScanSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsQualysScanSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsQualysScanSettingsArgs.builder
       builder.qualysScanSettings(args(argsBuilder).build)
@@ -1699,7 +1699,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def qualysVmSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsQualysVmSettingsArgs.Builder]):
+    inline def qualysVmSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsQualysVmSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsQualysVmSettingsArgs.builder
       builder.qualysVmSettings(args(argsBuilder).build)
@@ -1709,7 +1709,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rapid7InsightSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsRapid7InsightSettingsArgs.Builder]):
+    inline def rapid7InsightSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsRapid7InsightSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsRapid7InsightSettingsArgs.builder
       builder.rapid7InsightSettings(args(argsBuilder).build)
@@ -1719,7 +1719,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def recordedFutureIocSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsRecordedFutureIocSettingsArgs.Builder]):
+    inline def recordedFutureIocSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsRecordedFutureIocSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsRecordedFutureIocSettingsArgs.builder
       builder.recordedFutureIocSettings(args(argsBuilder).build)
@@ -1729,7 +1729,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rhIsacIocSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsRhIsacIocSettingsArgs.Builder]):
+    inline def rhIsacIocSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsRhIsacIocSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsRhIsacIocSettingsArgs.builder
       builder.rhIsacIocSettings(args(argsBuilder).build)
@@ -1739,7 +1739,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def salesforceSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsSalesforceSettingsArgs.Builder]):
+    inline def salesforceSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsSalesforceSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsSalesforceSettingsArgs.builder
       builder.salesforceSettings(args(argsBuilder).build)
@@ -1749,7 +1749,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sentineloneAlertSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsSentineloneAlertSettingsArgs.Builder]):
+    inline def sentineloneAlertSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsSentineloneAlertSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsSentineloneAlertSettingsArgs.builder
       builder.sentineloneAlertSettings(args(argsBuilder).build)
@@ -1759,7 +1759,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceNowCmdbSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsServiceNowCmdbSettingsArgs.Builder]):
+    inline def serviceNowCmdbSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsServiceNowCmdbSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsServiceNowCmdbSettingsArgs.builder
       builder.serviceNowCmdbSettings(args(argsBuilder).build)
@@ -1769,7 +1769,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sftpSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsSftpSettingsArgs.Builder]):
+    inline def sftpSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsSftpSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsSftpSettingsArgs.builder
       builder.sftpSettings(args(argsBuilder).build)
@@ -1779,7 +1779,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def symantecEventExportSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsSymantecEventExportSettingsArgs.Builder]):
+    inline def symantecEventExportSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsSymantecEventExportSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsSymantecEventExportSettingsArgs.builder
       builder.symantecEventExportSettings(args(argsBuilder).build)
@@ -1789,7 +1789,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def thinkstCanarySettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsThinkstCanarySettingsArgs.Builder]):
+    inline def thinkstCanarySettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsThinkstCanarySettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsThinkstCanarySettingsArgs.builder
       builder.thinkstCanarySettings(args(argsBuilder).build)
@@ -1799,7 +1799,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def threatConnectIocSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsThreatConnectIocSettingsArgs.Builder]):
+    inline def threatConnectIocSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsThreatConnectIocSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsThreatConnectIocSettingsArgs.builder
       builder.threatConnectIocSettings(args(argsBuilder).build)
@@ -1809,7 +1809,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def threatConnectIocV3Settings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsThreatConnectIocV3SettingsArgs.Builder]):
+    inline def threatConnectIocV3Settings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsThreatConnectIocV3SettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsThreatConnectIocV3SettingsArgs.builder
       builder.threatConnectIocV3Settings(args(argsBuilder).build)
@@ -1819,7 +1819,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trellixHxAlertsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxAlertsSettingsArgs.Builder]):
+    inline def trellixHxAlertsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxAlertsSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxAlertsSettingsArgs.builder
       builder.trellixHxAlertsSettings(args(argsBuilder).build)
@@ -1829,7 +1829,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trellixHxBulkAcqsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxBulkAcqsSettingsArgs.Builder]):
+    inline def trellixHxBulkAcqsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxBulkAcqsSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxBulkAcqsSettingsArgs.builder
       builder.trellixHxBulkAcqsSettings(args(argsBuilder).build)
@@ -1839,7 +1839,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trellixHxHostsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxHostsSettingsArgs.Builder]):
+    inline def trellixHxHostsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxHostsSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxHostsSettingsArgs.builder
       builder.trellixHxHostsSettings(args(argsBuilder).build)
@@ -1848,7 +1848,7 @@ object chronicle_ext:
      * @param webhookSettings Settings required by Webhook Feeds(HTTP-Push).
      * @return builder
      */
-    def webhookSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWebhookSettingsArgs.Builder]):
+    inline def webhookSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWebhookSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWebhookSettingsArgs.builder
       builder.webhookSettings(args(argsBuilder).build)
@@ -1858,7 +1858,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def workdaySettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkdaySettingsArgs.Builder]):
+    inline def workdaySettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkdaySettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkdaySettingsArgs.builder
       builder.workdaySettings(args(argsBuilder).build)
@@ -1868,7 +1868,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def workspaceActivitySettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceActivitySettingsArgs.Builder]):
+    inline def workspaceActivitySettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceActivitySettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceActivitySettingsArgs.builder
       builder.workspaceActivitySettings(args(argsBuilder).build)
@@ -1878,7 +1878,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def workspaceAlertsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceAlertsSettingsArgs.Builder]):
+    inline def workspaceAlertsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceAlertsSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceAlertsSettingsArgs.builder
       builder.workspaceAlertsSettings(args(argsBuilder).build)
@@ -1888,7 +1888,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def workspaceChromeOsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceChromeOsSettingsArgs.Builder]):
+    inline def workspaceChromeOsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceChromeOsSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceChromeOsSettingsArgs.builder
       builder.workspaceChromeOsSettings(args(argsBuilder).build)
@@ -1898,7 +1898,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def workspaceGroupsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceGroupsSettingsArgs.Builder]):
+    inline def workspaceGroupsSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceGroupsSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceGroupsSettingsArgs.builder
       builder.workspaceGroupsSettings(args(argsBuilder).build)
@@ -1908,7 +1908,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def workspaceMobileSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceMobileSettingsArgs.Builder]):
+    inline def workspaceMobileSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceMobileSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceMobileSettingsArgs.builder
       builder.workspaceMobileSettings(args(argsBuilder).build)
@@ -1918,7 +1918,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def workspacePrivilegesSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspacePrivilegesSettingsArgs.Builder]):
+    inline def workspacePrivilegesSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspacePrivilegesSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspacePrivilegesSettingsArgs.builder
       builder.workspacePrivilegesSettings(args(argsBuilder).build)
@@ -1930,7 +1930,7 @@ object chronicle_ext:
      * &lt;a name=&#34;nestedDetailsAmazonS3Settings&#34;&gt;&lt;/a&gt;The `amazonS3Settings` block supports:
      * @return builder
      */
-    def workspaceUsersSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceUsersSettingsArgs.Builder]):
+    inline def workspaceUsersSettings(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceUsersSettingsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceUsersSettingsArgs.builder
       builder.workspaceUsersSettings(args(argsBuilder).build)
@@ -1940,7 +1940,7 @@ object chronicle_ext:
      * @param authentication Info for username and secret based authentication.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsEc2HostsSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsEc2HostsSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsEc2HostsSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsEc2HostsSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -1950,7 +1950,7 @@ object chronicle_ext:
      * @param authentication Info for username and secret based authentication.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsEc2InstancesSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsEc2InstancesSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsEc2InstancesSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsEc2InstancesSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -1960,7 +1960,7 @@ object chronicle_ext:
      * @param authentication Info for username and secret based authentication.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsEc2VpcsSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsEc2VpcsSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsEc2VpcsSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsEc2VpcsSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -1971,7 +1971,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsIamSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsIamSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsIamSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAwsIamSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -1982,7 +1982,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureAdAuditSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureAdAuditSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureAdAuditSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureAdAuditSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -1993,7 +1993,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureAdContextSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureAdContextSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureAdContextSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureAdContextSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2004,7 +2004,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureAdSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureAdSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureAdSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureAdSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2015,7 +2015,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureBlobStoreSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureBlobStoreSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureBlobStoreSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureBlobStoreSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2025,7 +2025,7 @@ object chronicle_ext:
      * @param authentication A message containing fields used to authenticate with Azure Blob Storage.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureBlobStoreV2SettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureBlobStoreV2SettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureBlobStoreV2SettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureBlobStoreV2SettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2036,7 +2036,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def azureV2WorkloadIdentityFederation(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureBlobStoreV2SettingsAuthenticationAzureV2WorkloadIdentityFederationArgs.Builder]):
+    inline def azureV2WorkloadIdentityFederation(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureBlobStoreV2SettingsAuthenticationAzureV2WorkloadIdentityFederationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureBlobStoreV2SettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureBlobStoreV2SettingsAuthenticationAzureV2WorkloadIdentityFederationArgs.builder
       builder.azureV2WorkloadIdentityFederation(args(argsBuilder).build)
@@ -2047,7 +2047,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureMdmIntuneSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureMdmIntuneSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureMdmIntuneSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsAzureMdmIntuneSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2058,7 +2058,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsCloudPassageSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsCloudPassageSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsCloudPassageSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsCloudPassageSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2069,7 +2069,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsCortexXdrSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsCortexXdrSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsCortexXdrSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsCortexXdrSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2080,7 +2080,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsCortexXdrSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
+    inline def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsCortexXdrSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsCortexXdrSettingsAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsCortexXdrSettingsAuthenticationHeaderKeyValueArgs.builder
       builder.headerKeyValues(args.map(_(argsBuilder).build)*)
@@ -2091,7 +2091,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsCrowdstrikeAlertsSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsCrowdstrikeAlertsSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsCrowdstrikeAlertsSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsCrowdstrikeAlertsSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2102,7 +2102,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsCrowdstrikeDetectsSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsCrowdstrikeDetectsSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsCrowdstrikeDetectsSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsCrowdstrikeDetectsSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2113,7 +2113,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsDummyLogTypeSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsDummyLogTypeSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsDummyLogTypeSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsDummyLogTypeSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2124,7 +2124,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsDummyLogTypeSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
+    inline def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsDummyLogTypeSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsDummyLogTypeSettingsAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsDummyLogTypeSettingsAuthenticationHeaderKeyValueArgs.builder
       builder.headerKeyValues(args.map(_(argsBuilder).build)*)
@@ -2135,7 +2135,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsDuoAuthSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsDuoAuthSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsDuoAuthSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsDuoAuthSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2146,7 +2146,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsDuoUserContextSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsDuoUserContextSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsDuoUserContextSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsDuoUserContextSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2157,7 +2157,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsFoxItStixSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsFoxItStixSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsFoxItStixSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsFoxItStixSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2167,7 +2167,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ssl(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsFoxItStixSettingsSslArgs.Builder]):
+    inline def ssl(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsFoxItStixSettingsSslArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsFoxItStixSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsFoxItStixSettingsSslArgs.builder
       builder.ssl(args(argsBuilder).build)
@@ -2178,7 +2178,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDeviceUsersSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDeviceUsersSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDeviceUsersSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDeviceUsersSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2189,7 +2189,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def claims(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDeviceUsersSettingsAuthenticationClaimsArgs.Builder]):
+    inline def claims(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDeviceUsersSettingsAuthenticationClaimsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDeviceUsersSettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDeviceUsersSettingsAuthenticationClaimsArgs.builder
       builder.claims(args(argsBuilder).build)
@@ -2199,7 +2199,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rsCredentials(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDeviceUsersSettingsAuthenticationRsCredentialsArgs.Builder]):
+    inline def rsCredentials(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDeviceUsersSettingsAuthenticationRsCredentialsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDeviceUsersSettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDeviceUsersSettingsAuthenticationRsCredentialsArgs.builder
       builder.rsCredentials(args(argsBuilder).build)
@@ -2210,7 +2210,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDevicesSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDevicesSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDevicesSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDevicesSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2221,7 +2221,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def claims(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDevicesSettingsAuthenticationClaimsArgs.Builder]):
+    inline def claims(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDevicesSettingsAuthenticationClaimsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDevicesSettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDevicesSettingsAuthenticationClaimsArgs.builder
       builder.claims(args(argsBuilder).build)
@@ -2231,7 +2231,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rsCredentials(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDevicesSettingsAuthenticationRsCredentialsArgs.Builder]):
+    inline def rsCredentials(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDevicesSettingsAuthenticationRsCredentialsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDevicesSettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsGoogleCloudIdentityDevicesSettingsAuthenticationRsCredentialsArgs.builder
       builder.rsCredentials(args(argsBuilder).build)
@@ -2242,7 +2242,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsImpervaWafSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsImpervaWafSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsImpervaWafSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsImpervaWafSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2253,7 +2253,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsImpervaWafSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
+    inline def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsImpervaWafSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsImpervaWafSettingsAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsImpervaWafSettingsAuthenticationHeaderKeyValueArgs.builder
       builder.headerKeyValues(args.map(_(argsBuilder).build)*)
@@ -2264,7 +2264,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsMandiantIocSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsMandiantIocSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsMandiantIocSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsMandiantIocSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2275,7 +2275,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsMandiantIocSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
+    inline def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsMandiantIocSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsMandiantIocSettingsAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsMandiantIocSettingsAuthenticationHeaderKeyValueArgs.builder
       builder.headerKeyValues(args.map(_(argsBuilder).build)*)
@@ -2286,7 +2286,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsMicrosoftGraphAlertSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsMicrosoftGraphAlertSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsMicrosoftGraphAlertSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsMicrosoftGraphAlertSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2297,7 +2297,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsMicrosoftSecurityCenterAlertSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsMicrosoftSecurityCenterAlertSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsMicrosoftSecurityCenterAlertSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsMicrosoftSecurityCenterAlertSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2308,7 +2308,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsMimecastMailSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsMimecastMailSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsMimecastMailSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsMimecastMailSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2319,7 +2319,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsMimecastMailSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
+    inline def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsMimecastMailSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsMimecastMailSettingsAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsMimecastMailSettingsAuthenticationHeaderKeyValueArgs.builder
       builder.headerKeyValues(args.map(_(argsBuilder).build)*)
@@ -2330,7 +2330,7 @@ object chronicle_ext:
      * NEXT TAG: 3
      * @return builder
      */
-    def authCredentials(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsMimecastMailV2SettingsAuthCredentialsArgs.Builder]):
+    inline def authCredentials(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsMimecastMailV2SettingsAuthCredentialsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsMimecastMailV2SettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsMimecastMailV2SettingsAuthCredentialsArgs.builder
       builder.authCredentials(args(argsBuilder).build)
@@ -2341,7 +2341,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsNetskopeAlertSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsNetskopeAlertSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsNetskopeAlertSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsNetskopeAlertSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2352,7 +2352,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsNetskopeAlertSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
+    inline def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsNetskopeAlertSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsNetskopeAlertSettingsAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsNetskopeAlertSettingsAuthenticationHeaderKeyValueArgs.builder
       builder.headerKeyValues(args.map(_(argsBuilder).build)*)
@@ -2362,7 +2362,7 @@ object chronicle_ext:
      * @param authentication HTTP header based authentication.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsNetskopeAlertV2SettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsNetskopeAlertV2SettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsNetskopeAlertV2SettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsNetskopeAlertV2SettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2373,7 +2373,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsNetskopeAlertV2SettingsAuthenticationHeaderKeyValueArgs.Builder]*):
+    inline def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsNetskopeAlertV2SettingsAuthenticationHeaderKeyValueArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsNetskopeAlertV2SettingsAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsNetskopeAlertV2SettingsAuthenticationHeaderKeyValueArgs.builder
       builder.headerKeyValues(args.map(_(argsBuilder).build)*)
@@ -2383,7 +2383,7 @@ object chronicle_ext:
      * @param authentication Microsoft OAuth 2.0 client credentials grant.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsOffice365SettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsOffice365SettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsOffice365SettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsOffice365SettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2394,7 +2394,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsOktaSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsOktaSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsOktaSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsOktaSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2405,7 +2405,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsOktaSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
+    inline def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsOktaSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsOktaSettingsAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsOktaSettingsAuthenticationHeaderKeyValueArgs.builder
       builder.headerKeyValues(args.map(_(argsBuilder).build)*)
@@ -2416,7 +2416,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsOktaUserContextSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsOktaUserContextSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsOktaUserContextSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsOktaUserContextSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2427,7 +2427,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsOktaUserContextSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
+    inline def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsOktaUserContextSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsOktaUserContextSettingsAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsOktaUserContextSettingsAuthenticationHeaderKeyValueArgs.builder
       builder.headerKeyValues(args.map(_(argsBuilder).build)*)
@@ -2438,7 +2438,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsPanIocSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsPanIocSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsPanIocSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsPanIocSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2449,7 +2449,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsPanIocSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
+    inline def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsPanIocSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsPanIocSettingsAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsPanIocSettingsAuthenticationHeaderKeyValueArgs.builder
       builder.headerKeyValues(args.map(_(argsBuilder).build)*)
@@ -2460,7 +2460,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsPanPrismaCloudSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsPanPrismaCloudSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsPanPrismaCloudSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsPanPrismaCloudSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2471,7 +2471,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsProofpointMailSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsProofpointMailSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsProofpointMailSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsProofpointMailSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2482,7 +2482,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsProofpointOnDemandSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsProofpointOnDemandSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsProofpointOnDemandSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsProofpointOnDemandSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2493,7 +2493,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsProofpointOnDemandSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
+    inline def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsProofpointOnDemandSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsProofpointOnDemandSettingsAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsProofpointOnDemandSettingsAuthenticationHeaderKeyValueArgs.builder
       builder.headerKeyValues(args.map(_(argsBuilder).build)*)
@@ -2504,7 +2504,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsQualysScanSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsQualysScanSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsQualysScanSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsQualysScanSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2515,7 +2515,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsQualysVmSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsQualysVmSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsQualysVmSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsQualysVmSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2525,7 +2525,7 @@ object chronicle_ext:
      * @param authentication HTTP header based authentication.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsRapid7InsightSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsRapid7InsightSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsRapid7InsightSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsRapid7InsightSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2536,7 +2536,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsRapid7InsightSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
+    inline def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsRapid7InsightSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsRapid7InsightSettingsAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsRapid7InsightSettingsAuthenticationHeaderKeyValueArgs.builder
       builder.headerKeyValues(args.map(_(argsBuilder).build)*)
@@ -2547,7 +2547,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsRecordedFutureIocSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsRecordedFutureIocSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsRecordedFutureIocSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsRecordedFutureIocSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2558,7 +2558,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsRecordedFutureIocSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
+    inline def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsRecordedFutureIocSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsRecordedFutureIocSettingsAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsRecordedFutureIocSettingsAuthenticationHeaderKeyValueArgs.builder
       builder.headerKeyValues(args.map(_(argsBuilder).build)*)
@@ -2569,7 +2569,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsRhIsacIocSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsRhIsacIocSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsRhIsacIocSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsRhIsacIocSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2580,7 +2580,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauthJwtCredentials(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsSalesforceSettingsOauthJwtCredentialsArgs.Builder]):
+    inline def oauthJwtCredentials(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsSalesforceSettingsOauthJwtCredentialsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsSalesforceSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsSalesforceSettingsOauthJwtCredentialsArgs.builder
       builder.oauthJwtCredentials(args(argsBuilder).build)
@@ -2590,7 +2590,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauthPasswordGrantAuth(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsSalesforceSettingsOauthPasswordGrantAuthArgs.Builder]):
+    inline def oauthPasswordGrantAuth(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsSalesforceSettingsOauthPasswordGrantAuthArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsSalesforceSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsSalesforceSettingsOauthPasswordGrantAuthArgs.builder
       builder.oauthPasswordGrantAuth(args(argsBuilder).build)
@@ -2601,7 +2601,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def claims(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsSalesforceSettingsOauthJwtCredentialsClaimsArgs.Builder]):
+    inline def claims(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsSalesforceSettingsOauthJwtCredentialsClaimsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsSalesforceSettingsOauthJwtCredentialsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsSalesforceSettingsOauthJwtCredentialsClaimsArgs.builder
       builder.claims(args(argsBuilder).build)
@@ -2611,7 +2611,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rsCredentials(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsSalesforceSettingsOauthJwtCredentialsRsCredentialsArgs.Builder]):
+    inline def rsCredentials(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsSalesforceSettingsOauthJwtCredentialsRsCredentialsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsSalesforceSettingsOauthJwtCredentialsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsSalesforceSettingsOauthJwtCredentialsRsCredentialsArgs.builder
       builder.rsCredentials(args(argsBuilder).build)
@@ -2622,7 +2622,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsSentineloneAlertSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsSentineloneAlertSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsSentineloneAlertSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsSentineloneAlertSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2633,7 +2633,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsSentineloneAlertSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
+    inline def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsSentineloneAlertSettingsAuthenticationHeaderKeyValueArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsSentineloneAlertSettingsAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsSentineloneAlertSettingsAuthenticationHeaderKeyValueArgs.builder
       builder.headerKeyValues(args.map(_(argsBuilder).build)*)
@@ -2644,7 +2644,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsServiceNowCmdbSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsServiceNowCmdbSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsServiceNowCmdbSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsServiceNowCmdbSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2655,7 +2655,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsSftpSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsSftpSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsSftpSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsSftpSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2666,7 +2666,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsSymantecEventExportSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsSymantecEventExportSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsSymantecEventExportSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsSymantecEventExportSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2677,7 +2677,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsThinkstCanarySettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsThinkstCanarySettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsThinkstCanarySettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsThinkstCanarySettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2688,7 +2688,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsThinkstCanarySettingsAuthenticationHeaderKeyValueArgs.Builder]*):
+    inline def headerKeyValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsThinkstCanarySettingsAuthenticationHeaderKeyValueArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsThinkstCanarySettingsAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsThinkstCanarySettingsAuthenticationHeaderKeyValueArgs.builder
       builder.headerKeyValues(args.map(_(argsBuilder).build)*)
@@ -2699,7 +2699,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsThreatConnectIocSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsThreatConnectIocSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsThreatConnectIocSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsThreatConnectIocSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2709,7 +2709,7 @@ object chronicle_ext:
      * @param authentication Info for username and secret based authentication.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsThreatConnectIocV3SettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsThreatConnectIocV3SettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsThreatConnectIocV3SettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsThreatConnectIocV3SettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2721,7 +2721,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxAlertsSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxAlertsSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxAlertsSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxAlertsSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2733,7 +2733,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def msso(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxAlertsSettingsAuthenticationMssoArgs.Builder]):
+    inline def msso(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxAlertsSettingsAuthenticationMssoArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxAlertsSettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxAlertsSettingsAuthenticationMssoArgs.builder
       builder.msso(args(argsBuilder).build)
@@ -2743,7 +2743,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trellixIam(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxAlertsSettingsAuthenticationTrellixIamArgs.Builder]):
+    inline def trellixIam(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxAlertsSettingsAuthenticationTrellixIamArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxAlertsSettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxAlertsSettingsAuthenticationTrellixIamArgs.builder
       builder.trellixIam(args(argsBuilder).build)
@@ -2755,7 +2755,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxBulkAcqsSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxBulkAcqsSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxBulkAcqsSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxBulkAcqsSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2767,7 +2767,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def msso(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxBulkAcqsSettingsAuthenticationMssoArgs.Builder]):
+    inline def msso(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxBulkAcqsSettingsAuthenticationMssoArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxBulkAcqsSettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxBulkAcqsSettingsAuthenticationMssoArgs.builder
       builder.msso(args(argsBuilder).build)
@@ -2777,7 +2777,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trellixIam(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxBulkAcqsSettingsAuthenticationTrellixIamArgs.Builder]):
+    inline def trellixIam(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxBulkAcqsSettingsAuthenticationTrellixIamArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxBulkAcqsSettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxBulkAcqsSettingsAuthenticationTrellixIamArgs.builder
       builder.trellixIam(args(argsBuilder).build)
@@ -2789,7 +2789,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxHostsSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxHostsSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxHostsSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxHostsSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2801,7 +2801,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def msso(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxHostsSettingsAuthenticationMssoArgs.Builder]):
+    inline def msso(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxHostsSettingsAuthenticationMssoArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxHostsSettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxHostsSettingsAuthenticationMssoArgs.builder
       builder.msso(args(argsBuilder).build)
@@ -2811,7 +2811,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trellixIam(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxHostsSettingsAuthenticationTrellixIamArgs.Builder]):
+    inline def trellixIam(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxHostsSettingsAuthenticationTrellixIamArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxHostsSettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsTrellixHxHostsSettingsAuthenticationTrellixIamArgs.builder
       builder.trellixIam(args(argsBuilder).build)
@@ -2822,7 +2822,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkdaySettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkdaySettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkdaySettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkdaySettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2833,7 +2833,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceActivitySettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceActivitySettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceActivitySettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceActivitySettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2844,7 +2844,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def claims(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceActivitySettingsAuthenticationClaimsArgs.Builder]):
+    inline def claims(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceActivitySettingsAuthenticationClaimsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceActivitySettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceActivitySettingsAuthenticationClaimsArgs.builder
       builder.claims(args(argsBuilder).build)
@@ -2854,7 +2854,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rsCredentials(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceActivitySettingsAuthenticationRsCredentialsArgs.Builder]):
+    inline def rsCredentials(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceActivitySettingsAuthenticationRsCredentialsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceActivitySettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceActivitySettingsAuthenticationRsCredentialsArgs.builder
       builder.rsCredentials(args(argsBuilder).build)
@@ -2865,7 +2865,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceAlertsSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceAlertsSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceAlertsSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceAlertsSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2876,7 +2876,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def claims(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceAlertsSettingsAuthenticationClaimsArgs.Builder]):
+    inline def claims(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceAlertsSettingsAuthenticationClaimsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceAlertsSettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceAlertsSettingsAuthenticationClaimsArgs.builder
       builder.claims(args(argsBuilder).build)
@@ -2886,7 +2886,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rsCredentials(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceAlertsSettingsAuthenticationRsCredentialsArgs.Builder]):
+    inline def rsCredentials(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceAlertsSettingsAuthenticationRsCredentialsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceAlertsSettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceAlertsSettingsAuthenticationRsCredentialsArgs.builder
       builder.rsCredentials(args(argsBuilder).build)
@@ -2897,7 +2897,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceChromeOsSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceChromeOsSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceChromeOsSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceChromeOsSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2908,7 +2908,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def claims(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceChromeOsSettingsAuthenticationClaimsArgs.Builder]):
+    inline def claims(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceChromeOsSettingsAuthenticationClaimsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceChromeOsSettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceChromeOsSettingsAuthenticationClaimsArgs.builder
       builder.claims(args(argsBuilder).build)
@@ -2918,7 +2918,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rsCredentials(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceChromeOsSettingsAuthenticationRsCredentialsArgs.Builder]):
+    inline def rsCredentials(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceChromeOsSettingsAuthenticationRsCredentialsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceChromeOsSettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceChromeOsSettingsAuthenticationRsCredentialsArgs.builder
       builder.rsCredentials(args(argsBuilder).build)
@@ -2929,7 +2929,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceGroupsSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceGroupsSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceGroupsSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceGroupsSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2940,7 +2940,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def claims(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceGroupsSettingsAuthenticationClaimsArgs.Builder]):
+    inline def claims(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceGroupsSettingsAuthenticationClaimsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceGroupsSettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceGroupsSettingsAuthenticationClaimsArgs.builder
       builder.claims(args(argsBuilder).build)
@@ -2950,7 +2950,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rsCredentials(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceGroupsSettingsAuthenticationRsCredentialsArgs.Builder]):
+    inline def rsCredentials(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceGroupsSettingsAuthenticationRsCredentialsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceGroupsSettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceGroupsSettingsAuthenticationRsCredentialsArgs.builder
       builder.rsCredentials(args(argsBuilder).build)
@@ -2961,7 +2961,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceMobileSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceMobileSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceMobileSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceMobileSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -2972,7 +2972,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def claims(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceMobileSettingsAuthenticationClaimsArgs.Builder]):
+    inline def claims(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceMobileSettingsAuthenticationClaimsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceMobileSettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceMobileSettingsAuthenticationClaimsArgs.builder
       builder.claims(args(argsBuilder).build)
@@ -2982,7 +2982,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rsCredentials(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceMobileSettingsAuthenticationRsCredentialsArgs.Builder]):
+    inline def rsCredentials(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceMobileSettingsAuthenticationRsCredentialsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceMobileSettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceMobileSettingsAuthenticationRsCredentialsArgs.builder
       builder.rsCredentials(args(argsBuilder).build)
@@ -2993,7 +2993,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspacePrivilegesSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspacePrivilegesSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspacePrivilegesSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspacePrivilegesSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -3004,7 +3004,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def claims(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspacePrivilegesSettingsAuthenticationClaimsArgs.Builder]):
+    inline def claims(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspacePrivilegesSettingsAuthenticationClaimsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspacePrivilegesSettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspacePrivilegesSettingsAuthenticationClaimsArgs.builder
       builder.claims(args(argsBuilder).build)
@@ -3014,7 +3014,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rsCredentials(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspacePrivilegesSettingsAuthenticationRsCredentialsArgs.Builder]):
+    inline def rsCredentials(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspacePrivilegesSettingsAuthenticationRsCredentialsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspacePrivilegesSettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspacePrivilegesSettingsAuthenticationRsCredentialsArgs.builder
       builder.rsCredentials(args(argsBuilder).build)
@@ -3025,7 +3025,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceUsersSettingsAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceUsersSettingsAuthenticationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceUsersSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceUsersSettingsAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -3036,7 +3036,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def claims(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceUsersSettingsAuthenticationClaimsArgs.Builder]):
+    inline def claims(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceUsersSettingsAuthenticationClaimsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceUsersSettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceUsersSettingsAuthenticationClaimsArgs.builder
       builder.claims(args(argsBuilder).build)
@@ -3046,7 +3046,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rsCredentials(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceUsersSettingsAuthenticationRsCredentialsArgs.Builder]):
+    inline def rsCredentials(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceUsersSettingsAuthenticationRsCredentialsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceUsersSettingsAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsWorkspaceUsersSettingsAuthenticationRsCredentialsArgs.builder
       builder.rsCredentials(args(argsBuilder).build)
@@ -3058,7 +3058,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def details(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder]):
+    inline def details(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedState.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedDetailsArgs.builder
       builder.details(args(argsBuilder).build)
@@ -3071,7 +3071,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def failureDetails(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedFailureDetailsArgs.Builder]):
+    inline def failureDetails(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FeedFailureDetailsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FeedState.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FeedFailureDetailsArgs.builder
       builder.failureDetails(args(argsBuilder).build)
@@ -3082,7 +3082,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def detectionExclusionApplication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FindingsRefinementDeploymentDetectionExclusionApplicationArgs.Builder]):
+    inline def detectionExclusionApplication(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FindingsRefinementDeploymentDetectionExclusionApplicationArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.FindingsRefinementDeploymentState.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.FindingsRefinementDeploymentDetectionExclusionApplicationArgs.builder
       builder.detectionExclusionApplication(args(argsBuilder).build)
@@ -3095,7 +3095,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def outcomeFilters(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FindingsRefinementOutcomeFilterArgs.Builder]*):
+    inline def outcomeFilters(args: Endofunction[com.pulumi.gcp.chronicle.inputs.FindingsRefinementOutcomeFilterArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.FindingsRefinementState.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.FindingsRefinementOutcomeFilterArgs.builder
       builder.outcomeFilters(args.map(_(argsBuilder).build)*)
@@ -3106,7 +3106,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def chartLayout(args: Endofunction[com.pulumi.gcp.chronicle.inputs.NativeDashboardChartChartLayoutArgs.Builder]):
+    inline def chartLayout(args: Endofunction[com.pulumi.gcp.chronicle.inputs.NativeDashboardChartChartLayoutArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.NativeDashboardChartArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.NativeDashboardChartChartLayoutArgs.builder
       builder.chartLayout(args(argsBuilder).build)
@@ -3117,7 +3117,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def filterOperatorAndFieldValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.NativeDashboardFilterFilterOperatorAndFieldValueArgs.Builder]*):
+    inline def filterOperatorAndFieldValues(args: Endofunction[com.pulumi.gcp.chronicle.inputs.NativeDashboardFilterFilterOperatorAndFieldValueArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.NativeDashboardFilterArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.NativeDashboardFilterFilterOperatorAndFieldValueArgs.builder
       builder.filterOperatorAndFieldValues(args.map(_(argsBuilder).build)*)
@@ -3128,7 +3128,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def charts(args: Endofunction[com.pulumi.gcp.chronicle.inputs.NativeDashboardChartArgs.Builder]*):
+    inline def charts(args: Endofunction[com.pulumi.gcp.chronicle.inputs.NativeDashboardChartArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.NativeDashboardState.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.NativeDashboardChartArgs.builder
       builder.charts(args.map(_(argsBuilder).build)*)
@@ -3138,7 +3138,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def filters(args: Endofunction[com.pulumi.gcp.chronicle.inputs.NativeDashboardFilterArgs.Builder]*):
+    inline def filters(args: Endofunction[com.pulumi.gcp.chronicle.inputs.NativeDashboardFilterArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.NativeDashboardState.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.NativeDashboardFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
@@ -3149,7 +3149,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entries(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserChangelogEntryArgs.Builder]*):
+    inline def entries(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserChangelogEntryArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.ParserChangelogArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserChangelogEntryArgs.builder
       builder.entries(args.map(_(argsBuilder).build)*)
@@ -3160,7 +3160,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def optedFields(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserExtensionDynamicParsingOptedFieldArgs.Builder]*):
+    inline def optedFields(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserExtensionDynamicParsingOptedFieldArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.ParserExtensionDynamicParsingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserExtensionDynamicParsingOptedFieldArgs.builder
       builder.optedFields(args.map(_(argsBuilder).build)*)
@@ -3171,7 +3171,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def extractors(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserExtensionFieldExtractorsExtractorArgs.Builder]*):
+    inline def extractors(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserExtensionFieldExtractorsExtractorArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.ParserExtensionFieldExtractorsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserExtensionFieldExtractorsExtractorArgs.builder
       builder.extractors(args.map(_(argsBuilder).build)*)
@@ -3181,7 +3181,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def preprocessConfig(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserExtensionFieldExtractorsPreprocessConfigArgs.Builder]):
+    inline def preprocessConfig(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserExtensionFieldExtractorsPreprocessConfigArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.ParserExtensionFieldExtractorsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserExtensionFieldExtractorsPreprocessConfigArgs.builder
       builder.preprocessConfig(args(argsBuilder).build)
@@ -3192,7 +3192,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dynamicParsing(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserExtensionDynamicParsingArgs.Builder]):
+    inline def dynamicParsing(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserExtensionDynamicParsingArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.ParserExtensionState.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserExtensionDynamicParsingArgs.builder
       builder.dynamicParsing(args(argsBuilder).build)
@@ -3202,7 +3202,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fieldExtractors(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserExtensionFieldExtractorsArgs.Builder]):
+    inline def fieldExtractors(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserExtensionFieldExtractorsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.ParserExtensionState.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserExtensionFieldExtractorsArgs.builder
       builder.fieldExtractors(args(argsBuilder).build)
@@ -3213,7 +3213,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fieldExtractors(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserLowCodeFieldExtractorsArgs.Builder]):
+    inline def fieldExtractors(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserLowCodeFieldExtractorsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.ParserLowCodeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserLowCodeFieldExtractorsArgs.builder
       builder.fieldExtractors(args(argsBuilder).build)
@@ -3224,7 +3224,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def extractors(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserLowCodeFieldExtractorsExtractorArgs.Builder]*):
+    inline def extractors(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserLowCodeFieldExtractorsExtractorArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.ParserLowCodeFieldExtractorsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserLowCodeFieldExtractorsExtractorArgs.builder
       builder.extractors(args.map(_(argsBuilder).build)*)
@@ -3234,7 +3234,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def preprocessConfig(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserLowCodeFieldExtractorsPreprocessConfigArgs.Builder]):
+    inline def preprocessConfig(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserLowCodeFieldExtractorsPreprocessConfigArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.ParserLowCodeFieldExtractorsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserLowCodeFieldExtractorsPreprocessConfigArgs.builder
       builder.preprocessConfig(args(argsBuilder).build)
@@ -3245,7 +3245,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def changelogs(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserChangelogArgs.Builder]*):
+    inline def changelogs(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserChangelogArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.ParserState.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserChangelogArgs.builder
       builder.changelogs(args.map(_(argsBuilder).build)*)
@@ -3255,7 +3255,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def creators(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserCreatorArgs.Builder]*):
+    inline def creators(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserCreatorArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.ParserState.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserCreatorArgs.builder
       builder.creators(args.map(_(argsBuilder).build)*)
@@ -3265,7 +3265,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def lowCode(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserLowCodeArgs.Builder]):
+    inline def lowCode(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserLowCodeArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.ParserState.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserLowCodeArgs.builder
       builder.lowCode(args(argsBuilder).build)
@@ -3276,7 +3276,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def versionInfo(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserVersionInfoArgs.Builder]):
+    inline def versionInfo(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ParserVersionInfoArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.ParserState.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.ParserVersionInfoArgs.builder
       builder.versionInfo(args(argsBuilder).build)
@@ -3287,7 +3287,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def referenceListScope(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ReferenceListScopeInfoReferenceListScopeArgs.Builder]):
+    inline def referenceListScope(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ReferenceListScopeInfoReferenceListScopeArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.ReferenceListScopeInfoArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.ReferenceListScopeInfoReferenceListScopeArgs.builder
       builder.referenceListScope(args(argsBuilder).build)
@@ -3302,7 +3302,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entries(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ReferenceListEntryArgs.Builder]*):
+    inline def entries(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ReferenceListEntryArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.ReferenceListState.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.ReferenceListEntryArgs.builder
       builder.entries(args.map(_(argsBuilder).build)*)
@@ -3312,7 +3312,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scopeInfo(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ReferenceListScopeInfoArgs.Builder]):
+    inline def scopeInfo(args: Endofunction[com.pulumi.gcp.chronicle.inputs.ReferenceListScopeInfoArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.ReferenceListState.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.ReferenceListScopeInfoArgs.builder
       builder.scopeInfo(args(argsBuilder).build)
@@ -3327,7 +3327,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def executionIntervals(args: Endofunction[com.pulumi.gcp.chronicle.inputs.RetrohuntExecutionIntervalArgs.Builder]*):
+    inline def executionIntervals(args: Endofunction[com.pulumi.gcp.chronicle.inputs.RetrohuntExecutionIntervalArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.RetrohuntState.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.RetrohuntExecutionIntervalArgs.builder
       builder.executionIntervals(args.map(_(argsBuilder).build)*)
@@ -3341,7 +3341,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def processInterval(args: Endofunction[com.pulumi.gcp.chronicle.inputs.RetrohuntProcessIntervalArgs.Builder]):
+    inline def processInterval(args: Endofunction[com.pulumi.gcp.chronicle.inputs.RetrohuntProcessIntervalArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.RetrohuntState.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.RetrohuntProcessIntervalArgs.builder
       builder.processInterval(args(argsBuilder).build)
@@ -3353,7 +3353,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def position(args: Endofunction[com.pulumi.gcp.chronicle.inputs.RuleCompilationDiagnosticPositionArgs.Builder]):
+    inline def position(args: Endofunction[com.pulumi.gcp.chronicle.inputs.RuleCompilationDiagnosticPositionArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.RuleCompilationDiagnosticArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.RuleCompilationDiagnosticPositionArgs.builder
       builder.position(args(argsBuilder).build)
@@ -3365,7 +3365,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scheduleCustomizations(args: Endofunction[com.pulumi.gcp.chronicle.inputs.RuleDeploymentScheduleCustomizationsArgs.Builder]):
+    inline def scheduleCustomizations(args: Endofunction[com.pulumi.gcp.chronicle.inputs.RuleDeploymentScheduleCustomizationsArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.RuleDeploymentState.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.RuleDeploymentScheduleCustomizationsArgs.builder
       builder.scheduleCustomizations(args(argsBuilder).build)
@@ -3378,7 +3378,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def compilationDiagnostics(args: Endofunction[com.pulumi.gcp.chronicle.inputs.RuleCompilationDiagnosticArgs.Builder]*):
+    inline def compilationDiagnostics(args: Endofunction[com.pulumi.gcp.chronicle.inputs.RuleCompilationDiagnosticArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.RuleState.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.RuleCompilationDiagnosticArgs.builder
       builder.compilationDiagnostics(args.map(_(argsBuilder).build)*)
@@ -3392,7 +3392,7 @@ object chronicle_ext:
      * ERROR
      * @return builder
      */
-    def severities(args: Endofunction[com.pulumi.gcp.chronicle.inputs.RuleSeverityArgs.Builder]*):
+    inline def severities(args: Endofunction[com.pulumi.gcp.chronicle.inputs.RuleSeverityArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.RuleState.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.RuleSeverityArgs.builder
       builder.severities(args.map(_(argsBuilder).build)*)
@@ -3402,7 +3402,7 @@ object chronicle_ext:
      * @param manual Entities are added manually.
      * @return builder
      */
-    def manual(args: Endofunction[com.pulumi.gcp.chronicle.inputs.WatchlistEntityPopulationMechanismManualArgs.Builder]):
+    inline def manual(args: Endofunction[com.pulumi.gcp.chronicle.inputs.WatchlistEntityPopulationMechanismManualArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.WatchlistEntityPopulationMechanismArgs.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.WatchlistEntityPopulationMechanismManualArgs.builder
       builder.manual(args(argsBuilder).build)
@@ -3413,7 +3413,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entityCounts(args: Endofunction[com.pulumi.gcp.chronicle.inputs.WatchlistEntityCountArgs.Builder]*):
+    inline def entityCounts(args: Endofunction[com.pulumi.gcp.chronicle.inputs.WatchlistEntityCountArgs.Builder]*):
         com.pulumi.gcp.chronicle.inputs.WatchlistState.Builder =
       def argsBuilder = com.pulumi.gcp.chronicle.inputs.WatchlistEntityCountArgs.builder
       builder.entityCounts(args.map(_(argsBuilder).build)*)
@@ -3423,7 +3423,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entityPopulationMechanism(args: Endofunction[com.pulumi.gcp.chronicle.inputs.WatchlistEntityPopulationMechanismArgs.Builder]):
+    inline def entityPopulationMechanism(args: Endofunction[com.pulumi.gcp.chronicle.inputs.WatchlistEntityPopulationMechanismArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.WatchlistState.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.WatchlistEntityPopulationMechanismArgs.builder
       builder.entityPopulationMechanism(args(argsBuilder).build)
@@ -3433,7 +3433,7 @@ object chronicle_ext:
      * Structure is documented below.
      * @return builder
      */
-    def watchlistUserPreferences(args: Endofunction[com.pulumi.gcp.chronicle.inputs.WatchlistWatchlistUserPreferencesArgs.Builder]):
+    inline def watchlistUserPreferences(args: Endofunction[com.pulumi.gcp.chronicle.inputs.WatchlistWatchlistUserPreferencesArgs.Builder]):
         com.pulumi.gcp.chronicle.inputs.WatchlistState.Builder =
       val argsBuilder = com.pulumi.gcp.chronicle.inputs.WatchlistWatchlistUserPreferencesArgs.builder
       builder.watchlistUserPreferences(args(argsBuilder).build)

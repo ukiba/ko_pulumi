@@ -34,7 +34,7 @@ object appengine:
    * &gt; **Note:** All arguments marked as write-only values will not be stored in the state: `iap.oauth2_client_secret_wo`.
    * Read more about Write-only Arguments.
    */
-  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.appengine.ApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.appengine.ApplicationArgs.builder
     com.pulumi.gcp.appengine.Application(name,
@@ -48,7 +48,7 @@ object appengine:
    * 
    * * [API documentation](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps#UrlDispatchRule)
    */
-  def ApplicationUrlDispatchRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApplicationUrlDispatchRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.appengine.ApplicationUrlDispatchRulesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.appengine.ApplicationUrlDispatchRulesArgs.builder
     com.pulumi.gcp.appengine.ApplicationUrlDispatchRules(name,
@@ -64,7 +64,7 @@ object appengine:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/appengine/docs/standard/python/mapping-custom-domains)
    */
-  def DomainMapping(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DomainMapping(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.appengine.DomainMappingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.appengine.DomainMappingArgs.builder
     com.pulumi.gcp.appengine.DomainMapping(name,
@@ -78,7 +78,7 @@ object appengine:
    * 
    * * [API documentation](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services)
    */
-  def EngineSplitTraffic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EngineSplitTraffic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.appengine.EngineSplitTrafficArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.appengine.EngineSplitTrafficArgs.builder
     com.pulumi.gcp.appengine.EngineSplitTraffic(name,
@@ -95,7 +95,7 @@ object appengine:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/appengine/docs/standard/python/creating-firewalls#creating_firewall_rules)
    */
-  def FirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.appengine.FirewallRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.appengine.FirewallRuleArgs.builder
     com.pulumi.gcp.appengine.FirewallRule(name,
@@ -117,7 +117,7 @@ object appengine:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/appengine/docs/flexible)
    */
-  def FlexibleAppVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FlexibleAppVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.appengine.FlexibleAppVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.appengine.FlexibleAppVersionArgs.builder
     com.pulumi.gcp.appengine.FlexibleAppVersion(name,
@@ -131,7 +131,7 @@ object appengine:
    * 
    * * [API documentation](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services)
    */
-  def ServiceNetworkSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServiceNetworkSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.appengine.ServiceNetworkSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.appengine.ServiceNetworkSettingsArgs.builder
     com.pulumi.gcp.appengine.ServiceNetworkSettings(name,
@@ -150,7 +150,7 @@ object appengine:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/appengine/docs/standard)
    */
-  def StandardAppVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StandardAppVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.appengine.StandardAppVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.appengine.StandardAppVersionArgs.builder
     com.pulumi.gcp.appengine.StandardAppVersion(name,

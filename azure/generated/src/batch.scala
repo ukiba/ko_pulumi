@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object batch:
   /** Manages an Azure Batch account. */
-  def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.batch.AccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.batch.AccountArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25,7 +25,7 @@ object batch:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages Azure Batch Application instance. */
-  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.batch.ApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.batch.ApplicationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -113,7 +113,7 @@ object batch:
    * 
    * &gt; **Note:** The `azure.batch.Certificate` resource has been deprecated due to Azure retiring the Azure Batch Account Certificates Feature, and will be removed in v5.0 of the AzureRM provider.
    */
-  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.batch.CertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.batch.CertificateArgs.builder
     com.pulumi.azure.batch.Certificate(name,
@@ -121,7 +121,7 @@ object batch:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Batch Job. */
-  def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.batch.JobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.batch.JobArgs.builder
     conf.logicalName2physicalName(name) match
@@ -132,7 +132,7 @@ object batch:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Batch pool. */
-  def Pool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Pool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.batch.PoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.batch.PoolArgs.builder
     conf.logicalName2physicalName(name) match

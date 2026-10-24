@@ -8,7 +8,7 @@ object contactcenterinsights_ext:
      * Structure is documented below.
      * @return builder
      */
-    def annotatorSelector(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.AnalysisRuleAnnotatorSelectorArgs.Builder]):
+    inline def annotatorSelector(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.AnalysisRuleAnnotatorSelectorArgs.Builder]):
         com.pulumi.gcp.contactcenterinsights.AnalysisRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.contactcenterinsights.inputs.AnalysisRuleAnnotatorSelectorArgs.builder
       builder.annotatorSelector(args(argsBuilder).build)
@@ -19,7 +19,7 @@ object contactcenterinsights_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sampleRule(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.AssessmentRuleSampleRuleArgs.Builder]):
+    inline def sampleRule(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.AssessmentRuleSampleRuleArgs.Builder]):
         com.pulumi.gcp.contactcenterinsights.AssessmentRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.contactcenterinsights.inputs.AssessmentRuleSampleRuleArgs.builder
       builder.sampleRule(args(argsBuilder).build)
@@ -29,7 +29,7 @@ object contactcenterinsights_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scheduleInfo(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.AssessmentRuleScheduleInfoArgs.Builder]):
+    inline def scheduleInfo(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.AssessmentRuleScheduleInfoArgs.Builder]):
         com.pulumi.gcp.contactcenterinsights.AssessmentRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.contactcenterinsights.inputs.AssessmentRuleScheduleInfoArgs.builder
       builder.scheduleInfo(args(argsBuilder).build)
@@ -40,7 +40,7 @@ object contactcenterinsights_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.AutoLabelingRuleConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.AutoLabelingRuleConditionArgs.Builder]*):
         com.pulumi.gcp.contactcenterinsights.AutoLabelingRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.contactcenterinsights.inputs.AutoLabelingRuleConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -51,7 +51,7 @@ object contactcenterinsights_ext:
      * Structure is documented below.
      * @return builder
      */
-    def answerChoices(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionAnswerChoiceArgs.Builder]*):
+    inline def answerChoices(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionAnswerChoiceArgs.Builder]*):
         com.pulumi.gcp.contactcenterinsights.QaQuestionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionAnswerChoiceArgs.builder
       builder.answerChoices(args.map(_(argsBuilder).build)*)
@@ -62,7 +62,7 @@ object contactcenterinsights_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metrics(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionMetricsArgs.Builder]):
+    inline def metrics(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionMetricsArgs.Builder]):
         com.pulumi.gcp.contactcenterinsights.QaQuestionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionMetricsArgs.builder
       builder.metrics(args(argsBuilder).build)
@@ -73,7 +73,7 @@ object contactcenterinsights_ext:
      * Structure is documented below.
      * @return builder
      */
-    def predefinedQuestionConfig(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionPredefinedQuestionConfigArgs.Builder]):
+    inline def predefinedQuestionConfig(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionPredefinedQuestionConfigArgs.Builder]):
         com.pulumi.gcp.contactcenterinsights.QaQuestionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionPredefinedQuestionConfigArgs.builder
       builder.predefinedQuestionConfig(args(argsBuilder).build)
@@ -83,7 +83,7 @@ object contactcenterinsights_ext:
      * Structure is documented below.
      * @return builder
      */
-    def qaQuestionDataOptions(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionQaQuestionDataOptionsArgs.Builder]):
+    inline def qaQuestionDataOptions(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionQaQuestionDataOptionsArgs.Builder]):
         com.pulumi.gcp.contactcenterinsights.QaQuestionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionQaQuestionDataOptionsArgs.builder
       builder.qaQuestionDataOptions(args(argsBuilder).build)
@@ -94,7 +94,7 @@ object contactcenterinsights_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tuningMetadata(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionTuningMetadataArgs.Builder]):
+    inline def tuningMetadata(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionTuningMetadataArgs.Builder]):
         com.pulumi.gcp.contactcenterinsights.QaQuestionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionTuningMetadataArgs.builder
       builder.tuningMetadata(args(argsBuilder).build)
@@ -105,7 +105,7 @@ object contactcenterinsights_ext:
      * Structure is documented below.
      * @return builder
      */
-    def qaConfig(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.AnalysisRuleAnnotatorSelectorQaConfigArgs.Builder]):
+    inline def qaConfig(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.AnalysisRuleAnnotatorSelectorQaConfigArgs.Builder]):
         com.pulumi.gcp.contactcenterinsights.inputs.AnalysisRuleAnnotatorSelectorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.contactcenterinsights.inputs.AnalysisRuleAnnotatorSelectorQaConfigArgs.builder
       builder.qaConfig(args(argsBuilder).build)
@@ -115,7 +115,7 @@ object contactcenterinsights_ext:
      * Structure is documented below.
      * @return builder
      */
-    def summarizationConfig(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.AnalysisRuleAnnotatorSelectorSummarizationConfigArgs.Builder]):
+    inline def summarizationConfig(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.AnalysisRuleAnnotatorSelectorSummarizationConfigArgs.Builder]):
         com.pulumi.gcp.contactcenterinsights.inputs.AnalysisRuleAnnotatorSelectorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.contactcenterinsights.inputs.AnalysisRuleAnnotatorSelectorSummarizationConfigArgs.builder
       builder.summarizationConfig(args(argsBuilder).build)
@@ -126,7 +126,7 @@ object contactcenterinsights_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scorecardList(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.AnalysisRuleAnnotatorSelectorQaConfigScorecardListArgs.Builder]):
+    inline def scorecardList(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.AnalysisRuleAnnotatorSelectorQaConfigScorecardListArgs.Builder]):
         com.pulumi.gcp.contactcenterinsights.inputs.AnalysisRuleAnnotatorSelectorQaConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.contactcenterinsights.inputs.AnalysisRuleAnnotatorSelectorQaConfigScorecardListArgs.builder
       builder.scorecardList(args(argsBuilder).build)
@@ -137,7 +137,7 @@ object contactcenterinsights_ext:
      * Structure is documented below.
      * @return builder
      */
-    def annotatorSelector(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.AnalysisRuleAnnotatorSelectorArgs.Builder]):
+    inline def annotatorSelector(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.AnalysisRuleAnnotatorSelectorArgs.Builder]):
         com.pulumi.gcp.contactcenterinsights.inputs.AnalysisRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.contactcenterinsights.inputs.AnalysisRuleAnnotatorSelectorArgs.builder
       builder.annotatorSelector(args(argsBuilder).build)
@@ -148,7 +148,7 @@ object contactcenterinsights_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sampleRule(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.AssessmentRuleSampleRuleArgs.Builder]):
+    inline def sampleRule(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.AssessmentRuleSampleRuleArgs.Builder]):
         com.pulumi.gcp.contactcenterinsights.inputs.AssessmentRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.contactcenterinsights.inputs.AssessmentRuleSampleRuleArgs.builder
       builder.sampleRule(args(argsBuilder).build)
@@ -158,7 +158,7 @@ object contactcenterinsights_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scheduleInfo(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.AssessmentRuleScheduleInfoArgs.Builder]):
+    inline def scheduleInfo(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.AssessmentRuleScheduleInfoArgs.Builder]):
         com.pulumi.gcp.contactcenterinsights.inputs.AssessmentRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.contactcenterinsights.inputs.AssessmentRuleScheduleInfoArgs.builder
       builder.scheduleInfo(args(argsBuilder).build)
@@ -169,7 +169,7 @@ object contactcenterinsights_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.AutoLabelingRuleConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.AutoLabelingRuleConditionArgs.Builder]*):
         com.pulumi.gcp.contactcenterinsights.inputs.AutoLabelingRuleState.Builder =
       def argsBuilder = com.pulumi.gcp.contactcenterinsights.inputs.AutoLabelingRuleConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -181,7 +181,7 @@ object contactcenterinsights_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conversationDataOptions(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionQaQuestionDataOptionsConversationDataOptionsArgs.Builder]):
+    inline def conversationDataOptions(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionQaQuestionDataOptionsConversationDataOptionsArgs.Builder]):
         com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionQaQuestionDataOptionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionQaQuestionDataOptionsConversationDataOptionsArgs.builder
       builder.conversationDataOptions(args(argsBuilder).build)
@@ -192,7 +192,7 @@ object contactcenterinsights_ext:
      * Structure is documented below.
      * @return builder
      */
-    def answerChoices(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionAnswerChoiceArgs.Builder]*):
+    inline def answerChoices(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionAnswerChoiceArgs.Builder]*):
         com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionState.Builder =
       def argsBuilder = com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionAnswerChoiceArgs.builder
       builder.answerChoices(args.map(_(argsBuilder).build)*)
@@ -203,7 +203,7 @@ object contactcenterinsights_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metrics(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionMetricsArgs.Builder]):
+    inline def metrics(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionMetricsArgs.Builder]):
         com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionState.Builder =
       val argsBuilder = com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionMetricsArgs.builder
       builder.metrics(args(argsBuilder).build)
@@ -214,7 +214,7 @@ object contactcenterinsights_ext:
      * Structure is documented below.
      * @return builder
      */
-    def predefinedQuestionConfig(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionPredefinedQuestionConfigArgs.Builder]):
+    inline def predefinedQuestionConfig(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionPredefinedQuestionConfigArgs.Builder]):
         com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionState.Builder =
       val argsBuilder = com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionPredefinedQuestionConfigArgs.builder
       builder.predefinedQuestionConfig(args(argsBuilder).build)
@@ -224,7 +224,7 @@ object contactcenterinsights_ext:
      * Structure is documented below.
      * @return builder
      */
-    def qaQuestionDataOptions(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionQaQuestionDataOptionsArgs.Builder]):
+    inline def qaQuestionDataOptions(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionQaQuestionDataOptionsArgs.Builder]):
         com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionState.Builder =
       val argsBuilder = com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionQaQuestionDataOptionsArgs.builder
       builder.qaQuestionDataOptions(args(argsBuilder).build)
@@ -235,7 +235,7 @@ object contactcenterinsights_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tuningMetadata(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionTuningMetadataArgs.Builder]):
+    inline def tuningMetadata(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionTuningMetadataArgs.Builder]):
         com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionState.Builder =
       val argsBuilder = com.pulumi.gcp.contactcenterinsights.inputs.QaQuestionTuningMetadataArgs.builder
       builder.tuningMetadata(args(argsBuilder).build)
@@ -247,7 +247,7 @@ object contactcenterinsights_ext:
      * Structure is documented below.
      * @return builder
      */
-    def snapshots(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.QaScorecardRevisionSnapshotArgs.Builder]*):
+    inline def snapshots(args: Endofunction[com.pulumi.gcp.contactcenterinsights.inputs.QaScorecardRevisionSnapshotArgs.Builder]*):
         com.pulumi.gcp.contactcenterinsights.inputs.QaScorecardRevisionState.Builder =
       def argsBuilder = com.pulumi.gcp.contactcenterinsights.inputs.QaScorecardRevisionSnapshotArgs.builder
       builder.snapshots(args.map(_(argsBuilder).build)*)

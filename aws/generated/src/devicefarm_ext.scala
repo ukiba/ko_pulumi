@@ -7,7 +7,7 @@ object devicefarm_ext:
      * @param rules The device pool&#39;s rules. See Rule.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.aws.devicefarm.inputs.DevicePoolRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.aws.devicefarm.inputs.DevicePoolRuleArgs.Builder]*):
         com.pulumi.aws.devicefarm.DevicePoolArgs.Builder =
       def argsBuilder = com.pulumi.aws.devicefarm.inputs.DevicePoolRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -17,7 +17,7 @@ object devicefarm_ext:
      * @param vpcConfig The VPC security groups and subnets that are attached to a project. See VPC Config below.
      * @return builder
      */
-    def vpcConfig(args: Endofunction[com.pulumi.aws.devicefarm.inputs.TestGridProjectVpcConfigArgs.Builder]):
+    inline def vpcConfig(args: Endofunction[com.pulumi.aws.devicefarm.inputs.TestGridProjectVpcConfigArgs.Builder]):
         com.pulumi.aws.devicefarm.TestGridProjectArgs.Builder =
       val argsBuilder = com.pulumi.aws.devicefarm.inputs.TestGridProjectVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
@@ -27,7 +27,7 @@ object devicefarm_ext:
      * @param rules The device pool&#39;s rules. See Rule.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.aws.devicefarm.inputs.DevicePoolRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.aws.devicefarm.inputs.DevicePoolRuleArgs.Builder]*):
         com.pulumi.aws.devicefarm.inputs.DevicePoolState.Builder =
       def argsBuilder = com.pulumi.aws.devicefarm.inputs.DevicePoolRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -37,7 +37,7 @@ object devicefarm_ext:
      * @param vpcConfig The VPC security groups and subnets that are attached to a project. See VPC Config below.
      * @return builder
      */
-    def vpcConfig(args: Endofunction[com.pulumi.aws.devicefarm.inputs.TestGridProjectVpcConfigArgs.Builder]):
+    inline def vpcConfig(args: Endofunction[com.pulumi.aws.devicefarm.inputs.TestGridProjectVpcConfigArgs.Builder]):
         com.pulumi.aws.devicefarm.inputs.TestGridProjectState.Builder =
       val argsBuilder = com.pulumi.aws.devicefarm.inputs.TestGridProjectVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)

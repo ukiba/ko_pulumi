@@ -7,7 +7,7 @@ object verifiedaccess_ext:
      * @param cidrOptions CIDR block details. This parameter is required if the endpoint type is `cidr`. See below.
      * @return builder
      */
-    def cidrOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointCidrOptionsArgs.Builder]):
+    inline def cidrOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointCidrOptionsArgs.Builder]):
         com.pulumi.aws.verifiedaccess.EndpointArgs.Builder =
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.EndpointCidrOptionsArgs.builder
       builder.cidrOptions(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object verifiedaccess_ext:
      * @param loadBalancerOptions Load balancer details. This parameter is required if the endpoint type is `load-balancer`. See below.
      * @return builder
      */
-    def loadBalancerOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointLoadBalancerOptionsArgs.Builder]):
+    inline def loadBalancerOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointLoadBalancerOptionsArgs.Builder]):
         com.pulumi.aws.verifiedaccess.EndpointArgs.Builder =
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.EndpointLoadBalancerOptionsArgs.builder
       builder.loadBalancerOptions(args(argsBuilder).build)
@@ -25,7 +25,7 @@ object verifiedaccess_ext:
      * @param networkInterfaceOptions Network interface details. This parameter is required if the endpoint type is `network-interface`. See below.
      * @return builder
      */
-    def networkInterfaceOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointNetworkInterfaceOptionsArgs.Builder]):
+    inline def networkInterfaceOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointNetworkInterfaceOptionsArgs.Builder]):
         com.pulumi.aws.verifiedaccess.EndpointArgs.Builder =
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.EndpointNetworkInterfaceOptionsArgs.builder
       builder.networkInterfaceOptions(args(argsBuilder).build)
@@ -34,7 +34,7 @@ object verifiedaccess_ext:
      * @param rdsOptions RDS details. This parameter is required if the endpoint type is `rds`. See below.
      * @return builder
      */
-    def rdsOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointRdsOptionsArgs.Builder]):
+    inline def rdsOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointRdsOptionsArgs.Builder]):
         com.pulumi.aws.verifiedaccess.EndpointArgs.Builder =
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.EndpointRdsOptionsArgs.builder
       builder.rdsOptions(args(argsBuilder).build)
@@ -43,7 +43,7 @@ object verifiedaccess_ext:
      * @param sseSpecification Options in use for server side encryption. See below.
      * @return builder
      */
-    def sseSpecification(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointSseSpecificationArgs.Builder]):
+    inline def sseSpecification(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointSseSpecificationArgs.Builder]):
         com.pulumi.aws.verifiedaccess.EndpointArgs.Builder =
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.EndpointSseSpecificationArgs.builder
       builder.sseSpecification(args(argsBuilder).build)
@@ -53,7 +53,7 @@ object verifiedaccess_ext:
      * @param sseConfiguration Configuration block to use KMS keys for server-side encryption. See below.
      * @return builder
      */
-    def sseConfiguration(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.GroupSseConfigurationArgs.Builder]):
+    inline def sseConfiguration(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.GroupSseConfigurationArgs.Builder]):
         com.pulumi.aws.verifiedaccess.GroupArgs.Builder =
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.GroupSseConfigurationArgs.builder
       builder.sseConfiguration(args(argsBuilder).build)
@@ -63,7 +63,7 @@ object verifiedaccess_ext:
      * @param accessLogs Block that specifies the configuration options for Verified Access instances. Detailed below.
      * @return builder
      */
-    def accessLogs(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.InstanceLoggingConfigurationAccessLogsArgs.Builder]):
+    inline def accessLogs(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.InstanceLoggingConfigurationAccessLogsArgs.Builder]):
         com.pulumi.aws.verifiedaccess.InstanceLoggingConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.InstanceLoggingConfigurationAccessLogsArgs.builder
       builder.accessLogs(args(argsBuilder).build)
@@ -73,7 +73,7 @@ object verifiedaccess_ext:
      * @param deviceOptions Block of options for device identity based trust providers. See below.
      * @return builder
      */
-    def deviceOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.TrustProviderDeviceOptionsArgs.Builder]):
+    inline def deviceOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.TrustProviderDeviceOptionsArgs.Builder]):
         com.pulumi.aws.verifiedaccess.TrustProviderArgs.Builder =
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.TrustProviderDeviceOptionsArgs.builder
       builder.deviceOptions(args(argsBuilder).build)
@@ -82,7 +82,7 @@ object verifiedaccess_ext:
      * @param nativeApplicationOidcOptions OpenID Connect details for a Native Application OIDC, user-identity based trust provider. See below.
      * @return builder
      */
-    def nativeApplicationOidcOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.TrustProviderNativeApplicationOidcOptionsArgs.Builder]):
+    inline def nativeApplicationOidcOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.TrustProviderNativeApplicationOidcOptionsArgs.Builder]):
         com.pulumi.aws.verifiedaccess.TrustProviderArgs.Builder =
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.TrustProviderNativeApplicationOidcOptionsArgs.builder
       builder.nativeApplicationOidcOptions(args(argsBuilder).build)
@@ -91,7 +91,7 @@ object verifiedaccess_ext:
      * @param oidcOptions OpenID Connect details for an oidc-type, user-identity based trust provider. See below.
      * @return builder
      */
-    def oidcOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.TrustProviderOidcOptionsArgs.Builder]):
+    inline def oidcOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.TrustProviderOidcOptionsArgs.Builder]):
         com.pulumi.aws.verifiedaccess.TrustProviderArgs.Builder =
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.TrustProviderOidcOptionsArgs.builder
       builder.oidcOptions(args(argsBuilder).build)
@@ -100,7 +100,7 @@ object verifiedaccess_ext:
      * @param sseSpecification Block of options in use for server side encryption. See below.
      * @return builder
      */
-    def sseSpecification(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.TrustProviderSseSpecificationArgs.Builder]):
+    inline def sseSpecification(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.TrustProviderSseSpecificationArgs.Builder]):
         com.pulumi.aws.verifiedaccess.TrustProviderArgs.Builder =
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.TrustProviderSseSpecificationArgs.builder
       builder.sseSpecification(args(argsBuilder).build)
@@ -110,7 +110,7 @@ object verifiedaccess_ext:
      * @param portRanges Port ranges. See below.
      * @return builder
      */
-    def portRanges(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointCidrOptionsPortRangeArgs.Builder]*):
+    inline def portRanges(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointCidrOptionsPortRangeArgs.Builder]*):
         com.pulumi.aws.verifiedaccess.inputs.EndpointCidrOptionsArgs.Builder =
       def argsBuilder = com.pulumi.aws.verifiedaccess.inputs.EndpointCidrOptionsPortRangeArgs.builder
       builder.portRanges(args.map(_(argsBuilder).build)*)
@@ -120,7 +120,7 @@ object verifiedaccess_ext:
      * @param portRanges Port ranges. See below.
      * @return builder
      */
-    def portRanges(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointLoadBalancerOptionsPortRangeArgs.Builder]*):
+    inline def portRanges(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointLoadBalancerOptionsPortRangeArgs.Builder]*):
         com.pulumi.aws.verifiedaccess.inputs.EndpointLoadBalancerOptionsArgs.Builder =
       def argsBuilder = com.pulumi.aws.verifiedaccess.inputs.EndpointLoadBalancerOptionsPortRangeArgs.builder
       builder.portRanges(args.map(_(argsBuilder).build)*)
@@ -130,7 +130,7 @@ object verifiedaccess_ext:
      * @param portRanges Port ranges. See below.
      * @return builder
      */
-    def portRanges(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointNetworkInterfaceOptionsPortRangeArgs.Builder]*):
+    inline def portRanges(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointNetworkInterfaceOptionsPortRangeArgs.Builder]*):
         com.pulumi.aws.verifiedaccess.inputs.EndpointNetworkInterfaceOptionsArgs.Builder =
       def argsBuilder = com.pulumi.aws.verifiedaccess.inputs.EndpointNetworkInterfaceOptionsPortRangeArgs.builder
       builder.portRanges(args.map(_(argsBuilder).build)*)
@@ -140,7 +140,7 @@ object verifiedaccess_ext:
      * @param cidrOptions CIDR block details. This parameter is required if the endpoint type is `cidr`. See below.
      * @return builder
      */
-    def cidrOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointCidrOptionsArgs.Builder]):
+    inline def cidrOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointCidrOptionsArgs.Builder]):
         com.pulumi.aws.verifiedaccess.inputs.EndpointState.Builder =
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.EndpointCidrOptionsArgs.builder
       builder.cidrOptions(args(argsBuilder).build)
@@ -149,7 +149,7 @@ object verifiedaccess_ext:
      * @param loadBalancerOptions Load balancer details. This parameter is required if the endpoint type is `load-balancer`. See below.
      * @return builder
      */
-    def loadBalancerOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointLoadBalancerOptionsArgs.Builder]):
+    inline def loadBalancerOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointLoadBalancerOptionsArgs.Builder]):
         com.pulumi.aws.verifiedaccess.inputs.EndpointState.Builder =
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.EndpointLoadBalancerOptionsArgs.builder
       builder.loadBalancerOptions(args(argsBuilder).build)
@@ -158,7 +158,7 @@ object verifiedaccess_ext:
      * @param networkInterfaceOptions Network interface details. This parameter is required if the endpoint type is `network-interface`. See below.
      * @return builder
      */
-    def networkInterfaceOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointNetworkInterfaceOptionsArgs.Builder]):
+    inline def networkInterfaceOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointNetworkInterfaceOptionsArgs.Builder]):
         com.pulumi.aws.verifiedaccess.inputs.EndpointState.Builder =
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.EndpointNetworkInterfaceOptionsArgs.builder
       builder.networkInterfaceOptions(args(argsBuilder).build)
@@ -167,7 +167,7 @@ object verifiedaccess_ext:
      * @param rdsOptions RDS details. This parameter is required if the endpoint type is `rds`. See below.
      * @return builder
      */
-    def rdsOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointRdsOptionsArgs.Builder]):
+    inline def rdsOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointRdsOptionsArgs.Builder]):
         com.pulumi.aws.verifiedaccess.inputs.EndpointState.Builder =
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.EndpointRdsOptionsArgs.builder
       builder.rdsOptions(args(argsBuilder).build)
@@ -176,7 +176,7 @@ object verifiedaccess_ext:
      * @param sseSpecification Options in use for server side encryption. See below.
      * @return builder
      */
-    def sseSpecification(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointSseSpecificationArgs.Builder]):
+    inline def sseSpecification(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.EndpointSseSpecificationArgs.Builder]):
         com.pulumi.aws.verifiedaccess.inputs.EndpointState.Builder =
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.EndpointSseSpecificationArgs.builder
       builder.sseSpecification(args(argsBuilder).build)
@@ -186,7 +186,7 @@ object verifiedaccess_ext:
      * @param sseConfiguration Configuration block to use KMS keys for server-side encryption. See below.
      * @return builder
      */
-    def sseConfiguration(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.GroupSseConfigurationArgs.Builder]):
+    inline def sseConfiguration(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.GroupSseConfigurationArgs.Builder]):
         com.pulumi.aws.verifiedaccess.inputs.GroupState.Builder =
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.GroupSseConfigurationArgs.builder
       builder.sseConfiguration(args(argsBuilder).build)
@@ -196,7 +196,7 @@ object verifiedaccess_ext:
      * @param cloudwatchLogs Block that specifies configures sending Verified Access logs to CloudWatch Logs. Detailed below.
      * @return builder
      */
-    def cloudwatchLogs(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.InstanceLoggingConfigurationAccessLogsCloudwatchLogsArgs.Builder]):
+    inline def cloudwatchLogs(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.InstanceLoggingConfigurationAccessLogsCloudwatchLogsArgs.Builder]):
         com.pulumi.aws.verifiedaccess.inputs.InstanceLoggingConfigurationAccessLogsArgs.Builder =
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.InstanceLoggingConfigurationAccessLogsCloudwatchLogsArgs.builder
       builder.cloudwatchLogs(args(argsBuilder).build)
@@ -205,7 +205,7 @@ object verifiedaccess_ext:
      * @param kinesisDataFirehose Block that specifies configures sending Verified Access logs to Kinesis. Detailed below.
      * @return builder
      */
-    def kinesisDataFirehose(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.InstanceLoggingConfigurationAccessLogsKinesisDataFirehoseArgs.Builder]):
+    inline def kinesisDataFirehose(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.InstanceLoggingConfigurationAccessLogsKinesisDataFirehoseArgs.Builder]):
         com.pulumi.aws.verifiedaccess.inputs.InstanceLoggingConfigurationAccessLogsArgs.Builder =
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.InstanceLoggingConfigurationAccessLogsKinesisDataFirehoseArgs.builder
       builder.kinesisDataFirehose(args(argsBuilder).build)
@@ -214,7 +214,7 @@ object verifiedaccess_ext:
      * @param s3 Block that specifies configures sending Verified Access logs to S3. Detailed below.
      * @return builder
      */
-    def s3(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.InstanceLoggingConfigurationAccessLogsS3Args.Builder]):
+    inline def s3(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.InstanceLoggingConfigurationAccessLogsS3Args.Builder]):
         com.pulumi.aws.verifiedaccess.inputs.InstanceLoggingConfigurationAccessLogsArgs.Builder =
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.InstanceLoggingConfigurationAccessLogsS3Args.builder
       builder.s3(args(argsBuilder).build)
@@ -224,7 +224,7 @@ object verifiedaccess_ext:
      * @param accessLogs Block that specifies the configuration options for Verified Access instances. Detailed below.
      * @return builder
      */
-    def accessLogs(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.InstanceLoggingConfigurationAccessLogsArgs.Builder]):
+    inline def accessLogs(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.InstanceLoggingConfigurationAccessLogsArgs.Builder]):
         com.pulumi.aws.verifiedaccess.inputs.InstanceLoggingConfigurationState.Builder =
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.InstanceLoggingConfigurationAccessLogsArgs.builder
       builder.accessLogs(args(argsBuilder).build)
@@ -234,7 +234,7 @@ object verifiedaccess_ext:
      * @param verifiedAccessTrustProviders One or more blocks providing information about the AWS Verified Access Trust Providers. See verifiedAccessTrustProviders below for details.
      * @return builder
      */
-    def verifiedAccessTrustProviders(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.InstanceVerifiedAccessTrustProviderArgs.Builder]*):
+    inline def verifiedAccessTrustProviders(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.InstanceVerifiedAccessTrustProviderArgs.Builder]*):
         com.pulumi.aws.verifiedaccess.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.aws.verifiedaccess.inputs.InstanceVerifiedAccessTrustProviderArgs.builder
       builder.verifiedAccessTrustProviders(args.map(_(argsBuilder).build)*)
@@ -244,7 +244,7 @@ object verifiedaccess_ext:
      * @param deviceOptions Block of options for device identity based trust providers. See below.
      * @return builder
      */
-    def deviceOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.TrustProviderDeviceOptionsArgs.Builder]):
+    inline def deviceOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.TrustProviderDeviceOptionsArgs.Builder]):
         com.pulumi.aws.verifiedaccess.inputs.TrustProviderState.Builder =
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.TrustProviderDeviceOptionsArgs.builder
       builder.deviceOptions(args(argsBuilder).build)
@@ -253,7 +253,7 @@ object verifiedaccess_ext:
      * @param nativeApplicationOidcOptions OpenID Connect details for a Native Application OIDC, user-identity based trust provider. See below.
      * @return builder
      */
-    def nativeApplicationOidcOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.TrustProviderNativeApplicationOidcOptionsArgs.Builder]):
+    inline def nativeApplicationOidcOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.TrustProviderNativeApplicationOidcOptionsArgs.Builder]):
         com.pulumi.aws.verifiedaccess.inputs.TrustProviderState.Builder =
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.TrustProviderNativeApplicationOidcOptionsArgs.builder
       builder.nativeApplicationOidcOptions(args(argsBuilder).build)
@@ -262,7 +262,7 @@ object verifiedaccess_ext:
      * @param oidcOptions OpenID Connect details for an oidc-type, user-identity based trust provider. See below.
      * @return builder
      */
-    def oidcOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.TrustProviderOidcOptionsArgs.Builder]):
+    inline def oidcOptions(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.TrustProviderOidcOptionsArgs.Builder]):
         com.pulumi.aws.verifiedaccess.inputs.TrustProviderState.Builder =
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.TrustProviderOidcOptionsArgs.builder
       builder.oidcOptions(args(argsBuilder).build)
@@ -271,7 +271,7 @@ object verifiedaccess_ext:
      * @param sseSpecification Block of options in use for server side encryption. See below.
      * @return builder
      */
-    def sseSpecification(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.TrustProviderSseSpecificationArgs.Builder]):
+    inline def sseSpecification(args: Endofunction[com.pulumi.aws.verifiedaccess.inputs.TrustProviderSseSpecificationArgs.Builder]):
         com.pulumi.aws.verifiedaccess.inputs.TrustProviderState.Builder =
       val argsBuilder = com.pulumi.aws.verifiedaccess.inputs.TrustProviderSseSpecificationArgs.builder
       builder.sseSpecification(args(argsBuilder).build)

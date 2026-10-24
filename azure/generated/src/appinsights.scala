@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object appinsights:
   /** Manages an Application Insights Analytics Item component. */
-  def AnalyticsItem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AnalyticsItem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appinsights.AnalyticsItemArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appinsights.AnalyticsItemArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18,7 +18,7 @@ object appinsights:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Application Insights API key. */
-  def ApiKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApiKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appinsights.ApiKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appinsights.ApiKeyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -46,7 +46,7 @@ object appinsights:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an Application Insights component. */
-  def Insights(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Insights(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appinsights.InsightsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appinsights.InsightsArgs.builder
     conf.logicalName2physicalName(name) match
@@ -64,7 +64,7 @@ object appinsights:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Application Insights Smart Detection Rule. */
-  def SmartDetectionRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SmartDetectionRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appinsights.SmartDetectionRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appinsights.SmartDetectionRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -75,7 +75,7 @@ object appinsights:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Application Insights Standard WebTest. */
-  def StandardWebTest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StandardWebTest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appinsights.StandardWebTestArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appinsights.StandardWebTestArgs.builder
     conf.logicalName2physicalName(name) match
@@ -97,7 +97,7 @@ object appinsights:
    * 
    * &gt; **Note:** Despite the discrepancy in its name, this Terraform resource corresponds to the Azure resource &#39;Application Insights Classic Web Test&#39;. Azure changed the name, but we retained the original name in Terraform to avoid disruption and ensure backward compatibility.
    */
-  def WebTest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WebTest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appinsights.WebTestArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appinsights.WebTestArgs.builder
     conf.logicalName2physicalName(name) match
@@ -115,7 +115,7 @@ object appinsights:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Workbook. */
-  def Workbook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Workbook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appinsights.WorkbookArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appinsights.WorkbookArgs.builder
     conf.logicalName2physicalName(name) match
@@ -133,7 +133,7 @@ object appinsights:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Application Insights Workbook Template. */
-  def WorkbookTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkbookTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appinsights.WorkbookTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appinsights.WorkbookTemplateArgs.builder
     conf.logicalName2physicalName(name) match

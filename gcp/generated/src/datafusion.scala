@@ -32,7 +32,7 @@ object datafusion:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/data-fusion/docs/)
    */
-  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.datafusion.InstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.datafusion.InstanceArgs.builder
     conf.logicalName2physicalName(name) match

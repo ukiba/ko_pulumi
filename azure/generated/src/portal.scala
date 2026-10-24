@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object portal:
   /** Manages a shared dashboard in the Azure Portal. */
-  def PortalDashboard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PortalDashboard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.portal.PortalDashboardArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.portal.PortalDashboardArgs.builder
     conf.logicalName2physicalName(name) match

@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object sesv2:
   /** Manages AWS SESv2 (Simple Email V2) account-level suppression attributes. */
-  def AccountSuppressionAttributes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccountSuppressionAttributes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.AccountSuppressionAttributesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.sesv2.AccountSuppressionAttributesArgs.builder
     com.pulumi.aws.sesv2.AccountSuppressionAttributes(name,
@@ -15,7 +15,7 @@ object sesv2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS SESv2 (Simple Email V2) Account VDM Attributes. */
-  def AccountVdmAttributes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccountVdmAttributes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.AccountVdmAttributesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.sesv2.AccountVdmAttributesArgs.builder
     com.pulumi.aws.sesv2.AccountVdmAttributes(name,
@@ -23,7 +23,7 @@ object sesv2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS SESv2 (Simple Email V2) Configuration Set. */
-  def ConfigurationSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConfigurationSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.ConfigurationSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sesv2.ConfigurationSetArgs.builder
     argsBuilder = args(argsBuilder)
@@ -38,7 +38,7 @@ object sesv2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS SESv2 (Simple Email V2) Configuration Set Event Destination. */
-  def ConfigurationSetEventDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConfigurationSetEventDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.ConfigurationSetEventDestinationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.sesv2.ConfigurationSetEventDestinationArgs.builder
     com.pulumi.aws.sesv2.ConfigurationSetEventDestination(name,
@@ -46,7 +46,7 @@ object sesv2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS SESv2 (Simple Email V2) Contact List. */
-  def ContactList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ContactList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.ContactListArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sesv2.ContactListArgs.builder
     argsBuilder = args(argsBuilder)
@@ -65,7 +65,7 @@ object sesv2:
    * 
    * This resource is used with &#34;Standard&#34; dedicated IP addresses. This includes addresses [requested and relinquished manually](https://docs.aws.amazon.com/ses/latest/dg/dedicated-ip-case.html) via an AWS support case, or [Bring Your Own IP](https://docs.aws.amazon.com/ses/latest/dg/dedicated-ip-byo.html) addresses. Once no longer assigned, this resource returns the IP to the [`ses-default-dedicated-pool`](https://docs.aws.amazon.com/ses/latest/dg/managing-ip-pools.html), managed by AWS.
    */
-  def DedicatedIpAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DedicatedIpAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.DedicatedIpAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.sesv2.DedicatedIpAssignmentArgs.builder
     com.pulumi.aws.sesv2.DedicatedIpAssignment(name,
@@ -73,7 +73,7 @@ object sesv2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS SESv2 (Simple Email V2) Dedicated IP Pool. */
-  def DedicatedIpPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DedicatedIpPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.DedicatedIpPoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sesv2.DedicatedIpPoolArgs.builder
     argsBuilder = args(argsBuilder)
@@ -88,7 +88,7 @@ object sesv2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS SESv2 (Simple Email V2) Email Identity. */
-  def EmailIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EmailIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.EmailIdentityArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sesv2.EmailIdentityArgs.builder
     argsBuilder = args(argsBuilder)
@@ -103,7 +103,7 @@ object sesv2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS SESv2 (Simple Email V2) Email Identity Feedback Attributes. */
-  def EmailIdentityFeedbackAttributes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EmailIdentityFeedbackAttributes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.EmailIdentityFeedbackAttributesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.sesv2.EmailIdentityFeedbackAttributesArgs.builder
     com.pulumi.aws.sesv2.EmailIdentityFeedbackAttributes(name,
@@ -111,7 +111,7 @@ object sesv2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS SESv2 (Simple Email V2) Email Identity Mail From Attributes. */
-  def EmailIdentityMailFromAttributes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EmailIdentityMailFromAttributes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.EmailIdentityMailFromAttributesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.sesv2.EmailIdentityMailFromAttributesArgs.builder
     com.pulumi.aws.sesv2.EmailIdentityMailFromAttributes(name,
@@ -119,7 +119,7 @@ object sesv2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS SESv2 (Simple Email V2) Email Identity Policy. */
-  def EmailIdentityPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EmailIdentityPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.EmailIdentityPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.sesv2.EmailIdentityPolicyArgs.builder
     com.pulumi.aws.sesv2.EmailIdentityPolicy(name,
@@ -127,7 +127,7 @@ object sesv2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS SESv2 (Simple Email V2) Multi Region Endpoint (global endpoint). Traffic is split equally between the primary region (where the resource is created) and the secondary region specified in the `details` block. */
-  def MultiRegionEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MultiRegionEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.MultiRegionEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sesv2.MultiRegionEndpointArgs.builder
     argsBuilder = args(argsBuilder)
@@ -207,7 +207,7 @@ object sesv2:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an AWS SESv2 (Simple Email V2) Tenant. */
-  def Tenant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Tenant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.TenantArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sesv2.TenantArgs.builder
     argsBuilder = args(argsBuilder)
@@ -222,7 +222,7 @@ object sesv2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS SESv2 (Simple Email V2) Tenant Resource Association. */
-  def TenantResourceAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TenantResourceAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sesv2.TenantResourceAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.sesv2.TenantResourceAssociationArgs.builder
     com.pulumi.aws.sesv2.TenantResourceAssociation(name,

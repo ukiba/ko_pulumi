@@ -19,7 +19,7 @@ object identityplatform:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/identity-platform/docs)
    */
-  def Config(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Config(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.identityplatform.ConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.identityplatform.ConfigArgs.builder
     com.pulumi.gcp.identityplatform.Config(name,
@@ -33,7 +33,7 @@ object identityplatform:
    * [Google Identity Platform](https://console.cloud.google.com/marketplace/details/google-cloud-platform/customer-identity) in
    * the marketplace prior to using this resource.
    */
-  def DefaultSupportedIdpConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DefaultSupportedIdpConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.identityplatform.DefaultSupportedIdpConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.identityplatform.DefaultSupportedIdpConfigArgs.builder
     com.pulumi.gcp.identityplatform.DefaultSupportedIdpConfig(name,
@@ -47,7 +47,7 @@ object identityplatform:
    * [Google Identity Platform](https://console.cloud.google.com/marketplace/details/google-cloud-platform/customer-identity) in
    * the marketplace prior to using this resource.
    */
-  def InboundSamlConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InboundSamlConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.identityplatform.InboundSamlConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.identityplatform.InboundSamlConfigArgs.builder
     conf.logicalName2physicalName(name) match
@@ -64,7 +64,7 @@ object identityplatform:
    * [Google Identity Platform](https://console.cloud.google.com/marketplace/details/google-cloud-platform/customer-identity) in
    * the marketplace prior to using this resource.
    */
-  def OauthIdpConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OauthIdpConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.identityplatform.OauthIdpConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.identityplatform.OauthIdpConfigArgs.builder
     conf.logicalName2physicalName(name) match
@@ -84,7 +84,7 @@ object identityplatform:
    * You must [enable multi-tenancy](https://cloud.google.com/identity-platform/docs/multi-tenancy-quickstart) via
    * the Cloud Console prior to creating tenants.
    */
-  def Tenant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Tenant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.identityplatform.TenantArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.identityplatform.TenantArgs.builder
     com.pulumi.gcp.identityplatform.Tenant(name,
@@ -98,7 +98,7 @@ object identityplatform:
    * [Google Identity Platform](https://console.cloud.google.com/marketplace/details/google-cloud-platform/customer-identity) in
    * the marketplace prior to using this resource.
    */
-  def TenantDefaultSupportedIdpConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TenantDefaultSupportedIdpConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.identityplatform.TenantDefaultSupportedIdpConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.identityplatform.TenantDefaultSupportedIdpConfigArgs.builder
     com.pulumi.gcp.identityplatform.TenantDefaultSupportedIdpConfig(name,
@@ -112,7 +112,7 @@ object identityplatform:
    * [Google Identity Platform](https://console.cloud.google.com/marketplace/details/google-cloud-platform/customer-identity) in
    * the marketplace prior to using this resource.
    */
-  def TenantInboundSamlConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TenantInboundSamlConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.identityplatform.TenantInboundSamlConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.identityplatform.TenantInboundSamlConfigArgs.builder
     conf.logicalName2physicalName(name) match
@@ -129,7 +129,7 @@ object identityplatform:
    * [Google Identity Platform](https://console.cloud.google.com/marketplace/details/google-cloud-platform/customer-identity) in
    * the marketplace prior to using this resource.
    */
-  def TenantOauthIdpConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TenantOauthIdpConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.identityplatform.TenantOauthIdpConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.identityplatform.TenantOauthIdpConfigArgs.builder
     conf.logicalName2physicalName(name) match

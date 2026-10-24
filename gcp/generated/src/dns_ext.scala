@@ -8,7 +8,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.dns.inputs.DnsManagedZoneIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.dns.inputs.DnsManagedZoneIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.dns.DnsManagedZoneIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.DnsManagedZoneIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -19,7 +19,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.dns.inputs.DnsManagedZoneIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.dns.inputs.DnsManagedZoneIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.dns.DnsManagedZoneIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.DnsManagedZoneIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -30,7 +30,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudLoggingConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZoneCloudLoggingConfigArgs.Builder]):
+    inline def cloudLoggingConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZoneCloudLoggingConfigArgs.Builder]):
         com.pulumi.gcp.dns.ManagedZoneArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.ManagedZoneCloudLoggingConfigArgs.builder
       builder.cloudLoggingConfig(args(argsBuilder).build)
@@ -40,7 +40,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dnssecConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZoneDnssecConfigArgs.Builder]):
+    inline def dnssecConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZoneDnssecConfigArgs.Builder]):
         com.pulumi.gcp.dns.ManagedZoneArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.ManagedZoneDnssecConfigArgs.builder
       builder.dnssecConfig(args(argsBuilder).build)
@@ -52,7 +52,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def forwardingConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZoneForwardingConfigArgs.Builder]):
+    inline def forwardingConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZoneForwardingConfigArgs.Builder]):
         com.pulumi.gcp.dns.ManagedZoneArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.ManagedZoneForwardingConfigArgs.builder
       builder.forwardingConfig(args(argsBuilder).build)
@@ -63,7 +63,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def peeringConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZonePeeringConfigArgs.Builder]):
+    inline def peeringConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZonePeeringConfigArgs.Builder]):
         com.pulumi.gcp.dns.ManagedZoneArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.ManagedZonePeeringConfigArgs.builder
       builder.peeringConfig(args(argsBuilder).build)
@@ -74,7 +74,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def privateVisibilityConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZonePrivateVisibilityConfigArgs.Builder]):
+    inline def privateVisibilityConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZonePrivateVisibilityConfigArgs.Builder]):
         com.pulumi.gcp.dns.ManagedZoneArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.ManagedZonePrivateVisibilityConfigArgs.builder
       builder.privateVisibilityConfig(args(argsBuilder).build)
@@ -85,7 +85,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZoneServiceDirectoryConfigArgs.Builder]):
+    inline def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZoneServiceDirectoryConfigArgs.Builder]):
         com.pulumi.gcp.dns.ManagedZoneArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.ManagedZoneServiceDirectoryConfigArgs.builder
       builder.serviceDirectoryConfig(args(argsBuilder).build)
@@ -98,7 +98,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def alternativeNameServerConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.PolicyAlternativeNameServerConfigArgs.Builder]):
+    inline def alternativeNameServerConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.PolicyAlternativeNameServerConfigArgs.Builder]):
         com.pulumi.gcp.dns.PolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.PolicyAlternativeNameServerConfigArgs.builder
       builder.alternativeNameServerConfig(args(argsBuilder).build)
@@ -108,7 +108,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dns64Config(args: Endofunction[com.pulumi.gcp.dns.inputs.PolicyDns64ConfigArgs.Builder]):
+    inline def dns64Config(args: Endofunction[com.pulumi.gcp.dns.inputs.PolicyDns64ConfigArgs.Builder]):
         com.pulumi.gcp.dns.PolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.PolicyDns64ConfigArgs.builder
       builder.dns64Config(args(argsBuilder).build)
@@ -118,7 +118,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networks(args: Endofunction[com.pulumi.gcp.dns.inputs.PolicyNetworkArgs.Builder]*):
+    inline def networks(args: Endofunction[com.pulumi.gcp.dns.inputs.PolicyNetworkArgs.Builder]*):
         com.pulumi.gcp.dns.PolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dns.inputs.PolicyNetworkArgs.builder
       builder.networks(args.map(_(argsBuilder).build)*)
@@ -130,7 +130,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def routingPolicy(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyArgs.Builder]):
+    inline def routingPolicy(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyArgs.Builder]):
         com.pulumi.gcp.dns.RecordSetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyArgs.builder
       builder.routingPolicy(args(argsBuilder).build)
@@ -141,7 +141,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gkeClusters(args: Endofunction[com.pulumi.gcp.dns.inputs.ResponsePolicyGkeClusterArgs.Builder]*):
+    inline def gkeClusters(args: Endofunction[com.pulumi.gcp.dns.inputs.ResponsePolicyGkeClusterArgs.Builder]*):
         com.pulumi.gcp.dns.ResponsePolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dns.inputs.ResponsePolicyGkeClusterArgs.builder
       builder.gkeClusters(args.map(_(argsBuilder).build)*)
@@ -151,7 +151,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networks(args: Endofunction[com.pulumi.gcp.dns.inputs.ResponsePolicyNetworkArgs.Builder]*):
+    inline def networks(args: Endofunction[com.pulumi.gcp.dns.inputs.ResponsePolicyNetworkArgs.Builder]*):
         com.pulumi.gcp.dns.ResponsePolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dns.inputs.ResponsePolicyNetworkArgs.builder
       builder.networks(args.map(_(argsBuilder).build)*)
@@ -163,7 +163,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def localData(args: Endofunction[com.pulumi.gcp.dns.inputs.ResponsePolicyRuleLocalDataArgs.Builder]):
+    inline def localData(args: Endofunction[com.pulumi.gcp.dns.inputs.ResponsePolicyRuleLocalDataArgs.Builder]):
         com.pulumi.gcp.dns.ResponsePolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.ResponsePolicyRuleLocalDataArgs.builder
       builder.localData(args(argsBuilder).build)
@@ -174,7 +174,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.dns.inputs.DnsManagedZoneIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.dns.inputs.DnsManagedZoneIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.dns.inputs.DnsManagedZoneIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.DnsManagedZoneIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -185,7 +185,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.dns.inputs.DnsManagedZoneIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.dns.inputs.DnsManagedZoneIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.dns.inputs.DnsManagedZoneIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.DnsManagedZoneIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -199,7 +199,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultKeySpecs(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZoneDnssecConfigDefaultKeySpecArgs.Builder]*):
+    inline def defaultKeySpecs(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZoneDnssecConfigDefaultKeySpecArgs.Builder]*):
         com.pulumi.gcp.dns.inputs.ManagedZoneDnssecConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dns.inputs.ManagedZoneDnssecConfigDefaultKeySpecArgs.builder
       builder.defaultKeySpecs(args.map(_(argsBuilder).build)*)
@@ -212,7 +212,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def targetNameServers(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZoneForwardingConfigTargetNameServerArgs.Builder]*):
+    inline def targetNameServers(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZoneForwardingConfigTargetNameServerArgs.Builder]*):
         com.pulumi.gcp.dns.inputs.ManagedZoneForwardingConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dns.inputs.ManagedZoneForwardingConfigTargetNameServerArgs.builder
       builder.targetNameServers(args.map(_(argsBuilder).build)*)
@@ -223,7 +223,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def targetNetwork(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZonePeeringConfigTargetNetworkArgs.Builder]):
+    inline def targetNetwork(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZonePeeringConfigTargetNetworkArgs.Builder]):
         com.pulumi.gcp.dns.inputs.ManagedZonePeeringConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.ManagedZonePeeringConfigTargetNetworkArgs.builder
       builder.targetNetwork(args(argsBuilder).build)
@@ -234,7 +234,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gkeClusters(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZonePrivateVisibilityConfigGkeClusterArgs.Builder]*):
+    inline def gkeClusters(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZonePrivateVisibilityConfigGkeClusterArgs.Builder]*):
         com.pulumi.gcp.dns.inputs.ManagedZonePrivateVisibilityConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dns.inputs.ManagedZonePrivateVisibilityConfigGkeClusterArgs.builder
       builder.gkeClusters(args.map(_(argsBuilder).build)*)
@@ -248,7 +248,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networks(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZonePrivateVisibilityConfigNetworkArgs.Builder]*):
+    inline def networks(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZonePrivateVisibilityConfigNetworkArgs.Builder]*):
         com.pulumi.gcp.dns.inputs.ManagedZonePrivateVisibilityConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dns.inputs.ManagedZonePrivateVisibilityConfigNetworkArgs.builder
       builder.networks(args.map(_(argsBuilder).build)*)
@@ -259,7 +259,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def namespace(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZoneServiceDirectoryConfigNamespaceArgs.Builder]):
+    inline def namespace(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZoneServiceDirectoryConfigNamespaceArgs.Builder]):
         com.pulumi.gcp.dns.inputs.ManagedZoneServiceDirectoryConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.ManagedZoneServiceDirectoryConfigNamespaceArgs.builder
       builder.namespace(args(argsBuilder).build)
@@ -270,7 +270,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudLoggingConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZoneCloudLoggingConfigArgs.Builder]):
+    inline def cloudLoggingConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZoneCloudLoggingConfigArgs.Builder]):
         com.pulumi.gcp.dns.inputs.ManagedZoneState.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.ManagedZoneCloudLoggingConfigArgs.builder
       builder.cloudLoggingConfig(args(argsBuilder).build)
@@ -280,7 +280,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dnssecConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZoneDnssecConfigArgs.Builder]):
+    inline def dnssecConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZoneDnssecConfigArgs.Builder]):
         com.pulumi.gcp.dns.inputs.ManagedZoneState.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.ManagedZoneDnssecConfigArgs.builder
       builder.dnssecConfig(args(argsBuilder).build)
@@ -292,7 +292,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def forwardingConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZoneForwardingConfigArgs.Builder]):
+    inline def forwardingConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZoneForwardingConfigArgs.Builder]):
         com.pulumi.gcp.dns.inputs.ManagedZoneState.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.ManagedZoneForwardingConfigArgs.builder
       builder.forwardingConfig(args(argsBuilder).build)
@@ -303,7 +303,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def peeringConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZonePeeringConfigArgs.Builder]):
+    inline def peeringConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZonePeeringConfigArgs.Builder]):
         com.pulumi.gcp.dns.inputs.ManagedZoneState.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.ManagedZonePeeringConfigArgs.builder
       builder.peeringConfig(args(argsBuilder).build)
@@ -314,7 +314,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def privateVisibilityConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZonePrivateVisibilityConfigArgs.Builder]):
+    inline def privateVisibilityConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZonePrivateVisibilityConfigArgs.Builder]):
         com.pulumi.gcp.dns.inputs.ManagedZoneState.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.ManagedZonePrivateVisibilityConfigArgs.builder
       builder.privateVisibilityConfig(args(argsBuilder).build)
@@ -325,7 +325,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZoneServiceDirectoryConfigArgs.Builder]):
+    inline def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.ManagedZoneServiceDirectoryConfigArgs.Builder]):
         com.pulumi.gcp.dns.inputs.ManagedZoneState.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.ManagedZoneServiceDirectoryConfigArgs.builder
       builder.serviceDirectoryConfig(args(argsBuilder).build)
@@ -338,7 +338,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def targetNameServers(args: Endofunction[com.pulumi.gcp.dns.inputs.PolicyAlternativeNameServerConfigTargetNameServerArgs.Builder]*):
+    inline def targetNameServers(args: Endofunction[com.pulumi.gcp.dns.inputs.PolicyAlternativeNameServerConfigTargetNameServerArgs.Builder]*):
         com.pulumi.gcp.dns.inputs.PolicyAlternativeNameServerConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dns.inputs.PolicyAlternativeNameServerConfigTargetNameServerArgs.builder
       builder.targetNameServers(args.map(_(argsBuilder).build)*)
@@ -348,7 +348,7 @@ object dns_ext:
      * @param scope The scope to which DNS64 config will be applied to.
      * @return builder
      */
-    def scope(args: Endofunction[com.pulumi.gcp.dns.inputs.PolicyDns64ConfigScopeArgs.Builder]):
+    inline def scope(args: Endofunction[com.pulumi.gcp.dns.inputs.PolicyDns64ConfigScopeArgs.Builder]):
         com.pulumi.gcp.dns.inputs.PolicyDns64ConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.PolicyDns64ConfigScopeArgs.builder
       builder.scope(args(argsBuilder).build)
@@ -361,7 +361,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def alternativeNameServerConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.PolicyAlternativeNameServerConfigArgs.Builder]):
+    inline def alternativeNameServerConfig(args: Endofunction[com.pulumi.gcp.dns.inputs.PolicyAlternativeNameServerConfigArgs.Builder]):
         com.pulumi.gcp.dns.inputs.PolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.PolicyAlternativeNameServerConfigArgs.builder
       builder.alternativeNameServerConfig(args(argsBuilder).build)
@@ -371,7 +371,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dns64Config(args: Endofunction[com.pulumi.gcp.dns.inputs.PolicyDns64ConfigArgs.Builder]):
+    inline def dns64Config(args: Endofunction[com.pulumi.gcp.dns.inputs.PolicyDns64ConfigArgs.Builder]):
         com.pulumi.gcp.dns.inputs.PolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.PolicyDns64ConfigArgs.builder
       builder.dns64Config(args(argsBuilder).build)
@@ -381,7 +381,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networks(args: Endofunction[com.pulumi.gcp.dns.inputs.PolicyNetworkArgs.Builder]*):
+    inline def networks(args: Endofunction[com.pulumi.gcp.dns.inputs.PolicyNetworkArgs.Builder]*):
         com.pulumi.gcp.dns.inputs.PolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.dns.inputs.PolicyNetworkArgs.builder
       builder.networks(args.map(_(argsBuilder).build)*)
@@ -392,7 +392,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def geos(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyGeoArgs.Builder]*):
+    inline def geos(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyGeoArgs.Builder]*):
         com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyGeoArgs.builder
       builder.geos(args.map(_(argsBuilder).build)*)
@@ -402,7 +402,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def primaryBackup(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyPrimaryBackupArgs.Builder]):
+    inline def primaryBackup(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyPrimaryBackupArgs.Builder]):
         com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyPrimaryBackupArgs.builder
       builder.primaryBackup(args(argsBuilder).build)
@@ -412,7 +412,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def wrrs(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyWrrArgs.Builder]*):
+    inline def wrrs(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyWrrArgs.Builder]*):
         com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyWrrArgs.builder
       builder.wrrs(args.map(_(argsBuilder).build)*)
@@ -423,7 +423,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def healthCheckedTargets(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyGeoHealthCheckedTargetsArgs.Builder]):
+    inline def healthCheckedTargets(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyGeoHealthCheckedTargetsArgs.Builder]):
         com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyGeoArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyGeoHealthCheckedTargetsArgs.builder
       builder.healthCheckedTargets(args(argsBuilder).build)
@@ -434,7 +434,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def internalLoadBalancers(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancerArgs.Builder]*):
+    inline def internalLoadBalancers(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancerArgs.Builder]*):
         com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyGeoHealthCheckedTargetsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyGeoHealthCheckedTargetsInternalLoadBalancerArgs.builder
       builder.internalLoadBalancers(args.map(_(argsBuilder).build)*)
@@ -445,7 +445,7 @@ object dns_ext:
      * Structure is document above.
      * @return builder
      */
-    def backupGeos(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyPrimaryBackupBackupGeoArgs.Builder]*):
+    inline def backupGeos(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyPrimaryBackupBackupGeoArgs.Builder]*):
         com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyPrimaryBackupArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyPrimaryBackupBackupGeoArgs.builder
       builder.backupGeos(args.map(_(argsBuilder).build)*)
@@ -455,7 +455,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def primary(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyPrimaryBackupPrimaryArgs.Builder]):
+    inline def primary(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyPrimaryBackupPrimaryArgs.Builder]):
         com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyPrimaryBackupArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyPrimaryBackupPrimaryArgs.builder
       builder.primary(args(argsBuilder).build)
@@ -465,7 +465,7 @@ object dns_ext:
      * @param healthCheckedTargets For A and AAAA types only. The list of targets to be health checked. These can be specified along with `rrdatas` within this item.
      * @return builder
      */
-    def healthCheckedTargets(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargetsArgs.Builder]):
+    inline def healthCheckedTargets(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargetsArgs.Builder]):
         com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyPrimaryBackupBackupGeoArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargetsArgs.builder
       builder.healthCheckedTargets(args(argsBuilder).build)
@@ -476,7 +476,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def internalLoadBalancers(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargetsInternalLoadBalancerArgs.Builder]*):
+    inline def internalLoadBalancers(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargetsInternalLoadBalancerArgs.Builder]*):
         com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargetsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyPrimaryBackupBackupGeoHealthCheckedTargetsInternalLoadBalancerArgs.builder
       builder.internalLoadBalancers(args.map(_(argsBuilder).build)*)
@@ -486,7 +486,7 @@ object dns_ext:
      * @param internalLoadBalancers The list of internal load balancers to health check.
      * @return builder
      */
-    def internalLoadBalancers(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyPrimaryBackupPrimaryInternalLoadBalancerArgs.Builder]*):
+    inline def internalLoadBalancers(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyPrimaryBackupPrimaryInternalLoadBalancerArgs.Builder]*):
         com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyPrimaryBackupPrimaryArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyPrimaryBackupPrimaryInternalLoadBalancerArgs.builder
       builder.internalLoadBalancers(args.map(_(argsBuilder).build)*)
@@ -497,7 +497,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def healthCheckedTargets(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyWrrHealthCheckedTargetsArgs.Builder]):
+    inline def healthCheckedTargets(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyWrrHealthCheckedTargetsArgs.Builder]):
         com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyWrrArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyWrrHealthCheckedTargetsArgs.builder
       builder.healthCheckedTargets(args(argsBuilder).build)
@@ -508,7 +508,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def internalLoadBalancers(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyWrrHealthCheckedTargetsInternalLoadBalancerArgs.Builder]*):
+    inline def internalLoadBalancers(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyWrrHealthCheckedTargetsInternalLoadBalancerArgs.Builder]*):
         com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyWrrHealthCheckedTargetsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyWrrHealthCheckedTargetsInternalLoadBalancerArgs.builder
       builder.internalLoadBalancers(args.map(_(argsBuilder).build)*)
@@ -520,7 +520,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def routingPolicy(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyArgs.Builder]):
+    inline def routingPolicy(args: Endofunction[com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyArgs.Builder]):
         com.pulumi.gcp.dns.inputs.RecordSetState.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.RecordSetRoutingPolicyArgs.builder
       builder.routingPolicy(args(argsBuilder).build)
@@ -531,7 +531,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def localDatas(args: Endofunction[com.pulumi.gcp.dns.inputs.ResponsePolicyRuleLocalDataLocalDataArgs.Builder]*):
+    inline def localDatas(args: Endofunction[com.pulumi.gcp.dns.inputs.ResponsePolicyRuleLocalDataLocalDataArgs.Builder]*):
         com.pulumi.gcp.dns.inputs.ResponsePolicyRuleLocalDataArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dns.inputs.ResponsePolicyRuleLocalDataLocalDataArgs.builder
       builder.localDatas(args.map(_(argsBuilder).build)*)
@@ -543,7 +543,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def localData(args: Endofunction[com.pulumi.gcp.dns.inputs.ResponsePolicyRuleLocalDataArgs.Builder]):
+    inline def localData(args: Endofunction[com.pulumi.gcp.dns.inputs.ResponsePolicyRuleLocalDataArgs.Builder]):
         com.pulumi.gcp.dns.inputs.ResponsePolicyRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.dns.inputs.ResponsePolicyRuleLocalDataArgs.builder
       builder.localData(args(argsBuilder).build)
@@ -554,7 +554,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gkeClusters(args: Endofunction[com.pulumi.gcp.dns.inputs.ResponsePolicyGkeClusterArgs.Builder]*):
+    inline def gkeClusters(args: Endofunction[com.pulumi.gcp.dns.inputs.ResponsePolicyGkeClusterArgs.Builder]*):
         com.pulumi.gcp.dns.inputs.ResponsePolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.dns.inputs.ResponsePolicyGkeClusterArgs.builder
       builder.gkeClusters(args.map(_(argsBuilder).build)*)
@@ -564,7 +564,7 @@ object dns_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networks(args: Endofunction[com.pulumi.gcp.dns.inputs.ResponsePolicyNetworkArgs.Builder]*):
+    inline def networks(args: Endofunction[com.pulumi.gcp.dns.inputs.ResponsePolicyNetworkArgs.Builder]*):
         com.pulumi.gcp.dns.inputs.ResponsePolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.dns.inputs.ResponsePolicyNetworkArgs.builder
       builder.networks(args.map(_(argsBuilder).build)*)

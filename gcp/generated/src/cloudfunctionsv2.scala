@@ -54,7 +54,7 @@ object cloudfunctionsv2:
    * 
    * * [API documentation](https://cloud.google.com/functions/docs/reference/rest/v2beta/projects.locations.functions)
    */
-  def Function(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Function(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.FunctionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudfunctionsv2.FunctionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -370,7 +370,7 @@ object cloudfunctionsv2:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def FunctionIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FunctionIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.FunctionIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.cloudfunctionsv2.FunctionIamBindingArgs.builder
     com.pulumi.gcp.cloudfunctionsv2.FunctionIamBinding(name,
@@ -683,7 +683,7 @@ object cloudfunctionsv2:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def FunctionIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FunctionIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.FunctionIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.cloudfunctionsv2.FunctionIamMemberArgs.builder
     com.pulumi.gcp.cloudfunctionsv2.FunctionIamMember(name,
@@ -996,7 +996,7 @@ object cloudfunctionsv2:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def FunctionIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FunctionIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.FunctionIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.cloudfunctionsv2.FunctionIamPolicyArgs.builder
     com.pulumi.gcp.cloudfunctionsv2.FunctionIamPolicy(name,

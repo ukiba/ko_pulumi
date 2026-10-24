@@ -8,7 +8,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameterSpecs(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecArgs.Builder]*):
+    inline def parameterSpecs(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecArgs.Builder]*):
         com.pulumi.gcp.cloudsecuritycompliance.CloudControlArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecArgs.builder
       builder.parameterSpecs(args.map(_(argsBuilder).build)*)
@@ -18,7 +18,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlRuleArgs.Builder]*):
         com.pulumi.gcp.cloudsecuritycompliance.CloudControlArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -30,7 +30,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudControlDetails(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailArgs.Builder]*):
+    inline def cloudControlDetails(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailArgs.Builder]*):
         com.pulumi.gcp.cloudsecuritycompliance.FrameworkArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailArgs.builder
       builder.cloudControlDetails(args.map(_(argsBuilder).build)*)
@@ -43,7 +43,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudControlMetadatas(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataArgs.Builder]*):
+    inline def cloudControlMetadatas(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataArgs.Builder]*):
         com.pulumi.gcp.cloudsecuritycompliance.FrameworkDeploymentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataArgs.builder
       builder.cloudControlMetadatas(args.map(_(argsBuilder).build)*)
@@ -53,7 +53,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def framework(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentFrameworkArgs.Builder]):
+    inline def framework(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentFrameworkArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.FrameworkDeploymentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentFrameworkArgs.builder
       builder.framework(args(argsBuilder).build)
@@ -64,7 +64,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def targetResourceConfig(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentTargetResourceConfigArgs.Builder]):
+    inline def targetResourceConfig(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentTargetResourceConfigArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.FrameworkDeploymentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentTargetResourceConfigArgs.builder
       builder.targetResourceConfig(args(argsBuilder).build)
@@ -75,7 +75,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueArgs.Builder]):
+    inline def defaultValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueArgs.builder
       builder.defaultValue(args(argsBuilder).build)
@@ -85,7 +85,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def subParameters(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterArgs.Builder]*):
+    inline def subParameters(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterArgs.Builder]*):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterArgs.builder
       builder.subParameters(args.map(_(argsBuilder).build)*)
@@ -95,7 +95,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def substitutionRules(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubstitutionRuleArgs.Builder]*):
+    inline def substitutionRules(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubstitutionRuleArgs.Builder]*):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubstitutionRuleArgs.builder
       builder.substitutionRules(args.map(_(argsBuilder).build)*)
@@ -105,7 +105,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def validation(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationArgs.Builder]):
+    inline def validation(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationArgs.builder
       builder.validation(args(argsBuilder).build)
@@ -116,7 +116,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueOneofValueArgs.Builder]):
+    inline def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueOneofValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueOneofValueArgs.builder
       builder.oneofValue(args(argsBuilder).build)
@@ -126,7 +126,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueStringListValueArgs.Builder]):
+    inline def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueStringListValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueStringListValueArgs.builder
       builder.stringListValue(args(argsBuilder).build)
@@ -137,7 +137,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueOneofValueParameterValueArgs.Builder]):
+    inline def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueOneofValueParameterValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueOneofValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueOneofValueParameterValueArgs.builder
       builder.parameterValue(args(argsBuilder).build)
@@ -147,7 +147,7 @@ object cloudsecuritycompliance_ext:
      * @param oneofValue Sub-parameter values, in JSON format.
      * @return builder
      */
-    def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueOneofValueParameterValueOneofValueArgs.Builder]):
+    inline def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueOneofValueParameterValueOneofValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueOneofValueParameterValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueOneofValueParameterValueOneofValueArgs.builder
       builder.oneofValue(args(argsBuilder).build)
@@ -157,7 +157,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueOneofValueParameterValueStringListValueArgs.Builder]):
+    inline def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueOneofValueParameterValueStringListValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueOneofValueParameterValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueOneofValueParameterValueStringListValueArgs.builder
       builder.stringListValue(args(argsBuilder).build)
@@ -168,7 +168,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueOneofValueParameterValueOneofValueParameterValueArgs.Builder]):
+    inline def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueOneofValueParameterValueOneofValueParameterValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueOneofValueParameterValueOneofValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueOneofValueParameterValueOneofValueParameterValueArgs.builder
       builder.parameterValue(args(argsBuilder).build)
@@ -179,7 +179,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueOneofValueParameterValueOneofValueParameterValueStringListValueArgs.Builder]):
+    inline def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueOneofValueParameterValueOneofValueParameterValueStringListValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueOneofValueParameterValueOneofValueParameterValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecDefaultValueOneofValueParameterValueOneofValueParameterValueStringListValueArgs.builder
       builder.stringListValue(args(argsBuilder).build)
@@ -190,7 +190,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueArgs.Builder]):
+    inline def defaultValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueArgs.builder
       builder.defaultValue(args(argsBuilder).build)
@@ -199,7 +199,7 @@ object cloudsecuritycompliance_ext:
      * @param subParameters The parameter spec of the cloud control, in JSON format.
      * @return builder
      */
-    def subParameters(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterArgs.Builder]*):
+    inline def subParameters(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterArgs.Builder]*):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterArgs.builder
       builder.subParameters(args.map(_(argsBuilder).build)*)
@@ -209,7 +209,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def substitutionRules(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubstitutionRuleArgs.Builder]*):
+    inline def substitutionRules(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubstitutionRuleArgs.Builder]*):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubstitutionRuleArgs.builder
       builder.substitutionRules(args.map(_(argsBuilder).build)*)
@@ -219,7 +219,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def validation(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationArgs.Builder]):
+    inline def validation(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationArgs.builder
       builder.validation(args(argsBuilder).build)
@@ -230,7 +230,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueOneofValueArgs.Builder]):
+    inline def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueOneofValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueOneofValueArgs.builder
       builder.oneofValue(args(argsBuilder).build)
@@ -240,7 +240,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueStringListValueArgs.Builder]):
+    inline def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueStringListValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueStringListValueArgs.builder
       builder.stringListValue(args(argsBuilder).build)
@@ -251,7 +251,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueOneofValueParameterValueArgs.Builder]):
+    inline def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueOneofValueParameterValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueOneofValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueOneofValueParameterValueArgs.builder
       builder.parameterValue(args(argsBuilder).build)
@@ -261,7 +261,7 @@ object cloudsecuritycompliance_ext:
      * @param oneofValue Sub-parameter values, in JSON format.
      * @return builder
      */
-    def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueOneofValueParameterValueOneofValueArgs.Builder]):
+    inline def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueOneofValueParameterValueOneofValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueOneofValueParameterValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueOneofValueParameterValueOneofValueArgs.builder
       builder.oneofValue(args(argsBuilder).build)
@@ -271,7 +271,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueOneofValueParameterValueStringListValueArgs.Builder]):
+    inline def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueOneofValueParameterValueStringListValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueOneofValueParameterValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueOneofValueParameterValueStringListValueArgs.builder
       builder.stringListValue(args(argsBuilder).build)
@@ -282,7 +282,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueOneofValueParameterValueOneofValueParameterValueArgs.Builder]):
+    inline def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueOneofValueParameterValueOneofValueParameterValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueOneofValueParameterValueOneofValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueOneofValueParameterValueOneofValueParameterValueArgs.builder
       builder.parameterValue(args(argsBuilder).build)
@@ -293,7 +293,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueOneofValueParameterValueOneofValueParameterValueStringListValueArgs.Builder]):
+    inline def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueOneofValueParameterValueOneofValueParameterValueStringListValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueOneofValueParameterValueOneofValueParameterValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterDefaultValueOneofValueParameterValueOneofValueParameterValueStringListValueArgs.builder
       builder.stringListValue(args(argsBuilder).build)
@@ -304,7 +304,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterDefaultValueArgs.Builder]):
+    inline def defaultValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterDefaultValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterDefaultValueArgs.builder
       builder.defaultValue(args(argsBuilder).build)
@@ -314,7 +314,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def substitutionRules(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterSubstitutionRuleArgs.Builder]*):
+    inline def substitutionRules(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterSubstitutionRuleArgs.Builder]*):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterSubstitutionRuleArgs.builder
       builder.substitutionRules(args.map(_(argsBuilder).build)*)
@@ -324,7 +324,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def validation(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationArgs.Builder]):
+    inline def validation(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationArgs.builder
       builder.validation(args(argsBuilder).build)
@@ -335,7 +335,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterDefaultValueOneofValueArgs.Builder]):
+    inline def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterDefaultValueOneofValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterDefaultValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterDefaultValueOneofValueArgs.builder
       builder.oneofValue(args(argsBuilder).build)
@@ -345,7 +345,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterDefaultValueStringListValueArgs.Builder]):
+    inline def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterDefaultValueStringListValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterDefaultValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterDefaultValueStringListValueArgs.builder
       builder.stringListValue(args(argsBuilder).build)
@@ -356,7 +356,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterDefaultValueOneofValueParameterValueArgs.Builder]):
+    inline def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterDefaultValueOneofValueParameterValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterDefaultValueOneofValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterDefaultValueOneofValueParameterValueArgs.builder
       builder.parameterValue(args(argsBuilder).build)
@@ -367,7 +367,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterDefaultValueOneofValueParameterValueStringListValueArgs.Builder]):
+    inline def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterDefaultValueOneofValueParameterValueStringListValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterDefaultValueOneofValueParameterValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterDefaultValueOneofValueParameterValueStringListValueArgs.builder
       builder.stringListValue(args(argsBuilder).build)
@@ -378,7 +378,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attributeSubstitutionRule(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterSubstitutionRuleAttributeSubstitutionRuleArgs.Builder]):
+    inline def attributeSubstitutionRule(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterSubstitutionRuleAttributeSubstitutionRuleArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterSubstitutionRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterSubstitutionRuleAttributeSubstitutionRuleArgs.builder
       builder.attributeSubstitutionRule(args(argsBuilder).build)
@@ -388,7 +388,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def placeholderSubstitutionRule(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterSubstitutionRulePlaceholderSubstitutionRuleArgs.Builder]):
+    inline def placeholderSubstitutionRule(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterSubstitutionRulePlaceholderSubstitutionRuleArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterSubstitutionRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterSubstitutionRulePlaceholderSubstitutionRuleArgs.builder
       builder.placeholderSubstitutionRule(args(argsBuilder).build)
@@ -399,7 +399,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def values(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationAllowedValuesValueArgs.Builder]*):
+    inline def values(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationAllowedValuesValueArgs.Builder]*):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationAllowedValuesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationAllowedValuesValueArgs.builder
       builder.values(args.map(_(argsBuilder).build)*)
@@ -410,7 +410,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationAllowedValuesValueOneofValueArgs.Builder]):
+    inline def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationAllowedValuesValueOneofValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationAllowedValuesValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationAllowedValuesValueOneofValueArgs.builder
       builder.oneofValue(args(argsBuilder).build)
@@ -420,7 +420,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationAllowedValuesValueStringListValueArgs.Builder]):
+    inline def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationAllowedValuesValueStringListValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationAllowedValuesValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationAllowedValuesValueStringListValueArgs.builder
       builder.stringListValue(args(argsBuilder).build)
@@ -431,7 +431,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationAllowedValuesValueOneofValueParameterValueArgs.Builder]):
+    inline def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationAllowedValuesValueOneofValueParameterValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationAllowedValuesValueOneofValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationAllowedValuesValueOneofValueParameterValueArgs.builder
       builder.parameterValue(args(argsBuilder).build)
@@ -442,7 +442,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationAllowedValuesValueOneofValueParameterValueStringListValueArgs.Builder]):
+    inline def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationAllowedValuesValueOneofValueParameterValueStringListValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationAllowedValuesValueOneofValueParameterValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationAllowedValuesValueOneofValueParameterValueStringListValueArgs.builder
       builder.stringListValue(args(argsBuilder).build)
@@ -453,7 +453,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allowedValues(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationAllowedValuesArgs.Builder]):
+    inline def allowedValues(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationAllowedValuesArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationAllowedValuesArgs.builder
       builder.allowedValues(args(argsBuilder).build)
@@ -463,7 +463,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def intRange(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationIntRangeArgs.Builder]):
+    inline def intRange(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationIntRangeArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationIntRangeArgs.builder
       builder.intRange(args(argsBuilder).build)
@@ -473,7 +473,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def regexpPattern(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationRegexpPatternArgs.Builder]):
+    inline def regexpPattern(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationRegexpPatternArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubParameterValidationRegexpPatternArgs.builder
       builder.regexpPattern(args(argsBuilder).build)
@@ -484,7 +484,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attributeSubstitutionRule(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubstitutionRuleAttributeSubstitutionRuleArgs.Builder]):
+    inline def attributeSubstitutionRule(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubstitutionRuleAttributeSubstitutionRuleArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubstitutionRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubstitutionRuleAttributeSubstitutionRuleArgs.builder
       builder.attributeSubstitutionRule(args(argsBuilder).build)
@@ -494,7 +494,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def placeholderSubstitutionRule(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubstitutionRulePlaceholderSubstitutionRuleArgs.Builder]):
+    inline def placeholderSubstitutionRule(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubstitutionRulePlaceholderSubstitutionRuleArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubstitutionRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterSubstitutionRulePlaceholderSubstitutionRuleArgs.builder
       builder.placeholderSubstitutionRule(args(argsBuilder).build)
@@ -505,7 +505,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def values(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueArgs.Builder]*):
+    inline def values(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueArgs.Builder]*):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueArgs.builder
       builder.values(args.map(_(argsBuilder).build)*)
@@ -516,7 +516,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueOneofValueArgs.Builder]):
+    inline def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueOneofValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueOneofValueArgs.builder
       builder.oneofValue(args(argsBuilder).build)
@@ -526,7 +526,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueStringListValueArgs.Builder]):
+    inline def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueStringListValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueStringListValueArgs.builder
       builder.stringListValue(args(argsBuilder).build)
@@ -537,7 +537,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueOneofValueParameterValueArgs.Builder]):
+    inline def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueOneofValueParameterValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueOneofValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueOneofValueParameterValueArgs.builder
       builder.parameterValue(args(argsBuilder).build)
@@ -547,7 +547,7 @@ object cloudsecuritycompliance_ext:
      * @param oneofValue Sub-parameter values, in JSON format.
      * @return builder
      */
-    def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueOneofValueParameterValueOneofValueArgs.Builder]):
+    inline def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueOneofValueParameterValueOneofValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueOneofValueParameterValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueOneofValueParameterValueOneofValueArgs.builder
       builder.oneofValue(args(argsBuilder).build)
@@ -557,7 +557,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueOneofValueParameterValueStringListValueArgs.Builder]):
+    inline def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueOneofValueParameterValueStringListValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueOneofValueParameterValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueOneofValueParameterValueStringListValueArgs.builder
       builder.stringListValue(args(argsBuilder).build)
@@ -568,7 +568,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueOneofValueParameterValueOneofValueParameterValueArgs.Builder]):
+    inline def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueOneofValueParameterValueOneofValueParameterValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueOneofValueParameterValueOneofValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueOneofValueParameterValueOneofValueParameterValueArgs.builder
       builder.parameterValue(args(argsBuilder).build)
@@ -579,7 +579,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueOneofValueParameterValueOneofValueParameterValueStringListValueArgs.Builder]):
+    inline def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueOneofValueParameterValueOneofValueParameterValueStringListValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueOneofValueParameterValueOneofValueParameterValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesValueOneofValueParameterValueOneofValueParameterValueStringListValueArgs.builder
       builder.stringListValue(args(argsBuilder).build)
@@ -590,7 +590,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allowedValues(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesArgs.Builder]):
+    inline def allowedValues(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationAllowedValuesArgs.builder
       builder.allowedValues(args(argsBuilder).build)
@@ -600,7 +600,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def intRange(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationIntRangeArgs.Builder]):
+    inline def intRange(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationIntRangeArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationIntRangeArgs.builder
       builder.intRange(args(argsBuilder).build)
@@ -610,7 +610,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def regexpPattern(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationRegexpPatternArgs.Builder]):
+    inline def regexpPattern(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationRegexpPatternArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubParameterValidationRegexpPatternArgs.builder
       builder.regexpPattern(args(argsBuilder).build)
@@ -621,7 +621,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attributeSubstitutionRule(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubstitutionRuleAttributeSubstitutionRuleArgs.Builder]):
+    inline def attributeSubstitutionRule(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubstitutionRuleAttributeSubstitutionRuleArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubstitutionRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubstitutionRuleAttributeSubstitutionRuleArgs.builder
       builder.attributeSubstitutionRule(args(argsBuilder).build)
@@ -631,7 +631,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def placeholderSubstitutionRule(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubstitutionRulePlaceholderSubstitutionRuleArgs.Builder]):
+    inline def placeholderSubstitutionRule(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubstitutionRulePlaceholderSubstitutionRuleArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubstitutionRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecSubstitutionRulePlaceholderSubstitutionRuleArgs.builder
       builder.placeholderSubstitutionRule(args(argsBuilder).build)
@@ -642,7 +642,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def values(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueArgs.Builder]*):
+    inline def values(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueArgs.Builder]*):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueArgs.builder
       builder.values(args.map(_(argsBuilder).build)*)
@@ -653,7 +653,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueOneofValueArgs.Builder]):
+    inline def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueOneofValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueOneofValueArgs.builder
       builder.oneofValue(args(argsBuilder).build)
@@ -663,7 +663,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueStringListValueArgs.Builder]):
+    inline def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueStringListValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueStringListValueArgs.builder
       builder.stringListValue(args(argsBuilder).build)
@@ -674,7 +674,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueOneofValueParameterValueArgs.Builder]):
+    inline def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueOneofValueParameterValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueOneofValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueOneofValueParameterValueArgs.builder
       builder.parameterValue(args(argsBuilder).build)
@@ -684,7 +684,7 @@ object cloudsecuritycompliance_ext:
      * @param oneofValue Sub-parameter values, in JSON format.
      * @return builder
      */
-    def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueOneofValueParameterValueOneofValueArgs.Builder]):
+    inline def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueOneofValueParameterValueOneofValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueOneofValueParameterValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueOneofValueParameterValueOneofValueArgs.builder
       builder.oneofValue(args(argsBuilder).build)
@@ -694,7 +694,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueOneofValueParameterValueStringListValueArgs.Builder]):
+    inline def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueOneofValueParameterValueStringListValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueOneofValueParameterValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueOneofValueParameterValueStringListValueArgs.builder
       builder.stringListValue(args(argsBuilder).build)
@@ -705,7 +705,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueOneofValueParameterValueOneofValueParameterValueArgs.Builder]):
+    inline def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueOneofValueParameterValueOneofValueParameterValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueOneofValueParameterValueOneofValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueOneofValueParameterValueOneofValueParameterValueArgs.builder
       builder.parameterValue(args(argsBuilder).build)
@@ -716,7 +716,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueOneofValueParameterValueOneofValueParameterValueStringListValueArgs.Builder]):
+    inline def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueOneofValueParameterValueOneofValueParameterValueStringListValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueOneofValueParameterValueOneofValueParameterValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesValueOneofValueParameterValueOneofValueParameterValueStringListValueArgs.builder
       builder.stringListValue(args(argsBuilder).build)
@@ -727,7 +727,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allowedValues(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesArgs.Builder]):
+    inline def allowedValues(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationAllowedValuesArgs.builder
       builder.allowedValues(args(argsBuilder).build)
@@ -737,7 +737,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def intRange(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationIntRangeArgs.Builder]):
+    inline def intRange(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationIntRangeArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationIntRangeArgs.builder
       builder.intRange(args(argsBuilder).build)
@@ -747,7 +747,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def regexpPattern(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationRegexpPatternArgs.Builder]):
+    inline def regexpPattern(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationRegexpPatternArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecValidationRegexpPatternArgs.builder
       builder.regexpPattern(args(argsBuilder).build)
@@ -759,7 +759,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def celExpression(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlRuleCelExpressionArgs.Builder]):
+    inline def celExpression(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlRuleCelExpressionArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlRuleCelExpressionArgs.builder
       builder.celExpression(args(argsBuilder).build)
@@ -770,7 +770,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resourceTypesValues(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlRuleCelExpressionResourceTypesValuesArgs.Builder]):
+    inline def resourceTypesValues(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlRuleCelExpressionResourceTypesValuesArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlRuleCelExpressionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlRuleCelExpressionResourceTypesValuesArgs.builder
       builder.resourceTypesValues(args(argsBuilder).build)
@@ -781,7 +781,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameterSpecs(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecArgs.Builder]*):
+    inline def parameterSpecs(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecArgs.Builder]*):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlState.Builder =
       def argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlParameterSpecArgs.builder
       builder.parameterSpecs(args.map(_(argsBuilder).build)*)
@@ -791,7 +791,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlRuleArgs.Builder]*):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlState.Builder =
       def argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.CloudControlRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -804,7 +804,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameters(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailParameterArgs.Builder]*):
+    inline def parameters(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailParameterArgs.Builder]*):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
@@ -815,7 +815,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailParameterParameterValueArgs.Builder]):
+    inline def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailParameterParameterValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailParameterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailParameterParameterValueArgs.builder
       builder.parameterValue(args(argsBuilder).build)
@@ -826,7 +826,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailParameterParameterValueOneofValueArgs.Builder]):
+    inline def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailParameterParameterValueOneofValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailParameterParameterValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailParameterParameterValueOneofValueArgs.builder
       builder.oneofValue(args(argsBuilder).build)
@@ -836,7 +836,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailParameterParameterValueStringListValueArgs.Builder]):
+    inline def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailParameterParameterValueStringListValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailParameterParameterValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailParameterParameterValueStringListValueArgs.builder
       builder.stringListValue(args(argsBuilder).build)
@@ -847,7 +847,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailParameterParameterValueOneofValueParameterValueArgs.Builder]):
+    inline def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailParameterParameterValueOneofValueParameterValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailParameterParameterValueOneofValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailParameterParameterValueOneofValueParameterValueArgs.builder
       builder.parameterValue(args(argsBuilder).build)
@@ -858,7 +858,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailParameterParameterValueOneofValueParameterValueStringListValueArgs.Builder]):
+    inline def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailParameterParameterValueOneofValueParameterValueStringListValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailParameterParameterValueOneofValueParameterValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailParameterParameterValueOneofValueParameterValueStringListValueArgs.builder
       builder.stringListValue(args(argsBuilder).build)
@@ -869,7 +869,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudControlDetails(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsArgs.Builder]):
+    inline def cloudControlDetails(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsArgs.builder
       builder.cloudControlDetails(args(argsBuilder).build)
@@ -882,7 +882,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameters(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsParameterArgs.Builder]*):
+    inline def parameters(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsParameterArgs.Builder]*):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
@@ -893,7 +893,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsParameterParameterValueArgs.Builder]):
+    inline def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsParameterParameterValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsParameterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsParameterParameterValueArgs.builder
       builder.parameterValue(args(argsBuilder).build)
@@ -904,7 +904,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsParameterParameterValueOneofValueArgs.Builder]):
+    inline def oneofValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsParameterParameterValueOneofValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsParameterParameterValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsParameterParameterValueOneofValueArgs.builder
       builder.oneofValue(args(argsBuilder).build)
@@ -914,7 +914,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsParameterParameterValueStringListValueArgs.Builder]):
+    inline def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsParameterParameterValueStringListValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsParameterParameterValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsParameterParameterValueStringListValueArgs.builder
       builder.stringListValue(args(argsBuilder).build)
@@ -925,7 +925,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsParameterParameterValueOneofValueParameterValueArgs.Builder]):
+    inline def parameterValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsParameterParameterValueOneofValueParameterValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsParameterParameterValueOneofValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsParameterParameterValueOneofValueParameterValueArgs.builder
       builder.parameterValue(args(argsBuilder).build)
@@ -936,7 +936,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsParameterParameterValueOneofValueParameterValueStringListValueArgs.Builder]):
+    inline def stringListValue(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsParameterParameterValueOneofValueParameterValueStringListValueArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsParameterParameterValueOneofValueParameterValueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataCloudControlDetailsParameterParameterValueOneofValueParameterValueStringListValueArgs.builder
       builder.stringListValue(args(argsBuilder).build)
@@ -961,7 +961,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudControlDeploymentReferences(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlDeploymentReferenceArgs.Builder]*):
+    inline def cloudControlDeploymentReferences(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlDeploymentReferenceArgs.Builder]*):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentState.Builder =
       def argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlDeploymentReferenceArgs.builder
       builder.cloudControlDeploymentReferences(args.map(_(argsBuilder).build)*)
@@ -973,7 +973,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudControlMetadatas(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataArgs.Builder]*):
+    inline def cloudControlMetadatas(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataArgs.Builder]*):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentState.Builder =
       def argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentCloudControlMetadataArgs.builder
       builder.cloudControlMetadatas(args.map(_(argsBuilder).build)*)
@@ -983,7 +983,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def framework(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentFrameworkArgs.Builder]):
+    inline def framework(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentFrameworkArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentFrameworkArgs.builder
       builder.framework(args(argsBuilder).build)
@@ -994,7 +994,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def targetResourceConfig(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentTargetResourceConfigArgs.Builder]):
+    inline def targetResourceConfig(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentTargetResourceConfigArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentTargetResourceConfigArgs.builder
       builder.targetResourceConfig(args(argsBuilder).build)
@@ -1006,7 +1006,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def targetResourceCreationConfig(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentTargetResourceConfigTargetResourceCreationConfigArgs.Builder]):
+    inline def targetResourceCreationConfig(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentTargetResourceConfigTargetResourceCreationConfigArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentTargetResourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentTargetResourceConfigTargetResourceCreationConfigArgs.builder
       builder.targetResourceCreationConfig(args(argsBuilder).build)
@@ -1018,7 +1018,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def folderCreationConfig(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentTargetResourceConfigTargetResourceCreationConfigFolderCreationConfigArgs.Builder]):
+    inline def folderCreationConfig(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentTargetResourceConfigTargetResourceCreationConfigFolderCreationConfigArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentTargetResourceConfigTargetResourceCreationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentTargetResourceConfigTargetResourceCreationConfigFolderCreationConfigArgs.builder
       builder.folderCreationConfig(args(argsBuilder).build)
@@ -1029,7 +1029,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def projectCreationConfig(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentTargetResourceConfigTargetResourceCreationConfigProjectCreationConfigArgs.Builder]):
+    inline def projectCreationConfig(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentTargetResourceConfigTargetResourceCreationConfigProjectCreationConfigArgs.Builder]):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentTargetResourceConfigTargetResourceCreationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkDeploymentTargetResourceConfigTargetResourceCreationConfigProjectCreationConfigArgs.builder
       builder.projectCreationConfig(args(argsBuilder).build)
@@ -1041,7 +1041,7 @@ object cloudsecuritycompliance_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudControlDetails(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailArgs.Builder]*):
+    inline def cloudControlDetails(args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailArgs.Builder]*):
         com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkState.Builder =
       def argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.inputs.FrameworkCloudControlDetailArgs.builder
       builder.cloudControlDetails(args.map(_(argsBuilder).build)*)

@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object nginx:
   /** Manages the Dataplane API Key for an Nginx Deployment. */
-  def ApiKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApiKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.nginx.ApiKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.nginx.ApiKeyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18,7 +18,7 @@ object nginx:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Certificate for an NGINX Deployment. */
-  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.nginx.CertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.nginx.CertificateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -29,7 +29,7 @@ object nginx:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the configuration for a Nginx Deployment. */
-  def Configuration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Configuration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.nginx.ConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.nginx.ConfigurationArgs.builder
     com.pulumi.azure.nginx.Configuration(name,
@@ -37,7 +37,7 @@ object nginx:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an NGINX Deployment. */
-  def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.nginx.DeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.nginx.DeploymentArgs.builder
     conf.logicalName2physicalName(name) match

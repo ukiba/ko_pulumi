@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object ssm:
   /** Registers an on-premises server or virtual machine with Amazon EC2 so that it can be managed using Run Command. */
-  def Activation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Activation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssm.ActivationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssm.ActivationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25,7 +25,7 @@ object ssm:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Associates an SSM Document to an instance or EC2 tag. */
-  def Association(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Association(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssm.AssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssm.AssociationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -47,7 +47,7 @@ object ssm:
    * 
    * &gt; **NOTE:** A rotation implicitly depends on a replication set. If you configured your replication set in Terraform, we recommend you add it to the `dependsOn` argument for the Terraform Contact Resource.
    */
-  def ContactsRotation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ContactsRotation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssm.ContactsRotationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssm.ContactsRotationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -65,7 +65,7 @@ object ssm:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for registering an AWS Systems Manager Default Patch Baseline. */
-  def DefaultPatchBaseline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DefaultPatchBaseline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssm.DefaultPatchBaselineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ssm.DefaultPatchBaselineArgs.builder
     com.pulumi.aws.ssm.DefaultPatchBaseline(name,
@@ -78,7 +78,7 @@ object ssm:
    * &gt; **NOTE on updating SSM documents:** Only documents with a schema version of 2.0
    * or greater can update their content once created, see [SSM Schema Features](http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html#document-schemas-features). To update a document with an older schema version you must recreate the resource. Not all document types support a schema version of 2.0 or greater. Refer to [SSM document schema features and examples](https://docs.aws.amazon.com/systems-manager/latest/userguide/document-schemas-features.html) for information about which schema versions are supported for the respective `documentType`.
    */
-  def Document(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Document(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssm.DocumentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssm.DocumentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -96,7 +96,7 @@ object ssm:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an SSM Maintenance Window resource */
-  def MaintenanceWindow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MaintenanceWindow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssm.MaintenanceWindowArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssm.MaintenanceWindowArgs.builder
     conf.logicalName2physicalName(name) match
@@ -114,7 +114,7 @@ object ssm:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an SSM Maintenance Window Target resource */
-  def MaintenanceWindowTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MaintenanceWindowTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssm.MaintenanceWindowTargetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssm.MaintenanceWindowTargetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -125,7 +125,7 @@ object ssm:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an SSM Maintenance Window Task resource */
-  def MaintenanceWindowTask(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MaintenanceWindowTask(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssm.MaintenanceWindowTaskArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssm.MaintenanceWindowTaskArgs.builder
     conf.logicalName2physicalName(name) match
@@ -140,7 +140,7 @@ object ssm:
    * 
    * &gt; **Note:** The `overwrite` argument makes it possible to overwrite an existing SSM Parameter created outside of IAC.
    */
-  def Parameter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Parameter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssm.ParameterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssm.ParameterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -164,7 +164,7 @@ object ssm:
    * both marked as optional fields, but the Patch Baseline requires that at least one
    * of them is specified.
    */
-  def PatchBaseline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PatchBaseline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssm.PatchBaselineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssm.PatchBaselineArgs.builder
     conf.logicalName2physicalName(name) match
@@ -182,7 +182,7 @@ object ssm:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an SSM Patch Group resource */
-  def PatchGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PatchGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssm.PatchGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ssm.PatchGroupArgs.builder
     com.pulumi.aws.ssm.PatchGroup(name,
@@ -190,7 +190,7 @@ object ssm:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS SSM Quick Setup Configuration Manager. */
-  def QuicksetupConfigurationManager(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def QuicksetupConfigurationManager(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssm.QuicksetupConfigurationManagerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssm.QuicksetupConfigurationManagerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -208,7 +208,7 @@ object ssm:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SSM resource data sync. */
-  def ResourceDataSync(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourceDataSync(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssm.ResourceDataSyncArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssm.ResourceDataSyncArgs.builder
     conf.logicalName2physicalName(name) match
@@ -219,7 +219,7 @@ object ssm:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** This setting defines how a user interacts with or uses a service or a feature of a service. */
-  def ServiceSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServiceSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssm.ServiceSettingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ssm.ServiceSettingArgs.builder
     com.pulumi.aws.ssm.ServiceSetting(name,

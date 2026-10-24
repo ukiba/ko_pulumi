@@ -11,7 +11,7 @@ object dns:
    * 
    * &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
    */
-  def ARecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ARecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.dns.ARecordArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.dns.ARecordArgs.builder
     conf.logicalName2physicalName(name) match
@@ -33,7 +33,7 @@ object dns:
    * 
    * &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
    */
-  def AaaaRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AaaaRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.dns.AaaaRecordArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.dns.AaaaRecordArgs.builder
     conf.logicalName2physicalName(name) match
@@ -55,7 +55,7 @@ object dns:
    * 
    * &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
    */
-  def CNameRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CNameRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.dns.CNameRecordArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.dns.CNameRecordArgs.builder
     conf.logicalName2physicalName(name) match
@@ -77,7 +77,7 @@ object dns:
    * 
    * &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
    */
-  def CaaRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CaaRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.dns.CaaRecordArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.dns.CaaRecordArgs.builder
     conf.logicalName2physicalName(name) match
@@ -356,7 +356,7 @@ object dns:
    * 
    * &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
    */
-  def MxRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MxRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.dns.MxRecordArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.dns.MxRecordArgs.builder
     conf.logicalName2physicalName(name) match
@@ -378,7 +378,7 @@ object dns:
    * 
    * &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
    */
-  def NsRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NsRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.dns.NsRecordArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.dns.NsRecordArgs.builder
     conf.logicalName2physicalName(name) match
@@ -400,7 +400,7 @@ object dns:
    * 
    * &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
    */
-  def PtrRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PtrRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.dns.PtrRecordArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.dns.PtrRecordArgs.builder
     conf.logicalName2physicalName(name) match
@@ -422,7 +422,7 @@ object dns:
    * 
    * &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
    */
-  def SrvRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SrvRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.dns.SrvRecordArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.dns.SrvRecordArgs.builder
     conf.logicalName2physicalName(name) match
@@ -444,7 +444,7 @@ object dns:
    * 
    * &gt; **Note:** [The Azure DNS API has a throttle limit of 500 read (GET) operations per 5 minutes](https://docs.microsoft.com/azure/azure-resource-manager/management/request-limits-and-throttling#network-throttling) - whilst the default read timeouts will work for most cases - in larger configurations you may need to set a larger read timeout then the default 5min. Although, we&#39;d generally recommend that you split the resources out into smaller Terraform configurations to avoid the problem entirely.
    */
-  def TxtRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TxtRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.dns.TxtRecordArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.dns.TxtRecordArgs.builder
     conf.logicalName2physicalName(name) match
@@ -462,7 +462,7 @@ object dns:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enables you to manage DNS zones within Azure DNS. These zones are hosted on Azure&#39;s name servers to which you can delegate the zone from the parent domain. */
-  def Zone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Zone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.dns.ZoneArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.dns.ZoneArgs.builder
     conf.logicalName2physicalName(name) match

@@ -24,7 +24,7 @@ object grafana:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides an Amazon Managed Grafana workspace license association resource. */
-  def LicenseAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LicenseAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.grafana.LicenseAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.grafana.LicenseAssociationArgs.builder
     com.pulumi.aws.grafana.LicenseAssociation(name,
@@ -32,7 +32,7 @@ object grafana:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Amazon Managed Grafana workspace role association resource. */
-  def RoleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RoleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.grafana.RoleAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.grafana.RoleAssociationArgs.builder
     com.pulumi.aws.grafana.RoleAssociation(name,
@@ -40,7 +40,7 @@ object grafana:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Amazon Managed Grafana workspace resource. */
-  def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.grafana.WorkspaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.grafana.WorkspaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -58,7 +58,7 @@ object grafana:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Amazon Managed Grafana workspace API Key resource. */
-  def WorkspaceApiKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkspaceApiKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.grafana.WorkspaceApiKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.grafana.WorkspaceApiKeyArgs.builder
     com.pulumi.aws.grafana.WorkspaceApiKey(name,
@@ -66,7 +66,7 @@ object grafana:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Amazon Managed Grafana workspace SAML configuration resource. */
-  def WorkspaceSamlConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkspaceSamlConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.grafana.WorkspaceSamlConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.grafana.WorkspaceSamlConfigurationArgs.builder
     com.pulumi.aws.grafana.WorkspaceSamlConfiguration(name,
@@ -79,7 +79,7 @@ object grafana:
    * 
    * Read about Service Accounts in the [Amazon Managed Grafana user guide](https://docs.aws.amazon.com/grafana/latest/userguide/service-accounts.html).
    */
-  def WorkspaceServiceAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkspaceServiceAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.grafana.WorkspaceServiceAccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.grafana.WorkspaceServiceAccountArgs.builder
     conf.logicalName2physicalName(name) match
@@ -95,7 +95,7 @@ object grafana:
    * 
    * Read about Service Accounts Tokens in the [Amazon Managed Grafana user guide](https://docs.aws.amazon.com/grafana/latest/userguide/service-accounts.html#service-account-tokens).
    */
-  def WorkspaceServiceAccountToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkspaceServiceAccountToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.grafana.WorkspaceServiceAccountTokenArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.grafana.WorkspaceServiceAccountTokenArgs.builder
     conf.logicalName2physicalName(name) match

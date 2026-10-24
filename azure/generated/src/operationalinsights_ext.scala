@@ -7,7 +7,7 @@ object operationalinsights_ext:
      * @param plan A `plan` block as documented below.
      * @return builder
      */
-    def plan(args: Endofunction[com.pulumi.azure.operationalinsights.inputs.AnalyticsSolutionPlanArgs.Builder]):
+    inline def plan(args: Endofunction[com.pulumi.azure.operationalinsights.inputs.AnalyticsSolutionPlanArgs.Builder]):
         com.pulumi.azure.operationalinsights.AnalyticsSolutionArgs.Builder =
       val argsBuilder = com.pulumi.azure.operationalinsights.inputs.AnalyticsSolutionPlanArgs.builder
       builder.plan(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object operationalinsights_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.operationalinsights.inputs.AnalyticsWorkspaceIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.operationalinsights.inputs.AnalyticsWorkspaceIdentityArgs.Builder]):
         com.pulumi.azure.operationalinsights.AnalyticsWorkspaceArgs.Builder =
       val argsBuilder = com.pulumi.azure.operationalinsights.inputs.AnalyticsWorkspaceIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -27,7 +27,7 @@ object operationalinsights_ext:
      * @param plan A `plan` block as documented below.
      * @return builder
      */
-    def plan(args: Endofunction[com.pulumi.azure.operationalinsights.inputs.AnalyticsSolutionPlanArgs.Builder]):
+    inline def plan(args: Endofunction[com.pulumi.azure.operationalinsights.inputs.AnalyticsSolutionPlanArgs.Builder]):
         com.pulumi.azure.operationalinsights.inputs.AnalyticsSolutionState.Builder =
       val argsBuilder = com.pulumi.azure.operationalinsights.inputs.AnalyticsSolutionPlanArgs.builder
       builder.plan(args(argsBuilder).build)
@@ -37,7 +37,7 @@ object operationalinsights_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.operationalinsights.inputs.AnalyticsWorkspaceIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.operationalinsights.inputs.AnalyticsWorkspaceIdentityArgs.Builder]):
         com.pulumi.azure.operationalinsights.inputs.AnalyticsWorkspaceState.Builder =
       val argsBuilder = com.pulumi.azure.operationalinsights.inputs.AnalyticsWorkspaceIdentityArgs.builder
       builder.identity(args(argsBuilder).build)

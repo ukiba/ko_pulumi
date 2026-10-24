@@ -24,7 +24,7 @@ object chatbot:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Resource for managing an AWS Chatbot Slack Channel Configuration. */
-  def SlackChannelConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SlackChannelConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.chatbot.SlackChannelConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.chatbot.SlackChannelConfigurationArgs.builder
     argsBuilder = args(argsBuilder)
@@ -43,7 +43,7 @@ object chatbot:
    * 
    * &gt; **NOTE:** We provide this resource on a best-effort basis. If you are able to test it and find it useful, we welcome your input at GitHub.
    */
-  def TeamsChannelConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TeamsChannelConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.chatbot.TeamsChannelConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.chatbot.TeamsChannelConfigurationArgs.builder
     argsBuilder = args(argsBuilder)

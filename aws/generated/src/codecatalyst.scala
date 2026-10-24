@@ -24,7 +24,7 @@ object codecatalyst:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Resource for managing an AWS CodeCatalyst Dev Environment. */
-  def DevEnvironment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DevEnvironment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codecatalyst.DevEnvironmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.codecatalyst.DevEnvironmentArgs.builder
     com.pulumi.aws.codecatalyst.DevEnvironment(name,
@@ -32,7 +32,7 @@ object codecatalyst:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS CodeCatalyst Project. */
-  def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codecatalyst.ProjectArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.codecatalyst.ProjectArgs.builder
     com.pulumi.aws.codecatalyst.Project(name,
@@ -40,7 +40,7 @@ object codecatalyst:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS CodeCatalyst Source Repository. */
-  def SourceRepository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SourceRepository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codecatalyst.SourceRepositoryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codecatalyst.SourceRepositoryArgs.builder
     conf.logicalName2physicalName(name) match

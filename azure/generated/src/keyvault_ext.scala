@@ -7,7 +7,7 @@ object keyvault_ext:
      * @param certificate A `certificate` block as defined below, used to Import an existing certificate. Changing this will create a new version of the Key Vault Certificate.
      * @return builder
      */
-    def certificate(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificateArgs.Builder]):
+    inline def certificate(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificateArgs.Builder]):
         com.pulumi.azure.keyvault.CertifiateArgs.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.CertifiateCertificateArgs.builder
       builder.certificate(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object keyvault_ext:
      * &gt; **NOTE:** When creating a Key Vault Certificate, at least one of `certificate` or `certificatePolicy` is required. Provide `certificate` to import an existing certificate, `certificatePolicy` to generate a new certificate.
      * @return builder
      */
-    def certificatePolicy(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyArgs.Builder]):
+    inline def certificatePolicy(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyArgs.Builder]):
         com.pulumi.azure.keyvault.CertifiateArgs.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyArgs.builder
       builder.certificatePolicy(args(argsBuilder).build)
@@ -28,7 +28,7 @@ object keyvault_ext:
      * @param certificate A `certificate` block as defined below, used to Import an existing certificate. Changing this will create a new version of the Key Vault Certificate.
      * @return builder
      */
-    def certificate(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificateArgs.Builder]):
+    inline def certificate(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificateArgs.Builder]):
         com.pulumi.azure.keyvault.CertificateArgs.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.CertificateCertificateArgs.builder
       builder.certificate(args(argsBuilder).build)
@@ -39,7 +39,7 @@ object keyvault_ext:
      * &gt; **NOTE:** When creating a Key Vault Certificate, at least one of `certificate` or `certificatePolicy` is required. Provide `certificate` to import an existing certificate, `certificatePolicy` to generate a new certificate.
      * @return builder
      */
-    def certificatePolicy(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyArgs.Builder]):
+    inline def certificatePolicy(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyArgs.Builder]):
         com.pulumi.azure.keyvault.CertificateArgs.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyArgs.builder
       builder.certificatePolicy(args(argsBuilder).build)
@@ -49,7 +49,7 @@ object keyvault_ext:
      * @param contacts One or more `contact` blocks as defined below.
      * @return builder
      */
-    def contacts(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateContactsContactArgs.Builder]*):
+    inline def contacts(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateContactsContactArgs.Builder]*):
         com.pulumi.azure.keyvault.CertificateContactsArgs.Builder =
       def argsBuilder = com.pulumi.azure.keyvault.inputs.CertificateContactsContactArgs.builder
       builder.contacts(args.map(_(argsBuilder).build)*)
@@ -59,7 +59,7 @@ object keyvault_ext:
      * @param admins One or more `admin` blocks as defined below.
      * @return builder
      */
-    def admins(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateIssuerAdminArgs.Builder]*):
+    inline def admins(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateIssuerAdminArgs.Builder]*):
         com.pulumi.azure.keyvault.CertificateIssuerArgs.Builder =
       def argsBuilder = com.pulumi.azure.keyvault.inputs.CertificateIssuerAdminArgs.builder
       builder.admins(args.map(_(argsBuilder).build)*)
@@ -71,7 +71,7 @@ object keyvault_ext:
      * &gt; **Note:** When `releasePolicy` is set, the key is automatically set as exportable by the provider as this is an API requirement.
      * @return builder
      */
-    def releasePolicy(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyReleasePolicyArgs.Builder]):
+    inline def releasePolicy(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyReleasePolicyArgs.Builder]):
         com.pulumi.azure.keyvault.KeyArgs.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.KeyReleasePolicyArgs.builder
       builder.releasePolicy(args(argsBuilder).build)
@@ -80,7 +80,7 @@ object keyvault_ext:
      * @param rotationPolicy A `rotationPolicy` block as defined below.
      * @return builder
      */
-    def rotationPolicy(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyRotationPolicyArgs.Builder]):
+    inline def rotationPolicy(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyRotationPolicyArgs.Builder]):
         com.pulumi.azure.keyvault.KeyArgs.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.KeyRotationPolicyArgs.builder
       builder.rotationPolicy(args(argsBuilder).build)
@@ -92,7 +92,7 @@ object keyvault_ext:
      * &gt; **Note:** Since `accessPolicy` can be configured both inline and via the separate `azure.keyvault.AccessPolicy` resource, we have to explicitly set it to empty slice (`[]`) to remove it.
      * @return builder
      */
-    def accessPolicies(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyVaultAccessPolicyArgs.Builder]*):
+    inline def accessPolicies(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyVaultAccessPolicyArgs.Builder]*):
         com.pulumi.azure.keyvault.KeyVaultArgs.Builder =
       def argsBuilder = com.pulumi.azure.keyvault.inputs.KeyVaultAccessPolicyArgs.builder
       builder.accessPolicies(args.map(_(argsBuilder).build)*)
@@ -101,7 +101,7 @@ object keyvault_ext:
      * @return builder
      * @deprecated As the `contact` property uses a data plane API, to better support private endpoints and key vaults with public network access disabled, new key vaults with the `contact` field defined in the configuration file will now be required to use the `azure.keyvault.CertificateContacts` resource instead of the exposed `contact` field in the key vault resource itself. This field will be removed in v5.0 of the provider.
      */
-    @deprecated("As the `contact` property uses a data plane API, to better support private endpoints and key vaults with public network access disabled, new key vaults with the `contact` field defined in the configuration file will now be required to use the `azure.keyvault.CertificateContacts` resource instead of the exposed `contact` field in the key vault resource itself. This field will be removed in v5.0 of the provider.") def contacts(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyVaultContactArgs.Builder]*):
+    @deprecated("As the `contact` property uses a data plane API, to better support private endpoints and key vaults with public network access disabled, new key vaults with the `contact` field defined in the configuration file will now be required to use the `azure.keyvault.CertificateContacts` resource instead of the exposed `contact` field in the key vault resource itself. This field will be removed in v5.0 of the provider.") inline def contacts(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyVaultContactArgs.Builder]*):
         com.pulumi.azure.keyvault.KeyVaultArgs.Builder =
       def argsBuilder = com.pulumi.azure.keyvault.inputs.KeyVaultContactArgs.builder
       builder.contacts(args.map(_(argsBuilder).build)*)
@@ -110,7 +110,7 @@ object keyvault_ext:
      * @param networkAcls A `networkAcls` block as defined below.
      * @return builder
      */
-    def networkAcls(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyVaultNetworkAclsArgs.Builder]):
+    inline def networkAcls(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyVaultNetworkAclsArgs.Builder]):
         com.pulumi.azure.keyvault.KeyVaultArgs.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.KeyVaultNetworkAclsArgs.builder
       builder.networkAcls(args(argsBuilder).build)
@@ -120,7 +120,7 @@ object keyvault_ext:
      * @param networkAcls A `networkAcls` block as defined below.
      * @return builder
      */
-    def networkAcls(args: Endofunction[com.pulumi.azure.keyvault.inputs.ManagedHardwareSecurityModuleNetworkAclsArgs.Builder]):
+    inline def networkAcls(args: Endofunction[com.pulumi.azure.keyvault.inputs.ManagedHardwareSecurityModuleNetworkAclsArgs.Builder]):
         com.pulumi.azure.keyvault.ManagedHardwareSecurityModuleArgs.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.ManagedHardwareSecurityModuleNetworkAclsArgs.builder
       builder.networkAcls(args(argsBuilder).build)
@@ -130,7 +130,7 @@ object keyvault_ext:
      * @param permissions One or more `permission` blocks as defined below.
      * @return builder
      */
-    def permissions(args: Endofunction[com.pulumi.azure.keyvault.inputs.ManagedHardwareSecurityModuleRoleDefinitionPermissionArgs.Builder]*):
+    inline def permissions(args: Endofunction[com.pulumi.azure.keyvault.inputs.ManagedHardwareSecurityModuleRoleDefinitionPermissionArgs.Builder]*):
         com.pulumi.azure.keyvault.ManagedHardwareSecurityModuleRoleDefinitionArgs.Builder =
       def argsBuilder = com.pulumi.azure.keyvault.inputs.ManagedHardwareSecurityModuleRoleDefinitionPermissionArgs.builder
       builder.permissions(args.map(_(argsBuilder).build)*)
@@ -140,7 +140,7 @@ object keyvault_ext:
      * @param issuerParameters A `issuerParameters` block as defined below.
      * @return builder
      */
-    def issuerParameters(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyIssuerParametersArgs.Builder]):
+    inline def issuerParameters(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyIssuerParametersArgs.Builder]):
         com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyArgs.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyIssuerParametersArgs.builder
       builder.issuerParameters(args(argsBuilder).build)
@@ -149,7 +149,7 @@ object keyvault_ext:
      * @param keyProperties A `keyProperties` block as defined below.
      * @return builder
      */
-    def keyProperties(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyKeyPropertiesArgs.Builder]):
+    inline def keyProperties(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyKeyPropertiesArgs.Builder]):
         com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyArgs.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyKeyPropertiesArgs.builder
       builder.keyProperties(args(argsBuilder).build)
@@ -158,7 +158,7 @@ object keyvault_ext:
      * @param lifetimeActions A `lifetimeAction` block as defined below.
      * @return builder
      */
-    def lifetimeActions(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyLifetimeActionArgs.Builder]*):
+    inline def lifetimeActions(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyLifetimeActionArgs.Builder]*):
         com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyArgs.Builder =
       def argsBuilder = com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyLifetimeActionArgs.builder
       builder.lifetimeActions(args.map(_(argsBuilder).build)*)
@@ -167,7 +167,7 @@ object keyvault_ext:
      * @param secretProperties A `secretProperties` block as defined below.
      * @return builder
      */
-    def secretProperties(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicySecretPropertiesArgs.Builder]):
+    inline def secretProperties(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicySecretPropertiesArgs.Builder]):
         com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyArgs.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicySecretPropertiesArgs.builder
       builder.secretProperties(args(argsBuilder).build)
@@ -176,7 +176,7 @@ object keyvault_ext:
      * @param x509CertificateProperties A `x509CertificateProperties` block as defined below. Required when `certificate` block is not specified.
      * @return builder
      */
-    def x509CertificateProperties(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyX509CertificatePropertiesArgs.Builder]):
+    inline def x509CertificateProperties(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyX509CertificatePropertiesArgs.Builder]):
         com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyArgs.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyX509CertificatePropertiesArgs.builder
       builder.x509CertificateProperties(args(argsBuilder).build)
@@ -186,7 +186,7 @@ object keyvault_ext:
      * @param action A `action` block as defined below.
      * @return builder
      */
-    def action(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyLifetimeActionActionArgs.Builder]):
+    inline def action(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyLifetimeActionActionArgs.Builder]):
         com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyLifetimeActionArgs.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyLifetimeActionActionArgs.builder
       builder.action(args(argsBuilder).build)
@@ -195,7 +195,7 @@ object keyvault_ext:
      * @param trigger A `trigger` block as defined below.
      * @return builder
      */
-    def trigger(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyLifetimeActionTriggerArgs.Builder]):
+    inline def trigger(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyLifetimeActionTriggerArgs.Builder]):
         com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyLifetimeActionArgs.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyLifetimeActionTriggerArgs.builder
       builder.trigger(args(argsBuilder).build)
@@ -205,7 +205,7 @@ object keyvault_ext:
      * @param subjectAlternativeNames A `subjectAlternativeNames` block as defined below.
      * @return builder
      */
-    def subjectAlternativeNames(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyX509CertificatePropertiesSubjectAlternativeNamesArgs.Builder]):
+    inline def subjectAlternativeNames(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyX509CertificatePropertiesSubjectAlternativeNamesArgs.Builder]):
         com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyX509CertificatePropertiesArgs.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyX509CertificatePropertiesSubjectAlternativeNamesArgs.builder
       builder.subjectAlternativeNames(args(argsBuilder).build)
@@ -215,7 +215,7 @@ object keyvault_ext:
      * @param certificate A `certificate` block as defined below, used to Import an existing certificate. Changing this will create a new version of the Key Vault Certificate.
      * @return builder
      */
-    def certificate(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificateArgs.Builder]):
+    inline def certificate(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificateArgs.Builder]):
         com.pulumi.azure.keyvault.inputs.CertifiateState.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.CertifiateCertificateArgs.builder
       builder.certificate(args(argsBuilder).build)
@@ -224,7 +224,7 @@ object keyvault_ext:
      * @param certificateAttributes A `certificateAttribute` block as defined below.
      * @return builder
      */
-    def certificateAttributes(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificateAttributeArgs.Builder]*):
+    inline def certificateAttributes(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificateAttributeArgs.Builder]*):
         com.pulumi.azure.keyvault.inputs.CertifiateState.Builder =
       def argsBuilder = com.pulumi.azure.keyvault.inputs.CertifiateCertificateAttributeArgs.builder
       builder.certificateAttributes(args.map(_(argsBuilder).build)*)
@@ -235,7 +235,7 @@ object keyvault_ext:
      * &gt; **NOTE:** When creating a Key Vault Certificate, at least one of `certificate` or `certificatePolicy` is required. Provide `certificate` to import an existing certificate, `certificatePolicy` to generate a new certificate.
      * @return builder
      */
-    def certificatePolicy(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyArgs.Builder]):
+    inline def certificatePolicy(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyArgs.Builder]):
         com.pulumi.azure.keyvault.inputs.CertifiateState.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.CertifiateCertificatePolicyArgs.builder
       builder.certificatePolicy(args(argsBuilder).build)
@@ -245,7 +245,7 @@ object keyvault_ext:
      * @param issuerParameters A `issuerParameters` block as defined below.
      * @return builder
      */
-    def issuerParameters(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyIssuerParametersArgs.Builder]):
+    inline def issuerParameters(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyIssuerParametersArgs.Builder]):
         com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyArgs.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyIssuerParametersArgs.builder
       builder.issuerParameters(args(argsBuilder).build)
@@ -254,7 +254,7 @@ object keyvault_ext:
      * @param keyProperties A `keyProperties` block as defined below.
      * @return builder
      */
-    def keyProperties(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyKeyPropertiesArgs.Builder]):
+    inline def keyProperties(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyKeyPropertiesArgs.Builder]):
         com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyArgs.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyKeyPropertiesArgs.builder
       builder.keyProperties(args(argsBuilder).build)
@@ -263,7 +263,7 @@ object keyvault_ext:
      * @param lifetimeActions A `lifetimeAction` block as defined below.
      * @return builder
      */
-    def lifetimeActions(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyLifetimeActionArgs.Builder]*):
+    inline def lifetimeActions(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyLifetimeActionArgs.Builder]*):
         com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyArgs.Builder =
       def argsBuilder = com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyLifetimeActionArgs.builder
       builder.lifetimeActions(args.map(_(argsBuilder).build)*)
@@ -272,7 +272,7 @@ object keyvault_ext:
      * @param secretProperties A `secretProperties` block as defined below.
      * @return builder
      */
-    def secretProperties(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicySecretPropertiesArgs.Builder]):
+    inline def secretProperties(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicySecretPropertiesArgs.Builder]):
         com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyArgs.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicySecretPropertiesArgs.builder
       builder.secretProperties(args(argsBuilder).build)
@@ -281,7 +281,7 @@ object keyvault_ext:
      * @param x509CertificateProperties A `x509CertificateProperties` block as defined below. Required when `certificate` block is not specified.
      * @return builder
      */
-    def x509CertificateProperties(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyX509CertificatePropertiesArgs.Builder]):
+    inline def x509CertificateProperties(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyX509CertificatePropertiesArgs.Builder]):
         com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyArgs.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyX509CertificatePropertiesArgs.builder
       builder.x509CertificateProperties(args(argsBuilder).build)
@@ -291,7 +291,7 @@ object keyvault_ext:
      * @param action A `action` block as defined below.
      * @return builder
      */
-    def action(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyLifetimeActionActionArgs.Builder]):
+    inline def action(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyLifetimeActionActionArgs.Builder]):
         com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyLifetimeActionArgs.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyLifetimeActionActionArgs.builder
       builder.action(args(argsBuilder).build)
@@ -300,7 +300,7 @@ object keyvault_ext:
      * @param trigger A `trigger` block as defined below.
      * @return builder
      */
-    def trigger(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyLifetimeActionTriggerArgs.Builder]):
+    inline def trigger(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyLifetimeActionTriggerArgs.Builder]):
         com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyLifetimeActionArgs.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyLifetimeActionTriggerArgs.builder
       builder.trigger(args(argsBuilder).build)
@@ -310,7 +310,7 @@ object keyvault_ext:
      * @param subjectAlternativeNames A `subjectAlternativeNames` block as defined below.
      * @return builder
      */
-    def subjectAlternativeNames(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyX509CertificatePropertiesSubjectAlternativeNamesArgs.Builder]):
+    inline def subjectAlternativeNames(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyX509CertificatePropertiesSubjectAlternativeNamesArgs.Builder]):
         com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyX509CertificatePropertiesArgs.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyX509CertificatePropertiesSubjectAlternativeNamesArgs.builder
       builder.subjectAlternativeNames(args(argsBuilder).build)
@@ -320,7 +320,7 @@ object keyvault_ext:
      * @param contacts One or more `contact` blocks as defined below.
      * @return builder
      */
-    def contacts(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateContactsContactArgs.Builder]*):
+    inline def contacts(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateContactsContactArgs.Builder]*):
         com.pulumi.azure.keyvault.inputs.CertificateContactsState.Builder =
       def argsBuilder = com.pulumi.azure.keyvault.inputs.CertificateContactsContactArgs.builder
       builder.contacts(args.map(_(argsBuilder).build)*)
@@ -330,7 +330,7 @@ object keyvault_ext:
      * @param admins One or more `admin` blocks as defined below.
      * @return builder
      */
-    def admins(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateIssuerAdminArgs.Builder]*):
+    inline def admins(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateIssuerAdminArgs.Builder]*):
         com.pulumi.azure.keyvault.inputs.CertificateIssuerState.Builder =
       def argsBuilder = com.pulumi.azure.keyvault.inputs.CertificateIssuerAdminArgs.builder
       builder.admins(args.map(_(argsBuilder).build)*)
@@ -340,7 +340,7 @@ object keyvault_ext:
      * @param certificate A `certificate` block as defined below, used to Import an existing certificate. Changing this will create a new version of the Key Vault Certificate.
      * @return builder
      */
-    def certificate(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificateArgs.Builder]):
+    inline def certificate(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificateArgs.Builder]):
         com.pulumi.azure.keyvault.inputs.CertificateState.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.CertificateCertificateArgs.builder
       builder.certificate(args(argsBuilder).build)
@@ -349,7 +349,7 @@ object keyvault_ext:
      * @param certificateAttributes A `certificateAttribute` block as defined below.
      * @return builder
      */
-    def certificateAttributes(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificateAttributeArgs.Builder]*):
+    inline def certificateAttributes(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificateAttributeArgs.Builder]*):
         com.pulumi.azure.keyvault.inputs.CertificateState.Builder =
       def argsBuilder = com.pulumi.azure.keyvault.inputs.CertificateCertificateAttributeArgs.builder
       builder.certificateAttributes(args.map(_(argsBuilder).build)*)
@@ -360,7 +360,7 @@ object keyvault_ext:
      * &gt; **NOTE:** When creating a Key Vault Certificate, at least one of `certificate` or `certificatePolicy` is required. Provide `certificate` to import an existing certificate, `certificatePolicy` to generate a new certificate.
      * @return builder
      */
-    def certificatePolicy(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyArgs.Builder]):
+    inline def certificatePolicy(args: Endofunction[com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyArgs.Builder]):
         com.pulumi.azure.keyvault.inputs.CertificateState.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.CertificateCertificatePolicyArgs.builder
       builder.certificatePolicy(args(argsBuilder).build)
@@ -370,7 +370,7 @@ object keyvault_ext:
      * @param automatic An `automatic` block as defined below.
      * @return builder
      */
-    def automatic(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyRotationPolicyAutomaticArgs.Builder]):
+    inline def automatic(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyRotationPolicyAutomaticArgs.Builder]):
         com.pulumi.azure.keyvault.inputs.KeyRotationPolicyArgs.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.KeyRotationPolicyAutomaticArgs.builder
       builder.automatic(args(argsBuilder).build)
@@ -382,7 +382,7 @@ object keyvault_ext:
      * &gt; **Note:** When `releasePolicy` is set, the key is automatically set as exportable by the provider as this is an API requirement.
      * @return builder
      */
-    def releasePolicy(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyReleasePolicyArgs.Builder]):
+    inline def releasePolicy(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyReleasePolicyArgs.Builder]):
         com.pulumi.azure.keyvault.inputs.KeyState.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.KeyReleasePolicyArgs.builder
       builder.releasePolicy(args(argsBuilder).build)
@@ -391,7 +391,7 @@ object keyvault_ext:
      * @param rotationPolicy A `rotationPolicy` block as defined below.
      * @return builder
      */
-    def rotationPolicy(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyRotationPolicyArgs.Builder]):
+    inline def rotationPolicy(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyRotationPolicyArgs.Builder]):
         com.pulumi.azure.keyvault.inputs.KeyState.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.KeyRotationPolicyArgs.builder
       builder.rotationPolicy(args(argsBuilder).build)
@@ -403,7 +403,7 @@ object keyvault_ext:
      * &gt; **Note:** Since `accessPolicy` can be configured both inline and via the separate `azure.keyvault.AccessPolicy` resource, we have to explicitly set it to empty slice (`[]`) to remove it.
      * @return builder
      */
-    def accessPolicies(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyVaultAccessPolicyArgs.Builder]*):
+    inline def accessPolicies(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyVaultAccessPolicyArgs.Builder]*):
         com.pulumi.azure.keyvault.inputs.KeyVaultState.Builder =
       def argsBuilder = com.pulumi.azure.keyvault.inputs.KeyVaultAccessPolicyArgs.builder
       builder.accessPolicies(args.map(_(argsBuilder).build)*)
@@ -412,7 +412,7 @@ object keyvault_ext:
      * @return builder
      * @deprecated As the `contact` property uses a data plane API, to better support private endpoints and key vaults with public network access disabled, new key vaults with the `contact` field defined in the configuration file will now be required to use the `azure.keyvault.CertificateContacts` resource instead of the exposed `contact` field in the key vault resource itself. This field will be removed in v5.0 of the provider.
      */
-    @deprecated("As the `contact` property uses a data plane API, to better support private endpoints and key vaults with public network access disabled, new key vaults with the `contact` field defined in the configuration file will now be required to use the `azure.keyvault.CertificateContacts` resource instead of the exposed `contact` field in the key vault resource itself. This field will be removed in v5.0 of the provider.") def contacts(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyVaultContactArgs.Builder]*):
+    @deprecated("As the `contact` property uses a data plane API, to better support private endpoints and key vaults with public network access disabled, new key vaults with the `contact` field defined in the configuration file will now be required to use the `azure.keyvault.CertificateContacts` resource instead of the exposed `contact` field in the key vault resource itself. This field will be removed in v5.0 of the provider.") inline def contacts(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyVaultContactArgs.Builder]*):
         com.pulumi.azure.keyvault.inputs.KeyVaultState.Builder =
       def argsBuilder = com.pulumi.azure.keyvault.inputs.KeyVaultContactArgs.builder
       builder.contacts(args.map(_(argsBuilder).build)*)
@@ -421,7 +421,7 @@ object keyvault_ext:
      * @param networkAcls A `networkAcls` block as defined below.
      * @return builder
      */
-    def networkAcls(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyVaultNetworkAclsArgs.Builder]):
+    inline def networkAcls(args: Endofunction[com.pulumi.azure.keyvault.inputs.KeyVaultNetworkAclsArgs.Builder]):
         com.pulumi.azure.keyvault.inputs.KeyVaultState.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.KeyVaultNetworkAclsArgs.builder
       builder.networkAcls(args(argsBuilder).build)
@@ -431,7 +431,7 @@ object keyvault_ext:
      * @param permissions One or more `permission` blocks as defined below.
      * @return builder
      */
-    def permissions(args: Endofunction[com.pulumi.azure.keyvault.inputs.ManagedHardwareSecurityModuleRoleDefinitionPermissionArgs.Builder]*):
+    inline def permissions(args: Endofunction[com.pulumi.azure.keyvault.inputs.ManagedHardwareSecurityModuleRoleDefinitionPermissionArgs.Builder]*):
         com.pulumi.azure.keyvault.inputs.ManagedHardwareSecurityModuleRoleDefinitionState.Builder =
       def argsBuilder = com.pulumi.azure.keyvault.inputs.ManagedHardwareSecurityModuleRoleDefinitionPermissionArgs.builder
       builder.permissions(args.map(_(argsBuilder).build)*)
@@ -441,7 +441,7 @@ object keyvault_ext:
      * @param networkAcls A `networkAcls` block as defined below.
      * @return builder
      */
-    def networkAcls(args: Endofunction[com.pulumi.azure.keyvault.inputs.ManagedHardwareSecurityModuleNetworkAclsArgs.Builder]):
+    inline def networkAcls(args: Endofunction[com.pulumi.azure.keyvault.inputs.ManagedHardwareSecurityModuleNetworkAclsArgs.Builder]):
         com.pulumi.azure.keyvault.inputs.ManagedHardwareSecurityModuleState.Builder =
       val argsBuilder = com.pulumi.azure.keyvault.inputs.ManagedHardwareSecurityModuleNetworkAclsArgs.builder
       builder.networkAcls(args(argsBuilder).build)

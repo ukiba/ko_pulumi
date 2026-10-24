@@ -24,7 +24,7 @@ object dynatrace:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Dynatrace monitor. */
-  def Monitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Monitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.dynatrace.MonitorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.dynatrace.MonitorArgs.builder
     conf.logicalName2physicalName(name) match
@@ -42,7 +42,7 @@ object dynatrace:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages Dynatrace tag rules. */
-  def TagRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TagRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.dynatrace.TagRulesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.dynatrace.TagRulesArgs.builder
     conf.logicalName2physicalName(name) match

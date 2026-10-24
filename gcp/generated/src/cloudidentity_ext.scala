@@ -8,7 +8,7 @@ object cloudidentity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def groupKey(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GroupGroupKeyArgs.Builder]):
+    inline def groupKey(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GroupGroupKeyArgs.Builder]):
         com.pulumi.gcp.cloudidentity.GroupArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GroupGroupKeyArgs.builder
       builder.groupKey(args(argsBuilder).build)
@@ -20,7 +20,7 @@ object cloudidentity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def memberKey(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GroupMembershipMemberKeyArgs.Builder]):
+    inline def memberKey(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GroupMembershipMemberKeyArgs.Builder]):
         com.pulumi.gcp.cloudidentity.GroupMembershipArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GroupMembershipMemberKeyArgs.builder
       builder.memberKey(args(argsBuilder).build)
@@ -30,7 +30,7 @@ object cloudidentity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def preferredMemberKey(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GroupMembershipPreferredMemberKeyArgs.Builder]):
+    inline def preferredMemberKey(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GroupMembershipPreferredMemberKeyArgs.Builder]):
         com.pulumi.gcp.cloudidentity.GroupMembershipArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GroupMembershipPreferredMemberKeyArgs.builder
       builder.preferredMemberKey(args(argsBuilder).build)
@@ -41,7 +41,7 @@ object cloudidentity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def roles(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GroupMembershipRoleArgs.Builder]*):
+    inline def roles(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GroupMembershipRoleArgs.Builder]*):
         com.pulumi.gcp.cloudidentity.GroupMembershipArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GroupMembershipRoleArgs.builder
       builder.roles(args.map(_(argsBuilder).build)*)
@@ -52,7 +52,7 @@ object cloudidentity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def policyQuery(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.PolicyPolicyQueryArgs.Builder]):
+    inline def policyQuery(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.PolicyPolicyQueryArgs.Builder]):
         com.pulumi.gcp.cloudidentity.PolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.PolicyPolicyQueryArgs.builder
       builder.policyQuery(args(argsBuilder).build)
@@ -62,7 +62,7 @@ object cloudidentity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def setting(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.PolicySettingArgs.Builder]):
+    inline def setting(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.PolicySettingArgs.Builder]):
         com.pulumi.gcp.cloudidentity.PolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.PolicySettingArgs.builder
       builder.setting(args(argsBuilder).build)
@@ -74,7 +74,7 @@ object cloudidentity_ext:
      * The combination of id and namespace must be unique; however, the same id can be used with different namespaces. Structure is documented below.
      * @return builder
      */
-    def groupKey(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetGroupLookupGroupKeyArgs.Builder]):
+    inline def groupKey(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetGroupLookupGroupKeyArgs.Builder]):
         com.pulumi.gcp.cloudidentity.inputs.GetGroupLookupArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GetGroupLookupGroupKeyArgs.builder
       builder.groupKey(args(argsBuilder).build)
@@ -86,7 +86,7 @@ object cloudidentity_ext:
      * The combination of id and namespace must be unique; however, the same id can be used with different namespaces. Structure is documented below.
      * @return builder
      */
-    def groupKey(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetGroupLookupGroupKey.Builder]):
+    inline def groupKey(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GetGroupLookupGroupKey.Builder]):
         com.pulumi.gcp.cloudidentity.inputs.GetGroupLookupPlainArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GetGroupLookupGroupKey.builder
       builder.groupKey(args(argsBuilder).build)
@@ -98,7 +98,7 @@ object cloudidentity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def expiryDetail(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GroupMembershipRoleExpiryDetailArgs.Builder]):
+    inline def expiryDetail(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GroupMembershipRoleExpiryDetailArgs.Builder]):
         com.pulumi.gcp.cloudidentity.inputs.GroupMembershipRoleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GroupMembershipRoleExpiryDetailArgs.builder
       builder.expiryDetail(args(argsBuilder).build)
@@ -110,7 +110,7 @@ object cloudidentity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def memberKey(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GroupMembershipMemberKeyArgs.Builder]):
+    inline def memberKey(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GroupMembershipMemberKeyArgs.Builder]):
         com.pulumi.gcp.cloudidentity.inputs.GroupMembershipState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GroupMembershipMemberKeyArgs.builder
       builder.memberKey(args(argsBuilder).build)
@@ -120,7 +120,7 @@ object cloudidentity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def preferredMemberKey(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GroupMembershipPreferredMemberKeyArgs.Builder]):
+    inline def preferredMemberKey(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GroupMembershipPreferredMemberKeyArgs.Builder]):
         com.pulumi.gcp.cloudidentity.inputs.GroupMembershipState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GroupMembershipPreferredMemberKeyArgs.builder
       builder.preferredMemberKey(args(argsBuilder).build)
@@ -131,7 +131,7 @@ object cloudidentity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def roles(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GroupMembershipRoleArgs.Builder]*):
+    inline def roles(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GroupMembershipRoleArgs.Builder]*):
         com.pulumi.gcp.cloudidentity.inputs.GroupMembershipState.Builder =
       def argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GroupMembershipRoleArgs.builder
       builder.roles(args.map(_(argsBuilder).build)*)
@@ -142,7 +142,7 @@ object cloudidentity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def additionalGroupKeys(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GroupAdditionalGroupKeyArgs.Builder]*):
+    inline def additionalGroupKeys(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GroupAdditionalGroupKeyArgs.Builder]*):
         com.pulumi.gcp.cloudidentity.inputs.GroupState.Builder =
       def argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GroupAdditionalGroupKeyArgs.builder
       builder.additionalGroupKeys(args.map(_(argsBuilder).build)*)
@@ -152,7 +152,7 @@ object cloudidentity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def groupKey(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GroupGroupKeyArgs.Builder]):
+    inline def groupKey(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.GroupGroupKeyArgs.Builder]):
         com.pulumi.gcp.cloudidentity.inputs.GroupState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.GroupGroupKeyArgs.builder
       builder.groupKey(args(argsBuilder).build)
@@ -163,7 +163,7 @@ object cloudidentity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def policyQuery(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.PolicyPolicyQueryArgs.Builder]):
+    inline def policyQuery(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.PolicyPolicyQueryArgs.Builder]):
         com.pulumi.gcp.cloudidentity.inputs.PolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.PolicyPolicyQueryArgs.builder
       builder.policyQuery(args(argsBuilder).build)
@@ -173,7 +173,7 @@ object cloudidentity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def setting(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.PolicySettingArgs.Builder]):
+    inline def setting(args: Endofunction[com.pulumi.gcp.cloudidentity.inputs.PolicySettingArgs.Builder]):
         com.pulumi.gcp.cloudidentity.inputs.PolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudidentity.inputs.PolicySettingArgs.builder
       builder.setting(args(argsBuilder).build)

@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object rbin:
   /** Resource for managing an AWS RBin Rule. */
-  def Rule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Rule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rbin.RuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rbin.RuleArgs.builder
     argsBuilder = args(argsBuilder)

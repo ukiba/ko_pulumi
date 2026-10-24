@@ -8,7 +8,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiDatasetEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiDatasetEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vertex.AiDatasetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiDatasetEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -19,7 +19,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dedicatedResources(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiDeploymentResourcePoolDedicatedResourcesArgs.Builder]):
+    inline def dedicatedResources(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiDeploymentResourcePoolDedicatedResourcesArgs.Builder]):
         com.pulumi.gcp.vertex.AiDeploymentResourcePoolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiDeploymentResourcePoolDedicatedResourcesArgs.builder
       builder.dedicatedResources(args(argsBuilder).build)
@@ -30,7 +30,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vertex.AiEndpointArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -40,7 +40,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def predictRequestResponseLoggingConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointPredictRequestResponseLoggingConfigArgs.Builder]):
+    inline def predictRequestResponseLoggingConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointPredictRequestResponseLoggingConfigArgs.Builder]):
         com.pulumi.gcp.vertex.AiEndpointArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointPredictRequestResponseLoggingConfigArgs.builder
       builder.predictRequestResponseLoggingConfig(args(argsBuilder).build)
@@ -50,19 +50,19 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def privateServiceConnectConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointPrivateServiceConnectConfigArgs.Builder]):
+    inline def privateServiceConnectConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointPrivateServiceConnectConfigArgs.Builder]):
         com.pulumi.gcp.vertex.AiEndpointArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointPrivateServiceConnectConfigArgs.builder
       builder.privateServiceConnectConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.AiEndpointIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.vertex.AiEndpointIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.AiEndpointIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.vertex.AiEndpointIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -73,7 +73,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deployConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentDeployConfigArgs.Builder]):
+    inline def deployConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentDeployConfigArgs.Builder]):
         com.pulumi.gcp.vertex.AiEndpointWithModelGardenDeploymentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentDeployConfigArgs.builder
       builder.deployConfig(args(argsBuilder).build)
@@ -83,7 +83,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endpointConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentEndpointConfigArgs.Builder]):
+    inline def endpointConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentEndpointConfigArgs.Builder]):
         com.pulumi.gcp.vertex.AiEndpointWithModelGardenDeploymentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentEndpointConfigArgs.builder
       builder.endpointConfig(args(argsBuilder).build)
@@ -93,7 +93,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modelConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigArgs.Builder]):
+    inline def modelConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigArgs.Builder]):
         com.pulumi.gcp.vertex.AiEndpointWithModelGardenDeploymentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigArgs.builder
       builder.modelConfig(args(argsBuilder).build)
@@ -105,7 +105,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEvaluationMetricEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEvaluationMetricEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vertex.AiEvaluationMetricArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEvaluationMetricEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -116,19 +116,19 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigQuery(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureGroupBigQueryArgs.Builder]):
+    inline def bigQuery(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureGroupBigQueryArgs.Builder]):
         com.pulumi.gcp.vertex.AiFeatureGroupArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureGroupBigQueryArgs.builder
       builder.bigQuery(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.AiFeatureGroupIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureGroupIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureGroupIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.vertex.AiFeatureGroupIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureGroupIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.AiFeatureGroupIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureGroupIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureGroupIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.vertex.AiFeatureGroupIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureGroupIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -139,7 +139,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigtable(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreBigtableArgs.Builder]):
+    inline def bigtable(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreBigtableArgs.Builder]):
         com.pulumi.gcp.vertex.AiFeatureOnlineStoreArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreBigtableArgs.builder
       builder.bigtable(args(argsBuilder).build)
@@ -149,7 +149,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dedicatedServingEndpoint(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreDedicatedServingEndpointArgs.Builder]):
+    inline def dedicatedServingEndpoint(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreDedicatedServingEndpointArgs.Builder]):
         com.pulumi.gcp.vertex.AiFeatureOnlineStoreArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreDedicatedServingEndpointArgs.builder
       builder.dedicatedServingEndpoint(args(argsBuilder).build)
@@ -163,7 +163,7 @@ object vertex_ext:
      * @return builder
      * @deprecated `embeddingManagement` is deprecated. This field is no longer needed anymore and embedding management is automatically enabled when specifying Optimized storage type
      */
-    @deprecated("`embeddingManagement` is deprecated. This field is no longer needed anymore and embedding management is automatically enabled when specifying Optimized storage type") def embeddingManagement(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreEmbeddingManagementArgs.Builder]):
+    @deprecated("`embeddingManagement` is deprecated. This field is no longer needed anymore and embedding management is automatically enabled when specifying Optimized storage type") inline def embeddingManagement(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreEmbeddingManagementArgs.Builder]):
         com.pulumi.gcp.vertex.AiFeatureOnlineStoreArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreEmbeddingManagementArgs.builder
       builder.embeddingManagement(args(argsBuilder).build)
@@ -173,7 +173,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vertex.AiFeatureOnlineStoreArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -182,7 +182,7 @@ object vertex_ext:
      * @param optimized Settings for the Optimized store that will be created to serve featureValues for all FeatureViews under this FeatureOnlineStore
      * @return builder
      */
-    def optimized(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreOptimizedArgs.Builder]):
+    inline def optimized(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreOptimizedArgs.Builder]):
         com.pulumi.gcp.vertex.AiFeatureOnlineStoreArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreOptimizedArgs.builder
       builder.optimized(args(argsBuilder).build)
@@ -193,7 +193,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigQuerySource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewBigQuerySourceArgs.Builder]):
+    inline def bigQuerySource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewBigQuerySourceArgs.Builder]):
         com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureviewArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewBigQuerySourceArgs.builder
       builder.bigQuerySource(args(argsBuilder).build)
@@ -203,7 +203,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def featureRegistrySource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceArgs.Builder]):
+    inline def featureRegistrySource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceArgs.Builder]):
         com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureviewArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceArgs.builder
       builder.featureRegistrySource(args(argsBuilder).build)
@@ -213,7 +213,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def syncConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewSyncConfigArgs.Builder]):
+    inline def syncConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewSyncConfigArgs.Builder]):
         com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureviewArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewSyncConfigArgs.builder
       builder.syncConfig(args(argsBuilder).build)
@@ -224,31 +224,31 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vectorSearchConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewVectorSearchConfigArgs.Builder]):
+    inline def vectorSearchConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewVectorSearchConfigArgs.Builder]):
         com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureviewArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewVectorSearchConfigArgs.builder
       builder.vectorSearchConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureviewIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureviewIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureviewIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureviewIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.AiFeatureOnlineStoreIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.vertex.AiFeatureOnlineStoreIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.AiFeatureOnlineStoreIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.vertex.AiFeatureOnlineStoreIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -259,7 +259,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vertex.AiFeatureStoreArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureStoreEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -269,7 +269,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def onlineServingConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreOnlineServingConfigArgs.Builder]):
+    inline def onlineServingConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreOnlineServingConfigArgs.Builder]):
         com.pulumi.gcp.vertex.AiFeatureStoreArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureStoreOnlineServingConfigArgs.builder
       builder.onlineServingConfig(args(argsBuilder).build)
@@ -281,31 +281,31 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def monitoringConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeMonitoringConfigArgs.Builder]):
+    inline def monitoringConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeMonitoringConfigArgs.Builder]):
         com.pulumi.gcp.vertex.AiFeatureStoreEntityTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeMonitoringConfigArgs.builder
       builder.monitoringConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.AiFeatureStoreEntityTypeIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.vertex.AiFeatureStoreEntityTypeIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.AiFeatureStoreEntityTypeIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.vertex.AiFeatureStoreEntityTypeIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.AiFeatureStoreIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.vertex.AiFeatureStoreIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureStoreIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.AiFeatureStoreIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.vertex.AiFeatureStoreIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureStoreIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -316,7 +316,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vertex.AiIndexArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiIndexEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -328,7 +328,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metadata(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexMetadataArgs.Builder]):
+    inline def metadata(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexMetadataArgs.Builder]):
         com.pulumi.gcp.vertex.AiIndexArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiIndexMetadataArgs.builder
       builder.metadata(args(argsBuilder).build)
@@ -339,7 +339,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vertex.AiIndexEndpointArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiIndexEndpointEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -349,7 +349,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def privateServiceConnectConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointPrivateServiceConnectConfigArgs.Builder]):
+    inline def privateServiceConnectConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointPrivateServiceConnectConfigArgs.Builder]):
         com.pulumi.gcp.vertex.AiIndexEndpointArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiIndexEndpointPrivateServiceConnectConfigArgs.builder
       builder.privateServiceConnectConfig(args(argsBuilder).build)
@@ -360,7 +360,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def automaticResources(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexAutomaticResourcesArgs.Builder]):
+    inline def automaticResources(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexAutomaticResourcesArgs.Builder]):
         com.pulumi.gcp.vertex.AiIndexEndpointDeployedIndexArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexAutomaticResourcesArgs.builder
       builder.automaticResources(args(argsBuilder).build)
@@ -374,7 +374,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dedicatedResources(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexDedicatedResourcesArgs.Builder]):
+    inline def dedicatedResources(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexDedicatedResourcesArgs.Builder]):
         com.pulumi.gcp.vertex.AiIndexEndpointDeployedIndexArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexDedicatedResourcesArgs.builder
       builder.dedicatedResources(args(argsBuilder).build)
@@ -384,7 +384,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deployedIndexAuthConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexDeployedIndexAuthConfigArgs.Builder]):
+    inline def deployedIndexAuthConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexDeployedIndexAuthConfigArgs.Builder]):
         com.pulumi.gcp.vertex.AiIndexEndpointDeployedIndexArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexDeployedIndexAuthConfigArgs.builder
       builder.deployedIndexAuthConfig(args(argsBuilder).build)
@@ -395,7 +395,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiMetadataStoreEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiMetadataStoreEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vertex.AiMetadataStoreArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiMetadataStoreEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -410,7 +410,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudObservability(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityArgs.Builder]):
+    inline def cloudObservability(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityArgs.Builder]):
         com.pulumi.gcp.vertex.AiOnlineEvaluatorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityArgs.builder
       builder.cloudObservability(args(argsBuilder).build)
@@ -421,7 +421,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorConfigArgs.Builder]):
         com.pulumi.gcp.vertex.AiOnlineEvaluatorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -437,7 +437,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metricSources(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorMetricSourceArgs.Builder]*):
+    inline def metricSources(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorMetricSourceArgs.Builder]*):
         com.pulumi.gcp.vertex.AiOnlineEvaluatorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorMetricSourceArgs.builder
       builder.metricSources(args.map(_(argsBuilder).build)*)
@@ -449,7 +449,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vertex.AiPersistentResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourceEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -459,7 +459,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscInterfaceConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourcePscInterfaceConfigArgs.Builder]):
+    inline def pscInterfaceConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourcePscInterfaceConfigArgs.Builder]):
         com.pulumi.gcp.vertex.AiPersistentResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourcePscInterfaceConfigArgs.builder
       builder.pscInterfaceConfig(args(argsBuilder).build)
@@ -469,7 +469,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resourcePools(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolArgs.Builder]*):
+    inline def resourcePools(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolArgs.Builder]*):
         com.pulumi.gcp.vertex.AiPersistentResourceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolArgs.builder
       builder.resourcePools(args.map(_(argsBuilder).build)*)
@@ -479,7 +479,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resourceRuntimeSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourceRuntimeSpecArgs.Builder]):
+    inline def resourceRuntimeSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourceRuntimeSpecArgs.Builder]):
         com.pulumi.gcp.vertex.AiPersistentResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourceRuntimeSpecArgs.builder
       builder.resourceRuntimeSpec(args(argsBuilder).build)
@@ -493,7 +493,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vertex.AiRagCorpusArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -503,7 +503,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vectorDbConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigArgs.Builder]):
+    inline def vectorDbConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigArgs.Builder]):
         com.pulumi.gcp.vertex.AiRagCorpusArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigArgs.builder
       builder.vectorDbConfig(args(argsBuilder).build)
@@ -513,7 +513,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vertexAiSearchConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVertexAiSearchConfigArgs.Builder]):
+    inline def vertexAiSearchConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVertexAiSearchConfigArgs.Builder]):
         com.pulumi.gcp.vertex.AiRagCorpusArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVertexAiSearchConfigArgs.builder
       builder.vertexAiSearchConfig(args(argsBuilder).build)
@@ -524,7 +524,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ragManagedDbConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagEngineConfigRagManagedDbConfigArgs.Builder]):
+    inline def ragManagedDbConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagEngineConfigRagManagedDbConfigArgs.Builder]):
         com.pulumi.gcp.vertex.AiRagEngineConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagEngineConfigRagManagedDbConfigArgs.builder
       builder.ragManagedDbConfig(args(argsBuilder).build)
@@ -535,7 +535,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def contextSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecArgs.Builder]):
+    inline def contextSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecArgs.Builder]):
         com.pulumi.gcp.vertex.AiReasoningEngineArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecArgs.builder
       builder.contextSpec(args(argsBuilder).build)
@@ -547,7 +547,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vertex.AiReasoningEngineArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -557,7 +557,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def spec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecArgs.Builder]):
+    inline def spec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecArgs.Builder]):
         com.pulumi.gcp.vertex.AiReasoningEngineArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecArgs.builder
       builder.spec(args(argsBuilder).build)
@@ -569,19 +569,19 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trafficConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigArgs.Builder]):
+    inline def trafficConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigArgs.Builder]):
         com.pulumi.gcp.vertex.AiReasoningEngineArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigArgs.builder
       builder.trafficConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.AiReasoningEngineIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.vertex.AiReasoningEngineIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.AiReasoningEngineIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.vertex.AiReasoningEngineIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -592,7 +592,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def agentResponseCustomization(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyAgentResponseCustomizationArgs.Builder]):
+    inline def agentResponseCustomization(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyAgentResponseCustomizationArgs.Builder]):
         com.pulumi.gcp.vertex.AiSemanticGovernancePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyAgentResponseCustomizationArgs.builder
       builder.agentResponseCustomization(args(argsBuilder).build)
@@ -602,7 +602,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mcpTools(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyMcpToolsArgs.Builder]):
+    inline def mcpTools(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyMcpToolsArgs.Builder]):
         com.pulumi.gcp.vertex.AiSemanticGovernancePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyMcpToolsArgs.builder
       builder.mcpTools(args(argsBuilder).build)
@@ -616,7 +616,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gatewayConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyEngineGatewayConfigArgs.Builder]*):
+    inline def gatewayConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyEngineGatewayConfigArgs.Builder]*):
         com.pulumi.gcp.vertex.AiSemanticGovernancePolicyEngineArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyEngineGatewayConfigArgs.builder
       builder.gatewayConfigs(args.map(_(argsBuilder).build)*)
@@ -627,7 +627,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiTensorboardEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiTensorboardEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vertex.AiTensorboardArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiTensorboardEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -638,7 +638,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiDatasetEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiDatasetEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiDatasetState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiDatasetEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -649,7 +649,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoscalingMetricSpecs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiDeploymentResourcePoolDedicatedResourcesAutoscalingMetricSpecArgs.Builder]*):
+    inline def autoscalingMetricSpecs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiDeploymentResourcePoolDedicatedResourcesAutoscalingMetricSpecArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiDeploymentResourcePoolDedicatedResourcesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiDeploymentResourcePoolDedicatedResourcesAutoscalingMetricSpecArgs.builder
       builder.autoscalingMetricSpecs(args.map(_(argsBuilder).build)*)
@@ -659,7 +659,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def machineSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiDeploymentResourcePoolDedicatedResourcesMachineSpecArgs.Builder]):
+    inline def machineSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiDeploymentResourcePoolDedicatedResourcesMachineSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiDeploymentResourcePoolDedicatedResourcesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiDeploymentResourcePoolDedicatedResourcesMachineSpecArgs.builder
       builder.machineSpec(args(argsBuilder).build)
@@ -670,7 +670,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dedicatedResources(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiDeploymentResourcePoolDedicatedResourcesArgs.Builder]):
+    inline def dedicatedResources(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiDeploymentResourcePoolDedicatedResourcesArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiDeploymentResourcePoolState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiDeploymentResourcePoolDedicatedResourcesArgs.builder
       builder.dedicatedResources(args(argsBuilder).build)
@@ -682,7 +682,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def automaticResources(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointDeployedModelAutomaticResourceArgs.Builder]*):
+    inline def automaticResources(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointDeployedModelAutomaticResourceArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiEndpointDeployedModelArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointDeployedModelAutomaticResourceArgs.builder
       builder.automaticResources(args.map(_(argsBuilder).build)*)
@@ -693,7 +693,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dedicatedResources(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointDeployedModelDedicatedResourceArgs.Builder]*):
+    inline def dedicatedResources(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointDeployedModelDedicatedResourceArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiEndpointDeployedModelArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointDeployedModelDedicatedResourceArgs.builder
       builder.dedicatedResources(args.map(_(argsBuilder).build)*)
@@ -704,7 +704,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def privateEndpoints(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointDeployedModelPrivateEndpointArgs.Builder]*):
+    inline def privateEndpoints(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointDeployedModelPrivateEndpointArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiEndpointDeployedModelArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointDeployedModelPrivateEndpointArgs.builder
       builder.privateEndpoints(args.map(_(argsBuilder).build)*)
@@ -716,7 +716,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoscalingMetricSpecs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointDeployedModelDedicatedResourceAutoscalingMetricSpecArgs.Builder]*):
+    inline def autoscalingMetricSpecs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointDeployedModelDedicatedResourceAutoscalingMetricSpecArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiEndpointDeployedModelDedicatedResourceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointDeployedModelDedicatedResourceAutoscalingMetricSpecArgs.builder
       builder.autoscalingMetricSpecs(args.map(_(argsBuilder).build)*)
@@ -727,19 +727,19 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def machineSpecs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointDeployedModelDedicatedResourceMachineSpecArgs.Builder]*):
+    inline def machineSpecs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointDeployedModelDedicatedResourceMachineSpecArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiEndpointDeployedModelDedicatedResourceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointDeployedModelDedicatedResourceMachineSpecArgs.builder
       builder.machineSpecs(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiEndpointIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiEndpointIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -750,7 +750,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigqueryDestination(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointPredictRequestResponseLoggingConfigBigqueryDestinationArgs.Builder]):
+    inline def bigqueryDestination(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointPredictRequestResponseLoggingConfigBigqueryDestinationArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointPredictRequestResponseLoggingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointPredictRequestResponseLoggingConfigBigqueryDestinationArgs.builder
       builder.bigqueryDestination(args(argsBuilder).build)
@@ -761,7 +761,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscAutomationConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointPrivateServiceConnectConfigPscAutomationConfigArgs.Builder]*):
+    inline def pscAutomationConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointPrivateServiceConnectConfigPscAutomationConfigArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiEndpointPrivateServiceConnectConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointPrivateServiceConnectConfigPscAutomationConfigArgs.builder
       builder.pscAutomationConfigs(args.map(_(argsBuilder).build)*)
@@ -772,7 +772,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deployedModels(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointDeployedModelArgs.Builder]*):
+    inline def deployedModels(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointDeployedModelArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiEndpointState.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointDeployedModelArgs.builder
       builder.deployedModels(args.map(_(argsBuilder).build)*)
@@ -782,7 +782,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -792,7 +792,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def predictRequestResponseLoggingConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointPredictRequestResponseLoggingConfigArgs.Builder]):
+    inline def predictRequestResponseLoggingConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointPredictRequestResponseLoggingConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointPredictRequestResponseLoggingConfigArgs.builder
       builder.predictRequestResponseLoggingConfig(args(argsBuilder).build)
@@ -802,7 +802,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def privateServiceConnectConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointPrivateServiceConnectConfigArgs.Builder]):
+    inline def privateServiceConnectConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointPrivateServiceConnectConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointPrivateServiceConnectConfigArgs.builder
       builder.privateServiceConnectConfig(args(argsBuilder).build)
@@ -814,7 +814,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dedicatedResources(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentDeployConfigDedicatedResourcesArgs.Builder]):
+    inline def dedicatedResources(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentDeployConfigDedicatedResourcesArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentDeployConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentDeployConfigDedicatedResourcesArgs.builder
       builder.dedicatedResources(args(argsBuilder).build)
@@ -841,7 +841,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoscalingMetricSpecs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentDeployConfigDedicatedResourcesAutoscalingMetricSpecArgs.Builder]*):
+    inline def autoscalingMetricSpecs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentDeployConfigDedicatedResourcesAutoscalingMetricSpecArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentDeployConfigDedicatedResourcesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentDeployConfigDedicatedResourcesAutoscalingMetricSpecArgs.builder
       builder.autoscalingMetricSpecs(args.map(_(argsBuilder).build)*)
@@ -851,7 +851,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def machineSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentDeployConfigDedicatedResourcesMachineSpecArgs.Builder]):
+    inline def machineSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentDeployConfigDedicatedResourcesMachineSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentDeployConfigDedicatedResourcesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentDeployConfigDedicatedResourcesMachineSpecArgs.builder
       builder.machineSpec(args(argsBuilder).build)
@@ -864,7 +864,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def reservationAffinity(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentDeployConfigDedicatedResourcesMachineSpecReservationAffinityArgs.Builder]):
+    inline def reservationAffinity(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentDeployConfigDedicatedResourcesMachineSpecReservationAffinityArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentDeployConfigDedicatedResourcesMachineSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentDeployConfigDedicatedResourcesMachineSpecReservationAffinityArgs.builder
       builder.reservationAffinity(args(argsBuilder).build)
@@ -875,7 +875,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def privateServiceConnectConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentEndpointConfigPrivateServiceConnectConfigArgs.Builder]):
+    inline def privateServiceConnectConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentEndpointConfigPrivateServiceConnectConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentEndpointConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentEndpointConfigPrivateServiceConnectConfigArgs.builder
       builder.privateServiceConnectConfig(args(argsBuilder).build)
@@ -886,7 +886,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscAutomationConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentEndpointConfigPrivateServiceConnectConfigPscAutomationConfigsArgs.Builder]):
+    inline def pscAutomationConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentEndpointConfigPrivateServiceConnectConfigPscAutomationConfigsArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentEndpointConfigPrivateServiceConnectConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentEndpointConfigPrivateServiceConnectConfigPscAutomationConfigsArgs.builder
       builder.pscAutomationConfigs(args(argsBuilder).build)
@@ -899,7 +899,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def containerSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecArgs.Builder]):
+    inline def containerSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecArgs.builder
       builder.containerSpec(args(argsBuilder).build)
@@ -922,7 +922,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def envs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecEnvArgs.Builder]*):
+    inline def envs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecEnvArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecEnvArgs.builder
       builder.envs(args.map(_(argsBuilder).build)*)
@@ -938,7 +938,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def grpcPorts(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecGrpcPortArgs.Builder]*):
+    inline def grpcPorts(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecGrpcPortArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecGrpcPortArgs.builder
       builder.grpcPorts(args.map(_(argsBuilder).build)*)
@@ -949,7 +949,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def healthProbe(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecHealthProbeArgs.Builder]):
+    inline def healthProbe(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecHealthProbeArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecHealthProbeArgs.builder
       builder.healthProbe(args(argsBuilder).build)
@@ -960,7 +960,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def livenessProbe(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecLivenessProbeArgs.Builder]):
+    inline def livenessProbe(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecLivenessProbeArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecLivenessProbeArgs.builder
       builder.livenessProbe(args(argsBuilder).build)
@@ -981,7 +981,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ports(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecPortArgs.Builder]*):
+    inline def ports(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecPortArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecPortArgs.builder
       builder.ports(args.map(_(argsBuilder).build)*)
@@ -992,7 +992,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def startupProbe(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecStartupProbeArgs.Builder]):
+    inline def startupProbe(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecStartupProbeArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecStartupProbeArgs.builder
       builder.startupProbe(args(argsBuilder).build)
@@ -1003,7 +1003,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def exec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecHealthProbeExecArgs.Builder]):
+    inline def exec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecHealthProbeExecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecHealthProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecHealthProbeExecArgs.builder
       builder.exec(args(argsBuilder).build)
@@ -1013,7 +1013,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def grpc(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecHealthProbeGrpcArgs.Builder]):
+    inline def grpc(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecHealthProbeGrpcArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecHealthProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecHealthProbeGrpcArgs.builder
       builder.grpc(args(argsBuilder).build)
@@ -1023,7 +1023,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpGet(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecHealthProbeHttpGetArgs.Builder]):
+    inline def httpGet(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecHealthProbeHttpGetArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecHealthProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecHealthProbeHttpGetArgs.builder
       builder.httpGet(args(argsBuilder).build)
@@ -1034,7 +1034,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tcpSocket(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecHealthProbeTcpSocketArgs.Builder]):
+    inline def tcpSocket(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecHealthProbeTcpSocketArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecHealthProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecHealthProbeTcpSocketArgs.builder
       builder.tcpSocket(args(argsBuilder).build)
@@ -1045,7 +1045,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpHeaders(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecHealthProbeHttpGetHttpHeaderArgs.Builder]*):
+    inline def httpHeaders(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecHealthProbeHttpGetHttpHeaderArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecHealthProbeHttpGetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecHealthProbeHttpGetHttpHeaderArgs.builder
       builder.httpHeaders(args.map(_(argsBuilder).build)*)
@@ -1056,7 +1056,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def exec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecLivenessProbeExecArgs.Builder]):
+    inline def exec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecLivenessProbeExecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecLivenessProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecLivenessProbeExecArgs.builder
       builder.exec(args(argsBuilder).build)
@@ -1066,7 +1066,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def grpc(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecLivenessProbeGrpcArgs.Builder]):
+    inline def grpc(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecLivenessProbeGrpcArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecLivenessProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecLivenessProbeGrpcArgs.builder
       builder.grpc(args(argsBuilder).build)
@@ -1076,7 +1076,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpGet(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecLivenessProbeHttpGetArgs.Builder]):
+    inline def httpGet(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecLivenessProbeHttpGetArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecLivenessProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecLivenessProbeHttpGetArgs.builder
       builder.httpGet(args(argsBuilder).build)
@@ -1087,7 +1087,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tcpSocket(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecLivenessProbeTcpSocketArgs.Builder]):
+    inline def tcpSocket(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecLivenessProbeTcpSocketArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecLivenessProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecLivenessProbeTcpSocketArgs.builder
       builder.tcpSocket(args(argsBuilder).build)
@@ -1098,7 +1098,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpHeaders(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecLivenessProbeHttpGetHttpHeaderArgs.Builder]*):
+    inline def httpHeaders(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecLivenessProbeHttpGetHttpHeaderArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecLivenessProbeHttpGetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecLivenessProbeHttpGetHttpHeaderArgs.builder
       builder.httpHeaders(args.map(_(argsBuilder).build)*)
@@ -1109,7 +1109,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def exec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecStartupProbeExecArgs.Builder]):
+    inline def exec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecStartupProbeExecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecStartupProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecStartupProbeExecArgs.builder
       builder.exec(args(argsBuilder).build)
@@ -1119,7 +1119,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def grpc(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecStartupProbeGrpcArgs.Builder]):
+    inline def grpc(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecStartupProbeGrpcArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecStartupProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecStartupProbeGrpcArgs.builder
       builder.grpc(args(argsBuilder).build)
@@ -1129,7 +1129,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpGet(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecStartupProbeHttpGetArgs.Builder]):
+    inline def httpGet(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecStartupProbeHttpGetArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecStartupProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecStartupProbeHttpGetArgs.builder
       builder.httpGet(args(argsBuilder).build)
@@ -1140,7 +1140,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tcpSocket(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecStartupProbeTcpSocketArgs.Builder]):
+    inline def tcpSocket(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecStartupProbeTcpSocketArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecStartupProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecStartupProbeTcpSocketArgs.builder
       builder.tcpSocket(args(argsBuilder).build)
@@ -1151,7 +1151,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpHeaders(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecStartupProbeHttpGetHttpHeaderArgs.Builder]*):
+    inline def httpHeaders(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecStartupProbeHttpGetHttpHeaderArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecStartupProbeHttpGetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigContainerSpecStartupProbeHttpGetHttpHeaderArgs.builder
       builder.httpHeaders(args.map(_(argsBuilder).build)*)
@@ -1162,7 +1162,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deployConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentDeployConfigArgs.Builder]):
+    inline def deployConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentDeployConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentDeployConfigArgs.builder
       builder.deployConfig(args(argsBuilder).build)
@@ -1172,7 +1172,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endpointConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentEndpointConfigArgs.Builder]):
+    inline def endpointConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentEndpointConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentEndpointConfigArgs.builder
       builder.endpointConfig(args(argsBuilder).build)
@@ -1182,7 +1182,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modelConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigArgs.Builder]):
+    inline def modelConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEndpointWithModelGardenDeploymentModelConfigArgs.builder
       builder.modelConfig(args(argsBuilder).build)
@@ -1194,7 +1194,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEvaluationMetricEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiEvaluationMetricEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiEvaluationMetricState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiEvaluationMetricEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -1205,19 +1205,19 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigQuerySource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureGroupBigQueryBigQuerySourceArgs.Builder]):
+    inline def bigQuerySource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureGroupBigQueryBigQuerySourceArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureGroupBigQueryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureGroupBigQueryBigQuerySourceArgs.builder
       builder.bigQuerySource(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiFeatureGroupIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureGroupIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureGroupIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureGroupIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureGroupIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiFeatureGroupIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureGroupIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureGroupIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureGroupIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureGroupIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1228,7 +1228,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigQuery(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureGroupBigQueryArgs.Builder]):
+    inline def bigQuery(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureGroupBigQueryArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureGroupState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureGroupBigQueryArgs.builder
       builder.bigQuery(args(argsBuilder).build)
@@ -1239,7 +1239,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoScaling(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreBigtableAutoScalingArgs.Builder]):
+    inline def autoScaling(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreBigtableAutoScalingArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreBigtableArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreBigtableAutoScalingArgs.builder
       builder.autoScaling(args(argsBuilder).build)
@@ -1250,7 +1250,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def privateServiceConnectConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreDedicatedServingEndpointPrivateServiceConnectConfigArgs.Builder]):
+    inline def privateServiceConnectConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreDedicatedServingEndpointPrivateServiceConnectConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreDedicatedServingEndpointArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreDedicatedServingEndpointPrivateServiceConnectConfigArgs.builder
       builder.privateServiceConnectConfig(args(argsBuilder).build)
@@ -1261,19 +1261,19 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def featureGroups(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceFeatureGroupArgs.Builder]*):
+    inline def featureGroups(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceFeatureGroupArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceFeatureGroupArgs.builder
       builder.featureGroups(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1284,7 +1284,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigQuerySource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewBigQuerySourceArgs.Builder]):
+    inline def bigQuerySource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewBigQuerySourceArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewBigQuerySourceArgs.builder
       builder.bigQuerySource(args(argsBuilder).build)
@@ -1294,7 +1294,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def featureRegistrySource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceArgs.Builder]):
+    inline def featureRegistrySource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewFeatureRegistrySourceArgs.builder
       builder.featureRegistrySource(args(argsBuilder).build)
@@ -1304,7 +1304,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def syncConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewSyncConfigArgs.Builder]):
+    inline def syncConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewSyncConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewSyncConfigArgs.builder
       builder.syncConfig(args(argsBuilder).build)
@@ -1315,7 +1315,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vectorSearchConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewVectorSearchConfigArgs.Builder]):
+    inline def vectorSearchConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewVectorSearchConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewVectorSearchConfigArgs.builder
       builder.vectorSearchConfig(args(argsBuilder).build)
@@ -1325,7 +1325,7 @@ object vertex_ext:
      * @param bruteForceConfig Configuration options for using brute force search, which simply implements the standard linear search in the database for each query. It is primarily meant for benchmarking and to generate the ground truth for approximate search.
      * @return builder
      */
-    def bruteForceConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewVectorSearchConfigBruteForceConfigArgs.Builder]):
+    inline def bruteForceConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewVectorSearchConfigBruteForceConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewVectorSearchConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewVectorSearchConfigBruteForceConfigArgs.builder
       builder.bruteForceConfig(args(argsBuilder).build)
@@ -1335,19 +1335,19 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def treeAhConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewVectorSearchConfigTreeAhConfigArgs.Builder]):
+    inline def treeAhConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewVectorSearchConfigTreeAhConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewVectorSearchConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreFeatureviewVectorSearchConfigTreeAhConfigArgs.builder
       builder.treeAhConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1358,7 +1358,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigtable(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreBigtableArgs.Builder]):
+    inline def bigtable(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreBigtableArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreBigtableArgs.builder
       builder.bigtable(args(argsBuilder).build)
@@ -1368,7 +1368,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dedicatedServingEndpoint(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreDedicatedServingEndpointArgs.Builder]):
+    inline def dedicatedServingEndpoint(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreDedicatedServingEndpointArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreDedicatedServingEndpointArgs.builder
       builder.dedicatedServingEndpoint(args(argsBuilder).build)
@@ -1382,7 +1382,7 @@ object vertex_ext:
      * @return builder
      * @deprecated `embeddingManagement` is deprecated. This field is no longer needed anymore and embedding management is automatically enabled when specifying Optimized storage type
      */
-    @deprecated("`embeddingManagement` is deprecated. This field is no longer needed anymore and embedding management is automatically enabled when specifying Optimized storage type") def embeddingManagement(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreEmbeddingManagementArgs.Builder]):
+    @deprecated("`embeddingManagement` is deprecated. This field is no longer needed anymore and embedding management is automatically enabled when specifying Optimized storage type") inline def embeddingManagement(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreEmbeddingManagementArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreEmbeddingManagementArgs.builder
       builder.embeddingManagement(args(argsBuilder).build)
@@ -1392,7 +1392,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -1401,19 +1401,19 @@ object vertex_ext:
      * @param optimized Settings for the Optimized store that will be created to serve featureValues for all FeatureViews under this FeatureOnlineStore
      * @return builder
      */
-    def optimized(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreOptimizedArgs.Builder]):
+    inline def optimized(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreOptimizedArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureOnlineStoreOptimizedArgs.builder
       builder.optimized(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1424,7 +1424,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def categoricalThresholdConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeMonitoringConfigCategoricalThresholdConfigArgs.Builder]):
+    inline def categoricalThresholdConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeMonitoringConfigCategoricalThresholdConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeMonitoringConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeMonitoringConfigCategoricalThresholdConfigArgs.builder
       builder.categoricalThresholdConfig(args(argsBuilder).build)
@@ -1434,7 +1434,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def importFeaturesAnalysis(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeMonitoringConfigImportFeaturesAnalysisArgs.Builder]):
+    inline def importFeaturesAnalysis(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeMonitoringConfigImportFeaturesAnalysisArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeMonitoringConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeMonitoringConfigImportFeaturesAnalysisArgs.builder
       builder.importFeaturesAnalysis(args(argsBuilder).build)
@@ -1444,7 +1444,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def numericalThresholdConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeMonitoringConfigNumericalThresholdConfigArgs.Builder]):
+    inline def numericalThresholdConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeMonitoringConfigNumericalThresholdConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeMonitoringConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeMonitoringConfigNumericalThresholdConfigArgs.builder
       builder.numericalThresholdConfig(args(argsBuilder).build)
@@ -1454,7 +1454,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def snapshotAnalysis(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeMonitoringConfigSnapshotAnalysisArgs.Builder]):
+    inline def snapshotAnalysis(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeMonitoringConfigSnapshotAnalysisArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeMonitoringConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeMonitoringConfigSnapshotAnalysisArgs.builder
       builder.snapshotAnalysis(args(argsBuilder).build)
@@ -1466,19 +1466,19 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def monitoringConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeMonitoringConfigArgs.Builder]):
+    inline def monitoringConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeMonitoringConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureStoreEntityTypeMonitoringConfigArgs.builder
       builder.monitoringConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiFeatureStoreIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureStoreIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureStoreIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiFeatureStoreIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureStoreIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureStoreIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1489,7 +1489,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scaling(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreOnlineServingConfigScalingArgs.Builder]):
+    inline def scaling(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreOnlineServingConfigScalingArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureStoreOnlineServingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureStoreOnlineServingConfigScalingArgs.builder
       builder.scaling(args(argsBuilder).build)
@@ -1500,7 +1500,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureStoreState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureStoreEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -1510,7 +1510,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def onlineServingConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreOnlineServingConfigArgs.Builder]):
+    inline def onlineServingConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiFeatureStoreOnlineServingConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiFeatureStoreState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiFeatureStoreOnlineServingConfigArgs.builder
       builder.onlineServingConfig(args(argsBuilder).build)
@@ -1521,7 +1521,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def machineSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexDedicatedResourcesMachineSpecArgs.Builder]):
+    inline def machineSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexDedicatedResourcesMachineSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexDedicatedResourcesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexDedicatedResourcesMachineSpecArgs.builder
       builder.machineSpec(args(argsBuilder).build)
@@ -1532,7 +1532,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authProvider(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexDeployedIndexAuthConfigAuthProviderArgs.Builder]):
+    inline def authProvider(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexDeployedIndexAuthConfigAuthProviderArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexDeployedIndexAuthConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexDeployedIndexAuthConfigAuthProviderArgs.builder
       builder.authProvider(args(argsBuilder).build)
@@ -1544,7 +1544,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscAutomatedEndpoints(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexPrivateEndpointPscAutomatedEndpointArgs.Builder]*):
+    inline def pscAutomatedEndpoints(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexPrivateEndpointPscAutomatedEndpointArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexPrivateEndpointArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexPrivateEndpointPscAutomatedEndpointArgs.builder
       builder.pscAutomatedEndpoints(args.map(_(argsBuilder).build)*)
@@ -1555,7 +1555,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def automaticResources(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexAutomaticResourcesArgs.Builder]):
+    inline def automaticResources(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexAutomaticResourcesArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexAutomaticResourcesArgs.builder
       builder.automaticResources(args(argsBuilder).build)
@@ -1569,7 +1569,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dedicatedResources(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexDedicatedResourcesArgs.Builder]):
+    inline def dedicatedResources(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexDedicatedResourcesArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexDedicatedResourcesArgs.builder
       builder.dedicatedResources(args(argsBuilder).build)
@@ -1579,7 +1579,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deployedIndexAuthConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexDeployedIndexAuthConfigArgs.Builder]):
+    inline def deployedIndexAuthConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexDeployedIndexAuthConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexDeployedIndexAuthConfigArgs.builder
       builder.deployedIndexAuthConfig(args(argsBuilder).build)
@@ -1589,7 +1589,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def privateEndpoints(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexPrivateEndpointArgs.Builder]*):
+    inline def privateEndpoints(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexPrivateEndpointArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexState.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiIndexEndpointDeployedIndexPrivateEndpointArgs.builder
       builder.privateEndpoints(args.map(_(argsBuilder).build)*)
@@ -1600,7 +1600,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscAutomationConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointPrivateServiceConnectConfigPscAutomationConfigArgs.Builder]*):
+    inline def pscAutomationConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointPrivateServiceConnectConfigPscAutomationConfigArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiIndexEndpointPrivateServiceConnectConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiIndexEndpointPrivateServiceConnectConfigPscAutomationConfigArgs.builder
       builder.pscAutomationConfigs(args.map(_(argsBuilder).build)*)
@@ -1611,7 +1611,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiIndexEndpointState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiIndexEndpointEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -1621,7 +1621,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def privateServiceConnectConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointPrivateServiceConnectConfigArgs.Builder]):
+    inline def privateServiceConnectConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEndpointPrivateServiceConnectConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiIndexEndpointState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiIndexEndpointPrivateServiceConnectConfigArgs.builder
       builder.privateServiceConnectConfig(args(argsBuilder).build)
@@ -1632,7 +1632,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexMetadataConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexMetadataConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiIndexMetadataArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiIndexMetadataConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -1643,7 +1643,7 @@ object vertex_ext:
      * standard linear search in the database for each query.
      * @return builder
      */
-    def bruteForceConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexMetadataConfigAlgorithmConfigBruteForceConfigArgs.Builder]):
+    inline def bruteForceConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexMetadataConfigAlgorithmConfigBruteForceConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiIndexMetadataConfigAlgorithmConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiIndexMetadataConfigAlgorithmConfigBruteForceConfigArgs.builder
       builder.bruteForceConfig(args(argsBuilder).build)
@@ -1654,7 +1654,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def treeAhConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexMetadataConfigAlgorithmConfigTreeAhConfigArgs.Builder]):
+    inline def treeAhConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexMetadataConfigAlgorithmConfigTreeAhConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiIndexMetadataConfigAlgorithmConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiIndexMetadataConfigAlgorithmConfigTreeAhConfigArgs.builder
       builder.treeAhConfig(args(argsBuilder).build)
@@ -1665,7 +1665,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def algorithmConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexMetadataConfigAlgorithmConfigArgs.Builder]):
+    inline def algorithmConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexMetadataConfigAlgorithmConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiIndexMetadataConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiIndexMetadataConfigAlgorithmConfigArgs.builder
       builder.algorithmConfig(args(argsBuilder).build)
@@ -1676,7 +1676,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deployedIndexes(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexDeployedIndexArgs.Builder]*):
+    inline def deployedIndexes(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexDeployedIndexArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiIndexState.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiIndexDeployedIndexArgs.builder
       builder.deployedIndexes(args.map(_(argsBuilder).build)*)
@@ -1686,7 +1686,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiIndexState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiIndexEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -1696,7 +1696,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def indexStats(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexIndexStatArgs.Builder]*):
+    inline def indexStats(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexIndexStatArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiIndexState.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiIndexIndexStatArgs.builder
       builder.indexStats(args.map(_(argsBuilder).build)*)
@@ -1708,7 +1708,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metadata(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexMetadataArgs.Builder]):
+    inline def metadata(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiIndexMetadataArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiIndexState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiIndexMetadataArgs.builder
       builder.metadata(args(argsBuilder).build)
@@ -1719,7 +1719,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiMetadataStoreEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiMetadataStoreEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiMetadataStoreState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiMetadataStoreEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -1729,7 +1729,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def states(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiMetadataStoreStateArgs.Builder]*):
+    inline def states(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiMetadataStoreStateArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiMetadataStoreState.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiMetadataStoreStateArgs.builder
       builder.states(args.map(_(argsBuilder).build)*)
@@ -1741,7 +1741,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def openTelemetry(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityOpenTelemetryArgs.Builder]):
+    inline def openTelemetry(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityOpenTelemetryArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityOpenTelemetryArgs.builder
       builder.openTelemetry(args(argsBuilder).build)
@@ -1754,7 +1754,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sessionScope(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeArgs.Builder]):
+    inline def sessionScope(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeArgs.builder
       builder.sessionScope(args(argsBuilder).build)
@@ -1766,7 +1766,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def traceScope(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeArgs.Builder]):
+    inline def traceScope(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeArgs.builder
       builder.traceScope(args(argsBuilder).build)
@@ -1778,7 +1778,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def filters(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterArgs.Builder]*):
+    inline def filters(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
@@ -1789,7 +1789,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inactivityTrigger(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeInactivityTriggerArgs.Builder]):
+    inline def inactivityTrigger(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeInactivityTriggerArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeInactivityTriggerArgs.builder
       builder.inactivityTrigger(args(argsBuilder).build)
@@ -1800,7 +1800,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def duration(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterDurationArgs.Builder]):
+    inline def duration(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterDurationArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterDurationArgs.builder
       builder.duration(args(argsBuilder).build)
@@ -1810,7 +1810,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modelCallErrors(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterModelCallErrorsArgs.Builder]):
+    inline def modelCallErrors(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterModelCallErrorsArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterModelCallErrorsArgs.builder
       builder.modelCallErrors(args(argsBuilder).build)
@@ -1820,7 +1820,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modelCalls(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterModelCallsArgs.Builder]):
+    inline def modelCalls(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterModelCallsArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterModelCallsArgs.builder
       builder.modelCalls(args(argsBuilder).build)
@@ -1830,7 +1830,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolCallErrors(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterToolCallErrorsArgs.Builder]):
+    inline def toolCallErrors(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterToolCallErrorsArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterToolCallErrorsArgs.builder
       builder.toolCallErrors(args(argsBuilder).build)
@@ -1840,7 +1840,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolCalls(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterToolCallsArgs.Builder]):
+    inline def toolCalls(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterToolCallsArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterToolCallsArgs.builder
       builder.toolCalls(args(argsBuilder).build)
@@ -1850,7 +1850,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def totalTokenUsage(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterTotalTokenUsageArgs.Builder]):
+    inline def totalTokenUsage(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterTotalTokenUsageArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterTotalTokenUsageArgs.builder
       builder.totalTokenUsage(args(argsBuilder).build)
@@ -1860,7 +1860,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def userTurns(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterUserTurnsArgs.Builder]):
+    inline def userTurns(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterUserTurnsArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilitySessionScopeFilterUserTurnsArgs.builder
       builder.userTurns(args(argsBuilder).build)
@@ -1872,7 +1872,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def filters(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeFilterArgs.Builder]*):
+    inline def filters(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeFilterArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
@@ -1883,7 +1883,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def duration(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeFilterDurationArgs.Builder]):
+    inline def duration(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeFilterDurationArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeFilterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeFilterDurationArgs.builder
       builder.duration(args(argsBuilder).build)
@@ -1893,7 +1893,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def totalTokenUsage(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeFilterTotalTokenUsageArgs.Builder]):
+    inline def totalTokenUsage(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeFilterTotalTokenUsageArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeFilterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityTraceScopeFilterTotalTokenUsageArgs.builder
       builder.totalTokenUsage(args(argsBuilder).build)
@@ -1905,7 +1905,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def randomSampling(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorConfigRandomSamplingArgs.Builder]):
+    inline def randomSampling(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorConfigRandomSamplingArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorConfigRandomSamplingArgs.builder
       builder.randomSampling(args(argsBuilder).build)
@@ -1920,7 +1920,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudObservability(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityArgs.Builder]):
+    inline def cloudObservability(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorCloudObservabilityArgs.builder
       builder.cloudObservability(args(argsBuilder).build)
@@ -1931,7 +1931,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -1947,7 +1947,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metricSources(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorMetricSourceArgs.Builder]*):
+    inline def metricSources(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorMetricSourceArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorState.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorMetricSourceArgs.builder
       builder.metricSources(args.map(_(argsBuilder).build)*)
@@ -1958,7 +1958,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stateDetails(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorStateDetailArgs.Builder]*):
+    inline def stateDetails(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorStateDetailArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorState.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiOnlineEvaluatorStateDetailArgs.builder
       builder.stateDetails(args.map(_(argsBuilder).build)*)
@@ -1973,7 +1973,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dnsPeeringConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourcePscInterfaceConfigDnsPeeringConfigArgs.Builder]*):
+    inline def dnsPeeringConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourcePscInterfaceConfigDnsPeeringConfigArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiPersistentResourcePscInterfaceConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourcePscInterfaceConfigDnsPeeringConfigArgs.builder
       builder.dnsPeeringConfigs(args.map(_(argsBuilder).build)*)
@@ -1984,7 +1984,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoscalingSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolAutoscalingSpecArgs.Builder]):
+    inline def autoscalingSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolAutoscalingSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolAutoscalingSpecArgs.builder
       builder.autoscalingSpec(args(argsBuilder).build)
@@ -1994,7 +1994,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def diskSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolDiskSpecArgs.Builder]):
+    inline def diskSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolDiskSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolDiskSpecArgs.builder
       builder.diskSpec(args(argsBuilder).build)
@@ -2004,7 +2004,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def machineSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolMachineSpecArgs.Builder]):
+    inline def machineSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolMachineSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolMachineSpecArgs.builder
       builder.machineSpec(args(argsBuilder).build)
@@ -2015,7 +2015,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceAccountSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourceRuntimeSpecServiceAccountSpecArgs.Builder]):
+    inline def serviceAccountSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourceRuntimeSpecServiceAccountSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourceRuntimeSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourceRuntimeSpecServiceAccountSpecArgs.builder
       builder.serviceAccountSpec(args(argsBuilder).build)
@@ -2027,7 +2027,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiPersistentResourceState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourceEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -2042,7 +2042,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errors(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceErrorArgs.Builder]*):
+    inline def errors(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceErrorArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiPersistentResourceState.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourceErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
@@ -2052,7 +2052,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscInterfaceConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourcePscInterfaceConfigArgs.Builder]):
+    inline def pscInterfaceConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourcePscInterfaceConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiPersistentResourceState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourcePscInterfaceConfigArgs.builder
       builder.pscInterfaceConfig(args(argsBuilder).build)
@@ -2062,7 +2062,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resourcePools(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolArgs.Builder]*):
+    inline def resourcePools(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiPersistentResourceState.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourcePoolArgs.builder
       builder.resourcePools(args.map(_(argsBuilder).build)*)
@@ -2072,7 +2072,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resourceRuntimeSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourceRuntimeSpecArgs.Builder]):
+    inline def resourceRuntimeSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourceRuntimeSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiPersistentResourceState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourceRuntimeSpecArgs.builder
       builder.resourceRuntimeSpec(args(argsBuilder).build)
@@ -2082,7 +2082,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resourceRuntimes(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourceRuntimeArgs.Builder]*):
+    inline def resourceRuntimes(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourceRuntimeArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiPersistentResourceState.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiPersistentResourceResourceRuntimeArgs.builder
       builder.resourceRuntimes(args.map(_(argsBuilder).build)*)
@@ -2093,7 +2093,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def corpusStatuses(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusCorpusStatusArgs.Builder]*):
+    inline def corpusStatuses(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusCorpusStatusArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiRagCorpusState.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusCorpusStatusArgs.builder
       builder.corpusStatuses(args.map(_(argsBuilder).build)*)
@@ -2106,7 +2106,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiRagCorpusState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -2116,7 +2116,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vectorDbConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigArgs.Builder]):
+    inline def vectorDbConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiRagCorpusState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigArgs.builder
       builder.vectorDbConfig(args(argsBuilder).build)
@@ -2126,7 +2126,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vertexAiSearchConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVertexAiSearchConfigArgs.Builder]):
+    inline def vertexAiSearchConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVertexAiSearchConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiRagCorpusState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVertexAiSearchConfigArgs.builder
       builder.vertexAiSearchConfig(args(argsBuilder).build)
@@ -2137,7 +2137,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiKeyConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigApiAuthApiKeyConfigArgs.Builder]):
+    inline def apiKeyConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigApiAuthApiKeyConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigApiAuthArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigApiAuthApiKeyConfigArgs.builder
       builder.apiKeyConfig(args(argsBuilder).build)
@@ -2148,7 +2148,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiAuth(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigApiAuthArgs.Builder]):
+    inline def apiAuth(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigApiAuthArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigApiAuthArgs.builder
       builder.apiAuth(args(argsBuilder).build)
@@ -2158,7 +2158,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pinecone(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigPineconeArgs.Builder]):
+    inline def pinecone(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigPineconeArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigPineconeArgs.builder
       builder.pinecone(args(argsBuilder).build)
@@ -2168,7 +2168,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ragEmbeddingModelConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagEmbeddingModelConfigArgs.Builder]):
+    inline def ragEmbeddingModelConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagEmbeddingModelConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagEmbeddingModelConfigArgs.builder
       builder.ragEmbeddingModelConfig(args(argsBuilder).build)
@@ -2178,7 +2178,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ragManagedDb(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagManagedDbArgs.Builder]):
+    inline def ragManagedDb(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagManagedDbArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagManagedDbArgs.builder
       builder.ragManagedDb(args(argsBuilder).build)
@@ -2188,7 +2188,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vertexVectorSearch(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigVertexVectorSearchArgs.Builder]):
+    inline def vertexVectorSearch(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigVertexVectorSearchArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigVertexVectorSearchArgs.builder
       builder.vertexVectorSearch(args(argsBuilder).build)
@@ -2199,7 +2199,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vertexPredictionEndpoint(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagEmbeddingModelConfigVertexPredictionEndpointArgs.Builder]):
+    inline def vertexPredictionEndpoint(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagEmbeddingModelConfigVertexPredictionEndpointArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagEmbeddingModelConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagEmbeddingModelConfigVertexPredictionEndpointArgs.builder
       builder.vertexPredictionEndpoint(args(argsBuilder).build)
@@ -2210,7 +2210,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ann(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagManagedDbAnnArgs.Builder]):
+    inline def ann(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagManagedDbAnnArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagManagedDbArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagManagedDbAnnArgs.builder
       builder.ann(args(argsBuilder).build)
@@ -2219,7 +2219,7 @@ object vertex_ext:
      * @param knn Performs a KNN search on RagCorpus. This is the default choice if not specified.
      * @return builder
      */
-    def knn(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagManagedDbKnnArgs.Builder]):
+    inline def knn(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagManagedDbKnnArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagManagedDbArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagCorpusVectorDbConfigRagManagedDbKnnArgs.builder
       builder.knn(args(argsBuilder).build)
@@ -2230,7 +2230,7 @@ object vertex_ext:
      * NOTE: This is the default tier if not explicitly chosen.
      * @return builder
      */
-    def basic(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagEngineConfigRagManagedDbConfigBasicArgs.Builder]):
+    inline def basic(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagEngineConfigRagManagedDbConfigBasicArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiRagEngineConfigRagManagedDbConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagEngineConfigRagManagedDbConfigBasicArgs.builder
       builder.basic(args(argsBuilder).build)
@@ -2239,7 +2239,7 @@ object vertex_ext:
      * @param scaled Scaled tier offers production grade performance along with autoscaling functionality. It is suitable for customers with large amounts of data or performance sensitive workloads.
      * @return builder
      */
-    def scaled(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagEngineConfigRagManagedDbConfigScaledArgs.Builder]):
+    inline def scaled(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagEngineConfigRagManagedDbConfigScaledArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiRagEngineConfigRagManagedDbConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagEngineConfigRagManagedDbConfigScaledArgs.builder
       builder.scaled(args(argsBuilder).build)
@@ -2249,7 +2249,7 @@ object vertex_ext:
      * NOTE: Once deleted the data cannot be recovered. To start using RAG Engine again, you will need to update the tier by calling the UpdateRagEngineConfig API.
      * @return builder
      */
-    def unprovisioned(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagEngineConfigRagManagedDbConfigUnprovisionedArgs.Builder]):
+    inline def unprovisioned(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagEngineConfigRagManagedDbConfigUnprovisionedArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiRagEngineConfigRagManagedDbConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagEngineConfigRagManagedDbConfigUnprovisionedArgs.builder
       builder.unprovisioned(args(argsBuilder).build)
@@ -2260,7 +2260,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ragManagedDbConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagEngineConfigRagManagedDbConfigArgs.Builder]):
+    inline def ragManagedDbConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiRagEngineConfigRagManagedDbConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiRagEngineConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiRagEngineConfigRagManagedDbConfigArgs.builder
       builder.ragManagedDbConfig(args(argsBuilder).build)
@@ -2272,7 +2272,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def exampleStoreConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecExampleStoreConfigArgs.Builder]):
+    inline def exampleStoreConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecExampleStoreConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecExampleStoreConfigArgs.builder
       builder.exampleStoreConfig(args(argsBuilder).build)
@@ -2282,7 +2282,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def memoryBankConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigArgs.Builder]):
+    inline def memoryBankConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigArgs.builder
       builder.memoryBankConfig(args(argsBuilder).build)
@@ -2293,7 +2293,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def similaritySearchConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecExampleStoreConfigSimilaritySearchConfigArgs.Builder]):
+    inline def similaritySearchConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecExampleStoreConfigSimilaritySearchConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecExampleStoreConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecExampleStoreConfigSimilaritySearchConfigArgs.builder
       builder.similaritySearchConfig(args(argsBuilder).build)
@@ -2304,7 +2304,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customizationConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigArgs.Builder]*):
+    inline def customizationConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigArgs.builder
       builder.customizationConfigs(args.map(_(argsBuilder).build)*)
@@ -2314,7 +2314,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def generationConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigGenerationConfigArgs.Builder]):
+    inline def generationConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigGenerationConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigGenerationConfigArgs.builder
       builder.generationConfig(args(argsBuilder).build)
@@ -2324,7 +2324,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def similaritySearchConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigSimilaritySearchConfigArgs.Builder]):
+    inline def similaritySearchConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigSimilaritySearchConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigSimilaritySearchConfigArgs.builder
       builder.similaritySearchConfig(args(argsBuilder).build)
@@ -2334,7 +2334,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def structuredMemoryConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigStructuredMemoryConfigArgs.Builder]*):
+    inline def structuredMemoryConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigStructuredMemoryConfigArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigStructuredMemoryConfigArgs.builder
       builder.structuredMemoryConfigs(args.map(_(argsBuilder).build)*)
@@ -2344,7 +2344,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ttlConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigTtlConfigArgs.Builder]):
+    inline def ttlConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigTtlConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigTtlConfigArgs.builder
       builder.ttlConfig(args(argsBuilder).build)
@@ -2355,7 +2355,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def consolidationConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigConsolidationConfigArgs.Builder]):
+    inline def consolidationConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigConsolidationConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigConsolidationConfigArgs.builder
       builder.consolidationConfig(args(argsBuilder).build)
@@ -2365,7 +2365,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def generateMemoriesExamples(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleArgs.Builder]*):
+    inline def generateMemoriesExamples(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleArgs.builder
       builder.generateMemoriesExamples(args.map(_(argsBuilder).build)*)
@@ -2375,7 +2375,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def memoryTopics(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigMemoryTopicArgs.Builder]*):
+    inline def memoryTopics(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigMemoryTopicArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigMemoryTopicArgs.builder
       builder.memoryTopics(args.map(_(argsBuilder).build)*)
@@ -2386,7 +2386,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conversationSource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceArgs.Builder]):
+    inline def conversationSource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceArgs.builder
       builder.conversationSource(args(argsBuilder).build)
@@ -2396,7 +2396,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def generatedMemories(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleGeneratedMemoryArgs.Builder]*):
+    inline def generatedMemories(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleGeneratedMemoryArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleGeneratedMemoryArgs.builder
       builder.generatedMemories(args.map(_(argsBuilder).build)*)
@@ -2407,7 +2407,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def events(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventArgs.Builder]*):
+    inline def events(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventArgs.builder
       builder.events(args.map(_(argsBuilder).build)*)
@@ -2418,7 +2418,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def content(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentArgs.Builder]):
+    inline def content(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentArgs.builder
       builder.content(args(argsBuilder).build)
@@ -2429,7 +2429,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parts(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartArgs.Builder]*):
+    inline def parts(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartArgs.builder
       builder.parts(args.map(_(argsBuilder).build)*)
@@ -2440,7 +2440,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def audioTranscription(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartAudioTranscriptionArgs.Builder]):
+    inline def audioTranscription(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartAudioTranscriptionArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartAudioTranscriptionArgs.builder
       builder.audioTranscription(args(argsBuilder).build)
@@ -2450,7 +2450,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def codeExecutionResult(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartCodeExecutionResultArgs.Builder]):
+    inline def codeExecutionResult(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartCodeExecutionResultArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartCodeExecutionResultArgs.builder
       builder.codeExecutionResult(args(argsBuilder).build)
@@ -2460,7 +2460,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def executableCode(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartExecutableCodeArgs.Builder]):
+    inline def executableCode(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartExecutableCodeArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartExecutableCodeArgs.builder
       builder.executableCode(args(argsBuilder).build)
@@ -2470,7 +2470,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fileData(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartFileDataArgs.Builder]):
+    inline def fileData(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartFileDataArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartFileDataArgs.builder
       builder.fileData(args(argsBuilder).build)
@@ -2480,7 +2480,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def functionCall(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartFunctionCallArgs.Builder]):
+    inline def functionCall(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartFunctionCallArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartFunctionCallArgs.builder
       builder.functionCall(args(argsBuilder).build)
@@ -2490,7 +2490,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def functionResponse(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartFunctionResponseArgs.Builder]):
+    inline def functionResponse(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartFunctionResponseArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartFunctionResponseArgs.builder
       builder.functionResponse(args(argsBuilder).build)
@@ -2500,7 +2500,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inlineData(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartInlineDataArgs.Builder]):
+    inline def inlineData(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartInlineDataArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartInlineDataArgs.builder
       builder.inlineData(args(argsBuilder).build)
@@ -2510,7 +2510,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def videoMetadata(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartVideoMetadataArgs.Builder]):
+    inline def videoMetadata(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartVideoMetadataArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartVideoMetadataArgs.builder
       builder.videoMetadata(args(argsBuilder).build)
@@ -2521,7 +2521,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def words(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartAudioTranscriptionWordArgs.Builder]*):
+    inline def words(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartAudioTranscriptionWordArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartAudioTranscriptionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleConversationSourceEventContentPartAudioTranscriptionWordArgs.builder
       builder.words(args.map(_(argsBuilder).build)*)
@@ -2532,7 +2532,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def topics(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleGeneratedMemoryTopicArgs.Builder]*):
+    inline def topics(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleGeneratedMemoryTopicArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleGeneratedMemoryArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigGenerateMemoriesExampleGeneratedMemoryTopicArgs.builder
       builder.topics(args.map(_(argsBuilder).build)*)
@@ -2543,7 +2543,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customMemoryTopic(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigMemoryTopicCustomMemoryTopicArgs.Builder]):
+    inline def customMemoryTopic(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigMemoryTopicCustomMemoryTopicArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigMemoryTopicArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigMemoryTopicCustomMemoryTopicArgs.builder
       builder.customMemoryTopic(args(argsBuilder).build)
@@ -2553,7 +2553,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def managedMemoryTopic(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigMemoryTopicManagedMemoryTopicArgs.Builder]):
+    inline def managedMemoryTopic(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigMemoryTopicManagedMemoryTopicArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigMemoryTopicArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigCustomizationConfigMemoryTopicManagedMemoryTopicArgs.builder
       builder.managedMemoryTopic(args(argsBuilder).build)
@@ -2564,7 +2564,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def generationTriggerConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigGenerationConfigGenerationTriggerConfigArgs.Builder]):
+    inline def generationTriggerConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigGenerationConfigGenerationTriggerConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigGenerationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigGenerationConfigGenerationTriggerConfigArgs.builder
       builder.generationTriggerConfig(args(argsBuilder).build)
@@ -2576,7 +2576,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def generationRule(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigGenerationConfigGenerationTriggerConfigGenerationRuleArgs.Builder]):
+    inline def generationRule(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigGenerationConfigGenerationTriggerConfigGenerationRuleArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigGenerationConfigGenerationTriggerConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigGenerationConfigGenerationTriggerConfigGenerationRuleArgs.builder
       builder.generationRule(args(argsBuilder).build)
@@ -2587,7 +2587,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def schemaConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigStructuredMemoryConfigSchemaConfigArgs.Builder]*):
+    inline def schemaConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigStructuredMemoryConfigSchemaConfigArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigStructuredMemoryConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigStructuredMemoryConfigSchemaConfigArgs.builder
       builder.schemaConfigs(args.map(_(argsBuilder).build)*)
@@ -2598,19 +2598,19 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def granularTtlConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigTtlConfigGranularTtlConfigArgs.Builder]):
+    inline def granularTtlConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigTtlConfigGranularTtlConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigTtlConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecMemoryBankConfigTtlConfigGranularTtlConfigArgs.builder
       builder.granularTtlConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.vertex.inputs.AiReasoningEngineIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -2620,7 +2620,7 @@ object vertex_ext:
      * @param buildSpec Optional. Configuration for building container image.
      * @return builder
      */
-    def buildSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecBuildSpecArgs.Builder]):
+    inline def buildSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecBuildSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecBuildSpecArgs.builder
       builder.buildSpec(args(argsBuilder).build)
@@ -2629,7 +2629,7 @@ object vertex_ext:
      * @param containerSpec Deploy from a container image with a defined entrypoint and commands.
      * @return builder
      */
-    def containerSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecContainerSpecArgs.Builder]):
+    inline def containerSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecContainerSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecContainerSpecArgs.builder
       builder.containerSpec(args(argsBuilder).build)
@@ -2638,7 +2638,7 @@ object vertex_ext:
      * @param deploymentSpec Optional. The specification of a Reasoning Engine deployment.
      * @return builder
      */
-    def deploymentSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecArgs.Builder]):
+    inline def deploymentSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecArgs.builder
       builder.deploymentSpec(args(argsBuilder).build)
@@ -2650,7 +2650,7 @@ object vertex_ext:
      * fieldBehavior to avoid introducing breaking changes.
      * @return builder
      */
-    def packageSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecPackageSpecArgs.Builder]):
+    inline def packageSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecPackageSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecPackageSpecArgs.builder
       builder.packageSpec(args(argsBuilder).build)
@@ -2659,7 +2659,7 @@ object vertex_ext:
      * @param sourceCodeSpec Specification for deploying from source code.
      * @return builder
      */
-    def sourceCodeSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecArgs.Builder]):
+    inline def sourceCodeSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecArgs.builder
       builder.sourceCodeSpec(args(argsBuilder).build)
@@ -2670,7 +2670,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def agentToAnywhereConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecAgentGatewayConfigAgentToAnywhereConfigArgs.Builder]):
+    inline def agentToAnywhereConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecAgentGatewayConfigAgentToAnywhereConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecAgentGatewayConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecAgentGatewayConfigAgentToAnywhereConfigArgs.builder
       builder.agentToAnywhereConfig(args(argsBuilder).build)
@@ -2680,7 +2680,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clientToAgentConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecAgentGatewayConfigClientToAgentConfigArgs.Builder]):
+    inline def clientToAgentConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecAgentGatewayConfigClientToAgentConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecAgentGatewayConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecAgentGatewayConfigClientToAgentConfigArgs.builder
       builder.clientToAgentConfig(args(argsBuilder).build)
@@ -2691,7 +2691,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def agentGatewayConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecAgentGatewayConfigArgs.Builder]):
+    inline def agentGatewayConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecAgentGatewayConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecAgentGatewayConfigArgs.builder
       builder.agentGatewayConfig(args(argsBuilder).build)
@@ -2702,7 +2702,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def envs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecEnvArgs.Builder]*):
+    inline def envs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecEnvArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecEnvArgs.builder
       builder.envs(args.map(_(argsBuilder).build)*)
@@ -2713,7 +2713,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def keepAliveProbe(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecKeepAliveProbeArgs.Builder]):
+    inline def keepAliveProbe(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecKeepAliveProbeArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecKeepAliveProbeArgs.builder
       builder.keepAliveProbe(args(argsBuilder).build)
@@ -2723,7 +2723,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscInterfaceConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecPscInterfaceConfigArgs.Builder]):
+    inline def pscInterfaceConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecPscInterfaceConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecPscInterfaceConfigArgs.builder
       builder.pscInterfaceConfig(args(argsBuilder).build)
@@ -2736,7 +2736,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secretEnvs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecSecretEnvArgs.Builder]*):
+    inline def secretEnvs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecSecretEnvArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecSecretEnvArgs.builder
       builder.secretEnvs(args.map(_(argsBuilder).build)*)
@@ -2747,7 +2747,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpGet(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecKeepAliveProbeHttpGetArgs.Builder]):
+    inline def httpGet(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecKeepAliveProbeHttpGetArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecKeepAliveProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecKeepAliveProbeHttpGetArgs.builder
       builder.httpGet(args(argsBuilder).build)
@@ -2763,7 +2763,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dnsPeeringConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecPscInterfaceConfigDnsPeeringConfigArgs.Builder]*):
+    inline def dnsPeeringConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecPscInterfaceConfigDnsPeeringConfigArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecPscInterfaceConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecPscInterfaceConfigDnsPeeringConfigArgs.builder
       builder.dnsPeeringConfigs(args.map(_(argsBuilder).build)*)
@@ -2775,7 +2775,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secretRef(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecSecretEnvSecretRefArgs.Builder]):
+    inline def secretRef(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecSecretEnvSecretRefArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecSecretEnvArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecDeploymentSpecSecretEnvSecretRefArgs.builder
       builder.secretRef(args(argsBuilder).build)
@@ -2786,7 +2786,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def adkConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecAgentConfigSourceAdkConfigArgs.Builder]):
+    inline def adkConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecAgentConfigSourceAdkConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecAgentConfigSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecAgentConfigSourceAdkConfigArgs.builder
       builder.adkConfig(args(argsBuilder).build)
@@ -2796,7 +2796,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inlineSource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecAgentConfigSourceInlineSourceArgs.Builder]):
+    inline def inlineSource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecAgentConfigSourceInlineSourceArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecAgentConfigSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecAgentConfigSourceInlineSourceArgs.builder
       builder.inlineSource(args(argsBuilder).build)
@@ -2807,7 +2807,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def agentConfigSource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecAgentConfigSourceArgs.Builder]):
+    inline def agentConfigSource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecAgentConfigSourceArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecAgentConfigSourceArgs.builder
       builder.agentConfigSource(args(argsBuilder).build)
@@ -2817,7 +2817,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def developerConnectSource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecDeveloperConnectSourceArgs.Builder]):
+    inline def developerConnectSource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecDeveloperConnectSourceArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecDeveloperConnectSourceArgs.builder
       builder.developerConnectSource(args(argsBuilder).build)
@@ -2827,7 +2827,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def imageSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecImageSpecArgs.Builder]):
+    inline def imageSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecImageSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecImageSpecArgs.builder
       builder.imageSpec(args(argsBuilder).build)
@@ -2837,7 +2837,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inlineSource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecInlineSourceArgs.Builder]):
+    inline def inlineSource(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecInlineSourceArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecInlineSourceArgs.builder
       builder.inlineSource(args(argsBuilder).build)
@@ -2847,7 +2847,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pythonSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecPythonSpecArgs.Builder]):
+    inline def pythonSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecPythonSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecPythonSpecArgs.builder
       builder.pythonSpec(args(argsBuilder).build)
@@ -2858,7 +2858,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecDeveloperConnectSourceConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecDeveloperConnectSourceConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecDeveloperConnectSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecSourceCodeSpecDeveloperConnectSourceConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -2869,7 +2869,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def contextSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecArgs.Builder]):
+    inline def contextSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineContextSpecArgs.builder
       builder.contextSpec(args(argsBuilder).build)
@@ -2881,7 +2881,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -2891,7 +2891,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def spec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecArgs.Builder]):
+    inline def spec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineSpecArgs.builder
       builder.spec(args(argsBuilder).build)
@@ -2903,7 +2903,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trafficConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigArgs.Builder]):
+    inline def trafficConfig(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigArgs.builder
       builder.trafficConfig(args(argsBuilder).build)
@@ -2914,7 +2914,7 @@ object vertex_ext:
      * latest Runtime Revision.
      * @return builder
      */
-    def trafficSplitAlwaysLatest(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigTrafficSplitAlwaysLatestArgs.Builder]):
+    inline def trafficSplitAlwaysLatest(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigTrafficSplitAlwaysLatestArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigTrafficSplitAlwaysLatestArgs.builder
       builder.trafficSplitAlwaysLatest(args(argsBuilder).build)
@@ -2925,7 +2925,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trafficSplitManual(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigTrafficSplitManualArgs.Builder]):
+    inline def trafficSplitManual(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigTrafficSplitManualArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigTrafficSplitManualArgs.builder
       builder.trafficSplitManual(args(argsBuilder).build)
@@ -2937,7 +2937,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def targets(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigTrafficSplitManualTargetArgs.Builder]*):
+    inline def targets(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigTrafficSplitManualTargetArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigTrafficSplitManualArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiReasoningEngineTrafficConfigTrafficSplitManualTargetArgs.builder
       builder.targets(args.map(_(argsBuilder).build)*)
@@ -2951,7 +2951,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gatewayConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyEngineGatewayConfigArgs.Builder]*):
+    inline def gatewayConfigs(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyEngineGatewayConfigArgs.Builder]*):
         com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyEngineState.Builder =
       def argsBuilder = com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyEngineGatewayConfigArgs.builder
       builder.gatewayConfigs(args.map(_(argsBuilder).build)*)
@@ -2962,7 +2962,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def agentResponseCustomization(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyAgentResponseCustomizationArgs.Builder]):
+    inline def agentResponseCustomization(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyAgentResponseCustomizationArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyAgentResponseCustomizationArgs.builder
       builder.agentResponseCustomization(args(argsBuilder).build)
@@ -2972,7 +2972,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mcpTools(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyMcpToolsArgs.Builder]):
+    inline def mcpTools(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyMcpToolsArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiSemanticGovernancePolicyMcpToolsArgs.builder
       builder.mcpTools(args(argsBuilder).build)
@@ -2983,7 +2983,7 @@ object vertex_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiTensorboardEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vertex.inputs.AiTensorboardEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vertex.inputs.AiTensorboardState.Builder =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.AiTensorboardEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)

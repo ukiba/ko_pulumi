@@ -40,7 +40,7 @@ object cloudtrail:
    * 
    * &gt; **Tip:** For an organization event data store you must create this resource in the management account.
    */
-  def EventDataStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EventDataStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudtrail.EventDataStoreArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudtrail.EventDataStoreArgs.builder
     conf.logicalName2physicalName(name) match
@@ -58,7 +58,7 @@ object cloudtrail:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage an AWS CloudTrail Delegated Administrator. */
-  def OrganizationDelegatedAdminAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationDelegatedAdminAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudtrail.OrganizationDelegatedAdminAccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.cloudtrail.OrganizationDelegatedAdminAccountArgs.builder
     com.pulumi.aws.cloudtrail.OrganizationDelegatedAdminAccount(name,
@@ -72,7 +72,7 @@ object cloudtrail:
    * 
    * &gt; **Tip:** For an organization trail, this resource must be in the master account of the organization.
    */
-  def Trail(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Trail(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudtrail.TrailArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudtrail.TrailArgs.builder
     conf.logicalName2physicalName(name) match

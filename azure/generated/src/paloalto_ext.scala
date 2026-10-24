@@ -7,7 +7,7 @@ object paloalto_ext:
      * @param category A `category` block as defined below.
      * @return builder
      */
-    def category(args: Endofunction[com.pulumi.azure.paloalto.inputs.LocalRulestackRuleCategoryArgs.Builder]):
+    inline def category(args: Endofunction[com.pulumi.azure.paloalto.inputs.LocalRulestackRuleCategoryArgs.Builder]):
         com.pulumi.azure.paloalto.LocalRulestackRuleArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.LocalRulestackRuleCategoryArgs.builder
       builder.category(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object paloalto_ext:
      * @param destination One or more `destination` blocks as defined below.
      * @return builder
      */
-    def destination(args: Endofunction[com.pulumi.azure.paloalto.inputs.LocalRulestackRuleDestinationArgs.Builder]):
+    inline def destination(args: Endofunction[com.pulumi.azure.paloalto.inputs.LocalRulestackRuleDestinationArgs.Builder]):
         com.pulumi.azure.paloalto.LocalRulestackRuleArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.LocalRulestackRuleDestinationArgs.builder
       builder.destination(args(argsBuilder).build)
@@ -25,7 +25,7 @@ object paloalto_ext:
      * @param source One or more `source` blocks as defined below.
      * @return builder
      */
-    def source(args: Endofunction[com.pulumi.azure.paloalto.inputs.LocalRulestackRuleSourceArgs.Builder]):
+    inline def source(args: Endofunction[com.pulumi.azure.paloalto.inputs.LocalRulestackRuleSourceArgs.Builder]):
         com.pulumi.azure.paloalto.LocalRulestackRuleArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.LocalRulestackRuleSourceArgs.builder
       builder.source(args(argsBuilder).build)
@@ -35,7 +35,7 @@ object paloalto_ext:
      * @param destinationNats One or more `destinationNat` blocks as defined below.
      * @return builder
      */
-    def destinationNats(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackDestinationNatArgs.Builder]*):
+    inline def destinationNats(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackDestinationNatArgs.Builder]*):
         com.pulumi.azure.paloalto.NextGenerationFirewallVirtualHubLocalRulestackArgs.Builder =
       def argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackDestinationNatArgs.builder
       builder.destinationNats(args.map(_(argsBuilder).build)*)
@@ -44,7 +44,7 @@ object paloalto_ext:
      * @param dnsSettings A `dnsSettings` block as defined below.
      * @return builder
      */
-    def dnsSettings(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackDnsSettingsArgs.Builder]):
+    inline def dnsSettings(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackDnsSettingsArgs.Builder]):
         com.pulumi.azure.paloalto.NextGenerationFirewallVirtualHubLocalRulestackArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackDnsSettingsArgs.builder
       builder.dnsSettings(args(argsBuilder).build)
@@ -53,7 +53,7 @@ object paloalto_ext:
      * @param networkProfile A `networkProfile` block as defined below.
      * @return builder
      */
-    def networkProfile(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackNetworkProfileArgs.Builder]):
+    inline def networkProfile(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackNetworkProfileArgs.Builder]):
         com.pulumi.azure.paloalto.NextGenerationFirewallVirtualHubLocalRulestackArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackNetworkProfileArgs.builder
       builder.networkProfile(args(argsBuilder).build)
@@ -63,7 +63,7 @@ object paloalto_ext:
      * @param destinationNats One or more `destinationNat` blocks as defined below.
      * @return builder
      */
-    def destinationNats(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaDestinationNatArgs.Builder]*):
+    inline def destinationNats(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaDestinationNatArgs.Builder]*):
         com.pulumi.azure.paloalto.NextGenerationFirewallVirtualHubPanoramaArgs.Builder =
       def argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaDestinationNatArgs.builder
       builder.destinationNats(args.map(_(argsBuilder).build)*)
@@ -72,7 +72,7 @@ object paloalto_ext:
      * @param dnsSettings A `dnsSettings` block as defined below.
      * @return builder
      */
-    def dnsSettings(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaDnsSettingsArgs.Builder]):
+    inline def dnsSettings(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaDnsSettingsArgs.Builder]):
         com.pulumi.azure.paloalto.NextGenerationFirewallVirtualHubPanoramaArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaDnsSettingsArgs.builder
       builder.dnsSettings(args(argsBuilder).build)
@@ -81,7 +81,7 @@ object paloalto_ext:
      * @param networkProfile A `networkProfile` block as defined below.
      * @return builder
      */
-    def networkProfile(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaNetworkProfileArgs.Builder]):
+    inline def networkProfile(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaNetworkProfileArgs.Builder]):
         com.pulumi.azure.paloalto.NextGenerationFirewallVirtualHubPanoramaArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaNetworkProfileArgs.builder
       builder.networkProfile(args(argsBuilder).build)
@@ -91,7 +91,7 @@ object paloalto_ext:
      * @param destinationNats One or more `destinationNat` blocks as defined below.
      * @return builder
      */
-    def destinationNats(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerDestinationNatArgs.Builder]*):
+    inline def destinationNats(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerDestinationNatArgs.Builder]*):
         com.pulumi.azure.paloalto.NextGenerationFirewallVirtualHubStrataCloudManagerArgs.Builder =
       def argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerDestinationNatArgs.builder
       builder.destinationNats(args.map(_(argsBuilder).build)*)
@@ -100,7 +100,7 @@ object paloalto_ext:
      * @param dnsSettings A `dnsSettings` block as defined below.
      * @return builder
      */
-    def dnsSettings(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerDnsSettingsArgs.Builder]):
+    inline def dnsSettings(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerDnsSettingsArgs.Builder]):
         com.pulumi.azure.paloalto.NextGenerationFirewallVirtualHubStrataCloudManagerArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerDnsSettingsArgs.builder
       builder.dnsSettings(args(argsBuilder).build)
@@ -109,7 +109,7 @@ object paloalto_ext:
      * @param identity A `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerIdentityArgs.Builder]):
         com.pulumi.azure.paloalto.NextGenerationFirewallVirtualHubStrataCloudManagerArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -118,7 +118,7 @@ object paloalto_ext:
      * @param networkProfile A `networkProfile` block as defined below.
      * @return builder
      */
-    def networkProfile(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerNetworkProfileArgs.Builder]):
+    inline def networkProfile(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerNetworkProfileArgs.Builder]):
         com.pulumi.azure.paloalto.NextGenerationFirewallVirtualHubStrataCloudManagerArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerNetworkProfileArgs.builder
       builder.networkProfile(args(argsBuilder).build)
@@ -128,7 +128,7 @@ object paloalto_ext:
      * @param destinationNats One or more `destinationNat` blocks as defined below.
      * @return builder
      */
-    def destinationNats(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackDestinationNatArgs.Builder]*):
+    inline def destinationNats(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackDestinationNatArgs.Builder]*):
         com.pulumi.azure.paloalto.NextGenerationFirewallVirtualNetworkLocalRulestackArgs.Builder =
       def argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackDestinationNatArgs.builder
       builder.destinationNats(args.map(_(argsBuilder).build)*)
@@ -137,7 +137,7 @@ object paloalto_ext:
      * @param dnsSettings A `dnsSettings` block as defined below.
      * @return builder
      */
-    def dnsSettings(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackDnsSettingsArgs.Builder]):
+    inline def dnsSettings(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackDnsSettingsArgs.Builder]):
         com.pulumi.azure.paloalto.NextGenerationFirewallVirtualNetworkLocalRulestackArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackDnsSettingsArgs.builder
       builder.dnsSettings(args(argsBuilder).build)
@@ -146,7 +146,7 @@ object paloalto_ext:
      * @param networkProfile A `networkProfile` block as defined below.
      * @return builder
      */
-    def networkProfile(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackNetworkProfileArgs.Builder]):
+    inline def networkProfile(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackNetworkProfileArgs.Builder]):
         com.pulumi.azure.paloalto.NextGenerationFirewallVirtualNetworkLocalRulestackArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackNetworkProfileArgs.builder
       builder.networkProfile(args(argsBuilder).build)
@@ -156,7 +156,7 @@ object paloalto_ext:
      * @param destinationNats One or more `destinationNat` blocks as defined below.
      * @return builder
      */
-    def destinationNats(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaDestinationNatArgs.Builder]*):
+    inline def destinationNats(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaDestinationNatArgs.Builder]*):
         com.pulumi.azure.paloalto.NextGenerationFirewallVirtualNetworkPanoramaArgs.Builder =
       def argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaDestinationNatArgs.builder
       builder.destinationNats(args.map(_(argsBuilder).build)*)
@@ -165,7 +165,7 @@ object paloalto_ext:
      * @param dnsSettings A `dnsSettings` block as defined below.
      * @return builder
      */
-    def dnsSettings(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaDnsSettingsArgs.Builder]):
+    inline def dnsSettings(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaDnsSettingsArgs.Builder]):
         com.pulumi.azure.paloalto.NextGenerationFirewallVirtualNetworkPanoramaArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaDnsSettingsArgs.builder
       builder.dnsSettings(args(argsBuilder).build)
@@ -174,7 +174,7 @@ object paloalto_ext:
      * @param networkProfile A `networkProfile` block as defined below.
      * @return builder
      */
-    def networkProfile(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaNetworkProfileArgs.Builder]):
+    inline def networkProfile(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaNetworkProfileArgs.Builder]):
         com.pulumi.azure.paloalto.NextGenerationFirewallVirtualNetworkPanoramaArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaNetworkProfileArgs.builder
       builder.networkProfile(args(argsBuilder).build)
@@ -184,7 +184,7 @@ object paloalto_ext:
      * @param destinationNats One or more `destinationNat` blocks as defined below.
      * @return builder
      */
-    def destinationNats(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerDestinationNatArgs.Builder]*):
+    inline def destinationNats(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerDestinationNatArgs.Builder]*):
         com.pulumi.azure.paloalto.NextGenerationFirewallVirtualNetworkStrataCloudManagerArgs.Builder =
       def argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerDestinationNatArgs.builder
       builder.destinationNats(args.map(_(argsBuilder).build)*)
@@ -193,7 +193,7 @@ object paloalto_ext:
      * @param dnsSettings A `dnsSettings` block as defined below.
      * @return builder
      */
-    def dnsSettings(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerDnsSettingsArgs.Builder]):
+    inline def dnsSettings(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerDnsSettingsArgs.Builder]):
         com.pulumi.azure.paloalto.NextGenerationFirewallVirtualNetworkStrataCloudManagerArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerDnsSettingsArgs.builder
       builder.dnsSettings(args(argsBuilder).build)
@@ -202,7 +202,7 @@ object paloalto_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerIdentityArgs.Builder]):
         com.pulumi.azure.paloalto.NextGenerationFirewallVirtualNetworkStrataCloudManagerArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -211,7 +211,7 @@ object paloalto_ext:
      * @param networkProfile A `networkProfile` block as defined below.
      * @return builder
      */
-    def networkProfile(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerNetworkProfileArgs.Builder]):
+    inline def networkProfile(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerNetworkProfileArgs.Builder]):
         com.pulumi.azure.paloalto.NextGenerationFirewallVirtualNetworkStrataCloudManagerArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerNetworkProfileArgs.builder
       builder.networkProfile(args(argsBuilder).build)
@@ -221,7 +221,7 @@ object paloalto_ext:
      * @param category A `category` block as defined below.
      * @return builder
      */
-    def category(args: Endofunction[com.pulumi.azure.paloalto.inputs.LocalRulestackRuleCategoryArgs.Builder]):
+    inline def category(args: Endofunction[com.pulumi.azure.paloalto.inputs.LocalRulestackRuleCategoryArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.LocalRulestackRuleState.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.LocalRulestackRuleCategoryArgs.builder
       builder.category(args(argsBuilder).build)
@@ -230,7 +230,7 @@ object paloalto_ext:
      * @param destination One or more `destination` blocks as defined below.
      * @return builder
      */
-    def destination(args: Endofunction[com.pulumi.azure.paloalto.inputs.LocalRulestackRuleDestinationArgs.Builder]):
+    inline def destination(args: Endofunction[com.pulumi.azure.paloalto.inputs.LocalRulestackRuleDestinationArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.LocalRulestackRuleState.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.LocalRulestackRuleDestinationArgs.builder
       builder.destination(args(argsBuilder).build)
@@ -239,7 +239,7 @@ object paloalto_ext:
      * @param source One or more `source` blocks as defined below.
      * @return builder
      */
-    def source(args: Endofunction[com.pulumi.azure.paloalto.inputs.LocalRulestackRuleSourceArgs.Builder]):
+    inline def source(args: Endofunction[com.pulumi.azure.paloalto.inputs.LocalRulestackRuleSourceArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.LocalRulestackRuleState.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.LocalRulestackRuleSourceArgs.builder
       builder.source(args(argsBuilder).build)
@@ -249,7 +249,7 @@ object paloalto_ext:
      * @param backendConfig A `backendConfig` block as defined above.
      * @return builder
      */
-    def backendConfig(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackDestinationNatBackendConfigArgs.Builder]):
+    inline def backendConfig(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackDestinationNatBackendConfigArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackDestinationNatArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackDestinationNatBackendConfigArgs.builder
       builder.backendConfig(args(argsBuilder).build)
@@ -258,7 +258,7 @@ object paloalto_ext:
      * @param frontendConfig A `frontendConfig` block as defined below.
      * @return builder
      */
-    def frontendConfig(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackDestinationNatFrontendConfigArgs.Builder]):
+    inline def frontendConfig(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackDestinationNatFrontendConfigArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackDestinationNatArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackDestinationNatFrontendConfigArgs.builder
       builder.frontendConfig(args(argsBuilder).build)
@@ -268,7 +268,7 @@ object paloalto_ext:
      * @param destinationNats One or more `destinationNat` blocks as defined below.
      * @return builder
      */
-    def destinationNats(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackDestinationNatArgs.Builder]*):
+    inline def destinationNats(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackDestinationNatArgs.Builder]*):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackState.Builder =
       def argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackDestinationNatArgs.builder
       builder.destinationNats(args.map(_(argsBuilder).build)*)
@@ -277,7 +277,7 @@ object paloalto_ext:
      * @param dnsSettings A `dnsSettings` block as defined below.
      * @return builder
      */
-    def dnsSettings(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackDnsSettingsArgs.Builder]):
+    inline def dnsSettings(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackDnsSettingsArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackState.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackDnsSettingsArgs.builder
       builder.dnsSettings(args(argsBuilder).build)
@@ -286,7 +286,7 @@ object paloalto_ext:
      * @param networkProfile A `networkProfile` block as defined below.
      * @return builder
      */
-    def networkProfile(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackNetworkProfileArgs.Builder]):
+    inline def networkProfile(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackNetworkProfileArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackState.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubLocalRulestackNetworkProfileArgs.builder
       builder.networkProfile(args(argsBuilder).build)
@@ -296,7 +296,7 @@ object paloalto_ext:
      * @param backendConfig A `backendConfig` block as defined above.
      * @return builder
      */
-    def backendConfig(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaDestinationNatBackendConfigArgs.Builder]):
+    inline def backendConfig(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaDestinationNatBackendConfigArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaDestinationNatArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaDestinationNatBackendConfigArgs.builder
       builder.backendConfig(args(argsBuilder).build)
@@ -305,7 +305,7 @@ object paloalto_ext:
      * @param frontendConfig A `frontendConfig` block as defined below.
      * @return builder
      */
-    def frontendConfig(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaDestinationNatFrontendConfigArgs.Builder]):
+    inline def frontendConfig(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaDestinationNatFrontendConfigArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaDestinationNatArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaDestinationNatFrontendConfigArgs.builder
       builder.frontendConfig(args(argsBuilder).build)
@@ -315,7 +315,7 @@ object paloalto_ext:
      * @param destinationNats One or more `destinationNat` blocks as defined below.
      * @return builder
      */
-    def destinationNats(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaDestinationNatArgs.Builder]*):
+    inline def destinationNats(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaDestinationNatArgs.Builder]*):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaState.Builder =
       def argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaDestinationNatArgs.builder
       builder.destinationNats(args.map(_(argsBuilder).build)*)
@@ -324,7 +324,7 @@ object paloalto_ext:
      * @param dnsSettings A `dnsSettings` block as defined below.
      * @return builder
      */
-    def dnsSettings(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaDnsSettingsArgs.Builder]):
+    inline def dnsSettings(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaDnsSettingsArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaState.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaDnsSettingsArgs.builder
       builder.dnsSettings(args(argsBuilder).build)
@@ -333,12 +333,12 @@ object paloalto_ext:
      * @param networkProfile A `networkProfile` block as defined below.
      * @return builder
      */
-    def networkProfile(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaNetworkProfileArgs.Builder]):
+    inline def networkProfile(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaNetworkProfileArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaState.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaNetworkProfileArgs.builder
       builder.networkProfile(args(argsBuilder).build)
 
-    def panoramas(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaPanoramaArgs.Builder]*):
+    inline def panoramas(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaPanoramaArgs.Builder]*):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaState.Builder =
       def argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubPanoramaPanoramaArgs.builder
       builder.panoramas(args.map(_(argsBuilder).build)*)
@@ -348,7 +348,7 @@ object paloalto_ext:
      * @param backendConfig One or more `backendConfig` block as defined below.
      * @return builder
      */
-    def backendConfig(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerDestinationNatBackendConfigArgs.Builder]):
+    inline def backendConfig(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerDestinationNatBackendConfigArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerDestinationNatArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerDestinationNatBackendConfigArgs.builder
       builder.backendConfig(args(argsBuilder).build)
@@ -357,7 +357,7 @@ object paloalto_ext:
      * @param frontendConfig One or more `frontendConfig` block as defined below.
      * @return builder
      */
-    def frontendConfig(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerDestinationNatFrontendConfigArgs.Builder]):
+    inline def frontendConfig(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerDestinationNatFrontendConfigArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerDestinationNatArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerDestinationNatFrontendConfigArgs.builder
       builder.frontendConfig(args(argsBuilder).build)
@@ -367,7 +367,7 @@ object paloalto_ext:
      * @param destinationNats One or more `destinationNat` blocks as defined below.
      * @return builder
      */
-    def destinationNats(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerDestinationNatArgs.Builder]*):
+    inline def destinationNats(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerDestinationNatArgs.Builder]*):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerState.Builder =
       def argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerDestinationNatArgs.builder
       builder.destinationNats(args.map(_(argsBuilder).build)*)
@@ -376,7 +376,7 @@ object paloalto_ext:
      * @param dnsSettings A `dnsSettings` block as defined below.
      * @return builder
      */
-    def dnsSettings(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerDnsSettingsArgs.Builder]):
+    inline def dnsSettings(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerDnsSettingsArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerState.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerDnsSettingsArgs.builder
       builder.dnsSettings(args(argsBuilder).build)
@@ -385,7 +385,7 @@ object paloalto_ext:
      * @param identity A `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerIdentityArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerState.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -394,7 +394,7 @@ object paloalto_ext:
      * @param networkProfile A `networkProfile` block as defined below.
      * @return builder
      */
-    def networkProfile(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerNetworkProfileArgs.Builder]):
+    inline def networkProfile(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerNetworkProfileArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerState.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualHubStrataCloudManagerNetworkProfileArgs.builder
       builder.networkProfile(args(argsBuilder).build)
@@ -404,7 +404,7 @@ object paloalto_ext:
      * @param backendConfig A `backendConfig` block as defined above.
      * @return builder
      */
-    def backendConfig(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackDestinationNatBackendConfigArgs.Builder]):
+    inline def backendConfig(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackDestinationNatBackendConfigArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackDestinationNatArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackDestinationNatBackendConfigArgs.builder
       builder.backendConfig(args(argsBuilder).build)
@@ -413,7 +413,7 @@ object paloalto_ext:
      * @param frontendConfig A `frontendConfig` block as defined below.
      * @return builder
      */
-    def frontendConfig(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackDestinationNatFrontendConfigArgs.Builder]):
+    inline def frontendConfig(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackDestinationNatFrontendConfigArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackDestinationNatArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackDestinationNatFrontendConfigArgs.builder
       builder.frontendConfig(args(argsBuilder).build)
@@ -423,7 +423,7 @@ object paloalto_ext:
      * @param vnetConfiguration A `vnetConfiguration` block as defined below.
      * @return builder
      */
-    def vnetConfiguration(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackNetworkProfileVnetConfigurationArgs.Builder]):
+    inline def vnetConfiguration(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackNetworkProfileVnetConfigurationArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackNetworkProfileArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackNetworkProfileVnetConfigurationArgs.builder
       builder.vnetConfiguration(args(argsBuilder).build)
@@ -433,7 +433,7 @@ object paloalto_ext:
      * @param destinationNats One or more `destinationNat` blocks as defined below.
      * @return builder
      */
-    def destinationNats(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackDestinationNatArgs.Builder]*):
+    inline def destinationNats(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackDestinationNatArgs.Builder]*):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackState.Builder =
       def argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackDestinationNatArgs.builder
       builder.destinationNats(args.map(_(argsBuilder).build)*)
@@ -442,7 +442,7 @@ object paloalto_ext:
      * @param dnsSettings A `dnsSettings` block as defined below.
      * @return builder
      */
-    def dnsSettings(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackDnsSettingsArgs.Builder]):
+    inline def dnsSettings(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackDnsSettingsArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackState.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackDnsSettingsArgs.builder
       builder.dnsSettings(args(argsBuilder).build)
@@ -451,7 +451,7 @@ object paloalto_ext:
      * @param networkProfile A `networkProfile` block as defined below.
      * @return builder
      */
-    def networkProfile(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackNetworkProfileArgs.Builder]):
+    inline def networkProfile(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackNetworkProfileArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackState.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkLocalRulestackNetworkProfileArgs.builder
       builder.networkProfile(args(argsBuilder).build)
@@ -461,7 +461,7 @@ object paloalto_ext:
      * @param backendConfig A `backendConfig` block as defined above.
      * @return builder
      */
-    def backendConfig(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaDestinationNatBackendConfigArgs.Builder]):
+    inline def backendConfig(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaDestinationNatBackendConfigArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaDestinationNatArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaDestinationNatBackendConfigArgs.builder
       builder.backendConfig(args(argsBuilder).build)
@@ -470,7 +470,7 @@ object paloalto_ext:
      * @param frontendConfig A `frontendConfig` block as defined below.
      * @return builder
      */
-    def frontendConfig(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaDestinationNatFrontendConfigArgs.Builder]):
+    inline def frontendConfig(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaDestinationNatFrontendConfigArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaDestinationNatArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaDestinationNatFrontendConfigArgs.builder
       builder.frontendConfig(args(argsBuilder).build)
@@ -480,7 +480,7 @@ object paloalto_ext:
      * @param vnetConfiguration A `vnetConfiguration` block as defined below.
      * @return builder
      */
-    def vnetConfiguration(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaNetworkProfileVnetConfigurationArgs.Builder]):
+    inline def vnetConfiguration(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaNetworkProfileVnetConfigurationArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaNetworkProfileArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaNetworkProfileVnetConfigurationArgs.builder
       builder.vnetConfiguration(args(argsBuilder).build)
@@ -490,7 +490,7 @@ object paloalto_ext:
      * @param destinationNats One or more `destinationNat` blocks as defined below.
      * @return builder
      */
-    def destinationNats(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaDestinationNatArgs.Builder]*):
+    inline def destinationNats(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaDestinationNatArgs.Builder]*):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaState.Builder =
       def argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaDestinationNatArgs.builder
       builder.destinationNats(args.map(_(argsBuilder).build)*)
@@ -499,7 +499,7 @@ object paloalto_ext:
      * @param dnsSettings A `dnsSettings` block as defined below.
      * @return builder
      */
-    def dnsSettings(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaDnsSettingsArgs.Builder]):
+    inline def dnsSettings(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaDnsSettingsArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaState.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaDnsSettingsArgs.builder
       builder.dnsSettings(args(argsBuilder).build)
@@ -508,7 +508,7 @@ object paloalto_ext:
      * @param networkProfile A `networkProfile` block as defined below.
      * @return builder
      */
-    def networkProfile(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaNetworkProfileArgs.Builder]):
+    inline def networkProfile(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaNetworkProfileArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaState.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaNetworkProfileArgs.builder
       builder.networkProfile(args(argsBuilder).build)
@@ -517,7 +517,7 @@ object paloalto_ext:
      * @param panoramas A `panorama` block as defined below.
      * @return builder
      */
-    def panoramas(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaPanoramaArgs.Builder]*):
+    inline def panoramas(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaPanoramaArgs.Builder]*):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaState.Builder =
       def argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkPanoramaPanoramaArgs.builder
       builder.panoramas(args.map(_(argsBuilder).build)*)
@@ -527,7 +527,7 @@ object paloalto_ext:
      * @param backendConfig One or more `backendConfig` block as defined below.
      * @return builder
      */
-    def backendConfig(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerDestinationNatBackendConfigArgs.Builder]):
+    inline def backendConfig(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerDestinationNatBackendConfigArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerDestinationNatArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerDestinationNatBackendConfigArgs.builder
       builder.backendConfig(args(argsBuilder).build)
@@ -536,7 +536,7 @@ object paloalto_ext:
      * @param frontendConfig One or more `frontendConfig` block as defined below.
      * @return builder
      */
-    def frontendConfig(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerDestinationNatFrontendConfigArgs.Builder]):
+    inline def frontendConfig(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerDestinationNatFrontendConfigArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerDestinationNatArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerDestinationNatFrontendConfigArgs.builder
       builder.frontendConfig(args(argsBuilder).build)
@@ -546,7 +546,7 @@ object paloalto_ext:
      * @param vnetConfiguration A `vnetConfiguration` block as defined below.
      * @return builder
      */
-    def vnetConfiguration(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerNetworkProfileVnetConfigurationArgs.Builder]):
+    inline def vnetConfiguration(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerNetworkProfileVnetConfigurationArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerNetworkProfileArgs.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerNetworkProfileVnetConfigurationArgs.builder
       builder.vnetConfiguration(args(argsBuilder).build)
@@ -556,7 +556,7 @@ object paloalto_ext:
      * @param destinationNats One or more `destinationNat` blocks as defined below.
      * @return builder
      */
-    def destinationNats(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerDestinationNatArgs.Builder]*):
+    inline def destinationNats(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerDestinationNatArgs.Builder]*):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerState.Builder =
       def argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerDestinationNatArgs.builder
       builder.destinationNats(args.map(_(argsBuilder).build)*)
@@ -565,7 +565,7 @@ object paloalto_ext:
      * @param dnsSettings A `dnsSettings` block as defined below.
      * @return builder
      */
-    def dnsSettings(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerDnsSettingsArgs.Builder]):
+    inline def dnsSettings(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerDnsSettingsArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerState.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerDnsSettingsArgs.builder
       builder.dnsSettings(args(argsBuilder).build)
@@ -574,7 +574,7 @@ object paloalto_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerIdentityArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerState.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -583,7 +583,7 @@ object paloalto_ext:
      * @param networkProfile A `networkProfile` block as defined below.
      * @return builder
      */
-    def networkProfile(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerNetworkProfileArgs.Builder]):
+    inline def networkProfile(args: Endofunction[com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerNetworkProfileArgs.Builder]):
         com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerState.Builder =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.NextGenerationFirewallVirtualNetworkStrataCloudManagerNetworkProfileArgs.builder
       builder.networkProfile(args(argsBuilder).build)

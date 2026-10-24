@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object datazone:
   /** Resource for managing an AWS DataZone Asset Type. */
-  def AssetType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AssetType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.datazone.AssetTypeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datazone.AssetTypeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -51,7 +51,7 @@ object datazone:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Resource for managing an AWS DataZone Domain. */
-  def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.datazone.DomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datazone.DomainArgs.builder
     conf.logicalName2physicalName(name) match
@@ -69,7 +69,7 @@ object datazone:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS DataZone Environment. */
-  def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.datazone.EnvironmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datazone.EnvironmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -80,7 +80,7 @@ object datazone:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS DataZone Environment Blueprint Configuration. */
-  def EnvironmentBlueprintConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EnvironmentBlueprintConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.datazone.EnvironmentBlueprintConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.datazone.EnvironmentBlueprintConfigurationArgs.builder
     com.pulumi.aws.datazone.EnvironmentBlueprintConfiguration(name,
@@ -88,7 +88,7 @@ object datazone:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS DataZone Environment Profile. */
-  def EnvironmentProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EnvironmentProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.datazone.EnvironmentProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datazone.EnvironmentProfileArgs.builder
     conf.logicalName2physicalName(name) match
@@ -99,7 +99,7 @@ object datazone:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS DataZone Form Type. */
-  def FormType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FormType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.datazone.FormTypeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datazone.FormTypeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -110,7 +110,7 @@ object datazone:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS DataZone Glossary. */
-  def Glossary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Glossary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.datazone.GlossaryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datazone.GlossaryArgs.builder
     conf.logicalName2physicalName(name) match
@@ -121,7 +121,7 @@ object datazone:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS DataZone Glossary Term. */
-  def GlossaryTerm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GlossaryTerm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.datazone.GlossaryTermArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datazone.GlossaryTermArgs.builder
     conf.logicalName2physicalName(name) match
@@ -132,7 +132,7 @@ object datazone:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS DataZone Policy Grant. */
-  def PolicyGrant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PolicyGrant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.datazone.PolicyGrantArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.datazone.PolicyGrantArgs.builder
     com.pulumi.aws.datazone.PolicyGrant(name,
@@ -140,7 +140,7 @@ object datazone:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS DataZone Project. */
-  def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.datazone.ProjectArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datazone.ProjectArgs.builder
     conf.logicalName2physicalName(name) match
@@ -151,7 +151,7 @@ object datazone:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS DataZone User Profile. */
-  def UserProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UserProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.datazone.UserProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.datazone.UserProfileArgs.builder
     com.pulumi.aws.datazone.UserProfile(name,

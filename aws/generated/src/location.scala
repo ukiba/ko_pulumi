@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object location:
   /** Resource for managing an AWS Location Geofence Collection. */
-  def GeofenceCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GeofenceCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.location.GeofenceCollectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.location.GeofenceCollectionArgs.builder
     argsBuilder = args(argsBuilder)
@@ -135,7 +135,7 @@ object location:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides a Location Service Map. */
-  def Map(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Map(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.location.MapArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.location.MapArgs.builder
     argsBuilder = args(argsBuilder)
@@ -150,7 +150,7 @@ object location:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Location Service Place Index. */
-  def PlaceIndex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PlaceIndex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.location.PlaceIndexArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.location.PlaceIndexArgs.builder
     argsBuilder = args(argsBuilder)
@@ -165,7 +165,7 @@ object location:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Location Service Route Calculator. */
-  def RouteCalculation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RouteCalculation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.location.RouteCalculationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.location.RouteCalculationArgs.builder
     argsBuilder = args(argsBuilder)
@@ -180,7 +180,7 @@ object location:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Location Service Tracker. */
-  def Tracker(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Tracker(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.location.TrackerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.location.TrackerArgs.builder
     argsBuilder = args(argsBuilder)
@@ -195,7 +195,7 @@ object location:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Location Tracker Association. */
-  def TrackerAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TrackerAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.location.TrackerAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.location.TrackerAssociationArgs.builder
     com.pulumi.aws.location.TrackerAssociation(name,

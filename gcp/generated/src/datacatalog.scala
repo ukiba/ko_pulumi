@@ -129,7 +129,7 @@ object datacatalog:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/data-catalog/docs)
    */
-  def Entry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Entry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.datacatalog.EntryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datacatalog.EntryArgs.builder
     com.pulumi.gcp.datacatalog.Entry(name,
@@ -147,7 +147,7 @@ object datacatalog:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/data-catalog/docs)
    */
-  def EntryGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EntryGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.datacatalog.EntryGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datacatalog.EntryGroupArgs.builder
     com.pulumi.gcp.datacatalog.EntryGroup(name,
@@ -451,7 +451,7 @@ object datacatalog:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def EntryGroupIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EntryGroupIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.datacatalog.EntryGroupIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datacatalog.EntryGroupIamBindingArgs.builder
     com.pulumi.gcp.datacatalog.EntryGroupIamBinding(name,
@@ -755,7 +755,7 @@ object datacatalog:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def EntryGroupIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EntryGroupIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.datacatalog.EntryGroupIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datacatalog.EntryGroupIamMemberArgs.builder
     com.pulumi.gcp.datacatalog.EntryGroupIamMember(name,
@@ -1059,7 +1059,7 @@ object datacatalog:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def EntryGroupIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EntryGroupIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.datacatalog.EntryGroupIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datacatalog.EntryGroupIamPolicyArgs.builder
     com.pulumi.gcp.datacatalog.EntryGroupIamPolicy(name,
@@ -1075,7 +1075,7 @@ object datacatalog:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/data-catalog/docs)
    */
-  def PolicyTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PolicyTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.datacatalog.PolicyTagArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datacatalog.PolicyTagArgs.builder
     com.pulumi.gcp.datacatalog.PolicyTag(name,
@@ -1374,7 +1374,7 @@ object datacatalog:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def PolicyTagIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PolicyTagIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.datacatalog.PolicyTagIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datacatalog.PolicyTagIamBindingArgs.builder
     com.pulumi.gcp.datacatalog.PolicyTagIamBinding(name,
@@ -1673,7 +1673,7 @@ object datacatalog:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def PolicyTagIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PolicyTagIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.datacatalog.PolicyTagIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datacatalog.PolicyTagIamMemberArgs.builder
     com.pulumi.gcp.datacatalog.PolicyTagIamMember(name,
@@ -1972,7 +1972,7 @@ object datacatalog:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def PolicyTagIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PolicyTagIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.datacatalog.PolicyTagIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datacatalog.PolicyTagIamPolicyArgs.builder
     com.pulumi.gcp.datacatalog.PolicyTagIamPolicy(name,
@@ -1992,7 +1992,7 @@ object datacatalog:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/data-catalog/docs)
    */
-  def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.datacatalog.TagArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datacatalog.TagArgs.builder
     com.pulumi.gcp.datacatalog.Tag(name,
@@ -2011,7 +2011,7 @@ object datacatalog:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/data-catalog/docs)
    */
-  def TagTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TagTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.datacatalog.TagTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datacatalog.TagTemplateArgs.builder
     com.pulumi.gcp.datacatalog.TagTemplate(name,
@@ -2315,7 +2315,7 @@ object datacatalog:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TagTemplateIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TagTemplateIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.datacatalog.TagTemplateIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datacatalog.TagTemplateIamBindingArgs.builder
     com.pulumi.gcp.datacatalog.TagTemplateIamBinding(name,
@@ -2619,7 +2619,7 @@ object datacatalog:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TagTemplateIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TagTemplateIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.datacatalog.TagTemplateIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datacatalog.TagTemplateIamMemberArgs.builder
     com.pulumi.gcp.datacatalog.TagTemplateIamMember(name,
@@ -2923,7 +2923,7 @@ object datacatalog:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TagTemplateIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TagTemplateIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.datacatalog.TagTemplateIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datacatalog.TagTemplateIamPolicyArgs.builder
     com.pulumi.gcp.datacatalog.TagTemplateIamPolicy(name,
@@ -2939,7 +2939,7 @@ object datacatalog:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/data-catalog/docs)
    */
-  def Taxonomy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Taxonomy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.datacatalog.TaxonomyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datacatalog.TaxonomyArgs.builder
     com.pulumi.gcp.datacatalog.Taxonomy(name,
@@ -3240,7 +3240,7 @@ object datacatalog:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TaxonomyIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TaxonomyIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.datacatalog.TaxonomyIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datacatalog.TaxonomyIamBindingArgs.builder
     com.pulumi.gcp.datacatalog.TaxonomyIamBinding(name,
@@ -3541,7 +3541,7 @@ object datacatalog:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TaxonomyIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TaxonomyIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.datacatalog.TaxonomyIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datacatalog.TaxonomyIamMemberArgs.builder
     com.pulumi.gcp.datacatalog.TaxonomyIamMember(name,
@@ -3842,7 +3842,7 @@ object datacatalog:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TaxonomyIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TaxonomyIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.datacatalog.TaxonomyIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datacatalog.TaxonomyIamPolicyArgs.builder
     com.pulumi.gcp.datacatalog.TaxonomyIamPolicy(name,

@@ -9,7 +9,7 @@ object dataflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scheduleInfo(args: Endofunction[com.pulumi.gcp.dataflow.inputs.PipelineScheduleInfoArgs.Builder]):
+    inline def scheduleInfo(args: Endofunction[com.pulumi.gcp.dataflow.inputs.PipelineScheduleInfoArgs.Builder]):
         com.pulumi.gcp.dataflow.PipelineArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataflow.inputs.PipelineScheduleInfoArgs.builder
       builder.scheduleInfo(args(argsBuilder).build)
@@ -20,7 +20,7 @@ object dataflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def workload(args: Endofunction[com.pulumi.gcp.dataflow.inputs.PipelineWorkloadArgs.Builder]):
+    inline def workload(args: Endofunction[com.pulumi.gcp.dataflow.inputs.PipelineWorkloadArgs.Builder]):
         com.pulumi.gcp.dataflow.PipelineArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataflow.inputs.PipelineWorkloadArgs.builder
       builder.workload(args(argsBuilder).build)
@@ -32,7 +32,7 @@ object dataflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scheduleInfo(args: Endofunction[com.pulumi.gcp.dataflow.inputs.PipelineScheduleInfoArgs.Builder]):
+    inline def scheduleInfo(args: Endofunction[com.pulumi.gcp.dataflow.inputs.PipelineScheduleInfoArgs.Builder]):
         com.pulumi.gcp.dataflow.inputs.PipelineState.Builder =
       val argsBuilder = com.pulumi.gcp.dataflow.inputs.PipelineScheduleInfoArgs.builder
       builder.scheduleInfo(args(argsBuilder).build)
@@ -43,7 +43,7 @@ object dataflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def workload(args: Endofunction[com.pulumi.gcp.dataflow.inputs.PipelineWorkloadArgs.Builder]):
+    inline def workload(args: Endofunction[com.pulumi.gcp.dataflow.inputs.PipelineWorkloadArgs.Builder]):
         com.pulumi.gcp.dataflow.inputs.PipelineState.Builder =
       val argsBuilder = com.pulumi.gcp.dataflow.inputs.PipelineWorkloadArgs.builder
       builder.workload(args(argsBuilder).build)
@@ -55,7 +55,7 @@ object dataflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataflowFlexTemplateRequest(args: Endofunction[com.pulumi.gcp.dataflow.inputs.PipelineWorkloadDataflowFlexTemplateRequestArgs.Builder]):
+    inline def dataflowFlexTemplateRequest(args: Endofunction[com.pulumi.gcp.dataflow.inputs.PipelineWorkloadDataflowFlexTemplateRequestArgs.Builder]):
         com.pulumi.gcp.dataflow.inputs.PipelineWorkloadArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataflow.inputs.PipelineWorkloadDataflowFlexTemplateRequestArgs.builder
       builder.dataflowFlexTemplateRequest(args(argsBuilder).build)
@@ -66,7 +66,7 @@ object dataflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataflowLaunchTemplateRequest(args: Endofunction[com.pulumi.gcp.dataflow.inputs.PipelineWorkloadDataflowLaunchTemplateRequestArgs.Builder]):
+    inline def dataflowLaunchTemplateRequest(args: Endofunction[com.pulumi.gcp.dataflow.inputs.PipelineWorkloadDataflowLaunchTemplateRequestArgs.Builder]):
         com.pulumi.gcp.dataflow.inputs.PipelineWorkloadArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataflow.inputs.PipelineWorkloadDataflowLaunchTemplateRequestArgs.builder
       builder.dataflowLaunchTemplateRequest(args(argsBuilder).build)
@@ -78,7 +78,7 @@ object dataflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def launchParameter(args: Endofunction[com.pulumi.gcp.dataflow.inputs.PipelineWorkloadDataflowFlexTemplateRequestLaunchParameterArgs.Builder]):
+    inline def launchParameter(args: Endofunction[com.pulumi.gcp.dataflow.inputs.PipelineWorkloadDataflowFlexTemplateRequestLaunchParameterArgs.Builder]):
         com.pulumi.gcp.dataflow.inputs.PipelineWorkloadDataflowFlexTemplateRequestArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataflow.inputs.PipelineWorkloadDataflowFlexTemplateRequestLaunchParameterArgs.builder
       builder.launchParameter(args(argsBuilder).build)
@@ -90,7 +90,7 @@ object dataflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def environment(args: Endofunction[com.pulumi.gcp.dataflow.inputs.PipelineWorkloadDataflowFlexTemplateRequestLaunchParameterEnvironmentArgs.Builder]):
+    inline def environment(args: Endofunction[com.pulumi.gcp.dataflow.inputs.PipelineWorkloadDataflowFlexTemplateRequestLaunchParameterEnvironmentArgs.Builder]):
         com.pulumi.gcp.dataflow.inputs.PipelineWorkloadDataflowFlexTemplateRequestLaunchParameterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataflow.inputs.PipelineWorkloadDataflowFlexTemplateRequestLaunchParameterEnvironmentArgs.builder
       builder.environment(args(argsBuilder).build)
@@ -102,7 +102,7 @@ object dataflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def launchParameters(args: Endofunction[com.pulumi.gcp.dataflow.inputs.PipelineWorkloadDataflowLaunchTemplateRequestLaunchParametersArgs.Builder]):
+    inline def launchParameters(args: Endofunction[com.pulumi.gcp.dataflow.inputs.PipelineWorkloadDataflowLaunchTemplateRequestLaunchParametersArgs.Builder]):
         com.pulumi.gcp.dataflow.inputs.PipelineWorkloadDataflowLaunchTemplateRequestArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataflow.inputs.PipelineWorkloadDataflowLaunchTemplateRequestLaunchParametersArgs.builder
       builder.launchParameters(args(argsBuilder).build)
@@ -114,7 +114,7 @@ object dataflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def environment(args: Endofunction[com.pulumi.gcp.dataflow.inputs.PipelineWorkloadDataflowLaunchTemplateRequestLaunchParametersEnvironmentArgs.Builder]):
+    inline def environment(args: Endofunction[com.pulumi.gcp.dataflow.inputs.PipelineWorkloadDataflowLaunchTemplateRequestLaunchParametersEnvironmentArgs.Builder]):
         com.pulumi.gcp.dataflow.inputs.PipelineWorkloadDataflowLaunchTemplateRequestLaunchParametersArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataflow.inputs.PipelineWorkloadDataflowLaunchTemplateRequestLaunchParametersEnvironmentArgs.builder
       builder.environment(args(argsBuilder).build)

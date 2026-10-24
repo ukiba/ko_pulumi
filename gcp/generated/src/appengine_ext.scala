@@ -7,7 +7,7 @@ object appengine_ext:
      * @param featureSettings A block of optional settings to configure specific App Engine features:
      * @return builder
      */
-    def featureSettings(args: Endofunction[com.pulumi.gcp.appengine.inputs.ApplicationFeatureSettingsArgs.Builder]):
+    inline def featureSettings(args: Endofunction[com.pulumi.gcp.appengine.inputs.ApplicationFeatureSettingsArgs.Builder]):
         com.pulumi.gcp.appengine.ApplicationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.ApplicationFeatureSettingsArgs.builder
       builder.featureSettings(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object appengine_ext:
      * @param iap Settings for enabling Cloud Identity Aware Proxy
      * @return builder
      */
-    def iap(args: Endofunction[com.pulumi.gcp.appengine.inputs.ApplicationIapArgs.Builder]):
+    inline def iap(args: Endofunction[com.pulumi.gcp.appengine.inputs.ApplicationIapArgs.Builder]):
         com.pulumi.gcp.appengine.ApplicationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.ApplicationIapArgs.builder
       builder.iap(args(argsBuilder).build)
@@ -27,7 +27,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dispatchRules(args: Endofunction[com.pulumi.gcp.appengine.inputs.ApplicationUrlDispatchRulesDispatchRuleArgs.Builder]*):
+    inline def dispatchRules(args: Endofunction[com.pulumi.gcp.appengine.inputs.ApplicationUrlDispatchRulesDispatchRuleArgs.Builder]*):
         com.pulumi.gcp.appengine.ApplicationUrlDispatchRulesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.appengine.inputs.ApplicationUrlDispatchRulesDispatchRuleArgs.builder
       builder.dispatchRules(args.map(_(argsBuilder).build)*)
@@ -38,7 +38,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sslSettings(args: Endofunction[com.pulumi.gcp.appengine.inputs.DomainMappingSslSettingsArgs.Builder]):
+    inline def sslSettings(args: Endofunction[com.pulumi.gcp.appengine.inputs.DomainMappingSslSettingsArgs.Builder]):
         com.pulumi.gcp.appengine.DomainMappingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.DomainMappingSslSettingsArgs.builder
       builder.sslSettings(args(argsBuilder).build)
@@ -49,7 +49,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def split(args: Endofunction[com.pulumi.gcp.appengine.inputs.EngineSplitTrafficSplitArgs.Builder]):
+    inline def split(args: Endofunction[com.pulumi.gcp.appengine.inputs.EngineSplitTrafficSplitArgs.Builder]):
         com.pulumi.gcp.appengine.EngineSplitTrafficArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.EngineSplitTrafficSplitArgs.builder
       builder.split(args(argsBuilder).build)
@@ -60,7 +60,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiConfig(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionApiConfigArgs.Builder]):
+    inline def apiConfig(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionApiConfigArgs.Builder]):
         com.pulumi.gcp.appengine.FlexibleAppVersionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionApiConfigArgs.builder
       builder.apiConfig(args(argsBuilder).build)
@@ -70,7 +70,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def automaticScaling(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionAutomaticScalingArgs.Builder]):
+    inline def automaticScaling(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionAutomaticScalingArgs.Builder]):
         com.pulumi.gcp.appengine.FlexibleAppVersionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionAutomaticScalingArgs.builder
       builder.automaticScaling(args(argsBuilder).build)
@@ -80,7 +80,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deployment(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionDeploymentArgs.Builder]):
+    inline def deployment(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionDeploymentArgs.Builder]):
         com.pulumi.gcp.appengine.FlexibleAppVersionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionDeploymentArgs.builder
       builder.deployment(args(argsBuilder).build)
@@ -90,7 +90,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endpointsApiService(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionEndpointsApiServiceArgs.Builder]):
+    inline def endpointsApiService(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionEndpointsApiServiceArgs.Builder]):
         com.pulumi.gcp.appengine.FlexibleAppVersionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionEndpointsApiServiceArgs.builder
       builder.endpointsApiService(args(argsBuilder).build)
@@ -100,7 +100,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entrypoint(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionEntrypointArgs.Builder]):
+    inline def entrypoint(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionEntrypointArgs.Builder]):
         com.pulumi.gcp.appengine.FlexibleAppVersionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionEntrypointArgs.builder
       builder.entrypoint(args(argsBuilder).build)
@@ -110,7 +110,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def flexibleRuntimeSettings(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionFlexibleRuntimeSettingsArgs.Builder]):
+    inline def flexibleRuntimeSettings(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionFlexibleRuntimeSettingsArgs.Builder]):
         com.pulumi.gcp.appengine.FlexibleAppVersionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionFlexibleRuntimeSettingsArgs.builder
       builder.flexibleRuntimeSettings(args(argsBuilder).build)
@@ -121,7 +121,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def handlers(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionHandlerArgs.Builder]*):
+    inline def handlers(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionHandlerArgs.Builder]*):
         com.pulumi.gcp.appengine.FlexibleAppVersionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionHandlerArgs.builder
       builder.handlers(args.map(_(argsBuilder).build)*)
@@ -131,7 +131,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def livenessCheck(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionLivenessCheckArgs.Builder]):
+    inline def livenessCheck(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionLivenessCheckArgs.Builder]):
         com.pulumi.gcp.appengine.FlexibleAppVersionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionLivenessCheckArgs.builder
       builder.livenessCheck(args(argsBuilder).build)
@@ -141,7 +141,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def manualScaling(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionManualScalingArgs.Builder]):
+    inline def manualScaling(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionManualScalingArgs.Builder]):
         com.pulumi.gcp.appengine.FlexibleAppVersionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionManualScalingArgs.builder
       builder.manualScaling(args(argsBuilder).build)
@@ -151,7 +151,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def network(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionNetworkArgs.Builder]):
+    inline def network(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionNetworkArgs.Builder]):
         com.pulumi.gcp.appengine.FlexibleAppVersionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionNetworkArgs.builder
       builder.network(args(argsBuilder).build)
@@ -161,7 +161,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def readinessCheck(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionReadinessCheckArgs.Builder]):
+    inline def readinessCheck(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionReadinessCheckArgs.Builder]):
         com.pulumi.gcp.appengine.FlexibleAppVersionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionReadinessCheckArgs.builder
       builder.readinessCheck(args(argsBuilder).build)
@@ -171,7 +171,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resources(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionResourcesArgs.Builder]):
+    inline def resources(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionResourcesArgs.Builder]):
         com.pulumi.gcp.appengine.FlexibleAppVersionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionResourcesArgs.builder
       builder.resources(args(argsBuilder).build)
@@ -181,7 +181,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcAccessConnector(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionVpcAccessConnectorArgs.Builder]):
+    inline def vpcAccessConnector(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionVpcAccessConnectorArgs.Builder]):
         com.pulumi.gcp.appengine.FlexibleAppVersionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionVpcAccessConnectorArgs.builder
       builder.vpcAccessConnector(args(argsBuilder).build)
@@ -192,7 +192,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkSettings(args: Endofunction[com.pulumi.gcp.appengine.inputs.ServiceNetworkSettingsNetworkSettingsArgs.Builder]):
+    inline def networkSettings(args: Endofunction[com.pulumi.gcp.appengine.inputs.ServiceNetworkSettingsNetworkSettingsArgs.Builder]):
         com.pulumi.gcp.appengine.ServiceNetworkSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.ServiceNetworkSettingsNetworkSettingsArgs.builder
       builder.networkSettings(args(argsBuilder).build)
@@ -203,7 +203,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def automaticScaling(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionAutomaticScalingArgs.Builder]):
+    inline def automaticScaling(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionAutomaticScalingArgs.Builder]):
         com.pulumi.gcp.appengine.StandardAppVersionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionAutomaticScalingArgs.builder
       builder.automaticScaling(args(argsBuilder).build)
@@ -213,7 +213,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def basicScaling(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionBasicScalingArgs.Builder]):
+    inline def basicScaling(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionBasicScalingArgs.Builder]):
         com.pulumi.gcp.appengine.StandardAppVersionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionBasicScalingArgs.builder
       builder.basicScaling(args(argsBuilder).build)
@@ -223,7 +223,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deployment(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionDeploymentArgs.Builder]):
+    inline def deployment(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionDeploymentArgs.Builder]):
         com.pulumi.gcp.appengine.StandardAppVersionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionDeploymentArgs.builder
       builder.deployment(args(argsBuilder).build)
@@ -233,7 +233,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entrypoint(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionEntrypointArgs.Builder]):
+    inline def entrypoint(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionEntrypointArgs.Builder]):
         com.pulumi.gcp.appengine.StandardAppVersionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionEntrypointArgs.builder
       builder.entrypoint(args(argsBuilder).build)
@@ -244,7 +244,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def handlers(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionHandlerArgs.Builder]*):
+    inline def handlers(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionHandlerArgs.Builder]*):
         com.pulumi.gcp.appengine.StandardAppVersionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionHandlerArgs.builder
       builder.handlers(args.map(_(argsBuilder).build)*)
@@ -254,7 +254,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def libraries(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionLibraryArgs.Builder]*):
+    inline def libraries(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionLibraryArgs.Builder]*):
         com.pulumi.gcp.appengine.StandardAppVersionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionLibraryArgs.builder
       builder.libraries(args.map(_(argsBuilder).build)*)
@@ -264,7 +264,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def manualScaling(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionManualScalingArgs.Builder]):
+    inline def manualScaling(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionManualScalingArgs.Builder]):
         com.pulumi.gcp.appengine.StandardAppVersionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionManualScalingArgs.builder
       builder.manualScaling(args(argsBuilder).build)
@@ -275,7 +275,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcAccess(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionVpcAccessArgs.Builder]):
+    inline def vpcAccess(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionVpcAccessArgs.Builder]):
         com.pulumi.gcp.appengine.StandardAppVersionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionVpcAccessArgs.builder
       builder.vpcAccess(args(argsBuilder).build)
@@ -285,7 +285,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcAccessConnector(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionVpcAccessConnectorArgs.Builder]):
+    inline def vpcAccessConnector(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionVpcAccessConnectorArgs.Builder]):
         com.pulumi.gcp.appengine.StandardAppVersionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionVpcAccessConnectorArgs.builder
       builder.vpcAccessConnector(args(argsBuilder).build)
@@ -295,7 +295,7 @@ object appengine_ext:
      * @param featureSettings A block of optional settings to configure specific App Engine features:
      * @return builder
      */
-    def featureSettings(args: Endofunction[com.pulumi.gcp.appengine.inputs.ApplicationFeatureSettingsArgs.Builder]):
+    inline def featureSettings(args: Endofunction[com.pulumi.gcp.appengine.inputs.ApplicationFeatureSettingsArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.ApplicationState.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.ApplicationFeatureSettingsArgs.builder
       builder.featureSettings(args(argsBuilder).build)
@@ -304,7 +304,7 @@ object appengine_ext:
      * @param iap Settings for enabling Cloud Identity Aware Proxy
      * @return builder
      */
-    def iap(args: Endofunction[com.pulumi.gcp.appengine.inputs.ApplicationIapArgs.Builder]):
+    inline def iap(args: Endofunction[com.pulumi.gcp.appengine.inputs.ApplicationIapArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.ApplicationState.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.ApplicationIapArgs.builder
       builder.iap(args(argsBuilder).build)
@@ -313,7 +313,7 @@ object appengine_ext:
      * @param urlDispatchRules A list of dispatch rule blocks. Each block has a `domain`, `path`, and `service` field.
      * @return builder
      */
-    def urlDispatchRules(args: Endofunction[com.pulumi.gcp.appengine.inputs.ApplicationUrlDispatchRuleArgs.Builder]*):
+    inline def urlDispatchRules(args: Endofunction[com.pulumi.gcp.appengine.inputs.ApplicationUrlDispatchRuleArgs.Builder]*):
         com.pulumi.gcp.appengine.inputs.ApplicationState.Builder =
       def argsBuilder = com.pulumi.gcp.appengine.inputs.ApplicationUrlDispatchRuleArgs.builder
       builder.urlDispatchRules(args.map(_(argsBuilder).build)*)
@@ -324,7 +324,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dispatchRules(args: Endofunction[com.pulumi.gcp.appengine.inputs.ApplicationUrlDispatchRulesDispatchRuleArgs.Builder]*):
+    inline def dispatchRules(args: Endofunction[com.pulumi.gcp.appengine.inputs.ApplicationUrlDispatchRulesDispatchRuleArgs.Builder]*):
         com.pulumi.gcp.appengine.inputs.ApplicationUrlDispatchRulesState.Builder =
       def argsBuilder = com.pulumi.gcp.appengine.inputs.ApplicationUrlDispatchRulesDispatchRuleArgs.builder
       builder.dispatchRules(args.map(_(argsBuilder).build)*)
@@ -336,7 +336,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resourceRecords(args: Endofunction[com.pulumi.gcp.appengine.inputs.DomainMappingResourceRecordArgs.Builder]*):
+    inline def resourceRecords(args: Endofunction[com.pulumi.gcp.appengine.inputs.DomainMappingResourceRecordArgs.Builder]*):
         com.pulumi.gcp.appengine.inputs.DomainMappingState.Builder =
       def argsBuilder = com.pulumi.gcp.appengine.inputs.DomainMappingResourceRecordArgs.builder
       builder.resourceRecords(args.map(_(argsBuilder).build)*)
@@ -346,7 +346,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sslSettings(args: Endofunction[com.pulumi.gcp.appengine.inputs.DomainMappingSslSettingsArgs.Builder]):
+    inline def sslSettings(args: Endofunction[com.pulumi.gcp.appengine.inputs.DomainMappingSslSettingsArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.DomainMappingState.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.DomainMappingSslSettingsArgs.builder
       builder.sslSettings(args(argsBuilder).build)
@@ -357,7 +357,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def split(args: Endofunction[com.pulumi.gcp.appengine.inputs.EngineSplitTrafficSplitArgs.Builder]):
+    inline def split(args: Endofunction[com.pulumi.gcp.appengine.inputs.EngineSplitTrafficSplitArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.EngineSplitTrafficState.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.EngineSplitTrafficSplitArgs.builder
       builder.split(args(argsBuilder).build)
@@ -368,7 +368,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cpuUtilization(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionAutomaticScalingCpuUtilizationArgs.Builder]):
+    inline def cpuUtilization(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionAutomaticScalingCpuUtilizationArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.FlexibleAppVersionAutomaticScalingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionAutomaticScalingCpuUtilizationArgs.builder
       builder.cpuUtilization(args(argsBuilder).build)
@@ -378,7 +378,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def diskUtilization(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionAutomaticScalingDiskUtilizationArgs.Builder]):
+    inline def diskUtilization(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionAutomaticScalingDiskUtilizationArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.FlexibleAppVersionAutomaticScalingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionAutomaticScalingDiskUtilizationArgs.builder
       builder.diskUtilization(args(argsBuilder).build)
@@ -388,7 +388,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkUtilization(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionAutomaticScalingNetworkUtilizationArgs.Builder]):
+    inline def networkUtilization(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionAutomaticScalingNetworkUtilizationArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.FlexibleAppVersionAutomaticScalingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionAutomaticScalingNetworkUtilizationArgs.builder
       builder.networkUtilization(args(argsBuilder).build)
@@ -398,7 +398,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def requestUtilization(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionAutomaticScalingRequestUtilizationArgs.Builder]):
+    inline def requestUtilization(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionAutomaticScalingRequestUtilizationArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.FlexibleAppVersionAutomaticScalingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionAutomaticScalingRequestUtilizationArgs.builder
       builder.requestUtilization(args(argsBuilder).build)
@@ -409,7 +409,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudBuildOptions(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionDeploymentCloudBuildOptionsArgs.Builder]):
+    inline def cloudBuildOptions(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionDeploymentCloudBuildOptionsArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.FlexibleAppVersionDeploymentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionDeploymentCloudBuildOptionsArgs.builder
       builder.cloudBuildOptions(args(argsBuilder).build)
@@ -419,7 +419,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def container(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionDeploymentContainerArgs.Builder]):
+    inline def container(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionDeploymentContainerArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.FlexibleAppVersionDeploymentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionDeploymentContainerArgs.builder
       builder.container(args(argsBuilder).build)
@@ -430,7 +430,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def files(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionDeploymentFileArgs.Builder]*):
+    inline def files(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionDeploymentFileArgs.Builder]*):
         com.pulumi.gcp.appengine.inputs.FlexibleAppVersionDeploymentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionDeploymentFileArgs.builder
       builder.files(args.map(_(argsBuilder).build)*)
@@ -440,7 +440,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def zip(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionDeploymentZipArgs.Builder]):
+    inline def zip(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionDeploymentZipArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.FlexibleAppVersionDeploymentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionDeploymentZipArgs.builder
       builder.zip(args(argsBuilder).build)
@@ -452,7 +452,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def script(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionHandlerScriptArgs.Builder]):
+    inline def script(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionHandlerScriptArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.FlexibleAppVersionHandlerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionHandlerScriptArgs.builder
       builder.script(args(argsBuilder).build)
@@ -463,7 +463,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def staticFiles(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionHandlerStaticFilesArgs.Builder]):
+    inline def staticFiles(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionHandlerStaticFilesArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.FlexibleAppVersionHandlerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionHandlerStaticFilesArgs.builder
       builder.staticFiles(args(argsBuilder).build)
@@ -474,7 +474,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def volumes(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionResourcesVolumeArgs.Builder]*):
+    inline def volumes(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionResourcesVolumeArgs.Builder]*):
         com.pulumi.gcp.appengine.inputs.FlexibleAppVersionResourcesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionResourcesVolumeArgs.builder
       builder.volumes(args.map(_(argsBuilder).build)*)
@@ -485,7 +485,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiConfig(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionApiConfigArgs.Builder]):
+    inline def apiConfig(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionApiConfigArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.FlexibleAppVersionState.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionApiConfigArgs.builder
       builder.apiConfig(args(argsBuilder).build)
@@ -495,7 +495,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def automaticScaling(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionAutomaticScalingArgs.Builder]):
+    inline def automaticScaling(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionAutomaticScalingArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.FlexibleAppVersionState.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionAutomaticScalingArgs.builder
       builder.automaticScaling(args(argsBuilder).build)
@@ -505,7 +505,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deployment(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionDeploymentArgs.Builder]):
+    inline def deployment(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionDeploymentArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.FlexibleAppVersionState.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionDeploymentArgs.builder
       builder.deployment(args(argsBuilder).build)
@@ -515,7 +515,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endpointsApiService(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionEndpointsApiServiceArgs.Builder]):
+    inline def endpointsApiService(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionEndpointsApiServiceArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.FlexibleAppVersionState.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionEndpointsApiServiceArgs.builder
       builder.endpointsApiService(args(argsBuilder).build)
@@ -525,7 +525,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entrypoint(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionEntrypointArgs.Builder]):
+    inline def entrypoint(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionEntrypointArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.FlexibleAppVersionState.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionEntrypointArgs.builder
       builder.entrypoint(args(argsBuilder).build)
@@ -535,7 +535,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def flexibleRuntimeSettings(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionFlexibleRuntimeSettingsArgs.Builder]):
+    inline def flexibleRuntimeSettings(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionFlexibleRuntimeSettingsArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.FlexibleAppVersionState.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionFlexibleRuntimeSettingsArgs.builder
       builder.flexibleRuntimeSettings(args(argsBuilder).build)
@@ -546,7 +546,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def handlers(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionHandlerArgs.Builder]*):
+    inline def handlers(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionHandlerArgs.Builder]*):
         com.pulumi.gcp.appengine.inputs.FlexibleAppVersionState.Builder =
       def argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionHandlerArgs.builder
       builder.handlers(args.map(_(argsBuilder).build)*)
@@ -556,7 +556,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def livenessCheck(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionLivenessCheckArgs.Builder]):
+    inline def livenessCheck(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionLivenessCheckArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.FlexibleAppVersionState.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionLivenessCheckArgs.builder
       builder.livenessCheck(args(argsBuilder).build)
@@ -566,7 +566,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def manualScaling(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionManualScalingArgs.Builder]):
+    inline def manualScaling(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionManualScalingArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.FlexibleAppVersionState.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionManualScalingArgs.builder
       builder.manualScaling(args(argsBuilder).build)
@@ -576,7 +576,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def network(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionNetworkArgs.Builder]):
+    inline def network(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionNetworkArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.FlexibleAppVersionState.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionNetworkArgs.builder
       builder.network(args(argsBuilder).build)
@@ -586,7 +586,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def readinessCheck(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionReadinessCheckArgs.Builder]):
+    inline def readinessCheck(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionReadinessCheckArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.FlexibleAppVersionState.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionReadinessCheckArgs.builder
       builder.readinessCheck(args(argsBuilder).build)
@@ -596,7 +596,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resources(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionResourcesArgs.Builder]):
+    inline def resources(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionResourcesArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.FlexibleAppVersionState.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionResourcesArgs.builder
       builder.resources(args(argsBuilder).build)
@@ -606,7 +606,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcAccessConnector(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionVpcAccessConnectorArgs.Builder]):
+    inline def vpcAccessConnector(args: Endofunction[com.pulumi.gcp.appengine.inputs.FlexibleAppVersionVpcAccessConnectorArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.FlexibleAppVersionState.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.FlexibleAppVersionVpcAccessConnectorArgs.builder
       builder.vpcAccessConnector(args(argsBuilder).build)
@@ -617,7 +617,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkSettings(args: Endofunction[com.pulumi.gcp.appengine.inputs.ServiceNetworkSettingsNetworkSettingsArgs.Builder]):
+    inline def networkSettings(args: Endofunction[com.pulumi.gcp.appengine.inputs.ServiceNetworkSettingsNetworkSettingsArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.ServiceNetworkSettingsState.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.ServiceNetworkSettingsNetworkSettingsArgs.builder
       builder.networkSettings(args(argsBuilder).build)
@@ -628,7 +628,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def standardSchedulerSettings(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionAutomaticScalingStandardSchedulerSettingsArgs.Builder]):
+    inline def standardSchedulerSettings(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionAutomaticScalingStandardSchedulerSettingsArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.StandardAppVersionAutomaticScalingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionAutomaticScalingStandardSchedulerSettingsArgs.builder
       builder.standardSchedulerSettings(args(argsBuilder).build)
@@ -640,7 +640,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def files(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionDeploymentFileArgs.Builder]*):
+    inline def files(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionDeploymentFileArgs.Builder]*):
         com.pulumi.gcp.appengine.inputs.StandardAppVersionDeploymentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionDeploymentFileArgs.builder
       builder.files(args.map(_(argsBuilder).build)*)
@@ -650,7 +650,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def zip(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionDeploymentZipArgs.Builder]):
+    inline def zip(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionDeploymentZipArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.StandardAppVersionDeploymentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionDeploymentZipArgs.builder
       builder.zip(args(argsBuilder).build)
@@ -662,7 +662,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def script(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionHandlerScriptArgs.Builder]):
+    inline def script(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionHandlerScriptArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.StandardAppVersionHandlerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionHandlerScriptArgs.builder
       builder.script(args(argsBuilder).build)
@@ -672,7 +672,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def staticFiles(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionHandlerStaticFilesArgs.Builder]):
+    inline def staticFiles(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionHandlerStaticFilesArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.StandardAppVersionHandlerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionHandlerStaticFilesArgs.builder
       builder.staticFiles(args(argsBuilder).build)
@@ -683,7 +683,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def automaticScaling(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionAutomaticScalingArgs.Builder]):
+    inline def automaticScaling(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionAutomaticScalingArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.StandardAppVersionState.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionAutomaticScalingArgs.builder
       builder.automaticScaling(args(argsBuilder).build)
@@ -693,7 +693,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def basicScaling(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionBasicScalingArgs.Builder]):
+    inline def basicScaling(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionBasicScalingArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.StandardAppVersionState.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionBasicScalingArgs.builder
       builder.basicScaling(args(argsBuilder).build)
@@ -703,7 +703,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deployment(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionDeploymentArgs.Builder]):
+    inline def deployment(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionDeploymentArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.StandardAppVersionState.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionDeploymentArgs.builder
       builder.deployment(args(argsBuilder).build)
@@ -713,7 +713,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entrypoint(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionEntrypointArgs.Builder]):
+    inline def entrypoint(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionEntrypointArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.StandardAppVersionState.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionEntrypointArgs.builder
       builder.entrypoint(args(argsBuilder).build)
@@ -724,7 +724,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def handlers(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionHandlerArgs.Builder]*):
+    inline def handlers(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionHandlerArgs.Builder]*):
         com.pulumi.gcp.appengine.inputs.StandardAppVersionState.Builder =
       def argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionHandlerArgs.builder
       builder.handlers(args.map(_(argsBuilder).build)*)
@@ -734,7 +734,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def libraries(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionLibraryArgs.Builder]*):
+    inline def libraries(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionLibraryArgs.Builder]*):
         com.pulumi.gcp.appengine.inputs.StandardAppVersionState.Builder =
       def argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionLibraryArgs.builder
       builder.libraries(args.map(_(argsBuilder).build)*)
@@ -744,7 +744,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def manualScaling(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionManualScalingArgs.Builder]):
+    inline def manualScaling(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionManualScalingArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.StandardAppVersionState.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionManualScalingArgs.builder
       builder.manualScaling(args(argsBuilder).build)
@@ -755,7 +755,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcAccess(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionVpcAccessArgs.Builder]):
+    inline def vpcAccess(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionVpcAccessArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.StandardAppVersionState.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionVpcAccessArgs.builder
       builder.vpcAccess(args(argsBuilder).build)
@@ -765,7 +765,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcAccessConnector(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionVpcAccessConnectorArgs.Builder]):
+    inline def vpcAccessConnector(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionVpcAccessConnectorArgs.Builder]):
         com.pulumi.gcp.appengine.inputs.StandardAppVersionState.Builder =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionVpcAccessConnectorArgs.builder
       builder.vpcAccessConnector(args(argsBuilder).build)
@@ -776,7 +776,7 @@ object appengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkInterfaces(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionVpcAccessNetworkInterfaceArgs.Builder]*):
+    inline def networkInterfaces(args: Endofunction[com.pulumi.gcp.appengine.inputs.StandardAppVersionVpcAccessNetworkInterfaceArgs.Builder]*):
         com.pulumi.gcp.appengine.inputs.StandardAppVersionVpcAccessArgs.Builder =
       def argsBuilder = com.pulumi.gcp.appengine.inputs.StandardAppVersionVpcAccessNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)

@@ -11,7 +11,7 @@ object licensemanager:
    * 
    * &gt; **Note:** License configurations can also be associated with launch templates by specifying the `licenseSpecifications` block for an `aws.ec2.LaunchTemplate`.
    */
-  def Association(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Association(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.licensemanager.AssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.licensemanager.AssociationArgs.builder
     com.pulumi.aws.licensemanager.Association(name,
@@ -23,7 +23,7 @@ object licensemanager:
    * 
    * &gt; **Note:** Removing the `licenseCount` attribute is not supported by the License Manager API.
    */
-  def LicenseConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LicenseConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.licensemanager.LicenseConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.licensemanager.LicenseConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -41,7 +41,7 @@ object licensemanager:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a License Manager grant. This allows for sharing licenses with other AWS accounts. */
-  def LicenseGrant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LicenseGrant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.licensemanager.LicenseGrantArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.licensemanager.LicenseGrantArgs.builder
     conf.logicalName2physicalName(name) match
@@ -52,7 +52,7 @@ object licensemanager:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Accepts a License Manager grant. This allows for sharing licenses with other aws accounts. */
-  def LicenseGrantAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LicenseGrantAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.licensemanager.LicenseGrantAccepterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.licensemanager.LicenseGrantAccepterArgs.builder
     com.pulumi.aws.licensemanager.LicenseGrantAccepter(name,

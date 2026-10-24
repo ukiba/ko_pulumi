@@ -24,7 +24,7 @@ object avs:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an Azure VMware Solution Cluster. */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.avs.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.avs.ClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -35,7 +35,7 @@ object avs:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure VMware Solution ExpressRoute Circuit Authorization. */
-  def ExpressRouteAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ExpressRouteAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.avs.ExpressRouteAuthorizationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.avs.ExpressRouteAuthorizationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -46,7 +46,7 @@ object avs:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure VMware Solution Private Cloud Netapp File Attachment. */
-  def NetappVolumeAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetappVolumeAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.avs.NetappVolumeAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.avs.NetappVolumeAttachmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -57,7 +57,7 @@ object avs:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure VMware Solution Private Cloud. */
-  def PrivateCloud(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PrivateCloud(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.avs.PrivateCloudArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.avs.PrivateCloudArgs.builder
     conf.logicalName2physicalName(name) match

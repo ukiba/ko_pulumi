@@ -13,7 +13,7 @@ object outposts:
    * 
    * Because every argument of this resource is marked as forces-new, any change to the configuration results in destroying and re-creating the capacity task. Tasks that are already in a terminal state (`COMPLETED` or `CANCELLED`) are left in place on destroy and only removed from Terraform state; tasks still in flight are cancelled and Terraform waits for them to reach `CANCELLED`. If a task reaches the terminal state `FAILED` during `delete`, the provider tolerates the &#34;already in a terminal state&#34; error returned by `CancelCapacityTask` and considers the resource successfully destroyed. If a create operation produces a `FAILED` task, the resource is not written to Terraform state (the `failureReason` is surfaced in the diagnostic instead), so no follow-up destroy is required.
    */
-  def CapacityTask(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CapacityTask(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.outposts.CapacityTaskArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.outposts.CapacityTaskArgs.builder
     com.pulumi.aws.outposts.CapacityTask(name,

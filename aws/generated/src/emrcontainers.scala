@@ -24,7 +24,7 @@ object emrcontainers:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an EMR Containers (EMR on EKS) Job Template. */
-  def JobTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def JobTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.emrcontainers.JobTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.emrcontainers.JobTemplateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -42,7 +42,7 @@ object emrcontainers:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EMR Containers (EMR on EKS) Virtual Cluster. */
-  def VirtualCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VirtualCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.emrcontainers.VirtualClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.emrcontainers.VirtualClusterArgs.builder
     conf.logicalName2physicalName(name) match

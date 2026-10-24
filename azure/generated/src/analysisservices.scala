@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object analysisservices:
   /** Manages an Analysis Services Server. */
-  def Server(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Server(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.analysisservices.ServerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.analysisservices.ServerArgs.builder
     conf.logicalName2physicalName(name) match

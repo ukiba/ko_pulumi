@@ -11,7 +11,7 @@ object apigatewayv2:
    * 
    * &gt; **Note:** Amazon API Gateway Version 2 resources are used for creating and deploying WebSocket and HTTP APIs. To create and deploy REST APIs, use Amazon API Gateway Version 1 resources.
    */
-  def Api(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Api(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apigatewayv2.ApiArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.apigatewayv2.ApiArgs.builder
     conf.logicalName2physicalName(name) match
@@ -32,7 +32,7 @@ object apigatewayv2:
    * Manages an Amazon API Gateway Version 2 API mapping.
    * More information can be found in the [Amazon API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html).
    */
-  def ApiMapping(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApiMapping(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apigatewayv2.ApiMappingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.apigatewayv2.ApiMappingArgs.builder
     com.pulumi.aws.apigatewayv2.ApiMapping(name,
@@ -108,7 +108,7 @@ object apigatewayv2:
    * Manages an Amazon API Gateway Version 2 authorizer.
    * More information can be found in the [Amazon API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html).
    */
-  def Authorizer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Authorizer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apigatewayv2.AuthorizerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.apigatewayv2.AuthorizerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -124,7 +124,7 @@ object apigatewayv2:
    * 
    * &gt; **Note:** Creating a deployment for an API requires at least one `aws.apigatewayv2.Route` resource associated with that API. To avoid race conditions when all resources are being created together, you need to add implicit resource references via the `triggers` argument or explicit resource references using the [resource `dependsOn` meta-argument](https://www.pulumi.com/docs/intro/concepts/programming-model/#dependson).
    */
-  def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apigatewayv2.DeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.apigatewayv2.DeploymentArgs.builder
     com.pulumi.aws.apigatewayv2.Deployment(name,
@@ -138,7 +138,7 @@ object apigatewayv2:
    * &gt; **Note:** This resource establishes ownership of and the TLS settings for
    * a particular domain name. An API stage can be associated with the domain name using the `aws.apigatewayv2.ApiMapping` resource.
    */
-  def DomainName(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DomainName(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apigatewayv2.DomainNameArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.apigatewayv2.DomainNameArgs.builder
     argsBuilder = args(argsBuilder)
@@ -156,7 +156,7 @@ object apigatewayv2:
    * Manages an Amazon API Gateway Version 2 integration.
    * More information can be found in the [Amazon API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html).
    */
-  def Integration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Integration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apigatewayv2.IntegrationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.apigatewayv2.IntegrationArgs.builder
     com.pulumi.aws.apigatewayv2.Integration(name,
@@ -167,7 +167,7 @@ object apigatewayv2:
    * Manages an Amazon API Gateway Version 2 integration response.
    * More information can be found in the [Amazon API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html).
    */
-  def IntegrationResponse(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IntegrationResponse(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apigatewayv2.IntegrationResponseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.apigatewayv2.IntegrationResponseArgs.builder
     com.pulumi.aws.apigatewayv2.IntegrationResponse(name,
@@ -175,7 +175,7 @@ object apigatewayv2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Amazon API Gateway Version 2 [model](https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html#models-mappings-models). */
-  def Model(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Model(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apigatewayv2.ModelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.apigatewayv2.ModelArgs.builder
     conf.logicalName2physicalName(name) match
@@ -189,7 +189,7 @@ object apigatewayv2:
    * Manages an Amazon API Gateway Version 2 route.
    * More information can be found in the [Amazon API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html) for [WebSocket](https://docs.aws.amazon.com/apigateway/latest/developerguide/websocket-api-develop-routes.html) and [HTTP](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-routes.html) APIs.
    */
-  def Route(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Route(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apigatewayv2.RouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.apigatewayv2.RouteArgs.builder
     com.pulumi.aws.apigatewayv2.Route(name,
@@ -200,7 +200,7 @@ object apigatewayv2:
    * Manages an Amazon API Gateway Version 2 route response.
    * More information can be found in the [Amazon API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html).
    */
-  def RouteResponse(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RouteResponse(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apigatewayv2.RouteResponseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.apigatewayv2.RouteResponseArgs.builder
     com.pulumi.aws.apigatewayv2.RouteResponse(name,
@@ -208,7 +208,7 @@ object apigatewayv2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS API Gateway V2 Routing Rule. */
-  def RoutingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RoutingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apigatewayv2.RoutingRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.apigatewayv2.RoutingRuleArgs.builder
     com.pulumi.aws.apigatewayv2.RoutingRule(name,
@@ -219,7 +219,7 @@ object apigatewayv2:
    * Manages an Amazon API Gateway Version 2 stage.
    * More information can be found in the [Amazon API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html).
    */
-  def Stage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Stage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apigatewayv2.StageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.apigatewayv2.StageArgs.builder
     conf.logicalName2physicalName(name) match
@@ -242,7 +242,7 @@ object apigatewayv2:
    * &gt; **Note:** Amazon API Gateway Version 2 VPC Links enable private integrations that connect HTTP APIs to private resources in a VPC.
    * To enable private integration for REST APIs, use the Amazon API Gateway Version 1 VPC Link resource.
    */
-  def VpcLink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcLink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.apigatewayv2.VpcLinkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.apigatewayv2.VpcLinkArgs.builder
     conf.logicalName2physicalName(name) match

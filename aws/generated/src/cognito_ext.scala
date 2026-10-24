@@ -7,7 +7,7 @@ object cognito_ext:
      * @param cognitoIdentityProviders An array of Amazon Cognito Identity user pools and their client IDs.
      * @return builder
      */
-    def cognitoIdentityProviders(args: Endofunction[com.pulumi.aws.cognito.inputs.IdentityPoolCognitoIdentityProviderArgs.Builder]*):
+    inline def cognitoIdentityProviders(args: Endofunction[com.pulumi.aws.cognito.inputs.IdentityPoolCognitoIdentityProviderArgs.Builder]*):
         com.pulumi.aws.cognito.IdentityPoolArgs.Builder =
       def argsBuilder = com.pulumi.aws.cognito.inputs.IdentityPoolCognitoIdentityProviderArgs.builder
       builder.cognitoIdentityProviders(args.map(_(argsBuilder).build)*)
@@ -17,7 +17,7 @@ object cognito_ext:
      * @param roleMappings A List of Role Mapping.
      * @return builder
      */
-    def roleMappings(args: Endofunction[com.pulumi.aws.cognito.inputs.IdentityPoolRoleAttachmentRoleMappingArgs.Builder]*):
+    inline def roleMappings(args: Endofunction[com.pulumi.aws.cognito.inputs.IdentityPoolRoleAttachmentRoleMappingArgs.Builder]*):
         com.pulumi.aws.cognito.IdentityPoolRoleAttachmentArgs.Builder =
       def argsBuilder = com.pulumi.aws.cognito.inputs.IdentityPoolRoleAttachmentRoleMappingArgs.builder
       builder.roleMappings(args.map(_(argsBuilder).build)*)
@@ -27,7 +27,7 @@ object cognito_ext:
      * @param logConfigurations Configuration block for log delivery. At least one configuration block is required. See Log Configurations below.
      * @return builder
      */
-    def logConfigurations(args: Endofunction[com.pulumi.aws.cognito.inputs.LogDeliveryConfigurationLogConfigurationArgs.Builder]*):
+    inline def logConfigurations(args: Endofunction[com.pulumi.aws.cognito.inputs.LogDeliveryConfigurationLogConfigurationArgs.Builder]*):
         com.pulumi.aws.cognito.LogDeliveryConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.aws.cognito.inputs.LogDeliveryConfigurationLogConfigurationArgs.builder
       builder.logConfigurations(args.map(_(argsBuilder).build)*)
@@ -37,7 +37,7 @@ object cognito_ext:
      * @param assets Image files to apply to roles like backgrounds, logos, and icons. See details below.
      * @return builder
      */
-    def assets(args: Endofunction[com.pulumi.aws.cognito.inputs.ManagedLoginBrandingAssetArgs.Builder]*):
+    inline def assets(args: Endofunction[com.pulumi.aws.cognito.inputs.ManagedLoginBrandingAssetArgs.Builder]*):
         com.pulumi.aws.cognito.ManagedLoginBrandingArgs.Builder =
       def argsBuilder = com.pulumi.aws.cognito.inputs.ManagedLoginBrandingAssetArgs.builder
       builder.assets(args.map(_(argsBuilder).build)*)
@@ -47,7 +47,7 @@ object cognito_ext:
      * @param analyticsConfiguration Configuration block for AWS End User Messaging analytics that collects metrics for this user pool. See details below.
      * @return builder
      */
-    def analyticsConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.ManagedUserPoolClientAnalyticsConfigurationArgs.Builder]):
+    inline def analyticsConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.ManagedUserPoolClientAnalyticsConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.ManagedUserPoolClientArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.ManagedUserPoolClientAnalyticsConfigurationArgs.builder
       builder.analyticsConfiguration(args(argsBuilder).build)
@@ -56,7 +56,7 @@ object cognito_ext:
      * @param refreshTokenRotation A block that specifies the configuration of refresh token rotation. Detailed below.
      * @return builder
      */
-    def refreshTokenRotation(args: Endofunction[com.pulumi.aws.cognito.inputs.ManagedUserPoolClientRefreshTokenRotationArgs.Builder]):
+    inline def refreshTokenRotation(args: Endofunction[com.pulumi.aws.cognito.inputs.ManagedUserPoolClientRefreshTokenRotationArgs.Builder]):
         com.pulumi.aws.cognito.ManagedUserPoolClientArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.ManagedUserPoolClientRefreshTokenRotationArgs.builder
       builder.refreshTokenRotation(args(argsBuilder).build)
@@ -65,7 +65,7 @@ object cognito_ext:
      * @param tokenValidityUnits Configuration block for representing the validity times in units. See details below. Detailed below.
      * @return builder
      */
-    def tokenValidityUnits(args: Endofunction[com.pulumi.aws.cognito.inputs.ManagedUserPoolClientTokenValidityUnitsArgs.Builder]):
+    inline def tokenValidityUnits(args: Endofunction[com.pulumi.aws.cognito.inputs.ManagedUserPoolClientTokenValidityUnitsArgs.Builder]):
         com.pulumi.aws.cognito.ManagedUserPoolClientArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.ManagedUserPoolClientTokenValidityUnitsArgs.builder
       builder.tokenValidityUnits(args(argsBuilder).build)
@@ -75,7 +75,7 @@ object cognito_ext:
      * @param scopes A list of Authorization Scope.
      * @return builder
      */
-    def scopes(args: Endofunction[com.pulumi.aws.cognito.inputs.ResourceServerScopeArgs.Builder]*):
+    inline def scopes(args: Endofunction[com.pulumi.aws.cognito.inputs.ResourceServerScopeArgs.Builder]*):
         com.pulumi.aws.cognito.ResourceServerArgs.Builder =
       def argsBuilder = com.pulumi.aws.cognito.inputs.ResourceServerScopeArgs.builder
       builder.scopes(args.map(_(argsBuilder).build)*)
@@ -85,7 +85,7 @@ object cognito_ext:
      * @param accountTakeoverRiskConfiguration The account takeover risk configuration. See details below.
      * @return builder
      */
-    def accountTakeoverRiskConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationArgs.Builder]):
+    inline def accountTakeoverRiskConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.RiskConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationArgs.builder
       builder.accountTakeoverRiskConfiguration(args(argsBuilder).build)
@@ -94,7 +94,7 @@ object cognito_ext:
      * @param compromisedCredentialsRiskConfiguration The compromised credentials risk configuration. See details below.
      * @return builder
      */
-    def compromisedCredentialsRiskConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationCompromisedCredentialsRiskConfigurationArgs.Builder]):
+    inline def compromisedCredentialsRiskConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationCompromisedCredentialsRiskConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.RiskConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.RiskConfigurationCompromisedCredentialsRiskConfigurationArgs.builder
       builder.compromisedCredentialsRiskConfiguration(args(argsBuilder).build)
@@ -103,7 +103,7 @@ object cognito_ext:
      * @param riskExceptionConfiguration The configuration to override the risk decision. See details below.
      * @return builder
      */
-    def riskExceptionConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationRiskExceptionConfigurationArgs.Builder]):
+    inline def riskExceptionConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationRiskExceptionConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.RiskConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.RiskConfigurationRiskExceptionConfigurationArgs.builder
       builder.riskExceptionConfiguration(args(argsBuilder).build)
@@ -113,7 +113,7 @@ object cognito_ext:
      * @param accountRecoverySetting Configuration block to define which verified available method a user can use to recover their forgotten password. Detailed below.
      * @return builder
      */
-    def accountRecoverySetting(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolAccountRecoverySettingArgs.Builder]):
+    inline def accountRecoverySetting(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolAccountRecoverySettingArgs.Builder]):
         com.pulumi.aws.cognito.UserPoolArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolAccountRecoverySettingArgs.builder
       builder.accountRecoverySetting(args(argsBuilder).build)
@@ -122,7 +122,7 @@ object cognito_ext:
      * @param adminCreateUserConfig Configuration block for creating a new user profile. Detailed below.
      * @return builder
      */
-    def adminCreateUserConfig(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolAdminCreateUserConfigArgs.Builder]):
+    inline def adminCreateUserConfig(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolAdminCreateUserConfigArgs.Builder]):
         com.pulumi.aws.cognito.UserPoolArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolAdminCreateUserConfigArgs.builder
       builder.adminCreateUserConfig(args(argsBuilder).build)
@@ -131,7 +131,7 @@ object cognito_ext:
      * @param deviceConfiguration Configuration block for the user pool&#39;s device tracking. Detailed below.
      * @return builder
      */
-    def deviceConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolDeviceConfigurationArgs.Builder]):
+    inline def deviceConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolDeviceConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.UserPoolArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolDeviceConfigurationArgs.builder
       builder.deviceConfiguration(args(argsBuilder).build)
@@ -140,7 +140,7 @@ object cognito_ext:
      * @param emailConfiguration Configuration block for configuring email. Detailed below.
      * @return builder
      */
-    def emailConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolEmailConfigurationArgs.Builder]):
+    inline def emailConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolEmailConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.UserPoolArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolEmailConfigurationArgs.builder
       builder.emailConfiguration(args(argsBuilder).build)
@@ -149,7 +149,7 @@ object cognito_ext:
      * @param emailMfaConfiguration Configuration block for configuring email Multi-Factor Authentication (MFA); requires at least 2 `accountRecoverySetting` entries; requires an `emailConfiguration` configuration block. Effective only when `mfaConfiguration` is `ON` or `OPTIONAL`. Detailed below.
      * @return builder
      */
-    def emailMfaConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolEmailMfaConfigurationArgs.Builder]):
+    inline def emailMfaConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolEmailMfaConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.UserPoolArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolEmailMfaConfigurationArgs.builder
       builder.emailMfaConfiguration(args(argsBuilder).build)
@@ -158,7 +158,7 @@ object cognito_ext:
      * @param lambdaConfig Configuration block for the AWS Lambda triggers associated with the user pool. Detailed below.
      * @return builder
      */
-    def lambdaConfig(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolLambdaConfigArgs.Builder]):
+    inline def lambdaConfig(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolLambdaConfigArgs.Builder]):
         com.pulumi.aws.cognito.UserPoolArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolLambdaConfigArgs.builder
       builder.lambdaConfig(args(argsBuilder).build)
@@ -167,7 +167,7 @@ object cognito_ext:
      * @param passwordPolicy Configuration block for information about the user pool password policy. Detailed below.
      * @return builder
      */
-    def passwordPolicy(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolPasswordPolicyArgs.Builder]):
+    inline def passwordPolicy(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolPasswordPolicyArgs.Builder]):
         com.pulumi.aws.cognito.UserPoolArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolPasswordPolicyArgs.builder
       builder.passwordPolicy(args(argsBuilder).build)
@@ -176,7 +176,7 @@ object cognito_ext:
      * @param schemas Configuration block for the schema attributes of a user pool. Detailed below. Schema attributes from the [standard attribute set](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#cognito-user-pools-standard-attributes) only need to be specified if they are different from the default configuration. Attributes can be added, but not modified or removed. Maximum of 50 attributes.
      * @return builder
      */
-    def schemas(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolSchemaArgs.Builder]*):
+    inline def schemas(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolSchemaArgs.Builder]*):
         com.pulumi.aws.cognito.UserPoolArgs.Builder =
       def argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolSchemaArgs.builder
       builder.schemas(args.map(_(argsBuilder).build)*)
@@ -185,7 +185,7 @@ object cognito_ext:
      * @param signInPolicy Configuration block for information about the user pool sign in policy. Detailed below.
      * @return builder
      */
-    def signInPolicy(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolSignInPolicyArgs.Builder]):
+    inline def signInPolicy(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolSignInPolicyArgs.Builder]):
         com.pulumi.aws.cognito.UserPoolArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolSignInPolicyArgs.builder
       builder.signInPolicy(args(argsBuilder).build)
@@ -194,7 +194,7 @@ object cognito_ext:
      * @param smsConfiguration Configuration block for Short Message Service (SMS) settings. Detailed below. These settings apply to SMS user verification and SMS Multi-Factor Authentication (MFA). SMS MFA is activated only when `mfaConfiguration` is set to `ON` or `OPTIONAL` along with this block. Due to Cognito API restrictions, the SMS configuration cannot be removed without recreating the Cognito User Pool. For user data safety, this resource will ignore the removal of this configuration by disabling drift detection. To force resource recreation after this configuration has been applied, see the `taint` command.
      * @return builder
      */
-    def smsConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolSmsConfigurationArgs.Builder]):
+    inline def smsConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolSmsConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.UserPoolArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolSmsConfigurationArgs.builder
       builder.smsConfiguration(args(argsBuilder).build)
@@ -203,7 +203,7 @@ object cognito_ext:
      * @param softwareTokenMfaConfiguration Configuration block for software token Mult-Factor Authentication (MFA) settings. Effective only when `mfaConfiguration` is `ON` or `OPTIONAL`. Detailed below.
      * @return builder
      */
-    def softwareTokenMfaConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolSoftwareTokenMfaConfigurationArgs.Builder]):
+    inline def softwareTokenMfaConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolSoftwareTokenMfaConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.UserPoolArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolSoftwareTokenMfaConfigurationArgs.builder
       builder.softwareTokenMfaConfiguration(args(argsBuilder).build)
@@ -212,7 +212,7 @@ object cognito_ext:
      * @param userAttributeUpdateSettings Configuration block for user attribute update settings. Detailed below.
      * @return builder
      */
-    def userAttributeUpdateSettings(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolUserAttributeUpdateSettingsArgs.Builder]):
+    inline def userAttributeUpdateSettings(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolUserAttributeUpdateSettingsArgs.Builder]):
         com.pulumi.aws.cognito.UserPoolArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolUserAttributeUpdateSettingsArgs.builder
       builder.userAttributeUpdateSettings(args(argsBuilder).build)
@@ -221,7 +221,7 @@ object cognito_ext:
      * @param userPoolAddOns Configuration block for user pool add-ons to enable user pool advanced security mode features. Detailed below.
      * @return builder
      */
-    def userPoolAddOns(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolUserPoolAddOnsArgs.Builder]):
+    inline def userPoolAddOns(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolUserPoolAddOnsArgs.Builder]):
         com.pulumi.aws.cognito.UserPoolArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolUserPoolAddOnsArgs.builder
       builder.userPoolAddOns(args(argsBuilder).build)
@@ -230,7 +230,7 @@ object cognito_ext:
      * @param usernameConfiguration Configuration block for username configuration. Detailed below.
      * @return builder
      */
-    def usernameConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolUsernameConfigurationArgs.Builder]):
+    inline def usernameConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolUsernameConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.UserPoolArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolUsernameConfigurationArgs.builder
       builder.usernameConfiguration(args(argsBuilder).build)
@@ -239,7 +239,7 @@ object cognito_ext:
      * @param verificationMessageTemplate Configuration block for verification message templates. Detailed below.
      * @return builder
      */
-    def verificationMessageTemplate(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolVerificationMessageTemplateArgs.Builder]):
+    inline def verificationMessageTemplate(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolVerificationMessageTemplateArgs.Builder]):
         com.pulumi.aws.cognito.UserPoolArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolVerificationMessageTemplateArgs.builder
       builder.verificationMessageTemplate(args(argsBuilder).build)
@@ -248,7 +248,7 @@ object cognito_ext:
      * @param webAuthnConfiguration Configuration block for web authn configuration. Detailed below.
      * @return builder
      */
-    def webAuthnConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolWebAuthnConfigurationArgs.Builder]):
+    inline def webAuthnConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolWebAuthnConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.UserPoolArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolWebAuthnConfigurationArgs.builder
       builder.webAuthnConfiguration(args(argsBuilder).build)
@@ -258,7 +258,7 @@ object cognito_ext:
      * @param analyticsConfiguration Configuration block for AWS End User Messaging analytics that collects metrics for this user pool. See details below.
      * @return builder
      */
-    def analyticsConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolClientAnalyticsConfigurationArgs.Builder]):
+    inline def analyticsConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolClientAnalyticsConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.UserPoolClientArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolClientAnalyticsConfigurationArgs.builder
       builder.analyticsConfiguration(args(argsBuilder).build)
@@ -267,7 +267,7 @@ object cognito_ext:
      * @param refreshTokenRotation A block that specifies the configuration of refresh token rotation. Detailed below.
      * @return builder
      */
-    def refreshTokenRotation(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolClientRefreshTokenRotationArgs.Builder]):
+    inline def refreshTokenRotation(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolClientRefreshTokenRotationArgs.Builder]):
         com.pulumi.aws.cognito.UserPoolClientArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolClientRefreshTokenRotationArgs.builder
       builder.refreshTokenRotation(args(argsBuilder).build)
@@ -276,7 +276,7 @@ object cognito_ext:
      * @param tokenValidityUnits Configuration block for representing the validity times in units. See details below. Detailed below.
      * @return builder
      */
-    def tokenValidityUnits(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolClientTokenValidityUnitsArgs.Builder]):
+    inline def tokenValidityUnits(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolClientTokenValidityUnitsArgs.Builder]):
         com.pulumi.aws.cognito.UserPoolClientArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolClientTokenValidityUnitsArgs.builder
       builder.tokenValidityUnits(args(argsBuilder).build)
@@ -286,7 +286,7 @@ object cognito_ext:
      * @param mappingRules The Rules Configuration to be used for mapping users to roles. You can specify up to 25 rules per identity provider. Rules are evaluated in order. The first one to match specifies the role.
      * @return builder
      */
-    def mappingRules(args: Endofunction[com.pulumi.aws.cognito.inputs.IdentityPoolRoleAttachmentRoleMappingMappingRuleArgs.Builder]*):
+    inline def mappingRules(args: Endofunction[com.pulumi.aws.cognito.inputs.IdentityPoolRoleAttachmentRoleMappingMappingRuleArgs.Builder]*):
         com.pulumi.aws.cognito.inputs.IdentityPoolRoleAttachmentRoleMappingArgs.Builder =
       def argsBuilder = com.pulumi.aws.cognito.inputs.IdentityPoolRoleAttachmentRoleMappingMappingRuleArgs.builder
       builder.mappingRules(args.map(_(argsBuilder).build)*)
@@ -296,7 +296,7 @@ object cognito_ext:
      * @param roleMappings A List of Role Mapping.
      * @return builder
      */
-    def roleMappings(args: Endofunction[com.pulumi.aws.cognito.inputs.IdentityPoolRoleAttachmentRoleMappingArgs.Builder]*):
+    inline def roleMappings(args: Endofunction[com.pulumi.aws.cognito.inputs.IdentityPoolRoleAttachmentRoleMappingArgs.Builder]*):
         com.pulumi.aws.cognito.inputs.IdentityPoolRoleAttachmentState.Builder =
       def argsBuilder = com.pulumi.aws.cognito.inputs.IdentityPoolRoleAttachmentRoleMappingArgs.builder
       builder.roleMappings(args.map(_(argsBuilder).build)*)
@@ -306,7 +306,7 @@ object cognito_ext:
      * @param cognitoIdentityProviders An array of Amazon Cognito Identity user pools and their client IDs.
      * @return builder
      */
-    def cognitoIdentityProviders(args: Endofunction[com.pulumi.aws.cognito.inputs.IdentityPoolCognitoIdentityProviderArgs.Builder]*):
+    inline def cognitoIdentityProviders(args: Endofunction[com.pulumi.aws.cognito.inputs.IdentityPoolCognitoIdentityProviderArgs.Builder]*):
         com.pulumi.aws.cognito.inputs.IdentityPoolState.Builder =
       def argsBuilder = com.pulumi.aws.cognito.inputs.IdentityPoolCognitoIdentityProviderArgs.builder
       builder.cognitoIdentityProviders(args.map(_(argsBuilder).build)*)
@@ -316,7 +316,7 @@ object cognito_ext:
      * @param cloudWatchLogsConfiguration Configuration for CloudWatch Logs delivery. See CloudWatch Logs Configuration below.
      * @return builder
      */
-    def cloudWatchLogsConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.LogDeliveryConfigurationLogConfigurationCloudWatchLogsConfigurationArgs.Builder]):
+    inline def cloudWatchLogsConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.LogDeliveryConfigurationLogConfigurationCloudWatchLogsConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.inputs.LogDeliveryConfigurationLogConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.LogDeliveryConfigurationLogConfigurationCloudWatchLogsConfigurationArgs.builder
       builder.cloudWatchLogsConfiguration(args(argsBuilder).build)
@@ -325,7 +325,7 @@ object cognito_ext:
      * @param firehoseConfiguration Configuration for Kinesis Data Firehose delivery. See Firehose Configuration below.
      * @return builder
      */
-    def firehoseConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.LogDeliveryConfigurationLogConfigurationFirehoseConfigurationArgs.Builder]):
+    inline def firehoseConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.LogDeliveryConfigurationLogConfigurationFirehoseConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.inputs.LogDeliveryConfigurationLogConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.LogDeliveryConfigurationLogConfigurationFirehoseConfigurationArgs.builder
       builder.firehoseConfiguration(args(argsBuilder).build)
@@ -336,7 +336,7 @@ object cognito_ext:
      * &gt; **Note:** At least one destination configuration (`cloudWatchLogsConfiguration`, `firehoseConfiguration`, or `s3Configuration`) must be specified for each log configuration.
      * @return builder
      */
-    def s3Configuration(args: Endofunction[com.pulumi.aws.cognito.inputs.LogDeliveryConfigurationLogConfigurationS3ConfigurationArgs.Builder]):
+    inline def s3Configuration(args: Endofunction[com.pulumi.aws.cognito.inputs.LogDeliveryConfigurationLogConfigurationS3ConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.inputs.LogDeliveryConfigurationLogConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.LogDeliveryConfigurationLogConfigurationS3ConfigurationArgs.builder
       builder.s3Configuration(args(argsBuilder).build)
@@ -346,7 +346,7 @@ object cognito_ext:
      * @param logConfigurations Configuration block for log delivery. At least one configuration block is required. See Log Configurations below.
      * @return builder
      */
-    def logConfigurations(args: Endofunction[com.pulumi.aws.cognito.inputs.LogDeliveryConfigurationLogConfigurationArgs.Builder]*):
+    inline def logConfigurations(args: Endofunction[com.pulumi.aws.cognito.inputs.LogDeliveryConfigurationLogConfigurationArgs.Builder]*):
         com.pulumi.aws.cognito.inputs.LogDeliveryConfigurationState.Builder =
       def argsBuilder = com.pulumi.aws.cognito.inputs.LogDeliveryConfigurationLogConfigurationArgs.builder
       builder.logConfigurations(args.map(_(argsBuilder).build)*)
@@ -356,7 +356,7 @@ object cognito_ext:
      * @param assets Image files to apply to roles like backgrounds, logos, and icons. See details below.
      * @return builder
      */
-    def assets(args: Endofunction[com.pulumi.aws.cognito.inputs.ManagedLoginBrandingAssetArgs.Builder]*):
+    inline def assets(args: Endofunction[com.pulumi.aws.cognito.inputs.ManagedLoginBrandingAssetArgs.Builder]*):
         com.pulumi.aws.cognito.inputs.ManagedLoginBrandingState.Builder =
       def argsBuilder = com.pulumi.aws.cognito.inputs.ManagedLoginBrandingAssetArgs.builder
       builder.assets(args.map(_(argsBuilder).build)*)
@@ -366,7 +366,7 @@ object cognito_ext:
      * @param analyticsConfiguration Configuration block for AWS End User Messaging analytics that collects metrics for this user pool. See details below.
      * @return builder
      */
-    def analyticsConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.ManagedUserPoolClientAnalyticsConfigurationArgs.Builder]):
+    inline def analyticsConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.ManagedUserPoolClientAnalyticsConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.inputs.ManagedUserPoolClientState.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.ManagedUserPoolClientAnalyticsConfigurationArgs.builder
       builder.analyticsConfiguration(args(argsBuilder).build)
@@ -375,7 +375,7 @@ object cognito_ext:
      * @param refreshTokenRotation A block that specifies the configuration of refresh token rotation. Detailed below.
      * @return builder
      */
-    def refreshTokenRotation(args: Endofunction[com.pulumi.aws.cognito.inputs.ManagedUserPoolClientRefreshTokenRotationArgs.Builder]):
+    inline def refreshTokenRotation(args: Endofunction[com.pulumi.aws.cognito.inputs.ManagedUserPoolClientRefreshTokenRotationArgs.Builder]):
         com.pulumi.aws.cognito.inputs.ManagedUserPoolClientState.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.ManagedUserPoolClientRefreshTokenRotationArgs.builder
       builder.refreshTokenRotation(args(argsBuilder).build)
@@ -384,7 +384,7 @@ object cognito_ext:
      * @param tokenValidityUnits Configuration block for representing the validity times in units. See details below. Detailed below.
      * @return builder
      */
-    def tokenValidityUnits(args: Endofunction[com.pulumi.aws.cognito.inputs.ManagedUserPoolClientTokenValidityUnitsArgs.Builder]):
+    inline def tokenValidityUnits(args: Endofunction[com.pulumi.aws.cognito.inputs.ManagedUserPoolClientTokenValidityUnitsArgs.Builder]):
         com.pulumi.aws.cognito.inputs.ManagedUserPoolClientState.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.ManagedUserPoolClientTokenValidityUnitsArgs.builder
       builder.tokenValidityUnits(args(argsBuilder).build)
@@ -394,7 +394,7 @@ object cognito_ext:
      * @param scopes A list of Authorization Scope.
      * @return builder
      */
-    def scopes(args: Endofunction[com.pulumi.aws.cognito.inputs.ResourceServerScopeArgs.Builder]*):
+    inline def scopes(args: Endofunction[com.pulumi.aws.cognito.inputs.ResourceServerScopeArgs.Builder]*):
         com.pulumi.aws.cognito.inputs.ResourceServerState.Builder =
       def argsBuilder = com.pulumi.aws.cognito.inputs.ResourceServerScopeArgs.builder
       builder.scopes(args.map(_(argsBuilder).build)*)
@@ -404,7 +404,7 @@ object cognito_ext:
      * @param highAction Action to take for a high risk. See action block below.
      * @return builder
      */
-    def highAction(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationActionsHighActionArgs.Builder]):
+    inline def highAction(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationActionsHighActionArgs.Builder]):
         com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationActionsArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationActionsHighActionArgs.builder
       builder.highAction(args(argsBuilder).build)
@@ -413,7 +413,7 @@ object cognito_ext:
      * @param lowAction Action to take for a low risk. See action block below.
      * @return builder
      */
-    def lowAction(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationActionsLowActionArgs.Builder]):
+    inline def lowAction(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationActionsLowActionArgs.Builder]):
         com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationActionsArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationActionsLowActionArgs.builder
       builder.lowAction(args(argsBuilder).build)
@@ -422,7 +422,7 @@ object cognito_ext:
      * @param mediumAction Action to take for a medium risk. See action block below.
      * @return builder
      */
-    def mediumAction(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationActionsMediumActionArgs.Builder]):
+    inline def mediumAction(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationActionsMediumActionArgs.Builder]):
         com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationActionsArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationActionsMediumActionArgs.builder
       builder.mediumAction(args(argsBuilder).build)
@@ -432,7 +432,7 @@ object cognito_ext:
      * @param actions Account takeover risk configuration actions. See details below.
      * @return builder
      */
-    def actions(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationActionsArgs.Builder]):
+    inline def actions(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationActionsArgs.Builder]):
         com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationActionsArgs.builder
       builder.actions(args(argsBuilder).build)
@@ -441,7 +441,7 @@ object cognito_ext:
      * @param notifyConfiguration The notify configuration used to construct email notifications. See details below.
      * @return builder
      */
-    def notifyConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationNotifyConfigurationArgs.Builder]):
+    inline def notifyConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationNotifyConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationNotifyConfigurationArgs.builder
       builder.notifyConfiguration(args(argsBuilder).build)
@@ -451,7 +451,7 @@ object cognito_ext:
      * @param blockEmail Email template used when a detected risk event is blocked. See notify email type below.
      * @return builder
      */
-    def blockEmail(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationNotifyConfigurationBlockEmailArgs.Builder]):
+    inline def blockEmail(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationNotifyConfigurationBlockEmailArgs.Builder]):
         com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationNotifyConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationNotifyConfigurationBlockEmailArgs.builder
       builder.blockEmail(args(argsBuilder).build)
@@ -460,7 +460,7 @@ object cognito_ext:
      * @param mfaEmail The multi-factor authentication (MFA) email template used when MFA is challenged as part of a detected risk. See notify email type below.
      * @return builder
      */
-    def mfaEmail(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationNotifyConfigurationMfaEmailArgs.Builder]):
+    inline def mfaEmail(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationNotifyConfigurationMfaEmailArgs.Builder]):
         com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationNotifyConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationNotifyConfigurationMfaEmailArgs.builder
       builder.mfaEmail(args(argsBuilder).build)
@@ -469,7 +469,7 @@ object cognito_ext:
      * @param noActionEmail The email template used when a detected risk event is allowed. See notify email type below.
      * @return builder
      */
-    def noActionEmail(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationNotifyConfigurationNoActionEmailArgs.Builder]):
+    inline def noActionEmail(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationNotifyConfigurationNoActionEmailArgs.Builder]):
         com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationNotifyConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationNotifyConfigurationNoActionEmailArgs.builder
       builder.noActionEmail(args(argsBuilder).build)
@@ -479,7 +479,7 @@ object cognito_ext:
      * @param actions The compromised credentials risk configuration actions. See details below.
      * @return builder
      */
-    def actions(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationCompromisedCredentialsRiskConfigurationActionsArgs.Builder]):
+    inline def actions(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationCompromisedCredentialsRiskConfigurationActionsArgs.Builder]):
         com.pulumi.aws.cognito.inputs.RiskConfigurationCompromisedCredentialsRiskConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.RiskConfigurationCompromisedCredentialsRiskConfigurationActionsArgs.builder
       builder.actions(args(argsBuilder).build)
@@ -489,7 +489,7 @@ object cognito_ext:
      * @param accountTakeoverRiskConfiguration The account takeover risk configuration. See details below.
      * @return builder
      */
-    def accountTakeoverRiskConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationArgs.Builder]):
+    inline def accountTakeoverRiskConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.inputs.RiskConfigurationState.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.RiskConfigurationAccountTakeoverRiskConfigurationArgs.builder
       builder.accountTakeoverRiskConfiguration(args(argsBuilder).build)
@@ -498,7 +498,7 @@ object cognito_ext:
      * @param compromisedCredentialsRiskConfiguration The compromised credentials risk configuration. See details below.
      * @return builder
      */
-    def compromisedCredentialsRiskConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationCompromisedCredentialsRiskConfigurationArgs.Builder]):
+    inline def compromisedCredentialsRiskConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationCompromisedCredentialsRiskConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.inputs.RiskConfigurationState.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.RiskConfigurationCompromisedCredentialsRiskConfigurationArgs.builder
       builder.compromisedCredentialsRiskConfiguration(args(argsBuilder).build)
@@ -507,7 +507,7 @@ object cognito_ext:
      * @param riskExceptionConfiguration The configuration to override the risk decision. See details below.
      * @return builder
      */
-    def riskExceptionConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationRiskExceptionConfigurationArgs.Builder]):
+    inline def riskExceptionConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.RiskConfigurationRiskExceptionConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.inputs.RiskConfigurationState.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.RiskConfigurationRiskExceptionConfigurationArgs.builder
       builder.riskExceptionConfiguration(args(argsBuilder).build)
@@ -517,7 +517,7 @@ object cognito_ext:
      * @param recoveryMechanisms List of Account Recovery Options of the following structure:
      * @return builder
      */
-    def recoveryMechanisms(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolAccountRecoverySettingRecoveryMechanismArgs.Builder]*):
+    inline def recoveryMechanisms(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolAccountRecoverySettingRecoveryMechanismArgs.Builder]*):
         com.pulumi.aws.cognito.inputs.UserPoolAccountRecoverySettingArgs.Builder =
       def argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolAccountRecoverySettingRecoveryMechanismArgs.builder
       builder.recoveryMechanisms(args.map(_(argsBuilder).build)*)
@@ -527,7 +527,7 @@ object cognito_ext:
      * @param inviteMessageTemplate Invite message template structure. Detailed below.
      * @return builder
      */
-    def inviteMessageTemplate(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolAdminCreateUserConfigInviteMessageTemplateArgs.Builder]):
+    inline def inviteMessageTemplate(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolAdminCreateUserConfigInviteMessageTemplateArgs.Builder]):
         com.pulumi.aws.cognito.inputs.UserPoolAdminCreateUserConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolAdminCreateUserConfigInviteMessageTemplateArgs.builder
       builder.inviteMessageTemplate(args(argsBuilder).build)
@@ -537,7 +537,7 @@ object cognito_ext:
      * @param analyticsConfiguration Configuration block for AWS End User Messaging analytics that collects metrics for this user pool. See details below.
      * @return builder
      */
-    def analyticsConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolClientAnalyticsConfigurationArgs.Builder]):
+    inline def analyticsConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolClientAnalyticsConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.inputs.UserPoolClientState.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolClientAnalyticsConfigurationArgs.builder
       builder.analyticsConfiguration(args(argsBuilder).build)
@@ -546,7 +546,7 @@ object cognito_ext:
      * @param refreshTokenRotation A block that specifies the configuration of refresh token rotation. Detailed below.
      * @return builder
      */
-    def refreshTokenRotation(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolClientRefreshTokenRotationArgs.Builder]):
+    inline def refreshTokenRotation(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolClientRefreshTokenRotationArgs.Builder]):
         com.pulumi.aws.cognito.inputs.UserPoolClientState.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolClientRefreshTokenRotationArgs.builder
       builder.refreshTokenRotation(args(argsBuilder).build)
@@ -555,7 +555,7 @@ object cognito_ext:
      * @param tokenValidityUnits Configuration block for representing the validity times in units. See details below. Detailed below.
      * @return builder
      */
-    def tokenValidityUnits(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolClientTokenValidityUnitsArgs.Builder]):
+    inline def tokenValidityUnits(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolClientTokenValidityUnitsArgs.Builder]):
         com.pulumi.aws.cognito.inputs.UserPoolClientState.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolClientTokenValidityUnitsArgs.builder
       builder.tokenValidityUnits(args(argsBuilder).build)
@@ -565,7 +565,7 @@ object cognito_ext:
      * @param customEmailSender A custom email sender AWS Lambda trigger. See customEmailSender Below.
      * @return builder
      */
-    def customEmailSender(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolLambdaConfigCustomEmailSenderArgs.Builder]):
+    inline def customEmailSender(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolLambdaConfigCustomEmailSenderArgs.Builder]):
         com.pulumi.aws.cognito.inputs.UserPoolLambdaConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolLambdaConfigCustomEmailSenderArgs.builder
       builder.customEmailSender(args(argsBuilder).build)
@@ -574,7 +574,7 @@ object cognito_ext:
      * @param customSmsSender A custom SMS sender AWS Lambda trigger. See customSmsSender Below.
      * @return builder
      */
-    def customSmsSender(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolLambdaConfigCustomSmsSenderArgs.Builder]):
+    inline def customSmsSender(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolLambdaConfigCustomSmsSenderArgs.Builder]):
         com.pulumi.aws.cognito.inputs.UserPoolLambdaConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolLambdaConfigCustomSmsSenderArgs.builder
       builder.customSmsSender(args(argsBuilder).build)
@@ -583,7 +583,7 @@ object cognito_ext:
      * @param preTokenGenerationConfig Allow to customize access tokens. See pre_token_configuration_type
      * @return builder
      */
-    def preTokenGenerationConfig(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolLambdaConfigPreTokenGenerationConfigArgs.Builder]):
+    inline def preTokenGenerationConfig(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolLambdaConfigPreTokenGenerationConfigArgs.Builder]):
         com.pulumi.aws.cognito.inputs.UserPoolLambdaConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolLambdaConfigPreTokenGenerationConfigArgs.builder
       builder.preTokenGenerationConfig(args(argsBuilder).build)
@@ -593,7 +593,7 @@ object cognito_ext:
      * @param numberAttributeConstraints Configuration block for the constraints for an attribute of the number type. Detailed below.
      * @return builder
      */
-    def numberAttributeConstraints(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolSchemaNumberAttributeConstraintsArgs.Builder]):
+    inline def numberAttributeConstraints(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolSchemaNumberAttributeConstraintsArgs.Builder]):
         com.pulumi.aws.cognito.inputs.UserPoolSchemaArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolSchemaNumberAttributeConstraintsArgs.builder
       builder.numberAttributeConstraints(args(argsBuilder).build)
@@ -602,7 +602,7 @@ object cognito_ext:
      * @param stringAttributeConstraints Constraints for an attribute of the string type. Detailed below.
      * @return builder
      */
-    def stringAttributeConstraints(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolSchemaStringAttributeConstraintsArgs.Builder]):
+    inline def stringAttributeConstraints(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolSchemaStringAttributeConstraintsArgs.Builder]):
         com.pulumi.aws.cognito.inputs.UserPoolSchemaArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolSchemaStringAttributeConstraintsArgs.builder
       builder.stringAttributeConstraints(args(argsBuilder).build)
@@ -612,7 +612,7 @@ object cognito_ext:
      * @param accountRecoverySetting Configuration block to define which verified available method a user can use to recover their forgotten password. Detailed below.
      * @return builder
      */
-    def accountRecoverySetting(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolAccountRecoverySettingArgs.Builder]):
+    inline def accountRecoverySetting(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolAccountRecoverySettingArgs.Builder]):
         com.pulumi.aws.cognito.inputs.UserPoolState.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolAccountRecoverySettingArgs.builder
       builder.accountRecoverySetting(args(argsBuilder).build)
@@ -621,7 +621,7 @@ object cognito_ext:
      * @param adminCreateUserConfig Configuration block for creating a new user profile. Detailed below.
      * @return builder
      */
-    def adminCreateUserConfig(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolAdminCreateUserConfigArgs.Builder]):
+    inline def adminCreateUserConfig(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolAdminCreateUserConfigArgs.Builder]):
         com.pulumi.aws.cognito.inputs.UserPoolState.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolAdminCreateUserConfigArgs.builder
       builder.adminCreateUserConfig(args(argsBuilder).build)
@@ -630,7 +630,7 @@ object cognito_ext:
      * @param deviceConfiguration Configuration block for the user pool&#39;s device tracking. Detailed below.
      * @return builder
      */
-    def deviceConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolDeviceConfigurationArgs.Builder]):
+    inline def deviceConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolDeviceConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.inputs.UserPoolState.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolDeviceConfigurationArgs.builder
       builder.deviceConfiguration(args(argsBuilder).build)
@@ -639,7 +639,7 @@ object cognito_ext:
      * @param emailConfiguration Configuration block for configuring email. Detailed below.
      * @return builder
      */
-    def emailConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolEmailConfigurationArgs.Builder]):
+    inline def emailConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolEmailConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.inputs.UserPoolState.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolEmailConfigurationArgs.builder
       builder.emailConfiguration(args(argsBuilder).build)
@@ -648,7 +648,7 @@ object cognito_ext:
      * @param emailMfaConfiguration Configuration block for configuring email Multi-Factor Authentication (MFA); requires at least 2 `accountRecoverySetting` entries; requires an `emailConfiguration` configuration block. Effective only when `mfaConfiguration` is `ON` or `OPTIONAL`. Detailed below.
      * @return builder
      */
-    def emailMfaConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolEmailMfaConfigurationArgs.Builder]):
+    inline def emailMfaConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolEmailMfaConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.inputs.UserPoolState.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolEmailMfaConfigurationArgs.builder
       builder.emailMfaConfiguration(args(argsBuilder).build)
@@ -657,7 +657,7 @@ object cognito_ext:
      * @param lambdaConfig Configuration block for the AWS Lambda triggers associated with the user pool. Detailed below.
      * @return builder
      */
-    def lambdaConfig(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolLambdaConfigArgs.Builder]):
+    inline def lambdaConfig(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolLambdaConfigArgs.Builder]):
         com.pulumi.aws.cognito.inputs.UserPoolState.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolLambdaConfigArgs.builder
       builder.lambdaConfig(args(argsBuilder).build)
@@ -666,7 +666,7 @@ object cognito_ext:
      * @param passwordPolicy Configuration block for information about the user pool password policy. Detailed below.
      * @return builder
      */
-    def passwordPolicy(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolPasswordPolicyArgs.Builder]):
+    inline def passwordPolicy(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolPasswordPolicyArgs.Builder]):
         com.pulumi.aws.cognito.inputs.UserPoolState.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolPasswordPolicyArgs.builder
       builder.passwordPolicy(args(argsBuilder).build)
@@ -675,7 +675,7 @@ object cognito_ext:
      * @param schemas Configuration block for the schema attributes of a user pool. Detailed below. Schema attributes from the [standard attribute set](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#cognito-user-pools-standard-attributes) only need to be specified if they are different from the default configuration. Attributes can be added, but not modified or removed. Maximum of 50 attributes.
      * @return builder
      */
-    def schemas(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolSchemaArgs.Builder]*):
+    inline def schemas(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolSchemaArgs.Builder]*):
         com.pulumi.aws.cognito.inputs.UserPoolState.Builder =
       def argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolSchemaArgs.builder
       builder.schemas(args.map(_(argsBuilder).build)*)
@@ -684,7 +684,7 @@ object cognito_ext:
      * @param signInPolicy Configuration block for information about the user pool sign in policy. Detailed below.
      * @return builder
      */
-    def signInPolicy(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolSignInPolicyArgs.Builder]):
+    inline def signInPolicy(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolSignInPolicyArgs.Builder]):
         com.pulumi.aws.cognito.inputs.UserPoolState.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolSignInPolicyArgs.builder
       builder.signInPolicy(args(argsBuilder).build)
@@ -693,7 +693,7 @@ object cognito_ext:
      * @param smsConfiguration Configuration block for Short Message Service (SMS) settings. Detailed below. These settings apply to SMS user verification and SMS Multi-Factor Authentication (MFA). SMS MFA is activated only when `mfaConfiguration` is set to `ON` or `OPTIONAL` along with this block. Due to Cognito API restrictions, the SMS configuration cannot be removed without recreating the Cognito User Pool. For user data safety, this resource will ignore the removal of this configuration by disabling drift detection. To force resource recreation after this configuration has been applied, see the `taint` command.
      * @return builder
      */
-    def smsConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolSmsConfigurationArgs.Builder]):
+    inline def smsConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolSmsConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.inputs.UserPoolState.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolSmsConfigurationArgs.builder
       builder.smsConfiguration(args(argsBuilder).build)
@@ -702,7 +702,7 @@ object cognito_ext:
      * @param softwareTokenMfaConfiguration Configuration block for software token Mult-Factor Authentication (MFA) settings. Effective only when `mfaConfiguration` is `ON` or `OPTIONAL`. Detailed below.
      * @return builder
      */
-    def softwareTokenMfaConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolSoftwareTokenMfaConfigurationArgs.Builder]):
+    inline def softwareTokenMfaConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolSoftwareTokenMfaConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.inputs.UserPoolState.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolSoftwareTokenMfaConfigurationArgs.builder
       builder.softwareTokenMfaConfiguration(args(argsBuilder).build)
@@ -711,7 +711,7 @@ object cognito_ext:
      * @param userAttributeUpdateSettings Configuration block for user attribute update settings. Detailed below.
      * @return builder
      */
-    def userAttributeUpdateSettings(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolUserAttributeUpdateSettingsArgs.Builder]):
+    inline def userAttributeUpdateSettings(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolUserAttributeUpdateSettingsArgs.Builder]):
         com.pulumi.aws.cognito.inputs.UserPoolState.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolUserAttributeUpdateSettingsArgs.builder
       builder.userAttributeUpdateSettings(args(argsBuilder).build)
@@ -720,7 +720,7 @@ object cognito_ext:
      * @param userPoolAddOns Configuration block for user pool add-ons to enable user pool advanced security mode features. Detailed below.
      * @return builder
      */
-    def userPoolAddOns(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolUserPoolAddOnsArgs.Builder]):
+    inline def userPoolAddOns(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolUserPoolAddOnsArgs.Builder]):
         com.pulumi.aws.cognito.inputs.UserPoolState.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolUserPoolAddOnsArgs.builder
       builder.userPoolAddOns(args(argsBuilder).build)
@@ -729,7 +729,7 @@ object cognito_ext:
      * @param usernameConfiguration Configuration block for username configuration. Detailed below.
      * @return builder
      */
-    def usernameConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolUsernameConfigurationArgs.Builder]):
+    inline def usernameConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolUsernameConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.inputs.UserPoolState.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolUsernameConfigurationArgs.builder
       builder.usernameConfiguration(args(argsBuilder).build)
@@ -738,7 +738,7 @@ object cognito_ext:
      * @param verificationMessageTemplate Configuration block for verification message templates. Detailed below.
      * @return builder
      */
-    def verificationMessageTemplate(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolVerificationMessageTemplateArgs.Builder]):
+    inline def verificationMessageTemplate(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolVerificationMessageTemplateArgs.Builder]):
         com.pulumi.aws.cognito.inputs.UserPoolState.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolVerificationMessageTemplateArgs.builder
       builder.verificationMessageTemplate(args(argsBuilder).build)
@@ -747,7 +747,7 @@ object cognito_ext:
      * @param webAuthnConfiguration Configuration block for web authn configuration. Detailed below.
      * @return builder
      */
-    def webAuthnConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolWebAuthnConfigurationArgs.Builder]):
+    inline def webAuthnConfiguration(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolWebAuthnConfigurationArgs.Builder]):
         com.pulumi.aws.cognito.inputs.UserPoolState.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolWebAuthnConfigurationArgs.builder
       builder.webAuthnConfiguration(args(argsBuilder).build)
@@ -757,7 +757,7 @@ object cognito_ext:
      * @param advancedSecurityAdditionalFlows A block to specify the threat protection configuration options for additional authentication types in your user pool, including custom authentication. Detailed below.
      * @return builder
      */
-    def advancedSecurityAdditionalFlows(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolUserPoolAddOnsAdvancedSecurityAdditionalFlowsArgs.Builder]):
+    inline def advancedSecurityAdditionalFlows(args: Endofunction[com.pulumi.aws.cognito.inputs.UserPoolUserPoolAddOnsAdvancedSecurityAdditionalFlowsArgs.Builder]):
         com.pulumi.aws.cognito.inputs.UserPoolUserPoolAddOnsArgs.Builder =
       val argsBuilder = com.pulumi.aws.cognito.inputs.UserPoolUserPoolAddOnsAdvancedSecurityAdditionalFlowsArgs.builder
       builder.advancedSecurityAdditionalFlows(args(argsBuilder).build)

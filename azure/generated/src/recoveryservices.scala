@@ -24,7 +24,7 @@ object recoveryservices:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Recovery Services Vault. */
-  def Vault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Vault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.recoveryservices.VaultArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.recoveryservices.VaultArgs.builder
     conf.logicalName2physicalName(name) match
@@ -42,7 +42,7 @@ object recoveryservices:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an association of a Resource Guard and Recovery Services Vault. */
-  def VaultResourceGuardAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VaultResourceGuardAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.recoveryservices.VaultResourceGuardAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.recoveryservices.VaultResourceGuardAssociationArgs.builder
     com.pulumi.azure.recoveryservices.VaultResourceGuardAssociation(name,

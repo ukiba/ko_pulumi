@@ -9,7 +9,7 @@ object amplify:
    * 
    * &gt; **Note:** When you create/update an Amplify App from the provider, you may end up with the error &#34;BadRequestException: You should at least provide one valid token&#34; because of authentication issues. See the section &#34;Repository with Tokens&#34; below.
    */
-  def App(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def App(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.amplify.AppArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.amplify.AppArgs.builder
     conf.logicalName2physicalName(name) match
@@ -27,7 +27,7 @@ object amplify:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Amplify Backend Environment resource. */
-  def BackendEnvironment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackendEnvironment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.amplify.BackendEnvironmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.amplify.BackendEnvironmentArgs.builder
     com.pulumi.aws.amplify.BackendEnvironment(name,
@@ -35,7 +35,7 @@ object amplify:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Amplify Branch resource. */
-  def Branch(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Branch(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.amplify.BranchArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.amplify.BranchArgs.builder
     argsBuilder = args(argsBuilder)
@@ -50,7 +50,7 @@ object amplify:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Amplify Domain Association resource. */
-  def DomainAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DomainAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.amplify.DomainAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.amplify.DomainAssociationArgs.builder
     com.pulumi.aws.amplify.DomainAssociation(name,
@@ -58,7 +58,7 @@ object amplify:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Amplify Webhook resource. */
-  def Webhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Webhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.amplify.WebhookArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.amplify.WebhookArgs.builder
     com.pulumi.aws.amplify.Webhook(name,

@@ -7,7 +7,7 @@ object newrelic_ext:
      * @param identity An `identity` block as defined below. Changing this forces a new Azure Native New Relic Monitor to be created.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.newrelic.inputs.MonitorIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.newrelic.inputs.MonitorIdentityArgs.Builder]):
         com.pulumi.azure.newrelic.MonitorArgs.Builder =
       val argsBuilder = com.pulumi.azure.newrelic.inputs.MonitorIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object newrelic_ext:
      * @param plan A `plan` block as defined below. Changing this forces a new Azure Native New Relic Monitor to be created.
      * @return builder
      */
-    def plan(args: Endofunction[com.pulumi.azure.newrelic.inputs.MonitorPlanArgs.Builder]):
+    inline def plan(args: Endofunction[com.pulumi.azure.newrelic.inputs.MonitorPlanArgs.Builder]):
         com.pulumi.azure.newrelic.MonitorArgs.Builder =
       val argsBuilder = com.pulumi.azure.newrelic.inputs.MonitorPlanArgs.builder
       builder.plan(args(argsBuilder).build)
@@ -25,7 +25,7 @@ object newrelic_ext:
      * @param user A `user` block as defined below. Changing this forces a new Azure Native New Relic Monitor to be created.
      * @return builder
      */
-    def user(args: Endofunction[com.pulumi.azure.newrelic.inputs.MonitorUserArgs.Builder]):
+    inline def user(args: Endofunction[com.pulumi.azure.newrelic.inputs.MonitorUserArgs.Builder]):
         com.pulumi.azure.newrelic.MonitorArgs.Builder =
       val argsBuilder = com.pulumi.azure.newrelic.inputs.MonitorUserArgs.builder
       builder.user(args(argsBuilder).build)
@@ -35,7 +35,7 @@ object newrelic_ext:
      * @param logTagFilters A `logTagFilter` block as defined below.
      * @return builder
      */
-    def logTagFilters(args: Endofunction[com.pulumi.azure.newrelic.inputs.TagRuleLogTagFilterArgs.Builder]*):
+    inline def logTagFilters(args: Endofunction[com.pulumi.azure.newrelic.inputs.TagRuleLogTagFilterArgs.Builder]*):
         com.pulumi.azure.newrelic.TagRuleArgs.Builder =
       def argsBuilder = com.pulumi.azure.newrelic.inputs.TagRuleLogTagFilterArgs.builder
       builder.logTagFilters(args.map(_(argsBuilder).build)*)
@@ -44,7 +44,7 @@ object newrelic_ext:
      * @param metricTagFilters A `metricTagFilter` block as defined below.
      * @return builder
      */
-    def metricTagFilters(args: Endofunction[com.pulumi.azure.newrelic.inputs.TagRuleMetricTagFilterArgs.Builder]*):
+    inline def metricTagFilters(args: Endofunction[com.pulumi.azure.newrelic.inputs.TagRuleMetricTagFilterArgs.Builder]*):
         com.pulumi.azure.newrelic.TagRuleArgs.Builder =
       def argsBuilder = com.pulumi.azure.newrelic.inputs.TagRuleMetricTagFilterArgs.builder
       builder.metricTagFilters(args.map(_(argsBuilder).build)*)
@@ -54,7 +54,7 @@ object newrelic_ext:
      * @param identity An `identity` block as defined below. Changing this forces a new Azure Native New Relic Monitor to be created.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.newrelic.inputs.MonitorIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.newrelic.inputs.MonitorIdentityArgs.Builder]):
         com.pulumi.azure.newrelic.inputs.MonitorState.Builder =
       val argsBuilder = com.pulumi.azure.newrelic.inputs.MonitorIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -63,7 +63,7 @@ object newrelic_ext:
      * @param plan A `plan` block as defined below. Changing this forces a new Azure Native New Relic Monitor to be created.
      * @return builder
      */
-    def plan(args: Endofunction[com.pulumi.azure.newrelic.inputs.MonitorPlanArgs.Builder]):
+    inline def plan(args: Endofunction[com.pulumi.azure.newrelic.inputs.MonitorPlanArgs.Builder]):
         com.pulumi.azure.newrelic.inputs.MonitorState.Builder =
       val argsBuilder = com.pulumi.azure.newrelic.inputs.MonitorPlanArgs.builder
       builder.plan(args(argsBuilder).build)
@@ -72,7 +72,7 @@ object newrelic_ext:
      * @param user A `user` block as defined below. Changing this forces a new Azure Native New Relic Monitor to be created.
      * @return builder
      */
-    def user(args: Endofunction[com.pulumi.azure.newrelic.inputs.MonitorUserArgs.Builder]):
+    inline def user(args: Endofunction[com.pulumi.azure.newrelic.inputs.MonitorUserArgs.Builder]):
         com.pulumi.azure.newrelic.inputs.MonitorState.Builder =
       val argsBuilder = com.pulumi.azure.newrelic.inputs.MonitorUserArgs.builder
       builder.user(args(argsBuilder).build)
@@ -82,7 +82,7 @@ object newrelic_ext:
      * @param logTagFilters A `logTagFilter` block as defined below.
      * @return builder
      */
-    def logTagFilters(args: Endofunction[com.pulumi.azure.newrelic.inputs.TagRuleLogTagFilterArgs.Builder]*):
+    inline def logTagFilters(args: Endofunction[com.pulumi.azure.newrelic.inputs.TagRuleLogTagFilterArgs.Builder]*):
         com.pulumi.azure.newrelic.inputs.TagRuleState.Builder =
       def argsBuilder = com.pulumi.azure.newrelic.inputs.TagRuleLogTagFilterArgs.builder
       builder.logTagFilters(args.map(_(argsBuilder).build)*)
@@ -91,7 +91,7 @@ object newrelic_ext:
      * @param metricTagFilters A `metricTagFilter` block as defined below.
      * @return builder
      */
-    def metricTagFilters(args: Endofunction[com.pulumi.azure.newrelic.inputs.TagRuleMetricTagFilterArgs.Builder]*):
+    inline def metricTagFilters(args: Endofunction[com.pulumi.azure.newrelic.inputs.TagRuleMetricTagFilterArgs.Builder]*):
         com.pulumi.azure.newrelic.inputs.TagRuleState.Builder =
       def argsBuilder = com.pulumi.azure.newrelic.inputs.TagRuleMetricTagFilterArgs.builder
       builder.metricTagFilters(args.map(_(argsBuilder).build)*)

@@ -9,7 +9,7 @@ object evidently:
    * 
    * &gt; **Warning:** This resource is deprecated. Use [AWS AppConfig feature flags](https://aws.amazon.com/blogs/mt/using-aws-appconfig-feature-flags/) instead.
    */
-  def Feature(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Feature(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.evidently.FeatureArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.evidently.FeatureArgs.builder
     conf.logicalName2physicalName(name) match
@@ -31,7 +31,7 @@ object evidently:
    * 
    * &gt; **Warning:** This resource is deprecated. Use [AWS AppConfig feature flags](https://aws.amazon.com/blogs/mt/using-aws-appconfig-feature-flags/) instead.
    */
-  def Launch(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Launch(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.evidently.LaunchArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.evidently.LaunchArgs.builder
     conf.logicalName2physicalName(name) match
@@ -53,7 +53,7 @@ object evidently:
    * 
    * &gt; **Warning:** This resource is deprecated. Use [AWS AppConfig feature flags](https://aws.amazon.com/blogs/mt/using-aws-appconfig-feature-flags/) instead.
    */
-  def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.evidently.ProjectArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.evidently.ProjectArgs.builder
     conf.logicalName2physicalName(name) match
@@ -75,7 +75,7 @@ object evidently:
    * 
    * &gt; **Warning:** This resource is deprecated. Use [AWS AppConfig feature flags](https://aws.amazon.com/blogs/mt/using-aws-appconfig-feature-flags/) instead.
    */
-  def Segment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Segment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.evidently.SegmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.evidently.SegmentArgs.builder
     conf.logicalName2physicalName(name) match

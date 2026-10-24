@@ -17,7 +17,7 @@ object serviceusage:
    *     * [Managing Service Quota](https://cloud.google.com/service-usage/docs/manage-quota)
    *     * [REST API documentation](https://cloud.google.com/service-usage/docs/reference/rest/v1beta1/services.consumerQuotaMetrics.limits.consumerOverrides)
    */
-  def ConsumerQuotaOverride(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConsumerQuotaOverride(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.serviceusage.ConsumerQuotaOverrideArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.serviceusage.ConsumerQuotaOverrideArgs.builder
     com.pulumi.gcp.serviceusage.ConsumerQuotaOverride(name,
@@ -48,7 +48,7 @@ object serviceusage:
    * \$ pulumi import gcp:serviceusage/v2ConsumerPolicy:V2ConsumerPolicy default {{parent}}/consumerPolicies/{{name}}
    * ```
    */
-  def V2ConsumerPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2ConsumerPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.serviceusage.V2ConsumerPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.serviceusage.V2ConsumerPolicyArgs.builder
     conf.logicalName2physicalName(name) match

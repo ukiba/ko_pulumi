@@ -11,7 +11,7 @@ object autoscaling:
    * 
    * &gt; **NOTE on Auto Scaling groups, Attachments and Traffic Source Attachments:** Pulumi provides standalone Attachment (for attaching Classic Load Balancers and Application Load Balancer, Gateway Load Balancer, or Network Load Balancer target groups) and Traffic Source Attachment (for attaching Load Balancers and VPC Lattice target groups) resources and an Auto Scaling group resource with `loadBalancers`, `targetGroupArns` and `trafficSource` attributes. Do not use the same traffic source in more than one of these resources. Doing so will cause a conflict of attachments. A `lifecycle` configuration block can be used to suppress differences if necessary.
    */
-  def Attachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Attachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.autoscaling.AttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.autoscaling.AttachmentArgs.builder
     com.pulumi.aws.autoscaling.Attachment(name,
@@ -124,7 +124,7 @@ object autoscaling:
    * Troubleshooting](https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-troubleshooting.html)
    * for more information.
    */
-  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.autoscaling.GroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.autoscaling.GroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -149,7 +149,7 @@ object autoscaling:
    * `aws.autoscaling.Group`,
    * but take care to not duplicate those hooks with this resource.
    */
-  def LifecycleHook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LifecycleHook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.autoscaling.LifecycleHookArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.autoscaling.LifecycleHookArgs.builder
     conf.logicalName2physicalName(name) match
@@ -164,7 +164,7 @@ object autoscaling:
    * the `notifications` map to a [Notification Configuration](https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeNotificationConfigurations.html) inside Amazon Web
    * Services, and are applied to each Auto Scaling group you supply.
    */
-  def Notification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Notification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.autoscaling.NotificationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.autoscaling.NotificationArgs.builder
     com.pulumi.aws.autoscaling.Notification(name,
@@ -180,7 +180,7 @@ object autoscaling:
    * or [dynamic](https://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html)
    * (policy-based) scaling.
    */
-  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.autoscaling.PolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.autoscaling.PolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -191,7 +191,7 @@ object autoscaling:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AutoScaling Schedule resource. */
-  def Schedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Schedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.autoscaling.ScheduleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.autoscaling.ScheduleArgs.builder
     com.pulumi.aws.autoscaling.Schedule(name,
@@ -205,7 +205,7 @@ object autoscaling:
    * 
    * &gt; **NOTE:** This tagging resource does not use the provider `ignoreTags` configuration.
    */
-  def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.autoscaling.TagArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.autoscaling.TagArgs.builder
     com.pulumi.aws.autoscaling.Tag(name,
@@ -217,7 +217,7 @@ object autoscaling:
    * 
    * &gt; **NOTE on Auto Scaling groups, Attachments and Traffic Source Attachments:** Pulumi provides standalone Attachment (for attaching Classic Load Balancers and Application Load Balancer, Gateway Load Balancer, or Network Load Balancer target groups) and Traffic Source Attachment (for attaching Load Balancers and VPC Lattice target groups) resources and an Auto Scaling group resource with `loadBalancers`, `targetGroupArns` and `trafficSource` attributes. Do not use the same traffic source in more than one of these resources. Doing so will cause a conflict of attachments. A `lifecycle` configuration block can be used to suppress differences if necessary.
    */
-  def TrafficSourceAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TrafficSourceAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.autoscaling.TrafficSourceAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.autoscaling.TrafficSourceAttachmentArgs.builder
     com.pulumi.aws.autoscaling.TrafficSourceAttachment(name,

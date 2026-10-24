@@ -13,7 +13,7 @@ object dataloss:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/sensitive-data-protection/docs)
    */
-  def PreventionContentPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PreventionContentPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataloss.PreventionContentPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataloss.PreventionContentPolicyArgs.builder
     com.pulumi.gcp.dataloss.PreventionContentPolicy(name,
@@ -29,7 +29,7 @@ object dataloss:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dlp/docs/concepts-templates)
    */
-  def PreventionDeidentifyTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PreventionDeidentifyTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataloss.PreventionDeidentifyTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataloss.PreventionDeidentifyTemplateArgs.builder
     com.pulumi.gcp.dataloss.PreventionDeidentifyTemplate(name,
@@ -45,7 +45,7 @@ object dataloss:
    * * How-to Guides
    *     * [Schedule inspection scan](https://cloud.google.com/dlp/docs/schedule-inspection-scan)
    */
-  def PreventionDiscoveryConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PreventionDiscoveryConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataloss.PreventionDiscoveryConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataloss.PreventionDiscoveryConfigArgs.builder
     com.pulumi.gcp.dataloss.PreventionDiscoveryConfig(name,
@@ -61,7 +61,7 @@ object dataloss:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dlp/docs/creating-templates-inspect)
    */
-  def PreventionInspectTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PreventionInspectTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataloss.PreventionInspectTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataloss.PreventionInspectTemplateArgs.builder
     com.pulumi.gcp.dataloss.PreventionInspectTemplate(name,
@@ -77,7 +77,7 @@ object dataloss:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dlp/docs/creating-job-triggers)
    */
-  def PreventionJobTrigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PreventionJobTrigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataloss.PreventionJobTriggerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataloss.PreventionJobTriggerArgs.builder
     com.pulumi.gcp.dataloss.PreventionJobTrigger(name,
@@ -93,7 +93,7 @@ object dataloss:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dlp/docs/creating-stored-infotypes)
    */
-  def PreventionStoredInfoType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PreventionStoredInfoType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataloss.PreventionStoredInfoTypeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataloss.PreventionStoredInfoTypeArgs.builder
     com.pulumi.gcp.dataloss.PreventionStoredInfoType(name,

@@ -7,7 +7,7 @@ object arcmachine_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.arcmachine.inputs.ArcMachineIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.arcmachine.inputs.ArcMachineIdentityArgs.Builder]):
         com.pulumi.azure.arcmachine.ArcMachineArgs.Builder =
       val argsBuilder = com.pulumi.azure.arcmachine.inputs.ArcMachineIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object arcmachine_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.arcmachine.inputs.ArcMachineIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.arcmachine.inputs.ArcMachineIdentityArgs.Builder]):
         com.pulumi.azure.arcmachine.inputs.ArcMachineState.Builder =
       val argsBuilder = com.pulumi.azure.arcmachine.inputs.ArcMachineIdentityArgs.builder
       builder.identity(args(argsBuilder).build)

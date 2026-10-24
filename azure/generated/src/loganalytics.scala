@@ -11,7 +11,7 @@ object loganalytics:
    * 
    * Manages a Log Analytics Cluster.
    */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.loganalytics.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.loganalytics.ClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -29,7 +29,7 @@ object loganalytics:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Log Analytics Cluster Customer Managed Key. */
-  def ClusterCustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterCustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.loganalytics.ClusterCustomerManagedKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.loganalytics.ClusterCustomerManagedKeyArgs.builder
     com.pulumi.azure.loganalytics.ClusterCustomerManagedKey(name,
@@ -37,7 +37,7 @@ object loganalytics:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Log Analytics Data Export Rule. */
-  def DataExportRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataExportRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.loganalytics.DataExportRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.loganalytics.DataExportRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -48,7 +48,7 @@ object loganalytics:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Log Analytics Windows Event DataSource. */
-  def DataSourceWindowsEvent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataSourceWindowsEvent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.loganalytics.DataSourceWindowsEventArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.loganalytics.DataSourceWindowsEventArgs.builder
     conf.logicalName2physicalName(name) match
@@ -59,7 +59,7 @@ object loganalytics:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Log Analytics (formally Operational Insights) Windows Performance Counter DataSource. */
-  def DataSourceWindowsPerformanceCounter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataSourceWindowsPerformanceCounter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.loganalytics.DataSourceWindowsPerformanceCounterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.loganalytics.DataSourceWindowsPerformanceCounterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -70,7 +70,7 @@ object loganalytics:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Log Analytics Linked Service. */
-  def LinkedService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LinkedService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.loganalytics.LinkedServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.loganalytics.LinkedServiceArgs.builder
     com.pulumi.azure.loganalytics.LinkedService(name,
@@ -78,7 +78,7 @@ object loganalytics:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Log Analytics Linked Storage Account. */
-  def LinkedStorageAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LinkedStorageAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.loganalytics.LinkedStorageAccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.loganalytics.LinkedStorageAccountArgs.builder
     com.pulumi.azure.loganalytics.LinkedStorageAccount(name,
@@ -103,7 +103,7 @@ object loganalytics:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Log Analytics Query Pack. */
-  def QueryPack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def QueryPack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.loganalytics.QueryPackArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.loganalytics.QueryPackArgs.builder
     conf.logicalName2physicalName(name) match
@@ -121,7 +121,7 @@ object loganalytics:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Log Analytics (formally Operational Insights) Saved Search. */
-  def SavedSearch(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SavedSearch(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.loganalytics.SavedSearchArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.loganalytics.SavedSearchArgs.builder
     conf.logicalName2physicalName(name) match
@@ -139,7 +139,7 @@ object loganalytics:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Log Analytics Storage Insights resource. */
-  def StorageInsights(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StorageInsights(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.loganalytics.StorageInsightsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.loganalytics.StorageInsightsArgs.builder
     conf.logicalName2physicalName(name) match
@@ -154,7 +154,7 @@ object loganalytics:
    * 
    * &gt; **Note:** This resource does not create or destroy tables. This resource is used to update attributes (currently only retention_in_days) of the tables created when a Log Analytics Workspace is created. Deleting an azure.loganalytics.WorkspaceTable resource will not delete the table. Instead, the table&#39;s retentionInDays field will be set to the value of azure.operationalinsights.AnalyticsWorkspace retention_in_days
    */
-  def WorkspaceTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkspaceTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.loganalytics.WorkspaceTableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.loganalytics.WorkspaceTableArgs.builder
     conf.logicalName2physicalName(name) match
@@ -165,7 +165,7 @@ object loganalytics:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Custom Log Table in a Log Analytics (formally Operational Insights) Workspace. */
-  def WorkspaceTableCustomLog(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkspaceTableCustomLog(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.loganalytics.WorkspaceTableCustomLogArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.loganalytics.WorkspaceTableCustomLogArgs.builder
     conf.logicalName2physicalName(name) match
@@ -176,7 +176,7 @@ object loganalytics:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Microsoft Table in a Log Analytics (formally Operational Insights) Workspace. */
-  def WorkspaceTableMicrosoft(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkspaceTableMicrosoft(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.loganalytics.WorkspaceTableMicrosoftArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.loganalytics.WorkspaceTableMicrosoftArgs.builder
     conf.logicalName2physicalName(name) match

@@ -7,7 +7,7 @@ object qldb_ext:
      * @param kinesisConfiguration Configuration settings of the Kinesis Data Streams destination for your stream request. Documented below.
      * @return builder
      */
-    def kinesisConfiguration(args: Endofunction[com.pulumi.aws.qldb.inputs.StreamKinesisConfigurationArgs.Builder]):
+    inline def kinesisConfiguration(args: Endofunction[com.pulumi.aws.qldb.inputs.StreamKinesisConfigurationArgs.Builder]):
         com.pulumi.aws.qldb.StreamArgs.Builder =
       val argsBuilder = com.pulumi.aws.qldb.inputs.StreamKinesisConfigurationArgs.builder
       builder.kinesisConfiguration(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object qldb_ext:
      * @param kinesisConfiguration Configuration settings of the Kinesis Data Streams destination for your stream request. Documented below.
      * @return builder
      */
-    def kinesisConfiguration(args: Endofunction[com.pulumi.aws.qldb.inputs.StreamKinesisConfigurationArgs.Builder]):
+    inline def kinesisConfiguration(args: Endofunction[com.pulumi.aws.qldb.inputs.StreamKinesisConfigurationArgs.Builder]):
         com.pulumi.aws.qldb.inputs.StreamState.Builder =
       val argsBuilder = com.pulumi.aws.qldb.inputs.StreamKinesisConfigurationArgs.builder
       builder.kinesisConfiguration(args(argsBuilder).build)

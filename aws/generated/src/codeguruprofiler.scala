@@ -24,7 +24,7 @@ object codeguruprofiler:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Resource for managing an AWS CodeGuru Profiler Profiling Group. */
-  def ProfilingGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProfilingGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codeguruprofiler.ProfilingGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codeguruprofiler.ProfilingGroupArgs.builder
     conf.logicalName2physicalName(name) match

@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object compute:
   /** Manages a Virtual Machine Automanage Configuration Profile Assignment. */
-  def AutomanageConfigurationAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AutomanageConfigurationAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.AutomanageConfigurationAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.compute.AutomanageConfigurationAssignmentArgs.builder
     com.pulumi.azure.compute.AutomanageConfigurationAssignment(name,
@@ -15,7 +15,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Availability Set for Virtual Machines. */
-  def AvailabilitySet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AvailabilitySet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.AvailabilitySetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.AvailabilitySetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -33,7 +33,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Bastion Host. */
-  def BastionHost(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BastionHost(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.BastionHostArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.BastionHostArgs.builder
     conf.logicalName2physicalName(name) match
@@ -51,7 +51,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Capacity Reservation within a Capacity Reservation Group. */
-  def CapacityReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CapacityReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.CapacityReservationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.CapacityReservationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -69,7 +69,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Capacity Reservation Group. */
-  def CapacityReservationGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CapacityReservationGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.CapacityReservationGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.CapacityReservationGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -430,7 +430,7 @@ object compute:
    * 
    * &gt; **Please Note:** only Managed Disks are supported via this separate resource, Unmanaged Disks can be attached using the `storageDataDisk` block in the `azure.compute.VirtualMachine` resource.
    */
-  def DataDiskAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataDiskAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.DataDiskAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.compute.DataDiskAttachmentArgs.builder
     com.pulumi.azure.compute.DataDiskAttachment(name,
@@ -438,7 +438,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manage a Dedicated Host within a Dedicated Host Group. */
-  def DedicatedHost(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DedicatedHost(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.DedicatedHostArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.DedicatedHostArgs.builder
     conf.logicalName2physicalName(name) match
@@ -456,7 +456,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manage a Dedicated Host Group. */
-  def DedicatedHostGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DedicatedHostGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.DedicatedHostGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.DedicatedHostGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -474,7 +474,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Disk Access. */
-  def DiskAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DiskAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.DiskAccessArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.DiskAccessArgs.builder
     conf.logicalName2physicalName(name) match
@@ -496,7 +496,7 @@ object compute:
    * 
    * &gt; **NOTE:** At this time the Key Vault used to store the Active Key for this Disk Encryption Set must have both Soft Delete &amp; Purge Protection enabled - which are not yet supported by this provider.
    */
-  def DiskEncryptionSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DiskEncryptionSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.DiskEncryptionSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.DiskEncryptionSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -521,7 +521,7 @@ object compute:
    * 
    * &gt; **Note:** Custom Script Extensions require that the Azure Virtual Machine Guest Agent is running on the Virtual Machine.
    */
-  def Extension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Extension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.ExtensionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.ExtensionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -539,7 +539,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Gallery Application. */
-  def GalleryApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GalleryApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.GalleryApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.GalleryApplicationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -561,7 +561,7 @@ object compute:
    * 
    * &gt; **Note:** Gallery Application Assignments can be defined either directly on `azure.compute.LinuxVirtualMachine` and `azure.compute.WindowsVirtualMachine` resources, or using the `azure.compute.GalleryApplicationAssignment` resource - but the two approaches cannot be used together. If both are used with the same Virtual Machine, spurious changes will occur. It&#39;s recommended to use `ignoreChanges` for the `galleryApplication` block on the associated virtual machine resources, to avoid a persistent diff when using this resource.
    */
-  def GalleryApplicationAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GalleryApplicationAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.GalleryApplicationAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.compute.GalleryApplicationAssignmentArgs.builder
     com.pulumi.azure.compute.GalleryApplicationAssignment(name,
@@ -569,7 +569,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Gallery Application Version. */
-  def GalleryApplicationVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GalleryApplicationVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.GalleryApplicationVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.GalleryApplicationVersionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -587,7 +587,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a custom virtual machine image that can be used to create virtual machines. */
-  def Image(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Image(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.ImageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.ImageArgs.builder
     conf.logicalName2physicalName(name) match
@@ -609,7 +609,7 @@ object compute:
    * 
    * &gt; **Note:** The Implicit Data Disk will be deleted instantly after this resource is destroyed. If you want to detach this disk only, you may set `detachImplicitDataDiskOnDeletion` field to `true` within the `virtualMachine` block in the provider `features` block.
    */
-  def ImplicitDataDiskFromSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ImplicitDataDiskFromSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.ImplicitDataDiskFromSourceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.ImplicitDataDiskFromSourceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -634,7 +634,7 @@ object compute:
    * 
    * &gt; In this release there&#39;s a known issue where the `publicIpAddress` and `publicIpAddresses` fields may not be fully populated for Dynamic Public IP&#39;s.
    */
-  def LinuxVirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LinuxVirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.LinuxVirtualMachineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.LinuxVirtualMachineArgs.builder
     conf.logicalName2physicalName(name) match
@@ -658,7 +658,7 @@ object compute:
    * 
    * &gt; **Note:** As of the **v2.86.0** (November 19, 2021) release of the provider this resource will only create Virtual Machine Scale Sets with the **Uniform** Orchestration Mode. For Virtual Machine Scale Sets with **Flexible** orchestration mode, use `azure.compute.OrchestratedVirtualMachineScaleSet`. Flexible orchestration mode is recommended for workloads on Azure.
    */
-  def LinuxVirtualMachineScaleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LinuxVirtualMachineScaleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.LinuxVirtualMachineScaleSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.LinuxVirtualMachineScaleSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -676,7 +676,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a managed disk. */
-  def ManagedDisk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedDisk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.ManagedDiskArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.ManagedDiskArgs.builder
     conf.logicalName2physicalName(name) match
@@ -702,7 +702,7 @@ object compute:
    * 
    * With the help of this resource, data from the disk can be copied from managed disk to a storage blob or to some other system without the need of azcopy.
    */
-  def ManagedDiskSasToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedDiskSasToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.ManagedDiskSasTokenArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.compute.ManagedDiskSasTokenArgs.builder
     com.pulumi.azure.compute.ManagedDiskSasToken(name,
@@ -718,7 +718,7 @@ object compute:
    * 
    * &gt; **Note:** All arguments including the administrator login and password will be stored in the raw state as plain-text. [Read more about sensitive data in state](https://www.terraform.io/docs/state/sensitive-data.html).
    */
-  def OrchestratedVirtualMachineScaleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrchestratedVirtualMachineScaleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.OrchestratedVirtualMachineScaleSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.OrchestratedVirtualMachineScaleSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -736,7 +736,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Configures Network Packet Capturing against a Virtual Machine using a Network Watcher. */
-  def PacketCapture(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PacketCapture(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.PacketCaptureArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.PacketCaptureArgs.builder
     conf.logicalName2physicalName(name) match
@@ -747,7 +747,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Machine Restore Point. */
-  def RestorePoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RestorePoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.RestorePointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.RestorePointArgs.builder
     conf.logicalName2physicalName(name) match
@@ -758,7 +758,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Machine Restore Point Collection. */
-  def RestorePointCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RestorePointCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.RestorePointCollectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.RestorePointCollectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -776,7 +776,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Machine Run Command. */
-  def RunCommand(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RunCommand(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.RunCommandArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.RunCommandArgs.builder
     conf.logicalName2physicalName(name) match
@@ -794,7 +794,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a virtual machine scale set. */
-  def ScaleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ScaleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.ScaleSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.ScaleSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -812,7 +812,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Configures Network Packet Capturing against a Virtual Machine Scale Set using a Network Watcher. */
-  def ScaleSetPacketCapture(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ScaleSetPacketCapture(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.ScaleSetPacketCaptureArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.ScaleSetPacketCaptureArgs.builder
     conf.logicalName2physicalName(name) match
@@ -826,7 +826,7 @@ object compute:
    * Manages a Standby Pool for Virtual Machine Scale Sets.
    * &gt; **Note:** please follow the prerequisites mentioned in this [article](https://learn.microsoft.com/azure/virtual-machine-scale-sets/standby-pools-create?tabs=portal#prerequisites) before using this resource.
    */
-  def ScaleSetStandbyPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ScaleSetStandbyPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.ScaleSetStandbyPoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.ScaleSetStandbyPoolArgs.builder
     conf.logicalName2physicalName(name) match
@@ -844,7 +844,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Shared Image within a Shared Image Gallery. */
-  def SharedImage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SharedImage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.SharedImageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.SharedImageArgs.builder
     conf.logicalName2physicalName(name) match
@@ -862,7 +862,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Shared Image Gallery. */
-  def SharedImageGallery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SharedImageGallery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.SharedImageGalleryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.SharedImageGalleryArgs.builder
     conf.logicalName2physicalName(name) match
@@ -880,7 +880,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Version of a Shared Image within a Shared Image Gallery. */
-  def SharedImageVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SharedImageVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.SharedImageVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.SharedImageVersionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -898,7 +898,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Disk Snapshot. */
-  def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.SnapshotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.SnapshotArgs.builder
     conf.logicalName2physicalName(name) match
@@ -916,7 +916,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a SSH Public Key. */
-  def SshPublicKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SshPublicKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.SshPublicKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.SshPublicKeyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -942,7 +942,7 @@ object compute:
    * 
    * &gt; **Note:** Data Disks can be attached either directly on the `azure.compute.VirtualMachine` resource, or using the `azure.compute.DataDiskAttachment` resource - but the two cannot be used together. If both are used against the same Virtual Machine, spurious changes will occur.
    */
-  def VirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.VirtualMachineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.VirtualMachineArgs.builder
     conf.logicalName2physicalName(name) match
@@ -964,7 +964,7 @@ object compute:
    * 
    * &gt; **Note:** This resource is not intended to be used with the `azure.compute.ScaleSet` resource - instead it&#39;s intended for this to be used with the `azure.compute.LinuxVirtualMachineScaleSet` and `azure.compute.WindowsVirtualMachineScaleSet` resources.
    */
-  def VirtualMachineScaleSetExtension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VirtualMachineScaleSetExtension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.VirtualMachineScaleSetExtensionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.VirtualMachineScaleSetExtensionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -989,7 +989,7 @@ object compute:
    * 
    * &gt; In this release there&#39;s a known issue where the `publicIpAddress` and `publicIpAddresses` fields may not be fully populated for Dynamic Public IP&#39;s.
    */
-  def WindowsVirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WindowsVirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.WindowsVirtualMachineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.WindowsVirtualMachineArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1019,7 +1019,7 @@ object compute:
    * 
    * &gt; **Note:** This resource does not support Unmanaged Disks. If you need to use Unmanaged Disks you can continue to use the `azure.compute.ScaleSet` resource instead.
    */
-  def WindowsVirtualMachineScaleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WindowsVirtualMachineScaleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.compute.WindowsVirtualMachineScaleSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.WindowsVirtualMachineScaleSetArgs.builder
     conf.logicalName2physicalName(name) match

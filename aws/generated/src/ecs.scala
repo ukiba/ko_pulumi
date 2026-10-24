@@ -13,7 +13,7 @@ object ecs:
    * 
    * &gt; **NOTE:** Your AWS account may not support disabling `containerInstanceLongArnFormat`, `serviceLongArnFormat`, and `taskLongArnFormat`. If your account does not support disabling these, &#34;destroying&#34; this resource will not disable the setting nor cause a provider error. However, the AWS Provider will log an AWS error: `InvalidParameterException: You can no longer disable Long Arn settings`.
    */
-  def AccountSettingDefault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccountSettingDefault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecs.AccountSettingDefaultArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ecs.AccountSettingDefaultArgs.builder
     conf.logicalName2physicalName(name) match
@@ -32,7 +32,7 @@ object ecs:
    * 
    * &gt; **NOTE:** AWS cannot delete a capacity provider that is still associated with a cluster through `aws.ecs.ClusterCapacityProviders`. When a change forces replacement, add a `replaceTriggeredBy` lifecycle rule to the `aws.ecs.ClusterCapacityProviders` resource so the association is recreated before the old capacity provider is deleted.
    */
-  def CapacityProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CapacityProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecs.CapacityProviderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ecs.CapacityProviderArgs.builder
     conf.logicalName2physicalName(name) match
@@ -50,7 +50,7 @@ object ecs:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an ECS cluster. */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecs.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ecs.ClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -74,7 +74,7 @@ object ecs:
    * 
    * &gt; **NOTE:** When an associated `aws.ecs.CapacityProvider` must be replaced, add a `replaceTriggeredBy` lifecycle rule referencing the capacity provider. This recreates the association so the old capacity provider is detached from the cluster before it is deleted, which AWS otherwise disallows.
    */
-  def ClusterCapacityProviders(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterCapacityProviders(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecs.ClusterCapacityProvidersArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ecs.ClusterCapacityProvidersArgs.builder
     com.pulumi.aws.ecs.ClusterCapacityProviders(name,
@@ -82,7 +82,7 @@ object ecs:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an ECS Daemon resource, which manages a daemon that runs exactly one task on each container instance in an ECS cluster. */
-  def Daemon(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Daemon(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecs.DaemonArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ecs.DaemonArgs.builder
     conf.logicalName2physicalName(name) match
@@ -100,7 +100,7 @@ object ecs:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a revision of an ECS daemon task definition for use with daemon scheduling strategy. */
-  def DaemonTaskDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DaemonTaskDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecs.DaemonTaskDefinitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ecs.DaemonTaskDefinitionArgs.builder
     argsBuilder = args(argsBuilder)
@@ -248,7 +248,7 @@ object ecs:
    * 
    * &gt; **Note:** To prevent a race condition during service deletion, make sure to set `dependsOn` to the related `aws.iam.RolePolicy` or `aws.iam.RolePolicyAttachment` resources. Otherwise, the policy may be destroyed too soon and the ECS service will then get stuck in the `DRAINING` state.
    */
-  def ExpressGatewayService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ExpressGatewayService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecs.ExpressGatewayServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ecs.ExpressGatewayServiceArgs.builder
     argsBuilder = args(argsBuilder)
@@ -269,7 +269,7 @@ object ecs:
    * 
    * See [ECS Services section in AWS developer guide](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html).
    */
-  def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecs.ServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ecs.ServiceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -293,7 +293,7 @@ object ecs:
    * 
    * &gt; **NOTE:** This tagging resource does not use the provider `ignoreTags` configuration.
    */
-  def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecs.TagArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ecs.TagArgs.builder
     com.pulumi.aws.ecs.Tag(name,
@@ -301,7 +301,7 @@ object ecs:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a revision of an ECS task definition to be used in `aws.ecs.Service`. */
-  def TaskDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TaskDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecs.TaskDefinitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ecs.TaskDefinitionArgs.builder
     conf.logicalName2ecsTaskDefinitionFamily(name) match
@@ -323,7 +323,7 @@ object ecs:
    * 
    * See [ECS Task Set section in AWS developer guide](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-external.html).
    */
-  def TaskSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TaskSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ecs.TaskSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ecs.TaskSetArgs.builder
     argsBuilder = args(argsBuilder)

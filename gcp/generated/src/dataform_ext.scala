@@ -8,7 +8,7 @@ object dataform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gitRemoteSettings(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryGitRemoteSettingsArgs.Builder]):
+    inline def gitRemoteSettings(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryGitRemoteSettingsArgs.Builder]):
         com.pulumi.gcp.dataform.RepositoryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataform.inputs.RepositoryGitRemoteSettingsArgs.builder
       builder.gitRemoteSettings(args(argsBuilder).build)
@@ -18,19 +18,19 @@ object dataform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def workspaceCompilationOverrides(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryWorkspaceCompilationOverridesArgs.Builder]):
+    inline def workspaceCompilationOverrides(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryWorkspaceCompilationOverridesArgs.Builder]):
         com.pulumi.gcp.dataform.RepositoryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataform.inputs.RepositoryWorkspaceCompilationOverridesArgs.builder
       builder.workspaceCompilationOverrides(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.dataform.RepositoryIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.dataform.RepositoryIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataform.inputs.RepositoryIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.dataform.RepositoryIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.dataform.RepositoryIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataform.inputs.RepositoryIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -41,7 +41,7 @@ object dataform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def codeCompilationConfig(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryReleaseConfigCodeCompilationConfigArgs.Builder]):
+    inline def codeCompilationConfig(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryReleaseConfigCodeCompilationConfigArgs.Builder]):
         com.pulumi.gcp.dataform.RepositoryReleaseConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataform.inputs.RepositoryReleaseConfigCodeCompilationConfigArgs.builder
       builder.codeCompilationConfig(args(argsBuilder).build)
@@ -52,7 +52,7 @@ object dataform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def invocationConfig(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryWorkflowConfigInvocationConfigArgs.Builder]):
+    inline def invocationConfig(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryWorkflowConfigInvocationConfigArgs.Builder]):
         com.pulumi.gcp.dataform.RepositoryWorkflowConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataform.inputs.RepositoryWorkflowConfigInvocationConfigArgs.builder
       builder.invocationConfig(args(argsBuilder).build)
@@ -63,19 +63,19 @@ object dataform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sshAuthenticationConfig(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryGitRemoteSettingsSshAuthenticationConfigArgs.Builder]):
+    inline def sshAuthenticationConfig(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryGitRemoteSettingsSshAuthenticationConfigArgs.Builder]):
         com.pulumi.gcp.dataform.inputs.RepositoryGitRemoteSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.dataform.inputs.RepositoryGitRemoteSettingsSshAuthenticationConfigArgs.builder
       builder.sshAuthenticationConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.dataform.inputs.RepositoryIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.dataform.inputs.RepositoryIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.dataform.inputs.RepositoryIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.dataform.inputs.RepositoryIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.dataform.inputs.RepositoryIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.dataform.inputs.RepositoryIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -87,7 +87,7 @@ object dataform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errorStatuses(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryReleaseConfigRecentScheduledReleaseRecordErrorStatusArgs.Builder]*):
+    inline def errorStatuses(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryReleaseConfigRecentScheduledReleaseRecordErrorStatusArgs.Builder]*):
         com.pulumi.gcp.dataform.inputs.RepositoryReleaseConfigRecentScheduledReleaseRecordArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataform.inputs.RepositoryReleaseConfigRecentScheduledReleaseRecordErrorStatusArgs.builder
       builder.errorStatuses(args.map(_(argsBuilder).build)*)
@@ -98,7 +98,7 @@ object dataform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def codeCompilationConfig(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryReleaseConfigCodeCompilationConfigArgs.Builder]):
+    inline def codeCompilationConfig(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryReleaseConfigCodeCompilationConfigArgs.Builder]):
         com.pulumi.gcp.dataform.inputs.RepositoryReleaseConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.dataform.inputs.RepositoryReleaseConfigCodeCompilationConfigArgs.builder
       builder.codeCompilationConfig(args(argsBuilder).build)
@@ -108,7 +108,7 @@ object dataform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def recentScheduledReleaseRecords(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryReleaseConfigRecentScheduledReleaseRecordArgs.Builder]*):
+    inline def recentScheduledReleaseRecords(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryReleaseConfigRecentScheduledReleaseRecordArgs.Builder]*):
         com.pulumi.gcp.dataform.inputs.RepositoryReleaseConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.dataform.inputs.RepositoryReleaseConfigRecentScheduledReleaseRecordArgs.builder
       builder.recentScheduledReleaseRecords(args.map(_(argsBuilder).build)*)
@@ -119,7 +119,7 @@ object dataform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gitRemoteSettings(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryGitRemoteSettingsArgs.Builder]):
+    inline def gitRemoteSettings(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryGitRemoteSettingsArgs.Builder]):
         com.pulumi.gcp.dataform.inputs.RepositoryState.Builder =
       val argsBuilder = com.pulumi.gcp.dataform.inputs.RepositoryGitRemoteSettingsArgs.builder
       builder.gitRemoteSettings(args(argsBuilder).build)
@@ -129,7 +129,7 @@ object dataform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def workspaceCompilationOverrides(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryWorkspaceCompilationOverridesArgs.Builder]):
+    inline def workspaceCompilationOverrides(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryWorkspaceCompilationOverridesArgs.Builder]):
         com.pulumi.gcp.dataform.inputs.RepositoryState.Builder =
       val argsBuilder = com.pulumi.gcp.dataform.inputs.RepositoryWorkspaceCompilationOverridesArgs.builder
       builder.workspaceCompilationOverrides(args(argsBuilder).build)
@@ -140,7 +140,7 @@ object dataform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def includedTargets(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryWorkflowConfigInvocationConfigIncludedTargetArgs.Builder]*):
+    inline def includedTargets(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryWorkflowConfigInvocationConfigIncludedTargetArgs.Builder]*):
         com.pulumi.gcp.dataform.inputs.RepositoryWorkflowConfigInvocationConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataform.inputs.RepositoryWorkflowConfigInvocationConfigIncludedTargetArgs.builder
       builder.includedTargets(args.map(_(argsBuilder).build)*)
@@ -152,7 +152,7 @@ object dataform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errorStatuses(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryWorkflowConfigRecentScheduledExecutionRecordErrorStatusArgs.Builder]*):
+    inline def errorStatuses(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryWorkflowConfigRecentScheduledExecutionRecordErrorStatusArgs.Builder]*):
         com.pulumi.gcp.dataform.inputs.RepositoryWorkflowConfigRecentScheduledExecutionRecordArgs.Builder =
       def argsBuilder = com.pulumi.gcp.dataform.inputs.RepositoryWorkflowConfigRecentScheduledExecutionRecordErrorStatusArgs.builder
       builder.errorStatuses(args.map(_(argsBuilder).build)*)
@@ -163,7 +163,7 @@ object dataform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def invocationConfig(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryWorkflowConfigInvocationConfigArgs.Builder]):
+    inline def invocationConfig(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryWorkflowConfigInvocationConfigArgs.Builder]):
         com.pulumi.gcp.dataform.inputs.RepositoryWorkflowConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.dataform.inputs.RepositoryWorkflowConfigInvocationConfigArgs.builder
       builder.invocationConfig(args(argsBuilder).build)
@@ -173,7 +173,7 @@ object dataform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def recentScheduledExecutionRecords(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryWorkflowConfigRecentScheduledExecutionRecordArgs.Builder]*):
+    inline def recentScheduledExecutionRecords(args: Endofunction[com.pulumi.gcp.dataform.inputs.RepositoryWorkflowConfigRecentScheduledExecutionRecordArgs.Builder]*):
         com.pulumi.gcp.dataform.inputs.RepositoryWorkflowConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.dataform.inputs.RepositoryWorkflowConfigRecentScheduledExecutionRecordArgs.builder
       builder.recentScheduledExecutionRecords(args.map(_(argsBuilder).build)*)

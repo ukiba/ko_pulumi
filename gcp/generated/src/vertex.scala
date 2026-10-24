@@ -21,7 +21,7 @@ object vertex:
    * * How-to Guides
    *     * [Agent Anomaly Detection](https://cloud.google.com/vertex-ai/generative-ai/docs/agent-engine/)
    */
-  def AiAgentAnomalyDetectionScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiAgentAnomalyDetectionScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiAgentAnomalyDetectionScopeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiAgentAnomalyDetectionScopeArgs.builder
     com.pulumi.gcp.vertex.AiAgentAnomalyDetectionScope(name,
@@ -37,7 +37,7 @@ object vertex:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/CacheConfig)
    */
-  def AiCacheConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiCacheConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiCacheConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiCacheConfigArgs.builder
     com.pulumi.gcp.vertex.AiCacheConfig(name,
@@ -53,7 +53,7 @@ object vertex:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/vertex-ai/docs)
    */
-  def AiDataset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiDataset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiDatasetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiDatasetArgs.builder
     com.pulumi.gcp.vertex.AiDataset(name,
@@ -68,7 +68,7 @@ object vertex:
    * 
    * * [API documentation](https://cloud.google.com/vertex-ai/docs/reference/rest/v1/projects.locations.deploymentResourcePools)
    */
-  def AiDeploymentResourcePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiDeploymentResourcePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiDeploymentResourcePoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vertex.AiDeploymentResourcePoolArgs.builder
     conf.logicalName2physicalName(name) match
@@ -87,7 +87,7 @@ object vertex:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/vertex-ai/docs)
    */
-  def AiEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vertex.AiEndpointArgs.builder
     conf.logicalName2physicalName(name) match
@@ -97,21 +97,21 @@ object vertex:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def AiEndpointIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiEndpointIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiEndpointIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiEndpointIamBindingArgs.builder
     com.pulumi.gcp.vertex.AiEndpointIamBinding(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def AiEndpointIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiEndpointIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiEndpointIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiEndpointIamMemberArgs.builder
     com.pulumi.gcp.vertex.AiEndpointIamMember(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def AiEndpointIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiEndpointIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiEndpointIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiEndpointIamPolicyArgs.builder
     com.pulumi.gcp.vertex.AiEndpointIamPolicy(name,
@@ -129,7 +129,7 @@ object vertex:
    *     * [Overview of self-deployed models](https://cloud.google.com/vertex-ai/generative-ai/docs/model-garden/self-deployed-models)
    *     * [Use models in Model Garden](https://cloud.google.com/vertex-ai/generative-ai/docs/model-garden/use-models)
    */
-  def AiEndpointWithModelGardenDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiEndpointWithModelGardenDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiEndpointWithModelGardenDeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiEndpointWithModelGardenDeploymentArgs.builder
     com.pulumi.gcp.vertex.AiEndpointWithModelGardenDeployment(name,
@@ -148,7 +148,7 @@ object vertex:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/vertex-ai/generative-ai/docs/evaluation/overview)
    */
-  def AiEvaluationMetric(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiEvaluationMetric(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiEvaluationMetricArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiEvaluationMetricArgs.builder
     com.pulumi.gcp.vertex.AiEvaluationMetric(name,
@@ -164,7 +164,7 @@ object vertex:
    * * How-to Guides
    *     * [Creating a Feature Group](https://cloud.google.com/vertex-ai/docs/featurestore/latest/create-featuregroup)
    */
-  def AiFeatureGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiFeatureGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiFeatureGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vertex.AiFeatureGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -183,7 +183,7 @@ object vertex:
    * * How-to Guides
    *     * [Creating a Feature](https://cloud.google.com/vertex-ai/docs/featurestore/latest/create-feature)
    */
-  def AiFeatureGroupFeature(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiFeatureGroupFeature(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiFeatureGroupFeatureArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vertex.AiFeatureGroupFeatureArgs.builder
     conf.logicalName2physicalName(name) match
@@ -499,7 +499,7 @@ object vertex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AiFeatureGroupIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiFeatureGroupIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiFeatureGroupIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureGroupIamBindingArgs.builder
     com.pulumi.gcp.vertex.AiFeatureGroupIamBinding(name,
@@ -812,7 +812,7 @@ object vertex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AiFeatureGroupIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiFeatureGroupIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiFeatureGroupIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureGroupIamMemberArgs.builder
     com.pulumi.gcp.vertex.AiFeatureGroupIamMember(name,
@@ -1125,7 +1125,7 @@ object vertex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AiFeatureGroupIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiFeatureGroupIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiFeatureGroupIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureGroupIamPolicyArgs.builder
     com.pulumi.gcp.vertex.AiFeatureGroupIamPolicy(name,
@@ -1141,7 +1141,7 @@ object vertex:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/vertex-ai/docs)
    */
-  def AiFeatureOnlineStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiFeatureOnlineStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiFeatureOnlineStoreArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vertex.AiFeatureOnlineStoreArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1160,7 +1160,7 @@ object vertex:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/vertex-ai/docs)
    */
-  def AiFeatureOnlineStoreFeatureview(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiFeatureOnlineStoreFeatureview(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureviewArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureviewArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1481,7 +1481,7 @@ object vertex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AiFeatureOnlineStoreFeatureviewIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiFeatureOnlineStoreFeatureviewIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureviewIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureviewIamBindingArgs.builder
     com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureviewIamBinding(name,
@@ -1799,7 +1799,7 @@ object vertex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AiFeatureOnlineStoreFeatureviewIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiFeatureOnlineStoreFeatureviewIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureviewIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureviewIamMemberArgs.builder
     com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureviewIamMember(name,
@@ -2117,7 +2117,7 @@ object vertex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AiFeatureOnlineStoreFeatureviewIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiFeatureOnlineStoreFeatureviewIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureviewIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureviewIamPolicyArgs.builder
     com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureviewIamPolicy(name,
@@ -2430,7 +2430,7 @@ object vertex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AiFeatureOnlineStoreIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiFeatureOnlineStoreIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiFeatureOnlineStoreIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureOnlineStoreIamBindingArgs.builder
     com.pulumi.gcp.vertex.AiFeatureOnlineStoreIamBinding(name,
@@ -2743,7 +2743,7 @@ object vertex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AiFeatureOnlineStoreIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiFeatureOnlineStoreIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiFeatureOnlineStoreIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureOnlineStoreIamMemberArgs.builder
     com.pulumi.gcp.vertex.AiFeatureOnlineStoreIamMember(name,
@@ -3056,7 +3056,7 @@ object vertex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AiFeatureOnlineStoreIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiFeatureOnlineStoreIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiFeatureOnlineStoreIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureOnlineStoreIamPolicyArgs.builder
     com.pulumi.gcp.vertex.AiFeatureOnlineStoreIamPolicy(name,
@@ -3072,7 +3072,7 @@ object vertex:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/vertex-ai/docs)
    */
-  def AiFeatureStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiFeatureStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiFeatureStoreArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vertex.AiFeatureStoreArgs.builder
     conf.logicalName2physicalName(name) match
@@ -3091,7 +3091,7 @@ object vertex:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/vertex-ai/docs)
    */
-  def AiFeatureStoreEntityType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiFeatureStoreEntityType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiFeatureStoreEntityTypeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vertex.AiFeatureStoreEntityTypeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -3110,7 +3110,7 @@ object vertex:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/vertex-ai/docs)
    */
-  def AiFeatureStoreEntityTypeFeature(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiFeatureStoreEntityTypeFeature(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiFeatureStoreEntityTypeFeatureArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vertex.AiFeatureStoreEntityTypeFeatureArgs.builder
     conf.logicalName2physicalName(name) match
@@ -3425,7 +3425,7 @@ object vertex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AiFeatureStoreEntityTypeIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiFeatureStoreEntityTypeIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiFeatureStoreEntityTypeIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureStoreEntityTypeIamBindingArgs.builder
     com.pulumi.gcp.vertex.AiFeatureStoreEntityTypeIamBinding(name,
@@ -3737,7 +3737,7 @@ object vertex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AiFeatureStoreEntityTypeIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiFeatureStoreEntityTypeIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiFeatureStoreEntityTypeIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureStoreEntityTypeIamMemberArgs.builder
     com.pulumi.gcp.vertex.AiFeatureStoreEntityTypeIamMember(name,
@@ -4049,7 +4049,7 @@ object vertex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AiFeatureStoreEntityTypeIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiFeatureStoreEntityTypeIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiFeatureStoreEntityTypeIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureStoreEntityTypeIamPolicyArgs.builder
     com.pulumi.gcp.vertex.AiFeatureStoreEntityTypeIamPolicy(name,
@@ -4368,7 +4368,7 @@ object vertex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AiFeatureStoreIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiFeatureStoreIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiFeatureStoreIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureStoreIamBindingArgs.builder
     com.pulumi.gcp.vertex.AiFeatureStoreIamBinding(name,
@@ -4687,7 +4687,7 @@ object vertex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AiFeatureStoreIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiFeatureStoreIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiFeatureStoreIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureStoreIamMemberArgs.builder
     com.pulumi.gcp.vertex.AiFeatureStoreIamMember(name,
@@ -5006,7 +5006,7 @@ object vertex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AiFeatureStoreIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiFeatureStoreIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiFeatureStoreIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureStoreIamPolicyArgs.builder
     com.pulumi.gcp.vertex.AiFeatureStoreIamPolicy(name,
@@ -5020,7 +5020,7 @@ object vertex:
    * 
    * * [API documentation](https://cloud.google.com/vertex-ai/docs/reference/rest/v1/projects.locations.indexes/)
    */
-  def AiIndex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiIndex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiIndexArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiIndexArgs.builder
     com.pulumi.gcp.vertex.AiIndex(name,
@@ -5034,7 +5034,7 @@ object vertex:
    * 
    * * [API documentation](https://cloud.google.com/vertex-ai/docs/reference/rest/v1/projects.locations.indexEndpoints/)
    */
-  def AiIndexEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiIndexEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiIndexEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiIndexEndpointArgs.builder
     com.pulumi.gcp.vertex.AiIndexEndpoint(name,
@@ -5048,7 +5048,7 @@ object vertex:
    * 
    * * [API documentation](https://cloud.google.com/vertex-ai/docs/reference/rest/v1/projects.locations.indexEndpoints#DeployedIndex)
    */
-  def AiIndexEndpointDeployedIndex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiIndexEndpointDeployedIndex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiIndexEndpointDeployedIndexArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiIndexEndpointDeployedIndexArgs.builder
     com.pulumi.gcp.vertex.AiIndexEndpointDeployedIndex(name,
@@ -5067,7 +5067,7 @@ object vertex:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/vertex-ai/docs)
    */
-  def AiMetadataStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiMetadataStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiMetadataStoreArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vertex.AiMetadataStoreArgs.builder
     conf.logicalName2physicalName(name) match
@@ -5098,7 +5098,7 @@ object vertex:
    *     * [Overview of Model Garden](https://cloud.google.com/vertex-ai/generative-ai/docs/model-garden/explore-models)
    *     * [Use models in Model Garden](https://cloud.google.com/vertex-ai/generative-ai/docs/model-garden/use-models)
    */
-  def AiModelGardenEnableModel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiModelGardenEnableModel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiModelGardenEnableModelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiModelGardenEnableModelArgs.builder
     com.pulumi.gcp.vertex.AiModelGardenEnableModel(name,
@@ -5116,7 +5116,7 @@ object vertex:
    * * How-to Guides
    *     * [Official Documentation](https://docs.cloud.google.com/gemini-enterprise-agent-platform/optimize/evaluation/evaluate-online)
    */
-  def AiOnlineEvaluator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiOnlineEvaluator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiOnlineEvaluatorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiOnlineEvaluatorArgs.builder
     com.pulumi.gcp.vertex.AiOnlineEvaluator(name,
@@ -5132,7 +5132,7 @@ object vertex:
    * 
    * * [API documentation](https://cloud.google.com/vertex-ai/docs/reference/rest/v1/projects.locations.persistentResources)
    */
-  def AiPersistentResource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiPersistentResource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiPersistentResourceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vertex.AiPersistentResourceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -5151,7 +5151,7 @@ object vertex:
    * * How-to Guides
    *     * [Manage your RAG corpus](https://docs.cloud.google.com/gemini-enterprise-agent-platform/build/rag-engine/manage-your-rag-corpus)
    */
-  def AiRagCorpus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiRagCorpus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiRagCorpusArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiRagCorpusArgs.builder
     com.pulumi.gcp.vertex.AiRagCorpus(name,
@@ -5167,7 +5167,7 @@ object vertex:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/understanding-ragmanageddb)
    */
-  def AiRagEngineConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiRagEngineConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiRagEngineConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiRagEngineConfigArgs.builder
     com.pulumi.gcp.vertex.AiRagEngineConfig(name,
@@ -5183,7 +5183,7 @@ object vertex:
    * * How-to Guides
    *     * [Scale your agents](https://docs.cloud.google.com/gemini-enterprise-agent-platform/scale)
    */
-  def AiReasoningEngine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiReasoningEngine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiReasoningEngineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiReasoningEngineArgs.builder
     com.pulumi.gcp.vertex.AiReasoningEngine(name,
@@ -5496,7 +5496,7 @@ object vertex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AiReasoningEngineIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiReasoningEngineIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiReasoningEngineIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiReasoningEngineIamBindingArgs.builder
     com.pulumi.gcp.vertex.AiReasoningEngineIamBinding(name,
@@ -5809,7 +5809,7 @@ object vertex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AiReasoningEngineIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiReasoningEngineIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiReasoningEngineIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiReasoningEngineIamMemberArgs.builder
     com.pulumi.gcp.vertex.AiReasoningEngineIamMember(name,
@@ -6122,7 +6122,7 @@ object vertex:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AiReasoningEngineIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiReasoningEngineIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiReasoningEngineIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiReasoningEngineIamPolicyArgs.builder
     com.pulumi.gcp.vertex.AiReasoningEngineIamPolicy(name,
@@ -6141,7 +6141,7 @@ object vertex:
    * * How-to Guides
    *     * [Semantic governance overview](https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/policies/semantic-governance-overview)
    */
-  def AiSemanticGovernancePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiSemanticGovernancePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiSemanticGovernancePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiSemanticGovernancePolicyArgs.builder
     com.pulumi.gcp.vertex.AiSemanticGovernancePolicy(name,
@@ -6168,7 +6168,7 @@ object vertex:
    * * How-to Guides
    *     * [Semantic governance overview](https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/policies/semantic-governance-overview)
    */
-  def AiSemanticGovernancePolicyEngine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiSemanticGovernancePolicyEngine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiSemanticGovernancePolicyEngineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiSemanticGovernancePolicyEngineArgs.builder
     com.pulumi.gcp.vertex.AiSemanticGovernancePolicyEngine(name,
@@ -6184,7 +6184,7 @@ object vertex:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/vertex-ai/docs)
    */
-  def AiTensorboard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiTensorboard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiTensorboardArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiTensorboardArgs.builder
     com.pulumi.gcp.vertex.AiTensorboard(name,
@@ -6200,7 +6200,7 @@ object vertex:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/vertex-ai/docs)
    */
-  def AiTensorboardExperiment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiTensorboardExperiment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiTensorboardExperimentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiTensorboardExperimentArgs.builder
     com.pulumi.gcp.vertex.AiTensorboardExperiment(name,
@@ -6216,7 +6216,7 @@ object vertex:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/vertex-ai/docs)
    */
-  def AiTensorboardRun(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiTensorboardRun(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiTensorboardRunArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiTensorboardRunArgs.builder
     com.pulumi.gcp.vertex.AiTensorboardRun(name,

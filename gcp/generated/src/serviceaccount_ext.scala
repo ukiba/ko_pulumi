@@ -8,7 +8,7 @@ object serviceaccount_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.IAMBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.IAMBindingConditionArgs.Builder]):
         com.pulumi.gcp.serviceaccount.IAMBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.serviceaccount.inputs.IAMBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -19,7 +19,7 @@ object serviceaccount_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.IAMMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.IAMMemberConditionArgs.Builder]):
         com.pulumi.gcp.serviceaccount.IAMMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.serviceaccount.inputs.IAMMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -30,7 +30,7 @@ object serviceaccount_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.IAMBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.IAMBindingConditionArgs.Builder]):
         com.pulumi.gcp.serviceaccount.inputs.IAMBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.serviceaccount.inputs.IAMBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -41,7 +41,7 @@ object serviceaccount_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.IAMMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.serviceaccount.inputs.IAMMemberConditionArgs.Builder]):
         com.pulumi.gcp.serviceaccount.inputs.IAMMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.serviceaccount.inputs.IAMMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)

@@ -47,7 +47,7 @@ object acmpca:
    * To issue a renewable certificate using an ACM PCA, create a `aws.acm.Certificate`
    * with the parameter `certificateAuthorityArn`.
    */
-  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.acmpca.CertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.acmpca.CertificateArgs.builder
     com.pulumi.aws.acmpca.Certificate(name,
@@ -59,7 +59,7 @@ object acmpca:
    * 
    * &gt; **NOTE:** Creating this resource will leave the certificate authority in a `PENDING_CERTIFICATE` status, which means it cannot yet issue certificates. To complete this setup, you must fully sign the certificate authority CSR available in the `certificateSigningRequest` attribute. The `aws.acmpca.CertificateAuthorityCertificate` resource can be used for this purpose.
    */
-  def CertificateAuthority(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CertificateAuthority(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.acmpca.CertificateAuthorityArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.acmpca.CertificateAuthorityArgs.builder
     argsBuilder = args(argsBuilder)
@@ -74,7 +74,7 @@ object acmpca:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Associates a certificate with an AWS Certificate Manager Private Certificate Authority (ACM PCA Certificate Authority). An ACM PCA Certificate Authority is unable to issue certificates until it has a certificate associated with it. A root level ACM PCA Certificate Authority is able to self-sign its own root certificate. */
-  def CertificateAuthorityCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CertificateAuthorityCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.acmpca.CertificateAuthorityCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.acmpca.CertificateAuthorityCertificateArgs.builder
     com.pulumi.aws.acmpca.CertificateAuthorityCertificate(name,
@@ -85,7 +85,7 @@ object acmpca:
    * Provides a resource to manage an AWS Certificate Manager Private Certificate Authorities Permission.
    * Currently, this is only required in order to allow the ACM service to automatically renew certificates issued by a PCA.
    */
-  def Permission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Permission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.acmpca.PermissionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.acmpca.PermissionArgs.builder
     com.pulumi.aws.acmpca.Permission(name,
@@ -93,7 +93,7 @@ object acmpca:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Attaches a resource based policy to a private CA. */
-  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.acmpca.PolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.acmpca.PolicyArgs.builder
     com.pulumi.aws.acmpca.Policy(name,

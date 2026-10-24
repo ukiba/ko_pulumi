@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object notificationhub:
   /** Manages an Authorization Rule associated with a Notification Hub within a Notification Hub Namespace. */
-  def AuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.notificationhub.AuthorizationRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.notificationhub.AuthorizationRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18,7 +18,7 @@ object notificationhub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Notification Hub within a Notification Hub Namespace. */
-  def Hub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Hub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.notificationhub.HubArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.notificationhub.HubArgs.builder
     conf.logicalName2physicalName(name) match
@@ -36,7 +36,7 @@ object notificationhub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Notification Hub Namespace. */
-  def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.notificationhub.NamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.notificationhub.NamespaceArgs.builder
     conf.logicalName2physicalName(name) match

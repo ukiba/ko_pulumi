@@ -24,7 +24,7 @@ object elasticcloud:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an Elasticsearch in Elastic Cloud. */
-  def Elasticsearch(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Elasticsearch(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.elasticcloud.ElasticsearchArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.elasticcloud.ElasticsearchArgs.builder
     conf.logicalName2physicalName(name) match

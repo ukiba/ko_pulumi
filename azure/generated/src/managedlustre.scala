@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object managedlustre:
   /** Manages an Azure Managed Lustre File System. */
-  def FileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.managedlustre.FileSystemArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.managedlustre.FileSystemArgs.builder
     conf.logicalName2physicalName(name) match

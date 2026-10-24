@@ -40,7 +40,7 @@ object codeartifact:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides a CodeArtifact Domain Resource. */
-  def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codeartifact.DomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codeartifact.DomainArgs.builder
     argsBuilder = args(argsBuilder)
@@ -55,7 +55,7 @@ object codeartifact:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CodeArtifact Domains Permissions Policy Resource. */
-  def DomainPermissions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DomainPermissions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codeartifact.DomainPermissionsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.codeartifact.DomainPermissionsArgs.builder
     com.pulumi.aws.codeartifact.DomainPermissions(name,
@@ -63,7 +63,7 @@ object codeartifact:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CodeArtifact Repository Resource. */
-  def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codeartifact.RepositoryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codeartifact.RepositoryArgs.builder
     argsBuilder = args(argsBuilder)
@@ -78,7 +78,7 @@ object codeartifact:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CodeArtifact Repository Permissions Policy Resource. */
-  def RepositoryPermissionsPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RepositoryPermissionsPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codeartifact.RepositoryPermissionsPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.codeartifact.RepositoryPermissionsPolicyArgs.builder
     com.pulumi.aws.codeartifact.RepositoryPermissionsPolicy(name,

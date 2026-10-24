@@ -7,7 +7,7 @@ object mongocluster_ext:
      * @param customerManagedKey A `customerManagedKey` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def customerManagedKey(args: Endofunction[com.pulumi.azure.mongocluster.inputs.MongoClusterCustomerManagedKeyArgs.Builder]):
+    inline def customerManagedKey(args: Endofunction[com.pulumi.azure.mongocluster.inputs.MongoClusterCustomerManagedKeyArgs.Builder]):
         com.pulumi.azure.mongocluster.MongoClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.mongocluster.inputs.MongoClusterCustomerManagedKeyArgs.builder
       builder.customerManagedKey(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object mongocluster_ext:
      * &gt; **Note:** When adding or removing `identity`, a resource recreation will be triggered.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.mongocluster.inputs.MongoClusterIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.mongocluster.inputs.MongoClusterIdentityArgs.Builder]):
         com.pulumi.azure.mongocluster.MongoClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.mongocluster.inputs.MongoClusterIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -29,7 +29,7 @@ object mongocluster_ext:
      * &gt; **Note:** When `PointInTimeRestore` is enabled, service API will also assign a value to `sourceServerId`. The user has to explicitly set this property in the Terraform configuration or handle it using `ignoreChanges`.
      * @return builder
      */
-    def restore(args: Endofunction[com.pulumi.azure.mongocluster.inputs.MongoClusterRestoreArgs.Builder]):
+    inline def restore(args: Endofunction[com.pulumi.azure.mongocluster.inputs.MongoClusterRestoreArgs.Builder]):
         com.pulumi.azure.mongocluster.MongoClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.mongocluster.inputs.MongoClusterRestoreArgs.builder
       builder.restore(args(argsBuilder).build)
@@ -39,7 +39,7 @@ object mongocluster_ext:
      * @param roles One or more `role` blocks as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def roles(args: Endofunction[com.pulumi.azure.mongocluster.inputs.UserRoleArgs.Builder]*):
+    inline def roles(args: Endofunction[com.pulumi.azure.mongocluster.inputs.UserRoleArgs.Builder]*):
         com.pulumi.azure.mongocluster.UserArgs.Builder =
       def argsBuilder = com.pulumi.azure.mongocluster.inputs.UserRoleArgs.builder
       builder.roles(args.map(_(argsBuilder).build)*)
@@ -49,7 +49,7 @@ object mongocluster_ext:
      * @param connectionStrings One or more `connectionStrings` blocks as defined below.
      * @return builder
      */
-    def connectionStrings(args: Endofunction[com.pulumi.azure.mongocluster.inputs.MongoClusterConnectionStringArgs.Builder]*):
+    inline def connectionStrings(args: Endofunction[com.pulumi.azure.mongocluster.inputs.MongoClusterConnectionStringArgs.Builder]*):
         com.pulumi.azure.mongocluster.inputs.MongoClusterState.Builder =
       def argsBuilder = com.pulumi.azure.mongocluster.inputs.MongoClusterConnectionStringArgs.builder
       builder.connectionStrings(args.map(_(argsBuilder).build)*)
@@ -58,7 +58,7 @@ object mongocluster_ext:
      * @param customerManagedKey A `customerManagedKey` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def customerManagedKey(args: Endofunction[com.pulumi.azure.mongocluster.inputs.MongoClusterCustomerManagedKeyArgs.Builder]):
+    inline def customerManagedKey(args: Endofunction[com.pulumi.azure.mongocluster.inputs.MongoClusterCustomerManagedKeyArgs.Builder]):
         com.pulumi.azure.mongocluster.inputs.MongoClusterState.Builder =
       val argsBuilder = com.pulumi.azure.mongocluster.inputs.MongoClusterCustomerManagedKeyArgs.builder
       builder.customerManagedKey(args(argsBuilder).build)
@@ -69,7 +69,7 @@ object mongocluster_ext:
      * &gt; **Note:** When adding or removing `identity`, a resource recreation will be triggered.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.mongocluster.inputs.MongoClusterIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.mongocluster.inputs.MongoClusterIdentityArgs.Builder]):
         com.pulumi.azure.mongocluster.inputs.MongoClusterState.Builder =
       val argsBuilder = com.pulumi.azure.mongocluster.inputs.MongoClusterIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -80,7 +80,7 @@ object mongocluster_ext:
      * &gt; **Note:** When `PointInTimeRestore` is enabled, service API will also assign a value to `sourceServerId`. The user has to explicitly set this property in the Terraform configuration or handle it using `ignoreChanges`.
      * @return builder
      */
-    def restore(args: Endofunction[com.pulumi.azure.mongocluster.inputs.MongoClusterRestoreArgs.Builder]):
+    inline def restore(args: Endofunction[com.pulumi.azure.mongocluster.inputs.MongoClusterRestoreArgs.Builder]):
         com.pulumi.azure.mongocluster.inputs.MongoClusterState.Builder =
       val argsBuilder = com.pulumi.azure.mongocluster.inputs.MongoClusterRestoreArgs.builder
       builder.restore(args(argsBuilder).build)
@@ -90,7 +90,7 @@ object mongocluster_ext:
      * @param roles One or more `role` blocks as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def roles(args: Endofunction[com.pulumi.azure.mongocluster.inputs.UserRoleArgs.Builder]*):
+    inline def roles(args: Endofunction[com.pulumi.azure.mongocluster.inputs.UserRoleArgs.Builder]*):
         com.pulumi.azure.mongocluster.inputs.UserState.Builder =
       def argsBuilder = com.pulumi.azure.mongocluster.inputs.UserRoleArgs.builder
       builder.roles(args.map(_(argsBuilder).build)*)

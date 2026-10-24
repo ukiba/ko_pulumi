@@ -95,7 +95,7 @@ object netapp:
    * 
    * &gt; **Note:** When importing a NetApp account, the `active_directory.password` and `active_directory.server_root_ca_certificate` values *cannot* be retrieved from the Azure API and will need to be redeclared within the resource.
    */
-  def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.netapp.AccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.netapp.AccountArgs.builder
     conf.logicalName2physicalName(name) match
@@ -117,7 +117,7 @@ object netapp:
    * 
    * For more information about Azure NetApp Files Customer-Managed Keys feature, please refer to [Configure customer-managed keys for Azure NetApp Files volume encryption](https://learn.microsoft.com/en-us/azure/azure-netapp-files/configure-customer-managed-keys)
    */
-  def AccountEncryption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccountEncryption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.netapp.AccountEncryptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.netapp.AccountEncryptionArgs.builder
     com.pulumi.azure.netapp.AccountEncryption(name,
@@ -194,7 +194,7 @@ object netapp:
    * \$ pulumi import azure:netapp/backupPolicy:BackupPolicy example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.NetApp/netAppAccounts/account1/backupPolicies/backuppolicy1
    * ```
    */
-  def BackupPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackupPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.netapp.BackupPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.netapp.BackupPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -280,7 +280,7 @@ object netapp:
    * \$ pulumi import azure:netapp/backupVault:BackupVault example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.NetApp/netAppAccounts/account1/backupVaults/backupVault1
    * ```
    */
-  def BackupVault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackupVault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.netapp.BackupVaultArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.netapp.BackupVaultArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1278,7 +1278,7 @@ object netapp:
    * \$ pulumi import azure:netapp/pool:Pool example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.NetApp/netAppAccounts/account1/capacityPools/pool1
    * ```
    */
-  def Pool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Pool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.netapp.PoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.netapp.PoolArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1420,7 +1420,7 @@ object netapp:
    * \$ pulumi import azure:netapp/snapshot:Snapshot example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.NetApp/netAppAccounts/account1/capacityPools/pool1/volumes/volume1/snapshots/snapshot1
    * ```
    */
-  def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.netapp.SnapshotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.netapp.SnapshotArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1531,7 +1531,7 @@ object netapp:
    * \$ pulumi import azure:netapp/snapshotPolicy:SnapshotPolicy example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.NetApp/netAppAccounts/account1/snapshotPolicies/snapshotpolicy1
    * ```
    */
-  def SnapshotPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SnapshotPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.netapp.SnapshotPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.netapp.SnapshotPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1561,7 +1561,7 @@ object netapp:
    * \$ pulumi import azure:netapp/volume:Volume example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.NetApp/netAppAccounts/account1/capacityPools/pool1/volumes/volume1
    * ```
    */
-  def Volume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Volume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.netapp.VolumeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.netapp.VolumeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1589,7 +1589,7 @@ object netapp:
    * 
    * &gt; **Note:** Buckets are supported on cool-access and large NetApp volumes. Buckets are not supported on cache volumes. Deleting the parent volume cascade-deletes its buckets.
    */
-  def VolumeBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VolumeBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.netapp.VolumeBucketArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.netapp.VolumeBucketArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1610,7 +1610,7 @@ object netapp:
    * 
    * &gt; **Note:** Buckets are supported on cool-access and large NetApp volumes. Buckets are not supported on cache volumes. Deleting the parent volume cascade-deletes its buckets.
    */
-  def VolumeBucketWithServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VolumeBucketWithServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.netapp.VolumeBucketWithServerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.netapp.VolumeBucketWithServerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1625,7 +1625,7 @@ object netapp:
    * 
    * &gt; **Note:** This feature is intended to be used for Oracle workloads only, with several requirements, please refer to [Understand Azure NetApp Files application volume group for Oracle](https://learn.microsoft.com/en-us/azure/azure-netapp-files/application-volume-oracle-introduction) document as the starting point to understand this feature before using it with Terraform.
    */
-  def VolumeGroupOracle(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VolumeGroupOracle(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.netapp.VolumeGroupOracleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.netapp.VolumeGroupOracleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1640,7 +1640,7 @@ object netapp:
    * 
    * &gt; **Note:** This feature is intended to be used for SAP-HANA workloads only, with several requirements, please refer to [Understand Azure NetApp Files application volume group for SAP HANA](https://learn.microsoft.com/en-us/azure/azure-netapp-files/application-volume-group-introduction) document as the starting point to understand this feature before using it with Terraform.
    */
-  def VolumeGroupSapHana(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VolumeGroupSapHana(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.netapp.VolumeGroupSapHanaArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.netapp.VolumeGroupSapHanaArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1651,7 +1651,7 @@ object netapp:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Volume Quota Rule. */
-  def VolumeQuotaRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VolumeQuotaRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.netapp.VolumeQuotaRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.netapp.VolumeQuotaRuleArgs.builder
     conf.logicalName2physicalName(name) match

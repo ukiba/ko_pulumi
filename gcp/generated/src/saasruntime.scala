@@ -10,7 +10,7 @@ object saasruntime:
    * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
    * See Provider Versions for more details on beta resources.
    */
-  def Release(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Release(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.saasruntime.ReleaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.saasruntime.ReleaseArgs.builder
     com.pulumi.gcp.saasruntime.Release(name,
@@ -23,7 +23,7 @@ object saasruntime:
    * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
    * See Provider Versions for more details on beta resources.
    */
-  def RolloutKind(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RolloutKind(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.saasruntime.RolloutKindArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.saasruntime.RolloutKindArgs.builder
     com.pulumi.gcp.saasruntime.RolloutKind(name,
@@ -36,7 +36,7 @@ object saasruntime:
    * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
    * See Provider Versions for more details on beta resources.
    */
-  def SaaS(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SaaS(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.saasruntime.SaaSArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.saasruntime.SaaSArgs.builder
     com.pulumi.gcp.saasruntime.SaaS(name,
@@ -49,7 +49,7 @@ object saasruntime:
    * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
    * See Provider Versions for more details on beta resources.
    */
-  def Tenant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Tenant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.saasruntime.TenantArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.saasruntime.TenantArgs.builder
     com.pulumi.gcp.saasruntime.Tenant(name,
@@ -57,7 +57,7 @@ object saasruntime:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A Unit is the fundamental structural building block of a SaaS offering. Each Unit is an instance of a UnitKind. It is a versioned, manageable component of a service that has its own lifecycle, representing elements like infrastructure, workloads, or an entire application stack that a service producer intends to manage as a single entity. */
-  def Unit(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Unit(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.saasruntime.UnitArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.saasruntime.UnitArgs.builder
     com.pulumi.gcp.saasruntime.Unit(name,
@@ -70,7 +70,7 @@ object saasruntime:
    * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
    * See Provider Versions for more details on beta resources.
    */
-  def UnitKind(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UnitKind(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.saasruntime.UnitKindArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.saasruntime.UnitKindArgs.builder
     com.pulumi.gcp.saasruntime.UnitKind(name,
@@ -78,7 +78,7 @@ object saasruntime:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A UnitOperation encapsulates the intent to change or interact with a Unit. Operations such as provisioning, upgrading, or deprovisioning a Unit are triggered by creating a UnitOperation resource. */
-  def UnitOperation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UnitOperation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.saasruntime.UnitOperationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.saasruntime.UnitOperationArgs.builder
     com.pulumi.gcp.saasruntime.UnitOperation(name,

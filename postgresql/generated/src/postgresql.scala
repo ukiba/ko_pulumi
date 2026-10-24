@@ -93,7 +93,7 @@ object postgresql:
    * `postgresql_database.db1` is the name of the resource whose state will be
    * populated as a result of the command.
    */
-  def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.postgresql.DatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.postgresql.DatabaseArgs.builder
     conf.logicalName2physicalName(name) match
@@ -228,7 +228,7 @@ object postgresql:
    * </pre>
    * @deprecated postgresql.DefaultPrivileg has been deprecated in favor of postgresql.DefaultPrivileges
    */
-  @deprecated("postgresql.DefaultPrivileg has been deprecated in favor of postgresql.DefaultPrivileges") def DefaultPrivileg(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("postgresql.DefaultPrivileg has been deprecated in favor of postgresql.DefaultPrivileges") inline def DefaultPrivileg(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.postgresql.DefaultPrivilegArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.postgresql.DefaultPrivilegArgs.builder
     com.pulumi.postgresql.DefaultPrivileg(name,
@@ -359,7 +359,7 @@ object postgresql:
    * }
    * </pre>
    */
-  def DefaultPrivileges(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DefaultPrivileges(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.postgresql.DefaultPrivilegesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.postgresql.DefaultPrivilegesArgs.builder
     com.pulumi.postgresql.DefaultPrivileges(name,
@@ -409,7 +409,7 @@ object postgresql:
    * 
    * `terraform import postgresql_extension.uuid_ossp example-database.uuid-ossp`
    */
-  def Extension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Extension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.postgresql.ExtensionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.postgresql.ExtensionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -482,7 +482,7 @@ object postgresql:
    * `postgresql_schema.function_foo` is the name of the resource whose state will be
    * populated as a result of the command.
    */
-  def Function(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Function(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.postgresql.FunctionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.postgresql.FunctionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -595,7 +595,7 @@ object postgresql:
    * }
    * </pre>
    */
-  def Grant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Grant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.postgresql.GrantArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.postgresql.GrantArgs.builder
     com.pulumi.postgresql.Grant(name,
@@ -683,7 +683,7 @@ object postgresql:
    * }
    * </pre>
    */
-  def GrantRole(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GrantRole(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.postgresql.GrantRoleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.postgresql.GrantRoleArgs.builder
     com.pulumi.postgresql.GrantRole(name,
@@ -728,7 +728,7 @@ object postgresql:
    * }
    * </pre>
    */
-  def PhysicalReplicationSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PhysicalReplicationSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.postgresql.PhysicalReplicationSlotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.postgresql.PhysicalReplicationSlotArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1003,7 +1003,7 @@ object postgresql:
    * construction to achieve fine-grained programmatic control over provider settings. See the
    * [documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.
    */
-  def Provider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Provider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.postgresql.ProviderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.postgresql.ProviderArgs.builder
     com.pulumi.postgresql.Provider(name,
@@ -1054,7 +1054,7 @@ object postgresql:
    * 
    * Publication can be imported using this format:
    */
-  def Publication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Publication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.postgresql.PublicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.postgresql.PublicationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1102,7 +1102,7 @@ object postgresql:
    * }
    * </pre>
    */
-  def ReplicationSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ReplicationSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.postgresql.ReplicationSlotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.postgresql.ReplicationSlotArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1279,7 +1279,7 @@ object postgresql:
    * `postgresql_role.replication_role` is the name of the resource whose state will
    * be populated as a result of the command.
    */
-  def Role(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Role(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.postgresql.RoleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.postgresql.RoleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1411,7 +1411,7 @@ object postgresql:
    * `postgresql_schema.schema_foo` is the name of the resource whose state will be
    * populated as a result of the command.
    */
-  def Schema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Schema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.postgresql.SchemaArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.postgresql.SchemaArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1475,7 +1475,7 @@ object postgresql:
    * 
    * Security label is an attribute that can be added multiple times, so no import is needed, simply apply again.
    */
-  def SecurityLabel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecurityLabel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.postgresql.SecurityLabelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.postgresql.SecurityLabelArgs.builder
     com.pulumi.postgresql.SecurityLabel(name,
@@ -1574,7 +1574,7 @@ object postgresql:
    * }
    * </pre>
    */
-  def Server(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Server(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.postgresql.ServerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.postgresql.ServerArgs.builder
     com.pulumi.postgresql.Server(name,
@@ -1624,7 +1624,7 @@ object postgresql:
    * 
    * - https://www.postgresql.org/docs/current/sql-createsubscription.html
    */
-  def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.postgresql.SubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.postgresql.SubscriptionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1702,7 +1702,7 @@ object postgresql:
    * }
    * </pre>
    */
-  def UserMapping(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UserMapping(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.postgresql.UserMappingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.postgresql.UserMappingArgs.builder
     com.pulumi.postgresql.UserMapping(name,

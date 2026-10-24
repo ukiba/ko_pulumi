@@ -8,7 +8,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.apihub.inputs.ApiHubInstanceConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.apihub.inputs.ApiHubInstanceConfigArgs.Builder]):
         com.pulumi.gcp.apihub.ApiHubInstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apihub.inputs.ApiHubInstanceConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -23,7 +23,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endpoint(args: Endofunction[com.pulumi.gcp.apihub.inputs.CurationEndpointArgs.Builder]):
+    inline def endpoint(args: Endofunction[com.pulumi.gcp.apihub.inputs.CurationEndpointArgs.Builder]):
         com.pulumi.gcp.apihub.CurationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apihub.inputs.CurationEndpointArgs.builder
       builder.endpoint(args(argsBuilder).build)
@@ -34,7 +34,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def actionsConfigs(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginActionsConfigArgs.Builder]*):
+    inline def actionsConfigs(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginActionsConfigArgs.Builder]*):
         com.pulumi.gcp.apihub.PluginArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apihub.inputs.PluginActionsConfigArgs.builder
       builder.actionsConfigs(args.map(_(argsBuilder).build)*)
@@ -44,7 +44,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def configTemplate(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginConfigTemplateArgs.Builder]):
+    inline def configTemplate(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginConfigTemplateArgs.Builder]):
         com.pulumi.gcp.apihub.PluginArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apihub.inputs.PluginConfigTemplateArgs.builder
       builder.configTemplate(args(argsBuilder).build)
@@ -54,7 +54,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def documentation(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginDocumentationArgs.Builder]):
+    inline def documentation(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginDocumentationArgs.Builder]):
         com.pulumi.gcp.apihub.PluginArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apihub.inputs.PluginDocumentationArgs.builder
       builder.documentation(args(argsBuilder).build)
@@ -65,7 +65,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hostingService(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginHostingServiceArgs.Builder]):
+    inline def hostingService(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginHostingServiceArgs.Builder]):
         com.pulumi.gcp.apihub.PluginArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apihub.inputs.PluginHostingServiceArgs.builder
       builder.hostingService(args(argsBuilder).build)
@@ -76,7 +76,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def actions(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceActionArgs.Builder]*):
+    inline def actions(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceActionArgs.Builder]*):
         com.pulumi.gcp.apihub.PluginInstanceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apihub.inputs.PluginInstanceActionArgs.builder
       builder.actions(args.map(_(argsBuilder).build)*)
@@ -86,7 +86,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authConfig(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigArgs.Builder]):
+    inline def authConfig(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigArgs.Builder]):
         com.pulumi.gcp.apihub.PluginInstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigArgs.builder
       builder.authConfig(args(argsBuilder).build)
@@ -97,7 +97,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.apihub.inputs.ApiHubInstanceConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.apihub.inputs.ApiHubInstanceConfigArgs.Builder]):
         com.pulumi.gcp.apihub.inputs.ApiHubInstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.apihub.inputs.ApiHubInstanceConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -109,7 +109,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def applicationIntegrationEndpointDetails(args: Endofunction[com.pulumi.gcp.apihub.inputs.CurationEndpointApplicationIntegrationEndpointDetailsArgs.Builder]):
+    inline def applicationIntegrationEndpointDetails(args: Endofunction[com.pulumi.gcp.apihub.inputs.CurationEndpointApplicationIntegrationEndpointDetailsArgs.Builder]):
         com.pulumi.gcp.apihub.inputs.CurationEndpointArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apihub.inputs.CurationEndpointApplicationIntegrationEndpointDetailsArgs.builder
       builder.applicationIntegrationEndpointDetails(args(argsBuilder).build)
@@ -124,7 +124,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endpoint(args: Endofunction[com.pulumi.gcp.apihub.inputs.CurationEndpointArgs.Builder]):
+    inline def endpoint(args: Endofunction[com.pulumi.gcp.apihub.inputs.CurationEndpointArgs.Builder]):
         com.pulumi.gcp.apihub.inputs.CurationState.Builder =
       val argsBuilder = com.pulumi.gcp.apihub.inputs.CurationEndpointArgs.builder
       builder.endpoint(args(argsBuilder).build)
@@ -136,7 +136,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pluginInstanceActions(args: Endofunction[com.pulumi.gcp.apihub.inputs.CurationPluginInstanceActionArgs.Builder]*):
+    inline def pluginInstanceActions(args: Endofunction[com.pulumi.gcp.apihub.inputs.CurationPluginInstanceActionArgs.Builder]*):
         com.pulumi.gcp.apihub.inputs.CurationState.Builder =
       def argsBuilder = com.pulumi.gcp.apihub.inputs.CurationPluginInstanceActionArgs.builder
       builder.pluginInstanceActions(args.map(_(argsBuilder).build)*)
@@ -147,7 +147,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def enumOptions(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginConfigTemplateAdditionalConfigTemplateEnumOptionArgs.Builder]*):
+    inline def enumOptions(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginConfigTemplateAdditionalConfigTemplateEnumOptionArgs.Builder]*):
         com.pulumi.gcp.apihub.inputs.PluginConfigTemplateAdditionalConfigTemplateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apihub.inputs.PluginConfigTemplateAdditionalConfigTemplateEnumOptionArgs.builder
       builder.enumOptions(args.map(_(argsBuilder).build)*)
@@ -157,7 +157,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def multiSelectOptions(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginConfigTemplateAdditionalConfigTemplateMultiSelectOptionArgs.Builder]*):
+    inline def multiSelectOptions(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginConfigTemplateAdditionalConfigTemplateMultiSelectOptionArgs.Builder]*):
         com.pulumi.gcp.apihub.inputs.PluginConfigTemplateAdditionalConfigTemplateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apihub.inputs.PluginConfigTemplateAdditionalConfigTemplateMultiSelectOptionArgs.builder
       builder.multiSelectOptions(args.map(_(argsBuilder).build)*)
@@ -169,7 +169,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def additionalConfigTemplates(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginConfigTemplateAdditionalConfigTemplateArgs.Builder]*):
+    inline def additionalConfigTemplates(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginConfigTemplateAdditionalConfigTemplateArgs.Builder]*):
         com.pulumi.gcp.apihub.inputs.PluginConfigTemplateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apihub.inputs.PluginConfigTemplateAdditionalConfigTemplateArgs.builder
       builder.additionalConfigTemplates(args.map(_(argsBuilder).build)*)
@@ -179,7 +179,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authConfigTemplate(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginConfigTemplateAuthConfigTemplateArgs.Builder]):
+    inline def authConfigTemplate(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginConfigTemplateAuthConfigTemplateArgs.Builder]):
         com.pulumi.gcp.apihub.inputs.PluginConfigTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apihub.inputs.PluginConfigTemplateAuthConfigTemplateArgs.builder
       builder.authConfigTemplate(args(argsBuilder).build)
@@ -190,7 +190,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceAccount(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginConfigTemplateAuthConfigTemplateServiceAccountArgs.Builder]):
+    inline def serviceAccount(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginConfigTemplateAuthConfigTemplateServiceAccountArgs.Builder]):
         com.pulumi.gcp.apihub.inputs.PluginConfigTemplateAuthConfigTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apihub.inputs.PluginConfigTemplateAuthConfigTemplateServiceAccountArgs.builder
       builder.serviceAccount(args(argsBuilder).build)
@@ -201,7 +201,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def curationConfig(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceActionCurationConfigArgs.Builder]):
+    inline def curationConfig(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceActionCurationConfigArgs.Builder]):
         com.pulumi.gcp.apihub.inputs.PluginInstanceActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apihub.inputs.PluginInstanceActionCurationConfigArgs.builder
       builder.curationConfig(args(argsBuilder).build)
@@ -212,7 +212,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hubInstanceActions(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceActionHubInstanceActionArgs.Builder]*):
+    inline def hubInstanceActions(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceActionHubInstanceActionArgs.Builder]*):
         com.pulumi.gcp.apihub.inputs.PluginInstanceActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apihub.inputs.PluginInstanceActionHubInstanceActionArgs.builder
       builder.hubInstanceActions(args.map(_(argsBuilder).build)*)
@@ -223,7 +223,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customCuration(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceActionCurationConfigCustomCurationArgs.Builder]):
+    inline def customCuration(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceActionCurationConfigCustomCurationArgs.Builder]):
         com.pulumi.gcp.apihub.inputs.PluginInstanceActionCurationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apihub.inputs.PluginInstanceActionCurationConfigCustomCurationArgs.builder
       builder.customCuration(args(argsBuilder).build)
@@ -233,7 +233,7 @@ object apihub_ext:
      * @param lastExecutions The result of the last execution of the plugin instance.
      * @return builder
      */
-    def lastExecutions(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceActionHubInstanceActionLastExecutionArgs.Builder]*):
+    inline def lastExecutions(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceActionHubInstanceActionLastExecutionArgs.Builder]*):
         com.pulumi.gcp.apihub.inputs.PluginInstanceActionHubInstanceActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.apihub.inputs.PluginInstanceActionHubInstanceActionLastExecutionArgs.builder
       builder.lastExecutions(args.map(_(argsBuilder).build)*)
@@ -244,7 +244,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiKey(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigApiKeyConfigApiKeyArgs.Builder]):
+    inline def apiKey(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigApiKeyConfigApiKeyArgs.Builder]):
         com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigApiKeyConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigApiKeyConfigApiKeyArgs.builder
       builder.apiKey(args(argsBuilder).build)
@@ -255,7 +255,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiKeyConfig(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigApiKeyConfigArgs.Builder]):
+    inline def apiKeyConfig(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigApiKeyConfigArgs.Builder]):
         com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigApiKeyConfigArgs.builder
       builder.apiKeyConfig(args(argsBuilder).build)
@@ -265,7 +265,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleServiceAccountConfig(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigGoogleServiceAccountConfigArgs.Builder]):
+    inline def googleServiceAccountConfig(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigGoogleServiceAccountConfigArgs.Builder]):
         com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigGoogleServiceAccountConfigArgs.builder
       builder.googleServiceAccountConfig(args(argsBuilder).build)
@@ -276,7 +276,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauth2ClientCredentialsConfig(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigOauth2ClientCredentialsConfigArgs.Builder]):
+    inline def oauth2ClientCredentialsConfig(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigOauth2ClientCredentialsConfigArgs.Builder]):
         com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigOauth2ClientCredentialsConfigArgs.builder
       builder.oauth2ClientCredentialsConfig(args(argsBuilder).build)
@@ -286,7 +286,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def userPasswordConfig(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigUserPasswordConfigArgs.Builder]):
+    inline def userPasswordConfig(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigUserPasswordConfigArgs.Builder]):
         com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigUserPasswordConfigArgs.builder
       builder.userPasswordConfig(args(argsBuilder).build)
@@ -296,7 +296,7 @@ object apihub_ext:
      * @param clientSecret Secret provides a reference to entries in Secret Manager.
      * @return builder
      */
-    def clientSecret(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigOauth2ClientCredentialsConfigClientSecretArgs.Builder]):
+    inline def clientSecret(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigOauth2ClientCredentialsConfigClientSecretArgs.Builder]):
         com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigOauth2ClientCredentialsConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigOauth2ClientCredentialsConfigClientSecretArgs.builder
       builder.clientSecret(args(argsBuilder).build)
@@ -307,7 +307,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def password(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigUserPasswordConfigPasswordArgs.Builder]):
+    inline def password(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigUserPasswordConfigPasswordArgs.Builder]):
         com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigUserPasswordConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigUserPasswordConfigPasswordArgs.builder
       builder.password(args(argsBuilder).build)
@@ -318,7 +318,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def actions(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceActionArgs.Builder]*):
+    inline def actions(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceActionArgs.Builder]*):
         com.pulumi.gcp.apihub.inputs.PluginInstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.apihub.inputs.PluginInstanceActionArgs.builder
       builder.actions(args.map(_(argsBuilder).build)*)
@@ -328,7 +328,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authConfig(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigArgs.Builder]):
+    inline def authConfig(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigArgs.Builder]):
         com.pulumi.gcp.apihub.inputs.PluginInstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.apihub.inputs.PluginInstanceAuthConfigArgs.builder
       builder.authConfig(args(argsBuilder).build)
@@ -339,7 +339,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def actionsConfigs(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginActionsConfigArgs.Builder]*):
+    inline def actionsConfigs(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginActionsConfigArgs.Builder]*):
         com.pulumi.gcp.apihub.inputs.PluginState.Builder =
       def argsBuilder = com.pulumi.gcp.apihub.inputs.PluginActionsConfigArgs.builder
       builder.actionsConfigs(args.map(_(argsBuilder).build)*)
@@ -349,7 +349,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def configTemplate(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginConfigTemplateArgs.Builder]):
+    inline def configTemplate(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginConfigTemplateArgs.Builder]):
         com.pulumi.gcp.apihub.inputs.PluginState.Builder =
       val argsBuilder = com.pulumi.gcp.apihub.inputs.PluginConfigTemplateArgs.builder
       builder.configTemplate(args(argsBuilder).build)
@@ -359,7 +359,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def documentation(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginDocumentationArgs.Builder]):
+    inline def documentation(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginDocumentationArgs.Builder]):
         com.pulumi.gcp.apihub.inputs.PluginState.Builder =
       val argsBuilder = com.pulumi.gcp.apihub.inputs.PluginDocumentationArgs.builder
       builder.documentation(args(argsBuilder).build)
@@ -370,7 +370,7 @@ object apihub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hostingService(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginHostingServiceArgs.Builder]):
+    inline def hostingService(args: Endofunction[com.pulumi.gcp.apihub.inputs.PluginHostingServiceArgs.Builder]):
         com.pulumi.gcp.apihub.inputs.PluginState.Builder =
       val argsBuilder = com.pulumi.gcp.apihub.inputs.PluginHostingServiceArgs.builder
       builder.hostingService(args(argsBuilder).build)

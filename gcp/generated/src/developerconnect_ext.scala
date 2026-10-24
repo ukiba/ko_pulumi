@@ -8,7 +8,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customOauthConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.AccountConnectorCustomOauthConfigArgs.Builder]):
+    inline def customOauthConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.AccountConnectorCustomOauthConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.AccountConnectorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.AccountConnectorCustomOauthConfigArgs.builder
       builder.customOauthConfig(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def providerOauthConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.AccountConnectorProviderOauthConfigArgs.Builder]):
+    inline def providerOauthConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.AccountConnectorProviderOauthConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.AccountConnectorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.AccountConnectorProviderOauthConfigArgs.builder
       builder.providerOauthConfig(args(argsBuilder).build)
@@ -28,7 +28,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def proxyConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.AccountConnectorProxyConfigArgs.Builder]):
+    inline def proxyConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.AccountConnectorProxyConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.AccountConnectorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.AccountConnectorProxyConfigArgs.builder
       builder.proxyConfig(args(argsBuilder).build)
@@ -39,7 +39,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bitbucketCloudConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketCloudConfigArgs.Builder]):
+    inline def bitbucketCloudConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketCloudConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketCloudConfigArgs.builder
       builder.bitbucketCloudConfig(args(argsBuilder).build)
@@ -49,7 +49,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bitbucketDataCenterConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketDataCenterConfigArgs.Builder]):
+    inline def bitbucketDataCenterConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketDataCenterConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketDataCenterConfigArgs.builder
       builder.bitbucketDataCenterConfig(args(argsBuilder).build)
@@ -60,7 +60,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cryptoKeyConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionCryptoKeyConfigArgs.Builder]):
+    inline def cryptoKeyConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionCryptoKeyConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionCryptoKeyConfigArgs.builder
       builder.cryptoKeyConfig(args(argsBuilder).build)
@@ -70,7 +70,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def githubConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGithubConfigArgs.Builder]):
+    inline def githubConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGithubConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionGithubConfigArgs.builder
       builder.githubConfig(args(argsBuilder).build)
@@ -80,7 +80,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def githubEnterpriseConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGithubEnterpriseConfigArgs.Builder]):
+    inline def githubEnterpriseConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGithubEnterpriseConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionGithubEnterpriseConfigArgs.builder
       builder.githubEnterpriseConfig(args(argsBuilder).build)
@@ -90,7 +90,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gitlabConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabConfigArgs.Builder]):
+    inline def gitlabConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabConfigArgs.builder
       builder.gitlabConfig(args(argsBuilder).build)
@@ -100,7 +100,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gitlabEnterpriseConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabEnterpriseConfigArgs.Builder]):
+    inline def gitlabEnterpriseConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabEnterpriseConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabEnterpriseConfigArgs.builder
       builder.gitlabEnterpriseConfig(args(argsBuilder).build)
@@ -110,7 +110,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionHttpConfigArgs.Builder]):
+    inline def httpConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionHttpConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionHttpConfigArgs.builder
       builder.httpConfig(args(argsBuilder).build)
@@ -121,7 +121,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def artifactConfigs(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.InsightsConfigArtifactConfigArgs.Builder]*):
+    inline def artifactConfigs(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.InsightsConfigArtifactConfigArgs.Builder]*):
         com.pulumi.gcp.developerconnect.InsightsConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.developerconnect.inputs.InsightsConfigArtifactConfigArgs.builder
       builder.artifactConfigs(args.map(_(argsBuilder).build)*)
@@ -131,7 +131,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def targetProjects(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.InsightsConfigTargetProjectsArgs.Builder]):
+    inline def targetProjects(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.InsightsConfigTargetProjectsArgs.Builder]):
         com.pulumi.gcp.developerconnect.InsightsConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.InsightsConfigTargetProjectsArgs.builder
       builder.targetProjects(args(argsBuilder).build)
@@ -143,7 +143,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.AccountConnectorCustomOauthConfigServiceDirectoryConfigArgs.Builder]):
+    inline def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.AccountConnectorCustomOauthConfigServiceDirectoryConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.AccountConnectorCustomOauthConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.AccountConnectorCustomOauthConfigServiceDirectoryConfigArgs.builder
       builder.serviceDirectoryConfig(args(argsBuilder).build)
@@ -154,7 +154,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customOauthConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.AccountConnectorCustomOauthConfigArgs.Builder]):
+    inline def customOauthConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.AccountConnectorCustomOauthConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.AccountConnectorState.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.AccountConnectorCustomOauthConfigArgs.builder
       builder.customOauthConfig(args(argsBuilder).build)
@@ -164,7 +164,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def providerOauthConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.AccountConnectorProviderOauthConfigArgs.Builder]):
+    inline def providerOauthConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.AccountConnectorProviderOauthConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.AccountConnectorState.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.AccountConnectorProviderOauthConfigArgs.builder
       builder.providerOauthConfig(args(argsBuilder).build)
@@ -174,7 +174,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def proxyConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.AccountConnectorProxyConfigArgs.Builder]):
+    inline def proxyConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.AccountConnectorProxyConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.AccountConnectorState.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.AccountConnectorProxyConfigArgs.builder
       builder.proxyConfig(args(argsBuilder).build)
@@ -186,7 +186,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authorizerCredential(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketCloudConfigAuthorizerCredentialArgs.Builder]):
+    inline def authorizerCredential(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketCloudConfigAuthorizerCredentialArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketCloudConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketCloudConfigAuthorizerCredentialArgs.builder
       builder.authorizerCredential(args(argsBuilder).build)
@@ -197,7 +197,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def readAuthorizerCredential(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketCloudConfigReadAuthorizerCredentialArgs.Builder]):
+    inline def readAuthorizerCredential(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketCloudConfigReadAuthorizerCredentialArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketCloudConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketCloudConfigReadAuthorizerCredentialArgs.builder
       builder.readAuthorizerCredential(args(argsBuilder).build)
@@ -209,7 +209,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authorizerCredential(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketDataCenterConfigAuthorizerCredentialArgs.Builder]):
+    inline def authorizerCredential(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketDataCenterConfigAuthorizerCredentialArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketDataCenterConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketDataCenterConfigAuthorizerCredentialArgs.builder
       builder.authorizerCredential(args(argsBuilder).build)
@@ -220,7 +220,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def readAuthorizerCredential(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketDataCenterConfigReadAuthorizerCredentialArgs.Builder]):
+    inline def readAuthorizerCredential(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketDataCenterConfigReadAuthorizerCredentialArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketDataCenterConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketDataCenterConfigReadAuthorizerCredentialArgs.builder
       builder.readAuthorizerCredential(args(argsBuilder).build)
@@ -231,7 +231,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketDataCenterConfigServiceDirectoryConfigArgs.Builder]):
+    inline def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketDataCenterConfigServiceDirectoryConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketDataCenterConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketDataCenterConfigServiceDirectoryConfigArgs.builder
       builder.serviceDirectoryConfig(args(argsBuilder).build)
@@ -243,7 +243,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authorizerCredential(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGithubConfigAuthorizerCredentialArgs.Builder]):
+    inline def authorizerCredential(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGithubConfigAuthorizerCredentialArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.ConnectionGithubConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionGithubConfigAuthorizerCredentialArgs.builder
       builder.authorizerCredential(args(argsBuilder).build)
@@ -255,7 +255,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGithubEnterpriseConfigServiceDirectoryConfigArgs.Builder]):
+    inline def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGithubEnterpriseConfigServiceDirectoryConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.ConnectionGithubEnterpriseConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionGithubEnterpriseConfigServiceDirectoryConfigArgs.builder
       builder.serviceDirectoryConfig(args(argsBuilder).build)
@@ -267,7 +267,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authorizerCredential(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabConfigAuthorizerCredentialArgs.Builder]):
+    inline def authorizerCredential(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabConfigAuthorizerCredentialArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabConfigAuthorizerCredentialArgs.builder
       builder.authorizerCredential(args(argsBuilder).build)
@@ -278,7 +278,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def readAuthorizerCredential(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabConfigReadAuthorizerCredentialArgs.Builder]):
+    inline def readAuthorizerCredential(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabConfigReadAuthorizerCredentialArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabConfigReadAuthorizerCredentialArgs.builder
       builder.readAuthorizerCredential(args(argsBuilder).build)
@@ -290,7 +290,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authorizerCredential(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabEnterpriseConfigAuthorizerCredentialArgs.Builder]):
+    inline def authorizerCredential(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabEnterpriseConfigAuthorizerCredentialArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabEnterpriseConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabEnterpriseConfigAuthorizerCredentialArgs.builder
       builder.authorizerCredential(args(argsBuilder).build)
@@ -301,7 +301,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def readAuthorizerCredential(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabEnterpriseConfigReadAuthorizerCredentialArgs.Builder]):
+    inline def readAuthorizerCredential(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabEnterpriseConfigReadAuthorizerCredentialArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabEnterpriseConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabEnterpriseConfigReadAuthorizerCredentialArgs.builder
       builder.readAuthorizerCredential(args(argsBuilder).build)
@@ -312,7 +312,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabEnterpriseConfigServiceDirectoryConfigArgs.Builder]):
+    inline def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabEnterpriseConfigServiceDirectoryConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabEnterpriseConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabEnterpriseConfigServiceDirectoryConfigArgs.builder
       builder.serviceDirectoryConfig(args(argsBuilder).build)
@@ -323,7 +323,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def basicAuthentication(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionHttpConfigBasicAuthenticationArgs.Builder]):
+    inline def basicAuthentication(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionHttpConfigBasicAuthenticationArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.ConnectionHttpConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionHttpConfigBasicAuthenticationArgs.builder
       builder.basicAuthentication(args(argsBuilder).build)
@@ -333,7 +333,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bearerTokenAuthentication(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionHttpConfigBearerTokenAuthenticationArgs.Builder]):
+    inline def bearerTokenAuthentication(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionHttpConfigBearerTokenAuthenticationArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.ConnectionHttpConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionHttpConfigBearerTokenAuthenticationArgs.builder
       builder.bearerTokenAuthentication(args(argsBuilder).build)
@@ -344,7 +344,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionHttpConfigServiceDirectoryConfigArgs.Builder]):
+    inline def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionHttpConfigServiceDirectoryConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.ConnectionHttpConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionHttpConfigServiceDirectoryConfigArgs.builder
       builder.serviceDirectoryConfig(args(argsBuilder).build)
@@ -355,7 +355,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bitbucketCloudConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketCloudConfigArgs.Builder]):
+    inline def bitbucketCloudConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketCloudConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketCloudConfigArgs.builder
       builder.bitbucketCloudConfig(args(argsBuilder).build)
@@ -365,7 +365,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bitbucketDataCenterConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketDataCenterConfigArgs.Builder]):
+    inline def bitbucketDataCenterConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketDataCenterConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionBitbucketDataCenterConfigArgs.builder
       builder.bitbucketDataCenterConfig(args(argsBuilder).build)
@@ -376,7 +376,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cryptoKeyConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionCryptoKeyConfigArgs.Builder]):
+    inline def cryptoKeyConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionCryptoKeyConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionCryptoKeyConfigArgs.builder
       builder.cryptoKeyConfig(args(argsBuilder).build)
@@ -386,7 +386,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def githubConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGithubConfigArgs.Builder]):
+    inline def githubConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGithubConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionGithubConfigArgs.builder
       builder.githubConfig(args(argsBuilder).build)
@@ -396,7 +396,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def githubEnterpriseConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGithubEnterpriseConfigArgs.Builder]):
+    inline def githubEnterpriseConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGithubEnterpriseConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionGithubEnterpriseConfigArgs.builder
       builder.githubEnterpriseConfig(args(argsBuilder).build)
@@ -406,7 +406,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gitlabConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabConfigArgs.Builder]):
+    inline def gitlabConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabConfigArgs.builder
       builder.gitlabConfig(args(argsBuilder).build)
@@ -416,7 +416,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gitlabEnterpriseConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabEnterpriseConfigArgs.Builder]):
+    inline def gitlabEnterpriseConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabEnterpriseConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionGitlabEnterpriseConfigArgs.builder
       builder.gitlabEnterpriseConfig(args(argsBuilder).build)
@@ -426,7 +426,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionHttpConfigArgs.Builder]):
+    inline def httpConfig(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionHttpConfigArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionHttpConfigArgs.builder
       builder.httpConfig(args(argsBuilder).build)
@@ -438,7 +438,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def installationStates(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionInstallationStateArgs.Builder]*):
+    inline def installationStates(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.ConnectionInstallationStateArgs.Builder]*):
         com.pulumi.gcp.developerconnect.inputs.ConnectionState.Builder =
       def argsBuilder = com.pulumi.gcp.developerconnect.inputs.ConnectionInstallationStateArgs.builder
       builder.installationStates(args.map(_(argsBuilder).build)*)
@@ -449,7 +449,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleArtifactAnalysis(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.InsightsConfigArtifactConfigGoogleArtifactAnalysisArgs.Builder]):
+    inline def googleArtifactAnalysis(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.InsightsConfigArtifactConfigGoogleArtifactAnalysisArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.InsightsConfigArtifactConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.InsightsConfigArtifactConfigGoogleArtifactAnalysisArgs.builder
       builder.googleArtifactAnalysis(args(argsBuilder).build)
@@ -459,7 +459,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleArtifactRegistry(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.InsightsConfigArtifactConfigGoogleArtifactRegistryArgs.Builder]):
+    inline def googleArtifactRegistry(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.InsightsConfigArtifactConfigGoogleArtifactRegistryArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.InsightsConfigArtifactConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.InsightsConfigArtifactConfigGoogleArtifactRegistryArgs.builder
       builder.googleArtifactRegistry(args(argsBuilder).build)
@@ -472,7 +472,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def details(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.InsightsConfigErrorDetailArgs.Builder]*):
+    inline def details(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.InsightsConfigErrorDetailArgs.Builder]*):
         com.pulumi.gcp.developerconnect.inputs.InsightsConfigErrorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.developerconnect.inputs.InsightsConfigErrorDetailArgs.builder
       builder.details(args.map(_(argsBuilder).build)*)
@@ -483,7 +483,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def appHubWorkload(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.InsightsConfigRuntimeConfigAppHubWorkloadArgs.Builder]):
+    inline def appHubWorkload(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.InsightsConfigRuntimeConfigAppHubWorkloadArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.InsightsConfigRuntimeConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.InsightsConfigRuntimeConfigAppHubWorkloadArgs.builder
       builder.appHubWorkload(args(argsBuilder).build)
@@ -493,7 +493,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gkeWorkload(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.InsightsConfigRuntimeConfigGkeWorkloadArgs.Builder]):
+    inline def gkeWorkload(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.InsightsConfigRuntimeConfigGkeWorkloadArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.InsightsConfigRuntimeConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.InsightsConfigRuntimeConfigGkeWorkloadArgs.builder
       builder.gkeWorkload(args(argsBuilder).build)
@@ -504,7 +504,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def artifactConfigs(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.InsightsConfigArtifactConfigArgs.Builder]*):
+    inline def artifactConfigs(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.InsightsConfigArtifactConfigArgs.Builder]*):
         com.pulumi.gcp.developerconnect.inputs.InsightsConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.developerconnect.inputs.InsightsConfigArtifactConfigArgs.builder
       builder.artifactConfigs(args.map(_(argsBuilder).build)*)
@@ -517,7 +517,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errors(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.InsightsConfigErrorArgs.Builder]*):
+    inline def errors(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.InsightsConfigErrorArgs.Builder]*):
         com.pulumi.gcp.developerconnect.inputs.InsightsConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.developerconnect.inputs.InsightsConfigErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
@@ -527,7 +527,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def runtimeConfigs(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.InsightsConfigRuntimeConfigArgs.Builder]*):
+    inline def runtimeConfigs(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.InsightsConfigRuntimeConfigArgs.Builder]*):
         com.pulumi.gcp.developerconnect.inputs.InsightsConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.developerconnect.inputs.InsightsConfigRuntimeConfigArgs.builder
       builder.runtimeConfigs(args.map(_(argsBuilder).build)*)
@@ -537,7 +537,7 @@ object developerconnect_ext:
      * Structure is documented below.
      * @return builder
      */
-    def targetProjects(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.InsightsConfigTargetProjectsArgs.Builder]):
+    inline def targetProjects(args: Endofunction[com.pulumi.gcp.developerconnect.inputs.InsightsConfigTargetProjectsArgs.Builder]):
         com.pulumi.gcp.developerconnect.inputs.InsightsConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.developerconnect.inputs.InsightsConfigTargetProjectsArgs.builder
       builder.targetProjects(args(argsBuilder).build)

@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object trustedsigning:
   /** Manages a Trusted Signing Account. */
-  def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.trustedsigning.AccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.trustedsigning.AccountArgs.builder
     conf.logicalName2physicalName(name) match

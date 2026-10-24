@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object codecommit:
   /** Provides a CodeCommit Approval Rule Template Resource. */
-  def ApprovalRuleTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApprovalRuleTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codecommit.ApprovalRuleTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codecommit.ApprovalRuleTemplateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18,7 +18,7 @@ object codecommit:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Associates a CodeCommit Approval Rule Template with a Repository. */
-  def ApprovalRuleTemplateAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApprovalRuleTemplateAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codecommit.ApprovalRuleTemplateAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.codecommit.ApprovalRuleTemplateAssociationArgs.builder
     com.pulumi.aws.codecommit.ApprovalRuleTemplateAssociation(name,
@@ -59,7 +59,7 @@ object codecommit:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides a CodeCommit Repository Resource. */
-  def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codecommit.RepositoryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codecommit.RepositoryArgs.builder
     argsBuilder = args(argsBuilder)
@@ -74,7 +74,7 @@ object codecommit:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CodeCommit Trigger Resource. */
-  def Trigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Trigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.codecommit.TriggerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.codecommit.TriggerArgs.builder
     com.pulumi.aws.codecommit.Trigger(name,

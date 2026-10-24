@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object costexplorer:
   /** Provides a CE Anomaly Monitor. */
-  def AnomalyMonitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AnomalyMonitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.costexplorer.AnomalyMonitorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.costexplorer.AnomalyMonitorArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25,7 +25,7 @@ object costexplorer:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CE Anomaly Subscription. */
-  def AnomalySubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AnomalySubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.costexplorer.AnomalySubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.costexplorer.AnomalySubscriptionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -47,7 +47,7 @@ object costexplorer:
    * 
    * &gt; **NOTE:** After the user-defined tags are created and applied to resources, it can take up to 24 hours for the tag keys to appear on Cost Allocation tag page for activation.
    */
-  def CostAllocationTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CostAllocationTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.costexplorer.CostAllocationTagArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.costexplorer.CostAllocationTagArgs.builder
     com.pulumi.aws.costexplorer.CostAllocationTag(name,
@@ -55,7 +55,7 @@ object costexplorer:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CE Cost Category. */
-  def CostCategory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CostCategory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.costexplorer.CostCategoryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.costexplorer.CostCategoryArgs.builder
     conf.logicalName2physicalName(name) match

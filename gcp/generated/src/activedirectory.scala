@@ -13,7 +13,7 @@ object activedirectory:
    * * How-to Guides
    *     * [Managed Microsoft Active Directory Quickstart](https://cloud.google.com/managed-microsoft-ad/docs/quickstarts)
    */
-  def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.activedirectory.DomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.activedirectory.DomainArgs.builder
     com.pulumi.gcp.activedirectory.Domain(name,
@@ -29,7 +29,7 @@ object activedirectory:
    * * How-to Guides
    *     * [Active Directory Trust](https://cloud.google.com/managed-microsoft-ad/docs/create-one-way-trust)
    */
-  def DomainTrust(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DomainTrust(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.activedirectory.DomainTrustArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.activedirectory.DomainTrustArgs.builder
     com.pulumi.gcp.activedirectory.DomainTrust(name,
@@ -48,7 +48,7 @@ object activedirectory:
    * * How-to Guides
    *     * [Active Directory Domain Peering](https://cloud.google.com/managed-microsoft-ad/docs/domain-peering)
    */
-  def Peering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Peering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.activedirectory.PeeringArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.activedirectory.PeeringArgs.builder
     com.pulumi.gcp.activedirectory.Peering(name,

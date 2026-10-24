@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object armmsi:
   /** Manages a Federated Identity Credential. */
-  def FederatedIdentityCredential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FederatedIdentityCredential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.armmsi.FederatedIdentityCredentialArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.armmsi.FederatedIdentityCredentialArgs.builder
     conf.logicalName2physicalName(name) match

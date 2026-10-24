@@ -14,7 +14,7 @@ object elasticbeanstalk:
    * This resource creates an application that has one configuration template named
    * `default`, and no application versions
    */
-  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.elasticbeanstalk.ApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.elasticbeanstalk.ApplicationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -44,7 +44,7 @@ object elasticbeanstalk:
    * when attempting to delete an Application Version while it is still in use by a different environment.
    * To work around this you can either create each environment in a separate AWS account or create your `aws.elasticbeanstalk.ApplicationVersion` resources with a unique names in your Elastic Beanstalk Application. For example &amp;lt;revision&amp;gt;-&amp;lt;environment&amp;gt;.
    */
-  def ApplicationVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApplicationVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.elasticbeanstalk.ApplicationVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.elasticbeanstalk.ApplicationVersionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -66,7 +66,7 @@ object elasticbeanstalk:
    * a specific application and are used to deploy different versions of the
    * application with the same configuration settings.
    */
-  def ConfigurationTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConfigurationTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.elasticbeanstalk.ConfigurationTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.elasticbeanstalk.ConfigurationTemplateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -133,7 +133,7 @@ object elasticbeanstalk:
    * Environments are often things such as `development`, `integration`, or
    * `production`.
    */
-  def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.elasticbeanstalk.EnvironmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.elasticbeanstalk.EnvironmentArgs.builder
     conf.logicalName2physicalName(name) match

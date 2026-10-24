@@ -10,7 +10,7 @@ object cloudscheduler_ext:
      * Structure is documented below.
      * @return builder
      */
-    def appEngineHttpTarget(args: Endofunction[com.pulumi.gcp.cloudscheduler.inputs.JobAppEngineHttpTargetArgs.Builder]):
+    inline def appEngineHttpTarget(args: Endofunction[com.pulumi.gcp.cloudscheduler.inputs.JobAppEngineHttpTargetArgs.Builder]):
         com.pulumi.gcp.cloudscheduler.JobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudscheduler.inputs.JobAppEngineHttpTargetArgs.builder
       builder.appEngineHttpTarget(args(argsBuilder).build)
@@ -22,7 +22,7 @@ object cloudscheduler_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpTarget(args: Endofunction[com.pulumi.gcp.cloudscheduler.inputs.JobHttpTargetArgs.Builder]):
+    inline def httpTarget(args: Endofunction[com.pulumi.gcp.cloudscheduler.inputs.JobHttpTargetArgs.Builder]):
         com.pulumi.gcp.cloudscheduler.JobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudscheduler.inputs.JobHttpTargetArgs.builder
       builder.httpTarget(args(argsBuilder).build)
@@ -34,7 +34,7 @@ object cloudscheduler_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pubsubTarget(args: Endofunction[com.pulumi.gcp.cloudscheduler.inputs.JobPubsubTargetArgs.Builder]):
+    inline def pubsubTarget(args: Endofunction[com.pulumi.gcp.cloudscheduler.inputs.JobPubsubTargetArgs.Builder]):
         com.pulumi.gcp.cloudscheduler.JobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudscheduler.inputs.JobPubsubTargetArgs.builder
       builder.pubsubTarget(args(argsBuilder).build)
@@ -46,7 +46,7 @@ object cloudscheduler_ext:
      * Structure is documented below.
      * @return builder
      */
-    def retryConfig(args: Endofunction[com.pulumi.gcp.cloudscheduler.inputs.JobRetryConfigArgs.Builder]):
+    inline def retryConfig(args: Endofunction[com.pulumi.gcp.cloudscheduler.inputs.JobRetryConfigArgs.Builder]):
         com.pulumi.gcp.cloudscheduler.JobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudscheduler.inputs.JobRetryConfigArgs.builder
       builder.retryConfig(args(argsBuilder).build)
@@ -57,7 +57,7 @@ object cloudscheduler_ext:
      * Structure is documented below.
      * @return builder
      */
-    def appEngineRouting(args: Endofunction[com.pulumi.gcp.cloudscheduler.inputs.JobAppEngineHttpTargetAppEngineRoutingArgs.Builder]):
+    inline def appEngineRouting(args: Endofunction[com.pulumi.gcp.cloudscheduler.inputs.JobAppEngineHttpTargetAppEngineRoutingArgs.Builder]):
         com.pulumi.gcp.cloudscheduler.inputs.JobAppEngineHttpTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudscheduler.inputs.JobAppEngineHttpTargetAppEngineRoutingArgs.builder
       builder.appEngineRouting(args(argsBuilder).build)
@@ -69,7 +69,7 @@ object cloudscheduler_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauthToken(args: Endofunction[com.pulumi.gcp.cloudscheduler.inputs.JobHttpTargetOauthTokenArgs.Builder]):
+    inline def oauthToken(args: Endofunction[com.pulumi.gcp.cloudscheduler.inputs.JobHttpTargetOauthTokenArgs.Builder]):
         com.pulumi.gcp.cloudscheduler.inputs.JobHttpTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudscheduler.inputs.JobHttpTargetOauthTokenArgs.builder
       builder.oauthToken(args(argsBuilder).build)
@@ -80,7 +80,7 @@ object cloudscheduler_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oidcToken(args: Endofunction[com.pulumi.gcp.cloudscheduler.inputs.JobHttpTargetOidcTokenArgs.Builder]):
+    inline def oidcToken(args: Endofunction[com.pulumi.gcp.cloudscheduler.inputs.JobHttpTargetOidcTokenArgs.Builder]):
         com.pulumi.gcp.cloudscheduler.inputs.JobHttpTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudscheduler.inputs.JobHttpTargetOidcTokenArgs.builder
       builder.oidcToken(args(argsBuilder).build)
@@ -93,7 +93,7 @@ object cloudscheduler_ext:
      * Structure is documented below.
      * @return builder
      */
-    def appEngineHttpTarget(args: Endofunction[com.pulumi.gcp.cloudscheduler.inputs.JobAppEngineHttpTargetArgs.Builder]):
+    inline def appEngineHttpTarget(args: Endofunction[com.pulumi.gcp.cloudscheduler.inputs.JobAppEngineHttpTargetArgs.Builder]):
         com.pulumi.gcp.cloudscheduler.inputs.JobState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudscheduler.inputs.JobAppEngineHttpTargetArgs.builder
       builder.appEngineHttpTarget(args(argsBuilder).build)
@@ -105,7 +105,7 @@ object cloudscheduler_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpTarget(args: Endofunction[com.pulumi.gcp.cloudscheduler.inputs.JobHttpTargetArgs.Builder]):
+    inline def httpTarget(args: Endofunction[com.pulumi.gcp.cloudscheduler.inputs.JobHttpTargetArgs.Builder]):
         com.pulumi.gcp.cloudscheduler.inputs.JobState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudscheduler.inputs.JobHttpTargetArgs.builder
       builder.httpTarget(args(argsBuilder).build)
@@ -117,7 +117,7 @@ object cloudscheduler_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pubsubTarget(args: Endofunction[com.pulumi.gcp.cloudscheduler.inputs.JobPubsubTargetArgs.Builder]):
+    inline def pubsubTarget(args: Endofunction[com.pulumi.gcp.cloudscheduler.inputs.JobPubsubTargetArgs.Builder]):
         com.pulumi.gcp.cloudscheduler.inputs.JobState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudscheduler.inputs.JobPubsubTargetArgs.builder
       builder.pubsubTarget(args(argsBuilder).build)
@@ -129,7 +129,7 @@ object cloudscheduler_ext:
      * Structure is documented below.
      * @return builder
      */
-    def retryConfig(args: Endofunction[com.pulumi.gcp.cloudscheduler.inputs.JobRetryConfigArgs.Builder]):
+    inline def retryConfig(args: Endofunction[com.pulumi.gcp.cloudscheduler.inputs.JobRetryConfigArgs.Builder]):
         com.pulumi.gcp.cloudscheduler.inputs.JobState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudscheduler.inputs.JobRetryConfigArgs.builder
       builder.retryConfig(args(argsBuilder).build)

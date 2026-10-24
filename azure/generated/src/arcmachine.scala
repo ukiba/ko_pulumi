@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object arcmachine:
   /** Manages a Hybrid Compute Machine. */
-  def ArcMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ArcMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.arcmachine.ArcMachineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.arcmachine.ArcMachineArgs.builder
     conf.logicalName2physicalName(name) match
@@ -42,7 +42,7 @@ object arcmachine:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an Arc Machine Automanage Configuration Profile Assignment. */
-  def AutomanageConfigurationAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AutomanageConfigurationAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.arcmachine.AutomanageConfigurationAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.arcmachine.AutomanageConfigurationAssignmentArgs.builder
     com.pulumi.azure.arcmachine.AutomanageConfigurationAssignment(name,
@@ -50,7 +50,7 @@ object arcmachine:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Hybrid Compute Machine Extension. */
-  def Extension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Extension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.arcmachine.ExtensionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.arcmachine.ExtensionArgs.builder
     conf.logicalName2physicalName(name) match

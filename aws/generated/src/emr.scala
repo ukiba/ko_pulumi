@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object emr:
   /** Resource for managing an AWS EMR block public access configuration. This region level security configuration restricts the launch of EMR clusters that have associated security groups permitting public access on unspecified ports. See the [EMR Block Public Access Configuration](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-block-public-access.html) documentation for further information. */
-  def BlockPublicAccessConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BlockPublicAccessConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.emr.BlockPublicAccessConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.emr.BlockPublicAccessConfigurationArgs.builder
     com.pulumi.aws.emr.BlockPublicAccessConfiguration(name,
@@ -19,7 +19,7 @@ object emr:
    * 
    * To configure [Instance Groups](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-instance-group-configuration.html#emr-plan-instance-groups) for [task nodes](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-master-core-task-nodes.html#emr-plan-task), see the `aws.emr.InstanceGroup` resource.
    */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.emr.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.emr.ClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -77,7 +77,7 @@ object emr:
    * web interface. Instance Fleets are destroyed when the EMR Cluster is destroyed.
    * the provider will resize any Instance Fleet to zero when destroying the resource.
    */
-  def InstanceFleet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceFleet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.emr.InstanceFleetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.emr.InstanceFleetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -95,7 +95,7 @@ object emr:
    * web interface. Instance Groups are destroyed when the EMR Cluster is destroyed.
    * this provider will resize any Instance Group to zero when destroying the resource.
    */
-  def InstanceGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.emr.InstanceGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.emr.InstanceGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -106,7 +106,7 @@ object emr:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Managed Scaling policy for EMR Cluster. With Amazon EMR versions 5.30.0 and later (except for Amazon EMR 6.0.0), you can enable EMR managed scaling to automatically increase or decrease the number of instances or units in your cluster based on workload. See [Using EMR Managed Scaling in Amazon EMR](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-scaling.html) for more information. */
-  def ManagedScalingPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedScalingPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.emr.ManagedScalingPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.emr.ManagedScalingPolicyArgs.builder
     com.pulumi.aws.emr.ManagedScalingPolicy(name,
@@ -114,7 +114,7 @@ object emr:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage AWS EMR Security Configurations */
-  def SecurityConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecurityConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.emr.SecurityConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.emr.SecurityConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -125,7 +125,7 @@ object emr:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Elastic MapReduce Studio. */
-  def Studio(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Studio(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.emr.StudioArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.emr.StudioArgs.builder
     conf.logicalName2physicalName(name) match
@@ -143,7 +143,7 @@ object emr:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Elastic MapReduce Studio Session Mapping. */
-  def StudioSessionMapping(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StudioSessionMapping(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.emr.StudioSessionMappingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.emr.StudioSessionMappingArgs.builder
     com.pulumi.aws.emr.StudioSessionMapping(name,

@@ -76,7 +76,7 @@ object appconfiguration:
    * 
    * &gt; **Note:** App Configuration Features are provisioned using a Data Plane API which requires the role `App Configuration Data Owner` on either the App Configuration or a parent scope (such as the Resource Group/Subscription). [More information can be found in the Azure Documentation for App Configuration](https://docs.microsoft.com/azure/azure-app-configuration/concept-enable-rbac#azure-built-in-roles-for-azure-app-configuration). This is similar to providing App Configuration Keys.
    */
-  def ConfigurationFeature(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConfigurationFeature(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appconfiguration.ConfigurationFeatureArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appconfiguration.ConfigurationFeatureArgs.builder
     conf.logicalName2physicalName(name) match
@@ -98,7 +98,7 @@ object appconfiguration:
    * 
    * &gt; **Note:** App Configuration Keys are provisioned using a Data Plane API which requires the role `App Configuration Data Owner` on either the App Configuration or a parent scope (such as the Resource Group/Subscription). [More information can be found in the Azure Documentation for App Configuration](https://docs.microsoft.com/azure/azure-app-configuration/concept-enable-rbac#azure-built-in-roles-for-azure-app-configuration).
    */
-  def ConfigurationKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConfigurationKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appconfiguration.ConfigurationKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appconfiguration.ConfigurationKeyArgs.builder
     argsBuilder = args(argsBuilder)
@@ -121,7 +121,7 @@ object appconfiguration:
    * 
    * &gt; **Note:** Reading and purging soft-deleted App Configurations requires the `Microsoft.AppConfiguration/locations/deletedConfigurationStores/read` and `Microsoft.AppConfiguration/locations/deletedConfigurationStores/purge/action` permission on Subscription scope. Recovering a soft-deleted App Configuration requires the `Microsoft.AppConfiguration/configurationStores/write` permission on Subscription or Resource Group scope. [More information can be found in the Azure Documentation for App Configuration](https://learn.microsoft.com/en-us/azure/azure-app-configuration/concept-soft-delete#permissions-to-recover-a-deleted-store). See the following links for more information on assigning [Azure custom roles](https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles) or using the `azure.authorization.Assignment` resource to assign a custom role.
    */
-  def ConfigurationStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConfigurationStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appconfiguration.ConfigurationStoreArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appconfiguration.ConfigurationStoreArgs.builder
     conf.logicalName2physicalName(name) match
@@ -139,7 +139,7 @@ object appconfiguration:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Application Gateway for Containers (ALB). */
-  def LicationLoadBalancer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LicationLoadBalancer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appconfiguration.LicationLoadBalancerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appconfiguration.LicationLoadBalancerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -157,7 +157,7 @@ object appconfiguration:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Application Gateway for Containers Frontend. */
-  def LicationLoadBalancerFrontend(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LicationLoadBalancerFrontend(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appconfiguration.LicationLoadBalancerFrontendArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appconfiguration.LicationLoadBalancerFrontendArgs.builder
     conf.logicalName2physicalName(name) match
@@ -175,7 +175,7 @@ object appconfiguration:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Application Load Balancer Security Policy. */
-  def LicationLoadBalancerSecurityPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LicationLoadBalancerSecurityPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appconfiguration.LicationLoadBalancerSecurityPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appconfiguration.LicationLoadBalancerSecurityPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -193,7 +193,7 @@ object appconfiguration:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an association between an Application Gateway for Containers and a Subnet. */
-  def LicationLoadBalancerSubnetAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LicationLoadBalancerSubnetAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appconfiguration.LicationLoadBalancerSubnetAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appconfiguration.LicationLoadBalancerSubnetAssociationArgs.builder
     conf.logicalName2physicalName(name) match

@@ -13,7 +13,7 @@ object blockchainnodeengine:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/blockchain-node-engine)
    */
-  def BlockchainNodes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BlockchainNodes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.blockchainnodeengine.BlockchainNodesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.blockchainnodeengine.BlockchainNodesArgs.builder
     com.pulumi.gcp.blockchainnodeengine.BlockchainNodes(name,

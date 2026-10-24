@@ -7,7 +7,7 @@ object billing_ext:
      * @param exportDataOptions A `exportDataOptions` block as defined below.
      * @return builder
      */
-    def exportDataOptions(args: Endofunction[com.pulumi.azure.billing.inputs.AccountCostManagementExportExportDataOptionsArgs.Builder]):
+    inline def exportDataOptions(args: Endofunction[com.pulumi.azure.billing.inputs.AccountCostManagementExportExportDataOptionsArgs.Builder]):
         com.pulumi.azure.billing.AccountCostManagementExportArgs.Builder =
       val argsBuilder = com.pulumi.azure.billing.inputs.AccountCostManagementExportExportDataOptionsArgs.builder
       builder.exportDataOptions(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object billing_ext:
      * @param exportDataStorageLocation A `exportDataStorageLocation` block as defined below.
      * @return builder
      */
-    def exportDataStorageLocation(args: Endofunction[com.pulumi.azure.billing.inputs.AccountCostManagementExportExportDataStorageLocationArgs.Builder]):
+    inline def exportDataStorageLocation(args: Endofunction[com.pulumi.azure.billing.inputs.AccountCostManagementExportExportDataStorageLocationArgs.Builder]):
         com.pulumi.azure.billing.AccountCostManagementExportArgs.Builder =
       val argsBuilder = com.pulumi.azure.billing.inputs.AccountCostManagementExportExportDataStorageLocationArgs.builder
       builder.exportDataStorageLocation(args(argsBuilder).build)
@@ -26,7 +26,7 @@ object billing_ext:
      * @param exportDataOptions A `exportDataOptions` block as defined below.
      * @return builder
      */
-    def exportDataOptions(args: Endofunction[com.pulumi.azure.billing.inputs.AccountCostManagementExportExportDataOptionsArgs.Builder]):
+    inline def exportDataOptions(args: Endofunction[com.pulumi.azure.billing.inputs.AccountCostManagementExportExportDataOptionsArgs.Builder]):
         com.pulumi.azure.billing.inputs.AccountCostManagementExportState.Builder =
       val argsBuilder = com.pulumi.azure.billing.inputs.AccountCostManagementExportExportDataOptionsArgs.builder
       builder.exportDataOptions(args(argsBuilder).build)
@@ -35,7 +35,7 @@ object billing_ext:
      * @param exportDataStorageLocation A `exportDataStorageLocation` block as defined below.
      * @return builder
      */
-    def exportDataStorageLocation(args: Endofunction[com.pulumi.azure.billing.inputs.AccountCostManagementExportExportDataStorageLocationArgs.Builder]):
+    inline def exportDataStorageLocation(args: Endofunction[com.pulumi.azure.billing.inputs.AccountCostManagementExportExportDataStorageLocationArgs.Builder]):
         com.pulumi.azure.billing.inputs.AccountCostManagementExportState.Builder =
       val argsBuilder = com.pulumi.azure.billing.inputs.AccountCostManagementExportExportDataStorageLocationArgs.builder
       builder.exportDataStorageLocation(args(argsBuilder).build)

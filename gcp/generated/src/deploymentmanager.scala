@@ -19,7 +19,7 @@ object deploymentmanager:
    * than actually deploying an in-preview deployment (i.e. `preview=true` to
    * `preview=false`).
    */
-  def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.deploymentmanager.DeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.deploymentmanager.DeploymentArgs.builder
     conf.logicalName2physicalName(name) match

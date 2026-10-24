@@ -11,7 +11,7 @@ object policy:
    * 
    * Policy definitions do not take effect until they are assigned to a scope using a Policy Assignment.
    */
-  def Definition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Definition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.policy.DefinitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.policy.DefinitionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -107,7 +107,7 @@ object policy:
    * 
    * &gt; **Note:** Policy set definitions (also known as policy initiatives) do not take effect until they are assigned to a scope using a Policy Set Assignment.
    */
-  def PolicySetDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PolicySetDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.policy.PolicySetDefinitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.policy.PolicySetDefinitionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -122,7 +122,7 @@ object policy:
    * 
    * &gt; **Note:** You can create Guest Configuration Policies without defining a `azure.compute.Extension` resource, however the policies will not be executed until a `azure.compute.Extension` has been provisioned to the virtual machine.
    */
-  def VirtualMachineConfigurationAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VirtualMachineConfigurationAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.policy.VirtualMachineConfigurationAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.policy.VirtualMachineConfigurationAssignmentArgs.builder
     conf.logicalName2physicalName(name) match

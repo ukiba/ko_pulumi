@@ -7,7 +7,7 @@ object role_ext:
      * @param permissions A `permissions` block as defined below.
      * @return builder
      */
-    def permissions(args: Endofunction[com.pulumi.azure.role.inputs.DefinitionPermissionArgs.Builder]*):
+    inline def permissions(args: Endofunction[com.pulumi.azure.role.inputs.DefinitionPermissionArgs.Builder]*):
         com.pulumi.azure.role.DefinitionArgs.Builder =
       def argsBuilder = com.pulumi.azure.role.inputs.DefinitionPermissionArgs.builder
       builder.permissions(args.map(_(argsBuilder).build)*)
@@ -17,7 +17,7 @@ object role_ext:
      * @param permissions A `permissions` block as defined below.
      * @return builder
      */
-    def permissions(args: Endofunction[com.pulumi.azure.role.inputs.DefinitionPermissionArgs.Builder]*):
+    inline def permissions(args: Endofunction[com.pulumi.azure.role.inputs.DefinitionPermissionArgs.Builder]*):
         com.pulumi.azure.role.inputs.DefinitionState.Builder =
       def argsBuilder = com.pulumi.azure.role.inputs.DefinitionPermissionArgs.builder
       builder.permissions(args.map(_(argsBuilder).build)*)

@@ -7,7 +7,7 @@ object servicequotas_ext:
      * @param usageMetrics Information about the measurement.
      * @return builder
      */
-    def usageMetrics(args: Endofunction[com.pulumi.aws.servicequotas.inputs.ServiceQuotaUsageMetricArgs.Builder]*):
+    inline def usageMetrics(args: Endofunction[com.pulumi.aws.servicequotas.inputs.ServiceQuotaUsageMetricArgs.Builder]*):
         com.pulumi.aws.servicequotas.inputs.ServiceQuotaState.Builder =
       def argsBuilder = com.pulumi.aws.servicequotas.inputs.ServiceQuotaUsageMetricArgs.builder
       builder.usageMetrics(args.map(_(argsBuilder).build)*)
@@ -17,7 +17,7 @@ object servicequotas_ext:
      * @param metricDimensions The metric dimensions.
      * @return builder
      */
-    def metricDimensions(args: Endofunction[com.pulumi.aws.servicequotas.inputs.ServiceQuotaUsageMetricMetricDimensionArgs.Builder]*):
+    inline def metricDimensions(args: Endofunction[com.pulumi.aws.servicequotas.inputs.ServiceQuotaUsageMetricMetricDimensionArgs.Builder]*):
         com.pulumi.aws.servicequotas.inputs.ServiceQuotaUsageMetricArgs.Builder =
       def argsBuilder = com.pulumi.aws.servicequotas.inputs.ServiceQuotaUsageMetricMetricDimensionArgs.builder
       builder.metricDimensions(args.map(_(argsBuilder).build)*)

@@ -92,7 +92,7 @@ object backup:
    * 
    * &gt; **Note:** For the Deployment Status of the Framework to be successful, please turn on resource tracking to enable AWS Config recording to track configuration changes of your backup resources. This can be done from the AWS Console.
    */
-  def Framework(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Framework(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.backup.FrameworkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.backup.FrameworkArgs.builder
     conf.logicalName2physicalName(name) match
@@ -114,7 +114,7 @@ object backup:
    * 
    * &gt; **Note:** This resource will show perpetual differences for any supported settings not explicitly configured in the `globalSettings` configuration block. To avoid this, specify all supported options with their default values (typically `&#34;false&#34;`, but check the plan diff for the actual value). See [UpdateGlobalSettings](https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateGlobalSettings.html) in the AWS Backup Developer Guide for available settings.
    */
-  def GlobalSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GlobalSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.backup.GlobalSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.backup.GlobalSettingsArgs.builder
     com.pulumi.aws.backup.GlobalSettings(name,
@@ -122,7 +122,7 @@ object backup:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Backup Logically Air Gapped Vault. */
-  def LogicallyAirGappedVault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LogicallyAirGappedVault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.backup.LogicallyAirGappedVaultArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.backup.LogicallyAirGappedVaultArgs.builder
     conf.logicalName2physicalName(name) match
@@ -140,7 +140,7 @@ object backup:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Backup plan resource. */
-  def Plan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Plan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.backup.PlanArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.backup.PlanArgs.builder
     conf.logicalName2physicalName(name) match
@@ -158,7 +158,7 @@ object backup:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Backup Region Settings resource. */
-  def RegionSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.backup.RegionSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.backup.RegionSettingsArgs.builder
     com.pulumi.aws.backup.RegionSettings(name,
@@ -166,7 +166,7 @@ object backup:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Backup Report Plan resource. */
-  def ReportPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ReportPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.backup.ReportPlanArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.backup.ReportPlanArgs.builder
     conf.logicalName2physicalName(name) match
@@ -184,7 +184,7 @@ object backup:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Backup Restore Testing Plan. */
-  def RestoreTestingPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RestoreTestingPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.backup.RestoreTestingPlanArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.backup.RestoreTestingPlanArgs.builder
     conf.logicalName2physicalName(name) match
@@ -202,7 +202,7 @@ object backup:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Backup Restore Testing Selection. */
-  def RestoreTestingSelection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RestoreTestingSelection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.backup.RestoreTestingSelectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.backup.RestoreTestingSelectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -213,7 +213,7 @@ object backup:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages selection conditions for AWS Backup plan resources. */
-  def Selection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Selection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.backup.SelectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.backup.SelectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -224,7 +224,7 @@ object backup:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Backup vault resource. */
-  def Vault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Vault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.backup.VaultArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.backup.VaultArgs.builder
     conf.logicalName2physicalName(name) match
@@ -242,7 +242,7 @@ object backup:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Backup vault lock configuration resource. */
-  def VaultLockConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VaultLockConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.backup.VaultLockConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.backup.VaultLockConfigurationArgs.builder
     com.pulumi.aws.backup.VaultLockConfiguration(name,
@@ -250,7 +250,7 @@ object backup:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Backup vault notifications resource. */
-  def VaultNotifications(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VaultNotifications(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.backup.VaultNotificationsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.backup.VaultNotificationsArgs.builder
     com.pulumi.aws.backup.VaultNotifications(name,
@@ -258,7 +258,7 @@ object backup:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Backup vault policy resource. */
-  def VaultPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VaultPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.backup.VaultPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.backup.VaultPolicyArgs.builder
     com.pulumi.aws.backup.VaultPolicy(name,

@@ -18,7 +18,7 @@ object certificatemanager:
    * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `self_managed.pem_private_key_wo`.
    * Read more about Write-only Arguments.
    */
-  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.certificatemanager.CertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.certificatemanager.CertificateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -37,7 +37,7 @@ object certificatemanager:
    * * How-to Guides
    *     * [Manage certificate issuance configs](https://cloud.google.com/certificate-manager/docs/issuance-configs)
    */
-  def CertificateIssuanceConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CertificateIssuanceConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.certificatemanager.CertificateIssuanceConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.certificatemanager.CertificateIssuanceConfigArgs.builder
     conf.logicalName2physicalName(name) match
@@ -51,7 +51,7 @@ object certificatemanager:
    * CertificateMap defines a collection of certificate configurations,
    * which are usable by any associated target proxies
    */
-  def CertificateMap(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CertificateMap(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.certificatemanager.CertificateMapArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.certificatemanager.CertificateMapArgs.builder
     conf.logicalName2physicalName(name) match
@@ -65,7 +65,7 @@ object certificatemanager:
    * CertificateMapEntry is a list of certificate configurations,
    * that have been issued for a particular hostname
    */
-  def CertificateMapEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CertificateMapEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.certificatemanager.CertificateMapEntryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.certificatemanager.CertificateMapEntryArgs.builder
     conf.logicalName2physicalName(name) match
@@ -125,7 +125,7 @@ object certificatemanager:
           invokeOptions(InvokeOptions.builder).build)
 
   /** DnsAuthorization represents a HTTP-reachable backend for a DnsAuthorization. */
-  def DnsAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DnsAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.certificatemanager.DnsAuthorizationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.certificatemanager.DnsAuthorizationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -144,7 +144,7 @@ object certificatemanager:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/certificate-manager/docs)
    */
-  def TrustConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TrustConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.certificatemanager.TrustConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.certificatemanager.TrustConfigArgs.builder
     conf.logicalName2physicalName(name) match

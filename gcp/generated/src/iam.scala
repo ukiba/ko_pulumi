@@ -11,7 +11,7 @@ object iam:
    * **NOTE**: This is a private feature and users should contact GCP support
    * if they would like to test it.
    */
-  def AccessBoundaryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccessBoundaryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.AccessBoundaryPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.iam.AccessBoundaryPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -30,7 +30,7 @@ object iam:
    * * How-to Guides
    *     * [Permissions supported in deny policies](https://cloud.google.com/iam/docs/deny-permissions-support)
    */
-  def DenyPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DenyPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.DenyPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.iam.DenyPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -49,7 +49,7 @@ object iam:
    * 
    * * [API documentation](https://cloud.google.com/iam/docs/reference/rest/v3/folders.locations.accessPolicies)
    */
-  def FolderAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FolderAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.FolderAccessPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.FolderAccessPolicyArgs.builder
     com.pulumi.gcp.iam.FolderAccessPolicy(name,
@@ -65,7 +65,7 @@ object iam:
    * * How-to Guides
    *     * [Apply a policy binding](https://cloud.google.com/iam/docs/principal-access-boundary-policies-create#create_binding)
    */
-  def FoldersPolicyBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FoldersPolicyBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.FoldersPolicyBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.FoldersPolicyBindingArgs.builder
     com.pulumi.gcp.iam.FoldersPolicyBinding(name,
@@ -304,7 +304,7 @@ object iam:
    * * How-to Guides
    *     * [Managing OAuth clients](https://cloud.google.com/iam/docs/workforce-manage-oauth-app#manage-clients)
    */
-  def OauthClient(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OauthClient(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.OauthClientArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.OauthClientArgs.builder
     com.pulumi.gcp.iam.OauthClient(name,
@@ -322,7 +322,7 @@ object iam:
    * * How-to Guides
    *     * [Managing OAuth clients](https://cloud.google.com/iam/docs/workforce-manage-oauth-app#manage-clients)
    */
-  def OauthClientCredential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OauthClientCredential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.OauthClientCredentialArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.OauthClientCredentialArgs.builder
     com.pulumi.gcp.iam.OauthClientCredential(name,
@@ -338,7 +338,7 @@ object iam:
    * 
    * * [API documentation](https://cloud.google.com/iam/docs/reference/rest/v3/organizations.locations.accessPolicies)
    */
-  def OrganizationAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.OrganizationAccessPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.OrganizationAccessPolicyArgs.builder
     com.pulumi.gcp.iam.OrganizationAccessPolicy(name,
@@ -354,7 +354,7 @@ object iam:
    * * How-to Guides
    *     * [Apply a policy binding](https://cloud.google.com/iam/docs/principal-access-boundary-policies-create#create_binding)
    */
-  def OrganizationsPolicyBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationsPolicyBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.OrganizationsPolicyBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.OrganizationsPolicyBindingArgs.builder
     com.pulumi.gcp.iam.OrganizationsPolicyBinding(name,
@@ -374,7 +374,7 @@ object iam:
    * * How-to Guides
    *     * [Create and apply Principal Access Boundaries](https://cloud.google.com/iam/docs/principal-access-boundary-policies-create)
    */
-  def PrincipalAccessBoundaryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PrincipalAccessBoundaryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.PrincipalAccessBoundaryPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.PrincipalAccessBoundaryPolicyArgs.builder
     com.pulumi.gcp.iam.PrincipalAccessBoundaryPolicy(name,
@@ -390,7 +390,7 @@ object iam:
    * 
    * * [API documentation](https://cloud.google.com/iam/docs/reference/rest/v3/projects.locations.accessPolicies)
    */
-  def ProjectAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProjectAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.ProjectAccessPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.ProjectAccessPolicyArgs.builder
     com.pulumi.gcp.iam.ProjectAccessPolicy(name,
@@ -406,7 +406,7 @@ object iam:
    * * How-to Guides
    *     * [Apply a policy binding](https://cloud.google.com/iam/docs/principal-access-boundary-policies-create#create_binding)
    */
-  def ProjectsPolicyBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProjectsPolicyBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.ProjectsPolicyBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.ProjectsPolicyBindingArgs.builder
     com.pulumi.gcp.iam.ProjectsPolicyBinding(name,
@@ -426,7 +426,7 @@ object iam:
    * &gt; **Note:** Ask your Google Cloud account team to request access to workforce identity federation for
    * your billing/quota project. The account team notifies you when the project is granted access.
    */
-  def WorkforcePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkforcePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.WorkforcePoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkforcePoolArgs.builder
     com.pulumi.gcp.iam.WorkforcePool(name,
@@ -733,7 +733,7 @@ object iam:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WorkforcePoolIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkforcePoolIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.WorkforcePoolIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkforcePoolIamBindingArgs.builder
     com.pulumi.gcp.iam.WorkforcePoolIamBinding(name,
@@ -1040,7 +1040,7 @@ object iam:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WorkforcePoolIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkforcePoolIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.WorkforcePoolIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkforcePoolIamMemberArgs.builder
     com.pulumi.gcp.iam.WorkforcePoolIamMember(name,
@@ -1347,7 +1347,7 @@ object iam:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WorkforcePoolIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkforcePoolIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.WorkforcePoolIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkforcePoolIamPolicyArgs.builder
     com.pulumi.gcp.iam.WorkforcePoolIamPolicy(name,
@@ -1369,7 +1369,7 @@ object iam:
    * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `oidc.client_secret.value.plain_text_wo`, `extra_attributes_oauth2_client.client_secret.value.plain_text_wo`, `extended_attributes_oauth2_client.client_secret.value.plain_text_wo`.
    * Read more about Write-only Arguments.
    */
-  def WorkforcePoolProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkforcePoolProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.WorkforcePoolProviderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkforcePoolProviderArgs.builder
     com.pulumi.gcp.iam.WorkforcePoolProvider(name,
@@ -1387,7 +1387,7 @@ object iam:
    *     * [Configure a provider within the workforce pool](https://cloud.google.com/iam/docs/manage-workforce-identity-pools-providers#configure_a_provider_within_the_workforce_pool)
    *     * [Workforce Identity Federation Overview](https://cloud.google.com/iam/docs/workforce-identity-federation)
    */
-  def WorkforcePoolProviderKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkforcePoolProviderKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.WorkforcePoolProviderKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkforcePoolProviderKeyArgs.builder
     com.pulumi.gcp.iam.WorkforcePoolProviderKey(name,
@@ -1404,7 +1404,7 @@ object iam:
    * * How-to Guides
    *     * [Configure a SCIM Tenant](https://cloud.google.com/iam/docs/workforce-sign-in-microsoft-entra-id-scalable-groups?group_type=extended#extended-attributes)
    */
-  def WorkforcePoolProviderScimTenant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkforcePoolProviderScimTenant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.WorkforcePoolProviderScimTenantArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkforcePoolProviderScimTenantArgs.builder
     com.pulumi.gcp.iam.WorkforcePoolProviderScimTenant(name,
@@ -1421,7 +1421,7 @@ object iam:
    * * How-to Guides
    *     * [Create a SCIM Token for the SCIM Tenant](https://cloud.google.com/iam/docs/workforce-sign-in-microsoft-entra-id-scalable-groups?group_type=extended#extended-attributes)
    */
-  def WorkforcePoolProviderScimToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkforcePoolProviderScimToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.WorkforcePoolProviderScimTokenArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkforcePoolProviderScimTokenArgs.builder
     com.pulumi.gcp.iam.WorkforcePoolProviderScimToken(name,
@@ -1440,7 +1440,7 @@ object iam:
    *     * [Configure managed workload identity authentication for GKE](https://cloud.google.com/iam/docs/create-managed-workload-identities-gke)
    *     * [Managing workload identity pools](https://cloud.google.com/iam/docs/manage-workload-identity-pools-providers#pools)
    */
-  def WorkloadIdentityPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkloadIdentityPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.WorkloadIdentityPoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkloadIdentityPoolArgs.builder
     com.pulumi.gcp.iam.WorkloadIdentityPool(name,
@@ -2016,7 +2016,7 @@ object iam:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WorkloadIdentityPoolIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkloadIdentityPoolIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.WorkloadIdentityPoolIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkloadIdentityPoolIamBindingArgs.builder
     com.pulumi.gcp.iam.WorkloadIdentityPoolIamBinding(name,
@@ -2592,7 +2592,7 @@ object iam:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WorkloadIdentityPoolIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkloadIdentityPoolIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.WorkloadIdentityPoolIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkloadIdentityPoolIamMemberArgs.builder
     com.pulumi.gcp.iam.WorkloadIdentityPoolIamMember(name,
@@ -3168,7 +3168,7 @@ object iam:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WorkloadIdentityPoolIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkloadIdentityPoolIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.WorkloadIdentityPoolIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkloadIdentityPoolIamPolicyArgs.builder
     com.pulumi.gcp.iam.WorkloadIdentityPoolIamPolicy(name,
@@ -3185,7 +3185,7 @@ object iam:
    *     * [Configure managed workload identity authentication for Compute Engine](https://cloud.google.com/iam/docs/create-managed-workload-identities)
    *     * [Configure managed workload identity authentication for GKE](https://cloud.google.com/iam/docs/create-managed-workload-identities-gke)
    */
-  def WorkloadIdentityPoolManagedIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkloadIdentityPoolManagedIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.WorkloadIdentityPoolManagedIdentityArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkloadIdentityPoolManagedIdentityArgs.builder
     com.pulumi.gcp.iam.WorkloadIdentityPoolManagedIdentity(name,
@@ -3203,7 +3203,7 @@ object iam:
    *     * [Configure managed workload identity authentication for Compute Engine](https://cloud.google.com/iam/docs/create-managed-workload-identities)
    *     * [Configure managed workload identity authentication for GKE](https://cloud.google.com/iam/docs/create-managed-workload-identities-gke)
    */
-  def WorkloadIdentityPoolNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkloadIdentityPoolNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.WorkloadIdentityPoolNamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkloadIdentityPoolNamespaceArgs.builder
     com.pulumi.gcp.iam.WorkloadIdentityPoolNamespace(name,
@@ -3219,7 +3219,7 @@ object iam:
    * * How-to Guides
    *     * [Managing workload identity providers](https://cloud.google.com/iam/docs/manage-workload-identity-pools-providers#managing_workload_identity_providers)
    */
-  def WorkloadIdentityPoolProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkloadIdentityPoolProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.WorkloadIdentityPoolProviderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkloadIdentityPoolProviderArgs.builder
     com.pulumi.gcp.iam.WorkloadIdentityPoolProvider(name,
@@ -3227,7 +3227,7 @@ object iam:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A Service Agent within the Workload Identity API. */
-  def WorkloadIdentityServiceAgent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkloadIdentityServiceAgent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.iam.WorkloadIdentityServiceAgentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkloadIdentityServiceAgentArgs.builder
     com.pulumi.gcp.iam.WorkloadIdentityServiceAgent(name,

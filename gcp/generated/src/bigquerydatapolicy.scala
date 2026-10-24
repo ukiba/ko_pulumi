@@ -32,7 +32,7 @@ object bigquerydatapolicy:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/bigquery/docs/column-data-masking-intro)
    */
-  def DataPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquerydatapolicy.DataPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquerydatapolicy.DataPolicyArgs.builder
     com.pulumi.gcp.bigquerydatapolicy.DataPolicy(name,
@@ -345,7 +345,7 @@ object bigquerydatapolicy:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DataPolicyIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataPolicyIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquerydatapolicy.DataPolicyIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquerydatapolicy.DataPolicyIamBindingArgs.builder
     com.pulumi.gcp.bigquerydatapolicy.DataPolicyIamBinding(name,
@@ -658,7 +658,7 @@ object bigquerydatapolicy:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DataPolicyIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataPolicyIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquerydatapolicy.DataPolicyIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquerydatapolicy.DataPolicyIamMemberArgs.builder
     com.pulumi.gcp.bigquerydatapolicy.DataPolicyIamMember(name,
@@ -971,7 +971,7 @@ object bigquerydatapolicy:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DataPolicyIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataPolicyIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigquerydatapolicy.DataPolicyIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquerydatapolicy.DataPolicyIamPolicyArgs.builder
     com.pulumi.gcp.bigquerydatapolicy.DataPolicyIamPolicy(name,

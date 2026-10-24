@@ -12,7 +12,7 @@ object connect:
    * 
    * &gt; **NOTE:** This resource only currently supports Amazon Lex (V1) Associations.
    */
-  def BotAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BotAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.connect.BotAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.connect.BotAssociationArgs.builder
     com.pulumi.aws.connect.BotAssociation(name,
@@ -286,7 +286,7 @@ object connect:
    * &gt; **WARN:** Contact Flows exported from the Console [Contact Flow import/export](https://docs.aws.amazon.com/connect/latest/adminguide/contact-flow-import-export.html) are not in the Amazon Connect Contact Flow Language and can not be used with this resource. Instead, the recommendation is to use the AWS CLI [`describe-contact-flow`](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/connect/describe-contact-flow.html).
    * See example below which uses `jq` to extract the `Content` attribute and saves it to a local file.
    */
-  def ContactFlow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ContactFlow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.connect.ContactFlowArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.connect.ContactFlowArgs.builder
     conf.logicalName2physicalName(name) match
@@ -313,7 +313,7 @@ object connect:
    * &gt; **WARN:** Contact Flow Modules exported from the Console [See Contact Flow import/export which is the same for Contact Flow Modules](https://docs.aws.amazon.com/connect/latest/adminguide/contact-flow-import-export.html) are not in the Amazon Connect Contact Flow Language and can not be used with this resource. Instead, the recommendation is to use the AWS CLI [`describe-contact-flow-module`](https://docs.aws.amazon.com/cli/latest/reference/connect/describe-contact-flow-module.html).
    * See example below which uses `jq` to extract the `Content` attribute and saves it to a local file.
    */
-  def ContactFlowModule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ContactFlowModule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.connect.ContactFlowModuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.connect.ContactFlowModuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -334,7 +334,7 @@ object connect:
    * Provides an Amazon Connect Hours of Operation resource. For more information see
    * [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
    */
-  def HoursOfOperation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HoursOfOperation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.connect.HoursOfOperationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.connect.HoursOfOperationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -357,7 +357,7 @@ object connect:
    * 
    * &gt; **WARN:** Amazon Connect enforces a limit of [100 combined instance creation and deletions every 30 days](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits). For example, if you create 80 instances and delete 20 of them, you must wait 30 days to create or delete another instance. Use care when creating or deleting instances.
    */
-  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.connect.InstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.connect.InstanceArgs.builder
     argsBuilder = args(argsBuilder)
@@ -375,7 +375,7 @@ object connect:
    * Provides an Amazon Connect Instance Storage Config resource. For more information see
    * [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
    */
-  def InstanceStorageConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceStorageConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.connect.InstanceStorageConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.connect.InstanceStorageConfigArgs.builder
     com.pulumi.aws.connect.InstanceStorageConfig(name,
@@ -386,7 +386,7 @@ object connect:
    * Provides an Amazon Connect Lambda Function Association. For more information see
    * [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html) and [Invoke AWS Lambda functions](https://docs.aws.amazon.com/connect/latest/adminguide/connect-lambda-functions.html).
    */
-  def LambdaFunctionAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LambdaFunctionAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.connect.LambdaFunctionAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.connect.LambdaFunctionAssociationArgs.builder
     com.pulumi.aws.connect.LambdaFunctionAssociation(name,
@@ -397,7 +397,7 @@ object connect:
    * Provides an Amazon Connect Phone Number resource. For more information see
    * [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
    */
-  def PhoneNumber(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PhoneNumber(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.connect.PhoneNumberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.connect.PhoneNumberArgs.builder
     argsBuilder = args(argsBuilder)
@@ -412,7 +412,7 @@ object connect:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Associates a flow with a phone number claimed to an Amazon Connect instance. */
-  def PhoneNumberContactFlowAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PhoneNumberContactFlowAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.connect.PhoneNumberContactFlowAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.connect.PhoneNumberContactFlowAssociationArgs.builder
     com.pulumi.aws.connect.PhoneNumberContactFlowAssociation(name,
@@ -423,7 +423,7 @@ object connect:
    * Provides an Amazon Connect Queue resource. For more information see
    * [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
    */
-  def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.connect.QueueArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.connect.QueueArgs.builder
     conf.logicalName2physicalName(name) match
@@ -444,7 +444,7 @@ object connect:
    * Provides an Amazon Connect Quick Connect resource. For more information see
    * [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
    */
-  def QuickConnect(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def QuickConnect(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.connect.QuickConnectArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.connect.QuickConnectArgs.builder
     conf.logicalName2physicalName(name) match
@@ -465,7 +465,7 @@ object connect:
    * Provides an Amazon Connect Routing Profile resource. For more information see
    * [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html).
    */
-  def RoutingProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RoutingProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.connect.RoutingProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.connect.RoutingProfileArgs.builder
     conf.logicalName2physicalName(name) match
@@ -486,7 +486,7 @@ object connect:
    * Provides an Amazon Connect Security Profile resource. For more information see
    * [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
    */
-  def SecurityProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecurityProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.connect.SecurityProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.connect.SecurityProfileArgs.builder
     conf.logicalName2physicalName(name) match
@@ -507,7 +507,7 @@ object connect:
    * Provides an Amazon Connect User resource. For more information see
    * [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
    */
-  def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.connect.UserArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.connect.UserArgs.builder
     conf.logicalName2physicalName(name) match
@@ -530,7 +530,7 @@ object connect:
    * 
    * &gt; **NOTE:** The User Hierarchy Structure must be created before creating a User Hierarchy Group.
    */
-  def UserHierarchyGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UserHierarchyGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.connect.UserHierarchyGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.connect.UserHierarchyGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -551,7 +551,7 @@ object connect:
    * Provides an Amazon Connect User Hierarchy Structure resource. For more information see
    * [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
    */
-  def UserHierarchyStructure(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UserHierarchyStructure(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.connect.UserHierarchyStructureArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.connect.UserHierarchyStructureArgs.builder
     com.pulumi.aws.connect.UserHierarchyStructure(name,
@@ -562,7 +562,7 @@ object connect:
    * Provides an Amazon Connect Vocabulary resource. For more information see
    * [Amazon Connect: Getting Started](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-get-started.html)
    */
-  def Vocabulary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Vocabulary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.connect.VocabularyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.connect.VocabularyArgs.builder
     conf.logicalName2physicalName(name) match

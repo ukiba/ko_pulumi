@@ -13,7 +13,7 @@ object organizations:
    * 
    * * [API documentation](https://cloud.google.com/access-approval/docs/reference/rest/v1/organizations)
    */
-  def AccessApprovalSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccessApprovalSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.organizations.AccessApprovalSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.organizations.AccessApprovalSettingsArgs.builder
     com.pulumi.gcp.organizations.AccessApprovalSettings(name,
@@ -51,7 +51,7 @@ object organizations:
    * \$ pulumi import gcp:organizations/folder:Folder default folders/{{folder_id}}
    * ```
    */
-  def Folder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Folder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.organizations.FolderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.organizations.FolderArgs.builder
     com.pulumi.gcp.organizations.Folder(name,
@@ -578,7 +578,7 @@ object organizations:
    * &gt; **Conditional IAM Bindings**: If you&#39;re importing a IAM binding with a condition block, make sure
    *  to include the title of condition, e.g. `terraform import google_organization_iam_binding.my_organization &#34;your-org-id roles/{{role_id}} condition-title&#34;`
    */
-  def IAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.organizations.IAMBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.organizations.IAMBindingArgs.builder
     com.pulumi.gcp.organizations.IAMBinding(name,
@@ -598,7 +598,7 @@ object organizations:
    *  made available again. This means a deleted role that has been deleted for more than 7 days cannot be changed at all
    *  by the provider, and new roles cannot share that name.
    */
-  def IAMCustomRole(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IAMCustomRole(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.organizations.IAMCustomRoleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.organizations.IAMCustomRoleArgs.builder
     com.pulumi.gcp.organizations.IAMCustomRole(name,
@@ -1125,7 +1125,7 @@ object organizations:
    * &gt; **Conditional IAM Bindings**: If you&#39;re importing a IAM binding with a condition block, make sure
    *  to include the title of condition, e.g. `terraform import google_organization_iam_binding.my_organization &#34;your-org-id roles/{{role_id}} condition-title&#34;`
    */
-  def IAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.organizations.IAMMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.organizations.IAMMemberArgs.builder
     com.pulumi.gcp.organizations.IAMMember(name,
@@ -1652,7 +1652,7 @@ object organizations:
    * &gt; **Conditional IAM Bindings**: If you&#39;re importing a IAM binding with a condition block, make sure
    *  to include the title of condition, e.g. `terraform import google_organization_iam_binding.my_organization &#34;your-org-id roles/{{role_id}} condition-title&#34;`
    */
-  def IAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.organizations.IAMPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.organizations.IAMPolicyArgs.builder
     com.pulumi.gcp.organizations.IAMPolicy(name,
@@ -2179,7 +2179,7 @@ object organizations:
    * &gt; **Conditional IAM Bindings**: If you&#39;re importing a IAM binding with a condition block, make sure
    *  to include the title of condition, e.g. `terraform import google_organization_iam_binding.my_organization &#34;your-org-id roles/{{role_id}} condition-title&#34;`
    */
-  def IamAuditConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IamAuditConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.organizations.IamAuditConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.organizations.IamAuditConfigArgs.builder
     com.pulumi.gcp.organizations.IamAuditConfig(name,
@@ -2798,7 +2798,7 @@ object organizations:
    * * How-to Guides
    *     * [Introduction to the Organization Policy Service](https://docs.cloud.google.com/resource-manager/docs/organization-policy/overview)
    */
-  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.organizations.PolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.organizations.PolicyArgs.builder
     com.pulumi.gcp.organizations.Policy(name,
@@ -2828,7 +2828,7 @@ object organizations:
    * * How-to Guides
    *     * [Creating and managing projects](https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects)
    */
-  def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.organizations.ProjectArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.organizations.ProjectArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2855,7 +2855,7 @@ object organizations:
    * 
    * * [API documentation](https://cloud.google.com/service-usage/docs/reference/rest/v1beta1/services/generateServiceIdentity)
    */
-  def ServiceIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServiceIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.organizations.ServiceIdentityArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.organizations.ServiceIdentityArgs.builder
     com.pulumi.gcp.organizations.ServiceIdentity(name,

@@ -92,7 +92,7 @@ object batch:
    * &gt; **Note:** To prevent a race condition during environment deletion, make sure to set `dependsOn` to the related `aws.iam.RolePolicyAttachment`;
    * otherwise, the policy may be destroyed too soon and the compute environment will then get stuck in the `DELETING` state, see [Troubleshooting AWS Batch](http://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html).
    */
-  def ComputeEnvironment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ComputeEnvironment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.batch.ComputeEnvironmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.batch.ComputeEnvironmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -110,7 +110,7 @@ object batch:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Batch Job Definition resource. */
-  def JobDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def JobDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.batch.JobDefinitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.batch.JobDefinitionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -128,7 +128,7 @@ object batch:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Batch Job Queue resource. */
-  def JobQueue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def JobQueue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.batch.JobQueueArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.batch.JobQueueArgs.builder
     conf.logicalName2physicalName(name) match
@@ -146,7 +146,7 @@ object batch:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Batch Scheduling Policy resource. */
-  def SchedulingPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SchedulingPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.batch.SchedulingPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.batch.SchedulingPolicyArgs.builder
     conf.logicalName2physicalName(name) match

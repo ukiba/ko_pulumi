@@ -8,7 +8,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def enabledTools(args: Endofunction[com.pulumi.gcp.gemini.inputs.CodeToolsSettingEnabledToolArgs.Builder]*):
+    inline def enabledTools(args: Endofunction[com.pulumi.gcp.gemini.inputs.CodeToolsSettingEnabledToolArgs.Builder]*):
         com.pulumi.gcp.gemini.CodeToolsSettingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gemini.inputs.CodeToolsSettingEnabledToolArgs.builder
       builder.enabledTools(args.map(_(argsBuilder).build)*)
@@ -19,19 +19,19 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataAnalyticsAgent(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentArgs.Builder]):
+    inline def dataAnalyticsAgent(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentArgs.Builder]):
         com.pulumi.gcp.gemini.DataAnalyticsDataAgentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentArgs.builder
       builder.dataAnalyticsAgent(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -42,7 +42,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conversationalAnalyticsSetting(args: Endofunction[com.pulumi.gcp.gemini.inputs.GdaObservabilitySettingConversationalAnalyticsSettingArgs.Builder]):
+    inline def conversationalAnalyticsSetting(args: Endofunction[com.pulumi.gcp.gemini.inputs.GdaObservabilitySettingConversationalAnalyticsSettingArgs.Builder]):
         com.pulumi.gcp.gemini.GdaObservabilitySettingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.GdaObservabilitySettingConversationalAnalyticsSettingArgs.builder
       builder.conversationalAnalyticsSetting(args(argsBuilder).build)
@@ -53,7 +53,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conversationalAnalyticsSetting(args: Endofunction[com.pulumi.gcp.gemini.inputs.GibqObservabilitySettingConversationalAnalyticsSettingArgs.Builder]):
+    inline def conversationalAnalyticsSetting(args: Endofunction[com.pulumi.gcp.gemini.inputs.GibqObservabilitySettingConversationalAnalyticsSettingArgs.Builder]):
         com.pulumi.gcp.gemini.GibqObservabilitySettingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.GibqObservabilitySettingConversationalAnalyticsSettingArgs.builder
       builder.conversationalAnalyticsSetting(args(argsBuilder).build)
@@ -64,19 +64,19 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def repositories(args: Endofunction[com.pulumi.gcp.gemini.inputs.RepositoryGroupRepositoryArgs.Builder]*):
+    inline def repositories(args: Endofunction[com.pulumi.gcp.gemini.inputs.RepositoryGroupRepositoryArgs.Builder]*):
         com.pulumi.gcp.gemini.RepositoryGroupArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gemini.inputs.RepositoryGroupRepositoryArgs.builder
       builder.repositories(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.gemini.RepositoryGroupIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gemini.inputs.RepositoryGroupIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gemini.inputs.RepositoryGroupIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.gemini.RepositoryGroupIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.RepositoryGroupIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gemini.RepositoryGroupIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gemini.inputs.RepositoryGroupIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gemini.inputs.RepositoryGroupIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.gemini.RepositoryGroupIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.RepositoryGroupIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -87,7 +87,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def configs(args: Endofunction[com.pulumi.gcp.gemini.inputs.CodeToolsSettingEnabledToolConfigArgs.Builder]*):
+    inline def configs(args: Endofunction[com.pulumi.gcp.gemini.inputs.CodeToolsSettingEnabledToolConfigArgs.Builder]*):
         com.pulumi.gcp.gemini.inputs.CodeToolsSettingEnabledToolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gemini.inputs.CodeToolsSettingEnabledToolConfigArgs.builder
       builder.configs(args.map(_(argsBuilder).build)*)
@@ -98,7 +98,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def enabledTools(args: Endofunction[com.pulumi.gcp.gemini.inputs.CodeToolsSettingEnabledToolArgs.Builder]*):
+    inline def enabledTools(args: Endofunction[com.pulumi.gcp.gemini.inputs.CodeToolsSettingEnabledToolArgs.Builder]*):
         com.pulumi.gcp.gemini.inputs.CodeToolsSettingState.Builder =
       def argsBuilder = com.pulumi.gcp.gemini.inputs.CodeToolsSettingEnabledToolArgs.builder
       builder.enabledTools(args.map(_(argsBuilder).build)*)
@@ -110,7 +110,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def lastPublishedContexts(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextArgs.Builder]*):
+    inline def lastPublishedContexts(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextArgs.Builder]*):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextArgs.builder
       builder.lastPublishedContexts(args.map(_(argsBuilder).build)*)
@@ -121,7 +121,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def publishedContext(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextArgs.Builder]):
+    inline def publishedContext(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextArgs.builder
       builder.publishedContext(args(argsBuilder).build)
@@ -132,7 +132,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stagingContext(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextArgs.Builder]):
+    inline def stagingContext(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextArgs.builder
       builder.stagingContext(args(argsBuilder).build)
@@ -142,7 +142,7 @@ object gemini_ext:
      * @param datasourceReferences Output only. Data sources that are available for answering questions.
      * @return builder
      */
-    def datasourceReferences(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextDatasourceReferencesArgs.Builder]):
+    inline def datasourceReferences(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextDatasourceReferencesArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextDatasourceReferencesArgs.builder
       builder.datasourceReferences(args(argsBuilder).build)
@@ -153,7 +153,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bq(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextDatasourceReferencesBqArgs.Builder]):
+    inline def bq(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextDatasourceReferencesBqArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextDatasourceReferencesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextDatasourceReferencesBqArgs.builder
       builder.bq(args(argsBuilder).build)
@@ -164,7 +164,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tableReferences(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextDatasourceReferencesBqTableReferenceArgs.Builder]*):
+    inline def tableReferences(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextDatasourceReferencesBqTableReferenceArgs.Builder]*):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextDatasourceReferencesBqArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentLastPublishedContextDatasourceReferencesBqTableReferenceArgs.builder
       builder.tableReferences(args.map(_(argsBuilder).build)*)
@@ -176,7 +176,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def datasourceReferences(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextDatasourceReferencesArgs.Builder]):
+    inline def datasourceReferences(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextDatasourceReferencesArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextDatasourceReferencesArgs.builder
       builder.datasourceReferences(args(argsBuilder).build)
@@ -186,7 +186,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def exampleQueries(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextExampleQueryArgs.Builder]*):
+    inline def exampleQueries(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextExampleQueryArgs.Builder]*):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextExampleQueryArgs.builder
       builder.exampleQueries(args.map(_(argsBuilder).build)*)
@@ -196,7 +196,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def glossaryTerms(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextGlossaryTermArgs.Builder]*):
+    inline def glossaryTerms(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextGlossaryTermArgs.Builder]*):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextGlossaryTermArgs.builder
       builder.glossaryTerms(args.map(_(argsBuilder).build)*)
@@ -206,7 +206,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def options(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsArgs.Builder]):
+    inline def options(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsArgs.builder
       builder.options(args(argsBuilder).build)
@@ -217,7 +217,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def schemaRelationships(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextSchemaRelationshipArgs.Builder]*):
+    inline def schemaRelationships(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextSchemaRelationshipArgs.Builder]*):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextSchemaRelationshipArgs.builder
       builder.schemaRelationships(args.map(_(argsBuilder).build)*)
@@ -228,7 +228,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bq(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextDatasourceReferencesBqArgs.Builder]):
+    inline def bq(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextDatasourceReferencesBqArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextDatasourceReferencesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextDatasourceReferencesBqArgs.builder
       builder.bq(args(argsBuilder).build)
@@ -239,7 +239,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tableReferences(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextDatasourceReferencesBqTableReferenceArgs.Builder]*):
+    inline def tableReferences(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextDatasourceReferencesBqTableReferenceArgs.Builder]*):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextDatasourceReferencesBqArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextDatasourceReferencesBqTableReferenceArgs.builder
       builder.tableReferences(args.map(_(argsBuilder).build)*)
@@ -250,7 +250,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def python(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsAnalysisPythonArgs.Builder]):
+    inline def python(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsAnalysisPythonArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsAnalysisArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsAnalysisPythonArgs.builder
       builder.python(args(argsBuilder).build)
@@ -261,7 +261,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def analysis(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsAnalysisArgs.Builder]):
+    inline def analysis(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsAnalysisArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsAnalysisArgs.builder
       builder.analysis(args(argsBuilder).build)
@@ -271,7 +271,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def datasource(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsDatasourceArgs.Builder]):
+    inline def datasource(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsDatasourceArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextOptionsDatasourceArgs.builder
       builder.datasource(args(argsBuilder).build)
@@ -282,7 +282,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def leftSchemaPaths(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextSchemaRelationshipLeftSchemaPathsArgs.Builder]):
+    inline def leftSchemaPaths(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextSchemaRelationshipLeftSchemaPathsArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextSchemaRelationshipArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextSchemaRelationshipLeftSchemaPathsArgs.builder
       builder.leftSchemaPaths(args(argsBuilder).build)
@@ -292,7 +292,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rightSchemaPaths(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextSchemaRelationshipRightSchemaPathsArgs.Builder]):
+    inline def rightSchemaPaths(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextSchemaRelationshipRightSchemaPathsArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextSchemaRelationshipArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentPublishedContextSchemaRelationshipRightSchemaPathsArgs.builder
       builder.rightSchemaPaths(args(argsBuilder).build)
@@ -304,7 +304,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def datasourceReferences(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextDatasourceReferencesArgs.Builder]):
+    inline def datasourceReferences(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextDatasourceReferencesArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextDatasourceReferencesArgs.builder
       builder.datasourceReferences(args(argsBuilder).build)
@@ -314,7 +314,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def exampleQueries(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextExampleQueryArgs.Builder]*):
+    inline def exampleQueries(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextExampleQueryArgs.Builder]*):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextExampleQueryArgs.builder
       builder.exampleQueries(args.map(_(argsBuilder).build)*)
@@ -324,7 +324,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def glossaryTerms(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextGlossaryTermArgs.Builder]*):
+    inline def glossaryTerms(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextGlossaryTermArgs.Builder]*):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextGlossaryTermArgs.builder
       builder.glossaryTerms(args.map(_(argsBuilder).build)*)
@@ -334,7 +334,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def options(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsArgs.Builder]):
+    inline def options(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsArgs.builder
       builder.options(args(argsBuilder).build)
@@ -345,7 +345,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def schemaRelationships(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextSchemaRelationshipArgs.Builder]*):
+    inline def schemaRelationships(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextSchemaRelationshipArgs.Builder]*):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextSchemaRelationshipArgs.builder
       builder.schemaRelationships(args.map(_(argsBuilder).build)*)
@@ -356,7 +356,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bq(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextDatasourceReferencesBqArgs.Builder]):
+    inline def bq(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextDatasourceReferencesBqArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextDatasourceReferencesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextDatasourceReferencesBqArgs.builder
       builder.bq(args(argsBuilder).build)
@@ -367,7 +367,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tableReferences(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextDatasourceReferencesBqTableReferenceArgs.Builder]*):
+    inline def tableReferences(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextDatasourceReferencesBqTableReferenceArgs.Builder]*):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextDatasourceReferencesBqArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextDatasourceReferencesBqTableReferenceArgs.builder
       builder.tableReferences(args.map(_(argsBuilder).build)*)
@@ -378,7 +378,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def python(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsAnalysisPythonArgs.Builder]):
+    inline def python(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsAnalysisPythonArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsAnalysisArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsAnalysisPythonArgs.builder
       builder.python(args(argsBuilder).build)
@@ -389,7 +389,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def analysis(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsAnalysisArgs.Builder]):
+    inline def analysis(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsAnalysisArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsAnalysisArgs.builder
       builder.analysis(args(argsBuilder).build)
@@ -399,7 +399,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def datasource(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsDatasourceArgs.Builder]):
+    inline def datasource(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsDatasourceArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextOptionsDatasourceArgs.builder
       builder.datasource(args(argsBuilder).build)
@@ -410,7 +410,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def leftSchemaPaths(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextSchemaRelationshipLeftSchemaPathsArgs.Builder]):
+    inline def leftSchemaPaths(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextSchemaRelationshipLeftSchemaPathsArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextSchemaRelationshipArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextSchemaRelationshipLeftSchemaPathsArgs.builder
       builder.leftSchemaPaths(args(argsBuilder).build)
@@ -420,19 +420,19 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rightSchemaPaths(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextSchemaRelationshipRightSchemaPathsArgs.Builder]):
+    inline def rightSchemaPaths(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextSchemaRelationshipRightSchemaPathsArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextSchemaRelationshipArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentStagingContextSchemaRelationshipRightSchemaPathsArgs.builder
       builder.rightSchemaPaths(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -443,7 +443,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataAnalyticsAgent(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentArgs.Builder]):
+    inline def dataAnalyticsAgent(args: Endofunction[com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentState.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.DataAnalyticsDataAgentDataAnalyticsAgentArgs.builder
       builder.dataAnalyticsAgent(args(argsBuilder).build)
@@ -454,7 +454,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conversationalAnalyticsSetting(args: Endofunction[com.pulumi.gcp.gemini.inputs.GdaObservabilitySettingConversationalAnalyticsSettingArgs.Builder]):
+    inline def conversationalAnalyticsSetting(args: Endofunction[com.pulumi.gcp.gemini.inputs.GdaObservabilitySettingConversationalAnalyticsSettingArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.GdaObservabilitySettingState.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.GdaObservabilitySettingConversationalAnalyticsSettingArgs.builder
       builder.conversationalAnalyticsSetting(args(argsBuilder).build)
@@ -465,19 +465,19 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conversationalAnalyticsSetting(args: Endofunction[com.pulumi.gcp.gemini.inputs.GibqObservabilitySettingConversationalAnalyticsSettingArgs.Builder]):
+    inline def conversationalAnalyticsSetting(args: Endofunction[com.pulumi.gcp.gemini.inputs.GibqObservabilitySettingConversationalAnalyticsSettingArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.GibqObservabilitySettingState.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.GibqObservabilitySettingConversationalAnalyticsSettingArgs.builder
       builder.conversationalAnalyticsSetting(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gemini.inputs.RepositoryGroupIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gemini.inputs.RepositoryGroupIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gemini.inputs.RepositoryGroupIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.RepositoryGroupIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.RepositoryGroupIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gemini.inputs.RepositoryGroupIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gemini.inputs.RepositoryGroupIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gemini.inputs.RepositoryGroupIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.gemini.inputs.RepositoryGroupIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.RepositoryGroupIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -488,7 +488,7 @@ object gemini_ext:
      * Structure is documented below.
      * @return builder
      */
-    def repositories(args: Endofunction[com.pulumi.gcp.gemini.inputs.RepositoryGroupRepositoryArgs.Builder]*):
+    inline def repositories(args: Endofunction[com.pulumi.gcp.gemini.inputs.RepositoryGroupRepositoryArgs.Builder]*):
         com.pulumi.gcp.gemini.inputs.RepositoryGroupState.Builder =
       def argsBuilder = com.pulumi.gcp.gemini.inputs.RepositoryGroupRepositoryArgs.builder
       builder.repositories(args.map(_(argsBuilder).build)*)

@@ -17,7 +17,7 @@ object networkmanagement:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/network-intelligence-center/docs)
    */
-  def ConnectivityTest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConnectivityTest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkmanagement.ConnectivityTestArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkmanagement.ConnectivityTestArgs.builder
     conf.logicalName2physicalName(name) match
@@ -38,7 +38,7 @@ object networkmanagement:
    * * How-to Guides
    *     * [Network Intelligence Center Documentation](https://cloud.google.com/network-intelligence-center/docs)
    */
-  def NetworkMonitoringProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkMonitoringProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkmanagement.NetworkMonitoringProviderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networkmanagement.NetworkMonitoringProviderArgs.builder
     com.pulumi.gcp.networkmanagement.NetworkMonitoringProvider(name,
@@ -127,7 +127,7 @@ object networkmanagement:
           invokeOptions(InvokeOptions.builder).build)
 
   /** VPC Flow Logs Config is a resource that lets you configure Flow Logs for Organization. */
-  def OrganizationVpcFlowLogsConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationVpcFlowLogsConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkmanagement.OrganizationVpcFlowLogsConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networkmanagement.OrganizationVpcFlowLogsConfigArgs.builder
     com.pulumi.gcp.networkmanagement.OrganizationVpcFlowLogsConfig(name,
@@ -135,7 +135,7 @@ object networkmanagement:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** VPC Flow Logs Config is a resource that lets you configure Flow Logs for Networks, Subnets, Interconnect attachments or VPN Tunnels. */
-  def VpcFlowLogsConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcFlowLogsConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkmanagement.VpcFlowLogsConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networkmanagement.VpcFlowLogsConfigArgs.builder
     com.pulumi.gcp.networkmanagement.VpcFlowLogsConfig(name,

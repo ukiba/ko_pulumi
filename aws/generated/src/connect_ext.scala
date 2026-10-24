@@ -7,7 +7,7 @@ object connect_ext:
      * @param lexBot Configuration information of an Amazon Lex (V1) bot. Detailed below.
      * @return builder
      */
-    def lexBot(args: Endofunction[com.pulumi.aws.connect.inputs.BotAssociationLexBotArgs.Builder]):
+    inline def lexBot(args: Endofunction[com.pulumi.aws.connect.inputs.BotAssociationLexBotArgs.Builder]):
         com.pulumi.aws.connect.BotAssociationArgs.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.BotAssociationLexBotArgs.builder
       builder.lexBot(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object connect_ext:
      * @param configs One or more config blocks which define the configuration information for the hours of operation: day, start time, and end time . Config blocks are documented below.
      * @return builder
      */
-    def configs(args: Endofunction[com.pulumi.aws.connect.inputs.HoursOfOperationConfigArgs.Builder]*):
+    inline def configs(args: Endofunction[com.pulumi.aws.connect.inputs.HoursOfOperationConfigArgs.Builder]*):
         com.pulumi.aws.connect.HoursOfOperationArgs.Builder =
       def argsBuilder = com.pulumi.aws.connect.inputs.HoursOfOperationConfigArgs.builder
       builder.configs(args.map(_(argsBuilder).build)*)
@@ -27,7 +27,7 @@ object connect_ext:
      * @param storageConfig Specifies the storage configuration options for the Connect Instance. Documented below.
      * @return builder
      */
-    def storageConfig(args: Endofunction[com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigArgs.Builder]):
+    inline def storageConfig(args: Endofunction[com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigArgs.Builder]):
         com.pulumi.aws.connect.InstanceStorageConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigArgs.builder
       builder.storageConfig(args(argsBuilder).build)
@@ -37,7 +37,7 @@ object connect_ext:
      * @param outboundCallerConfig A block that defines the outbound caller ID name, number, and outbound whisper flow. The Outbound Caller Config block is documented below.
      * @return builder
      */
-    def outboundCallerConfig(args: Endofunction[com.pulumi.aws.connect.inputs.QueueOutboundCallerConfigArgs.Builder]):
+    inline def outboundCallerConfig(args: Endofunction[com.pulumi.aws.connect.inputs.QueueOutboundCallerConfigArgs.Builder]):
         com.pulumi.aws.connect.QueueArgs.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.QueueOutboundCallerConfigArgs.builder
       builder.outboundCallerConfig(args(argsBuilder).build)
@@ -47,7 +47,7 @@ object connect_ext:
      * @param quickConnectConfig A block that defines the configuration information for the Quick Connect: `quickConnectType` and one of `phoneConfig`, `queueConfig`, `userConfig` . The Quick Connect Config block is documented below.
      * @return builder
      */
-    def quickConnectConfig(args: Endofunction[com.pulumi.aws.connect.inputs.QuickConnectQuickConnectConfigArgs.Builder]):
+    inline def quickConnectConfig(args: Endofunction[com.pulumi.aws.connect.inputs.QuickConnectQuickConnectConfigArgs.Builder]):
         com.pulumi.aws.connect.QuickConnectArgs.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.QuickConnectQuickConnectConfigArgs.builder
       builder.quickConnectConfig(args(argsBuilder).build)
@@ -57,7 +57,7 @@ object connect_ext:
      * @param mediaConcurrencies One or more `mediaConcurrencies` blocks that specify the channels that agents can handle in the Contact Control Panel (CCP) for this Routing Profile. The `mediaConcurrencies` block is documented below.
      * @return builder
      */
-    def mediaConcurrencies(args: Endofunction[com.pulumi.aws.connect.inputs.RoutingProfileMediaConcurrencyArgs.Builder]*):
+    inline def mediaConcurrencies(args: Endofunction[com.pulumi.aws.connect.inputs.RoutingProfileMediaConcurrencyArgs.Builder]*):
         com.pulumi.aws.connect.RoutingProfileArgs.Builder =
       def argsBuilder = com.pulumi.aws.connect.inputs.RoutingProfileMediaConcurrencyArgs.builder
       builder.mediaConcurrencies(args.map(_(argsBuilder).build)*)
@@ -66,7 +66,7 @@ object connect_ext:
      * @param queueConfigs One or more `queueConfigs` blocks that specify the inbound queues associated with the routing profile. If no queue is added, the agent only can make outbound calls. The `queueConfigs` block is documented below.
      * @return builder
      */
-    def queueConfigs(args: Endofunction[com.pulumi.aws.connect.inputs.RoutingProfileQueueConfigArgs.Builder]*):
+    inline def queueConfigs(args: Endofunction[com.pulumi.aws.connect.inputs.RoutingProfileQueueConfigArgs.Builder]*):
         com.pulumi.aws.connect.RoutingProfileArgs.Builder =
       def argsBuilder = com.pulumi.aws.connect.inputs.RoutingProfileQueueConfigArgs.builder
       builder.queueConfigs(args.map(_(argsBuilder).build)*)
@@ -76,7 +76,7 @@ object connect_ext:
      * @param identityInfo A block that contains information about the identity of the user. Documented below.
      * @return builder
      */
-    def identityInfo(args: Endofunction[com.pulumi.aws.connect.inputs.UserIdentityInfoArgs.Builder]):
+    inline def identityInfo(args: Endofunction[com.pulumi.aws.connect.inputs.UserIdentityInfoArgs.Builder]):
         com.pulumi.aws.connect.UserArgs.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.UserIdentityInfoArgs.builder
       builder.identityInfo(args(argsBuilder).build)
@@ -85,7 +85,7 @@ object connect_ext:
      * @param phoneConfig A block that contains information about the phone settings for the user. Documented below.
      * @return builder
      */
-    def phoneConfig(args: Endofunction[com.pulumi.aws.connect.inputs.UserPhoneConfigArgs.Builder]):
+    inline def phoneConfig(args: Endofunction[com.pulumi.aws.connect.inputs.UserPhoneConfigArgs.Builder]):
         com.pulumi.aws.connect.UserArgs.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.UserPhoneConfigArgs.builder
       builder.phoneConfig(args(argsBuilder).build)
@@ -95,7 +95,7 @@ object connect_ext:
      * @param hierarchyStructure A block that defines the hierarchy structure&#39;s levels. The `hierarchyStructure` block is documented below.
      * @return builder
      */
-    def hierarchyStructure(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureArgs.Builder]):
+    inline def hierarchyStructure(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureArgs.Builder]):
         com.pulumi.aws.connect.UserHierarchyStructureArgs.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureArgs.builder
       builder.hierarchyStructure(args(argsBuilder).build)
@@ -105,7 +105,7 @@ object connect_ext:
      * @param lexBot Configuration information of an Amazon Lex (V1) bot. Detailed below.
      * @return builder
      */
-    def lexBot(args: Endofunction[com.pulumi.aws.connect.inputs.BotAssociationLexBotArgs.Builder]):
+    inline def lexBot(args: Endofunction[com.pulumi.aws.connect.inputs.BotAssociationLexBotArgs.Builder]):
         com.pulumi.aws.connect.inputs.BotAssociationState.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.BotAssociationLexBotArgs.builder
       builder.lexBot(args(argsBuilder).build)
@@ -115,7 +115,7 @@ object connect_ext:
      * @param lexBot Configuration information of an Amazon Lex (V1) bot. Detailed below.
      * @return builder
      */
-    def lexBot(args: Endofunction[com.pulumi.aws.connect.inputs.GetBotAssociationLexBotArgs.Builder]):
+    inline def lexBot(args: Endofunction[com.pulumi.aws.connect.inputs.GetBotAssociationLexBotArgs.Builder]):
         com.pulumi.aws.connect.inputs.GetBotAssociationArgs.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetBotAssociationLexBotArgs.builder
       builder.lexBot(args(argsBuilder).build)
@@ -125,7 +125,7 @@ object connect_ext:
      * @param lexBot Configuration information of an Amazon Lex (V1) bot. Detailed below.
      * @return builder
      */
-    def lexBot(args: Endofunction[com.pulumi.aws.connect.inputs.GetBotAssociationLexBot.Builder]):
+    inline def lexBot(args: Endofunction[com.pulumi.aws.connect.inputs.GetBotAssociationLexBot.Builder]):
         com.pulumi.aws.connect.inputs.GetBotAssociationPlainArgs.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.GetBotAssociationLexBot.builder
       builder.lexBot(args(argsBuilder).build)
@@ -135,7 +135,7 @@ object connect_ext:
      * @param endTime A end time block specifies the time that your contact center closes. The `endTime` is documented below.
      * @return builder
      */
-    def endTime(args: Endofunction[com.pulumi.aws.connect.inputs.HoursOfOperationConfigEndTimeArgs.Builder]):
+    inline def endTime(args: Endofunction[com.pulumi.aws.connect.inputs.HoursOfOperationConfigEndTimeArgs.Builder]):
         com.pulumi.aws.connect.inputs.HoursOfOperationConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.HoursOfOperationConfigEndTimeArgs.builder
       builder.endTime(args(argsBuilder).build)
@@ -144,7 +144,7 @@ object connect_ext:
      * @param startTime A start time block specifies the time that your contact center opens. The `startTime` is documented below.
      * @return builder
      */
-    def startTime(args: Endofunction[com.pulumi.aws.connect.inputs.HoursOfOperationConfigStartTimeArgs.Builder]):
+    inline def startTime(args: Endofunction[com.pulumi.aws.connect.inputs.HoursOfOperationConfigStartTimeArgs.Builder]):
         com.pulumi.aws.connect.inputs.HoursOfOperationConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.HoursOfOperationConfigStartTimeArgs.builder
       builder.startTime(args(argsBuilder).build)
@@ -154,7 +154,7 @@ object connect_ext:
      * @param configs One or more config blocks which define the configuration information for the hours of operation: day, start time, and end time . Config blocks are documented below.
      * @return builder
      */
-    def configs(args: Endofunction[com.pulumi.aws.connect.inputs.HoursOfOperationConfigArgs.Builder]*):
+    inline def configs(args: Endofunction[com.pulumi.aws.connect.inputs.HoursOfOperationConfigArgs.Builder]*):
         com.pulumi.aws.connect.inputs.HoursOfOperationState.Builder =
       def argsBuilder = com.pulumi.aws.connect.inputs.HoursOfOperationConfigArgs.builder
       builder.configs(args.map(_(argsBuilder).build)*)
@@ -164,7 +164,7 @@ object connect_ext:
      * @param storageConfig Specifies the storage configuration options for the Connect Instance. Documented below.
      * @return builder
      */
-    def storageConfig(args: Endofunction[com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigArgs.Builder]):
+    inline def storageConfig(args: Endofunction[com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigArgs.Builder]):
         com.pulumi.aws.connect.inputs.InstanceStorageConfigState.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigArgs.builder
       builder.storageConfig(args(argsBuilder).build)
@@ -174,7 +174,7 @@ object connect_ext:
      * @param kinesisFirehoseConfig A block that specifies the configuration of the Kinesis Firehose delivery stream. Documented below.
      * @return builder
      */
-    def kinesisFirehoseConfig(args: Endofunction[com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigKinesisFirehoseConfigArgs.Builder]):
+    inline def kinesisFirehoseConfig(args: Endofunction[com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigKinesisFirehoseConfigArgs.Builder]):
         com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigKinesisFirehoseConfigArgs.builder
       builder.kinesisFirehoseConfig(args(argsBuilder).build)
@@ -183,7 +183,7 @@ object connect_ext:
      * @param kinesisStreamConfig A block that specifies the configuration of the Kinesis data stream. Documented below.
      * @return builder
      */
-    def kinesisStreamConfig(args: Endofunction[com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigKinesisStreamConfigArgs.Builder]):
+    inline def kinesisStreamConfig(args: Endofunction[com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigKinesisStreamConfigArgs.Builder]):
         com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigKinesisStreamConfigArgs.builder
       builder.kinesisStreamConfig(args(argsBuilder).build)
@@ -192,7 +192,7 @@ object connect_ext:
      * @param kinesisVideoStreamConfig A block that specifies the configuration of the Kinesis video stream. Documented below.
      * @return builder
      */
-    def kinesisVideoStreamConfig(args: Endofunction[com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigKinesisVideoStreamConfigArgs.Builder]):
+    inline def kinesisVideoStreamConfig(args: Endofunction[com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigKinesisVideoStreamConfigArgs.Builder]):
         com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigKinesisVideoStreamConfigArgs.builder
       builder.kinesisVideoStreamConfig(args(argsBuilder).build)
@@ -201,7 +201,7 @@ object connect_ext:
      * @param s3Config A block that specifies the configuration of S3 Bucket. Documented below.
      * @return builder
      */
-    def s3Config(args: Endofunction[com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigS3ConfigArgs.Builder]):
+    inline def s3Config(args: Endofunction[com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigS3ConfigArgs.Builder]):
         com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigS3ConfigArgs.builder
       builder.s3Config(args(argsBuilder).build)
@@ -211,7 +211,7 @@ object connect_ext:
      * @param encryptionConfig The encryption configuration. Documented below.
      * @return builder
      */
-    def encryptionConfig(args: Endofunction[com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigKinesisVideoStreamConfigEncryptionConfigArgs.Builder]):
+    inline def encryptionConfig(args: Endofunction[com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigKinesisVideoStreamConfigEncryptionConfigArgs.Builder]):
         com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigKinesisVideoStreamConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigKinesisVideoStreamConfigEncryptionConfigArgs.builder
       builder.encryptionConfig(args(argsBuilder).build)
@@ -221,7 +221,7 @@ object connect_ext:
      * @param encryptionConfig The encryption configuration. Documented below.
      * @return builder
      */
-    def encryptionConfig(args: Endofunction[com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigS3ConfigEncryptionConfigArgs.Builder]):
+    inline def encryptionConfig(args: Endofunction[com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigS3ConfigEncryptionConfigArgs.Builder]):
         com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigS3ConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.InstanceStorageConfigStorageConfigS3ConfigEncryptionConfigArgs.builder
       builder.encryptionConfig(args(argsBuilder).build)
@@ -231,7 +231,7 @@ object connect_ext:
      * @param statuses The status of the phone number. Valid Values: `CLAIMED` | `IN_PROGRESS` | `FAILED`.
      * @return builder
      */
-    def statuses(args: Endofunction[com.pulumi.aws.connect.inputs.PhoneNumberStatusArgs.Builder]*):
+    inline def statuses(args: Endofunction[com.pulumi.aws.connect.inputs.PhoneNumberStatusArgs.Builder]*):
         com.pulumi.aws.connect.inputs.PhoneNumberState.Builder =
       def argsBuilder = com.pulumi.aws.connect.inputs.PhoneNumberStatusArgs.builder
       builder.statuses(args.map(_(argsBuilder).build)*)
@@ -241,7 +241,7 @@ object connect_ext:
      * @param outboundCallerConfig A block that defines the outbound caller ID name, number, and outbound whisper flow. The Outbound Caller Config block is documented below.
      * @return builder
      */
-    def outboundCallerConfig(args: Endofunction[com.pulumi.aws.connect.inputs.QueueOutboundCallerConfigArgs.Builder]):
+    inline def outboundCallerConfig(args: Endofunction[com.pulumi.aws.connect.inputs.QueueOutboundCallerConfigArgs.Builder]):
         com.pulumi.aws.connect.inputs.QueueState.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.QueueOutboundCallerConfigArgs.builder
       builder.outboundCallerConfig(args(argsBuilder).build)
@@ -251,7 +251,7 @@ object connect_ext:
      * @param phoneConfigs Specifies the phone configuration of the Quick Connect. This is required only if `quickConnectType` is `PHONE_NUMBER`. The `phoneConfig` block is documented below.
      * @return builder
      */
-    def phoneConfigs(args: Endofunction[com.pulumi.aws.connect.inputs.QuickConnectQuickConnectConfigPhoneConfigArgs.Builder]*):
+    inline def phoneConfigs(args: Endofunction[com.pulumi.aws.connect.inputs.QuickConnectQuickConnectConfigPhoneConfigArgs.Builder]*):
         com.pulumi.aws.connect.inputs.QuickConnectQuickConnectConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.connect.inputs.QuickConnectQuickConnectConfigPhoneConfigArgs.builder
       builder.phoneConfigs(args.map(_(argsBuilder).build)*)
@@ -260,7 +260,7 @@ object connect_ext:
      * @param queueConfigs Specifies the queue configuration of the Quick Connect. This is required only if `quickConnectType` is `QUEUE`. The `queueConfig` block is documented below.
      * @return builder
      */
-    def queueConfigs(args: Endofunction[com.pulumi.aws.connect.inputs.QuickConnectQuickConnectConfigQueueConfigArgs.Builder]*):
+    inline def queueConfigs(args: Endofunction[com.pulumi.aws.connect.inputs.QuickConnectQuickConnectConfigQueueConfigArgs.Builder]*):
         com.pulumi.aws.connect.inputs.QuickConnectQuickConnectConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.connect.inputs.QuickConnectQuickConnectConfigQueueConfigArgs.builder
       builder.queueConfigs(args.map(_(argsBuilder).build)*)
@@ -269,7 +269,7 @@ object connect_ext:
      * @param userConfigs Specifies the user configuration of the Quick Connect. This is required only if `quickConnectType` is `USER`. The `userConfig` block is documented below.
      * @return builder
      */
-    def userConfigs(args: Endofunction[com.pulumi.aws.connect.inputs.QuickConnectQuickConnectConfigUserConfigArgs.Builder]*):
+    inline def userConfigs(args: Endofunction[com.pulumi.aws.connect.inputs.QuickConnectQuickConnectConfigUserConfigArgs.Builder]*):
         com.pulumi.aws.connect.inputs.QuickConnectQuickConnectConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.connect.inputs.QuickConnectQuickConnectConfigUserConfigArgs.builder
       builder.userConfigs(args.map(_(argsBuilder).build)*)
@@ -279,7 +279,7 @@ object connect_ext:
      * @param quickConnectConfig A block that defines the configuration information for the Quick Connect: `quickConnectType` and one of `phoneConfig`, `queueConfig`, `userConfig` . The Quick Connect Config block is documented below.
      * @return builder
      */
-    def quickConnectConfig(args: Endofunction[com.pulumi.aws.connect.inputs.QuickConnectQuickConnectConfigArgs.Builder]):
+    inline def quickConnectConfig(args: Endofunction[com.pulumi.aws.connect.inputs.QuickConnectQuickConnectConfigArgs.Builder]):
         com.pulumi.aws.connect.inputs.QuickConnectState.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.QuickConnectQuickConnectConfigArgs.builder
       builder.quickConnectConfig(args(argsBuilder).build)
@@ -289,7 +289,7 @@ object connect_ext:
      * @param crossChannelBehavior Defines the cross-channel routing behavior for each traffic type. **Out-of-band changes are only detected when this argument is explicitly configured in your Terraform configuration.** Documented below.
      * @return builder
      */
-    def crossChannelBehavior(args: Endofunction[com.pulumi.aws.connect.inputs.RoutingProfileMediaConcurrencyCrossChannelBehaviorArgs.Builder]):
+    inline def crossChannelBehavior(args: Endofunction[com.pulumi.aws.connect.inputs.RoutingProfileMediaConcurrencyCrossChannelBehaviorArgs.Builder]):
         com.pulumi.aws.connect.inputs.RoutingProfileMediaConcurrencyArgs.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.RoutingProfileMediaConcurrencyCrossChannelBehaviorArgs.builder
       builder.crossChannelBehavior(args(argsBuilder).build)
@@ -299,7 +299,7 @@ object connect_ext:
      * @param mediaConcurrencies One or more `mediaConcurrencies` blocks that specify the channels that agents can handle in the Contact Control Panel (CCP) for this Routing Profile. The `mediaConcurrencies` block is documented below.
      * @return builder
      */
-    def mediaConcurrencies(args: Endofunction[com.pulumi.aws.connect.inputs.RoutingProfileMediaConcurrencyArgs.Builder]*):
+    inline def mediaConcurrencies(args: Endofunction[com.pulumi.aws.connect.inputs.RoutingProfileMediaConcurrencyArgs.Builder]*):
         com.pulumi.aws.connect.inputs.RoutingProfileState.Builder =
       def argsBuilder = com.pulumi.aws.connect.inputs.RoutingProfileMediaConcurrencyArgs.builder
       builder.mediaConcurrencies(args.map(_(argsBuilder).build)*)
@@ -308,7 +308,7 @@ object connect_ext:
      * @param queueConfigs One or more `queueConfigs` blocks that specify the inbound queues associated with the routing profile. If no queue is added, the agent only can make outbound calls. The `queueConfigs` block is documented below.
      * @return builder
      */
-    def queueConfigs(args: Endofunction[com.pulumi.aws.connect.inputs.RoutingProfileQueueConfigArgs.Builder]*):
+    inline def queueConfigs(args: Endofunction[com.pulumi.aws.connect.inputs.RoutingProfileQueueConfigArgs.Builder]*):
         com.pulumi.aws.connect.inputs.RoutingProfileState.Builder =
       def argsBuilder = com.pulumi.aws.connect.inputs.RoutingProfileQueueConfigArgs.builder
       builder.queueConfigs(args.map(_(argsBuilder).build)*)
@@ -318,7 +318,7 @@ object connect_ext:
      * @param levelFives A block that defines the details of level five. The level block is documented below.
      * @return builder
      */
-    def levelFives(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathLevelFifeArgs.Builder]*):
+    inline def levelFives(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathLevelFifeArgs.Builder]*):
         com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathArgs.Builder =
       def argsBuilder = com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathLevelFifeArgs.builder
       builder.levelFives(args.map(_(argsBuilder).build)*)
@@ -327,7 +327,7 @@ object connect_ext:
      * @param levelFours A block that defines the details of level four. The level block is documented below.
      * @return builder
      */
-    def levelFours(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathLevelFourArgs.Builder]*):
+    inline def levelFours(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathLevelFourArgs.Builder]*):
         com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathArgs.Builder =
       def argsBuilder = com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathLevelFourArgs.builder
       builder.levelFours(args.map(_(argsBuilder).build)*)
@@ -336,7 +336,7 @@ object connect_ext:
      * @param levelOnes A block that defines the details of level one. The level block is documented below.
      * @return builder
      */
-    def levelOnes(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathLevelOneArgs.Builder]*):
+    inline def levelOnes(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathLevelOneArgs.Builder]*):
         com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathArgs.Builder =
       def argsBuilder = com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathLevelOneArgs.builder
       builder.levelOnes(args.map(_(argsBuilder).build)*)
@@ -345,7 +345,7 @@ object connect_ext:
      * @param levelThrees A block that defines the details of level three. The level block is documented below.
      * @return builder
      */
-    def levelThrees(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathLevelThreeArgs.Builder]*):
+    inline def levelThrees(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathLevelThreeArgs.Builder]*):
         com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathArgs.Builder =
       def argsBuilder = com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathLevelThreeArgs.builder
       builder.levelThrees(args.map(_(argsBuilder).build)*)
@@ -354,7 +354,7 @@ object connect_ext:
      * @param levelTwos A block that defines the details of level two. The level block is documented below.
      * @return builder
      */
-    def levelTwos(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathLevelTwoArgs.Builder]*):
+    inline def levelTwos(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathLevelTwoArgs.Builder]*):
         com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathArgs.Builder =
       def argsBuilder = com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathLevelTwoArgs.builder
       builder.levelTwos(args.map(_(argsBuilder).build)*)
@@ -364,7 +364,7 @@ object connect_ext:
      * @param hierarchyPaths A block that contains information about the levels in the hierarchy group. The `hierarchyPath` block is documented below.
      * @return builder
      */
-    def hierarchyPaths(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathArgs.Builder]*):
+    inline def hierarchyPaths(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathArgs.Builder]*):
         com.pulumi.aws.connect.inputs.UserHierarchyGroupState.Builder =
       def argsBuilder = com.pulumi.aws.connect.inputs.UserHierarchyGroupHierarchyPathArgs.builder
       builder.hierarchyPaths(args.map(_(argsBuilder).build)*)
@@ -376,7 +376,7 @@ object connect_ext:
      * Each level block supports the following arguments:
      * @return builder
      */
-    def levelFive(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureLevelFiveArgs.Builder]):
+    inline def levelFive(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureLevelFiveArgs.Builder]):
         com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureArgs.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureLevelFiveArgs.builder
       builder.levelFive(args(argsBuilder).build)
@@ -385,7 +385,7 @@ object connect_ext:
      * @param levelFour A block that defines the details of level four. The level block is documented below.
      * @return builder
      */
-    def levelFour(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureLevelFourArgs.Builder]):
+    inline def levelFour(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureLevelFourArgs.Builder]):
         com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureArgs.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureLevelFourArgs.builder
       builder.levelFour(args(argsBuilder).build)
@@ -394,7 +394,7 @@ object connect_ext:
      * @param levelOne A block that defines the details of level one. The level block is documented below.
      * @return builder
      */
-    def levelOne(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureLevelOneArgs.Builder]):
+    inline def levelOne(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureLevelOneArgs.Builder]):
         com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureArgs.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureLevelOneArgs.builder
       builder.levelOne(args(argsBuilder).build)
@@ -403,7 +403,7 @@ object connect_ext:
      * @param levelThree A block that defines the details of level three. The level block is documented below.
      * @return builder
      */
-    def levelThree(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureLevelThreeArgs.Builder]):
+    inline def levelThree(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureLevelThreeArgs.Builder]):
         com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureArgs.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureLevelThreeArgs.builder
       builder.levelThree(args(argsBuilder).build)
@@ -412,7 +412,7 @@ object connect_ext:
      * @param levelTwo A block that defines the details of level two. The level block is documented below.
      * @return builder
      */
-    def levelTwo(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureLevelTwoArgs.Builder]):
+    inline def levelTwo(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureLevelTwoArgs.Builder]):
         com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureArgs.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureLevelTwoArgs.builder
       builder.levelTwo(args(argsBuilder).build)
@@ -422,7 +422,7 @@ object connect_ext:
      * @param hierarchyStructure A block that defines the hierarchy structure&#39;s levels. The `hierarchyStructure` block is documented below.
      * @return builder
      */
-    def hierarchyStructure(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureArgs.Builder]):
+    inline def hierarchyStructure(args: Endofunction[com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureArgs.Builder]):
         com.pulumi.aws.connect.inputs.UserHierarchyStructureState.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.UserHierarchyStructureHierarchyStructureArgs.builder
       builder.hierarchyStructure(args(argsBuilder).build)
@@ -432,7 +432,7 @@ object connect_ext:
      * @param identityInfo A block that contains information about the identity of the user. Documented below.
      * @return builder
      */
-    def identityInfo(args: Endofunction[com.pulumi.aws.connect.inputs.UserIdentityInfoArgs.Builder]):
+    inline def identityInfo(args: Endofunction[com.pulumi.aws.connect.inputs.UserIdentityInfoArgs.Builder]):
         com.pulumi.aws.connect.inputs.UserState.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.UserIdentityInfoArgs.builder
       builder.identityInfo(args(argsBuilder).build)
@@ -441,7 +441,7 @@ object connect_ext:
      * @param phoneConfig A block that contains information about the phone settings for the user. Documented below.
      * @return builder
      */
-    def phoneConfig(args: Endofunction[com.pulumi.aws.connect.inputs.UserPhoneConfigArgs.Builder]):
+    inline def phoneConfig(args: Endofunction[com.pulumi.aws.connect.inputs.UserPhoneConfigArgs.Builder]):
         com.pulumi.aws.connect.inputs.UserState.Builder =
       val argsBuilder = com.pulumi.aws.connect.inputs.UserPhoneConfigArgs.builder
       builder.phoneConfig(args(argsBuilder).build)

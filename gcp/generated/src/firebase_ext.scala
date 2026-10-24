@@ -16,7 +16,7 @@ object firebase_ext:
      * @return builder
      * @deprecated `generativeLanguageConfig` is deprecated and will be removed in a future major release. Firebase AI Logic now uses a Google-managed service account to authenticate requests to the Gemini Developer API and no longer requires an API key.
      */
-    @deprecated("`generativeLanguageConfig` is deprecated and will be removed in a future major release. Firebase AI Logic now uses a Google-managed service account to authenticate requests to the Gemini Developer API and no longer requires an API key.") def generativeLanguageConfig(args: Endofunction[com.pulumi.gcp.firebase.inputs.AiLogicConfigGenerativeLanguageConfigArgs.Builder]):
+    @deprecated("`generativeLanguageConfig` is deprecated and will be removed in a future major release. Firebase AI Logic now uses a Google-managed service account to authenticate requests to the Gemini Developer API and no longer requires an API key.") inline def generativeLanguageConfig(args: Endofunction[com.pulumi.gcp.firebase.inputs.AiLogicConfigGenerativeLanguageConfigArgs.Builder]):
         com.pulumi.gcp.firebase.AiLogicConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.AiLogicConfigGenerativeLanguageConfigArgs.builder
       builder.generativeLanguageConfig(args(argsBuilder).build)
@@ -28,7 +28,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def telemetryConfig(args: Endofunction[com.pulumi.gcp.firebase.inputs.AiLogicConfigTelemetryConfigArgs.Builder]):
+    inline def telemetryConfig(args: Endofunction[com.pulumi.gcp.firebase.inputs.AiLogicConfigTelemetryConfigArgs.Builder]):
         com.pulumi.gcp.firebase.AiLogicConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.AiLogicConfigTelemetryConfigArgs.builder
       builder.telemetryConfig(args(argsBuilder).build)
@@ -38,7 +38,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trafficFilter(args: Endofunction[com.pulumi.gcp.firebase.inputs.AiLogicConfigTrafficFilterArgs.Builder]):
+    inline def trafficFilter(args: Endofunction[com.pulumi.gcp.firebase.inputs.AiLogicConfigTrafficFilterArgs.Builder]):
         com.pulumi.gcp.firebase.AiLogicConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.AiLogicConfigTrafficFilterArgs.builder
       builder.trafficFilter(args(argsBuilder).build)
@@ -50,7 +50,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def codebase(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingBackendCodebaseArgs.Builder]):
+    inline def codebase(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingBackendCodebaseArgs.Builder]):
         com.pulumi.gcp.firebase.AppHostingBackendArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingBackendCodebaseArgs.builder
       builder.codebase(args(argsBuilder).build)
@@ -61,7 +61,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def source(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingBuildSourceArgs.Builder]):
+    inline def source(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingBuildSourceArgs.Builder]):
         com.pulumi.gcp.firebase.AppHostingBuildArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingBuildSourceArgs.builder
       builder.source(args(argsBuilder).build)
@@ -73,7 +73,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serve(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingDomainServeArgs.Builder]):
+    inline def serve(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingDomainServeArgs.Builder]):
         com.pulumi.gcp.firebase.AppHostingDomainArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingDomainServeArgs.builder
       builder.serve(args(argsBuilder).build)
@@ -84,7 +84,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rolloutPolicy(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingTrafficRolloutPolicyArgs.Builder]):
+    inline def rolloutPolicy(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingTrafficRolloutPolicyArgs.Builder]):
         com.pulumi.gcp.firebase.AppHostingTrafficArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingTrafficRolloutPolicyArgs.builder
       builder.rolloutPolicy(args(argsBuilder).build)
@@ -96,7 +96,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def target(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingTrafficTargetArgs.Builder]):
+    inline def target(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingTrafficTargetArgs.Builder]):
         com.pulumi.gcp.firebase.AppHostingTrafficArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingTrafficTargetArgs.builder
       builder.target(args(argsBuilder).build)
@@ -107,7 +107,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.firebase.inputs.ExtensionsInstanceConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.firebase.inputs.ExtensionsInstanceConfigArgs.Builder]):
         com.pulumi.gcp.firebase.ExtensionsInstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.ExtensionsInstanceConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -118,7 +118,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingVersionConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingVersionConfigArgs.Builder]):
         com.pulumi.gcp.firebase.HostingVersionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.HostingVersionConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -130,7 +130,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigConditionArgs.Builder]*):
         com.pulumi.gcp.firebase.RemoteConfigRemoteConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -149,7 +149,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameterGroups(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterGroupArgs.Builder]*):
+    inline def parameterGroups(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterGroupArgs.Builder]*):
         com.pulumi.gcp.firebase.RemoteConfigRemoteConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterGroupArgs.builder
       builder.parameterGroups(args.map(_(argsBuilder).build)*)
@@ -160,7 +160,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameters(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterArgs.Builder]*):
+    inline def parameters(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterArgs.Builder]*):
         com.pulumi.gcp.firebase.RemoteConfigRemoteConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
@@ -179,7 +179,7 @@ object firebase_ext:
      * @return builder
      * @deprecated `generativeLanguageConfig` is deprecated and will be removed in a future major release. Firebase AI Logic now uses a Google-managed service account to authenticate requests to the Gemini Developer API and no longer requires an API key.
      */
-    @deprecated("`generativeLanguageConfig` is deprecated and will be removed in a future major release. Firebase AI Logic now uses a Google-managed service account to authenticate requests to the Gemini Developer API and no longer requires an API key.") def generativeLanguageConfig(args: Endofunction[com.pulumi.gcp.firebase.inputs.AiLogicConfigGenerativeLanguageConfigArgs.Builder]):
+    @deprecated("`generativeLanguageConfig` is deprecated and will be removed in a future major release. Firebase AI Logic now uses a Google-managed service account to authenticate requests to the Gemini Developer API and no longer requires an API key.") inline def generativeLanguageConfig(args: Endofunction[com.pulumi.gcp.firebase.inputs.AiLogicConfigGenerativeLanguageConfigArgs.Builder]):
         com.pulumi.gcp.firebase.inputs.AiLogicConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.AiLogicConfigGenerativeLanguageConfigArgs.builder
       builder.generativeLanguageConfig(args(argsBuilder).build)
@@ -191,7 +191,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def telemetryConfig(args: Endofunction[com.pulumi.gcp.firebase.inputs.AiLogicConfigTelemetryConfigArgs.Builder]):
+    inline def telemetryConfig(args: Endofunction[com.pulumi.gcp.firebase.inputs.AiLogicConfigTelemetryConfigArgs.Builder]):
         com.pulumi.gcp.firebase.inputs.AiLogicConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.AiLogicConfigTelemetryConfigArgs.builder
       builder.telemetryConfig(args(argsBuilder).build)
@@ -201,7 +201,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trafficFilter(args: Endofunction[com.pulumi.gcp.firebase.inputs.AiLogicConfigTrafficFilterArgs.Builder]):
+    inline def trafficFilter(args: Endofunction[com.pulumi.gcp.firebase.inputs.AiLogicConfigTrafficFilterArgs.Builder]):
         com.pulumi.gcp.firebase.inputs.AiLogicConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.AiLogicConfigTrafficFilterArgs.builder
       builder.trafficFilter(args(argsBuilder).build)
@@ -214,7 +214,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def runServices(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingBackendManagedResourceRunServiceArgs.Builder]*):
+    inline def runServices(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingBackendManagedResourceRunServiceArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.AppHostingBackendManagedResourceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingBackendManagedResourceRunServiceArgs.builder
       builder.runServices(args.map(_(argsBuilder).build)*)
@@ -226,7 +226,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def codebase(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingBackendCodebaseArgs.Builder]):
+    inline def codebase(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingBackendCodebaseArgs.Builder]):
         com.pulumi.gcp.firebase.inputs.AppHostingBackendState.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingBackendCodebaseArgs.builder
       builder.codebase(args(argsBuilder).build)
@@ -236,7 +236,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def managedResources(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingBackendManagedResourceArgs.Builder]*):
+    inline def managedResources(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingBackendManagedResourceArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.AppHostingBackendState.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingBackendManagedResourceArgs.builder
       builder.managedResources(args.map(_(argsBuilder).build)*)
@@ -248,7 +248,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def codebase(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingBuildSourceCodebaseArgs.Builder]):
+    inline def codebase(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingBuildSourceCodebaseArgs.Builder]):
         com.pulumi.gcp.firebase.inputs.AppHostingBuildSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingBuildSourceCodebaseArgs.builder
       builder.codebase(args(argsBuilder).build)
@@ -261,7 +261,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def container(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingBuildSourceContainerArgs.Builder]):
+    inline def container(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingBuildSourceContainerArgs.Builder]):
         com.pulumi.gcp.firebase.inputs.AppHostingBuildSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingBuildSourceContainerArgs.builder
       builder.container(args(argsBuilder).build)
@@ -274,7 +274,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authors(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingBuildSourceCodebaseAuthorArgs.Builder]*):
+    inline def authors(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingBuildSourceCodebaseAuthorArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.AppHostingBuildSourceCodebaseArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingBuildSourceCodebaseAuthorArgs.builder
       builder.authors(args.map(_(argsBuilder).build)*)
@@ -290,7 +290,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errors(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingBuildErrorArgs.Builder]*):
+    inline def errors(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingBuildErrorArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.AppHostingBuildState.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingBuildErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
@@ -300,7 +300,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def source(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingBuildSourceArgs.Builder]):
+    inline def source(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingBuildSourceArgs.Builder]):
         com.pulumi.gcp.firebase.inputs.AppHostingBuildState.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingBuildSourceArgs.builder
       builder.source(args(argsBuilder).build)
@@ -313,7 +313,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def issues(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusIssueArgs.Builder]*):
+    inline def issues(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusIssueArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusIssueArgs.builder
       builder.issues(args.map(_(argsBuilder).build)*)
@@ -328,7 +328,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def requiredDnsUpdates(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateArgs.Builder]*):
+    inline def requiredDnsUpdates(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateArgs.builder
       builder.requiredDnsUpdates(args.map(_(argsBuilder).build)*)
@@ -341,7 +341,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def desireds(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateDesiredArgs.Builder]*):
+    inline def desireds(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateDesiredArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateDesiredArgs.builder
       builder.desireds(args.map(_(argsBuilder).build)*)
@@ -352,7 +352,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def discovereds(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateDiscoveredArgs.Builder]*):
+    inline def discovereds(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateDiscoveredArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateDiscoveredArgs.builder
       builder.discovereds(args.map(_(argsBuilder).build)*)
@@ -369,7 +369,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def checkErrors(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateDesiredCheckErrorArgs.Builder]*):
+    inline def checkErrors(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateDesiredCheckErrorArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateDesiredArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateDesiredCheckErrorArgs.builder
       builder.checkErrors(args.map(_(argsBuilder).build)*)
@@ -380,7 +380,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def records(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateDesiredRecordArgs.Builder]*):
+    inline def records(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateDesiredRecordArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateDesiredArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateDesiredRecordArgs.builder
       builder.records(args.map(_(argsBuilder).build)*)
@@ -397,7 +397,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def checkErrors(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateDiscoveredCheckErrorArgs.Builder]*):
+    inline def checkErrors(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateDiscoveredCheckErrorArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateDiscoveredArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateDiscoveredCheckErrorArgs.builder
       builder.checkErrors(args.map(_(argsBuilder).build)*)
@@ -408,7 +408,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def records(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateDiscoveredRecordArgs.Builder]*):
+    inline def records(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateDiscoveredRecordArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateDiscoveredArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusRequiredDnsUpdateDiscoveredRecordArgs.builder
       builder.records(args.map(_(argsBuilder).build)*)
@@ -419,7 +419,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def redirect(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingDomainServeRedirectArgs.Builder]):
+    inline def redirect(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingDomainServeRedirectArgs.Builder]):
         com.pulumi.gcp.firebase.inputs.AppHostingDomainServeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingDomainServeRedirectArgs.builder
       builder.redirect(args(argsBuilder).build)
@@ -430,7 +430,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customDomainStatuses(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusArgs.Builder]*):
+    inline def customDomainStatuses(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.AppHostingDomainState.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingDomainCustomDomainStatusArgs.builder
       builder.customDomainStatuses(args.map(_(argsBuilder).build)*)
@@ -441,7 +441,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serve(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingDomainServeArgs.Builder]):
+    inline def serve(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingDomainServeArgs.Builder]):
         com.pulumi.gcp.firebase.inputs.AppHostingDomainState.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingDomainServeArgs.builder
       builder.serve(args(argsBuilder).build)
@@ -453,7 +453,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def splits(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingTrafficCurrentSplitArgs.Builder]*):
+    inline def splits(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingTrafficCurrentSplitArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.AppHostingTrafficCurrentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingTrafficCurrentSplitArgs.builder
       builder.splits(args.map(_(argsBuilder).build)*)
@@ -465,7 +465,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def currents(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingTrafficCurrentArgs.Builder]*):
+    inline def currents(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingTrafficCurrentArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.AppHostingTrafficState.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingTrafficCurrentArgs.builder
       builder.currents(args.map(_(argsBuilder).build)*)
@@ -475,7 +475,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rolloutPolicy(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingTrafficRolloutPolicyArgs.Builder]):
+    inline def rolloutPolicy(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingTrafficRolloutPolicyArgs.Builder]):
         com.pulumi.gcp.firebase.inputs.AppHostingTrafficState.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingTrafficRolloutPolicyArgs.builder
       builder.rolloutPolicy(args(argsBuilder).build)
@@ -487,7 +487,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def target(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingTrafficTargetArgs.Builder]):
+    inline def target(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingTrafficTargetArgs.Builder]):
         com.pulumi.gcp.firebase.inputs.AppHostingTrafficState.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingTrafficTargetArgs.builder
       builder.target(args(argsBuilder).build)
@@ -498,7 +498,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def splits(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingTrafficTargetSplitArgs.Builder]*):
+    inline def splits(args: Endofunction[com.pulumi.gcp.firebase.inputs.AppHostingTrafficTargetSplitArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.AppHostingTrafficTargetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.AppHostingTrafficTargetSplitArgs.builder
       builder.splits(args.map(_(argsBuilder).build)*)
@@ -509,7 +509,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fatalError(args: Endofunction[com.pulumi.gcp.firebase.inputs.ExtensionsInstanceRuntimeDataFatalErrorArgs.Builder]):
+    inline def fatalError(args: Endofunction[com.pulumi.gcp.firebase.inputs.ExtensionsInstanceRuntimeDataFatalErrorArgs.Builder]):
         com.pulumi.gcp.firebase.inputs.ExtensionsInstanceRuntimeDataArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.ExtensionsInstanceRuntimeDataFatalErrorArgs.builder
       builder.fatalError(args(argsBuilder).build)
@@ -519,7 +519,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def processingState(args: Endofunction[com.pulumi.gcp.firebase.inputs.ExtensionsInstanceRuntimeDataProcessingStateArgs.Builder]):
+    inline def processingState(args: Endofunction[com.pulumi.gcp.firebase.inputs.ExtensionsInstanceRuntimeDataProcessingStateArgs.Builder]):
         com.pulumi.gcp.firebase.inputs.ExtensionsInstanceRuntimeDataArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.ExtensionsInstanceRuntimeDataProcessingStateArgs.builder
       builder.processingState(args(argsBuilder).build)
@@ -530,7 +530,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.firebase.inputs.ExtensionsInstanceConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.firebase.inputs.ExtensionsInstanceConfigArgs.Builder]):
         com.pulumi.gcp.firebase.inputs.ExtensionsInstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.ExtensionsInstanceConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -541,7 +541,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errorStatuses(args: Endofunction[com.pulumi.gcp.firebase.inputs.ExtensionsInstanceErrorStatusArgs.Builder]*):
+    inline def errorStatuses(args: Endofunction[com.pulumi.gcp.firebase.inputs.ExtensionsInstanceErrorStatusArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.ExtensionsInstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.ExtensionsInstanceErrorStatusArgs.builder
       builder.errorStatuses(args.map(_(argsBuilder).build)*)
@@ -551,7 +551,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def runtimeDatas(args: Endofunction[com.pulumi.gcp.firebase.inputs.ExtensionsInstanceRuntimeDataArgs.Builder]*):
+    inline def runtimeDatas(args: Endofunction[com.pulumi.gcp.firebase.inputs.ExtensionsInstanceRuntimeDataArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.ExtensionsInstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.ExtensionsInstanceRuntimeDataArgs.builder
       builder.runtimeDatas(args.map(_(argsBuilder).build)*)
@@ -566,7 +566,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def verification(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationArgs.Builder]):
+    inline def verification(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationArgs.Builder]):
         com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationArgs.builder
       builder.verification(args(argsBuilder).build)
@@ -578,7 +578,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dns(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationDnsArgs.Builder]):
+    inline def dns(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationDnsArgs.Builder]):
         com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationDnsArgs.builder
       builder.dns(args(argsBuilder).build)
@@ -589,7 +589,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def http(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationHttpArgs.Builder]):
+    inline def http(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationHttpArgs.Builder]):
         com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationHttpArgs.builder
       builder.http(args(argsBuilder).build)
@@ -599,7 +599,7 @@ object firebase_ext:
      * @param desireds A text string to serve at the path.
      * @return builder
      */
-    def desireds(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationDnsDesiredArgs.Builder]*):
+    inline def desireds(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationDnsDesiredArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationDnsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationDnsDesiredArgs.builder
       builder.desireds(args.map(_(argsBuilder).build)*)
@@ -609,7 +609,7 @@ object firebase_ext:
      * specified path during its last check.
      * @return builder
      */
-    def discovereds(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationDnsDiscoveredArgs.Builder]*):
+    inline def discovereds(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationDnsDiscoveredArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationDnsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationDnsDiscoveredArgs.builder
       builder.discovereds(args.map(_(argsBuilder).build)*)
@@ -620,7 +620,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def records(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationDnsDesiredRecordArgs.Builder]*):
+    inline def records(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationDnsDesiredRecordArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationDnsDesiredArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationDnsDesiredRecordArgs.builder
       builder.records(args.map(_(argsBuilder).build)*)
@@ -631,7 +631,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def records(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationDnsDiscoveredRecordArgs.Builder]*):
+    inline def records(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationDnsDiscoveredRecordArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationDnsDiscoveredArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertVerificationDnsDiscoveredRecordArgs.builder
       builder.records(args.map(_(argsBuilder).build)*)
@@ -641,7 +641,7 @@ object firebase_ext:
      * @param desireds A text string to serve at the path.
      * @return builder
      */
-    def desireds(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainRequiredDnsUpdateDesiredArgs.Builder]*):
+    inline def desireds(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainRequiredDnsUpdateDesiredArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.HostingCustomDomainRequiredDnsUpdateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.HostingCustomDomainRequiredDnsUpdateDesiredArgs.builder
       builder.desireds(args.map(_(argsBuilder).build)*)
@@ -651,7 +651,7 @@ object firebase_ext:
      * specified path during its last check.
      * @return builder
      */
-    def discovereds(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainRequiredDnsUpdateDiscoveredArgs.Builder]*):
+    inline def discovereds(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainRequiredDnsUpdateDiscoveredArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.HostingCustomDomainRequiredDnsUpdateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.HostingCustomDomainRequiredDnsUpdateDiscoveredArgs.builder
       builder.discovereds(args.map(_(argsBuilder).build)*)
@@ -662,7 +662,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def records(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainRequiredDnsUpdateDesiredRecordArgs.Builder]*):
+    inline def records(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainRequiredDnsUpdateDesiredRecordArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.HostingCustomDomainRequiredDnsUpdateDesiredArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.HostingCustomDomainRequiredDnsUpdateDesiredRecordArgs.builder
       builder.records(args.map(_(argsBuilder).build)*)
@@ -673,7 +673,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def records(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainRequiredDnsUpdateDiscoveredRecordArgs.Builder]*):
+    inline def records(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainRequiredDnsUpdateDiscoveredRecordArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.HostingCustomDomainRequiredDnsUpdateDiscoveredArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.HostingCustomDomainRequiredDnsUpdateDiscoveredRecordArgs.builder
       builder.records(args.map(_(argsBuilder).build)*)
@@ -687,7 +687,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def certs(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertArgs.Builder]*):
+    inline def certs(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.HostingCustomDomainState.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.HostingCustomDomainCertArgs.builder
       builder.certs(args.map(_(argsBuilder).build)*)
@@ -699,7 +699,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def issues(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainIssueArgs.Builder]*):
+    inline def issues(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainIssueArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.HostingCustomDomainState.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.HostingCustomDomainIssueArgs.builder
       builder.issues(args.map(_(argsBuilder).build)*)
@@ -710,7 +710,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def requiredDnsUpdates(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainRequiredDnsUpdateArgs.Builder]*):
+    inline def requiredDnsUpdates(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingCustomDomainRequiredDnsUpdateArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.HostingCustomDomainState.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.HostingCustomDomainRequiredDnsUpdateArgs.builder
       builder.requiredDnsUpdates(args.map(_(argsBuilder).build)*)
@@ -722,7 +722,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingVersionConfigHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingVersionConfigHeaderArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.HostingVersionConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.HostingVersionConfigHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -733,7 +733,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def redirects(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingVersionConfigRedirectArgs.Builder]*):
+    inline def redirects(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingVersionConfigRedirectArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.HostingVersionConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.HostingVersionConfigRedirectArgs.builder
       builder.redirects(args.map(_(argsBuilder).build)*)
@@ -744,7 +744,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rewrites(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingVersionConfigRewriteArgs.Builder]*):
+    inline def rewrites(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingVersionConfigRewriteArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.HostingVersionConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.HostingVersionConfigRewriteArgs.builder
       builder.rewrites(args.map(_(argsBuilder).build)*)
@@ -755,7 +755,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def run(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingVersionConfigRewriteRunArgs.Builder]):
+    inline def run(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingVersionConfigRewriteRunArgs.Builder]):
         com.pulumi.gcp.firebase.inputs.HostingVersionConfigRewriteArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.HostingVersionConfigRewriteRunArgs.builder
       builder.run(args(argsBuilder).build)
@@ -766,7 +766,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingVersionConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.firebase.inputs.HostingVersionConfigArgs.Builder]):
         com.pulumi.gcp.firebase.inputs.HostingVersionState.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.HostingVersionConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -780,7 +780,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditionalValues(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterConditionalValueArgs.Builder]*):
+    inline def conditionalValues(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterConditionalValueArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterConditionalValueArgs.builder
       builder.conditionalValues(args.map(_(argsBuilder).build)*)
@@ -791,7 +791,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultValue(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterDefaultValueArgs.Builder]):
+    inline def defaultValue(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterDefaultValueArgs.Builder]):
         com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterDefaultValueArgs.builder
       builder.defaultValue(args(argsBuilder).build)
@@ -806,7 +806,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameters(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterGroupParameterArgs.Builder]*):
+    inline def parameters(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterGroupParameterArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterGroupArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterGroupParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
@@ -820,7 +820,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditionalValues(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterGroupParameterConditionalValueArgs.Builder]*):
+    inline def conditionalValues(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterGroupParameterConditionalValueArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterGroupParameterArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterGroupParameterConditionalValueArgs.builder
       builder.conditionalValues(args.map(_(argsBuilder).build)*)
@@ -831,7 +831,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultValue(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterGroupParameterDefaultValueArgs.Builder]):
+    inline def defaultValue(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterGroupParameterDefaultValueArgs.Builder]):
         com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterGroupParameterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterGroupParameterDefaultValueArgs.builder
       builder.defaultValue(args(argsBuilder).build)
@@ -843,7 +843,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigConditionArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -862,7 +862,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameterGroups(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterGroupArgs.Builder]*):
+    inline def parameterGroups(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterGroupArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterGroupArgs.builder
       builder.parameterGroups(args.map(_(argsBuilder).build)*)
@@ -873,7 +873,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameters(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterArgs.Builder]*):
+    inline def parameters(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
@@ -886,7 +886,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def versions(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigVersionArgs.Builder]*):
+    inline def versions(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigVersionArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigVersionArgs.builder
       builder.versions(args.map(_(argsBuilder).build)*)
@@ -899,7 +899,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def updateUsers(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigVersionUpdateUserArgs.Builder]*):
+    inline def updateUsers(args: Endofunction[com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigVersionUpdateUserArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigVersionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.RemoteConfigRemoteConfigVersionUpdateUserArgs.builder
       builder.updateUsers(args.map(_(argsBuilder).build)*)
@@ -910,7 +910,7 @@ object firebase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def buckets(args: Endofunction[com.pulumi.gcp.firebase.inputs.StorageDefaultBucketBucketArgs.Builder]*):
+    inline def buckets(args: Endofunction[com.pulumi.gcp.firebase.inputs.StorageDefaultBucketBucketArgs.Builder]*):
         com.pulumi.gcp.firebase.inputs.StorageDefaultBucketState.Builder =
       def argsBuilder = com.pulumi.gcp.firebase.inputs.StorageDefaultBucketBucketArgs.builder
       builder.buckets(args.map(_(argsBuilder).build)*)

@@ -7,7 +7,7 @@ object alb_ext:
      * @param defaultActions Configuration block for default actions. See below.
      * @return builder
      */
-    def defaultActions(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerDefaultActionArgs.Builder]*):
+    inline def defaultActions(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerDefaultActionArgs.Builder]*):
         com.pulumi.aws.alb.ListenerArgs.Builder =
       def argsBuilder = com.pulumi.aws.alb.inputs.ListenerDefaultActionArgs.builder
       builder.defaultActions(args.map(_(argsBuilder).build)*)
@@ -16,7 +16,7 @@ object alb_ext:
      * @param mutualAuthentication The mutual authentication configuration information. See below.
      * @return builder
      */
-    def mutualAuthentication(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerMutualAuthenticationArgs.Builder]):
+    inline def mutualAuthentication(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerMutualAuthenticationArgs.Builder]):
         com.pulumi.aws.alb.ListenerArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerMutualAuthenticationArgs.builder
       builder.mutualAuthentication(args(argsBuilder).build)
@@ -26,7 +26,7 @@ object alb_ext:
      * @param actions An Action block. Action blocks are documented below.
      * @return builder
      */
-    def actions(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleActionArgs.Builder]*):
+    inline def actions(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleActionArgs.Builder]*):
         com.pulumi.aws.alb.ListenerRuleArgs.Builder =
       def argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleActionArgs.builder
       builder.actions(args.map(_(argsBuilder).build)*)
@@ -35,7 +35,7 @@ object alb_ext:
      * @param conditions A Condition block. Multiple condition blocks of different types can be set and all must be satisfied for the rule to match. Condition blocks are documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleConditionArgs.Builder]*):
         com.pulumi.aws.alb.ListenerRuleArgs.Builder =
       def argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -44,7 +44,7 @@ object alb_ext:
      * @param transforms Configuration block that defines the transform to apply to requests matching this rule. See Transform Blocks below for more details. Once specified, to remove the transform from the rule, remove the `transform` block from the configuration.
      * @return builder
      */
-    def transforms(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleTransformArgs.Builder]*):
+    inline def transforms(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleTransformArgs.Builder]*):
         com.pulumi.aws.alb.ListenerRuleArgs.Builder =
       def argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleTransformArgs.builder
       builder.transforms(args.map(_(argsBuilder).build)*)
@@ -54,7 +54,7 @@ object alb_ext:
      * @param accessLogs Access Logs block. See below.
      * @return builder
      */
-    def accessLogs(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerAccessLogsArgs.Builder]):
+    inline def accessLogs(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerAccessLogsArgs.Builder]):
         com.pulumi.aws.alb.LoadBalancerArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.LoadBalancerAccessLogsArgs.builder
       builder.accessLogs(args(argsBuilder).build)
@@ -63,7 +63,7 @@ object alb_ext:
      * @param connectionLogs Connection Logs block. See below. Only valid for Load Balancers of type `application`.
      * @return builder
      */
-    def connectionLogs(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerConnectionLogsArgs.Builder]):
+    inline def connectionLogs(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerConnectionLogsArgs.Builder]):
         com.pulumi.aws.alb.LoadBalancerArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.LoadBalancerConnectionLogsArgs.builder
       builder.connectionLogs(args(argsBuilder).build)
@@ -72,7 +72,7 @@ object alb_ext:
      * @param healthCheckLogs Health Check Logs block. See below. Only valid for Load Balancers of type `application`.
      * @return builder
      */
-    def healthCheckLogs(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerHealthCheckLogsArgs.Builder]):
+    inline def healthCheckLogs(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerHealthCheckLogsArgs.Builder]):
         com.pulumi.aws.alb.LoadBalancerArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.LoadBalancerHealthCheckLogsArgs.builder
       builder.healthCheckLogs(args(argsBuilder).build)
@@ -81,7 +81,7 @@ object alb_ext:
      * @param ipamPools . The IPAM pools to use with the load balancer.  Only valid for Load Balancers of type `application`. See ipamPools for more information.
      * @return builder
      */
-    def ipamPools(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerIpamPoolsArgs.Builder]):
+    inline def ipamPools(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerIpamPoolsArgs.Builder]):
         com.pulumi.aws.alb.LoadBalancerArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.LoadBalancerIpamPoolsArgs.builder
       builder.ipamPools(args(argsBuilder).build)
@@ -90,7 +90,7 @@ object alb_ext:
      * @param minimumLoadBalancerCapacity Minimum capacity for a load balancer. Only valid for Load Balancers of type `application` or `network`.
      * @return builder
      */
-    def minimumLoadBalancerCapacity(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerMinimumLoadBalancerCapacityArgs.Builder]):
+    inline def minimumLoadBalancerCapacity(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerMinimumLoadBalancerCapacityArgs.Builder]):
         com.pulumi.aws.alb.LoadBalancerArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.LoadBalancerMinimumLoadBalancerCapacityArgs.builder
       builder.minimumLoadBalancerCapacity(args(argsBuilder).build)
@@ -99,7 +99,7 @@ object alb_ext:
      * @param subnetMappings Subnet mapping block. See below. For Load Balancers of type `network` subnet mappings can only be added.
      * @return builder
      */
-    def subnetMappings(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerSubnetMappingArgs.Builder]*):
+    inline def subnetMappings(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerSubnetMappingArgs.Builder]*):
         com.pulumi.aws.alb.LoadBalancerArgs.Builder =
       def argsBuilder = com.pulumi.aws.alb.inputs.LoadBalancerSubnetMappingArgs.builder
       builder.subnetMappings(args.map(_(argsBuilder).build)*)
@@ -109,7 +109,7 @@ object alb_ext:
      * @param healthCheck Health Check configuration block. Detailed below.
      * @return builder
      */
-    def healthCheck(args: Endofunction[com.pulumi.aws.alb.inputs.TargetGroupHealthCheckArgs.Builder]):
+    inline def healthCheck(args: Endofunction[com.pulumi.aws.alb.inputs.TargetGroupHealthCheckArgs.Builder]):
         com.pulumi.aws.alb.TargetGroupArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.TargetGroupHealthCheckArgs.builder
       builder.healthCheck(args(argsBuilder).build)
@@ -118,7 +118,7 @@ object alb_ext:
      * @param stickiness Stickiness configuration block. Detailed below.
      * @return builder
      */
-    def stickiness(args: Endofunction[com.pulumi.aws.alb.inputs.TargetGroupStickinessArgs.Builder]):
+    inline def stickiness(args: Endofunction[com.pulumi.aws.alb.inputs.TargetGroupStickinessArgs.Builder]):
         com.pulumi.aws.alb.TargetGroupArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.TargetGroupStickinessArgs.builder
       builder.stickiness(args(argsBuilder).build)
@@ -127,7 +127,7 @@ object alb_ext:
      * @param targetFailovers Target failover block. Only applicable for Gateway Load Balancer target groups. See targetFailover for more information.
      * @return builder
      */
-    def targetFailovers(args: Endofunction[com.pulumi.aws.alb.inputs.TargetGroupTargetFailoverArgs.Builder]*):
+    inline def targetFailovers(args: Endofunction[com.pulumi.aws.alb.inputs.TargetGroupTargetFailoverArgs.Builder]*):
         com.pulumi.aws.alb.TargetGroupArgs.Builder =
       def argsBuilder = com.pulumi.aws.alb.inputs.TargetGroupTargetFailoverArgs.builder
       builder.targetFailovers(args.map(_(argsBuilder).build)*)
@@ -136,7 +136,7 @@ object alb_ext:
      * @param targetGroupHealth Target health requirements block. See targetGroupHealth for more information.
      * @return builder
      */
-    def targetGroupHealth(args: Endofunction[com.pulumi.aws.alb.inputs.TargetGroupTargetGroupHealthArgs.Builder]):
+    inline def targetGroupHealth(args: Endofunction[com.pulumi.aws.alb.inputs.TargetGroupTargetGroupHealthArgs.Builder]):
         com.pulumi.aws.alb.TargetGroupArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.TargetGroupTargetGroupHealthArgs.builder
       builder.targetGroupHealth(args(argsBuilder).build)
@@ -145,7 +145,7 @@ object alb_ext:
      * @param targetHealthStates Target health state block. Only applicable for Network Load Balancer target groups when `protocol` is `TCP` or `TLS`. See targetHealthState for more information.
      * @return builder
      */
-    def targetHealthStates(args: Endofunction[com.pulumi.aws.alb.inputs.TargetGroupTargetHealthStateArgs.Builder]*):
+    inline def targetHealthStates(args: Endofunction[com.pulumi.aws.alb.inputs.TargetGroupTargetHealthStateArgs.Builder]*):
         com.pulumi.aws.alb.TargetGroupArgs.Builder =
       def argsBuilder = com.pulumi.aws.alb.inputs.TargetGroupTargetHealthStateArgs.builder
       builder.targetHealthStates(args.map(_(argsBuilder).build)*)
@@ -155,7 +155,7 @@ object alb_ext:
      * @param authenticateCognito Configuration block for using Amazon Cognito to authenticate users. Specify only when `type` is `authenticate-cognito`. See below.
      * @return builder
      */
-    def authenticateCognito(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerDefaultActionAuthenticateCognitoArgs.Builder]):
+    inline def authenticateCognito(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerDefaultActionAuthenticateCognitoArgs.Builder]):
         com.pulumi.aws.alb.inputs.ListenerDefaultActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerDefaultActionAuthenticateCognitoArgs.builder
       builder.authenticateCognito(args(argsBuilder).build)
@@ -164,7 +164,7 @@ object alb_ext:
      * @param authenticateOidc Configuration block for an identity provider that is compliant with OpenID Connect (OIDC). Specify only when `type` is `authenticate-oidc`. See below.
      * @return builder
      */
-    def authenticateOidc(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerDefaultActionAuthenticateOidcArgs.Builder]):
+    inline def authenticateOidc(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerDefaultActionAuthenticateOidcArgs.Builder]):
         com.pulumi.aws.alb.inputs.ListenerDefaultActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerDefaultActionAuthenticateOidcArgs.builder
       builder.authenticateOidc(args(argsBuilder).build)
@@ -173,7 +173,7 @@ object alb_ext:
      * @param fixedResponse Information for creating an action that returns a custom HTTP response. Required if `type` is `fixed-response`.
      * @return builder
      */
-    def fixedResponse(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerDefaultActionFixedResponseArgs.Builder]):
+    inline def fixedResponse(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerDefaultActionFixedResponseArgs.Builder]):
         com.pulumi.aws.alb.inputs.ListenerDefaultActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerDefaultActionFixedResponseArgs.builder
       builder.fixedResponse(args(argsBuilder).build)
@@ -182,7 +182,7 @@ object alb_ext:
      * @param forward Configuration block for creating an action that distributes requests among one or more target groups. Specify only if `type` is `forward`. See below.
      * @return builder
      */
-    def forward(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerDefaultActionForwardArgs.Builder]):
+    inline def forward(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerDefaultActionForwardArgs.Builder]):
         com.pulumi.aws.alb.inputs.ListenerDefaultActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerDefaultActionForwardArgs.builder
       builder.forward(args(argsBuilder).build)
@@ -191,7 +191,7 @@ object alb_ext:
      * @param jwtValidation Configuration block for creating a JWT validation action. Required if `type` is `jwt-validation`.
      * @return builder
      */
-    def jwtValidation(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerDefaultActionJwtValidationArgs.Builder]):
+    inline def jwtValidation(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerDefaultActionJwtValidationArgs.Builder]):
         com.pulumi.aws.alb.inputs.ListenerDefaultActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerDefaultActionJwtValidationArgs.builder
       builder.jwtValidation(args(argsBuilder).build)
@@ -200,7 +200,7 @@ object alb_ext:
      * @param redirect Configuration block for creating a redirect action. Required if `type` is `redirect`. See below.
      * @return builder
      */
-    def redirect(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerDefaultActionRedirectArgs.Builder]):
+    inline def redirect(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerDefaultActionRedirectArgs.Builder]):
         com.pulumi.aws.alb.inputs.ListenerDefaultActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerDefaultActionRedirectArgs.builder
       builder.redirect(args(argsBuilder).build)
@@ -210,7 +210,7 @@ object alb_ext:
      * @param stickiness Configuration block for target group stickiness for the rule. See below.
      * @return builder
      */
-    def stickiness(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerDefaultActionForwardStickinessArgs.Builder]):
+    inline def stickiness(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerDefaultActionForwardStickinessArgs.Builder]):
         com.pulumi.aws.alb.inputs.ListenerDefaultActionForwardArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerDefaultActionForwardStickinessArgs.builder
       builder.stickiness(args(argsBuilder).build)
@@ -221,7 +221,7 @@ object alb_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def targetGroups(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerDefaultActionForwardTargetGroupArgs.Builder]*):
+    inline def targetGroups(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerDefaultActionForwardTargetGroupArgs.Builder]*):
         com.pulumi.aws.alb.inputs.ListenerDefaultActionForwardArgs.Builder =
       def argsBuilder = com.pulumi.aws.alb.inputs.ListenerDefaultActionForwardTargetGroupArgs.builder
       builder.targetGroups(args.map(_(argsBuilder).build)*)
@@ -231,7 +231,7 @@ object alb_ext:
      * @param additionalClaims Repeatable configuration block for additional claims to validate.
      * @return builder
      */
-    def additionalClaims(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerDefaultActionJwtValidationAdditionalClaimArgs.Builder]*):
+    inline def additionalClaims(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerDefaultActionJwtValidationAdditionalClaimArgs.Builder]*):
         com.pulumi.aws.alb.inputs.ListenerDefaultActionJwtValidationArgs.Builder =
       def argsBuilder = com.pulumi.aws.alb.inputs.ListenerDefaultActionJwtValidationAdditionalClaimArgs.builder
       builder.additionalClaims(args.map(_(argsBuilder).build)*)
@@ -241,7 +241,7 @@ object alb_ext:
      * @param authenticateCognito Information for creating an authenticate action using Cognito. Required if `type` is `authenticate-cognito`.
      * @return builder
      */
-    def authenticateCognito(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleActionAuthenticateCognitoArgs.Builder]):
+    inline def authenticateCognito(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleActionAuthenticateCognitoArgs.Builder]):
         com.pulumi.aws.alb.inputs.ListenerRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleActionAuthenticateCognitoArgs.builder
       builder.authenticateCognito(args(argsBuilder).build)
@@ -250,7 +250,7 @@ object alb_ext:
      * @param authenticateOidc Information for creating an authenticate action using OIDC. Required if `type` is `authenticate-oidc`.
      * @return builder
      */
-    def authenticateOidc(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleActionAuthenticateOidcArgs.Builder]):
+    inline def authenticateOidc(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleActionAuthenticateOidcArgs.Builder]):
         com.pulumi.aws.alb.inputs.ListenerRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleActionAuthenticateOidcArgs.builder
       builder.authenticateOidc(args(argsBuilder).build)
@@ -259,7 +259,7 @@ object alb_ext:
      * @param fixedResponse Information for creating an action that returns a custom HTTP response. Required if `type` is `fixed-response`.
      * @return builder
      */
-    def fixedResponse(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleActionFixedResponseArgs.Builder]):
+    inline def fixedResponse(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleActionFixedResponseArgs.Builder]):
         com.pulumi.aws.alb.inputs.ListenerRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleActionFixedResponseArgs.builder
       builder.fixedResponse(args(argsBuilder).build)
@@ -270,7 +270,7 @@ object alb_ext:
      * Cannot be specified with `targetGroupArn`.
      * @return builder
      */
-    def forward(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleActionForwardArgs.Builder]):
+    inline def forward(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleActionForwardArgs.Builder]):
         com.pulumi.aws.alb.inputs.ListenerRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleActionForwardArgs.builder
       builder.forward(args(argsBuilder).build)
@@ -279,7 +279,7 @@ object alb_ext:
      * @param jwtValidation Information for creating a JWT validation action. Required if `type` is `jwt-validation`.
      * @return builder
      */
-    def jwtValidation(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleActionJwtValidationArgs.Builder]):
+    inline def jwtValidation(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleActionJwtValidationArgs.Builder]):
         com.pulumi.aws.alb.inputs.ListenerRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleActionJwtValidationArgs.builder
       builder.jwtValidation(args(argsBuilder).build)
@@ -288,7 +288,7 @@ object alb_ext:
      * @param redirect Information for creating a redirect action. Required if `type` is `redirect`.
      * @return builder
      */
-    def redirect(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleActionRedirectArgs.Builder]):
+    inline def redirect(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleActionRedirectArgs.Builder]):
         com.pulumi.aws.alb.inputs.ListenerRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleActionRedirectArgs.builder
       builder.redirect(args(argsBuilder).build)
@@ -298,7 +298,7 @@ object alb_ext:
      * @param stickiness The target group stickiness for the rule.
      * @return builder
      */
-    def stickiness(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleActionForwardStickinessArgs.Builder]):
+    inline def stickiness(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleActionForwardStickinessArgs.Builder]):
         com.pulumi.aws.alb.inputs.ListenerRuleActionForwardArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleActionForwardStickinessArgs.builder
       builder.stickiness(args(argsBuilder).build)
@@ -307,7 +307,7 @@ object alb_ext:
      * @param targetGroups One or more target group blocks.
      * @return builder
      */
-    def targetGroups(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleActionForwardTargetGroupArgs.Builder]*):
+    inline def targetGroups(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleActionForwardTargetGroupArgs.Builder]*):
         com.pulumi.aws.alb.inputs.ListenerRuleActionForwardArgs.Builder =
       def argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleActionForwardTargetGroupArgs.builder
       builder.targetGroups(args.map(_(argsBuilder).build)*)
@@ -317,7 +317,7 @@ object alb_ext:
      * @param additionalClaims Repeatable configuration block for additional claims to validate.
      * @return builder
      */
-    def additionalClaims(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleActionJwtValidationAdditionalClaimArgs.Builder]*):
+    inline def additionalClaims(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleActionJwtValidationAdditionalClaimArgs.Builder]*):
         com.pulumi.aws.alb.inputs.ListenerRuleActionJwtValidationArgs.Builder =
       def argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleActionJwtValidationAdditionalClaimArgs.builder
       builder.additionalClaims(args.map(_(argsBuilder).build)*)
@@ -327,7 +327,7 @@ object alb_ext:
      * @param hostHeader Host header patterns to match. Host Header block fields documented below.
      * @return builder
      */
-    def hostHeader(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleConditionHostHeaderArgs.Builder]):
+    inline def hostHeader(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleConditionHostHeaderArgs.Builder]):
         com.pulumi.aws.alb.inputs.ListenerRuleConditionArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleConditionHostHeaderArgs.builder
       builder.hostHeader(args(argsBuilder).build)
@@ -336,7 +336,7 @@ object alb_ext:
      * @param httpHeader HTTP headers to match. HTTP Header block fields documented below.
      * @return builder
      */
-    def httpHeader(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleConditionHttpHeaderArgs.Builder]):
+    inline def httpHeader(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleConditionHttpHeaderArgs.Builder]):
         com.pulumi.aws.alb.inputs.ListenerRuleConditionArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleConditionHttpHeaderArgs.builder
       builder.httpHeader(args(argsBuilder).build)
@@ -345,7 +345,7 @@ object alb_ext:
      * @param httpRequestMethod Contains a single `values` item which is a list of HTTP request methods or verbs to match. Maximum size is 40 characters. Only allowed characters are A-Z, hyphen (-) and underscore (\_). Comparison is case sensitive. Wildcards are not supported. Only one needs to match for the condition to be satisfied. AWS recommends that GET and HEAD requests are routed in the same way because the response to a HEAD request may be cached.
      * @return builder
      */
-    def httpRequestMethod(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleConditionHttpRequestMethodArgs.Builder]):
+    inline def httpRequestMethod(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleConditionHttpRequestMethodArgs.Builder]):
         com.pulumi.aws.alb.inputs.ListenerRuleConditionArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleConditionHttpRequestMethodArgs.builder
       builder.httpRequestMethod(args(argsBuilder).build)
@@ -354,7 +354,7 @@ object alb_ext:
      * @param pathPattern Path patterns to match against the request URL. Path Pattern block fields documented below.
      * @return builder
      */
-    def pathPattern(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleConditionPathPatternArgs.Builder]):
+    inline def pathPattern(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleConditionPathPatternArgs.Builder]):
         com.pulumi.aws.alb.inputs.ListenerRuleConditionArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleConditionPathPatternArgs.builder
       builder.pathPattern(args(argsBuilder).build)
@@ -363,7 +363,7 @@ object alb_ext:
      * @param queryStrings Query strings to match. Query String block fields documented below.
      * @return builder
      */
-    def queryStrings(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleConditionQueryStringArgs.Builder]*):
+    inline def queryStrings(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleConditionQueryStringArgs.Builder]*):
         com.pulumi.aws.alb.inputs.ListenerRuleConditionArgs.Builder =
       def argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleConditionQueryStringArgs.builder
       builder.queryStrings(args.map(_(argsBuilder).build)*)
@@ -374,7 +374,7 @@ object alb_ext:
      * &gt; **NOTE::** Exactly one of `hostHeader`, `httpHeader`, `httpRequestMethod`, `pathPattern`, `queryString` or `sourceIp` must be set per condition.
      * @return builder
      */
-    def sourceIp(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleConditionSourceIpArgs.Builder]):
+    inline def sourceIp(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleConditionSourceIpArgs.Builder]):
         com.pulumi.aws.alb.inputs.ListenerRuleConditionArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleConditionSourceIpArgs.builder
       builder.sourceIp(args(argsBuilder).build)
@@ -384,7 +384,7 @@ object alb_ext:
      * @param actions An Action block. Action blocks are documented below.
      * @return builder
      */
-    def actions(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleActionArgs.Builder]*):
+    inline def actions(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleActionArgs.Builder]*):
         com.pulumi.aws.alb.inputs.ListenerRuleState.Builder =
       def argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleActionArgs.builder
       builder.actions(args.map(_(argsBuilder).build)*)
@@ -393,7 +393,7 @@ object alb_ext:
      * @param conditions A Condition block. Multiple condition blocks of different types can be set and all must be satisfied for the rule to match. Condition blocks are documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleConditionArgs.Builder]*):
         com.pulumi.aws.alb.inputs.ListenerRuleState.Builder =
       def argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -402,7 +402,7 @@ object alb_ext:
      * @param transforms Configuration block that defines the transform to apply to requests matching this rule. See Transform Blocks below for more details. Once specified, to remove the transform from the rule, remove the `transform` block from the configuration.
      * @return builder
      */
-    def transforms(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleTransformArgs.Builder]*):
+    inline def transforms(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleTransformArgs.Builder]*):
         com.pulumi.aws.alb.inputs.ListenerRuleState.Builder =
       def argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleTransformArgs.builder
       builder.transforms(args.map(_(argsBuilder).build)*)
@@ -412,7 +412,7 @@ object alb_ext:
      * @param hostHeaderRewriteConfig Configuration block for host header rewrite. Required if `type` is `host-header-rewrite`. See Host Header Rewrite Config Blocks below.
      * @return builder
      */
-    def hostHeaderRewriteConfig(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleTransformHostHeaderRewriteConfigArgs.Builder]):
+    inline def hostHeaderRewriteConfig(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleTransformHostHeaderRewriteConfigArgs.Builder]):
         com.pulumi.aws.alb.inputs.ListenerRuleTransformArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleTransformHostHeaderRewriteConfigArgs.builder
       builder.hostHeaderRewriteConfig(args(argsBuilder).build)
@@ -421,7 +421,7 @@ object alb_ext:
      * @param urlRewriteConfig Configuration block for URL rewrite. Required if `type` is `url-rewrite`. See URL Rewrite Config Blocks below.
      * @return builder
      */
-    def urlRewriteConfig(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleTransformUrlRewriteConfigArgs.Builder]):
+    inline def urlRewriteConfig(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleTransformUrlRewriteConfigArgs.Builder]):
         com.pulumi.aws.alb.inputs.ListenerRuleTransformArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleTransformUrlRewriteConfigArgs.builder
       builder.urlRewriteConfig(args(argsBuilder).build)
@@ -431,7 +431,7 @@ object alb_ext:
      * @param rewrite Block for host header rewrite configuration. Only one block is accepted. See Rewrite Blocks below.
      * @return builder
      */
-    def rewrite(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleTransformHostHeaderRewriteConfigRewriteArgs.Builder]):
+    inline def rewrite(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleTransformHostHeaderRewriteConfigRewriteArgs.Builder]):
         com.pulumi.aws.alb.inputs.ListenerRuleTransformHostHeaderRewriteConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleTransformHostHeaderRewriteConfigRewriteArgs.builder
       builder.rewrite(args(argsBuilder).build)
@@ -441,7 +441,7 @@ object alb_ext:
      * @param rewrite Block for URL rewrite configuration. Only one block is accepted. See Rewrite Blocks below.
      * @return builder
      */
-    def rewrite(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleTransformUrlRewriteConfigRewriteArgs.Builder]):
+    inline def rewrite(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerRuleTransformUrlRewriteConfigRewriteArgs.Builder]):
         com.pulumi.aws.alb.inputs.ListenerRuleTransformUrlRewriteConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerRuleTransformUrlRewriteConfigRewriteArgs.builder
       builder.rewrite(args(argsBuilder).build)
@@ -451,7 +451,7 @@ object alb_ext:
      * @param defaultActions Configuration block for default actions. See below.
      * @return builder
      */
-    def defaultActions(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerDefaultActionArgs.Builder]*):
+    inline def defaultActions(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerDefaultActionArgs.Builder]*):
         com.pulumi.aws.alb.inputs.ListenerState.Builder =
       def argsBuilder = com.pulumi.aws.alb.inputs.ListenerDefaultActionArgs.builder
       builder.defaultActions(args.map(_(argsBuilder).build)*)
@@ -460,7 +460,7 @@ object alb_ext:
      * @param mutualAuthentication The mutual authentication configuration information. See below.
      * @return builder
      */
-    def mutualAuthentication(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerMutualAuthenticationArgs.Builder]):
+    inline def mutualAuthentication(args: Endofunction[com.pulumi.aws.alb.inputs.ListenerMutualAuthenticationArgs.Builder]):
         com.pulumi.aws.alb.inputs.ListenerState.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.ListenerMutualAuthenticationArgs.builder
       builder.mutualAuthentication(args(argsBuilder).build)
@@ -470,7 +470,7 @@ object alb_ext:
      * @param accessLogs Access Logs block. See below.
      * @return builder
      */
-    def accessLogs(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerAccessLogsArgs.Builder]):
+    inline def accessLogs(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerAccessLogsArgs.Builder]):
         com.pulumi.aws.alb.inputs.LoadBalancerState.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.LoadBalancerAccessLogsArgs.builder
       builder.accessLogs(args(argsBuilder).build)
@@ -479,7 +479,7 @@ object alb_ext:
      * @param connectionLogs Connection Logs block. See below. Only valid for Load Balancers of type `application`.
      * @return builder
      */
-    def connectionLogs(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerConnectionLogsArgs.Builder]):
+    inline def connectionLogs(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerConnectionLogsArgs.Builder]):
         com.pulumi.aws.alb.inputs.LoadBalancerState.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.LoadBalancerConnectionLogsArgs.builder
       builder.connectionLogs(args(argsBuilder).build)
@@ -488,7 +488,7 @@ object alb_ext:
      * @param healthCheckLogs Health Check Logs block. See below. Only valid for Load Balancers of type `application`.
      * @return builder
      */
-    def healthCheckLogs(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerHealthCheckLogsArgs.Builder]):
+    inline def healthCheckLogs(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerHealthCheckLogsArgs.Builder]):
         com.pulumi.aws.alb.inputs.LoadBalancerState.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.LoadBalancerHealthCheckLogsArgs.builder
       builder.healthCheckLogs(args(argsBuilder).build)
@@ -497,7 +497,7 @@ object alb_ext:
      * @param ipamPools . The IPAM pools to use with the load balancer.  Only valid for Load Balancers of type `application`. See ipamPools for more information.
      * @return builder
      */
-    def ipamPools(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerIpamPoolsArgs.Builder]):
+    inline def ipamPools(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerIpamPoolsArgs.Builder]):
         com.pulumi.aws.alb.inputs.LoadBalancerState.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.LoadBalancerIpamPoolsArgs.builder
       builder.ipamPools(args(argsBuilder).build)
@@ -506,7 +506,7 @@ object alb_ext:
      * @param minimumLoadBalancerCapacity Minimum capacity for a load balancer. Only valid for Load Balancers of type `application` or `network`.
      * @return builder
      */
-    def minimumLoadBalancerCapacity(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerMinimumLoadBalancerCapacityArgs.Builder]):
+    inline def minimumLoadBalancerCapacity(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerMinimumLoadBalancerCapacityArgs.Builder]):
         com.pulumi.aws.alb.inputs.LoadBalancerState.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.LoadBalancerMinimumLoadBalancerCapacityArgs.builder
       builder.minimumLoadBalancerCapacity(args(argsBuilder).build)
@@ -515,7 +515,7 @@ object alb_ext:
      * @param subnetMappings Subnet mapping block. See below. For Load Balancers of type `network` subnet mappings can only be added.
      * @return builder
      */
-    def subnetMappings(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerSubnetMappingArgs.Builder]*):
+    inline def subnetMappings(args: Endofunction[com.pulumi.aws.alb.inputs.LoadBalancerSubnetMappingArgs.Builder]*):
         com.pulumi.aws.alb.inputs.LoadBalancerState.Builder =
       def argsBuilder = com.pulumi.aws.alb.inputs.LoadBalancerSubnetMappingArgs.builder
       builder.subnetMappings(args.map(_(argsBuilder).build)*)
@@ -525,7 +525,7 @@ object alb_ext:
      * @param healthCheck Health Check configuration block. Detailed below.
      * @return builder
      */
-    def healthCheck(args: Endofunction[com.pulumi.aws.alb.inputs.TargetGroupHealthCheckArgs.Builder]):
+    inline def healthCheck(args: Endofunction[com.pulumi.aws.alb.inputs.TargetGroupHealthCheckArgs.Builder]):
         com.pulumi.aws.alb.inputs.TargetGroupState.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.TargetGroupHealthCheckArgs.builder
       builder.healthCheck(args(argsBuilder).build)
@@ -534,7 +534,7 @@ object alb_ext:
      * @param stickiness Stickiness configuration block. Detailed below.
      * @return builder
      */
-    def stickiness(args: Endofunction[com.pulumi.aws.alb.inputs.TargetGroupStickinessArgs.Builder]):
+    inline def stickiness(args: Endofunction[com.pulumi.aws.alb.inputs.TargetGroupStickinessArgs.Builder]):
         com.pulumi.aws.alb.inputs.TargetGroupState.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.TargetGroupStickinessArgs.builder
       builder.stickiness(args(argsBuilder).build)
@@ -543,7 +543,7 @@ object alb_ext:
      * @param targetFailovers Target failover block. Only applicable for Gateway Load Balancer target groups. See targetFailover for more information.
      * @return builder
      */
-    def targetFailovers(args: Endofunction[com.pulumi.aws.alb.inputs.TargetGroupTargetFailoverArgs.Builder]*):
+    inline def targetFailovers(args: Endofunction[com.pulumi.aws.alb.inputs.TargetGroupTargetFailoverArgs.Builder]*):
         com.pulumi.aws.alb.inputs.TargetGroupState.Builder =
       def argsBuilder = com.pulumi.aws.alb.inputs.TargetGroupTargetFailoverArgs.builder
       builder.targetFailovers(args.map(_(argsBuilder).build)*)
@@ -552,7 +552,7 @@ object alb_ext:
      * @param targetGroupHealth Target health requirements block. See targetGroupHealth for more information.
      * @return builder
      */
-    def targetGroupHealth(args: Endofunction[com.pulumi.aws.alb.inputs.TargetGroupTargetGroupHealthArgs.Builder]):
+    inline def targetGroupHealth(args: Endofunction[com.pulumi.aws.alb.inputs.TargetGroupTargetGroupHealthArgs.Builder]):
         com.pulumi.aws.alb.inputs.TargetGroupState.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.TargetGroupTargetGroupHealthArgs.builder
       builder.targetGroupHealth(args(argsBuilder).build)
@@ -561,7 +561,7 @@ object alb_ext:
      * @param targetHealthStates Target health state block. Only applicable for Network Load Balancer target groups when `protocol` is `TCP` or `TLS`. See targetHealthState for more information.
      * @return builder
      */
-    def targetHealthStates(args: Endofunction[com.pulumi.aws.alb.inputs.TargetGroupTargetHealthStateArgs.Builder]*):
+    inline def targetHealthStates(args: Endofunction[com.pulumi.aws.alb.inputs.TargetGroupTargetHealthStateArgs.Builder]*):
         com.pulumi.aws.alb.inputs.TargetGroupState.Builder =
       def argsBuilder = com.pulumi.aws.alb.inputs.TargetGroupTargetHealthStateArgs.builder
       builder.targetHealthStates(args.map(_(argsBuilder).build)*)
@@ -571,7 +571,7 @@ object alb_ext:
      * @param dnsFailover Block to configure DNS Failover requirements. See DNS Failover below for details on attributes.
      * @return builder
      */
-    def dnsFailover(args: Endofunction[com.pulumi.aws.alb.inputs.TargetGroupTargetGroupHealthDnsFailoverArgs.Builder]):
+    inline def dnsFailover(args: Endofunction[com.pulumi.aws.alb.inputs.TargetGroupTargetGroupHealthDnsFailoverArgs.Builder]):
         com.pulumi.aws.alb.inputs.TargetGroupTargetGroupHealthArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.TargetGroupTargetGroupHealthDnsFailoverArgs.builder
       builder.dnsFailover(args(argsBuilder).build)
@@ -580,7 +580,7 @@ object alb_ext:
      * @param unhealthyStateRouting Block to configure Unhealthy State Routing requirements. See Unhealthy State Routing below for details on attributes.
      * @return builder
      */
-    def unhealthyStateRouting(args: Endofunction[com.pulumi.aws.alb.inputs.TargetGroupTargetGroupHealthUnhealthyStateRoutingArgs.Builder]):
+    inline def unhealthyStateRouting(args: Endofunction[com.pulumi.aws.alb.inputs.TargetGroupTargetGroupHealthUnhealthyStateRoutingArgs.Builder]):
         com.pulumi.aws.alb.inputs.TargetGroupTargetGroupHealthArgs.Builder =
       val argsBuilder = com.pulumi.aws.alb.inputs.TargetGroupTargetGroupHealthUnhealthyStateRoutingArgs.builder
       builder.unhealthyStateRouting(args(argsBuilder).build)

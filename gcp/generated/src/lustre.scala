@@ -15,7 +15,7 @@ object lustre:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/managed-lustre/docs/create-instance)
    */
-  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.lustre.InstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.lustre.InstanceArgs.builder
     com.pulumi.gcp.lustre.Instance(name,

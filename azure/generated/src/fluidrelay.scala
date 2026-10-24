@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object fluidrelay:
   /** Manages a Fluid Relay Server. */
-  def Server(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Server(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.fluidrelay.ServerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.fluidrelay.ServerArgs.builder
     conf.logicalName2physicalName(name) match

@@ -8,7 +8,7 @@ object customerprofiles:
    * Resource for managing an Amazon Customer Profiles Domain.
    * See the [Create Domain](https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html) for more information.
    */
-  def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.customerprofiles.DomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.customerprofiles.DomainArgs.builder
     argsBuilder = args(argsBuilder)
@@ -26,7 +26,7 @@ object customerprofiles:
    * Resource for managing an Amazon Customer Profiles Profile.
    * See the [Create Profile](https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateProfile.html) for more information.
    */
-  def Profile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Profile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.customerprofiles.ProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.customerprofiles.ProfileArgs.builder
     com.pulumi.aws.customerprofiles.Profile(name,

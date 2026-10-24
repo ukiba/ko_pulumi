@@ -17,7 +17,7 @@ object pubsub:
    * * How-to Guides
    *     * [Managing Reservations](https://cloud.google.com/pubsub/lite/docs/reservations)
    */
-  def LiteReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LiteReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.pubsub.LiteReservationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.pubsub.LiteReservationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -39,7 +39,7 @@ object pubsub:
    * * How-to Guides
    *     * [Managing Subscriptions](https://cloud.google.com/pubsub/lite/docs/subscriptions)
    */
-  def LiteSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LiteSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.pubsub.LiteSubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.pubsub.LiteSubscriptionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -60,7 +60,7 @@ object pubsub:
    * * How-to Guides
    *     * [Managing Topics](https://cloud.google.com/pubsub/lite/docs/topics)
    */
-  def LiteTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LiteTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.pubsub.LiteTopicArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.pubsub.LiteTopicArgs.builder
     conf.logicalName2physicalName(name) match
@@ -247,7 +247,7 @@ object pubsub:
    * * How-to Guides
    *     * [Creating and managing schemas](https://cloud.google.com/pubsub/docs/schemas)
    */
-  def Schema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Schema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.pubsub.SchemaArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.pubsub.SchemaArgs.builder
     conf.logicalName2physicalName(name) match
@@ -556,7 +556,7 @@ object pubsub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SchemaIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SchemaIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.pubsub.SchemaIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.pubsub.SchemaIamBindingArgs.builder
     com.pulumi.gcp.pubsub.SchemaIamBinding(name,
@@ -862,7 +862,7 @@ object pubsub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SchemaIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SchemaIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.pubsub.SchemaIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.pubsub.SchemaIamMemberArgs.builder
     com.pulumi.gcp.pubsub.SchemaIamMember(name,
@@ -1168,7 +1168,7 @@ object pubsub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SchemaIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SchemaIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.pubsub.SchemaIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.pubsub.SchemaIamPolicyArgs.builder
     com.pulumi.gcp.pubsub.SchemaIamPolicy(name,
@@ -1188,7 +1188,7 @@ object pubsub:
    * &gt; **Note:** You can retrieve the email of the Google Managed Pub/Sub Service Account used for forwarding
    * by using the `gcp.projects.ServiceIdentity` resource.
    */
-  def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.pubsub.SubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.pubsub.SubscriptionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1442,7 +1442,7 @@ object pubsub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SubscriptionIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubscriptionIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.pubsub.SubscriptionIAMBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.pubsub.SubscriptionIAMBindingArgs.builder
     com.pulumi.gcp.pubsub.SubscriptionIAMBinding(name,
@@ -1693,7 +1693,7 @@ object pubsub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SubscriptionIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubscriptionIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.pubsub.SubscriptionIAMMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.pubsub.SubscriptionIAMMemberArgs.builder
     com.pulumi.gcp.pubsub.SubscriptionIAMMember(name,
@@ -1944,7 +1944,7 @@ object pubsub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SubscriptionIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubscriptionIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.pubsub.SubscriptionIAMPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.pubsub.SubscriptionIAMPolicyArgs.builder
     com.pulumi.gcp.pubsub.SubscriptionIAMPolicy(name,
@@ -1963,7 +1963,7 @@ object pubsub:
    * &gt; **Note:** You can retrieve the email of the Google Managed Pub/Sub Service Account used for forwarding
    * by using the `gcp.projects.ServiceIdentity` resource.
    */
-  def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.pubsub.TopicArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.pubsub.TopicArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2272,7 +2272,7 @@ object pubsub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TopicIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TopicIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.pubsub.TopicIAMBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.pubsub.TopicIAMBindingArgs.builder
     com.pulumi.gcp.pubsub.TopicIAMBinding(name,
@@ -2578,7 +2578,7 @@ object pubsub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TopicIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TopicIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.pubsub.TopicIAMMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.pubsub.TopicIAMMemberArgs.builder
     com.pulumi.gcp.pubsub.TopicIAMMember(name,
@@ -2884,7 +2884,7 @@ object pubsub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TopicIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TopicIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.pubsub.TopicIAMPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.pubsub.TopicIAMPolicyArgs.builder
     com.pulumi.gcp.pubsub.TopicIAMPolicy(name,

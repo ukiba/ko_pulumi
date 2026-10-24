@@ -36,7 +36,7 @@ object siteverification:
    * * How-to Guides
    *     * [Getting Started](https://developers.google.com/site-verification/v1/getting_started)
    */
-  def Owner(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Owner(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.siteverification.OwnerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.siteverification.OwnerArgs.builder
     com.pulumi.gcp.siteverification.Owner(name,
@@ -93,7 +93,7 @@ object siteverification:
    * * How-to Guides
    *     * [Getting Started](https://developers.google.com/site-verification/v1/getting_started)
    */
-  def WebResource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WebResource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.siteverification.WebResourceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.siteverification.WebResourceArgs.builder
     com.pulumi.gcp.siteverification.WebResource(name,

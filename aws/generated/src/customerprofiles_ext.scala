@@ -7,7 +7,7 @@ object customerprofiles_ext:
      * @param matching A block that specifies the process of matching duplicate profiles. Documented below.
      * @return builder
      */
-    def matching(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainMatchingArgs.Builder]):
+    inline def matching(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainMatchingArgs.Builder]):
         com.pulumi.aws.customerprofiles.DomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.DomainMatchingArgs.builder
       builder.matching(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object customerprofiles_ext:
      * @param ruleBasedMatching A block that specifies the process of matching duplicate profiles using the Rule-Based matching. Documented below.
      * @return builder
      */
-    def ruleBasedMatching(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingArgs.Builder]):
+    inline def ruleBasedMatching(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingArgs.Builder]):
         com.pulumi.aws.customerprofiles.DomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingArgs.builder
       builder.ruleBasedMatching(args(argsBuilder).build)
@@ -26,7 +26,7 @@ object customerprofiles_ext:
      * @param address A block that specifies a generic address associated with the customer that is not mailing, shipping, or billing. Documented below.
      * @return builder
      */
-    def address(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.ProfileAddressArgs.Builder]):
+    inline def address(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.ProfileAddressArgs.Builder]):
         com.pulumi.aws.customerprofiles.ProfileArgs.Builder =
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.ProfileAddressArgs.builder
       builder.address(args(argsBuilder).build)
@@ -35,7 +35,7 @@ object customerprofiles_ext:
      * @param billingAddress A block that specifies the customer\u2019s billing address. Documented below.
      * @return builder
      */
-    def billingAddress(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.ProfileBillingAddressArgs.Builder]):
+    inline def billingAddress(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.ProfileBillingAddressArgs.Builder]):
         com.pulumi.aws.customerprofiles.ProfileArgs.Builder =
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.ProfileBillingAddressArgs.builder
       builder.billingAddress(args(argsBuilder).build)
@@ -44,7 +44,7 @@ object customerprofiles_ext:
      * @param mailingAddress A block that specifies the customer\u2019s mailing address. Documented below.
      * @return builder
      */
-    def mailingAddress(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.ProfileMailingAddressArgs.Builder]):
+    inline def mailingAddress(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.ProfileMailingAddressArgs.Builder]):
         com.pulumi.aws.customerprofiles.ProfileArgs.Builder =
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.ProfileMailingAddressArgs.builder
       builder.mailingAddress(args(argsBuilder).build)
@@ -53,7 +53,7 @@ object customerprofiles_ext:
      * @param shippingAddress A block that specifies the customer\u2019s shipping address. Documented below.
      * @return builder
      */
-    def shippingAddress(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.ProfileShippingAddressArgs.Builder]):
+    inline def shippingAddress(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.ProfileShippingAddressArgs.Builder]):
         com.pulumi.aws.customerprofiles.ProfileArgs.Builder =
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.ProfileShippingAddressArgs.builder
       builder.shippingAddress(args(argsBuilder).build)
@@ -63,7 +63,7 @@ object customerprofiles_ext:
      * @param autoMerging A block that specifies the configuration about the auto-merging process. Documented below.
      * @return builder
      */
-    def autoMerging(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainMatchingAutoMergingArgs.Builder]):
+    inline def autoMerging(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainMatchingAutoMergingArgs.Builder]):
         com.pulumi.aws.customerprofiles.inputs.DomainMatchingArgs.Builder =
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.DomainMatchingAutoMergingArgs.builder
       builder.autoMerging(args(argsBuilder).build)
@@ -72,7 +72,7 @@ object customerprofiles_ext:
      * @param exportingConfig A block that specifies the configuration for exporting Identity Resolution results. Documented below.
      * @return builder
      */
-    def exportingConfig(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainMatchingExportingConfigArgs.Builder]):
+    inline def exportingConfig(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainMatchingExportingConfigArgs.Builder]):
         com.pulumi.aws.customerprofiles.inputs.DomainMatchingArgs.Builder =
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.DomainMatchingExportingConfigArgs.builder
       builder.exportingConfig(args(argsBuilder).build)
@@ -81,7 +81,7 @@ object customerprofiles_ext:
      * @param jobSchedule A block that specifies the day and time when you want to start the Identity Resolution Job every week. Documented below.
      * @return builder
      */
-    def jobSchedule(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainMatchingJobScheduleArgs.Builder]):
+    inline def jobSchedule(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainMatchingJobScheduleArgs.Builder]):
         com.pulumi.aws.customerprofiles.inputs.DomainMatchingArgs.Builder =
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.DomainMatchingJobScheduleArgs.builder
       builder.jobSchedule(args(argsBuilder).build)
@@ -91,7 +91,7 @@ object customerprofiles_ext:
      * @param conflictResolution A block that specifies how the auto-merging process should resolve conflicts between different profiles. Documented below.
      * @return builder
      */
-    def conflictResolution(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainMatchingAutoMergingConflictResolutionArgs.Builder]):
+    inline def conflictResolution(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainMatchingAutoMergingConflictResolutionArgs.Builder]):
         com.pulumi.aws.customerprofiles.inputs.DomainMatchingAutoMergingArgs.Builder =
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.DomainMatchingAutoMergingConflictResolutionArgs.builder
       builder.conflictResolution(args(argsBuilder).build)
@@ -101,13 +101,13 @@ object customerprofiles_ext:
      * * ` minAllowedConfidenceScoreForMerging  ` - (Optional) A number between 0 and 1 that represents the minimum confidence score required for profiles within a matching group to be merged during the auto-merge process. A higher score means higher similarity required to merge profiles.
      * @return builder
      */
-    def consolidation(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainMatchingAutoMergingConsolidationArgs.Builder]):
+    inline def consolidation(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainMatchingAutoMergingConsolidationArgs.Builder]):
         com.pulumi.aws.customerprofiles.inputs.DomainMatchingAutoMergingArgs.Builder =
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.DomainMatchingAutoMergingConsolidationArgs.builder
       builder.consolidation(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.customerprofiles.inputs.DomainMatchingExportingConfigArgs.Builder)
-    def s3Exporting(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainMatchingExportingConfigS3ExportingArgs.Builder]):
+    inline def s3Exporting(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainMatchingExportingConfigS3ExportingArgs.Builder]):
         com.pulumi.aws.customerprofiles.inputs.DomainMatchingExportingConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.DomainMatchingExportingConfigS3ExportingArgs.builder
       builder.s3Exporting(args(argsBuilder).build)
@@ -117,7 +117,7 @@ object customerprofiles_ext:
      * @param attributeTypesSelector A block that configures information about the `AttributeTypesSelector` where the rule-based identity resolution uses to match profiles. Documented below.
      * @return builder
      */
-    def attributeTypesSelector(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingAttributeTypesSelectorArgs.Builder]):
+    inline def attributeTypesSelector(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingAttributeTypesSelectorArgs.Builder]):
         com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingArgs.Builder =
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingAttributeTypesSelectorArgs.builder
       builder.attributeTypesSelector(args(argsBuilder).build)
@@ -126,7 +126,7 @@ object customerprofiles_ext:
      * @param conflictResolution A block that specifies how the auto-merging process should resolve conflicts between different profiles. Documented below.
      * @return builder
      */
-    def conflictResolution(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingConflictResolutionArgs.Builder]):
+    inline def conflictResolution(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingConflictResolutionArgs.Builder]):
         com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingArgs.Builder =
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingConflictResolutionArgs.builder
       builder.conflictResolution(args(argsBuilder).build)
@@ -135,7 +135,7 @@ object customerprofiles_ext:
      * @param exportingConfig A block that specifies the configuration for exporting Identity Resolution results. Documented below.
      * @return builder
      */
-    def exportingConfig(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingExportingConfigArgs.Builder]):
+    inline def exportingConfig(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingExportingConfigArgs.Builder]):
         com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingArgs.Builder =
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingExportingConfigArgs.builder
       builder.exportingConfig(args(argsBuilder).build)
@@ -144,13 +144,13 @@ object customerprofiles_ext:
      * @param matchingRules A block that configures how the rule-based matching process should match profiles. You can have up to 15 `rule` in the `natchingRules`. Documented below.
      * @return builder
      */
-    def matchingRules(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingMatchingRuleArgs.Builder]*):
+    inline def matchingRules(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingMatchingRuleArgs.Builder]*):
         com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingArgs.Builder =
       def argsBuilder = com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingMatchingRuleArgs.builder
       builder.matchingRules(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingExportingConfigArgs.Builder)
-    def s3Exporting(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingExportingConfigS3ExportingArgs.Builder]):
+    inline def s3Exporting(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingExportingConfigS3ExportingArgs.Builder]):
         com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingExportingConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingExportingConfigS3ExportingArgs.builder
       builder.s3Exporting(args(argsBuilder).build)
@@ -160,7 +160,7 @@ object customerprofiles_ext:
      * @param matching A block that specifies the process of matching duplicate profiles. Documented below.
      * @return builder
      */
-    def matching(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainMatchingArgs.Builder]):
+    inline def matching(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainMatchingArgs.Builder]):
         com.pulumi.aws.customerprofiles.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.DomainMatchingArgs.builder
       builder.matching(args(argsBuilder).build)
@@ -169,7 +169,7 @@ object customerprofiles_ext:
      * @param ruleBasedMatching A block that specifies the process of matching duplicate profiles using the Rule-Based matching. Documented below.
      * @return builder
      */
-    def ruleBasedMatching(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingArgs.Builder]):
+    inline def ruleBasedMatching(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingArgs.Builder]):
         com.pulumi.aws.customerprofiles.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.DomainRuleBasedMatchingArgs.builder
       builder.ruleBasedMatching(args(argsBuilder).build)
@@ -179,7 +179,7 @@ object customerprofiles_ext:
      * @param address A block that specifies a generic address associated with the customer that is not mailing, shipping, or billing. Documented below.
      * @return builder
      */
-    def address(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.ProfileAddressArgs.Builder]):
+    inline def address(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.ProfileAddressArgs.Builder]):
         com.pulumi.aws.customerprofiles.inputs.ProfileState.Builder =
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.ProfileAddressArgs.builder
       builder.address(args(argsBuilder).build)
@@ -188,7 +188,7 @@ object customerprofiles_ext:
      * @param billingAddress A block that specifies the customer\u2019s billing address. Documented below.
      * @return builder
      */
-    def billingAddress(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.ProfileBillingAddressArgs.Builder]):
+    inline def billingAddress(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.ProfileBillingAddressArgs.Builder]):
         com.pulumi.aws.customerprofiles.inputs.ProfileState.Builder =
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.ProfileBillingAddressArgs.builder
       builder.billingAddress(args(argsBuilder).build)
@@ -197,7 +197,7 @@ object customerprofiles_ext:
      * @param mailingAddress A block that specifies the customer\u2019s mailing address. Documented below.
      * @return builder
      */
-    def mailingAddress(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.ProfileMailingAddressArgs.Builder]):
+    inline def mailingAddress(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.ProfileMailingAddressArgs.Builder]):
         com.pulumi.aws.customerprofiles.inputs.ProfileState.Builder =
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.ProfileMailingAddressArgs.builder
       builder.mailingAddress(args(argsBuilder).build)
@@ -206,7 +206,7 @@ object customerprofiles_ext:
      * @param shippingAddress A block that specifies the customer\u2019s shipping address. Documented below.
      * @return builder
      */
-    def shippingAddress(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.ProfileShippingAddressArgs.Builder]):
+    inline def shippingAddress(args: Endofunction[com.pulumi.aws.customerprofiles.inputs.ProfileShippingAddressArgs.Builder]):
         com.pulumi.aws.customerprofiles.inputs.ProfileState.Builder =
       val argsBuilder = com.pulumi.aws.customerprofiles.inputs.ProfileShippingAddressArgs.builder
       builder.shippingAddress(args(argsBuilder).build)

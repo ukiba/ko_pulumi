@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object vectorsearch:
   /** Description */
-  def Collection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Collection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vectorsearch.CollectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vectorsearch.CollectionArgs.builder
     com.pulumi.gcp.vectorsearch.Collection(name,
@@ -37,7 +37,7 @@ object vectorsearch:
    * longer available and DataObjects must be created via `CreateDataObject`
    * (as this resource does) or via `batchCreate`.
    */
-  def DataObject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataObject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vectorsearch.DataObjectArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vectorsearch.DataObjectArgs.builder
     com.pulumi.gcp.vectorsearch.DataObject(name,
@@ -48,7 +48,7 @@ object vectorsearch:
    * An Index defines an approximate nearest-neighbor search structure over a
    * field of a Vector Search Collection.
    */
-  def Index(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Index(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vectorsearch.IndexArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vectorsearch.IndexArgs.builder
     com.pulumi.gcp.vectorsearch.Index(name,

@@ -8,7 +8,7 @@ object cleanrooms:
    * Provides a AWS Clean Rooms collaboration.
    * All members included in the definition will be invited to join the collaboration and can create memberships.
    */
-  def Collaboration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Collaboration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cleanrooms.CollaborationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cleanrooms.CollaborationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -26,7 +26,7 @@ object cleanrooms:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a AWS Clean Rooms configured table. Configured tables are used to represent references to existing tables in the AWS Glue Data Catalog. */
-  def ConfiguredTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConfiguredTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cleanrooms.ConfiguredTableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cleanrooms.ConfiguredTableArgs.builder
     conf.logicalName2physicalName(name) match
@@ -44,7 +44,7 @@ object cleanrooms:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a AWS Clean Rooms membership. Memberships are used to join a Clean Rooms collaboration by the invited member. */
-  def Membership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Membership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cleanrooms.MembershipArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cleanrooms.MembershipArgs.builder
     argsBuilder = args(argsBuilder)

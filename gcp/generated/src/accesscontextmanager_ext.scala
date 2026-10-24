@@ -8,7 +8,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def basic(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicArgs.Builder]):
+    inline def basic(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.AccessLevelArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicArgs.builder
       builder.basic(args(argsBuilder).build)
@@ -19,7 +19,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def custom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelCustomArgs.Builder]):
+    inline def custom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelCustomArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.AccessLevelArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelCustomArgs.builder
       builder.custom(args(argsBuilder).build)
@@ -32,7 +32,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def devicePolicy(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelConditionDevicePolicyArgs.Builder]):
+    inline def devicePolicy(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelConditionDevicePolicyArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.AccessLevelConditionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelConditionDevicePolicyArgs.builder
       builder.devicePolicy(args(argsBuilder).build)
@@ -42,7 +42,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcNetworkSources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelConditionVpcNetworkSourceArgs.Builder]*):
+    inline def vpcNetworkSources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelConditionVpcNetworkSourceArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.AccessLevelConditionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelConditionVpcNetworkSourceArgs.builder
       builder.vpcNetworkSources(args.map(_(argsBuilder).build)*)
@@ -53,19 +53,19 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accessLevels(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelArgs.Builder]*):
+    inline def accessLevels(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.AccessLevelsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelArgs.builder
       builder.accessLevels(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.accesscontextmanager.AccessPolicyIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessPolicyIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessPolicyIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.AccessPolicyIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessPolicyIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.accesscontextmanager.AccessPolicyIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessPolicyIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessPolicyIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.AccessPolicyIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessPolicyIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -76,7 +76,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def principal(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingPrincipalArgs.Builder]):
+    inline def principal(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingPrincipalArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.GcpUserAccessBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingPrincipalArgs.builder
       builder.principal(args(argsBuilder).build)
@@ -86,7 +86,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scopedAccessSettings(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingArgs.Builder]*):
+    inline def scopedAccessSettings(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.GcpUserAccessBindingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingArgs.builder
       builder.scopedAccessSettings(args.map(_(argsBuilder).build)*)
@@ -96,7 +96,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sessionSettings(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingSessionSettingsArgs.Builder]):
+    inline def sessionSettings(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingSessionSettingsArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.GcpUserAccessBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingSessionSettingsArgs.builder
       builder.sessionSettings(args(argsBuilder).build)
@@ -110,7 +110,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def spec(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecArgs.Builder]):
+    inline def spec(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.ServicePerimeterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecArgs.builder
       builder.spec(args(argsBuilder).build)
@@ -122,7 +122,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def status(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusArgs.Builder]):
+    inline def status(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.ServicePerimeterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusArgs.builder
       builder.status(args(argsBuilder).build)
@@ -133,7 +133,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def egressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressFromArgs.Builder]):
+    inline def egressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressFromArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.ServicePerimeterDryRunEgressPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressFromArgs.builder
       builder.egressFrom(args(argsBuilder).build)
@@ -144,7 +144,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def egressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressToArgs.Builder]):
+    inline def egressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressToArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.ServicePerimeterDryRunEgressPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressToArgs.builder
       builder.egressTo(args(argsBuilder).build)
@@ -156,7 +156,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressFromArgs.Builder]):
+    inline def ingressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressFromArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.ServicePerimeterDryRunIngressPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressFromArgs.builder
       builder.ingressFrom(args(argsBuilder).build)
@@ -167,7 +167,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressToArgs.Builder]):
+    inline def ingressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressToArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.ServicePerimeterDryRunIngressPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressToArgs.builder
       builder.ingressTo(args(argsBuilder).build)
@@ -178,7 +178,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def egressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressFromArgs.Builder]):
+    inline def egressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressFromArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.ServicePerimeterEgressPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressFromArgs.builder
       builder.egressFrom(args(argsBuilder).build)
@@ -189,7 +189,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def egressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressToArgs.Builder]):
+    inline def egressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressToArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.ServicePerimeterEgressPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressToArgs.builder
       builder.egressTo(args(argsBuilder).build)
@@ -201,7 +201,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressFromArgs.Builder]):
+    inline def ingressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressFromArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.ServicePerimeterIngressPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressFromArgs.builder
       builder.ingressFrom(args(argsBuilder).build)
@@ -212,7 +212,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressToArgs.Builder]):
+    inline def ingressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressToArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.ServicePerimeterIngressPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressToArgs.builder
       builder.ingressTo(args(argsBuilder).build)
@@ -223,7 +223,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def servicePerimeters(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterArgs.Builder]*):
+    inline def servicePerimeters(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.ServicePerimetersArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterArgs.builder
       builder.servicePerimeters(args.map(_(argsBuilder).build)*)
@@ -234,7 +234,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicConditionArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -247,7 +247,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def devicePolicy(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicConditionDevicePolicyArgs.Builder]):
+    inline def devicePolicy(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicConditionDevicePolicyArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicConditionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicConditionDevicePolicyArgs.builder
       builder.devicePolicy(args(argsBuilder).build)
@@ -257,7 +257,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcNetworkSources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicConditionVpcNetworkSourceArgs.Builder]*):
+    inline def vpcNetworkSources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicConditionVpcNetworkSourceArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicConditionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicConditionVpcNetworkSourceArgs.builder
       builder.vpcNetworkSources(args.map(_(argsBuilder).build)*)
@@ -269,7 +269,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def osConstraints(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicConditionDevicePolicyOsConstraintArgs.Builder]*):
+    inline def osConstraints(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicConditionDevicePolicyOsConstraintArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicConditionDevicePolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicConditionDevicePolicyOsConstraintArgs.builder
       builder.osConstraints(args.map(_(argsBuilder).build)*)
@@ -280,7 +280,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcSubnetwork(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicConditionVpcNetworkSourceVpcSubnetworkArgs.Builder]):
+    inline def vpcSubnetwork(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicConditionVpcNetworkSourceVpcSubnetworkArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicConditionVpcNetworkSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicConditionVpcNetworkSourceVpcSubnetworkArgs.builder
       builder.vpcSubnetwork(args(argsBuilder).build)
@@ -292,7 +292,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def osConstraints(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelConditionDevicePolicyOsConstraintArgs.Builder]*):
+    inline def osConstraints(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelConditionDevicePolicyOsConstraintArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelConditionDevicePolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelConditionDevicePolicyOsConstraintArgs.builder
       builder.osConstraints(args.map(_(argsBuilder).build)*)
@@ -305,7 +305,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def devicePolicy(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelConditionDevicePolicyArgs.Builder]):
+    inline def devicePolicy(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelConditionDevicePolicyArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelConditionState.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelConditionDevicePolicyArgs.builder
       builder.devicePolicy(args(argsBuilder).build)
@@ -315,7 +315,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcNetworkSources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelConditionVpcNetworkSourceArgs.Builder]*):
+    inline def vpcNetworkSources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelConditionVpcNetworkSourceArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelConditionState.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelConditionVpcNetworkSourceArgs.builder
       builder.vpcNetworkSources(args.map(_(argsBuilder).build)*)
@@ -326,7 +326,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcSubnetwork(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelConditionVpcNetworkSourceVpcSubnetworkArgs.Builder]):
+    inline def vpcSubnetwork(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelConditionVpcNetworkSourceVpcSubnetworkArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelConditionVpcNetworkSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelConditionVpcNetworkSourceVpcSubnetworkArgs.builder
       builder.vpcSubnetwork(args(argsBuilder).build)
@@ -339,7 +339,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def expr(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelCustomExprArgs.Builder]):
+    inline def expr(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelCustomExprArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelCustomArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelCustomExprArgs.builder
       builder.expr(args(argsBuilder).build)
@@ -350,7 +350,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def basic(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicArgs.Builder]):
+    inline def basic(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelState.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelBasicArgs.builder
       builder.basic(args(argsBuilder).build)
@@ -361,7 +361,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def custom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelCustomArgs.Builder]):
+    inline def custom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelCustomArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelState.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelCustomArgs.builder
       builder.custom(args(argsBuilder).build)
@@ -372,7 +372,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def basic(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelBasicArgs.Builder]):
+    inline def basic(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelBasicArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelBasicArgs.builder
       builder.basic(args(argsBuilder).build)
@@ -383,7 +383,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def custom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelCustomArgs.Builder]):
+    inline def custom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelCustomArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelCustomArgs.builder
       builder.custom(args(argsBuilder).build)
@@ -394,7 +394,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelBasicConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelBasicConditionArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelBasicArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelBasicConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -407,7 +407,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def devicePolicy(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelBasicConditionDevicePolicyArgs.Builder]):
+    inline def devicePolicy(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelBasicConditionDevicePolicyArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelBasicConditionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelBasicConditionDevicePolicyArgs.builder
       builder.devicePolicy(args(argsBuilder).build)
@@ -417,7 +417,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcNetworkSources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelBasicConditionVpcNetworkSourceArgs.Builder]*):
+    inline def vpcNetworkSources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelBasicConditionVpcNetworkSourceArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelBasicConditionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelBasicConditionVpcNetworkSourceArgs.builder
       builder.vpcNetworkSources(args.map(_(argsBuilder).build)*)
@@ -429,7 +429,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def osConstraints(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelBasicConditionDevicePolicyOsConstraintArgs.Builder]*):
+    inline def osConstraints(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelBasicConditionDevicePolicyOsConstraintArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelBasicConditionDevicePolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelBasicConditionDevicePolicyOsConstraintArgs.builder
       builder.osConstraints(args.map(_(argsBuilder).build)*)
@@ -440,7 +440,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcSubnetwork(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelBasicConditionVpcNetworkSourceVpcSubnetworkArgs.Builder]):
+    inline def vpcSubnetwork(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelBasicConditionVpcNetworkSourceVpcSubnetworkArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelBasicConditionVpcNetworkSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelBasicConditionVpcNetworkSourceVpcSubnetworkArgs.builder
       builder.vpcSubnetwork(args(argsBuilder).build)
@@ -453,7 +453,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def expr(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelCustomExprArgs.Builder]):
+    inline def expr(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelCustomExprArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelCustomArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelCustomExprArgs.builder
       builder.expr(args(argsBuilder).build)
@@ -464,19 +464,19 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accessLevels(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelArgs.Builder]*):
+    inline def accessLevels(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsState.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessLevelsAccessLevelArgs.builder
       builder.accessLevels(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.AccessPolicyIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessPolicyIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessPolicyIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.AccessPolicyIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessPolicyIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.accesscontextmanager.inputs.AccessPolicyIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessPolicyIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.AccessPolicyIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.AccessPolicyIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.AccessPolicyIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -487,7 +487,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sessionSettings(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingActiveSettingsSessionSettingsArgs.Builder]):
+    inline def sessionSettings(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingActiveSettingsSessionSettingsArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingActiveSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingActiveSettingsSessionSettingsArgs.builder
       builder.sessionSettings(args(argsBuilder).build)
@@ -498,7 +498,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def activeSettings(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingActiveSettingsArgs.Builder]):
+    inline def activeSettings(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingActiveSettingsArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingActiveSettingsArgs.builder
       builder.activeSettings(args(argsBuilder).build)
@@ -508,7 +508,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dryRunSettings(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingDryRunSettingsArgs.Builder]):
+    inline def dryRunSettings(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingDryRunSettingsArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingDryRunSettingsArgs.builder
       builder.dryRunSettings(args(argsBuilder).build)
@@ -518,7 +518,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scope(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingScopeArgs.Builder]):
+    inline def scope(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingScopeArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingScopeArgs.builder
       builder.scope(args(argsBuilder).build)
@@ -529,7 +529,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clientScope(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingScopeClientScopeArgs.Builder]):
+    inline def clientScope(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingScopeClientScopeArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingScopeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingScopeClientScopeArgs.builder
       builder.clientScope(args(argsBuilder).build)
@@ -540,7 +540,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def restrictedClientApplication(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingScopeClientScopeRestrictedClientApplicationArgs.Builder]):
+    inline def restrictedClientApplication(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingScopeClientScopeRestrictedClientApplicationArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingScopeClientScopeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingScopeClientScopeRestrictedClientApplicationArgs.builder
       builder.restrictedClientApplication(args(argsBuilder).build)
@@ -551,7 +551,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def principal(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingPrincipalArgs.Builder]):
+    inline def principal(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingPrincipalArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingPrincipalArgs.builder
       builder.principal(args(argsBuilder).build)
@@ -561,7 +561,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scopedAccessSettings(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingArgs.Builder]*):
+    inline def scopedAccessSettings(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingState.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingScopedAccessSettingArgs.builder
       builder.scopedAccessSettings(args.map(_(argsBuilder).build)*)
@@ -571,7 +571,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sessionSettings(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingSessionSettingsArgs.Builder]):
+    inline def sessionSettings(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingSessionSettingsArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.GcpUserAccessBindingSessionSettingsArgs.builder
       builder.sessionSettings(args(argsBuilder).build)
@@ -582,7 +582,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressFromSourceArgs.Builder]*):
+    inline def sources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressFromSourceArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressFromArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
@@ -594,7 +594,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressFromSourcePscEndpointArgs.Builder]):
+    inline def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressFromSourcePscEndpointArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressFromSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressFromSourcePscEndpointArgs.builder
       builder.pscEndpoint(args(argsBuilder).build)
@@ -606,7 +606,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operations(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressToOperationArgs.Builder]*):
+    inline def operations(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressToOperationArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressToArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressToOperationArgs.builder
       builder.operations(args.map(_(argsBuilder).build)*)
@@ -620,7 +620,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def methodSelectors(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressToOperationMethodSelectorArgs.Builder]*):
+    inline def methodSelectors(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressToOperationMethodSelectorArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressToOperationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressToOperationMethodSelectorArgs.builder
       builder.methodSelectors(args.map(_(argsBuilder).build)*)
@@ -631,7 +631,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def egressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressFromArgs.Builder]):
+    inline def egressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressFromArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressFromArgs.builder
       builder.egressFrom(args(argsBuilder).build)
@@ -642,7 +642,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def egressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressToArgs.Builder]):
+    inline def egressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressToArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunEgressPolicyEgressToArgs.builder
       builder.egressTo(args(argsBuilder).build)
@@ -653,7 +653,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressFromSourceArgs.Builder]*):
+    inline def sources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressFromSourceArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressFromArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
@@ -665,7 +665,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressFromSourcePscEndpointArgs.Builder]):
+    inline def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressFromSourcePscEndpointArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressFromSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressFromSourcePscEndpointArgs.builder
       builder.pscEndpoint(args(argsBuilder).build)
@@ -677,7 +677,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operations(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressToOperationArgs.Builder]*):
+    inline def operations(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressToOperationArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressToArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressToOperationArgs.builder
       builder.operations(args.map(_(argsBuilder).build)*)
@@ -691,7 +691,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def methodSelectors(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressToOperationMethodSelectorArgs.Builder]*):
+    inline def methodSelectors(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressToOperationMethodSelectorArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressToOperationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressToOperationMethodSelectorArgs.builder
       builder.methodSelectors(args.map(_(argsBuilder).build)*)
@@ -703,7 +703,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressFromArgs.Builder]):
+    inline def ingressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressFromArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressFromArgs.builder
       builder.ingressFrom(args(argsBuilder).build)
@@ -714,7 +714,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressToArgs.Builder]):
+    inline def ingressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressToArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterDryRunIngressPolicyIngressToArgs.builder
       builder.ingressTo(args(argsBuilder).build)
@@ -725,7 +725,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressFromSourceArgs.Builder]*):
+    inline def sources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressFromSourceArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressFromArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
@@ -737,7 +737,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressFromSourcePscEndpointArgs.Builder]):
+    inline def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressFromSourcePscEndpointArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressFromSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressFromSourcePscEndpointArgs.builder
       builder.pscEndpoint(args(argsBuilder).build)
@@ -749,7 +749,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operations(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressToOperationArgs.Builder]*):
+    inline def operations(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressToOperationArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressToArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressToOperationArgs.builder
       builder.operations(args.map(_(argsBuilder).build)*)
@@ -763,7 +763,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def methodSelectors(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressToOperationMethodSelectorArgs.Builder]*):
+    inline def methodSelectors(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressToOperationMethodSelectorArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressToOperationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressToOperationMethodSelectorArgs.builder
       builder.methodSelectors(args.map(_(argsBuilder).build)*)
@@ -774,7 +774,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def egressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressFromArgs.Builder]):
+    inline def egressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressFromArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressFromArgs.builder
       builder.egressFrom(args(argsBuilder).build)
@@ -785,7 +785,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def egressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressToArgs.Builder]):
+    inline def egressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressToArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterEgressPolicyEgressToArgs.builder
       builder.egressTo(args(argsBuilder).build)
@@ -796,7 +796,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressFromSourceArgs.Builder]*):
+    inline def sources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressFromSourceArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressFromArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
@@ -808,7 +808,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressFromSourcePscEndpointArgs.Builder]):
+    inline def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressFromSourcePscEndpointArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressFromSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressFromSourcePscEndpointArgs.builder
       builder.pscEndpoint(args(argsBuilder).build)
@@ -820,7 +820,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operations(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressToOperationArgs.Builder]*):
+    inline def operations(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressToOperationArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressToArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressToOperationArgs.builder
       builder.operations(args.map(_(argsBuilder).build)*)
@@ -834,7 +834,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def methodSelectors(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressToOperationMethodSelectorArgs.Builder]*):
+    inline def methodSelectors(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressToOperationMethodSelectorArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressToOperationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressToOperationMethodSelectorArgs.builder
       builder.methodSelectors(args.map(_(argsBuilder).build)*)
@@ -846,7 +846,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressFromArgs.Builder]):
+    inline def ingressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressFromArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressFromArgs.builder
       builder.ingressFrom(args(argsBuilder).build)
@@ -857,7 +857,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressToArgs.Builder]):
+    inline def ingressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressToArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterIngressPolicyIngressToArgs.builder
       builder.ingressTo(args(argsBuilder).build)
@@ -871,7 +871,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def egressPolicies(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyArgs.Builder]*):
+    inline def egressPolicies(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyArgs.builder
       builder.egressPolicies(args.map(_(argsBuilder).build)*)
@@ -884,7 +884,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingressPolicies(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyArgs.Builder]*):
+    inline def ingressPolicies(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyArgs.builder
       builder.ingressPolicies(args.map(_(argsBuilder).build)*)
@@ -895,7 +895,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcAccessibleServices(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesArgs.Builder]):
+    inline def vpcAccessibleServices(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesArgs.builder
       builder.vpcAccessibleServices(args(argsBuilder).build)
@@ -906,7 +906,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def egressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressFromArgs.Builder]):
+    inline def egressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressFromArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressFromArgs.builder
       builder.egressFrom(args(argsBuilder).build)
@@ -917,7 +917,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def egressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressToArgs.Builder]):
+    inline def egressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressToArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressToArgs.builder
       builder.egressTo(args(argsBuilder).build)
@@ -928,7 +928,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressFromSourceArgs.Builder]*):
+    inline def sources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressFromSourceArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressFromArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
@@ -940,7 +940,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressFromSourcePscEndpointArgs.Builder]):
+    inline def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressFromSourcePscEndpointArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressFromSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressFromSourcePscEndpointArgs.builder
       builder.pscEndpoint(args(argsBuilder).build)
@@ -952,7 +952,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operations(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressToOperationArgs.Builder]*):
+    inline def operations(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressToOperationArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressToArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressToOperationArgs.builder
       builder.operations(args.map(_(argsBuilder).build)*)
@@ -966,7 +966,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def methodSelectors(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressToOperationMethodSelectorArgs.Builder]*):
+    inline def methodSelectors(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressToOperationMethodSelectorArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressToOperationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecEgressPolicyEgressToOperationMethodSelectorArgs.builder
       builder.methodSelectors(args.map(_(argsBuilder).build)*)
@@ -978,7 +978,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressFromArgs.Builder]):
+    inline def ingressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressFromArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressFromArgs.builder
       builder.ingressFrom(args(argsBuilder).build)
@@ -989,7 +989,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressToArgs.Builder]):
+    inline def ingressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressToArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressToArgs.builder
       builder.ingressTo(args(argsBuilder).build)
@@ -1000,7 +1000,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressFromSourceArgs.Builder]*):
+    inline def sources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressFromSourceArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressFromArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
@@ -1012,7 +1012,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressFromSourcePscEndpointArgs.Builder]):
+    inline def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressFromSourcePscEndpointArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressFromSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressFromSourcePscEndpointArgs.builder
       builder.pscEndpoint(args(argsBuilder).build)
@@ -1024,7 +1024,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operations(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressToOperationArgs.Builder]*):
+    inline def operations(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressToOperationArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressToArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressToOperationArgs.builder
       builder.operations(args.map(_(argsBuilder).build)*)
@@ -1038,7 +1038,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def methodSelectors(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressToOperationMethodSelectorArgs.Builder]*):
+    inline def methodSelectors(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressToOperationMethodSelectorArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressToOperationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecIngressPolicyIngressToOperationMethodSelectorArgs.builder
       builder.methodSelectors(args.map(_(argsBuilder).build)*)
@@ -1049,7 +1049,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modifiers(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierArgs.Builder]*):
+    inline def modifiers(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierArgs.builder
       builder.modifiers(args.map(_(argsBuilder).build)*)
@@ -1060,7 +1060,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def addRequestHeader(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierAddRequestHeaderArgs.Builder]):
+    inline def addRequestHeader(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierAddRequestHeaderArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierAddRequestHeaderArgs.builder
       builder.addRequestHeader(args(argsBuilder).build)
@@ -1072,7 +1072,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allowedServicePatterns(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternArgs.Builder]*):
+    inline def allowedServicePatterns(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternArgs.builder
       builder.allowedServicePatterns(args.map(_(argsBuilder).build)*)
@@ -1086,7 +1086,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def spec(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecArgs.Builder]):
+    inline def spec(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterState.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterSpecArgs.builder
       builder.spec(args(argsBuilder).build)
@@ -1098,7 +1098,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def status(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusArgs.Builder]):
+    inline def status(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterState.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusArgs.builder
       builder.status(args(argsBuilder).build)
@@ -1112,7 +1112,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def egressPolicies(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyArgs.Builder]*):
+    inline def egressPolicies(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyArgs.builder
       builder.egressPolicies(args.map(_(argsBuilder).build)*)
@@ -1125,7 +1125,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingressPolicies(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyArgs.Builder]*):
+    inline def ingressPolicies(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyArgs.builder
       builder.ingressPolicies(args.map(_(argsBuilder).build)*)
@@ -1136,7 +1136,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcAccessibleServices(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesArgs.Builder]):
+    inline def vpcAccessibleServices(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesArgs.builder
       builder.vpcAccessibleServices(args(argsBuilder).build)
@@ -1147,7 +1147,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def egressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressFromArgs.Builder]):
+    inline def egressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressFromArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressFromArgs.builder
       builder.egressFrom(args(argsBuilder).build)
@@ -1158,7 +1158,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def egressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressToArgs.Builder]):
+    inline def egressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressToArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressToArgs.builder
       builder.egressTo(args(argsBuilder).build)
@@ -1169,7 +1169,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressFromSourceArgs.Builder]*):
+    inline def sources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressFromSourceArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressFromArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
@@ -1181,7 +1181,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressFromSourcePscEndpointArgs.Builder]):
+    inline def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressFromSourcePscEndpointArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressFromSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressFromSourcePscEndpointArgs.builder
       builder.pscEndpoint(args(argsBuilder).build)
@@ -1193,7 +1193,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operations(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressToOperationArgs.Builder]*):
+    inline def operations(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressToOperationArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressToArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressToOperationArgs.builder
       builder.operations(args.map(_(argsBuilder).build)*)
@@ -1207,7 +1207,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def methodSelectors(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressToOperationMethodSelectorArgs.Builder]*):
+    inline def methodSelectors(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressToOperationMethodSelectorArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressToOperationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusEgressPolicyEgressToOperationMethodSelectorArgs.builder
       builder.methodSelectors(args.map(_(argsBuilder).build)*)
@@ -1219,7 +1219,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressFromArgs.Builder]):
+    inline def ingressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressFromArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressFromArgs.builder
       builder.ingressFrom(args(argsBuilder).build)
@@ -1230,7 +1230,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressToArgs.Builder]):
+    inline def ingressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressToArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressToArgs.builder
       builder.ingressTo(args(argsBuilder).build)
@@ -1241,7 +1241,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressFromSourceArgs.Builder]*):
+    inline def sources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressFromSourceArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressFromArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
@@ -1253,7 +1253,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressFromSourcePscEndpointArgs.Builder]):
+    inline def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressFromSourcePscEndpointArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressFromSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressFromSourcePscEndpointArgs.builder
       builder.pscEndpoint(args(argsBuilder).build)
@@ -1265,7 +1265,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operations(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressToOperationArgs.Builder]*):
+    inline def operations(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressToOperationArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressToArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressToOperationArgs.builder
       builder.operations(args.map(_(argsBuilder).build)*)
@@ -1279,7 +1279,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def methodSelectors(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressToOperationMethodSelectorArgs.Builder]*):
+    inline def methodSelectors(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressToOperationMethodSelectorArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressToOperationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusIngressPolicyIngressToOperationMethodSelectorArgs.builder
       builder.methodSelectors(args.map(_(argsBuilder).build)*)
@@ -1290,7 +1290,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modifiers(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierArgs.Builder]*):
+    inline def modifiers(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierArgs.builder
       builder.modifiers(args.map(_(argsBuilder).build)*)
@@ -1301,7 +1301,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def addRequestHeader(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierAddRequestHeaderArgs.Builder]):
+    inline def addRequestHeader(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierAddRequestHeaderArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierAddRequestHeaderArgs.builder
       builder.addRequestHeader(args(argsBuilder).build)
@@ -1313,7 +1313,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allowedServicePatterns(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternArgs.Builder]*):
+    inline def allowedServicePatterns(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternArgs.builder
       builder.allowedServicePatterns(args.map(_(argsBuilder).build)*)
@@ -1327,7 +1327,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def spec(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecArgs.Builder]):
+    inline def spec(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecArgs.builder
       builder.spec(args(argsBuilder).build)
@@ -1339,7 +1339,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def status(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusArgs.Builder]):
+    inline def status(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusArgs.builder
       builder.status(args(argsBuilder).build)
@@ -1353,7 +1353,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def egressPolicies(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyArgs.Builder]*):
+    inline def egressPolicies(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyArgs.builder
       builder.egressPolicies(args.map(_(argsBuilder).build)*)
@@ -1366,7 +1366,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingressPolicies(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyArgs.Builder]*):
+    inline def ingressPolicies(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyArgs.builder
       builder.ingressPolicies(args.map(_(argsBuilder).build)*)
@@ -1377,7 +1377,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcAccessibleServices(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesArgs.Builder]):
+    inline def vpcAccessibleServices(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesArgs.builder
       builder.vpcAccessibleServices(args(argsBuilder).build)
@@ -1388,7 +1388,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def egressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressFromArgs.Builder]):
+    inline def egressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressFromArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressFromArgs.builder
       builder.egressFrom(args(argsBuilder).build)
@@ -1399,7 +1399,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def egressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressToArgs.Builder]):
+    inline def egressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressToArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressToArgs.builder
       builder.egressTo(args(argsBuilder).build)
@@ -1410,7 +1410,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressFromSourceArgs.Builder]*):
+    inline def sources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressFromSourceArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressFromArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
@@ -1422,7 +1422,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressFromSourcePscEndpointArgs.Builder]):
+    inline def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressFromSourcePscEndpointArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressFromSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressFromSourcePscEndpointArgs.builder
       builder.pscEndpoint(args(argsBuilder).build)
@@ -1434,7 +1434,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operations(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressToOperationArgs.Builder]*):
+    inline def operations(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressToOperationArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressToArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressToOperationArgs.builder
       builder.operations(args.map(_(argsBuilder).build)*)
@@ -1448,7 +1448,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def methodSelectors(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressToOperationMethodSelectorArgs.Builder]*):
+    inline def methodSelectors(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressToOperationMethodSelectorArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressToOperationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecEgressPolicyEgressToOperationMethodSelectorArgs.builder
       builder.methodSelectors(args.map(_(argsBuilder).build)*)
@@ -1460,7 +1460,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressFromArgs.Builder]):
+    inline def ingressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressFromArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressFromArgs.builder
       builder.ingressFrom(args(argsBuilder).build)
@@ -1471,7 +1471,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressToArgs.Builder]):
+    inline def ingressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressToArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressToArgs.builder
       builder.ingressTo(args(argsBuilder).build)
@@ -1482,7 +1482,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressFromSourceArgs.Builder]*):
+    inline def sources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressFromSourceArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressFromArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
@@ -1494,7 +1494,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressFromSourcePscEndpointArgs.Builder]):
+    inline def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressFromSourcePscEndpointArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressFromSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressFromSourcePscEndpointArgs.builder
       builder.pscEndpoint(args(argsBuilder).build)
@@ -1506,7 +1506,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operations(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressToOperationArgs.Builder]*):
+    inline def operations(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressToOperationArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressToArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressToOperationArgs.builder
       builder.operations(args.map(_(argsBuilder).build)*)
@@ -1520,7 +1520,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def methodSelectors(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressToOperationMethodSelectorArgs.Builder]*):
+    inline def methodSelectors(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressToOperationMethodSelectorArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressToOperationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecIngressPolicyIngressToOperationMethodSelectorArgs.builder
       builder.methodSelectors(args.map(_(argsBuilder).build)*)
@@ -1531,7 +1531,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modifiers(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierArgs.Builder]*):
+    inline def modifiers(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierArgs.builder
       builder.modifiers(args.map(_(argsBuilder).build)*)
@@ -1542,7 +1542,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def addRequestHeader(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierAddRequestHeaderArgs.Builder]):
+    inline def addRequestHeader(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierAddRequestHeaderArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternModifierAddRequestHeaderArgs.builder
       builder.addRequestHeader(args(argsBuilder).build)
@@ -1554,7 +1554,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allowedServicePatterns(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternArgs.Builder]*):
+    inline def allowedServicePatterns(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterSpecVpcAccessibleServicesAllowedServicePatternArgs.builder
       builder.allowedServicePatterns(args.map(_(argsBuilder).build)*)
@@ -1568,7 +1568,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def egressPolicies(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyArgs.Builder]*):
+    inline def egressPolicies(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyArgs.builder
       builder.egressPolicies(args.map(_(argsBuilder).build)*)
@@ -1581,7 +1581,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingressPolicies(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyArgs.Builder]*):
+    inline def ingressPolicies(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyArgs.builder
       builder.ingressPolicies(args.map(_(argsBuilder).build)*)
@@ -1592,7 +1592,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcAccessibleServices(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesArgs.Builder]):
+    inline def vpcAccessibleServices(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesArgs.builder
       builder.vpcAccessibleServices(args(argsBuilder).build)
@@ -1603,7 +1603,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def egressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressFromArgs.Builder]):
+    inline def egressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressFromArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressFromArgs.builder
       builder.egressFrom(args(argsBuilder).build)
@@ -1614,7 +1614,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def egressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressToArgs.Builder]):
+    inline def egressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressToArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressToArgs.builder
       builder.egressTo(args(argsBuilder).build)
@@ -1625,7 +1625,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressFromSourceArgs.Builder]*):
+    inline def sources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressFromSourceArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressFromArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
@@ -1637,7 +1637,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressFromSourcePscEndpointArgs.Builder]):
+    inline def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressFromSourcePscEndpointArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressFromSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressFromSourcePscEndpointArgs.builder
       builder.pscEndpoint(args(argsBuilder).build)
@@ -1649,7 +1649,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operations(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressToOperationArgs.Builder]*):
+    inline def operations(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressToOperationArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressToArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressToOperationArgs.builder
       builder.operations(args.map(_(argsBuilder).build)*)
@@ -1663,7 +1663,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def methodSelectors(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressToOperationMethodSelectorArgs.Builder]*):
+    inline def methodSelectors(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressToOperationMethodSelectorArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressToOperationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusEgressPolicyEgressToOperationMethodSelectorArgs.builder
       builder.methodSelectors(args.map(_(argsBuilder).build)*)
@@ -1675,7 +1675,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressFromArgs.Builder]):
+    inline def ingressFrom(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressFromArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressFromArgs.builder
       builder.ingressFrom(args(argsBuilder).build)
@@ -1686,7 +1686,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressToArgs.Builder]):
+    inline def ingressTo(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressToArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressToArgs.builder
       builder.ingressTo(args(argsBuilder).build)
@@ -1697,7 +1697,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressFromSourceArgs.Builder]*):
+    inline def sources(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressFromSourceArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressFromArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
@@ -1709,7 +1709,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressFromSourcePscEndpointArgs.Builder]):
+    inline def pscEndpoint(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressFromSourcePscEndpointArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressFromSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressFromSourcePscEndpointArgs.builder
       builder.pscEndpoint(args(argsBuilder).build)
@@ -1721,7 +1721,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operations(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressToOperationArgs.Builder]*):
+    inline def operations(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressToOperationArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressToArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressToOperationArgs.builder
       builder.operations(args.map(_(argsBuilder).build)*)
@@ -1735,7 +1735,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def methodSelectors(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressToOperationMethodSelectorArgs.Builder]*):
+    inline def methodSelectors(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressToOperationMethodSelectorArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressToOperationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusIngressPolicyIngressToOperationMethodSelectorArgs.builder
       builder.methodSelectors(args.map(_(argsBuilder).build)*)
@@ -1746,7 +1746,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modifiers(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierArgs.Builder]*):
+    inline def modifiers(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierArgs.builder
       builder.modifiers(args.map(_(argsBuilder).build)*)
@@ -1757,7 +1757,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def addRequestHeader(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierAddRequestHeaderArgs.Builder]):
+    inline def addRequestHeader(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierAddRequestHeaderArgs.Builder]):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierArgs.Builder =
       val argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternModifierAddRequestHeaderArgs.builder
       builder.addRequestHeader(args(argsBuilder).build)
@@ -1769,7 +1769,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allowedServicePatterns(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternArgs.Builder]*):
+    inline def allowedServicePatterns(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterStatusVpcAccessibleServicesAllowedServicePatternArgs.builder
       builder.allowedServicePatterns(args.map(_(argsBuilder).build)*)
@@ -1780,7 +1780,7 @@ object accesscontextmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def servicePerimeters(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterArgs.Builder]*):
+    inline def servicePerimeters(args: Endofunction[com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterArgs.Builder]*):
         com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersState.Builder =
       def argsBuilder = com.pulumi.gcp.accesscontextmanager.inputs.ServicePerimetersServicePerimeterArgs.builder
       builder.servicePerimeters(args.map(_(argsBuilder).build)*)

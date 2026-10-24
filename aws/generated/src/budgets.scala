@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object budgets:
   /** Manages a budgets budget resource. Budgets use the cost visualization provided by Cost Explorer to show you the status of your budgets, to provide forecasts of your estimated costs, and to track your AWS usage, including your free tier usage. For more detailed documentation about each argument, refer to the [AWS official documentation](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/data-type-budget.html). */
-  def Budget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Budget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.budgets.BudgetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.budgets.BudgetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25,7 +25,7 @@ object budgets:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a budget action resource. Budget actions are cost savings controls that run either automatically on your behalf or by using a workflow approval process. */
-  def BudgetAction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BudgetAction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.budgets.BudgetActionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.budgets.BudgetActionArgs.builder
     argsBuilder = args(argsBuilder)

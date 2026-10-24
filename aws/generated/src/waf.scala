@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object waf:
   /** Provides a WAF Byte Match Set Resource */
-  def ByteMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ByteMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.waf.ByteMatchSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.waf.ByteMatchSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18,7 +18,7 @@ object waf:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF Geo Match Set Resource */
-  def GeoMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GeoMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.waf.GeoMatchSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.waf.GeoMatchSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -29,7 +29,7 @@ object waf:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF IPSet Resource */
-  def IpSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IpSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.waf.IpSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.waf.IpSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -40,7 +40,7 @@ object waf:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF Rate Based Rule Resource */
-  def RateBasedRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RateBasedRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.waf.RateBasedRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.waf.RateBasedRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -58,7 +58,7 @@ object waf:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF Regex Match Set Resource */
-  def RegexMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegexMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.waf.RegexMatchSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.waf.RegexMatchSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -69,7 +69,7 @@ object waf:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF Regex Pattern Set Resource */
-  def RegexPatternSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegexPatternSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.waf.RegexPatternSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.waf.RegexPatternSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -80,7 +80,7 @@ object waf:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF Rule Resource */
-  def Rule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Rule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.waf.RuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.waf.RuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -98,7 +98,7 @@ object waf:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF Rule Group Resource */
-  def RuleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RuleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.waf.RuleGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.waf.RuleGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -116,7 +116,7 @@ object waf:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Use the `aws.waf.SizeConstraintSet` resource to manage WAF size constraint sets. */
-  def SizeConstraintSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SizeConstraintSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.waf.SizeConstraintSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.waf.SizeConstraintSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -127,7 +127,7 @@ object waf:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF SQL Injection Match Set Resource */
-  def SqlInjectionMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SqlInjectionMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.waf.SqlInjectionMatchSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.waf.SqlInjectionMatchSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -219,7 +219,7 @@ object waf:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides a WAF Web ACL Resource */
-  def WebAcl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WebAcl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.waf.WebAclArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.waf.WebAclArgs.builder
     conf.logicalName2physicalName(name) match
@@ -237,7 +237,7 @@ object waf:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF XSS Match Set Resource */
-  def XssMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def XssMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.waf.XssMatchSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.waf.XssMatchSetArgs.builder
     conf.logicalName2physicalName(name) match

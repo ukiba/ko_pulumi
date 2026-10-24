@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object kusto:
   /** Manages a Kusto (also known as Azure Data Explorer) Attached Database Configuration */
-  def AttachedDatabaseConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AttachedDatabaseConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.kusto.AttachedDatabaseConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.kusto.AttachedDatabaseConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18,7 +18,7 @@ object kusto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kusto (also known as Azure Data Explorer) Cluster */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.kusto.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.kusto.ClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -36,7 +36,7 @@ object kusto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Customer Managed Key for a Kusto Cluster. */
-  def ClusterCustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterCustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.kusto.ClusterCustomerManagedKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.kusto.ClusterCustomerManagedKeyArgs.builder
     com.pulumi.azure.kusto.ClusterCustomerManagedKey(name,
@@ -44,7 +44,7 @@ object kusto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Managed Private Endpoint for a Kusto Cluster. */
-  def ClusterManagedPrivateEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterManagedPrivateEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.kusto.ClusterManagedPrivateEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.kusto.ClusterManagedPrivateEndpointArgs.builder
     conf.logicalName2physicalName(name) match
@@ -55,7 +55,7 @@ object kusto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kusto Cluster Principal Assignment. */
-  def ClusterPrincipalAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterPrincipalAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.kusto.ClusterPrincipalAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.kusto.ClusterPrincipalAssignmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -66,7 +66,7 @@ object kusto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kusto / Cosmos Database Data Connection. */
-  def CosmosdbDataConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CosmosdbDataConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.kusto.CosmosdbDataConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.kusto.CosmosdbDataConnectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -81,7 +81,7 @@ object kusto:
    * 
    * &gt; **Note:** To mitigate the possibility of accidental data loss it is highly recommended that you use the `preventDestroy` lifecycle argument in your configuration file for this resource. For more information on the `preventDestroy` lifecycle argument please see the terraform documentation.
    */
-  def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.kusto.DatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.kusto.DatabaseArgs.builder
     conf.logicalName2physicalName(name) match
@@ -92,7 +92,7 @@ object kusto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kusto (also known as Azure Data Explorer) Database Principal Assignment. */
-  def DatabasePrincipalAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DatabasePrincipalAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.kusto.DatabasePrincipalAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.kusto.DatabasePrincipalAssignmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -103,7 +103,7 @@ object kusto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kusto (also known as Azure Data Explorer) Event Grid Data Connection */
-  def EventGridDataConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EventGridDataConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.kusto.EventGridDataConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.kusto.EventGridDataConnectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -114,7 +114,7 @@ object kusto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kusto (also known as Azure Data Explorer) EventHub Data Connection */
-  def EventhubDataConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EventhubDataConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.kusto.EventhubDataConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.kusto.EventhubDataConnectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -125,7 +125,7 @@ object kusto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kusto (also known as Azure Data Explorer) IotHub Data Connection */
-  def IotHubDataConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IotHubDataConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.kusto.IotHubDataConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.kusto.IotHubDataConnectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -169,7 +169,7 @@ object kusto:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Kusto Script. */
-  def Script(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Script(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.kusto.ScriptArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.kusto.ScriptArgs.builder
     conf.logicalName2physicalName(name) match

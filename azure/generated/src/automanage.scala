@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object automanage:
   /** Manages an Automanage Configuration. */
-  def Configuration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Configuration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automanage.ConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automanage.ConfigurationArgs.builder
     conf.logicalName2physicalName(name) match

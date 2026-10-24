@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object operationalinsights:
   /** Manages a Log Analytics (formally Operational Insights) Solution. */
-  def AnalyticsSolution(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AnalyticsSolution(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.operationalinsights.AnalyticsSolutionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.operationalinsights.AnalyticsSolutionArgs.builder
     argsBuilder = args(argsBuilder)
@@ -22,7 +22,7 @@ object operationalinsights:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Log Analytics (formally Operational Insights) Workspace. */
-  def AnalyticsWorkspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AnalyticsWorkspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.operationalinsights.AnalyticsWorkspaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.operationalinsights.AnalyticsWorkspaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -57,7 +57,7 @@ object operationalinsights:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Log Analytics Query Pack Query. */
-  def QueryPackQuery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def QueryPackQuery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.operationalinsights.QueryPackQueryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.operationalinsights.QueryPackQueryArgs.builder
     conf.logicalName2physicalName(name) match

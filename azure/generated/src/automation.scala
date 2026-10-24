@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object automation:
   /** Manages an Automation Account. */
-  def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.AccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.AccountArgs.builder
     conf.logicalName2physicalName(name) match
@@ -154,7 +154,7 @@ object automation:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a boolean variable in Azure Automation */
-  def BoolVariable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BoolVariable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.BoolVariableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.BoolVariableArgs.builder
     conf.logicalName2physicalName(name) match
@@ -165,7 +165,7 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Certificate. */
-  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.CertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.CertificateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -176,7 +176,7 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Connection. */
-  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.ConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.ConnectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -187,7 +187,7 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Connection with type `Azure`. */
-  def ConnectionCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConnectionCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.ConnectionCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.ConnectionCertificateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -198,7 +198,7 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Connection with type `AzureClassicCertificate`. */
-  def ConnectionClassicCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConnectionClassicCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.ConnectionClassicCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.ConnectionClassicCertificateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -209,7 +209,7 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Connection with type `AzureServicePrincipal`. */
-  def ConnectionServicePrincipal(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConnectionServicePrincipal(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.ConnectionServicePrincipalArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.ConnectionServicePrincipalArgs.builder
     conf.logicalName2physicalName(name) match
@@ -220,7 +220,7 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages anAutomation Connection Type. */
-  def ConnectionType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConnectionType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.ConnectionTypeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.ConnectionTypeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -231,7 +231,7 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation Credential. */
-  def Credential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Credential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.CredentialArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.CredentialArgs.builder
     conf.logicalName2physicalName(name) match
@@ -242,7 +242,7 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a DateTime variable in Azure Automation */
-  def DateTimeVariable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DateTimeVariable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.DateTimeVariableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.DateTimeVariableArgs.builder
     conf.logicalName2physicalName(name) match
@@ -253,7 +253,7 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation DSC Configuration. */
-  def DscConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DscConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.DscConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.DscConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -271,7 +271,7 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation DSC Node Configuration. */
-  def DscNodeConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DscNodeConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.DscNodeConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.DscNodeConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -282,7 +282,7 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation Hybrid Runbook Worker. */
-  def HybridRunbookWorker(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HybridRunbookWorker(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.HybridRunbookWorkerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.automation.HybridRunbookWorkerArgs.builder
     com.pulumi.azure.automation.HybridRunbookWorker(name,
@@ -290,7 +290,7 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation Hybrid Runbook Worker Group. */
-  def HybridRunbookWorkerGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HybridRunbookWorkerGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.HybridRunbookWorkerGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.HybridRunbookWorkerGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -301,7 +301,7 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a integer variable in Azure Automation */
-  def IntVariable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IntVariable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.IntVariableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.IntVariableArgs.builder
     conf.logicalName2physicalName(name) match
@@ -316,7 +316,7 @@ object automation:
    * 
    * &gt; **Note:** AzureRM provides this stand-alone azure.automation.JobSchedule and an inlined `jobSchedule` property in azurermRunbook to manage the job schedules. You can only make use of one of these methods to manage a job schedule.
    */
-  def JobSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def JobSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.JobScheduleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.automation.JobScheduleArgs.builder
     com.pulumi.azure.automation.JobSchedule(name,
@@ -324,7 +324,7 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation Module. */
-  def Module(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Module(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.ModuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.ModuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -335,7 +335,7 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation Powershell 7.2 Module. */
-  def Powershell72Module(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Powershell72Module(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.Powershell72ModuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.Powershell72ModuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -353,7 +353,7 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation Python3 Package. */
-  def Python3Package(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Python3Package(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.Python3PackageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.Python3PackageArgs.builder
     conf.logicalName2physicalName(name) match
@@ -371,7 +371,7 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation Runbook. */
-  def RunBook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RunBook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.RunBookArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.RunBookArgs.builder
     conf.logicalName2physicalName(name) match
@@ -389,7 +389,7 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Runtime Environment. */
-  def RuntimeEnvironment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RuntimeEnvironment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.RuntimeEnvironmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.RuntimeEnvironmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -407,7 +407,7 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Package within an Automation Runtime Environment. */
-  def RuntimeEnvironmentPackage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RuntimeEnvironmentPackage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.RuntimeEnvironmentPackageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.RuntimeEnvironmentPackageArgs.builder
     conf.logicalName2physicalName(name) match
@@ -418,7 +418,7 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation Schedule. */
-  def Schedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Schedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.ScheduleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.ScheduleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -433,7 +433,7 @@ object automation:
    * 
    * &gt; **Note:** The `azure.automation.SoftwareUpdateConfiguration` resource has been deprecated because the Azure Automation Update Management was retired on 2024-08-31 and has been shutdown on 2025-02-28. This resource will be removed in v5.0 of the AzureRM Provider. Please migrate to Azure Update Manager, and use the `azure.maintenance.Configuration` resource combined with the appropriate assignment resources instead. See https://techcommunity.microsoft.com/blog/azuregovernanceandmanagementblog/log-analytics-agent-based-azure-management-services-shut-down-starting-28-februa/4381853 for more information.
    */
-  def SoftwareUpdateConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SoftwareUpdateConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.SoftwareUpdateConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.SoftwareUpdateConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -444,7 +444,7 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Source Control. */
-  def SourceControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SourceControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.SourceControlArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.SourceControlArgs.builder
     conf.logicalName2physicalName(name) match
@@ -455,7 +455,7 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a string variable in Azure Automation */
-  def StringVariable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StringVariable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.StringVariableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.StringVariableArgs.builder
     conf.logicalName2physicalName(name) match
@@ -466,7 +466,7 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an object variable in Azure Automation */
-  def VariableObject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VariableObject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.VariableObjectArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.VariableObjectArgs.builder
     conf.logicalName2physicalName(name) match
@@ -477,7 +477,7 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Wacher. */
-  def Watcher(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Watcher(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.WatcherArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.WatcherArgs.builder
     conf.logicalName2physicalName(name) match
@@ -495,7 +495,7 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Runbook&#39;s Webhook. */
-  def Webhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Webhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.automation.WebhookArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.WebhookArgs.builder
     conf.logicalName2physicalName(name) match

@@ -7,7 +7,7 @@ object fluidrelay_ext:
      * @param customerManagedKey A `customerManagedKey` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def customerManagedKey(args: Endofunction[com.pulumi.azure.fluidrelay.inputs.ServerCustomerManagedKeyArgs.Builder]):
+    inline def customerManagedKey(args: Endofunction[com.pulumi.azure.fluidrelay.inputs.ServerCustomerManagedKeyArgs.Builder]):
         com.pulumi.azure.fluidrelay.ServerArgs.Builder =
       val argsBuilder = com.pulumi.azure.fluidrelay.inputs.ServerCustomerManagedKeyArgs.builder
       builder.customerManagedKey(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object fluidrelay_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.fluidrelay.inputs.ServerIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.fluidrelay.inputs.ServerIdentityArgs.Builder]):
         com.pulumi.azure.fluidrelay.ServerArgs.Builder =
       val argsBuilder = com.pulumi.azure.fluidrelay.inputs.ServerIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -26,7 +26,7 @@ object fluidrelay_ext:
      * @param customerManagedKey A `customerManagedKey` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def customerManagedKey(args: Endofunction[com.pulumi.azure.fluidrelay.inputs.ServerCustomerManagedKeyArgs.Builder]):
+    inline def customerManagedKey(args: Endofunction[com.pulumi.azure.fluidrelay.inputs.ServerCustomerManagedKeyArgs.Builder]):
         com.pulumi.azure.fluidrelay.inputs.ServerState.Builder =
       val argsBuilder = com.pulumi.azure.fluidrelay.inputs.ServerCustomerManagedKeyArgs.builder
       builder.customerManagedKey(args(argsBuilder).build)
@@ -35,7 +35,7 @@ object fluidrelay_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.fluidrelay.inputs.ServerIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.fluidrelay.inputs.ServerIdentityArgs.Builder]):
         com.pulumi.azure.fluidrelay.inputs.ServerState.Builder =
       val argsBuilder = com.pulumi.azure.fluidrelay.inputs.ServerIdentityArgs.builder
       builder.identity(args(argsBuilder).build)

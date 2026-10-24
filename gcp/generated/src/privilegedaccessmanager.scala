@@ -16,7 +16,7 @@ object privilegedaccessmanager:
    *     * [How to create an Entitlement](https://cloud.google.com/iam/docs/pam-create-entitlements)
    *     * [Official Documentation](https://cloud.google.com/iam/docs/pam-overview)
    */
-  def Entitlement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Entitlement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.EntitlementArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.EntitlementArgs.builder
     com.pulumi.gcp.privilegedaccessmanager.Entitlement(name,
@@ -69,7 +69,7 @@ object privilegedaccessmanager:
    *     * [Configure Privileged Access Manager settings](https://cloud.google.com/iam/docs/pam-configure-settings)
    *     * [Official Documentation](https://cloud.google.com/iam/docs/pam-overview)
    */
-  def Settings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Settings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.SettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.SettingsArgs.builder
     com.pulumi.gcp.privilegedaccessmanager.Settings(name,

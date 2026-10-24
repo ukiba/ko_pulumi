@@ -10,7 +10,7 @@ object ec2clientvpn:
    * Provides authorization rules for AWS Client VPN endpoints. For more information on usage, please see the
    * [AWS Client VPN Administrator&#39;s Guide](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html).
    */
-  def AuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2clientvpn.AuthorizationRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2clientvpn.AuthorizationRuleArgs.builder
     com.pulumi.aws.ec2clientvpn.AuthorizationRule(name,
@@ -38,7 +38,7 @@ object ec2clientvpn:
    * Provides an AWS Client VPN endpoint for OpenVPN clients. For more information on usage, please see the
    * [AWS Client VPN Administrator&#39;s Guide](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html).
    */
-  def Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2clientvpn.EndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2clientvpn.EndpointArgs.builder
     argsBuilder = args(argsBuilder)
@@ -56,7 +56,7 @@ object ec2clientvpn:
    * Provides network associations for AWS Client VPN endpoints. For more information on usage, please see the
    * [AWS Client VPN Administrator&#39;s Guide](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html).
    */
-  def NetworkAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2clientvpn.NetworkAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2clientvpn.NetworkAssociationArgs.builder
     com.pulumi.aws.ec2clientvpn.NetworkAssociation(name,
@@ -67,7 +67,7 @@ object ec2clientvpn:
    * Provides additional routes for AWS Client VPN endpoints. For more information on usage, please see the
    * [AWS Client VPN Administrator&#39;s Guide](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html).
    */
-  def Route(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Route(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2clientvpn.RouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2clientvpn.RouteArgs.builder
     com.pulumi.aws.ec2clientvpn.Route(name,

@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object maps:
   /** Manages an Azure Maps Account. */
-  def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.maps.AccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.maps.AccountArgs.builder
     conf.logicalName2physicalName(name) match
@@ -29,7 +29,7 @@ object maps:
    * 
    * &gt; **Note:** The `azure.maps.Creator` resource has been deprecated because the service is retiring from 2024-09-23 and will be removed in v5.0 of the AzureRM Provider.
    */
-  def Creator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Creator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.maps.CreatorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.maps.CreatorArgs.builder
     conf.logicalName2physicalName(name) match

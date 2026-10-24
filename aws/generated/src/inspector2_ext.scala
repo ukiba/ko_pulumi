@@ -9,7 +9,7 @@ object inspector2_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def filterCriterias(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder]*):
+    inline def filterCriterias(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder]*):
         com.pulumi.aws.inspector2.FilterArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.builder
       builder.filterCriterias(args.map(_(argsBuilder).build)*)
@@ -19,7 +19,7 @@ object inspector2_ext:
      * @param autoEnable Configuration block for auto enabling. See below.
      * @return builder
      */
-    def autoEnable(args: Endofunction[com.pulumi.aws.inspector2.inputs.OrganizationConfigurationAutoEnableArgs.Builder]):
+    inline def autoEnable(args: Endofunction[com.pulumi.aws.inspector2.inputs.OrganizationConfigurationAutoEnableArgs.Builder]):
         com.pulumi.aws.inspector2.OrganizationConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.inspector2.inputs.OrganizationConfigurationAutoEnableArgs.builder
       builder.autoEnable(args(argsBuilder).build)
@@ -29,7 +29,7 @@ object inspector2_ext:
      * @param awsAccountIds (Optional) The AWS account ID in which the finding was generated. Documented below.
      * @return builder
      */
-    def awsAccountIds(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaAwsAccountIdArgs.Builder]*):
+    inline def awsAccountIds(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaAwsAccountIdArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaAwsAccountIdArgs.builder
       builder.awsAccountIds(args.map(_(argsBuilder).build)*)
@@ -38,7 +38,7 @@ object inspector2_ext:
      * @param codeRepositoryProjectNames (Optional) The project name in a code repository. Documented below.
      * @return builder
      */
-    def codeRepositoryProjectNames(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaCodeRepositoryProjectNameArgs.Builder]*):
+    inline def codeRepositoryProjectNames(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaCodeRepositoryProjectNameArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaCodeRepositoryProjectNameArgs.builder
       builder.codeRepositoryProjectNames(args.map(_(argsBuilder).build)*)
@@ -47,7 +47,7 @@ object inspector2_ext:
      * @param codeRepositoryProviderTypes (Optional) The repository provider type (such as GitHub, GitLab, etc.) Documented below.
      * @return builder
      */
-    def codeRepositoryProviderTypes(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaCodeRepositoryProviderTypeArgs.Builder]*):
+    inline def codeRepositoryProviderTypes(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaCodeRepositoryProviderTypeArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaCodeRepositoryProviderTypeArgs.builder
       builder.codeRepositoryProviderTypes(args.map(_(argsBuilder).build)*)
@@ -56,7 +56,7 @@ object inspector2_ext:
      * @param codeVulnerabilityDetectorNames (Optional) The ID of the component. Documented below.
      * @return builder
      */
-    def codeVulnerabilityDetectorNames(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaCodeVulnerabilityDetectorNameArgs.Builder]*):
+    inline def codeVulnerabilityDetectorNames(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaCodeVulnerabilityDetectorNameArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaCodeVulnerabilityDetectorNameArgs.builder
       builder.codeVulnerabilityDetectorNames(args.map(_(argsBuilder).build)*)
@@ -65,7 +65,7 @@ object inspector2_ext:
      * @param codeVulnerabilityDetectorTags (Optional) The ID of the component. Documented below.
      * @return builder
      */
-    def codeVulnerabilityDetectorTags(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaCodeVulnerabilityDetectorTagArgs.Builder]*):
+    inline def codeVulnerabilityDetectorTags(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaCodeVulnerabilityDetectorTagArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaCodeVulnerabilityDetectorTagArgs.builder
       builder.codeVulnerabilityDetectorTags(args.map(_(argsBuilder).build)*)
@@ -74,7 +74,7 @@ object inspector2_ext:
      * @param codeVulnerabilityFilePaths (Optional) The ID of the component. Documented below.
      * @return builder
      */
-    def codeVulnerabilityFilePaths(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaCodeVulnerabilityFilePathArgs.Builder]*):
+    inline def codeVulnerabilityFilePaths(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaCodeVulnerabilityFilePathArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaCodeVulnerabilityFilePathArgs.builder
       builder.codeVulnerabilityFilePaths(args.map(_(argsBuilder).build)*)
@@ -83,7 +83,7 @@ object inspector2_ext:
      * @param componentIds (Optional) The ID of the component. Documented below.
      * @return builder
      */
-    def componentIds(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaComponentIdArgs.Builder]*):
+    inline def componentIds(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaComponentIdArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaComponentIdArgs.builder
       builder.componentIds(args.map(_(argsBuilder).build)*)
@@ -92,7 +92,7 @@ object inspector2_ext:
      * @param componentTypes (Optional) The type of the component. Documented below.
      * @return builder
      */
-    def componentTypes(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaComponentTypeArgs.Builder]*):
+    inline def componentTypes(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaComponentTypeArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaComponentTypeArgs.builder
       builder.componentTypes(args.map(_(argsBuilder).build)*)
@@ -101,7 +101,7 @@ object inspector2_ext:
      * @param ec2InstanceImageIds (Optional) ID of the AMI. Documented below.
      * @return builder
      */
-    def ec2InstanceImageIds(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEc2InstanceImageIdArgs.Builder]*):
+    inline def ec2InstanceImageIds(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEc2InstanceImageIdArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEc2InstanceImageIdArgs.builder
       builder.ec2InstanceImageIds(args.map(_(argsBuilder).build)*)
@@ -110,7 +110,7 @@ object inspector2_ext:
      * @param ec2InstanceSubnetIds (Optional) The ID of the subnet. Documented below.
      * @return builder
      */
-    def ec2InstanceSubnetIds(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEc2InstanceSubnetIdArgs.Builder]*):
+    inline def ec2InstanceSubnetIds(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEc2InstanceSubnetIdArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEc2InstanceSubnetIdArgs.builder
       builder.ec2InstanceSubnetIds(args.map(_(argsBuilder).build)*)
@@ -119,7 +119,7 @@ object inspector2_ext:
      * @param ec2InstanceVpcIds (Optional) The ID of the VPC. Documented below.
      * @return builder
      */
-    def ec2InstanceVpcIds(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEc2InstanceVpcIdArgs.Builder]*):
+    inline def ec2InstanceVpcIds(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEc2InstanceVpcIdArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEc2InstanceVpcIdArgs.builder
       builder.ec2InstanceVpcIds(args.map(_(argsBuilder).build)*)
@@ -128,7 +128,7 @@ object inspector2_ext:
      * @param ecrImageArchitectures (Optional) The architecture of the ECR image. Documented below.
      * @return builder
      */
-    def ecrImageArchitectures(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEcrImageArchitectureArgs.Builder]*):
+    inline def ecrImageArchitectures(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEcrImageArchitectureArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEcrImageArchitectureArgs.builder
       builder.ecrImageArchitectures(args.map(_(argsBuilder).build)*)
@@ -137,7 +137,7 @@ object inspector2_ext:
      * @param ecrImageHashes (Optional) The SHA256 hash of the ECR image. Documented below.
      * @return builder
      */
-    def ecrImageHashes(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEcrImageHashArgs.Builder]*):
+    inline def ecrImageHashes(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEcrImageHashArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEcrImageHashArgs.builder
       builder.ecrImageHashes(args.map(_(argsBuilder).build)*)
@@ -146,7 +146,7 @@ object inspector2_ext:
      * @param ecrImageInUseCounts (Optional)  The number of the ECR images in use. Documented below.
      * @return builder
      */
-    def ecrImageInUseCounts(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEcrImageInUseCountArgs.Builder]*):
+    inline def ecrImageInUseCounts(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEcrImageInUseCountArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEcrImageInUseCountArgs.builder
       builder.ecrImageInUseCounts(args.map(_(argsBuilder).build)*)
@@ -155,7 +155,7 @@ object inspector2_ext:
      * @param ecrImageLastInUseAts (Optional) The date range when an ECR image was last used in an ECS cluster task or EKS cluster pod. Documented below.
      * @return builder
      */
-    def ecrImageLastInUseAts(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEcrImageLastInUseAtArgs.Builder]*):
+    inline def ecrImageLastInUseAts(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEcrImageLastInUseAtArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEcrImageLastInUseAtArgs.builder
       builder.ecrImageLastInUseAts(args.map(_(argsBuilder).build)*)
@@ -164,7 +164,7 @@ object inspector2_ext:
      * @param ecrImagePushedAts (Optional) The date range when the image was pushed. Documented below.
      * @return builder
      */
-    def ecrImagePushedAts(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEcrImagePushedAtArgs.Builder]*):
+    inline def ecrImagePushedAts(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEcrImagePushedAtArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEcrImagePushedAtArgs.builder
       builder.ecrImagePushedAts(args.map(_(argsBuilder).build)*)
@@ -173,7 +173,7 @@ object inspector2_ext:
      * @param ecrImageRegistries (Optional) The registry of the ECR image. Documented below.
      * @return builder
      */
-    def ecrImageRegistries(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEcrImageRegistryArgs.Builder]*):
+    inline def ecrImageRegistries(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEcrImageRegistryArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEcrImageRegistryArgs.builder
       builder.ecrImageRegistries(args.map(_(argsBuilder).build)*)
@@ -182,7 +182,7 @@ object inspector2_ext:
      * @param ecrImageRepositoryNames (Optional) The name of the ECR repository. Documented below.
      * @return builder
      */
-    def ecrImageRepositoryNames(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEcrImageRepositoryNameArgs.Builder]*):
+    inline def ecrImageRepositoryNames(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEcrImageRepositoryNameArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEcrImageRepositoryNameArgs.builder
       builder.ecrImageRepositoryNames(args.map(_(argsBuilder).build)*)
@@ -191,7 +191,7 @@ object inspector2_ext:
      * @param ecrImageTags (Optional) The tags associated with the ECR image. Documented below.
      * @return builder
      */
-    def ecrImageTags(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEcrImageTagArgs.Builder]*):
+    inline def ecrImageTags(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEcrImageTagArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEcrImageTagArgs.builder
       builder.ecrImageTags(args.map(_(argsBuilder).build)*)
@@ -200,7 +200,7 @@ object inspector2_ext:
      * @param epssScores (Optional) EPSS (Exploit Prediction Scoring System) Score of the finding. Documented below.
      * @return builder
      */
-    def epssScores(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEpssScoreArgs.Builder]*):
+    inline def epssScores(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEpssScoreArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaEpssScoreArgs.builder
       builder.epssScores(args.map(_(argsBuilder).build)*)
@@ -209,7 +209,7 @@ object inspector2_ext:
      * @param exploitAvailables (Optional) Availability of exploits. Documented below.
      * @return builder
      */
-    def exploitAvailables(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaExploitAvailableArgs.Builder]*):
+    inline def exploitAvailables(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaExploitAvailableArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaExploitAvailableArgs.builder
       builder.exploitAvailables(args.map(_(argsBuilder).build)*)
@@ -218,7 +218,7 @@ object inspector2_ext:
      * @param findingArns (Optional) The ARN of the finding. Documented below.
      * @return builder
      */
-    def findingArns(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaFindingArnArgs.Builder]*):
+    inline def findingArns(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaFindingArnArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaFindingArnArgs.builder
       builder.findingArns(args.map(_(argsBuilder).build)*)
@@ -227,7 +227,7 @@ object inspector2_ext:
      * @param findingStatuses (Optional) The status of the finding. Documented below.
      * @return builder
      */
-    def findingStatuses(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaFindingStatusArgs.Builder]*):
+    inline def findingStatuses(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaFindingStatusArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaFindingStatusArgs.builder
       builder.findingStatuses(args.map(_(argsBuilder).build)*)
@@ -236,7 +236,7 @@ object inspector2_ext:
      * @param findingTypes (Optional) The type of the finding. Documented below.
      * @return builder
      */
-    def findingTypes(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaFindingTypeArgs.Builder]*):
+    inline def findingTypes(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaFindingTypeArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaFindingTypeArgs.builder
       builder.findingTypes(args.map(_(argsBuilder).build)*)
@@ -245,7 +245,7 @@ object inspector2_ext:
      * @param firstObservedAts (Optional) When the finding was first observed. Documented below.
      * @return builder
      */
-    def firstObservedAts(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaFirstObservedAtArgs.Builder]*):
+    inline def firstObservedAts(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaFirstObservedAtArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaFirstObservedAtArgs.builder
       builder.firstObservedAts(args.map(_(argsBuilder).build)*)
@@ -254,7 +254,7 @@ object inspector2_ext:
      * @param fixAvailables (Optional) Availability of the fix. Documented below.
      * @return builder
      */
-    def fixAvailables(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaFixAvailableArgs.Builder]*):
+    inline def fixAvailables(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaFixAvailableArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaFixAvailableArgs.builder
       builder.fixAvailables(args.map(_(argsBuilder).build)*)
@@ -263,7 +263,7 @@ object inspector2_ext:
      * @param inspectorScores (Optional) The Inspector score given to the finding. Documented below.
      * @return builder
      */
-    def inspectorScores(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaInspectorScoreArgs.Builder]*):
+    inline def inspectorScores(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaInspectorScoreArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaInspectorScoreArgs.builder
       builder.inspectorScores(args.map(_(argsBuilder).build)*)
@@ -272,7 +272,7 @@ object inspector2_ext:
      * @param lambdaFunctionExecutionRoleArns (Optional) Lambda execution role ARN. Documented below.
      * @return builder
      */
-    def lambdaFunctionExecutionRoleArns(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaLambdaFunctionExecutionRoleArnArgs.Builder]*):
+    inline def lambdaFunctionExecutionRoleArns(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaLambdaFunctionExecutionRoleArnArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaLambdaFunctionExecutionRoleArnArgs.builder
       builder.lambdaFunctionExecutionRoleArns(args.map(_(argsBuilder).build)*)
@@ -281,7 +281,7 @@ object inspector2_ext:
      * @param lambdaFunctionLastModifiedAts (Optional) Last modified timestamp of the lambda function. Documented below.
      * @return builder
      */
-    def lambdaFunctionLastModifiedAts(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaLambdaFunctionLastModifiedAtArgs.Builder]*):
+    inline def lambdaFunctionLastModifiedAts(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaLambdaFunctionLastModifiedAtArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaLambdaFunctionLastModifiedAtArgs.builder
       builder.lambdaFunctionLastModifiedAts(args.map(_(argsBuilder).build)*)
@@ -290,7 +290,7 @@ object inspector2_ext:
      * @param lambdaFunctionLayers (Optional) Lambda function layers. Documented below.
      * @return builder
      */
-    def lambdaFunctionLayers(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaLambdaFunctionLayerArgs.Builder]*):
+    inline def lambdaFunctionLayers(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaLambdaFunctionLayerArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaLambdaFunctionLayerArgs.builder
       builder.lambdaFunctionLayers(args.map(_(argsBuilder).build)*)
@@ -299,7 +299,7 @@ object inspector2_ext:
      * @param lambdaFunctionNames (Optional) Lambda function name. Documented below.
      * @return builder
      */
-    def lambdaFunctionNames(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaLambdaFunctionNameArgs.Builder]*):
+    inline def lambdaFunctionNames(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaLambdaFunctionNameArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaLambdaFunctionNameArgs.builder
       builder.lambdaFunctionNames(args.map(_(argsBuilder).build)*)
@@ -308,7 +308,7 @@ object inspector2_ext:
      * @param lambdaFunctionRuntimes (Optional) Lambda function runtime. Documented below.
      * @return builder
      */
-    def lambdaFunctionRuntimes(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaLambdaFunctionRuntimeArgs.Builder]*):
+    inline def lambdaFunctionRuntimes(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaLambdaFunctionRuntimeArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaLambdaFunctionRuntimeArgs.builder
       builder.lambdaFunctionRuntimes(args.map(_(argsBuilder).build)*)
@@ -317,7 +317,7 @@ object inspector2_ext:
      * @param lastObservedAts (Optional) When the finding was last observed. Documented below.
      * @return builder
      */
-    def lastObservedAts(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaLastObservedAtArgs.Builder]*):
+    inline def lastObservedAts(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaLastObservedAtArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaLastObservedAtArgs.builder
       builder.lastObservedAts(args.map(_(argsBuilder).build)*)
@@ -326,7 +326,7 @@ object inspector2_ext:
      * @param networkProtocols (Optional) The network protocol of the finding. Documented below.
      * @return builder
      */
-    def networkProtocols(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaNetworkProtocolArgs.Builder]*):
+    inline def networkProtocols(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaNetworkProtocolArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaNetworkProtocolArgs.builder
       builder.networkProtocols(args.map(_(argsBuilder).build)*)
@@ -335,7 +335,7 @@ object inspector2_ext:
      * @param portRanges (Optional) The port range of the finding. Documented below.
      * @return builder
      */
-    def portRanges(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaPortRangeArgs.Builder]*):
+    inline def portRanges(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaPortRangeArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaPortRangeArgs.builder
       builder.portRanges(args.map(_(argsBuilder).build)*)
@@ -344,7 +344,7 @@ object inspector2_ext:
      * @param relatedVulnerabilities (Optional) Related vulnerabilities. Documented below.
      * @return builder
      */
-    def relatedVulnerabilities(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaRelatedVulnerabilityArgs.Builder]*):
+    inline def relatedVulnerabilities(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaRelatedVulnerabilityArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaRelatedVulnerabilityArgs.builder
       builder.relatedVulnerabilities(args.map(_(argsBuilder).build)*)
@@ -353,7 +353,7 @@ object inspector2_ext:
      * @param resourceIds (Optional) The ID of the resource. Documented below.
      * @return builder
      */
-    def resourceIds(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaResourceIdArgs.Builder]*):
+    inline def resourceIds(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaResourceIdArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaResourceIdArgs.builder
       builder.resourceIds(args.map(_(argsBuilder).build)*)
@@ -362,7 +362,7 @@ object inspector2_ext:
      * @param resourceTags (Optional) The tags of the resource. Documented below.
      * @return builder
      */
-    def resourceTags(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaResourceTagArgs.Builder]*):
+    inline def resourceTags(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaResourceTagArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaResourceTagArgs.builder
       builder.resourceTags(args.map(_(argsBuilder).build)*)
@@ -371,7 +371,7 @@ object inspector2_ext:
      * @param resourceTypes (Optional) The type of the resource. Documented below.
      * @return builder
      */
-    def resourceTypes(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaResourceTypeArgs.Builder]*):
+    inline def resourceTypes(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaResourceTypeArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaResourceTypeArgs.builder
       builder.resourceTypes(args.map(_(argsBuilder).build)*)
@@ -380,7 +380,7 @@ object inspector2_ext:
      * @param severities (Optional) The severity of the finding. Documented below.
      * @return builder
      */
-    def severities(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaSeverityArgs.Builder]*):
+    inline def severities(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaSeverityArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaSeverityArgs.builder
       builder.severities(args.map(_(argsBuilder).build)*)
@@ -389,7 +389,7 @@ object inspector2_ext:
      * @param titles (Optional) The title of the finding. Documented below.
      * @return builder
      */
-    def titles(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaTitleArgs.Builder]*):
+    inline def titles(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaTitleArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaTitleArgs.builder
       builder.titles(args.map(_(argsBuilder).build)*)
@@ -398,7 +398,7 @@ object inspector2_ext:
      * @param updatedAts (Optional) When the finding was last updated. Documented below.
      * @return builder
      */
-    def updatedAts(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaUpdatedAtArgs.Builder]*):
+    inline def updatedAts(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaUpdatedAtArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaUpdatedAtArgs.builder
       builder.updatedAts(args.map(_(argsBuilder).build)*)
@@ -407,7 +407,7 @@ object inspector2_ext:
      * @param vendorSeverities (Optional) The severity as reported by the vendor. Documented below.
      * @return builder
      */
-    def vendorSeverities(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVendorSeverityArgs.Builder]*):
+    inline def vendorSeverities(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVendorSeverityArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVendorSeverityArgs.builder
       builder.vendorSeverities(args.map(_(argsBuilder).build)*)
@@ -416,7 +416,7 @@ object inspector2_ext:
      * @param vulnerabilityIds (Optional) The ID of the vulnerability. Documented below.
      * @return builder
      */
-    def vulnerabilityIds(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerabilityIdArgs.Builder]*):
+    inline def vulnerabilityIds(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerabilityIdArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerabilityIdArgs.builder
       builder.vulnerabilityIds(args.map(_(argsBuilder).build)*)
@@ -425,7 +425,7 @@ object inspector2_ext:
      * @param vulnerabilitySources (Optional) The source of the vulnerability. Documented below.
      * @return builder
      */
-    def vulnerabilitySources(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerabilitySourceArgs.Builder]*):
+    inline def vulnerabilitySources(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerabilitySourceArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerabilitySourceArgs.builder
       builder.vulnerabilitySources(args.map(_(argsBuilder).build)*)
@@ -434,7 +434,7 @@ object inspector2_ext:
      * @param vulnerablePackages (Optional) Details about vulnerable packages. Documented below.
      * @return builder
      */
-    def vulnerablePackages(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageArgs.Builder]*):
+    inline def vulnerablePackages(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageArgs.builder
       builder.vulnerablePackages(args.map(_(argsBuilder).build)*)
@@ -444,7 +444,7 @@ object inspector2_ext:
      * @param architecture (Optional) The architecture of the package. Documented below.
      * @return builder
      */
-    def architecture(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageArchitectureArgs.Builder]):
+    inline def architecture(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageArchitectureArgs.Builder]):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageArgs.Builder =
       val argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageArchitectureArgs.builder
       builder.architecture(args(argsBuilder).build)
@@ -453,7 +453,7 @@ object inspector2_ext:
      * @param epoches (Optional) The epoch of the package. Documented below.
      * @return builder
      */
-    def epoches(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageEpochArgs.Builder]*):
+    inline def epoches(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageEpochArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageEpochArgs.builder
       builder.epoches(args.map(_(argsBuilder).build)*)
@@ -462,7 +462,7 @@ object inspector2_ext:
      * @param filePath (Optional) The name of the package. Documented below.
      * @return builder
      */
-    def filePath(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageFilePathArgs.Builder]):
+    inline def filePath(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageFilePathArgs.Builder]):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageArgs.Builder =
       val argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageFilePathArgs.builder
       builder.filePath(args(argsBuilder).build)
@@ -471,7 +471,7 @@ object inspector2_ext:
      * @param name Name of the filter.
      * @return builder
      */
-    def name(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageNameArgs.Builder]):
+    inline def name(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageNameArgs.Builder]):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageArgs.Builder =
       val argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageNameArgs.builder
       builder.name(args(argsBuilder).build)
@@ -480,7 +480,7 @@ object inspector2_ext:
      * @param release (Optional) The release of the package. Documented below.
      * @return builder
      */
-    def release(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageReleaseArgs.Builder]):
+    inline def release(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageReleaseArgs.Builder]):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageArgs.Builder =
       val argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageReleaseArgs.builder
       builder.release(args(argsBuilder).build)
@@ -489,7 +489,7 @@ object inspector2_ext:
      * @param sourceLambdaLayerArn (Optional) The ARN of the package&#39;s source lambda layer. Documented below.
      * @return builder
      */
-    def sourceLambdaLayerArn(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageSourceLambdaLayerArnArgs.Builder]):
+    inline def sourceLambdaLayerArn(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageSourceLambdaLayerArnArgs.Builder]):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageArgs.Builder =
       val argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageSourceLambdaLayerArnArgs.builder
       builder.sourceLambdaLayerArn(args(argsBuilder).build)
@@ -498,7 +498,7 @@ object inspector2_ext:
      * @param sourceLayerHash (Optional) The source layer hash of the package. Documented below.
      * @return builder
      */
-    def sourceLayerHash(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageSourceLayerHashArgs.Builder]):
+    inline def sourceLayerHash(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageSourceLayerHashArgs.Builder]):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageArgs.Builder =
       val argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageSourceLayerHashArgs.builder
       builder.sourceLayerHash(args(argsBuilder).build)
@@ -507,7 +507,7 @@ object inspector2_ext:
      * @param version (Optional) The version of the package. Documented below.
      * @return builder
      */
-    def version(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageVersionArgs.Builder]):
+    inline def version(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageVersionArgs.Builder]):
         com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageArgs.Builder =
       val argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaVulnerablePackageVersionArgs.builder
       builder.version(args(argsBuilder).build)
@@ -519,7 +519,7 @@ object inspector2_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def filterCriterias(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder]*):
+    inline def filterCriterias(args: Endofunction[com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.Builder]*):
         com.pulumi.aws.inspector2.inputs.FilterState.Builder =
       def argsBuilder = com.pulumi.aws.inspector2.inputs.FilterFilterCriteriaArgs.builder
       builder.filterCriterias(args.map(_(argsBuilder).build)*)
@@ -529,7 +529,7 @@ object inspector2_ext:
      * @param autoEnable Configuration block for auto enabling. See below.
      * @return builder
      */
-    def autoEnable(args: Endofunction[com.pulumi.aws.inspector2.inputs.OrganizationConfigurationAutoEnableArgs.Builder]):
+    inline def autoEnable(args: Endofunction[com.pulumi.aws.inspector2.inputs.OrganizationConfigurationAutoEnableArgs.Builder]):
         com.pulumi.aws.inspector2.inputs.OrganizationConfigurationState.Builder =
       val argsBuilder = com.pulumi.aws.inspector2.inputs.OrganizationConfigurationAutoEnableArgs.builder
       builder.autoEnable(args(argsBuilder).build)

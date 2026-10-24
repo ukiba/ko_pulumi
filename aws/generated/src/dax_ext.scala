@@ -7,7 +7,7 @@ object dax_ext:
      * @param serverSideEncryption Encrypt at rest options
      * @return builder
      */
-    def serverSideEncryption(args: Endofunction[com.pulumi.aws.dax.inputs.ClusterServerSideEncryptionArgs.Builder]):
+    inline def serverSideEncryption(args: Endofunction[com.pulumi.aws.dax.inputs.ClusterServerSideEncryptionArgs.Builder]):
         com.pulumi.aws.dax.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.aws.dax.inputs.ClusterServerSideEncryptionArgs.builder
       builder.serverSideEncryption(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object dax_ext:
      * @param parameters The parameters of the parameter group.
      * @return builder
      */
-    def parameters(args: Endofunction[com.pulumi.aws.dax.inputs.ParameterGroupParameterArgs.Builder]*):
+    inline def parameters(args: Endofunction[com.pulumi.aws.dax.inputs.ParameterGroupParameterArgs.Builder]*):
         com.pulumi.aws.dax.ParameterGroupArgs.Builder =
       def argsBuilder = com.pulumi.aws.dax.inputs.ParameterGroupParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
@@ -29,7 +29,7 @@ object dax_ext:
      * `\${aws_dax_cluster.test.nodes.0.address}`
      * @return builder
      */
-    def nodes(args: Endofunction[com.pulumi.aws.dax.inputs.ClusterNodeArgs.Builder]*):
+    inline def nodes(args: Endofunction[com.pulumi.aws.dax.inputs.ClusterNodeArgs.Builder]*):
         com.pulumi.aws.dax.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.aws.dax.inputs.ClusterNodeArgs.builder
       builder.nodes(args.map(_(argsBuilder).build)*)
@@ -38,7 +38,7 @@ object dax_ext:
      * @param serverSideEncryption Encrypt at rest options
      * @return builder
      */
-    def serverSideEncryption(args: Endofunction[com.pulumi.aws.dax.inputs.ClusterServerSideEncryptionArgs.Builder]):
+    inline def serverSideEncryption(args: Endofunction[com.pulumi.aws.dax.inputs.ClusterServerSideEncryptionArgs.Builder]):
         com.pulumi.aws.dax.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.aws.dax.inputs.ClusterServerSideEncryptionArgs.builder
       builder.serverSideEncryption(args(argsBuilder).build)
@@ -48,7 +48,7 @@ object dax_ext:
      * @param parameters The parameters of the parameter group.
      * @return builder
      */
-    def parameters(args: Endofunction[com.pulumi.aws.dax.inputs.ParameterGroupParameterArgs.Builder]*):
+    inline def parameters(args: Endofunction[com.pulumi.aws.dax.inputs.ParameterGroupParameterArgs.Builder]*):
         com.pulumi.aws.dax.inputs.ParameterGroupState.Builder =
       def argsBuilder = com.pulumi.aws.dax.inputs.ParameterGroupParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)

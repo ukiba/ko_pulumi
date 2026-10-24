@@ -15,7 +15,7 @@ object cloudbuild:
    * * How-to Guides
    *     * [Connect to a Bitbucket Server host](https://cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-server)
    */
-  def BitbucketServerConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BitbucketServerConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudbuild.BitbucketServerConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.cloudbuild.BitbucketServerConfigArgs.builder
     com.pulumi.gcp.cloudbuild.BitbucketServerConfig(name,
@@ -90,7 +90,7 @@ object cloudbuild:
    * 
    * &gt; **Note:** You can retrieve the email of the Cloud Build Service Account used in jobs by using the `gcp.projects.ServiceIdentity` resource.
    */
-  def Trigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Trigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudbuild.TriggerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudbuild.TriggerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -101,7 +101,7 @@ object cloudbuild:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Definition of custom Cloud Build WorkerPools for running jobs with custom configuration and custom networking. */
-  def WorkerPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkerPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudbuild.WorkerPoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudbuild.WorkerPoolArgs.builder
     conf.logicalName2physicalName(name) match

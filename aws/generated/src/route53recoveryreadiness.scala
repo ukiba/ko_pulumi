@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object route53recoveryreadiness:
   /** Provides an AWS Route 53 Recovery Readiness Cell. */
-  def Cell(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cell(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53recoveryreadiness.CellArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53recoveryreadiness.CellArgs.builder
     argsBuilder = args(argsBuilder)
@@ -20,7 +20,7 @@ object route53recoveryreadiness:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Route 53 Recovery Readiness Readiness Check. */
-  def ReadinessCheck(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ReadinessCheck(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53recoveryreadiness.ReadinessCheckArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53recoveryreadiness.ReadinessCheckArgs.builder
     argsBuilder = args(argsBuilder)
@@ -35,7 +35,7 @@ object route53recoveryreadiness:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Route 53 Recovery Readiness Recovery Group. */
-  def RecoveryGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RecoveryGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53recoveryreadiness.RecoveryGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53recoveryreadiness.RecoveryGroupArgs.builder
     argsBuilder = args(argsBuilder)
@@ -50,7 +50,7 @@ object route53recoveryreadiness:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Route 53 Recovery Readiness Resource Set. */
-  def ResourceSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourceSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53recoveryreadiness.ResourceSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53recoveryreadiness.ResourceSetArgs.builder
     argsBuilder = args(argsBuilder)

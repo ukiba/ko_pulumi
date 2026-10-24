@@ -12,7 +12,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def autoscalingPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyArgs.Builder]):
+    inline def autoscalingPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyArgs.Builder]):
         com.pulumi.gcp.compute.AutoscalerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyArgs.builder
       builder.autoscalingPolicy(args(argsBuilder).build)
@@ -23,7 +23,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def cdnPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendBucketCdnPolicyArgs.Builder]):
+    inline def cdnPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendBucketCdnPolicyArgs.Builder]):
         com.pulumi.gcp.compute.BackendBucketArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendBucketCdnPolicyArgs.builder
       builder.cdnPolicy(args(argsBuilder).build)
@@ -33,19 +33,19 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendBucketParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendBucketParamsArgs.Builder]):
         com.pulumi.gcp.compute.BackendBucketArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendBucketParamsArgs.builder
       builder.params(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.BackendBucketIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendBucketIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendBucketIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.BackendBucketIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendBucketIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.BackendBucketIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendBucketIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendBucketIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.BackendBucketIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendBucketIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -56,7 +56,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def backends(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceBackendArgs.Builder]*):
+    inline def backends(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceBackendArgs.Builder]*):
         com.pulumi.gcp.compute.BackendServiceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceBackendArgs.builder
       builder.backends(args.map(_(argsBuilder).build)*)
@@ -66,7 +66,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def cdnPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceCdnPolicyArgs.Builder]):
+    inline def cdnPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceCdnPolicyArgs.Builder]):
         com.pulumi.gcp.compute.BackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceCdnPolicyArgs.builder
       builder.cdnPolicy(args(argsBuilder).build)
@@ -77,7 +77,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def circuitBreakers(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceCircuitBreakersArgs.Builder]):
+    inline def circuitBreakers(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceCircuitBreakersArgs.Builder]):
         com.pulumi.gcp.compute.BackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceCircuitBreakersArgs.builder
       builder.circuitBreakers(args(argsBuilder).build)
@@ -94,7 +94,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def consistentHash(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceConsistentHashArgs.Builder]):
+    inline def consistentHash(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceConsistentHashArgs.Builder]):
         com.pulumi.gcp.compute.BackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceConsistentHashArgs.builder
       builder.consistentHash(args(argsBuilder).build)
@@ -104,7 +104,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def customMetrics(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceCustomMetricArgs.Builder]*):
+    inline def customMetrics(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceCustomMetricArgs.Builder]*):
         com.pulumi.gcp.compute.BackendServiceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceCustomMetricArgs.builder
       builder.customMetrics(args.map(_(argsBuilder).build)*)
@@ -116,7 +116,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def dynamicForwarding(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceDynamicForwardingArgs.Builder]):
+    inline def dynamicForwarding(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceDynamicForwardingArgs.Builder]):
         com.pulumi.gcp.compute.BackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceDynamicForwardingArgs.builder
       builder.dynamicForwarding(args(argsBuilder).build)
@@ -127,7 +127,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def iap(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceIapArgs.Builder]):
+    inline def iap(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceIapArgs.Builder]):
         com.pulumi.gcp.compute.BackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceIapArgs.builder
       builder.iap(args(argsBuilder).build)
@@ -142,7 +142,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def localityLbPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceLocalityLbPolicyArgs.Builder]*):
+    inline def localityLbPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceLocalityLbPolicyArgs.Builder]*):
         com.pulumi.gcp.compute.BackendServiceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceLocalityLbPolicyArgs.builder
       builder.localityLbPolicies(args.map(_(argsBuilder).build)*)
@@ -153,7 +153,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceLogConfigArgs.Builder]):
         com.pulumi.gcp.compute.BackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -168,7 +168,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def maxStreamDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceMaxStreamDurationArgs.Builder]):
+    inline def maxStreamDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceMaxStreamDurationArgs.Builder]):
         com.pulumi.gcp.compute.BackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceMaxStreamDurationArgs.builder
       builder.maxStreamDuration(args(argsBuilder).build)
@@ -179,7 +179,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def networkPassThroughLbTrafficPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceNetworkPassThroughLbTrafficPolicyArgs.Builder]):
+    inline def networkPassThroughLbTrafficPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceNetworkPassThroughLbTrafficPolicyArgs.Builder]):
         com.pulumi.gcp.compute.BackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceNetworkPassThroughLbTrafficPolicyArgs.builder
       builder.networkPassThroughLbTrafficPolicy(args(argsBuilder).build)
@@ -191,7 +191,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def outlierDetection(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceOutlierDetectionArgs.Builder]):
+    inline def outlierDetection(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceOutlierDetectionArgs.Builder]):
         com.pulumi.gcp.compute.BackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceOutlierDetectionArgs.builder
       builder.outlierDetection(args(argsBuilder).build)
@@ -201,7 +201,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceParamsArgs.Builder]):
         com.pulumi.gcp.compute.BackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -214,7 +214,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def securitySettings(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceSecuritySettingsArgs.Builder]):
+    inline def securitySettings(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceSecuritySettingsArgs.Builder]):
         com.pulumi.gcp.compute.BackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceSecuritySettingsArgs.builder
       builder.securitySettings(args(argsBuilder).build)
@@ -224,7 +224,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def strongSessionAffinityCookie(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceStrongSessionAffinityCookieArgs.Builder]):
+    inline def strongSessionAffinityCookie(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceStrongSessionAffinityCookieArgs.Builder]):
         com.pulumi.gcp.compute.BackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceStrongSessionAffinityCookieArgs.builder
       builder.strongSessionAffinityCookie(args(argsBuilder).build)
@@ -234,7 +234,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def tlsSettings(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceTlsSettingsArgs.Builder]):
+    inline def tlsSettings(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceTlsSettingsArgs.Builder]):
         com.pulumi.gcp.compute.BackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceTlsSettingsArgs.builder
       builder.tlsSettings(args(argsBuilder).build)
@@ -245,7 +245,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.BackendServiceIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -256,7 +256,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.BackendServiceIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -267,7 +267,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def instances(args: Endofunction[com.pulumi.gcp.compute.inputs.BulkPerInstanceConfigInstanceArgs.Builder]*):
+    inline def instances(args: Endofunction[com.pulumi.gcp.compute.inputs.BulkPerInstanceConfigInstanceArgs.Builder]*):
         com.pulumi.gcp.compute.BulkPerInstanceConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.BulkPerInstanceConfigInstanceArgs.builder
       builder.instances(args.map(_(argsBuilder).build)*)
@@ -278,7 +278,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def asyncPrimaryDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskAsyncPrimaryDiskArgs.Builder]):
+    inline def asyncPrimaryDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskAsyncPrimaryDiskArgs.Builder]):
         com.pulumi.gcp.compute.DiskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.DiskAsyncPrimaryDiskArgs.builder
       builder.asyncPrimaryDisk(args(argsBuilder).build)
@@ -298,7 +298,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def diskEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskDiskEncryptionKeyArgs.Builder]):
+    inline def diskEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskDiskEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.DiskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.DiskDiskEncryptionKeyArgs.builder
       builder.diskEncryptionKey(args(argsBuilder).build)
@@ -309,7 +309,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def guestOsFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskGuestOsFeatureArgs.Builder]*):
+    inline def guestOsFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskGuestOsFeatureArgs.Builder]*):
         com.pulumi.gcp.compute.DiskArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.DiskGuestOsFeatureArgs.builder
       builder.guestOsFeatures(args.map(_(argsBuilder).build)*)
@@ -319,7 +319,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskParamsArgs.Builder]):
         com.pulumi.gcp.compute.DiskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.DiskParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -330,7 +330,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def sourceImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskSourceImageEncryptionKeyArgs.Builder]):
+    inline def sourceImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskSourceImageEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.DiskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.DiskSourceImageEncryptionKeyArgs.builder
       builder.sourceImageEncryptionKey(args(argsBuilder).build)
@@ -342,7 +342,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def sourceSnapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskSourceSnapshotEncryptionKeyArgs.Builder]):
+    inline def sourceSnapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskSourceSnapshotEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.DiskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.DiskSourceSnapshotEncryptionKeyArgs.builder
       builder.sourceSnapshotEncryptionKey(args(argsBuilder).build)
@@ -352,19 +352,19 @@ object compute_ext1:
      * @param secondaryDisk The secondary disk (target of replication). You can specify only one value. Structure is documented below.
      * @return builder
      */
-    def secondaryDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskAsyncReplicationSecondaryDiskArgs.Builder]):
+    inline def secondaryDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskAsyncReplicationSecondaryDiskArgs.Builder]):
         com.pulumi.gcp.compute.DiskAsyncReplicationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.DiskAsyncReplicationSecondaryDiskArgs.builder
       builder.secondaryDisk(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.DiskIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.DiskIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.DiskIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.DiskIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.DiskIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.DiskIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -375,7 +375,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def interfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.ExternalVpnGatewayInterfaceArgs.Builder]*):
+    inline def interfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.ExternalVpnGatewayInterfaceArgs.Builder]*):
         com.pulumi.gcp.compute.ExternalVpnGatewayArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ExternalVpnGatewayInterfaceArgs.builder
       builder.interfaces(args.map(_(argsBuilder).build)*)
@@ -385,7 +385,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.ExternalVpnGatewayParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.ExternalVpnGatewayParamsArgs.Builder]):
         com.pulumi.gcp.compute.ExternalVpnGatewayArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ExternalVpnGatewayParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -398,7 +398,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def allows(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallAllowArgs.Builder]*):
+    inline def allows(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallAllowArgs.Builder]*):
         com.pulumi.gcp.compute.FirewallArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FirewallAllowArgs.builder
       builder.allows(args.map(_(argsBuilder).build)*)
@@ -409,7 +409,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def denies(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallDenyArgs.Builder]*):
+    inline def denies(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallDenyArgs.Builder]*):
         com.pulumi.gcp.compute.FirewallArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FirewallDenyArgs.builder
       builder.denies(args.map(_(argsBuilder).build)*)
@@ -420,7 +420,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallLogConfigArgs.Builder]):
         com.pulumi.gcp.compute.FirewallArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FirewallLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -430,19 +430,19 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallParamsArgs.Builder]):
         com.pulumi.gcp.compute.FirewallArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FirewallParamsArgs.builder
       builder.params(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.FirewallPolicyIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.FirewallPolicyIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FirewallPolicyIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.FirewallPolicyIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.FirewallPolicyIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FirewallPolicyIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -453,7 +453,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyRuleMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyRuleMatchArgs.Builder]):
         com.pulumi.gcp.compute.FirewallPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FirewallPolicyRuleMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -465,7 +465,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyRuleTargetSecureTagArgs.Builder]*):
+    inline def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyRuleTargetSecureTagArgs.Builder]*):
         com.pulumi.gcp.compute.FirewallPolicyRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FirewallPolicyRuleTargetSecureTagArgs.builder
       builder.targetSecureTags(args.map(_(argsBuilder).build)*)
@@ -476,7 +476,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesRuleArgs.Builder]*):
         com.pulumi.gcp.compute.FirewallPolicyWithRulesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -488,7 +488,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectoryRegistrations(args: Endofunction[com.pulumi.gcp.compute.inputs.ForwardingRuleServiceDirectoryRegistrationsArgs.Builder]):
+    inline def serviceDirectoryRegistrations(args: Endofunction[com.pulumi.gcp.compute.inputs.ForwardingRuleServiceDirectoryRegistrationsArgs.Builder]):
         com.pulumi.gcp.compute.ForwardingRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ForwardingRuleServiceDirectoryRegistrationsArgs.builder
       builder.serviceDirectoryRegistrations(args(argsBuilder).build)
@@ -499,7 +499,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def aggregateReservation(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationAggregateReservationArgs.Builder]):
+    inline def aggregateReservation(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationAggregateReservationArgs.Builder]):
         com.pulumi.gcp.compute.FutureReservationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationAggregateReservationArgs.builder
       builder.aggregateReservation(args(argsBuilder).build)
@@ -509,7 +509,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def autoCreatedReservationsDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationAutoCreatedReservationsDurationArgs.Builder]):
+    inline def autoCreatedReservationsDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationAutoCreatedReservationsDurationArgs.Builder]):
         com.pulumi.gcp.compute.FutureReservationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationAutoCreatedReservationsDurationArgs.builder
       builder.autoCreatedReservationsDuration(args(argsBuilder).build)
@@ -519,7 +519,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def commitmentInfo(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationCommitmentInfoArgs.Builder]):
+    inline def commitmentInfo(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationCommitmentInfoArgs.Builder]):
         com.pulumi.gcp.compute.FutureReservationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationCommitmentInfoArgs.builder
       builder.commitmentInfo(args(argsBuilder).build)
@@ -529,7 +529,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationParamsArgs.Builder]):
         com.pulumi.gcp.compute.FutureReservationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -539,7 +539,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def shareSettings(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationShareSettingsArgs.Builder]):
+    inline def shareSettings(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationShareSettingsArgs.Builder]):
         com.pulumi.gcp.compute.FutureReservationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationShareSettingsArgs.builder
       builder.shareSettings(args(argsBuilder).build)
@@ -549,7 +549,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def specificSkuProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationSpecificSkuPropertiesArgs.Builder]):
+    inline def specificSkuProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationSpecificSkuPropertiesArgs.Builder]):
         com.pulumi.gcp.compute.FutureReservationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationSpecificSkuPropertiesArgs.builder
       builder.specificSkuProperties(args(argsBuilder).build)
@@ -559,7 +559,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def timeWindow(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationTimeWindowArgs.Builder]):
+    inline def timeWindow(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationTimeWindowArgs.Builder]):
         com.pulumi.gcp.compute.FutureReservationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationTimeWindowArgs.builder
       builder.timeWindow(args(argsBuilder).build)
@@ -583,7 +583,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def metadataFilters(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalForwardingRuleMetadataFilterArgs.Builder]*):
+    inline def metadataFilters(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalForwardingRuleMetadataFilterArgs.Builder]*):
         com.pulumi.gcp.compute.GlobalForwardingRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.GlobalForwardingRuleMetadataFilterArgs.builder
       builder.metadataFilters(args.map(_(argsBuilder).build)*)
@@ -594,7 +594,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectoryRegistrations(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalForwardingRuleServiceDirectoryRegistrationsArgs.Builder]):
+    inline def serviceDirectoryRegistrations(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalForwardingRuleServiceDirectoryRegistrationsArgs.Builder]):
         com.pulumi.gcp.compute.GlobalForwardingRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GlobalForwardingRuleServiceDirectoryRegistrationsArgs.builder
       builder.serviceDirectoryRegistrations(args(argsBuilder).build)
@@ -605,7 +605,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def extensionPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyExtensionPolicyArgs.Builder]*):
+    inline def extensionPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyExtensionPolicyArgs.Builder]*):
         com.pulumi.gcp.compute.GlobalVmExtensionPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyExtensionPolicyArgs.builder
       builder.extensionPolicies(args.map(_(argsBuilder).build)*)
@@ -615,7 +615,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def instanceSelectors(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyInstanceSelectorArgs.Builder]*):
+    inline def instanceSelectors(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyInstanceSelectorArgs.Builder]*):
         com.pulumi.gcp.compute.GlobalVmExtensionPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyInstanceSelectorArgs.builder
       builder.instanceSelectors(args.map(_(argsBuilder).build)*)
@@ -625,7 +625,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rolloutOperation(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationArgs.Builder]):
+    inline def rolloutOperation(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationArgs.Builder]):
         com.pulumi.gcp.compute.GlobalVmExtensionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationArgs.builder
       builder.rolloutOperation(args(argsBuilder).build)
@@ -636,7 +636,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.HaVpnGatewayParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.HaVpnGatewayParamsArgs.Builder]):
         com.pulumi.gcp.compute.HaVpnGatewayArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.HaVpnGatewayParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -646,7 +646,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def vpnInterfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.HaVpnGatewayVpnInterfaceArgs.Builder]*):
+    inline def vpnInterfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.HaVpnGatewayVpnInterfaceArgs.Builder]*):
         com.pulumi.gcp.compute.HaVpnGatewayArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.HaVpnGatewayVpnInterfaceArgs.builder
       builder.vpnInterfaces(args.map(_(argsBuilder).build)*)
@@ -657,7 +657,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def grpcHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckGrpcHealthCheckArgs.Builder]):
+    inline def grpcHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckGrpcHealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.HealthCheckArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.HealthCheckGrpcHealthCheckArgs.builder
       builder.grpcHealthCheck(args(argsBuilder).build)
@@ -667,7 +667,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def grpcTlsHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckGrpcTlsHealthCheckArgs.Builder]):
+    inline def grpcTlsHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckGrpcTlsHealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.HealthCheckArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.HealthCheckGrpcTlsHealthCheckArgs.builder
       builder.grpcTlsHealthCheck(args(argsBuilder).build)
@@ -677,7 +677,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def http2HealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckHttp2HealthCheckArgs.Builder]):
+    inline def http2HealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckHttp2HealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.HealthCheckArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.HealthCheckHttp2HealthCheckArgs.builder
       builder.http2HealthCheck(args(argsBuilder).build)
@@ -687,7 +687,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def httpHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckHttpHealthCheckArgs.Builder]):
+    inline def httpHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckHttpHealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.HealthCheckArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.HealthCheckHttpHealthCheckArgs.builder
       builder.httpHealthCheck(args(argsBuilder).build)
@@ -697,7 +697,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def httpsHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckHttpsHealthCheckArgs.Builder]):
+    inline def httpsHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckHttpsHealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.HealthCheckArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.HealthCheckHttpsHealthCheckArgs.builder
       builder.httpsHealthCheck(args(argsBuilder).build)
@@ -707,7 +707,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckLogConfigArgs.Builder]):
         com.pulumi.gcp.compute.HealthCheckArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.HealthCheckLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -717,7 +717,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def sslHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckSslHealthCheckArgs.Builder]):
+    inline def sslHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckSslHealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.HealthCheckArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.HealthCheckSslHealthCheckArgs.builder
       builder.sslHealthCheck(args(argsBuilder).build)
@@ -727,7 +727,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def tcpHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckTcpHealthCheckArgs.Builder]):
+    inline def tcpHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckTcpHealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.HealthCheckArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.HealthCheckTcpHealthCheckArgs.builder
       builder.tcpHealthCheck(args(argsBuilder).build)
@@ -739,7 +739,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def guestOsFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageGuestOsFeatureArgs.Builder]*):
+    inline def guestOsFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageGuestOsFeatureArgs.Builder]*):
         com.pulumi.gcp.compute.ImageArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ImageGuestOsFeatureArgs.builder
       builder.guestOsFeatures(args.map(_(argsBuilder).build)*)
@@ -752,7 +752,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def imageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageImageEncryptionKeyArgs.Builder]):
+    inline def imageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageImageEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.ImageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ImageImageEncryptionKeyArgs.builder
       builder.imageEncryptionKey(args(argsBuilder).build)
@@ -762,7 +762,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageParamsArgs.Builder]):
         com.pulumi.gcp.compute.ImageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ImageParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -772,7 +772,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rawDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageRawDiskArgs.Builder]):
+    inline def rawDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageRawDiskArgs.Builder]):
         com.pulumi.gcp.compute.ImageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ImageRawDiskArgs.builder
       builder.rawDisk(args(argsBuilder).build)
@@ -782,7 +782,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def shieldedInstanceInitialState(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageShieldedInstanceInitialStateArgs.Builder]):
+    inline def shieldedInstanceInitialState(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageShieldedInstanceInitialStateArgs.Builder]):
         com.pulumi.gcp.compute.ImageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ImageShieldedInstanceInitialStateArgs.builder
       builder.shieldedInstanceInitialState(args(argsBuilder).build)
@@ -793,7 +793,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def sourceDiskEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageSourceDiskEncryptionKeyArgs.Builder]):
+    inline def sourceDiskEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageSourceDiskEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.ImageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ImageSourceDiskEncryptionKeyArgs.builder
       builder.sourceDiskEncryptionKey(args(argsBuilder).build)
@@ -804,7 +804,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def sourceImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageSourceImageEncryptionKeyArgs.Builder]):
+    inline def sourceImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageSourceImageEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.ImageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ImageSourceImageEncryptionKeyArgs.builder
       builder.sourceImageEncryptionKey(args(argsBuilder).build)
@@ -815,7 +815,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def sourceSnapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageSourceSnapshotEncryptionKeyArgs.Builder]):
+    inline def sourceSnapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageSourceSnapshotEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.ImageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ImageSourceSnapshotEncryptionKeyArgs.builder
       builder.sourceSnapshotEncryptionKey(args(argsBuilder).build)
@@ -826,7 +826,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.ImageIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ImageIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -837,7 +837,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.ImageIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ImageIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -847,7 +847,7 @@ object compute_ext1:
      * @param advancedMachineFeatures Configure Nested Virtualisation and Simultaneous Hyper Threading  on this VM. Structure is documented below
      * @return builder
      */
-    def advancedMachineFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceAdvancedMachineFeaturesArgs.Builder]):
+    inline def advancedMachineFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceAdvancedMachineFeaturesArgs.Builder]):
         com.pulumi.gcp.compute.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceAdvancedMachineFeaturesArgs.builder
       builder.advancedMachineFeatures(args(argsBuilder).build)
@@ -856,7 +856,7 @@ object compute_ext1:
      * @param attachedDisks Additional disks to attach to the instance. Can be repeated multiple times for multiple disks. Structure is documented below.
      * @return builder
      */
-    def attachedDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceAttachedDiskArgs.Builder]*):
+    inline def attachedDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceAttachedDiskArgs.Builder]*):
         com.pulumi.gcp.compute.InstanceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceAttachedDiskArgs.builder
       builder.attachedDisks(args.map(_(argsBuilder).build)*)
@@ -866,7 +866,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def bootDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceBootDiskArgs.Builder]):
+    inline def bootDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceBootDiskArgs.Builder]):
         com.pulumi.gcp.compute.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceBootDiskArgs.builder
       builder.bootDisk(args(argsBuilder).build)
@@ -875,7 +875,7 @@ object compute_ext1:
      * @param confidentialInstanceConfig Enable [Confidential Mode](https://cloud.google.com/compute/confidential-vm/docs/about-cvm) on this VM. Structure is documented below
      * @return builder
      */
-    def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceConfidentialInstanceConfigArgs.Builder]):
+    inline def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceConfidentialInstanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceConfidentialInstanceConfigArgs.builder
       builder.confidentialInstanceConfig(args(argsBuilder).build)
@@ -885,7 +885,7 @@ object compute_ext1:
      * **Note:** GPU accelerators can only be used with `onHostMaintenance` option set to TERMINATE.
      * @return builder
      */
-    def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGuestAcceleratorArgs.Builder]*):
+    inline def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGuestAcceleratorArgs.Builder]*):
         com.pulumi.gcp.compute.InstanceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGuestAcceleratorArgs.builder
       builder.guestAccelerators(args.map(_(argsBuilder).build)*)
@@ -894,7 +894,7 @@ object compute_ext1:
      * @param instanceEncryptionKey Configuration for data encryption on the instance with encryption keys. Structure is documented below.
      * @return builder
      */
-    def instanceEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceInstanceEncryptionKeyArgs.Builder]):
+    inline def instanceEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceInstanceEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceInstanceEncryptionKeyArgs.builder
       builder.instanceEncryptionKey(args(argsBuilder).build)
@@ -906,7 +906,7 @@ object compute_ext1:
      * ***
      * @return builder
      */
-    def networkInterfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceArgs.Builder]*):
+    inline def networkInterfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceArgs.Builder]*):
         com.pulumi.gcp.compute.InstanceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
@@ -919,7 +919,7 @@ object compute_ext1:
      * in order for this setting to take effect.
      * @return builder
      */
-    def networkPerformanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceNetworkPerformanceConfigArgs.Builder]):
+    inline def networkPerformanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceNetworkPerformanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceNetworkPerformanceConfigArgs.builder
       builder.networkPerformanceConfig(args(argsBuilder).build)
@@ -929,7 +929,7 @@ object compute_ext1:
      * .
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceParamsArgs.Builder]):
         com.pulumi.gcp.compute.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -939,7 +939,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def reservationAffinity(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceReservationAffinityArgs.Builder]):
+    inline def reservationAffinity(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceReservationAffinityArgs.Builder]):
         com.pulumi.gcp.compute.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceReservationAffinityArgs.builder
       builder.reservationAffinity(args(argsBuilder).build)
@@ -949,7 +949,7 @@ object compute_ext1:
      * this configuration option are detailed below.
      * @return builder
      */
-    def scheduling(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceSchedulingArgs.Builder]):
+    inline def scheduling(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceSchedulingArgs.Builder]):
         com.pulumi.gcp.compute.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceSchedulingArgs.builder
       builder.scheduling(args(argsBuilder).build)
@@ -959,7 +959,7 @@ object compute_ext1:
      * specified multiple times for multiple scratch disks. Structure is documented below.
      * @return builder
      */
-    def scratchDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceScratchDiskArgs.Builder]*):
+    inline def scratchDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceScratchDiskArgs.Builder]*):
         com.pulumi.gcp.compute.InstanceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceScratchDiskArgs.builder
       builder.scratchDisks(args.map(_(argsBuilder).build)*)
@@ -970,7 +970,7 @@ object compute_ext1:
      * **Note**: `allowStoppingForUpdate` must be set to true or your instance must have a `desiredStatus` of `TERMINATED` in order to update this field.
      * @return builder
      */
-    def serviceAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceServiceAccountArgs.Builder]):
+    inline def serviceAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceServiceAccountArgs.Builder]):
         com.pulumi.gcp.compute.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceServiceAccountArgs.builder
       builder.serviceAccount(args(argsBuilder).build)
@@ -981,7 +981,7 @@ object compute_ext1:
      * **Note**: `allowStoppingForUpdate` must be set to true or your instance must have a `desiredStatus` of `TERMINATED` in order to update this field.
      * @return builder
      */
-    def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceShieldedInstanceConfigArgs.Builder]):
+    inline def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceShieldedInstanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceShieldedInstanceConfigArgs.builder
       builder.shieldedInstanceConfig(args(argsBuilder).build)
@@ -991,7 +991,7 @@ object compute_ext1:
      * this configuration option are detailed below.
      * @return builder
      */
-    def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceWorkloadIdentityConfigArgs.Builder]):
+    inline def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceWorkloadIdentityConfigArgs.Builder]):
         com.pulumi.gcp.compute.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceWorkloadIdentityConfigArgs.builder
       builder.workloadIdentityConfig(args(argsBuilder).build)
@@ -1001,7 +1001,7 @@ object compute_ext1:
      * @param advancedMachineFeatures Controls for advanced machine-related behavior features.
      * @return builder
      */
-    def advancedMachineFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageAdvancedMachineFeaturesArgs.Builder]):
+    inline def advancedMachineFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageAdvancedMachineFeaturesArgs.Builder]):
         com.pulumi.gcp.compute.InstanceFromMachineImageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageAdvancedMachineFeaturesArgs.builder
       builder.advancedMachineFeatures(args(argsBuilder).build)
@@ -1010,7 +1010,7 @@ object compute_ext1:
      * @param confidentialInstanceConfig The Confidential VM config being used by the instance.  onHostMaintenance has to be set to TERMINATE or this will fail to create.
      * @return builder
      */
-    def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageConfidentialInstanceConfigArgs.Builder]):
+    inline def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageConfidentialInstanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.InstanceFromMachineImageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageConfidentialInstanceConfigArgs.builder
       builder.confidentialInstanceConfig(args(argsBuilder).build)
@@ -1019,7 +1019,7 @@ object compute_ext1:
      * @param guestAccelerators List of the type and count of accelerator cards attached to the instance.
      * @return builder
      */
-    def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageGuestAcceleratorArgs.Builder]*):
+    inline def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageGuestAcceleratorArgs.Builder]*):
         com.pulumi.gcp.compute.InstanceFromMachineImageArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageGuestAcceleratorArgs.builder
       builder.guestAccelerators(args.map(_(argsBuilder).build)*)
@@ -1028,7 +1028,7 @@ object compute_ext1:
      * @param instanceEncryptionKey Encryption key used to provide data encryption on the given instance.
      * @return builder
      */
-    def instanceEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageInstanceEncryptionKeyArgs.Builder]):
+    inline def instanceEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageInstanceEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.InstanceFromMachineImageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageInstanceEncryptionKeyArgs.builder
       builder.instanceEncryptionKey(args(argsBuilder).build)
@@ -1037,7 +1037,7 @@ object compute_ext1:
      * @param networkInterfaces The networks attached to the instance.
      * @return builder
      */
-    def networkInterfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkInterfaceArgs.Builder]*):
+    inline def networkInterfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkInterfaceArgs.Builder]*):
         com.pulumi.gcp.compute.InstanceFromMachineImageArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
@@ -1046,7 +1046,7 @@ object compute_ext1:
      * @param networkPerformanceConfig Configures network performance settings for the instance. If not specified, the instance will be created with its default network performance configuration.
      * @return builder
      */
-    def networkPerformanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkPerformanceConfigArgs.Builder]):
+    inline def networkPerformanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkPerformanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.InstanceFromMachineImageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkPerformanceConfigArgs.builder
       builder.networkPerformanceConfig(args(argsBuilder).build)
@@ -1055,7 +1055,7 @@ object compute_ext1:
      * @param params Stores additional params passed with the request, but not persisted as part of resource payload.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageParamsArgs.Builder]):
         com.pulumi.gcp.compute.InstanceFromMachineImageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -1064,7 +1064,7 @@ object compute_ext1:
      * @param reservationAffinity Specifies the reservations that this instance can consume from.
      * @return builder
      */
-    def reservationAffinity(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageReservationAffinityArgs.Builder]):
+    inline def reservationAffinity(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageReservationAffinityArgs.Builder]):
         com.pulumi.gcp.compute.InstanceFromMachineImageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageReservationAffinityArgs.builder
       builder.reservationAffinity(args(argsBuilder).build)
@@ -1073,7 +1073,7 @@ object compute_ext1:
      * @param scheduling The scheduling strategy being used by the instance.
      * @return builder
      */
-    def scheduling(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingArgs.Builder]):
+    inline def scheduling(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingArgs.Builder]):
         com.pulumi.gcp.compute.InstanceFromMachineImageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingArgs.builder
       builder.scheduling(args(argsBuilder).build)
@@ -1082,7 +1082,7 @@ object compute_ext1:
      * @param serviceAccount The service account to attach to the instance.
      * @return builder
      */
-    def serviceAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageServiceAccountArgs.Builder]):
+    inline def serviceAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageServiceAccountArgs.Builder]):
         com.pulumi.gcp.compute.InstanceFromMachineImageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageServiceAccountArgs.builder
       builder.serviceAccount(args(argsBuilder).build)
@@ -1091,7 +1091,7 @@ object compute_ext1:
      * @param shieldedInstanceConfig The shielded vm config being used by the instance.
      * @return builder
      */
-    def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageShieldedInstanceConfigArgs.Builder]):
+    inline def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageShieldedInstanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.InstanceFromMachineImageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageShieldedInstanceConfigArgs.builder
       builder.shieldedInstanceConfig(args(argsBuilder).build)
@@ -1100,7 +1100,7 @@ object compute_ext1:
      * @param sourceMachineImageEncryptionKey Encryption key for the source machine image.
      * @return builder
      */
-    def sourceMachineImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSourceMachineImageEncryptionKeyArgs.Builder]):
+    inline def sourceMachineImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSourceMachineImageEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.InstanceFromMachineImageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSourceMachineImageEncryptionKeyArgs.builder
       builder.sourceMachineImageEncryptionKey(args(argsBuilder).build)
@@ -1109,7 +1109,7 @@ object compute_ext1:
      * @param workloadIdentityConfig Workload identity config.
      * @return builder
      */
-    def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageWorkloadIdentityConfigArgs.Builder]):
+    inline def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageWorkloadIdentityConfigArgs.Builder]):
         com.pulumi.gcp.compute.InstanceFromMachineImageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageWorkloadIdentityConfigArgs.builder
       builder.workloadIdentityConfig(args(argsBuilder).build)
@@ -1119,7 +1119,7 @@ object compute_ext1:
      * @param advancedMachineFeatures Controls for advanced machine-related behavior features.
      * @return builder
      */
-    def advancedMachineFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateAdvancedMachineFeaturesArgs.Builder]):
+    inline def advancedMachineFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateAdvancedMachineFeaturesArgs.Builder]):
         com.pulumi.gcp.compute.InstanceFromTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateAdvancedMachineFeaturesArgs.builder
       builder.advancedMachineFeatures(args(argsBuilder).build)
@@ -1128,7 +1128,7 @@ object compute_ext1:
      * @param attachedDisks List of disks attached to the instance
      * @return builder
      */
-    def attachedDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateAttachedDiskArgs.Builder]*):
+    inline def attachedDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateAttachedDiskArgs.Builder]*):
         com.pulumi.gcp.compute.InstanceFromTemplateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateAttachedDiskArgs.builder
       builder.attachedDisks(args.map(_(argsBuilder).build)*)
@@ -1137,7 +1137,7 @@ object compute_ext1:
      * @param bootDisk The boot disk for the instance.
      * @return builder
      */
-    def bootDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateBootDiskArgs.Builder]):
+    inline def bootDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateBootDiskArgs.Builder]):
         com.pulumi.gcp.compute.InstanceFromTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateBootDiskArgs.builder
       builder.bootDisk(args(argsBuilder).build)
@@ -1146,7 +1146,7 @@ object compute_ext1:
      * @param confidentialInstanceConfig The Confidential VM config being used by the instance.  onHostMaintenance has to be set to TERMINATE or this will fail to create.
      * @return builder
      */
-    def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateConfidentialInstanceConfigArgs.Builder]):
+    inline def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateConfidentialInstanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.InstanceFromTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateConfidentialInstanceConfigArgs.builder
       builder.confidentialInstanceConfig(args(argsBuilder).build)
@@ -1155,7 +1155,7 @@ object compute_ext1:
      * @param guestAccelerators List of the type and count of accelerator cards attached to the instance.
      * @return builder
      */
-    def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateGuestAcceleratorArgs.Builder]*):
+    inline def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateGuestAcceleratorArgs.Builder]*):
         com.pulumi.gcp.compute.InstanceFromTemplateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateGuestAcceleratorArgs.builder
       builder.guestAccelerators(args.map(_(argsBuilder).build)*)
@@ -1164,7 +1164,7 @@ object compute_ext1:
      * @param instanceEncryptionKey Encryption key used to provide data encryption on the given instance.
      * @return builder
      */
-    def instanceEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateInstanceEncryptionKeyArgs.Builder]):
+    inline def instanceEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateInstanceEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.InstanceFromTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateInstanceEncryptionKeyArgs.builder
       builder.instanceEncryptionKey(args(argsBuilder).build)
@@ -1173,7 +1173,7 @@ object compute_ext1:
      * @param networkInterfaces The networks attached to the instance.
      * @return builder
      */
-    def networkInterfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkInterfaceArgs.Builder]*):
+    inline def networkInterfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkInterfaceArgs.Builder]*):
         com.pulumi.gcp.compute.InstanceFromTemplateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
@@ -1182,7 +1182,7 @@ object compute_ext1:
      * @param networkPerformanceConfig Configures network performance settings for the instance. If not specified, the instance will be created with its default network performance configuration.
      * @return builder
      */
-    def networkPerformanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkPerformanceConfigArgs.Builder]):
+    inline def networkPerformanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkPerformanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.InstanceFromTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkPerformanceConfigArgs.builder
       builder.networkPerformanceConfig(args(argsBuilder).build)
@@ -1191,7 +1191,7 @@ object compute_ext1:
      * @param params Stores additional params passed with the request, but not persisted as part of resource payload.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateParamsArgs.Builder]):
         com.pulumi.gcp.compute.InstanceFromTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -1200,7 +1200,7 @@ object compute_ext1:
      * @param reservationAffinity Specifies the reservations that this instance can consume from.
      * @return builder
      */
-    def reservationAffinity(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateReservationAffinityArgs.Builder]):
+    inline def reservationAffinity(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateReservationAffinityArgs.Builder]):
         com.pulumi.gcp.compute.InstanceFromTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateReservationAffinityArgs.builder
       builder.reservationAffinity(args(argsBuilder).build)
@@ -1209,7 +1209,7 @@ object compute_ext1:
      * @param scheduling The scheduling strategy being used by the instance.
      * @return builder
      */
-    def scheduling(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingArgs.Builder]):
+    inline def scheduling(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingArgs.Builder]):
         com.pulumi.gcp.compute.InstanceFromTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingArgs.builder
       builder.scheduling(args(argsBuilder).build)
@@ -1220,7 +1220,7 @@ object compute_ext1:
      * * `network_interface.access_config`
      * @return builder
      */
-    def scratchDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateScratchDiskArgs.Builder]*):
+    inline def scratchDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateScratchDiskArgs.Builder]*):
         com.pulumi.gcp.compute.InstanceFromTemplateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateScratchDiskArgs.builder
       builder.scratchDisks(args.map(_(argsBuilder).build)*)
@@ -1229,7 +1229,7 @@ object compute_ext1:
      * @param serviceAccount The service account to attach to the instance.
      * @return builder
      */
-    def serviceAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateServiceAccountArgs.Builder]):
+    inline def serviceAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateServiceAccountArgs.Builder]):
         com.pulumi.gcp.compute.InstanceFromTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateServiceAccountArgs.builder
       builder.serviceAccount(args(argsBuilder).build)
@@ -1238,7 +1238,7 @@ object compute_ext1:
      * @param shieldedInstanceConfig The shielded vm config being used by the instance.
      * @return builder
      */
-    def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateShieldedInstanceConfigArgs.Builder]):
+    inline def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateShieldedInstanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.InstanceFromTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateShieldedInstanceConfigArgs.builder
       builder.shieldedInstanceConfig(args(argsBuilder).build)
@@ -1247,7 +1247,7 @@ object compute_ext1:
      * @param workloadIdentityConfig Workload identity config.
      * @return builder
      */
-    def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateWorkloadIdentityConfigArgs.Builder]):
+    inline def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateWorkloadIdentityConfigArgs.Builder]):
         com.pulumi.gcp.compute.InstanceFromTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateWorkloadIdentityConfigArgs.builder
       builder.workloadIdentityConfig(args(argsBuilder).build)
@@ -1258,7 +1258,7 @@ object compute_ext1:
      * for details on configuration. Structure is documented below.
      * @return builder
      */
-    def namedPorts(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupNamedPortArgs.Builder]*):
+    inline def namedPorts(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupNamedPortArgs.Builder]*):
         com.pulumi.gcp.compute.InstanceGroupArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupNamedPortArgs.builder
       builder.namedPorts(args.map(_(argsBuilder).build)*)
@@ -1270,7 +1270,7 @@ object compute_ext1:
      * apply the configuration.
      * @return builder
      */
-    def allInstancesConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerAllInstancesConfigArgs.Builder]):
+    inline def allInstancesConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerAllInstancesConfigArgs.Builder]):
         com.pulumi.gcp.compute.InstanceGroupManagerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerAllInstancesConfigArgs.builder
       builder.allInstancesConfig(args(argsBuilder).build)
@@ -1280,7 +1280,7 @@ object compute_ext1:
      * group. You can specify only one value. Structure is documented below. For more information, see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances#monitoring_groups).
      * @return builder
      */
-    def autoHealingPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerAutoHealingPoliciesArgs.Builder]):
+    inline def autoHealingPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerAutoHealingPoliciesArgs.Builder]):
         com.pulumi.gcp.compute.InstanceGroupManagerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerAutoHealingPoliciesArgs.builder
       builder.autoHealingPolicies(args(argsBuilder).build)
@@ -1289,7 +1289,7 @@ object compute_ext1:
      * @param instanceLifecyclePolicy The instance lifecycle policy for this managed instance group.
      * @return builder
      */
-    def instanceLifecyclePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerInstanceLifecyclePolicyArgs.Builder]):
+    inline def instanceLifecyclePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerInstanceLifecyclePolicyArgs.Builder]):
         com.pulumi.gcp.compute.InstanceGroupManagerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerInstanceLifecyclePolicyArgs.builder
       builder.instanceLifecyclePolicy(args(argsBuilder).build)
@@ -1299,7 +1299,7 @@ object compute_ext1:
      * for details on configuration.
      * @return builder
      */
-    def namedPorts(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerNamedPortArgs.Builder]*):
+    inline def namedPorts(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerNamedPortArgs.Builder]*):
         com.pulumi.gcp.compute.InstanceGroupManagerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerNamedPortArgs.builder
       builder.namedPorts(args.map(_(argsBuilder).build)*)
@@ -1308,7 +1308,7 @@ object compute_ext1:
      * @param params ) Input only additional params for instance group manager creation. Structure is documented below. For more information, see [API](https://cloud.google.com/compute/docs/reference/rest/beta/instanceGroupManagers/insert).
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerParamsArgs.Builder]):
         com.pulumi.gcp.compute.InstanceGroupManagerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -1317,7 +1317,7 @@ object compute_ext1:
      * @param resourcePolicies Resource policies for this managed instance group. Structure is documented below.
      * @return builder
      */
-    def resourcePolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerResourcePoliciesArgs.Builder]):
+    inline def resourcePolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerResourcePoliciesArgs.Builder]):
         com.pulumi.gcp.compute.InstanceGroupManagerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerResourcePoliciesArgs.builder
       builder.resourcePolicies(args(argsBuilder).build)
@@ -1326,7 +1326,7 @@ object compute_ext1:
      * @param standbyPolicy The standby policy for stopped and suspended instances. Structure is documented below. For more information, see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/suspended-and-stopped-vms-in-mig).
      * @return builder
      */
-    def standbyPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStandbyPolicyArgs.Builder]):
+    inline def standbyPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStandbyPolicyArgs.Builder]):
         com.pulumi.gcp.compute.InstanceGroupManagerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerStandbyPolicyArgs.builder
       builder.standbyPolicy(args(argsBuilder).build)
@@ -1335,7 +1335,7 @@ object compute_ext1:
      * @param statefulDisks Disks created on the instances that will be preserved on instance delete, update, etc. Structure is documented below. For more information see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/configuring-stateful-disks-in-migs).
      * @return builder
      */
-    def statefulDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatefulDiskArgs.Builder]*):
+    inline def statefulDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatefulDiskArgs.Builder]*):
         com.pulumi.gcp.compute.InstanceGroupManagerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatefulDiskArgs.builder
       builder.statefulDisks(args.map(_(argsBuilder).build)*)
@@ -1344,7 +1344,7 @@ object compute_ext1:
      * @param statefulExternalIps External network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name. Structure is documented below.
      * @return builder
      */
-    def statefulExternalIps(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatefulExternalIpArgs.Builder]*):
+    inline def statefulExternalIps(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatefulExternalIpArgs.Builder]*):
         com.pulumi.gcp.compute.InstanceGroupManagerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatefulExternalIpArgs.builder
       builder.statefulExternalIps(args.map(_(argsBuilder).build)*)
@@ -1353,7 +1353,7 @@ object compute_ext1:
      * @param statefulInternalIps Internal network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name. Structure is documented below.
      * @return builder
      */
-    def statefulInternalIps(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatefulInternalIpArgs.Builder]*):
+    inline def statefulInternalIps(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatefulInternalIpArgs.Builder]*):
         com.pulumi.gcp.compute.InstanceGroupManagerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatefulInternalIpArgs.builder
       builder.statefulInternalIps(args.map(_(argsBuilder).build)*)
@@ -1362,7 +1362,7 @@ object compute_ext1:
      * @param targetSizePolicies The policy that specifies how the MIG creates its VMs to achieve the target size. Structure is documented below.
      * @return builder
      */
-    def targetSizePolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerTargetSizePolicyArgs.Builder]*):
+    inline def targetSizePolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerTargetSizePolicyArgs.Builder]*):
         com.pulumi.gcp.compute.InstanceGroupManagerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerTargetSizePolicyArgs.builder
       builder.targetSizePolicies(args.map(_(argsBuilder).build)*)
@@ -1371,7 +1371,7 @@ object compute_ext1:
      * @param updatePolicy The update policy for this managed instance group. Structure is documented below. For more information, see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/updating-managed-instance-groups) and [API](https://cloud.google.com/compute/docs/reference/rest/v1/instanceGroupManagers/patch).
      * @return builder
      */
-    def updatePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerUpdatePolicyArgs.Builder]):
+    inline def updatePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerUpdatePolicyArgs.Builder]):
         com.pulumi.gcp.compute.InstanceGroupManagerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerUpdatePolicyArgs.builder
       builder.updatePolicy(args(argsBuilder).build)
@@ -1382,7 +1382,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def versions(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerVersionArgs.Builder]*):
+    inline def versions(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerVersionArgs.Builder]*):
         com.pulumi.gcp.compute.InstanceGroupManagerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerVersionArgs.builder
       builder.versions(args.map(_(argsBuilder).build)*)
@@ -1393,7 +1393,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceIAMBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceIAMBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.InstanceIAMBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceIAMBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1404,7 +1404,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceIAMMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceIAMMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.InstanceIAMMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceIAMMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1415,7 +1415,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def metadata(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceSettingsMetadataArgs.Builder]):
+    inline def metadata(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceSettingsMetadataArgs.Builder]):
         com.pulumi.gcp.compute.InstanceSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceSettingsMetadataArgs.builder
       builder.metadata(args(argsBuilder).build)
@@ -1425,7 +1425,7 @@ object compute_ext1:
      * @param advancedMachineFeatures Configure Nested Virtualisation and Simultaneous Hyper Threading on this VM. Structure is documented below
      * @return builder
      */
-    def advancedMachineFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateAdvancedMachineFeaturesArgs.Builder]):
+    inline def advancedMachineFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateAdvancedMachineFeaturesArgs.Builder]):
         com.pulumi.gcp.compute.InstanceTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateAdvancedMachineFeaturesArgs.builder
       builder.advancedMachineFeatures(args(argsBuilder).build)
@@ -1434,7 +1434,7 @@ object compute_ext1:
      * @param confidentialInstanceConfig Enable [Confidential Mode](https://cloud.google.com/compute/confidential-vm/docs/about-cvm) on this VM. Structure is documented below
      * @return builder
      */
-    def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateConfidentialInstanceConfigArgs.Builder]):
+    inline def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateConfidentialInstanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.InstanceTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateConfidentialInstanceConfigArgs.builder
       builder.confidentialInstanceConfig(args(argsBuilder).build)
@@ -1445,7 +1445,7 @@ object compute_ext1:
      * documented below.
      * @return builder
      */
-    def disks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateDiskArgs.Builder]*):
+    inline def disks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateDiskArgs.Builder]*):
         com.pulumi.gcp.compute.InstanceTemplateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateDiskArgs.builder
       builder.disks(args.map(_(argsBuilder).build)*)
@@ -1454,7 +1454,7 @@ object compute_ext1:
      * @param guestAccelerators List of the type and count of accelerator cards attached to the instance. Structure documented below.
      * @return builder
      */
-    def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateGuestAcceleratorArgs.Builder]*):
+    inline def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateGuestAcceleratorArgs.Builder]*):
         com.pulumi.gcp.compute.InstanceTemplateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateGuestAcceleratorArgs.builder
       builder.guestAccelerators(args.map(_(argsBuilder).build)*)
@@ -1465,7 +1465,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def networkInterfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceArgs.Builder]*):
+    inline def networkInterfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceArgs.Builder]*):
         com.pulumi.gcp.compute.InstanceTemplateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
@@ -1479,7 +1479,7 @@ object compute_ext1:
      * in order for this setting to take effect.
      * @return builder
      */
-    def networkPerformanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkPerformanceConfigArgs.Builder]):
+    inline def networkPerformanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkPerformanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.InstanceTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkPerformanceConfigArgs.builder
       builder.networkPerformanceConfig(args(argsBuilder).build)
@@ -1489,7 +1489,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def reservationAffinity(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateReservationAffinityArgs.Builder]):
+    inline def reservationAffinity(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateReservationAffinityArgs.Builder]):
         com.pulumi.gcp.compute.InstanceTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateReservationAffinityArgs.builder
       builder.reservationAffinity(args(argsBuilder).build)
@@ -1499,7 +1499,7 @@ object compute_ext1:
      * this configuration option are detailed below.
      * @return builder
      */
-    def scheduling(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingArgs.Builder]):
+    inline def scheduling(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingArgs.Builder]):
         com.pulumi.gcp.compute.InstanceTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingArgs.builder
       builder.scheduling(args(argsBuilder).build)
@@ -1508,7 +1508,7 @@ object compute_ext1:
      * @param serviceAccount Service account to attach to the instance. Structure is documented below.
      * @return builder
      */
-    def serviceAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateServiceAccountArgs.Builder]):
+    inline def serviceAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateServiceAccountArgs.Builder]):
         com.pulumi.gcp.compute.InstanceTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateServiceAccountArgs.builder
       builder.serviceAccount(args(argsBuilder).build)
@@ -1518,7 +1518,7 @@ object compute_ext1:
      * **Note**: `shieldedInstanceConfig` can only be used with boot images with shielded vm support. See the complete list [here](https://cloud.google.com/compute/docs/images#shielded-images).
      * @return builder
      */
-    def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateShieldedInstanceConfigArgs.Builder]):
+    inline def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateShieldedInstanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.InstanceTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateShieldedInstanceConfigArgs.builder
       builder.shieldedInstanceConfig(args(argsBuilder).build)
@@ -1528,7 +1528,7 @@ object compute_ext1:
      * this configuration option are detailed below.
      * @return builder
      */
-    def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateWorkloadIdentityConfigArgs.Builder]):
+    inline def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateWorkloadIdentityConfigArgs.Builder]):
         com.pulumi.gcp.compute.InstanceTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateWorkloadIdentityConfigArgs.builder
       builder.workloadIdentityConfig(args(argsBuilder).build)
@@ -1539,7 +1539,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.InstanceTemplateIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1550,7 +1550,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.InstanceTemplateIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1561,7 +1561,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InstantSnapshotParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InstantSnapshotParamsArgs.Builder]):
         com.pulumi.gcp.compute.InstantSnapshotArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstantSnapshotParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -1572,7 +1572,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.InstantSnapshotIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.InstantSnapshotIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.InstantSnapshotIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstantSnapshotIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1583,7 +1583,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.InstantSnapshotIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.InstantSnapshotIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.InstantSnapshotIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstantSnapshotIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1596,7 +1596,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def applicationAwareInterconnect(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectApplicationAwareInterconnectArgs.Builder]):
+    inline def applicationAwareInterconnect(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectApplicationAwareInterconnectArgs.Builder]):
         com.pulumi.gcp.compute.InterconnectArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectApplicationAwareInterconnectArgs.builder
       builder.applicationAwareInterconnect(args(argsBuilder).build)
@@ -1607,7 +1607,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def macsec(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectMacsecArgs.Builder]):
+    inline def macsec(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectMacsecArgs.Builder]):
         com.pulumi.gcp.compute.InterconnectArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectMacsecArgs.builder
       builder.macsec(args(argsBuilder).build)
@@ -1617,7 +1617,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectParamsArgs.Builder]):
         com.pulumi.gcp.compute.InterconnectArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -1628,7 +1628,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def l2Forwarding(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentL2ForwardingArgs.Builder]):
+    inline def l2Forwarding(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentL2ForwardingArgs.Builder]):
         com.pulumi.gcp.compute.InterconnectAttachmentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectAttachmentL2ForwardingArgs.builder
       builder.l2Forwarding(args(argsBuilder).build)
@@ -1638,7 +1638,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentParamsArgs.Builder]):
         com.pulumi.gcp.compute.InterconnectAttachmentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectAttachmentParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -1653,7 +1653,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def attachments(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupAttachmentArgs.Builder]*):
+    inline def attachments(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupAttachmentArgs.Builder]*):
         com.pulumi.gcp.compute.InterconnectAttachmentGroupArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupAttachmentArgs.builder
       builder.attachments(args.map(_(argsBuilder).build)*)
@@ -1664,7 +1664,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def intent(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupIntentArgs.Builder]):
+    inline def intent(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupIntentArgs.Builder]):
         com.pulumi.gcp.compute.InterconnectAttachmentGroupArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupIntentArgs.builder
       builder.intent(args(argsBuilder).build)
@@ -1676,7 +1676,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def intent(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectGroupIntentArgs.Builder]):
+    inline def intent(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectGroupIntentArgs.Builder]):
         com.pulumi.gcp.compute.InterconnectGroupArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectGroupIntentArgs.builder
       builder.intent(args(argsBuilder).build)
@@ -1690,7 +1690,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def interconnects(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectGroupInterconnectArgs.Builder]*):
+    inline def interconnects(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectGroupInterconnectArgs.Builder]*):
         com.pulumi.gcp.compute.InterconnectGroupArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectGroupInterconnectArgs.builder
       builder.interconnects(args.map(_(argsBuilder).build)*)
@@ -1704,7 +1704,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def machineImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.MachineImageMachineImageEncryptionKeyArgs.Builder]):
+    inline def machineImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.MachineImageMachineImageEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.MachineImageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.MachineImageMachineImageEncryptionKeyArgs.builder
       builder.machineImageEncryptionKey(args(argsBuilder).build)
@@ -1714,7 +1714,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.MachineImageParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.MachineImageParamsArgs.Builder]):
         com.pulumi.gcp.compute.MachineImageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.MachineImageParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -1725,7 +1725,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.MachineImageIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.MachineImageIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.MachineImageIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.MachineImageIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1736,7 +1736,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.MachineImageIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.MachineImageIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.MachineImageIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.MachineImageIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1748,7 +1748,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def managed(args: Endofunction[com.pulumi.gcp.compute.inputs.ManagedSslCertificateManagedArgs.Builder]):
+    inline def managed(args: Endofunction[com.pulumi.gcp.compute.inputs.ManagedSslCertificateManagedArgs.Builder]):
         com.pulumi.gcp.compute.ManagedSslCertificateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ManagedSslCertificateManagedArgs.builder
       builder.managed(args(argsBuilder).build)
@@ -1760,7 +1760,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def managed(args: Endofunction[com.pulumi.gcp.compute.inputs.MangedSslCertificateManagedArgs.Builder]):
+    inline def managed(args: Endofunction[com.pulumi.gcp.compute.inputs.MangedSslCertificateManagedArgs.Builder]):
         com.pulumi.gcp.compute.MangedSslCertificateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.MangedSslCertificateManagedArgs.builder
       builder.managed(args(argsBuilder).build)
@@ -1771,7 +1771,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkParamsArgs.Builder]):
         com.pulumi.gcp.compute.NetworkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.NetworkParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -1784,19 +1784,19 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def networkEndpoints(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkEndpointListNetworkEndpointArgs.Builder]*):
+    inline def networkEndpoints(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkEndpointListNetworkEndpointArgs.Builder]*):
         com.pulumi.gcp.compute.NetworkEndpointListArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NetworkEndpointListNetworkEndpointArgs.builder
       builder.networkEndpoints(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.compute.NetworkFirewallPolicyIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.NetworkFirewallPolicyIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.NetworkFirewallPolicyIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.NetworkFirewallPolicyIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1807,7 +1807,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyPacketMirroringRuleMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyPacketMirroringRuleMatchArgs.Builder]):
         com.pulumi.gcp.compute.NetworkFirewallPolicyPacketMirroringRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyPacketMirroringRuleMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -1819,7 +1819,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyPacketMirroringRuleTargetSecureTagArgs.Builder]*):
+    inline def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyPacketMirroringRuleTargetSecureTagArgs.Builder]*):
         com.pulumi.gcp.compute.NetworkFirewallPolicyPacketMirroringRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyPacketMirroringRuleTargetSecureTagArgs.builder
       builder.targetSecureTags(args.map(_(argsBuilder).build)*)
@@ -1830,7 +1830,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyRuleMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyRuleMatchArgs.Builder]):
         com.pulumi.gcp.compute.NetworkFirewallPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyRuleMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -1842,7 +1842,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyRuleTargetSecureTagArgs.Builder]*):
+    inline def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyRuleTargetSecureTagArgs.Builder]*):
         com.pulumi.gcp.compute.NetworkFirewallPolicyRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyRuleTargetSecureTagArgs.builder
       builder.targetSecureTags(args.map(_(argsBuilder).build)*)
@@ -1853,7 +1853,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesRuleArgs.Builder]*):
         com.pulumi.gcp.compute.NetworkFirewallPolicyWithRulesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -1866,7 +1866,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def autoscalingPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeGroupAutoscalingPolicyArgs.Builder]):
+    inline def autoscalingPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeGroupAutoscalingPolicyArgs.Builder]):
         com.pulumi.gcp.compute.NodeGroupArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.NodeGroupAutoscalingPolicyArgs.builder
       builder.autoscalingPolicy(args(argsBuilder).build)
@@ -1876,7 +1876,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def maintenanceWindow(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeGroupMaintenanceWindowArgs.Builder]):
+    inline def maintenanceWindow(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeGroupMaintenanceWindowArgs.Builder]):
         com.pulumi.gcp.compute.NodeGroupArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.NodeGroupMaintenanceWindowArgs.builder
       builder.maintenanceWindow(args(argsBuilder).build)
@@ -1886,7 +1886,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def shareSettings(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeGroupShareSettingsArgs.Builder]):
+    inline def shareSettings(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeGroupShareSettingsArgs.Builder]):
         com.pulumi.gcp.compute.NodeGroupArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.NodeGroupShareSettingsArgs.builder
       builder.shareSettings(args(argsBuilder).build)
@@ -1898,7 +1898,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def accelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeTemplateAcceleratorArgs.Builder]*):
+    inline def accelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeTemplateAcceleratorArgs.Builder]*):
         com.pulumi.gcp.compute.NodeTemplateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NodeTemplateAcceleratorArgs.builder
       builder.accelerators(args.map(_(argsBuilder).build)*)
@@ -1909,7 +1909,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def disks(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeTemplateDiskArgs.Builder]*):
+    inline def disks(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeTemplateDiskArgs.Builder]*):
         com.pulumi.gcp.compute.NodeTemplateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NodeTemplateDiskArgs.builder
       builder.disks(args.map(_(argsBuilder).build)*)
@@ -1922,7 +1922,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def nodeTypeFlexibility(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeTemplateNodeTypeFlexibilityArgs.Builder]):
+    inline def nodeTypeFlexibility(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeTemplateNodeTypeFlexibilityArgs.Builder]):
         com.pulumi.gcp.compute.NodeTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.NodeTemplateNodeTypeFlexibilityArgs.builder
       builder.nodeTypeFlexibility(args(argsBuilder).build)
@@ -1933,7 +1933,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def serverBinding(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeTemplateServerBindingArgs.Builder]):
+    inline def serverBinding(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeTemplateServerBindingArgs.Builder]):
         com.pulumi.gcp.compute.NodeTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.NodeTemplateServerBindingArgs.builder
       builder.serverBinding(args(argsBuilder).build)
@@ -1944,7 +1944,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def advancedOptionsConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyAdvancedOptionsConfigArgs.Builder]):
+    inline def advancedOptionsConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyAdvancedOptionsConfigArgs.Builder]):
         com.pulumi.gcp.compute.OrganizationSecurityPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyAdvancedOptionsConfigArgs.builder
       builder.advancedOptionsConfig(args(argsBuilder).build)
@@ -1955,7 +1955,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleHeaderActionArgs.Builder]):
+    inline def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleHeaderActionArgs.Builder]):
         com.pulumi.gcp.compute.OrganizationSecurityPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleHeaderActionArgs.builder
       builder.headerAction(args(argsBuilder).build)
@@ -1965,7 +1965,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleMatchArgs.Builder]):
         com.pulumi.gcp.compute.OrganizationSecurityPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -1976,7 +1976,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def preconfiguredWafConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigArgs.Builder]):
+    inline def preconfiguredWafConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigArgs.Builder]):
         com.pulumi.gcp.compute.OrganizationSecurityPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigArgs.builder
       builder.preconfiguredWafConfig(args(argsBuilder).build)
@@ -1987,7 +1987,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def redirectOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleRedirectOptionsArgs.Builder]):
+    inline def redirectOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleRedirectOptionsArgs.Builder]):
         com.pulumi.gcp.compute.OrganizationSecurityPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleRedirectOptionsArgs.builder
       builder.redirectOptions(args(argsBuilder).build)
@@ -2003,7 +2003,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicyRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicyRuleArgs.Builder]*):
         com.pulumi.gcp.compute.OrganizationSnapshotRecycleBinPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicyRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -2017,7 +2017,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def collectorIlb(args: Endofunction[com.pulumi.gcp.compute.inputs.PacketMirroringCollectorIlbArgs.Builder]):
+    inline def collectorIlb(args: Endofunction[com.pulumi.gcp.compute.inputs.PacketMirroringCollectorIlbArgs.Builder]):
         com.pulumi.gcp.compute.PacketMirroringArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.PacketMirroringCollectorIlbArgs.builder
       builder.collectorIlb(args(argsBuilder).build)
@@ -2027,7 +2027,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def filter(args: Endofunction[com.pulumi.gcp.compute.inputs.PacketMirroringFilterArgs.Builder]):
+    inline def filter(args: Endofunction[com.pulumi.gcp.compute.inputs.PacketMirroringFilterArgs.Builder]):
         com.pulumi.gcp.compute.PacketMirroringArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.PacketMirroringFilterArgs.builder
       builder.filter(args(argsBuilder).build)
@@ -2037,7 +2037,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def mirroredResources(args: Endofunction[com.pulumi.gcp.compute.inputs.PacketMirroringMirroredResourcesArgs.Builder]):
+    inline def mirroredResources(args: Endofunction[com.pulumi.gcp.compute.inputs.PacketMirroringMirroredResourcesArgs.Builder]):
         com.pulumi.gcp.compute.PacketMirroringArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.PacketMirroringMirroredResourcesArgs.builder
       builder.mirroredResources(args(argsBuilder).build)
@@ -2049,7 +2049,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def network(args: Endofunction[com.pulumi.gcp.compute.inputs.PacketMirroringNetworkArgs.Builder]):
+    inline def network(args: Endofunction[com.pulumi.gcp.compute.inputs.PacketMirroringNetworkArgs.Builder]):
         com.pulumi.gcp.compute.PacketMirroringArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.PacketMirroringNetworkArgs.builder
       builder.network(args(argsBuilder).build)
@@ -2060,7 +2060,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def preservedState(args: Endofunction[com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateArgs.Builder]):
+    inline def preservedState(args: Endofunction[com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateArgs.Builder]):
         com.pulumi.gcp.compute.PerInstanceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateArgs.builder
       builder.preservedState(args(argsBuilder).build)
@@ -2071,7 +2071,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rolloutOperation(args: Endofunction[com.pulumi.gcp.compute.inputs.PreviewFeatureRolloutOperationArgs.Builder]):
+    inline def rolloutOperation(args: Endofunction[com.pulumi.gcp.compute.inputs.PreviewFeatureRolloutOperationArgs.Builder]):
         com.pulumi.gcp.compute.PreviewFeatureArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.PreviewFeatureRolloutOperationArgs.builder
       builder.rolloutOperation(args(argsBuilder).build)
@@ -2086,7 +2086,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def autoscalingPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyArgs.Builder]):
+    inline def autoscalingPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyArgs.Builder]):
         com.pulumi.gcp.compute.RegionAutoscalerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyArgs.builder
       builder.autoscalingPolicy(args(argsBuilder).build)
@@ -2097,7 +2097,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendBucketIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendBucketIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.RegionBackendBucketIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendBucketIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -2108,7 +2108,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendBucketIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendBucketIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.RegionBackendBucketIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendBucketIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -2119,7 +2119,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def backends(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceBackendArgs.Builder]*):
+    inline def backends(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceBackendArgs.Builder]*):
         com.pulumi.gcp.compute.RegionBackendServiceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceBackendArgs.builder
       builder.backends(args.map(_(argsBuilder).build)*)
@@ -2129,7 +2129,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def cdnPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceCdnPolicyArgs.Builder]):
+    inline def cdnPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceCdnPolicyArgs.Builder]):
         com.pulumi.gcp.compute.RegionBackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceCdnPolicyArgs.builder
       builder.cdnPolicy(args(argsBuilder).build)
@@ -2141,7 +2141,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def circuitBreakers(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceCircuitBreakersArgs.Builder]):
+    inline def circuitBreakers(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceCircuitBreakersArgs.Builder]):
         com.pulumi.gcp.compute.RegionBackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceCircuitBreakersArgs.builder
       builder.circuitBreakers(args(argsBuilder).build)
@@ -2153,7 +2153,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def connectionTrackingPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceConnectionTrackingPolicyArgs.Builder]):
+    inline def connectionTrackingPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceConnectionTrackingPolicyArgs.Builder]):
         com.pulumi.gcp.compute.RegionBackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceConnectionTrackingPolicyArgs.builder
       builder.connectionTrackingPolicy(args(argsBuilder).build)
@@ -2168,7 +2168,7 @@ object compute_ext1:
      * This field only applies when all of the following are true -
      * @return builder
      */
-    def consistentHash(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceConsistentHashArgs.Builder]):
+    inline def consistentHash(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceConsistentHashArgs.Builder]):
         com.pulumi.gcp.compute.RegionBackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceConsistentHashArgs.builder
       builder.consistentHash(args(argsBuilder).build)
@@ -2178,7 +2178,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def customMetrics(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceCustomMetricArgs.Builder]*):
+    inline def customMetrics(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceCustomMetricArgs.Builder]*):
         com.pulumi.gcp.compute.RegionBackendServiceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceCustomMetricArgs.builder
       builder.customMetrics(args.map(_(argsBuilder).build)*)
@@ -2190,7 +2190,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def dynamicForwarding(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceDynamicForwardingArgs.Builder]):
+    inline def dynamicForwarding(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceDynamicForwardingArgs.Builder]):
         com.pulumi.gcp.compute.RegionBackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceDynamicForwardingArgs.builder
       builder.dynamicForwarding(args(argsBuilder).build)
@@ -2200,7 +2200,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def failoverPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceFailoverPolicyArgs.Builder]):
+    inline def failoverPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceFailoverPolicyArgs.Builder]):
         com.pulumi.gcp.compute.RegionBackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceFailoverPolicyArgs.builder
       builder.failoverPolicy(args(argsBuilder).build)
@@ -2217,7 +2217,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def haPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceHaPolicyArgs.Builder]):
+    inline def haPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceHaPolicyArgs.Builder]):
         com.pulumi.gcp.compute.RegionBackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceHaPolicyArgs.builder
       builder.haPolicy(args(argsBuilder).build)
@@ -2228,7 +2228,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def iap(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceIapArgs.Builder]):
+    inline def iap(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceIapArgs.Builder]):
         com.pulumi.gcp.compute.RegionBackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceIapArgs.builder
       builder.iap(args(argsBuilder).build)
@@ -2239,7 +2239,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceLogConfigArgs.Builder]):
         com.pulumi.gcp.compute.RegionBackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -2249,7 +2249,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def networkPassThroughLbTrafficPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceNetworkPassThroughLbTrafficPolicyArgs.Builder]):
+    inline def networkPassThroughLbTrafficPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceNetworkPassThroughLbTrafficPolicyArgs.Builder]):
         com.pulumi.gcp.compute.RegionBackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceNetworkPassThroughLbTrafficPolicyArgs.builder
       builder.networkPassThroughLbTrafficPolicy(args(argsBuilder).build)
@@ -2261,7 +2261,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def outlierDetection(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceOutlierDetectionArgs.Builder]):
+    inline def outlierDetection(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceOutlierDetectionArgs.Builder]):
         com.pulumi.gcp.compute.RegionBackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceOutlierDetectionArgs.builder
       builder.outlierDetection(args(argsBuilder).build)
@@ -2271,7 +2271,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceParamsArgs.Builder]):
         com.pulumi.gcp.compute.RegionBackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -2281,7 +2281,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def strongSessionAffinityCookie(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceStrongSessionAffinityCookieArgs.Builder]):
+    inline def strongSessionAffinityCookie(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceStrongSessionAffinityCookieArgs.Builder]):
         com.pulumi.gcp.compute.RegionBackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceStrongSessionAffinityCookieArgs.builder
       builder.strongSessionAffinityCookie(args(argsBuilder).build)
@@ -2292,7 +2292,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def subsetting(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceSubsettingArgs.Builder]):
+    inline def subsetting(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceSubsettingArgs.Builder]):
         com.pulumi.gcp.compute.RegionBackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceSubsettingArgs.builder
       builder.subsetting(args(argsBuilder).build)
@@ -2302,7 +2302,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def tlsSettings(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceTlsSettingsArgs.Builder]):
+    inline def tlsSettings(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceTlsSettingsArgs.Builder]):
         com.pulumi.gcp.compute.RegionBackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceTlsSettingsArgs.builder
       builder.tlsSettings(args(argsBuilder).build)
@@ -2313,7 +2313,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.RegionBackendServiceIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -2324,7 +2324,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.RegionBackendServiceIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -2335,7 +2335,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def licenseResource(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionCommitmentLicenseResourceArgs.Builder]):
+    inline def licenseResource(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionCommitmentLicenseResourceArgs.Builder]):
         com.pulumi.gcp.compute.RegionCommitmentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionCommitmentLicenseResourceArgs.builder
       builder.licenseResource(args(argsBuilder).build)
@@ -2345,7 +2345,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionCommitmentParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionCommitmentParamsArgs.Builder]):
         com.pulumi.gcp.compute.RegionCommitmentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionCommitmentParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -2356,7 +2356,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def resources(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionCommitmentResourceArgs.Builder]*):
+    inline def resources(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionCommitmentResourceArgs.Builder]*):
         com.pulumi.gcp.compute.RegionCommitmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionCommitmentResourceArgs.builder
       builder.resources(args.map(_(argsBuilder).build)*)
@@ -2367,7 +2367,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def asyncPrimaryDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskAsyncPrimaryDiskArgs.Builder]):
+    inline def asyncPrimaryDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskAsyncPrimaryDiskArgs.Builder]):
         com.pulumi.gcp.compute.RegionDiskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionDiskAsyncPrimaryDiskArgs.builder
       builder.asyncPrimaryDisk(args(argsBuilder).build)
@@ -2387,7 +2387,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def diskEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskDiskEncryptionKeyArgs.Builder]):
+    inline def diskEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskDiskEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.RegionDiskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionDiskDiskEncryptionKeyArgs.builder
       builder.diskEncryptionKey(args(argsBuilder).build)
@@ -2398,7 +2398,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def guestOsFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskGuestOsFeatureArgs.Builder]*):
+    inline def guestOsFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskGuestOsFeatureArgs.Builder]*):
         com.pulumi.gcp.compute.RegionDiskArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionDiskGuestOsFeatureArgs.builder
       builder.guestOsFeatures(args.map(_(argsBuilder).build)*)
@@ -2409,7 +2409,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def sourceImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskSourceImageEncryptionKeyArgs.Builder]):
+    inline def sourceImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskSourceImageEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.RegionDiskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionDiskSourceImageEncryptionKeyArgs.builder
       builder.sourceImageEncryptionKey(args(argsBuilder).build)
@@ -2421,19 +2421,19 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def sourceSnapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskSourceSnapshotEncryptionKeyArgs.Builder]):
+    inline def sourceSnapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskSourceSnapshotEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.RegionDiskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionDiskSourceSnapshotEncryptionKeyArgs.builder
       builder.sourceSnapshotEncryptionKey(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.RegionDiskIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.RegionDiskIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionDiskIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.RegionDiskIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.RegionDiskIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionDiskIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -2444,7 +2444,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def grpcHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckGrpcHealthCheckArgs.Builder]):
+    inline def grpcHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckGrpcHealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.RegionHealthCheckArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionHealthCheckGrpcHealthCheckArgs.builder
       builder.grpcHealthCheck(args(argsBuilder).build)
@@ -2454,7 +2454,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def grpcTlsHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckGrpcTlsHealthCheckArgs.Builder]):
+    inline def grpcTlsHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckGrpcTlsHealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.RegionHealthCheckArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionHealthCheckGrpcTlsHealthCheckArgs.builder
       builder.grpcTlsHealthCheck(args(argsBuilder).build)
@@ -2464,7 +2464,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def http2HealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckHttp2HealthCheckArgs.Builder]):
+    inline def http2HealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckHttp2HealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.RegionHealthCheckArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionHealthCheckHttp2HealthCheckArgs.builder
       builder.http2HealthCheck(args(argsBuilder).build)
@@ -2474,7 +2474,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def httpHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckHttpHealthCheckArgs.Builder]):
+    inline def httpHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckHttpHealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.RegionHealthCheckArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionHealthCheckHttpHealthCheckArgs.builder
       builder.httpHealthCheck(args(argsBuilder).build)
@@ -2484,7 +2484,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def httpsHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckHttpsHealthCheckArgs.Builder]):
+    inline def httpsHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckHttpsHealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.RegionHealthCheckArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionHealthCheckHttpsHealthCheckArgs.builder
       builder.httpsHealthCheck(args(argsBuilder).build)
@@ -2494,7 +2494,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckLogConfigArgs.Builder]):
         com.pulumi.gcp.compute.RegionHealthCheckArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionHealthCheckLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -2504,7 +2504,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def sslHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckSslHealthCheckArgs.Builder]):
+    inline def sslHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckSslHealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.RegionHealthCheckArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionHealthCheckSslHealthCheckArgs.builder
       builder.sslHealthCheck(args(argsBuilder).build)
@@ -2514,7 +2514,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def tcpHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckTcpHealthCheckArgs.Builder]):
+    inline def tcpHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckTcpHealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.RegionHealthCheckArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionHealthCheckTcpHealthCheckArgs.builder
       builder.tcpHealthCheck(args(argsBuilder).build)
@@ -2526,7 +2526,7 @@ object compute_ext1:
      * apply the configuration.
      * @return builder
      */
-    def allInstancesConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerAllInstancesConfigArgs.Builder]):
+    inline def allInstancesConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerAllInstancesConfigArgs.Builder]):
         com.pulumi.gcp.compute.RegionInstanceGroupManagerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerAllInstancesConfigArgs.builder
       builder.allInstancesConfig(args(argsBuilder).build)
@@ -2536,7 +2536,7 @@ object compute_ext1:
      * group. You can specify only one value. Structure is documented below. For more information, see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances#monitoring_groups).
      * @return builder
      */
-    def autoHealingPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerAutoHealingPoliciesArgs.Builder]):
+    inline def autoHealingPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerAutoHealingPoliciesArgs.Builder]):
         com.pulumi.gcp.compute.RegionInstanceGroupManagerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerAutoHealingPoliciesArgs.builder
       builder.autoHealingPolicies(args(argsBuilder).build)
@@ -2545,7 +2545,7 @@ object compute_ext1:
      * @param instanceFlexibilityPolicy The flexibility policy for managed instance group. Instance flexibility allows managed instance group to create VMs from multiple types of machines. Instance flexibility configuration on managed instance group overrides instance template configuration. Structure is documented below.
      * @return builder
      */
-    def instanceFlexibilityPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyArgs.Builder]):
+    inline def instanceFlexibilityPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyArgs.Builder]):
         com.pulumi.gcp.compute.RegionInstanceGroupManagerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyArgs.builder
       builder.instanceFlexibilityPolicy(args(argsBuilder).build)
@@ -2554,7 +2554,7 @@ object compute_ext1:
      * @param instanceLifecyclePolicy The instance lifecycle policy for this managed instance group.
      * @return builder
      */
-    def instanceLifecyclePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceLifecyclePolicyArgs.Builder]):
+    inline def instanceLifecyclePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceLifecyclePolicyArgs.Builder]):
         com.pulumi.gcp.compute.RegionInstanceGroupManagerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceLifecyclePolicyArgs.builder
       builder.instanceLifecyclePolicy(args(argsBuilder).build)
@@ -2564,7 +2564,7 @@ object compute_ext1:
      * for details on configuration.
      * @return builder
      */
-    def namedPorts(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerNamedPortArgs.Builder]*):
+    inline def namedPorts(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerNamedPortArgs.Builder]*):
         com.pulumi.gcp.compute.RegionInstanceGroupManagerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerNamedPortArgs.builder
       builder.namedPorts(args.map(_(argsBuilder).build)*)
@@ -2573,7 +2573,7 @@ object compute_ext1:
      * @param params ) Input only additional params for instance group manager creation. Structure is documented below. For more information, see [API](https://cloud.google.com/compute/docs/reference/rest/beta/instanceGroupManagers/insert).
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerParamsArgs.Builder]):
         com.pulumi.gcp.compute.RegionInstanceGroupManagerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -2584,7 +2584,7 @@ object compute_ext1:
      * ***
      * @return builder
      */
-    def resourcePolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerResourcePoliciesArgs.Builder]):
+    inline def resourcePolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerResourcePoliciesArgs.Builder]):
         com.pulumi.gcp.compute.RegionInstanceGroupManagerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerResourcePoliciesArgs.builder
       builder.resourcePolicies(args(argsBuilder).build)
@@ -2593,7 +2593,7 @@ object compute_ext1:
      * @param standbyPolicy The standby policy for stopped and suspended instances. Structure is documented below. For more information, see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/suspended-and-stopped-vms-in-mig).
      * @return builder
      */
-    def standbyPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStandbyPolicyArgs.Builder]):
+    inline def standbyPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStandbyPolicyArgs.Builder]):
         com.pulumi.gcp.compute.RegionInstanceGroupManagerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStandbyPolicyArgs.builder
       builder.standbyPolicy(args(argsBuilder).build)
@@ -2602,7 +2602,7 @@ object compute_ext1:
      * @param statefulDisks Disks created on the instances that will be preserved on instance delete, update, etc. Structure is documented below. For more information see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/configuring-stateful-disks-in-migs). Proactive cross zone instance redistribution must be disabled before you can update stateful disks on existing instance group managers. This can be controlled via the `updatePolicy`.
      * @return builder
      */
-    def statefulDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatefulDiskArgs.Builder]*):
+    inline def statefulDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatefulDiskArgs.Builder]*):
         com.pulumi.gcp.compute.RegionInstanceGroupManagerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatefulDiskArgs.builder
       builder.statefulDisks(args.map(_(argsBuilder).build)*)
@@ -2611,7 +2611,7 @@ object compute_ext1:
      * @param statefulExternalIps External network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name. Structure is documented below.
      * @return builder
      */
-    def statefulExternalIps(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatefulExternalIpArgs.Builder]*):
+    inline def statefulExternalIps(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatefulExternalIpArgs.Builder]*):
         com.pulumi.gcp.compute.RegionInstanceGroupManagerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatefulExternalIpArgs.builder
       builder.statefulExternalIps(args.map(_(argsBuilder).build)*)
@@ -2620,7 +2620,7 @@ object compute_ext1:
      * @param statefulInternalIps Internal network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name. Structure is documented below.
      * @return builder
      */
-    def statefulInternalIps(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatefulInternalIpArgs.Builder]*):
+    inline def statefulInternalIps(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatefulInternalIpArgs.Builder]*):
         com.pulumi.gcp.compute.RegionInstanceGroupManagerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatefulInternalIpArgs.builder
       builder.statefulInternalIps(args.map(_(argsBuilder).build)*)
@@ -2629,7 +2629,7 @@ object compute_ext1:
      * @param targetSizePolicies The policy that specifies how the MIG creates its VMs to achieve the target size. Structure is documented below.
      * @return builder
      */
-    def targetSizePolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerTargetSizePolicyArgs.Builder]*):
+    inline def targetSizePolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerTargetSizePolicyArgs.Builder]*):
         com.pulumi.gcp.compute.RegionInstanceGroupManagerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerTargetSizePolicyArgs.builder
       builder.targetSizePolicies(args.map(_(argsBuilder).build)*)
@@ -2638,7 +2638,7 @@ object compute_ext1:
      * @param updatePolicy The update policy for this managed instance group. Structure is documented below. For more information, see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/updating-managed-instance-groups) and [API](https://cloud.google.com/compute/docs/reference/rest/beta/regionInstanceGroupManagers/patch)
      * @return builder
      */
-    def updatePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerUpdatePolicyArgs.Builder]):
+    inline def updatePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerUpdatePolicyArgs.Builder]):
         com.pulumi.gcp.compute.RegionInstanceGroupManagerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerUpdatePolicyArgs.builder
       builder.updatePolicy(args(argsBuilder).build)
@@ -2649,7 +2649,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def versions(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerVersionArgs.Builder]*):
+    inline def versions(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerVersionArgs.Builder]*):
         com.pulumi.gcp.compute.RegionInstanceGroupManagerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerVersionArgs.builder
       builder.versions(args.map(_(argsBuilder).build)*)
@@ -2659,7 +2659,7 @@ object compute_ext1:
      * @param advancedMachineFeatures Configure Nested Virtualisation and Simultaneous Hyper Threading on this VM. Structure is documented below
      * @return builder
      */
-    def advancedMachineFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateAdvancedMachineFeaturesArgs.Builder]):
+    inline def advancedMachineFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateAdvancedMachineFeaturesArgs.Builder]):
         com.pulumi.gcp.compute.RegionInstanceTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateAdvancedMachineFeaturesArgs.builder
       builder.advancedMachineFeatures(args(argsBuilder).build)
@@ -2668,7 +2668,7 @@ object compute_ext1:
      * @param confidentialInstanceConfig Enable [Confidential Mode](https://cloud.google.com/compute/confidential-vm/docs/about-cvm) on this VM. Structure is documented below
      * @return builder
      */
-    def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateConfidentialInstanceConfigArgs.Builder]):
+    inline def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateConfidentialInstanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.RegionInstanceTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateConfidentialInstanceConfigArgs.builder
       builder.confidentialInstanceConfig(args(argsBuilder).build)
@@ -2679,7 +2679,7 @@ object compute_ext1:
      * documented below.
      * @return builder
      */
-    def disks(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateDiskArgs.Builder]*):
+    inline def disks(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateDiskArgs.Builder]*):
         com.pulumi.gcp.compute.RegionInstanceTemplateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateDiskArgs.builder
       builder.disks(args.map(_(argsBuilder).build)*)
@@ -2688,7 +2688,7 @@ object compute_ext1:
      * @param guestAccelerators List of the type and count of accelerator cards attached to the instance. Structure documented below.
      * @return builder
      */
-    def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateGuestAcceleratorArgs.Builder]*):
+    inline def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateGuestAcceleratorArgs.Builder]*):
         com.pulumi.gcp.compute.RegionInstanceTemplateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateGuestAcceleratorArgs.builder
       builder.guestAccelerators(args.map(_(argsBuilder).build)*)
@@ -2699,7 +2699,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def networkInterfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceArgs.Builder]*):
+    inline def networkInterfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceArgs.Builder]*):
         com.pulumi.gcp.compute.RegionInstanceTemplateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
@@ -2713,7 +2713,7 @@ object compute_ext1:
      * in order for this setting to take effect.
      * @return builder
      */
-    def networkPerformanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkPerformanceConfigArgs.Builder]):
+    inline def networkPerformanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkPerformanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.RegionInstanceTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkPerformanceConfigArgs.builder
       builder.networkPerformanceConfig(args(argsBuilder).build)
@@ -2723,7 +2723,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def reservationAffinity(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateReservationAffinityArgs.Builder]):
+    inline def reservationAffinity(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateReservationAffinityArgs.Builder]):
         com.pulumi.gcp.compute.RegionInstanceTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateReservationAffinityArgs.builder
       builder.reservationAffinity(args(argsBuilder).build)
@@ -2733,7 +2733,7 @@ object compute_ext1:
      * this configuration option are detailed below.
      * @return builder
      */
-    def scheduling(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingArgs.Builder]):
+    inline def scheduling(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingArgs.Builder]):
         com.pulumi.gcp.compute.RegionInstanceTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingArgs.builder
       builder.scheduling(args(argsBuilder).build)
@@ -2742,7 +2742,7 @@ object compute_ext1:
      * @param serviceAccount Service account to attach to the instance. Structure is documented below.
      * @return builder
      */
-    def serviceAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateServiceAccountArgs.Builder]):
+    inline def serviceAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateServiceAccountArgs.Builder]):
         com.pulumi.gcp.compute.RegionInstanceTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateServiceAccountArgs.builder
       builder.serviceAccount(args(argsBuilder).build)
@@ -2752,7 +2752,7 @@ object compute_ext1:
      * **Note**: `shieldedInstanceConfig` can only be used with boot images with shielded vm support. See the complete list [here](https://cloud.google.com/compute/docs/images#shielded-images).
      * @return builder
      */
-    def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateShieldedInstanceConfigArgs.Builder]):
+    inline def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateShieldedInstanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.RegionInstanceTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateShieldedInstanceConfigArgs.builder
       builder.shieldedInstanceConfig(args(argsBuilder).build)
@@ -2762,7 +2762,7 @@ object compute_ext1:
      * this configuration option are detailed below.
      * @return builder
      */
-    def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateWorkloadIdentityConfigArgs.Builder]):
+    inline def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateWorkloadIdentityConfigArgs.Builder]):
         com.pulumi.gcp.compute.RegionInstanceTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateWorkloadIdentityConfigArgs.builder
       builder.workloadIdentityConfig(args(argsBuilder).build)
@@ -2773,7 +2773,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstantSnapshotParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstantSnapshotParamsArgs.Builder]):
         com.pulumi.gcp.compute.RegionInstantSnapshotArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstantSnapshotParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -2784,7 +2784,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstantSnapshotIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstantSnapshotIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.RegionInstantSnapshotIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstantSnapshotIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -2795,7 +2795,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstantSnapshotIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstantSnapshotIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.RegionInstantSnapshotIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstantSnapshotIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -2807,7 +2807,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def appEngine(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupAppEngineArgs.Builder]):
+    inline def appEngine(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupAppEngineArgs.Builder]):
         com.pulumi.gcp.compute.RegionNetworkEndpointGroupArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupAppEngineArgs.builder
       builder.appEngine(args(argsBuilder).build)
@@ -2818,7 +2818,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def cloudFunction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupCloudFunctionArgs.Builder]):
+    inline def cloudFunction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupCloudFunctionArgs.Builder]):
         com.pulumi.gcp.compute.RegionNetworkEndpointGroupArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupCloudFunctionArgs.builder
       builder.cloudFunction(args(argsBuilder).build)
@@ -2829,7 +2829,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def cloudRun(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupCloudRunArgs.Builder]):
+    inline def cloudRun(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupCloudRunArgs.Builder]):
         com.pulumi.gcp.compute.RegionNetworkEndpointGroupArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupCloudRunArgs.builder
       builder.cloudRun(args(argsBuilder).build)
@@ -2839,7 +2839,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def pscData(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupPscDataArgs.Builder]):
+    inline def pscData(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupPscDataArgs.Builder]):
         com.pulumi.gcp.compute.RegionNetworkEndpointGroupArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupPscDataArgs.builder
       builder.pscData(args(argsBuilder).build)
@@ -2851,19 +2851,19 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def serverlessDeployment(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupServerlessDeploymentArgs.Builder]):
+    inline def serverlessDeployment(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupServerlessDeploymentArgs.Builder]):
         com.pulumi.gcp.compute.RegionNetworkEndpointGroupArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupServerlessDeploymentArgs.builder
       builder.serverlessDeployment(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -2874,7 +2874,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyRuleMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyRuleMatchArgs.Builder]):
         com.pulumi.gcp.compute.RegionNetworkFirewallPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyRuleMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -2886,7 +2886,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyRuleTargetSecureTagArgs.Builder]*):
+    inline def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyRuleTargetSecureTagArgs.Builder]*):
         com.pulumi.gcp.compute.RegionNetworkFirewallPolicyRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyRuleTargetSecureTagArgs.builder
       builder.targetSecureTags(args.map(_(argsBuilder).build)*)
@@ -2897,7 +2897,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesRuleArgs.Builder]*):
         com.pulumi.gcp.compute.RegionNetworkFirewallPolicyWithRulesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -2908,7 +2908,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def action(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleActionArgs.Builder]):
+    inline def action(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleActionArgs.Builder]):
         com.pulumi.gcp.compute.RegionNetworkPolicyTrafficClassificationRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleActionArgs.builder
       builder.action(args(argsBuilder).build)
@@ -2918,7 +2918,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleMatchArgs.Builder]):
         com.pulumi.gcp.compute.RegionNetworkPolicyTrafficClassificationRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -2930,7 +2930,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleTargetSecureTagArgs.Builder]*):
+    inline def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleTargetSecureTagArgs.Builder]*):
         com.pulumi.gcp.compute.RegionNetworkPolicyTrafficClassificationRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleTargetSecureTagArgs.builder
       builder.targetSecureTags(args.map(_(argsBuilder).build)*)
@@ -2941,7 +2941,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def preservedState(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateArgs.Builder]):
+    inline def preservedState(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateArgs.Builder]):
         com.pulumi.gcp.compute.RegionPerInstanceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateArgs.builder
       builder.preservedState(args(argsBuilder).build)
@@ -2952,7 +2952,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def requestedRunDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestRequestedRunDurationArgs.Builder]):
+    inline def requestedRunDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestRequestedRunDurationArgs.Builder]):
         com.pulumi.gcp.compute.RegionResizeRequestArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionResizeRequestRequestedRunDurationArgs.builder
       builder.requestedRunDuration(args(argsBuilder).build)
@@ -2963,7 +2963,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def advancedOptionsConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyAdvancedOptionsConfigArgs.Builder]):
+    inline def advancedOptionsConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyAdvancedOptionsConfigArgs.Builder]):
         com.pulumi.gcp.compute.RegionSecurityPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyAdvancedOptionsConfigArgs.builder
       builder.advancedOptionsConfig(args(argsBuilder).build)
@@ -2973,7 +2973,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def ddosProtectionConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyDdosProtectionConfigArgs.Builder]):
+    inline def ddosProtectionConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyDdosProtectionConfigArgs.Builder]):
         com.pulumi.gcp.compute.RegionSecurityPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyDdosProtectionConfigArgs.builder
       builder.ddosProtectionConfig(args(argsBuilder).build)
@@ -2983,7 +2983,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleArgs.Builder]*):
         com.pulumi.gcp.compute.RegionSecurityPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -2995,7 +2995,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def userDefinedFields(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyUserDefinedFieldArgs.Builder]*):
+    inline def userDefinedFields(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyUserDefinedFieldArgs.Builder]*):
         com.pulumi.gcp.compute.RegionSecurityPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyUserDefinedFieldArgs.builder
       builder.userDefinedFields(args.map(_(argsBuilder).build)*)
@@ -3007,7 +3007,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleMatchArgs.Builder]):
         com.pulumi.gcp.compute.RegionSecurityPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -3024,7 +3024,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def networkMatch(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleNetworkMatchArgs.Builder]):
+    inline def networkMatch(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleNetworkMatchArgs.Builder]):
         com.pulumi.gcp.compute.RegionSecurityPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleNetworkMatchArgs.builder
       builder.networkMatch(args(argsBuilder).build)
@@ -3035,7 +3035,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def preconfiguredWafConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigArgs.Builder]):
+    inline def preconfiguredWafConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigArgs.Builder]):
         com.pulumi.gcp.compute.RegionSecurityPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigArgs.builder
       builder.preconfiguredWafConfig(args(argsBuilder).build)
@@ -3045,7 +3045,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rateLimitOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleRateLimitOptionsArgs.Builder]):
+    inline def rateLimitOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleRateLimitOptionsArgs.Builder]):
         com.pulumi.gcp.compute.RegionSecurityPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleRateLimitOptionsArgs.builder
       builder.rateLimitOptions(args(argsBuilder).build)
@@ -3059,7 +3059,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def defaultRouteAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionArgs.Builder]):
+    inline def defaultRouteAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionArgs.Builder]):
         com.pulumi.gcp.compute.RegionUrlMapArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionArgs.builder
       builder.defaultRouteAction(args(argsBuilder).build)
@@ -3071,7 +3071,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def defaultUrlRedirect(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultUrlRedirectArgs.Builder]):
+    inline def defaultUrlRedirect(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultUrlRedirectArgs.Builder]):
         com.pulumi.gcp.compute.RegionUrlMapArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultUrlRedirectArgs.builder
       builder.defaultUrlRedirect(args(argsBuilder).build)
@@ -3084,7 +3084,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapHeaderActionArgs.Builder]):
+    inline def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapHeaderActionArgs.Builder]):
         com.pulumi.gcp.compute.RegionUrlMapArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapHeaderActionArgs.builder
       builder.headerAction(args(argsBuilder).build)
@@ -3094,7 +3094,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def hostRules(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapHostRuleArgs.Builder]*):
+    inline def hostRules(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapHostRuleArgs.Builder]*):
         com.pulumi.gcp.compute.RegionUrlMapArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapHostRuleArgs.builder
       builder.hostRules(args.map(_(argsBuilder).build)*)
@@ -3104,7 +3104,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def pathMatchers(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherArgs.Builder]*):
+    inline def pathMatchers(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherArgs.Builder]*):
         com.pulumi.gcp.compute.RegionUrlMapArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherArgs.builder
       builder.pathMatchers(args.map(_(argsBuilder).build)*)
@@ -3115,7 +3115,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def tests(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapTestArgs.Builder]*):
+    inline def tests(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapTestArgs.Builder]*):
         com.pulumi.gcp.compute.RegionUrlMapArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapTestArgs.builder
       builder.tests(args.map(_(argsBuilder).build)*)
@@ -3126,7 +3126,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def deleteAfterDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationDeleteAfterDurationArgs.Builder]):
+    inline def deleteAfterDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationDeleteAfterDurationArgs.Builder]):
         com.pulumi.gcp.compute.ReservationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ReservationDeleteAfterDurationArgs.builder
       builder.deleteAfterDuration(args(argsBuilder).build)
@@ -3136,7 +3136,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationParamsArgs.Builder]):
         com.pulumi.gcp.compute.ReservationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ReservationParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -3146,7 +3146,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def reservationSharingPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationReservationSharingPolicyArgs.Builder]):
+    inline def reservationSharingPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationReservationSharingPolicyArgs.Builder]):
         com.pulumi.gcp.compute.ReservationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ReservationReservationSharingPolicyArgs.builder
       builder.reservationSharingPolicy(args(argsBuilder).build)
@@ -3156,7 +3156,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def shareSettings(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationShareSettingsArgs.Builder]):
+    inline def shareSettings(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationShareSettingsArgs.Builder]):
         com.pulumi.gcp.compute.ReservationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ReservationShareSettingsArgs.builder
       builder.shareSettings(args(argsBuilder).build)
@@ -3166,7 +3166,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def specificReservation(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationSpecificReservationArgs.Builder]):
+    inline def specificReservation(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationSpecificReservationArgs.Builder]):
         com.pulumi.gcp.compute.ReservationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ReservationSpecificReservationArgs.builder
       builder.specificReservation(args(argsBuilder).build)
@@ -3177,7 +3177,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def requestedRunDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestRequestedRunDurationArgs.Builder]):
+    inline def requestedRunDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestRequestedRunDurationArgs.Builder]):
         com.pulumi.gcp.compute.ResizeRequestArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ResizeRequestRequestedRunDurationArgs.builder
       builder.requestedRunDuration(args(argsBuilder).build)
@@ -3188,7 +3188,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def diskConsistencyGroupPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicyDiskConsistencyGroupPolicyArgs.Builder]):
+    inline def diskConsistencyGroupPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicyDiskConsistencyGroupPolicyArgs.Builder]):
         com.pulumi.gcp.compute.ResourcePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ResourcePolicyDiskConsistencyGroupPolicyArgs.builder
       builder.diskConsistencyGroupPolicy(args(argsBuilder).build)
@@ -3198,7 +3198,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def groupPlacementPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicyGroupPlacementPolicyArgs.Builder]):
+    inline def groupPlacementPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicyGroupPlacementPolicyArgs.Builder]):
         com.pulumi.gcp.compute.ResourcePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ResourcePolicyGroupPlacementPolicyArgs.builder
       builder.groupPlacementPolicy(args(argsBuilder).build)
@@ -3208,7 +3208,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def instanceSchedulePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicyInstanceSchedulePolicyArgs.Builder]):
+    inline def instanceSchedulePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicyInstanceSchedulePolicyArgs.Builder]):
         com.pulumi.gcp.compute.ResourcePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ResourcePolicyInstanceSchedulePolicyArgs.builder
       builder.instanceSchedulePolicy(args(argsBuilder).build)
@@ -3218,7 +3218,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def snapshotSchedulePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyArgs.Builder]):
+    inline def snapshotSchedulePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyArgs.Builder]):
         com.pulumi.gcp.compute.ResourcePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyArgs.builder
       builder.snapshotSchedulePolicy(args(argsBuilder).build)
@@ -3228,7 +3228,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def workloadPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicyWorkloadPolicyArgs.Builder]):
+    inline def workloadPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicyWorkloadPolicyArgs.Builder]):
         com.pulumi.gcp.compute.ResourcePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ResourcePolicyWorkloadPolicyArgs.builder
       builder.workloadPolicy(args(argsBuilder).build)
@@ -3239,7 +3239,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def waves(args: Endofunction[com.pulumi.gcp.compute.inputs.RolloutPlanWaveArgs.Builder]*):
+    inline def waves(args: Endofunction[com.pulumi.gcp.compute.inputs.RolloutPlanWaveArgs.Builder]*):
         com.pulumi.gcp.compute.RolloutPlanArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RolloutPlanWaveArgs.builder
       builder.waves(args.map(_(argsBuilder).build)*)
@@ -3250,7 +3250,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.RouteParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.RouteParamsArgs.Builder]):
         com.pulumi.gcp.compute.RouteArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RouteParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -3261,7 +3261,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def bgp(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterBgpArgs.Builder]):
+    inline def bgp(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterBgpArgs.Builder]):
         com.pulumi.gcp.compute.RouterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RouterBgpArgs.builder
       builder.bgp(args(argsBuilder).build)
@@ -3271,7 +3271,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def md5AuthenticationKeys(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterMd5AuthenticationKeysArgs.Builder]):
+    inline def md5AuthenticationKeys(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterMd5AuthenticationKeysArgs.Builder]):
         com.pulumi.gcp.compute.RouterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RouterMd5AuthenticationKeysArgs.builder
       builder.md5AuthenticationKeys(args(argsBuilder).build)
@@ -3281,7 +3281,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterParamsArgs.Builder]):
         com.pulumi.gcp.compute.RouterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RouterParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -3292,7 +3292,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def elements(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterNamedSetElementArgs.Builder]*):
+    inline def elements(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterNamedSetElementArgs.Builder]*):
         com.pulumi.gcp.compute.RouterNamedSetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RouterNamedSetElementArgs.builder
       builder.elements(args.map(_(argsBuilder).build)*)
@@ -3303,7 +3303,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterNatLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterNatLogConfigArgs.Builder]):
         com.pulumi.gcp.compute.RouterNatArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RouterNatLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -3314,7 +3314,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def nat64Subnetworks(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterNatNat64SubnetworkArgs.Builder]*):
+    inline def nat64Subnetworks(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterNatNat64SubnetworkArgs.Builder]*):
         com.pulumi.gcp.compute.RouterNatArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RouterNatNat64SubnetworkArgs.builder
       builder.nat64Subnetworks(args.map(_(argsBuilder).build)*)
@@ -3324,7 +3324,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterNatRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterNatRuleArgs.Builder]*):
         com.pulumi.gcp.compute.RouterNatArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RouterNatRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -3335,7 +3335,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def subnetworks(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterNatSubnetworkArgs.Builder]*):
+    inline def subnetworks(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterNatSubnetworkArgs.Builder]*):
         com.pulumi.gcp.compute.RouterNatArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RouterNatSubnetworkArgs.builder
       builder.subnetworks(args.map(_(argsBuilder).build)*)
@@ -3350,7 +3350,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def advertisedIpRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterPeerAdvertisedIpRangeArgs.Builder]*):
+    inline def advertisedIpRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterPeerAdvertisedIpRangeArgs.Builder]*):
         com.pulumi.gcp.compute.RouterPeerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RouterPeerAdvertisedIpRangeArgs.builder
       builder.advertisedIpRanges(args.map(_(argsBuilder).build)*)
@@ -3360,7 +3360,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def bfd(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterPeerBfdArgs.Builder]):
+    inline def bfd(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterPeerBfdArgs.Builder]):
         com.pulumi.gcp.compute.RouterPeerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RouterPeerBfdArgs.builder
       builder.bfd(args(argsBuilder).build)
@@ -3372,7 +3372,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def customLearnedIpRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterPeerCustomLearnedIpRangeArgs.Builder]*):
+    inline def customLearnedIpRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterPeerCustomLearnedIpRangeArgs.Builder]*):
         com.pulumi.gcp.compute.RouterPeerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RouterPeerCustomLearnedIpRangeArgs.builder
       builder.customLearnedIpRanges(args.map(_(argsBuilder).build)*)
@@ -3382,7 +3382,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def md5AuthenticationKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterPeerMd5AuthenticationKeyArgs.Builder]):
+    inline def md5AuthenticationKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterPeerMd5AuthenticationKeyArgs.Builder]):
         com.pulumi.gcp.compute.RouterPeerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RouterPeerMd5AuthenticationKeyArgs.builder
       builder.md5AuthenticationKey(args(argsBuilder).build)
@@ -3393,7 +3393,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def terms(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterRoutePolicyTermArgs.Builder]*):
+    inline def terms(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterRoutePolicyTermArgs.Builder]*):
         com.pulumi.gcp.compute.RouterRoutePolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RouterRoutePolicyTermArgs.builder
       builder.terms(args.map(_(argsBuilder).build)*)
@@ -3403,7 +3403,7 @@ object compute_ext1:
      * @param adaptiveProtectionConfig Configuration for [Google Cloud Armor Adaptive Protection](https://cloud.google.com/armor/docs/adaptive-protection-overview?hl=en). Structure is documented below.
      * @return builder
      */
-    def adaptiveProtectionConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyAdaptiveProtectionConfigArgs.Builder]):
+    inline def adaptiveProtectionConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyAdaptiveProtectionConfigArgs.Builder]):
         com.pulumi.gcp.compute.SecurityPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyAdaptiveProtectionConfigArgs.builder
       builder.adaptiveProtectionConfig(args(argsBuilder).build)
@@ -3413,7 +3413,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def advancedOptionsConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyAdvancedOptionsConfigArgs.Builder]):
+    inline def advancedOptionsConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyAdvancedOptionsConfigArgs.Builder]):
         com.pulumi.gcp.compute.SecurityPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyAdvancedOptionsConfigArgs.builder
       builder.advancedOptionsConfig(args(argsBuilder).build)
@@ -3422,7 +3422,7 @@ object compute_ext1:
      * @param recaptchaOptionsConfig [reCAPTCHA Configuration Options](https://cloud.google.com/armor/docs/configure-security-policies?hl=en#use_a_manual_challenge_to_distinguish_between_human_or_automated_clients). Structure is documented below.
      * @return builder
      */
-    def recaptchaOptionsConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRecaptchaOptionsConfigArgs.Builder]):
+    inline def recaptchaOptionsConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRecaptchaOptionsConfigArgs.Builder]):
         com.pulumi.gcp.compute.SecurityPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRecaptchaOptionsConfigArgs.builder
       builder.recaptchaOptionsConfig(args(argsBuilder).build)
@@ -3433,7 +3433,7 @@ object compute_ext1:
      * security policy, a default rule with action &#34;allow&#34; will be added. Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleArgs.Builder]*):
         com.pulumi.gcp.compute.SecurityPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -3444,7 +3444,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleHeaderActionArgs.Builder]):
+    inline def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleHeaderActionArgs.Builder]):
         com.pulumi.gcp.compute.SecurityPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRuleHeaderActionArgs.builder
       builder.headerAction(args(argsBuilder).build)
@@ -3455,7 +3455,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleMatchArgs.Builder]):
         com.pulumi.gcp.compute.SecurityPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRuleMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -3466,7 +3466,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def preconfiguredWafConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigArgs.Builder]):
+    inline def preconfiguredWafConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigArgs.Builder]):
         com.pulumi.gcp.compute.SecurityPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigArgs.builder
       builder.preconfiguredWafConfig(args(argsBuilder).build)
@@ -3476,7 +3476,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rateLimitOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRateLimitOptionsArgs.Builder]):
+    inline def rateLimitOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRateLimitOptionsArgs.Builder]):
         com.pulumi.gcp.compute.SecurityPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRateLimitOptionsArgs.builder
       builder.rateLimitOptions(args(argsBuilder).build)
@@ -3486,7 +3486,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def redirectOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRedirectOptionsArgs.Builder]):
+    inline def redirectOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRedirectOptionsArgs.Builder]):
         com.pulumi.gcp.compute.SecurityPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRedirectOptionsArgs.builder
       builder.redirectOptions(args(argsBuilder).build)
@@ -3498,7 +3498,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityScanConfigAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityScanConfigAuthenticationArgs.Builder]):
         com.pulumi.gcp.compute.SecurityScanConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityScanConfigAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -3508,7 +3508,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def schedule(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityScanConfigScheduleArgs.Builder]):
+    inline def schedule(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityScanConfigScheduleArgs.Builder]):
         com.pulumi.gcp.compute.SecurityScanConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityScanConfigScheduleArgs.builder
       builder.schedule(args(argsBuilder).build)
@@ -3520,7 +3520,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def consumerAcceptLists(args: Endofunction[com.pulumi.gcp.compute.inputs.ServiceAttachmentConsumerAcceptListArgs.Builder]*):
+    inline def consumerAcceptLists(args: Endofunction[com.pulumi.gcp.compute.inputs.ServiceAttachmentConsumerAcceptListArgs.Builder]*):
         com.pulumi.gcp.compute.ServiceAttachmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ServiceAttachmentConsumerAcceptListArgs.builder
       builder.consumerAcceptLists(args.map(_(argsBuilder).build)*)
@@ -3531,7 +3531,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def tunnelingConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.ServiceAttachmentTunnelingConfigArgs.Builder]):
+    inline def tunnelingConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.ServiceAttachmentTunnelingConfigArgs.Builder]):
         com.pulumi.gcp.compute.ServiceAttachmentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ServiceAttachmentTunnelingConfigArgs.builder
       builder.tunnelingConfig(args(argsBuilder).build)
@@ -3542,7 +3542,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotParamsArgs.Builder]):
         com.pulumi.gcp.compute.SnapshotArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -3563,7 +3563,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def snapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotSnapshotEncryptionKeyArgs.Builder]):
+    inline def snapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotSnapshotEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.SnapshotArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotSnapshotEncryptionKeyArgs.builder
       builder.snapshotEncryptionKey(args(argsBuilder).build)
@@ -3575,19 +3575,19 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def sourceDiskEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotSourceDiskEncryptionKeyArgs.Builder]):
+    inline def sourceDiskEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotSourceDiskEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.SnapshotArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotSourceDiskEncryptionKeyArgs.builder
       builder.sourceDiskEncryptionKey(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.SnapshotIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.SnapshotIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.SnapshotIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.SnapshotIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -3603,7 +3603,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicyRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicyRuleArgs.Builder]*):
         com.pulumi.gcp.compute.SnapshotRecycleBinPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicyRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -3615,7 +3615,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def storageLocation(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotSettingsStorageLocationArgs.Builder]):
+    inline def storageLocation(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotSettingsStorageLocationArgs.Builder]):
         com.pulumi.gcp.compute.SnapshotSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotSettingsStorageLocationArgs.builder
       builder.storageLocation(args(argsBuilder).build)
@@ -3626,7 +3626,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.StoragePoolParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.StoragePoolParamsArgs.Builder]):
         com.pulumi.gcp.compute.StoragePoolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.StoragePoolParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -3637,7 +3637,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.StoragePoolIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.StoragePoolIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.StoragePoolIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.StoragePoolIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -3648,7 +3648,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.StoragePoolIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.StoragePoolIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.StoragePoolIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.StoragePoolIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -3662,7 +3662,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SubnetworkLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SubnetworkLogConfigArgs.Builder]):
         com.pulumi.gcp.compute.SubnetworkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SubnetworkLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -3672,7 +3672,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.SubnetworkParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.SubnetworkParamsArgs.Builder]):
         com.pulumi.gcp.compute.SubnetworkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SubnetworkParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -3685,7 +3685,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def secondaryIpRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.SubnetworkSecondaryIpRangeArgs.Builder]*):
+    inline def secondaryIpRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.SubnetworkSecondaryIpRangeArgs.Builder]*):
         com.pulumi.gcp.compute.SubnetworkArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.SubnetworkSecondaryIpRangeArgs.builder
       builder.secondaryIpRanges(args.map(_(argsBuilder).build)*)
@@ -3696,7 +3696,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.SubnetworkIAMBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.SubnetworkIAMBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.SubnetworkIAMBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SubnetworkIAMBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -3707,7 +3707,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.SubnetworkIAMMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.SubnetworkIAMMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.SubnetworkIAMMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SubnetworkIAMMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -3725,7 +3725,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def defaultCustomErrorResponsePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultCustomErrorResponsePolicyArgs.Builder]):
+    inline def defaultCustomErrorResponsePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultCustomErrorResponsePolicyArgs.Builder]):
         com.pulumi.gcp.compute.URLMapArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultCustomErrorResponsePolicyArgs.builder
       builder.defaultCustomErrorResponsePolicy(args(argsBuilder).build)
@@ -3739,7 +3739,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def defaultRouteAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionArgs.Builder]):
+    inline def defaultRouteAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionArgs.Builder]):
         com.pulumi.gcp.compute.URLMapArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionArgs.builder
       builder.defaultRouteAction(args(argsBuilder).build)
@@ -3751,7 +3751,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def defaultUrlRedirect(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultUrlRedirectArgs.Builder]):
+    inline def defaultUrlRedirect(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultUrlRedirectArgs.Builder]):
         com.pulumi.gcp.compute.URLMapArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultUrlRedirectArgs.builder
       builder.defaultUrlRedirect(args(argsBuilder).build)
@@ -3763,7 +3763,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapHeaderActionArgs.Builder]):
+    inline def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapHeaderActionArgs.Builder]):
         com.pulumi.gcp.compute.URLMapArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapHeaderActionArgs.builder
       builder.headerAction(args(argsBuilder).build)
@@ -3773,7 +3773,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def hostRules(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapHostRuleArgs.Builder]*):
+    inline def hostRules(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapHostRuleArgs.Builder]*):
         com.pulumi.gcp.compute.URLMapArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapHostRuleArgs.builder
       builder.hostRules(args.map(_(argsBuilder).build)*)
@@ -3783,7 +3783,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def pathMatchers(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherArgs.Builder]*):
+    inline def pathMatchers(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherArgs.Builder]*):
         com.pulumi.gcp.compute.URLMapArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherArgs.builder
       builder.pathMatchers(args.map(_(argsBuilder).build)*)
@@ -3795,7 +3795,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def tests(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapTestArgs.Builder]*):
+    inline def tests(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapTestArgs.Builder]*):
         com.pulumi.gcp.compute.URLMapArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapTestArgs.builder
       builder.tests(args.map(_(argsBuilder).build)*)
@@ -3806,7 +3806,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.VPNGatewayParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.VPNGatewayParamsArgs.Builder]):
         com.pulumi.gcp.compute.VPNGatewayArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.VPNGatewayParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -3817,7 +3817,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def cipherSuite(args: Endofunction[com.pulumi.gcp.compute.inputs.VPNTunnelCipherSuiteArgs.Builder]):
+    inline def cipherSuite(args: Endofunction[com.pulumi.gcp.compute.inputs.VPNTunnelCipherSuiteArgs.Builder]):
         com.pulumi.gcp.compute.VPNTunnelArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.VPNTunnelCipherSuiteArgs.builder
       builder.cipherSuite(args(argsBuilder).build)
@@ -3827,7 +3827,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.VPNTunnelParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.VPNTunnelParamsArgs.Builder]):
         com.pulumi.gcp.compute.VPNTunnelArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.VPNTunnelParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -3838,7 +3838,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def endpoints(args: Endofunction[com.pulumi.gcp.compute.inputs.WireGroupEndpointArgs.Builder]*):
+    inline def endpoints(args: Endofunction[com.pulumi.gcp.compute.inputs.WireGroupEndpointArgs.Builder]*):
         com.pulumi.gcp.compute.WireGroupArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.WireGroupEndpointArgs.builder
       builder.endpoints(args.map(_(argsBuilder).build)*)
@@ -3849,7 +3849,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def wireGroupProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.WireGroupWireGroupPropertiesArgs.Builder]):
+    inline def wireGroupProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.WireGroupWireGroupPropertiesArgs.Builder]):
         com.pulumi.gcp.compute.WireGroupArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.WireGroupWireGroupPropertiesArgs.builder
       builder.wireGroupProperties(args(argsBuilder).build)
@@ -3859,7 +3859,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def wireProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.WireGroupWirePropertiesArgs.Builder]):
+    inline def wireProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.WireGroupWirePropertiesArgs.Builder]):
         com.pulumi.gcp.compute.WireGroupArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.WireGroupWirePropertiesArgs.builder
       builder.wireProperties(args(argsBuilder).build)
@@ -3870,7 +3870,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def extensionPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyExtensionPolicyArgs.Builder]*):
+    inline def extensionPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyExtensionPolicyArgs.Builder]*):
         com.pulumi.gcp.compute.ZoneVmExtensionPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyExtensionPolicyArgs.builder
       builder.extensionPolicies(args.map(_(argsBuilder).build)*)
@@ -3880,7 +3880,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def instanceSelectors(args: Endofunction[com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyInstanceSelectorArgs.Builder]*):
+    inline def instanceSelectors(args: Endofunction[com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyInstanceSelectorArgs.Builder]*):
         com.pulumi.gcp.compute.ZoneVmExtensionPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyInstanceSelectorArgs.builder
       builder.instanceSelectors(args.map(_(argsBuilder).build)*)
@@ -3893,7 +3893,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def cpuUtilization(args: Endofunction[com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyCpuUtilizationArgs.Builder]):
+    inline def cpuUtilization(args: Endofunction[com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyCpuUtilizationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyCpuUtilizationArgs.builder
       builder.cpuUtilization(args(argsBuilder).build)
@@ -3903,7 +3903,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def loadBalancingUtilization(args: Endofunction[com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyLoadBalancingUtilizationArgs.Builder]):
+    inline def loadBalancingUtilization(args: Endofunction[com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyLoadBalancingUtilizationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyLoadBalancingUtilizationArgs.builder
       builder.loadBalancingUtilization(args(argsBuilder).build)
@@ -3913,7 +3913,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def metrics(args: Endofunction[com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyMetricArgs.Builder]*):
+    inline def metrics(args: Endofunction[com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyMetricArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyMetricArgs.builder
       builder.metrics(args.map(_(argsBuilder).build)*)
@@ -3925,7 +3925,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def scaleDownControl(args: Endofunction[com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyScaleDownControlArgs.Builder]):
+    inline def scaleDownControl(args: Endofunction[com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyScaleDownControlArgs.Builder]):
         com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyScaleDownControlArgs.builder
       builder.scaleDownControl(args(argsBuilder).build)
@@ -3936,7 +3936,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def scaleInControl(args: Endofunction[com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyScaleInControlArgs.Builder]):
+    inline def scaleInControl(args: Endofunction[com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyScaleInControlArgs.Builder]):
         com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyScaleInControlArgs.builder
       builder.scaleInControl(args(argsBuilder).build)
@@ -3946,7 +3946,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def scalingSchedules(args: Endofunction[com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyScalingScheduleArgs.Builder]*):
+    inline def scalingSchedules(args: Endofunction[com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyScalingScheduleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyScalingScheduleArgs.builder
       builder.scalingSchedules(args.map(_(argsBuilder).build)*)
@@ -3957,7 +3957,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def maxScaledDownReplicas(args: Endofunction[com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicasArgs.Builder]):
+    inline def maxScaledDownReplicas(args: Endofunction[com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicasArgs.Builder]):
         com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyScaleDownControlArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicasArgs.builder
       builder.maxScaledDownReplicas(args(argsBuilder).build)
@@ -3968,7 +3968,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def maxScaledInReplicas(args: Endofunction[com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicasArgs.Builder]):
+    inline def maxScaledInReplicas(args: Endofunction[com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicasArgs.Builder]):
         com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyScaleInControlArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicasArgs.builder
       builder.maxScaledInReplicas(args(argsBuilder).build)
@@ -3983,7 +3983,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def autoscalingPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyArgs.Builder]):
+    inline def autoscalingPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.AutoscalerState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.AutoscalerAutoscalingPolicyArgs.builder
       builder.autoscalingPolicy(args(argsBuilder).build)
@@ -3994,7 +3994,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def bypassCacheOnRequestHeaders(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendBucketCdnPolicyBypassCacheOnRequestHeaderArgs.Builder]*):
+    inline def bypassCacheOnRequestHeaders(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendBucketCdnPolicyBypassCacheOnRequestHeaderArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.BackendBucketCdnPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.BackendBucketCdnPolicyBypassCacheOnRequestHeaderArgs.builder
       builder.bypassCacheOnRequestHeaders(args.map(_(argsBuilder).build)*)
@@ -4004,7 +4004,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def cacheKeyPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendBucketCdnPolicyCacheKeyPolicyArgs.Builder]):
+    inline def cacheKeyPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendBucketCdnPolicyCacheKeyPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendBucketCdnPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendBucketCdnPolicyCacheKeyPolicyArgs.builder
       builder.cacheKeyPolicy(args(argsBuilder).build)
@@ -4015,19 +4015,19 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def negativeCachingPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendBucketCdnPolicyNegativeCachingPolicyArgs.Builder]*):
+    inline def negativeCachingPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendBucketCdnPolicyNegativeCachingPolicyArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.BackendBucketCdnPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.BackendBucketCdnPolicyNegativeCachingPolicyArgs.builder
       builder.negativeCachingPolicies(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.compute.inputs.BackendBucketIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendBucketIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendBucketIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendBucketIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendBucketIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.inputs.BackendBucketIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendBucketIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendBucketIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendBucketIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendBucketIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -4038,7 +4038,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def cdnPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendBucketCdnPolicyArgs.Builder]):
+    inline def cdnPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendBucketCdnPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendBucketState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendBucketCdnPolicyArgs.builder
       builder.cdnPolicy(args(argsBuilder).build)
@@ -4048,7 +4048,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendBucketParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendBucketParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendBucketState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendBucketParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -4059,7 +4059,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def customMetrics(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceBackendCustomMetricArgs.Builder]*):
+    inline def customMetrics(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceBackendCustomMetricArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.BackendServiceBackendArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceBackendCustomMetricArgs.builder
       builder.customMetrics(args.map(_(argsBuilder).build)*)
@@ -4071,7 +4071,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def bypassCacheOnRequestHeaders(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceCdnPolicyBypassCacheOnRequestHeaderArgs.Builder]*):
+    inline def bypassCacheOnRequestHeaders(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceCdnPolicyBypassCacheOnRequestHeaderArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.BackendServiceCdnPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceCdnPolicyBypassCacheOnRequestHeaderArgs.builder
       builder.bypassCacheOnRequestHeaders(args.map(_(argsBuilder).build)*)
@@ -4081,7 +4081,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def cacheKeyPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceCdnPolicyCacheKeyPolicyArgs.Builder]):
+    inline def cacheKeyPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceCdnPolicyCacheKeyPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceCdnPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceCdnPolicyCacheKeyPolicyArgs.builder
       builder.cacheKeyPolicy(args(argsBuilder).build)
@@ -4092,7 +4092,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def negativeCachingPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceCdnPolicyNegativeCachingPolicyArgs.Builder]*):
+    inline def negativeCachingPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceCdnPolicyNegativeCachingPolicyArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.BackendServiceCdnPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceCdnPolicyNegativeCachingPolicyArgs.builder
       builder.negativeCachingPolicies(args.map(_(argsBuilder).build)*)
@@ -4104,7 +4104,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def connectTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceCircuitBreakersConnectTimeoutArgs.Builder]):
+    inline def connectTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceCircuitBreakersConnectTimeoutArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceCircuitBreakersArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceCircuitBreakersConnectTimeoutArgs.builder
       builder.connectTimeout(args(argsBuilder).build)
@@ -4118,7 +4118,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def httpCookie(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceConsistentHashHttpCookieArgs.Builder]):
+    inline def httpCookie(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceConsistentHashHttpCookieArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceConsistentHashArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceConsistentHashHttpCookieArgs.builder
       builder.httpCookie(args(argsBuilder).build)
@@ -4129,7 +4129,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def ttl(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceConsistentHashHttpCookieTtlArgs.Builder]):
+    inline def ttl(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceConsistentHashHttpCookieTtlArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceConsistentHashHttpCookieArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceConsistentHashHttpCookieTtlArgs.builder
       builder.ttl(args(argsBuilder).build)
@@ -4141,7 +4141,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def forwardProxy(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceDynamicForwardingForwardProxyArgs.Builder]):
+    inline def forwardProxy(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceDynamicForwardingForwardProxyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceDynamicForwardingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceDynamicForwardingForwardProxyArgs.builder
       builder.forwardProxy(args(argsBuilder).build)
@@ -4152,7 +4152,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def ipPortSelection(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceDynamicForwardingIpPortSelectionArgs.Builder]):
+    inline def ipPortSelection(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceDynamicForwardingIpPortSelectionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceDynamicForwardingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceDynamicForwardingIpPortSelectionArgs.builder
       builder.ipPortSelection(args(argsBuilder).build)
@@ -4163,7 +4163,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -4174,7 +4174,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -4186,7 +4186,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def customPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceLocalityLbPolicyCustomPolicyArgs.Builder]):
+    inline def customPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceLocalityLbPolicyCustomPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceLocalityLbPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceLocalityLbPolicyCustomPolicyArgs.builder
       builder.customPolicy(args(argsBuilder).build)
@@ -4196,7 +4196,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def policy(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceLocalityLbPolicyPolicyArgs.Builder]):
+    inline def policy(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceLocalityLbPolicyPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceLocalityLbPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceLocalityLbPolicyPolicyArgs.builder
       builder.policy(args(argsBuilder).build)
@@ -4207,7 +4207,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def requestHeaders(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceLogConfigRequestHeaderArgs.Builder]*):
+    inline def requestHeaders(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceLogConfigRequestHeaderArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.BackendServiceLogConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceLogConfigRequestHeaderArgs.builder
       builder.requestHeaders(args.map(_(argsBuilder).build)*)
@@ -4217,7 +4217,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def responseHeaders(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceLogConfigResponseHeaderArgs.Builder]*):
+    inline def responseHeaders(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceLogConfigResponseHeaderArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.BackendServiceLogConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceLogConfigResponseHeaderArgs.builder
       builder.responseHeaders(args.map(_(argsBuilder).build)*)
@@ -4228,7 +4228,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def zonalAffinity(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceNetworkPassThroughLbTrafficPolicyZonalAffinityArgs.Builder]):
+    inline def zonalAffinity(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceNetworkPassThroughLbTrafficPolicyZonalAffinityArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceNetworkPassThroughLbTrafficPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceNetworkPassThroughLbTrafficPolicyZonalAffinityArgs.builder
       builder.zonalAffinity(args(argsBuilder).build)
@@ -4241,7 +4241,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def baseEjectionTime(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceOutlierDetectionBaseEjectionTimeArgs.Builder]):
+    inline def baseEjectionTime(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceOutlierDetectionBaseEjectionTimeArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceOutlierDetectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceOutlierDetectionBaseEjectionTimeArgs.builder
       builder.baseEjectionTime(args(argsBuilder).build)
@@ -4252,7 +4252,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def interval(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceOutlierDetectionIntervalArgs.Builder]):
+    inline def interval(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceOutlierDetectionIntervalArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceOutlierDetectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceOutlierDetectionIntervalArgs.builder
       builder.interval(args(argsBuilder).build)
@@ -4266,7 +4266,7 @@ object compute_ext1:
      * &lt;a name=&#34;nestedSecuritySettingsAwsV4Authentication&#34;&gt;&lt;/a&gt;The `awsV4Authentication` block supports:
      * @return builder
      */
-    def awsV4Authentication(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceSecuritySettingsAwsV4AuthenticationArgs.Builder]):
+    inline def awsV4Authentication(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceSecuritySettingsAwsV4AuthenticationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceSecuritySettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceSecuritySettingsAwsV4AuthenticationArgs.builder
       builder.awsV4Authentication(args(argsBuilder).build)
@@ -4277,7 +4277,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def backends(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceBackendArgs.Builder]*):
+    inline def backends(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceBackendArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.BackendServiceState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceBackendArgs.builder
       builder.backends(args.map(_(argsBuilder).build)*)
@@ -4287,7 +4287,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def cdnPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceCdnPolicyArgs.Builder]):
+    inline def cdnPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceCdnPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceCdnPolicyArgs.builder
       builder.cdnPolicy(args(argsBuilder).build)
@@ -4298,7 +4298,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def circuitBreakers(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceCircuitBreakersArgs.Builder]):
+    inline def circuitBreakers(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceCircuitBreakersArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceCircuitBreakersArgs.builder
       builder.circuitBreakers(args(argsBuilder).build)
@@ -4315,7 +4315,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def consistentHash(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceConsistentHashArgs.Builder]):
+    inline def consistentHash(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceConsistentHashArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceConsistentHashArgs.builder
       builder.consistentHash(args(argsBuilder).build)
@@ -4325,7 +4325,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def customMetrics(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceCustomMetricArgs.Builder]*):
+    inline def customMetrics(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceCustomMetricArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.BackendServiceState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceCustomMetricArgs.builder
       builder.customMetrics(args.map(_(argsBuilder).build)*)
@@ -4337,7 +4337,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def dynamicForwarding(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceDynamicForwardingArgs.Builder]):
+    inline def dynamicForwarding(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceDynamicForwardingArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceDynamicForwardingArgs.builder
       builder.dynamicForwarding(args(argsBuilder).build)
@@ -4348,7 +4348,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def iap(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceIapArgs.Builder]):
+    inline def iap(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceIapArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceIapArgs.builder
       builder.iap(args(argsBuilder).build)
@@ -4363,7 +4363,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def localityLbPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceLocalityLbPolicyArgs.Builder]*):
+    inline def localityLbPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceLocalityLbPolicyArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.BackendServiceState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceLocalityLbPolicyArgs.builder
       builder.localityLbPolicies(args.map(_(argsBuilder).build)*)
@@ -4374,7 +4374,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceLogConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -4389,7 +4389,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def maxStreamDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceMaxStreamDurationArgs.Builder]):
+    inline def maxStreamDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceMaxStreamDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceMaxStreamDurationArgs.builder
       builder.maxStreamDuration(args(argsBuilder).build)
@@ -4400,7 +4400,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def networkPassThroughLbTrafficPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceNetworkPassThroughLbTrafficPolicyArgs.Builder]):
+    inline def networkPassThroughLbTrafficPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceNetworkPassThroughLbTrafficPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceNetworkPassThroughLbTrafficPolicyArgs.builder
       builder.networkPassThroughLbTrafficPolicy(args(argsBuilder).build)
@@ -4412,7 +4412,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def outlierDetection(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceOutlierDetectionArgs.Builder]):
+    inline def outlierDetection(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceOutlierDetectionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceOutlierDetectionArgs.builder
       builder.outlierDetection(args(argsBuilder).build)
@@ -4422,7 +4422,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -4435,7 +4435,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def securitySettings(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceSecuritySettingsArgs.Builder]):
+    inline def securitySettings(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceSecuritySettingsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceSecuritySettingsArgs.builder
       builder.securitySettings(args(argsBuilder).build)
@@ -4445,7 +4445,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def strongSessionAffinityCookie(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceStrongSessionAffinityCookieArgs.Builder]):
+    inline def strongSessionAffinityCookie(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceStrongSessionAffinityCookieArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceStrongSessionAffinityCookieArgs.builder
       builder.strongSessionAffinityCookie(args(argsBuilder).build)
@@ -4455,7 +4455,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def tlsSettings(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceTlsSettingsArgs.Builder]):
+    inline def tlsSettings(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceTlsSettingsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceTlsSettingsArgs.builder
       builder.tlsSettings(args(argsBuilder).build)
@@ -4466,7 +4466,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def ttl(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceStrongSessionAffinityCookieTtlArgs.Builder]):
+    inline def ttl(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceStrongSessionAffinityCookieTtlArgs.Builder]):
         com.pulumi.gcp.compute.inputs.BackendServiceStrongSessionAffinityCookieArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceStrongSessionAffinityCookieTtlArgs.builder
       builder.ttl(args(argsBuilder).build)
@@ -4481,7 +4481,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def subjectAltNames(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceTlsSettingsSubjectAltNameArgs.Builder]*):
+    inline def subjectAltNames(args: Endofunction[com.pulumi.gcp.compute.inputs.BackendServiceTlsSettingsSubjectAltNameArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.BackendServiceTlsSettingsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.BackendServiceTlsSettingsSubjectAltNameArgs.builder
       builder.subjectAltNames(args.map(_(argsBuilder).build)*)
@@ -4492,7 +4492,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def instances(args: Endofunction[com.pulumi.gcp.compute.inputs.BulkPerInstanceConfigInstanceArgs.Builder]*):
+    inline def instances(args: Endofunction[com.pulumi.gcp.compute.inputs.BulkPerInstanceConfigInstanceArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.BulkPerInstanceConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.BulkPerInstanceConfigInstanceArgs.builder
       builder.instances(args.map(_(argsBuilder).build)*)
@@ -4502,19 +4502,19 @@ object compute_ext1:
      * @param secondaryDisk The secondary disk (target of replication). You can specify only one value. Structure is documented below.
      * @return builder
      */
-    def secondaryDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskAsyncReplicationSecondaryDiskArgs.Builder]):
+    inline def secondaryDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskAsyncReplicationSecondaryDiskArgs.Builder]):
         com.pulumi.gcp.compute.inputs.DiskAsyncReplicationState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.DiskAsyncReplicationSecondaryDiskArgs.builder
       builder.secondaryDisk(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.inputs.DiskIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.DiskIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.DiskIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.inputs.DiskIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.DiskIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.DiskIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -4525,7 +4525,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def asyncPrimaryDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskAsyncPrimaryDiskArgs.Builder]):
+    inline def asyncPrimaryDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskAsyncPrimaryDiskArgs.Builder]):
         com.pulumi.gcp.compute.inputs.DiskState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.DiskAsyncPrimaryDiskArgs.builder
       builder.asyncPrimaryDisk(args(argsBuilder).build)
@@ -4545,7 +4545,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def diskEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskDiskEncryptionKeyArgs.Builder]):
+    inline def diskEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskDiskEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.DiskState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.DiskDiskEncryptionKeyArgs.builder
       builder.diskEncryptionKey(args(argsBuilder).build)
@@ -4556,7 +4556,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def guestOsFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskGuestOsFeatureArgs.Builder]*):
+    inline def guestOsFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskGuestOsFeatureArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.DiskState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.DiskGuestOsFeatureArgs.builder
       builder.guestOsFeatures(args.map(_(argsBuilder).build)*)
@@ -4566,7 +4566,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.DiskState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.DiskParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -4577,7 +4577,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def sourceImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskSourceImageEncryptionKeyArgs.Builder]):
+    inline def sourceImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskSourceImageEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.DiskState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.DiskSourceImageEncryptionKeyArgs.builder
       builder.sourceImageEncryptionKey(args(argsBuilder).build)
@@ -4589,7 +4589,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def sourceSnapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskSourceSnapshotEncryptionKeyArgs.Builder]):
+    inline def sourceSnapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.DiskSourceSnapshotEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.DiskState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.DiskSourceSnapshotEncryptionKeyArgs.builder
       builder.sourceSnapshotEncryptionKey(args(argsBuilder).build)
@@ -4600,7 +4600,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def interfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.ExternalVpnGatewayInterfaceArgs.Builder]*):
+    inline def interfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.ExternalVpnGatewayInterfaceArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ExternalVpnGatewayState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ExternalVpnGatewayInterfaceArgs.builder
       builder.interfaces(args.map(_(argsBuilder).build)*)
@@ -4610,19 +4610,19 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.ExternalVpnGatewayParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.ExternalVpnGatewayParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ExternalVpnGatewayState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ExternalVpnGatewayParamsArgs.builder
       builder.params(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.inputs.FirewallPolicyIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.FirewallPolicyIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FirewallPolicyIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.inputs.FirewallPolicyIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.FirewallPolicyIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FirewallPolicyIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -4633,7 +4633,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def layer4Configs(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyRuleMatchLayer4ConfigArgs.Builder]*):
+    inline def layer4Configs(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyRuleMatchLayer4ConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.FirewallPolicyRuleMatchArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FirewallPolicyRuleMatchLayer4ConfigArgs.builder
       builder.layer4Configs(args.map(_(argsBuilder).build)*)
@@ -4645,7 +4645,7 @@ object compute_ext1:
      * &lt;a name=&#34;nestedMatchLayer4Configs&#34;&gt;&lt;/a&gt;The `layer4Configs` block supports:
      * @return builder
      */
-    def srcSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyRuleMatchSrcSecureTagArgs.Builder]*):
+    inline def srcSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyRuleMatchSrcSecureTagArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.FirewallPolicyRuleMatchArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FirewallPolicyRuleMatchSrcSecureTagArgs.builder
       builder.srcSecureTags(args.map(_(argsBuilder).build)*)
@@ -4656,7 +4656,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyRuleMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyRuleMatchArgs.Builder]):
         com.pulumi.gcp.compute.inputs.FirewallPolicyRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FirewallPolicyRuleMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -4668,7 +4668,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyRuleTargetSecureTagArgs.Builder]*):
+    inline def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyRuleTargetSecureTagArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.FirewallPolicyRuleState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FirewallPolicyRuleTargetSecureTagArgs.builder
       builder.targetSecureTags(args.map(_(argsBuilder).build)*)
@@ -4680,7 +4680,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def matches(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesPredefinedRuleMatchArgs.Builder]*):
+    inline def matches(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesPredefinedRuleMatchArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesPredefinedRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesPredefinedRuleMatchArgs.builder
       builder.matches(args.map(_(argsBuilder).build)*)
@@ -4701,7 +4701,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesPredefinedRuleTargetSecureTagArgs.Builder]*):
+    inline def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesPredefinedRuleTargetSecureTagArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesPredefinedRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesPredefinedRuleTargetSecureTagArgs.builder
       builder.targetSecureTags(args.map(_(argsBuilder).build)*)
@@ -4712,7 +4712,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def layer4Configs(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesPredefinedRuleMatchLayer4ConfigArgs.Builder]*):
+    inline def layer4Configs(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesPredefinedRuleMatchLayer4ConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesPredefinedRuleMatchArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesPredefinedRuleMatchLayer4ConfigArgs.builder
       builder.layer4Configs(args.map(_(argsBuilder).build)*)
@@ -4726,7 +4726,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def srcSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesPredefinedRuleMatchSrcSecureTagArgs.Builder]*):
+    inline def srcSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesPredefinedRuleMatchSrcSecureTagArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesPredefinedRuleMatchArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesPredefinedRuleMatchSrcSecureTagArgs.builder
       builder.srcSecureTags(args.map(_(argsBuilder).build)*)
@@ -4737,7 +4737,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesRuleMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesRuleMatchArgs.Builder]):
         com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesRuleMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -4757,7 +4757,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesRuleTargetSecureTagArgs.Builder]*):
+    inline def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesRuleTargetSecureTagArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesRuleTargetSecureTagArgs.builder
       builder.targetSecureTags(args.map(_(argsBuilder).build)*)
@@ -4768,7 +4768,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def layer4Configs(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesRuleMatchLayer4ConfigArgs.Builder]*):
+    inline def layer4Configs(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesRuleMatchLayer4ConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesRuleMatchArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesRuleMatchLayer4ConfigArgs.builder
       builder.layer4Configs(args.map(_(argsBuilder).build)*)
@@ -4782,7 +4782,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def srcSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesRuleMatchSrcSecureTagArgs.Builder]*):
+    inline def srcSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesRuleMatchSrcSecureTagArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesRuleMatchArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesRuleMatchSrcSecureTagArgs.builder
       builder.srcSecureTags(args.map(_(argsBuilder).build)*)
@@ -4793,7 +4793,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def predefinedRules(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesPredefinedRuleArgs.Builder]*):
+    inline def predefinedRules(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesPredefinedRuleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesPredefinedRuleArgs.builder
       builder.predefinedRules(args.map(_(argsBuilder).build)*)
@@ -4803,7 +4803,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesRuleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FirewallPolicyWithRulesRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -4816,7 +4816,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def allows(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallAllowArgs.Builder]*):
+    inline def allows(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallAllowArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.FirewallState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FirewallAllowArgs.builder
       builder.allows(args.map(_(argsBuilder).build)*)
@@ -4827,7 +4827,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def denies(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallDenyArgs.Builder]*):
+    inline def denies(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallDenyArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.FirewallState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FirewallDenyArgs.builder
       builder.denies(args.map(_(argsBuilder).build)*)
@@ -4838,7 +4838,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallLogConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.FirewallState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FirewallLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -4848,7 +4848,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.FirewallParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.FirewallState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FirewallParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -4860,7 +4860,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectoryRegistrations(args: Endofunction[com.pulumi.gcp.compute.inputs.ForwardingRuleServiceDirectoryRegistrationsArgs.Builder]):
+    inline def serviceDirectoryRegistrations(args: Endofunction[com.pulumi.gcp.compute.inputs.ForwardingRuleServiceDirectoryRegistrationsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ForwardingRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ForwardingRuleServiceDirectoryRegistrationsArgs.builder
       builder.serviceDirectoryRegistrations(args(argsBuilder).build)
@@ -4871,7 +4871,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def reservedResources(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationAggregateReservationReservedResourceArgs.Builder]*):
+    inline def reservedResources(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationAggregateReservationReservedResourceArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.FutureReservationAggregateReservationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationAggregateReservationReservedResourceArgs.builder
       builder.reservedResources(args.map(_(argsBuilder).build)*)
@@ -4882,7 +4882,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def accelerator(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationAggregateReservationReservedResourceAcceleratorArgs.Builder]):
+    inline def accelerator(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationAggregateReservationReservedResourceAcceleratorArgs.Builder]):
         com.pulumi.gcp.compute.inputs.FutureReservationAggregateReservationReservedResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationAggregateReservationReservedResourceAcceleratorArgs.builder
       builder.accelerator(args(argsBuilder).build)
@@ -4893,7 +4893,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def projectMaps(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationShareSettingsProjectMapArgs.Builder]*):
+    inline def projectMaps(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationShareSettingsProjectMapArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.FutureReservationShareSettingsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationShareSettingsProjectMapArgs.builder
       builder.projectMaps(args.map(_(argsBuilder).build)*)
@@ -4904,7 +4904,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def instanceProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationSpecificSkuPropertiesInstancePropertiesArgs.Builder]):
+    inline def instanceProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationSpecificSkuPropertiesInstancePropertiesArgs.Builder]):
         com.pulumi.gcp.compute.inputs.FutureReservationSpecificSkuPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationSpecificSkuPropertiesInstancePropertiesArgs.builder
       builder.instanceProperties(args(argsBuilder).build)
@@ -4915,7 +4915,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationSpecificSkuPropertiesInstancePropertiesGuestAcceleratorArgs.Builder]*):
+    inline def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationSpecificSkuPropertiesInstancePropertiesGuestAcceleratorArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.FutureReservationSpecificSkuPropertiesInstancePropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationSpecificSkuPropertiesInstancePropertiesGuestAcceleratorArgs.builder
       builder.guestAccelerators(args.map(_(argsBuilder).build)*)
@@ -4925,7 +4925,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def localSsds(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationSpecificSkuPropertiesInstancePropertiesLocalSsdArgs.Builder]*):
+    inline def localSsds(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationSpecificSkuPropertiesInstancePropertiesLocalSsdArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.FutureReservationSpecificSkuPropertiesInstancePropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationSpecificSkuPropertiesInstancePropertiesLocalSsdArgs.builder
       builder.localSsds(args.map(_(argsBuilder).build)*)
@@ -4936,7 +4936,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def aggregateReservation(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationAggregateReservationArgs.Builder]):
+    inline def aggregateReservation(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationAggregateReservationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.FutureReservationState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationAggregateReservationArgs.builder
       builder.aggregateReservation(args(argsBuilder).build)
@@ -4946,7 +4946,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def autoCreatedReservationsDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationAutoCreatedReservationsDurationArgs.Builder]):
+    inline def autoCreatedReservationsDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationAutoCreatedReservationsDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.FutureReservationState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationAutoCreatedReservationsDurationArgs.builder
       builder.autoCreatedReservationsDuration(args(argsBuilder).build)
@@ -4956,7 +4956,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def commitmentInfo(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationCommitmentInfoArgs.Builder]):
+    inline def commitmentInfo(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationCommitmentInfoArgs.Builder]):
         com.pulumi.gcp.compute.inputs.FutureReservationState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationCommitmentInfoArgs.builder
       builder.commitmentInfo(args(argsBuilder).build)
@@ -4966,7 +4966,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.FutureReservationState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -4976,7 +4976,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def shareSettings(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationShareSettingsArgs.Builder]):
+    inline def shareSettings(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationShareSettingsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.FutureReservationState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationShareSettingsArgs.builder
       builder.shareSettings(args(argsBuilder).build)
@@ -4986,7 +4986,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def specificSkuProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationSpecificSkuPropertiesArgs.Builder]):
+    inline def specificSkuProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationSpecificSkuPropertiesArgs.Builder]):
         com.pulumi.gcp.compute.inputs.FutureReservationState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationSpecificSkuPropertiesArgs.builder
       builder.specificSkuProperties(args(argsBuilder).build)
@@ -4996,7 +4996,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def statuses(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusArgs.Builder]*):
+    inline def statuses(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.FutureReservationState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationStatusArgs.builder
       builder.statuses(args.map(_(argsBuilder).build)*)
@@ -5006,7 +5006,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def timeWindow(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationTimeWindowArgs.Builder]):
+    inline def timeWindow(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationTimeWindowArgs.Builder]):
         com.pulumi.gcp.compute.inputs.FutureReservationState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationTimeWindowArgs.builder
       builder.timeWindow(args(argsBuilder).build)
@@ -5017,7 +5017,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def lastKnownGoodState(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateArgs.Builder]):
+    inline def lastKnownGoodState(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateArgs.Builder]):
         com.pulumi.gcp.compute.inputs.FutureReservationStatusArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateArgs.builder
       builder.lastKnownGoodState(args(argsBuilder).build)
@@ -5027,7 +5027,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def specificSkuProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusSpecificSkuPropertiesArgs.Builder]):
+    inline def specificSkuProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusSpecificSkuPropertiesArgs.Builder]):
         com.pulumi.gcp.compute.inputs.FutureReservationStatusArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationStatusSpecificSkuPropertiesArgs.builder
       builder.specificSkuProperties(args(argsBuilder).build)
@@ -5038,7 +5038,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def existingMatchingUsageInfo(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateExistingMatchingUsageInfoArgs.Builder]):
+    inline def existingMatchingUsageInfo(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateExistingMatchingUsageInfoArgs.Builder]):
         com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateExistingMatchingUsageInfoArgs.builder
       builder.existingMatchingUsageInfo(args(argsBuilder).build)
@@ -5048,7 +5048,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def futureReservationSpecs(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsArgs.Builder]):
+    inline def futureReservationSpecs(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsArgs.builder
       builder.futureReservationSpecs(args(argsBuilder).build)
@@ -5059,7 +5059,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def shareSettings(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsShareSettingsArgs.Builder]):
+    inline def shareSettings(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsShareSettingsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsShareSettingsArgs.builder
       builder.shareSettings(args(argsBuilder).build)
@@ -5069,7 +5069,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def specificSkuProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsSpecificSkuPropertiesArgs.Builder]):
+    inline def specificSkuProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsSpecificSkuPropertiesArgs.Builder]):
         com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsSpecificSkuPropertiesArgs.builder
       builder.specificSkuProperties(args(argsBuilder).build)
@@ -5079,7 +5079,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def timeWindow(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsTimeWindowArgs.Builder]):
+    inline def timeWindow(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsTimeWindowArgs.Builder]):
         com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsTimeWindowArgs.builder
       builder.timeWindow(args(argsBuilder).build)
@@ -5090,7 +5090,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def projectMaps(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsShareSettingsProjectMapArgs.Builder]*):
+    inline def projectMaps(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsShareSettingsProjectMapArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsShareSettingsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsShareSettingsProjectMapArgs.builder
       builder.projectMaps(args.map(_(argsBuilder).build)*)
@@ -5101,7 +5101,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def instanceProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsSpecificSkuPropertiesInstancePropertiesArgs.Builder]):
+    inline def instanceProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsSpecificSkuPropertiesInstancePropertiesArgs.Builder]):
         com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsSpecificSkuPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsSpecificSkuPropertiesInstancePropertiesArgs.builder
       builder.instanceProperties(args(argsBuilder).build)
@@ -5112,7 +5112,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsSpecificSkuPropertiesInstancePropertiesGuestAcceleratorArgs.Builder]*):
+    inline def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsSpecificSkuPropertiesInstancePropertiesGuestAcceleratorArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsSpecificSkuPropertiesInstancePropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsSpecificSkuPropertiesInstancePropertiesGuestAcceleratorArgs.builder
       builder.guestAccelerators(args.map(_(argsBuilder).build)*)
@@ -5122,7 +5122,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def localSsds(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsSpecificSkuPropertiesInstancePropertiesLocalSsdArgs.Builder]*):
+    inline def localSsds(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsSpecificSkuPropertiesInstancePropertiesLocalSsdArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsSpecificSkuPropertiesInstancePropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsSpecificSkuPropertiesInstancePropertiesLocalSsdArgs.builder
       builder.localSsds(args.map(_(argsBuilder).build)*)
@@ -5133,7 +5133,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def duration(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsTimeWindowDurationArgs.Builder]):
+    inline def duration(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsTimeWindowDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsTimeWindowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationStatusLastKnownGoodStateFutureReservationSpecsTimeWindowDurationArgs.builder
       builder.duration(args(argsBuilder).build)
@@ -5144,7 +5144,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def duration(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationTimeWindowDurationArgs.Builder]):
+    inline def duration(args: Endofunction[com.pulumi.gcp.compute.inputs.FutureReservationTimeWindowDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.FutureReservationTimeWindowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.FutureReservationTimeWindowDurationArgs.builder
       builder.duration(args(argsBuilder).build)
@@ -5157,7 +5157,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def filterLabels(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalForwardingRuleMetadataFilterFilterLabelArgs.Builder]*):
+    inline def filterLabels(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalForwardingRuleMetadataFilterFilterLabelArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.GlobalForwardingRuleMetadataFilterArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.GlobalForwardingRuleMetadataFilterFilterLabelArgs.builder
       builder.filterLabels(args.map(_(argsBuilder).build)*)
@@ -5181,7 +5181,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def metadataFilters(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalForwardingRuleMetadataFilterArgs.Builder]*):
+    inline def metadataFilters(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalForwardingRuleMetadataFilterArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.GlobalForwardingRuleState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.GlobalForwardingRuleMetadataFilterArgs.builder
       builder.metadataFilters(args.map(_(argsBuilder).build)*)
@@ -5192,7 +5192,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectoryRegistrations(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalForwardingRuleServiceDirectoryRegistrationsArgs.Builder]):
+    inline def serviceDirectoryRegistrations(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalForwardingRuleServiceDirectoryRegistrationsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.GlobalForwardingRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GlobalForwardingRuleServiceDirectoryRegistrationsArgs.builder
       builder.serviceDirectoryRegistrations(args(argsBuilder).build)
@@ -5203,7 +5203,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def labelSelector(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyInstanceSelectorLabelSelectorArgs.Builder]):
+    inline def labelSelector(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyInstanceSelectorLabelSelectorArgs.Builder]):
         com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyInstanceSelectorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyInstanceSelectorLabelSelectorArgs.builder
       builder.labelSelector(args(argsBuilder).build)
@@ -5214,7 +5214,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rolloutInput(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutInputArgs.Builder]):
+    inline def rolloutInput(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutInputArgs.Builder]):
         com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutInputArgs.builder
       builder.rolloutInput(args(argsBuilder).build)
@@ -5225,7 +5225,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rolloutStatuses(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusArgs.Builder]*):
+    inline def rolloutStatuses(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusArgs.builder
       builder.rolloutStatuses(args.map(_(argsBuilder).build)*)
@@ -5235,7 +5235,7 @@ object compute_ext1:
      * @param currentRollouts The current rollouts for the latest version of the resource.
      * @return builder
      */
-    def currentRollouts(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusCurrentRolloutArgs.Builder]*):
+    inline def currentRollouts(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusCurrentRolloutArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusCurrentRolloutArgs.builder
       builder.currentRollouts(args.map(_(argsBuilder).build)*)
@@ -5244,7 +5244,7 @@ object compute_ext1:
      * @param previousRollouts Rollout status of the previous rollout.
      * @return builder
      */
-    def previousRollouts(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusPreviousRolloutArgs.Builder]*):
+    inline def previousRollouts(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusPreviousRolloutArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusPreviousRolloutArgs.builder
       builder.previousRollouts(args.map(_(argsBuilder).build)*)
@@ -5254,7 +5254,7 @@ object compute_ext1:
      * @param locationRolloutStatuses The rollout status for each location.
      * @return builder
      */
-    def locationRolloutStatuses(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusCurrentRolloutLocationRolloutStatusArgs.Builder]*):
+    inline def locationRolloutStatuses(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusCurrentRolloutLocationRolloutStatusArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusCurrentRolloutArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusCurrentRolloutLocationRolloutStatusArgs.builder
       builder.locationRolloutStatuses(args.map(_(argsBuilder).build)*)
@@ -5264,7 +5264,7 @@ object compute_ext1:
      * @param locationRolloutStatuses The rollout status for each location.
      * @return builder
      */
-    def locationRolloutStatuses(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusPreviousRolloutLocationRolloutStatusArgs.Builder]*):
+    inline def locationRolloutStatuses(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusPreviousRolloutLocationRolloutStatusArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusPreviousRolloutArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationRolloutStatusPreviousRolloutLocationRolloutStatusArgs.builder
       builder.locationRolloutStatuses(args.map(_(argsBuilder).build)*)
@@ -5275,7 +5275,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def extensionPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyExtensionPolicyArgs.Builder]*):
+    inline def extensionPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyExtensionPolicyArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyExtensionPolicyArgs.builder
       builder.extensionPolicies(args.map(_(argsBuilder).build)*)
@@ -5285,7 +5285,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def instanceSelectors(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyInstanceSelectorArgs.Builder]*):
+    inline def instanceSelectors(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyInstanceSelectorArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyInstanceSelectorArgs.builder
       builder.instanceSelectors(args.map(_(argsBuilder).build)*)
@@ -5295,7 +5295,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rolloutOperation(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationArgs.Builder]):
+    inline def rolloutOperation(args: Endofunction[com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.GlobalVmExtensionPolicyRolloutOperationArgs.builder
       builder.rolloutOperation(args(argsBuilder).build)
@@ -5306,7 +5306,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.HaVpnGatewayParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.HaVpnGatewayParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.HaVpnGatewayState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.HaVpnGatewayParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -5316,7 +5316,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def vpnInterfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.HaVpnGatewayVpnInterfaceArgs.Builder]*):
+    inline def vpnInterfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.HaVpnGatewayVpnInterfaceArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.HaVpnGatewayState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.HaVpnGatewayVpnInterfaceArgs.builder
       builder.vpnInterfaces(args.map(_(argsBuilder).build)*)
@@ -5327,7 +5327,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def grpcHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckGrpcHealthCheckArgs.Builder]):
+    inline def grpcHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckGrpcHealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.inputs.HealthCheckState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.HealthCheckGrpcHealthCheckArgs.builder
       builder.grpcHealthCheck(args(argsBuilder).build)
@@ -5337,7 +5337,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def grpcTlsHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckGrpcTlsHealthCheckArgs.Builder]):
+    inline def grpcTlsHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckGrpcTlsHealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.inputs.HealthCheckState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.HealthCheckGrpcTlsHealthCheckArgs.builder
       builder.grpcTlsHealthCheck(args(argsBuilder).build)
@@ -5347,7 +5347,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def http2HealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckHttp2HealthCheckArgs.Builder]):
+    inline def http2HealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckHttp2HealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.inputs.HealthCheckState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.HealthCheckHttp2HealthCheckArgs.builder
       builder.http2HealthCheck(args(argsBuilder).build)
@@ -5357,7 +5357,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def httpHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckHttpHealthCheckArgs.Builder]):
+    inline def httpHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckHttpHealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.inputs.HealthCheckState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.HealthCheckHttpHealthCheckArgs.builder
       builder.httpHealthCheck(args(argsBuilder).build)
@@ -5367,7 +5367,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def httpsHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckHttpsHealthCheckArgs.Builder]):
+    inline def httpsHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckHttpsHealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.inputs.HealthCheckState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.HealthCheckHttpsHealthCheckArgs.builder
       builder.httpsHealthCheck(args(argsBuilder).build)
@@ -5377,7 +5377,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckLogConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.HealthCheckState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.HealthCheckLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -5387,7 +5387,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def sslHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckSslHealthCheckArgs.Builder]):
+    inline def sslHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckSslHealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.inputs.HealthCheckState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.HealthCheckSslHealthCheckArgs.builder
       builder.sslHealthCheck(args(argsBuilder).build)
@@ -5397,7 +5397,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def tcpHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckTcpHealthCheckArgs.Builder]):
+    inline def tcpHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.HealthCheckTcpHealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.inputs.HealthCheckState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.HealthCheckTcpHealthCheckArgs.builder
       builder.tcpHealthCheck(args(argsBuilder).build)
@@ -5408,7 +5408,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ImageIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ImageIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -5419,7 +5419,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ImageIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ImageIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -5430,7 +5430,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def dbs(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageShieldedInstanceInitialStateDbArgs.Builder]*):
+    inline def dbs(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageShieldedInstanceInitialStateDbArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ImageShieldedInstanceInitialStateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ImageShieldedInstanceInitialStateDbArgs.builder
       builder.dbs(args.map(_(argsBuilder).build)*)
@@ -5440,7 +5440,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def dbxs(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageShieldedInstanceInitialStateDbxArgs.Builder]*):
+    inline def dbxs(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageShieldedInstanceInitialStateDbxArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ImageShieldedInstanceInitialStateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ImageShieldedInstanceInitialStateDbxArgs.builder
       builder.dbxs(args.map(_(argsBuilder).build)*)
@@ -5450,7 +5450,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def keks(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageShieldedInstanceInitialStateKekArgs.Builder]*):
+    inline def keks(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageShieldedInstanceInitialStateKekArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ImageShieldedInstanceInitialStateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ImageShieldedInstanceInitialStateKekArgs.builder
       builder.keks(args.map(_(argsBuilder).build)*)
@@ -5460,7 +5460,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def pk(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageShieldedInstanceInitialStatePkArgs.Builder]):
+    inline def pk(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageShieldedInstanceInitialStatePkArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ImageShieldedInstanceInitialStateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ImageShieldedInstanceInitialStatePkArgs.builder
       builder.pk(args(argsBuilder).build)
@@ -5472,7 +5472,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def guestOsFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageGuestOsFeatureArgs.Builder]*):
+    inline def guestOsFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageGuestOsFeatureArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ImageState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ImageGuestOsFeatureArgs.builder
       builder.guestOsFeatures(args.map(_(argsBuilder).build)*)
@@ -5485,7 +5485,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def imageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageImageEncryptionKeyArgs.Builder]):
+    inline def imageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageImageEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ImageState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ImageImageEncryptionKeyArgs.builder
       builder.imageEncryptionKey(args(argsBuilder).build)
@@ -5495,7 +5495,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ImageState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ImageParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -5505,7 +5505,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rawDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageRawDiskArgs.Builder]):
+    inline def rawDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageRawDiskArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ImageState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ImageRawDiskArgs.builder
       builder.rawDisk(args(argsBuilder).build)
@@ -5515,7 +5515,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def shieldedInstanceInitialState(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageShieldedInstanceInitialStateArgs.Builder]):
+    inline def shieldedInstanceInitialState(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageShieldedInstanceInitialStateArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ImageState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ImageShieldedInstanceInitialStateArgs.builder
       builder.shieldedInstanceInitialState(args(argsBuilder).build)
@@ -5526,7 +5526,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def sourceDiskEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageSourceDiskEncryptionKeyArgs.Builder]):
+    inline def sourceDiskEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageSourceDiskEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ImageState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ImageSourceDiskEncryptionKeyArgs.builder
       builder.sourceDiskEncryptionKey(args(argsBuilder).build)
@@ -5537,7 +5537,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def sourceImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageSourceImageEncryptionKeyArgs.Builder]):
+    inline def sourceImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageSourceImageEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ImageState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ImageSourceImageEncryptionKeyArgs.builder
       builder.sourceImageEncryptionKey(args(argsBuilder).build)
@@ -5548,7 +5548,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def sourceSnapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageSourceSnapshotEncryptionKeyArgs.Builder]):
+    inline def sourceSnapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.ImageSourceSnapshotEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ImageState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ImageSourceSnapshotEncryptionKeyArgs.builder
       builder.sourceSnapshotEncryptionKey(args(argsBuilder).build)
@@ -5560,7 +5560,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def initializeParams(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceBootDiskInitializeParamsArgs.Builder]):
+    inline def initializeParams(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceBootDiskInitializeParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceBootDiskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceBootDiskInitializeParamsArgs.builder
       builder.initializeParams(args(argsBuilder).build)
@@ -5570,7 +5570,7 @@ object compute_ext1:
      * @param sourceImageEncryptionKey Encryption key used to decrypt the given image. Structure is documented below.
      * @return builder
      */
-    def sourceImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceBootDiskInitializeParamsSourceImageEncryptionKeyArgs.Builder]):
+    inline def sourceImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceBootDiskInitializeParamsSourceImageEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceBootDiskInitializeParamsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceBootDiskInitializeParamsSourceImageEncryptionKeyArgs.builder
       builder.sourceImageEncryptionKey(args(argsBuilder).build)
@@ -5579,7 +5579,7 @@ object compute_ext1:
      * @param sourceSnapshotEncryptionKey Encryption key used to decrypt the given snapshot. Structure is documented below.
      * @return builder
      */
-    def sourceSnapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceBootDiskInitializeParamsSourceSnapshotEncryptionKeyArgs.Builder]):
+    inline def sourceSnapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceBootDiskInitializeParamsSourceSnapshotEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceBootDiskInitializeParamsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceBootDiskInitializeParamsSourceSnapshotEncryptionKeyArgs.builder
       builder.sourceSnapshotEncryptionKey(args(argsBuilder).build)
@@ -5589,7 +5589,7 @@ object compute_ext1:
      * @param initializeParams Parameters with which a disk was created alongside the instance.
      * @return builder
      */
-    def initializeParams(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageBootDiskInitializeParamsArgs.Builder]):
+    inline def initializeParams(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageBootDiskInitializeParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageBootDiskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageBootDiskInitializeParamsArgs.builder
       builder.initializeParams(args(argsBuilder).build)
@@ -5599,7 +5599,7 @@ object compute_ext1:
      * @param sourceImageEncryptionKey The encryption key used to decrypt the source image.
      * @return builder
      */
-    def sourceImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageBootDiskInitializeParamsSourceImageEncryptionKeyArgs.Builder]):
+    inline def sourceImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageBootDiskInitializeParamsSourceImageEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageBootDiskInitializeParamsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageBootDiskInitializeParamsSourceImageEncryptionKeyArgs.builder
       builder.sourceImageEncryptionKey(args(argsBuilder).build)
@@ -5608,7 +5608,7 @@ object compute_ext1:
      * @param sourceSnapshotEncryptionKey The encryption key used to decrypt the source snapshot.
      * @return builder
      */
-    def sourceSnapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageBootDiskInitializeParamsSourceSnapshotEncryptionKeyArgs.Builder]):
+    inline def sourceSnapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageBootDiskInitializeParamsSourceSnapshotEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageBootDiskInitializeParamsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageBootDiskInitializeParamsSourceSnapshotEncryptionKeyArgs.builder
       builder.sourceSnapshotEncryptionKey(args(argsBuilder).build)
@@ -5618,7 +5618,7 @@ object compute_ext1:
      * @param accessConfigs Access configurations, i.e. IPs via which this instance can be accessed via the Internet.
      * @return builder
      */
-    def accessConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkInterfaceAccessConfigArgs.Builder]*):
+    inline def accessConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkInterfaceAccessConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkInterfaceAccessConfigArgs.builder
       builder.accessConfigs(args.map(_(argsBuilder).build)*)
@@ -5627,7 +5627,7 @@ object compute_ext1:
      * @param aliasIpRanges An array of alias IP ranges for this network interface.
      * @return builder
      */
-    def aliasIpRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkInterfaceAliasIpRangeArgs.Builder]*):
+    inline def aliasIpRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkInterfaceAliasIpRangeArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkInterfaceAliasIpRangeArgs.builder
       builder.aliasIpRanges(args.map(_(argsBuilder).build)*)
@@ -5636,7 +5636,7 @@ object compute_ext1:
      * @param aliasIpv6Ranges An array of IPv6 alias IP ranges for this network interface.
      * @return builder
      */
-    def aliasIpv6Ranges(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkInterfaceAliasIpv6RangeArgs.Builder]*):
+    inline def aliasIpv6Ranges(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkInterfaceAliasIpv6RangeArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkInterfaceAliasIpv6RangeArgs.builder
       builder.aliasIpv6Ranges(args.map(_(argsBuilder).build)*)
@@ -5645,7 +5645,7 @@ object compute_ext1:
      * @param ipv6AccessConfigs An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
      * @return builder
      */
-    def ipv6AccessConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkInterfaceIpv6AccessConfigArgs.Builder]*):
+    inline def ipv6AccessConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkInterfaceIpv6AccessConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkInterfaceIpv6AccessConfigArgs.builder
       builder.ipv6AccessConfigs(args.map(_(argsBuilder).build)*)
@@ -5655,7 +5655,7 @@ object compute_ext1:
      * @param specificReservation Specifies the label selector for the reservation to use.
      * @return builder
      */
-    def specificReservation(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageReservationAffinitySpecificReservationArgs.Builder]):
+    inline def specificReservation(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageReservationAffinitySpecificReservationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageReservationAffinityArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageReservationAffinitySpecificReservationArgs.builder
       builder.specificReservation(args(argsBuilder).build)
@@ -5665,7 +5665,7 @@ object compute_ext1:
      * @param gracefulShutdown Settings for the instance to perform a graceful shutdown.
      * @return builder
      */
-    def gracefulShutdown(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingGracefulShutdownArgs.Builder]):
+    inline def gracefulShutdown(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingGracefulShutdownArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingGracefulShutdownArgs.builder
       builder.gracefulShutdown(args(argsBuilder).build)
@@ -5677,7 +5677,7 @@ object compute_ext1:
      *   hour.
      * @return builder
      */
-    def localSsdRecoveryTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingLocalSsdRecoveryTimeoutArgs.Builder]):
+    inline def localSsdRecoveryTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingLocalSsdRecoveryTimeoutArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingLocalSsdRecoveryTimeoutArgs.builder
       builder.localSsdRecoveryTimeout(args(argsBuilder).build)
@@ -5686,7 +5686,7 @@ object compute_ext1:
      * @param maxRunDuration The timeout for new network connections to hosts.
      * @return builder
      */
-    def maxRunDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingMaxRunDurationArgs.Builder]):
+    inline def maxRunDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingMaxRunDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingMaxRunDurationArgs.builder
       builder.maxRunDuration(args(argsBuilder).build)
@@ -5695,7 +5695,7 @@ object compute_ext1:
      * @param nodeAffinities Specifies node affinities or anti-affinities to determine which sole-tenant nodes your instances and managed instance groups will use as host systems.
      * @return builder
      */
-    def nodeAffinities(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingNodeAffinityArgs.Builder]*):
+    inline def nodeAffinities(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingNodeAffinityArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingNodeAffinityArgs.builder
       builder.nodeAffinities(args.map(_(argsBuilder).build)*)
@@ -5704,7 +5704,7 @@ object compute_ext1:
      * @param onInstanceStopAction Defines the behaviour for instances with the instance_termination_action.
      * @return builder
      */
-    def onInstanceStopAction(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingOnInstanceStopActionArgs.Builder]):
+    inline def onInstanceStopAction(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingOnInstanceStopActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingOnInstanceStopActionArgs.builder
       builder.onInstanceStopAction(args(argsBuilder).build)
@@ -5713,7 +5713,7 @@ object compute_ext1:
      * @param preemptionNoticeDuration The duration of the notice that the instance will receive before it is preempted.
      * @return builder
      */
-    def preemptionNoticeDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingPreemptionNoticeDurationArgs.Builder]):
+    inline def preemptionNoticeDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingPreemptionNoticeDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingPreemptionNoticeDurationArgs.builder
       builder.preemptionNoticeDuration(args(argsBuilder).build)
@@ -5725,7 +5725,7 @@ object compute_ext1:
      * 										transitions to the STOPPING state.
      * @return builder
      */
-    def maxDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingGracefulShutdownMaxDurationArgs.Builder]):
+    inline def maxDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingGracefulShutdownMaxDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingGracefulShutdownArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingGracefulShutdownMaxDurationArgs.builder
       builder.maxDuration(args(argsBuilder).build)
@@ -5735,7 +5735,7 @@ object compute_ext1:
      * @param advancedMachineFeatures Controls for advanced machine-related behavior features.
      * @return builder
      */
-    def advancedMachineFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageAdvancedMachineFeaturesArgs.Builder]):
+    inline def advancedMachineFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageAdvancedMachineFeaturesArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageAdvancedMachineFeaturesArgs.builder
       builder.advancedMachineFeatures(args(argsBuilder).build)
@@ -5744,7 +5744,7 @@ object compute_ext1:
      * @param attachedDisks List of disks attached to the instance
      * @return builder
      */
-    def attachedDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageAttachedDiskArgs.Builder]*):
+    inline def attachedDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageAttachedDiskArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageAttachedDiskArgs.builder
       builder.attachedDisks(args.map(_(argsBuilder).build)*)
@@ -5753,7 +5753,7 @@ object compute_ext1:
      * @param bootDisks The boot disk for the instance.
      * @return builder
      */
-    def bootDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageBootDiskArgs.Builder]*):
+    inline def bootDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageBootDiskArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageBootDiskArgs.builder
       builder.bootDisks(args.map(_(argsBuilder).build)*)
@@ -5762,7 +5762,7 @@ object compute_ext1:
      * @param confidentialInstanceConfig The Confidential VM config being used by the instance.  onHostMaintenance has to be set to TERMINATE or this will fail to create.
      * @return builder
      */
-    def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageConfidentialInstanceConfigArgs.Builder]):
+    inline def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageConfidentialInstanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageConfidentialInstanceConfigArgs.builder
       builder.confidentialInstanceConfig(args(argsBuilder).build)
@@ -5771,7 +5771,7 @@ object compute_ext1:
      * @param guestAccelerators List of the type and count of accelerator cards attached to the instance.
      * @return builder
      */
-    def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageGuestAcceleratorArgs.Builder]*):
+    inline def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageGuestAcceleratorArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageGuestAcceleratorArgs.builder
       builder.guestAccelerators(args.map(_(argsBuilder).build)*)
@@ -5780,7 +5780,7 @@ object compute_ext1:
      * @param instanceEncryptionKey Encryption key used to provide data encryption on the given instance.
      * @return builder
      */
-    def instanceEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageInstanceEncryptionKeyArgs.Builder]):
+    inline def instanceEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageInstanceEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageInstanceEncryptionKeyArgs.builder
       builder.instanceEncryptionKey(args(argsBuilder).build)
@@ -5789,7 +5789,7 @@ object compute_ext1:
      * @param networkInterfaces The networks attached to the instance.
      * @return builder
      */
-    def networkInterfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkInterfaceArgs.Builder]*):
+    inline def networkInterfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkInterfaceArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
@@ -5798,7 +5798,7 @@ object compute_ext1:
      * @param networkPerformanceConfig Configures network performance settings for the instance. If not specified, the instance will be created with its default network performance configuration.
      * @return builder
      */
-    def networkPerformanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkPerformanceConfigArgs.Builder]):
+    inline def networkPerformanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkPerformanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageNetworkPerformanceConfigArgs.builder
       builder.networkPerformanceConfig(args(argsBuilder).build)
@@ -5807,7 +5807,7 @@ object compute_ext1:
      * @param params Stores additional params passed with the request, but not persisted as part of resource payload.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -5816,7 +5816,7 @@ object compute_ext1:
      * @param reservationAffinity Specifies the reservations that this instance can consume from.
      * @return builder
      */
-    def reservationAffinity(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageReservationAffinityArgs.Builder]):
+    inline def reservationAffinity(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageReservationAffinityArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageReservationAffinityArgs.builder
       builder.reservationAffinity(args(argsBuilder).build)
@@ -5825,7 +5825,7 @@ object compute_ext1:
      * @param scheduling The scheduling strategy being used by the instance.
      * @return builder
      */
-    def scheduling(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingArgs.Builder]):
+    inline def scheduling(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSchedulingArgs.builder
       builder.scheduling(args(argsBuilder).build)
@@ -5834,7 +5834,7 @@ object compute_ext1:
      * @param scratchDisks The scratch disks attached to the instance.
      * @return builder
      */
-    def scratchDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageScratchDiskArgs.Builder]*):
+    inline def scratchDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageScratchDiskArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageScratchDiskArgs.builder
       builder.scratchDisks(args.map(_(argsBuilder).build)*)
@@ -5843,7 +5843,7 @@ object compute_ext1:
      * @param serviceAccount The service account to attach to the instance.
      * @return builder
      */
-    def serviceAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageServiceAccountArgs.Builder]):
+    inline def serviceAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageServiceAccountArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageServiceAccountArgs.builder
       builder.serviceAccount(args(argsBuilder).build)
@@ -5852,7 +5852,7 @@ object compute_ext1:
      * @param shieldedInstanceConfig The shielded vm config being used by the instance.
      * @return builder
      */
-    def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageShieldedInstanceConfigArgs.Builder]):
+    inline def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageShieldedInstanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageShieldedInstanceConfigArgs.builder
       builder.shieldedInstanceConfig(args(argsBuilder).build)
@@ -5861,7 +5861,7 @@ object compute_ext1:
      * @param sourceMachineImageEncryptionKey Encryption key for the source machine image.
      * @return builder
      */
-    def sourceMachineImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSourceMachineImageEncryptionKeyArgs.Builder]):
+    inline def sourceMachineImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSourceMachineImageEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageSourceMachineImageEncryptionKeyArgs.builder
       builder.sourceMachineImageEncryptionKey(args(argsBuilder).build)
@@ -5870,7 +5870,7 @@ object compute_ext1:
      * @param workloadIdentityConfig Workload identity config.
      * @return builder
      */
-    def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageWorkloadIdentityConfigArgs.Builder]):
+    inline def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromMachineImageWorkloadIdentityConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromMachineImageState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromMachineImageWorkloadIdentityConfigArgs.builder
       builder.workloadIdentityConfig(args(argsBuilder).build)
@@ -5880,7 +5880,7 @@ object compute_ext1:
      * @param initializeParams Parameters with which a disk was created alongside the instance.
      * @return builder
      */
-    def initializeParams(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateBootDiskInitializeParamsArgs.Builder]):
+    inline def initializeParams(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateBootDiskInitializeParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateBootDiskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateBootDiskInitializeParamsArgs.builder
       builder.initializeParams(args(argsBuilder).build)
@@ -5890,7 +5890,7 @@ object compute_ext1:
      * @param sourceImageEncryptionKey The encryption key used to decrypt the source image.
      * @return builder
      */
-    def sourceImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateBootDiskInitializeParamsSourceImageEncryptionKeyArgs.Builder]):
+    inline def sourceImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateBootDiskInitializeParamsSourceImageEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateBootDiskInitializeParamsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateBootDiskInitializeParamsSourceImageEncryptionKeyArgs.builder
       builder.sourceImageEncryptionKey(args(argsBuilder).build)
@@ -5899,7 +5899,7 @@ object compute_ext1:
      * @param sourceSnapshotEncryptionKey The encryption key used to decrypt the source snapshot.
      * @return builder
      */
-    def sourceSnapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateBootDiskInitializeParamsSourceSnapshotEncryptionKeyArgs.Builder]):
+    inline def sourceSnapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateBootDiskInitializeParamsSourceSnapshotEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateBootDiskInitializeParamsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateBootDiskInitializeParamsSourceSnapshotEncryptionKeyArgs.builder
       builder.sourceSnapshotEncryptionKey(args(argsBuilder).build)
@@ -5909,7 +5909,7 @@ object compute_ext1:
      * @param accessConfigs Access configurations, i.e. IPs via which this instance can be accessed via the Internet.
      * @return builder
      */
-    def accessConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkInterfaceAccessConfigArgs.Builder]*):
+    inline def accessConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkInterfaceAccessConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkInterfaceAccessConfigArgs.builder
       builder.accessConfigs(args.map(_(argsBuilder).build)*)
@@ -5918,7 +5918,7 @@ object compute_ext1:
      * @param aliasIpRanges An array of alias IP ranges for this network interface.
      * @return builder
      */
-    def aliasIpRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkInterfaceAliasIpRangeArgs.Builder]*):
+    inline def aliasIpRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkInterfaceAliasIpRangeArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkInterfaceAliasIpRangeArgs.builder
       builder.aliasIpRanges(args.map(_(argsBuilder).build)*)
@@ -5927,7 +5927,7 @@ object compute_ext1:
      * @param aliasIpv6Ranges An array of IPv6 alias IP ranges for this network interface.
      * @return builder
      */
-    def aliasIpv6Ranges(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkInterfaceAliasIpv6RangeArgs.Builder]*):
+    inline def aliasIpv6Ranges(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkInterfaceAliasIpv6RangeArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkInterfaceAliasIpv6RangeArgs.builder
       builder.aliasIpv6Ranges(args.map(_(argsBuilder).build)*)
@@ -5936,7 +5936,7 @@ object compute_ext1:
      * @param ipv6AccessConfigs An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access.
      * @return builder
      */
-    def ipv6AccessConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkInterfaceIpv6AccessConfigArgs.Builder]*):
+    inline def ipv6AccessConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkInterfaceIpv6AccessConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkInterfaceIpv6AccessConfigArgs.builder
       builder.ipv6AccessConfigs(args.map(_(argsBuilder).build)*)
@@ -5946,7 +5946,7 @@ object compute_ext1:
      * @param specificReservation Specifies the label selector for the reservation to use.
      * @return builder
      */
-    def specificReservation(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateReservationAffinitySpecificReservationArgs.Builder]):
+    inline def specificReservation(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateReservationAffinitySpecificReservationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateReservationAffinityArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateReservationAffinitySpecificReservationArgs.builder
       builder.specificReservation(args(argsBuilder).build)
@@ -5956,7 +5956,7 @@ object compute_ext1:
      * @param gracefulShutdown Settings for the instance to perform a graceful shutdown.
      * @return builder
      */
-    def gracefulShutdown(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingGracefulShutdownArgs.Builder]):
+    inline def gracefulShutdown(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingGracefulShutdownArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingGracefulShutdownArgs.builder
       builder.gracefulShutdown(args(argsBuilder).build)
@@ -5968,7 +5968,7 @@ object compute_ext1:
      *   hour.
      * @return builder
      */
-    def localSsdRecoveryTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingLocalSsdRecoveryTimeoutArgs.Builder]):
+    inline def localSsdRecoveryTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingLocalSsdRecoveryTimeoutArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingLocalSsdRecoveryTimeoutArgs.builder
       builder.localSsdRecoveryTimeout(args(argsBuilder).build)
@@ -5977,7 +5977,7 @@ object compute_ext1:
      * @param maxRunDuration The timeout for new network connections to hosts.
      * @return builder
      */
-    def maxRunDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingMaxRunDurationArgs.Builder]):
+    inline def maxRunDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingMaxRunDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingMaxRunDurationArgs.builder
       builder.maxRunDuration(args(argsBuilder).build)
@@ -5986,7 +5986,7 @@ object compute_ext1:
      * @param nodeAffinities Specifies node affinities or anti-affinities to determine which sole-tenant nodes your instances and managed instance groups will use as host systems.
      * @return builder
      */
-    def nodeAffinities(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingNodeAffinityArgs.Builder]*):
+    inline def nodeAffinities(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingNodeAffinityArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingNodeAffinityArgs.builder
       builder.nodeAffinities(args.map(_(argsBuilder).build)*)
@@ -5995,7 +5995,7 @@ object compute_ext1:
      * @param onInstanceStopAction Defines the behaviour for instances with the instance_termination_action.
      * @return builder
      */
-    def onInstanceStopAction(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingOnInstanceStopActionArgs.Builder]):
+    inline def onInstanceStopAction(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingOnInstanceStopActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingOnInstanceStopActionArgs.builder
       builder.onInstanceStopAction(args(argsBuilder).build)
@@ -6004,7 +6004,7 @@ object compute_ext1:
      * @param preemptionNoticeDuration The duration of the notice that the instance will receive before it is preempted.
      * @return builder
      */
-    def preemptionNoticeDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingPreemptionNoticeDurationArgs.Builder]):
+    inline def preemptionNoticeDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingPreemptionNoticeDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingPreemptionNoticeDurationArgs.builder
       builder.preemptionNoticeDuration(args(argsBuilder).build)
@@ -6016,7 +6016,7 @@ object compute_ext1:
      * 										transitions to the STOPPING state.
      * @return builder
      */
-    def maxDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingGracefulShutdownMaxDurationArgs.Builder]):
+    inline def maxDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingGracefulShutdownMaxDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingGracefulShutdownArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingGracefulShutdownMaxDurationArgs.builder
       builder.maxDuration(args(argsBuilder).build)
@@ -6026,7 +6026,7 @@ object compute_ext1:
      * @param advancedMachineFeatures Controls for advanced machine-related behavior features.
      * @return builder
      */
-    def advancedMachineFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateAdvancedMachineFeaturesArgs.Builder]):
+    inline def advancedMachineFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateAdvancedMachineFeaturesArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateAdvancedMachineFeaturesArgs.builder
       builder.advancedMachineFeatures(args(argsBuilder).build)
@@ -6035,7 +6035,7 @@ object compute_ext1:
      * @param attachedDisks List of disks attached to the instance
      * @return builder
      */
-    def attachedDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateAttachedDiskArgs.Builder]*):
+    inline def attachedDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateAttachedDiskArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateAttachedDiskArgs.builder
       builder.attachedDisks(args.map(_(argsBuilder).build)*)
@@ -6044,7 +6044,7 @@ object compute_ext1:
      * @param bootDisk The boot disk for the instance.
      * @return builder
      */
-    def bootDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateBootDiskArgs.Builder]):
+    inline def bootDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateBootDiskArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateBootDiskArgs.builder
       builder.bootDisk(args(argsBuilder).build)
@@ -6053,7 +6053,7 @@ object compute_ext1:
      * @param confidentialInstanceConfig The Confidential VM config being used by the instance.  onHostMaintenance has to be set to TERMINATE or this will fail to create.
      * @return builder
      */
-    def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateConfidentialInstanceConfigArgs.Builder]):
+    inline def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateConfidentialInstanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateConfidentialInstanceConfigArgs.builder
       builder.confidentialInstanceConfig(args(argsBuilder).build)
@@ -6062,7 +6062,7 @@ object compute_ext1:
      * @param guestAccelerators List of the type and count of accelerator cards attached to the instance.
      * @return builder
      */
-    def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateGuestAcceleratorArgs.Builder]*):
+    inline def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateGuestAcceleratorArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateGuestAcceleratorArgs.builder
       builder.guestAccelerators(args.map(_(argsBuilder).build)*)
@@ -6071,7 +6071,7 @@ object compute_ext1:
      * @param instanceEncryptionKey Encryption key used to provide data encryption on the given instance.
      * @return builder
      */
-    def instanceEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateInstanceEncryptionKeyArgs.Builder]):
+    inline def instanceEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateInstanceEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateInstanceEncryptionKeyArgs.builder
       builder.instanceEncryptionKey(args(argsBuilder).build)
@@ -6080,7 +6080,7 @@ object compute_ext1:
      * @param networkInterfaces The networks attached to the instance.
      * @return builder
      */
-    def networkInterfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkInterfaceArgs.Builder]*):
+    inline def networkInterfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkInterfaceArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
@@ -6089,7 +6089,7 @@ object compute_ext1:
      * @param networkPerformanceConfig Configures network performance settings for the instance. If not specified, the instance will be created with its default network performance configuration.
      * @return builder
      */
-    def networkPerformanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkPerformanceConfigArgs.Builder]):
+    inline def networkPerformanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkPerformanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateNetworkPerformanceConfigArgs.builder
       builder.networkPerformanceConfig(args(argsBuilder).build)
@@ -6098,7 +6098,7 @@ object compute_ext1:
      * @param params Stores additional params passed with the request, but not persisted as part of resource payload.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -6107,7 +6107,7 @@ object compute_ext1:
      * @param reservationAffinity Specifies the reservations that this instance can consume from.
      * @return builder
      */
-    def reservationAffinity(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateReservationAffinityArgs.Builder]):
+    inline def reservationAffinity(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateReservationAffinityArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateReservationAffinityArgs.builder
       builder.reservationAffinity(args(argsBuilder).build)
@@ -6116,7 +6116,7 @@ object compute_ext1:
      * @param scheduling The scheduling strategy being used by the instance.
      * @return builder
      */
-    def scheduling(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingArgs.Builder]):
+    inline def scheduling(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateSchedulingArgs.builder
       builder.scheduling(args(argsBuilder).build)
@@ -6127,7 +6127,7 @@ object compute_ext1:
      * * `network_interface.access_config`
      * @return builder
      */
-    def scratchDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateScratchDiskArgs.Builder]*):
+    inline def scratchDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateScratchDiskArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateScratchDiskArgs.builder
       builder.scratchDisks(args.map(_(argsBuilder).build)*)
@@ -6136,7 +6136,7 @@ object compute_ext1:
      * @param serviceAccount The service account to attach to the instance.
      * @return builder
      */
-    def serviceAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateServiceAccountArgs.Builder]):
+    inline def serviceAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateServiceAccountArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateServiceAccountArgs.builder
       builder.serviceAccount(args(argsBuilder).build)
@@ -6145,7 +6145,7 @@ object compute_ext1:
      * @param shieldedInstanceConfig The shielded vm config being used by the instance.
      * @return builder
      */
-    def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateShieldedInstanceConfigArgs.Builder]):
+    inline def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateShieldedInstanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateShieldedInstanceConfigArgs.builder
       builder.shieldedInstanceConfig(args(argsBuilder).build)
@@ -6154,7 +6154,7 @@ object compute_ext1:
      * @param workloadIdentityConfig Workload identity config.
      * @return builder
      */
-    def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateWorkloadIdentityConfigArgs.Builder]):
+    inline def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceFromTemplateWorkloadIdentityConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceFromTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceFromTemplateWorkloadIdentityConfigArgs.builder
       builder.workloadIdentityConfig(args(argsBuilder).build)
@@ -6165,7 +6165,7 @@ object compute_ext1:
      * ***
      * @return builder
      */
-    def onRepair(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerInstanceLifecyclePolicyOnRepairArgs.Builder]):
+    inline def onRepair(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerInstanceLifecyclePolicyOnRepairArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceGroupManagerInstanceLifecyclePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerInstanceLifecyclePolicyOnRepairArgs.builder
       builder.onRepair(args(argsBuilder).build)
@@ -6177,7 +6177,7 @@ object compute_ext1:
      * apply the configuration.
      * @return builder
      */
-    def allInstancesConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerAllInstancesConfigArgs.Builder]):
+    inline def allInstancesConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerAllInstancesConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceGroupManagerState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerAllInstancesConfigArgs.builder
       builder.allInstancesConfig(args(argsBuilder).build)
@@ -6187,7 +6187,7 @@ object compute_ext1:
      * group. You can specify only one value. Structure is documented below. For more information, see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances#monitoring_groups).
      * @return builder
      */
-    def autoHealingPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerAutoHealingPoliciesArgs.Builder]):
+    inline def autoHealingPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerAutoHealingPoliciesArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceGroupManagerState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerAutoHealingPoliciesArgs.builder
       builder.autoHealingPolicies(args(argsBuilder).build)
@@ -6196,7 +6196,7 @@ object compute_ext1:
      * @param instanceLifecyclePolicy The instance lifecycle policy for this managed instance group.
      * @return builder
      */
-    def instanceLifecyclePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerInstanceLifecyclePolicyArgs.Builder]):
+    inline def instanceLifecyclePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerInstanceLifecyclePolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceGroupManagerState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerInstanceLifecyclePolicyArgs.builder
       builder.instanceLifecyclePolicy(args(argsBuilder).build)
@@ -6206,7 +6206,7 @@ object compute_ext1:
      * for details on configuration.
      * @return builder
      */
-    def namedPorts(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerNamedPortArgs.Builder]*):
+    inline def namedPorts(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerNamedPortArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceGroupManagerState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerNamedPortArgs.builder
       builder.namedPorts(args.map(_(argsBuilder).build)*)
@@ -6215,7 +6215,7 @@ object compute_ext1:
      * @param params ) Input only additional params for instance group manager creation. Structure is documented below. For more information, see [API](https://cloud.google.com/compute/docs/reference/rest/beta/instanceGroupManagers/insert).
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceGroupManagerState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -6224,7 +6224,7 @@ object compute_ext1:
      * @param resourcePolicies Resource policies for this managed instance group. Structure is documented below.
      * @return builder
      */
-    def resourcePolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerResourcePoliciesArgs.Builder]):
+    inline def resourcePolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerResourcePoliciesArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceGroupManagerState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerResourcePoliciesArgs.builder
       builder.resourcePolicies(args(argsBuilder).build)
@@ -6233,7 +6233,7 @@ object compute_ext1:
      * @param standbyPolicy The standby policy for stopped and suspended instances. Structure is documented below. For more information, see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/suspended-and-stopped-vms-in-mig).
      * @return builder
      */
-    def standbyPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStandbyPolicyArgs.Builder]):
+    inline def standbyPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStandbyPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceGroupManagerState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerStandbyPolicyArgs.builder
       builder.standbyPolicy(args(argsBuilder).build)
@@ -6242,7 +6242,7 @@ object compute_ext1:
      * @param statefulDisks Disks created on the instances that will be preserved on instance delete, update, etc. Structure is documented below. For more information see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/configuring-stateful-disks-in-migs).
      * @return builder
      */
-    def statefulDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatefulDiskArgs.Builder]*):
+    inline def statefulDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatefulDiskArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceGroupManagerState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatefulDiskArgs.builder
       builder.statefulDisks(args.map(_(argsBuilder).build)*)
@@ -6251,7 +6251,7 @@ object compute_ext1:
      * @param statefulExternalIps External network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name. Structure is documented below.
      * @return builder
      */
-    def statefulExternalIps(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatefulExternalIpArgs.Builder]*):
+    inline def statefulExternalIps(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatefulExternalIpArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceGroupManagerState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatefulExternalIpArgs.builder
       builder.statefulExternalIps(args.map(_(argsBuilder).build)*)
@@ -6260,7 +6260,7 @@ object compute_ext1:
      * @param statefulInternalIps Internal network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name. Structure is documented below.
      * @return builder
      */
-    def statefulInternalIps(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatefulInternalIpArgs.Builder]*):
+    inline def statefulInternalIps(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatefulInternalIpArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceGroupManagerState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatefulInternalIpArgs.builder
       builder.statefulInternalIps(args.map(_(argsBuilder).build)*)
@@ -6269,7 +6269,7 @@ object compute_ext1:
      * @param statuses The status of this managed instance group.
      * @return builder
      */
-    def statuses(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatusArgs.Builder]*):
+    inline def statuses(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatusArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceGroupManagerState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatusArgs.builder
       builder.statuses(args.map(_(argsBuilder).build)*)
@@ -6278,7 +6278,7 @@ object compute_ext1:
      * @param targetSizePolicies The policy that specifies how the MIG creates its VMs to achieve the target size. Structure is documented below.
      * @return builder
      */
-    def targetSizePolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerTargetSizePolicyArgs.Builder]*):
+    inline def targetSizePolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerTargetSizePolicyArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceGroupManagerState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerTargetSizePolicyArgs.builder
       builder.targetSizePolicies(args.map(_(argsBuilder).build)*)
@@ -6287,7 +6287,7 @@ object compute_ext1:
      * @param updatePolicy The update policy for this managed instance group. Structure is documented below. For more information, see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/updating-managed-instance-groups) and [API](https://cloud.google.com/compute/docs/reference/rest/v1/instanceGroupManagers/patch).
      * @return builder
      */
-    def updatePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerUpdatePolicyArgs.Builder]):
+    inline def updatePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerUpdatePolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceGroupManagerState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerUpdatePolicyArgs.builder
       builder.updatePolicy(args(argsBuilder).build)
@@ -6298,7 +6298,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def versions(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerVersionArgs.Builder]*):
+    inline def versions(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerVersionArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceGroupManagerState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerVersionArgs.builder
       builder.versions(args.map(_(argsBuilder).build)*)
@@ -6310,7 +6310,7 @@ object compute_ext1:
      * apply the configuration.
      * @return builder
      */
-    def allInstancesConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatusAllInstancesConfigArgs.Builder]*):
+    inline def allInstancesConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatusAllInstancesConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatusAllInstancesConfigArgs.builder
       builder.allInstancesConfigs(args.map(_(argsBuilder).build)*)
@@ -6319,7 +6319,7 @@ object compute_ext1:
      * @param statefuls Stateful status of the given Instance Group Manager.
      * @return builder
      */
-    def statefuls(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatusStatefulArgs.Builder]*):
+    inline def statefuls(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatusStatefulArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatusStatefulArgs.builder
       builder.statefuls(args.map(_(argsBuilder).build)*)
@@ -6328,7 +6328,7 @@ object compute_ext1:
      * @param versionTargets A bit indicating whether version target has been reached in this managed instance group, i.e. all instances are in their target version. Instances&#39; target version are specified by version field on Instance Group Manager.
      * @return builder
      */
-    def versionTargets(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatusVersionTargetArgs.Builder]*):
+    inline def versionTargets(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatusVersionTargetArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatusVersionTargetArgs.builder
       builder.versionTargets(args.map(_(argsBuilder).build)*)
@@ -6338,7 +6338,7 @@ object compute_ext1:
      * @param perInstanceConfigs Status of per-instance configs on the instances.
      * @return builder
      */
-    def perInstanceConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatusStatefulPerInstanceConfigArgs.Builder]*):
+    inline def perInstanceConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatusStatefulPerInstanceConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatusStatefulArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerStatusStatefulPerInstanceConfigArgs.builder
       builder.perInstanceConfigs(args.map(_(argsBuilder).build)*)
@@ -6351,7 +6351,7 @@ object compute_ext1:
      * constraints of every other `version`, and any remaining instances will be provisioned with the version where `targetSize` is unset.
      * @return builder
      */
-    def targetSize(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerVersionTargetSizeArgs.Builder]):
+    inline def targetSize(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupManagerVersionTargetSizeArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceGroupManagerVersionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupManagerVersionTargetSizeArgs.builder
       builder.targetSize(args(argsBuilder).build)
@@ -6362,7 +6362,7 @@ object compute_ext1:
      * for details on configuration. Structure is documented below.
      * @return builder
      */
-    def namedPorts(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupNamedPortArgs.Builder]*):
+    inline def namedPorts(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGroupNamedPortArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceGroupState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGroupNamedPortArgs.builder
       builder.namedPorts(args.map(_(argsBuilder).build)*)
@@ -6373,7 +6373,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceIAMBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceIAMBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceIAMBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceIAMBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -6384,7 +6384,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceIAMMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceIAMMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceIAMMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceIAMMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -6399,7 +6399,7 @@ object compute_ext1:
      * This block can be specified once per `networkInterface`. Structure documented below.
      * @return builder
      */
-    def accessConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceAccessConfigArgs.Builder]*):
+    inline def accessConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceAccessConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceAccessConfigArgs.builder
       builder.accessConfigs(args.map(_(argsBuilder).build)*)
@@ -6410,7 +6410,7 @@ object compute_ext1:
      * interfaces on subnet-mode networks. Structure documented below.
      * @return builder
      */
-    def aliasIpRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceAliasIpRangeArgs.Builder]*):
+    inline def aliasIpRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceAliasIpRangeArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceAliasIpRangeArgs.builder
       builder.aliasIpRanges(args.map(_(argsBuilder).build)*)
@@ -6421,7 +6421,7 @@ object compute_ext1:
      * interfaces on subnet-mode networks. Structure documented below.
      * @return builder
      */
-    def aliasIpv6Ranges(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceAliasIpv6RangeArgs.Builder]*):
+    inline def aliasIpv6Ranges(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceAliasIpv6RangeArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceAliasIpv6RangeArgs.builder
       builder.aliasIpv6Ranges(args.map(_(argsBuilder).build)*)
@@ -6432,7 +6432,7 @@ object compute_ext1:
      * specified, then this instance will have no external IPv6 Internet access. Structure documented below.
      * @return builder
      */
-    def ipv6AccessConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceIpv6AccessConfigArgs.Builder]*):
+    inline def ipv6AccessConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceIpv6AccessConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceIpv6AccessConfigArgs.builder
       builder.ipv6AccessConfigs(args.map(_(argsBuilder).build)*)
@@ -6443,7 +6443,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def specificReservation(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceReservationAffinitySpecificReservationArgs.Builder]):
+    inline def specificReservation(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceReservationAffinitySpecificReservationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceReservationAffinityArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceReservationAffinitySpecificReservationArgs.builder
       builder.specificReservation(args(argsBuilder).build)
@@ -6453,7 +6453,7 @@ object compute_ext1:
      * @param gracefulShutdown Beta Settings for the instance to perform a graceful shutdown. Structure is documented below.
      * @return builder
      */
-    def gracefulShutdown(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceSchedulingGracefulShutdownArgs.Builder]):
+    inline def gracefulShutdown(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceSchedulingGracefulShutdownArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceSchedulingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceSchedulingGracefulShutdownArgs.builder
       builder.gracefulShutdown(args(argsBuilder).build)
@@ -6462,7 +6462,7 @@ object compute_ext1:
      * @param localSsdRecoveryTimeout (../guides/provider_versions.html.markdown) Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour. Structure is documented below.
      * @return builder
      */
-    def localSsdRecoveryTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceSchedulingLocalSsdRecoveryTimeoutArgs.Builder]):
+    inline def localSsdRecoveryTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceSchedulingLocalSsdRecoveryTimeoutArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceSchedulingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceSchedulingLocalSsdRecoveryTimeoutArgs.builder
       builder.localSsdRecoveryTimeout(args(argsBuilder).build)
@@ -6471,7 +6471,7 @@ object compute_ext1:
      * @param maxRunDuration The duration of the instance. Instance will run and be terminated after then, the termination action could be defined in `instanceTerminationAction`. Structure is documented below.
      * @return builder
      */
-    def maxRunDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceSchedulingMaxRunDurationArgs.Builder]):
+    inline def maxRunDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceSchedulingMaxRunDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceSchedulingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceSchedulingMaxRunDurationArgs.builder
       builder.maxRunDuration(args(argsBuilder).build)
@@ -6484,7 +6484,7 @@ object compute_ext1:
      * Structure documented below.
      * @return builder
      */
-    def nodeAffinities(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceSchedulingNodeAffinityArgs.Builder]*):
+    inline def nodeAffinities(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceSchedulingNodeAffinityArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceSchedulingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceSchedulingNodeAffinityArgs.builder
       builder.nodeAffinities(args.map(_(argsBuilder).build)*)
@@ -6493,7 +6493,7 @@ object compute_ext1:
      * @param onInstanceStopAction Specifies the action to be performed when the instance is terminated using `maxRunDuration` and `STOP` `instanceTerminationAction`. Only support `true` `discardLocalSsd` at this point. Structure is documented below.
      * @return builder
      */
-    def onInstanceStopAction(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceSchedulingOnInstanceStopActionArgs.Builder]):
+    inline def onInstanceStopAction(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceSchedulingOnInstanceStopActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceSchedulingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceSchedulingOnInstanceStopActionArgs.builder
       builder.onInstanceStopAction(args(argsBuilder).build)
@@ -6502,7 +6502,7 @@ object compute_ext1:
      * @param preemptionNoticeDuration Specifies the Metadata Service preemption notice duration before the GCE ACPI G2 Soft Off signal is triggered for Spot VMs only. If not specified, there will be no wait before the G2 Soft Off signal is triggered. Structure is documented below.
      * @return builder
      */
-    def preemptionNoticeDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceSchedulingPreemptionNoticeDurationArgs.Builder]):
+    inline def preemptionNoticeDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceSchedulingPreemptionNoticeDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceSchedulingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceSchedulingPreemptionNoticeDurationArgs.builder
       builder.preemptionNoticeDuration(args(argsBuilder).build)
@@ -6514,7 +6514,7 @@ object compute_ext1:
      * transitions to the STOPPING state. Structure is documented below:
      * @return builder
      */
-    def maxDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceSchedulingGracefulShutdownMaxDurationArgs.Builder]):
+    inline def maxDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceSchedulingGracefulShutdownMaxDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceSchedulingGracefulShutdownArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceSchedulingGracefulShutdownMaxDurationArgs.builder
       builder.maxDuration(args(argsBuilder).build)
@@ -6525,7 +6525,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def metadata(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceSettingsMetadataArgs.Builder]):
+    inline def metadata(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceSettingsMetadataArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceSettingsState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceSettingsMetadataArgs.builder
       builder.metadata(args(argsBuilder).build)
@@ -6535,7 +6535,7 @@ object compute_ext1:
      * @param advancedMachineFeatures Configure Nested Virtualisation and Simultaneous Hyper Threading  on this VM. Structure is documented below
      * @return builder
      */
-    def advancedMachineFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceAdvancedMachineFeaturesArgs.Builder]):
+    inline def advancedMachineFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceAdvancedMachineFeaturesArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceAdvancedMachineFeaturesArgs.builder
       builder.advancedMachineFeatures(args(argsBuilder).build)
@@ -6544,7 +6544,7 @@ object compute_ext1:
      * @param attachedDisks Additional disks to attach to the instance. Can be repeated multiple times for multiple disks. Structure is documented below.
      * @return builder
      */
-    def attachedDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceAttachedDiskArgs.Builder]*):
+    inline def attachedDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceAttachedDiskArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceAttachedDiskArgs.builder
       builder.attachedDisks(args.map(_(argsBuilder).build)*)
@@ -6554,7 +6554,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def bootDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceBootDiskArgs.Builder]):
+    inline def bootDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceBootDiskArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceBootDiskArgs.builder
       builder.bootDisk(args(argsBuilder).build)
@@ -6563,7 +6563,7 @@ object compute_ext1:
      * @param confidentialInstanceConfig Enable [Confidential Mode](https://cloud.google.com/compute/confidential-vm/docs/about-cvm) on this VM. Structure is documented below
      * @return builder
      */
-    def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceConfidentialInstanceConfigArgs.Builder]):
+    inline def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceConfidentialInstanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceConfidentialInstanceConfigArgs.builder
       builder.confidentialInstanceConfig(args(argsBuilder).build)
@@ -6573,7 +6573,7 @@ object compute_ext1:
      * **Note:** GPU accelerators can only be used with `onHostMaintenance` option set to TERMINATE.
      * @return builder
      */
-    def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGuestAcceleratorArgs.Builder]*):
+    inline def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceGuestAcceleratorArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceGuestAcceleratorArgs.builder
       builder.guestAccelerators(args.map(_(argsBuilder).build)*)
@@ -6582,7 +6582,7 @@ object compute_ext1:
      * @param instanceEncryptionKey Configuration for data encryption on the instance with encryption keys. Structure is documented below.
      * @return builder
      */
-    def instanceEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceInstanceEncryptionKeyArgs.Builder]):
+    inline def instanceEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceInstanceEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceInstanceEncryptionKeyArgs.builder
       builder.instanceEncryptionKey(args(argsBuilder).build)
@@ -6594,7 +6594,7 @@ object compute_ext1:
      * ***
      * @return builder
      */
-    def networkInterfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceArgs.Builder]*):
+    inline def networkInterfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
@@ -6607,7 +6607,7 @@ object compute_ext1:
      * in order for this setting to take effect.
      * @return builder
      */
-    def networkPerformanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceNetworkPerformanceConfigArgs.Builder]):
+    inline def networkPerformanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceNetworkPerformanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceNetworkPerformanceConfigArgs.builder
       builder.networkPerformanceConfig(args(argsBuilder).build)
@@ -6617,7 +6617,7 @@ object compute_ext1:
      * .
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -6627,7 +6627,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def reservationAffinity(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceReservationAffinityArgs.Builder]):
+    inline def reservationAffinity(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceReservationAffinityArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceReservationAffinityArgs.builder
       builder.reservationAffinity(args(argsBuilder).build)
@@ -6637,7 +6637,7 @@ object compute_ext1:
      * this configuration option are detailed below.
      * @return builder
      */
-    def scheduling(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceSchedulingArgs.Builder]):
+    inline def scheduling(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceSchedulingArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceSchedulingArgs.builder
       builder.scheduling(args(argsBuilder).build)
@@ -6647,7 +6647,7 @@ object compute_ext1:
      * specified multiple times for multiple scratch disks. Structure is documented below.
      * @return builder
      */
-    def scratchDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceScratchDiskArgs.Builder]*):
+    inline def scratchDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceScratchDiskArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceScratchDiskArgs.builder
       builder.scratchDisks(args.map(_(argsBuilder).build)*)
@@ -6658,7 +6658,7 @@ object compute_ext1:
      * **Note**: `allowStoppingForUpdate` must be set to true or your instance must have a `desiredStatus` of `TERMINATED` in order to update this field.
      * @return builder
      */
-    def serviceAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceServiceAccountArgs.Builder]):
+    inline def serviceAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceServiceAccountArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceServiceAccountArgs.builder
       builder.serviceAccount(args(argsBuilder).build)
@@ -6669,7 +6669,7 @@ object compute_ext1:
      * **Note**: `allowStoppingForUpdate` must be set to true or your instance must have a `desiredStatus` of `TERMINATED` in order to update this field.
      * @return builder
      */
-    def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceShieldedInstanceConfigArgs.Builder]):
+    inline def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceShieldedInstanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceShieldedInstanceConfigArgs.builder
       builder.shieldedInstanceConfig(args(argsBuilder).build)
@@ -6679,7 +6679,7 @@ object compute_ext1:
      * this configuration option are detailed below.
      * @return builder
      */
-    def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceWorkloadIdentityConfigArgs.Builder]):
+    inline def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceWorkloadIdentityConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceWorkloadIdentityConfigArgs.builder
       builder.workloadIdentityConfig(args(argsBuilder).build)
@@ -6697,7 +6697,7 @@ object compute_ext1:
      * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group. Structure documented below.
      * @return builder
      */
-    def diskEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateDiskDiskEncryptionKeyArgs.Builder]):
+    inline def diskEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateDiskDiskEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceTemplateDiskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateDiskDiskEncryptionKeyArgs.builder
       builder.diskEncryptionKey(args(argsBuilder).build)
@@ -6713,7 +6713,7 @@ object compute_ext1:
      * documented below.
      * @return builder
      */
-    def sourceImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateDiskSourceImageEncryptionKeyArgs.Builder]):
+    inline def sourceImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateDiskSourceImageEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceTemplateDiskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateDiskSourceImageEncryptionKeyArgs.builder
       builder.sourceImageEncryptionKey(args(argsBuilder).build)
@@ -6724,7 +6724,7 @@ object compute_ext1:
      * documented below.
      * @return builder
      */
-    def sourceSnapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateDiskSourceSnapshotEncryptionKeyArgs.Builder]):
+    inline def sourceSnapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateDiskSourceSnapshotEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceTemplateDiskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateDiskSourceSnapshotEncryptionKeyArgs.builder
       builder.sourceSnapshotEncryptionKey(args(argsBuilder).build)
@@ -6735,7 +6735,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceTemplateIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -6746,7 +6746,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceTemplateIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -6761,7 +6761,7 @@ object compute_ext1:
      * on that network). This block can be specified once per `networkInterface`. Structure documented below.
      * @return builder
      */
-    def accessConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceAccessConfigArgs.Builder]*):
+    inline def accessConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceAccessConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceAccessConfigArgs.builder
       builder.accessConfigs(args.map(_(argsBuilder).build)*)
@@ -6772,7 +6772,7 @@ object compute_ext1:
      * interfaces on subnet-mode networks. Structure documented below.
      * @return builder
      */
-    def aliasIpRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceAliasIpRangeArgs.Builder]*):
+    inline def aliasIpRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceAliasIpRangeArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceAliasIpRangeArgs.builder
       builder.aliasIpRanges(args.map(_(argsBuilder).build)*)
@@ -6783,7 +6783,7 @@ object compute_ext1:
      * interfaces on subnet-mode networks. Structure documented below.
      * @return builder
      */
-    def aliasIpv6Ranges(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceAliasIpv6RangeArgs.Builder]*):
+    inline def aliasIpv6Ranges(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceAliasIpv6RangeArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceAliasIpv6RangeArgs.builder
       builder.aliasIpv6Ranges(args.map(_(argsBuilder).build)*)
@@ -6794,7 +6794,7 @@ object compute_ext1:
      * specified, then this instance will have no external IPv6 Internet access. Structure documented below.
      * @return builder
      */
-    def ipv6AccessConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceIpv6AccessConfigArgs.Builder]*):
+    inline def ipv6AccessConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceIpv6AccessConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceIpv6AccessConfigArgs.builder
       builder.ipv6AccessConfigs(args.map(_(argsBuilder).build)*)
@@ -6805,7 +6805,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def specificReservation(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateReservationAffinitySpecificReservationArgs.Builder]):
+    inline def specificReservation(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateReservationAffinitySpecificReservationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceTemplateReservationAffinityArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateReservationAffinitySpecificReservationArgs.builder
       builder.specificReservation(args(argsBuilder).build)
@@ -6815,7 +6815,7 @@ object compute_ext1:
      * @param gracefulShutdown Beta Settings for the instance to perform a graceful shutdown. Structure is documented below.
      * @return builder
      */
-    def gracefulShutdown(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingGracefulShutdownArgs.Builder]):
+    inline def gracefulShutdown(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingGracefulShutdownArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingGracefulShutdownArgs.builder
       builder.gracefulShutdown(args(argsBuilder).build)
@@ -6824,7 +6824,7 @@ object compute_ext1:
      * @param localSsdRecoveryTimeouts (../guides/provider_versions.html.markdown) Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour. Structure is documented below.
      * @return builder
      */
-    def localSsdRecoveryTimeouts(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingLocalSsdRecoveryTimeoutArgs.Builder]*):
+    inline def localSsdRecoveryTimeouts(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingLocalSsdRecoveryTimeoutArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingLocalSsdRecoveryTimeoutArgs.builder
       builder.localSsdRecoveryTimeouts(args.map(_(argsBuilder).build)*)
@@ -6833,7 +6833,7 @@ object compute_ext1:
      * @param maxRunDuration The duration of the instance. Instance will run and be terminated after then, the termination action could be defined in `instanceTerminationAction`. Structure is documented below.
      * @return builder
      */
-    def maxRunDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingMaxRunDurationArgs.Builder]):
+    inline def maxRunDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingMaxRunDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingMaxRunDurationArgs.builder
       builder.maxRunDuration(args(argsBuilder).build)
@@ -6846,7 +6846,7 @@ object compute_ext1:
      * Structure documented below.
      * @return builder
      */
-    def nodeAffinities(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingNodeAffinityArgs.Builder]*):
+    inline def nodeAffinities(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingNodeAffinityArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingNodeAffinityArgs.builder
       builder.nodeAffinities(args.map(_(argsBuilder).build)*)
@@ -6855,7 +6855,7 @@ object compute_ext1:
      * @param onInstanceStopAction Specifies the action to be performed when the instance is terminated using `maxRunDuration` and `STOP` `instanceTerminationAction`. Only support `true` `discardLocalSsd` at this point. Structure is documented below.
      * @return builder
      */
-    def onInstanceStopAction(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingOnInstanceStopActionArgs.Builder]):
+    inline def onInstanceStopAction(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingOnInstanceStopActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingOnInstanceStopActionArgs.builder
       builder.onInstanceStopAction(args(argsBuilder).build)
@@ -6864,7 +6864,7 @@ object compute_ext1:
      * @param preemptionNoticeDuration Specifies the Metadata Service preemption notice duration before the GCE ACPI G2 Soft Off signal is triggered for Spot VMs only. If not specified, there will be no wait before the G2 Soft Off signal is triggered. Structure is documented below.
      * @return builder
      */
-    def preemptionNoticeDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingPreemptionNoticeDurationArgs.Builder]):
+    inline def preemptionNoticeDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingPreemptionNoticeDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingPreemptionNoticeDurationArgs.builder
       builder.preemptionNoticeDuration(args(argsBuilder).build)
@@ -6876,7 +6876,7 @@ object compute_ext1:
      * transitions to the STOPPING state. Structure is documented below:
      * @return builder
      */
-    def maxDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingGracefulShutdownMaxDurationArgs.Builder]):
+    inline def maxDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingGracefulShutdownMaxDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingGracefulShutdownArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingGracefulShutdownMaxDurationArgs.builder
       builder.maxDuration(args(argsBuilder).build)
@@ -6886,7 +6886,7 @@ object compute_ext1:
      * @param advancedMachineFeatures Configure Nested Virtualisation and Simultaneous Hyper Threading on this VM. Structure is documented below
      * @return builder
      */
-    def advancedMachineFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateAdvancedMachineFeaturesArgs.Builder]):
+    inline def advancedMachineFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateAdvancedMachineFeaturesArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateAdvancedMachineFeaturesArgs.builder
       builder.advancedMachineFeatures(args(argsBuilder).build)
@@ -6895,7 +6895,7 @@ object compute_ext1:
      * @param confidentialInstanceConfig Enable [Confidential Mode](https://cloud.google.com/compute/confidential-vm/docs/about-cvm) on this VM. Structure is documented below
      * @return builder
      */
-    def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateConfidentialInstanceConfigArgs.Builder]):
+    inline def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateConfidentialInstanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateConfidentialInstanceConfigArgs.builder
       builder.confidentialInstanceConfig(args(argsBuilder).build)
@@ -6906,7 +6906,7 @@ object compute_ext1:
      * documented below.
      * @return builder
      */
-    def disks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateDiskArgs.Builder]*):
+    inline def disks(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateDiskArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceTemplateState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateDiskArgs.builder
       builder.disks(args.map(_(argsBuilder).build)*)
@@ -6915,7 +6915,7 @@ object compute_ext1:
      * @param guestAccelerators List of the type and count of accelerator cards attached to the instance. Structure documented below.
      * @return builder
      */
-    def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateGuestAcceleratorArgs.Builder]*):
+    inline def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateGuestAcceleratorArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceTemplateState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateGuestAcceleratorArgs.builder
       builder.guestAccelerators(args.map(_(argsBuilder).build)*)
@@ -6926,7 +6926,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def networkInterfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceArgs.Builder]*):
+    inline def networkInterfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InstanceTemplateState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
@@ -6940,7 +6940,7 @@ object compute_ext1:
      * in order for this setting to take effect.
      * @return builder
      */
-    def networkPerformanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkPerformanceConfigArgs.Builder]):
+    inline def networkPerformanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkPerformanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateNetworkPerformanceConfigArgs.builder
       builder.networkPerformanceConfig(args(argsBuilder).build)
@@ -6950,7 +6950,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def reservationAffinity(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateReservationAffinityArgs.Builder]):
+    inline def reservationAffinity(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateReservationAffinityArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateReservationAffinityArgs.builder
       builder.reservationAffinity(args(argsBuilder).build)
@@ -6960,7 +6960,7 @@ object compute_ext1:
      * this configuration option are detailed below.
      * @return builder
      */
-    def scheduling(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingArgs.Builder]):
+    inline def scheduling(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateSchedulingArgs.builder
       builder.scheduling(args(argsBuilder).build)
@@ -6969,7 +6969,7 @@ object compute_ext1:
      * @param serviceAccount Service account to attach to the instance. Structure is documented below.
      * @return builder
      */
-    def serviceAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateServiceAccountArgs.Builder]):
+    inline def serviceAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateServiceAccountArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateServiceAccountArgs.builder
       builder.serviceAccount(args(argsBuilder).build)
@@ -6979,7 +6979,7 @@ object compute_ext1:
      * **Note**: `shieldedInstanceConfig` can only be used with boot images with shielded vm support. See the complete list [here](https://cloud.google.com/compute/docs/images#shielded-images).
      * @return builder
      */
-    def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateShieldedInstanceConfigArgs.Builder]):
+    inline def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateShieldedInstanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateShieldedInstanceConfigArgs.builder
       builder.shieldedInstanceConfig(args(argsBuilder).build)
@@ -6989,7 +6989,7 @@ object compute_ext1:
      * this configuration option are detailed below.
      * @return builder
      */
-    def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateWorkloadIdentityConfigArgs.Builder]):
+    inline def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.InstanceTemplateWorkloadIdentityConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstanceTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstanceTemplateWorkloadIdentityConfigArgs.builder
       builder.workloadIdentityConfig(args(argsBuilder).build)
@@ -7000,7 +7000,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.InstantSnapshotIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.InstantSnapshotIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstantSnapshotIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstantSnapshotIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -7011,7 +7011,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.InstantSnapshotIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.InstantSnapshotIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstantSnapshotIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstantSnapshotIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -7022,7 +7022,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InstantSnapshotParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InstantSnapshotParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InstantSnapshotState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InstantSnapshotParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -7035,7 +7035,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def bandwidthPercentagePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectApplicationAwareInterconnectBandwidthPercentagePolicyArgs.Builder]):
+    inline def bandwidthPercentagePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectApplicationAwareInterconnectBandwidthPercentagePolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InterconnectApplicationAwareInterconnectArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectApplicationAwareInterconnectBandwidthPercentagePolicyArgs.builder
       builder.bandwidthPercentagePolicy(args(argsBuilder).build)
@@ -7047,7 +7047,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def shapeAveragePercentages(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectApplicationAwareInterconnectShapeAveragePercentageArgs.Builder]*):
+    inline def shapeAveragePercentages(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectApplicationAwareInterconnectShapeAveragePercentageArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InterconnectApplicationAwareInterconnectArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectApplicationAwareInterconnectShapeAveragePercentageArgs.builder
       builder.shapeAveragePercentages(args.map(_(argsBuilder).build)*)
@@ -7057,7 +7057,7 @@ object compute_ext1:
      * Specify configuration for StrictPriorityPolicy.
      * @return builder
      */
-    def strictPriorityPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectApplicationAwareInterconnectStrictPriorityPolicyArgs.Builder]):
+    inline def strictPriorityPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectApplicationAwareInterconnectStrictPriorityPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InterconnectApplicationAwareInterconnectArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectApplicationAwareInterconnectStrictPriorityPolicyArgs.builder
       builder.strictPriorityPolicy(args(argsBuilder).build)
@@ -7070,7 +7070,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def bandwidthPercentages(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectApplicationAwareInterconnectBandwidthPercentagePolicyBandwidthPercentageArgs.Builder]*):
+    inline def bandwidthPercentages(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectApplicationAwareInterconnectBandwidthPercentagePolicyBandwidthPercentageArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InterconnectApplicationAwareInterconnectBandwidthPercentagePolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectApplicationAwareInterconnectBandwidthPercentagePolicyBandwidthPercentageArgs.builder
       builder.bandwidthPercentages(args.map(_(argsBuilder).build)*)
@@ -7083,7 +7083,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def availabilitySlas(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupConfiguredAvailabilitySlaArgs.Builder]*):
+    inline def availabilitySlas(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupConfiguredAvailabilitySlaArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupConfiguredArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupConfiguredAvailabilitySlaArgs.builder
       builder.availabilitySlas(args.map(_(argsBuilder).build)*)
@@ -7097,7 +7097,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def intendedSlaBlockers(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupConfiguredAvailabilitySlaIntendedSlaBlockerArgs.Builder]*):
+    inline def intendedSlaBlockers(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupConfiguredAvailabilitySlaIntendedSlaBlockerArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupConfiguredAvailabilitySlaArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupConfiguredAvailabilitySlaIntendedSlaBlockerArgs.builder
       builder.intendedSlaBlockers(args.map(_(argsBuilder).build)*)
@@ -7111,7 +7111,7 @@ object compute_ext1:
      * not apply to others.
      * @return builder
      */
-    def regions(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupLogicalStructureRegionArgs.Builder]*):
+    inline def regions(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupLogicalStructureRegionArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupLogicalStructureArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupLogicalStructureRegionArgs.builder
       builder.regions(args.map(_(argsBuilder).build)*)
@@ -7125,7 +7125,7 @@ object compute_ext1:
      * not apply to others.
      * @return builder
      */
-    def metros(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupLogicalStructureRegionMetroArgs.Builder]*):
+    inline def metros(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupLogicalStructureRegionMetroArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupLogicalStructureRegionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupLogicalStructureRegionMetroArgs.builder
       builder.metros(args.map(_(argsBuilder).build)*)
@@ -7138,7 +7138,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def facilities(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupLogicalStructureRegionMetroFacilityArgs.Builder]*):
+    inline def facilities(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupLogicalStructureRegionMetroFacilityArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupLogicalStructureRegionMetroArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupLogicalStructureRegionMetroFacilityArgs.builder
       builder.facilities(args.map(_(argsBuilder).build)*)
@@ -7151,7 +7151,7 @@ object compute_ext1:
      * (like  MISSING_ZONE) but does not apply to others.
      * @return builder
      */
-    def zones(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupLogicalStructureRegionMetroFacilityZoneArgs.Builder]*):
+    inline def zones(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupLogicalStructureRegionMetroFacilityZoneArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupLogicalStructureRegionMetroFacilityArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupLogicalStructureRegionMetroFacilityZoneArgs.builder
       builder.zones(args.map(_(argsBuilder).build)*)
@@ -7166,7 +7166,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def attachments(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupAttachmentArgs.Builder]*):
+    inline def attachments(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupAttachmentArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupAttachmentArgs.builder
       builder.attachments(args.map(_(argsBuilder).build)*)
@@ -7178,7 +7178,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def configureds(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupConfiguredArgs.Builder]*):
+    inline def configureds(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupConfiguredArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupConfiguredArgs.builder
       builder.configureds(args.map(_(argsBuilder).build)*)
@@ -7189,7 +7189,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def intent(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupIntentArgs.Builder]):
+    inline def intent(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupIntentArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupIntentArgs.builder
       builder.intent(args(argsBuilder).build)
@@ -7200,7 +7200,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def logicalStructures(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupLogicalStructureArgs.Builder]*):
+    inline def logicalStructures(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupLogicalStructureArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectAttachmentGroupLogicalStructureArgs.builder
       builder.logicalStructures(args.map(_(argsBuilder).build)*)
@@ -7210,7 +7210,7 @@ object compute_ext1:
      * @param innerVlanToApplianceMappings Structure is documented below.
      * @return builder
      */
-    def innerVlanToApplianceMappings(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentL2ForwardingApplianceMappingInnerVlanToApplianceMappingArgs.Builder]*):
+    inline def innerVlanToApplianceMappings(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentL2ForwardingApplianceMappingInnerVlanToApplianceMappingArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InterconnectAttachmentL2ForwardingApplianceMappingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectAttachmentL2ForwardingApplianceMappingInnerVlanToApplianceMappingArgs.builder
       builder.innerVlanToApplianceMappings(args.map(_(argsBuilder).build)*)
@@ -7220,7 +7220,7 @@ object compute_ext1:
      * @param applianceMappings A map of VLAN tags to appliances and optional inner mapping rules.
      * @return builder
      */
-    def applianceMappings(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentL2ForwardingApplianceMappingArgs.Builder]*):
+    inline def applianceMappings(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentL2ForwardingApplianceMappingArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InterconnectAttachmentL2ForwardingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectAttachmentL2ForwardingApplianceMappingArgs.builder
       builder.applianceMappings(args.map(_(argsBuilder).build)*)
@@ -7229,7 +7229,7 @@ object compute_ext1:
      * @param geneveHeader GeneveHeader related configurations.
      * @return builder
      */
-    def geneveHeader(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentL2ForwardingGeneveHeaderArgs.Builder]):
+    inline def geneveHeader(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentL2ForwardingGeneveHeaderArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InterconnectAttachmentL2ForwardingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectAttachmentL2ForwardingGeneveHeaderArgs.builder
       builder.geneveHeader(args(argsBuilder).build)
@@ -7240,7 +7240,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def l2Forwarding(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentL2ForwardingArgs.Builder]):
+    inline def l2Forwarding(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentL2ForwardingArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InterconnectAttachmentState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectAttachmentL2ForwardingArgs.builder
       builder.l2Forwarding(args(argsBuilder).build)
@@ -7250,7 +7250,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InterconnectAttachmentState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectAttachmentParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -7261,7 +7261,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def privateInterconnectInfos(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentPrivateInterconnectInfoArgs.Builder]*):
+    inline def privateInterconnectInfos(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectAttachmentPrivateInterconnectInfoArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InterconnectAttachmentState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectAttachmentPrivateInterconnectInfoArgs.builder
       builder.privateInterconnectInfos(args.map(_(argsBuilder).build)*)
@@ -7275,7 +7275,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def topologyCapabilities(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectGroupConfiguredTopologyCapabilityArgs.Builder]*):
+    inline def topologyCapabilities(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectGroupConfiguredTopologyCapabilityArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InterconnectGroupConfiguredArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectGroupConfiguredTopologyCapabilityArgs.builder
       builder.topologyCapabilities(args.map(_(argsBuilder).build)*)
@@ -7289,7 +7289,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def intendedCapabilityBlockers(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectGroupConfiguredTopologyCapabilityIntendedCapabilityBlockerArgs.Builder]*):
+    inline def intendedCapabilityBlockers(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectGroupConfiguredTopologyCapabilityIntendedCapabilityBlockerArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InterconnectGroupConfiguredTopologyCapabilityArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectGroupConfiguredTopologyCapabilityIntendedCapabilityBlockerArgs.builder
       builder.intendedCapabilityBlockers(args.map(_(argsBuilder).build)*)
@@ -7303,7 +7303,7 @@ object compute_ext1:
      * field.
      * @return builder
      */
-    def metros(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectGroupPhysicalStructureMetroArgs.Builder]*):
+    inline def metros(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectGroupPhysicalStructureMetroArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InterconnectGroupPhysicalStructureArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectGroupPhysicalStructureMetroArgs.builder
       builder.metros(args.map(_(argsBuilder).build)*)
@@ -7316,7 +7316,7 @@ object compute_ext1:
      * string like &#34;5467&#34;.
      * @return builder
      */
-    def facilities(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectGroupPhysicalStructureMetroFacilityArgs.Builder]*):
+    inline def facilities(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectGroupPhysicalStructureMetroFacilityArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InterconnectGroupPhysicalStructureMetroArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectGroupPhysicalStructureMetroFacilityArgs.builder
       builder.facilities(args.map(_(argsBuilder).build)*)
@@ -7328,7 +7328,7 @@ object compute_ext1:
      * Zone names are &#34;zone1&#34; and/or &#34;zone2&#34;.
      * @return builder
      */
-    def zones(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectGroupPhysicalStructureMetroFacilityZoneArgs.Builder]*):
+    inline def zones(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectGroupPhysicalStructureMetroFacilityZoneArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InterconnectGroupPhysicalStructureMetroFacilityArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectGroupPhysicalStructureMetroFacilityZoneArgs.builder
       builder.zones(args.map(_(argsBuilder).build)*)
@@ -7342,7 +7342,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def configureds(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectGroupConfiguredArgs.Builder]*):
+    inline def configureds(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectGroupConfiguredArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InterconnectGroupState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectGroupConfiguredArgs.builder
       builder.configureds(args.map(_(argsBuilder).build)*)
@@ -7353,7 +7353,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def intent(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectGroupIntentArgs.Builder]):
+    inline def intent(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectGroupIntentArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InterconnectGroupState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectGroupIntentArgs.builder
       builder.intent(args(argsBuilder).build)
@@ -7367,7 +7367,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def interconnects(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectGroupInterconnectArgs.Builder]*):
+    inline def interconnects(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectGroupInterconnectArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InterconnectGroupState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectGroupInterconnectArgs.builder
       builder.interconnects(args.map(_(argsBuilder).build)*)
@@ -7378,7 +7378,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def physicalStructures(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectGroupPhysicalStructureArgs.Builder]*):
+    inline def physicalStructures(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectGroupPhysicalStructureArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InterconnectGroupState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectGroupPhysicalStructureArgs.builder
       builder.physicalStructures(args.map(_(argsBuilder).build)*)
@@ -7392,7 +7392,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def preSharedKeys(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectMacsecPreSharedKeyArgs.Builder]*):
+    inline def preSharedKeys(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectMacsecPreSharedKeyArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InterconnectMacsecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectMacsecPreSharedKeyArgs.builder
       builder.preSharedKeys(args.map(_(argsBuilder).build)*)
@@ -7405,7 +7405,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def applicationAwareInterconnect(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectApplicationAwareInterconnectArgs.Builder]):
+    inline def applicationAwareInterconnect(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectApplicationAwareInterconnectArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InterconnectState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectApplicationAwareInterconnectArgs.builder
       builder.applicationAwareInterconnect(args(argsBuilder).build)
@@ -7415,7 +7415,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def circuitInfos(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectCircuitInfoArgs.Builder]*):
+    inline def circuitInfos(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectCircuitInfoArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InterconnectState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectCircuitInfoArgs.builder
       builder.circuitInfos(args.map(_(argsBuilder).build)*)
@@ -7425,7 +7425,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def expectedOutages(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectExpectedOutageArgs.Builder]*):
+    inline def expectedOutages(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectExpectedOutageArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.InterconnectState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectExpectedOutageArgs.builder
       builder.expectedOutages(args.map(_(argsBuilder).build)*)
@@ -7436,7 +7436,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def macsec(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectMacsecArgs.Builder]):
+    inline def macsec(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectMacsecArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InterconnectState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectMacsecArgs.builder
       builder.macsec(args(argsBuilder).build)
@@ -7446,7 +7446,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.InterconnectParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.InterconnectState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.InterconnectParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -7457,7 +7457,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.MachineImageIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.MachineImageIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.MachineImageIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.MachineImageIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -7468,7 +7468,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.MachineImageIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.MachineImageIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.MachineImageIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.MachineImageIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -7482,7 +7482,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def machineImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.MachineImageMachineImageEncryptionKeyArgs.Builder]):
+    inline def machineImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.MachineImageMachineImageEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.MachineImageState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.MachineImageMachineImageEncryptionKeyArgs.builder
       builder.machineImageEncryptionKey(args(argsBuilder).build)
@@ -7492,7 +7492,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.MachineImageParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.MachineImageParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.MachineImageState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.MachineImageParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -7504,7 +7504,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def managed(args: Endofunction[com.pulumi.gcp.compute.inputs.ManagedSslCertificateManagedArgs.Builder]):
+    inline def managed(args: Endofunction[com.pulumi.gcp.compute.inputs.ManagedSslCertificateManagedArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ManagedSslCertificateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ManagedSslCertificateManagedArgs.builder
       builder.managed(args(argsBuilder).build)
@@ -7516,7 +7516,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def managed(args: Endofunction[com.pulumi.gcp.compute.inputs.MangedSslCertificateManagedArgs.Builder]):
+    inline def managed(args: Endofunction[com.pulumi.gcp.compute.inputs.MangedSslCertificateManagedArgs.Builder]):
         com.pulumi.gcp.compute.inputs.MangedSslCertificateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.MangedSslCertificateManagedArgs.builder
       builder.managed(args(argsBuilder).build)
@@ -7527,7 +7527,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def connectionEndpoints(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkAttachmentConnectionEndpointArgs.Builder]*):
+    inline def connectionEndpoints(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkAttachmentConnectionEndpointArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.NetworkAttachmentState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NetworkAttachmentConnectionEndpointArgs.builder
       builder.connectionEndpoints(args.map(_(argsBuilder).build)*)
@@ -7540,19 +7540,19 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def networkEndpoints(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkEndpointListNetworkEndpointArgs.Builder]*):
+    inline def networkEndpoints(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkEndpointListNetworkEndpointArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.NetworkEndpointListState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NetworkEndpointListNetworkEndpointArgs.builder
       builder.networkEndpoints(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -7565,7 +7565,7 @@ object compute_ext1:
      * &lt;a name=&#34;nestedMatchLayer4Configs&#34;&gt;&lt;/a&gt;The `layer4Configs` block supports:
      * @return builder
      */
-    def layer4Configs(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyPacketMirroringRuleMatchLayer4ConfigArgs.Builder]*):
+    inline def layer4Configs(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyPacketMirroringRuleMatchLayer4ConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyPacketMirroringRuleMatchArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyPacketMirroringRuleMatchLayer4ConfigArgs.builder
       builder.layer4Configs(args.map(_(argsBuilder).build)*)
@@ -7576,7 +7576,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyPacketMirroringRuleMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyPacketMirroringRuleMatchArgs.Builder]):
         com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyPacketMirroringRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyPacketMirroringRuleMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -7588,7 +7588,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyPacketMirroringRuleTargetSecureTagArgs.Builder]*):
+    inline def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyPacketMirroringRuleTargetSecureTagArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyPacketMirroringRuleState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyPacketMirroringRuleTargetSecureTagArgs.builder
       builder.targetSecureTags(args.map(_(argsBuilder).build)*)
@@ -7599,7 +7599,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def layer4Configs(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyRuleMatchLayer4ConfigArgs.Builder]*):
+    inline def layer4Configs(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyRuleMatchLayer4ConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyRuleMatchArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyRuleMatchLayer4ConfigArgs.builder
       builder.layer4Configs(args.map(_(argsBuilder).build)*)
@@ -7609,7 +7609,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def srcSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyRuleMatchSrcSecureTagArgs.Builder]*):
+    inline def srcSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyRuleMatchSrcSecureTagArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyRuleMatchArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyRuleMatchSrcSecureTagArgs.builder
       builder.srcSecureTags(args.map(_(argsBuilder).build)*)
@@ -7620,7 +7620,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyRuleMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyRuleMatchArgs.Builder]):
         com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyRuleMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -7632,7 +7632,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyRuleTargetSecureTagArgs.Builder]*):
+    inline def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyRuleTargetSecureTagArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyRuleState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyRuleTargetSecureTagArgs.builder
       builder.targetSecureTags(args.map(_(argsBuilder).build)*)
@@ -7644,7 +7644,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def matches(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesPredefinedRuleMatchArgs.Builder]*):
+    inline def matches(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesPredefinedRuleMatchArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesPredefinedRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesPredefinedRuleMatchArgs.builder
       builder.matches(args.map(_(argsBuilder).build)*)
@@ -7665,7 +7665,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesPredefinedRuleTargetSecureTagArgs.Builder]*):
+    inline def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesPredefinedRuleTargetSecureTagArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesPredefinedRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesPredefinedRuleTargetSecureTagArgs.builder
       builder.targetSecureTags(args.map(_(argsBuilder).build)*)
@@ -7676,7 +7676,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def layer4Configs(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesPredefinedRuleMatchLayer4ConfigArgs.Builder]*):
+    inline def layer4Configs(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesPredefinedRuleMatchLayer4ConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesPredefinedRuleMatchArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesPredefinedRuleMatchLayer4ConfigArgs.builder
       builder.layer4Configs(args.map(_(argsBuilder).build)*)
@@ -7692,7 +7692,7 @@ object compute_ext1:
      * &lt;a name=&#34;nestedRuleMatchLayer4Config&#34;&gt;&lt;/a&gt;The `layer4Config` block supports:
      * @return builder
      */
-    def srcSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesPredefinedRuleMatchSrcSecureTagArgs.Builder]*):
+    inline def srcSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesPredefinedRuleMatchSrcSecureTagArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesPredefinedRuleMatchArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesPredefinedRuleMatchSrcSecureTagArgs.builder
       builder.srcSecureTags(args.map(_(argsBuilder).build)*)
@@ -7703,7 +7703,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesRuleMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesRuleMatchArgs.Builder]):
         com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesRuleMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -7723,7 +7723,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesRuleTargetSecureTagArgs.Builder]*):
+    inline def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesRuleTargetSecureTagArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesRuleTargetSecureTagArgs.builder
       builder.targetSecureTags(args.map(_(argsBuilder).build)*)
@@ -7734,7 +7734,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def layer4Configs(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesRuleMatchLayer4ConfigArgs.Builder]*):
+    inline def layer4Configs(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesRuleMatchLayer4ConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesRuleMatchArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesRuleMatchLayer4ConfigArgs.builder
       builder.layer4Configs(args.map(_(argsBuilder).build)*)
@@ -7750,7 +7750,7 @@ object compute_ext1:
      * &lt;a name=&#34;nestedRuleMatchLayer4Config&#34;&gt;&lt;/a&gt;The `layer4Config` block supports:
      * @return builder
      */
-    def srcSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesRuleMatchSrcSecureTagArgs.Builder]*):
+    inline def srcSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesRuleMatchSrcSecureTagArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesRuleMatchArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesRuleMatchSrcSecureTagArgs.builder
       builder.srcSecureTags(args.map(_(argsBuilder).build)*)
@@ -7761,7 +7761,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def predefinedRules(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesPredefinedRuleArgs.Builder]*):
+    inline def predefinedRules(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesPredefinedRuleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesPredefinedRuleArgs.builder
       builder.predefinedRules(args.map(_(argsBuilder).build)*)
@@ -7771,7 +7771,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesRuleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NetworkFirewallPolicyWithRulesRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -7782,7 +7782,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.NetworkParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.NetworkState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.NetworkParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -7793,7 +7793,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def projectMaps(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeGroupShareSettingsProjectMapArgs.Builder]*):
+    inline def projectMaps(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeGroupShareSettingsProjectMapArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.NodeGroupShareSettingsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NodeGroupShareSettingsProjectMapArgs.builder
       builder.projectMaps(args.map(_(argsBuilder).build)*)
@@ -7806,7 +7806,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def autoscalingPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeGroupAutoscalingPolicyArgs.Builder]):
+    inline def autoscalingPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeGroupAutoscalingPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.NodeGroupState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.NodeGroupAutoscalingPolicyArgs.builder
       builder.autoscalingPolicy(args(argsBuilder).build)
@@ -7816,7 +7816,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def maintenanceWindow(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeGroupMaintenanceWindowArgs.Builder]):
+    inline def maintenanceWindow(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeGroupMaintenanceWindowArgs.Builder]):
         com.pulumi.gcp.compute.inputs.NodeGroupState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.NodeGroupMaintenanceWindowArgs.builder
       builder.maintenanceWindow(args(argsBuilder).build)
@@ -7826,7 +7826,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def shareSettings(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeGroupShareSettingsArgs.Builder]):
+    inline def shareSettings(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeGroupShareSettingsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.NodeGroupState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.NodeGroupShareSettingsArgs.builder
       builder.shareSettings(args(argsBuilder).build)
@@ -7838,7 +7838,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def accelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeTemplateAcceleratorArgs.Builder]*):
+    inline def accelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeTemplateAcceleratorArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.NodeTemplateState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NodeTemplateAcceleratorArgs.builder
       builder.accelerators(args.map(_(argsBuilder).build)*)
@@ -7849,7 +7849,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def disks(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeTemplateDiskArgs.Builder]*):
+    inline def disks(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeTemplateDiskArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.NodeTemplateState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.NodeTemplateDiskArgs.builder
       builder.disks(args.map(_(argsBuilder).build)*)
@@ -7862,7 +7862,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def nodeTypeFlexibility(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeTemplateNodeTypeFlexibilityArgs.Builder]):
+    inline def nodeTypeFlexibility(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeTemplateNodeTypeFlexibilityArgs.Builder]):
         com.pulumi.gcp.compute.inputs.NodeTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.NodeTemplateNodeTypeFlexibilityArgs.builder
       builder.nodeTypeFlexibility(args(argsBuilder).build)
@@ -7873,7 +7873,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def serverBinding(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeTemplateServerBindingArgs.Builder]):
+    inline def serverBinding(args: Endofunction[com.pulumi.gcp.compute.inputs.NodeTemplateServerBindingArgs.Builder]):
         com.pulumi.gcp.compute.inputs.NodeTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.NodeTemplateServerBindingArgs.builder
       builder.serverBinding(args(argsBuilder).build)
@@ -7884,7 +7884,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def jsonCustomConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyAdvancedOptionsConfigJsonCustomConfigArgs.Builder]):
+    inline def jsonCustomConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyAdvancedOptionsConfigJsonCustomConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyAdvancedOptionsConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyAdvancedOptionsConfigJsonCustomConfigArgs.builder
       builder.jsonCustomConfig(args(argsBuilder).build)
@@ -7895,7 +7895,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleHeaderActionRequestHeadersToAddArgs.Builder]*):
+    inline def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleHeaderActionRequestHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleHeaderActionRequestHeadersToAddArgs.builder
       builder.requestHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -7906,7 +7906,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleMatchConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleMatchConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleMatchArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleMatchConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -7916,7 +7916,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def expr(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleMatchExprArgs.Builder]):
+    inline def expr(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleMatchExprArgs.Builder]):
         com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleMatchArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleMatchExprArgs.builder
       builder.expr(args(argsBuilder).build)
@@ -7931,7 +7931,7 @@ object compute_ext1:
      * &lt;a name=&#34;nestedMatchConfigLayer4Config&#34;&gt;&lt;/a&gt;The `layer4Config` block supports:
      * @return builder
      */
-    def layer4Configs(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleMatchConfigLayer4ConfigArgs.Builder]*):
+    inline def layer4Configs(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleMatchConfigLayer4ConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleMatchConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleMatchConfigLayer4ConfigArgs.builder
       builder.layer4Configs(args.map(_(argsBuilder).build)*)
@@ -7942,7 +7942,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def exclusions(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigExclusionArgs.Builder]*):
+    inline def exclusions(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigExclusionArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigExclusionArgs.builder
       builder.exclusions(args.map(_(argsBuilder).build)*)
@@ -7953,7 +7953,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def requestCookies(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigExclusionRequestCookyArgs.Builder]*):
+    inline def requestCookies(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigExclusionRequestCookyArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigExclusionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigExclusionRequestCookyArgs.builder
       builder.requestCookies(args.map(_(argsBuilder).build)*)
@@ -7963,7 +7963,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def requestHeaders(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigExclusionRequestHeaderArgs.Builder]*):
+    inline def requestHeaders(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigExclusionRequestHeaderArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigExclusionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigExclusionRequestHeaderArgs.builder
       builder.requestHeaders(args.map(_(argsBuilder).build)*)
@@ -7974,7 +7974,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def requestQueryParams(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigExclusionRequestQueryParamArgs.Builder]*):
+    inline def requestQueryParams(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigExclusionRequestQueryParamArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigExclusionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigExclusionRequestQueryParamArgs.builder
       builder.requestQueryParams(args.map(_(argsBuilder).build)*)
@@ -7985,7 +7985,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def requestUris(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigExclusionRequestUriArgs.Builder]*):
+    inline def requestUris(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigExclusionRequestUriArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigExclusionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigExclusionRequestUriArgs.builder
       builder.requestUris(args.map(_(argsBuilder).build)*)
@@ -7996,7 +7996,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleHeaderActionArgs.Builder]):
+    inline def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleHeaderActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleHeaderActionArgs.builder
       builder.headerAction(args(argsBuilder).build)
@@ -8006,7 +8006,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleMatchArgs.Builder]):
         com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -8017,7 +8017,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def preconfiguredWafConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigArgs.Builder]):
+    inline def preconfiguredWafConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRulePreconfiguredWafConfigArgs.builder
       builder.preconfiguredWafConfig(args(argsBuilder).build)
@@ -8028,7 +8028,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def redirectOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleRedirectOptionsArgs.Builder]):
+    inline def redirectOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleRedirectOptionsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyRuleRedirectOptionsArgs.builder
       builder.redirectOptions(args(argsBuilder).build)
@@ -8039,7 +8039,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def advancedOptionsConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyAdvancedOptionsConfigArgs.Builder]):
+    inline def advancedOptionsConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyAdvancedOptionsConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSecurityPolicyAdvancedOptionsConfigArgs.builder
       builder.advancedOptionsConfig(args(argsBuilder).build)
@@ -8050,7 +8050,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def standardSnapshots(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicyRuleStandardSnapshotsArgs.Builder]):
+    inline def standardSnapshots(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicyRuleStandardSnapshotsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicyRuleStandardSnapshotsArgs.builder
       builder.standardSnapshots(args(argsBuilder).build)
@@ -8066,7 +8066,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicyRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicyRuleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicyRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -8077,7 +8077,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def systemRules(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicySystemRuleArgs.Builder]*):
+    inline def systemRules(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicySystemRuleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicySystemRuleArgs.builder
       builder.systemRules(args.map(_(argsBuilder).build)*)
@@ -8089,7 +8089,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def standardSnapshots(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicySystemRuleStandardSnapshotArgs.Builder]*):
+    inline def standardSnapshots(args: Endofunction[com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicySystemRuleStandardSnapshotArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicySystemRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.OrganizationSnapshotRecycleBinPolicySystemRuleStandardSnapshotArgs.builder
       builder.standardSnapshots(args.map(_(argsBuilder).build)*)
@@ -8100,7 +8100,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def instances(args: Endofunction[com.pulumi.gcp.compute.inputs.PacketMirroringMirroredResourcesInstanceArgs.Builder]*):
+    inline def instances(args: Endofunction[com.pulumi.gcp.compute.inputs.PacketMirroringMirroredResourcesInstanceArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.PacketMirroringMirroredResourcesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.PacketMirroringMirroredResourcesInstanceArgs.builder
       builder.instances(args.map(_(argsBuilder).build)*)
@@ -8110,7 +8110,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def subnetworks(args: Endofunction[com.pulumi.gcp.compute.inputs.PacketMirroringMirroredResourcesSubnetworkArgs.Builder]*):
+    inline def subnetworks(args: Endofunction[com.pulumi.gcp.compute.inputs.PacketMirroringMirroredResourcesSubnetworkArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.PacketMirroringMirroredResourcesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.PacketMirroringMirroredResourcesSubnetworkArgs.builder
       builder.subnetworks(args.map(_(argsBuilder).build)*)
@@ -8124,7 +8124,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def collectorIlb(args: Endofunction[com.pulumi.gcp.compute.inputs.PacketMirroringCollectorIlbArgs.Builder]):
+    inline def collectorIlb(args: Endofunction[com.pulumi.gcp.compute.inputs.PacketMirroringCollectorIlbArgs.Builder]):
         com.pulumi.gcp.compute.inputs.PacketMirroringState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.PacketMirroringCollectorIlbArgs.builder
       builder.collectorIlb(args(argsBuilder).build)
@@ -8134,7 +8134,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def filter(args: Endofunction[com.pulumi.gcp.compute.inputs.PacketMirroringFilterArgs.Builder]):
+    inline def filter(args: Endofunction[com.pulumi.gcp.compute.inputs.PacketMirroringFilterArgs.Builder]):
         com.pulumi.gcp.compute.inputs.PacketMirroringState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.PacketMirroringFilterArgs.builder
       builder.filter(args(argsBuilder).build)
@@ -8144,7 +8144,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def mirroredResources(args: Endofunction[com.pulumi.gcp.compute.inputs.PacketMirroringMirroredResourcesArgs.Builder]):
+    inline def mirroredResources(args: Endofunction[com.pulumi.gcp.compute.inputs.PacketMirroringMirroredResourcesArgs.Builder]):
         com.pulumi.gcp.compute.inputs.PacketMirroringState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.PacketMirroringMirroredResourcesArgs.builder
       builder.mirroredResources(args(argsBuilder).build)
@@ -8156,7 +8156,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def network(args: Endofunction[com.pulumi.gcp.compute.inputs.PacketMirroringNetworkArgs.Builder]):
+    inline def network(args: Endofunction[com.pulumi.gcp.compute.inputs.PacketMirroringNetworkArgs.Builder]):
         com.pulumi.gcp.compute.inputs.PacketMirroringState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.PacketMirroringNetworkArgs.builder
       builder.network(args(argsBuilder).build)
@@ -8167,7 +8167,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def disks(args: Endofunction[com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateDiskArgs.Builder]*):
+    inline def disks(args: Endofunction[com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateDiskArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateDiskArgs.builder
       builder.disks(args.map(_(argsBuilder).build)*)
@@ -8177,7 +8177,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def externalIps(args: Endofunction[com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateExternalIpArgs.Builder]*):
+    inline def externalIps(args: Endofunction[com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateExternalIpArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateExternalIpArgs.builder
       builder.externalIps(args.map(_(argsBuilder).build)*)
@@ -8187,7 +8187,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def internalIps(args: Endofunction[com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateInternalIpArgs.Builder]*):
+    inline def internalIps(args: Endofunction[com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateInternalIpArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateInternalIpArgs.builder
       builder.internalIps(args.map(_(argsBuilder).build)*)
@@ -8198,7 +8198,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def ipAddress(args: Endofunction[com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateExternalIpIpAddressArgs.Builder]):
+    inline def ipAddress(args: Endofunction[com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateExternalIpIpAddressArgs.Builder]):
         com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateExternalIpArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateExternalIpIpAddressArgs.builder
       builder.ipAddress(args(argsBuilder).build)
@@ -8209,7 +8209,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def ipAddress(args: Endofunction[com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateInternalIpIpAddressArgs.Builder]):
+    inline def ipAddress(args: Endofunction[com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateInternalIpIpAddressArgs.Builder]):
         com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateInternalIpArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateInternalIpIpAddressArgs.builder
       builder.ipAddress(args(argsBuilder).build)
@@ -8220,7 +8220,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def preservedState(args: Endofunction[com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateArgs.Builder]):
+    inline def preservedState(args: Endofunction[com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateArgs.Builder]):
         com.pulumi.gcp.compute.inputs.PerInstanceConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.PerInstanceConfigPreservedStateArgs.builder
       builder.preservedState(args(argsBuilder).build)
@@ -8231,7 +8231,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rolloutInput(args: Endofunction[com.pulumi.gcp.compute.inputs.PreviewFeatureRolloutOperationRolloutInputArgs.Builder]):
+    inline def rolloutInput(args: Endofunction[com.pulumi.gcp.compute.inputs.PreviewFeatureRolloutOperationRolloutInputArgs.Builder]):
         com.pulumi.gcp.compute.inputs.PreviewFeatureRolloutOperationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.PreviewFeatureRolloutOperationRolloutInputArgs.builder
       builder.rolloutInput(args(argsBuilder).build)
@@ -8242,7 +8242,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rolloutOperation(args: Endofunction[com.pulumi.gcp.compute.inputs.PreviewFeatureRolloutOperationArgs.Builder]):
+    inline def rolloutOperation(args: Endofunction[com.pulumi.gcp.compute.inputs.PreviewFeatureRolloutOperationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.PreviewFeatureState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.PreviewFeatureRolloutOperationArgs.builder
       builder.rolloutOperation(args(argsBuilder).build)
@@ -8255,7 +8255,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def publicDelegatedSubPrefixs(args: Endofunction[com.pulumi.gcp.compute.inputs.PublicDelegatedPrefixPublicDelegatedSubPrefixArgs.Builder]*):
+    inline def publicDelegatedSubPrefixs(args: Endofunction[com.pulumi.gcp.compute.inputs.PublicDelegatedPrefixPublicDelegatedSubPrefixArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.PublicDelegatedPrefixState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.PublicDelegatedPrefixPublicDelegatedSubPrefixArgs.builder
       builder.publicDelegatedSubPrefixs(args.map(_(argsBuilder).build)*)
@@ -8268,7 +8268,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def cpuUtilization(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyCpuUtilizationArgs.Builder]):
+    inline def cpuUtilization(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyCpuUtilizationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyCpuUtilizationArgs.builder
       builder.cpuUtilization(args(argsBuilder).build)
@@ -8278,7 +8278,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def loadBalancingUtilization(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyLoadBalancingUtilizationArgs.Builder]):
+    inline def loadBalancingUtilization(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyLoadBalancingUtilizationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyLoadBalancingUtilizationArgs.builder
       builder.loadBalancingUtilization(args(argsBuilder).build)
@@ -8288,7 +8288,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def metrics(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyMetricArgs.Builder]*):
+    inline def metrics(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyMetricArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyMetricArgs.builder
       builder.metrics(args.map(_(argsBuilder).build)*)
@@ -8300,7 +8300,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def scaleDownControl(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyScaleDownControlArgs.Builder]):
+    inline def scaleDownControl(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyScaleDownControlArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyScaleDownControlArgs.builder
       builder.scaleDownControl(args(argsBuilder).build)
@@ -8311,7 +8311,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def scaleInControl(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyScaleInControlArgs.Builder]):
+    inline def scaleInControl(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyScaleInControlArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyScaleInControlArgs.builder
       builder.scaleInControl(args(argsBuilder).build)
@@ -8321,7 +8321,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def scalingSchedules(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyScalingScheduleArgs.Builder]*):
+    inline def scalingSchedules(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyScalingScheduleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyScalingScheduleArgs.builder
       builder.scalingSchedules(args.map(_(argsBuilder).build)*)
@@ -8332,7 +8332,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def maxScaledDownReplicas(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicasArgs.Builder]):
+    inline def maxScaledDownReplicas(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicasArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyScaleDownControlArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyScaleDownControlMaxScaledDownReplicasArgs.builder
       builder.maxScaledDownReplicas(args(argsBuilder).build)
@@ -8343,7 +8343,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def maxScaledInReplicas(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicasArgs.Builder]):
+    inline def maxScaledInReplicas(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicasArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyScaleInControlArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyScaleInControlMaxScaledInReplicasArgs.builder
       builder.maxScaledInReplicas(args(argsBuilder).build)
@@ -8358,7 +8358,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def autoscalingPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyArgs.Builder]):
+    inline def autoscalingPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionAutoscalerState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionAutoscalerAutoscalingPolicyArgs.builder
       builder.autoscalingPolicy(args(argsBuilder).build)
@@ -8369,7 +8369,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendBucketIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendBucketIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendBucketIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendBucketIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -8380,7 +8380,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendBucketIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendBucketIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendBucketIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendBucketIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -8391,7 +8391,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def customMetrics(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceBackendCustomMetricArgs.Builder]*):
+    inline def customMetrics(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceBackendCustomMetricArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceBackendArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceBackendCustomMetricArgs.builder
       builder.customMetrics(args.map(_(argsBuilder).build)*)
@@ -8402,7 +8402,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def cacheKeyPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceCdnPolicyCacheKeyPolicyArgs.Builder]):
+    inline def cacheKeyPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceCdnPolicyCacheKeyPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceCdnPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceCdnPolicyCacheKeyPolicyArgs.builder
       builder.cacheKeyPolicy(args(argsBuilder).build)
@@ -8413,7 +8413,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def negativeCachingPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceCdnPolicyNegativeCachingPolicyArgs.Builder]*):
+    inline def negativeCachingPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceCdnPolicyNegativeCachingPolicyArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceCdnPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceCdnPolicyNegativeCachingPolicyArgs.builder
       builder.negativeCachingPolicies(args.map(_(argsBuilder).build)*)
@@ -8425,7 +8425,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def connectTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceCircuitBreakersConnectTimeoutArgs.Builder]):
+    inline def connectTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceCircuitBreakersConnectTimeoutArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceCircuitBreakersArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceCircuitBreakersConnectTimeoutArgs.builder
       builder.connectTimeout(args(argsBuilder).build)
@@ -8439,7 +8439,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def httpCookie(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceConsistentHashHttpCookieArgs.Builder]):
+    inline def httpCookie(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceConsistentHashHttpCookieArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceConsistentHashArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceConsistentHashHttpCookieArgs.builder
       builder.httpCookie(args(argsBuilder).build)
@@ -8450,7 +8450,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def ttl(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceConsistentHashHttpCookieTtlArgs.Builder]):
+    inline def ttl(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceConsistentHashHttpCookieTtlArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceConsistentHashHttpCookieArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceConsistentHashHttpCookieTtlArgs.builder
       builder.ttl(args(argsBuilder).build)
@@ -8462,7 +8462,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def forwardProxy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceDynamicForwardingForwardProxyArgs.Builder]):
+    inline def forwardProxy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceDynamicForwardingForwardProxyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceDynamicForwardingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceDynamicForwardingForwardProxyArgs.builder
       builder.forwardProxy(args(argsBuilder).build)
@@ -8473,7 +8473,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def ipPortSelection(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceDynamicForwardingIpPortSelectionArgs.Builder]):
+    inline def ipPortSelection(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceDynamicForwardingIpPortSelectionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceDynamicForwardingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceDynamicForwardingIpPortSelectionArgs.builder
       builder.ipPortSelection(args(argsBuilder).build)
@@ -8485,7 +8485,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def leader(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceHaPolicyLeaderArgs.Builder]):
+    inline def leader(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceHaPolicyLeaderArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceHaPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceHaPolicyLeaderArgs.builder
       builder.leader(args(argsBuilder).build)
@@ -8496,7 +8496,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def networkEndpoint(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceHaPolicyLeaderNetworkEndpointArgs.Builder]):
+    inline def networkEndpoint(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceHaPolicyLeaderNetworkEndpointArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceHaPolicyLeaderArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceHaPolicyLeaderNetworkEndpointArgs.builder
       builder.networkEndpoint(args(argsBuilder).build)
@@ -8507,7 +8507,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -8518,7 +8518,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -8529,7 +8529,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def requestHeaders(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceLogConfigRequestHeaderArgs.Builder]*):
+    inline def requestHeaders(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceLogConfigRequestHeaderArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceLogConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceLogConfigRequestHeaderArgs.builder
       builder.requestHeaders(args.map(_(argsBuilder).build)*)
@@ -8539,7 +8539,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def responseHeaders(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceLogConfigResponseHeaderArgs.Builder]*):
+    inline def responseHeaders(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceLogConfigResponseHeaderArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceLogConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceLogConfigResponseHeaderArgs.builder
       builder.responseHeaders(args.map(_(argsBuilder).build)*)
@@ -8550,7 +8550,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def zonalAffinity(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceNetworkPassThroughLbTrafficPolicyZonalAffinityArgs.Builder]):
+    inline def zonalAffinity(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceNetworkPassThroughLbTrafficPolicyZonalAffinityArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceNetworkPassThroughLbTrafficPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceNetworkPassThroughLbTrafficPolicyZonalAffinityArgs.builder
       builder.zonalAffinity(args(argsBuilder).build)
@@ -8563,7 +8563,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def baseEjectionTime(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceOutlierDetectionBaseEjectionTimeArgs.Builder]):
+    inline def baseEjectionTime(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceOutlierDetectionBaseEjectionTimeArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceOutlierDetectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceOutlierDetectionBaseEjectionTimeArgs.builder
       builder.baseEjectionTime(args(argsBuilder).build)
@@ -8574,7 +8574,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def interval(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceOutlierDetectionIntervalArgs.Builder]):
+    inline def interval(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceOutlierDetectionIntervalArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceOutlierDetectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceOutlierDetectionIntervalArgs.builder
       builder.interval(args(argsBuilder).build)
@@ -8585,7 +8585,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def backends(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceBackendArgs.Builder]*):
+    inline def backends(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceBackendArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceBackendArgs.builder
       builder.backends(args.map(_(argsBuilder).build)*)
@@ -8595,7 +8595,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def cdnPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceCdnPolicyArgs.Builder]):
+    inline def cdnPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceCdnPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceCdnPolicyArgs.builder
       builder.cdnPolicy(args(argsBuilder).build)
@@ -8607,7 +8607,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def circuitBreakers(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceCircuitBreakersArgs.Builder]):
+    inline def circuitBreakers(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceCircuitBreakersArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceCircuitBreakersArgs.builder
       builder.circuitBreakers(args(argsBuilder).build)
@@ -8619,7 +8619,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def connectionTrackingPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceConnectionTrackingPolicyArgs.Builder]):
+    inline def connectionTrackingPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceConnectionTrackingPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceConnectionTrackingPolicyArgs.builder
       builder.connectionTrackingPolicy(args(argsBuilder).build)
@@ -8634,7 +8634,7 @@ object compute_ext1:
      * This field only applies when all of the following are true -
      * @return builder
      */
-    def consistentHash(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceConsistentHashArgs.Builder]):
+    inline def consistentHash(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceConsistentHashArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceConsistentHashArgs.builder
       builder.consistentHash(args(argsBuilder).build)
@@ -8644,7 +8644,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def customMetrics(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceCustomMetricArgs.Builder]*):
+    inline def customMetrics(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceCustomMetricArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceCustomMetricArgs.builder
       builder.customMetrics(args.map(_(argsBuilder).build)*)
@@ -8656,7 +8656,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def dynamicForwarding(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceDynamicForwardingArgs.Builder]):
+    inline def dynamicForwarding(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceDynamicForwardingArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceDynamicForwardingArgs.builder
       builder.dynamicForwarding(args(argsBuilder).build)
@@ -8666,7 +8666,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def failoverPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceFailoverPolicyArgs.Builder]):
+    inline def failoverPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceFailoverPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceFailoverPolicyArgs.builder
       builder.failoverPolicy(args(argsBuilder).build)
@@ -8683,7 +8683,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def haPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceHaPolicyArgs.Builder]):
+    inline def haPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceHaPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceHaPolicyArgs.builder
       builder.haPolicy(args(argsBuilder).build)
@@ -8694,7 +8694,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def iap(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceIapArgs.Builder]):
+    inline def iap(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceIapArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceIapArgs.builder
       builder.iap(args(argsBuilder).build)
@@ -8705,7 +8705,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceLogConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -8715,7 +8715,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def networkPassThroughLbTrafficPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceNetworkPassThroughLbTrafficPolicyArgs.Builder]):
+    inline def networkPassThroughLbTrafficPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceNetworkPassThroughLbTrafficPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceNetworkPassThroughLbTrafficPolicyArgs.builder
       builder.networkPassThroughLbTrafficPolicy(args(argsBuilder).build)
@@ -8727,7 +8727,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def outlierDetection(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceOutlierDetectionArgs.Builder]):
+    inline def outlierDetection(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceOutlierDetectionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceOutlierDetectionArgs.builder
       builder.outlierDetection(args(argsBuilder).build)
@@ -8737,7 +8737,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -8747,7 +8747,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def strongSessionAffinityCookie(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceStrongSessionAffinityCookieArgs.Builder]):
+    inline def strongSessionAffinityCookie(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceStrongSessionAffinityCookieArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceStrongSessionAffinityCookieArgs.builder
       builder.strongSessionAffinityCookie(args(argsBuilder).build)
@@ -8758,7 +8758,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def subsetting(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceSubsettingArgs.Builder]):
+    inline def subsetting(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceSubsettingArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceSubsettingArgs.builder
       builder.subsetting(args(argsBuilder).build)
@@ -8768,7 +8768,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def tlsSettings(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceTlsSettingsArgs.Builder]):
+    inline def tlsSettings(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceTlsSettingsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceTlsSettingsArgs.builder
       builder.tlsSettings(args(argsBuilder).build)
@@ -8779,7 +8779,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def ttl(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceStrongSessionAffinityCookieTtlArgs.Builder]):
+    inline def ttl(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceStrongSessionAffinityCookieTtlArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceStrongSessionAffinityCookieArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceStrongSessionAffinityCookieTtlArgs.builder
       builder.ttl(args(argsBuilder).build)
@@ -8794,7 +8794,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def subjectAltNames(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceTlsSettingsSubjectAltNameArgs.Builder]*):
+    inline def subjectAltNames(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionBackendServiceTlsSettingsSubjectAltNameArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionBackendServiceTlsSettingsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionBackendServiceTlsSettingsSubjectAltNameArgs.builder
       builder.subjectAltNames(args.map(_(argsBuilder).build)*)
@@ -8805,7 +8805,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def licenseResource(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionCommitmentLicenseResourceArgs.Builder]):
+    inline def licenseResource(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionCommitmentLicenseResourceArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionCommitmentState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionCommitmentLicenseResourceArgs.builder
       builder.licenseResource(args(argsBuilder).build)
@@ -8815,7 +8815,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionCommitmentParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionCommitmentParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionCommitmentState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionCommitmentParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -8826,19 +8826,19 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def resources(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionCommitmentResourceArgs.Builder]*):
+    inline def resources(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionCommitmentResourceArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionCommitmentState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionCommitmentResourceArgs.builder
       builder.resources(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.compute.inputs.RegionDiskIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionDiskIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionDiskIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.inputs.RegionDiskIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionDiskIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionDiskIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -8849,7 +8849,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def asyncPrimaryDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskAsyncPrimaryDiskArgs.Builder]):
+    inline def asyncPrimaryDisk(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskAsyncPrimaryDiskArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionDiskState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionDiskAsyncPrimaryDiskArgs.builder
       builder.asyncPrimaryDisk(args(argsBuilder).build)
@@ -8869,7 +8869,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def diskEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskDiskEncryptionKeyArgs.Builder]):
+    inline def diskEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskDiskEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionDiskState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionDiskDiskEncryptionKeyArgs.builder
       builder.diskEncryptionKey(args(argsBuilder).build)
@@ -8880,7 +8880,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def guestOsFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskGuestOsFeatureArgs.Builder]*):
+    inline def guestOsFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskGuestOsFeatureArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionDiskState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionDiskGuestOsFeatureArgs.builder
       builder.guestOsFeatures(args.map(_(argsBuilder).build)*)
@@ -8891,7 +8891,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def sourceImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskSourceImageEncryptionKeyArgs.Builder]):
+    inline def sourceImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskSourceImageEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionDiskState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionDiskSourceImageEncryptionKeyArgs.builder
       builder.sourceImageEncryptionKey(args(argsBuilder).build)
@@ -8903,7 +8903,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def sourceSnapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskSourceSnapshotEncryptionKeyArgs.Builder]):
+    inline def sourceSnapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionDiskSourceSnapshotEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionDiskState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionDiskSourceSnapshotEncryptionKeyArgs.builder
       builder.sourceSnapshotEncryptionKey(args(argsBuilder).build)
@@ -8914,7 +8914,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def grpcHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckGrpcHealthCheckArgs.Builder]):
+    inline def grpcHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckGrpcHealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionHealthCheckState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionHealthCheckGrpcHealthCheckArgs.builder
       builder.grpcHealthCheck(args(argsBuilder).build)
@@ -8924,7 +8924,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def grpcTlsHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckGrpcTlsHealthCheckArgs.Builder]):
+    inline def grpcTlsHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckGrpcTlsHealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionHealthCheckState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionHealthCheckGrpcTlsHealthCheckArgs.builder
       builder.grpcTlsHealthCheck(args(argsBuilder).build)
@@ -8934,7 +8934,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def http2HealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckHttp2HealthCheckArgs.Builder]):
+    inline def http2HealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckHttp2HealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionHealthCheckState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionHealthCheckHttp2HealthCheckArgs.builder
       builder.http2HealthCheck(args(argsBuilder).build)
@@ -8944,7 +8944,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def httpHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckHttpHealthCheckArgs.Builder]):
+    inline def httpHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckHttpHealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionHealthCheckState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionHealthCheckHttpHealthCheckArgs.builder
       builder.httpHealthCheck(args(argsBuilder).build)
@@ -8954,7 +8954,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def httpsHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckHttpsHealthCheckArgs.Builder]):
+    inline def httpsHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckHttpsHealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionHealthCheckState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionHealthCheckHttpsHealthCheckArgs.builder
       builder.httpsHealthCheck(args(argsBuilder).build)
@@ -8964,7 +8964,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckLogConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionHealthCheckState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionHealthCheckLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -8974,7 +8974,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def sslHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckSslHealthCheckArgs.Builder]):
+    inline def sslHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckSslHealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionHealthCheckState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionHealthCheckSslHealthCheckArgs.builder
       builder.sslHealthCheck(args(argsBuilder).build)
@@ -8984,7 +8984,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def tcpHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckTcpHealthCheckArgs.Builder]):
+    inline def tcpHealthCheck(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionHealthCheckTcpHealthCheckArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionHealthCheckState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionHealthCheckTcpHealthCheckArgs.builder
       builder.tcpHealthCheck(args(argsBuilder).build)
@@ -8994,7 +8994,7 @@ object compute_ext1:
      * @param instanceSelections Named instance selections configuring properties that the group will use when creating new VMs.
      * @return builder
      */
-    def instanceSelections(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionArgs.Builder]*):
+    inline def instanceSelections(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionArgs.builder
       builder.instanceSelections(args.map(_(argsBuilder).build)*)
@@ -9004,7 +9004,7 @@ object compute_ext1:
      * @param disks List of disks to be attached to the instances created from this selection.
      * @return builder
      */
-    def disks(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionDiskArgs.Builder]*):
+    inline def disks(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionDiskArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionDiskArgs.builder
       builder.disks(args.map(_(argsBuilder).build)*)
@@ -9014,7 +9014,7 @@ object compute_ext1:
      * @param diskEncryptionKey , Encrypts or decrypts a disk using a customer-supplied encryption key.  Structure is documented below.
      * @return builder
      */
-    def diskEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionDiskDiskEncryptionKeyArgs.Builder]):
+    inline def diskEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionDiskDiskEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionDiskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionDiskDiskEncryptionKeyArgs.builder
       builder.diskEncryptionKey(args(argsBuilder).build)
@@ -9023,7 +9023,7 @@ object compute_ext1:
      * @param labels , A set of key/value label pairs to assign to disks. Structure is documented below.
      * @return builder
      */
-    def labels(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionDiskLabelArgs.Builder]*):
+    inline def labels(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionDiskLabelArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionDiskArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionDiskLabelArgs.builder
       builder.labels(args.map(_(argsBuilder).build)*)
@@ -9032,7 +9032,7 @@ object compute_ext1:
      * @param resourceManagerTags , A map of resource manager tags. Resource manager tag keys and values have the same definition as resource manager tags. Keys must be in the format tagKeys/{tag_key_id}, and values are in the format tagValues/456. The field is ignored (both PUT &amp; PATCH) when empty. Structure is documented below.
      * @return builder
      */
-    def resourceManagerTags(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionDiskResourceManagerTagArgs.Builder]*):
+    inline def resourceManagerTags(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionDiskResourceManagerTagArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionDiskArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionDiskResourceManagerTagArgs.builder
       builder.resourceManagerTags(args.map(_(argsBuilder).build)*)
@@ -9041,7 +9041,7 @@ object compute_ext1:
      * @param sourceImageEncryptionKey , The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key. Instance templates do not store customer-supplied encryption keys, so you cannot create disks for instances in a managed instance group if the source images are encrypted with your own keys. Structure is documented below.
      * @return builder
      */
-    def sourceImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionDiskSourceImageEncryptionKeyArgs.Builder]):
+    inline def sourceImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionDiskSourceImageEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionDiskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionDiskSourceImageEncryptionKeyArgs.builder
       builder.sourceImageEncryptionKey(args(argsBuilder).build)
@@ -9051,7 +9051,7 @@ object compute_ext1:
      * ***
      * @return builder
      */
-    def sourceSnapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionDiskSourceSnapshotEncryptionKeyArgs.Builder]):
+    inline def sourceSnapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionDiskSourceSnapshotEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionDiskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionDiskSourceSnapshotEncryptionKeyArgs.builder
       builder.sourceSnapshotEncryptionKey(args(argsBuilder).build)
@@ -9062,7 +9062,7 @@ object compute_ext1:
      * ***
      * @return builder
      */
-    def onRepair(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceLifecyclePolicyOnRepairArgs.Builder]):
+    inline def onRepair(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceLifecyclePolicyOnRepairArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceLifecyclePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceLifecyclePolicyOnRepairArgs.builder
       builder.onRepair(args(argsBuilder).build)
@@ -9074,7 +9074,7 @@ object compute_ext1:
      * apply the configuration.
      * @return builder
      */
-    def allInstancesConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerAllInstancesConfigArgs.Builder]):
+    inline def allInstancesConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerAllInstancesConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerAllInstancesConfigArgs.builder
       builder.allInstancesConfig(args(argsBuilder).build)
@@ -9084,7 +9084,7 @@ object compute_ext1:
      * group. You can specify only one value. Structure is documented below. For more information, see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances#monitoring_groups).
      * @return builder
      */
-    def autoHealingPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerAutoHealingPoliciesArgs.Builder]):
+    inline def autoHealingPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerAutoHealingPoliciesArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerAutoHealingPoliciesArgs.builder
       builder.autoHealingPolicies(args(argsBuilder).build)
@@ -9093,7 +9093,7 @@ object compute_ext1:
      * @param instanceFlexibilityPolicy The flexibility policy for managed instance group. Instance flexibility allows managed instance group to create VMs from multiple types of machines. Instance flexibility configuration on managed instance group overrides instance template configuration. Structure is documented below.
      * @return builder
      */
-    def instanceFlexibilityPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyArgs.Builder]):
+    inline def instanceFlexibilityPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceFlexibilityPolicyArgs.builder
       builder.instanceFlexibilityPolicy(args(argsBuilder).build)
@@ -9102,7 +9102,7 @@ object compute_ext1:
      * @param instanceLifecyclePolicy The instance lifecycle policy for this managed instance group.
      * @return builder
      */
-    def instanceLifecyclePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceLifecyclePolicyArgs.Builder]):
+    inline def instanceLifecyclePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceLifecyclePolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerInstanceLifecyclePolicyArgs.builder
       builder.instanceLifecyclePolicy(args(argsBuilder).build)
@@ -9112,7 +9112,7 @@ object compute_ext1:
      * for details on configuration.
      * @return builder
      */
-    def namedPorts(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerNamedPortArgs.Builder]*):
+    inline def namedPorts(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerNamedPortArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerNamedPortArgs.builder
       builder.namedPorts(args.map(_(argsBuilder).build)*)
@@ -9121,7 +9121,7 @@ object compute_ext1:
      * @param params ) Input only additional params for instance group manager creation. Structure is documented below. For more information, see [API](https://cloud.google.com/compute/docs/reference/rest/beta/instanceGroupManagers/insert).
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -9132,7 +9132,7 @@ object compute_ext1:
      * ***
      * @return builder
      */
-    def resourcePolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerResourcePoliciesArgs.Builder]):
+    inline def resourcePolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerResourcePoliciesArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerResourcePoliciesArgs.builder
       builder.resourcePolicies(args(argsBuilder).build)
@@ -9141,7 +9141,7 @@ object compute_ext1:
      * @param standbyPolicy The standby policy for stopped and suspended instances. Structure is documented below. For more information, see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/suspended-and-stopped-vms-in-mig).
      * @return builder
      */
-    def standbyPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStandbyPolicyArgs.Builder]):
+    inline def standbyPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStandbyPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStandbyPolicyArgs.builder
       builder.standbyPolicy(args(argsBuilder).build)
@@ -9150,7 +9150,7 @@ object compute_ext1:
      * @param statefulDisks Disks created on the instances that will be preserved on instance delete, update, etc. Structure is documented below. For more information see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/configuring-stateful-disks-in-migs). Proactive cross zone instance redistribution must be disabled before you can update stateful disks on existing instance group managers. This can be controlled via the `updatePolicy`.
      * @return builder
      */
-    def statefulDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatefulDiskArgs.Builder]*):
+    inline def statefulDisks(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatefulDiskArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatefulDiskArgs.builder
       builder.statefulDisks(args.map(_(argsBuilder).build)*)
@@ -9159,7 +9159,7 @@ object compute_ext1:
      * @param statefulExternalIps External network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name. Structure is documented below.
      * @return builder
      */
-    def statefulExternalIps(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatefulExternalIpArgs.Builder]*):
+    inline def statefulExternalIps(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatefulExternalIpArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatefulExternalIpArgs.builder
       builder.statefulExternalIps(args.map(_(argsBuilder).build)*)
@@ -9168,7 +9168,7 @@ object compute_ext1:
      * @param statefulInternalIps Internal network IPs assigned to the instances that will be preserved on instance delete, update, etc. This map is keyed with the network interface name. Structure is documented below.
      * @return builder
      */
-    def statefulInternalIps(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatefulInternalIpArgs.Builder]*):
+    inline def statefulInternalIps(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatefulInternalIpArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatefulInternalIpArgs.builder
       builder.statefulInternalIps(args.map(_(argsBuilder).build)*)
@@ -9177,7 +9177,7 @@ object compute_ext1:
      * @param statuses The status of this managed instance group.
      * @return builder
      */
-    def statuses(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatusArgs.Builder]*):
+    inline def statuses(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatusArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatusArgs.builder
       builder.statuses(args.map(_(argsBuilder).build)*)
@@ -9186,7 +9186,7 @@ object compute_ext1:
      * @param targetSizePolicies The policy that specifies how the MIG creates its VMs to achieve the target size. Structure is documented below.
      * @return builder
      */
-    def targetSizePolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerTargetSizePolicyArgs.Builder]*):
+    inline def targetSizePolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerTargetSizePolicyArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerTargetSizePolicyArgs.builder
       builder.targetSizePolicies(args.map(_(argsBuilder).build)*)
@@ -9195,7 +9195,7 @@ object compute_ext1:
      * @param updatePolicy The update policy for this managed instance group. Structure is documented below. For more information, see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/updating-managed-instance-groups) and [API](https://cloud.google.com/compute/docs/reference/rest/beta/regionInstanceGroupManagers/patch)
      * @return builder
      */
-    def updatePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerUpdatePolicyArgs.Builder]):
+    inline def updatePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerUpdatePolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerUpdatePolicyArgs.builder
       builder.updatePolicy(args(argsBuilder).build)
@@ -9206,7 +9206,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def versions(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerVersionArgs.Builder]*):
+    inline def versions(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerVersionArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerVersionArgs.builder
       builder.versions(args.map(_(argsBuilder).build)*)
@@ -9218,7 +9218,7 @@ object compute_ext1:
      * apply the configuration.
      * @return builder
      */
-    def allInstancesConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatusAllInstancesConfigArgs.Builder]*):
+    inline def allInstancesConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatusAllInstancesConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatusAllInstancesConfigArgs.builder
       builder.allInstancesConfigs(args.map(_(argsBuilder).build)*)
@@ -9227,7 +9227,7 @@ object compute_ext1:
      * @param statefuls Stateful status of the given Instance Group Manager.
      * @return builder
      */
-    def statefuls(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatusStatefulArgs.Builder]*):
+    inline def statefuls(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatusStatefulArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatusStatefulArgs.builder
       builder.statefuls(args.map(_(argsBuilder).build)*)
@@ -9236,7 +9236,7 @@ object compute_ext1:
      * @param versionTargets A bit indicating whether version target has been reached in this managed instance group, i.e. all instances are in their target version. Instances&#39; target version are specified by version field on Instance Group Manager.
      * @return builder
      */
-    def versionTargets(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatusVersionTargetArgs.Builder]*):
+    inline def versionTargets(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatusVersionTargetArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatusVersionTargetArgs.builder
       builder.versionTargets(args.map(_(argsBuilder).build)*)
@@ -9246,7 +9246,7 @@ object compute_ext1:
      * @param perInstanceConfigs Status of per-instance configs on the instances.
      * @return builder
      */
-    def perInstanceConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatusStatefulPerInstanceConfigArgs.Builder]*):
+    inline def perInstanceConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatusStatefulPerInstanceConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatusStatefulArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerStatusStatefulPerInstanceConfigArgs.builder
       builder.perInstanceConfigs(args.map(_(argsBuilder).build)*)
@@ -9259,7 +9259,7 @@ object compute_ext1:
      * constraints of every other `version`, and any remaining instances will be provisioned with the version where `targetSize` is unset.
      * @return builder
      */
-    def targetSize(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerVersionTargetSizeArgs.Builder]):
+    inline def targetSize(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerVersionTargetSizeArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerVersionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceGroupManagerVersionTargetSizeArgs.builder
       builder.targetSize(args(argsBuilder).build)
@@ -9277,7 +9277,7 @@ object compute_ext1:
      * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group. Structure documented below.
      * @return builder
      */
-    def diskEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateDiskDiskEncryptionKeyArgs.Builder]):
+    inline def diskEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateDiskDiskEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateDiskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateDiskDiskEncryptionKeyArgs.builder
       builder.diskEncryptionKey(args(argsBuilder).build)
@@ -9293,7 +9293,7 @@ object compute_ext1:
      * documented below.
      * @return builder
      */
-    def sourceImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateDiskSourceImageEncryptionKeyArgs.Builder]):
+    inline def sourceImageEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateDiskSourceImageEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateDiskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateDiskSourceImageEncryptionKeyArgs.builder
       builder.sourceImageEncryptionKey(args(argsBuilder).build)
@@ -9304,7 +9304,7 @@ object compute_ext1:
      * documented below.
      * @return builder
      */
-    def sourceSnapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateDiskSourceSnapshotEncryptionKeyArgs.Builder]):
+    inline def sourceSnapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateDiskSourceSnapshotEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateDiskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateDiskSourceSnapshotEncryptionKeyArgs.builder
       builder.sourceSnapshotEncryptionKey(args(argsBuilder).build)
@@ -9319,7 +9319,7 @@ object compute_ext1:
      * on that network). This block can be specified once per `networkInterface`. Structure documented below.
      * @return builder
      */
-    def accessConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceAccessConfigArgs.Builder]*):
+    inline def accessConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceAccessConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceAccessConfigArgs.builder
       builder.accessConfigs(args.map(_(argsBuilder).build)*)
@@ -9330,7 +9330,7 @@ object compute_ext1:
      * interfaces on subnet-mode networks. Structure documented below.
      * @return builder
      */
-    def aliasIpRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceAliasIpRangeArgs.Builder]*):
+    inline def aliasIpRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceAliasIpRangeArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceAliasIpRangeArgs.builder
       builder.aliasIpRanges(args.map(_(argsBuilder).build)*)
@@ -9341,7 +9341,7 @@ object compute_ext1:
      * interfaces on subnet-mode networks. Structure documented below.
      * @return builder
      */
-    def aliasIpv6Ranges(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceAliasIpv6RangeArgs.Builder]*):
+    inline def aliasIpv6Ranges(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceAliasIpv6RangeArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceAliasIpv6RangeArgs.builder
       builder.aliasIpv6Ranges(args.map(_(argsBuilder).build)*)
@@ -9352,7 +9352,7 @@ object compute_ext1:
      * specified, then this instance will have no external IPv6 Internet access. Structure documented below.
      * @return builder
      */
-    def ipv6AccessConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceIpv6AccessConfigArgs.Builder]*):
+    inline def ipv6AccessConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceIpv6AccessConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceIpv6AccessConfigArgs.builder
       builder.ipv6AccessConfigs(args.map(_(argsBuilder).build)*)
@@ -9363,7 +9363,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def specificReservation(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateReservationAffinitySpecificReservationArgs.Builder]):
+    inline def specificReservation(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateReservationAffinitySpecificReservationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateReservationAffinityArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateReservationAffinitySpecificReservationArgs.builder
       builder.specificReservation(args(argsBuilder).build)
@@ -9373,7 +9373,7 @@ object compute_ext1:
      * @param gracefulShutdown Settings for the instance to perform a graceful shutdown.
      * @return builder
      */
-    def gracefulShutdown(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingGracefulShutdownArgs.Builder]):
+    inline def gracefulShutdown(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingGracefulShutdownArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingGracefulShutdownArgs.builder
       builder.gracefulShutdown(args(argsBuilder).build)
@@ -9385,7 +9385,7 @@ object compute_ext1:
      *   hour.
      * @return builder
      */
-    def localSsdRecoveryTimeouts(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingLocalSsdRecoveryTimeoutArgs.Builder]*):
+    inline def localSsdRecoveryTimeouts(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingLocalSsdRecoveryTimeoutArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingLocalSsdRecoveryTimeoutArgs.builder
       builder.localSsdRecoveryTimeouts(args.map(_(argsBuilder).build)*)
@@ -9394,7 +9394,7 @@ object compute_ext1:
      * @param maxRunDuration The duration of the instance. Instance will run and be terminated after then, the termination action could be defined in `instanceTerminationAction`. Only support `DELETE` `instanceTerminationAction` at this point. Structure is documented below.
      * @return builder
      */
-    def maxRunDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingMaxRunDurationArgs.Builder]):
+    inline def maxRunDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingMaxRunDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingMaxRunDurationArgs.builder
       builder.maxRunDuration(args(argsBuilder).build)
@@ -9407,7 +9407,7 @@ object compute_ext1:
      * Structure documented below.
      * @return builder
      */
-    def nodeAffinities(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingNodeAffinityArgs.Builder]*):
+    inline def nodeAffinities(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingNodeAffinityArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingNodeAffinityArgs.builder
       builder.nodeAffinities(args.map(_(argsBuilder).build)*)
@@ -9416,7 +9416,7 @@ object compute_ext1:
      * @param onInstanceStopAction Defines the behaviour for instances with the instance_termination_action.
      * @return builder
      */
-    def onInstanceStopAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingOnInstanceStopActionArgs.Builder]):
+    inline def onInstanceStopAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingOnInstanceStopActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingOnInstanceStopActionArgs.builder
       builder.onInstanceStopAction(args(argsBuilder).build)
@@ -9425,7 +9425,7 @@ object compute_ext1:
      * @param preemptionNoticeDuration The duration of the notice that the instance will receive before it is preempted.
      * @return builder
      */
-    def preemptionNoticeDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingPreemptionNoticeDurationArgs.Builder]):
+    inline def preemptionNoticeDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingPreemptionNoticeDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingPreemptionNoticeDurationArgs.builder
       builder.preemptionNoticeDuration(args(argsBuilder).build)
@@ -9437,7 +9437,7 @@ object compute_ext1:
      * transitions to the STOPPING state. Structure is documented below:
      * @return builder
      */
-    def maxDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingGracefulShutdownMaxDurationArgs.Builder]):
+    inline def maxDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingGracefulShutdownMaxDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingGracefulShutdownArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingGracefulShutdownMaxDurationArgs.builder
       builder.maxDuration(args(argsBuilder).build)
@@ -9447,7 +9447,7 @@ object compute_ext1:
      * @param advancedMachineFeatures Configure Nested Virtualisation and Simultaneous Hyper Threading on this VM. Structure is documented below
      * @return builder
      */
-    def advancedMachineFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateAdvancedMachineFeaturesArgs.Builder]):
+    inline def advancedMachineFeatures(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateAdvancedMachineFeaturesArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateAdvancedMachineFeaturesArgs.builder
       builder.advancedMachineFeatures(args(argsBuilder).build)
@@ -9456,7 +9456,7 @@ object compute_ext1:
      * @param confidentialInstanceConfig Enable [Confidential Mode](https://cloud.google.com/compute/confidential-vm/docs/about-cvm) on this VM. Structure is documented below
      * @return builder
      */
-    def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateConfidentialInstanceConfigArgs.Builder]):
+    inline def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateConfidentialInstanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateConfidentialInstanceConfigArgs.builder
       builder.confidentialInstanceConfig(args(argsBuilder).build)
@@ -9467,7 +9467,7 @@ object compute_ext1:
      * documented below.
      * @return builder
      */
-    def disks(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateDiskArgs.Builder]*):
+    inline def disks(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateDiskArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateDiskArgs.builder
       builder.disks(args.map(_(argsBuilder).build)*)
@@ -9476,7 +9476,7 @@ object compute_ext1:
      * @param guestAccelerators List of the type and count of accelerator cards attached to the instance. Structure documented below.
      * @return builder
      */
-    def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateGuestAcceleratorArgs.Builder]*):
+    inline def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateGuestAcceleratorArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateGuestAcceleratorArgs.builder
       builder.guestAccelerators(args.map(_(argsBuilder).build)*)
@@ -9487,7 +9487,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def networkInterfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceArgs.Builder]*):
+    inline def networkInterfaces(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
@@ -9501,7 +9501,7 @@ object compute_ext1:
      * in order for this setting to take effect.
      * @return builder
      */
-    def networkPerformanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkPerformanceConfigArgs.Builder]):
+    inline def networkPerformanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkPerformanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateNetworkPerformanceConfigArgs.builder
       builder.networkPerformanceConfig(args(argsBuilder).build)
@@ -9511,7 +9511,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def reservationAffinity(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateReservationAffinityArgs.Builder]):
+    inline def reservationAffinity(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateReservationAffinityArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateReservationAffinityArgs.builder
       builder.reservationAffinity(args(argsBuilder).build)
@@ -9521,7 +9521,7 @@ object compute_ext1:
      * this configuration option are detailed below.
      * @return builder
      */
-    def scheduling(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingArgs.Builder]):
+    inline def scheduling(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateSchedulingArgs.builder
       builder.scheduling(args(argsBuilder).build)
@@ -9530,7 +9530,7 @@ object compute_ext1:
      * @param serviceAccount Service account to attach to the instance. Structure is documented below.
      * @return builder
      */
-    def serviceAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateServiceAccountArgs.Builder]):
+    inline def serviceAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateServiceAccountArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateServiceAccountArgs.builder
       builder.serviceAccount(args(argsBuilder).build)
@@ -9540,7 +9540,7 @@ object compute_ext1:
      * **Note**: `shieldedInstanceConfig` can only be used with boot images with shielded vm support. See the complete list [here](https://cloud.google.com/compute/docs/images#shielded-images).
      * @return builder
      */
-    def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateShieldedInstanceConfigArgs.Builder]):
+    inline def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateShieldedInstanceConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateShieldedInstanceConfigArgs.builder
       builder.shieldedInstanceConfig(args(argsBuilder).build)
@@ -9550,7 +9550,7 @@ object compute_ext1:
      * this configuration option are detailed below.
      * @return builder
      */
-    def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateWorkloadIdentityConfigArgs.Builder]):
+    inline def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstanceTemplateWorkloadIdentityConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstanceTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstanceTemplateWorkloadIdentityConfigArgs.builder
       builder.workloadIdentityConfig(args(argsBuilder).build)
@@ -9561,7 +9561,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstantSnapshotIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstantSnapshotIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstantSnapshotIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstantSnapshotIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -9572,7 +9572,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstantSnapshotIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstantSnapshotIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstantSnapshotIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstantSnapshotIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -9583,7 +9583,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstantSnapshotParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstantSnapshotParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionInstantSnapshotState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstantSnapshotParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -9593,7 +9593,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def resourceStatuses(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstantSnapshotResourceStatusArgs.Builder]*):
+    inline def resourceStatuses(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionInstantSnapshotResourceStatusArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionInstantSnapshotState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionInstantSnapshotResourceStatusArgs.builder
       builder.resourceStatuses(args.map(_(argsBuilder).build)*)
@@ -9605,7 +9605,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def appEngine(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupAppEngineArgs.Builder]):
+    inline def appEngine(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupAppEngineArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupAppEngineArgs.builder
       builder.appEngine(args(argsBuilder).build)
@@ -9616,7 +9616,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def cloudFunction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupCloudFunctionArgs.Builder]):
+    inline def cloudFunction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupCloudFunctionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupCloudFunctionArgs.builder
       builder.cloudFunction(args(argsBuilder).build)
@@ -9627,7 +9627,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def cloudRun(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupCloudRunArgs.Builder]):
+    inline def cloudRun(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupCloudRunArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupCloudRunArgs.builder
       builder.cloudRun(args(argsBuilder).build)
@@ -9637,7 +9637,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def pscData(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupPscDataArgs.Builder]):
+    inline def pscData(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupPscDataArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupPscDataArgs.builder
       builder.pscData(args(argsBuilder).build)
@@ -9649,19 +9649,19 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def serverlessDeployment(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupServerlessDeploymentArgs.Builder]):
+    inline def serverlessDeployment(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupServerlessDeploymentArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkEndpointGroupServerlessDeploymentArgs.builder
       builder.serverlessDeployment(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -9672,7 +9672,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def layer4Configs(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyRuleMatchLayer4ConfigArgs.Builder]*):
+    inline def layer4Configs(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyRuleMatchLayer4ConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyRuleMatchArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyRuleMatchLayer4ConfigArgs.builder
       builder.layer4Configs(args.map(_(argsBuilder).build)*)
@@ -9682,7 +9682,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def srcSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyRuleMatchSrcSecureTagArgs.Builder]*):
+    inline def srcSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyRuleMatchSrcSecureTagArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyRuleMatchArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyRuleMatchSrcSecureTagArgs.builder
       builder.srcSecureTags(args.map(_(argsBuilder).build)*)
@@ -9693,7 +9693,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyRuleMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyRuleMatchArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyRuleMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -9705,7 +9705,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyRuleTargetSecureTagArgs.Builder]*):
+    inline def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyRuleTargetSecureTagArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyRuleState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyRuleTargetSecureTagArgs.builder
       builder.targetSecureTags(args.map(_(argsBuilder).build)*)
@@ -9717,7 +9717,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def matches(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesPredefinedRuleMatchArgs.Builder]*):
+    inline def matches(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesPredefinedRuleMatchArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesPredefinedRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesPredefinedRuleMatchArgs.builder
       builder.matches(args.map(_(argsBuilder).build)*)
@@ -9738,7 +9738,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesPredefinedRuleTargetSecureTagArgs.Builder]*):
+    inline def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesPredefinedRuleTargetSecureTagArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesPredefinedRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesPredefinedRuleTargetSecureTagArgs.builder
       builder.targetSecureTags(args.map(_(argsBuilder).build)*)
@@ -9749,7 +9749,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def layer4Configs(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesPredefinedRuleMatchLayer4ConfigArgs.Builder]*):
+    inline def layer4Configs(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesPredefinedRuleMatchLayer4ConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesPredefinedRuleMatchArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesPredefinedRuleMatchLayer4ConfigArgs.builder
       builder.layer4Configs(args.map(_(argsBuilder).build)*)
@@ -9765,7 +9765,7 @@ object compute_ext1:
      * &lt;a name=&#34;nestedRuleMatchLayer4Config&#34;&gt;&lt;/a&gt;The `layer4Config` block supports:
      * @return builder
      */
-    def srcSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesPredefinedRuleMatchSrcSecureTagArgs.Builder]*):
+    inline def srcSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesPredefinedRuleMatchSrcSecureTagArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesPredefinedRuleMatchArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesPredefinedRuleMatchSrcSecureTagArgs.builder
       builder.srcSecureTags(args.map(_(argsBuilder).build)*)
@@ -9776,7 +9776,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesRuleMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesRuleMatchArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesRuleMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -9796,7 +9796,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesRuleTargetSecureTagArgs.Builder]*):
+    inline def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesRuleTargetSecureTagArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesRuleTargetSecureTagArgs.builder
       builder.targetSecureTags(args.map(_(argsBuilder).build)*)
@@ -9807,7 +9807,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def layer4Configs(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesRuleMatchLayer4ConfigArgs.Builder]*):
+    inline def layer4Configs(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesRuleMatchLayer4ConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesRuleMatchArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesRuleMatchLayer4ConfigArgs.builder
       builder.layer4Configs(args.map(_(argsBuilder).build)*)
@@ -9823,7 +9823,7 @@ object compute_ext1:
      * &lt;a name=&#34;nestedRuleMatchLayer4Config&#34;&gt;&lt;/a&gt;The `layer4Config` block supports:
      * @return builder
      */
-    def srcSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesRuleMatchSrcSecureTagArgs.Builder]*):
+    inline def srcSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesRuleMatchSrcSecureTagArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesRuleMatchArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesRuleMatchSrcSecureTagArgs.builder
       builder.srcSecureTags(args.map(_(argsBuilder).build)*)
@@ -9834,7 +9834,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def predefinedRules(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesPredefinedRuleArgs.Builder]*):
+    inline def predefinedRules(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesPredefinedRuleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesPredefinedRuleArgs.builder
       builder.predefinedRules(args.map(_(argsBuilder).build)*)
@@ -9844,7 +9844,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesRuleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkFirewallPolicyWithRulesRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -9855,7 +9855,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def associations(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkPolicyAssociationArgs.Builder]*):
+    inline def associations(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkPolicyAssociationArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionNetworkPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkPolicyAssociationArgs.builder
       builder.associations(args.map(_(argsBuilder).build)*)
@@ -9868,7 +9868,7 @@ object compute_ext1:
      * &lt;a name=&#34;nestedMatchLayer4Configs&#34;&gt;&lt;/a&gt;The `layer4Configs` block supports:
      * @return builder
      */
-    def layer4Configs(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleMatchLayer4ConfigArgs.Builder]*):
+    inline def layer4Configs(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleMatchLayer4ConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleMatchArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleMatchLayer4ConfigArgs.builder
       builder.layer4Configs(args.map(_(argsBuilder).build)*)
@@ -9879,7 +9879,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def action(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleActionArgs.Builder]):
+    inline def action(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleActionArgs.builder
       builder.action(args(argsBuilder).build)
@@ -9889,7 +9889,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleMatchArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -9901,7 +9901,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleTargetSecureTagArgs.Builder]*):
+    inline def targetSecureTags(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleTargetSecureTagArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionNetworkPolicyTrafficClassificationRuleTargetSecureTagArgs.builder
       builder.targetSecureTags(args.map(_(argsBuilder).build)*)
@@ -9912,7 +9912,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def disks(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateDiskArgs.Builder]*):
+    inline def disks(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateDiskArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateDiskArgs.builder
       builder.disks(args.map(_(argsBuilder).build)*)
@@ -9922,7 +9922,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def externalIps(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateExternalIpArgs.Builder]*):
+    inline def externalIps(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateExternalIpArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateExternalIpArgs.builder
       builder.externalIps(args.map(_(argsBuilder).build)*)
@@ -9932,7 +9932,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def internalIps(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateInternalIpArgs.Builder]*):
+    inline def internalIps(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateInternalIpArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateInternalIpArgs.builder
       builder.internalIps(args.map(_(argsBuilder).build)*)
@@ -9943,7 +9943,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def ipAddress(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateExternalIpIpAddressArgs.Builder]):
+    inline def ipAddress(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateExternalIpIpAddressArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateExternalIpArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateExternalIpIpAddressArgs.builder
       builder.ipAddress(args(argsBuilder).build)
@@ -9954,7 +9954,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def ipAddress(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateInternalIpIpAddressArgs.Builder]):
+    inline def ipAddress(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateInternalIpIpAddressArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateInternalIpArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateInternalIpIpAddressArgs.builder
       builder.ipAddress(args(argsBuilder).build)
@@ -9965,7 +9965,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def preservedState(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateArgs.Builder]):
+    inline def preservedState(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionPerInstanceConfigPreservedStateArgs.builder
       builder.preservedState(args(argsBuilder).build)
@@ -9976,7 +9976,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def requestedRunDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestRequestedRunDurationArgs.Builder]):
+    inline def requestedRunDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestRequestedRunDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionResizeRequestState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionResizeRequestRequestedRunDurationArgs.builder
       builder.requestedRunDuration(args(argsBuilder).build)
@@ -9986,7 +9986,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def statuses(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusArgs.Builder]*):
+    inline def statuses(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionResizeRequestState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusArgs.builder
       builder.statuses(args.map(_(argsBuilder).build)*)
@@ -9998,7 +9998,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def errors(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorArgs.Builder]*):
+    inline def errors(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
@@ -10009,7 +10009,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def lastAttempts(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptArgs.Builder]*):
+    inline def lastAttempts(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptArgs.builder
       builder.lastAttempts(args.map(_(argsBuilder).build)*)
@@ -10021,7 +10021,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def errors(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorArgs.Builder]*):
+    inline def errors(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
@@ -10033,7 +10033,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def errorDetails(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorErrorDetailArgs.Builder]*):
+    inline def errorDetails(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorErrorDetailArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorErrorDetailArgs.builder
       builder.errorDetails(args.map(_(argsBuilder).build)*)
@@ -10045,7 +10045,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def errorInfos(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorErrorDetailErrorInfoArgs.Builder]*):
+    inline def errorInfos(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorErrorDetailErrorInfoArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorErrorDetailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorErrorDetailErrorInfoArgs.builder
       builder.errorInfos(args.map(_(argsBuilder).build)*)
@@ -10056,7 +10056,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def helps(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorErrorDetailHelpArgs.Builder]*):
+    inline def helps(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorErrorDetailHelpArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorErrorDetailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorErrorDetailHelpArgs.builder
       builder.helps(args.map(_(argsBuilder).build)*)
@@ -10067,7 +10067,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def localizedMessages(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorErrorDetailLocalizedMessageArgs.Builder]*):
+    inline def localizedMessages(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorErrorDetailLocalizedMessageArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorErrorDetailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorErrorDetailLocalizedMessageArgs.builder
       builder.localizedMessages(args.map(_(argsBuilder).build)*)
@@ -10078,7 +10078,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def quotaInfos(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorErrorDetailQuotaInfoArgs.Builder]*):
+    inline def quotaInfos(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorErrorDetailQuotaInfoArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorErrorDetailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorErrorDetailQuotaInfoArgs.builder
       builder.quotaInfos(args.map(_(argsBuilder).build)*)
@@ -10090,7 +10090,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def links(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorErrorDetailHelpLinkArgs.Builder]*):
+    inline def links(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorErrorDetailHelpLinkArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorErrorDetailHelpArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusErrorErrorErrorDetailHelpLinkArgs.builder
       builder.links(args.map(_(argsBuilder).build)*)
@@ -10102,7 +10102,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def errors(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorArgs.Builder]*):
+    inline def errors(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
@@ -10114,7 +10114,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def errors(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorArgs.Builder]*):
+    inline def errors(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
@@ -10126,7 +10126,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def errorDetails(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailArgs.Builder]*):
+    inline def errorDetails(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailArgs.builder
       builder.errorDetails(args.map(_(argsBuilder).build)*)
@@ -10138,7 +10138,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def errorInfos(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailErrorInfoArgs.Builder]*):
+    inline def errorInfos(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailErrorInfoArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailErrorInfoArgs.builder
       builder.errorInfos(args.map(_(argsBuilder).build)*)
@@ -10149,7 +10149,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def helps(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailHelpArgs.Builder]*):
+    inline def helps(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailHelpArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailHelpArgs.builder
       builder.helps(args.map(_(argsBuilder).build)*)
@@ -10160,7 +10160,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def localizedMessages(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailLocalizedMessageArgs.Builder]*):
+    inline def localizedMessages(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailLocalizedMessageArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailLocalizedMessageArgs.builder
       builder.localizedMessages(args.map(_(argsBuilder).build)*)
@@ -10171,7 +10171,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def quotaInfos(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailQuotaInfoArgs.Builder]*):
+    inline def quotaInfos(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailQuotaInfoArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailQuotaInfoArgs.builder
       builder.quotaInfos(args.map(_(argsBuilder).build)*)
@@ -10183,7 +10183,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def links(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailHelpLinkArgs.Builder]*):
+    inline def links(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailHelpLinkArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailHelpArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionResizeRequestStatusLastAttemptErrorErrorErrorDetailHelpLinkArgs.builder
       builder.links(args.map(_(argsBuilder).build)*)
@@ -10194,7 +10194,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def jsonCustomConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyAdvancedOptionsConfigJsonCustomConfigArgs.Builder]):
+    inline def jsonCustomConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyAdvancedOptionsConfigJsonCustomConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionSecurityPolicyAdvancedOptionsConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyAdvancedOptionsConfigJsonCustomConfigArgs.builder
       builder.jsonCustomConfig(args(argsBuilder).build)
@@ -10206,7 +10206,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleMatchArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -10223,7 +10223,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def networkMatch(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleNetworkMatchArgs.Builder]):
+    inline def networkMatch(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleNetworkMatchArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleNetworkMatchArgs.builder
       builder.networkMatch(args(argsBuilder).build)
@@ -10234,7 +10234,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def preconfiguredWafConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigArgs.Builder]):
+    inline def preconfiguredWafConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigArgs.builder
       builder.preconfiguredWafConfig(args(argsBuilder).build)
@@ -10244,7 +10244,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rateLimitOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleRateLimitOptionsArgs.Builder]):
+    inline def rateLimitOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleRateLimitOptionsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleRateLimitOptionsArgs.builder
       builder.rateLimitOptions(args(argsBuilder).build)
@@ -10256,7 +10256,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleMatchConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleMatchConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleMatchArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleMatchConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -10266,7 +10266,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def expr(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleMatchExprArgs.Builder]):
+    inline def expr(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleMatchExprArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleMatchArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleMatchExprArgs.builder
       builder.expr(args(argsBuilder).build)
@@ -10277,7 +10277,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def userDefinedFields(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleNetworkMatchUserDefinedFieldArgs.Builder]*):
+    inline def userDefinedFields(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleNetworkMatchUserDefinedFieldArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleNetworkMatchArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleNetworkMatchUserDefinedFieldArgs.builder
       builder.userDefinedFields(args.map(_(argsBuilder).build)*)
@@ -10288,7 +10288,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def exclusions(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionArgs.Builder]*):
+    inline def exclusions(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionArgs.builder
       builder.exclusions(args.map(_(argsBuilder).build)*)
@@ -10300,7 +10300,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def requestBodies(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestBodyArgs.Builder]*):
+    inline def requestBodies(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestBodyArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestBodyArgs.builder
       builder.requestBodies(args.map(_(argsBuilder).build)*)
@@ -10310,7 +10310,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def requestCookies(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestCookyArgs.Builder]*):
+    inline def requestCookies(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestCookyArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestCookyArgs.builder
       builder.requestCookies(args.map(_(argsBuilder).build)*)
@@ -10320,7 +10320,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def requestHeaders(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestHeaderArgs.Builder]*):
+    inline def requestHeaders(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestHeaderArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestHeaderArgs.builder
       builder.requestHeaders(args.map(_(argsBuilder).build)*)
@@ -10331,7 +10331,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def requestQueryParams(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestQueryParamArgs.Builder]*):
+    inline def requestQueryParams(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestQueryParamArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestQueryParamArgs.builder
       builder.requestQueryParams(args.map(_(argsBuilder).build)*)
@@ -10342,7 +10342,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def requestUris(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestUriArgs.Builder]*):
+    inline def requestUris(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestUriArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigExclusionRequestUriArgs.builder
       builder.requestUris(args.map(_(argsBuilder).build)*)
@@ -10354,7 +10354,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def banThreshold(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleRateLimitOptionsBanThresholdArgs.Builder]):
+    inline def banThreshold(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleRateLimitOptionsBanThresholdArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleRateLimitOptionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleRateLimitOptionsBanThresholdArgs.builder
       builder.banThreshold(args(argsBuilder).build)
@@ -10366,7 +10366,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def enforceOnKeyConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfigArgs.Builder]*):
+    inline def enforceOnKeyConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleRateLimitOptionsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfigArgs.builder
       builder.enforceOnKeyConfigs(args.map(_(argsBuilder).build)*)
@@ -10376,7 +10376,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rateLimitThreshold(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleRateLimitOptionsRateLimitThresholdArgs.Builder]):
+    inline def rateLimitThreshold(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleRateLimitOptionsRateLimitThresholdArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleRateLimitOptionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleRateLimitOptionsRateLimitThresholdArgs.builder
       builder.rateLimitThreshold(args(argsBuilder).build)
@@ -10388,7 +10388,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleMatchArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -10405,7 +10405,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def networkMatch(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleNetworkMatchArgs.Builder]):
+    inline def networkMatch(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleNetworkMatchArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleNetworkMatchArgs.builder
       builder.networkMatch(args(argsBuilder).build)
@@ -10416,7 +10416,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def preconfiguredWafConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigArgs.Builder]):
+    inline def preconfiguredWafConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRulePreconfiguredWafConfigArgs.builder
       builder.preconfiguredWafConfig(args(argsBuilder).build)
@@ -10426,7 +10426,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rateLimitOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleRateLimitOptionsArgs.Builder]):
+    inline def rateLimitOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleRateLimitOptionsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleRateLimitOptionsArgs.builder
       builder.rateLimitOptions(args(argsBuilder).build)
@@ -10437,7 +10437,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def advancedOptionsConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyAdvancedOptionsConfigArgs.Builder]):
+    inline def advancedOptionsConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyAdvancedOptionsConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionSecurityPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyAdvancedOptionsConfigArgs.builder
       builder.advancedOptionsConfig(args(argsBuilder).build)
@@ -10447,7 +10447,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def ddosProtectionConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyDdosProtectionConfigArgs.Builder]):
+    inline def ddosProtectionConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyDdosProtectionConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionSecurityPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyDdosProtectionConfigArgs.builder
       builder.ddosProtectionConfig(args(argsBuilder).build)
@@ -10457,7 +10457,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionSecurityPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -10469,7 +10469,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def userDefinedFields(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyUserDefinedFieldArgs.Builder]*):
+    inline def userDefinedFields(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionSecurityPolicyUserDefinedFieldArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionSecurityPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionSecurityPolicyUserDefinedFieldArgs.builder
       builder.userDefinedFields(args.map(_(argsBuilder).build)*)
@@ -10481,7 +10481,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def corsPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionCorsPolicyArgs.Builder]):
+    inline def corsPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionCorsPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionCorsPolicyArgs.builder
       builder.corsPolicy(args(argsBuilder).build)
@@ -10495,7 +10495,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def faultInjectionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionFaultInjectionPolicyArgs.Builder]):
+    inline def faultInjectionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionFaultInjectionPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionFaultInjectionPolicyArgs.builder
       builder.faultInjectionPolicy(args(argsBuilder).build)
@@ -10507,7 +10507,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def requestMirrorPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionRequestMirrorPolicyArgs.Builder]):
+    inline def requestMirrorPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionRequestMirrorPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionRequestMirrorPolicyArgs.builder
       builder.requestMirrorPolicy(args(argsBuilder).build)
@@ -10517,7 +10517,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def retryPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionRetryPolicyArgs.Builder]):
+    inline def retryPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionRetryPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
@@ -10529,7 +10529,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def timeout(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionTimeoutArgs.Builder]):
+    inline def timeout(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionTimeoutArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionTimeoutArgs.builder
       builder.timeout(args(argsBuilder).build)
@@ -10541,7 +10541,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def urlRewrite(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionUrlRewriteArgs.Builder]):
+    inline def urlRewrite(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionUrlRewriteArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionUrlRewriteArgs.builder
       builder.urlRewrite(args(argsBuilder).build)
@@ -10552,7 +10552,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def weightedBackendServices(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionWeightedBackendServiceArgs.Builder]*):
+    inline def weightedBackendServices(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionWeightedBackendServiceArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionWeightedBackendServiceArgs.builder
       builder.weightedBackendServices(args.map(_(argsBuilder).build)*)
@@ -10563,7 +10563,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def abort(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionFaultInjectionPolicyAbortArgs.Builder]):
+    inline def abort(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionFaultInjectionPolicyAbortArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionFaultInjectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionFaultInjectionPolicyAbortArgs.builder
       builder.abort(args(argsBuilder).build)
@@ -10573,7 +10573,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def delay(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionFaultInjectionPolicyDelayArgs.Builder]):
+    inline def delay(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionFaultInjectionPolicyDelayArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionFaultInjectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionFaultInjectionPolicyDelayArgs.builder
       builder.delay(args(argsBuilder).build)
@@ -10584,7 +10584,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def fixedDelay(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionFaultInjectionPolicyDelayFixedDelayArgs.Builder]):
+    inline def fixedDelay(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionFaultInjectionPolicyDelayFixedDelayArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionFaultInjectionPolicyDelayArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionFaultInjectionPolicyDelayFixedDelayArgs.builder
       builder.fixedDelay(args(argsBuilder).build)
@@ -10597,7 +10597,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def perTryTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionRetryPolicyPerTryTimeoutArgs.Builder]):
+    inline def perTryTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionRetryPolicyPerTryTimeoutArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionRetryPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionRetryPolicyPerTryTimeoutArgs.builder
       builder.perTryTimeout(args(argsBuilder).build)
@@ -10611,7 +10611,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionWeightedBackendServiceHeaderActionArgs.Builder]):
+    inline def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionWeightedBackendServiceHeaderActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionWeightedBackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionWeightedBackendServiceHeaderActionArgs.builder
       builder.headerAction(args(argsBuilder).build)
@@ -10622,7 +10622,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAddArgs.Builder]*):
+    inline def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionWeightedBackendServiceHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAddArgs.builder
       builder.requestHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -10632,7 +10632,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAddArgs.Builder]*):
+    inline def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionWeightedBackendServiceHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAddArgs.builder
       builder.responseHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -10643,7 +10643,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapHeaderActionRequestHeadersToAddArgs.Builder]*):
+    inline def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapHeaderActionRequestHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapHeaderActionRequestHeadersToAddArgs.builder
       builder.requestHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -10653,7 +10653,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapHeaderActionResponseHeadersToAddArgs.Builder]*):
+    inline def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapHeaderActionResponseHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapHeaderActionResponseHeadersToAddArgs.builder
       builder.responseHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -10668,7 +10668,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def defaultRouteAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionArgs.Builder]):
+    inline def defaultRouteAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionArgs.builder
       builder.defaultRouteAction(args(argsBuilder).build)
@@ -10680,7 +10680,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def defaultUrlRedirect(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultUrlRedirectArgs.Builder]):
+    inline def defaultUrlRedirect(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultUrlRedirectArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultUrlRedirectArgs.builder
       builder.defaultUrlRedirect(args(argsBuilder).build)
@@ -10693,7 +10693,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherHeaderActionArgs.Builder]):
+    inline def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherHeaderActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherHeaderActionArgs.builder
       builder.headerAction(args(argsBuilder).build)
@@ -10708,7 +10708,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def pathRules(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleArgs.Builder]*):
+    inline def pathRules(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleArgs.builder
       builder.pathRules(args.map(_(argsBuilder).build)*)
@@ -10723,7 +10723,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def routeRules(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleArgs.Builder]*):
+    inline def routeRules(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleArgs.builder
       builder.routeRules(args.map(_(argsBuilder).build)*)
@@ -10735,7 +10735,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def corsPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionCorsPolicyArgs.Builder]):
+    inline def corsPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionCorsPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionCorsPolicyArgs.builder
       builder.corsPolicy(args(argsBuilder).build)
@@ -10749,7 +10749,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def faultInjectionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionFaultInjectionPolicyArgs.Builder]):
+    inline def faultInjectionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionFaultInjectionPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionFaultInjectionPolicyArgs.builder
       builder.faultInjectionPolicy(args(argsBuilder).build)
@@ -10763,7 +10763,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def maxStreamDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionMaxStreamDurationArgs.Builder]):
+    inline def maxStreamDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionMaxStreamDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionMaxStreamDurationArgs.builder
       builder.maxStreamDuration(args(argsBuilder).build)
@@ -10775,7 +10775,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def requestMirrorPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionRequestMirrorPolicyArgs.Builder]):
+    inline def requestMirrorPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionRequestMirrorPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionRequestMirrorPolicyArgs.builder
       builder.requestMirrorPolicy(args(argsBuilder).build)
@@ -10785,7 +10785,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def retryPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionRetryPolicyArgs.Builder]):
+    inline def retryPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionRetryPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
@@ -10797,7 +10797,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def timeout(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionTimeoutArgs.Builder]):
+    inline def timeout(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionTimeoutArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionTimeoutArgs.builder
       builder.timeout(args(argsBuilder).build)
@@ -10809,7 +10809,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def urlRewrite(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionUrlRewriteArgs.Builder]):
+    inline def urlRewrite(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionUrlRewriteArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionUrlRewriteArgs.builder
       builder.urlRewrite(args(argsBuilder).build)
@@ -10820,7 +10820,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def weightedBackendServices(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionWeightedBackendServiceArgs.Builder]*):
+    inline def weightedBackendServices(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionWeightedBackendServiceArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionWeightedBackendServiceArgs.builder
       builder.weightedBackendServices(args.map(_(argsBuilder).build)*)
@@ -10831,7 +10831,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def abort(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionFaultInjectionPolicyAbortArgs.Builder]):
+    inline def abort(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionFaultInjectionPolicyAbortArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionFaultInjectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionFaultInjectionPolicyAbortArgs.builder
       builder.abort(args(argsBuilder).build)
@@ -10841,7 +10841,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def delay(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelayArgs.Builder]):
+    inline def delay(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelayArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionFaultInjectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelayArgs.builder
       builder.delay(args(argsBuilder).build)
@@ -10852,7 +10852,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def fixedDelay(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelayFixedDelayArgs.Builder]):
+    inline def fixedDelay(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelayFixedDelayArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelayArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelayFixedDelayArgs.builder
       builder.fixedDelay(args(argsBuilder).build)
@@ -10865,7 +10865,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def perTryTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionRetryPolicyPerTryTimeoutArgs.Builder]):
+    inline def perTryTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionRetryPolicyPerTryTimeoutArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionRetryPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionRetryPolicyPerTryTimeoutArgs.builder
       builder.perTryTimeout(args(argsBuilder).build)
@@ -10879,7 +10879,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionArgs.Builder]):
+    inline def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionWeightedBackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionArgs.builder
       builder.headerAction(args(argsBuilder).build)
@@ -10890,7 +10890,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAddArgs.Builder]*):
+    inline def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAddArgs.builder
       builder.requestHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -10900,7 +10900,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAddArgs.Builder]*):
+    inline def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAddArgs.builder
       builder.responseHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -10911,7 +10911,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherHeaderActionRequestHeadersToAddArgs.Builder]*):
+    inline def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherHeaderActionRequestHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherHeaderActionRequestHeadersToAddArgs.builder
       builder.requestHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -10921,7 +10921,7 @@ object compute_ext1:
      * Structure is documented below.
      * @return builder
      */
-    def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherHeaderActionResponseHeadersToAddArgs.Builder]*):
+    inline def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherHeaderActionResponseHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherHeaderActionResponseHeadersToAddArgs.builder
       builder.responseHeadersToAdds(args.map(_(argsBuilder).build)*)

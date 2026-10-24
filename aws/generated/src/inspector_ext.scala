@@ -7,7 +7,7 @@ object inspector_ext:
      * @param eventSubscriptions A block that enables sending notifications about a specified assessment template event to a designated SNS topic. See Event Subscriptions for details.
      * @return builder
      */
-    def eventSubscriptions(args: Endofunction[com.pulumi.aws.inspector.inputs.AssessmentTemplateEventSubscriptionArgs.Builder]*):
+    inline def eventSubscriptions(args: Endofunction[com.pulumi.aws.inspector.inputs.AssessmentTemplateEventSubscriptionArgs.Builder]*):
         com.pulumi.aws.inspector.AssessmentTemplateArgs.Builder =
       def argsBuilder = com.pulumi.aws.inspector.inputs.AssessmentTemplateEventSubscriptionArgs.builder
       builder.eventSubscriptions(args.map(_(argsBuilder).build)*)
@@ -17,7 +17,7 @@ object inspector_ext:
      * @param eventSubscriptions A block that enables sending notifications about a specified assessment template event to a designated SNS topic. See Event Subscriptions for details.
      * @return builder
      */
-    def eventSubscriptions(args: Endofunction[com.pulumi.aws.inspector.inputs.AssessmentTemplateEventSubscriptionArgs.Builder]*):
+    inline def eventSubscriptions(args: Endofunction[com.pulumi.aws.inspector.inputs.AssessmentTemplateEventSubscriptionArgs.Builder]*):
         com.pulumi.aws.inspector.inputs.AssessmentTemplateState.Builder =
       def argsBuilder = com.pulumi.aws.inspector.inputs.AssessmentTemplateEventSubscriptionArgs.builder
       builder.eventSubscriptions(args.map(_(argsBuilder).build)*)

@@ -7,7 +7,7 @@ object autoscaling_ext:
      * @param availabilityZoneDistribution The instance capacity distribution across Availability Zones. See `availabilityZoneDistribution` Block below for more details.
      * @return builder
      */
-    def availabilityZoneDistribution(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupAvailabilityZoneDistributionArgs.Builder]):
+    inline def availabilityZoneDistribution(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupAvailabilityZoneDistributionArgs.Builder]):
         com.pulumi.aws.autoscaling.GroupArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupAvailabilityZoneDistributionArgs.builder
       builder.availabilityZoneDistribution(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object autoscaling_ext:
      * @param capacityReservationSpecification The capacity reservation specification for the Auto Scaling group allows you to prioritize launching into On-Demand Capacity Reservations. See `capacityReservationSpecification` Block below for more details.
      * @return builder
      */
-    def capacityReservationSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupCapacityReservationSpecificationArgs.Builder]):
+    inline def capacityReservationSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupCapacityReservationSpecificationArgs.Builder]):
         com.pulumi.aws.autoscaling.GroupArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupCapacityReservationSpecificationArgs.builder
       builder.capacityReservationSpecification(args(argsBuilder).build)
@@ -31,7 +31,7 @@ object autoscaling_ext:
      * a new Auto Scaling group. For all other use-cases, please use `aws.autoscaling.LifecycleHook` resource.
      * @return builder
      */
-    def initialLifecycleHooks(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupInitialLifecycleHookArgs.Builder]*):
+    inline def initialLifecycleHooks(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupInitialLifecycleHookArgs.Builder]*):
         com.pulumi.aws.autoscaling.GroupArgs.Builder =
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupInitialLifecycleHookArgs.builder
       builder.initialLifecycleHooks(args.map(_(argsBuilder).build)*)
@@ -40,7 +40,7 @@ object autoscaling_ext:
      * @param instanceLifecyclePolicy If this block is configured, adds an instance lifecycle policy to the specified Auto Scaling group. Defined below.
      * @return builder
      */
-    def instanceLifecyclePolicy(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupInstanceLifecyclePolicyArgs.Builder]):
+    inline def instanceLifecyclePolicy(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupInstanceLifecyclePolicyArgs.Builder]):
         com.pulumi.aws.autoscaling.GroupArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupInstanceLifecyclePolicyArgs.builder
       builder.instanceLifecyclePolicy(args(argsBuilder).build)
@@ -49,7 +49,7 @@ object autoscaling_ext:
      * @param instanceMaintenancePolicy If this block is configured, add a instance maintenance policy to the specified Auto Scaling group. Defined below.
      * @return builder
      */
-    def instanceMaintenancePolicy(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupInstanceMaintenancePolicyArgs.Builder]):
+    inline def instanceMaintenancePolicy(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupInstanceMaintenancePolicyArgs.Builder]):
         com.pulumi.aws.autoscaling.GroupArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupInstanceMaintenancePolicyArgs.builder
       builder.instanceMaintenancePolicy(args(argsBuilder).build)
@@ -60,7 +60,7 @@ object autoscaling_ext:
      * when this Auto Scaling group is updated. Defined below.
      * @return builder
      */
-    def instanceRefresh(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupInstanceRefreshArgs.Builder]):
+    inline def instanceRefresh(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupInstanceRefreshArgs.Builder]):
         com.pulumi.aws.autoscaling.GroupArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupInstanceRefreshArgs.builder
       builder.instanceRefresh(args(argsBuilder).build)
@@ -69,7 +69,7 @@ object autoscaling_ext:
      * @param launchTemplate Nested argument with Launch template specification to use to launch instances. See `launchTemplate` Block below for more details.
      * @return builder
      */
-    def launchTemplate(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupLaunchTemplateArgs.Builder]):
+    inline def launchTemplate(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupLaunchTemplateArgs.Builder]):
         com.pulumi.aws.autoscaling.GroupArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupLaunchTemplateArgs.builder
       builder.launchTemplate(args(argsBuilder).build)
@@ -78,7 +78,7 @@ object autoscaling_ext:
      * @param mixedInstancesPolicy Configuration block containing settings to define launch targets for Auto Scaling groups. See `mixedInstancesPolicy` Block below for more details.
      * @return builder
      */
-    def mixedInstancesPolicy(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyArgs.Builder]):
+    inline def mixedInstancesPolicy(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyArgs.Builder]):
         com.pulumi.aws.autoscaling.GroupArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyArgs.builder
       builder.mixedInstancesPolicy(args(argsBuilder).build)
@@ -87,7 +87,7 @@ object autoscaling_ext:
      * @param tags Configuration block(s) containing resource tags. See `tag` Block below for more details.
      * @return builder
      */
-    def tags(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupTagArgs.Builder]*):
+    inline def tags(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupTagArgs.Builder]*):
         com.pulumi.aws.autoscaling.GroupArgs.Builder =
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupTagArgs.builder
       builder.tags(args.map(_(argsBuilder).build)*)
@@ -96,7 +96,7 @@ object autoscaling_ext:
      * @param trafficSources Attaches one or more traffic sources to the specified Auto Scaling group.
      * @return builder
      */
-    def trafficSources(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupTrafficSourceArgs.Builder]*):
+    inline def trafficSources(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupTrafficSourceArgs.Builder]*):
         com.pulumi.aws.autoscaling.GroupArgs.Builder =
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupTrafficSourceArgs.builder
       builder.trafficSources(args.map(_(argsBuilder).build)*)
@@ -106,7 +106,7 @@ object autoscaling_ext:
      * to the specified Auto Scaling group. Defined below
      * @return builder
      */
-    def warmPool(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupWarmPoolArgs.Builder]):
+    inline def warmPool(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupWarmPoolArgs.Builder]):
         com.pulumi.aws.autoscaling.GroupArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupWarmPoolArgs.builder
       builder.warmPool(args(argsBuilder).build)
@@ -116,7 +116,7 @@ object autoscaling_ext:
      * @param predictiveScalingConfiguration Predictive scaling policy configuration to use with Amazon EC2 Auto Scaling.
      * @return builder
      */
-    def predictiveScalingConfiguration(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationArgs.Builder]):
+    inline def predictiveScalingConfiguration(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationArgs.Builder]):
         com.pulumi.aws.autoscaling.PolicyArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationArgs.builder
       builder.predictiveScalingConfiguration(args(argsBuilder).build)
@@ -170,7 +170,7 @@ object autoscaling_ext:
      * The following fields are available in step adjustments:
      * @return builder
      */
-    def stepAdjustments(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyStepAdjustmentArgs.Builder]*):
+    inline def stepAdjustments(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyStepAdjustmentArgs.Builder]*):
         com.pulumi.aws.autoscaling.PolicyArgs.Builder =
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyStepAdjustmentArgs.builder
       builder.stepAdjustments(args.map(_(argsBuilder).build)*)
@@ -219,7 +219,7 @@ object autoscaling_ext:
      * The following fields are available in target tracking configuration:
      * @return builder
      */
-    def targetTrackingConfiguration(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationArgs.Builder]):
+    inline def targetTrackingConfiguration(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationArgs.Builder]):
         com.pulumi.aws.autoscaling.PolicyArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationArgs.builder
       builder.targetTrackingConfiguration(args(argsBuilder).build)
@@ -229,7 +229,7 @@ object autoscaling_ext:
      * @param tag Tag to create. The `tag` block is documented below.
      * @return builder
      */
-    def tag(args: Endofunction[com.pulumi.aws.autoscaling.inputs.TagTagArgs.Builder]):
+    inline def tag(args: Endofunction[com.pulumi.aws.autoscaling.inputs.TagTagArgs.Builder]):
         com.pulumi.aws.autoscaling.TagArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.TagTagArgs.builder
       builder.tag(args(argsBuilder).build)
@@ -239,7 +239,7 @@ object autoscaling_ext:
      * @param trafficSource The unique identifiers of a traffic sources.
      * @return builder
      */
-    def trafficSource(args: Endofunction[com.pulumi.aws.autoscaling.inputs.TrafficSourceAttachmentTrafficSourceArgs.Builder]):
+    inline def trafficSource(args: Endofunction[com.pulumi.aws.autoscaling.inputs.TrafficSourceAttachmentTrafficSourceArgs.Builder]):
         com.pulumi.aws.autoscaling.TrafficSourceAttachmentArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.TrafficSourceAttachmentTrafficSourceArgs.builder
       builder.trafficSource(args(argsBuilder).build)
@@ -249,7 +249,7 @@ object autoscaling_ext:
      * @param filters Filter used to scope the list e.g., by tags. See [related docs](http://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_Filter.html).
      * @return builder
      */
-    def filters(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GetAmiIdsFilterArgs.Builder]*):
+    inline def filters(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GetAmiIdsFilterArgs.Builder]*):
         com.pulumi.aws.autoscaling.inputs.GetAmiIdsArgs.Builder =
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.GetAmiIdsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
@@ -259,7 +259,7 @@ object autoscaling_ext:
      * @param filters Filter used to scope the list e.g., by tags. See [related docs](http://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_Filter.html).
      * @return builder
      */
-    def filters(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GetAmiIdsFilter.Builder]*):
+    inline def filters(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GetAmiIdsFilter.Builder]*):
         com.pulumi.aws.autoscaling.inputs.GetAmiIdsPlainArgs.Builder =
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.GetAmiIdsFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
@@ -269,7 +269,7 @@ object autoscaling_ext:
      * @param capacityReservationTarget Describes a target Capacity Reservation or Capacity Reservation resource group.
      * @return builder
      */
-    def capacityReservationTarget(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupCapacityReservationSpecificationCapacityReservationTargetArgs.Builder]):
+    inline def capacityReservationTarget(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupCapacityReservationSpecificationCapacityReservationTargetArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupCapacityReservationSpecificationArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupCapacityReservationSpecificationCapacityReservationTargetArgs.builder
       builder.capacityReservationTarget(args(argsBuilder).build)
@@ -279,7 +279,7 @@ object autoscaling_ext:
      * @param retentionTriggers Conditions that trigger instance retention behavior. Defined below.
      * @return builder
      */
-    def retentionTriggers(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupInstanceLifecyclePolicyRetentionTriggersArgs.Builder]):
+    inline def retentionTriggers(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupInstanceLifecyclePolicyRetentionTriggersArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupInstanceLifecyclePolicyArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupInstanceLifecyclePolicyRetentionTriggersArgs.builder
       builder.retentionTriggers(args(argsBuilder).build)
@@ -289,7 +289,7 @@ object autoscaling_ext:
      * @param preferences Override default parameters for Instance Refresh.
      * @return builder
      */
-    def preferences(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupInstanceRefreshPreferencesArgs.Builder]):
+    inline def preferences(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupInstanceRefreshPreferencesArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupInstanceRefreshArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupInstanceRefreshPreferencesArgs.builder
       builder.preferences(args(argsBuilder).build)
@@ -299,7 +299,7 @@ object autoscaling_ext:
      * @param alarmSpecification Alarm Specification for Instance Refresh.
      * @return builder
      */
-    def alarmSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupInstanceRefreshPreferencesAlarmSpecificationArgs.Builder]):
+    inline def alarmSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupInstanceRefreshPreferencesAlarmSpecificationArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupInstanceRefreshPreferencesArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupInstanceRefreshPreferencesAlarmSpecificationArgs.builder
       builder.alarmSpecification(args(argsBuilder).build)
@@ -309,7 +309,7 @@ object autoscaling_ext:
      * @param instancesDistribution Nested argument containing settings on how to mix on-demand and Spot instances in the Auto Scaling group. Defined below.
      * @return builder
      */
-    def instancesDistribution(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyInstancesDistributionArgs.Builder]):
+    inline def instancesDistribution(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyInstancesDistributionArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyInstancesDistributionArgs.builder
       builder.instancesDistribution(args(argsBuilder).build)
@@ -318,7 +318,7 @@ object autoscaling_ext:
      * @param launchTemplate Nested argument containing launch template settings along with the overrides to specify multiple instance types and weights. Defined below.
      * @return builder
      */
-    def launchTemplate(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateArgs.Builder]):
+    inline def launchTemplate(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateArgs.builder
       builder.launchTemplate(args(argsBuilder).build)
@@ -328,7 +328,7 @@ object autoscaling_ext:
      * @param launchTemplateSpecification Override the instance launch template specification in the Launch Template.
      * @return builder
      */
-    def launchTemplateSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationArgs.Builder]):
+    inline def launchTemplateSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationArgs.builder
       builder.launchTemplateSpecification(args(argsBuilder).build)
@@ -337,7 +337,7 @@ object autoscaling_ext:
      * @param overrides List of nested arguments provides the ability to specify multiple instance types. This will override the same parameter in the launch template. For on-demand instances, Auto Scaling considers the order of preference of instance types to launch based on the order specified in the overrides list. Defined below.
      * @return builder
      */
-    def overrides(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideArgs.Builder]*):
+    inline def overrides(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideArgs.Builder]*):
         com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateArgs.Builder =
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideArgs.builder
       builder.overrides(args.map(_(argsBuilder).build)*)
@@ -347,7 +347,7 @@ object autoscaling_ext:
      * @param instanceRequirements Override the instance type in the Launch Template with instance types that satisfy the requirements.
      * @return builder
      */
-    def instanceRequirements(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsArgs.Builder]):
+    inline def instanceRequirements(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsArgs.builder
       builder.instanceRequirements(args(argsBuilder).build)
@@ -356,7 +356,7 @@ object autoscaling_ext:
      * @param launchTemplateSpecification Override the instance launch template specification in the Launch Template.
      * @return builder
      */
-    def launchTemplateSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationArgs.Builder]):
+    inline def launchTemplateSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideLaunchTemplateSpecificationArgs.builder
       builder.launchTemplateSpecification(args(argsBuilder).build)
@@ -366,7 +366,7 @@ object autoscaling_ext:
      * @param acceleratorCount Block describing the minimum and maximum number of accelerators (GPUs, FPGAs, or AWS Inferentia chips). Default is no minimum or maximum.
      * @return builder
      */
-    def acceleratorCount(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsAcceleratorCountArgs.Builder]):
+    inline def acceleratorCount(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsAcceleratorCountArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsAcceleratorCountArgs.builder
       builder.acceleratorCount(args(argsBuilder).build)
@@ -375,7 +375,7 @@ object autoscaling_ext:
      * @param acceleratorTotalMemoryMib Block describing the minimum and maximum total memory of the accelerators. Default is no minimum or maximum.
      * @return builder
      */
-    def acceleratorTotalMemoryMib(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsAcceleratorTotalMemoryMibArgs.Builder]):
+    inline def acceleratorTotalMemoryMib(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsAcceleratorTotalMemoryMibArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsAcceleratorTotalMemoryMibArgs.builder
       builder.acceleratorTotalMemoryMib(args(argsBuilder).build)
@@ -384,7 +384,7 @@ object autoscaling_ext:
      * @param baselineEbsBandwidthMbps Block describing the minimum and maximum baseline EBS bandwidth, in Mbps. Default is no minimum or maximum.
      * @return builder
      */
-    def baselineEbsBandwidthMbps(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsBaselineEbsBandwidthMbpsArgs.Builder]):
+    inline def baselineEbsBandwidthMbps(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsBaselineEbsBandwidthMbpsArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsBaselineEbsBandwidthMbpsArgs.builder
       builder.baselineEbsBandwidthMbps(args(argsBuilder).build)
@@ -393,7 +393,7 @@ object autoscaling_ext:
      * @param memoryGibPerVcpu Block describing the minimum and maximum amount of memory (GiB) per vCPU. Default is no minimum or maximum.
      * @return builder
      */
-    def memoryGibPerVcpu(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsMemoryGibPerVcpuArgs.Builder]):
+    inline def memoryGibPerVcpu(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsMemoryGibPerVcpuArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsMemoryGibPerVcpuArgs.builder
       builder.memoryGibPerVcpu(args(argsBuilder).build)
@@ -402,7 +402,7 @@ object autoscaling_ext:
      * @param memoryMib Block describing the minimum and maximum amount of memory (MiB). Default is no maximum.
      * @return builder
      */
-    def memoryMib(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsMemoryMibArgs.Builder]):
+    inline def memoryMib(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsMemoryMibArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsMemoryMibArgs.builder
       builder.memoryMib(args(argsBuilder).build)
@@ -411,7 +411,7 @@ object autoscaling_ext:
      * @param networkBandwidthGbps Block describing the minimum and maximum amount of network bandwidth, in gigabits per second (Gbps). Default is no minimum or maximum.
      * @return builder
      */
-    def networkBandwidthGbps(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsNetworkBandwidthGbpsArgs.Builder]):
+    inline def networkBandwidthGbps(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsNetworkBandwidthGbpsArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsNetworkBandwidthGbpsArgs.builder
       builder.networkBandwidthGbps(args(argsBuilder).build)
@@ -420,7 +420,7 @@ object autoscaling_ext:
      * @param networkInterfaceCount Block describing the minimum and maximum number of network interfaces. Default is no minimum or maximum.
      * @return builder
      */
-    def networkInterfaceCount(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsNetworkInterfaceCountArgs.Builder]):
+    inline def networkInterfaceCount(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsNetworkInterfaceCountArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsNetworkInterfaceCountArgs.builder
       builder.networkInterfaceCount(args(argsBuilder).build)
@@ -429,7 +429,7 @@ object autoscaling_ext:
      * @param totalLocalStorageGb Block describing the minimum and maximum total local storage (GB). Default is no minimum or maximum.
      * @return builder
      */
-    def totalLocalStorageGb(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsTotalLocalStorageGbArgs.Builder]):
+    inline def totalLocalStorageGb(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsTotalLocalStorageGbArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsTotalLocalStorageGbArgs.builder
       builder.totalLocalStorageGb(args(argsBuilder).build)
@@ -438,7 +438,7 @@ object autoscaling_ext:
      * @param vcpuCount Block describing the minimum and maximum number of vCPUs. Default is no maximum.
      * @return builder
      */
-    def vcpuCount(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsVcpuCountArgs.Builder]):
+    inline def vcpuCount(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsVcpuCountArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyLaunchTemplateOverrideInstanceRequirementsVcpuCountArgs.builder
       builder.vcpuCount(args(argsBuilder).build)
@@ -448,7 +448,7 @@ object autoscaling_ext:
      * @param availabilityZoneDistribution The instance capacity distribution across Availability Zones. See `availabilityZoneDistribution` Block below for more details.
      * @return builder
      */
-    def availabilityZoneDistribution(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupAvailabilityZoneDistributionArgs.Builder]):
+    inline def availabilityZoneDistribution(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupAvailabilityZoneDistributionArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupState.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupAvailabilityZoneDistributionArgs.builder
       builder.availabilityZoneDistribution(args(argsBuilder).build)
@@ -457,7 +457,7 @@ object autoscaling_ext:
      * @param capacityReservationSpecification The capacity reservation specification for the Auto Scaling group allows you to prioritize launching into On-Demand Capacity Reservations. See `capacityReservationSpecification` Block below for more details.
      * @return builder
      */
-    def capacityReservationSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupCapacityReservationSpecificationArgs.Builder]):
+    inline def capacityReservationSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupCapacityReservationSpecificationArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupState.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupCapacityReservationSpecificationArgs.builder
       builder.capacityReservationSpecification(args(argsBuilder).build)
@@ -472,7 +472,7 @@ object autoscaling_ext:
      * a new Auto Scaling group. For all other use-cases, please use `aws.autoscaling.LifecycleHook` resource.
      * @return builder
      */
-    def initialLifecycleHooks(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupInitialLifecycleHookArgs.Builder]*):
+    inline def initialLifecycleHooks(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupInitialLifecycleHookArgs.Builder]*):
         com.pulumi.aws.autoscaling.inputs.GroupState.Builder =
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupInitialLifecycleHookArgs.builder
       builder.initialLifecycleHooks(args.map(_(argsBuilder).build)*)
@@ -481,7 +481,7 @@ object autoscaling_ext:
      * @param instanceLifecyclePolicy If this block is configured, adds an instance lifecycle policy to the specified Auto Scaling group. Defined below.
      * @return builder
      */
-    def instanceLifecyclePolicy(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupInstanceLifecyclePolicyArgs.Builder]):
+    inline def instanceLifecyclePolicy(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupInstanceLifecyclePolicyArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupState.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupInstanceLifecyclePolicyArgs.builder
       builder.instanceLifecyclePolicy(args(argsBuilder).build)
@@ -490,7 +490,7 @@ object autoscaling_ext:
      * @param instanceMaintenancePolicy If this block is configured, add a instance maintenance policy to the specified Auto Scaling group. Defined below.
      * @return builder
      */
-    def instanceMaintenancePolicy(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupInstanceMaintenancePolicyArgs.Builder]):
+    inline def instanceMaintenancePolicy(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupInstanceMaintenancePolicyArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupState.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupInstanceMaintenancePolicyArgs.builder
       builder.instanceMaintenancePolicy(args(argsBuilder).build)
@@ -501,7 +501,7 @@ object autoscaling_ext:
      * when this Auto Scaling group is updated. Defined below.
      * @return builder
      */
-    def instanceRefresh(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupInstanceRefreshArgs.Builder]):
+    inline def instanceRefresh(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupInstanceRefreshArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupState.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupInstanceRefreshArgs.builder
       builder.instanceRefresh(args(argsBuilder).build)
@@ -510,7 +510,7 @@ object autoscaling_ext:
      * @param launchTemplate Nested argument with Launch template specification to use to launch instances. See `launchTemplate` Block below for more details.
      * @return builder
      */
-    def launchTemplate(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupLaunchTemplateArgs.Builder]):
+    inline def launchTemplate(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupLaunchTemplateArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupState.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupLaunchTemplateArgs.builder
       builder.launchTemplate(args(argsBuilder).build)
@@ -519,7 +519,7 @@ object autoscaling_ext:
      * @param mixedInstancesPolicy Configuration block containing settings to define launch targets for Auto Scaling groups. See `mixedInstancesPolicy` Block below for more details.
      * @return builder
      */
-    def mixedInstancesPolicy(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyArgs.Builder]):
+    inline def mixedInstancesPolicy(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupState.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupMixedInstancesPolicyArgs.builder
       builder.mixedInstancesPolicy(args(argsBuilder).build)
@@ -528,7 +528,7 @@ object autoscaling_ext:
      * @param tags Configuration block(s) containing resource tags. See `tag` Block below for more details.
      * @return builder
      */
-    def tags(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupTagArgs.Builder]*):
+    inline def tags(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupTagArgs.Builder]*):
         com.pulumi.aws.autoscaling.inputs.GroupState.Builder =
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupTagArgs.builder
       builder.tags(args.map(_(argsBuilder).build)*)
@@ -537,7 +537,7 @@ object autoscaling_ext:
      * @param trafficSources Attaches one or more traffic sources to the specified Auto Scaling group.
      * @return builder
      */
-    def trafficSources(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupTrafficSourceArgs.Builder]*):
+    inline def trafficSources(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupTrafficSourceArgs.Builder]*):
         com.pulumi.aws.autoscaling.inputs.GroupState.Builder =
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupTrafficSourceArgs.builder
       builder.trafficSources(args.map(_(argsBuilder).build)*)
@@ -547,7 +547,7 @@ object autoscaling_ext:
      * to the specified Auto Scaling group. Defined below
      * @return builder
      */
-    def warmPool(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupWarmPoolArgs.Builder]):
+    inline def warmPool(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupWarmPoolArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupState.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupWarmPoolArgs.builder
       builder.warmPool(args(argsBuilder).build)
@@ -557,7 +557,7 @@ object autoscaling_ext:
      * @param instanceReusePolicy Whether instances in the Auto Scaling group can be returned to the warm pool on scale in. The default is to terminate instances in the Auto Scaling group when the group scales in.
      * @return builder
      */
-    def instanceReusePolicy(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupWarmPoolInstanceReusePolicyArgs.Builder]):
+    inline def instanceReusePolicy(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GroupWarmPoolInstanceReusePolicyArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.GroupWarmPoolArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GroupWarmPoolInstanceReusePolicyArgs.builder
       builder.instanceReusePolicy(args(argsBuilder).build)
@@ -567,7 +567,7 @@ object autoscaling_ext:
      * @param metricSpecification This structure includes the metrics and target utilization to use for predictive scaling.
      * @return builder
      */
-    def metricSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationArgs.Builder]):
+    inline def metricSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationArgs.builder
       builder.metricSpecification(args(argsBuilder).build)
@@ -577,7 +577,7 @@ object autoscaling_ext:
      * @param customizedCapacityMetricSpecification Customized capacity metric specification. The field is only valid when you use `customizedLoadMetricSpecification`
      * @return builder
      */
-    def customizedCapacityMetricSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationArgs.Builder]):
+    inline def customizedCapacityMetricSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationArgs.builder
       builder.customizedCapacityMetricSpecification(args(argsBuilder).build)
@@ -586,7 +586,7 @@ object autoscaling_ext:
      * @param customizedLoadMetricSpecification Customized load metric specification.
      * @return builder
      */
-    def customizedLoadMetricSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationArgs.Builder]):
+    inline def customizedLoadMetricSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationArgs.builder
       builder.customizedLoadMetricSpecification(args(argsBuilder).build)
@@ -595,7 +595,7 @@ object autoscaling_ext:
      * @param customizedScalingMetricSpecification Customized scaling metric specification.
      * @return builder
      */
-    def customizedScalingMetricSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationArgs.Builder]):
+    inline def customizedScalingMetricSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationArgs.builder
       builder.customizedScalingMetricSpecification(args(argsBuilder).build)
@@ -604,7 +604,7 @@ object autoscaling_ext:
      * @param predefinedLoadMetricSpecification Predefined load metric specification.
      * @return builder
      */
-    def predefinedLoadMetricSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationArgs.Builder]):
+    inline def predefinedLoadMetricSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationPredefinedLoadMetricSpecificationArgs.builder
       builder.predefinedLoadMetricSpecification(args(argsBuilder).build)
@@ -613,7 +613,7 @@ object autoscaling_ext:
      * @param predefinedMetricPairSpecification Metric pair specification from which Amazon EC2 Auto Scaling determines the appropriate scaling metric and load metric to use.
      * @return builder
      */
-    def predefinedMetricPairSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationArgs.Builder]):
+    inline def predefinedMetricPairSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationPredefinedMetricPairSpecificationArgs.builder
       builder.predefinedMetricPairSpecification(args(argsBuilder).build)
@@ -622,7 +622,7 @@ object autoscaling_ext:
      * @param predefinedScalingMetricSpecification Predefined scaling metric specification.
      * @return builder
      */
-    def predefinedScalingMetricSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationArgs.Builder]):
+    inline def predefinedScalingMetricSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationPredefinedScalingMetricSpecificationArgs.builder
       builder.predefinedScalingMetricSpecification(args(argsBuilder).build)
@@ -632,7 +632,7 @@ object autoscaling_ext:
      * @param metricDataQueries List of up to 10 structures that defines custom capacity metric in predictive scaling policy
      * @return builder
      */
-    def metricDataQueries(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryArgs.Builder]*):
+    inline def metricDataQueries(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryArgs.Builder]*):
         com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationArgs.Builder =
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryArgs.builder
       builder.metricDataQueries(args.map(_(argsBuilder).build)*)
@@ -642,7 +642,7 @@ object autoscaling_ext:
      * @param metricStat Structure that defines CloudWatch metric to be used in predictive scaling policy. You must specify either `expression` or `metricStat`, but not both.
      * @return builder
      */
-    def metricStat(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryMetricStatArgs.Builder]):
+    inline def metricStat(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryMetricStatArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryMetricStatArgs.builder
       builder.metricStat(args(argsBuilder).build)
@@ -652,7 +652,7 @@ object autoscaling_ext:
      * @param metric Structure that defines the CloudWatch metric to return, including the metric name, namespace, and dimensions.
      * @return builder
      */
-    def metric(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryMetricStatMetricArgs.Builder]):
+    inline def metric(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryMetricStatMetricArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryMetricStatArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryMetricStatMetricArgs.builder
       builder.metric(args(argsBuilder).build)
@@ -662,7 +662,7 @@ object autoscaling_ext:
      * @param dimensions Dimensions of the metric.
      * @return builder
      */
-    def dimensions(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryMetricStatMetricDimensionArgs.Builder]*):
+    inline def dimensions(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryMetricStatMetricDimensionArgs.Builder]*):
         com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryMetricStatMetricArgs.Builder =
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedCapacityMetricSpecificationMetricDataQueryMetricStatMetricDimensionArgs.builder
       builder.dimensions(args.map(_(argsBuilder).build)*)
@@ -672,7 +672,7 @@ object autoscaling_ext:
      * @param metricDataQueries List of up to 10 structures that defines custom load metric in predictive scaling policy
      * @return builder
      */
-    def metricDataQueries(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryArgs.Builder]*):
+    inline def metricDataQueries(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryArgs.Builder]*):
         com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationArgs.Builder =
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryArgs.builder
       builder.metricDataQueries(args.map(_(argsBuilder).build)*)
@@ -682,7 +682,7 @@ object autoscaling_ext:
      * @param metricStat Structure that defines CloudWatch metric to be used in predictive scaling policy. You must specify either `expression` or `metricStat`, but not both.
      * @return builder
      */
-    def metricStat(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStatArgs.Builder]):
+    inline def metricStat(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStatArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStatArgs.builder
       builder.metricStat(args(argsBuilder).build)
@@ -692,7 +692,7 @@ object autoscaling_ext:
      * @param metric Structure that defines the CloudWatch metric to return, including the metric name, namespace, and dimensions.
      * @return builder
      */
-    def metric(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStatMetricArgs.Builder]):
+    inline def metric(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStatMetricArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStatArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStatMetricArgs.builder
       builder.metric(args(argsBuilder).build)
@@ -702,7 +702,7 @@ object autoscaling_ext:
      * @param dimensions Dimensions of the metric.
      * @return builder
      */
-    def dimensions(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStatMetricDimensionArgs.Builder]*):
+    inline def dimensions(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStatMetricDimensionArgs.Builder]*):
         com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStatMetricArgs.Builder =
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedLoadMetricSpecificationMetricDataQueryMetricStatMetricDimensionArgs.builder
       builder.dimensions(args.map(_(argsBuilder).build)*)
@@ -712,7 +712,7 @@ object autoscaling_ext:
      * @param metricDataQueries List of up to 10 structures that defines custom scaling metric in predictive scaling policy
      * @return builder
      */
-    def metricDataQueries(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryArgs.Builder]*):
+    inline def metricDataQueries(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryArgs.Builder]*):
         com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationArgs.Builder =
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryArgs.builder
       builder.metricDataQueries(args.map(_(argsBuilder).build)*)
@@ -722,7 +722,7 @@ object autoscaling_ext:
      * @param metricStat Structure that defines CloudWatch metric to be used in predictive scaling policy. You must specify either `expression` or `metricStat`, but not both.
      * @return builder
      */
-    def metricStat(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryMetricStatArgs.Builder]):
+    inline def metricStat(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryMetricStatArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryMetricStatArgs.builder
       builder.metricStat(args(argsBuilder).build)
@@ -732,7 +732,7 @@ object autoscaling_ext:
      * @param metric Structure that defines the CloudWatch metric to return, including the metric name, namespace, and dimensions.
      * @return builder
      */
-    def metric(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryMetricStatMetricArgs.Builder]):
+    inline def metric(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryMetricStatMetricArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryMetricStatArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryMetricStatMetricArgs.builder
       builder.metric(args(argsBuilder).build)
@@ -742,7 +742,7 @@ object autoscaling_ext:
      * @param dimensions Dimensions of the metric.
      * @return builder
      */
-    def dimensions(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryMetricStatMetricDimensionArgs.Builder]*):
+    inline def dimensions(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryMetricStatMetricDimensionArgs.Builder]*):
         com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryMetricStatMetricArgs.Builder =
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationMetricSpecificationCustomizedScalingMetricSpecificationMetricDataQueryMetricStatMetricDimensionArgs.builder
       builder.dimensions(args.map(_(argsBuilder).build)*)
@@ -752,7 +752,7 @@ object autoscaling_ext:
      * @param predictiveScalingConfiguration Predictive scaling policy configuration to use with Amazon EC2 Auto Scaling.
      * @return builder
      */
-    def predictiveScalingConfiguration(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationArgs.Builder]):
+    inline def predictiveScalingConfiguration(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.PolicyState.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyPredictiveScalingConfigurationArgs.builder
       builder.predictiveScalingConfiguration(args(argsBuilder).build)
@@ -806,7 +806,7 @@ object autoscaling_ext:
      * The following fields are available in step adjustments:
      * @return builder
      */
-    def stepAdjustments(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyStepAdjustmentArgs.Builder]*):
+    inline def stepAdjustments(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyStepAdjustmentArgs.Builder]*):
         com.pulumi.aws.autoscaling.inputs.PolicyState.Builder =
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyStepAdjustmentArgs.builder
       builder.stepAdjustments(args.map(_(argsBuilder).build)*)
@@ -855,7 +855,7 @@ object autoscaling_ext:
      * The following fields are available in target tracking configuration:
      * @return builder
      */
-    def targetTrackingConfiguration(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationArgs.Builder]):
+    inline def targetTrackingConfiguration(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.PolicyState.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationArgs.builder
       builder.targetTrackingConfiguration(args(argsBuilder).build)
@@ -865,7 +865,7 @@ object autoscaling_ext:
      * @param customizedMetricSpecification Customized metric. Conflicts with `predefinedMetricSpecification`.
      * @return builder
      */
-    def customizedMetricSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationArgs.Builder]):
+    inline def customizedMetricSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationArgs.builder
       builder.customizedMetricSpecification(args(argsBuilder).build)
@@ -874,7 +874,7 @@ object autoscaling_ext:
      * @param predefinedMetricSpecification Predefined metric. Conflicts with `customizedMetricSpecification`.
      * @return builder
      */
-    def predefinedMetricSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationPredefinedMetricSpecificationArgs.Builder]):
+    inline def predefinedMetricSpecification(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationPredefinedMetricSpecificationArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationPredefinedMetricSpecificationArgs.builder
       builder.predefinedMetricSpecification(args(argsBuilder).build)
@@ -884,7 +884,7 @@ object autoscaling_ext:
      * @param metricDimensions Dimensions of the metric.
      * @return builder
      */
-    def metricDimensions(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricDimensionArgs.Builder]*):
+    inline def metricDimensions(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricDimensionArgs.Builder]*):
         com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationArgs.Builder =
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricDimensionArgs.builder
       builder.metricDimensions(args.map(_(argsBuilder).build)*)
@@ -893,7 +893,7 @@ object autoscaling_ext:
      * @param metrics Metrics to include, as a metric data query.
      * @return builder
      */
-    def metrics(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricArgs.Builder]*):
+    inline def metrics(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricArgs.Builder]*):
         com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationArgs.Builder =
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricArgs.builder
       builder.metrics(args.map(_(argsBuilder).build)*)
@@ -903,7 +903,7 @@ object autoscaling_ext:
      * @param metricStat Structure that defines CloudWatch metric to be used in target tracking scaling policy. You must specify either `expression` or `metricStat`, but not both.
      * @return builder
      */
-    def metricStat(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricMetricStatArgs.Builder]):
+    inline def metricStat(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricMetricStatArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricMetricStatArgs.builder
       builder.metricStat(args(argsBuilder).build)
@@ -913,7 +913,7 @@ object autoscaling_ext:
      * @param metric Structure that defines the CloudWatch metric to return, including the metric name, namespace, and dimensions.
      * @return builder
      */
-    def metric(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricMetricStatMetricArgs.Builder]):
+    inline def metric(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricMetricStatMetricArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricMetricStatArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricMetricStatMetricArgs.builder
       builder.metric(args(argsBuilder).build)
@@ -923,7 +923,7 @@ object autoscaling_ext:
      * @param dimensions Dimensions of the metric.
      * @return builder
      */
-    def dimensions(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricMetricStatMetricDimensionArgs.Builder]*):
+    inline def dimensions(args: Endofunction[com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricMetricStatMetricDimensionArgs.Builder]*):
         com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricMetricStatMetricArgs.Builder =
       def argsBuilder = com.pulumi.aws.autoscaling.inputs.PolicyTargetTrackingConfigurationCustomizedMetricSpecificationMetricMetricStatMetricDimensionArgs.builder
       builder.dimensions(args.map(_(argsBuilder).build)*)
@@ -933,7 +933,7 @@ object autoscaling_ext:
      * @param tag Tag to create. The `tag` block is documented below.
      * @return builder
      */
-    def tag(args: Endofunction[com.pulumi.aws.autoscaling.inputs.TagTagArgs.Builder]):
+    inline def tag(args: Endofunction[com.pulumi.aws.autoscaling.inputs.TagTagArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.TagState.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.TagTagArgs.builder
       builder.tag(args(argsBuilder).build)
@@ -943,7 +943,7 @@ object autoscaling_ext:
      * @param trafficSource The unique identifiers of a traffic sources.
      * @return builder
      */
-    def trafficSource(args: Endofunction[com.pulumi.aws.autoscaling.inputs.TrafficSourceAttachmentTrafficSourceArgs.Builder]):
+    inline def trafficSource(args: Endofunction[com.pulumi.aws.autoscaling.inputs.TrafficSourceAttachmentTrafficSourceArgs.Builder]):
         com.pulumi.aws.autoscaling.inputs.TrafficSourceAttachmentState.Builder =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.TrafficSourceAttachmentTrafficSourceArgs.builder
       builder.trafficSource(args(argsBuilder).build)

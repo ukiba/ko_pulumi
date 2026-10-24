@@ -6,7 +6,7 @@ import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object servicediscovery:
-  def HttpNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HttpNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicediscovery.HttpNamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.servicediscovery.HttpNamespaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -24,7 +24,7 @@ object servicediscovery:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Service Discovery Instance resource. */
-  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicediscovery.InstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.servicediscovery.InstanceArgs.builder
     com.pulumi.aws.servicediscovery.Instance(name,
@@ -32,7 +32,7 @@ object servicediscovery:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Service Discovery Private DNS Namespace resource. */
-  def PrivateDnsNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PrivateDnsNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicediscovery.PrivateDnsNamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.servicediscovery.PrivateDnsNamespaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -50,7 +50,7 @@ object servicediscovery:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Service Discovery Public DNS Namespace resource. */
-  def PublicDnsNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PublicDnsNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicediscovery.PublicDnsNamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.servicediscovery.PublicDnsNamespaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -68,7 +68,7 @@ object servicediscovery:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Service Discovery Service resource. */
-  def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicediscovery.ServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.servicediscovery.ServiceArgs.builder
     conf.logicalName2physicalName(name) match

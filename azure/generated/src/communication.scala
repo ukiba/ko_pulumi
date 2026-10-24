@@ -24,7 +24,7 @@ object communication:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an Email Communication Service. */
-  def EmailService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EmailService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.communication.EmailServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.communication.EmailServiceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -42,7 +42,7 @@ object communication:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Email Communication Service Domain. */
-  def EmailServiceDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EmailServiceDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.communication.EmailServiceDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.communication.EmailServiceDomainArgs.builder
     conf.logicalName2physicalName(name) match
@@ -60,7 +60,7 @@ object communication:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Email Communication Service Domain Sender Username. */
-  def EmailServiceDomainSenderUsername(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EmailServiceDomainSenderUsername(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.communication.EmailServiceDomainSenderUsernameArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.communication.EmailServiceDomainSenderUsernameArgs.builder
     conf.logicalName2physicalName(name) match
@@ -71,7 +71,7 @@ object communication:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Communication Service. */
-  def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.communication.ServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.communication.ServiceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -89,7 +89,7 @@ object communication:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a communication service email domain association. */
-  def ServiceEmailDomainAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServiceEmailDomainAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.communication.ServiceEmailDomainAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.communication.ServiceEmailDomainAssociationArgs.builder
     com.pulumi.azure.communication.ServiceEmailDomainAssociation(name,

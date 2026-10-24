@@ -250,7 +250,7 @@ object billing:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `organizations/my-org-id/roles/my-custom-role`.
    */
-  def AccountIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccountIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.billing.AccountIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.billing.AccountIamBindingArgs.builder
     com.pulumi.gcp.billing.AccountIamBinding(name,
@@ -501,7 +501,7 @@ object billing:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `organizations/my-org-id/roles/my-custom-role`.
    */
-  def AccountIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccountIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.billing.AccountIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.billing.AccountIamMemberArgs.builder
     com.pulumi.gcp.billing.AccountIamMember(name,
@@ -752,7 +752,7 @@ object billing:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `organizations/my-org-id/roles/my-custom-role`.
    */
-  def AccountIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccountIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.billing.AccountIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.billing.AccountIamPolicyArgs.builder
     com.pulumi.gcp.billing.AccountIamPolicy(name,
@@ -861,7 +861,7 @@ object billing:
    * Your account must have the `serviceusage.services.use` permission on the
    * `billingProject` you defined.
    */
-  def Budget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Budget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.billing.BudgetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.billing.BudgetArgs.builder
     com.pulumi.gcp.billing.Budget(name,
@@ -877,7 +877,7 @@ object billing:
    * * How-to Guides
    *     * [Enable, disable, or change billing for a project](https://cloud.google.com/billing/docs/how-to/modify-project)
    */
-  def ProjectInfo(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProjectInfo(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.billing.ProjectInfoArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.billing.ProjectInfoArgs.builder
     com.pulumi.gcp.billing.ProjectInfo(name,
@@ -933,7 +933,7 @@ object billing:
    * \$ pulumi import gcp:billing/subAccount:SubAccount default billingAccounts/{billing_account_id}
    * ```
    */
-  def SubAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.billing.SubAccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.billing.SubAccountArgs.builder
     com.pulumi.gcp.billing.SubAccount(name,

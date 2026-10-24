@@ -13,7 +13,7 @@ object resourcemanager:
    * * How-to Guides
    *     * [Official Documentation](https://docs.cloud.google.com/resource-manager/docs/manage-applications)
    */
-  def Capability(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Capability(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.resourcemanager.CapabilityArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.resourcemanager.CapabilityArgs.builder
     com.pulumi.gcp.resourcemanager.Capability(name,
@@ -30,7 +30,7 @@ object resourcemanager:
    * * How-to Guides
    *     * [Official Documentation](https://docs.cloud.google.com/resource-manager/docs/manage-applications)
    */
-  def CapabilityConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CapabilityConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.resourcemanager.CapabilityConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.resourcemanager.CapabilityConfigArgs.builder
     com.pulumi.gcp.resourcemanager.CapabilityConfig(name,
@@ -46,7 +46,7 @@ object resourcemanager:
    * * How-to Guides
    *     * [Create a Lien](https://docs.cloud.google.com/resource-manager/docs/project-liens)
    */
-  def Lien(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Lien(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.resourcemanager.LienArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.resourcemanager.LienArgs.builder
     com.pulumi.gcp.resourcemanager.Lien(name,

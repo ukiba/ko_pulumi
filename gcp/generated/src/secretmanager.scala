@@ -15,7 +15,7 @@ object secretmanager:
    * * How-to Guides
    *     * [Create and deploy a Regional Secret](https://cloud.google.com/secret-manager/regional-secrets/create-regional-secret)
    */
-  def RegionalSecret(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionalSecret(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.secretmanager.RegionalSecretArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.secretmanager.RegionalSecretArgs.builder
     com.pulumi.gcp.secretmanager.RegionalSecret(name,
@@ -604,7 +604,7 @@ object secretmanager:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RegionalSecretIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionalSecretIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.secretmanager.RegionalSecretIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.secretmanager.RegionalSecretIamBindingArgs.builder
     com.pulumi.gcp.secretmanager.RegionalSecretIamBinding(name,
@@ -1193,7 +1193,7 @@ object secretmanager:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RegionalSecretIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionalSecretIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.secretmanager.RegionalSecretIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.secretmanager.RegionalSecretIamMemberArgs.builder
     com.pulumi.gcp.secretmanager.RegionalSecretIamMember(name,
@@ -1782,7 +1782,7 @@ object secretmanager:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RegionalSecretIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionalSecretIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.secretmanager.RegionalSecretIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.secretmanager.RegionalSecretIamPolicyArgs.builder
     com.pulumi.gcp.secretmanager.RegionalSecretIamPolicy(name,
@@ -1807,7 +1807,7 @@ object secretmanager:
    * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `secretDataWo`.
    * Read more about Write-only Arguments.
    */
-  def RegionalSecretVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionalSecretVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.secretmanager.RegionalSecretVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.secretmanager.RegionalSecretVersionArgs.builder
     com.pulumi.gcp.secretmanager.RegionalSecretVersion(name,
@@ -1823,7 +1823,7 @@ object secretmanager:
    * * How-to Guides
    *     * [Create and deploy a Secret](https://cloud.google.com/secret-manager/docs/creating-and-accessing-secrets)
    */
-  def Secret(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Secret(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.secretmanager.SecretArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.secretmanager.SecretArgs.builder
     com.pulumi.gcp.secretmanager.Secret(name,
@@ -2399,7 +2399,7 @@ object secretmanager:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SecretIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecretIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.secretmanager.SecretIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.secretmanager.SecretIamBindingArgs.builder
     com.pulumi.gcp.secretmanager.SecretIamBinding(name,
@@ -2975,7 +2975,7 @@ object secretmanager:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SecretIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecretIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.secretmanager.SecretIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.secretmanager.SecretIamMemberArgs.builder
     com.pulumi.gcp.secretmanager.SecretIamMember(name,
@@ -3551,7 +3551,7 @@ object secretmanager:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SecretIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecretIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.secretmanager.SecretIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.secretmanager.SecretIamPolicyArgs.builder
     com.pulumi.gcp.secretmanager.SecretIamPolicy(name,
@@ -3576,7 +3576,7 @@ object secretmanager:
    * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `secretDataWo`.
    * Read more about Write-only Arguments.
    */
-  def SecretVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecretVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.secretmanager.SecretVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.secretmanager.SecretVersionArgs.builder
     com.pulumi.gcp.secretmanager.SecretVersion(name,

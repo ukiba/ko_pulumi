@@ -51,7 +51,7 @@ object tpu:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/tpu/docs/)
    */
-  def V2QueuedResource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2QueuedResource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.tpu.V2QueuedResourceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.tpu.V2QueuedResourceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -73,7 +73,7 @@ object tpu:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/tpu/docs/)
    */
-  def V2Vm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2Vm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.tpu.V2VmArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.tpu.V2VmArgs.builder
     conf.logicalName2physicalName(name) match

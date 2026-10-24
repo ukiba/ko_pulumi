@@ -104,7 +104,7 @@ object alb:
    * 
    * &gt; **Note:** `aws.alb.Listener` is known as `aws.lb.Listener`. The functionality is identical.
    */
-  def Listener(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Listener(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.alb.ListenerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.alb.ListenerArgs.builder
     argsBuilder = args(argsBuilder)
@@ -125,7 +125,7 @@ object alb:
    * 
    * &gt; **Note:** `aws.alb.ListenerCertificate` is known as `aws.lb.ListenerCertificate`. The functionality is identical.
    */
-  def ListenerCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ListenerCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.alb.ListenerCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.alb.ListenerCertificateArgs.builder
     com.pulumi.aws.alb.ListenerCertificate(name,
@@ -147,7 +147,7 @@ object alb:
    * \$ pulumi import aws:alb/listenerRule:ListenerRule front_end arn:aws:elasticloadbalancing:us-west-2:187416307283:listener-rule/app/test/8e4497da625e2d8a/9ab28ade35828f96/67b3d2d36dd7c26b
    * ```
    */
-  def ListenerRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ListenerRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.alb.ListenerRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.alb.ListenerRuleArgs.builder
     argsBuilder = args(argsBuilder)
@@ -166,7 +166,7 @@ object alb:
    * 
    * &gt; **Note:** `aws.alb.LoadBalancer` is known as `aws.lb.LoadBalancer`. The functionality is identical.
    */
-  def LoadBalancer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LoadBalancer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.alb.LoadBalancerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.alb.LoadBalancerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -188,7 +188,7 @@ object alb:
    * 
    * &gt; **Note:** `aws.alb.TargetGroup` is known as `aws.lb.TargetGroup`. The functionality is identical.
    */
-  def TargetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TargetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.alb.TargetGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.alb.TargetGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -210,7 +210,7 @@ object alb:
    * 
    * &gt; **Note:** `aws.alb.TargetGroupAttachment` is known as `aws.lb.TargetGroupAttachment`. The functionality is identical.
    */
-  def TargetGroupAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TargetGroupAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.alb.TargetGroupAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.alb.TargetGroupAttachmentArgs.builder
     com.pulumi.aws.alb.TargetGroupAttachment(name,

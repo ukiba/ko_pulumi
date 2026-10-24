@@ -10,7 +10,7 @@ object datafusion_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accelerators(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceAcceleratorArgs.Builder]*):
+    inline def accelerators(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceAcceleratorArgs.Builder]*):
         com.pulumi.gcp.datafusion.InstanceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datafusion.inputs.InstanceAcceleratorArgs.builder
       builder.accelerators(args.map(_(argsBuilder).build)*)
@@ -20,7 +20,7 @@ object datafusion_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cryptoKeyConfig(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceCryptoKeyConfigArgs.Builder]):
+    inline def cryptoKeyConfig(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceCryptoKeyConfigArgs.Builder]):
         com.pulumi.gcp.datafusion.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datafusion.inputs.InstanceCryptoKeyConfigArgs.builder
       builder.cryptoKeyConfig(args(argsBuilder).build)
@@ -30,7 +30,7 @@ object datafusion_ext:
      * Structure is documented below.
      * @return builder
      */
-    def eventPublishConfig(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceEventPublishConfigArgs.Builder]):
+    inline def eventPublishConfig(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceEventPublishConfigArgs.Builder]):
         com.pulumi.gcp.datafusion.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datafusion.inputs.InstanceEventPublishConfigArgs.builder
       builder.eventPublishConfig(args(argsBuilder).build)
@@ -40,7 +40,7 @@ object datafusion_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenancePolicy(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyArgs.Builder]):
+    inline def maintenancePolicy(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyArgs.Builder]):
         com.pulumi.gcp.datafusion.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyArgs.builder
       builder.maintenancePolicy(args(argsBuilder).build)
@@ -50,7 +50,7 @@ object datafusion_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfig(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceNetworkConfigArgs.Builder]):
+    inline def networkConfig(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceNetworkConfigArgs.Builder]):
         com.pulumi.gcp.datafusion.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datafusion.inputs.InstanceNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)
@@ -61,7 +61,7 @@ object datafusion_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenanceWindow(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyMaintenanceWindowArgs.Builder]):
+    inline def maintenanceWindow(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyMaintenanceWindowArgs.Builder]):
         com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyMaintenanceWindowArgs.builder
       builder.maintenanceWindow(args(argsBuilder).build)
@@ -72,7 +72,7 @@ object datafusion_ext:
      * Structure is documented below.
      * @return builder
      */
-    def recurringTimeWindow(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyMaintenanceWindowRecurringTimeWindowArgs.Builder]):
+    inline def recurringTimeWindow(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyMaintenanceWindowRecurringTimeWindowArgs.Builder]):
         com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyMaintenanceWindowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyMaintenanceWindowRecurringTimeWindowArgs.builder
       builder.recurringTimeWindow(args(argsBuilder).build)
@@ -83,7 +83,7 @@ object datafusion_ext:
      * Structure is documented below.
      * @return builder
      */
-    def window(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyMaintenanceWindowRecurringTimeWindowWindowArgs.Builder]):
+    inline def window(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyMaintenanceWindowRecurringTimeWindowWindowArgs.Builder]):
         com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyMaintenanceWindowRecurringTimeWindowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyMaintenanceWindowRecurringTimeWindowWindowArgs.builder
       builder.window(args(argsBuilder).build)
@@ -95,7 +95,7 @@ object datafusion_ext:
      * Structure is documented below.
      * @return builder
      */
-    def privateServiceConnectConfig(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceNetworkConfigPrivateServiceConnectConfigArgs.Builder]):
+    inline def privateServiceConnectConfig(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceNetworkConfigPrivateServiceConnectConfigArgs.Builder]):
         com.pulumi.gcp.datafusion.inputs.InstanceNetworkConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datafusion.inputs.InstanceNetworkConfigPrivateServiceConnectConfigArgs.builder
       builder.privateServiceConnectConfig(args(argsBuilder).build)
@@ -108,7 +108,7 @@ object datafusion_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accelerators(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceAcceleratorArgs.Builder]*):
+    inline def accelerators(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceAcceleratorArgs.Builder]*):
         com.pulumi.gcp.datafusion.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.datafusion.inputs.InstanceAcceleratorArgs.builder
       builder.accelerators(args.map(_(argsBuilder).build)*)
@@ -118,7 +118,7 @@ object datafusion_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cryptoKeyConfig(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceCryptoKeyConfigArgs.Builder]):
+    inline def cryptoKeyConfig(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceCryptoKeyConfigArgs.Builder]):
         com.pulumi.gcp.datafusion.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.datafusion.inputs.InstanceCryptoKeyConfigArgs.builder
       builder.cryptoKeyConfig(args(argsBuilder).build)
@@ -128,7 +128,7 @@ object datafusion_ext:
      * Structure is documented below.
      * @return builder
      */
-    def eventPublishConfig(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceEventPublishConfigArgs.Builder]):
+    inline def eventPublishConfig(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceEventPublishConfigArgs.Builder]):
         com.pulumi.gcp.datafusion.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.datafusion.inputs.InstanceEventPublishConfigArgs.builder
       builder.eventPublishConfig(args(argsBuilder).build)
@@ -138,7 +138,7 @@ object datafusion_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenanceEvents(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceMaintenanceEventArgs.Builder]*):
+    inline def maintenanceEvents(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceMaintenanceEventArgs.Builder]*):
         com.pulumi.gcp.datafusion.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.datafusion.inputs.InstanceMaintenanceEventArgs.builder
       builder.maintenanceEvents(args.map(_(argsBuilder).build)*)
@@ -148,7 +148,7 @@ object datafusion_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenancePolicy(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyArgs.Builder]):
+    inline def maintenancePolicy(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyArgs.Builder]):
         com.pulumi.gcp.datafusion.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.datafusion.inputs.InstanceMaintenancePolicyArgs.builder
       builder.maintenancePolicy(args(argsBuilder).build)
@@ -158,7 +158,7 @@ object datafusion_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfig(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceNetworkConfigArgs.Builder]):
+    inline def networkConfig(args: Endofunction[com.pulumi.gcp.datafusion.inputs.InstanceNetworkConfigArgs.Builder]):
         com.pulumi.gcp.datafusion.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.datafusion.inputs.InstanceNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)

@@ -11,7 +11,7 @@ object servicecatalog:
    * 
    * &gt; An AWS Service Catalog AppRegistry Application is displayed in the AWS Console under &#34;MyApplications&#34;.
    */
-  def AppregistryApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AppregistryApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.AppregistryApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.servicecatalog.AppregistryApplicationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -29,7 +29,7 @@ object servicecatalog:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Service Catalog AppRegistry Attribute Group. */
-  def AppregistryAttributeGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AppregistryAttributeGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.AppregistryAttributeGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.servicecatalog.AppregistryAttributeGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -47,7 +47,7 @@ object servicecatalog:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Service Catalog AppRegistry Attribute Group Association. */
-  def AppregistryAttributeGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AppregistryAttributeGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.AppregistryAttributeGroupAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.servicecatalog.AppregistryAttributeGroupAssociationArgs.builder
     com.pulumi.aws.servicecatalog.AppregistryAttributeGroupAssociation(name,
@@ -59,7 +59,7 @@ object servicecatalog:
    * 
    * &gt; **Tip:** A &#34;resource&#34; is either a Service Catalog portfolio or product.
    */
-  def BudgetResourceAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BudgetResourceAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.BudgetResourceAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.servicecatalog.BudgetResourceAssociationArgs.builder
     com.pulumi.aws.servicecatalog.BudgetResourceAssociation(name,
@@ -71,7 +71,7 @@ object servicecatalog:
    * 
    * &gt; **NOTE:** This resource does not associate a Service Catalog product and portfolio. However, the product and portfolio must be associated (see the `aws.servicecatalog.ProductPortfolioAssociation` resource) prior to creating a constraint or you will receive an error.
    */
-  def Constraint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Constraint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.ConstraintArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.servicecatalog.ConstraintArgs.builder
     com.pulumi.aws.servicecatalog.Constraint(name,
@@ -83,7 +83,7 @@ object servicecatalog:
    * 
    * &gt; **NOTE:** This resource can only be used by the management account in the organization. In other words, a delegated administrator is not authorized to use the resource.
    */
-  def OrganizationsAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationsAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.OrganizationsAccessArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.servicecatalog.OrganizationsAccessArgs.builder
     com.pulumi.aws.servicecatalog.OrganizationsAccess(name,
@@ -91,7 +91,7 @@ object servicecatalog:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to create a Service Catalog Portfolio. */
-  def Portfolio(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Portfolio(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.PortfolioArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.servicecatalog.PortfolioArgs.builder
     conf.logicalName2physicalName(name) match
@@ -119,7 +119,7 @@ object servicecatalog:
    * 
    * &gt; **NOTE:** You can&#39;t share a shared resource, including portfolios that contain a shared product.
    */
-  def PortfolioShare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PortfolioShare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.PortfolioShareArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.servicecatalog.PortfolioShareArgs.builder
     com.pulumi.aws.servicecatalog.PortfolioShare(name,
@@ -127,7 +127,7 @@ object servicecatalog:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Service Catalog Principal Portfolio Association. */
-  def PrincipalPortfolioAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PrincipalPortfolioAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.PrincipalPortfolioAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.servicecatalog.PrincipalPortfolioAssociationArgs.builder
     com.pulumi.aws.servicecatalog.PrincipalPortfolioAssociation(name,
@@ -141,7 +141,7 @@ object servicecatalog:
    * 
    * &gt; A &#34;provisioning artifact&#34; is also referred to as a &#34;version.&#34; A &#34;distributor&#34; is also referred to as a &#34;vendor.&#34;
    */
-  def Product(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Product(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.ProductArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.servicecatalog.ProductArgs.builder
     conf.logicalName2physicalName(name) match
@@ -159,7 +159,7 @@ object servicecatalog:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Service Catalog Product Portfolio Association. */
-  def ProductPortfolioAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProductPortfolioAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.ProductPortfolioAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.servicecatalog.ProductPortfolioAssociationArgs.builder
     com.pulumi.aws.servicecatalog.ProductPortfolioAssociation(name,
@@ -175,7 +175,7 @@ object servicecatalog:
    * 
    * &gt; **Tip:** A &#34;provisioning artifact&#34; is also referred to as a &#34;version.&#34; A &#34;distributor&#34; is also referred to as a &#34;vendor.&#34;
    */
-  def ProvisionedProduct(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProvisionedProduct(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.ProvisionedProductArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.servicecatalog.ProvisionedProductArgs.builder
     conf.logicalName2physicalName(name) match
@@ -201,7 +201,7 @@ object servicecatalog:
    * 
    * &gt; **NOTE:** The user or role that use this resource must have the `cloudformation:GetTemplate` IAM policy permission. This policy permission is required when using the `templatePhysicalId` argument.
    */
-  def ProvisioningArtifact(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProvisioningArtifact(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.ProvisioningArtifactArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.servicecatalog.ProvisioningArtifactArgs.builder
     conf.logicalName2physicalName(name) match
@@ -212,7 +212,7 @@ object servicecatalog:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Service Catalog self-service action. */
-  def ServiceAction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServiceAction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.ServiceActionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.servicecatalog.ServiceActionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -376,7 +376,7 @@ object servicecatalog:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Service Catalog Tag Option. */
-  def TagOption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TagOption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.TagOptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.servicecatalog.TagOptionArgs.builder
     com.pulumi.aws.servicecatalog.TagOption(name,
@@ -388,7 +388,7 @@ object servicecatalog:
    * 
    * &gt; **Tip:** A &#34;resource&#34; is either a Service Catalog portfolio or product.
    */
-  def TagOptionResourceAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TagOptionResourceAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.servicecatalog.TagOptionResourceAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.servicecatalog.TagOptionResourceAssociationArgs.builder
     com.pulumi.aws.servicecatalog.TagOptionResourceAssociation(name,

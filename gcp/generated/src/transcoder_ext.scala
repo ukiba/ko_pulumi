@@ -8,7 +8,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigArgs.Builder]):
         com.pulumi.gcp.transcoder.JobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -19,7 +19,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigArgs.Builder]):
         com.pulumi.gcp.transcoder.JobTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -30,7 +30,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def adBreaks(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigAdBreakArgs.Builder]*):
+    inline def adBreaks(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigAdBreakArgs.Builder]*):
         com.pulumi.gcp.transcoder.inputs.JobConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigAdBreakArgs.builder
       builder.adBreaks(args.map(_(argsBuilder).build)*)
@@ -40,7 +40,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def editLists(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigEditListArgs.Builder]*):
+    inline def editLists(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigEditListArgs.Builder]*):
         com.pulumi.gcp.transcoder.inputs.JobConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigEditListArgs.builder
       builder.editLists(args.map(_(argsBuilder).build)*)
@@ -50,7 +50,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def elementaryStreams(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigElementaryStreamArgs.Builder]*):
+    inline def elementaryStreams(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigElementaryStreamArgs.Builder]*):
         com.pulumi.gcp.transcoder.inputs.JobConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigElementaryStreamArgs.builder
       builder.elementaryStreams(args.map(_(argsBuilder).build)*)
@@ -60,7 +60,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptions(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionArgs.Builder]*):
+    inline def encryptions(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionArgs.Builder]*):
         com.pulumi.gcp.transcoder.inputs.JobConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionArgs.builder
       builder.encryptions(args.map(_(argsBuilder).build)*)
@@ -70,7 +70,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inputs(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigInputArgs.Builder]*):
+    inline def inputs(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigInputArgs.Builder]*):
         com.pulumi.gcp.transcoder.inputs.JobConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigInputArgs.builder
       builder.inputs(args.map(_(argsBuilder).build)*)
@@ -80,7 +80,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def manifests(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigManifestArgs.Builder]*):
+    inline def manifests(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigManifestArgs.Builder]*):
         com.pulumi.gcp.transcoder.inputs.JobConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigManifestArgs.builder
       builder.manifests(args.map(_(argsBuilder).build)*)
@@ -90,7 +90,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def muxStreams(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigMuxStreamArgs.Builder]*):
+    inline def muxStreams(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigMuxStreamArgs.Builder]*):
         com.pulumi.gcp.transcoder.inputs.JobConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigMuxStreamArgs.builder
       builder.muxStreams(args.map(_(argsBuilder).build)*)
@@ -100,7 +100,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def output(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigOutputArgs.Builder]):
+    inline def output(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigOutputArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigOutputArgs.builder
       builder.output(args(argsBuilder).build)
@@ -110,7 +110,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def overlays(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigOverlayArgs.Builder]*):
+    inline def overlays(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigOverlayArgs.Builder]*):
         com.pulumi.gcp.transcoder.inputs.JobConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigOverlayArgs.builder
       builder.overlays(args.map(_(argsBuilder).build)*)
@@ -120,7 +120,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pubsubDestination(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigPubsubDestinationArgs.Builder]):
+    inline def pubsubDestination(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigPubsubDestinationArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigPubsubDestinationArgs.builder
       builder.pubsubDestination(args(argsBuilder).build)
@@ -131,7 +131,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def audioStream(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigElementaryStreamAudioStreamArgs.Builder]):
+    inline def audioStream(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigElementaryStreamAudioStreamArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobConfigElementaryStreamArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigElementaryStreamAudioStreamArgs.builder
       builder.audioStream(args(argsBuilder).build)
@@ -141,7 +141,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def videoStream(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigElementaryStreamVideoStreamArgs.Builder]):
+    inline def videoStream(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigElementaryStreamVideoStreamArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobConfigElementaryStreamArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigElementaryStreamVideoStreamArgs.builder
       builder.videoStream(args(argsBuilder).build)
@@ -154,7 +154,7 @@ object transcoder_ext:
      * &lt;a name=&#34;nestedConfigElementaryStreamsVideoStreamH264&#34;&gt;&lt;/a&gt;The `h264` block supports:
      * @return builder
      */
-    def h264(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigElementaryStreamVideoStreamH264Args.Builder]):
+    inline def h264(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigElementaryStreamVideoStreamH264Args.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobConfigElementaryStreamVideoStreamArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigElementaryStreamVideoStreamH264Args.builder
       builder.h264(args(argsBuilder).build)
@@ -164,7 +164,7 @@ object transcoder_ext:
      * @param hlg HLG color format setting for H264.
      * @return builder
      */
-    def hlg(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigElementaryStreamVideoStreamH264HlgArgs.Builder]):
+    inline def hlg(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigElementaryStreamVideoStreamH264HlgArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobConfigElementaryStreamVideoStreamH264Args.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigElementaryStreamVideoStreamH264HlgArgs.builder
       builder.hlg(args(argsBuilder).build)
@@ -173,7 +173,7 @@ object transcoder_ext:
      * @param sdr SDR color format setting for H264.
      * @return builder
      */
-    def sdr(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigElementaryStreamVideoStreamH264SdrArgs.Builder]):
+    inline def sdr(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigElementaryStreamVideoStreamH264SdrArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobConfigElementaryStreamVideoStreamH264Args.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigElementaryStreamVideoStreamH264SdrArgs.builder
       builder.sdr(args(argsBuilder).build)
@@ -183,7 +183,7 @@ object transcoder_ext:
      * @param aes128 Configuration for AES-128 encryption.
      * @return builder
      */
-    def aes128(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionAes128Args.Builder]):
+    inline def aes128(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionAes128Args.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionAes128Args.builder
       builder.aes128(args(argsBuilder).build)
@@ -193,7 +193,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def drmSystems(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionDrmSystemsArgs.Builder]):
+    inline def drmSystems(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionDrmSystemsArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionDrmSystemsArgs.builder
       builder.drmSystems(args(argsBuilder).build)
@@ -203,7 +203,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mpegCenc(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionMpegCencArgs.Builder]):
+    inline def mpegCenc(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionMpegCencArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionMpegCencArgs.builder
       builder.mpegCenc(args(argsBuilder).build)
@@ -212,7 +212,7 @@ object transcoder_ext:
      * @param sampleAes Configuration for SAMPLE-AES encryption.
      * @return builder
      */
-    def sampleAes(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionSampleAesArgs.Builder]):
+    inline def sampleAes(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionSampleAesArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionSampleAesArgs.builder
       builder.sampleAes(args(argsBuilder).build)
@@ -222,7 +222,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secretManagerKeySource(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionSecretManagerKeySourceArgs.Builder]):
+    inline def secretManagerKeySource(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionSecretManagerKeySourceArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionSecretManagerKeySourceArgs.builder
       builder.secretManagerKeySource(args(argsBuilder).build)
@@ -232,7 +232,7 @@ object transcoder_ext:
      * @param clearkey Clearkey configuration.
      * @return builder
      */
-    def clearkey(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionDrmSystemsClearkeyArgs.Builder]):
+    inline def clearkey(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionDrmSystemsClearkeyArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionDrmSystemsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionDrmSystemsClearkeyArgs.builder
       builder.clearkey(args(argsBuilder).build)
@@ -241,7 +241,7 @@ object transcoder_ext:
      * @param fairplay Fairplay configuration.
      * @return builder
      */
-    def fairplay(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionDrmSystemsFairplayArgs.Builder]):
+    inline def fairplay(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionDrmSystemsFairplayArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionDrmSystemsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionDrmSystemsFairplayArgs.builder
       builder.fairplay(args(argsBuilder).build)
@@ -250,7 +250,7 @@ object transcoder_ext:
      * @param playready Playready configuration.
      * @return builder
      */
-    def playready(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionDrmSystemsPlayreadyArgs.Builder]):
+    inline def playready(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionDrmSystemsPlayreadyArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionDrmSystemsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionDrmSystemsPlayreadyArgs.builder
       builder.playready(args(argsBuilder).build)
@@ -259,7 +259,7 @@ object transcoder_ext:
      * @param widevine Widevine configuration.
      * @return builder
      */
-    def widevine(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionDrmSystemsWidevineArgs.Builder]):
+    inline def widevine(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionDrmSystemsWidevineArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionDrmSystemsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigEncryptionDrmSystemsWidevineArgs.builder
       builder.widevine(args(argsBuilder).build)
@@ -270,7 +270,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def segmentSettings(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigMuxStreamSegmentSettingsArgs.Builder]):
+    inline def segmentSettings(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigMuxStreamSegmentSettingsArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobConfigMuxStreamArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigMuxStreamSegmentSettingsArgs.builder
       builder.segmentSettings(args(argsBuilder).build)
@@ -281,7 +281,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def xy(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigOverlayAnimationAnimationFadeXyArgs.Builder]):
+    inline def xy(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigOverlayAnimationAnimationFadeXyArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobConfigOverlayAnimationAnimationFadeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigOverlayAnimationAnimationFadeXyArgs.builder
       builder.xy(args(argsBuilder).build)
@@ -292,7 +292,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def animationFade(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigOverlayAnimationAnimationFadeArgs.Builder]):
+    inline def animationFade(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigOverlayAnimationAnimationFadeArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobConfigOverlayAnimationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigOverlayAnimationAnimationFadeArgs.builder
       builder.animationFade(args(argsBuilder).build)
@@ -303,7 +303,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def animations(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigOverlayAnimationArgs.Builder]*):
+    inline def animations(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigOverlayAnimationArgs.Builder]*):
         com.pulumi.gcp.transcoder.inputs.JobConfigOverlayArgs.Builder =
       def argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigOverlayAnimationArgs.builder
       builder.animations(args.map(_(argsBuilder).build)*)
@@ -313,7 +313,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def image(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigOverlayImageArgs.Builder]):
+    inline def image(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigOverlayImageArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobConfigOverlayArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigOverlayImageArgs.builder
       builder.image(args(argsBuilder).build)
@@ -324,7 +324,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobConfigArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobState.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -335,7 +335,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def adBreaks(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigAdBreakArgs.Builder]*):
+    inline def adBreaks(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigAdBreakArgs.Builder]*):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigAdBreakArgs.builder
       builder.adBreaks(args.map(_(argsBuilder).build)*)
@@ -345,7 +345,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def editLists(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEditListArgs.Builder]*):
+    inline def editLists(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEditListArgs.Builder]*):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEditListArgs.builder
       builder.editLists(args.map(_(argsBuilder).build)*)
@@ -355,7 +355,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def elementaryStreams(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigElementaryStreamArgs.Builder]*):
+    inline def elementaryStreams(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigElementaryStreamArgs.Builder]*):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigElementaryStreamArgs.builder
       builder.elementaryStreams(args.map(_(argsBuilder).build)*)
@@ -365,7 +365,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptions(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionArgs.Builder]*):
+    inline def encryptions(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionArgs.Builder]*):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionArgs.builder
       builder.encryptions(args.map(_(argsBuilder).build)*)
@@ -375,7 +375,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inputs(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigInputArgs.Builder]*):
+    inline def inputs(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigInputArgs.Builder]*):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigInputArgs.builder
       builder.inputs(args.map(_(argsBuilder).build)*)
@@ -385,7 +385,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def manifests(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigManifestArgs.Builder]*):
+    inline def manifests(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigManifestArgs.Builder]*):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigManifestArgs.builder
       builder.manifests(args.map(_(argsBuilder).build)*)
@@ -395,7 +395,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def muxStreams(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigMuxStreamArgs.Builder]*):
+    inline def muxStreams(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigMuxStreamArgs.Builder]*):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigMuxStreamArgs.builder
       builder.muxStreams(args.map(_(argsBuilder).build)*)
@@ -405,7 +405,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def output(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigOutputArgs.Builder]):
+    inline def output(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigOutputArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigOutputArgs.builder
       builder.output(args(argsBuilder).build)
@@ -415,7 +415,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def overlays(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigOverlayArgs.Builder]*):
+    inline def overlays(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigOverlayArgs.Builder]*):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigOverlayArgs.builder
       builder.overlays(args.map(_(argsBuilder).build)*)
@@ -425,7 +425,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pubsubDestination(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigPubsubDestinationArgs.Builder]):
+    inline def pubsubDestination(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigPubsubDestinationArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigPubsubDestinationArgs.builder
       builder.pubsubDestination(args(argsBuilder).build)
@@ -436,7 +436,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def audioStream(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigElementaryStreamAudioStreamArgs.Builder]):
+    inline def audioStream(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigElementaryStreamAudioStreamArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigElementaryStreamArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigElementaryStreamAudioStreamArgs.builder
       builder.audioStream(args(argsBuilder).build)
@@ -446,7 +446,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def videoStream(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigElementaryStreamVideoStreamArgs.Builder]):
+    inline def videoStream(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigElementaryStreamVideoStreamArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigElementaryStreamArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigElementaryStreamVideoStreamArgs.builder
       builder.videoStream(args(argsBuilder).build)
@@ -459,7 +459,7 @@ object transcoder_ext:
      * &lt;a name=&#34;nestedConfigElementaryStreamsVideoStreamH264&#34;&gt;&lt;/a&gt;The `h264` block supports:
      * @return builder
      */
-    def h264(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigElementaryStreamVideoStreamH264Args.Builder]):
+    inline def h264(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigElementaryStreamVideoStreamH264Args.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigElementaryStreamVideoStreamArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigElementaryStreamVideoStreamH264Args.builder
       builder.h264(args(argsBuilder).build)
@@ -469,7 +469,7 @@ object transcoder_ext:
      * @param hlg HLG color format setting for H264.
      * @return builder
      */
-    def hlg(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigElementaryStreamVideoStreamH264HlgArgs.Builder]):
+    inline def hlg(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigElementaryStreamVideoStreamH264HlgArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigElementaryStreamVideoStreamH264Args.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigElementaryStreamVideoStreamH264HlgArgs.builder
       builder.hlg(args(argsBuilder).build)
@@ -478,7 +478,7 @@ object transcoder_ext:
      * @param sdr SDR color format setting for H264.
      * @return builder
      */
-    def sdr(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigElementaryStreamVideoStreamH264SdrArgs.Builder]):
+    inline def sdr(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigElementaryStreamVideoStreamH264SdrArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigElementaryStreamVideoStreamH264Args.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigElementaryStreamVideoStreamH264SdrArgs.builder
       builder.sdr(args(argsBuilder).build)
@@ -488,7 +488,7 @@ object transcoder_ext:
      * @param aes128 Configuration for AES-128 encryption.
      * @return builder
      */
-    def aes128(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionAes128Args.Builder]):
+    inline def aes128(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionAes128Args.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionAes128Args.builder
       builder.aes128(args(argsBuilder).build)
@@ -498,7 +498,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def drmSystems(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionDrmSystemsArgs.Builder]):
+    inline def drmSystems(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionDrmSystemsArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionDrmSystemsArgs.builder
       builder.drmSystems(args(argsBuilder).build)
@@ -508,7 +508,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mpegCenc(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionMpegCencArgs.Builder]):
+    inline def mpegCenc(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionMpegCencArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionMpegCencArgs.builder
       builder.mpegCenc(args(argsBuilder).build)
@@ -517,7 +517,7 @@ object transcoder_ext:
      * @param sampleAes Configuration for SAMPLE-AES encryption.
      * @return builder
      */
-    def sampleAes(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionSampleAesArgs.Builder]):
+    inline def sampleAes(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionSampleAesArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionSampleAesArgs.builder
       builder.sampleAes(args(argsBuilder).build)
@@ -527,7 +527,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secretManagerKeySource(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionSecretManagerKeySourceArgs.Builder]):
+    inline def secretManagerKeySource(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionSecretManagerKeySourceArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionSecretManagerKeySourceArgs.builder
       builder.secretManagerKeySource(args(argsBuilder).build)
@@ -537,7 +537,7 @@ object transcoder_ext:
      * @param clearkey Clearkey configuration.
      * @return builder
      */
-    def clearkey(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionDrmSystemsClearkeyArgs.Builder]):
+    inline def clearkey(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionDrmSystemsClearkeyArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionDrmSystemsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionDrmSystemsClearkeyArgs.builder
       builder.clearkey(args(argsBuilder).build)
@@ -546,7 +546,7 @@ object transcoder_ext:
      * @param fairplay Fairplay configuration.
      * @return builder
      */
-    def fairplay(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionDrmSystemsFairplayArgs.Builder]):
+    inline def fairplay(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionDrmSystemsFairplayArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionDrmSystemsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionDrmSystemsFairplayArgs.builder
       builder.fairplay(args(argsBuilder).build)
@@ -555,7 +555,7 @@ object transcoder_ext:
      * @param playready Playready configuration.
      * @return builder
      */
-    def playready(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionDrmSystemsPlayreadyArgs.Builder]):
+    inline def playready(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionDrmSystemsPlayreadyArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionDrmSystemsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionDrmSystemsPlayreadyArgs.builder
       builder.playready(args(argsBuilder).build)
@@ -564,7 +564,7 @@ object transcoder_ext:
      * @param widevine Widevine configuration.
      * @return builder
      */
-    def widevine(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionDrmSystemsWidevineArgs.Builder]):
+    inline def widevine(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionDrmSystemsWidevineArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionDrmSystemsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigEncryptionDrmSystemsWidevineArgs.builder
       builder.widevine(args(argsBuilder).build)
@@ -575,7 +575,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def segmentSettings(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigMuxStreamSegmentSettingsArgs.Builder]):
+    inline def segmentSettings(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigMuxStreamSegmentSettingsArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigMuxStreamArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigMuxStreamSegmentSettingsArgs.builder
       builder.segmentSettings(args(argsBuilder).build)
@@ -586,7 +586,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def xy(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigOverlayAnimationAnimationFadeXyArgs.Builder]):
+    inline def xy(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigOverlayAnimationAnimationFadeXyArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigOverlayAnimationAnimationFadeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigOverlayAnimationAnimationFadeXyArgs.builder
       builder.xy(args(argsBuilder).build)
@@ -597,7 +597,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def animationFade(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigOverlayAnimationAnimationFadeArgs.Builder]):
+    inline def animationFade(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigOverlayAnimationAnimationFadeArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigOverlayAnimationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigOverlayAnimationAnimationFadeArgs.builder
       builder.animationFade(args(argsBuilder).build)
@@ -608,7 +608,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def animations(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigOverlayAnimationArgs.Builder]*):
+    inline def animations(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigOverlayAnimationArgs.Builder]*):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigOverlayArgs.Builder =
       def argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigOverlayAnimationArgs.builder
       builder.animations(args.map(_(argsBuilder).build)*)
@@ -618,7 +618,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def image(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigOverlayImageArgs.Builder]):
+    inline def image(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigOverlayImageArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobTemplateConfigOverlayArgs.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigOverlayImageArgs.builder
       builder.image(args(argsBuilder).build)
@@ -629,7 +629,7 @@ object transcoder_ext:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.transcoder.inputs.JobTemplateConfigArgs.Builder]):
         com.pulumi.gcp.transcoder.inputs.JobTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.transcoder.inputs.JobTemplateConfigArgs.builder
       builder.config(args(argsBuilder).build)

@@ -11,7 +11,7 @@ object managementgroups:
    * 
    * &gt; **Note:** Configuring `subscriptionIds` is not supported when using the `azure.management.GroupSubscriptionAssociation` resource, results will be unpredictable.
    */
-  @deprecated("azure.managementgroups.ManagementGroup has been deprecated in favor of azure.management.Group") def ManagementGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("azure.managementgroups.ManagementGroup has been deprecated in favor of azure.management.Group") inline def ManagementGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.managementgroups.ManagementGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.managementgroups.ManagementGroupArgs.builder
     conf.logicalName2physicalName(name) match

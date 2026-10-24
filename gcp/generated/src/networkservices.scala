@@ -13,7 +13,7 @@ object networkservices:
    * 
    * * [API documentation](https://cloud.google.com/network-services/docs/reference/network-services/rest/v1/projects.locations.agentConnectivityTemplates)
    */
-  def AgentConnectivityTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentConnectivityTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.AgentConnectivityTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networkservices.AgentConnectivityTemplateArgs.builder
     com.pulumi.gcp.networkservices.AgentConnectivityTemplate(name,
@@ -27,7 +27,7 @@ object networkservices:
    * 
    * * [API documentation](https://cloud.google.com/network-services/docs/reference/network-services/rest/v1/projects.locations.agentGateways)
    */
-  def AgentGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.AgentGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkservices.AgentGatewayArgs.builder
     conf.logicalName2physicalName(name) match
@@ -44,7 +44,7 @@ object networkservices:
    * 
    * * [API documentation](https://cloud.google.com/service-extensions/docs/reference/rest/v1beta1/projects.locations.authzExtensions)
    */
-  def AuthzExtension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AuthzExtension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.AuthzExtensionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkservices.AuthzExtensionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -63,7 +63,7 @@ object networkservices:
    * * How-to Guides
    *     * [Create keysets](https://cloud.google.com/media-cdn/docs/create-keyset)
    */
-  def EdgeCacheKeyset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EdgeCacheKeyset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.EdgeCacheKeysetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkservices.EdgeCacheKeysetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -80,7 +80,7 @@ object networkservices:
    * 
    * * [API documentation](https://cloud.google.com/media-cdn/docs/reference/rest/v1/projects.locations.edgeCacheOrigins)
    */
-  def EdgeCacheOrigin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EdgeCacheOrigin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.EdgeCacheOriginArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkservices.EdgeCacheOriginArgs.builder
     conf.logicalName2physicalName(name) match
@@ -95,7 +95,7 @@ object networkservices:
    * 
    * &gt; **Warning:** These resources require allow-listing to use, and are not openly available to all Cloud customers. Engage with your Cloud account team to discuss how to onboard.
    */
-  def EdgeCacheService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EdgeCacheService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.EdgeCacheServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkservices.EdgeCacheServiceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -112,7 +112,7 @@ object networkservices:
    * 
    * * [API documentation](https://cloud.google.com/traffic-director/docs/reference/network-services/rest/v1beta1/projects.locations.endpointPolicies)
    */
-  def EndpointPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EndpointPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.EndpointPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkservices.EndpointPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -132,7 +132,7 @@ object networkservices:
    * 
    * * [API documentation](https://cloud.google.com/traffic-director/docs/reference/network-services/rest/v1/projects.locations.gateways)
    */
-  def Gateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Gateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.GatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkservices.GatewayArgs.builder
     conf.logicalName2physicalName(name) match
@@ -149,7 +149,7 @@ object networkservices:
    * 
    * * [API documentation](https://cloud.google.com/traffic-director/docs/reference/network-services/rest/v1beta1/projects.locations.grpcRoutes)
    */
-  def GrpcRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GrpcRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.GrpcRouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkservices.GrpcRouteArgs.builder
     conf.logicalName2physicalName(name) match
@@ -168,7 +168,7 @@ object networkservices:
    * * How-to Guides
    *     * [Setup HTTP Services](https://cloud.google.com/traffic-director/docs/set-up-envoy-http-mesh)
    */
-  def HttpRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HttpRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.HttpRouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkservices.HttpRouteArgs.builder
     conf.logicalName2physicalName(name) match
@@ -187,7 +187,7 @@ object networkservices:
    * * How-to Guides
    *     * [Configure a edge extension](https://cloud.google.com/service-extensions/docs/configure-edge-extensions)
    */
-  def LbEdgeExtension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LbEdgeExtension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.LbEdgeExtensionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkservices.LbEdgeExtensionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -206,7 +206,7 @@ object networkservices:
    * * How-to Guides
    *     * [Configure a route extension](https://cloud.google.com/service-extensions/docs/configure-callout#configure_a_route_extension)
    */
-  def LbRouteExtension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LbRouteExtension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.LbRouteExtensionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkservices.LbRouteExtensionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -225,7 +225,7 @@ object networkservices:
    * * How-to Guides
    *     * [Configure a traffic extension](https://cloud.google.com/service-extensions/docs/configure-callout#configure_a_traffic_extension)
    */
-  def LbTrafficExtension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LbTrafficExtension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.LbTrafficExtensionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkservices.LbTrafficExtensionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -244,7 +244,7 @@ object networkservices:
    * 
    * * [API documentation](https://cloud.google.com/traffic-director/docs/reference/network-services/rest/v1beta1/projects.locations.meshes)
    */
-  def Mesh(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Mesh(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.MeshArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkservices.MeshArgs.builder
     conf.logicalName2physicalName(name) match
@@ -263,7 +263,7 @@ object networkservices:
    * * How-to Guides
    *     * [Create Multicast Consumer Association](https://docs.cloud.google.com/vpc/docs/multicast/enable-consumer-network#add-consumer)
    */
-  def MulticastConsumerAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MulticastConsumerAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.MulticastConsumerAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networkservices.MulticastConsumerAssociationArgs.builder
     com.pulumi.gcp.networkservices.MulticastConsumerAssociation(name,
@@ -279,7 +279,7 @@ object networkservices:
    * * How-to Guides
    *     * [Create Multicast Domain](https://docs.cloud.google.com/vpc/docs/multicast/create-domains#create-domain)
    */
-  def MulticastDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MulticastDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.MulticastDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networkservices.MulticastDomainArgs.builder
     com.pulumi.gcp.networkservices.MulticastDomain(name,
@@ -295,7 +295,7 @@ object networkservices:
    * * How-to Guides
    *     * [Create Multicast Domain Activation](https://docs.cloud.google.com/vpc/docs/multicast/create-domains#activate-domain)
    */
-  def MulticastDomainActivation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MulticastDomainActivation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.MulticastDomainActivationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networkservices.MulticastDomainActivationArgs.builder
     com.pulumi.gcp.networkservices.MulticastDomainActivation(name,
@@ -311,7 +311,7 @@ object networkservices:
    * * How-to Guides
    *     * [Create Multicast Domain Group](https://docs.cloud.google.com/vpc/docs/multicast/create-domains#create-domain-group)
    */
-  def MulticastDomainGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MulticastDomainGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.MulticastDomainGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networkservices.MulticastDomainGroupArgs.builder
     com.pulumi.gcp.networkservices.MulticastDomainGroup(name,
@@ -327,7 +327,7 @@ object networkservices:
    * * How-to Guides
    *     * [Create Multicast Group Consumer Activation](https://docs.cloud.google.com/vpc/docs/multicast/enable-consumer-network#activate-consumer)
    */
-  def MulticastGroupConsumerActivation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MulticastGroupConsumerActivation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.MulticastGroupConsumerActivationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networkservices.MulticastGroupConsumerActivationArgs.builder
     com.pulumi.gcp.networkservices.MulticastGroupConsumerActivation(name,
@@ -343,7 +343,7 @@ object networkservices:
    * * How-to Guides
    *     * [Create Multicast Group Producer Activation](https://docs.cloud.google.com/vpc/docs/multicast/enable-producer-network#activate-producer)
    */
-  def MulticastGroupProducerActivation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MulticastGroupProducerActivation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.MulticastGroupProducerActivationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networkservices.MulticastGroupProducerActivationArgs.builder
     com.pulumi.gcp.networkservices.MulticastGroupProducerActivation(name,
@@ -359,7 +359,7 @@ object networkservices:
    * * How-to Guides
    *     * [Create Multicast Group Range](https://docs.cloud.google.com/vpc/docs/multicast/create-group-ranges#create_a_group_range)
    */
-  def MulticastGroupRange(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MulticastGroupRange(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.MulticastGroupRangeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networkservices.MulticastGroupRangeArgs.builder
     com.pulumi.gcp.networkservices.MulticastGroupRange(name,
@@ -375,7 +375,7 @@ object networkservices:
    * * How-to Guides
    *     * [Create Multicast Group Range Activation](https://docs.cloud.google.com/vpc/docs/multicast/create-group-ranges#activate_the_group_range)
    */
-  def MulticastGroupRangeActivation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MulticastGroupRangeActivation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.MulticastGroupRangeActivationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networkservices.MulticastGroupRangeActivationArgs.builder
     com.pulumi.gcp.networkservices.MulticastGroupRangeActivation(name,
@@ -391,7 +391,7 @@ object networkservices:
    * * How-to Guides
    *     * [Create Multicast Producer Association](https://docs.cloud.google.com/vpc/docs/multicast/enable-producer-network#create-producer)
    */
-  def MulticastProducerAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MulticastProducerAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.MulticastProducerAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networkservices.MulticastProducerAssociationArgs.builder
     com.pulumi.gcp.networkservices.MulticastProducerAssociation(name,
@@ -425,7 +425,7 @@ object networkservices:
    * 
    * * [API documentation](https://cloud.google.com/traffic-director/docs/reference/network-services/rest/v1beta1/projects.locations.serviceBindings)
    */
-  def ServiceBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServiceBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.ServiceBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkservices.ServiceBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -445,7 +445,7 @@ object networkservices:
    * 
    * * [API documentation](https://cloud.google.com/service-mesh/docs/reference/network-services/rest/v1/projects.locations.serviceLbPolicies)
    */
-  def ServiceLbPolicies(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServiceLbPolicies(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.ServiceLbPoliciesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkservices.ServiceLbPoliciesArgs.builder
     conf.logicalName2physicalName(name) match
@@ -464,7 +464,7 @@ object networkservices:
    * * How-to Guides
    *     * [Setup TCP Services](https://cloud.google.com/traffic-director/docs/set-up-tcp-route)
    */
-  def TcpRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TcpRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.TcpRouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkservices.TcpRouteArgs.builder
     conf.logicalName2physicalName(name) match
@@ -481,7 +481,7 @@ object networkservices:
    * 
    * * [API documentation](https://cloud.google.com/traffic-director/docs/reference/network-services/rest/v1beta1/projects.locations.tlsRoutes)
    */
-  def TlsRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TlsRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.TlsRouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkservices.TlsRouteArgs.builder
     conf.logicalName2physicalName(name) match
@@ -500,7 +500,7 @@ object networkservices:
    * * How-to Guides
    *     * [Configure a route extension](https://cloud.google.com/service-extensions/docs/create-plugin)
    */
-  def WasmPlugin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WasmPlugin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.networkservices.WasmPluginArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkservices.WasmPluginArgs.builder
     conf.logicalName2physicalName(name) match

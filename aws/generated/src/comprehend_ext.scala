@@ -8,7 +8,7 @@ object comprehend_ext:
      * See the `inputDataConfig` Configuration Block section below.
      * @return builder
      */
-    def inputDataConfig(args: Endofunction[com.pulumi.aws.comprehend.inputs.DocumentClassifierInputDataConfigArgs.Builder]):
+    inline def inputDataConfig(args: Endofunction[com.pulumi.aws.comprehend.inputs.DocumentClassifierInputDataConfigArgs.Builder]):
         com.pulumi.aws.comprehend.DocumentClassifierArgs.Builder =
       val argsBuilder = com.pulumi.aws.comprehend.inputs.DocumentClassifierInputDataConfigArgs.builder
       builder.inputDataConfig(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object comprehend_ext:
      * See the `outputDataConfig` Configuration Block section below.
      * @return builder
      */
-    def outputDataConfig(args: Endofunction[com.pulumi.aws.comprehend.inputs.DocumentClassifierOutputDataConfigArgs.Builder]):
+    inline def outputDataConfig(args: Endofunction[com.pulumi.aws.comprehend.inputs.DocumentClassifierOutputDataConfigArgs.Builder]):
         com.pulumi.aws.comprehend.DocumentClassifierArgs.Builder =
       val argsBuilder = com.pulumi.aws.comprehend.inputs.DocumentClassifierOutputDataConfigArgs.builder
       builder.outputDataConfig(args(argsBuilder).build)
@@ -28,7 +28,7 @@ object comprehend_ext:
      * See the `vpcConfig` Configuration Block section below.
      * @return builder
      */
-    def vpcConfig(args: Endofunction[com.pulumi.aws.comprehend.inputs.DocumentClassifierVpcConfigArgs.Builder]):
+    inline def vpcConfig(args: Endofunction[com.pulumi.aws.comprehend.inputs.DocumentClassifierVpcConfigArgs.Builder]):
         com.pulumi.aws.comprehend.DocumentClassifierArgs.Builder =
       val argsBuilder = com.pulumi.aws.comprehend.inputs.DocumentClassifierVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
@@ -39,7 +39,7 @@ object comprehend_ext:
      * See the `inputDataConfig` Configuration Block section below.
      * @return builder
      */
-    def inputDataConfig(args: Endofunction[com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigArgs.Builder]):
+    inline def inputDataConfig(args: Endofunction[com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigArgs.Builder]):
         com.pulumi.aws.comprehend.EntityRecognizerArgs.Builder =
       val argsBuilder = com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigArgs.builder
       builder.inputDataConfig(args(argsBuilder).build)
@@ -49,7 +49,7 @@ object comprehend_ext:
      * See the `vpcConfig` Configuration Block section below.
      * @return builder
      */
-    def vpcConfig(args: Endofunction[com.pulumi.aws.comprehend.inputs.EntityRecognizerVpcConfigArgs.Builder]):
+    inline def vpcConfig(args: Endofunction[com.pulumi.aws.comprehend.inputs.EntityRecognizerVpcConfigArgs.Builder]):
         com.pulumi.aws.comprehend.EntityRecognizerArgs.Builder =
       val argsBuilder = com.pulumi.aws.comprehend.inputs.EntityRecognizerVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
@@ -61,7 +61,7 @@ object comprehend_ext:
      * See the `augmentedManifests` Configuration Block section below.
      * @return builder
      */
-    def augmentedManifests(args: Endofunction[com.pulumi.aws.comprehend.inputs.DocumentClassifierInputDataConfigAugmentedManifestArgs.Builder]*):
+    inline def augmentedManifests(args: Endofunction[com.pulumi.aws.comprehend.inputs.DocumentClassifierInputDataConfigAugmentedManifestArgs.Builder]*):
         com.pulumi.aws.comprehend.inputs.DocumentClassifierInputDataConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.comprehend.inputs.DocumentClassifierInputDataConfigAugmentedManifestArgs.builder
       builder.augmentedManifests(args.map(_(argsBuilder).build)*)
@@ -72,7 +72,7 @@ object comprehend_ext:
      * See the `inputDataConfig` Configuration Block section below.
      * @return builder
      */
-    def inputDataConfig(args: Endofunction[com.pulumi.aws.comprehend.inputs.DocumentClassifierInputDataConfigArgs.Builder]):
+    inline def inputDataConfig(args: Endofunction[com.pulumi.aws.comprehend.inputs.DocumentClassifierInputDataConfigArgs.Builder]):
         com.pulumi.aws.comprehend.inputs.DocumentClassifierState.Builder =
       val argsBuilder = com.pulumi.aws.comprehend.inputs.DocumentClassifierInputDataConfigArgs.builder
       builder.inputDataConfig(args(argsBuilder).build)
@@ -82,7 +82,7 @@ object comprehend_ext:
      * See the `outputDataConfig` Configuration Block section below.
      * @return builder
      */
-    def outputDataConfig(args: Endofunction[com.pulumi.aws.comprehend.inputs.DocumentClassifierOutputDataConfigArgs.Builder]):
+    inline def outputDataConfig(args: Endofunction[com.pulumi.aws.comprehend.inputs.DocumentClassifierOutputDataConfigArgs.Builder]):
         com.pulumi.aws.comprehend.inputs.DocumentClassifierState.Builder =
       val argsBuilder = com.pulumi.aws.comprehend.inputs.DocumentClassifierOutputDataConfigArgs.builder
       builder.outputDataConfig(args(argsBuilder).build)
@@ -92,7 +92,7 @@ object comprehend_ext:
      * See the `vpcConfig` Configuration Block section below.
      * @return builder
      */
-    def vpcConfig(args: Endofunction[com.pulumi.aws.comprehend.inputs.DocumentClassifierVpcConfigArgs.Builder]):
+    inline def vpcConfig(args: Endofunction[com.pulumi.aws.comprehend.inputs.DocumentClassifierVpcConfigArgs.Builder]):
         com.pulumi.aws.comprehend.inputs.DocumentClassifierState.Builder =
       val argsBuilder = com.pulumi.aws.comprehend.inputs.DocumentClassifierVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
@@ -104,7 +104,7 @@ object comprehend_ext:
      * One of `annotations` or `entityList` is required.
      * @return builder
      */
-    def annotations(args: Endofunction[com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigAnnotationsArgs.Builder]):
+    inline def annotations(args: Endofunction[com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigAnnotationsArgs.Builder]):
         com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigAnnotationsArgs.builder
       builder.annotations(args(argsBuilder).build)
@@ -115,7 +115,7 @@ object comprehend_ext:
      * See the `augmentedManifests` Configuration Block section below.
      * @return builder
      */
-    def augmentedManifests(args: Endofunction[com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigAugmentedManifestArgs.Builder]*):
+    inline def augmentedManifests(args: Endofunction[com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigAugmentedManifestArgs.Builder]*):
         com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigAugmentedManifestArgs.builder
       builder.augmentedManifests(args.map(_(argsBuilder).build)*)
@@ -126,7 +126,7 @@ object comprehend_ext:
      * See the `documents` Configuration Block section below.
      * @return builder
      */
-    def documents(args: Endofunction[com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigDocumentsArgs.Builder]):
+    inline def documents(args: Endofunction[com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigDocumentsArgs.Builder]):
         com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigDocumentsArgs.builder
       builder.documents(args(argsBuilder).build)
@@ -137,7 +137,7 @@ object comprehend_ext:
      * One of `entityList` or `annotations` is required.
      * @return builder
      */
-    def entityList(args: Endofunction[com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigEntityListArgs.Builder]):
+    inline def entityList(args: Endofunction[com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigEntityListArgs.Builder]):
         com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigEntityListArgs.builder
       builder.entityList(args(argsBuilder).build)
@@ -148,7 +148,7 @@ object comprehend_ext:
      * See the `entityTypes` Configuration Block section below.
      * @return builder
      */
-    def entityTypes(args: Endofunction[com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigEntityTypeArgs.Builder]*):
+    inline def entityTypes(args: Endofunction[com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigEntityTypeArgs.Builder]*):
         com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigEntityTypeArgs.builder
       builder.entityTypes(args.map(_(argsBuilder).build)*)
@@ -159,7 +159,7 @@ object comprehend_ext:
      * See the `inputDataConfig` Configuration Block section below.
      * @return builder
      */
-    def inputDataConfig(args: Endofunction[com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigArgs.Builder]):
+    inline def inputDataConfig(args: Endofunction[com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigArgs.Builder]):
         com.pulumi.aws.comprehend.inputs.EntityRecognizerState.Builder =
       val argsBuilder = com.pulumi.aws.comprehend.inputs.EntityRecognizerInputDataConfigArgs.builder
       builder.inputDataConfig(args(argsBuilder).build)
@@ -169,7 +169,7 @@ object comprehend_ext:
      * See the `vpcConfig` Configuration Block section below.
      * @return builder
      */
-    def vpcConfig(args: Endofunction[com.pulumi.aws.comprehend.inputs.EntityRecognizerVpcConfigArgs.Builder]):
+    inline def vpcConfig(args: Endofunction[com.pulumi.aws.comprehend.inputs.EntityRecognizerVpcConfigArgs.Builder]):
         com.pulumi.aws.comprehend.inputs.EntityRecognizerState.Builder =
       val argsBuilder = com.pulumi.aws.comprehend.inputs.EntityRecognizerVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)

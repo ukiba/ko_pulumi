@@ -20,7 +20,7 @@ object kms:
    * * How-to Guides
    *     * [Cloud KMS with Autokey](https://cloud.google.com/kms/docs/kms-with-autokey)
    */
-  def AutokeyConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AutokeyConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.kms.AutokeyConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.AutokeyConfigArgs.builder
     com.pulumi.gcp.kms.AutokeyConfig(name,
@@ -43,7 +43,7 @@ object kms:
    * * How-to Guides
    *     * [Creating a key](https://cloud.google.com/kms/docs/creating-keys#create_a_key)
    */
-  def CryptoKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CryptoKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.kms.CryptoKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.kms.CryptoKeyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -314,7 +314,7 @@ object kms:
    * 
    * ## Import
    */
-  def CryptoKeyIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CryptoKeyIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.kms.CryptoKeyIAMBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.CryptoKeyIAMBindingArgs.builder
     com.pulumi.gcp.kms.CryptoKeyIAMBinding(name,
@@ -582,7 +582,7 @@ object kms:
    * 
    * ## Import
    */
-  def CryptoKeyIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CryptoKeyIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.kms.CryptoKeyIAMMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.CryptoKeyIAMMemberArgs.builder
     com.pulumi.gcp.kms.CryptoKeyIAMMember(name,
@@ -850,7 +850,7 @@ object kms:
    * 
    * ## Import
    */
-  def CryptoKeyIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CryptoKeyIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.kms.CryptoKeyIAMPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.CryptoKeyIAMPolicyArgs.builder
     com.pulumi.gcp.kms.CryptoKeyIAMPolicy(name,
@@ -868,7 +868,7 @@ object kms:
    * * How-to Guides
    *     * [Creating a key Version](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions/create)
    */
-  def CryptoKeyVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CryptoKeyVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.kms.CryptoKeyVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.CryptoKeyVersionArgs.builder
     com.pulumi.gcp.kms.CryptoKeyVersion(name,
@@ -887,7 +887,7 @@ object kms:
    * * How-to Guides
    *     * [Creating a Ekm Connection](https://cloud.google.com/kms/docs/create-ekm-connection)
    */
-  def EkmConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EkmConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.kms.EkmConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.kms.EkmConnectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1478,7 +1478,7 @@ object kms:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def EkmConnectionIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EkmConnectionIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.kms.EkmConnectionIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.kms.EkmConnectionIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2069,7 +2069,7 @@ object kms:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def EkmConnectionIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EkmConnectionIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.kms.EkmConnectionIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.kms.EkmConnectionIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2660,7 +2660,7 @@ object kms:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def EkmConnectionIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EkmConnectionIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.kms.EkmConnectionIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.kms.EkmConnectionIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2687,7 +2687,7 @@ object kms:
    * * How-to Guides
    *     * [Set default Key Access Justifications policy](https://cloud.google.com/assured-workloads/key-access-justifications/docs/set-default-policy)
    */
-  def FolderKajPolicyConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FolderKajPolicyConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.kms.FolderKajPolicyConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.FolderKajPolicyConfigArgs.builder
     com.pulumi.gcp.kms.FolderKajPolicyConfig(name,
@@ -2707,7 +2707,7 @@ object kms:
    * * How-to Guides
    *     * [Cloud KMS with Autokey](https://cloud.google.com/kms/docs/kms-with-autokey)
    */
-  def KeyHandle(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def KeyHandle(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.kms.KeyHandleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.kms.KeyHandleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2730,7 +2730,7 @@ object kms:
    * * How-to Guides
    *     * [Creating a key ring](https://cloud.google.com/kms/docs/creating-keys#create_a_key_ring)
    */
-  def KeyRing(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def KeyRing(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.kms.KeyRingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.kms.KeyRingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -3165,7 +3165,7 @@ object kms:
    * 
    * ## Import
    */
-  def KeyRingIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def KeyRingIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.kms.KeyRingIAMBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.KeyRingIAMBindingArgs.builder
     com.pulumi.gcp.kms.KeyRingIAMBinding(name,
@@ -3597,7 +3597,7 @@ object kms:
    * 
    * ## Import
    */
-  def KeyRingIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def KeyRingIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.kms.KeyRingIAMMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.KeyRingIAMMemberArgs.builder
     com.pulumi.gcp.kms.KeyRingIAMMember(name,
@@ -4029,7 +4029,7 @@ object kms:
    * 
    * ## Import
    */
-  def KeyRingIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def KeyRingIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.kms.KeyRingIAMPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.KeyRingIAMPolicyArgs.builder
     com.pulumi.gcp.kms.KeyRingIAMPolicy(name,
@@ -4052,7 +4052,7 @@ object kms:
    * * How-to Guides
    *     * [Importing a key](https://cloud.google.com/kms/docs/importing-a-key)
    */
-  def KeyRingImportJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def KeyRingImportJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.kms.KeyRingImportJobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.KeyRingImportJobArgs.builder
     com.pulumi.gcp.kms.KeyRingImportJob(name,
@@ -4681,7 +4681,7 @@ object kms:
    * * How-to Guides
    *     * [Set default Key Access Justifications policy](https://cloud.google.com/assured-workloads/key-access-justifications/docs/set-default-policy)
    */
-  def OrganizationKajPolicyConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationKajPolicyConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.kms.OrganizationKajPolicyConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.OrganizationKajPolicyConfigArgs.builder
     com.pulumi.gcp.kms.OrganizationKajPolicyConfig(name,
@@ -4702,7 +4702,7 @@ object kms:
    * * How-to Guides
    *     * [Cloud KMS with Autokey](https://cloud.google.com/kms/docs/kms-with-autokey)
    */
-  def ProjectAutokeyConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProjectAutokeyConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.kms.ProjectAutokeyConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.ProjectAutokeyConfigArgs.builder
     com.pulumi.gcp.kms.ProjectAutokeyConfig(name,
@@ -4726,7 +4726,7 @@ object kms:
    * * How-to Guides
    *     * [Set default Key Access Justifications policy](https://cloud.google.com/assured-workloads/key-access-justifications/docs/set-default-policy)
    */
-  def ProjectKajPolicyConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProjectKajPolicyConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.kms.ProjectKajPolicyConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.ProjectKajPolicyConfigArgs.builder
     com.pulumi.gcp.kms.ProjectKajPolicyConfig(name,
@@ -4747,7 +4747,7 @@ object kms:
    * * How-to Guides
    *     * [Encrypting and decrypting data with a symmetric key](https://cloud.google.com/kms/docs/encrypt-decrypt)
    */
-  def SecretCiphertext(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecretCiphertext(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.kms.SecretCiphertextArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.SecretCiphertextArgs.builder
     com.pulumi.gcp.kms.SecretCiphertext(name,

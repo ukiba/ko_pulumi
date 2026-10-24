@@ -8,7 +8,7 @@ object spanner_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionConfig(args: Endofunction[com.pulumi.gcp.spanner.inputs.BackupScheduleEncryptionConfigArgs.Builder]):
+    inline def encryptionConfig(args: Endofunction[com.pulumi.gcp.spanner.inputs.BackupScheduleEncryptionConfigArgs.Builder]):
         com.pulumi.gcp.spanner.BackupScheduleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.BackupScheduleEncryptionConfigArgs.builder
       builder.encryptionConfig(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object spanner_ext:
      * @param fullBackupSpec The schedule creates only full backups..
      * @return builder
      */
-    def fullBackupSpec(args: Endofunction[com.pulumi.gcp.spanner.inputs.BackupScheduleFullBackupSpecArgs.Builder]):
+    inline def fullBackupSpec(args: Endofunction[com.pulumi.gcp.spanner.inputs.BackupScheduleFullBackupSpecArgs.Builder]):
         com.pulumi.gcp.spanner.BackupScheduleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.BackupScheduleFullBackupSpecArgs.builder
       builder.fullBackupSpec(args(argsBuilder).build)
@@ -26,7 +26,7 @@ object spanner_ext:
      * @param incrementalBackupSpec The schedule creates incremental backup chains.
      * @return builder
      */
-    def incrementalBackupSpec(args: Endofunction[com.pulumi.gcp.spanner.inputs.BackupScheduleIncrementalBackupSpecArgs.Builder]):
+    inline def incrementalBackupSpec(args: Endofunction[com.pulumi.gcp.spanner.inputs.BackupScheduleIncrementalBackupSpecArgs.Builder]):
         com.pulumi.gcp.spanner.BackupScheduleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.BackupScheduleIncrementalBackupSpecArgs.builder
       builder.incrementalBackupSpec(args(argsBuilder).build)
@@ -36,7 +36,7 @@ object spanner_ext:
      * Structure is documented below.
      * @return builder
      */
-    def spec(args: Endofunction[com.pulumi.gcp.spanner.inputs.BackupScheduleSpecArgs.Builder]):
+    inline def spec(args: Endofunction[com.pulumi.gcp.spanner.inputs.BackupScheduleSpecArgs.Builder]):
         com.pulumi.gcp.spanner.BackupScheduleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.BackupScheduleSpecArgs.builder
       builder.spec(args(argsBuilder).build)
@@ -47,7 +47,7 @@ object spanner_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionConfig(args: Endofunction[com.pulumi.gcp.spanner.inputs.DatabaseEncryptionConfigArgs.Builder]):
+    inline def encryptionConfig(args: Endofunction[com.pulumi.gcp.spanner.inputs.DatabaseEncryptionConfigArgs.Builder]):
         com.pulumi.gcp.spanner.DatabaseArgs.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.DatabaseEncryptionConfigArgs.builder
       builder.encryptionConfig(args(argsBuilder).build)
@@ -58,7 +58,7 @@ object spanner_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.spanner.inputs.DatabaseIAMBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.spanner.inputs.DatabaseIAMBindingConditionArgs.Builder]):
         com.pulumi.gcp.spanner.DatabaseIAMBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.DatabaseIAMBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -69,7 +69,7 @@ object spanner_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.spanner.inputs.DatabaseIAMMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.spanner.inputs.DatabaseIAMMemberConditionArgs.Builder]):
         com.pulumi.gcp.spanner.DatabaseIAMMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.DatabaseIAMMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -85,7 +85,7 @@ object spanner_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoscalingConfig(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigArgs.Builder]):
+    inline def autoscalingConfig(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigArgs.Builder]):
         com.pulumi.gcp.spanner.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigArgs.builder
       builder.autoscalingConfig(args(argsBuilder).build)
@@ -96,19 +96,19 @@ object spanner_ext:
      * Structure is documented below.
      * @return builder
      */
-    def replicas(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceConfigReplicaArgs.Builder]*):
+    inline def replicas(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceConfigReplicaArgs.Builder]*):
         com.pulumi.gcp.spanner.InstanceConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.spanner.inputs.InstanceConfigReplicaArgs.builder
       builder.replicas(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.spanner.InstanceIAMBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceIAMBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceIAMBindingConditionArgs.Builder]):
         com.pulumi.gcp.spanner.InstanceIAMBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.InstanceIAMBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.spanner.InstanceIAMMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceIAMMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceIAMMemberConditionArgs.Builder]):
         com.pulumi.gcp.spanner.InstanceIAMMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.InstanceIAMMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -123,7 +123,7 @@ object spanner_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoscalingConfig(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstancePartitionAutoscalingConfigArgs.Builder]):
+    inline def autoscalingConfig(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstancePartitionAutoscalingConfigArgs.Builder]):
         com.pulumi.gcp.spanner.InstancePartitionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.InstancePartitionAutoscalingConfigArgs.builder
       builder.autoscalingConfig(args(argsBuilder).build)
@@ -134,7 +134,7 @@ object spanner_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cronSpec(args: Endofunction[com.pulumi.gcp.spanner.inputs.BackupScheduleSpecCronSpecArgs.Builder]):
+    inline def cronSpec(args: Endofunction[com.pulumi.gcp.spanner.inputs.BackupScheduleSpecCronSpecArgs.Builder]):
         com.pulumi.gcp.spanner.inputs.BackupScheduleSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.BackupScheduleSpecCronSpecArgs.builder
       builder.cronSpec(args(argsBuilder).build)
@@ -145,7 +145,7 @@ object spanner_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionConfig(args: Endofunction[com.pulumi.gcp.spanner.inputs.BackupScheduleEncryptionConfigArgs.Builder]):
+    inline def encryptionConfig(args: Endofunction[com.pulumi.gcp.spanner.inputs.BackupScheduleEncryptionConfigArgs.Builder]):
         com.pulumi.gcp.spanner.inputs.BackupScheduleState.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.BackupScheduleEncryptionConfigArgs.builder
       builder.encryptionConfig(args(argsBuilder).build)
@@ -154,7 +154,7 @@ object spanner_ext:
      * @param fullBackupSpec The schedule creates only full backups..
      * @return builder
      */
-    def fullBackupSpec(args: Endofunction[com.pulumi.gcp.spanner.inputs.BackupScheduleFullBackupSpecArgs.Builder]):
+    inline def fullBackupSpec(args: Endofunction[com.pulumi.gcp.spanner.inputs.BackupScheduleFullBackupSpecArgs.Builder]):
         com.pulumi.gcp.spanner.inputs.BackupScheduleState.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.BackupScheduleFullBackupSpecArgs.builder
       builder.fullBackupSpec(args(argsBuilder).build)
@@ -163,7 +163,7 @@ object spanner_ext:
      * @param incrementalBackupSpec The schedule creates incremental backup chains.
      * @return builder
      */
-    def incrementalBackupSpec(args: Endofunction[com.pulumi.gcp.spanner.inputs.BackupScheduleIncrementalBackupSpecArgs.Builder]):
+    inline def incrementalBackupSpec(args: Endofunction[com.pulumi.gcp.spanner.inputs.BackupScheduleIncrementalBackupSpecArgs.Builder]):
         com.pulumi.gcp.spanner.inputs.BackupScheduleState.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.BackupScheduleIncrementalBackupSpecArgs.builder
       builder.incrementalBackupSpec(args(argsBuilder).build)
@@ -173,7 +173,7 @@ object spanner_ext:
      * Structure is documented below.
      * @return builder
      */
-    def spec(args: Endofunction[com.pulumi.gcp.spanner.inputs.BackupScheduleSpecArgs.Builder]):
+    inline def spec(args: Endofunction[com.pulumi.gcp.spanner.inputs.BackupScheduleSpecArgs.Builder]):
         com.pulumi.gcp.spanner.inputs.BackupScheduleState.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.BackupScheduleSpecArgs.builder
       builder.spec(args(argsBuilder).build)
@@ -184,7 +184,7 @@ object spanner_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.spanner.inputs.DatabaseIAMBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.spanner.inputs.DatabaseIAMBindingConditionArgs.Builder]):
         com.pulumi.gcp.spanner.inputs.DatabaseIAMBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.DatabaseIAMBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -195,7 +195,7 @@ object spanner_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.spanner.inputs.DatabaseIAMMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.spanner.inputs.DatabaseIAMMemberConditionArgs.Builder]):
         com.pulumi.gcp.spanner.inputs.DatabaseIAMMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.DatabaseIAMMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -206,7 +206,7 @@ object spanner_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionConfig(args: Endofunction[com.pulumi.gcp.spanner.inputs.DatabaseEncryptionConfigArgs.Builder]):
+    inline def encryptionConfig(args: Endofunction[com.pulumi.gcp.spanner.inputs.DatabaseEncryptionConfigArgs.Builder]):
         com.pulumi.gcp.spanner.inputs.DatabaseState.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.DatabaseEncryptionConfigArgs.builder
       builder.encryptionConfig(args(argsBuilder).build)
@@ -217,7 +217,7 @@ object spanner_ext:
      * Structure is documented below.
      * @return builder
      */
-    def asymmetricAutoscalingOptions(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigAsymmetricAutoscalingOptionArgs.Builder]*):
+    inline def asymmetricAutoscalingOptions(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigAsymmetricAutoscalingOptionArgs.Builder]*):
         com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigAsymmetricAutoscalingOptionArgs.builder
       builder.asymmetricAutoscalingOptions(args.map(_(argsBuilder).build)*)
@@ -232,7 +232,7 @@ object spanner_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoscalingLimits(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigAutoscalingLimitsArgs.Builder]):
+    inline def autoscalingLimits(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigAutoscalingLimitsArgs.Builder]):
         com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigAutoscalingLimitsArgs.builder
       builder.autoscalingLimits(args(argsBuilder).build)
@@ -243,7 +243,7 @@ object spanner_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoscalingTargets(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigAutoscalingTargetsArgs.Builder]):
+    inline def autoscalingTargets(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigAutoscalingTargetsArgs.Builder]):
         com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigAutoscalingTargetsArgs.builder
       builder.autoscalingTargets(args(argsBuilder).build)
@@ -254,7 +254,7 @@ object spanner_ext:
      * Structure is documented below.
      * @return builder
      */
-    def overrides(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigAsymmetricAutoscalingOptionOverridesArgs.Builder]):
+    inline def overrides(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigAsymmetricAutoscalingOptionOverridesArgs.Builder]):
         com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigAsymmetricAutoscalingOptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigAsymmetricAutoscalingOptionOverridesArgs.builder
       builder.overrides(args(argsBuilder).build)
@@ -264,7 +264,7 @@ object spanner_ext:
      * Structure is documented below.
      * @return builder
      */
-    def replicaSelection(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigAsymmetricAutoscalingOptionReplicaSelectionArgs.Builder]):
+    inline def replicaSelection(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigAsymmetricAutoscalingOptionReplicaSelectionArgs.Builder]):
         com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigAsymmetricAutoscalingOptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigAsymmetricAutoscalingOptionReplicaSelectionArgs.builder
       builder.replicaSelection(args(argsBuilder).build)
@@ -275,7 +275,7 @@ object spanner_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoscalingLimits(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigAsymmetricAutoscalingOptionOverridesAutoscalingLimitsArgs.Builder]):
+    inline def autoscalingLimits(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigAsymmetricAutoscalingOptionOverridesAutoscalingLimitsArgs.Builder]):
         com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigAsymmetricAutoscalingOptionOverridesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigAsymmetricAutoscalingOptionOverridesAutoscalingLimitsArgs.builder
       builder.autoscalingLimits(args(argsBuilder).build)
@@ -286,19 +286,19 @@ object spanner_ext:
      * Structure is documented below.
      * @return builder
      */
-    def replicas(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceConfigReplicaArgs.Builder]*):
+    inline def replicas(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceConfigReplicaArgs.Builder]*):
         com.pulumi.gcp.spanner.inputs.InstanceConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.spanner.inputs.InstanceConfigReplicaArgs.builder
       builder.replicas(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.spanner.inputs.InstanceIAMBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceIAMBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceIAMBindingConditionArgs.Builder]):
         com.pulumi.gcp.spanner.inputs.InstanceIAMBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.InstanceIAMBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.spanner.inputs.InstanceIAMMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceIAMMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceIAMMemberConditionArgs.Builder]):
         com.pulumi.gcp.spanner.inputs.InstanceIAMMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.InstanceIAMMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -314,7 +314,7 @@ object spanner_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoscalingLimits(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstancePartitionAutoscalingConfigAutoscalingLimitsArgs.Builder]):
+    inline def autoscalingLimits(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstancePartitionAutoscalingConfigAutoscalingLimitsArgs.Builder]):
         com.pulumi.gcp.spanner.inputs.InstancePartitionAutoscalingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.InstancePartitionAutoscalingConfigAutoscalingLimitsArgs.builder
       builder.autoscalingLimits(args(argsBuilder).build)
@@ -325,7 +325,7 @@ object spanner_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoscalingTargets(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstancePartitionAutoscalingConfigAutoscalingTargetsArgs.Builder]):
+    inline def autoscalingTargets(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstancePartitionAutoscalingConfigAutoscalingTargetsArgs.Builder]):
         com.pulumi.gcp.spanner.inputs.InstancePartitionAutoscalingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.InstancePartitionAutoscalingConfigAutoscalingTargetsArgs.builder
       builder.autoscalingTargets(args(argsBuilder).build)
@@ -340,7 +340,7 @@ object spanner_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoscalingConfig(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstancePartitionAutoscalingConfigArgs.Builder]):
+    inline def autoscalingConfig(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstancePartitionAutoscalingConfigArgs.Builder]):
         com.pulumi.gcp.spanner.inputs.InstancePartitionState.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.InstancePartitionAutoscalingConfigArgs.builder
       builder.autoscalingConfig(args(argsBuilder).build)
@@ -356,7 +356,7 @@ object spanner_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoscalingConfig(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigArgs.Builder]):
+    inline def autoscalingConfig(args: Endofunction[com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigArgs.Builder]):
         com.pulumi.gcp.spanner.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.InstanceAutoscalingConfigArgs.builder
       builder.autoscalingConfig(args(argsBuilder).build)

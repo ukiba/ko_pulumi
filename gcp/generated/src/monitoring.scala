@@ -17,7 +17,7 @@ object monitoring:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/monitoring/alerts/)
    */
-  def AlertPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AlertPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.monitoring.AlertPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.monitoring.AlertPolicyArgs.builder
     com.pulumi.gcp.monitoring.AlertPolicy(name,
@@ -38,7 +38,7 @@ object monitoring:
    *     * [Service Monitoring](https://cloud.google.com/monitoring/service-monitoring)
    *     * [Service-orientation on Wikipedia](https://en.wikipedia.org/wiki/Service-orientation)
    */
-  def CustomService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.monitoring.CustomServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.monitoring.CustomServiceArgs.builder
     com.pulumi.gcp.monitoring.CustomService(name,
@@ -54,7 +54,7 @@ object monitoring:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/monitoring/dashboards)
    */
-  def Dashboard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Dashboard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.monitoring.DashboardArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.monitoring.DashboardArgs.builder
     com.pulumi.gcp.monitoring.Dashboard(name,
@@ -75,7 +75,7 @@ object monitoring:
    *     * [Service Monitoring](https://cloud.google.com/monitoring/service-monitoring)
    *     * [Service-orientation on Wikipedia](https://en.wikipedia.org/wiki/Service-orientation)
    */
-  def GenericService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GenericService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.monitoring.GenericServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.monitoring.GenericServiceArgs.builder
     com.pulumi.gcp.monitoring.GenericService(name,
@@ -94,7 +94,7 @@ object monitoring:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/monitoring/groups/)
    */
-  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.monitoring.GroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.monitoring.GroupArgs.builder
     com.pulumi.gcp.monitoring.Group(name,
@@ -110,7 +110,7 @@ object monitoring:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/monitoring/custom-metrics/)
    */
-  def MetricDescriptor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MetricDescriptor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.monitoring.MetricDescriptorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.monitoring.MetricDescriptorArgs.builder
     com.pulumi.gcp.monitoring.MetricDescriptor(name,
@@ -126,7 +126,7 @@ object monitoring:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/monitoring/settings/manage-api)
    */
-  def MonitoredProject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MonitoredProject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.monitoring.MonitoredProjectArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.monitoring.MonitoredProjectArgs.builder
     conf.logicalName2physicalName(name) match
@@ -397,7 +397,7 @@ object monitoring:
    * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `sensitive_labels.auth_token_wo`, `sensitive_labels.password_wo`, `sensitive_labels.service_key_wo`.
    * Read more about Write-only Arguments.
    */
-  def NotificationChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NotificationChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.monitoring.NotificationChannelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.monitoring.NotificationChannelArgs.builder
     com.pulumi.gcp.monitoring.NotificationChannel(name,
@@ -420,7 +420,7 @@ object monitoring:
    *     * [Monitoring API Documentation](https://cloud.google.com/monitoring/api/v3/)
    *     * [Service Monitoring](https://cloud.google.com/monitoring/service-monitoring)
    */
-  def Slo(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Slo(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.monitoring.SloArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.monitoring.SloArgs.builder
     com.pulumi.gcp.monitoring.Slo(name,
@@ -442,7 +442,7 @@ object monitoring:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/monitoring/alerts/snooze)
    */
-  def Snooze(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Snooze(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.monitoring.SnoozeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.monitoring.SnoozeArgs.builder
     com.pulumi.gcp.monitoring.Snooze(name,
@@ -461,7 +461,7 @@ object monitoring:
    * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `http_check.auth_info.password_wo`.
    * Read more about Write-only Arguments.
    */
-  def UptimeCheckConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UptimeCheckConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.monitoring.UptimeCheckConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.monitoring.UptimeCheckConfigArgs.builder
     com.pulumi.gcp.monitoring.UptimeCheckConfig(name,

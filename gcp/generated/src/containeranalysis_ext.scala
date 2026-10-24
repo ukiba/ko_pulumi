@@ -16,7 +16,7 @@ object containeranalysis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attestationAuthority(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.NoteAttestationAuthorityArgs.Builder]):
+    inline def attestationAuthority(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.NoteAttestationAuthorityArgs.Builder]):
         com.pulumi.gcp.containeranalysis.NoteArgs.Builder =
       val argsBuilder = com.pulumi.gcp.containeranalysis.inputs.NoteAttestationAuthorityArgs.builder
       builder.attestationAuthority(args(argsBuilder).build)
@@ -26,19 +26,19 @@ object containeranalysis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def relatedUrls(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.NoteRelatedUrlArgs.Builder]*):
+    inline def relatedUrls(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.NoteRelatedUrlArgs.Builder]*):
         com.pulumi.gcp.containeranalysis.NoteArgs.Builder =
       def argsBuilder = com.pulumi.gcp.containeranalysis.inputs.NoteRelatedUrlArgs.builder
       builder.relatedUrls(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.containeranalysis.NoteIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.NoteIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.NoteIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.containeranalysis.NoteIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.containeranalysis.inputs.NoteIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.containeranalysis.NoteIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.NoteIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.NoteIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.containeranalysis.NoteIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.containeranalysis.inputs.NoteIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -56,7 +56,7 @@ object containeranalysis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attestation(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.OccurenceAttestationArgs.Builder]):
+    inline def attestation(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.OccurenceAttestationArgs.Builder]):
         com.pulumi.gcp.containeranalysis.OccurenceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.containeranalysis.inputs.OccurenceAttestationArgs.builder
       builder.attestation(args(argsBuilder).build)
@@ -74,19 +74,19 @@ object containeranalysis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hint(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.NoteAttestationAuthorityHintArgs.Builder]):
+    inline def hint(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.NoteAttestationAuthorityHintArgs.Builder]):
         com.pulumi.gcp.containeranalysis.inputs.NoteAttestationAuthorityArgs.Builder =
       val argsBuilder = com.pulumi.gcp.containeranalysis.inputs.NoteAttestationAuthorityHintArgs.builder
       builder.hint(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.containeranalysis.inputs.NoteIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.NoteIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.NoteIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.containeranalysis.inputs.NoteIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.containeranalysis.inputs.NoteIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.containeranalysis.inputs.NoteIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.NoteIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.NoteIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.containeranalysis.inputs.NoteIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.containeranalysis.inputs.NoteIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -105,7 +105,7 @@ object containeranalysis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attestationAuthority(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.NoteAttestationAuthorityArgs.Builder]):
+    inline def attestationAuthority(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.NoteAttestationAuthorityArgs.Builder]):
         com.pulumi.gcp.containeranalysis.inputs.NoteState.Builder =
       val argsBuilder = com.pulumi.gcp.containeranalysis.inputs.NoteAttestationAuthorityArgs.builder
       builder.attestationAuthority(args(argsBuilder).build)
@@ -115,7 +115,7 @@ object containeranalysis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def relatedUrls(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.NoteRelatedUrlArgs.Builder]*):
+    inline def relatedUrls(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.NoteRelatedUrlArgs.Builder]*):
         com.pulumi.gcp.containeranalysis.inputs.NoteState.Builder =
       def argsBuilder = com.pulumi.gcp.containeranalysis.inputs.NoteRelatedUrlArgs.builder
       builder.relatedUrls(args.map(_(argsBuilder).build)*)
@@ -130,7 +130,7 @@ object containeranalysis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def signatures(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.OccurenceAttestationSignatureArgs.Builder]*):
+    inline def signatures(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.OccurenceAttestationSignatureArgs.Builder]*):
         com.pulumi.gcp.containeranalysis.inputs.OccurenceAttestationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.containeranalysis.inputs.OccurenceAttestationSignatureArgs.builder
       builder.signatures(args.map(_(argsBuilder).build)*)
@@ -148,7 +148,7 @@ object containeranalysis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attestation(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.OccurenceAttestationArgs.Builder]):
+    inline def attestation(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.OccurenceAttestationArgs.Builder]):
         com.pulumi.gcp.containeranalysis.inputs.OccurenceState.Builder =
       val argsBuilder = com.pulumi.gcp.containeranalysis.inputs.OccurenceAttestationArgs.builder
       builder.attestation(args(argsBuilder).build)

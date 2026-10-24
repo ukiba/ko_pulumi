@@ -8,7 +8,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectedRepositories(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.BitbucketServerConfigConnectedRepositoryArgs.Builder]*):
+    inline def connectedRepositories(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.BitbucketServerConfigConnectedRepositoryArgs.Builder]*):
         com.pulumi.gcp.cloudbuild.BitbucketServerConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudbuild.inputs.BitbucketServerConfigConnectedRepositoryArgs.builder
       builder.connectedRepositories(args.map(_(argsBuilder).build)*)
@@ -18,7 +18,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secrets(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.BitbucketServerConfigSecretsArgs.Builder]):
+    inline def secrets(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.BitbucketServerConfigSecretsArgs.Builder]):
         com.pulumi.gcp.cloudbuild.BitbucketServerConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.BitbucketServerConfigSecretsArgs.builder
       builder.secrets(args(argsBuilder).build)
@@ -31,7 +31,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def approvalConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerApprovalConfigArgs.Builder]):
+    inline def approvalConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerApprovalConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuild.TriggerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerApprovalConfigArgs.builder
       builder.approvalConfig(args(argsBuilder).build)
@@ -41,7 +41,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bitbucketServerTriggerConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBitbucketServerTriggerConfigArgs.Builder]):
+    inline def bitbucketServerTriggerConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBitbucketServerTriggerConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuild.TriggerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerBitbucketServerTriggerConfigArgs.builder
       builder.bitbucketServerTriggerConfig(args(argsBuilder).build)
@@ -51,7 +51,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def build(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArgs.Builder]):
+    inline def build(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArgs.Builder]):
         com.pulumi.gcp.cloudbuild.TriggerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArgs.builder
       builder.build(args(argsBuilder).build)
@@ -61,7 +61,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def developerConnectEventConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerDeveloperConnectEventConfigArgs.Builder]):
+    inline def developerConnectEventConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerDeveloperConnectEventConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuild.TriggerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerDeveloperConnectEventConfigArgs.builder
       builder.developerConnectEventConfig(args(argsBuilder).build)
@@ -71,7 +71,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gitFileSource(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerGitFileSourceArgs.Builder]):
+    inline def gitFileSource(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerGitFileSourceArgs.Builder]):
         com.pulumi.gcp.cloudbuild.TriggerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerGitFileSourceArgs.builder
       builder.gitFileSource(args(argsBuilder).build)
@@ -81,7 +81,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def github(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerGithubArgs.Builder]):
+    inline def github(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerGithubArgs.Builder]):
         com.pulumi.gcp.cloudbuild.TriggerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerGithubArgs.builder
       builder.github(args(argsBuilder).build)
@@ -92,7 +92,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pubsubConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerPubsubConfigArgs.Builder]):
+    inline def pubsubConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerPubsubConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuild.TriggerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerPubsubConfigArgs.builder
       builder.pubsubConfig(args(argsBuilder).build)
@@ -102,7 +102,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def repositoryEventConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerRepositoryEventConfigArgs.Builder]):
+    inline def repositoryEventConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerRepositoryEventConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuild.TriggerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerRepositoryEventConfigArgs.builder
       builder.repositoryEventConfig(args(argsBuilder).build)
@@ -115,7 +115,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sourceToBuild(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerSourceToBuildArgs.Builder]):
+    inline def sourceToBuild(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerSourceToBuildArgs.Builder]):
         com.pulumi.gcp.cloudbuild.TriggerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerSourceToBuildArgs.builder
       builder.sourceToBuild(args(argsBuilder).build)
@@ -128,7 +128,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def triggerTemplate(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerTriggerTemplateArgs.Builder]):
+    inline def triggerTemplate(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerTriggerTemplateArgs.Builder]):
         com.pulumi.gcp.cloudbuild.TriggerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerTriggerTemplateArgs.builder
       builder.triggerTemplate(args(argsBuilder).build)
@@ -139,7 +139,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def webhookConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerWebhookConfigArgs.Builder]):
+    inline def webhookConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerWebhookConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuild.TriggerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerWebhookConfigArgs.builder
       builder.webhookConfig(args(argsBuilder).build)
@@ -149,7 +149,7 @@ object cloudbuild_ext:
      * @param networkConfig Network configuration for the `WorkerPool`. Structure is documented below.
      * @return builder
      */
-    def networkConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.WorkerPoolNetworkConfigArgs.Builder]):
+    inline def networkConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.WorkerPoolNetworkConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuild.WorkerPoolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.WorkerPoolNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)
@@ -158,7 +158,7 @@ object cloudbuild_ext:
      * @param privateServiceConnect Private Service Connect configuration for the pool.
      * @return builder
      */
-    def privateServiceConnect(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.WorkerPoolPrivateServiceConnectArgs.Builder]):
+    inline def privateServiceConnect(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.WorkerPoolPrivateServiceConnectArgs.Builder]):
         com.pulumi.gcp.cloudbuild.WorkerPoolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.WorkerPoolPrivateServiceConnectArgs.builder
       builder.privateServiceConnect(args(argsBuilder).build)
@@ -167,7 +167,7 @@ object cloudbuild_ext:
      * @param workerConfig Configuration to be used for a creating workers in the `WorkerPool`. Structure is documented below.
      * @return builder
      */
-    def workerConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.WorkerPoolWorkerConfigArgs.Builder]):
+    inline def workerConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.WorkerPoolWorkerConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuild.WorkerPoolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.WorkerPoolWorkerConfigArgs.builder
       builder.workerConfig(args(argsBuilder).build)
@@ -178,7 +178,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectedRepositories(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.BitbucketServerConfigConnectedRepositoryArgs.Builder]*):
+    inline def connectedRepositories(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.BitbucketServerConfigConnectedRepositoryArgs.Builder]*):
         com.pulumi.gcp.cloudbuild.inputs.BitbucketServerConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.cloudbuild.inputs.BitbucketServerConfigConnectedRepositoryArgs.builder
       builder.connectedRepositories(args.map(_(argsBuilder).build)*)
@@ -188,7 +188,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secrets(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.BitbucketServerConfigSecretsArgs.Builder]):
+    inline def secrets(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.BitbucketServerConfigSecretsArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.BitbucketServerConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.BitbucketServerConfigSecretsArgs.builder
       builder.secrets(args(argsBuilder).build)
@@ -199,7 +199,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pullRequest(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBitbucketServerTriggerConfigPullRequestArgs.Builder]):
+    inline def pullRequest(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBitbucketServerTriggerConfigPullRequestArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerBitbucketServerTriggerConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerBitbucketServerTriggerConfigPullRequestArgs.builder
       builder.pullRequest(args(argsBuilder).build)
@@ -209,7 +209,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def push(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBitbucketServerTriggerConfigPushArgs.Builder]):
+    inline def push(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBitbucketServerTriggerConfigPushArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerBitbucketServerTriggerConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerBitbucketServerTriggerConfigPushArgs.builder
       builder.push(args(argsBuilder).build)
@@ -220,7 +220,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def artifacts(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArtifactsArgs.Builder]):
+    inline def artifacts(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArtifactsArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArtifactsArgs.builder
       builder.artifacts(args(argsBuilder).build)
@@ -230,7 +230,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def availableSecrets(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildAvailableSecretsArgs.Builder]):
+    inline def availableSecrets(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildAvailableSecretsArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerBuildAvailableSecretsArgs.builder
       builder.availableSecrets(args(argsBuilder).build)
@@ -240,7 +240,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def options(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildOptionsArgs.Builder]):
+    inline def options(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildOptionsArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerBuildOptionsArgs.builder
       builder.options(args(argsBuilder).build)
@@ -250,7 +250,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secrets(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildSecretArgs.Builder]*):
+    inline def secrets(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildSecretArgs.Builder]*):
         com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerBuildSecretArgs.builder
       builder.secrets(args.map(_(argsBuilder).build)*)
@@ -261,7 +261,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def source(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildSourceArgs.Builder]):
+    inline def source(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildSourceArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerBuildSourceArgs.builder
       builder.source(args(argsBuilder).build)
@@ -271,7 +271,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def steps(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildStepArgs.Builder]*):
+    inline def steps(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildStepArgs.Builder]*):
         com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerBuildStepArgs.builder
       builder.steps(args.map(_(argsBuilder).build)*)
@@ -284,7 +284,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mavenArtifacts(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArtifactsMavenArtifactArgs.Builder]*):
+    inline def mavenArtifacts(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArtifactsMavenArtifactArgs.Builder]*):
         com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArtifactsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArtifactsMavenArtifactArgs.builder
       builder.mavenArtifacts(args.map(_(argsBuilder).build)*)
@@ -296,7 +296,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def npmPackages(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArtifactsNpmPackageArgs.Builder]*):
+    inline def npmPackages(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArtifactsNpmPackageArgs.Builder]*):
         com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArtifactsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArtifactsNpmPackageArgs.builder
       builder.npmPackages(args.map(_(argsBuilder).build)*)
@@ -310,7 +310,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def objects(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArtifactsObjectsArgs.Builder]):
+    inline def objects(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArtifactsObjectsArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArtifactsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArtifactsObjectsArgs.builder
       builder.objects(args(argsBuilder).build)
@@ -322,7 +322,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pythonPackages(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArtifactsPythonPackageArgs.Builder]*):
+    inline def pythonPackages(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArtifactsPythonPackageArgs.Builder]*):
         com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArtifactsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArtifactsPythonPackageArgs.builder
       builder.pythonPackages(args.map(_(argsBuilder).build)*)
@@ -336,7 +336,7 @@ object cloudbuild_ext:
      * &lt;a name=&#34;nestedBuildArtifactsObjectsTiming&#34;&gt;&lt;/a&gt;The `timing` block contains:
      * @return builder
      */
-    def timings(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArtifactsObjectsTimingArgs.Builder]*):
+    inline def timings(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArtifactsObjectsTimingArgs.Builder]*):
         com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArtifactsObjectsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArtifactsObjectsTimingArgs.builder
       builder.timings(args.map(_(argsBuilder).build)*)
@@ -347,7 +347,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secretManagers(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildAvailableSecretsSecretManagerArgs.Builder]*):
+    inline def secretManagers(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildAvailableSecretsSecretManagerArgs.Builder]*):
         com.pulumi.gcp.cloudbuild.inputs.TriggerBuildAvailableSecretsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerBuildAvailableSecretsSecretManagerArgs.builder
       builder.secretManagers(args.map(_(argsBuilder).build)*)
@@ -363,7 +363,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def volumes(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildOptionsVolumeArgs.Builder]*):
+    inline def volumes(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildOptionsVolumeArgs.Builder]*):
         com.pulumi.gcp.cloudbuild.inputs.TriggerBuildOptionsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerBuildOptionsVolumeArgs.builder
       builder.volumes(args.map(_(argsBuilder).build)*)
@@ -374,7 +374,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def repoSource(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildSourceRepoSourceArgs.Builder]):
+    inline def repoSource(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildSourceRepoSourceArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerBuildSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerBuildSourceRepoSourceArgs.builder
       builder.repoSource(args(argsBuilder).build)
@@ -384,7 +384,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def storageSource(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildSourceStorageSourceArgs.Builder]):
+    inline def storageSource(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildSourceStorageSourceArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerBuildSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerBuildSourceStorageSourceArgs.builder
       builder.storageSource(args(argsBuilder).build)
@@ -400,7 +400,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def volumes(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildStepVolumeArgs.Builder]*):
+    inline def volumes(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildStepVolumeArgs.Builder]*):
         com.pulumi.gcp.cloudbuild.inputs.TriggerBuildStepArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerBuildStepVolumeArgs.builder
       builder.volumes(args.map(_(argsBuilder).build)*)
@@ -411,7 +411,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pullRequest(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerDeveloperConnectEventConfigPullRequestArgs.Builder]):
+    inline def pullRequest(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerDeveloperConnectEventConfigPullRequestArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerDeveloperConnectEventConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerDeveloperConnectEventConfigPullRequestArgs.builder
       builder.pullRequest(args(argsBuilder).build)
@@ -421,7 +421,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def push(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerDeveloperConnectEventConfigPushArgs.Builder]):
+    inline def push(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerDeveloperConnectEventConfigPushArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerDeveloperConnectEventConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerDeveloperConnectEventConfigPushArgs.builder
       builder.push(args(argsBuilder).build)
@@ -432,7 +432,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pullRequest(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerGithubPullRequestArgs.Builder]):
+    inline def pullRequest(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerGithubPullRequestArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerGithubArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerGithubPullRequestArgs.builder
       builder.pullRequest(args(argsBuilder).build)
@@ -442,7 +442,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def push(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerGithubPushArgs.Builder]):
+    inline def push(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerGithubPushArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerGithubArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerGithubPushArgs.builder
       builder.push(args(argsBuilder).build)
@@ -453,7 +453,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pullRequest(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerRepositoryEventConfigPullRequestArgs.Builder]):
+    inline def pullRequest(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerRepositoryEventConfigPullRequestArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerRepositoryEventConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerRepositoryEventConfigPullRequestArgs.builder
       builder.pullRequest(args(argsBuilder).build)
@@ -463,7 +463,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def push(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerRepositoryEventConfigPushArgs.Builder]):
+    inline def push(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerRepositoryEventConfigPushArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerRepositoryEventConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerRepositoryEventConfigPushArgs.builder
       builder.push(args(argsBuilder).build)
@@ -476,7 +476,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def approvalConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerApprovalConfigArgs.Builder]):
+    inline def approvalConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerApprovalConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerApprovalConfigArgs.builder
       builder.approvalConfig(args(argsBuilder).build)
@@ -486,7 +486,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bitbucketServerTriggerConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBitbucketServerTriggerConfigArgs.Builder]):
+    inline def bitbucketServerTriggerConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBitbucketServerTriggerConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerBitbucketServerTriggerConfigArgs.builder
       builder.bitbucketServerTriggerConfig(args(argsBuilder).build)
@@ -496,7 +496,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def build(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArgs.Builder]):
+    inline def build(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerBuildArgs.builder
       builder.build(args(argsBuilder).build)
@@ -506,7 +506,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def developerConnectEventConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerDeveloperConnectEventConfigArgs.Builder]):
+    inline def developerConnectEventConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerDeveloperConnectEventConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerDeveloperConnectEventConfigArgs.builder
       builder.developerConnectEventConfig(args(argsBuilder).build)
@@ -516,7 +516,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gitFileSource(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerGitFileSourceArgs.Builder]):
+    inline def gitFileSource(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerGitFileSourceArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerGitFileSourceArgs.builder
       builder.gitFileSource(args(argsBuilder).build)
@@ -526,7 +526,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def github(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerGithubArgs.Builder]):
+    inline def github(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerGithubArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerGithubArgs.builder
       builder.github(args(argsBuilder).build)
@@ -537,7 +537,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pubsubConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerPubsubConfigArgs.Builder]):
+    inline def pubsubConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerPubsubConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerPubsubConfigArgs.builder
       builder.pubsubConfig(args(argsBuilder).build)
@@ -547,7 +547,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def repositoryEventConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerRepositoryEventConfigArgs.Builder]):
+    inline def repositoryEventConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerRepositoryEventConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerRepositoryEventConfigArgs.builder
       builder.repositoryEventConfig(args(argsBuilder).build)
@@ -560,7 +560,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sourceToBuild(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerSourceToBuildArgs.Builder]):
+    inline def sourceToBuild(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerSourceToBuildArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerSourceToBuildArgs.builder
       builder.sourceToBuild(args(argsBuilder).build)
@@ -573,7 +573,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def triggerTemplate(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerTriggerTemplateArgs.Builder]):
+    inline def triggerTemplate(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerTriggerTemplateArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerTriggerTemplateArgs.builder
       builder.triggerTemplate(args(argsBuilder).build)
@@ -584,7 +584,7 @@ object cloudbuild_ext:
      * Structure is documented below.
      * @return builder
      */
-    def webhookConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerWebhookConfigArgs.Builder]):
+    inline def webhookConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.TriggerWebhookConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.TriggerState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.TriggerWebhookConfigArgs.builder
       builder.webhookConfig(args(argsBuilder).build)
@@ -594,7 +594,7 @@ object cloudbuild_ext:
      * @param networkConfig Network configuration for the `WorkerPool`. Structure is documented below.
      * @return builder
      */
-    def networkConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.WorkerPoolNetworkConfigArgs.Builder]):
+    inline def networkConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.WorkerPoolNetworkConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.WorkerPoolState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.WorkerPoolNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)
@@ -603,7 +603,7 @@ object cloudbuild_ext:
      * @param privateServiceConnect Private Service Connect configuration for the pool.
      * @return builder
      */
-    def privateServiceConnect(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.WorkerPoolPrivateServiceConnectArgs.Builder]):
+    inline def privateServiceConnect(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.WorkerPoolPrivateServiceConnectArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.WorkerPoolState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.WorkerPoolPrivateServiceConnectArgs.builder
       builder.privateServiceConnect(args(argsBuilder).build)
@@ -612,7 +612,7 @@ object cloudbuild_ext:
      * @param workerConfig Configuration to be used for a creating workers in the `WorkerPool`. Structure is documented below.
      * @return builder
      */
-    def workerConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.WorkerPoolWorkerConfigArgs.Builder]):
+    inline def workerConfig(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.WorkerPoolWorkerConfigArgs.Builder]):
         com.pulumi.gcp.cloudbuild.inputs.WorkerPoolState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.WorkerPoolWorkerConfigArgs.builder
       builder.workerConfig(args(argsBuilder).build)

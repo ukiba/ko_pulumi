@@ -3,13 +3,13 @@ package gcp
 
 object billing_ext:
   extension (builder: com.pulumi.gcp.billing.AccountIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.billing.inputs.AccountIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.billing.inputs.AccountIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.billing.AccountIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.billing.inputs.AccountIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.billing.AccountIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.billing.inputs.AccountIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.billing.inputs.AccountIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.billing.AccountIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.billing.inputs.AccountIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -22,7 +22,7 @@ object billing_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allUpdatesRule(args: Endofunction[com.pulumi.gcp.billing.inputs.BudgetAllUpdatesRuleArgs.Builder]):
+    inline def allUpdatesRule(args: Endofunction[com.pulumi.gcp.billing.inputs.BudgetAllUpdatesRuleArgs.Builder]):
         com.pulumi.gcp.billing.BudgetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.billing.inputs.BudgetAllUpdatesRuleArgs.builder
       builder.allUpdatesRule(args(argsBuilder).build)
@@ -32,7 +32,7 @@ object billing_ext:
      * Structure is documented below.
      * @return builder
      */
-    def amount(args: Endofunction[com.pulumi.gcp.billing.inputs.BudgetAmountArgs.Builder]):
+    inline def amount(args: Endofunction[com.pulumi.gcp.billing.inputs.BudgetAmountArgs.Builder]):
         com.pulumi.gcp.billing.BudgetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.billing.inputs.BudgetAmountArgs.builder
       builder.amount(args(argsBuilder).build)
@@ -43,7 +43,7 @@ object billing_ext:
      * Structure is documented below.
      * @return builder
      */
-    def budgetFilter(args: Endofunction[com.pulumi.gcp.billing.inputs.BudgetBudgetFilterArgs.Builder]):
+    inline def budgetFilter(args: Endofunction[com.pulumi.gcp.billing.inputs.BudgetBudgetFilterArgs.Builder]):
         com.pulumi.gcp.billing.BudgetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.billing.inputs.BudgetBudgetFilterArgs.builder
       builder.budgetFilter(args(argsBuilder).build)
@@ -55,19 +55,19 @@ object billing_ext:
      * Structure is documented below.
      * @return builder
      */
-    def thresholdRules(args: Endofunction[com.pulumi.gcp.billing.inputs.BudgetThresholdRuleArgs.Builder]*):
+    inline def thresholdRules(args: Endofunction[com.pulumi.gcp.billing.inputs.BudgetThresholdRuleArgs.Builder]*):
         com.pulumi.gcp.billing.BudgetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.billing.inputs.BudgetThresholdRuleArgs.builder
       builder.thresholdRules(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.billing.inputs.AccountIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.billing.inputs.AccountIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.billing.inputs.AccountIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.billing.inputs.AccountIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.billing.inputs.AccountIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.billing.inputs.AccountIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.billing.inputs.AccountIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.billing.inputs.AccountIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.billing.inputs.AccountIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.billing.inputs.AccountIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -80,7 +80,7 @@ object billing_ext:
      * Structure is documented below.
      * @return builder
      */
-    def specifiedAmount(args: Endofunction[com.pulumi.gcp.billing.inputs.BudgetAmountSpecifiedAmountArgs.Builder]):
+    inline def specifiedAmount(args: Endofunction[com.pulumi.gcp.billing.inputs.BudgetAmountSpecifiedAmountArgs.Builder]):
         com.pulumi.gcp.billing.inputs.BudgetAmountArgs.Builder =
       val argsBuilder = com.pulumi.gcp.billing.inputs.BudgetAmountSpecifiedAmountArgs.builder
       builder.specifiedAmount(args(argsBuilder).build)
@@ -93,7 +93,7 @@ object billing_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customPeriod(args: Endofunction[com.pulumi.gcp.billing.inputs.BudgetBudgetFilterCustomPeriodArgs.Builder]):
+    inline def customPeriod(args: Endofunction[com.pulumi.gcp.billing.inputs.BudgetBudgetFilterCustomPeriodArgs.Builder]):
         com.pulumi.gcp.billing.inputs.BudgetBudgetFilterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.billing.inputs.BudgetBudgetFilterCustomPeriodArgs.builder
       builder.customPeriod(args(argsBuilder).build)
@@ -105,7 +105,7 @@ object billing_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endDate(args: Endofunction[com.pulumi.gcp.billing.inputs.BudgetBudgetFilterCustomPeriodEndDateArgs.Builder]):
+    inline def endDate(args: Endofunction[com.pulumi.gcp.billing.inputs.BudgetBudgetFilterCustomPeriodEndDateArgs.Builder]):
         com.pulumi.gcp.billing.inputs.BudgetBudgetFilterCustomPeriodArgs.Builder =
       val argsBuilder = com.pulumi.gcp.billing.inputs.BudgetBudgetFilterCustomPeriodEndDateArgs.builder
       builder.endDate(args(argsBuilder).build)
@@ -115,7 +115,7 @@ object billing_ext:
      * Structure is documented below.
      * @return builder
      */
-    def startDate(args: Endofunction[com.pulumi.gcp.billing.inputs.BudgetBudgetFilterCustomPeriodStartDateArgs.Builder]):
+    inline def startDate(args: Endofunction[com.pulumi.gcp.billing.inputs.BudgetBudgetFilterCustomPeriodStartDateArgs.Builder]):
         com.pulumi.gcp.billing.inputs.BudgetBudgetFilterCustomPeriodArgs.Builder =
       val argsBuilder = com.pulumi.gcp.billing.inputs.BudgetBudgetFilterCustomPeriodStartDateArgs.builder
       builder.startDate(args(argsBuilder).build)
@@ -128,7 +128,7 @@ object billing_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allUpdatesRule(args: Endofunction[com.pulumi.gcp.billing.inputs.BudgetAllUpdatesRuleArgs.Builder]):
+    inline def allUpdatesRule(args: Endofunction[com.pulumi.gcp.billing.inputs.BudgetAllUpdatesRuleArgs.Builder]):
         com.pulumi.gcp.billing.inputs.BudgetState.Builder =
       val argsBuilder = com.pulumi.gcp.billing.inputs.BudgetAllUpdatesRuleArgs.builder
       builder.allUpdatesRule(args(argsBuilder).build)
@@ -138,7 +138,7 @@ object billing_ext:
      * Structure is documented below.
      * @return builder
      */
-    def amount(args: Endofunction[com.pulumi.gcp.billing.inputs.BudgetAmountArgs.Builder]):
+    inline def amount(args: Endofunction[com.pulumi.gcp.billing.inputs.BudgetAmountArgs.Builder]):
         com.pulumi.gcp.billing.inputs.BudgetState.Builder =
       val argsBuilder = com.pulumi.gcp.billing.inputs.BudgetAmountArgs.builder
       builder.amount(args(argsBuilder).build)
@@ -149,7 +149,7 @@ object billing_ext:
      * Structure is documented below.
      * @return builder
      */
-    def budgetFilter(args: Endofunction[com.pulumi.gcp.billing.inputs.BudgetBudgetFilterArgs.Builder]):
+    inline def budgetFilter(args: Endofunction[com.pulumi.gcp.billing.inputs.BudgetBudgetFilterArgs.Builder]):
         com.pulumi.gcp.billing.inputs.BudgetState.Builder =
       val argsBuilder = com.pulumi.gcp.billing.inputs.BudgetBudgetFilterArgs.builder
       builder.budgetFilter(args(argsBuilder).build)
@@ -161,7 +161,7 @@ object billing_ext:
      * Structure is documented below.
      * @return builder
      */
-    def thresholdRules(args: Endofunction[com.pulumi.gcp.billing.inputs.BudgetThresholdRuleArgs.Builder]*):
+    inline def thresholdRules(args: Endofunction[com.pulumi.gcp.billing.inputs.BudgetThresholdRuleArgs.Builder]*):
         com.pulumi.gcp.billing.inputs.BudgetState.Builder =
       def argsBuilder = com.pulumi.gcp.billing.inputs.BudgetThresholdRuleArgs.builder
       builder.thresholdRules(args.map(_(argsBuilder).build)*)

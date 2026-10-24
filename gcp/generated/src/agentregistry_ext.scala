@@ -8,7 +8,7 @@ object agentregistry_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authProviderBinding(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.BindingAuthProviderBindingArgs.Builder]):
+    inline def authProviderBinding(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.BindingAuthProviderBindingArgs.Builder]):
         com.pulumi.gcp.agentregistry.BindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agentregistry.inputs.BindingAuthProviderBindingArgs.builder
       builder.authProviderBinding(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object agentregistry_ext:
      * Structure is documented below.
      * @return builder
      */
-    def source(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.BindingSourceArgs.Builder]):
+    inline def source(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.BindingSourceArgs.Builder]):
         com.pulumi.gcp.agentregistry.BindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agentregistry.inputs.BindingSourceArgs.builder
       builder.source(args(argsBuilder).build)
@@ -28,7 +28,7 @@ object agentregistry_ext:
      * Structure is documented below.
      * @return builder
      */
-    def target(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.BindingTargetArgs.Builder]):
+    inline def target(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.BindingTargetArgs.Builder]):
         com.pulumi.gcp.agentregistry.BindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agentregistry.inputs.BindingTargetArgs.builder
       builder.target(args(argsBuilder).build)
@@ -39,7 +39,7 @@ object agentregistry_ext:
      * Structure is documented below.
      * @return builder
      */
-    def agentSpec(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.ServiceAgentSpecArgs.Builder]):
+    inline def agentSpec(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.ServiceAgentSpecArgs.Builder]):
         com.pulumi.gcp.agentregistry.ServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agentregistry.inputs.ServiceAgentSpecArgs.builder
       builder.agentSpec(args(argsBuilder).build)
@@ -49,7 +49,7 @@ object agentregistry_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endpointSpec(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.ServiceEndpointSpecArgs.Builder]):
+    inline def endpointSpec(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.ServiceEndpointSpecArgs.Builder]):
         com.pulumi.gcp.agentregistry.ServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agentregistry.inputs.ServiceEndpointSpecArgs.builder
       builder.endpointSpec(args(argsBuilder).build)
@@ -59,7 +59,7 @@ object agentregistry_ext:
      * Structure is documented below.
      * @return builder
      */
-    def interfaces(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.ServiceInterfaceArgs.Builder]*):
+    inline def interfaces(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.ServiceInterfaceArgs.Builder]*):
         com.pulumi.gcp.agentregistry.ServiceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.agentregistry.inputs.ServiceInterfaceArgs.builder
       builder.interfaces(args.map(_(argsBuilder).build)*)
@@ -69,7 +69,7 @@ object agentregistry_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mcpServerSpec(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.ServiceMcpServerSpecArgs.Builder]):
+    inline def mcpServerSpec(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.ServiceMcpServerSpecArgs.Builder]):
         com.pulumi.gcp.agentregistry.ServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agentregistry.inputs.ServiceMcpServerSpecArgs.builder
       builder.mcpServerSpec(args(argsBuilder).build)
@@ -80,7 +80,7 @@ object agentregistry_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authProviderBinding(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.BindingAuthProviderBindingArgs.Builder]):
+    inline def authProviderBinding(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.BindingAuthProviderBindingArgs.Builder]):
         com.pulumi.gcp.agentregistry.inputs.BindingState.Builder =
       val argsBuilder = com.pulumi.gcp.agentregistry.inputs.BindingAuthProviderBindingArgs.builder
       builder.authProviderBinding(args(argsBuilder).build)
@@ -90,7 +90,7 @@ object agentregistry_ext:
      * Structure is documented below.
      * @return builder
      */
-    def source(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.BindingSourceArgs.Builder]):
+    inline def source(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.BindingSourceArgs.Builder]):
         com.pulumi.gcp.agentregistry.inputs.BindingState.Builder =
       val argsBuilder = com.pulumi.gcp.agentregistry.inputs.BindingSourceArgs.builder
       builder.source(args(argsBuilder).build)
@@ -100,7 +100,7 @@ object agentregistry_ext:
      * Structure is documented below.
      * @return builder
      */
-    def target(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.BindingTargetArgs.Builder]):
+    inline def target(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.BindingTargetArgs.Builder]):
         com.pulumi.gcp.agentregistry.inputs.BindingState.Builder =
       val argsBuilder = com.pulumi.gcp.agentregistry.inputs.BindingTargetArgs.builder
       builder.target(args(argsBuilder).build)
@@ -111,7 +111,7 @@ object agentregistry_ext:
      * Structure is documented below.
      * @return builder
      */
-    def agentSpec(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.ServiceAgentSpecArgs.Builder]):
+    inline def agentSpec(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.ServiceAgentSpecArgs.Builder]):
         com.pulumi.gcp.agentregistry.inputs.ServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.agentregistry.inputs.ServiceAgentSpecArgs.builder
       builder.agentSpec(args(argsBuilder).build)
@@ -121,7 +121,7 @@ object agentregistry_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endpointSpec(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.ServiceEndpointSpecArgs.Builder]):
+    inline def endpointSpec(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.ServiceEndpointSpecArgs.Builder]):
         com.pulumi.gcp.agentregistry.inputs.ServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.agentregistry.inputs.ServiceEndpointSpecArgs.builder
       builder.endpointSpec(args(argsBuilder).build)
@@ -131,7 +131,7 @@ object agentregistry_ext:
      * Structure is documented below.
      * @return builder
      */
-    def interfaces(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.ServiceInterfaceArgs.Builder]*):
+    inline def interfaces(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.ServiceInterfaceArgs.Builder]*):
         com.pulumi.gcp.agentregistry.inputs.ServiceState.Builder =
       def argsBuilder = com.pulumi.gcp.agentregistry.inputs.ServiceInterfaceArgs.builder
       builder.interfaces(args.map(_(argsBuilder).build)*)
@@ -141,7 +141,7 @@ object agentregistry_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mcpServerSpec(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.ServiceMcpServerSpecArgs.Builder]):
+    inline def mcpServerSpec(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.ServiceMcpServerSpecArgs.Builder]):
         com.pulumi.gcp.agentregistry.inputs.ServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.agentregistry.inputs.ServiceMcpServerSpecArgs.builder
       builder.mcpServerSpec(args(argsBuilder).build)

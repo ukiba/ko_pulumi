@@ -7,7 +7,7 @@ object workspacesweb_ext:
      * @param inlineRedactionConfiguration The inline redaction configuration of the data protection settings. Detailed below.
      * @return builder
      */
-    def inlineRedactionConfiguration(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.DataProtectionSettingsInlineRedactionConfigurationArgs.Builder]):
+    inline def inlineRedactionConfiguration(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.DataProtectionSettingsInlineRedactionConfigurationArgs.Builder]):
         com.pulumi.aws.workspacesweb.DataProtectionSettingsArgs.Builder =
       val argsBuilder = com.pulumi.aws.workspacesweb.inputs.DataProtectionSettingsInlineRedactionConfigurationArgs.builder
       builder.inlineRedactionConfiguration(args(argsBuilder).build)
@@ -19,13 +19,13 @@ object workspacesweb_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def ipRules(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.IpAccessSettingsIpRuleArgs.Builder]*):
+    inline def ipRules(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.IpAccessSettingsIpRuleArgs.Builder]*):
         com.pulumi.aws.workspacesweb.IpAccessSettingsArgs.Builder =
       def argsBuilder = com.pulumi.aws.workspacesweb.inputs.IpAccessSettingsIpRuleArgs.builder
       builder.ipRules(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.workspacesweb.PortalArgs.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.PortalTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.PortalTimeoutsArgs.Builder]):
         com.pulumi.aws.workspacesweb.PortalArgs.Builder =
       val argsBuilder = com.pulumi.aws.workspacesweb.inputs.PortalTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -35,7 +35,7 @@ object workspacesweb_ext:
      * @param eventFilter Event filter that determines which events are logged. See Event Filter below.
      * @return builder
      */
-    def eventFilter(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.SessionLoggerEventFilterArgs.Builder]):
+    inline def eventFilter(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.SessionLoggerEventFilterArgs.Builder]):
         com.pulumi.aws.workspacesweb.SessionLoggerArgs.Builder =
       val argsBuilder = com.pulumi.aws.workspacesweb.inputs.SessionLoggerEventFilterArgs.builder
       builder.eventFilter(args(argsBuilder).build)
@@ -46,7 +46,7 @@ object workspacesweb_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def logConfiguration(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.SessionLoggerLogConfigurationArgs.Builder]):
+    inline def logConfiguration(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.SessionLoggerLogConfigurationArgs.Builder]):
         com.pulumi.aws.workspacesweb.SessionLoggerArgs.Builder =
       val argsBuilder = com.pulumi.aws.workspacesweb.inputs.SessionLoggerLogConfigurationArgs.builder
       builder.logConfiguration(args(argsBuilder).build)
@@ -56,7 +56,7 @@ object workspacesweb_ext:
      * @param certificates Set of certificates to include in the trust store. See Certificate below.
      * @return builder
      */
-    def certificates(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.TrustStoreCertificateArgs.Builder]*):
+    inline def certificates(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.TrustStoreCertificateArgs.Builder]*):
         com.pulumi.aws.workspacesweb.TrustStoreArgs.Builder =
       def argsBuilder = com.pulumi.aws.workspacesweb.inputs.TrustStoreCertificateArgs.builder
       builder.certificates(args.map(_(argsBuilder).build)*)
@@ -66,7 +66,7 @@ object workspacesweb_ext:
      * @param cookieSynchronizationConfiguration Configuration that specifies which cookies should be synchronized from the end user&#39;s local browser to the remote browser. Detailed below.
      * @return builder
      */
-    def cookieSynchronizationConfiguration(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.UserSettingsCookieSynchronizationConfigurationArgs.Builder]):
+    inline def cookieSynchronizationConfiguration(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.UserSettingsCookieSynchronizationConfigurationArgs.Builder]):
         com.pulumi.aws.workspacesweb.UserSettingsArgs.Builder =
       val argsBuilder = com.pulumi.aws.workspacesweb.inputs.UserSettingsCookieSynchronizationConfigurationArgs.builder
       builder.cookieSynchronizationConfiguration(args(argsBuilder).build)
@@ -75,7 +75,7 @@ object workspacesweb_ext:
      * @param toolbarConfiguration Configuration of the toolbar. Detailed below.
      * @return builder
      */
-    def toolbarConfiguration(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.UserSettingsToolbarConfigurationArgs.Builder]):
+    inline def toolbarConfiguration(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.UserSettingsToolbarConfigurationArgs.Builder]):
         com.pulumi.aws.workspacesweb.UserSettingsArgs.Builder =
       val argsBuilder = com.pulumi.aws.workspacesweb.inputs.UserSettingsToolbarConfigurationArgs.builder
       builder.toolbarConfiguration(args(argsBuilder).build)
@@ -85,7 +85,7 @@ object workspacesweb_ext:
      * @param inlineRedactionPatterns The inline redaction patterns to be enabled for the inline redaction configuration. Detailed below.
      * @return builder
      */
-    def inlineRedactionPatterns(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.DataProtectionSettingsInlineRedactionConfigurationInlineRedactionPatternArgs.Builder]*):
+    inline def inlineRedactionPatterns(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.DataProtectionSettingsInlineRedactionConfigurationInlineRedactionPatternArgs.Builder]*):
         com.pulumi.aws.workspacesweb.inputs.DataProtectionSettingsInlineRedactionConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.aws.workspacesweb.inputs.DataProtectionSettingsInlineRedactionConfigurationInlineRedactionPatternArgs.builder
       builder.inlineRedactionPatterns(args.map(_(argsBuilder).build)*)
@@ -95,7 +95,7 @@ object workspacesweb_ext:
      * @param customPattern The configuration for a custom pattern. Either a `customPattern` or `builtInPatternId` is required. Detailed below.
      * @return builder
      */
-    def customPattern(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.DataProtectionSettingsInlineRedactionConfigurationInlineRedactionPatternCustomPatternArgs.Builder]):
+    inline def customPattern(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.DataProtectionSettingsInlineRedactionConfigurationInlineRedactionPatternCustomPatternArgs.Builder]):
         com.pulumi.aws.workspacesweb.inputs.DataProtectionSettingsInlineRedactionConfigurationInlineRedactionPatternArgs.Builder =
       val argsBuilder = com.pulumi.aws.workspacesweb.inputs.DataProtectionSettingsInlineRedactionConfigurationInlineRedactionPatternCustomPatternArgs.builder
       builder.customPattern(args(argsBuilder).build)
@@ -104,7 +104,7 @@ object workspacesweb_ext:
      * @param redactionPlaceHolders The redaction placeholder that will replace the redacted text in session. Detailed below.
      * @return builder
      */
-    def redactionPlaceHolders(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.DataProtectionSettingsInlineRedactionConfigurationInlineRedactionPatternRedactionPlaceHolderArgs.Builder]*):
+    inline def redactionPlaceHolders(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.DataProtectionSettingsInlineRedactionConfigurationInlineRedactionPatternRedactionPlaceHolderArgs.Builder]*):
         com.pulumi.aws.workspacesweb.inputs.DataProtectionSettingsInlineRedactionConfigurationInlineRedactionPatternArgs.Builder =
       def argsBuilder = com.pulumi.aws.workspacesweb.inputs.DataProtectionSettingsInlineRedactionConfigurationInlineRedactionPatternRedactionPlaceHolderArgs.builder
       builder.redactionPlaceHolders(args.map(_(argsBuilder).build)*)
@@ -114,7 +114,7 @@ object workspacesweb_ext:
      * @param inlineRedactionConfiguration The inline redaction configuration of the data protection settings. Detailed below.
      * @return builder
      */
-    def inlineRedactionConfiguration(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.DataProtectionSettingsInlineRedactionConfigurationArgs.Builder]):
+    inline def inlineRedactionConfiguration(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.DataProtectionSettingsInlineRedactionConfigurationArgs.Builder]):
         com.pulumi.aws.workspacesweb.inputs.DataProtectionSettingsState.Builder =
       val argsBuilder = com.pulumi.aws.workspacesweb.inputs.DataProtectionSettingsInlineRedactionConfigurationArgs.builder
       builder.inlineRedactionConfiguration(args(argsBuilder).build)
@@ -126,13 +126,13 @@ object workspacesweb_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def ipRules(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.IpAccessSettingsIpRuleArgs.Builder]*):
+    inline def ipRules(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.IpAccessSettingsIpRuleArgs.Builder]*):
         com.pulumi.aws.workspacesweb.inputs.IpAccessSettingsState.Builder =
       def argsBuilder = com.pulumi.aws.workspacesweb.inputs.IpAccessSettingsIpRuleArgs.builder
       builder.ipRules(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.workspacesweb.inputs.PortalState.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.PortalTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.PortalTimeoutsArgs.Builder]):
         com.pulumi.aws.workspacesweb.inputs.PortalState.Builder =
       val argsBuilder = com.pulumi.aws.workspacesweb.inputs.PortalTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -142,7 +142,7 @@ object workspacesweb_ext:
      * @param all Block that specifies to monitor all events. Set to `{}` to monitor all events.
      * @return builder
      */
-    def all(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.SessionLoggerEventFilterAllArgs.Builder]):
+    inline def all(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.SessionLoggerEventFilterAllArgs.Builder]):
         com.pulumi.aws.workspacesweb.inputs.SessionLoggerEventFilterArgs.Builder =
       val argsBuilder = com.pulumi.aws.workspacesweb.inputs.SessionLoggerEventFilterAllArgs.builder
       builder.all(args(argsBuilder).build)
@@ -152,7 +152,7 @@ object workspacesweb_ext:
      * @param s3 Configuration block for S3 log delivery. See S3 Configuration below.
      * @return builder
      */
-    def s3(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.SessionLoggerLogConfigurationS3Args.Builder]):
+    inline def s3(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.SessionLoggerLogConfigurationS3Args.Builder]):
         com.pulumi.aws.workspacesweb.inputs.SessionLoggerLogConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.workspacesweb.inputs.SessionLoggerLogConfigurationS3Args.builder
       builder.s3(args(argsBuilder).build)
@@ -162,7 +162,7 @@ object workspacesweb_ext:
      * @param eventFilter Event filter that determines which events are logged. See Event Filter below.
      * @return builder
      */
-    def eventFilter(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.SessionLoggerEventFilterArgs.Builder]):
+    inline def eventFilter(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.SessionLoggerEventFilterArgs.Builder]):
         com.pulumi.aws.workspacesweb.inputs.SessionLoggerState.Builder =
       val argsBuilder = com.pulumi.aws.workspacesweb.inputs.SessionLoggerEventFilterArgs.builder
       builder.eventFilter(args(argsBuilder).build)
@@ -173,7 +173,7 @@ object workspacesweb_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def logConfiguration(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.SessionLoggerLogConfigurationArgs.Builder]):
+    inline def logConfiguration(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.SessionLoggerLogConfigurationArgs.Builder]):
         com.pulumi.aws.workspacesweb.inputs.SessionLoggerState.Builder =
       val argsBuilder = com.pulumi.aws.workspacesweb.inputs.SessionLoggerLogConfigurationArgs.builder
       builder.logConfiguration(args(argsBuilder).build)
@@ -183,7 +183,7 @@ object workspacesweb_ext:
      * @param certificates Set of certificates to include in the trust store. See Certificate below.
      * @return builder
      */
-    def certificates(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.TrustStoreCertificateArgs.Builder]*):
+    inline def certificates(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.TrustStoreCertificateArgs.Builder]*):
         com.pulumi.aws.workspacesweb.inputs.TrustStoreState.Builder =
       def argsBuilder = com.pulumi.aws.workspacesweb.inputs.TrustStoreCertificateArgs.builder
       builder.certificates(args.map(_(argsBuilder).build)*)
@@ -193,7 +193,7 @@ object workspacesweb_ext:
      * @param allowlists List of cookie specifications that are allowed to be synchronized to the remote browser.
      * @return builder
      */
-    def allowlists(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.UserSettingsCookieSynchronizationConfigurationAllowlistArgs.Builder]*):
+    inline def allowlists(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.UserSettingsCookieSynchronizationConfigurationAllowlistArgs.Builder]*):
         com.pulumi.aws.workspacesweb.inputs.UserSettingsCookieSynchronizationConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.aws.workspacesweb.inputs.UserSettingsCookieSynchronizationConfigurationAllowlistArgs.builder
       builder.allowlists(args.map(_(argsBuilder).build)*)
@@ -202,7 +202,7 @@ object workspacesweb_ext:
      * @param blocklists List of cookie specifications that are blocked from being synchronized to the remote browser.
      * @return builder
      */
-    def blocklists(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.UserSettingsCookieSynchronizationConfigurationBlocklistArgs.Builder]*):
+    inline def blocklists(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.UserSettingsCookieSynchronizationConfigurationBlocklistArgs.Builder]*):
         com.pulumi.aws.workspacesweb.inputs.UserSettingsCookieSynchronizationConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.aws.workspacesweb.inputs.UserSettingsCookieSynchronizationConfigurationBlocklistArgs.builder
       builder.blocklists(args.map(_(argsBuilder).build)*)
@@ -212,7 +212,7 @@ object workspacesweb_ext:
      * @param cookieSynchronizationConfiguration Configuration that specifies which cookies should be synchronized from the end user&#39;s local browser to the remote browser. Detailed below.
      * @return builder
      */
-    def cookieSynchronizationConfiguration(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.UserSettingsCookieSynchronizationConfigurationArgs.Builder]):
+    inline def cookieSynchronizationConfiguration(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.UserSettingsCookieSynchronizationConfigurationArgs.Builder]):
         com.pulumi.aws.workspacesweb.inputs.UserSettingsState.Builder =
       val argsBuilder = com.pulumi.aws.workspacesweb.inputs.UserSettingsCookieSynchronizationConfigurationArgs.builder
       builder.cookieSynchronizationConfiguration(args(argsBuilder).build)
@@ -221,7 +221,7 @@ object workspacesweb_ext:
      * @param toolbarConfiguration Configuration of the toolbar. Detailed below.
      * @return builder
      */
-    def toolbarConfiguration(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.UserSettingsToolbarConfigurationArgs.Builder]):
+    inline def toolbarConfiguration(args: Endofunction[com.pulumi.aws.workspacesweb.inputs.UserSettingsToolbarConfigurationArgs.Builder]):
         com.pulumi.aws.workspacesweb.inputs.UserSettingsState.Builder =
       val argsBuilder = com.pulumi.aws.workspacesweb.inputs.UserSettingsToolbarConfigurationArgs.builder
       builder.toolbarConfiguration(args(argsBuilder).build)

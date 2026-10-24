@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object chaosstudio:
   /** Manages a Chaos Studio Capability. */
-  def Capability(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Capability(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.chaosstudio.CapabilityArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.chaosstudio.CapabilityArgs.builder
     com.pulumi.azure.chaosstudio.Capability(name,
@@ -13,7 +13,7 @@ object chaosstudio:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Chaos Studio Experiment. */
-  def Experiment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Experiment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.chaosstudio.ExperimentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.chaosstudio.ExperimentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -28,7 +28,7 @@ object chaosstudio:
    * 
    * Manages a Chaos Studio Target.
    */
-  def Target(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Target(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.chaosstudio.TargetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.chaosstudio.TargetArgs.builder
     com.pulumi.azure.chaosstudio.Target(name,

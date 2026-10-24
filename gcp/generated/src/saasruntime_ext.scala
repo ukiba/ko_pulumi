@@ -12,7 +12,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def blueprint(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.ReleaseBlueprintArgs.Builder]):
+    inline def blueprint(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.ReleaseBlueprintArgs.Builder]):
         com.pulumi.gcp.saasruntime.ReleaseArgs.Builder =
       val argsBuilder = com.pulumi.gcp.saasruntime.inputs.ReleaseBlueprintArgs.builder
       builder.blueprint(args(argsBuilder).build)
@@ -22,7 +22,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inputVariableDefaults(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.ReleaseInputVariableDefaultArgs.Builder]*):
+    inline def inputVariableDefaults(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.ReleaseInputVariableDefaultArgs.Builder]*):
         com.pulumi.gcp.saasruntime.ReleaseArgs.Builder =
       def argsBuilder = com.pulumi.gcp.saasruntime.inputs.ReleaseInputVariableDefaultArgs.builder
       builder.inputVariableDefaults(args.map(_(argsBuilder).build)*)
@@ -32,7 +32,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def releaseRequirements(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.ReleaseReleaseRequirementsArgs.Builder]):
+    inline def releaseRequirements(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.ReleaseReleaseRequirementsArgs.Builder]):
         com.pulumi.gcp.saasruntime.ReleaseArgs.Builder =
       val argsBuilder = com.pulumi.gcp.saasruntime.inputs.ReleaseReleaseRequirementsArgs.builder
       builder.releaseRequirements(args(argsBuilder).build)
@@ -44,7 +44,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errorBudget(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.RolloutKindErrorBudgetArgs.Builder]):
+    inline def errorBudget(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.RolloutKindErrorBudgetArgs.Builder]):
         com.pulumi.gcp.saasruntime.RolloutKindArgs.Builder =
       val argsBuilder = com.pulumi.gcp.saasruntime.inputs.RolloutKindErrorBudgetArgs.builder
       builder.errorBudget(args(argsBuilder).build)
@@ -56,7 +56,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def locations(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.SaaSLocationArgs.Builder]*):
+    inline def locations(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.SaaSLocationArgs.Builder]*):
         com.pulumi.gcp.saasruntime.SaaSArgs.Builder =
       def argsBuilder = com.pulumi.gcp.saasruntime.inputs.SaaSLocationArgs.builder
       builder.locations(args.map(_(argsBuilder).build)*)
@@ -70,7 +70,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenance(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitMaintenanceArgs.Builder]):
+    inline def maintenance(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitMaintenanceArgs.Builder]):
         com.pulumi.gcp.saasruntime.UnitArgs.Builder =
       val argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitMaintenanceArgs.builder
       builder.maintenance(args(argsBuilder).build)
@@ -82,7 +82,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dependencies(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitKindDependencyArgs.Builder]*):
+    inline def dependencies(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitKindDependencyArgs.Builder]*):
         com.pulumi.gcp.saasruntime.UnitKindArgs.Builder =
       def argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitKindDependencyArgs.builder
       builder.dependencies(args.map(_(argsBuilder).build)*)
@@ -94,7 +94,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inputVariableMappings(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitKindInputVariableMappingArgs.Builder]*):
+    inline def inputVariableMappings(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitKindInputVariableMappingArgs.Builder]*):
         com.pulumi.gcp.saasruntime.UnitKindArgs.Builder =
       def argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitKindInputVariableMappingArgs.builder
       builder.inputVariableMappings(args.map(_(argsBuilder).build)*)
@@ -105,7 +105,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def outputVariableMappings(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitKindOutputVariableMappingArgs.Builder]*):
+    inline def outputVariableMappings(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitKindOutputVariableMappingArgs.Builder]*):
         com.pulumi.gcp.saasruntime.UnitKindArgs.Builder =
       def argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitKindOutputVariableMappingArgs.builder
       builder.outputVariableMappings(args.map(_(argsBuilder).build)*)
@@ -117,7 +117,7 @@ object saasruntime_ext:
      * provisioned.
      * @return builder
      */
-    def deprovision(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitOperationDeprovisionArgs.Builder]):
+    inline def deprovision(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitOperationDeprovisionArgs.Builder]):
         com.pulumi.gcp.saasruntime.UnitOperationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitOperationDeprovisionArgs.builder
       builder.deprovision(args(argsBuilder).build)
@@ -129,7 +129,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def provision(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitOperationProvisionArgs.Builder]):
+    inline def provision(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitOperationProvisionArgs.Builder]):
         com.pulumi.gcp.saasruntime.UnitOperationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitOperationProvisionArgs.builder
       builder.provision(args(argsBuilder).build)
@@ -141,7 +141,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def upgrade(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitOperationUpgradeArgs.Builder]):
+    inline def upgrade(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitOperationUpgradeArgs.Builder]):
         com.pulumi.gcp.saasruntime.UnitOperationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitOperationUpgradeArgs.builder
       builder.upgrade(args(argsBuilder).build)
@@ -156,7 +156,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def blueprint(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.ReleaseBlueprintArgs.Builder]):
+    inline def blueprint(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.ReleaseBlueprintArgs.Builder]):
         com.pulumi.gcp.saasruntime.inputs.ReleaseState.Builder =
       val argsBuilder = com.pulumi.gcp.saasruntime.inputs.ReleaseBlueprintArgs.builder
       builder.blueprint(args(argsBuilder).build)
@@ -166,7 +166,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inputVariableDefaults(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.ReleaseInputVariableDefaultArgs.Builder]*):
+    inline def inputVariableDefaults(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.ReleaseInputVariableDefaultArgs.Builder]*):
         com.pulumi.gcp.saasruntime.inputs.ReleaseState.Builder =
       def argsBuilder = com.pulumi.gcp.saasruntime.inputs.ReleaseInputVariableDefaultArgs.builder
       builder.inputVariableDefaults(args.map(_(argsBuilder).build)*)
@@ -177,7 +177,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inputVariables(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.ReleaseInputVariableArgs.Builder]*):
+    inline def inputVariables(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.ReleaseInputVariableArgs.Builder]*):
         com.pulumi.gcp.saasruntime.inputs.ReleaseState.Builder =
       def argsBuilder = com.pulumi.gcp.saasruntime.inputs.ReleaseInputVariableArgs.builder
       builder.inputVariables(args.map(_(argsBuilder).build)*)
@@ -188,7 +188,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def outputVariables(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.ReleaseOutputVariableArgs.Builder]*):
+    inline def outputVariables(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.ReleaseOutputVariableArgs.Builder]*):
         com.pulumi.gcp.saasruntime.inputs.ReleaseState.Builder =
       def argsBuilder = com.pulumi.gcp.saasruntime.inputs.ReleaseOutputVariableArgs.builder
       builder.outputVariables(args.map(_(argsBuilder).build)*)
@@ -198,7 +198,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def releaseRequirements(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.ReleaseReleaseRequirementsArgs.Builder]):
+    inline def releaseRequirements(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.ReleaseReleaseRequirementsArgs.Builder]):
         com.pulumi.gcp.saasruntime.inputs.ReleaseState.Builder =
       val argsBuilder = com.pulumi.gcp.saasruntime.inputs.ReleaseReleaseRequirementsArgs.builder
       builder.releaseRequirements(args(argsBuilder).build)
@@ -210,7 +210,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errorBudget(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.RolloutKindErrorBudgetArgs.Builder]):
+    inline def errorBudget(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.RolloutKindErrorBudgetArgs.Builder]):
         com.pulumi.gcp.saasruntime.inputs.RolloutKindState.Builder =
       val argsBuilder = com.pulumi.gcp.saasruntime.inputs.RolloutKindErrorBudgetArgs.builder
       builder.errorBudget(args(argsBuilder).build)
@@ -222,7 +222,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def locations(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.SaaSLocationArgs.Builder]*):
+    inline def locations(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.SaaSLocationArgs.Builder]*):
         com.pulumi.gcp.saasruntime.inputs.SaaSState.Builder =
       def argsBuilder = com.pulumi.gcp.saasruntime.inputs.SaaSLocationArgs.builder
       builder.locations(args.map(_(argsBuilder).build)*)
@@ -233,7 +233,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def from(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitKindInputVariableMappingFromArgs.Builder]):
+    inline def from(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitKindInputVariableMappingFromArgs.Builder]):
         com.pulumi.gcp.saasruntime.inputs.UnitKindInputVariableMappingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitKindInputVariableMappingFromArgs.builder
       builder.from(args(argsBuilder).build)
@@ -243,7 +243,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def to(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitKindInputVariableMappingToArgs.Builder]):
+    inline def to(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitKindInputVariableMappingToArgs.Builder]):
         com.pulumi.gcp.saasruntime.inputs.UnitKindInputVariableMappingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitKindInputVariableMappingToArgs.builder
       builder.to(args(argsBuilder).build)
@@ -254,7 +254,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def from(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitKindOutputVariableMappingFromArgs.Builder]):
+    inline def from(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitKindOutputVariableMappingFromArgs.Builder]):
         com.pulumi.gcp.saasruntime.inputs.UnitKindOutputVariableMappingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitKindOutputVariableMappingFromArgs.builder
       builder.from(args(argsBuilder).build)
@@ -264,7 +264,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def to(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitKindOutputVariableMappingToArgs.Builder]):
+    inline def to(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitKindOutputVariableMappingToArgs.Builder]):
         com.pulumi.gcp.saasruntime.inputs.UnitKindOutputVariableMappingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitKindOutputVariableMappingToArgs.builder
       builder.to(args(argsBuilder).build)
@@ -276,7 +276,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dependencies(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitKindDependencyArgs.Builder]*):
+    inline def dependencies(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitKindDependencyArgs.Builder]*):
         com.pulumi.gcp.saasruntime.inputs.UnitKindState.Builder =
       def argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitKindDependencyArgs.builder
       builder.dependencies(args.map(_(argsBuilder).build)*)
@@ -288,7 +288,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inputVariableMappings(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitKindInputVariableMappingArgs.Builder]*):
+    inline def inputVariableMappings(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitKindInputVariableMappingArgs.Builder]*):
         com.pulumi.gcp.saasruntime.inputs.UnitKindState.Builder =
       def argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitKindInputVariableMappingArgs.builder
       builder.inputVariableMappings(args.map(_(argsBuilder).build)*)
@@ -299,7 +299,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def outputVariableMappings(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitKindOutputVariableMappingArgs.Builder]*):
+    inline def outputVariableMappings(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitKindOutputVariableMappingArgs.Builder]*):
         com.pulumi.gcp.saasruntime.inputs.UnitKindState.Builder =
       def argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitKindOutputVariableMappingArgs.builder
       builder.outputVariableMappings(args.map(_(argsBuilder).build)*)
@@ -310,7 +310,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inputVariables(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitOperationProvisionInputVariableArgs.Builder]*):
+    inline def inputVariables(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitOperationProvisionInputVariableArgs.Builder]*):
         com.pulumi.gcp.saasruntime.inputs.UnitOperationProvisionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitOperationProvisionInputVariableArgs.builder
       builder.inputVariables(args.map(_(argsBuilder).build)*)
@@ -322,7 +322,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitOperationConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitOperationConditionArgs.Builder]*):
         com.pulumi.gcp.saasruntime.inputs.UnitOperationState.Builder =
       def argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitOperationConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -333,7 +333,7 @@ object saasruntime_ext:
      * provisioned.
      * @return builder
      */
-    def deprovision(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitOperationDeprovisionArgs.Builder]):
+    inline def deprovision(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitOperationDeprovisionArgs.Builder]):
         com.pulumi.gcp.saasruntime.inputs.UnitOperationState.Builder =
       val argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitOperationDeprovisionArgs.builder
       builder.deprovision(args(argsBuilder).build)
@@ -345,7 +345,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def provision(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitOperationProvisionArgs.Builder]):
+    inline def provision(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitOperationProvisionArgs.Builder]):
         com.pulumi.gcp.saasruntime.inputs.UnitOperationState.Builder =
       val argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitOperationProvisionArgs.builder
       builder.provision(args(argsBuilder).build)
@@ -357,7 +357,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def upgrade(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitOperationUpgradeArgs.Builder]):
+    inline def upgrade(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitOperationUpgradeArgs.Builder]):
         com.pulumi.gcp.saasruntime.inputs.UnitOperationState.Builder =
       val argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitOperationUpgradeArgs.builder
       builder.upgrade(args(argsBuilder).build)
@@ -368,7 +368,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inputVariables(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitOperationUpgradeInputVariableArgs.Builder]*):
+    inline def inputVariables(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitOperationUpgradeInputVariableArgs.Builder]*):
         com.pulumi.gcp.saasruntime.inputs.UnitOperationUpgradeArgs.Builder =
       def argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitOperationUpgradeInputVariableArgs.builder
       builder.inputVariables(args.map(_(argsBuilder).build)*)
@@ -380,7 +380,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitConditionArgs.Builder]*):
         com.pulumi.gcp.saasruntime.inputs.UnitState.Builder =
       def argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -390,7 +390,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dependencies(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitDependencyArgs.Builder]*):
+    inline def dependencies(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitDependencyArgs.Builder]*):
         com.pulumi.gcp.saasruntime.inputs.UnitState.Builder =
       def argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitDependencyArgs.builder
       builder.dependencies(args.map(_(argsBuilder).build)*)
@@ -401,7 +401,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dependents(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitDependentArgs.Builder]*):
+    inline def dependents(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitDependentArgs.Builder]*):
         com.pulumi.gcp.saasruntime.inputs.UnitState.Builder =
       def argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitDependentArgs.builder
       builder.dependents(args.map(_(argsBuilder).build)*)
@@ -411,7 +411,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inputVariables(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitInputVariableArgs.Builder]*):
+    inline def inputVariables(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitInputVariableArgs.Builder]*):
         com.pulumi.gcp.saasruntime.inputs.UnitState.Builder =
       def argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitInputVariableArgs.builder
       builder.inputVariables(args.map(_(argsBuilder).build)*)
@@ -424,7 +424,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenance(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitMaintenanceArgs.Builder]):
+    inline def maintenance(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitMaintenanceArgs.Builder]):
         com.pulumi.gcp.saasruntime.inputs.UnitState.Builder =
       val argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitMaintenanceArgs.builder
       builder.maintenance(args(argsBuilder).build)
@@ -437,7 +437,7 @@ object saasruntime_ext:
      * Structure is documented below.
      * @return builder
      */
-    def outputVariables(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitOutputVariableArgs.Builder]*):
+    inline def outputVariables(args: Endofunction[com.pulumi.gcp.saasruntime.inputs.UnitOutputVariableArgs.Builder]*):
         com.pulumi.gcp.saasruntime.inputs.UnitState.Builder =
       def argsBuilder = com.pulumi.gcp.saasruntime.inputs.UnitOutputVariableArgs.builder
       builder.outputVariables(args.map(_(argsBuilder).build)*)

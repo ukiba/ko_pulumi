@@ -8,7 +8,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def domainConfig(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationClusterDomainConfigArgs.Builder]):
+    inline def domainConfig(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationClusterDomainConfigArgs.Builder]):
         com.pulumi.gcp.workstations.WorkstationClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationClusterDomainConfigArgs.builder
       builder.domainConfig(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def privateClusterConfig(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationClusterPrivateClusterConfigArgs.Builder]):
+    inline def privateClusterConfig(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationClusterPrivateClusterConfigArgs.Builder]):
         com.pulumi.gcp.workstations.WorkstationClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationClusterPrivateClusterConfigArgs.builder
       builder.privateClusterConfig(args(argsBuilder).build)
@@ -29,7 +29,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allowedPorts(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigAllowedPortArgs.Builder]*):
+    inline def allowedPorts(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigAllowedPortArgs.Builder]*):
         com.pulumi.gcp.workstations.WorkstationConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigAllowedPortArgs.builder
       builder.allowedPorts(args.map(_(argsBuilder).build)*)
@@ -39,7 +39,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def container(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigContainerArgs.Builder]):
+    inline def container(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigContainerArgs.Builder]):
         com.pulumi.gcp.workstations.WorkstationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigContainerArgs.builder
       builder.container(args(argsBuilder).build)
@@ -52,7 +52,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionKey(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigEncryptionKeyArgs.Builder]):
+    inline def encryptionKey(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.workstations.WorkstationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigEncryptionKeyArgs.builder
       builder.encryptionKey(args(argsBuilder).build)
@@ -62,7 +62,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ephemeralDirectories(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigEphemeralDirectoryArgs.Builder]*):
+    inline def ephemeralDirectories(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigEphemeralDirectoryArgs.Builder]*):
         com.pulumi.gcp.workstations.WorkstationConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigEphemeralDirectoryArgs.builder
       builder.ephemeralDirectories(args.map(_(argsBuilder).build)*)
@@ -72,7 +72,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def host(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigHostArgs.Builder]):
+    inline def host(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigHostArgs.Builder]):
         com.pulumi.gcp.workstations.WorkstationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigHostArgs.builder
       builder.host(args(argsBuilder).build)
@@ -82,7 +82,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def persistentDirectories(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigPersistentDirectoryArgs.Builder]*):
+    inline def persistentDirectories(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigPersistentDirectoryArgs.Builder]*):
         com.pulumi.gcp.workstations.WorkstationConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigPersistentDirectoryArgs.builder
       builder.persistentDirectories(args.map(_(argsBuilder).build)*)
@@ -92,31 +92,31 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def readinessChecks(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigReadinessCheckArgs.Builder]*):
+    inline def readinessChecks(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigReadinessCheckArgs.Builder]*):
         com.pulumi.gcp.workstations.WorkstationConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigReadinessCheckArgs.builder
       builder.readinessChecks(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.workstations.WorkstationConfigIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.workstations.WorkstationConfigIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.workstations.WorkstationConfigIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.workstations.WorkstationConfigIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.workstations.WorkstationIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.workstations.WorkstationIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.workstations.WorkstationIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.workstations.WorkstationIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -127,7 +127,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationClusterConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationClusterConditionArgs.Builder]*):
         com.pulumi.gcp.workstations.inputs.WorkstationClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationClusterConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -137,7 +137,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def domainConfig(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationClusterDomainConfigArgs.Builder]):
+    inline def domainConfig(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationClusterDomainConfigArgs.Builder]):
         com.pulumi.gcp.workstations.inputs.WorkstationClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationClusterDomainConfigArgs.builder
       builder.domainConfig(args(argsBuilder).build)
@@ -147,7 +147,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def privateClusterConfig(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationClusterPrivateClusterConfigArgs.Builder]):
+    inline def privateClusterConfig(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationClusterPrivateClusterConfigArgs.Builder]):
         com.pulumi.gcp.workstations.inputs.WorkstationClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationClusterPrivateClusterConfigArgs.builder
       builder.privateClusterConfig(args(argsBuilder).build)
@@ -158,7 +158,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gcePd(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigEphemeralDirectoryGcePdArgs.Builder]):
+    inline def gcePd(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigEphemeralDirectoryGcePdArgs.Builder]):
         com.pulumi.gcp.workstations.inputs.WorkstationConfigEphemeralDirectoryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigEphemeralDirectoryGcePdArgs.builder
       builder.gcePd(args(argsBuilder).build)
@@ -169,7 +169,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gceInstance(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigHostGceInstanceArgs.Builder]):
+    inline def gceInstance(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigHostGceInstanceArgs.Builder]):
         com.pulumi.gcp.workstations.inputs.WorkstationConfigHostArgs.Builder =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigHostGceInstanceArgs.builder
       builder.gceInstance(args(argsBuilder).build)
@@ -180,7 +180,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accelerators(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigHostGceInstanceAcceleratorArgs.Builder]*):
+    inline def accelerators(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigHostGceInstanceAcceleratorArgs.Builder]*):
         com.pulumi.gcp.workstations.inputs.WorkstationConfigHostGceInstanceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigHostGceInstanceAcceleratorArgs.builder
       builder.accelerators(args.map(_(argsBuilder).build)*)
@@ -190,7 +190,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def boostConfigs(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigHostGceInstanceBoostConfigArgs.Builder]*):
+    inline def boostConfigs(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigHostGceInstanceBoostConfigArgs.Builder]*):
         com.pulumi.gcp.workstations.inputs.WorkstationConfigHostGceInstanceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigHostGceInstanceBoostConfigArgs.builder
       builder.boostConfigs(args.map(_(argsBuilder).build)*)
@@ -200,7 +200,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigHostGceInstanceConfidentialInstanceConfigArgs.Builder]):
+    inline def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigHostGceInstanceConfidentialInstanceConfigArgs.Builder]):
         com.pulumi.gcp.workstations.inputs.WorkstationConfigHostGceInstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigHostGceInstanceConfidentialInstanceConfigArgs.builder
       builder.confidentialInstanceConfig(args(argsBuilder).build)
@@ -210,7 +210,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigHostGceInstanceShieldedInstanceConfigArgs.Builder]):
+    inline def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigHostGceInstanceShieldedInstanceConfigArgs.Builder]):
         com.pulumi.gcp.workstations.inputs.WorkstationConfigHostGceInstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigHostGceInstanceShieldedInstanceConfigArgs.builder
       builder.shieldedInstanceConfig(args(argsBuilder).build)
@@ -221,19 +221,19 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accelerators(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigHostGceInstanceBoostConfigAcceleratorArgs.Builder]*):
+    inline def accelerators(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigHostGceInstanceBoostConfigAcceleratorArgs.Builder]*):
         com.pulumi.gcp.workstations.inputs.WorkstationConfigHostGceInstanceBoostConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigHostGceInstanceBoostConfigAcceleratorArgs.builder
       builder.accelerators(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.workstations.inputs.WorkstationConfigIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.workstations.inputs.WorkstationConfigIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.workstations.inputs.WorkstationConfigIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.workstations.inputs.WorkstationConfigIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -244,7 +244,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gceHd(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigPersistentDirectoryGceHdArgs.Builder]):
+    inline def gceHd(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigPersistentDirectoryGceHdArgs.Builder]):
         com.pulumi.gcp.workstations.inputs.WorkstationConfigPersistentDirectoryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigPersistentDirectoryGceHdArgs.builder
       builder.gceHd(args(argsBuilder).build)
@@ -254,7 +254,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gcePd(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigPersistentDirectoryGcePdArgs.Builder]):
+    inline def gcePd(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigPersistentDirectoryGcePdArgs.Builder]):
         com.pulumi.gcp.workstations.inputs.WorkstationConfigPersistentDirectoryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigPersistentDirectoryGcePdArgs.builder
       builder.gcePd(args(argsBuilder).build)
@@ -265,7 +265,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allowedPorts(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigAllowedPortArgs.Builder]*):
+    inline def allowedPorts(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigAllowedPortArgs.Builder]*):
         com.pulumi.gcp.workstations.inputs.WorkstationConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigAllowedPortArgs.builder
       builder.allowedPorts(args.map(_(argsBuilder).build)*)
@@ -275,7 +275,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigConditionArgs.Builder]*):
         com.pulumi.gcp.workstations.inputs.WorkstationConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -285,7 +285,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def container(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigContainerArgs.Builder]):
+    inline def container(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigContainerArgs.Builder]):
         com.pulumi.gcp.workstations.inputs.WorkstationConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigContainerArgs.builder
       builder.container(args(argsBuilder).build)
@@ -298,7 +298,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionKey(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigEncryptionKeyArgs.Builder]):
+    inline def encryptionKey(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.workstations.inputs.WorkstationConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigEncryptionKeyArgs.builder
       builder.encryptionKey(args(argsBuilder).build)
@@ -308,7 +308,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ephemeralDirectories(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigEphemeralDirectoryArgs.Builder]*):
+    inline def ephemeralDirectories(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigEphemeralDirectoryArgs.Builder]*):
         com.pulumi.gcp.workstations.inputs.WorkstationConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigEphemeralDirectoryArgs.builder
       builder.ephemeralDirectories(args.map(_(argsBuilder).build)*)
@@ -318,7 +318,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def host(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigHostArgs.Builder]):
+    inline def host(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigHostArgs.Builder]):
         com.pulumi.gcp.workstations.inputs.WorkstationConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigHostArgs.builder
       builder.host(args(argsBuilder).build)
@@ -328,7 +328,7 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def persistentDirectories(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigPersistentDirectoryArgs.Builder]*):
+    inline def persistentDirectories(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigPersistentDirectoryArgs.Builder]*):
         com.pulumi.gcp.workstations.inputs.WorkstationConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigPersistentDirectoryArgs.builder
       builder.persistentDirectories(args.map(_(argsBuilder).build)*)
@@ -338,19 +338,19 @@ object workstations_ext:
      * Structure is documented below.
      * @return builder
      */
-    def readinessChecks(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigReadinessCheckArgs.Builder]*):
+    inline def readinessChecks(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationConfigReadinessCheckArgs.Builder]*):
         com.pulumi.gcp.workstations.inputs.WorkstationConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationConfigReadinessCheckArgs.builder
       builder.readinessChecks(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.workstations.inputs.WorkstationIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.workstations.inputs.WorkstationIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.workstations.inputs.WorkstationIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.workstations.inputs.WorkstationIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.workstations.inputs.WorkstationIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.WorkstationIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)

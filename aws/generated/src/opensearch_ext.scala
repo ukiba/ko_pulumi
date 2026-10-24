@@ -7,7 +7,7 @@ object opensearch_ext:
      * @param appConfigs Configuration block(s) for OpenSearch application settings. See App Config below.
      * @return builder
      */
-    def appConfigs(args: Endofunction[com.pulumi.aws.opensearch.inputs.ApplicationAppConfigArgs.Builder]*):
+    inline def appConfigs(args: Endofunction[com.pulumi.aws.opensearch.inputs.ApplicationAppConfigArgs.Builder]*):
         com.pulumi.aws.opensearch.ApplicationArgs.Builder =
       def argsBuilder = com.pulumi.aws.opensearch.inputs.ApplicationAppConfigArgs.builder
       builder.appConfigs(args.map(_(argsBuilder).build)*)
@@ -16,7 +16,7 @@ object opensearch_ext:
      * @param dataSources Configuration block(s) for data sources to link to the OpenSearch application. See Data Source below.
      * @return builder
      */
-    def dataSources(args: Endofunction[com.pulumi.aws.opensearch.inputs.ApplicationDataSourceArgs.Builder]*):
+    inline def dataSources(args: Endofunction[com.pulumi.aws.opensearch.inputs.ApplicationDataSourceArgs.Builder]*):
         com.pulumi.aws.opensearch.ApplicationArgs.Builder =
       def argsBuilder = com.pulumi.aws.opensearch.inputs.ApplicationDataSourceArgs.builder
       builder.dataSources(args.map(_(argsBuilder).build)*)
@@ -25,12 +25,12 @@ object opensearch_ext:
      * @param iamIdentityCenterOptions Configuration block for integrating AWS IAM Identity Center with the OpenSearch application. See IAM Identity Center Options below.
      * @return builder
      */
-    def iamIdentityCenterOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ApplicationIamIdentityCenterOptionsArgs.Builder]):
+    inline def iamIdentityCenterOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ApplicationIamIdentityCenterOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.ApplicationArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ApplicationIamIdentityCenterOptionsArgs.builder
       builder.iamIdentityCenterOptions(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.opensearch.inputs.ApplicationTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.opensearch.inputs.ApplicationTimeoutsArgs.Builder]):
         com.pulumi.aws.opensearch.ApplicationArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ApplicationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -40,7 +40,7 @@ object opensearch_ext:
      * @param advancedSecurityOptions Configuration block for [fine-grained access control](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html). Detailed below.
      * @return builder
      */
-    def advancedSecurityOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAdvancedSecurityOptionsArgs.Builder]):
+    inline def advancedSecurityOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAdvancedSecurityOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.DomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainAdvancedSecurityOptionsArgs.builder
       builder.advancedSecurityOptions(args(argsBuilder).build)
@@ -49,7 +49,7 @@ object opensearch_ext:
      * @param aimlOptions Configuration block for parameters required to enable all machine learning features. Detailed below.
      * @return builder
      */
-    def aimlOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAimlOptionsArgs.Builder]):
+    inline def aimlOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAimlOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.DomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainAimlOptionsArgs.builder
       builder.aimlOptions(args(argsBuilder).build)
@@ -58,7 +58,7 @@ object opensearch_ext:
      * @param autoTuneOptions Configuration block for the Auto-Tune options of the domain. Detailed below.
      * @return builder
      */
-    def autoTuneOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAutoTuneOptionsArgs.Builder]):
+    inline def autoTuneOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAutoTuneOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.DomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainAutoTuneOptionsArgs.builder
       builder.autoTuneOptions(args(argsBuilder).build)
@@ -67,7 +67,7 @@ object opensearch_ext:
      * @param clusterConfig Configuration block for the cluster of the domain. Detailed below.
      * @return builder
      */
-    def clusterConfig(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainClusterConfigArgs.Builder]):
+    inline def clusterConfig(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainClusterConfigArgs.Builder]):
         com.pulumi.aws.opensearch.DomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainClusterConfigArgs.builder
       builder.clusterConfig(args(argsBuilder).build)
@@ -76,7 +76,7 @@ object opensearch_ext:
      * @param cognitoOptions Configuration block for authenticating dashboard with Cognito. Detailed below.
      * @return builder
      */
-    def cognitoOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainCognitoOptionsArgs.Builder]):
+    inline def cognitoOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainCognitoOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.DomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainCognitoOptionsArgs.builder
       builder.cognitoOptions(args(argsBuilder).build)
@@ -85,7 +85,7 @@ object opensearch_ext:
      * @param deploymentStrategyOptions Configuration block for the deployment strategy options of the domain. Detailed below.
      * @return builder
      */
-    def deploymentStrategyOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainDeploymentStrategyOptionsArgs.Builder]):
+    inline def deploymentStrategyOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainDeploymentStrategyOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.DomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainDeploymentStrategyOptionsArgs.builder
       builder.deploymentStrategyOptions(args(argsBuilder).build)
@@ -94,7 +94,7 @@ object opensearch_ext:
      * @param domainEndpointOptions Configuration block for domain endpoint HTTP(S) related options. Detailed below.
      * @return builder
      */
-    def domainEndpointOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainDomainEndpointOptionsArgs.Builder]):
+    inline def domainEndpointOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainDomainEndpointOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.DomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainDomainEndpointOptionsArgs.builder
       builder.domainEndpointOptions(args(argsBuilder).build)
@@ -103,7 +103,7 @@ object opensearch_ext:
      * @param ebsOptions Configuration block for EBS related options, may be required based on chosen [instance size](https://aws.amazon.com/opensearch-service/pricing/). Detailed below.
      * @return builder
      */
-    def ebsOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainEbsOptionsArgs.Builder]):
+    inline def ebsOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainEbsOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.DomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainEbsOptionsArgs.builder
       builder.ebsOptions(args(argsBuilder).build)
@@ -112,7 +112,7 @@ object opensearch_ext:
      * @param encryptAtRest Configuration block for encrypt at rest options. Only available for [certain instance types](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/encryption-at-rest.html). Detailed below.
      * @return builder
      */
-    def encryptAtRest(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainEncryptAtRestArgs.Builder]):
+    inline def encryptAtRest(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainEncryptAtRestArgs.Builder]):
         com.pulumi.aws.opensearch.DomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainEncryptAtRestArgs.builder
       builder.encryptAtRest(args(argsBuilder).build)
@@ -121,7 +121,7 @@ object opensearch_ext:
      * @param identityCenterOptions Configuration block for enabling and managing IAM Identity Center integration within a domain. Detailed below.
      * @return builder
      */
-    def identityCenterOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainIdentityCenterOptionsArgs.Builder]):
+    inline def identityCenterOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainIdentityCenterOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.DomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainIdentityCenterOptionsArgs.builder
       builder.identityCenterOptions(args(argsBuilder).build)
@@ -130,7 +130,7 @@ object opensearch_ext:
      * @param logPublishingOptions Configuration block for publishing slow and application logs to CloudWatch Logs. This block can be declared multiple times, for each log_type, within the same resource. Detailed below.
      * @return builder
      */
-    def logPublishingOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainLogPublishingOptionArgs.Builder]*):
+    inline def logPublishingOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainLogPublishingOptionArgs.Builder]*):
         com.pulumi.aws.opensearch.DomainArgs.Builder =
       def argsBuilder = com.pulumi.aws.opensearch.inputs.DomainLogPublishingOptionArgs.builder
       builder.logPublishingOptions(args.map(_(argsBuilder).build)*)
@@ -139,7 +139,7 @@ object opensearch_ext:
      * @param nodeToNodeEncryption Configuration block for node-to-node encryption options. Detailed below.
      * @return builder
      */
-    def nodeToNodeEncryption(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainNodeToNodeEncryptionArgs.Builder]):
+    inline def nodeToNodeEncryption(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainNodeToNodeEncryptionArgs.Builder]):
         com.pulumi.aws.opensearch.DomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainNodeToNodeEncryptionArgs.builder
       builder.nodeToNodeEncryption(args(argsBuilder).build)
@@ -148,7 +148,7 @@ object opensearch_ext:
      * @param offPeakWindowOptions Configuration to add Off Peak update options. ([documentation](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html)). Detailed below.
      * @return builder
      */
-    def offPeakWindowOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainOffPeakWindowOptionsArgs.Builder]):
+    inline def offPeakWindowOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainOffPeakWindowOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.DomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainOffPeakWindowOptionsArgs.builder
       builder.offPeakWindowOptions(args(argsBuilder).build)
@@ -157,7 +157,7 @@ object opensearch_ext:
      * @param snapshotOptions Configuration block for snapshot related options. Detailed below. DEPRECATED. For domains running OpenSearch 5.3 and later, Amazon OpenSearch takes hourly automated snapshots, making this setting irrelevant. For domains running earlier versions, OpenSearch takes daily automated snapshots.
      * @return builder
      */
-    def snapshotOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainSnapshotOptionsArgs.Builder]):
+    inline def snapshotOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainSnapshotOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.DomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainSnapshotOptionsArgs.builder
       builder.snapshotOptions(args(argsBuilder).build)
@@ -166,7 +166,7 @@ object opensearch_ext:
      * @param softwareUpdateOptions Software update options for the domain. Detailed below.
      * @return builder
      */
-    def softwareUpdateOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainSoftwareUpdateOptionsArgs.Builder]):
+    inline def softwareUpdateOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainSoftwareUpdateOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.DomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainSoftwareUpdateOptionsArgs.builder
       builder.softwareUpdateOptions(args(argsBuilder).build)
@@ -175,7 +175,7 @@ object opensearch_ext:
      * @param vpcOptions Configuration block for VPC related options. Adding or removing this configuration forces a new resource ([documentation](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html)). Detailed below.
      * @return builder
      */
-    def vpcOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainVpcOptionsArgs.Builder]):
+    inline def vpcOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainVpcOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.DomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainVpcOptionsArgs.builder
       builder.vpcOptions(args(argsBuilder).build)
@@ -185,7 +185,7 @@ object opensearch_ext:
      * @param samlOptions SAML authentication options for an AWS OpenSearch Domain.
      * @return builder
      */
-    def samlOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainSamlOptionsSamlOptionsArgs.Builder]):
+    inline def samlOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainSamlOptionsSamlOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.DomainSamlOptionsArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainSamlOptionsSamlOptionsArgs.builder
       builder.samlOptions(args(argsBuilder).build)
@@ -195,7 +195,7 @@ object opensearch_ext:
      * @param connectionProperties Configuration block for the outbound connection.
      * @return builder
      */
-    def connectionProperties(args: Endofunction[com.pulumi.aws.opensearch.inputs.OutboundConnectionConnectionPropertiesArgs.Builder]):
+    inline def connectionProperties(args: Endofunction[com.pulumi.aws.opensearch.inputs.OutboundConnectionConnectionPropertiesArgs.Builder]):
         com.pulumi.aws.opensearch.OutboundConnectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.OutboundConnectionConnectionPropertiesArgs.builder
       builder.connectionProperties(args(argsBuilder).build)
@@ -204,7 +204,7 @@ object opensearch_ext:
      * @param localDomainInfo Configuration block for the local Opensearch domain.
      * @return builder
      */
-    def localDomainInfo(args: Endofunction[com.pulumi.aws.opensearch.inputs.OutboundConnectionLocalDomainInfoArgs.Builder]):
+    inline def localDomainInfo(args: Endofunction[com.pulumi.aws.opensearch.inputs.OutboundConnectionLocalDomainInfoArgs.Builder]):
         com.pulumi.aws.opensearch.OutboundConnectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.OutboundConnectionLocalDomainInfoArgs.builder
       builder.localDomainInfo(args(argsBuilder).build)
@@ -213,7 +213,7 @@ object opensearch_ext:
      * @param remoteDomainInfo Configuration block for the remote Opensearch domain.
      * @return builder
      */
-    def remoteDomainInfo(args: Endofunction[com.pulumi.aws.opensearch.inputs.OutboundConnectionRemoteDomainInfoArgs.Builder]):
+    inline def remoteDomainInfo(args: Endofunction[com.pulumi.aws.opensearch.inputs.OutboundConnectionRemoteDomainInfoArgs.Builder]):
         com.pulumi.aws.opensearch.OutboundConnectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.OutboundConnectionRemoteDomainInfoArgs.builder
       builder.remoteDomainInfo(args(argsBuilder).build)
@@ -223,7 +223,7 @@ object opensearch_ext:
      * @param packageSource Configuration block for the package source options.
      * @return builder
      */
-    def packageSource(args: Endofunction[com.pulumi.aws.opensearch.inputs.PackagePackageSourceArgs.Builder]):
+    inline def packageSource(args: Endofunction[com.pulumi.aws.opensearch.inputs.PackagePackageSourceArgs.Builder]):
         com.pulumi.aws.opensearch.PackageArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.PackagePackageSourceArgs.builder
       builder.packageSource(args(argsBuilder).build)
@@ -233,12 +233,12 @@ object opensearch_ext:
      * @param encryptionConfigs Configuration block for direct collection encryption settings. See `encryptionConfig` below for details.
      * @return builder
      */
-    def encryptionConfigs(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessCollectionEncryptionConfigArgs.Builder]*):
+    inline def encryptionConfigs(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessCollectionEncryptionConfigArgs.Builder]*):
         com.pulumi.aws.opensearch.ServerlessCollectionArgs.Builder =
       def argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessCollectionEncryptionConfigArgs.builder
       builder.encryptionConfigs(args.map(_(argsBuilder).build)*)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessCollectionTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessCollectionTimeoutsArgs.Builder]):
         com.pulumi.aws.opensearch.ServerlessCollectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessCollectionTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -247,7 +247,7 @@ object opensearch_ext:
      * @param vectorOptions Configuration block for vector search options. Only valid when `type` is `VECTORSEARCH`. See `vectorOptions` below for details.
      * @return builder
      */
-    def vectorOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessCollectionVectorOptionArgs.Builder]*):
+    inline def vectorOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessCollectionVectorOptionArgs.Builder]*):
         com.pulumi.aws.opensearch.ServerlessCollectionArgs.Builder =
       def argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessCollectionVectorOptionArgs.builder
       builder.vectorOptions(args.map(_(argsBuilder).build)*)
@@ -257,7 +257,7 @@ object opensearch_ext:
      * @param capacityLimits Configuration block for the collection group&#39;s indexing and search capacity limits. See `capacityLimits` below for details.
      * @return builder
      */
-    def capacityLimits(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessCollectionGroupCapacityLimitArgs.Builder]*):
+    inline def capacityLimits(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessCollectionGroupCapacityLimitArgs.Builder]*):
         com.pulumi.aws.opensearch.ServerlessCollectionGroupArgs.Builder =
       def argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessCollectionGroupCapacityLimitArgs.builder
       builder.capacityLimits(args.map(_(argsBuilder).build)*)
@@ -267,7 +267,7 @@ object opensearch_ext:
      * @param iamFederationOptions Configuration block for IAM Federation options. Required if `type` is set to `iamfederation`. See `iamFederationOptions` Block below for details.
      * @return builder
      */
-    def iamFederationOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigIamFederationOptionsArgs.Builder]):
+    inline def iamFederationOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigIamFederationOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.ServerlessSecurityConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigIamFederationOptionsArgs.builder
       builder.iamFederationOptions(args(argsBuilder).build)
@@ -276,7 +276,7 @@ object opensearch_ext:
      * @param iamIdentityCenterOptions Configuration block for IAM Identity Center options. Required if `type` is set to `iamidentitycenter`. See `iamIdentityCenterOptions` Block below for details.
      * @return builder
      */
-    def iamIdentityCenterOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigIamIdentityCenterOptionsArgs.Builder]):
+    inline def iamIdentityCenterOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigIamIdentityCenterOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.ServerlessSecurityConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigIamIdentityCenterOptionsArgs.builder
       builder.iamIdentityCenterOptions(args(argsBuilder).build)
@@ -285,13 +285,13 @@ object opensearch_ext:
      * @param samlOptions Configuration block for SAML options. Required if `type` is set to `saml`. See `samlOptions` Block below for details.
      * @return builder
      */
-    def samlOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigSamlOptionsArgs.Builder]):
+    inline def samlOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigSamlOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.ServerlessSecurityConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigSamlOptionsArgs.builder
       builder.samlOptions(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.opensearch.ServerlessVpcEndpointArgs.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessVpcEndpointTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessVpcEndpointTimeoutsArgs.Builder]):
         com.pulumi.aws.opensearch.ServerlessVpcEndpointArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessVpcEndpointTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -301,7 +301,7 @@ object opensearch_ext:
      * @param vpcOptions Options to specify the subnets and security groups for the endpoint.
      * @return builder
      */
-    def vpcOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.VpcEndpointVpcOptionsArgs.Builder]):
+    inline def vpcOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.VpcEndpointVpcOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.VpcEndpointArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.VpcEndpointVpcOptionsArgs.builder
       builder.vpcOptions(args(argsBuilder).build)
@@ -311,7 +311,7 @@ object opensearch_ext:
      * @param appConfigs Configuration block(s) for OpenSearch application settings. See App Config below.
      * @return builder
      */
-    def appConfigs(args: Endofunction[com.pulumi.aws.opensearch.inputs.ApplicationAppConfigArgs.Builder]*):
+    inline def appConfigs(args: Endofunction[com.pulumi.aws.opensearch.inputs.ApplicationAppConfigArgs.Builder]*):
         com.pulumi.aws.opensearch.inputs.ApplicationState.Builder =
       def argsBuilder = com.pulumi.aws.opensearch.inputs.ApplicationAppConfigArgs.builder
       builder.appConfigs(args.map(_(argsBuilder).build)*)
@@ -320,7 +320,7 @@ object opensearch_ext:
      * @param dataSources Configuration block(s) for data sources to link to the OpenSearch application. See Data Source below.
      * @return builder
      */
-    def dataSources(args: Endofunction[com.pulumi.aws.opensearch.inputs.ApplicationDataSourceArgs.Builder]*):
+    inline def dataSources(args: Endofunction[com.pulumi.aws.opensearch.inputs.ApplicationDataSourceArgs.Builder]*):
         com.pulumi.aws.opensearch.inputs.ApplicationState.Builder =
       def argsBuilder = com.pulumi.aws.opensearch.inputs.ApplicationDataSourceArgs.builder
       builder.dataSources(args.map(_(argsBuilder).build)*)
@@ -329,12 +329,12 @@ object opensearch_ext:
      * @param iamIdentityCenterOptions Configuration block for integrating AWS IAM Identity Center with the OpenSearch application. See IAM Identity Center Options below.
      * @return builder
      */
-    def iamIdentityCenterOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ApplicationIamIdentityCenterOptionsArgs.Builder]):
+    inline def iamIdentityCenterOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ApplicationIamIdentityCenterOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.ApplicationState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ApplicationIamIdentityCenterOptionsArgs.builder
       builder.iamIdentityCenterOptions(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.opensearch.inputs.ApplicationTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.opensearch.inputs.ApplicationTimeoutsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.ApplicationState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ApplicationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -344,7 +344,7 @@ object opensearch_ext:
      * @param authorizedPrincipals Information about the Amazon Web Services account or service that was provided access to the domain. See `authorizedPrincipal` Block for further details.
      * @return builder
      */
-    def authorizedPrincipals(args: Endofunction[com.pulumi.aws.opensearch.inputs.AuthorizeVpcEndpointAccessAuthorizedPrincipalArgs.Builder]*):
+    inline def authorizedPrincipals(args: Endofunction[com.pulumi.aws.opensearch.inputs.AuthorizeVpcEndpointAccessAuthorizedPrincipalArgs.Builder]*):
         com.pulumi.aws.opensearch.inputs.AuthorizeVpcEndpointAccessState.Builder =
       def argsBuilder = com.pulumi.aws.opensearch.inputs.AuthorizeVpcEndpointAccessAuthorizedPrincipalArgs.builder
       builder.authorizedPrincipals(args.map(_(argsBuilder).build)*)
@@ -354,7 +354,7 @@ object opensearch_ext:
      * @param jwtOptions Configuration block for JWT authentication. Requires OpenSearch 2.11 or later. Detailed below.
      * @return builder
      */
-    def jwtOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAdvancedSecurityOptionsJwtOptionsArgs.Builder]):
+    inline def jwtOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAdvancedSecurityOptionsJwtOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainAdvancedSecurityOptionsArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainAdvancedSecurityOptionsJwtOptionsArgs.builder
       builder.jwtOptions(args(argsBuilder).build)
@@ -363,7 +363,7 @@ object opensearch_ext:
      * @param masterUserOptions Configuration block for the main user. Detailed below.
      * @return builder
      */
-    def masterUserOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAdvancedSecurityOptionsMasterUserOptionsArgs.Builder]):
+    inline def masterUserOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAdvancedSecurityOptionsMasterUserOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainAdvancedSecurityOptionsArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainAdvancedSecurityOptionsMasterUserOptionsArgs.builder
       builder.masterUserOptions(args(argsBuilder).build)
@@ -373,7 +373,7 @@ object opensearch_ext:
      * @param naturalLanguageQueryGenerationOptions Configuration block for parameters required for natural language query generation on the specified domain.
      * @return builder
      */
-    def naturalLanguageQueryGenerationOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAimlOptionsNaturalLanguageQueryGenerationOptionsArgs.Builder]):
+    inline def naturalLanguageQueryGenerationOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAimlOptionsNaturalLanguageQueryGenerationOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainAimlOptionsArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainAimlOptionsNaturalLanguageQueryGenerationOptionsArgs.builder
       builder.naturalLanguageQueryGenerationOptions(args(argsBuilder).build)
@@ -382,7 +382,7 @@ object opensearch_ext:
      * @param s3VectorsEngine Configuration block for parameters required to enable S3 vectors engine features on the specified domain.
      * @return builder
      */
-    def s3VectorsEngine(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAimlOptionsS3VectorsEngineArgs.Builder]):
+    inline def s3VectorsEngine(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAimlOptionsS3VectorsEngineArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainAimlOptionsArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainAimlOptionsS3VectorsEngineArgs.builder
       builder.s3VectorsEngine(args(argsBuilder).build)
@@ -391,7 +391,7 @@ object opensearch_ext:
      * @param serverlessVectorAcceleration Configuration block for parameters required to enable GPU-accelerated vector search on the specified domain.
      * @return builder
      */
-    def serverlessVectorAcceleration(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAimlOptionsServerlessVectorAccelerationArgs.Builder]):
+    inline def serverlessVectorAcceleration(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAimlOptionsServerlessVectorAccelerationArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainAimlOptionsArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainAimlOptionsServerlessVectorAccelerationArgs.builder
       builder.serverlessVectorAcceleration(args(argsBuilder).build)
@@ -403,7 +403,7 @@ object opensearch_ext:
      * **NOTE:** Maintenance windows are deprecated and have been replaced with [off-peak windows](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html). Consequently, `maintenanceSchedule` configuration blocks cannot be specified when `useOffPeakWindow` is set to `true`.
      * @return builder
      */
-    def maintenanceSchedules(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAutoTuneOptionsMaintenanceScheduleArgs.Builder]*):
+    inline def maintenanceSchedules(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAutoTuneOptionsMaintenanceScheduleArgs.Builder]*):
         com.pulumi.aws.opensearch.inputs.DomainAutoTuneOptionsArgs.Builder =
       def argsBuilder = com.pulumi.aws.opensearch.inputs.DomainAutoTuneOptionsMaintenanceScheduleArgs.builder
       builder.maintenanceSchedules(args.map(_(argsBuilder).build)*)
@@ -413,7 +413,7 @@ object opensearch_ext:
      * @param duration Configuration block for the duration of the Auto-Tune maintenance window. Detailed below.
      * @return builder
      */
-    def duration(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAutoTuneOptionsMaintenanceScheduleDurationArgs.Builder]):
+    inline def duration(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAutoTuneOptionsMaintenanceScheduleDurationArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainAutoTuneOptionsMaintenanceScheduleArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainAutoTuneOptionsMaintenanceScheduleDurationArgs.builder
       builder.duration(args(argsBuilder).build)
@@ -423,7 +423,7 @@ object opensearch_ext:
      * @param coldStorageOptions Configuration block containing cold storage configuration. Detailed below.
      * @return builder
      */
-    def coldStorageOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainClusterConfigColdStorageOptionsArgs.Builder]):
+    inline def coldStorageOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainClusterConfigColdStorageOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainClusterConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainClusterConfigColdStorageOptionsArgs.builder
       builder.coldStorageOptions(args(argsBuilder).build)
@@ -432,7 +432,7 @@ object opensearch_ext:
      * @param nodeOptions List of node options for the domain.
      * @return builder
      */
-    def nodeOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainClusterConfigNodeOptionArgs.Builder]*):
+    inline def nodeOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainClusterConfigNodeOptionArgs.Builder]*):
         com.pulumi.aws.opensearch.inputs.DomainClusterConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.opensearch.inputs.DomainClusterConfigNodeOptionArgs.builder
       builder.nodeOptions(args.map(_(argsBuilder).build)*)
@@ -441,7 +441,7 @@ object opensearch_ext:
      * @param zoneAwarenessConfig Configuration block containing zone awareness settings. Detailed below.
      * @return builder
      */
-    def zoneAwarenessConfig(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainClusterConfigZoneAwarenessConfigArgs.Builder]):
+    inline def zoneAwarenessConfig(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainClusterConfigZoneAwarenessConfigArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainClusterConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainClusterConfigZoneAwarenessConfigArgs.builder
       builder.zoneAwarenessConfig(args(argsBuilder).build)
@@ -451,13 +451,13 @@ object opensearch_ext:
      * @param nodeConfig Container to specify sizing of a node type.
      * @return builder
      */
-    def nodeConfig(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainClusterConfigNodeOptionNodeConfigArgs.Builder]):
+    inline def nodeConfig(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainClusterConfigNodeOptionNodeConfigArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainClusterConfigNodeOptionArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainClusterConfigNodeOptionNodeConfigArgs.builder
       builder.nodeConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.opensearch.inputs.DomainOffPeakWindowOptionsArgs.Builder)
-    def offPeakWindow(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainOffPeakWindowOptionsOffPeakWindowArgs.Builder]):
+    inline def offPeakWindow(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainOffPeakWindowOptionsOffPeakWindowArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainOffPeakWindowOptionsArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainOffPeakWindowOptionsOffPeakWindowArgs.builder
       builder.offPeakWindow(args(argsBuilder).build)
@@ -467,7 +467,7 @@ object opensearch_ext:
      * @param windowStartTime 10h window for updates
      * @return builder
      */
-    def windowStartTime(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainOffPeakWindowOptionsOffPeakWindowWindowStartTimeArgs.Builder]):
+    inline def windowStartTime(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainOffPeakWindowOptionsOffPeakWindowWindowStartTimeArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainOffPeakWindowOptionsOffPeakWindowArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainOffPeakWindowOptionsOffPeakWindowWindowStartTimeArgs.builder
       builder.windowStartTime(args(argsBuilder).build)
@@ -477,7 +477,7 @@ object opensearch_ext:
      * @param idp Information from your identity provider.
      * @return builder
      */
-    def idp(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainSamlOptionsSamlOptionsIdpArgs.Builder]):
+    inline def idp(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainSamlOptionsSamlOptionsIdpArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainSamlOptionsSamlOptionsArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainSamlOptionsSamlOptionsIdpArgs.builder
       builder.idp(args(argsBuilder).build)
@@ -487,7 +487,7 @@ object opensearch_ext:
      * @param samlOptions SAML authentication options for an AWS OpenSearch Domain.
      * @return builder
      */
-    def samlOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainSamlOptionsSamlOptionsArgs.Builder]):
+    inline def samlOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainSamlOptionsSamlOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainSamlOptionsState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainSamlOptionsSamlOptionsArgs.builder
       builder.samlOptions(args(argsBuilder).build)
@@ -497,7 +497,7 @@ object opensearch_ext:
      * @param advancedSecurityOptions Configuration block for [fine-grained access control](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html). Detailed below.
      * @return builder
      */
-    def advancedSecurityOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAdvancedSecurityOptionsArgs.Builder]):
+    inline def advancedSecurityOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAdvancedSecurityOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainAdvancedSecurityOptionsArgs.builder
       builder.advancedSecurityOptions(args(argsBuilder).build)
@@ -506,7 +506,7 @@ object opensearch_ext:
      * @param aimlOptions Configuration block for parameters required to enable all machine learning features. Detailed below.
      * @return builder
      */
-    def aimlOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAimlOptionsArgs.Builder]):
+    inline def aimlOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAimlOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainAimlOptionsArgs.builder
       builder.aimlOptions(args(argsBuilder).build)
@@ -515,7 +515,7 @@ object opensearch_ext:
      * @param autoTuneOptions Configuration block for the Auto-Tune options of the domain. Detailed below.
      * @return builder
      */
-    def autoTuneOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAutoTuneOptionsArgs.Builder]):
+    inline def autoTuneOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainAutoTuneOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainAutoTuneOptionsArgs.builder
       builder.autoTuneOptions(args(argsBuilder).build)
@@ -524,7 +524,7 @@ object opensearch_ext:
      * @param clusterConfig Configuration block for the cluster of the domain. Detailed below.
      * @return builder
      */
-    def clusterConfig(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainClusterConfigArgs.Builder]):
+    inline def clusterConfig(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainClusterConfigArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainClusterConfigArgs.builder
       builder.clusterConfig(args(argsBuilder).build)
@@ -533,7 +533,7 @@ object opensearch_ext:
      * @param cognitoOptions Configuration block for authenticating dashboard with Cognito. Detailed below.
      * @return builder
      */
-    def cognitoOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainCognitoOptionsArgs.Builder]):
+    inline def cognitoOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainCognitoOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainCognitoOptionsArgs.builder
       builder.cognitoOptions(args(argsBuilder).build)
@@ -542,7 +542,7 @@ object opensearch_ext:
      * @param deploymentStrategyOptions Configuration block for the deployment strategy options of the domain. Detailed below.
      * @return builder
      */
-    def deploymentStrategyOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainDeploymentStrategyOptionsArgs.Builder]):
+    inline def deploymentStrategyOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainDeploymentStrategyOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainDeploymentStrategyOptionsArgs.builder
       builder.deploymentStrategyOptions(args(argsBuilder).build)
@@ -551,7 +551,7 @@ object opensearch_ext:
      * @param domainEndpointOptions Configuration block for domain endpoint HTTP(S) related options. Detailed below.
      * @return builder
      */
-    def domainEndpointOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainDomainEndpointOptionsArgs.Builder]):
+    inline def domainEndpointOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainDomainEndpointOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainDomainEndpointOptionsArgs.builder
       builder.domainEndpointOptions(args(argsBuilder).build)
@@ -560,7 +560,7 @@ object opensearch_ext:
      * @param ebsOptions Configuration block for EBS related options, may be required based on chosen [instance size](https://aws.amazon.com/opensearch-service/pricing/). Detailed below.
      * @return builder
      */
-    def ebsOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainEbsOptionsArgs.Builder]):
+    inline def ebsOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainEbsOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainEbsOptionsArgs.builder
       builder.ebsOptions(args(argsBuilder).build)
@@ -569,7 +569,7 @@ object opensearch_ext:
      * @param encryptAtRest Configuration block for encrypt at rest options. Only available for [certain instance types](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/encryption-at-rest.html). Detailed below.
      * @return builder
      */
-    def encryptAtRest(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainEncryptAtRestArgs.Builder]):
+    inline def encryptAtRest(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainEncryptAtRestArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainEncryptAtRestArgs.builder
       builder.encryptAtRest(args(argsBuilder).build)
@@ -578,7 +578,7 @@ object opensearch_ext:
      * @param identityCenterOptions Configuration block for enabling and managing IAM Identity Center integration within a domain. Detailed below.
      * @return builder
      */
-    def identityCenterOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainIdentityCenterOptionsArgs.Builder]):
+    inline def identityCenterOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainIdentityCenterOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainIdentityCenterOptionsArgs.builder
       builder.identityCenterOptions(args(argsBuilder).build)
@@ -587,7 +587,7 @@ object opensearch_ext:
      * @param logPublishingOptions Configuration block for publishing slow and application logs to CloudWatch Logs. This block can be declared multiple times, for each log_type, within the same resource. Detailed below.
      * @return builder
      */
-    def logPublishingOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainLogPublishingOptionArgs.Builder]*):
+    inline def logPublishingOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainLogPublishingOptionArgs.Builder]*):
         com.pulumi.aws.opensearch.inputs.DomainState.Builder =
       def argsBuilder = com.pulumi.aws.opensearch.inputs.DomainLogPublishingOptionArgs.builder
       builder.logPublishingOptions(args.map(_(argsBuilder).build)*)
@@ -596,7 +596,7 @@ object opensearch_ext:
      * @param nodeToNodeEncryption Configuration block for node-to-node encryption options. Detailed below.
      * @return builder
      */
-    def nodeToNodeEncryption(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainNodeToNodeEncryptionArgs.Builder]):
+    inline def nodeToNodeEncryption(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainNodeToNodeEncryptionArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainNodeToNodeEncryptionArgs.builder
       builder.nodeToNodeEncryption(args(argsBuilder).build)
@@ -605,7 +605,7 @@ object opensearch_ext:
      * @param offPeakWindowOptions Configuration to add Off Peak update options. ([documentation](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html)). Detailed below.
      * @return builder
      */
-    def offPeakWindowOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainOffPeakWindowOptionsArgs.Builder]):
+    inline def offPeakWindowOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainOffPeakWindowOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainOffPeakWindowOptionsArgs.builder
       builder.offPeakWindowOptions(args(argsBuilder).build)
@@ -614,7 +614,7 @@ object opensearch_ext:
      * @param snapshotOptions Configuration block for snapshot related options. Detailed below. DEPRECATED. For domains running OpenSearch 5.3 and later, Amazon OpenSearch takes hourly automated snapshots, making this setting irrelevant. For domains running earlier versions, OpenSearch takes daily automated snapshots.
      * @return builder
      */
-    def snapshotOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainSnapshotOptionsArgs.Builder]):
+    inline def snapshotOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainSnapshotOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainSnapshotOptionsArgs.builder
       builder.snapshotOptions(args(argsBuilder).build)
@@ -623,7 +623,7 @@ object opensearch_ext:
      * @param softwareUpdateOptions Software update options for the domain. Detailed below.
      * @return builder
      */
-    def softwareUpdateOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainSoftwareUpdateOptionsArgs.Builder]):
+    inline def softwareUpdateOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainSoftwareUpdateOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainSoftwareUpdateOptionsArgs.builder
       builder.softwareUpdateOptions(args(argsBuilder).build)
@@ -632,7 +632,7 @@ object opensearch_ext:
      * @param vpcOptions Configuration block for VPC related options. Adding or removing this configuration forces a new resource ([documentation](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html)). Detailed below.
      * @return builder
      */
-    def vpcOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainVpcOptionsArgs.Builder]):
+    inline def vpcOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.DomainVpcOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.DomainVpcOptionsArgs.builder
       builder.vpcOptions(args(argsBuilder).build)
@@ -642,7 +642,7 @@ object opensearch_ext:
      * @param iamFederationOptions IAM Federation options for the security configuration.
      * @return builder
      */
-    def iamFederationOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigIamFederationOptionArgs.Builder]*):
+    inline def iamFederationOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigIamFederationOptionArgs.Builder]*):
         com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigIamFederationOptionArgs.builder
       builder.iamFederationOptions(args.map(_(argsBuilder).build)*)
@@ -651,7 +651,7 @@ object opensearch_ext:
      * @param iamIdentityCenterOptions IAM Identity Center options for the security configuration.
      * @return builder
      */
-    def iamIdentityCenterOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigIamIdentityCenterOptionArgs.Builder]*):
+    inline def iamIdentityCenterOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigIamIdentityCenterOptionArgs.Builder]*):
         com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigIamIdentityCenterOptionArgs.builder
       builder.iamIdentityCenterOptions(args.map(_(argsBuilder).build)*)
@@ -660,7 +660,7 @@ object opensearch_ext:
      * @param samlOptions SAML options for the security configuration.
      * @return builder
      */
-    def samlOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigSamlOptionArgs.Builder]*):
+    inline def samlOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigSamlOptionArgs.Builder]*):
         com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigSamlOptionArgs.builder
       builder.samlOptions(args.map(_(argsBuilder).build)*)
@@ -670,7 +670,7 @@ object opensearch_ext:
      * @param iamFederationOptions IAM Federation options for the security configuration.
      * @return builder
      */
-    def iamFederationOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigIamFederationOption.Builder]*):
+    inline def iamFederationOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigIamFederationOption.Builder]*):
         com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigPlainArgs.Builder =
       def argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigIamFederationOption.builder
       builder.iamFederationOptions(args.map(_(argsBuilder).build)*)
@@ -679,7 +679,7 @@ object opensearch_ext:
      * @param iamIdentityCenterOptions IAM Identity Center options for the security configuration.
      * @return builder
      */
-    def iamIdentityCenterOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigIamIdentityCenterOption.Builder]*):
+    inline def iamIdentityCenterOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigIamIdentityCenterOption.Builder]*):
         com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigPlainArgs.Builder =
       def argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigIamIdentityCenterOption.builder
       builder.iamIdentityCenterOptions(args.map(_(argsBuilder).build)*)
@@ -688,7 +688,7 @@ object opensearch_ext:
      * @param samlOptions SAML options for the security configuration.
      * @return builder
      */
-    def samlOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigSamlOption.Builder]*):
+    inline def samlOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigSamlOption.Builder]*):
         com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigPlainArgs.Builder =
       def argsBuilder = com.pulumi.aws.opensearch.inputs.GetServerlessSecurityConfigSamlOption.builder
       builder.samlOptions(args.map(_(argsBuilder).build)*)
@@ -698,7 +698,7 @@ object opensearch_ext:
      * @param crossClusterSearch Configuration block for cross cluster search.
      * @return builder
      */
-    def crossClusterSearch(args: Endofunction[com.pulumi.aws.opensearch.inputs.OutboundConnectionConnectionPropertiesCrossClusterSearchArgs.Builder]):
+    inline def crossClusterSearch(args: Endofunction[com.pulumi.aws.opensearch.inputs.OutboundConnectionConnectionPropertiesCrossClusterSearchArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.OutboundConnectionConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.OutboundConnectionConnectionPropertiesCrossClusterSearchArgs.builder
       builder.crossClusterSearch(args(argsBuilder).build)
@@ -708,7 +708,7 @@ object opensearch_ext:
      * @param connectionProperties Configuration block for the outbound connection.
      * @return builder
      */
-    def connectionProperties(args: Endofunction[com.pulumi.aws.opensearch.inputs.OutboundConnectionConnectionPropertiesArgs.Builder]):
+    inline def connectionProperties(args: Endofunction[com.pulumi.aws.opensearch.inputs.OutboundConnectionConnectionPropertiesArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.OutboundConnectionState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.OutboundConnectionConnectionPropertiesArgs.builder
       builder.connectionProperties(args(argsBuilder).build)
@@ -717,7 +717,7 @@ object opensearch_ext:
      * @param localDomainInfo Configuration block for the local Opensearch domain.
      * @return builder
      */
-    def localDomainInfo(args: Endofunction[com.pulumi.aws.opensearch.inputs.OutboundConnectionLocalDomainInfoArgs.Builder]):
+    inline def localDomainInfo(args: Endofunction[com.pulumi.aws.opensearch.inputs.OutboundConnectionLocalDomainInfoArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.OutboundConnectionState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.OutboundConnectionLocalDomainInfoArgs.builder
       builder.localDomainInfo(args(argsBuilder).build)
@@ -726,7 +726,7 @@ object opensearch_ext:
      * @param remoteDomainInfo Configuration block for the remote Opensearch domain.
      * @return builder
      */
-    def remoteDomainInfo(args: Endofunction[com.pulumi.aws.opensearch.inputs.OutboundConnectionRemoteDomainInfoArgs.Builder]):
+    inline def remoteDomainInfo(args: Endofunction[com.pulumi.aws.opensearch.inputs.OutboundConnectionRemoteDomainInfoArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.OutboundConnectionState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.OutboundConnectionRemoteDomainInfoArgs.builder
       builder.remoteDomainInfo(args(argsBuilder).build)
@@ -736,7 +736,7 @@ object opensearch_ext:
      * @param packageSource Configuration block for the package source options.
      * @return builder
      */
-    def packageSource(args: Endofunction[com.pulumi.aws.opensearch.inputs.PackagePackageSourceArgs.Builder]):
+    inline def packageSource(args: Endofunction[com.pulumi.aws.opensearch.inputs.PackagePackageSourceArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.PackageState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.PackagePackageSourceArgs.builder
       builder.packageSource(args(argsBuilder).build)
@@ -746,7 +746,7 @@ object opensearch_ext:
      * @param capacityLimits Configuration block for the collection group&#39;s indexing and search capacity limits. See `capacityLimits` below for details.
      * @return builder
      */
-    def capacityLimits(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessCollectionGroupCapacityLimitArgs.Builder]*):
+    inline def capacityLimits(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessCollectionGroupCapacityLimitArgs.Builder]*):
         com.pulumi.aws.opensearch.inputs.ServerlessCollectionGroupState.Builder =
       def argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessCollectionGroupCapacityLimitArgs.builder
       builder.capacityLimits(args.map(_(argsBuilder).build)*)
@@ -756,12 +756,12 @@ object opensearch_ext:
      * @param encryptionConfigs Configuration block for direct collection encryption settings. See `encryptionConfig` below for details.
      * @return builder
      */
-    def encryptionConfigs(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessCollectionEncryptionConfigArgs.Builder]*):
+    inline def encryptionConfigs(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessCollectionEncryptionConfigArgs.Builder]*):
         com.pulumi.aws.opensearch.inputs.ServerlessCollectionState.Builder =
       def argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessCollectionEncryptionConfigArgs.builder
       builder.encryptionConfigs(args.map(_(argsBuilder).build)*)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessCollectionTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessCollectionTimeoutsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.ServerlessCollectionState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessCollectionTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -770,7 +770,7 @@ object opensearch_ext:
      * @param vectorOptions Configuration block for vector search options. Only valid when `type` is `VECTORSEARCH`. See `vectorOptions` below for details.
      * @return builder
      */
-    def vectorOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessCollectionVectorOptionArgs.Builder]*):
+    inline def vectorOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessCollectionVectorOptionArgs.Builder]*):
         com.pulumi.aws.opensearch.inputs.ServerlessCollectionState.Builder =
       def argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessCollectionVectorOptionArgs.builder
       builder.vectorOptions(args.map(_(argsBuilder).build)*)
@@ -780,7 +780,7 @@ object opensearch_ext:
      * @param iamFederationOptions Configuration block for IAM Federation options. Required if `type` is set to `iamfederation`. See `iamFederationOptions` Block below for details.
      * @return builder
      */
-    def iamFederationOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigIamFederationOptionsArgs.Builder]):
+    inline def iamFederationOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigIamFederationOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigIamFederationOptionsArgs.builder
       builder.iamFederationOptions(args(argsBuilder).build)
@@ -789,7 +789,7 @@ object opensearch_ext:
      * @param iamIdentityCenterOptions Configuration block for IAM Identity Center options. Required if `type` is set to `iamidentitycenter`. See `iamIdentityCenterOptions` Block below for details.
      * @return builder
      */
-    def iamIdentityCenterOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigIamIdentityCenterOptionsArgs.Builder]):
+    inline def iamIdentityCenterOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigIamIdentityCenterOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigIamIdentityCenterOptionsArgs.builder
       builder.iamIdentityCenterOptions(args(argsBuilder).build)
@@ -798,13 +798,13 @@ object opensearch_ext:
      * @param samlOptions Configuration block for SAML options. Required if `type` is set to `saml`. See `samlOptions` Block below for details.
      * @return builder
      */
-    def samlOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigSamlOptionsArgs.Builder]):
+    inline def samlOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigSamlOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessSecurityConfigSamlOptionsArgs.builder
       builder.samlOptions(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.opensearch.inputs.ServerlessVpcEndpointState.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessVpcEndpointTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.opensearch.inputs.ServerlessVpcEndpointTimeoutsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.ServerlessVpcEndpointState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.ServerlessVpcEndpointTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -814,7 +814,7 @@ object opensearch_ext:
      * @param vpcOptions Options to specify the subnets and security groups for the endpoint.
      * @return builder
      */
-    def vpcOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.VpcEndpointVpcOptionsArgs.Builder]):
+    inline def vpcOptions(args: Endofunction[com.pulumi.aws.opensearch.inputs.VpcEndpointVpcOptionsArgs.Builder]):
         com.pulumi.aws.opensearch.inputs.VpcEndpointState.Builder =
       val argsBuilder = com.pulumi.aws.opensearch.inputs.VpcEndpointVpcOptionsArgs.builder
       builder.vpcOptions(args(argsBuilder).build)

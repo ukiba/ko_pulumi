@@ -8,7 +8,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoscalingSettings(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ClusterAutoscalingSettingsArgs.Builder]):
+    inline def autoscalingSettings(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ClusterAutoscalingSettingsArgs.Builder]):
         com.pulumi.gcp.vmwareengine.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.ClusterAutoscalingSettingsArgs.builder
       builder.autoscalingSettings(args(argsBuilder).build)
@@ -21,7 +21,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def datastoreMountConfigs(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ClusterDatastoreMountConfigArgs.Builder]*):
+    inline def datastoreMountConfigs(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ClusterDatastoreMountConfigArgs.Builder]*):
         com.pulumi.gcp.vmwareengine.ClusterArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vmwareengine.inputs.ClusterDatastoreMountConfigArgs.builder
       builder.datastoreMountConfigs(args.map(_(argsBuilder).build)*)
@@ -32,7 +32,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeTypeConfigs(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ClusterNodeTypeConfigArgs.Builder]*):
+    inline def nodeTypeConfigs(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ClusterNodeTypeConfigArgs.Builder]*):
         com.pulumi.gcp.vmwareengine.ClusterArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vmwareengine.inputs.ClusterNodeTypeConfigArgs.builder
       builder.nodeTypeConfigs(args.map(_(argsBuilder).build)*)
@@ -43,7 +43,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nfsDatastore(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.DatastoreNfsDatastoreArgs.Builder]):
+    inline def nfsDatastore(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.DatastoreNfsDatastoreArgs.Builder]):
         com.pulumi.gcp.vmwareengine.DatastoreArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.DatastoreNfsDatastoreArgs.builder
       builder.nfsDatastore(args(argsBuilder).build)
@@ -55,7 +55,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinationIpRanges(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ExternalAccessRuleDestinationIpRangeArgs.Builder]*):
+    inline def destinationIpRanges(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ExternalAccessRuleDestinationIpRangeArgs.Builder]*):
         com.pulumi.gcp.vmwareengine.ExternalAccessRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vmwareengine.inputs.ExternalAccessRuleDestinationIpRangeArgs.builder
       builder.destinationIpRanges(args.map(_(argsBuilder).build)*)
@@ -66,7 +66,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sourceIpRanges(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ExternalAccessRuleSourceIpRangeArgs.Builder]*):
+    inline def sourceIpRanges(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ExternalAccessRuleSourceIpRangeArgs.Builder]*):
         com.pulumi.gcp.vmwareengine.ExternalAccessRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vmwareengine.inputs.ExternalAccessRuleSourceIpRangeArgs.builder
       builder.sourceIpRanges(args.map(_(argsBuilder).build)*)
@@ -78,7 +78,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def externalIp(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.NetworkPolicyExternalIpArgs.Builder]):
+    inline def externalIp(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.NetworkPolicyExternalIpArgs.Builder]):
         com.pulumi.gcp.vmwareengine.NetworkPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.NetworkPolicyExternalIpArgs.builder
       builder.externalIp(args(argsBuilder).build)
@@ -88,7 +88,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def internetAccess(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.NetworkPolicyInternetAccessArgs.Builder]):
+    inline def internetAccess(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.NetworkPolicyInternetAccessArgs.Builder]):
         com.pulumi.gcp.vmwareengine.NetworkPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.NetworkPolicyInternetAccessArgs.builder
       builder.internetAccess(args(argsBuilder).build)
@@ -99,7 +99,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def managementCluster(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterArgs.Builder]):
+    inline def managementCluster(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterArgs.Builder]):
         com.pulumi.gcp.vmwareengine.PrivateCloudArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterArgs.builder
       builder.managementCluster(args(argsBuilder).build)
@@ -109,7 +109,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfig(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudNetworkConfigArgs.Builder]):
+    inline def networkConfig(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudNetworkConfigArgs.Builder]):
         com.pulumi.gcp.vmwareengine.PrivateCloudArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.PrivateCloudNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)
@@ -129,7 +129,7 @@ object vmwareengine_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def autoscalingPolicies(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ClusterAutoscalingSettingsAutoscalingPolicyArgs.Builder]*):
+    inline def autoscalingPolicies(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ClusterAutoscalingSettingsAutoscalingPolicyArgs.Builder]*):
         com.pulumi.gcp.vmwareengine.inputs.ClusterAutoscalingSettingsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vmwareengine.inputs.ClusterAutoscalingSettingsAutoscalingPolicyArgs.builder
       builder.autoscalingPolicies(args.map(_(argsBuilder).build)*)
@@ -140,7 +140,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def consumedMemoryThresholds(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ClusterAutoscalingSettingsAutoscalingPolicyConsumedMemoryThresholdsArgs.Builder]):
+    inline def consumedMemoryThresholds(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ClusterAutoscalingSettingsAutoscalingPolicyConsumedMemoryThresholdsArgs.Builder]):
         com.pulumi.gcp.vmwareengine.inputs.ClusterAutoscalingSettingsAutoscalingPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.ClusterAutoscalingSettingsAutoscalingPolicyConsumedMemoryThresholdsArgs.builder
       builder.consumedMemoryThresholds(args(argsBuilder).build)
@@ -150,7 +150,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cpuThresholds(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ClusterAutoscalingSettingsAutoscalingPolicyCpuThresholdsArgs.Builder]):
+    inline def cpuThresholds(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ClusterAutoscalingSettingsAutoscalingPolicyCpuThresholdsArgs.Builder]):
         com.pulumi.gcp.vmwareengine.inputs.ClusterAutoscalingSettingsAutoscalingPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.ClusterAutoscalingSettingsAutoscalingPolicyCpuThresholdsArgs.builder
       builder.cpuThresholds(args(argsBuilder).build)
@@ -160,7 +160,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def storageThresholds(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ClusterAutoscalingSettingsAutoscalingPolicyStorageThresholdsArgs.Builder]):
+    inline def storageThresholds(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ClusterAutoscalingSettingsAutoscalingPolicyStorageThresholdsArgs.Builder]):
         com.pulumi.gcp.vmwareengine.inputs.ClusterAutoscalingSettingsAutoscalingPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.ClusterAutoscalingSettingsAutoscalingPolicyStorageThresholdsArgs.builder
       builder.storageThresholds(args(argsBuilder).build)
@@ -171,7 +171,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def datastoreNetwork(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ClusterDatastoreMountConfigDatastoreNetworkArgs.Builder]):
+    inline def datastoreNetwork(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ClusterDatastoreMountConfigDatastoreNetworkArgs.Builder]):
         com.pulumi.gcp.vmwareengine.inputs.ClusterDatastoreMountConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.ClusterDatastoreMountConfigDatastoreNetworkArgs.builder
       builder.datastoreNetwork(args(argsBuilder).build)
@@ -182,7 +182,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoscalingSettings(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ClusterAutoscalingSettingsArgs.Builder]):
+    inline def autoscalingSettings(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ClusterAutoscalingSettingsArgs.Builder]):
         com.pulumi.gcp.vmwareengine.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.ClusterAutoscalingSettingsArgs.builder
       builder.autoscalingSettings(args(argsBuilder).build)
@@ -195,7 +195,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def datastoreMountConfigs(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ClusterDatastoreMountConfigArgs.Builder]*):
+    inline def datastoreMountConfigs(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ClusterDatastoreMountConfigArgs.Builder]*):
         com.pulumi.gcp.vmwareengine.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.vmwareengine.inputs.ClusterDatastoreMountConfigArgs.builder
       builder.datastoreMountConfigs(args.map(_(argsBuilder).build)*)
@@ -206,7 +206,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeTypeConfigs(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ClusterNodeTypeConfigArgs.Builder]*):
+    inline def nodeTypeConfigs(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ClusterNodeTypeConfigArgs.Builder]*):
         com.pulumi.gcp.vmwareengine.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.vmwareengine.inputs.ClusterNodeTypeConfigArgs.builder
       builder.nodeTypeConfigs(args.map(_(argsBuilder).build)*)
@@ -217,7 +217,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleFileService(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.DatastoreNfsDatastoreGoogleFileServiceArgs.Builder]):
+    inline def googleFileService(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.DatastoreNfsDatastoreGoogleFileServiceArgs.Builder]):
         com.pulumi.gcp.vmwareengine.inputs.DatastoreNfsDatastoreArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.DatastoreNfsDatastoreGoogleFileServiceArgs.builder
       builder.googleFileService(args(argsBuilder).build)
@@ -227,7 +227,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def thirdPartyFileService(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.DatastoreNfsDatastoreThirdPartyFileServiceArgs.Builder]):
+    inline def thirdPartyFileService(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.DatastoreNfsDatastoreThirdPartyFileServiceArgs.Builder]):
         com.pulumi.gcp.vmwareengine.inputs.DatastoreNfsDatastoreArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.DatastoreNfsDatastoreThirdPartyFileServiceArgs.builder
       builder.thirdPartyFileService(args(argsBuilder).build)
@@ -238,7 +238,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nfsDatastore(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.DatastoreNfsDatastoreArgs.Builder]):
+    inline def nfsDatastore(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.DatastoreNfsDatastoreArgs.Builder]):
         com.pulumi.gcp.vmwareengine.inputs.DatastoreState.Builder =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.DatastoreNfsDatastoreArgs.builder
       builder.nfsDatastore(args(argsBuilder).build)
@@ -250,7 +250,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinationIpRanges(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ExternalAccessRuleDestinationIpRangeArgs.Builder]*):
+    inline def destinationIpRanges(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ExternalAccessRuleDestinationIpRangeArgs.Builder]*):
         com.pulumi.gcp.vmwareengine.inputs.ExternalAccessRuleState.Builder =
       def argsBuilder = com.pulumi.gcp.vmwareengine.inputs.ExternalAccessRuleDestinationIpRangeArgs.builder
       builder.destinationIpRanges(args.map(_(argsBuilder).build)*)
@@ -261,7 +261,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sourceIpRanges(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ExternalAccessRuleSourceIpRangeArgs.Builder]*):
+    inline def sourceIpRanges(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.ExternalAccessRuleSourceIpRangeArgs.Builder]*):
         com.pulumi.gcp.vmwareengine.inputs.ExternalAccessRuleState.Builder =
       def argsBuilder = com.pulumi.gcp.vmwareengine.inputs.ExternalAccessRuleSourceIpRangeArgs.builder
       builder.sourceIpRanges(args.map(_(argsBuilder).build)*)
@@ -273,7 +273,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def externalIp(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.NetworkPolicyExternalIpArgs.Builder]):
+    inline def externalIp(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.NetworkPolicyExternalIpArgs.Builder]):
         com.pulumi.gcp.vmwareengine.inputs.NetworkPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.NetworkPolicyExternalIpArgs.builder
       builder.externalIp(args(argsBuilder).build)
@@ -283,7 +283,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def internetAccess(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.NetworkPolicyInternetAccessArgs.Builder]):
+    inline def internetAccess(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.NetworkPolicyInternetAccessArgs.Builder]):
         com.pulumi.gcp.vmwareengine.inputs.NetworkPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.NetworkPolicyInternetAccessArgs.builder
       builder.internetAccess(args(argsBuilder).build)
@@ -295,7 +295,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcNetworks(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.NetworkVpcNetworkArgs.Builder]*):
+    inline def vpcNetworks(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.NetworkVpcNetworkArgs.Builder]*):
         com.pulumi.gcp.vmwareengine.inputs.NetworkState.Builder =
       def argsBuilder = com.pulumi.gcp.vmwareengine.inputs.NetworkVpcNetworkArgs.builder
       builder.vpcNetworks(args.map(_(argsBuilder).build)*)
@@ -307,7 +307,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoscalingSettings(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterAutoscalingSettingsArgs.Builder]):
+    inline def autoscalingSettings(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterAutoscalingSettingsArgs.Builder]):
         com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterAutoscalingSettingsArgs.builder
       builder.autoscalingSettings(args(argsBuilder).build)
@@ -318,7 +318,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeTypeConfigs(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterNodeTypeConfigArgs.Builder]*):
+    inline def nodeTypeConfigs(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterNodeTypeConfigArgs.Builder]*):
         com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterNodeTypeConfigArgs.builder
       builder.nodeTypeConfigs(args.map(_(argsBuilder).build)*)
@@ -328,7 +328,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stretchedClusterConfig(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterStretchedClusterConfigArgs.Builder]):
+    inline def stretchedClusterConfig(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterStretchedClusterConfigArgs.Builder]):
         com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterStretchedClusterConfigArgs.builder
       builder.stretchedClusterConfig(args(argsBuilder).build)
@@ -348,7 +348,7 @@ object vmwareengine_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def autoscalingPolicies(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyArgs.Builder]*):
+    inline def autoscalingPolicies(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyArgs.Builder]*):
         com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterAutoscalingSettingsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyArgs.builder
       builder.autoscalingPolicies(args.map(_(argsBuilder).build)*)
@@ -359,7 +359,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def consumedMemoryThresholds(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyConsumedMemoryThresholdsArgs.Builder]):
+    inline def consumedMemoryThresholds(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyConsumedMemoryThresholdsArgs.Builder]):
         com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyConsumedMemoryThresholdsArgs.builder
       builder.consumedMemoryThresholds(args(argsBuilder).build)
@@ -369,7 +369,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cpuThresholds(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyCpuThresholdsArgs.Builder]):
+    inline def cpuThresholds(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyCpuThresholdsArgs.Builder]):
         com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyCpuThresholdsArgs.builder
       builder.cpuThresholds(args(argsBuilder).build)
@@ -379,7 +379,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def storageThresholds(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyStorageThresholdsArgs.Builder]):
+    inline def storageThresholds(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyStorageThresholdsArgs.Builder]):
         com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterAutoscalingSettingsAutoscalingPolicyStorageThresholdsArgs.builder
       builder.storageThresholds(args(argsBuilder).build)
@@ -390,7 +390,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hcxes(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudHcxArgs.Builder]*):
+    inline def hcxes(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudHcxArgs.Builder]*):
         com.pulumi.gcp.vmwareengine.inputs.PrivateCloudState.Builder =
       def argsBuilder = com.pulumi.gcp.vmwareengine.inputs.PrivateCloudHcxArgs.builder
       builder.hcxes(args.map(_(argsBuilder).build)*)
@@ -400,7 +400,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def managementCluster(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterArgs.Builder]):
+    inline def managementCluster(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterArgs.Builder]):
         com.pulumi.gcp.vmwareengine.inputs.PrivateCloudState.Builder =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.PrivateCloudManagementClusterArgs.builder
       builder.managementCluster(args(argsBuilder).build)
@@ -410,7 +410,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfig(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudNetworkConfigArgs.Builder]):
+    inline def networkConfig(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudNetworkConfigArgs.Builder]):
         com.pulumi.gcp.vmwareengine.inputs.PrivateCloudState.Builder =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.PrivateCloudNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)
@@ -420,7 +420,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nsxes(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudNsxArgs.Builder]*):
+    inline def nsxes(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudNsxArgs.Builder]*):
         com.pulumi.gcp.vmwareengine.inputs.PrivateCloudState.Builder =
       def argsBuilder = com.pulumi.gcp.vmwareengine.inputs.PrivateCloudNsxArgs.builder
       builder.nsxes(args.map(_(argsBuilder).build)*)
@@ -430,7 +430,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vcenters(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudVcenterArgs.Builder]*):
+    inline def vcenters(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.PrivateCloudVcenterArgs.Builder]*):
         com.pulumi.gcp.vmwareengine.inputs.PrivateCloudState.Builder =
       def argsBuilder = com.pulumi.gcp.vmwareengine.inputs.PrivateCloudVcenterArgs.builder
       builder.vcenters(args.map(_(argsBuilder).build)*)
@@ -441,7 +441,7 @@ object vmwareengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dhcpAddressRanges(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.SubnetDhcpAddressRangeArgs.Builder]*):
+    inline def dhcpAddressRanges(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.SubnetDhcpAddressRangeArgs.Builder]*):
         com.pulumi.gcp.vmwareengine.inputs.SubnetState.Builder =
       def argsBuilder = com.pulumi.gcp.vmwareengine.inputs.SubnetDhcpAddressRangeArgs.builder
       builder.dhcpAddressRanges(args.map(_(argsBuilder).build)*)

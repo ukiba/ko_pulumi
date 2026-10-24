@@ -11,7 +11,7 @@ object appflow:
    * For specific information about creating an AppFlow connector profile, see the
    * [CreateConnectorProfile](https://docs.aws.amazon.com/appflow/1.0/APIReference/API_CreateConnectorProfile.html) page in the Amazon AppFlow API Reference.
    */
-  def ConnectorProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConnectorProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appflow.ConnectorProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appflow.ConnectorProfileArgs.builder
     conf.logicalName2physicalName(name) match
@@ -22,7 +22,7 @@ object appflow:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppFlow flow resource. */
-  def Flow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Flow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appflow.FlowArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appflow.FlowArgs.builder
     conf.logicalName2physicalName(name) match

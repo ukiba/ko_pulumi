@@ -18,7 +18,7 @@ object runtimeconfig:
    * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
    * See Provider Versions for more details on beta resources.
    */
-  def Config(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Config(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.runtimeconfig.ConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.runtimeconfig.ConfigArgs.builder
     conf.logicalName2physicalName(name) match
@@ -333,7 +333,7 @@ object runtimeconfig:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ConfigIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConfigIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.runtimeconfig.ConfigIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.runtimeconfig.ConfigIamBindingArgs.builder
     com.pulumi.gcp.runtimeconfig.ConfigIamBinding(name,
@@ -645,7 +645,7 @@ object runtimeconfig:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ConfigIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConfigIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.runtimeconfig.ConfigIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.runtimeconfig.ConfigIamMemberArgs.builder
     com.pulumi.gcp.runtimeconfig.ConfigIamMember(name,
@@ -957,7 +957,7 @@ object runtimeconfig:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ConfigIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConfigIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.runtimeconfig.ConfigIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.runtimeconfig.ConfigIamPolicyArgs.builder
     com.pulumi.gcp.runtimeconfig.ConfigIamPolicy(name,
@@ -1066,7 +1066,7 @@ object runtimeconfig:
    * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
    * See Provider Versions for more details on beta resources.
    */
-  def Variable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Variable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.runtimeconfig.VariableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.runtimeconfig.VariableArgs.builder
     conf.logicalName2physicalName(name) match

@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object mysql:
   /** Manages a MySQL Database within a MySQL Flexible Server */
-  def FlexibleDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FlexibleDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.mysql.FlexibleDatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.mysql.FlexibleDatabaseArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18,7 +18,7 @@ object mysql:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a MySQL Flexible Server. */
-  def FlexibleServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FlexibleServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.mysql.FlexibleServerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.mysql.FlexibleServerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -36,7 +36,7 @@ object mysql:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Active Directory administrator on a MySQL Flexible Server */
-  def FlexibleServerActiveDirectoryAdministratory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FlexibleServerActiveDirectoryAdministratory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.mysql.FlexibleServerActiveDirectoryAdministratoryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.mysql.FlexibleServerActiveDirectoryAdministratoryArgs.builder
     com.pulumi.azure.mysql.FlexibleServerActiveDirectoryAdministratory(name,
@@ -50,7 +50,7 @@ object mysql:
    * 
    * &gt; **Note:** Since this resource is provisioned by default, the Azure Provider will not check for the presence of an existing resource prior to attempting to create it.
    */
-  def FlexibleServerConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FlexibleServerConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.mysql.FlexibleServerConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.mysql.FlexibleServerConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -61,7 +61,7 @@ object mysql:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Firewall Rule for a MySQL Flexible Server. */
-  def FlexibleServerFirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FlexibleServerFirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.mysql.FlexibleServerFirewallRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.mysql.FlexibleServerFirewallRuleArgs.builder
     conf.logicalName2physicalName(name) match

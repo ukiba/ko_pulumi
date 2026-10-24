@@ -8,7 +8,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def artifactExamples(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleArgs.Builder]*):
+    inline def artifactExamples(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleArgs.Builder]*):
         com.pulumi.gcp.agenticapplications.AnalystAgentPersonaArgs.Builder =
       def argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleArgs.builder
       builder.artifactExamples(args.map(_(argsBuilder).build)*)
@@ -18,7 +18,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def artifactsConfig(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigArgs.Builder]):
+    inline def artifactsConfig(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigArgs.Builder]):
         com.pulumi.gcp.agenticapplications.AnalystAgentPersonaArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigArgs.builder
       builder.artifactsConfig(args(argsBuilder).build)
@@ -28,7 +28,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def externalDataSources(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceArgs.Builder]*):
+    inline def externalDataSources(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceArgs.Builder]*):
         com.pulumi.gcp.agenticapplications.AnalystAgentPersonaArgs.Builder =
       def argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceArgs.builder
       builder.externalDataSources(args.map(_(argsBuilder).build)*)
@@ -38,7 +38,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mcpDataSources(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaMcpDataSourceArgs.Builder]*):
+    inline def mcpDataSources(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaMcpDataSourceArgs.Builder]*):
         com.pulumi.gcp.agenticapplications.AnalystAgentPersonaArgs.Builder =
       def argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaMcpDataSourceArgs.builder
       builder.mcpDataSources(args.map(_(argsBuilder).build)*)
@@ -48,7 +48,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resources(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceArgs.Builder]*):
+    inline def resources(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceArgs.Builder]*):
         com.pulumi.gcp.agenticapplications.AnalystAgentPersonaArgs.Builder =
       def argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceArgs.builder
       builder.resources(args.map(_(argsBuilder).build)*)
@@ -58,7 +58,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def skills(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaSkillArgs.Builder]*):
+    inline def skills(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaSkillArgs.Builder]*):
         com.pulumi.gcp.agenticapplications.AnalystAgentPersonaArgs.Builder =
       def argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaSkillArgs.builder
       builder.skills(args.map(_(argsBuilder).build)*)
@@ -70,7 +70,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tables(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaTableArgs.Builder]*):
+    inline def tables(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaTableArgs.Builder]*):
         com.pulumi.gcp.agenticapplications.AnalystAgentPersonaArgs.Builder =
       def argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaTableArgs.builder
       builder.tables(args.map(_(argsBuilder).build)*)
@@ -80,7 +80,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def webSearchConfig(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaWebSearchConfigArgs.Builder]):
+    inline def webSearchConfig(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaWebSearchConfigArgs.Builder]):
         com.pulumi.gcp.agenticapplications.AnalystAgentPersonaArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaWebSearchConfigArgs.builder
       builder.webSearchConfig(args(argsBuilder).build)
@@ -91,7 +91,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleResourceArgs.Builder]):
+    inline def resource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleResourceArgs.builder
       builder.resource(args(argsBuilder).build)
@@ -102,7 +102,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigqueryResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleResourceBigqueryResourceArgs.Builder]):
+    inline def bigqueryResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleResourceBigqueryResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleResourceBigqueryResourceArgs.builder
       builder.bigqueryResource(args(argsBuilder).build)
@@ -112,7 +112,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def f1Resource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleResourceF1ResourceArgs.Builder]):
+    inline def f1Resource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleResourceF1ResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleResourceF1ResourceArgs.builder
       builder.f1Resource(args(argsBuilder).build)
@@ -122,7 +122,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleCloudStorageResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleResourceGoogleCloudStorageResourceArgs.Builder]):
+    inline def googleCloudStorageResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleResourceGoogleCloudStorageResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleResourceGoogleCloudStorageResourceArgs.builder
       builder.googleCloudStorageResource(args(argsBuilder).build)
@@ -132,7 +132,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleDriveResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleResourceGoogleDriveResourceArgs.Builder]):
+    inline def googleDriveResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleResourceGoogleDriveResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleResourceGoogleDriveResourceArgs.builder
       builder.googleDriveResource(args(argsBuilder).build)
@@ -142,7 +142,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rawFileResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleResourceRawFileResourceArgs.Builder]):
+    inline def rawFileResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleResourceRawFileResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleResourceRawFileResourceArgs.builder
       builder.rawFileResource(args(argsBuilder).build)
@@ -152,7 +152,7 @@ object agenticapplications_ext:
      * @param documentGenerationOptions Options for document generation.
      * @return builder
      */
-    def documentGenerationOptions(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsArgs.Builder]):
+    inline def documentGenerationOptions(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsArgs.builder
       builder.documentGenerationOptions(args(argsBuilder).build)
@@ -161,7 +161,7 @@ object agenticapplications_ext:
      * @param methodologyExportOptions Options for methodology export.
      * @return builder
      */
-    def methodologyExportOptions(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigMethodologyExportOptionsArgs.Builder]):
+    inline def methodologyExportOptions(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigMethodologyExportOptionsArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigMethodologyExportOptionsArgs.builder
       builder.methodologyExportOptions(args(argsBuilder).build)
@@ -170,7 +170,7 @@ object agenticapplications_ext:
      * @param slideGenerationOptions Options for slide generation.
      * @return builder
      */
-    def slideGenerationOptions(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsArgs.Builder]):
+    inline def slideGenerationOptions(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsArgs.builder
       builder.slideGenerationOptions(args(argsBuilder).build)
@@ -179,7 +179,7 @@ object agenticapplications_ext:
      * @param visualizationOptions Options for visualizations.
      * @return builder
      */
-    def visualizationOptions(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsArgs.Builder]):
+    inline def visualizationOptions(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsArgs.builder
       builder.visualizationOptions(args(argsBuilder).build)
@@ -189,7 +189,7 @@ object agenticapplications_ext:
      * @param documentExamples Examples for document generation.
      * @return builder
      */
-    def documentExamples(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleArgs.Builder]*):
+    inline def documentExamples(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleArgs.Builder]*):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleArgs.builder
       builder.documentExamples(args.map(_(argsBuilder).build)*)
@@ -199,7 +199,7 @@ object agenticapplications_ext:
      * @param resource Represents a resource that can be used by the Analyst Agent.
      * @return builder
      */
-    def resource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleResourceArgs.Builder]):
+    inline def resource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleResourceArgs.builder
       builder.resource(args(argsBuilder).build)
@@ -210,7 +210,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigqueryResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleResourceBigqueryResourceArgs.Builder]):
+    inline def bigqueryResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleResourceBigqueryResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleResourceBigqueryResourceArgs.builder
       builder.bigqueryResource(args(argsBuilder).build)
@@ -220,7 +220,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def f1Resource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleResourceF1ResourceArgs.Builder]):
+    inline def f1Resource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleResourceF1ResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleResourceF1ResourceArgs.builder
       builder.f1Resource(args(argsBuilder).build)
@@ -230,7 +230,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleCloudStorageResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleResourceGoogleCloudStorageResourceArgs.Builder]):
+    inline def googleCloudStorageResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleResourceGoogleCloudStorageResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleResourceGoogleCloudStorageResourceArgs.builder
       builder.googleCloudStorageResource(args(argsBuilder).build)
@@ -240,7 +240,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleDriveResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleResourceGoogleDriveResourceArgs.Builder]):
+    inline def googleDriveResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleResourceGoogleDriveResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleResourceGoogleDriveResourceArgs.builder
       builder.googleDriveResource(args(argsBuilder).build)
@@ -250,7 +250,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rawFileResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleResourceRawFileResourceArgs.Builder]):
+    inline def rawFileResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleResourceRawFileResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigDocumentGenerationOptionsDocumentExampleResourceRawFileResourceArgs.builder
       builder.rawFileResource(args(argsBuilder).build)
@@ -260,7 +260,7 @@ object agenticapplications_ext:
      * @param slideExamples Examples for slide generation.
      * @return builder
      */
-    def slideExamples(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleArgs.Builder]*):
+    inline def slideExamples(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleArgs.Builder]*):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleArgs.builder
       builder.slideExamples(args.map(_(argsBuilder).build)*)
@@ -270,7 +270,7 @@ object agenticapplications_ext:
      * @param resource Represents a resource that can be used by the Analyst Agent.
      * @return builder
      */
-    def resource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleResourceArgs.Builder]):
+    inline def resource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleResourceArgs.builder
       builder.resource(args(argsBuilder).build)
@@ -281,7 +281,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigqueryResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleResourceBigqueryResourceArgs.Builder]):
+    inline def bigqueryResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleResourceBigqueryResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleResourceBigqueryResourceArgs.builder
       builder.bigqueryResource(args(argsBuilder).build)
@@ -291,7 +291,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def f1Resource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleResourceF1ResourceArgs.Builder]):
+    inline def f1Resource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleResourceF1ResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleResourceF1ResourceArgs.builder
       builder.f1Resource(args(argsBuilder).build)
@@ -301,7 +301,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleCloudStorageResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleResourceGoogleCloudStorageResourceArgs.Builder]):
+    inline def googleCloudStorageResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleResourceGoogleCloudStorageResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleResourceGoogleCloudStorageResourceArgs.builder
       builder.googleCloudStorageResource(args(argsBuilder).build)
@@ -311,7 +311,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleDriveResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleResourceGoogleDriveResourceArgs.Builder]):
+    inline def googleDriveResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleResourceGoogleDriveResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleResourceGoogleDriveResourceArgs.builder
       builder.googleDriveResource(args(argsBuilder).build)
@@ -321,7 +321,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rawFileResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleResourceRawFileResourceArgs.Builder]):
+    inline def rawFileResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleResourceRawFileResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigSlideGenerationOptionsSlideExampleResourceRawFileResourceArgs.builder
       builder.rawFileResource(args(argsBuilder).build)
@@ -331,7 +331,7 @@ object agenticapplications_ext:
      * @param visualizationExamples Examples for visualizations.
      * @return builder
      */
-    def visualizationExamples(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleArgs.Builder]*):
+    inline def visualizationExamples(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleArgs.Builder]*):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleArgs.builder
       builder.visualizationExamples(args.map(_(argsBuilder).build)*)
@@ -341,7 +341,7 @@ object agenticapplications_ext:
      * @param resource Represents a resource that can be used by the Analyst Agent.
      * @return builder
      */
-    def resource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleResourceArgs.Builder]):
+    inline def resource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleResourceArgs.builder
       builder.resource(args(argsBuilder).build)
@@ -352,7 +352,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigqueryResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleResourceBigqueryResourceArgs.Builder]):
+    inline def bigqueryResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleResourceBigqueryResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleResourceBigqueryResourceArgs.builder
       builder.bigqueryResource(args(argsBuilder).build)
@@ -362,7 +362,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def f1Resource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleResourceF1ResourceArgs.Builder]):
+    inline def f1Resource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleResourceF1ResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleResourceF1ResourceArgs.builder
       builder.f1Resource(args(argsBuilder).build)
@@ -372,7 +372,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleCloudStorageResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleResourceGoogleCloudStorageResourceArgs.Builder]):
+    inline def googleCloudStorageResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleResourceGoogleCloudStorageResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleResourceGoogleCloudStorageResourceArgs.builder
       builder.googleCloudStorageResource(args(argsBuilder).build)
@@ -382,7 +382,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleDriveResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleResourceGoogleDriveResourceArgs.Builder]):
+    inline def googleDriveResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleResourceGoogleDriveResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleResourceGoogleDriveResourceArgs.builder
       builder.googleDriveResource(args(argsBuilder).build)
@@ -392,7 +392,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rawFileResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleResourceRawFileResourceArgs.Builder]):
+    inline def rawFileResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleResourceRawFileResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigVisualizationOptionsVisualizationExampleResourceRawFileResourceArgs.builder
       builder.rawFileResource(args(argsBuilder).build)
@@ -402,7 +402,7 @@ object agenticapplications_ext:
      * @param airQuality Configurations for the AirQuality external data source.
      * @return builder
      */
-    def airQuality(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceAirQualityArgs.Builder]):
+    inline def airQuality(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceAirQualityArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceAirQualityArgs.builder
       builder.airQuality(args(argsBuilder).build)
@@ -411,7 +411,7 @@ object agenticapplications_ext:
      * @param bureauLaborStatistics Configurations for the BureauLaborStatistics external data source.
      * @return builder
      */
-    def bureauLaborStatistics(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceBureauLaborStatisticsArgs.Builder]):
+    inline def bureauLaborStatistics(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceBureauLaborStatisticsArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceBureauLaborStatisticsArgs.builder
       builder.bureauLaborStatistics(args(argsBuilder).build)
@@ -420,7 +420,7 @@ object agenticapplications_ext:
      * @param coindesk Configurations for the Coindesk external data source.
      * @return builder
      */
-    def coindesk(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceCoindeskArgs.Builder]):
+    inline def coindesk(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceCoindeskArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceCoindeskArgs.builder
       builder.coindesk(args(argsBuilder).build)
@@ -429,7 +429,7 @@ object agenticapplications_ext:
      * @param finnhub Configurations for the Finnhub external data source.
      * @return builder
      */
-    def finnhub(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceFinnhubArgs.Builder]):
+    inline def finnhub(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceFinnhubArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceFinnhubArgs.builder
       builder.finnhub(args(argsBuilder).build)
@@ -438,7 +438,7 @@ object agenticapplications_ext:
      * @param fred Configurations for the Fred external data source.
      * @return builder
      */
-    def fred(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceFredArgs.Builder]):
+    inline def fred(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceFredArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceFredArgs.builder
       builder.fred(args(argsBuilder).build)
@@ -447,7 +447,7 @@ object agenticapplications_ext:
      * @param secEdgar Configurations for the SecEdgar external data source.
      * @return builder
      */
-    def secEdgar(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceSecEdgarArgs.Builder]):
+    inline def secEdgar(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceSecEdgarArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceSecEdgarArgs.builder
       builder.secEdgar(args(argsBuilder).build)
@@ -456,7 +456,7 @@ object agenticapplications_ext:
      * @param treasurySecuritiesAuctions Configurations for the TreasurySecuritiesAuctions external data source.
      * @return builder
      */
-    def treasurySecuritiesAuctions(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceTreasurySecuritiesAuctionsArgs.Builder]):
+    inline def treasurySecuritiesAuctions(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceTreasurySecuritiesAuctionsArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceTreasurySecuritiesAuctionsArgs.builder
       builder.treasurySecuritiesAuctions(args(argsBuilder).build)
@@ -465,7 +465,7 @@ object agenticapplications_ext:
      * @param usda Configurations for the USDA external data source.
      * @return builder
      */
-    def usda(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceUsdaArgs.Builder]):
+    inline def usda(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceUsdaArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceUsdaArgs.builder
       builder.usda(args(argsBuilder).build)
@@ -475,7 +475,7 @@ object agenticapplications_ext:
      * @param bigqueryResource Represents a BigQuery resource.
      * @return builder
      */
-    def bigqueryResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceBigqueryResourceArgs.Builder]):
+    inline def bigqueryResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceBigqueryResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceBigqueryResourceArgs.builder
       builder.bigqueryResource(args(argsBuilder).build)
@@ -484,7 +484,7 @@ object agenticapplications_ext:
      * @param f1Resource - Represents an F1 resource.
      * @return builder
      */
-    def f1Resource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceF1ResourceArgs.Builder]):
+    inline def f1Resource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceF1ResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceF1ResourceArgs.builder
       builder.f1Resource(args(argsBuilder).build)
@@ -493,7 +493,7 @@ object agenticapplications_ext:
      * @param googleCloudStorageResource Represents a Google Cloud Storage resource.
      * @return builder
      */
-    def googleCloudStorageResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceGoogleCloudStorageResourceArgs.Builder]):
+    inline def googleCloudStorageResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceGoogleCloudStorageResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceGoogleCloudStorageResourceArgs.builder
       builder.googleCloudStorageResource(args(argsBuilder).build)
@@ -502,7 +502,7 @@ object agenticapplications_ext:
      * @param googleDriveResource Represents a Google Drive resource.
      * @return builder
      */
-    def googleDriveResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceGoogleDriveResourceArgs.Builder]):
+    inline def googleDriveResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceGoogleDriveResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceGoogleDriveResourceArgs.builder
       builder.googleDriveResource(args(argsBuilder).build)
@@ -511,7 +511,7 @@ object agenticapplications_ext:
      * @param rawFileResource Represents a raw file resource.
      * @return builder
      */
-    def rawFileResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceRawFileResourceArgs.Builder]):
+    inline def rawFileResource(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceRawFileResourceArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceRawFileResourceArgs.builder
       builder.rawFileResource(args(argsBuilder).build)
@@ -521,7 +521,7 @@ object agenticapplications_ext:
      * @param references References for the skill.
      * @return builder
      */
-    def references(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaSkillReferenceArgs.Builder]*):
+    inline def references(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaSkillReferenceArgs.Builder]*):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaSkillArgs.Builder =
       def argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaSkillReferenceArgs.builder
       builder.references(args.map(_(argsBuilder).build)*)
@@ -532,7 +532,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def artifactExamples(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleArgs.Builder]*):
+    inline def artifactExamples(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleArgs.Builder]*):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaState.Builder =
       def argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactExampleArgs.builder
       builder.artifactExamples(args.map(_(argsBuilder).build)*)
@@ -542,7 +542,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def artifactsConfig(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigArgs.Builder]):
+    inline def artifactsConfig(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaState.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaArtifactsConfigArgs.builder
       builder.artifactsConfig(args(argsBuilder).build)
@@ -552,7 +552,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def externalDataSources(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceArgs.Builder]*):
+    inline def externalDataSources(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceArgs.Builder]*):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaState.Builder =
       def argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaExternalDataSourceArgs.builder
       builder.externalDataSources(args.map(_(argsBuilder).build)*)
@@ -562,7 +562,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mcpDataSources(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaMcpDataSourceArgs.Builder]*):
+    inline def mcpDataSources(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaMcpDataSourceArgs.Builder]*):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaState.Builder =
       def argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaMcpDataSourceArgs.builder
       builder.mcpDataSources(args.map(_(argsBuilder).build)*)
@@ -572,7 +572,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resources(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceArgs.Builder]*):
+    inline def resources(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceArgs.Builder]*):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaState.Builder =
       def argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaResourceArgs.builder
       builder.resources(args.map(_(argsBuilder).build)*)
@@ -582,7 +582,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def skills(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaSkillArgs.Builder]*):
+    inline def skills(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaSkillArgs.Builder]*):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaState.Builder =
       def argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaSkillArgs.builder
       builder.skills(args.map(_(argsBuilder).build)*)
@@ -594,7 +594,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tables(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaTableArgs.Builder]*):
+    inline def tables(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaTableArgs.Builder]*):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaState.Builder =
       def argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaTableArgs.builder
       builder.tables(args.map(_(argsBuilder).build)*)
@@ -604,7 +604,7 @@ object agenticapplications_ext:
      * Structure is documented below.
      * @return builder
      */
-    def webSearchConfig(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaWebSearchConfigArgs.Builder]):
+    inline def webSearchConfig(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaWebSearchConfigArgs.Builder]):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaState.Builder =
       val argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaWebSearchConfigArgs.builder
       builder.webSearchConfig(args(argsBuilder).build)
@@ -614,7 +614,7 @@ object agenticapplications_ext:
      * @param columns The columns in the table.
      * @return builder
      */
-    def columns(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaTableColumnArgs.Builder]*):
+    inline def columns(args: Endofunction[com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaTableColumnArgs.Builder]*):
         com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaTableArgs.Builder =
       def argsBuilder = com.pulumi.gcp.agenticapplications.inputs.AnalystAgentPersonaTableColumnArgs.builder
       builder.columns(args.map(_(argsBuilder).build)*)

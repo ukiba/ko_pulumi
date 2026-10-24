@@ -17,7 +17,7 @@ object cloudformation:
    * \$ pulumi import aws:cloudformation/cloudFormationType:CloudFormationType example arn:aws:cloudformation:us-east-1:123456789012:type/resource/ExampleCompany-ExampleService-ExampleType/1
    * ```
    */
-  def CloudFormationType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CloudFormationType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudformation.CloudFormationTypeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.cloudformation.CloudFormationTypeArgs.builder
     com.pulumi.aws.cloudformation.CloudFormationType(name,
@@ -90,7 +90,7 @@ object cloudformation:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides a CloudFormation Stack resource. */
-  def Stack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Stack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudformation.StackArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudformation.StackArgs.builder
     conf.logicalName2physicalName(name) match
@@ -116,7 +116,7 @@ object cloudformation:
    * 
    * &gt; **NOTE:** To retain the Stack during Terraform resource destroy, ensure `retainStacks = true` has been successfully applied into the Terraform state first. This must be completed _before_ an apply that would destroy the resource.
    */
-  def StackInstances(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StackInstances(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudformation.StackInstancesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.cloudformation.StackInstancesArgs.builder
     com.pulumi.aws.cloudformation.StackInstances(name,
@@ -132,7 +132,7 @@ object cloudformation:
    * 
    * &gt; **NOTE:** When using a delegated administrator account, ensure that your IAM User or Role has the `organizations:ListDelegatedAdministrators` permission. Otherwise, you may get an error like `ValidationError: Account used is not a delegated administrator`.
    */
-  def StackSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StackSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudformation.StackSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudformation.StackSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -156,7 +156,7 @@ object cloudformation:
    * 
    * &gt; **NOTE:** To retain the Stack during resource destroy, ensure `retainStack` has been set to `true` in the state first. This must be completed _before_ a deployment that would destroy the resource.
    */
-  def StackSetInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StackSetInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudformation.StackSetInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.cloudformation.StackSetInstanceArgs.builder
     com.pulumi.aws.cloudformation.StackSetInstance(name,

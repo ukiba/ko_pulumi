@@ -8,7 +8,7 @@ object clouddomains_ext:
      * Structure is documented below.
      * @return builder
      */
-    def contactSettings(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsArgs.Builder]):
+    inline def contactSettings(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsArgs.Builder]):
         com.pulumi.gcp.clouddomains.RegistrationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsArgs.builder
       builder.contactSettings(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object clouddomains_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dnsSettings(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationDnsSettingsArgs.Builder]):
+    inline def dnsSettings(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationDnsSettingsArgs.Builder]):
         com.pulumi.gcp.clouddomains.RegistrationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddomains.inputs.RegistrationDnsSettingsArgs.builder
       builder.dnsSettings(args(argsBuilder).build)
@@ -28,7 +28,7 @@ object clouddomains_ext:
      * Structure is documented below.
      * @return builder
      */
-    def managementSettings(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationManagementSettingsArgs.Builder]):
+    inline def managementSettings(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationManagementSettingsArgs.Builder]):
         com.pulumi.gcp.clouddomains.RegistrationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddomains.inputs.RegistrationManagementSettingsArgs.builder
       builder.managementSettings(args(argsBuilder).build)
@@ -39,7 +39,7 @@ object clouddomains_ext:
      * Structure is documented below.
      * @return builder
      */
-    def yearlyPrice(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationYearlyPriceArgs.Builder]):
+    inline def yearlyPrice(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationYearlyPriceArgs.Builder]):
         com.pulumi.gcp.clouddomains.RegistrationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddomains.inputs.RegistrationYearlyPriceArgs.builder
       builder.yearlyPrice(args(argsBuilder).build)
@@ -50,7 +50,7 @@ object clouddomains_ext:
      * Structure is documented below.
      * @return builder
      */
-    def postalAddress(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsAdminContactPostalAddressArgs.Builder]):
+    inline def postalAddress(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsAdminContactPostalAddressArgs.Builder]):
         com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsAdminContactArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsAdminContactPostalAddressArgs.builder
       builder.postalAddress(args(argsBuilder).build)
@@ -63,7 +63,7 @@ object clouddomains_ext:
      * Structure is documented below.
      * @return builder
      */
-    def adminContact(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsAdminContactArgs.Builder]):
+    inline def adminContact(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsAdminContactArgs.Builder]):
         com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsAdminContactArgs.builder
       builder.adminContact(args(argsBuilder).build)
@@ -75,7 +75,7 @@ object clouddomains_ext:
      * Structure is documented below.
      * @return builder
      */
-    def registrantContact(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsRegistrantContactArgs.Builder]):
+    inline def registrantContact(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsRegistrantContactArgs.Builder]):
         com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsRegistrantContactArgs.builder
       builder.registrantContact(args(argsBuilder).build)
@@ -87,7 +87,7 @@ object clouddomains_ext:
      * Structure is documented below.
      * @return builder
      */
-    def technicalContact(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsTechnicalContactArgs.Builder]):
+    inline def technicalContact(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsTechnicalContactArgs.Builder]):
         com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsTechnicalContactArgs.builder
       builder.technicalContact(args(argsBuilder).build)
@@ -98,7 +98,7 @@ object clouddomains_ext:
      * Structure is documented below.
      * @return builder
      */
-    def postalAddress(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsRegistrantContactPostalAddressArgs.Builder]):
+    inline def postalAddress(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsRegistrantContactPostalAddressArgs.Builder]):
         com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsRegistrantContactArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsRegistrantContactPostalAddressArgs.builder
       builder.postalAddress(args(argsBuilder).build)
@@ -109,7 +109,7 @@ object clouddomains_ext:
      * Structure is documented below.
      * @return builder
      */
-    def postalAddress(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsTechnicalContactPostalAddressArgs.Builder]):
+    inline def postalAddress(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsTechnicalContactPostalAddressArgs.Builder]):
         com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsTechnicalContactArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsTechnicalContactPostalAddressArgs.builder
       builder.postalAddress(args(argsBuilder).build)
@@ -120,7 +120,7 @@ object clouddomains_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customDns(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationDnsSettingsCustomDnsArgs.Builder]):
+    inline def customDns(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationDnsSettingsCustomDnsArgs.Builder]):
         com.pulumi.gcp.clouddomains.inputs.RegistrationDnsSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.clouddomains.inputs.RegistrationDnsSettingsCustomDnsArgs.builder
       builder.customDns(args(argsBuilder).build)
@@ -130,7 +130,7 @@ object clouddomains_ext:
      * Structure is documented below.
      * @return builder
      */
-    def glueRecords(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationDnsSettingsGlueRecordArgs.Builder]*):
+    inline def glueRecords(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationDnsSettingsGlueRecordArgs.Builder]*):
         com.pulumi.gcp.clouddomains.inputs.RegistrationDnsSettingsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddomains.inputs.RegistrationDnsSettingsGlueRecordArgs.builder
       builder.glueRecords(args.map(_(argsBuilder).build)*)
@@ -142,7 +142,7 @@ object clouddomains_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dsRecords(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationDnsSettingsCustomDnsDsRecordArgs.Builder]*):
+    inline def dsRecords(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationDnsSettingsCustomDnsDsRecordArgs.Builder]*):
         com.pulumi.gcp.clouddomains.inputs.RegistrationDnsSettingsCustomDnsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.clouddomains.inputs.RegistrationDnsSettingsCustomDnsDsRecordArgs.builder
       builder.dsRecords(args.map(_(argsBuilder).build)*)
@@ -153,7 +153,7 @@ object clouddomains_ext:
      * Structure is documented below.
      * @return builder
      */
-    def contactSettings(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsArgs.Builder]):
+    inline def contactSettings(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsArgs.Builder]):
         com.pulumi.gcp.clouddomains.inputs.RegistrationState.Builder =
       val argsBuilder = com.pulumi.gcp.clouddomains.inputs.RegistrationContactSettingsArgs.builder
       builder.contactSettings(args(argsBuilder).build)
@@ -163,7 +163,7 @@ object clouddomains_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dnsSettings(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationDnsSettingsArgs.Builder]):
+    inline def dnsSettings(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationDnsSettingsArgs.Builder]):
         com.pulumi.gcp.clouddomains.inputs.RegistrationState.Builder =
       val argsBuilder = com.pulumi.gcp.clouddomains.inputs.RegistrationDnsSettingsArgs.builder
       builder.dnsSettings(args(argsBuilder).build)
@@ -173,7 +173,7 @@ object clouddomains_ext:
      * Structure is documented below.
      * @return builder
      */
-    def managementSettings(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationManagementSettingsArgs.Builder]):
+    inline def managementSettings(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationManagementSettingsArgs.Builder]):
         com.pulumi.gcp.clouddomains.inputs.RegistrationState.Builder =
       val argsBuilder = com.pulumi.gcp.clouddomains.inputs.RegistrationManagementSettingsArgs.builder
       builder.managementSettings(args(argsBuilder).build)
@@ -184,7 +184,7 @@ object clouddomains_ext:
      * Structure is documented below.
      * @return builder
      */
-    def yearlyPrice(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationYearlyPriceArgs.Builder]):
+    inline def yearlyPrice(args: Endofunction[com.pulumi.gcp.clouddomains.inputs.RegistrationYearlyPriceArgs.Builder]):
         com.pulumi.gcp.clouddomains.inputs.RegistrationState.Builder =
       val argsBuilder = com.pulumi.gcp.clouddomains.inputs.RegistrationYearlyPriceArgs.builder
       builder.yearlyPrice(args(argsBuilder).build)

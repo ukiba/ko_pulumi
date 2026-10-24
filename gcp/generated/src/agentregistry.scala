@@ -56,7 +56,7 @@ object agentregistry:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Represents a user-defined Binding. */
-  def Binding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Binding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.agentregistry.BindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.agentregistry.BindingArgs.builder
     com.pulumi.gcp.agentregistry.Binding(name,
@@ -64,7 +64,7 @@ object agentregistry:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Service manages a service in a management boundary */
-  def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.agentregistry.ServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.agentregistry.ServiceArgs.builder
     com.pulumi.gcp.agentregistry.Service(name,

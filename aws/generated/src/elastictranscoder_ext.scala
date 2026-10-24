@@ -7,7 +7,7 @@ object elastictranscoder_ext:
      * @param contentConfig The ContentConfig object specifies information about the Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists. (documented below)
      * @return builder
      */
-    def contentConfig(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PipelineContentConfigArgs.Builder]):
+    inline def contentConfig(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PipelineContentConfigArgs.Builder]):
         com.pulumi.aws.elastictranscoder.PipelineArgs.Builder =
       val argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PipelineContentConfigArgs.builder
       builder.contentConfig(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object elastictranscoder_ext:
      * @param contentConfigPermissions The permissions for the `contentConfig` object. (documented below)
      * @return builder
      */
-    def contentConfigPermissions(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PipelineContentConfigPermissionArgs.Builder]*):
+    inline def contentConfigPermissions(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PipelineContentConfigPermissionArgs.Builder]*):
         com.pulumi.aws.elastictranscoder.PipelineArgs.Builder =
       def argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PipelineContentConfigPermissionArgs.builder
       builder.contentConfigPermissions(args.map(_(argsBuilder).build)*)
@@ -25,7 +25,7 @@ object elastictranscoder_ext:
      * @param notifications The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status. (documented below)
      * @return builder
      */
-    def notifications(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PipelineNotificationsArgs.Builder]):
+    inline def notifications(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PipelineNotificationsArgs.Builder]):
         com.pulumi.aws.elastictranscoder.PipelineArgs.Builder =
       val argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PipelineNotificationsArgs.builder
       builder.notifications(args(argsBuilder).build)
@@ -34,7 +34,7 @@ object elastictranscoder_ext:
      * @param thumbnailConfig The ThumbnailConfig object specifies information about the Amazon S3 bucket in which you want Elastic Transcoder to save thumbnail files. (documented below)
      * @return builder
      */
-    def thumbnailConfig(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PipelineThumbnailConfigArgs.Builder]):
+    inline def thumbnailConfig(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PipelineThumbnailConfigArgs.Builder]):
         com.pulumi.aws.elastictranscoder.PipelineArgs.Builder =
       val argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PipelineThumbnailConfigArgs.builder
       builder.thumbnailConfig(args(argsBuilder).build)
@@ -52,7 +52,7 @@ object elastictranscoder_ext:
      * `thumbnailConfig`, omit the `outputBucket` object.
      * @return builder
      */
-    def thumbnailConfigPermissions(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PipelineThumbnailConfigPermissionArgs.Builder]*):
+    inline def thumbnailConfigPermissions(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PipelineThumbnailConfigPermissionArgs.Builder]*):
         com.pulumi.aws.elastictranscoder.PipelineArgs.Builder =
       def argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PipelineThumbnailConfigPermissionArgs.builder
       builder.thumbnailConfigPermissions(args.map(_(argsBuilder).build)*)
@@ -62,7 +62,7 @@ object elastictranscoder_ext:
      * @param audio Audio parameters object (documented below).
      * @return builder
      */
-    def audio(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PresetAudioArgs.Builder]):
+    inline def audio(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PresetAudioArgs.Builder]):
         com.pulumi.aws.elastictranscoder.PresetArgs.Builder =
       val argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PresetAudioArgs.builder
       builder.audio(args(argsBuilder).build)
@@ -71,7 +71,7 @@ object elastictranscoder_ext:
      * @param audioCodecOptions Codec options for the audio parameters (documented below)
      * @return builder
      */
-    def audioCodecOptions(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PresetAudioCodecOptionsArgs.Builder]):
+    inline def audioCodecOptions(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PresetAudioCodecOptionsArgs.Builder]):
         com.pulumi.aws.elastictranscoder.PresetArgs.Builder =
       val argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PresetAudioCodecOptionsArgs.builder
       builder.audioCodecOptions(args(argsBuilder).build)
@@ -80,7 +80,7 @@ object elastictranscoder_ext:
      * @param thumbnails Thumbnail parameters object (documented below)
      * @return builder
      */
-    def thumbnails(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PresetThumbnailsArgs.Builder]):
+    inline def thumbnails(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PresetThumbnailsArgs.Builder]):
         com.pulumi.aws.elastictranscoder.PresetArgs.Builder =
       val argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PresetThumbnailsArgs.builder
       builder.thumbnails(args(argsBuilder).build)
@@ -89,7 +89,7 @@ object elastictranscoder_ext:
      * @param video Video parameters object (documented below)
      * @return builder
      */
-    def video(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PresetVideoArgs.Builder]):
+    inline def video(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PresetVideoArgs.Builder]):
         com.pulumi.aws.elastictranscoder.PresetArgs.Builder =
       val argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PresetVideoArgs.builder
       builder.video(args(argsBuilder).build)
@@ -98,7 +98,7 @@ object elastictranscoder_ext:
      * @param videoWatermarks Watermark parameters for the video parameters (documented below)
      * @return builder
      */
-    def videoWatermarks(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PresetVideoWatermarkArgs.Builder]*):
+    inline def videoWatermarks(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PresetVideoWatermarkArgs.Builder]*):
         com.pulumi.aws.elastictranscoder.PresetArgs.Builder =
       def argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PresetVideoWatermarkArgs.builder
       builder.videoWatermarks(args.map(_(argsBuilder).build)*)
@@ -108,7 +108,7 @@ object elastictranscoder_ext:
      * @param contentConfig The ContentConfig object specifies information about the Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists. (documented below)
      * @return builder
      */
-    def contentConfig(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PipelineContentConfigArgs.Builder]):
+    inline def contentConfig(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PipelineContentConfigArgs.Builder]):
         com.pulumi.aws.elastictranscoder.inputs.PipelineState.Builder =
       val argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PipelineContentConfigArgs.builder
       builder.contentConfig(args(argsBuilder).build)
@@ -117,7 +117,7 @@ object elastictranscoder_ext:
      * @param contentConfigPermissions The permissions for the `contentConfig` object. (documented below)
      * @return builder
      */
-    def contentConfigPermissions(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PipelineContentConfigPermissionArgs.Builder]*):
+    inline def contentConfigPermissions(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PipelineContentConfigPermissionArgs.Builder]*):
         com.pulumi.aws.elastictranscoder.inputs.PipelineState.Builder =
       def argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PipelineContentConfigPermissionArgs.builder
       builder.contentConfigPermissions(args.map(_(argsBuilder).build)*)
@@ -126,7 +126,7 @@ object elastictranscoder_ext:
      * @param notifications The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status. (documented below)
      * @return builder
      */
-    def notifications(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PipelineNotificationsArgs.Builder]):
+    inline def notifications(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PipelineNotificationsArgs.Builder]):
         com.pulumi.aws.elastictranscoder.inputs.PipelineState.Builder =
       val argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PipelineNotificationsArgs.builder
       builder.notifications(args(argsBuilder).build)
@@ -135,7 +135,7 @@ object elastictranscoder_ext:
      * @param thumbnailConfig The ThumbnailConfig object specifies information about the Amazon S3 bucket in which you want Elastic Transcoder to save thumbnail files. (documented below)
      * @return builder
      */
-    def thumbnailConfig(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PipelineThumbnailConfigArgs.Builder]):
+    inline def thumbnailConfig(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PipelineThumbnailConfigArgs.Builder]):
         com.pulumi.aws.elastictranscoder.inputs.PipelineState.Builder =
       val argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PipelineThumbnailConfigArgs.builder
       builder.thumbnailConfig(args(argsBuilder).build)
@@ -153,7 +153,7 @@ object elastictranscoder_ext:
      * `thumbnailConfig`, omit the `outputBucket` object.
      * @return builder
      */
-    def thumbnailConfigPermissions(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PipelineThumbnailConfigPermissionArgs.Builder]*):
+    inline def thumbnailConfigPermissions(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PipelineThumbnailConfigPermissionArgs.Builder]*):
         com.pulumi.aws.elastictranscoder.inputs.PipelineState.Builder =
       def argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PipelineThumbnailConfigPermissionArgs.builder
       builder.thumbnailConfigPermissions(args.map(_(argsBuilder).build)*)
@@ -163,7 +163,7 @@ object elastictranscoder_ext:
      * @param audio Audio parameters object (documented below).
      * @return builder
      */
-    def audio(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PresetAudioArgs.Builder]):
+    inline def audio(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PresetAudioArgs.Builder]):
         com.pulumi.aws.elastictranscoder.inputs.PresetState.Builder =
       val argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PresetAudioArgs.builder
       builder.audio(args(argsBuilder).build)
@@ -172,7 +172,7 @@ object elastictranscoder_ext:
      * @param audioCodecOptions Codec options for the audio parameters (documented below)
      * @return builder
      */
-    def audioCodecOptions(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PresetAudioCodecOptionsArgs.Builder]):
+    inline def audioCodecOptions(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PresetAudioCodecOptionsArgs.Builder]):
         com.pulumi.aws.elastictranscoder.inputs.PresetState.Builder =
       val argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PresetAudioCodecOptionsArgs.builder
       builder.audioCodecOptions(args(argsBuilder).build)
@@ -181,7 +181,7 @@ object elastictranscoder_ext:
      * @param thumbnails Thumbnail parameters object (documented below)
      * @return builder
      */
-    def thumbnails(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PresetThumbnailsArgs.Builder]):
+    inline def thumbnails(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PresetThumbnailsArgs.Builder]):
         com.pulumi.aws.elastictranscoder.inputs.PresetState.Builder =
       val argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PresetThumbnailsArgs.builder
       builder.thumbnails(args(argsBuilder).build)
@@ -190,7 +190,7 @@ object elastictranscoder_ext:
      * @param video Video parameters object (documented below)
      * @return builder
      */
-    def video(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PresetVideoArgs.Builder]):
+    inline def video(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PresetVideoArgs.Builder]):
         com.pulumi.aws.elastictranscoder.inputs.PresetState.Builder =
       val argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PresetVideoArgs.builder
       builder.video(args(argsBuilder).build)
@@ -199,7 +199,7 @@ object elastictranscoder_ext:
      * @param videoWatermarks Watermark parameters for the video parameters (documented below)
      * @return builder
      */
-    def videoWatermarks(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PresetVideoWatermarkArgs.Builder]*):
+    inline def videoWatermarks(args: Endofunction[com.pulumi.aws.elastictranscoder.inputs.PresetVideoWatermarkArgs.Builder]*):
         com.pulumi.aws.elastictranscoder.inputs.PresetState.Builder =
       def argsBuilder = com.pulumi.aws.elastictranscoder.inputs.PresetVideoWatermarkArgs.builder
       builder.videoWatermarks(args.map(_(argsBuilder).build)*)

@@ -11,7 +11,7 @@ object serverlessrepository:
    * 
    * &gt; **Warning:** CloudFormation masks `NoEcho` parameter values as `****` in API responses, which may set an expectation that they remain hidden. They do not \u2014 like any other argument, the configured value is persisted to state. To mask a specific parameter in plan and `terraform show` output, wrap it with Terraform&#39;s `sensitive()` function, for example `parameters = { password = sensitive(var.password) }`.
    */
-  def CloudFormationStack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CloudFormationStack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.serverlessrepository.CloudFormationStackArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.serverlessrepository.CloudFormationStackArgs.builder
     conf.logicalName2physicalName(name) match

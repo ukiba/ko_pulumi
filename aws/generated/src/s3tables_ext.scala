@@ -7,7 +7,7 @@ object s3tables_ext:
      * @param encryptionConfiguration Single table bucket encryption configuration object. See `encryptionConfiguration` below.
      * @return builder
      */
-    def encryptionConfiguration(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableEncryptionConfigurationArgs.Builder]):
+    inline def encryptionConfiguration(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableEncryptionConfigurationArgs.Builder]):
         com.pulumi.aws.s3tables.TableArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableEncryptionConfigurationArgs.builder
       builder.encryptionConfiguration(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object s3tables_ext:
      * @param maintenanceConfiguration Single table bucket maintenance configuration object. See `maintenanceConfiguration` below.
      * @return builder
      */
-    def maintenanceConfiguration(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationArgs.Builder]):
+    inline def maintenanceConfiguration(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationArgs.Builder]):
         com.pulumi.aws.s3tables.TableArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationArgs.builder
       builder.maintenanceConfiguration(args(argsBuilder).build)
@@ -25,7 +25,7 @@ object s3tables_ext:
      * @param metadata Details about the table metadata. This configuration specifies the metadata format and schema for the table. Currently only supports Iceberg format. See `metadata` below.
      * @return builder
      */
-    def metadata(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableMetadataArgs.Builder]):
+    inline def metadata(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableMetadataArgs.Builder]):
         com.pulumi.aws.s3tables.TableArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableMetadataArgs.builder
       builder.metadata(args(argsBuilder).build)
@@ -35,7 +35,7 @@ object s3tables_ext:
      * @param encryptionConfiguration Encryption configuration for the table bucket. See `encryptionConfiguration` below.
      * @return builder
      */
-    def encryptionConfiguration(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableBucketEncryptionConfigurationArgs.Builder]):
+    inline def encryptionConfiguration(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableBucketEncryptionConfigurationArgs.Builder]):
         com.pulumi.aws.s3tables.TableBucketArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableBucketEncryptionConfigurationArgs.builder
       builder.encryptionConfiguration(args(argsBuilder).build)
@@ -44,7 +44,7 @@ object s3tables_ext:
      * @param maintenanceConfiguration Maintenance configuration for the table bucket. See `maintenanceConfiguration` below.
      * @return builder
      */
-    def maintenanceConfiguration(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableBucketMaintenanceConfigurationArgs.Builder]):
+    inline def maintenanceConfiguration(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableBucketMaintenanceConfigurationArgs.Builder]):
         com.pulumi.aws.s3tables.TableBucketArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableBucketMaintenanceConfigurationArgs.builder
       builder.maintenanceConfiguration(args(argsBuilder).build)
@@ -54,7 +54,7 @@ object s3tables_ext:
      * @param rule Replication rules. See Rule below for more details.
      * @return builder
      */
-    def rule(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableBucketReplicationRuleArgs.Builder]):
+    inline def rule(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableBucketReplicationRuleArgs.Builder]):
         com.pulumi.aws.s3tables.TableBucketReplicationArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableBucketReplicationRuleArgs.builder
       builder.rule(args(argsBuilder).build)
@@ -64,7 +64,7 @@ object s3tables_ext:
      * @param rule Replication rules. See Rule below for more details.
      * @return builder
      */
-    def rule(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableReplicationRuleArgs.Builder]):
+    inline def rule(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableReplicationRuleArgs.Builder]):
         com.pulumi.aws.s3tables.TableReplicationArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableReplicationRuleArgs.builder
       builder.rule(args(argsBuilder).build)
@@ -74,7 +74,7 @@ object s3tables_ext:
      * @param icebergUnreferencedFileRemoval Iceberg unreferenced file removal settings for the table bucket. See `icebergUnreferencedFileRemoval` below.
      * @return builder
      */
-    def icebergUnreferencedFileRemoval(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableBucketMaintenanceConfigurationIcebergUnreferencedFileRemovalArgs.Builder]):
+    inline def icebergUnreferencedFileRemoval(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableBucketMaintenanceConfigurationIcebergUnreferencedFileRemovalArgs.Builder]):
         com.pulumi.aws.s3tables.inputs.TableBucketMaintenanceConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableBucketMaintenanceConfigurationIcebergUnreferencedFileRemovalArgs.builder
       builder.icebergUnreferencedFileRemoval(args(argsBuilder).build)
@@ -84,7 +84,7 @@ object s3tables_ext:
      * @param settings Settings object for unreferenced file removal. See `iceberg_unreferenced_file_removal.settings` below.
      * @return builder
      */
-    def settings(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableBucketMaintenanceConfigurationIcebergUnreferencedFileRemovalSettingsArgs.Builder]):
+    inline def settings(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableBucketMaintenanceConfigurationIcebergUnreferencedFileRemovalSettingsArgs.Builder]):
         com.pulumi.aws.s3tables.inputs.TableBucketMaintenanceConfigurationIcebergUnreferencedFileRemovalArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableBucketMaintenanceConfigurationIcebergUnreferencedFileRemovalSettingsArgs.builder
       builder.settings(args(argsBuilder).build)
@@ -94,7 +94,7 @@ object s3tables_ext:
      * @param destinations Replication destination. See Destination below for more details.
      * @return builder
      */
-    def destinations(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableBucketReplicationRuleDestinationArgs.Builder]*):
+    inline def destinations(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableBucketReplicationRuleDestinationArgs.Builder]*):
         com.pulumi.aws.s3tables.inputs.TableBucketReplicationRuleArgs.Builder =
       def argsBuilder = com.pulumi.aws.s3tables.inputs.TableBucketReplicationRuleDestinationArgs.builder
       builder.destinations(args.map(_(argsBuilder).build)*)
@@ -104,7 +104,7 @@ object s3tables_ext:
      * @param rule Replication rules. See Rule below for more details.
      * @return builder
      */
-    def rule(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableBucketReplicationRuleArgs.Builder]):
+    inline def rule(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableBucketReplicationRuleArgs.Builder]):
         com.pulumi.aws.s3tables.inputs.TableBucketReplicationState.Builder =
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableBucketReplicationRuleArgs.builder
       builder.rule(args(argsBuilder).build)
@@ -114,7 +114,7 @@ object s3tables_ext:
      * @param encryptionConfiguration Encryption configuration for the table bucket. See `encryptionConfiguration` below.
      * @return builder
      */
-    def encryptionConfiguration(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableBucketEncryptionConfigurationArgs.Builder]):
+    inline def encryptionConfiguration(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableBucketEncryptionConfigurationArgs.Builder]):
         com.pulumi.aws.s3tables.inputs.TableBucketState.Builder =
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableBucketEncryptionConfigurationArgs.builder
       builder.encryptionConfiguration(args(argsBuilder).build)
@@ -123,7 +123,7 @@ object s3tables_ext:
      * @param maintenanceConfiguration Maintenance configuration for the table bucket. See `maintenanceConfiguration` below.
      * @return builder
      */
-    def maintenanceConfiguration(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableBucketMaintenanceConfigurationArgs.Builder]):
+    inline def maintenanceConfiguration(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableBucketMaintenanceConfigurationArgs.Builder]):
         com.pulumi.aws.s3tables.inputs.TableBucketState.Builder =
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableBucketMaintenanceConfigurationArgs.builder
       builder.maintenanceConfiguration(args(argsBuilder).build)
@@ -133,7 +133,7 @@ object s3tables_ext:
      * @param icebergCompaction Single Iceberg compaction settings object. See `icebergCompaction` below.
      * @return builder
      */
-    def icebergCompaction(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationIcebergCompactionArgs.Builder]):
+    inline def icebergCompaction(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationIcebergCompactionArgs.Builder]):
         com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationIcebergCompactionArgs.builder
       builder.icebergCompaction(args(argsBuilder).build)
@@ -142,7 +142,7 @@ object s3tables_ext:
      * @param icebergSnapshotManagement Single Iceberg snapshot management settings object. See `icebergSnapshotManagement` below.
      * @return builder
      */
-    def icebergSnapshotManagement(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationIcebergSnapshotManagementArgs.Builder]):
+    inline def icebergSnapshotManagement(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationIcebergSnapshotManagementArgs.Builder]):
         com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationIcebergSnapshotManagementArgs.builder
       builder.icebergSnapshotManagement(args(argsBuilder).build)
@@ -152,7 +152,7 @@ object s3tables_ext:
      * @param settings Settings object for compaction. See `iceberg_compaction.settings` below.
      * @return builder
      */
-    def settings(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationIcebergCompactionSettingsArgs.Builder]):
+    inline def settings(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationIcebergCompactionSettingsArgs.Builder]):
         com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationIcebergCompactionArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationIcebergCompactionSettingsArgs.builder
       builder.settings(args(argsBuilder).build)
@@ -162,7 +162,7 @@ object s3tables_ext:
      * @param settings Settings object for snapshot management. See `iceberg_snapshot_management.settings` below.
      * @return builder
      */
-    def settings(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationIcebergSnapshotManagementSettingsArgs.Builder]):
+    inline def settings(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationIcebergSnapshotManagementSettingsArgs.Builder]):
         com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationIcebergSnapshotManagementArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationIcebergSnapshotManagementSettingsArgs.builder
       builder.settings(args(argsBuilder).build)
@@ -172,7 +172,7 @@ object s3tables_ext:
      * @param iceberg Details about the metadata for an Iceberg table. This block defines the schema structure for the Apache Iceberg table format. See `iceberg` below.
      * @return builder
      */
-    def iceberg(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableMetadataIcebergArgs.Builder]):
+    inline def iceberg(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableMetadataIcebergArgs.Builder]):
         com.pulumi.aws.s3tables.inputs.TableMetadataArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableMetadataIcebergArgs.builder
       builder.iceberg(args(argsBuilder).build)
@@ -182,7 +182,7 @@ object s3tables_ext:
      * @param schema Schema configuration for the Iceberg table. See `schema` below.
      * @return builder
      */
-    def schema(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableMetadataIcebergSchemaArgs.Builder]):
+    inline def schema(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableMetadataIcebergSchemaArgs.Builder]):
         com.pulumi.aws.s3tables.inputs.TableMetadataIcebergArgs.Builder =
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableMetadataIcebergSchemaArgs.builder
       builder.schema(args(argsBuilder).build)
@@ -192,7 +192,7 @@ object s3tables_ext:
      * @param fields List of schema fields for the Iceberg table. Each field defines a column in the table schema. See `field` below.
      * @return builder
      */
-    def fields(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableMetadataIcebergSchemaFieldArgs.Builder]*):
+    inline def fields(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableMetadataIcebergSchemaFieldArgs.Builder]*):
         com.pulumi.aws.s3tables.inputs.TableMetadataIcebergSchemaArgs.Builder =
       def argsBuilder = com.pulumi.aws.s3tables.inputs.TableMetadataIcebergSchemaFieldArgs.builder
       builder.fields(args.map(_(argsBuilder).build)*)
@@ -202,7 +202,7 @@ object s3tables_ext:
      * @param destinations Replication destination. See Destination below for more details.
      * @return builder
      */
-    def destinations(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableReplicationRuleDestinationArgs.Builder]*):
+    inline def destinations(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableReplicationRuleDestinationArgs.Builder]*):
         com.pulumi.aws.s3tables.inputs.TableReplicationRuleArgs.Builder =
       def argsBuilder = com.pulumi.aws.s3tables.inputs.TableReplicationRuleDestinationArgs.builder
       builder.destinations(args.map(_(argsBuilder).build)*)
@@ -212,7 +212,7 @@ object s3tables_ext:
      * @param rule Replication rules. See Rule below for more details.
      * @return builder
      */
-    def rule(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableReplicationRuleArgs.Builder]):
+    inline def rule(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableReplicationRuleArgs.Builder]):
         com.pulumi.aws.s3tables.inputs.TableReplicationState.Builder =
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableReplicationRuleArgs.builder
       builder.rule(args(argsBuilder).build)
@@ -222,7 +222,7 @@ object s3tables_ext:
      * @param encryptionConfiguration Single table bucket encryption configuration object. See `encryptionConfiguration` below.
      * @return builder
      */
-    def encryptionConfiguration(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableEncryptionConfigurationArgs.Builder]):
+    inline def encryptionConfiguration(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableEncryptionConfigurationArgs.Builder]):
         com.pulumi.aws.s3tables.inputs.TableState.Builder =
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableEncryptionConfigurationArgs.builder
       builder.encryptionConfiguration(args(argsBuilder).build)
@@ -231,7 +231,7 @@ object s3tables_ext:
      * @param maintenanceConfiguration Single table bucket maintenance configuration object. See `maintenanceConfiguration` below.
      * @return builder
      */
-    def maintenanceConfiguration(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationArgs.Builder]):
+    inline def maintenanceConfiguration(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationArgs.Builder]):
         com.pulumi.aws.s3tables.inputs.TableState.Builder =
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableMaintenanceConfigurationArgs.builder
       builder.maintenanceConfiguration(args(argsBuilder).build)
@@ -240,7 +240,7 @@ object s3tables_ext:
      * @param metadata Details about the table metadata. This configuration specifies the metadata format and schema for the table. Currently only supports Iceberg format. See `metadata` below.
      * @return builder
      */
-    def metadata(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableMetadataArgs.Builder]):
+    inline def metadata(args: Endofunction[com.pulumi.aws.s3tables.inputs.TableMetadataArgs.Builder]):
         com.pulumi.aws.s3tables.inputs.TableState.Builder =
       val argsBuilder = com.pulumi.aws.s3tables.inputs.TableMetadataArgs.builder
       builder.metadata(args(argsBuilder).build)

@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object iotcentral:
   /** Manages an IoT Central Application */
-  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.iotcentral.ApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.iotcentral.ApplicationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -23,7 +23,7 @@ object iotcentral:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an IoT Central Application Network Rule Set. */
-  def ApplicationNetworkRuleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApplicationNetworkRuleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.iotcentral.ApplicationNetworkRuleSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.iotcentral.ApplicationNetworkRuleSetArgs.builder
     com.pulumi.azure.iotcentral.ApplicationNetworkRuleSet(name,
@@ -31,7 +31,7 @@ object iotcentral:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an IoT Central Organization */
-  def Organization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Organization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.iotcentral.OrganizationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.iotcentral.OrganizationArgs.builder
     com.pulumi.azure.iotcentral.Organization(name,

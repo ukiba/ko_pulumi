@@ -7,7 +7,7 @@ object mskconnect_ext:
      * @param capacity Information about the capacity allocated to the connector. See `capacity` Block for details.
      * @return builder
      */
-    def capacity(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorCapacityArgs.Builder]):
+    inline def capacity(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorCapacityArgs.Builder]):
         com.pulumi.aws.mskconnect.ConnectorArgs.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorCapacityArgs.builder
       builder.capacity(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object mskconnect_ext:
      * @param kafkaCluster Apache Kafka cluster to connect to. See `kafkaCluster` Block for details.
      * @return builder
      */
-    def kafkaCluster(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterArgs.Builder]):
+    inline def kafkaCluster(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterArgs.Builder]):
         com.pulumi.aws.mskconnect.ConnectorArgs.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterArgs.builder
       builder.kafkaCluster(args(argsBuilder).build)
@@ -25,7 +25,7 @@ object mskconnect_ext:
      * @param kafkaClusterClientAuthentication Details of the client authentication used by the Apache Kafka cluster. See `kafkaClusterClientAuthentication` Block for details.
      * @return builder
      */
-    def kafkaClusterClientAuthentication(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterClientAuthenticationArgs.Builder]):
+    inline def kafkaClusterClientAuthentication(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterClientAuthenticationArgs.Builder]):
         com.pulumi.aws.mskconnect.ConnectorArgs.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterClientAuthenticationArgs.builder
       builder.kafkaClusterClientAuthentication(args(argsBuilder).build)
@@ -34,7 +34,7 @@ object mskconnect_ext:
      * @param kafkaClusterEncryptionInTransit Details of encryption in transit to the Apache Kafka cluster. See `kafkaClusterEncryptionInTransit` Block for details.
      * @return builder
      */
-    def kafkaClusterEncryptionInTransit(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterEncryptionInTransitArgs.Builder]):
+    inline def kafkaClusterEncryptionInTransit(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterEncryptionInTransitArgs.Builder]):
         com.pulumi.aws.mskconnect.ConnectorArgs.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterEncryptionInTransitArgs.builder
       builder.kafkaClusterEncryptionInTransit(args(argsBuilder).build)
@@ -43,7 +43,7 @@ object mskconnect_ext:
      * @param logDelivery Details about log delivery. See `logDelivery` Block for details.
      * @return builder
      */
-    def logDelivery(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryArgs.Builder]):
+    inline def logDelivery(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryArgs.Builder]):
         com.pulumi.aws.mskconnect.ConnectorArgs.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryArgs.builder
       builder.logDelivery(args(argsBuilder).build)
@@ -52,7 +52,7 @@ object mskconnect_ext:
      * @param plugins Plugins to use for the connector. See `plugin` Block for details.
      * @return builder
      */
-    def plugins(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorPluginArgs.Builder]*):
+    inline def plugins(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorPluginArgs.Builder]*):
         com.pulumi.aws.mskconnect.ConnectorArgs.Builder =
       def argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorPluginArgs.builder
       builder.plugins(args.map(_(argsBuilder).build)*)
@@ -61,7 +61,7 @@ object mskconnect_ext:
      * @param workerConfiguration Worker configuration to use with the connector. See `workerConfiguration` Block for details.
      * @return builder
      */
-    def workerConfiguration(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorWorkerConfigurationArgs.Builder]):
+    inline def workerConfiguration(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorWorkerConfigurationArgs.Builder]):
         com.pulumi.aws.mskconnect.ConnectorArgs.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorWorkerConfigurationArgs.builder
       builder.workerConfiguration(args(argsBuilder).build)
@@ -71,7 +71,7 @@ object mskconnect_ext:
      * @param location Information about the location of a custom plugin. See `location` Block for details.
      * @return builder
      */
-    def location(args: Endofunction[com.pulumi.aws.mskconnect.inputs.CustomPluginLocationArgs.Builder]):
+    inline def location(args: Endofunction[com.pulumi.aws.mskconnect.inputs.CustomPluginLocationArgs.Builder]):
         com.pulumi.aws.mskconnect.CustomPluginArgs.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.CustomPluginLocationArgs.builder
       builder.location(args(argsBuilder).build)
@@ -81,7 +81,7 @@ object mskconnect_ext:
      * @param autoscaling Information about the auto scaling parameters for the connector. See `autoscaling` Block for details.
      * @return builder
      */
-    def autoscaling(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorCapacityAutoscalingArgs.Builder]):
+    inline def autoscaling(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorCapacityAutoscalingArgs.Builder]):
         com.pulumi.aws.mskconnect.inputs.ConnectorCapacityArgs.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorCapacityAutoscalingArgs.builder
       builder.autoscaling(args(argsBuilder).build)
@@ -90,7 +90,7 @@ object mskconnect_ext:
      * @param provisionedCapacity Details about a fixed capacity allocated to a connector. See `provisionedCapacity` Block for details.
      * @return builder
      */
-    def provisionedCapacity(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorCapacityProvisionedCapacityArgs.Builder]):
+    inline def provisionedCapacity(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorCapacityProvisionedCapacityArgs.Builder]):
         com.pulumi.aws.mskconnect.inputs.ConnectorCapacityArgs.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorCapacityProvisionedCapacityArgs.builder
       builder.provisionedCapacity(args(argsBuilder).build)
@@ -100,7 +100,7 @@ object mskconnect_ext:
      * @param scaleInPolicy Scale-in policy for the connector. See `scaleInPolicy` Block for details.
      * @return builder
      */
-    def scaleInPolicy(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorCapacityAutoscalingScaleInPolicyArgs.Builder]):
+    inline def scaleInPolicy(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorCapacityAutoscalingScaleInPolicyArgs.Builder]):
         com.pulumi.aws.mskconnect.inputs.ConnectorCapacityAutoscalingArgs.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorCapacityAutoscalingScaleInPolicyArgs.builder
       builder.scaleInPolicy(args(argsBuilder).build)
@@ -109,7 +109,7 @@ object mskconnect_ext:
      * @param scaleOutPolicy Scale-out policy for the connector. See `scaleOutPolicy` Block for details.
      * @return builder
      */
-    def scaleOutPolicy(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorCapacityAutoscalingScaleOutPolicyArgs.Builder]):
+    inline def scaleOutPolicy(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorCapacityAutoscalingScaleOutPolicyArgs.Builder]):
         com.pulumi.aws.mskconnect.inputs.ConnectorCapacityAutoscalingArgs.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorCapacityAutoscalingScaleOutPolicyArgs.builder
       builder.scaleOutPolicy(args(argsBuilder).build)
@@ -119,7 +119,7 @@ object mskconnect_ext:
      * @param vpc Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster. See `vpc` Block for details.
      * @return builder
      */
-    def vpc(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterApacheKafkaClusterVpcArgs.Builder]):
+    inline def vpc(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterApacheKafkaClusterVpcArgs.Builder]):
         com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterApacheKafkaClusterArgs.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterApacheKafkaClusterVpcArgs.builder
       builder.vpc(args(argsBuilder).build)
@@ -129,7 +129,7 @@ object mskconnect_ext:
      * @param apacheKafkaCluster Apache Kafka cluster to which the connector is connected. See `apacheKafkaCluster` Block for details.
      * @return builder
      */
-    def apacheKafkaCluster(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterApacheKafkaClusterArgs.Builder]):
+    inline def apacheKafkaCluster(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterApacheKafkaClusterArgs.Builder]):
         com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterArgs.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterApacheKafkaClusterArgs.builder
       builder.apacheKafkaCluster(args(argsBuilder).build)
@@ -139,7 +139,7 @@ object mskconnect_ext:
      * @param workerLogDelivery Workers can send worker logs to different destination types. This configuration specifies the details of these destinations. See `workerLogDelivery` Block for details.
      * @return builder
      */
-    def workerLogDelivery(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryWorkerLogDeliveryArgs.Builder]):
+    inline def workerLogDelivery(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryWorkerLogDeliveryArgs.Builder]):
         com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryArgs.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryWorkerLogDeliveryArgs.builder
       builder.workerLogDelivery(args(argsBuilder).build)
@@ -149,7 +149,7 @@ object mskconnect_ext:
      * @param cloudwatchLogs Details about delivering logs to Amazon CloudWatch Logs. See `cloudwatchLogs` Block for details.
      * @return builder
      */
-    def cloudwatchLogs(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryWorkerLogDeliveryCloudwatchLogsArgs.Builder]):
+    inline def cloudwatchLogs(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryWorkerLogDeliveryCloudwatchLogsArgs.Builder]):
         com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryWorkerLogDeliveryArgs.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryWorkerLogDeliveryCloudwatchLogsArgs.builder
       builder.cloudwatchLogs(args(argsBuilder).build)
@@ -158,7 +158,7 @@ object mskconnect_ext:
      * @param firehose Details about delivering logs to Amazon Kinesis Data Firehose. See `firehose` Block for details.
      * @return builder
      */
-    def firehose(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryWorkerLogDeliveryFirehoseArgs.Builder]):
+    inline def firehose(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryWorkerLogDeliveryFirehoseArgs.Builder]):
         com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryWorkerLogDeliveryArgs.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryWorkerLogDeliveryFirehoseArgs.builder
       builder.firehose(args(argsBuilder).build)
@@ -167,7 +167,7 @@ object mskconnect_ext:
      * @param s3 Details about delivering logs to Amazon S3. See `s3` Block for deetails.
      * @return builder
      */
-    def s3(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryWorkerLogDeliveryS3Args.Builder]):
+    inline def s3(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryWorkerLogDeliveryS3Args.Builder]):
         com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryWorkerLogDeliveryArgs.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryWorkerLogDeliveryS3Args.builder
       builder.s3(args(argsBuilder).build)
@@ -177,7 +177,7 @@ object mskconnect_ext:
      * @param customPlugin Details about a custom plugin. See `customPlugin` Block for details.
      * @return builder
      */
-    def customPlugin(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorPluginCustomPluginArgs.Builder]):
+    inline def customPlugin(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorPluginCustomPluginArgs.Builder]):
         com.pulumi.aws.mskconnect.inputs.ConnectorPluginArgs.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorPluginCustomPluginArgs.builder
       builder.customPlugin(args(argsBuilder).build)
@@ -187,7 +187,7 @@ object mskconnect_ext:
      * @param capacity Information about the capacity allocated to the connector. See `capacity` Block for details.
      * @return builder
      */
-    def capacity(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorCapacityArgs.Builder]):
+    inline def capacity(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorCapacityArgs.Builder]):
         com.pulumi.aws.mskconnect.inputs.ConnectorState.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorCapacityArgs.builder
       builder.capacity(args(argsBuilder).build)
@@ -196,7 +196,7 @@ object mskconnect_ext:
      * @param kafkaCluster Apache Kafka cluster to connect to. See `kafkaCluster` Block for details.
      * @return builder
      */
-    def kafkaCluster(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterArgs.Builder]):
+    inline def kafkaCluster(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterArgs.Builder]):
         com.pulumi.aws.mskconnect.inputs.ConnectorState.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterArgs.builder
       builder.kafkaCluster(args(argsBuilder).build)
@@ -205,7 +205,7 @@ object mskconnect_ext:
      * @param kafkaClusterClientAuthentication Details of the client authentication used by the Apache Kafka cluster. See `kafkaClusterClientAuthentication` Block for details.
      * @return builder
      */
-    def kafkaClusterClientAuthentication(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterClientAuthenticationArgs.Builder]):
+    inline def kafkaClusterClientAuthentication(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterClientAuthenticationArgs.Builder]):
         com.pulumi.aws.mskconnect.inputs.ConnectorState.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterClientAuthenticationArgs.builder
       builder.kafkaClusterClientAuthentication(args(argsBuilder).build)
@@ -214,7 +214,7 @@ object mskconnect_ext:
      * @param kafkaClusterEncryptionInTransit Details of encryption in transit to the Apache Kafka cluster. See `kafkaClusterEncryptionInTransit` Block for details.
      * @return builder
      */
-    def kafkaClusterEncryptionInTransit(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterEncryptionInTransitArgs.Builder]):
+    inline def kafkaClusterEncryptionInTransit(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterEncryptionInTransitArgs.Builder]):
         com.pulumi.aws.mskconnect.inputs.ConnectorState.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorKafkaClusterEncryptionInTransitArgs.builder
       builder.kafkaClusterEncryptionInTransit(args(argsBuilder).build)
@@ -223,7 +223,7 @@ object mskconnect_ext:
      * @param logDelivery Details about log delivery. See `logDelivery` Block for details.
      * @return builder
      */
-    def logDelivery(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryArgs.Builder]):
+    inline def logDelivery(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryArgs.Builder]):
         com.pulumi.aws.mskconnect.inputs.ConnectorState.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorLogDeliveryArgs.builder
       builder.logDelivery(args(argsBuilder).build)
@@ -232,7 +232,7 @@ object mskconnect_ext:
      * @param plugins Plugins to use for the connector. See `plugin` Block for details.
      * @return builder
      */
-    def plugins(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorPluginArgs.Builder]*):
+    inline def plugins(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorPluginArgs.Builder]*):
         com.pulumi.aws.mskconnect.inputs.ConnectorState.Builder =
       def argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorPluginArgs.builder
       builder.plugins(args.map(_(argsBuilder).build)*)
@@ -241,7 +241,7 @@ object mskconnect_ext:
      * @param workerConfiguration Worker configuration to use with the connector. See `workerConfiguration` Block for details.
      * @return builder
      */
-    def workerConfiguration(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorWorkerConfigurationArgs.Builder]):
+    inline def workerConfiguration(args: Endofunction[com.pulumi.aws.mskconnect.inputs.ConnectorWorkerConfigurationArgs.Builder]):
         com.pulumi.aws.mskconnect.inputs.ConnectorState.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.ConnectorWorkerConfigurationArgs.builder
       builder.workerConfiguration(args(argsBuilder).build)
@@ -251,7 +251,7 @@ object mskconnect_ext:
      * @param s3 Information of the plugin file stored in Amazon S3. See `s3` Block for details..
      * @return builder
      */
-    def s3(args: Endofunction[com.pulumi.aws.mskconnect.inputs.CustomPluginLocationS3Args.Builder]):
+    inline def s3(args: Endofunction[com.pulumi.aws.mskconnect.inputs.CustomPluginLocationS3Args.Builder]):
         com.pulumi.aws.mskconnect.inputs.CustomPluginLocationArgs.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.CustomPluginLocationS3Args.builder
       builder.s3(args(argsBuilder).build)
@@ -261,7 +261,7 @@ object mskconnect_ext:
      * @param location Information about the location of a custom plugin. See `location` Block for details.
      * @return builder
      */
-    def location(args: Endofunction[com.pulumi.aws.mskconnect.inputs.CustomPluginLocationArgs.Builder]):
+    inline def location(args: Endofunction[com.pulumi.aws.mskconnect.inputs.CustomPluginLocationArgs.Builder]):
         com.pulumi.aws.mskconnect.inputs.CustomPluginState.Builder =
       val argsBuilder = com.pulumi.aws.mskconnect.inputs.CustomPluginLocationArgs.builder
       builder.location(args(argsBuilder).build)

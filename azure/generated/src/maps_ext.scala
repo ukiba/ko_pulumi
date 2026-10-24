@@ -7,7 +7,7 @@ object maps_ext:
      * @param cors A `cors` block as defined below
      * @return builder
      */
-    def cors(args: Endofunction[com.pulumi.azure.maps.inputs.AccountCorsArgs.Builder]):
+    inline def cors(args: Endofunction[com.pulumi.azure.maps.inputs.AccountCorsArgs.Builder]):
         com.pulumi.azure.maps.AccountArgs.Builder =
       val argsBuilder = com.pulumi.azure.maps.inputs.AccountCorsArgs.builder
       builder.cors(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object maps_ext:
      * @param dataStores One or more `dataStore` blocks as defined below.
      * @return builder
      */
-    def dataStores(args: Endofunction[com.pulumi.azure.maps.inputs.AccountDataStoreArgs.Builder]*):
+    inline def dataStores(args: Endofunction[com.pulumi.azure.maps.inputs.AccountDataStoreArgs.Builder]*):
         com.pulumi.azure.maps.AccountArgs.Builder =
       def argsBuilder = com.pulumi.azure.maps.inputs.AccountDataStoreArgs.builder
       builder.dataStores(args.map(_(argsBuilder).build)*)
@@ -25,7 +25,7 @@ object maps_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.maps.inputs.AccountIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.maps.inputs.AccountIdentityArgs.Builder]):
         com.pulumi.azure.maps.AccountArgs.Builder =
       val argsBuilder = com.pulumi.azure.maps.inputs.AccountIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -35,7 +35,7 @@ object maps_ext:
      * @param cors A `cors` block as defined below
      * @return builder
      */
-    def cors(args: Endofunction[com.pulumi.azure.maps.inputs.AccountCorsArgs.Builder]):
+    inline def cors(args: Endofunction[com.pulumi.azure.maps.inputs.AccountCorsArgs.Builder]):
         com.pulumi.azure.maps.inputs.AccountState.Builder =
       val argsBuilder = com.pulumi.azure.maps.inputs.AccountCorsArgs.builder
       builder.cors(args(argsBuilder).build)
@@ -44,7 +44,7 @@ object maps_ext:
      * @param dataStores One or more `dataStore` blocks as defined below.
      * @return builder
      */
-    def dataStores(args: Endofunction[com.pulumi.azure.maps.inputs.AccountDataStoreArgs.Builder]*):
+    inline def dataStores(args: Endofunction[com.pulumi.azure.maps.inputs.AccountDataStoreArgs.Builder]*):
         com.pulumi.azure.maps.inputs.AccountState.Builder =
       def argsBuilder = com.pulumi.azure.maps.inputs.AccountDataStoreArgs.builder
       builder.dataStores(args.map(_(argsBuilder).build)*)
@@ -53,7 +53,7 @@ object maps_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.maps.inputs.AccountIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.maps.inputs.AccountIdentityArgs.Builder]):
         com.pulumi.azure.maps.inputs.AccountState.Builder =
       val argsBuilder = com.pulumi.azure.maps.inputs.AccountIdentityArgs.builder
       builder.identity(args(argsBuilder).build)

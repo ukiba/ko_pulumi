@@ -12,7 +12,7 @@ object servicenetworking:
    * and
    * [API](https://cloud.google.com/service-infrastructure/docs/service-networking/reference/rest/v1/services.connections).
    */
-  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.servicenetworking.ConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.servicenetworking.ConnectionArgs.builder
     com.pulumi.gcp.servicenetworking.Connection(name,
@@ -26,7 +26,7 @@ object servicenetworking:
    * 
    * For more information see [the API](https://cloud.google.com/service-infrastructure/docs/service-networking/reference/rest/v1/services.projects.global.networks.peeredDnsDomains)
    */
-  def PeeredDnsDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PeeredDnsDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.servicenetworking.PeeredDnsDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.servicenetworking.PeeredDnsDomainArgs.builder
     conf.logicalName2physicalName(name) match
@@ -90,7 +90,7 @@ object servicenetworking:
    * underlying VPC Service Controls configuration for the service
    * producer network.
    */
-  def VpcServiceControls(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcServiceControls(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.servicenetworking.VpcServiceControlsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.servicenetworking.VpcServiceControlsArgs.builder
     com.pulumi.gcp.servicenetworking.VpcServiceControls(name,

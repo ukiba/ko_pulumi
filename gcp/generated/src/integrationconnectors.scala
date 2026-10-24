@@ -13,7 +13,7 @@ object integrationconnectors:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/integration-connectors/docs/createconnection)
    */
-  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.integrationconnectors.ConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.integrationconnectors.ConnectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -32,7 +32,7 @@ object integrationconnectors:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/integration-connectors/docs/create-endpoint-attachment)
    */
-  def EndpointAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EndpointAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.integrationconnectors.EndpointAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.integrationconnectors.EndpointAttachmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -51,7 +51,7 @@ object integrationconnectors:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/integration-connectors/docs)
    */
-  def ManagedZone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedZone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.integrationconnectors.ManagedZoneArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.integrationconnectors.ManagedZoneArgs.builder
     conf.logicalName2physicalName(name) match

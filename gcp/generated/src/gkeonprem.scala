@@ -11,7 +11,7 @@ object gkeonprem:
    * 
    * * [API documentation](https://cloud.google.com/kubernetes-engine/distributed-cloud/reference/on-prem-api/rest/v1/projects.locations.bareMetalAdminClusters)
    */
-  def BareMetalAdminCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BareMetalAdminCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gkeonprem.BareMetalAdminClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkeonprem.BareMetalAdminClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -28,7 +28,7 @@ object gkeonprem:
    * 
    * * [API documentation](https://cloud.google.com/kubernetes-engine/distributed-cloud/reference/on-prem-api/rest/v1/projects.locations.bareMetalClusters)
    */
-  def BareMetalCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BareMetalCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gkeonprem.BareMetalClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkeonprem.BareMetalClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -45,7 +45,7 @@ object gkeonprem:
    * 
    * * [API documentation](https://cloud.google.com/kubernetes-engine/distributed-cloud/reference/on-prem-api/rest/v1/projects.locations.bareMetalClusters.bareMetalNodePools)
    */
-  def BareMetalNodePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BareMetalNodePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gkeonprem.BareMetalNodePoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkeonprem.BareMetalNodePoolArgs.builder
     conf.logicalName2physicalName(name) match
@@ -62,7 +62,7 @@ object gkeonprem:
    * 
    * * [API documentation](https://cloud.google.com/kubernetes-engine/distributed-cloud/reference/on-prem-api/rest/v1/projects.locations.vmwareClusters)
    */
-  def VMwareCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VMwareCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gkeonprem.VMwareClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkeonprem.VMwareClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -79,7 +79,7 @@ object gkeonprem:
    * 
    * * [API documentation](https://cloud.google.com/kubernetes-engine/distributed-cloud/reference/on-prem-api/rest/v1/projects.locations.vmwareClusters.vmwareNodePools)
    */
-  def VMwareNodePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VMwareNodePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gkeonprem.VMwareNodePoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkeonprem.VMwareNodePoolArgs.builder
     conf.logicalName2physicalName(name) match
@@ -96,7 +96,7 @@ object gkeonprem:
    * 
    * * [API documentation](https://cloud.google.com/kubernetes-engine/distributed-cloud/reference/on-prem-api/rest/v1/projects.locations.vmwareAdminClusters)
    */
-  def VmwareAdminCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VmwareAdminCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gkeonprem.VmwareAdminClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkeonprem.VmwareAdminClusterArgs.builder
     conf.logicalName2physicalName(name) match

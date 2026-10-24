@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object amp:
   /** Manages an Amazon Managed Service for Prometheus (AMP) Alert Manager Definition */
-  def AlertManagerDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AlertManagerDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.amp.AlertManagerDefinitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.amp.AlertManagerDefinitionArgs.builder
     com.pulumi.aws.amp.AlertManagerDefinition(name,
@@ -64,7 +64,7 @@ object amp:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an AWS AMP (Managed Prometheus) Anomaly Detector. */
-  def AnomalyDetector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AnomalyDetector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.amp.AnomalyDetectorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.amp.AnomalyDetectorArgs.builder
     argsBuilder = args(argsBuilder)
@@ -79,7 +79,7 @@ object amp:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Amazon Managed Service for Prometheus (AMP) Query Logging Configuration. */
-  def QueryLoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def QueryLoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.amp.QueryLoggingConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.amp.QueryLoggingConfigurationArgs.builder
     com.pulumi.aws.amp.QueryLoggingConfiguration(name,
@@ -95,7 +95,7 @@ object amp:
    * 
    * &gt; **Note:** Only Prometheus-compatible APIs can be used for workspace sharing. Non-Prometheus-compatible APIs added to the policy will be ignored. If your workspace uses customer-managed KMS keys for encryption, you must grant the principals in your resource-based policy access to those KMS keys through KMS grants. The resource ARN in the policy document must match the workspace ARN that the policy is being attached to.
    */
-  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.amp.ResourcePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.amp.ResourcePolicyArgs.builder
     com.pulumi.aws.amp.ResourcePolicy(name,
@@ -103,7 +103,7 @@ object amp:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Amazon Managed Service for Prometheus (AMP) Rule Group Namespace */
-  def RuleGroupNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RuleGroupNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.amp.RuleGroupNamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.amp.RuleGroupNamespaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -129,7 +129,7 @@ object amp:
    * 
    * Read more in the [Amazon Managed Service for Prometheus user guide](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector.html).
    */
-  def Scraper(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Scraper(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.amp.ScraperArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.amp.ScraperArgs.builder
     argsBuilder = args(argsBuilder)
@@ -144,7 +144,7 @@ object amp:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Amazon Managed Service for Prometheus (AMP) Scraper Logging Configuration. */
-  def ScraperLoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ScraperLoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.amp.ScraperLoggingConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.amp.ScraperLoggingConfigurationArgs.builder
     com.pulumi.aws.amp.ScraperLoggingConfiguration(name,
@@ -152,7 +152,7 @@ object amp:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Amazon Managed Service for Prometheus (AMP) Workspace. */
-  def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.amp.WorkspaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.amp.WorkspaceArgs.builder
     argsBuilder = args(argsBuilder)
@@ -167,7 +167,7 @@ object amp:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Managed Service for Prometheus Workspace Configuration. */
-  def WorkspaceConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkspaceConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.amp.WorkspaceConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.amp.WorkspaceConfigurationArgs.builder
     com.pulumi.aws.amp.WorkspaceConfiguration(name,

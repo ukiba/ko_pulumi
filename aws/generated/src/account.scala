@@ -48,7 +48,7 @@ object account:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages the specified alternate contact attached to an AWS Account. */
-  def AlternativeContact(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AlternativeContact(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.account.AlternativeContactArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.account.AlternativeContactArgs.builder
     conf.logicalName2physicalName(name) match
@@ -59,7 +59,7 @@ object account:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the specified primary contact information associated with an AWS Account. */
-  def PrimaryContact(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PrimaryContact(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.account.PrimaryContactArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.account.PrimaryContactArgs.builder
     com.pulumi.aws.account.PrimaryContact(name,
@@ -67,7 +67,7 @@ object account:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enable (Opt-In) or Disable (Opt-Out) a particular Region for an AWS account. */
-  def Region(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Region(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.account.RegionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.account.RegionArgs.builder
     com.pulumi.aws.account.Region(name,

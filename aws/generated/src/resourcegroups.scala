@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object resourcegroups:
   /** Provides a Resource Group. */
-  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.resourcegroups.GroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.resourcegroups.GroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -23,7 +23,7 @@ object resourcegroups:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Resource Groups Resource. */
-  def Resource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Resource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.resourcegroups.ResourceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.resourcegroups.ResourceArgs.builder
     com.pulumi.aws.resourcegroups.Resource(name,

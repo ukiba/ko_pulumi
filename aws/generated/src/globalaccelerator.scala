@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object globalaccelerator:
   /** Creates a Global Accelerator accelerator. */
-  def Accelerator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Accelerator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.globalaccelerator.AcceleratorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.globalaccelerator.AcceleratorArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25,7 +25,7 @@ object globalaccelerator:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Global Accelerator Cross Account Attachment. */
-  def CrossAccountAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CrossAccountAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.globalaccelerator.CrossAccountAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.globalaccelerator.CrossAccountAttachmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -43,7 +43,7 @@ object globalaccelerator:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a Global Accelerator custom routing accelerator. */
-  def CustomRoutingAccelerator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomRoutingAccelerator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.globalaccelerator.CustomRoutingAcceleratorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.globalaccelerator.CustomRoutingAcceleratorArgs.builder
     conf.logicalName2physicalName(name) match
@@ -61,7 +61,7 @@ object globalaccelerator:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Global Accelerator custom routing endpoint group. */
-  def CustomRoutingEndpointGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomRoutingEndpointGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.globalaccelerator.CustomRoutingEndpointGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.globalaccelerator.CustomRoutingEndpointGroupArgs.builder
     com.pulumi.aws.globalaccelerator.CustomRoutingEndpointGroup(name,
@@ -69,7 +69,7 @@ object globalaccelerator:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Global Accelerator custom routing listener. */
-  def CustomRoutingListener(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomRoutingListener(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.globalaccelerator.CustomRoutingListenerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.globalaccelerator.CustomRoutingListenerArgs.builder
     com.pulumi.aws.globalaccelerator.CustomRoutingListener(name,
@@ -77,7 +77,7 @@ object globalaccelerator:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Global Accelerator endpoint group. */
-  def EndpointGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EndpointGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.globalaccelerator.EndpointGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.globalaccelerator.EndpointGroupArgs.builder
     com.pulumi.aws.globalaccelerator.EndpointGroup(name,
@@ -118,7 +118,7 @@ object globalaccelerator:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides a Global Accelerator listener. */
-  def Listener(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Listener(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.globalaccelerator.ListenerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.globalaccelerator.ListenerArgs.builder
     com.pulumi.aws.globalaccelerator.Listener(name,

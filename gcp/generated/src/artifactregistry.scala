@@ -518,7 +518,7 @@ object artifactregistry:
    * exists at the location. Deleting this resource will remove the config from
    * your Terraform state but leave the resource as is.
    */
-  def ProjectConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProjectConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.artifactregistry.ProjectConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.artifactregistry.ProjectConfigArgs.builder
     com.pulumi.gcp.artifactregistry.ProjectConfig(name,
@@ -534,7 +534,7 @@ object artifactregistry:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/artifact-registry/docs/overview)
    */
-  def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.artifactregistry.RepositoryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.artifactregistry.RepositoryArgs.builder
     com.pulumi.gcp.artifactregistry.Repository(name,
@@ -847,7 +847,7 @@ object artifactregistry:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RepositoryIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RepositoryIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.artifactregistry.RepositoryIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.artifactregistry.RepositoryIamBindingArgs.builder
     com.pulumi.gcp.artifactregistry.RepositoryIamBinding(name,
@@ -1160,7 +1160,7 @@ object artifactregistry:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RepositoryIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RepositoryIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.artifactregistry.RepositoryIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.artifactregistry.RepositoryIamMemberArgs.builder
     com.pulumi.gcp.artifactregistry.RepositoryIamMember(name,
@@ -1473,7 +1473,7 @@ object artifactregistry:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RepositoryIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RepositoryIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.artifactregistry.RepositoryIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.artifactregistry.RepositoryIamPolicyArgs.builder
     com.pulumi.gcp.artifactregistry.RepositoryIamPolicy(name,
@@ -1489,7 +1489,7 @@ object artifactregistry:
    * * How-to Guides
    *     * [Official Documentation](https://docs.cloud.google.com/sdk/gcloud/reference/artifacts/rules)
    */
-  def Rule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Rule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.artifactregistry.RuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.artifactregistry.RuleArgs.builder
     com.pulumi.gcp.artifactregistry.Rule(name,
@@ -1511,7 +1511,7 @@ object artifactregistry:
    * exists at the location. Deleting this resource will remove the config from
    * your Terraform state but leave the resource as is.
    */
-  def VpcscConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcscConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.artifactregistry.VpcscConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.artifactregistry.VpcscConfigArgs.builder
     com.pulumi.gcp.artifactregistry.VpcscConfig(name,

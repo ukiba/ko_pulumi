@@ -7,7 +7,7 @@ object appmesh_ext:
      * @param spec Gateway route specification to apply.
      * @return builder
      */
-    def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecArgs.Builder]):
+    inline def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecArgs.Builder]):
         com.pulumi.aws.appmesh.GatewayRouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecArgs.builder
       builder.spec(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object appmesh_ext:
      * @param spec Service mesh specification to apply. See `spec` Block for details.
      * @return builder
      */
-    def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.MeshSpecArgs.Builder]):
+    inline def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.MeshSpecArgs.Builder]):
         com.pulumi.aws.appmesh.MeshArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.MeshSpecArgs.builder
       builder.spec(args(argsBuilder).build)
@@ -27,7 +27,7 @@ object appmesh_ext:
      * @param spec Route specification to apply. See `spec` Block for details.
      * @return builder
      */
-    def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecArgs.Builder]):
+    inline def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecArgs.Builder]):
         com.pulumi.aws.appmesh.RouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecArgs.builder
       builder.spec(args(argsBuilder).build)
@@ -37,7 +37,7 @@ object appmesh_ext:
      * @param spec Virtual gateway specification to apply.
      * @return builder
      */
-    def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecArgs.Builder]):
+    inline def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecArgs.Builder]):
         com.pulumi.aws.appmesh.VirtualGatewayArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecArgs.builder
       builder.spec(args(argsBuilder).build)
@@ -47,7 +47,7 @@ object appmesh_ext:
      * @param spec Virtual node specification to apply. See `spec` Block for details.
      * @return builder
      */
-    def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecArgs.Builder]):
+    inline def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecArgs.Builder]):
         com.pulumi.aws.appmesh.VirtualNodeArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecArgs.builder
       builder.spec(args(argsBuilder).build)
@@ -57,7 +57,7 @@ object appmesh_ext:
      * @param spec Virtual router specification to apply. See `spec` Block for details.
      * @return builder
      */
-    def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualRouterSpecArgs.Builder]):
+    inline def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualRouterSpecArgs.Builder]):
         com.pulumi.aws.appmesh.VirtualRouterArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualRouterSpecArgs.builder
       builder.spec(args(argsBuilder).build)
@@ -67,7 +67,7 @@ object appmesh_ext:
      * @param spec Virtual service specification to apply. See `spec` Block for details.
      * @return builder
      */
-    def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualServiceSpecArgs.Builder]):
+    inline def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualServiceSpecArgs.Builder]):
         com.pulumi.aws.appmesh.VirtualServiceArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualServiceSpecArgs.builder
       builder.spec(args(argsBuilder).build)
@@ -77,7 +77,7 @@ object appmesh_ext:
      * @param grpcRoute Specification of a gRPC gateway route. See `grpcRoute` Block for details.
      * @return builder
      */
-    def grpcRoute(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteArgs.Builder]):
+    inline def grpcRoute(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteArgs.builder
       builder.grpcRoute(args(argsBuilder).build)
@@ -86,7 +86,7 @@ object appmesh_ext:
      * @param http2Route Specification of an HTTP/2 gateway route. See `http2Route` Block for details.
      * @return builder
      */
-    def http2Route(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteArgs.Builder]):
+    inline def http2Route(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteArgs.builder
       builder.http2Route(args(argsBuilder).build)
@@ -95,7 +95,7 @@ object appmesh_ext:
      * @param httpRoute Specification of an HTTP gateway route. See `httpRoute` Block for details.
      * @return builder
      */
-    def httpRoute(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteArgs.Builder]):
+    inline def httpRoute(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteArgs.builder
       builder.httpRoute(args(argsBuilder).build)
@@ -105,7 +105,7 @@ object appmesh_ext:
      * @param target Target that traffic is routed to when a request matches the gateway route. See `spec.http2_route.action.target` Block for details.
      * @return builder
      */
-    def target(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteActionTargetArgs.Builder]):
+    inline def target(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteActionTargetArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteActionTargetArgs.builder
       builder.target(args(argsBuilder).build)
@@ -115,7 +115,7 @@ object appmesh_ext:
      * @param virtualService Virtual service gateway route target. See `spec.http2_route.action.target.virtual_service` Block for details.
      * @return builder
      */
-    def virtualService(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteActionTargetVirtualServiceArgs.Builder]):
+    inline def virtualService(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteActionTargetVirtualServiceArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteActionTargetArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteActionTargetVirtualServiceArgs.builder
       builder.virtualService(args(argsBuilder).build)
@@ -125,7 +125,7 @@ object appmesh_ext:
      * @param action Action to take if a match is determined. See `spec.grpc_route.action` Block for details.
      * @return builder
      */
-    def action(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteActionArgs.Builder]):
+    inline def action(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteActionArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteActionArgs.builder
       builder.action(args(argsBuilder).build)
@@ -134,7 +134,7 @@ object appmesh_ext:
      * @param match Criteria for determining a request match. See `spec.grpc_route.match` Block for details.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecGrpcRouteMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -144,7 +144,7 @@ object appmesh_ext:
      * @param rewrite Gateway route action to rewrite. See `spec.http2_route.action.rewrite` Block for details.
      * @return builder
      */
-    def rewrite(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionRewriteArgs.Builder]):
+    inline def rewrite(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionRewriteArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionRewriteArgs.builder
       builder.rewrite(args(argsBuilder).build)
@@ -153,7 +153,7 @@ object appmesh_ext:
      * @param target Target that traffic is routed to when a request matches the gateway route. See `spec.http2_route.action.target` Block for details.
      * @return builder
      */
-    def target(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionTargetArgs.Builder]):
+    inline def target(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionTargetArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionTargetArgs.builder
       builder.target(args(argsBuilder).build)
@@ -163,7 +163,7 @@ object appmesh_ext:
      * @param hostname Host name to match on. See `spec.http2_route.match.hostname` Block for details.
      * @return builder
      */
-    def hostname(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionRewriteHostnameArgs.Builder]):
+    inline def hostname(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionRewriteHostnameArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionRewriteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionRewriteHostnameArgs.builder
       builder.hostname(args(argsBuilder).build)
@@ -172,7 +172,7 @@ object appmesh_ext:
      * @param path Client request path to match on. See `spec.http2_route.match.path` Block for details.
      * @return builder
      */
-    def path(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionRewritePathArgs.Builder]):
+    inline def path(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionRewritePathArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionRewriteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionRewritePathArgs.builder
       builder.path(args(argsBuilder).build)
@@ -181,7 +181,7 @@ object appmesh_ext:
      * @param prefix Header value sent by the client must begin with the specified characters.
      * @return builder
      */
-    def prefix(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionRewritePrefixArgs.Builder]):
+    inline def prefix(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionRewritePrefixArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionRewriteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionRewritePrefixArgs.builder
       builder.prefix(args(argsBuilder).build)
@@ -191,7 +191,7 @@ object appmesh_ext:
      * @param virtualService Virtual service gateway route target. See `spec.http2_route.action.target.virtual_service` Block for details.
      * @return builder
      */
-    def virtualService(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionTargetVirtualServiceArgs.Builder]):
+    inline def virtualService(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionTargetVirtualServiceArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionTargetArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionTargetVirtualServiceArgs.builder
       builder.virtualService(args(argsBuilder).build)
@@ -201,7 +201,7 @@ object appmesh_ext:
      * @param action Action to take if a match is determined. See `spec.http2_route.action` Block for details.
      * @return builder
      */
-    def action(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionArgs.Builder]):
+    inline def action(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteActionArgs.builder
       builder.action(args(argsBuilder).build)
@@ -210,7 +210,7 @@ object appmesh_ext:
      * @param match Criteria for determining a request match. See `spec.http2_route.match` Block for details.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -220,7 +220,7 @@ object appmesh_ext:
      * @param headers Client request headers to match on. See `spec.http2_route.match.header` Block for details.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHeaderArgs.Builder]*):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -229,7 +229,7 @@ object appmesh_ext:
      * @param hostname Host name to match on. See `spec.http2_route.match.hostname` Block for details.
      * @return builder
      */
-    def hostname(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHostnameArgs.Builder]):
+    inline def hostname(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHostnameArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHostnameArgs.builder
       builder.hostname(args(argsBuilder).build)
@@ -238,7 +238,7 @@ object appmesh_ext:
      * @param path Client request path to match on. See `spec.http2_route.match.path` Block for details.
      * @return builder
      */
-    def path(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchPathArgs.Builder]):
+    inline def path(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchPathArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchPathArgs.builder
       builder.path(args(argsBuilder).build)
@@ -247,13 +247,13 @@ object appmesh_ext:
      * @param queryParameters Client request query parameters to match on. See `spec.http2_route.match.query_parameter` Block for details.
      * @return builder
      */
-    def queryParameters(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchQueryParameterArgs.Builder]*):
+    inline def queryParameters(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchQueryParameterArgs.Builder]*):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchQueryParameterArgs.builder
       builder.queryParameters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHeaderArgs.Builder)
-    def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHeaderMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHeaderMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHeaderMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -263,13 +263,13 @@ object appmesh_ext:
      * @param range Object that specifies the range of numbers that the header value sent by the client must be included in. See `spec.http2_route.match.header.match.range` Block for details.
      * @return builder
      */
-    def range(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHeaderMatchRangeArgs.Builder]):
+    inline def range(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHeaderMatchRangeArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHeaderMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchHeaderMatchRangeArgs.builder
       builder.range(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchQueryParameterArgs.Builder)
-    def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchQueryParameterMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchQueryParameterMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchQueryParameterArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttp2RouteMatchQueryParameterMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -279,7 +279,7 @@ object appmesh_ext:
      * @param rewrite Gateway route action to rewrite. See `spec.http2_route.action.rewrite` Block for details.
      * @return builder
      */
-    def rewrite(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionRewriteArgs.Builder]):
+    inline def rewrite(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionRewriteArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionRewriteArgs.builder
       builder.rewrite(args(argsBuilder).build)
@@ -288,7 +288,7 @@ object appmesh_ext:
      * @param target Target that traffic is routed to when a request matches the gateway route. See `spec.http2_route.action.target` Block for details.
      * @return builder
      */
-    def target(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionTargetArgs.Builder]):
+    inline def target(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionTargetArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionTargetArgs.builder
       builder.target(args(argsBuilder).build)
@@ -298,7 +298,7 @@ object appmesh_ext:
      * @param hostname Host name to match on. See `spec.http2_route.match.hostname` Block for details.
      * @return builder
      */
-    def hostname(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionRewriteHostnameArgs.Builder]):
+    inline def hostname(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionRewriteHostnameArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionRewriteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionRewriteHostnameArgs.builder
       builder.hostname(args(argsBuilder).build)
@@ -307,7 +307,7 @@ object appmesh_ext:
      * @param path Client request path to match on. See `spec.http2_route.match.path` Block for details.
      * @return builder
      */
-    def path(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionRewritePathArgs.Builder]):
+    inline def path(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionRewritePathArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionRewriteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionRewritePathArgs.builder
       builder.path(args(argsBuilder).build)
@@ -316,7 +316,7 @@ object appmesh_ext:
      * @param prefix Header value sent by the client must begin with the specified characters.
      * @return builder
      */
-    def prefix(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionRewritePrefixArgs.Builder]):
+    inline def prefix(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionRewritePrefixArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionRewriteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionRewritePrefixArgs.builder
       builder.prefix(args(argsBuilder).build)
@@ -326,7 +326,7 @@ object appmesh_ext:
      * @param virtualService Virtual service gateway route target. See `spec.http2_route.action.target.virtual_service` Block for details.
      * @return builder
      */
-    def virtualService(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionTargetVirtualServiceArgs.Builder]):
+    inline def virtualService(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionTargetVirtualServiceArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionTargetArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionTargetVirtualServiceArgs.builder
       builder.virtualService(args(argsBuilder).build)
@@ -336,7 +336,7 @@ object appmesh_ext:
      * @param action Action to take if a match is determined. See `spec.http_route.action` Block for details.
      * @return builder
      */
-    def action(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionArgs.Builder]):
+    inline def action(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteActionArgs.builder
       builder.action(args(argsBuilder).build)
@@ -345,7 +345,7 @@ object appmesh_ext:
      * @param match Criteria for determining a request match. See `spec.http_route.match` Block for details.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -355,7 +355,7 @@ object appmesh_ext:
      * @param headers Client request headers to match on. See `spec.http2_route.match.header` Block for details.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHeaderArgs.Builder]*):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -364,7 +364,7 @@ object appmesh_ext:
      * @param hostname Host name to match on. See `spec.http2_route.match.hostname` Block for details.
      * @return builder
      */
-    def hostname(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHostnameArgs.Builder]):
+    inline def hostname(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHostnameArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHostnameArgs.builder
       builder.hostname(args(argsBuilder).build)
@@ -373,7 +373,7 @@ object appmesh_ext:
      * @param path Client request path to match on. See `spec.http2_route.match.path` Block for details.
      * @return builder
      */
-    def path(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchPathArgs.Builder]):
+    inline def path(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchPathArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchPathArgs.builder
       builder.path(args(argsBuilder).build)
@@ -382,13 +382,13 @@ object appmesh_ext:
      * @param queryParameters Client request query parameters to match on. See `spec.http2_route.match.query_parameter` Block for details.
      * @return builder
      */
-    def queryParameters(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchQueryParameterArgs.Builder]*):
+    inline def queryParameters(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchQueryParameterArgs.Builder]*):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchQueryParameterArgs.builder
       builder.queryParameters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHeaderArgs.Builder)
-    def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHeaderMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHeaderMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHeaderMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -398,13 +398,13 @@ object appmesh_ext:
      * @param range Object that specifies the range of numbers that the header value sent by the client must be included in. See `spec.http2_route.match.header.match.range` Block for details.
      * @return builder
      */
-    def range(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHeaderMatchRangeArgs.Builder]):
+    inline def range(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHeaderMatchRangeArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHeaderMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchHeaderMatchRangeArgs.builder
       builder.range(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchQueryParameterArgs.Builder)
-    def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchQueryParameterMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchQueryParameterMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchQueryParameterArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecHttpRouteMatchQueryParameterMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -414,7 +414,7 @@ object appmesh_ext:
      * @param spec Gateway route specification to apply.
      * @return builder
      */
-    def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecArgs.Builder]):
+    inline def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.GatewayRouteSpecArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.GatewayRouteState.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.GatewayRouteSpecArgs.builder
       builder.spec(args(argsBuilder).build)
@@ -424,7 +424,7 @@ object appmesh_ext:
      * @param egressFilter Egress filter rules for the service mesh. See `egressFilter` Block for details.
      * @return builder
      */
-    def egressFilter(args: Endofunction[com.pulumi.aws.appmesh.inputs.MeshSpecEgressFilterArgs.Builder]):
+    inline def egressFilter(args: Endofunction[com.pulumi.aws.appmesh.inputs.MeshSpecEgressFilterArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.MeshSpecArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.MeshSpecEgressFilterArgs.builder
       builder.egressFilter(args(argsBuilder).build)
@@ -433,7 +433,7 @@ object appmesh_ext:
      * @param serviceDiscovery Service discovery information for the service mesh. See `serviceDiscovery` Block for details.
      * @return builder
      */
-    def serviceDiscovery(args: Endofunction[com.pulumi.aws.appmesh.inputs.MeshSpecServiceDiscoveryArgs.Builder]):
+    inline def serviceDiscovery(args: Endofunction[com.pulumi.aws.appmesh.inputs.MeshSpecServiceDiscoveryArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.MeshSpecArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.MeshSpecServiceDiscoveryArgs.builder
       builder.serviceDiscovery(args(argsBuilder).build)
@@ -443,7 +443,7 @@ object appmesh_ext:
      * @param spec Service mesh specification to apply. See `spec` Block for details.
      * @return builder
      */
-    def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.MeshSpecArgs.Builder]):
+    inline def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.MeshSpecArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.MeshState.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.MeshSpecArgs.builder
       builder.spec(args(argsBuilder).build)
@@ -453,7 +453,7 @@ object appmesh_ext:
      * @param grpcRoute gRPC routing information for the route. See `spec.grpc_route` Block for details.
      * @return builder
      */
-    def grpcRoute(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteArgs.Builder]):
+    inline def grpcRoute(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteArgs.builder
       builder.grpcRoute(args(argsBuilder).build)
@@ -462,7 +462,7 @@ object appmesh_ext:
      * @param http2Route HTTP/2 routing information for the route. See `spec.http2_route` Block for details.
      * @return builder
      */
-    def http2Route(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteArgs.Builder]):
+    inline def http2Route(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteArgs.builder
       builder.http2Route(args(argsBuilder).build)
@@ -471,7 +471,7 @@ object appmesh_ext:
      * @param httpRoute HTTP routing information for the route. See `spec.http_route` Block for details.
      * @return builder
      */
-    def httpRoute(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteArgs.Builder]):
+    inline def httpRoute(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteArgs.builder
       builder.httpRoute(args(argsBuilder).build)
@@ -480,7 +480,7 @@ object appmesh_ext:
      * @param tcpRoute TCP routing information for the route. See `spec.tcp_route` Block for details.
      * @return builder
      */
-    def tcpRoute(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteArgs.Builder]):
+    inline def tcpRoute(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteArgs.builder
       builder.tcpRoute(args(argsBuilder).build)
@@ -490,7 +490,7 @@ object appmesh_ext:
      * @param weightedTargets Targets that traffic is routed to when a request matches the route. You can specify one or more targets and their relative weights with which to distribute traffic. See `spec.tcp_route.action.weighted_target` Block for details.
      * @return builder
      */
-    def weightedTargets(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteActionWeightedTargetArgs.Builder]*):
+    inline def weightedTargets(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteActionWeightedTargetArgs.Builder]*):
         com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteActionArgs.Builder =
       def argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteActionWeightedTargetArgs.builder
       builder.weightedTargets(args.map(_(argsBuilder).build)*)
@@ -500,7 +500,7 @@ object appmesh_ext:
      * @param action Action to take if a match is determined. See `spec.tcp_route.action` Block for details.
      * @return builder
      */
-    def action(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteActionArgs.Builder]):
+    inline def action(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteActionArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteActionArgs.builder
       builder.action(args(argsBuilder).build)
@@ -509,7 +509,7 @@ object appmesh_ext:
      * @param match Criteria for determining a TCP request match. See `spec.tcp_route.match` Block for details.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -518,7 +518,7 @@ object appmesh_ext:
      * @param retryPolicy Retry policy. See `spec.http_route.retry_policy` Block for details.
      * @return builder
      */
-    def retryPolicy(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteRetryPolicyArgs.Builder]):
+    inline def retryPolicy(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteRetryPolicyArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
@@ -527,7 +527,7 @@ object appmesh_ext:
      * @param timeout Types of timeouts. See `spec.tcp_route.timeout` Block for details.
      * @return builder
      */
-    def timeout(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteTimeoutArgs.Builder]):
+    inline def timeout(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteTimeoutArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteTimeoutArgs.builder
       builder.timeout(args(argsBuilder).build)
@@ -537,7 +537,7 @@ object appmesh_ext:
      * @param metadatas Data to match from the gRPC request. See `spec.grpc_route.match.metadata` Block for details.
      * @return builder
      */
-    def metadatas(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchMetadataArgs.Builder]*):
+    inline def metadatas(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchMetadataArgs.Builder]*):
         com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchMetadataArgs.builder
       builder.metadatas(args.map(_(argsBuilder).build)*)
@@ -547,7 +547,7 @@ object appmesh_ext:
      * @param match Criteria for determining a TCP request match. See `spec.tcp_route.match` Block for details.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchMetadataMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchMetadataMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchMetadataArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchMetadataMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -557,7 +557,7 @@ object appmesh_ext:
      * @param range Object that specifies the range of numbers that the header value sent by the client must be included in. See `spec.http_route.match.header.match.range` Block for details.
      * @return builder
      */
-    def range(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchMetadataMatchRangeArgs.Builder]):
+    inline def range(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchMetadataMatchRangeArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchMetadataMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteMatchMetadataMatchRangeArgs.builder
       builder.range(args(argsBuilder).build)
@@ -567,7 +567,7 @@ object appmesh_ext:
      * @param perRetryTimeout Per-retry timeout. See `spec.http_route.retry_policy.per_retry_timeout` Block for details.
      * @return builder
      */
-    def perRetryTimeout(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteRetryPolicyPerRetryTimeoutArgs.Builder]):
+    inline def perRetryTimeout(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteRetryPolicyPerRetryTimeoutArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteRetryPolicyArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteRetryPolicyPerRetryTimeoutArgs.builder
       builder.perRetryTimeout(args(argsBuilder).build)
@@ -577,7 +577,7 @@ object appmesh_ext:
      * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle. See `spec.tcp_route.timeout.idle` Block for details.
      * @return builder
      */
-    def idle(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteTimeoutIdleArgs.Builder]):
+    inline def idle(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteTimeoutIdleArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteTimeoutArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteTimeoutIdleArgs.builder
       builder.idle(args(argsBuilder).build)
@@ -586,7 +586,7 @@ object appmesh_ext:
      * @param perRequest Per request timeout. See `spec.http_route.timeout.per_request` Block for details.
      * @return builder
      */
-    def perRequest(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteTimeoutPerRequestArgs.Builder]):
+    inline def perRequest(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteTimeoutPerRequestArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteTimeoutArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecGrpcRouteTimeoutPerRequestArgs.builder
       builder.perRequest(args(argsBuilder).build)
@@ -596,7 +596,7 @@ object appmesh_ext:
      * @param weightedTargets Targets that traffic is routed to when a request matches the route. You can specify one or more targets and their relative weights with which to distribute traffic. See `spec.tcp_route.action.weighted_target` Block for details.
      * @return builder
      */
-    def weightedTargets(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteActionWeightedTargetArgs.Builder]*):
+    inline def weightedTargets(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteActionWeightedTargetArgs.Builder]*):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteActionArgs.Builder =
       def argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteActionWeightedTargetArgs.builder
       builder.weightedTargets(args.map(_(argsBuilder).build)*)
@@ -606,7 +606,7 @@ object appmesh_ext:
      * @param action Action to take if a match is determined. See `spec.tcp_route.action` Block for details.
      * @return builder
      */
-    def action(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteActionArgs.Builder]):
+    inline def action(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteActionArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteActionArgs.builder
       builder.action(args(argsBuilder).build)
@@ -615,7 +615,7 @@ object appmesh_ext:
      * @param match Criteria for determining a TCP request match. See `spec.tcp_route.match` Block for details.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -624,7 +624,7 @@ object appmesh_ext:
      * @param retryPolicy Retry policy. See `spec.http_route.retry_policy` Block for details.
      * @return builder
      */
-    def retryPolicy(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteRetryPolicyArgs.Builder]):
+    inline def retryPolicy(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteRetryPolicyArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
@@ -633,7 +633,7 @@ object appmesh_ext:
      * @param timeout Types of timeouts. See `spec.tcp_route.timeout` Block for details.
      * @return builder
      */
-    def timeout(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteTimeoutArgs.Builder]):
+    inline def timeout(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteTimeoutArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteTimeoutArgs.builder
       builder.timeout(args(argsBuilder).build)
@@ -643,7 +643,7 @@ object appmesh_ext:
      * @param headers Client request headers to match on. See `spec.http_route.match.header` Block for details.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchHeaderArgs.Builder]*):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -652,7 +652,7 @@ object appmesh_ext:
      * @param path Client request path to match on. See `spec.http_route.match.path` Block for details.
      * @return builder
      */
-    def path(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchPathArgs.Builder]):
+    inline def path(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchPathArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchPathArgs.builder
       builder.path(args(argsBuilder).build)
@@ -661,7 +661,7 @@ object appmesh_ext:
      * @param queryParameters Client request query parameters to match on. See `spec.http_route.match.query_parameter` Block for details.
      * @return builder
      */
-    def queryParameters(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchQueryParameterArgs.Builder]*):
+    inline def queryParameters(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchQueryParameterArgs.Builder]*):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchQueryParameterArgs.builder
       builder.queryParameters(args.map(_(argsBuilder).build)*)
@@ -671,7 +671,7 @@ object appmesh_ext:
      * @param match Criteria for determining a TCP request match. See `spec.tcp_route.match` Block for details.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchHeaderMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchHeaderMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchHeaderMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -681,7 +681,7 @@ object appmesh_ext:
      * @param range Object that specifies the range of numbers that the header value sent by the client must be included in. See `spec.http_route.match.header.match.range` Block for details.
      * @return builder
      */
-    def range(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchHeaderMatchRangeArgs.Builder]):
+    inline def range(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchHeaderMatchRangeArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchHeaderMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchHeaderMatchRangeArgs.builder
       builder.range(args(argsBuilder).build)
@@ -691,7 +691,7 @@ object appmesh_ext:
      * @param match Criteria for determining a TCP request match. See `spec.tcp_route.match` Block for details.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchQueryParameterMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchQueryParameterMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchQueryParameterArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteMatchQueryParameterMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -701,7 +701,7 @@ object appmesh_ext:
      * @param perRetryTimeout Per-retry timeout. See `spec.http_route.retry_policy.per_retry_timeout` Block for details.
      * @return builder
      */
-    def perRetryTimeout(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteRetryPolicyPerRetryTimeoutArgs.Builder]):
+    inline def perRetryTimeout(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteRetryPolicyPerRetryTimeoutArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteRetryPolicyArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteRetryPolicyPerRetryTimeoutArgs.builder
       builder.perRetryTimeout(args(argsBuilder).build)
@@ -711,7 +711,7 @@ object appmesh_ext:
      * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle. See `spec.tcp_route.timeout.idle` Block for details.
      * @return builder
      */
-    def idle(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteTimeoutIdleArgs.Builder]):
+    inline def idle(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteTimeoutIdleArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteTimeoutArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteTimeoutIdleArgs.builder
       builder.idle(args(argsBuilder).build)
@@ -720,7 +720,7 @@ object appmesh_ext:
      * @param perRequest Per request timeout. See `spec.http_route.timeout.per_request` Block for details.
      * @return builder
      */
-    def perRequest(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteTimeoutPerRequestArgs.Builder]):
+    inline def perRequest(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteTimeoutPerRequestArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteTimeoutArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttp2RouteTimeoutPerRequestArgs.builder
       builder.perRequest(args(argsBuilder).build)
@@ -730,7 +730,7 @@ object appmesh_ext:
      * @param weightedTargets Targets that traffic is routed to when a request matches the route. You can specify one or more targets and their relative weights with which to distribute traffic. See `spec.tcp_route.action.weighted_target` Block for details.
      * @return builder
      */
-    def weightedTargets(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteActionWeightedTargetArgs.Builder]*):
+    inline def weightedTargets(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteActionWeightedTargetArgs.Builder]*):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteActionArgs.Builder =
       def argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteActionWeightedTargetArgs.builder
       builder.weightedTargets(args.map(_(argsBuilder).build)*)
@@ -740,7 +740,7 @@ object appmesh_ext:
      * @param action Action to take if a match is determined. See `spec.tcp_route.action` Block for details.
      * @return builder
      */
-    def action(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteActionArgs.Builder]):
+    inline def action(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteActionArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteActionArgs.builder
       builder.action(args(argsBuilder).build)
@@ -749,7 +749,7 @@ object appmesh_ext:
      * @param match Criteria for determining a TCP request match. See `spec.tcp_route.match` Block for details.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -758,7 +758,7 @@ object appmesh_ext:
      * @param retryPolicy Retry policy. See `spec.http_route.retry_policy` Block for details.
      * @return builder
      */
-    def retryPolicy(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteRetryPolicyArgs.Builder]):
+    inline def retryPolicy(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteRetryPolicyArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
@@ -767,7 +767,7 @@ object appmesh_ext:
      * @param timeout Types of timeouts. See `spec.tcp_route.timeout` Block for details.
      * @return builder
      */
-    def timeout(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteTimeoutArgs.Builder]):
+    inline def timeout(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteTimeoutArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteTimeoutArgs.builder
       builder.timeout(args(argsBuilder).build)
@@ -777,7 +777,7 @@ object appmesh_ext:
      * @param headers Client request headers to match on. See `spec.http_route.match.header` Block for details.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchHeaderArgs.Builder]*):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -786,7 +786,7 @@ object appmesh_ext:
      * @param path Client request path to match on. See `spec.http_route.match.path` Block for details.
      * @return builder
      */
-    def path(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchPathArgs.Builder]):
+    inline def path(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchPathArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchPathArgs.builder
       builder.path(args(argsBuilder).build)
@@ -795,7 +795,7 @@ object appmesh_ext:
      * @param queryParameters Client request query parameters to match on. See `spec.http_route.match.query_parameter` Block for details.
      * @return builder
      */
-    def queryParameters(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchQueryParameterArgs.Builder]*):
+    inline def queryParameters(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchQueryParameterArgs.Builder]*):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchArgs.Builder =
       def argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchQueryParameterArgs.builder
       builder.queryParameters(args.map(_(argsBuilder).build)*)
@@ -805,7 +805,7 @@ object appmesh_ext:
      * @param match Criteria for determining a TCP request match. See `spec.tcp_route.match` Block for details.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchHeaderMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchHeaderMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchHeaderMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -815,7 +815,7 @@ object appmesh_ext:
      * @param range Object that specifies the range of numbers that the header value sent by the client must be included in. See `spec.http_route.match.header.match.range` Block for details.
      * @return builder
      */
-    def range(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchHeaderMatchRangeArgs.Builder]):
+    inline def range(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchHeaderMatchRangeArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchHeaderMatchArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchHeaderMatchRangeArgs.builder
       builder.range(args(argsBuilder).build)
@@ -825,7 +825,7 @@ object appmesh_ext:
      * @param match Criteria for determining a TCP request match. See `spec.tcp_route.match` Block for details.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchQueryParameterMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchQueryParameterMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchQueryParameterArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteMatchQueryParameterMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -835,7 +835,7 @@ object appmesh_ext:
      * @param perRetryTimeout Per-retry timeout. See `spec.http_route.retry_policy.per_retry_timeout` Block for details.
      * @return builder
      */
-    def perRetryTimeout(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteRetryPolicyPerRetryTimeoutArgs.Builder]):
+    inline def perRetryTimeout(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteRetryPolicyPerRetryTimeoutArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteRetryPolicyArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteRetryPolicyPerRetryTimeoutArgs.builder
       builder.perRetryTimeout(args(argsBuilder).build)
@@ -845,7 +845,7 @@ object appmesh_ext:
      * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle. See `spec.tcp_route.timeout.idle` Block for details.
      * @return builder
      */
-    def idle(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteTimeoutIdleArgs.Builder]):
+    inline def idle(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteTimeoutIdleArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteTimeoutArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteTimeoutIdleArgs.builder
       builder.idle(args(argsBuilder).build)
@@ -854,7 +854,7 @@ object appmesh_ext:
      * @param perRequest Per request timeout. See `spec.http_route.timeout.per_request` Block for details.
      * @return builder
      */
-    def perRequest(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteTimeoutPerRequestArgs.Builder]):
+    inline def perRequest(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteTimeoutPerRequestArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteTimeoutArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecHttpRouteTimeoutPerRequestArgs.builder
       builder.perRequest(args(argsBuilder).build)
@@ -864,7 +864,7 @@ object appmesh_ext:
      * @param weightedTargets Targets that traffic is routed to when a request matches the route. You can specify one or more targets and their relative weights with which to distribute traffic. See `spec.tcp_route.action.weighted_target` Block for details.
      * @return builder
      */
-    def weightedTargets(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteActionWeightedTargetArgs.Builder]*):
+    inline def weightedTargets(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteActionWeightedTargetArgs.Builder]*):
         com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteActionArgs.Builder =
       def argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteActionWeightedTargetArgs.builder
       builder.weightedTargets(args.map(_(argsBuilder).build)*)
@@ -874,7 +874,7 @@ object appmesh_ext:
      * @param action Action to take if a match is determined. See `spec.tcp_route.action` Block for details.
      * @return builder
      */
-    def action(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteActionArgs.Builder]):
+    inline def action(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteActionArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteActionArgs.builder
       builder.action(args(argsBuilder).build)
@@ -883,7 +883,7 @@ object appmesh_ext:
      * @param match Criteria for determining a TCP request match. See `spec.tcp_route.match` Block for details.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -892,7 +892,7 @@ object appmesh_ext:
      * @param timeout Types of timeouts. See `spec.tcp_route.timeout` Block for details.
      * @return builder
      */
-    def timeout(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteTimeoutArgs.Builder]):
+    inline def timeout(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteTimeoutArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteTimeoutArgs.builder
       builder.timeout(args(argsBuilder).build)
@@ -902,7 +902,7 @@ object appmesh_ext:
      * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle. See `spec.tcp_route.timeout.idle` Block for details.
      * @return builder
      */
-    def idle(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteTimeoutIdleArgs.Builder]):
+    inline def idle(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteTimeoutIdleArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteTimeoutArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecTcpRouteTimeoutIdleArgs.builder
       builder.idle(args(argsBuilder).build)
@@ -912,7 +912,7 @@ object appmesh_ext:
      * @param spec Route specification to apply. See `spec` Block for details.
      * @return builder
      */
-    def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecArgs.Builder]):
+    inline def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.RouteSpecArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.RouteState.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.RouteSpecArgs.builder
       builder.spec(args(argsBuilder).build)
@@ -922,7 +922,7 @@ object appmesh_ext:
      * @param backendDefaults Defaults for backends. See `backendDefaults` Block for details.
      * @return builder
      */
-    def backendDefaults(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsArgs.Builder]):
+    inline def backendDefaults(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsArgs.builder
       builder.backendDefaults(args(argsBuilder).build)
@@ -931,7 +931,7 @@ object appmesh_ext:
      * @param listeners Listeners that the mesh endpoint is expected to receive inbound traffic from. You can specify one listener. See `listener` Block for details.
      * @return builder
      */
-    def listeners(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerArgs.Builder]*):
+    inline def listeners(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerArgs.Builder]*):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecArgs.Builder =
       def argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerArgs.builder
       builder.listeners(args.map(_(argsBuilder).build)*)
@@ -940,7 +940,7 @@ object appmesh_ext:
      * @param logging Inbound and outbound access logging information for the virtual gateway. See `logging` Block for details.
      * @return builder
      */
-    def logging(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingArgs.Builder]):
+    inline def logging(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingArgs.builder
       builder.logging(args(argsBuilder).build)
@@ -950,7 +950,7 @@ object appmesh_ext:
      * @param clientPolicy Default client policy for virtual gateway backends. See `clientPolicy` Block for details.
      * @return builder
      */
-    def clientPolicy(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyArgs.Builder]):
+    inline def clientPolicy(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyArgs.builder
       builder.clientPolicy(args(argsBuilder).build)
@@ -960,7 +960,7 @@ object appmesh_ext:
      * @param tls TLS client policy. See `spec.backend_defaults.client_policy.tls` Block for details.
      * @return builder
      */
-    def tls(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsArgs.Builder]):
+    inline def tls(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsArgs.builder
       builder.tls(args(argsBuilder).build)
@@ -970,7 +970,7 @@ object appmesh_ext:
      * @param certificate Listener&#39;s TLS certificate.
      * @return builder
      */
-    def certificate(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateArgs.Builder]):
+    inline def certificate(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateArgs.builder
       builder.certificate(args(argsBuilder).build)
@@ -979,13 +979,13 @@ object appmesh_ext:
      * @param validation Listener&#39;s TLS validation context.
      * @return builder
      */
-    def validation(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationArgs.Builder]):
+    inline def validation(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationArgs.builder
       builder.validation(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateArgs.Builder)
-    def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFileArgs.Builder]):
+    inline def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFileArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateFileArgs.builder
       builder.file(args(argsBuilder).build)
@@ -994,7 +994,7 @@ object appmesh_ext:
      * @param sds TLS validation context trust for a [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate.
      * @return builder
      */
-    def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSdsArgs.Builder]):
+    inline def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSdsArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsCertificateSdsArgs.builder
       builder.sds(args(argsBuilder).build)
@@ -1004,7 +1004,7 @@ object appmesh_ext:
      * @param subjectAlternativeNames SANs for a virtual gateway&#39;s listener&#39;s TLS validation context.
      * @return builder
      */
-    def subjectAlternativeNames(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesArgs.Builder]):
+    inline def subjectAlternativeNames(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesArgs.builder
       builder.subjectAlternativeNames(args(argsBuilder).build)
@@ -1013,7 +1013,7 @@ object appmesh_ext:
      * @param trust TLS validation context trust.
      * @return builder
      */
-    def trust(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustArgs.Builder]):
+    inline def trust(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustArgs.builder
       builder.trust(args(argsBuilder).build)
@@ -1023,7 +1023,7 @@ object appmesh_ext:
      * @param match Criteria for determining a SAN&#39;s match.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -1033,12 +1033,12 @@ object appmesh_ext:
      * @param acm AWS Certificate Manager (ACM) certificate.
      * @return builder
      */
-    def acm(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcmArgs.Builder]):
+    inline def acm(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcmArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustAcmArgs.builder
       builder.acm(args(argsBuilder).build)
 
-    def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFileArgs.Builder]):
+    inline def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFileArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustFileArgs.builder
       builder.file(args(argsBuilder).build)
@@ -1047,7 +1047,7 @@ object appmesh_ext:
      * @param sds TLS validation context trust for a [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate.
      * @return builder
      */
-    def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSdsArgs.Builder]):
+    inline def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSdsArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecBackendDefaultsClientPolicyTlsValidationTrustSdsArgs.builder
       builder.sds(args(argsBuilder).build)
@@ -1057,7 +1057,7 @@ object appmesh_ext:
      * @param connectionPool Connection pool information for the listener. See `connectionPool` Block for details.
      * @return builder
      */
-    def connectionPool(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerConnectionPoolArgs.Builder]):
+    inline def connectionPool(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerConnectionPoolArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerConnectionPoolArgs.builder
       builder.connectionPool(args(argsBuilder).build)
@@ -1066,7 +1066,7 @@ object appmesh_ext:
      * @param healthCheck Health check information for the listener. See `healthCheck` Block for details.
      * @return builder
      */
-    def healthCheck(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerHealthCheckArgs.Builder]):
+    inline def healthCheck(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerHealthCheckArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerHealthCheckArgs.builder
       builder.healthCheck(args(argsBuilder).build)
@@ -1075,7 +1075,7 @@ object appmesh_ext:
      * @param portMapping Port mapping information for the listener. See `portMapping` Block for details.
      * @return builder
      */
-    def portMapping(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerPortMappingArgs.Builder]):
+    inline def portMapping(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerPortMappingArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerPortMappingArgs.builder
       builder.portMapping(args(argsBuilder).build)
@@ -1084,7 +1084,7 @@ object appmesh_ext:
      * @param tls TLS properties for the listener. See `spec.listener.tls` Block for details.
      * @return builder
      */
-    def tls(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsArgs.Builder]):
+    inline def tls(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsArgs.builder
       builder.tls(args(argsBuilder).build)
@@ -1094,7 +1094,7 @@ object appmesh_ext:
      * @param grpc Connection pool information for gRPC listeners. See `grpc` Block for details.
      * @return builder
      */
-    def grpc(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerConnectionPoolGrpcArgs.Builder]):
+    inline def grpc(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerConnectionPoolGrpcArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerConnectionPoolArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerConnectionPoolGrpcArgs.builder
       builder.grpc(args(argsBuilder).build)
@@ -1103,7 +1103,7 @@ object appmesh_ext:
      * @param http Connection pool information for HTTP listeners. See `http` Block for details.
      * @return builder
      */
-    def http(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerConnectionPoolHttpArgs.Builder]):
+    inline def http(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerConnectionPoolHttpArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerConnectionPoolArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerConnectionPoolHttpArgs.builder
       builder.http(args(argsBuilder).build)
@@ -1112,7 +1112,7 @@ object appmesh_ext:
      * @param http2 Connection pool information for HTTP2 listeners. See `http2` Block for details.
      * @return builder
      */
-    def http2(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerConnectionPoolHttp2Args.Builder]):
+    inline def http2(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerConnectionPoolHttp2Args.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerConnectionPoolArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerConnectionPoolHttp2Args.builder
       builder.http2(args(argsBuilder).build)
@@ -1122,7 +1122,7 @@ object appmesh_ext:
      * @param certificate Listener&#39;s TLS certificate.
      * @return builder
      */
-    def certificate(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsCertificateArgs.Builder]):
+    inline def certificate(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsCertificateArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsCertificateArgs.builder
       builder.certificate(args(argsBuilder).build)
@@ -1131,7 +1131,7 @@ object appmesh_ext:
      * @param validation Listener&#39;s TLS validation context.
      * @return builder
      */
-    def validation(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationArgs.Builder]):
+    inline def validation(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationArgs.builder
       builder.validation(args(argsBuilder).build)
@@ -1141,12 +1141,12 @@ object appmesh_ext:
      * @param acm AWS Certificate Manager (ACM) certificate.
      * @return builder
      */
-    def acm(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsCertificateAcmArgs.Builder]):
+    inline def acm(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsCertificateAcmArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsCertificateArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsCertificateAcmArgs.builder
       builder.acm(args(argsBuilder).build)
 
-    def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsCertificateFileArgs.Builder]):
+    inline def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsCertificateFileArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsCertificateArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsCertificateFileArgs.builder
       builder.file(args(argsBuilder).build)
@@ -1155,7 +1155,7 @@ object appmesh_ext:
      * @param sds TLS validation context trust for a [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate.
      * @return builder
      */
-    def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsCertificateSdsArgs.Builder]):
+    inline def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsCertificateSdsArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsCertificateArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsCertificateSdsArgs.builder
       builder.sds(args(argsBuilder).build)
@@ -1165,7 +1165,7 @@ object appmesh_ext:
      * @param subjectAlternativeNames SANs for a virtual gateway&#39;s listener&#39;s TLS validation context.
      * @return builder
      */
-    def subjectAlternativeNames(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesArgs.Builder]):
+    inline def subjectAlternativeNames(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesArgs.builder
       builder.subjectAlternativeNames(args(argsBuilder).build)
@@ -1174,7 +1174,7 @@ object appmesh_ext:
      * @param trust TLS validation context trust.
      * @return builder
      */
-    def trust(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationTrustArgs.Builder]):
+    inline def trust(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationTrustArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationTrustArgs.builder
       builder.trust(args(argsBuilder).build)
@@ -1184,13 +1184,13 @@ object appmesh_ext:
      * @param match Criteria for determining a SAN&#39;s match.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationSubjectAlternativeNamesMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationTrustArgs.Builder)
-    def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationTrustFileArgs.Builder]):
+    inline def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationTrustFileArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationTrustArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationTrustFileArgs.builder
       builder.file(args(argsBuilder).build)
@@ -1199,7 +1199,7 @@ object appmesh_ext:
      * @param sds TLS validation context trust for a [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate.
      * @return builder
      */
-    def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationTrustSdsArgs.Builder]):
+    inline def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationTrustSdsArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationTrustArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecListenerTlsValidationTrustSdsArgs.builder
       builder.sds(args(argsBuilder).build)
@@ -1209,7 +1209,7 @@ object appmesh_ext:
      * @param file File object to send virtual gateway access logs to. See `spec.logging.access_log.file` Block for details.
      * @return builder
      */
-    def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogFileArgs.Builder]):
+    inline def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogFileArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogFileArgs.builder
       builder.file(args(argsBuilder).build)
@@ -1219,7 +1219,7 @@ object appmesh_ext:
      * @param format Specified format for the logs. See `format` Block for details.
      * @return builder
      */
-    def format(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogFileFormatArgs.Builder]):
+    inline def format(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogFileFormatArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogFileArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogFileFormatArgs.builder
       builder.format(args(argsBuilder).build)
@@ -1229,7 +1229,7 @@ object appmesh_ext:
      * @param jsons Logging format for JSON. See `json` Block for details.
      * @return builder
      */
-    def jsons(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogFileFormatJsonArgs.Builder]*):
+    inline def jsons(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogFileFormatJsonArgs.Builder]*):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogFileFormatArgs.Builder =
       def argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogFileFormatJsonArgs.builder
       builder.jsons(args.map(_(argsBuilder).build)*)
@@ -1239,7 +1239,7 @@ object appmesh_ext:
      * @param accessLog Access log configuration for a virtual gateway. See `accessLog` Block for details.
      * @return builder
      */
-    def accessLog(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogArgs.Builder]):
+    inline def accessLog(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecLoggingAccessLogArgs.builder
       builder.accessLog(args(argsBuilder).build)
@@ -1249,7 +1249,7 @@ object appmesh_ext:
      * @param spec Virtual gateway specification to apply.
      * @return builder
      */
-    def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecArgs.Builder]):
+    inline def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualGatewayState.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualGatewaySpecArgs.builder
       builder.spec(args(argsBuilder).build)
@@ -1259,7 +1259,7 @@ object appmesh_ext:
      * @param backendDefaults Defaults for backends. See `spec.backend_defaults` Block for details.
      * @return builder
      */
-    def backendDefaults(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsArgs.Builder]):
+    inline def backendDefaults(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsArgs.builder
       builder.backendDefaults(args(argsBuilder).build)
@@ -1268,7 +1268,7 @@ object appmesh_ext:
      * @param backends Backends to which the virtual node is expected to send outbound traffic. See `spec.backend` Block for details.
      * @return builder
      */
-    def backends(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendArgs.Builder]*):
+    inline def backends(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendArgs.Builder]*):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecArgs.Builder =
       def argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendArgs.builder
       builder.backends(args.map(_(argsBuilder).build)*)
@@ -1277,7 +1277,7 @@ object appmesh_ext:
      * @param listeners Listeners from which the virtual node is expected to receive inbound traffic. See `spec.listener` Block for details.
      * @return builder
      */
-    def listeners(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerArgs.Builder]*):
+    inline def listeners(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerArgs.Builder]*):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecArgs.Builder =
       def argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerArgs.builder
       builder.listeners(args.map(_(argsBuilder).build)*)
@@ -1286,7 +1286,7 @@ object appmesh_ext:
      * @param logging Inbound and outbound access logging information for the virtual node. See `spec.logging` Block for details.
      * @return builder
      */
-    def logging(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingArgs.Builder]):
+    inline def logging(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingArgs.builder
       builder.logging(args(argsBuilder).build)
@@ -1295,7 +1295,7 @@ object appmesh_ext:
      * @param serviceDiscovery Service discovery information for the virtual node. See `spec.service_discovery` Block for details.
      * @return builder
      */
-    def serviceDiscovery(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecServiceDiscoveryArgs.Builder]):
+    inline def serviceDiscovery(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecServiceDiscoveryArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecServiceDiscoveryArgs.builder
       builder.serviceDiscovery(args(argsBuilder).build)
@@ -1305,7 +1305,7 @@ object appmesh_ext:
      * @param virtualService Virtual service to use as a backend for a virtual node. See `spec.backend.virtual_service` Block for details.
      * @return builder
      */
-    def virtualService(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceArgs.Builder]):
+    inline def virtualService(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceArgs.builder
       builder.virtualService(args(argsBuilder).build)
@@ -1315,7 +1315,7 @@ object appmesh_ext:
      * @param clientPolicy Default client policy for virtual service backends. See `spec.backend_defaults.client_policy` Block for details.
      * @return builder
      */
-    def clientPolicy(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyArgs.Builder]):
+    inline def clientPolicy(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyArgs.builder
       builder.clientPolicy(args(argsBuilder).build)
@@ -1325,7 +1325,7 @@ object appmesh_ext:
      * @param tls TLS properties for the listener. See `spec.listener.tls` Block for details.
      * @return builder
      */
-    def tls(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsArgs.Builder]):
+    inline def tls(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsArgs.builder
       builder.tls(args(argsBuilder).build)
@@ -1335,7 +1335,7 @@ object appmesh_ext:
      * @param certificate Listener&#39;s TLS certificate. See `spec.listener.tls.certificate` Block for details.
      * @return builder
      */
-    def certificate(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateArgs.Builder]):
+    inline def certificate(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateArgs.builder
       builder.certificate(args(argsBuilder).build)
@@ -1344,7 +1344,7 @@ object appmesh_ext:
      * @param validation Listener&#39;s TLS validation context. See `spec.listener.tls.validation` Block for details.
      * @return builder
      */
-    def validation(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationArgs.Builder]):
+    inline def validation(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationArgs.builder
       builder.validation(args(argsBuilder).build)
@@ -1354,7 +1354,7 @@ object appmesh_ext:
      * @param file File object to send virtual node access logs to. See `spec.logging.access_log.file` Block for details.
      * @return builder
      */
-    def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFileArgs.Builder]):
+    inline def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFileArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateFileArgs.builder
       builder.file(args(argsBuilder).build)
@@ -1363,7 +1363,7 @@ object appmesh_ext:
      * @param sds TLS validation context trust for a [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate. See `spec.listener.tls.validation.trust.sds` Block for details.
      * @return builder
      */
-    def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSdsArgs.Builder]):
+    inline def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSdsArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsCertificateSdsArgs.builder
       builder.sds(args(argsBuilder).build)
@@ -1373,7 +1373,7 @@ object appmesh_ext:
      * @param subjectAlternativeNames SANs for a TLS validation context. See `spec.listener.tls.validation.subject_alternative_names` Block for details.
      * @return builder
      */
-    def subjectAlternativeNames(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesArgs.Builder]):
+    inline def subjectAlternativeNames(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesArgs.builder
       builder.subjectAlternativeNames(args(argsBuilder).build)
@@ -1382,7 +1382,7 @@ object appmesh_ext:
      * @param trust TLS validation context trust. See `spec.listener.tls.validation.trust` Block for details.
      * @return builder
      */
-    def trust(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustArgs.Builder]):
+    inline def trust(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustArgs.builder
       builder.trust(args(argsBuilder).build)
@@ -1392,7 +1392,7 @@ object appmesh_ext:
      * @param match Criteria for determining a SAN&#39;s match. See `spec.listener.tls.validation.subject_alternative_names.match` Block for details.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationSubjectAlternativeNamesMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -1402,7 +1402,7 @@ object appmesh_ext:
      * @param acm AWS Certificate Manager (ACM) certificate. See `spec.listener.tls.certificate.acm` Block for details.
      * @return builder
      */
-    def acm(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcmArgs.Builder]):
+    inline def acm(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcmArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustAcmArgs.builder
       builder.acm(args(argsBuilder).build)
@@ -1411,7 +1411,7 @@ object appmesh_ext:
      * @param file File object to send virtual node access logs to. See `spec.logging.access_log.file` Block for details.
      * @return builder
      */
-    def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFileArgs.Builder]):
+    inline def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFileArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustFileArgs.builder
       builder.file(args(argsBuilder).build)
@@ -1420,7 +1420,7 @@ object appmesh_ext:
      * @param sds TLS validation context trust for a [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate. See `spec.listener.tls.validation.trust.sds` Block for details.
      * @return builder
      */
-    def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSdsArgs.Builder]):
+    inline def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSdsArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendDefaultsClientPolicyTlsValidationTrustSdsArgs.builder
       builder.sds(args(argsBuilder).build)
@@ -1430,7 +1430,7 @@ object appmesh_ext:
      * @param clientPolicy Default client policy for virtual service backends. See `spec.backend_defaults.client_policy` Block for details.
      * @return builder
      */
-    def clientPolicy(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyArgs.Builder]):
+    inline def clientPolicy(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyArgs.builder
       builder.clientPolicy(args(argsBuilder).build)
@@ -1440,7 +1440,7 @@ object appmesh_ext:
      * @param tls TLS properties for the listener. See `spec.listener.tls` Block for details.
      * @return builder
      */
-    def tls(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsArgs.Builder]):
+    inline def tls(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsArgs.builder
       builder.tls(args(argsBuilder).build)
@@ -1450,7 +1450,7 @@ object appmesh_ext:
      * @param certificate Listener&#39;s TLS certificate. See `spec.listener.tls.certificate` Block for details.
      * @return builder
      */
-    def certificate(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateArgs.Builder]):
+    inline def certificate(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateArgs.builder
       builder.certificate(args(argsBuilder).build)
@@ -1459,7 +1459,7 @@ object appmesh_ext:
      * @param validation Listener&#39;s TLS validation context. See `spec.listener.tls.validation` Block for details.
      * @return builder
      */
-    def validation(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationArgs.Builder]):
+    inline def validation(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationArgs.builder
       builder.validation(args(argsBuilder).build)
@@ -1469,7 +1469,7 @@ object appmesh_ext:
      * @param file File object to send virtual node access logs to. See `spec.logging.access_log.file` Block for details.
      * @return builder
      */
-    def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFileArgs.Builder]):
+    inline def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFileArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateFileArgs.builder
       builder.file(args(argsBuilder).build)
@@ -1478,7 +1478,7 @@ object appmesh_ext:
      * @param sds TLS validation context trust for a [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate. See `spec.listener.tls.validation.trust.sds` Block for details.
      * @return builder
      */
-    def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSdsArgs.Builder]):
+    inline def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSdsArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsCertificateSdsArgs.builder
       builder.sds(args(argsBuilder).build)
@@ -1488,7 +1488,7 @@ object appmesh_ext:
      * @param subjectAlternativeNames SANs for a TLS validation context. See `spec.listener.tls.validation.subject_alternative_names` Block for details.
      * @return builder
      */
-    def subjectAlternativeNames(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesArgs.Builder]):
+    inline def subjectAlternativeNames(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesArgs.builder
       builder.subjectAlternativeNames(args(argsBuilder).build)
@@ -1497,7 +1497,7 @@ object appmesh_ext:
      * @param trust TLS validation context trust. See `spec.listener.tls.validation.trust` Block for details.
      * @return builder
      */
-    def trust(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustArgs.Builder]):
+    inline def trust(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustArgs.builder
       builder.trust(args(argsBuilder).build)
@@ -1507,7 +1507,7 @@ object appmesh_ext:
      * @param match Criteria for determining a SAN&#39;s match. See `spec.listener.tls.validation.subject_alternative_names.match` Block for details.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationSubjectAlternativeNamesMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -1517,7 +1517,7 @@ object appmesh_ext:
      * @param acm AWS Certificate Manager (ACM) certificate. See `spec.listener.tls.certificate.acm` Block for details.
      * @return builder
      */
-    def acm(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAcmArgs.Builder]):
+    inline def acm(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAcmArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustAcmArgs.builder
       builder.acm(args(argsBuilder).build)
@@ -1526,7 +1526,7 @@ object appmesh_ext:
      * @param file File object to send virtual node access logs to. See `spec.logging.access_log.file` Block for details.
      * @return builder
      */
-    def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFileArgs.Builder]):
+    inline def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFileArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustFileArgs.builder
       builder.file(args(argsBuilder).build)
@@ -1535,7 +1535,7 @@ object appmesh_ext:
      * @param sds TLS validation context trust for a [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate. See `spec.listener.tls.validation.trust.sds` Block for details.
      * @return builder
      */
-    def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSdsArgs.Builder]):
+    inline def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSdsArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecBackendVirtualServiceClientPolicyTlsValidationTrustSdsArgs.builder
       builder.sds(args(argsBuilder).build)
@@ -1545,7 +1545,7 @@ object appmesh_ext:
      * @param connectionPool Connection pool information for the listener. See `spec.listener.connection_pool` Block for details.
      * @return builder
      */
-    def connectionPool(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolArgs.Builder]):
+    inline def connectionPool(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolArgs.builder
       builder.connectionPool(args(argsBuilder).build)
@@ -1554,7 +1554,7 @@ object appmesh_ext:
      * @param healthCheck Health check information for the listener. See `spec.listener.health_check` Block for details.
      * @return builder
      */
-    def healthCheck(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerHealthCheckArgs.Builder]):
+    inline def healthCheck(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerHealthCheckArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerHealthCheckArgs.builder
       builder.healthCheck(args(argsBuilder).build)
@@ -1563,7 +1563,7 @@ object appmesh_ext:
      * @param outlierDetection Outlier detection information for the listener. See `spec.listener.outlier_detection` Block for details.
      * @return builder
      */
-    def outlierDetection(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerOutlierDetectionArgs.Builder]):
+    inline def outlierDetection(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerOutlierDetectionArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerOutlierDetectionArgs.builder
       builder.outlierDetection(args(argsBuilder).build)
@@ -1572,7 +1572,7 @@ object appmesh_ext:
      * @param portMapping Port mapping information for the listener. See `spec.listener.port_mapping` Block for details.
      * @return builder
      */
-    def portMapping(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerPortMappingArgs.Builder]):
+    inline def portMapping(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerPortMappingArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerPortMappingArgs.builder
       builder.portMapping(args(argsBuilder).build)
@@ -1581,7 +1581,7 @@ object appmesh_ext:
      * @param timeout Timeouts for different protocols. See `spec.listener.timeout` Block for details.
      * @return builder
      */
-    def timeout(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutArgs.Builder]):
+    inline def timeout(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutArgs.builder
       builder.timeout(args(argsBuilder).build)
@@ -1590,7 +1590,7 @@ object appmesh_ext:
      * @param tls TLS properties for the listener. See `spec.listener.tls` Block for details.
      * @return builder
      */
-    def tls(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsArgs.Builder]):
+    inline def tls(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsArgs.builder
       builder.tls(args(argsBuilder).build)
@@ -1600,7 +1600,7 @@ object appmesh_ext:
      * @param grpc Timeouts for gRPC listeners. See `spec.listener.timeout.grpc` Block for details.
      * @return builder
      */
-    def grpc(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolGrpcArgs.Builder]):
+    inline def grpc(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolGrpcArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolGrpcArgs.builder
       builder.grpc(args(argsBuilder).build)
@@ -1609,7 +1609,7 @@ object appmesh_ext:
      * @param http2s Timeouts for HTTP2 listeners. See `spec.listener.timeout.http2` Block for details.
      * @return builder
      */
-    def http2s(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolHttp2Args.Builder]*):
+    inline def http2s(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolHttp2Args.Builder]*):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolArgs.Builder =
       def argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolHttp2Args.builder
       builder.http2s(args.map(_(argsBuilder).build)*)
@@ -1618,7 +1618,7 @@ object appmesh_ext:
      * @param https Timeouts for HTTP listeners. See `spec.listener.timeout.http` Block for details.
      * @return builder
      */
-    def https(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolHttpArgs.Builder]*):
+    inline def https(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolHttpArgs.Builder]*):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolArgs.Builder =
       def argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolHttpArgs.builder
       builder.https(args.map(_(argsBuilder).build)*)
@@ -1627,7 +1627,7 @@ object appmesh_ext:
      * @param tcps Timeouts for TCP listeners. See `spec.listener.timeout.tcp` Block for details.
      * @return builder
      */
-    def tcps(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolTcpArgs.Builder]*):
+    inline def tcps(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolTcpArgs.Builder]*):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolArgs.Builder =
       def argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerConnectionPoolTcpArgs.builder
       builder.tcps(args.map(_(argsBuilder).build)*)
@@ -1637,7 +1637,7 @@ object appmesh_ext:
      * @param baseEjectionDuration Base amount of time for which a host is ejected. See `spec.listener.outlier_detection.base_ejection_duration` Block for details.
      * @return builder
      */
-    def baseEjectionDuration(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerOutlierDetectionBaseEjectionDurationArgs.Builder]):
+    inline def baseEjectionDuration(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerOutlierDetectionBaseEjectionDurationArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerOutlierDetectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerOutlierDetectionBaseEjectionDurationArgs.builder
       builder.baseEjectionDuration(args(argsBuilder).build)
@@ -1646,7 +1646,7 @@ object appmesh_ext:
      * @param interval Time interval between ejection sweep analysis. See `spec.listener.outlier_detection.interval` Block for details.
      * @return builder
      */
-    def interval(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerOutlierDetectionIntervalArgs.Builder]):
+    inline def interval(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerOutlierDetectionIntervalArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerOutlierDetectionArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerOutlierDetectionIntervalArgs.builder
       builder.interval(args(argsBuilder).build)
@@ -1656,7 +1656,7 @@ object appmesh_ext:
      * @param grpc Timeouts for gRPC listeners. See `spec.listener.timeout.grpc` Block for details.
      * @return builder
      */
-    def grpc(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutGrpcArgs.Builder]):
+    inline def grpc(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutGrpcArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutGrpcArgs.builder
       builder.grpc(args(argsBuilder).build)
@@ -1665,7 +1665,7 @@ object appmesh_ext:
      * @param http Timeouts for HTTP listeners. See `spec.listener.timeout.http` Block for details.
      * @return builder
      */
-    def http(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttpArgs.Builder]):
+    inline def http(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttpArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttpArgs.builder
       builder.http(args(argsBuilder).build)
@@ -1674,7 +1674,7 @@ object appmesh_ext:
      * @param http2 Timeouts for HTTP2 listeners. See `spec.listener.timeout.http2` Block for details.
      * @return builder
      */
-    def http2(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttp2Args.Builder]):
+    inline def http2(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttp2Args.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttp2Args.builder
       builder.http2(args(argsBuilder).build)
@@ -1683,7 +1683,7 @@ object appmesh_ext:
      * @param tcp Timeouts for TCP listeners. See `spec.listener.timeout.tcp` Block for details.
      * @return builder
      */
-    def tcp(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutTcpArgs.Builder]):
+    inline def tcp(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutTcpArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutTcpArgs.builder
       builder.tcp(args(argsBuilder).build)
@@ -1693,7 +1693,7 @@ object appmesh_ext:
      * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle. See `spec.listener.timeout.tcp.idle` Block for details.
      * @return builder
      */
-    def idle(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutGrpcIdleArgs.Builder]):
+    inline def idle(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutGrpcIdleArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutGrpcArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutGrpcIdleArgs.builder
       builder.idle(args(argsBuilder).build)
@@ -1702,7 +1702,7 @@ object appmesh_ext:
      * @param perRequest Per request timeout. See `spec.listener.timeout.http2.per_request` Block for details.
      * @return builder
      */
-    def perRequest(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutGrpcPerRequestArgs.Builder]):
+    inline def perRequest(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutGrpcPerRequestArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutGrpcArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutGrpcPerRequestArgs.builder
       builder.perRequest(args(argsBuilder).build)
@@ -1712,7 +1712,7 @@ object appmesh_ext:
      * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle. See `spec.listener.timeout.tcp.idle` Block for details.
      * @return builder
      */
-    def idle(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttp2IdleArgs.Builder]):
+    inline def idle(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttp2IdleArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttp2Args.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttp2IdleArgs.builder
       builder.idle(args(argsBuilder).build)
@@ -1721,7 +1721,7 @@ object appmesh_ext:
      * @param perRequest Per request timeout. See `spec.listener.timeout.http2.per_request` Block for details.
      * @return builder
      */
-    def perRequest(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttp2PerRequestArgs.Builder]):
+    inline def perRequest(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttp2PerRequestArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttp2Args.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttp2PerRequestArgs.builder
       builder.perRequest(args(argsBuilder).build)
@@ -1731,7 +1731,7 @@ object appmesh_ext:
      * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle. See `spec.listener.timeout.tcp.idle` Block for details.
      * @return builder
      */
-    def idle(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttpIdleArgs.Builder]):
+    inline def idle(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttpIdleArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttpArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttpIdleArgs.builder
       builder.idle(args(argsBuilder).build)
@@ -1740,7 +1740,7 @@ object appmesh_ext:
      * @param perRequest Per request timeout. See `spec.listener.timeout.http2.per_request` Block for details.
      * @return builder
      */
-    def perRequest(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttpPerRequestArgs.Builder]):
+    inline def perRequest(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttpPerRequestArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttpArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutHttpPerRequestArgs.builder
       builder.perRequest(args(argsBuilder).build)
@@ -1750,7 +1750,7 @@ object appmesh_ext:
      * @param idle Idle timeout. An idle timeout bounds the amount of time that a connection may be idle. See `spec.listener.timeout.tcp.idle` Block for details.
      * @return builder
      */
-    def idle(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutTcpIdleArgs.Builder]):
+    inline def idle(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutTcpIdleArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutTcpArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTimeoutTcpIdleArgs.builder
       builder.idle(args(argsBuilder).build)
@@ -1760,7 +1760,7 @@ object appmesh_ext:
      * @param certificate Listener&#39;s TLS certificate. See `spec.listener.tls.certificate` Block for details.
      * @return builder
      */
-    def certificate(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsCertificateArgs.Builder]):
+    inline def certificate(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsCertificateArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsCertificateArgs.builder
       builder.certificate(args(argsBuilder).build)
@@ -1769,7 +1769,7 @@ object appmesh_ext:
      * @param validation Listener&#39;s TLS validation context. See `spec.listener.tls.validation` Block for details.
      * @return builder
      */
-    def validation(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationArgs.Builder]):
+    inline def validation(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationArgs.builder
       builder.validation(args(argsBuilder).build)
@@ -1779,7 +1779,7 @@ object appmesh_ext:
      * @param acm AWS Certificate Manager (ACM) certificate. See `spec.listener.tls.certificate.acm` Block for details.
      * @return builder
      */
-    def acm(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsCertificateAcmArgs.Builder]):
+    inline def acm(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsCertificateAcmArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsCertificateArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsCertificateAcmArgs.builder
       builder.acm(args(argsBuilder).build)
@@ -1788,7 +1788,7 @@ object appmesh_ext:
      * @param file File object to send virtual node access logs to. See `spec.logging.access_log.file` Block for details.
      * @return builder
      */
-    def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsCertificateFileArgs.Builder]):
+    inline def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsCertificateFileArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsCertificateArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsCertificateFileArgs.builder
       builder.file(args(argsBuilder).build)
@@ -1797,7 +1797,7 @@ object appmesh_ext:
      * @param sds TLS validation context trust for a [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate. See `spec.listener.tls.validation.trust.sds` Block for details.
      * @return builder
      */
-    def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsCertificateSdsArgs.Builder]):
+    inline def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsCertificateSdsArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsCertificateArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsCertificateSdsArgs.builder
       builder.sds(args(argsBuilder).build)
@@ -1807,7 +1807,7 @@ object appmesh_ext:
      * @param subjectAlternativeNames SANs for a TLS validation context. See `spec.listener.tls.validation.subject_alternative_names` Block for details.
      * @return builder
      */
-    def subjectAlternativeNames(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesArgs.Builder]):
+    inline def subjectAlternativeNames(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesArgs.builder
       builder.subjectAlternativeNames(args(argsBuilder).build)
@@ -1816,7 +1816,7 @@ object appmesh_ext:
      * @param trust TLS validation context trust. See `spec.listener.tls.validation.trust` Block for details.
      * @return builder
      */
-    def trust(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationTrustArgs.Builder]):
+    inline def trust(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationTrustArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationTrustArgs.builder
       builder.trust(args(argsBuilder).build)
@@ -1826,7 +1826,7 @@ object appmesh_ext:
      * @param match Criteria for determining a SAN&#39;s match. See `spec.listener.tls.validation.subject_alternative_names.match` Block for details.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatchArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationSubjectAlternativeNamesMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -1836,7 +1836,7 @@ object appmesh_ext:
      * @param file File object to send virtual node access logs to. See `spec.logging.access_log.file` Block for details.
      * @return builder
      */
-    def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationTrustFileArgs.Builder]):
+    inline def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationTrustFileArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationTrustArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationTrustFileArgs.builder
       builder.file(args(argsBuilder).build)
@@ -1845,7 +1845,7 @@ object appmesh_ext:
      * @param sds TLS validation context trust for a [Secret Discovery Service](https://www.envoyproxy.io/docs/envoy/latest/configuration/security/secret#secret-discovery-service-sds) certificate. See `spec.listener.tls.validation.trust.sds` Block for details.
      * @return builder
      */
-    def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationTrustSdsArgs.Builder]):
+    inline def sds(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationTrustSdsArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationTrustArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecListenerTlsValidationTrustSdsArgs.builder
       builder.sds(args(argsBuilder).build)
@@ -1855,7 +1855,7 @@ object appmesh_ext:
      * @param file File object to send virtual node access logs to. See `spec.logging.access_log.file` Block for details.
      * @return builder
      */
-    def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogFileArgs.Builder]):
+    inline def file(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogFileArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogFileArgs.builder
       builder.file(args(argsBuilder).build)
@@ -1865,7 +1865,7 @@ object appmesh_ext:
      * @param format Format for the logs. See `spec.logging.access_log.file.format` Block for details.
      * @return builder
      */
-    def format(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogFileFormatArgs.Builder]):
+    inline def format(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogFileFormatArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogFileArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogFileFormatArgs.builder
       builder.format(args(argsBuilder).build)
@@ -1875,7 +1875,7 @@ object appmesh_ext:
      * @param jsons Logging format for JSON. See `spec.logging.access_log.file.format.json` Block for details.
      * @return builder
      */
-    def jsons(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogFileFormatJsonArgs.Builder]*):
+    inline def jsons(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogFileFormatJsonArgs.Builder]*):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogFileFormatArgs.Builder =
       def argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogFileFormatJsonArgs.builder
       builder.jsons(args.map(_(argsBuilder).build)*)
@@ -1885,7 +1885,7 @@ object appmesh_ext:
      * @param accessLog Access log configuration for a virtual node. See `spec.logging.access_log` Block for details.
      * @return builder
      */
-    def accessLog(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogArgs.Builder]):
+    inline def accessLog(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecLoggingAccessLogArgs.builder
       builder.accessLog(args(argsBuilder).build)
@@ -1895,7 +1895,7 @@ object appmesh_ext:
      * @param awsCloudMap Any AWS Cloud Map information for the virtual node. See `spec.service_discovery.aws_cloud_map` Block for details.
      * @return builder
      */
-    def awsCloudMap(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecServiceDiscoveryAwsCloudMapArgs.Builder]):
+    inline def awsCloudMap(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecServiceDiscoveryAwsCloudMapArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecServiceDiscoveryArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecServiceDiscoveryAwsCloudMapArgs.builder
       builder.awsCloudMap(args(argsBuilder).build)
@@ -1904,7 +1904,7 @@ object appmesh_ext:
      * @param dns DNS service name for the virtual node. See `spec.service_discovery.dns` Block for details.
      * @return builder
      */
-    def dns(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecServiceDiscoveryDnsArgs.Builder]):
+    inline def dns(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecServiceDiscoveryDnsArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeSpecServiceDiscoveryArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecServiceDiscoveryDnsArgs.builder
       builder.dns(args(argsBuilder).build)
@@ -1914,7 +1914,7 @@ object appmesh_ext:
      * @param spec Virtual node specification to apply. See `spec` Block for details.
      * @return builder
      */
-    def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecArgs.Builder]):
+    inline def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualNodeSpecArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualNodeState.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualNodeSpecArgs.builder
       builder.spec(args(argsBuilder).build)
@@ -1924,7 +1924,7 @@ object appmesh_ext:
      * @param listeners Listeners that the virtual router is expected to receive inbound traffic from. Currently only one listener is supported per virtual router. See `listener` Block for details.
      * @return builder
      */
-    def listeners(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualRouterSpecListenerArgs.Builder]*):
+    inline def listeners(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualRouterSpecListenerArgs.Builder]*):
         com.pulumi.aws.appmesh.inputs.VirtualRouterSpecArgs.Builder =
       def argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualRouterSpecListenerArgs.builder
       builder.listeners(args.map(_(argsBuilder).build)*)
@@ -1934,7 +1934,7 @@ object appmesh_ext:
      * @param portMapping Port mapping information for the listener. See `portMapping` Block for details.
      * @return builder
      */
-    def portMapping(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualRouterSpecListenerPortMappingArgs.Builder]):
+    inline def portMapping(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualRouterSpecListenerPortMappingArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualRouterSpecListenerArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualRouterSpecListenerPortMappingArgs.builder
       builder.portMapping(args(argsBuilder).build)
@@ -1944,7 +1944,7 @@ object appmesh_ext:
      * @param spec Virtual router specification to apply. See `spec` Block for details.
      * @return builder
      */
-    def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualRouterSpecArgs.Builder]):
+    inline def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualRouterSpecArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualRouterState.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualRouterSpecArgs.builder
       builder.spec(args(argsBuilder).build)
@@ -1954,7 +1954,7 @@ object appmesh_ext:
      * @param provider App Mesh object that is acting as the provider for a virtual service. You can specify a single virtual node or virtual router. See `provider` Block for details.
      * @return builder
      */
-    def provider(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualServiceSpecProviderArgs.Builder]):
+    inline def provider(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualServiceSpecProviderArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualServiceSpecArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualServiceSpecProviderArgs.builder
       builder.provider(args(argsBuilder).build)
@@ -1964,7 +1964,7 @@ object appmesh_ext:
      * @param virtualNode Virtual node associated with a virtual service. See `virtualNode` Block for details.
      * @return builder
      */
-    def virtualNode(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualServiceSpecProviderVirtualNodeArgs.Builder]):
+    inline def virtualNode(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualServiceSpecProviderVirtualNodeArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualServiceSpecProviderArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualServiceSpecProviderVirtualNodeArgs.builder
       builder.virtualNode(args(argsBuilder).build)
@@ -1973,7 +1973,7 @@ object appmesh_ext:
      * @param virtualRouter Virtual router associated with a virtual service. See `virtualRouter` Block for details.
      * @return builder
      */
-    def virtualRouter(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualServiceSpecProviderVirtualRouterArgs.Builder]):
+    inline def virtualRouter(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualServiceSpecProviderVirtualRouterArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualServiceSpecProviderArgs.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualServiceSpecProviderVirtualRouterArgs.builder
       builder.virtualRouter(args(argsBuilder).build)
@@ -1983,7 +1983,7 @@ object appmesh_ext:
      * @param spec Virtual service specification to apply. See `spec` Block for details.
      * @return builder
      */
-    def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualServiceSpecArgs.Builder]):
+    inline def spec(args: Endofunction[com.pulumi.aws.appmesh.inputs.VirtualServiceSpecArgs.Builder]):
         com.pulumi.aws.appmesh.inputs.VirtualServiceState.Builder =
       val argsBuilder = com.pulumi.aws.appmesh.inputs.VirtualServiceSpecArgs.builder
       builder.spec(args(argsBuilder).build)

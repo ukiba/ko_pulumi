@@ -22,7 +22,7 @@ object firestore:
    * This resource is owned by the database it is backing up, and is deleted along
    * with the database. The actual backups are not though.
    */
-  def BackupSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackupSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firestore.BackupScheduleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firestore.BackupScheduleArgs.builder
     com.pulumi.gcp.firestore.BackupSchedule(name,
@@ -43,7 +43,7 @@ object firestore:
    * &gt; **Warning:** This resource creates a Firestore Change Stream on a project that already has
    * a Firestore database.
    */
-  def ChangeStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ChangeStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firestore.ChangeStreamArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.firestore.ChangeStreamArgs.builder
     conf.logicalName2physicalName(name) match
@@ -68,7 +68,7 @@ object firestore:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/firestore/docs/)
    */
-  def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firestore.DatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.firestore.DatabaseArgs.builder
     conf.logicalName2physicalName(name) match
@@ -97,7 +97,7 @@ object firestore:
    * `&#34;CLOUD_FIRESTORE&#34;`. Your Firestore location will be the same as
    * the App Engine location specified.
    */
-  def Document(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Document(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firestore.DocumentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firestore.DocumentArgs.builder
     com.pulumi.gcp.firestore.Document(name,
@@ -122,7 +122,7 @@ object firestore:
    * create a `gcp.firestore.Database` resource with `locationId` set to your
    * chosen location.
    */
-  def Field(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Field(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firestore.FieldArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firestore.FieldArgs.builder
     com.pulumi.gcp.firestore.Field(name,
@@ -175,7 +175,7 @@ object firestore:
    * instead create a `gcp.appengine.Application` resource.
    * Your Firestore location will be the same as the App Engine location specified.
    */
-  def Index(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Index(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firestore.IndexArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.firestore.IndexArgs.builder
     com.pulumi.gcp.firestore.Index(name,
@@ -192,7 +192,7 @@ object firestore:
    * * How-to Guides
    *     * [Authenticate and connect to a database](https://cloud.google.com/firestore/mongodb-compatibility/docs/connect)
    */
-  def UserCreds(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UserCreds(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.firestore.UserCredsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.firestore.UserCredsArgs.builder
     conf.logicalName2physicalName(name) match

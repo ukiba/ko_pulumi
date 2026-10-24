@@ -7,7 +7,7 @@ object cloudhsmv2_ext:
      * @param clusterCertificates The list of cluster certificates.
      * @return builder
      */
-    def clusterCertificates(args: Endofunction[com.pulumi.aws.cloudhsmv2.inputs.ClusterClusterCertificateArgs.Builder]*):
+    inline def clusterCertificates(args: Endofunction[com.pulumi.aws.cloudhsmv2.inputs.ClusterClusterCertificateArgs.Builder]*):
         com.pulumi.aws.cloudhsmv2.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.aws.cloudhsmv2.inputs.ClusterClusterCertificateArgs.builder
       builder.clusterCertificates(args.map(_(argsBuilder).build)*)

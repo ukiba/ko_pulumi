@@ -14,7 +14,7 @@ object cloudscheduler:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/scheduler/)
    */
-  def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudscheduler.JobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudscheduler.JobArgs.builder
     conf.logicalName2physicalName(name) match

@@ -7,7 +7,7 @@ object devcenter_ext:
      * @param catalogAdogit A `catalogAdogit` block as defined below.
      * @return builder
      */
-    def catalogAdogit(args: Endofunction[com.pulumi.azure.devcenter.inputs.CatalogCatalogAdogitArgs.Builder]):
+    inline def catalogAdogit(args: Endofunction[com.pulumi.azure.devcenter.inputs.CatalogCatalogAdogitArgs.Builder]):
         com.pulumi.azure.devcenter.CatalogArgs.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.CatalogCatalogAdogitArgs.builder
       builder.catalogAdogit(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object devcenter_ext:
      * @param catalogGithub A `catalogGithub` block as defined below.
      * @return builder
      */
-    def catalogGithub(args: Endofunction[com.pulumi.azure.devcenter.inputs.CatalogCatalogGithubArgs.Builder]):
+    inline def catalogGithub(args: Endofunction[com.pulumi.azure.devcenter.inputs.CatalogCatalogGithubArgs.Builder]):
         com.pulumi.azure.devcenter.CatalogArgs.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.CatalogCatalogGithubArgs.builder
       builder.catalogGithub(args(argsBuilder).build)
@@ -26,7 +26,7 @@ object devcenter_ext:
      * @param identity An `identity` block as defined below. Specifies the Managed Identity which should be assigned to this Dev Center.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.devcenter.inputs.DevCenterIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.devcenter.inputs.DevCenterIdentityArgs.Builder]):
         com.pulumi.azure.devcenter.DevCenterArgs.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.DevCenterIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -36,7 +36,7 @@ object devcenter_ext:
      * @param azureDevopsOrganization An `azureDevopsOrganization` block as defined below.
      * @return builder
      */
-    def azureDevopsOrganization(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolAzureDevopsOrganizationArgs.Builder]):
+    inline def azureDevopsOrganization(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolAzureDevopsOrganizationArgs.Builder]):
         com.pulumi.azure.devcenter.ManagedDevOpsPoolArgs.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolAzureDevopsOrganizationArgs.builder
       builder.azureDevopsOrganization(args(argsBuilder).build)
@@ -45,7 +45,7 @@ object devcenter_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolIdentityArgs.Builder]):
         com.pulumi.azure.devcenter.ManagedDevOpsPoolArgs.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -54,7 +54,7 @@ object devcenter_ext:
      * @param statefulAgent A `statefulAgent` block as defined below.
      * @return builder
      */
-    def statefulAgent(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentArgs.Builder]):
+    inline def statefulAgent(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentArgs.Builder]):
         com.pulumi.azure.devcenter.ManagedDevOpsPoolArgs.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentArgs.builder
       builder.statefulAgent(args(argsBuilder).build)
@@ -65,7 +65,7 @@ object devcenter_ext:
      * &gt; **Note:** Exactly one of `statefulAgent` or `statelessAgent` must be specified.
      * @return builder
      */
-    def statelessAgent(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentArgs.Builder]):
+    inline def statelessAgent(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentArgs.Builder]):
         com.pulumi.azure.devcenter.ManagedDevOpsPoolArgs.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentArgs.builder
       builder.statelessAgent(args(argsBuilder).build)
@@ -74,7 +74,7 @@ object devcenter_ext:
      * @param virtualMachineScaleSetFabric A `virtualMachineScaleSetFabric` block as defined below.
      * @return builder
      */
-    def virtualMachineScaleSetFabric(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolVirtualMachineScaleSetFabricArgs.Builder]):
+    inline def virtualMachineScaleSetFabric(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolVirtualMachineScaleSetFabricArgs.Builder]):
         com.pulumi.azure.devcenter.ManagedDevOpsPoolArgs.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolVirtualMachineScaleSetFabricArgs.builder
       builder.virtualMachineScaleSetFabric(args(argsBuilder).build)
@@ -84,7 +84,7 @@ object devcenter_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.devcenter.inputs.ProjectIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.devcenter.inputs.ProjectIdentityArgs.Builder]):
         com.pulumi.azure.devcenter.ProjectArgs.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.ProjectIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -94,7 +94,7 @@ object devcenter_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.devcenter.inputs.ProjectEnvironmentTypeIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.devcenter.inputs.ProjectEnvironmentTypeIdentityArgs.Builder]):
         com.pulumi.azure.devcenter.ProjectEnvironmentTypeArgs.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.ProjectEnvironmentTypeIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -103,7 +103,7 @@ object devcenter_ext:
      * @param userRoleAssignments A `userRoleAssignment` block as defined below.
      * @return builder
      */
-    def userRoleAssignments(args: Endofunction[com.pulumi.azure.devcenter.inputs.ProjectEnvironmentTypeUserRoleAssignmentArgs.Builder]*):
+    inline def userRoleAssignments(args: Endofunction[com.pulumi.azure.devcenter.inputs.ProjectEnvironmentTypeUserRoleAssignmentArgs.Builder]*):
         com.pulumi.azure.devcenter.ProjectEnvironmentTypeArgs.Builder =
       def argsBuilder = com.pulumi.azure.devcenter.inputs.ProjectEnvironmentTypeUserRoleAssignmentArgs.builder
       builder.userRoleAssignments(args.map(_(argsBuilder).build)*)
@@ -113,7 +113,7 @@ object devcenter_ext:
      * @param catalogAdogit A `catalogAdogit` block as defined below.
      * @return builder
      */
-    def catalogAdogit(args: Endofunction[com.pulumi.azure.devcenter.inputs.CatalogCatalogAdogitArgs.Builder]):
+    inline def catalogAdogit(args: Endofunction[com.pulumi.azure.devcenter.inputs.CatalogCatalogAdogitArgs.Builder]):
         com.pulumi.azure.devcenter.inputs.CatalogState.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.CatalogCatalogAdogitArgs.builder
       builder.catalogAdogit(args(argsBuilder).build)
@@ -122,7 +122,7 @@ object devcenter_ext:
      * @param catalogGithub A `catalogGithub` block as defined below.
      * @return builder
      */
-    def catalogGithub(args: Endofunction[com.pulumi.azure.devcenter.inputs.CatalogCatalogGithubArgs.Builder]):
+    inline def catalogGithub(args: Endofunction[com.pulumi.azure.devcenter.inputs.CatalogCatalogGithubArgs.Builder]):
         com.pulumi.azure.devcenter.inputs.CatalogState.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.CatalogCatalogGithubArgs.builder
       builder.catalogGithub(args(argsBuilder).build)
@@ -132,7 +132,7 @@ object devcenter_ext:
      * @param identity An `identity` block as defined below. Specifies the Managed Identity which should be assigned to this Dev Center.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.devcenter.inputs.DevCenterIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.devcenter.inputs.DevCenterIdentityArgs.Builder]):
         com.pulumi.azure.devcenter.inputs.DevCenterState.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.DevCenterIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -142,7 +142,7 @@ object devcenter_ext:
      * @param organizations One or more `organization` blocks as defined below.
      * @return builder
      */
-    def organizations(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolAzureDevopsOrganizationOrganizationArgs.Builder]*):
+    inline def organizations(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolAzureDevopsOrganizationOrganizationArgs.Builder]*):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolAzureDevopsOrganizationArgs.Builder =
       def argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolAzureDevopsOrganizationOrganizationArgs.builder
       builder.organizations(args.map(_(argsBuilder).build)*)
@@ -151,7 +151,7 @@ object devcenter_ext:
      * @param permission A `permission` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def permission(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolAzureDevopsOrganizationPermissionArgs.Builder]):
+    inline def permission(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolAzureDevopsOrganizationPermissionArgs.Builder]):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolAzureDevopsOrganizationArgs.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolAzureDevopsOrganizationPermissionArgs.builder
       builder.permission(args(argsBuilder).build)
@@ -161,7 +161,7 @@ object devcenter_ext:
      * @param administratorAccount An `administratorAccount` block as defined below. This block is only valid when `kind` is set to `SpecificAccounts`. Changing this forces a new resource to be created.
      * @return builder
      */
-    def administratorAccount(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolAzureDevopsOrganizationPermissionAdministratorAccountArgs.Builder]):
+    inline def administratorAccount(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolAzureDevopsOrganizationPermissionAdministratorAccountArgs.Builder]):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolAzureDevopsOrganizationPermissionArgs.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolAzureDevopsOrganizationPermissionAdministratorAccountArgs.builder
       builder.administratorAccount(args(argsBuilder).build)
@@ -171,7 +171,7 @@ object devcenter_ext:
      * @param azureDevopsOrganization An `azureDevopsOrganization` block as defined below.
      * @return builder
      */
-    def azureDevopsOrganization(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolAzureDevopsOrganizationArgs.Builder]):
+    inline def azureDevopsOrganization(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolAzureDevopsOrganizationArgs.Builder]):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolState.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolAzureDevopsOrganizationArgs.builder
       builder.azureDevopsOrganization(args(argsBuilder).build)
@@ -180,7 +180,7 @@ object devcenter_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolIdentityArgs.Builder]):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolState.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -189,7 +189,7 @@ object devcenter_ext:
      * @param statefulAgent A `statefulAgent` block as defined below.
      * @return builder
      */
-    def statefulAgent(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentArgs.Builder]):
+    inline def statefulAgent(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentArgs.Builder]):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolState.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentArgs.builder
       builder.statefulAgent(args(argsBuilder).build)
@@ -200,7 +200,7 @@ object devcenter_ext:
      * &gt; **Note:** Exactly one of `statefulAgent` or `statelessAgent` must be specified.
      * @return builder
      */
-    def statelessAgent(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentArgs.Builder]):
+    inline def statelessAgent(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentArgs.Builder]):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolState.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentArgs.builder
       builder.statelessAgent(args(argsBuilder).build)
@@ -209,7 +209,7 @@ object devcenter_ext:
      * @param virtualMachineScaleSetFabric A `virtualMachineScaleSetFabric` block as defined below.
      * @return builder
      */
-    def virtualMachineScaleSetFabric(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolVirtualMachineScaleSetFabricArgs.Builder]):
+    inline def virtualMachineScaleSetFabric(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolVirtualMachineScaleSetFabricArgs.Builder]):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolState.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolVirtualMachineScaleSetFabricArgs.builder
       builder.virtualMachineScaleSetFabric(args(argsBuilder).build)
@@ -219,7 +219,7 @@ object devcenter_ext:
      * @param automaticResourcePrediction An `automaticResourcePrediction` block as defined below.
      * @return builder
      */
-    def automaticResourcePrediction(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentAutomaticResourcePredictionArgs.Builder]):
+    inline def automaticResourcePrediction(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentAutomaticResourcePredictionArgs.Builder]):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentArgs.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentAutomaticResourcePredictionArgs.builder
       builder.automaticResourcePrediction(args(argsBuilder).build)
@@ -228,7 +228,7 @@ object devcenter_ext:
      * @param manualResourcePrediction A `manualResourcePrediction` block as defined below.
      * @return builder
      */
-    def manualResourcePrediction(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionArgs.Builder]):
+    inline def manualResourcePrediction(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionArgs.Builder]):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentArgs.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionArgs.builder
       builder.manualResourcePrediction(args(argsBuilder).build)
@@ -238,7 +238,7 @@ object devcenter_ext:
      * @param fridaySchedules One or more `dailySchedule` blocks as defined below.
      * @return builder
      */
-    def fridaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionFridayScheduleArgs.Builder]*):
+    inline def fridaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionFridayScheduleArgs.Builder]*):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionArgs.Builder =
       def argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionFridayScheduleArgs.builder
       builder.fridaySchedules(args.map(_(argsBuilder).build)*)
@@ -247,7 +247,7 @@ object devcenter_ext:
      * @param mondaySchedules One or more `dailySchedule` blocks as defined below.
      * @return builder
      */
-    def mondaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionMondayScheduleArgs.Builder]*):
+    inline def mondaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionMondayScheduleArgs.Builder]*):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionArgs.Builder =
       def argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionMondayScheduleArgs.builder
       builder.mondaySchedules(args.map(_(argsBuilder).build)*)
@@ -256,7 +256,7 @@ object devcenter_ext:
      * @param saturdaySchedules One or more `dailySchedule` blocks as defined below.
      * @return builder
      */
-    def saturdaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionSaturdayScheduleArgs.Builder]*):
+    inline def saturdaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionSaturdayScheduleArgs.Builder]*):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionArgs.Builder =
       def argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionSaturdayScheduleArgs.builder
       builder.saturdaySchedules(args.map(_(argsBuilder).build)*)
@@ -265,7 +265,7 @@ object devcenter_ext:
      * @param sundaySchedules One or more `dailySchedule` blocks as defined below.
      * @return builder
      */
-    def sundaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionSundayScheduleArgs.Builder]*):
+    inline def sundaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionSundayScheduleArgs.Builder]*):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionArgs.Builder =
       def argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionSundayScheduleArgs.builder
       builder.sundaySchedules(args.map(_(argsBuilder).build)*)
@@ -274,7 +274,7 @@ object devcenter_ext:
      * @param thursdaySchedules One or more `dailySchedule` blocks as defined below.
      * @return builder
      */
-    def thursdaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionThursdayScheduleArgs.Builder]*):
+    inline def thursdaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionThursdayScheduleArgs.Builder]*):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionArgs.Builder =
       def argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionThursdayScheduleArgs.builder
       builder.thursdaySchedules(args.map(_(argsBuilder).build)*)
@@ -283,7 +283,7 @@ object devcenter_ext:
      * @param tuesdaySchedules One or more `dailySchedule` blocks as defined below.
      * @return builder
      */
-    def tuesdaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionTuesdayScheduleArgs.Builder]*):
+    inline def tuesdaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionTuesdayScheduleArgs.Builder]*):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionArgs.Builder =
       def argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionTuesdayScheduleArgs.builder
       builder.tuesdaySchedules(args.map(_(argsBuilder).build)*)
@@ -296,7 +296,7 @@ object devcenter_ext:
      * &gt; **Note:** Please refer to [Microsoft documentation](https://learn.microsoft.com/azure/devops/managed-devops-pools/configure-scaling?view=azure-devops&amp;tabs=azure-cli#manual) for more information about the manual predictions setup.
      * @return builder
      */
-    def wednesdaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionWednesdayScheduleArgs.Builder]*):
+    inline def wednesdaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionWednesdayScheduleArgs.Builder]*):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionArgs.Builder =
       def argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatefulAgentManualResourcePredictionWednesdayScheduleArgs.builder
       builder.wednesdaySchedules(args.map(_(argsBuilder).build)*)
@@ -306,7 +306,7 @@ object devcenter_ext:
      * @param automaticResourcePrediction An `automaticResourcePrediction` block as defined below.
      * @return builder
      */
-    def automaticResourcePrediction(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentAutomaticResourcePredictionArgs.Builder]):
+    inline def automaticResourcePrediction(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentAutomaticResourcePredictionArgs.Builder]):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentArgs.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentAutomaticResourcePredictionArgs.builder
       builder.automaticResourcePrediction(args(argsBuilder).build)
@@ -317,7 +317,7 @@ object devcenter_ext:
      * &gt; **Note:** Exactly one of `manualResourcePrediction` or `automaticResourcePrediction` may be specified.
      * @return builder
      */
-    def manualResourcePrediction(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionArgs.Builder]):
+    inline def manualResourcePrediction(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionArgs.Builder]):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentArgs.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionArgs.builder
       builder.manualResourcePrediction(args(argsBuilder).build)
@@ -327,7 +327,7 @@ object devcenter_ext:
      * @param fridaySchedules One or more `dailySchedule` blocks as defined below.
      * @return builder
      */
-    def fridaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionFridayScheduleArgs.Builder]*):
+    inline def fridaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionFridayScheduleArgs.Builder]*):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionArgs.Builder =
       def argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionFridayScheduleArgs.builder
       builder.fridaySchedules(args.map(_(argsBuilder).build)*)
@@ -336,7 +336,7 @@ object devcenter_ext:
      * @param mondaySchedules One or more `dailySchedule` blocks as defined below.
      * @return builder
      */
-    def mondaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionMondayScheduleArgs.Builder]*):
+    inline def mondaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionMondayScheduleArgs.Builder]*):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionArgs.Builder =
       def argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionMondayScheduleArgs.builder
       builder.mondaySchedules(args.map(_(argsBuilder).build)*)
@@ -345,7 +345,7 @@ object devcenter_ext:
      * @param saturdaySchedules One or more `dailySchedule` blocks as defined below.
      * @return builder
      */
-    def saturdaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionSaturdayScheduleArgs.Builder]*):
+    inline def saturdaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionSaturdayScheduleArgs.Builder]*):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionArgs.Builder =
       def argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionSaturdayScheduleArgs.builder
       builder.saturdaySchedules(args.map(_(argsBuilder).build)*)
@@ -354,7 +354,7 @@ object devcenter_ext:
      * @param sundaySchedules One or more `dailySchedule` blocks as defined below.
      * @return builder
      */
-    def sundaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionSundayScheduleArgs.Builder]*):
+    inline def sundaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionSundayScheduleArgs.Builder]*):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionArgs.Builder =
       def argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionSundayScheduleArgs.builder
       builder.sundaySchedules(args.map(_(argsBuilder).build)*)
@@ -363,7 +363,7 @@ object devcenter_ext:
      * @param thursdaySchedules One or more `dailySchedule` blocks as defined below.
      * @return builder
      */
-    def thursdaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionThursdayScheduleArgs.Builder]*):
+    inline def thursdaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionThursdayScheduleArgs.Builder]*):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionArgs.Builder =
       def argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionThursdayScheduleArgs.builder
       builder.thursdaySchedules(args.map(_(argsBuilder).build)*)
@@ -372,7 +372,7 @@ object devcenter_ext:
      * @param tuesdaySchedules One or more `dailySchedule` blocks as defined below.
      * @return builder
      */
-    def tuesdaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionTuesdayScheduleArgs.Builder]*):
+    inline def tuesdaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionTuesdayScheduleArgs.Builder]*):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionArgs.Builder =
       def argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionTuesdayScheduleArgs.builder
       builder.tuesdaySchedules(args.map(_(argsBuilder).build)*)
@@ -385,7 +385,7 @@ object devcenter_ext:
      * &gt; **Note:** Please refer to [Microsoft documentation](https://learn.microsoft.com/azure/devops/managed-devops-pools/configure-scaling?view=azure-devops&amp;tabs=azure-cli#manual) for more information about the manual predictions setup.
      * @return builder
      */
-    def wednesdaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionWednesdayScheduleArgs.Builder]*):
+    inline def wednesdaySchedules(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionWednesdayScheduleArgs.Builder]*):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionArgs.Builder =
       def argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolStatelessAgentManualResourcePredictionWednesdayScheduleArgs.builder
       builder.wednesdaySchedules(args.map(_(argsBuilder).build)*)
@@ -395,7 +395,7 @@ object devcenter_ext:
      * @param images One or more `image` blocks as defined below.
      * @return builder
      */
-    def images(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolVirtualMachineScaleSetFabricImageArgs.Builder]*):
+    inline def images(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolVirtualMachineScaleSetFabricImageArgs.Builder]*):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolVirtualMachineScaleSetFabricArgs.Builder =
       def argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolVirtualMachineScaleSetFabricImageArgs.builder
       builder.images(args.map(_(argsBuilder).build)*)
@@ -404,7 +404,7 @@ object devcenter_ext:
      * @param security A `security` block as defined below.
      * @return builder
      */
-    def security(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolVirtualMachineScaleSetFabricSecurityArgs.Builder]):
+    inline def security(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolVirtualMachineScaleSetFabricSecurityArgs.Builder]):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolVirtualMachineScaleSetFabricArgs.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolVirtualMachineScaleSetFabricSecurityArgs.builder
       builder.security(args(argsBuilder).build)
@@ -413,7 +413,7 @@ object devcenter_ext:
      * @param storage A `storage` block as defined below.
      * @return builder
      */
-    def storage(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolVirtualMachineScaleSetFabricStorageArgs.Builder]):
+    inline def storage(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolVirtualMachineScaleSetFabricStorageArgs.Builder]):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolVirtualMachineScaleSetFabricArgs.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolVirtualMachineScaleSetFabricStorageArgs.builder
       builder.storage(args(argsBuilder).build)
@@ -423,7 +423,7 @@ object devcenter_ext:
      * @param keyVaultManagement A `keyVaultManagement` block as defined below.
      * @return builder
      */
-    def keyVaultManagement(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolVirtualMachineScaleSetFabricSecurityKeyVaultManagementArgs.Builder]):
+    inline def keyVaultManagement(args: Endofunction[com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolVirtualMachineScaleSetFabricSecurityKeyVaultManagementArgs.Builder]):
         com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolVirtualMachineScaleSetFabricSecurityArgs.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.ManagedDevOpsPoolVirtualMachineScaleSetFabricSecurityKeyVaultManagementArgs.builder
       builder.keyVaultManagement(args(argsBuilder).build)
@@ -433,7 +433,7 @@ object devcenter_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.devcenter.inputs.ProjectEnvironmentTypeIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.devcenter.inputs.ProjectEnvironmentTypeIdentityArgs.Builder]):
         com.pulumi.azure.devcenter.inputs.ProjectEnvironmentTypeState.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.ProjectEnvironmentTypeIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -442,7 +442,7 @@ object devcenter_ext:
      * @param userRoleAssignments A `userRoleAssignment` block as defined below.
      * @return builder
      */
-    def userRoleAssignments(args: Endofunction[com.pulumi.azure.devcenter.inputs.ProjectEnvironmentTypeUserRoleAssignmentArgs.Builder]*):
+    inline def userRoleAssignments(args: Endofunction[com.pulumi.azure.devcenter.inputs.ProjectEnvironmentTypeUserRoleAssignmentArgs.Builder]*):
         com.pulumi.azure.devcenter.inputs.ProjectEnvironmentTypeState.Builder =
       def argsBuilder = com.pulumi.azure.devcenter.inputs.ProjectEnvironmentTypeUserRoleAssignmentArgs.builder
       builder.userRoleAssignments(args.map(_(argsBuilder).build)*)
@@ -452,7 +452,7 @@ object devcenter_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.devcenter.inputs.ProjectIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.devcenter.inputs.ProjectIdentityArgs.Builder]):
         com.pulumi.azure.devcenter.inputs.ProjectState.Builder =
       val argsBuilder = com.pulumi.azure.devcenter.inputs.ProjectIdentityArgs.builder
       builder.identity(args(argsBuilder).build)

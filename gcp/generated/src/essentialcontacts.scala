@@ -19,7 +19,7 @@ object essentialcontacts:
    * Your account must have the `serviceusage.services.use` permission on the
    * `billingProject` you defined.
    */
-  def Contact(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Contact(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.essentialcontacts.ContactArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.essentialcontacts.ContactArgs.builder
     com.pulumi.gcp.essentialcontacts.Contact(name,
@@ -35,7 +35,7 @@ object essentialcontacts:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/document-ai/docs/overview)
    */
-  def DocumentAiProcessor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DocumentAiProcessor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.essentialcontacts.DocumentAiProcessorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.essentialcontacts.DocumentAiProcessorArgs.builder
     com.pulumi.gcp.essentialcontacts.DocumentAiProcessor(name,
@@ -43,7 +43,7 @@ object essentialcontacts:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The default version for the processor. Deleting this resource is a no-op, and does not unset the default version. */
-  def DocumentAiProcessorDefaultVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DocumentAiProcessorDefaultVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.essentialcontacts.DocumentAiProcessorDefaultVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.essentialcontacts.DocumentAiProcessorDefaultVersionArgs.builder
     com.pulumi.gcp.essentialcontacts.DocumentAiProcessorDefaultVersion(name,
@@ -59,7 +59,7 @@ object essentialcontacts:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/document-warehouse/docs/manage-document-schemas)
    */
-  def DocumentAiWarehouseDocumentSchema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DocumentAiWarehouseDocumentSchema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.essentialcontacts.DocumentAiWarehouseDocumentSchemaArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.essentialcontacts.DocumentAiWarehouseDocumentSchemaArgs.builder
     com.pulumi.gcp.essentialcontacts.DocumentAiWarehouseDocumentSchema(name,
@@ -75,7 +75,7 @@ object essentialcontacts:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/document-warehouse/docs/overview)
    */
-  def DocumentAiWarehouseLocation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DocumentAiWarehouseLocation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.essentialcontacts.DocumentAiWarehouseLocationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.essentialcontacts.DocumentAiWarehouseLocationArgs.builder
     com.pulumi.gcp.essentialcontacts.DocumentAiWarehouseLocation(name,

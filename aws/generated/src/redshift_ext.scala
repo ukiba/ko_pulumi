@@ -7,7 +7,7 @@ object redshift_ext:
      * @param authorizedTokenIssuer Token issuer list for the Amazon Redshift IAM Identity Center application instance. Refer to the authorizedTokenIssuer documentation for more details.
      * @return builder
      */
-    def authorizedTokenIssuer(args: Endofunction[com.pulumi.aws.redshift.inputs.IdcApplicationAuthorizedTokenIssuerArgs.Builder]):
+    inline def authorizedTokenIssuer(args: Endofunction[com.pulumi.aws.redshift.inputs.IdcApplicationAuthorizedTokenIssuerArgs.Builder]):
         com.pulumi.aws.redshift.IdcApplicationArgs.Builder =
       val argsBuilder = com.pulumi.aws.redshift.inputs.IdcApplicationAuthorizedTokenIssuerArgs.builder
       builder.authorizedTokenIssuer(args(argsBuilder).build)
@@ -16,13 +16,13 @@ object redshift_ext:
      * @param serviceIntegration Collection of service integrations for the Redshift IAM Identity Center application. Refer to the serviceIntegration documentation for more details.
      * @return builder
      */
-    def serviceIntegration(args: Endofunction[com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationArgs.Builder]):
+    inline def serviceIntegration(args: Endofunction[com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationArgs.Builder]):
         com.pulumi.aws.redshift.IdcApplicationArgs.Builder =
       val argsBuilder = com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationArgs.builder
       builder.serviceIntegration(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.redshift.IntegrationArgs.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.redshift.inputs.IntegrationTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.redshift.inputs.IntegrationTimeoutsArgs.Builder]):
         com.pulumi.aws.redshift.IntegrationArgs.Builder =
       val argsBuilder = com.pulumi.aws.redshift.inputs.IntegrationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -32,7 +32,7 @@ object redshift_ext:
      * @param parameters A list of Redshift parameters to apply.
      * @return builder
      */
-    def parameters(args: Endofunction[com.pulumi.aws.redshift.inputs.ParameterGroupParameterArgs.Builder]*):
+    inline def parameters(args: Endofunction[com.pulumi.aws.redshift.inputs.ParameterGroupParameterArgs.Builder]*):
         com.pulumi.aws.redshift.ParameterGroupArgs.Builder =
       def argsBuilder = com.pulumi.aws.redshift.inputs.ParameterGroupParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
@@ -42,7 +42,7 @@ object redshift_ext:
      * @param targetAction Target action. Documented below.
      * @return builder
      */
-    def targetAction(args: Endofunction[com.pulumi.aws.redshift.inputs.ScheduledActionTargetActionArgs.Builder]):
+    inline def targetAction(args: Endofunction[com.pulumi.aws.redshift.inputs.ScheduledActionTargetActionArgs.Builder]):
         com.pulumi.aws.redshift.ScheduledActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.redshift.inputs.ScheduledActionTargetActionArgs.builder
       builder.targetAction(args(argsBuilder).build)
@@ -52,7 +52,7 @@ object redshift_ext:
      * @param clusterNodes The nodes in the cluster. Cluster node blocks are documented below
      * @return builder
      */
-    def clusterNodes(args: Endofunction[com.pulumi.aws.redshift.inputs.ClusterClusterNodeArgs.Builder]*):
+    inline def clusterNodes(args: Endofunction[com.pulumi.aws.redshift.inputs.ClusterClusterNodeArgs.Builder]*):
         com.pulumi.aws.redshift.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.aws.redshift.inputs.ClusterClusterNodeArgs.builder
       builder.clusterNodes(args.map(_(argsBuilder).build)*)
@@ -62,7 +62,7 @@ object redshift_ext:
      * @param vpcEndpoints The connection endpoint for connecting to an Amazon Redshift cluster through the proxy. See details below.
      * @return builder
      */
-    def vpcEndpoints(args: Endofunction[com.pulumi.aws.redshift.inputs.EndpointAccessVpcEndpointArgs.Builder]*):
+    inline def vpcEndpoints(args: Endofunction[com.pulumi.aws.redshift.inputs.EndpointAccessVpcEndpointArgs.Builder]*):
         com.pulumi.aws.redshift.inputs.EndpointAccessState.Builder =
       def argsBuilder = com.pulumi.aws.redshift.inputs.EndpointAccessVpcEndpointArgs.builder
       builder.vpcEndpoints(args.map(_(argsBuilder).build)*)
@@ -72,7 +72,7 @@ object redshift_ext:
      * @param networkInterfaces One or more network interfaces of the endpoint. Also known as an interface endpoint. See details below.
      * @return builder
      */
-    def networkInterfaces(args: Endofunction[com.pulumi.aws.redshift.inputs.EndpointAccessVpcEndpointNetworkInterfaceArgs.Builder]*):
+    inline def networkInterfaces(args: Endofunction[com.pulumi.aws.redshift.inputs.EndpointAccessVpcEndpointNetworkInterfaceArgs.Builder]*):
         com.pulumi.aws.redshift.inputs.EndpointAccessVpcEndpointArgs.Builder =
       def argsBuilder = com.pulumi.aws.redshift.inputs.EndpointAccessVpcEndpointNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
@@ -82,7 +82,7 @@ object redshift_ext:
      * @param lakeFormation List of scopes set up for Lake Formation integration. Refer to the lakeFormation documentation for more details.
      * @return builder
      */
-    def lakeFormation(args: Endofunction[com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationLakeFormationArgs.Builder]):
+    inline def lakeFormation(args: Endofunction[com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationLakeFormationArgs.Builder]):
         com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationArgs.Builder =
       val argsBuilder = com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationLakeFormationArgs.builder
       builder.lakeFormation(args(argsBuilder).build)
@@ -91,7 +91,7 @@ object redshift_ext:
      * @param redshift List of scopes set up for Redshift integration. Refer to the redshift documentation for more details.
      * @return builder
      */
-    def redshift(args: Endofunction[com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationRedshiftArgs.Builder]):
+    inline def redshift(args: Endofunction[com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationRedshiftArgs.Builder]):
         com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationArgs.Builder =
       val argsBuilder = com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationRedshiftArgs.builder
       builder.redshift(args(argsBuilder).build)
@@ -100,7 +100,7 @@ object redshift_ext:
      * @param s3AccessGrants List of scopes set up for S3 Access Grants integration. Refer to the s3AccessGrants documentation for more details.
      * @return builder
      */
-    def s3AccessGrants(args: Endofunction[com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationS3AccessGrantsArgs.Builder]):
+    inline def s3AccessGrants(args: Endofunction[com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationS3AccessGrantsArgs.Builder]):
         com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationArgs.Builder =
       val argsBuilder = com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationS3AccessGrantsArgs.builder
       builder.s3AccessGrants(args(argsBuilder).build)
@@ -110,7 +110,7 @@ object redshift_ext:
      * @param lakeFormationQuery Lake Formation scope.
      * @return builder
      */
-    def lakeFormationQuery(args: Endofunction[com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationLakeFormationLakeFormationQueryArgs.Builder]):
+    inline def lakeFormationQuery(args: Endofunction[com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationLakeFormationLakeFormationQueryArgs.Builder]):
         com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationLakeFormationArgs.Builder =
       val argsBuilder = com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationLakeFormationLakeFormationQueryArgs.builder
       builder.lakeFormationQuery(args(argsBuilder).build)
@@ -120,7 +120,7 @@ object redshift_ext:
      * @param connect Amazon Redshift connect service integration scope.
      * @return builder
      */
-    def connect(args: Endofunction[com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationRedshiftConnectArgs.Builder]):
+    inline def connect(args: Endofunction[com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationRedshiftConnectArgs.Builder]):
         com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationRedshiftArgs.Builder =
       val argsBuilder = com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationRedshiftConnectArgs.builder
       builder.connect(args(argsBuilder).build)
@@ -130,7 +130,7 @@ object redshift_ext:
      * @param readWriteAccess S3 Access grants integration scope.
      * @return builder
      */
-    def readWriteAccess(args: Endofunction[com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationS3AccessGrantsReadWriteAccessArgs.Builder]):
+    inline def readWriteAccess(args: Endofunction[com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationS3AccessGrantsReadWriteAccessArgs.Builder]):
         com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationS3AccessGrantsArgs.Builder =
       val argsBuilder = com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationS3AccessGrantsReadWriteAccessArgs.builder
       builder.readWriteAccess(args(argsBuilder).build)
@@ -140,7 +140,7 @@ object redshift_ext:
      * @param authorizedTokenIssuer Token issuer list for the Amazon Redshift IAM Identity Center application instance. Refer to the authorizedTokenIssuer documentation for more details.
      * @return builder
      */
-    def authorizedTokenIssuer(args: Endofunction[com.pulumi.aws.redshift.inputs.IdcApplicationAuthorizedTokenIssuerArgs.Builder]):
+    inline def authorizedTokenIssuer(args: Endofunction[com.pulumi.aws.redshift.inputs.IdcApplicationAuthorizedTokenIssuerArgs.Builder]):
         com.pulumi.aws.redshift.inputs.IdcApplicationState.Builder =
       val argsBuilder = com.pulumi.aws.redshift.inputs.IdcApplicationAuthorizedTokenIssuerArgs.builder
       builder.authorizedTokenIssuer(args(argsBuilder).build)
@@ -149,13 +149,13 @@ object redshift_ext:
      * @param serviceIntegration Collection of service integrations for the Redshift IAM Identity Center application. Refer to the serviceIntegration documentation for more details.
      * @return builder
      */
-    def serviceIntegration(args: Endofunction[com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationArgs.Builder]):
+    inline def serviceIntegration(args: Endofunction[com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationArgs.Builder]):
         com.pulumi.aws.redshift.inputs.IdcApplicationState.Builder =
       val argsBuilder = com.pulumi.aws.redshift.inputs.IdcApplicationServiceIntegrationArgs.builder
       builder.serviceIntegration(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.redshift.inputs.IntegrationState.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.redshift.inputs.IntegrationTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.redshift.inputs.IntegrationTimeoutsArgs.Builder]):
         com.pulumi.aws.redshift.inputs.IntegrationState.Builder =
       val argsBuilder = com.pulumi.aws.redshift.inputs.IntegrationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -165,7 +165,7 @@ object redshift_ext:
      * @param parameters A list of Redshift parameters to apply.
      * @return builder
      */
-    def parameters(args: Endofunction[com.pulumi.aws.redshift.inputs.ParameterGroupParameterArgs.Builder]*):
+    inline def parameters(args: Endofunction[com.pulumi.aws.redshift.inputs.ParameterGroupParameterArgs.Builder]*):
         com.pulumi.aws.redshift.inputs.ParameterGroupState.Builder =
       def argsBuilder = com.pulumi.aws.redshift.inputs.ParameterGroupParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
@@ -175,7 +175,7 @@ object redshift_ext:
      * @param targetAction Target action. Documented below.
      * @return builder
      */
-    def targetAction(args: Endofunction[com.pulumi.aws.redshift.inputs.ScheduledActionTargetActionArgs.Builder]):
+    inline def targetAction(args: Endofunction[com.pulumi.aws.redshift.inputs.ScheduledActionTargetActionArgs.Builder]):
         com.pulumi.aws.redshift.inputs.ScheduledActionState.Builder =
       val argsBuilder = com.pulumi.aws.redshift.inputs.ScheduledActionTargetActionArgs.builder
       builder.targetAction(args(argsBuilder).build)
@@ -185,7 +185,7 @@ object redshift_ext:
      * @param pauseCluster An action that runs a `PauseCluster` API operation. Documented below.
      * @return builder
      */
-    def pauseCluster(args: Endofunction[com.pulumi.aws.redshift.inputs.ScheduledActionTargetActionPauseClusterArgs.Builder]):
+    inline def pauseCluster(args: Endofunction[com.pulumi.aws.redshift.inputs.ScheduledActionTargetActionPauseClusterArgs.Builder]):
         com.pulumi.aws.redshift.inputs.ScheduledActionTargetActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.redshift.inputs.ScheduledActionTargetActionPauseClusterArgs.builder
       builder.pauseCluster(args(argsBuilder).build)
@@ -194,7 +194,7 @@ object redshift_ext:
      * @param resizeCluster An action that runs a `ResizeCluster` API operation. Documented below.
      * @return builder
      */
-    def resizeCluster(args: Endofunction[com.pulumi.aws.redshift.inputs.ScheduledActionTargetActionResizeClusterArgs.Builder]):
+    inline def resizeCluster(args: Endofunction[com.pulumi.aws.redshift.inputs.ScheduledActionTargetActionResizeClusterArgs.Builder]):
         com.pulumi.aws.redshift.inputs.ScheduledActionTargetActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.redshift.inputs.ScheduledActionTargetActionResizeClusterArgs.builder
       builder.resizeCluster(args(argsBuilder).build)
@@ -203,7 +203,7 @@ object redshift_ext:
      * @param resumeCluster An action that runs a `ResumeCluster` API operation. Documented below.
      * @return builder
      */
-    def resumeCluster(args: Endofunction[com.pulumi.aws.redshift.inputs.ScheduledActionTargetActionResumeClusterArgs.Builder]):
+    inline def resumeCluster(args: Endofunction[com.pulumi.aws.redshift.inputs.ScheduledActionTargetActionResumeClusterArgs.Builder]):
         com.pulumi.aws.redshift.inputs.ScheduledActionTargetActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.redshift.inputs.ScheduledActionTargetActionResumeClusterArgs.builder
       builder.resumeCluster(args(argsBuilder).build)

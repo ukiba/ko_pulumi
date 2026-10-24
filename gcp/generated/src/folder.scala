@@ -13,7 +13,7 @@ object folder:
    * 
    * * [API documentation](https://cloud.google.com/access-approval/docs/reference/rest/v1/folders)
    */
-  def AccessApprovalSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccessApprovalSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.folder.AccessApprovalSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.folder.AccessApprovalSettingsArgs.builder
     com.pulumi.gcp.folder.AccessApprovalSettings(name,
@@ -646,7 +646,7 @@ object folder:
    * &gt; **Conditional IAM Bindings**: If you&#39;re importing a IAM binding with a condition block, make sure
    *  to include the title of condition, e.g. `terraform import google_folder_iam_binding.my_folder &#34;folder roles/{{role_id}} condition-title&#34;`
    */
-  def IAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.folder.IAMBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.folder.IAMBindingArgs.builder
     com.pulumi.gcp.folder.IAMBinding(name,
@@ -1168,7 +1168,7 @@ object folder:
    * &gt; **Conditional IAM Bindings**: If you&#39;re importing a IAM binding with a condition block, make sure
    *  to include the title of condition, e.g. `terraform import google_folder_iam_binding.my_folder &#34;folder roles/{{role_id}} condition-title&#34;`
    */
-  def IAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.folder.IAMMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.folder.IAMMemberArgs.builder
     com.pulumi.gcp.folder.IAMMember(name,
@@ -1690,7 +1690,7 @@ object folder:
    * &gt; **Conditional IAM Bindings**: If you&#39;re importing a IAM binding with a condition block, make sure
    *  to include the title of condition, e.g. `terraform import google_folder_iam_binding.my_folder &#34;folder roles/{{role_id}} condition-title&#34;`
    */
-  def IAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.folder.IAMPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.folder.IAMPolicyArgs.builder
     com.pulumi.gcp.folder.IAMPolicy(name,
@@ -2212,7 +2212,7 @@ object folder:
    * &gt; **Conditional IAM Bindings**: If you&#39;re importing a IAM binding with a condition block, make sure
    *  to include the title of condition, e.g. `terraform import google_folder_iam_binding.my_folder &#34;folder roles/{{role_id}} condition-title&#34;`
    */
-  def IamAuditConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IamAuditConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.folder.IamAuditConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.folder.IamAuditConfigArgs.builder
     com.pulumi.gcp.folder.IamAuditConfig(name,
@@ -2230,7 +2230,7 @@ object folder:
    * * How-to Guides
    *     * [Introduction to the Organization Policy Service](https://docs.cloud.google.com/resource-manager/docs/organization-policy/overview)
    */
-  def OrganizationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.folder.OrganizationPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.folder.OrganizationPolicyArgs.builder
     com.pulumi.gcp.folder.OrganizationPolicy(name,
@@ -2254,7 +2254,7 @@ object folder:
    * 
    * * [API documentation](https://cloud.google.com/service-usage/docs/reference/rest/v1beta1/services/generateServiceIdentity)
    */
-  def ServiceIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServiceIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.folder.ServiceIdentityArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.folder.ServiceIdentityArgs.builder
     com.pulumi.gcp.folder.ServiceIdentity(name,

@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object proximity:
   /** Manages a proximity placement group for virtual machines, virtual machine scale sets and availability sets. */
-  def PlacementGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PlacementGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.proximity.PlacementGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.proximity.PlacementGroupArgs.builder
     conf.logicalName2physicalName(name) match

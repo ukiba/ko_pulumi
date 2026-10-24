@@ -13,7 +13,7 @@ object databasemigrationservice:
    * * How-to Guides
    *     * [Database Migration](https://cloud.google.com/database-migration/docs/)
    */
-  def ConnectionProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConnectionProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.databasemigrationservice.ConnectionProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.databasemigrationservice.ConnectionProfileArgs.builder
     com.pulumi.gcp.databasemigrationservice.ConnectionProfile(name,
@@ -29,7 +29,7 @@ object databasemigrationservice:
    * * How-to Guides
    *     * [Database Migration](https://cloud.google.com/database-migration/docs/)
    */
-  def MigrationJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MigrationJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.databasemigrationservice.MigrationJobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.databasemigrationservice.MigrationJobArgs.builder
     com.pulumi.gcp.databasemigrationservice.MigrationJob(name,
@@ -45,7 +45,7 @@ object databasemigrationservice:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/database-migration/docs/oracle-to-postgresql/create-private-connectivity-configuration)
    */
-  def PrivateConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PrivateConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.databasemigrationservice.PrivateConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.databasemigrationservice.PrivateConnectionArgs.builder
     com.pulumi.gcp.databasemigrationservice.PrivateConnection(name,

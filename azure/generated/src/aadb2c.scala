@@ -24,7 +24,7 @@ object aadb2c:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an AAD B2C Directory. */
-  def Directory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Directory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.aadb2c.DirectoryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.aadb2c.DirectoryArgs.builder
     argsBuilder = args(argsBuilder)

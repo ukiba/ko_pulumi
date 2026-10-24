@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object eks:
   /** Access Entry Configurations for an EKS Cluster. */
-  def AccessEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccessEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.eks.AccessEntryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.eks.AccessEntryArgs.builder
     argsBuilder = args(argsBuilder)
@@ -22,7 +22,7 @@ object eks:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Access Entry Policy Association for an EKS Cluster. */
-  def AccessPolicyAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccessPolicyAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.eks.AccessPolicyAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.eks.AccessPolicyAssociationArgs.builder
     com.pulumi.aws.eks.AccessPolicyAssociation(name,
@@ -30,7 +30,7 @@ object eks:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EKS add-on. */
-  def Addon(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Addon(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.eks.AddonArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.eks.AddonArgs.builder
     argsBuilder = args(argsBuilder)
@@ -45,7 +45,7 @@ object eks:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EKS Capability for an EKS cluster. */
-  def Capability(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Capability(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.eks.CapabilityArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.eks.CapabilityArgs.builder
     argsBuilder = args(argsBuilder)
@@ -60,7 +60,7 @@ object eks:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EKS Cluster. */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.eks.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.eks.ClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -253,7 +253,7 @@ object eks:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an EKS Fargate Profile. */
-  def FargateProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FargateProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.eks.FargateProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.eks.FargateProfileArgs.builder
     argsBuilder = args(argsBuilder)
@@ -268,7 +268,7 @@ object eks:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EKS Identity Provider Configuration. */
-  def IdentityProviderConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IdentityProviderConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.eks.IdentityProviderConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.eks.IdentityProviderConfigArgs.builder
     argsBuilder = args(argsBuilder)
@@ -283,7 +283,7 @@ object eks:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EKS Node Group, which can provision and optionally update an Auto Scaling group of Kubernetes worker nodes compatible with EKS. Additional documentation about this functionality can be found in the [EKS User Guide](https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html). */
-  def NodeGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NodeGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.eks.NodeGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.eks.NodeGroupArgs.builder
     argsBuilder = args(argsBuilder)
@@ -308,7 +308,7 @@ object eks:
    * 
    * Pod Identity is a simpler method than IAM roles for service accounts, as this method doesn\u2019t use OIDC identity providers. Additionally, you can configure a role for Pod Identity once, and reuse it across clusters.
    */
-  def PodIdentityAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PodIdentityAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.eks.PodIdentityAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.eks.PodIdentityAssociationArgs.builder
     argsBuilder = args(argsBuilder)

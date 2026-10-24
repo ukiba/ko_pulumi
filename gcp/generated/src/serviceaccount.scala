@@ -19,7 +19,7 @@ object serviceaccount:
    * errors when you try to apply ACLs to service accounts immediately after
    * creation.
    */
-  def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.serviceaccount.AccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.serviceaccount.AccountArgs.builder
     com.pulumi.gcp.serviceaccount.Account(name,
@@ -39,7 +39,7 @@ object serviceaccount:
    * 
    * &gt; **Note:** `gcp.serviceaccount.IAMBinding` resources **can be** used in conjunction with `gcp.serviceaccount.IAMMember` resources **only if** they do not grant privilege to the same role.
    */
-  def IAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.serviceaccount.IAMBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.serviceaccount.IAMBindingArgs.builder
     com.pulumi.gcp.serviceaccount.IAMBinding(name,
@@ -59,7 +59,7 @@ object serviceaccount:
    * 
    * &gt; **Note:** `gcp.serviceaccount.IAMBinding` resources **can be** used in conjunction with `gcp.serviceaccount.IAMMember` resources **only if** they do not grant privilege to the same role.
    */
-  def IAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.serviceaccount.IAMMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.serviceaccount.IAMMemberArgs.builder
     com.pulumi.gcp.serviceaccount.IAMMember(name,
@@ -79,7 +79,7 @@ object serviceaccount:
    * 
    * &gt; **Note:** `gcp.serviceaccount.IAMBinding` resources **can be** used in conjunction with `gcp.serviceaccount.IAMMember` resources **only if** they do not grant privilege to the same role.
    */
-  def IAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.serviceaccount.IAMPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.serviceaccount.IAMPolicyArgs.builder
     com.pulumi.gcp.serviceaccount.IAMPolicy(name,
@@ -96,7 +96,7 @@ object serviceaccount:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/iam/docs/creating-managing-service-account-keys)
    */
-  def Key(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Key(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.serviceaccount.KeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.serviceaccount.KeyArgs.builder
     com.pulumi.gcp.serviceaccount.Key(name,

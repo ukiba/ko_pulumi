@@ -13,7 +13,7 @@ object workflows:
    * * How-to Guides
    *     * [Managing Workflows](https://cloud.google.com/workflows/docs/creating-updating-workflow)
    */
-  def Workflow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Workflow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.workflows.WorkflowArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.workflows.WorkflowArgs.builder
     conf.logicalName2physicalName(name) match

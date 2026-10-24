@@ -8,7 +8,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.BackupEncryptionConfigArgs.Builder]):
+    inline def encryptionConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.BackupEncryptionConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.BackupArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.BackupEncryptionConfigArgs.builder
       builder.encryptionConfig(args(argsBuilder).build)
@@ -19,7 +19,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def automatedBackupPolicy(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyArgs.Builder]):
+    inline def automatedBackupPolicy(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyArgs.Builder]):
         com.pulumi.gcp.alloydb.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyArgs.builder
       builder.automatedBackupPolicy(args(argsBuilder).build)
@@ -30,7 +30,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def continuousBackupConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterContinuousBackupConfigArgs.Builder]):
+    inline def continuousBackupConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterContinuousBackupConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterContinuousBackupConfigArgs.builder
       builder.continuousBackupConfig(args(argsBuilder).build)
@@ -40,7 +40,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataplexConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterDataplexConfigArgs.Builder]):
+    inline def dataplexConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterDataplexConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterDataplexConfigArgs.builder
       builder.dataplexConfig(args(argsBuilder).build)
@@ -50,7 +50,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterEncryptionConfigArgs.Builder]):
+    inline def encryptionConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterEncryptionConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterEncryptionConfigArgs.builder
       builder.encryptionConfig(args(argsBuilder).build)
@@ -60,7 +60,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def initialUser(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterInitialUserArgs.Builder]):
+    inline def initialUser(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterInitialUserArgs.Builder]):
         com.pulumi.gcp.alloydb.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterInitialUserArgs.builder
       builder.initialUser(args(argsBuilder).build)
@@ -70,7 +70,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenanceUpdatePolicy(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterMaintenanceUpdatePolicyArgs.Builder]):
+    inline def maintenanceUpdatePolicy(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterMaintenanceUpdatePolicyArgs.Builder]):
         com.pulumi.gcp.alloydb.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterMaintenanceUpdatePolicyArgs.builder
       builder.maintenanceUpdatePolicy(args(argsBuilder).build)
@@ -80,7 +80,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterNetworkConfigArgs.Builder]):
+    inline def networkConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterNetworkConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)
@@ -90,7 +90,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterPscConfigArgs.Builder]):
+    inline def pscConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterPscConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterPscConfigArgs.builder
       builder.pscConfig(args(argsBuilder).build)
@@ -100,7 +100,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def restoreBackupSource(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterRestoreBackupSourceArgs.Builder]):
+    inline def restoreBackupSource(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterRestoreBackupSourceArgs.Builder]):
         com.pulumi.gcp.alloydb.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterRestoreBackupSourceArgs.builder
       builder.restoreBackupSource(args(argsBuilder).build)
@@ -110,7 +110,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def restoreBackupdrBackupSource(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterRestoreBackupdrBackupSourceArgs.Builder]):
+    inline def restoreBackupdrBackupSource(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterRestoreBackupdrBackupSourceArgs.Builder]):
         com.pulumi.gcp.alloydb.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterRestoreBackupdrBackupSourceArgs.builder
       builder.restoreBackupdrBackupSource(args(argsBuilder).build)
@@ -120,7 +120,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def restoreBackupdrPitrSource(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterRestoreBackupdrPitrSourceArgs.Builder]):
+    inline def restoreBackupdrPitrSource(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterRestoreBackupdrPitrSourceArgs.Builder]):
         com.pulumi.gcp.alloydb.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterRestoreBackupdrPitrSourceArgs.builder
       builder.restoreBackupdrPitrSource(args(argsBuilder).build)
@@ -130,7 +130,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def restoreContinuousBackupSource(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterRestoreContinuousBackupSourceArgs.Builder]):
+    inline def restoreContinuousBackupSource(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterRestoreContinuousBackupSourceArgs.Builder]):
         com.pulumi.gcp.alloydb.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterRestoreContinuousBackupSourceArgs.builder
       builder.restoreContinuousBackupSource(args(argsBuilder).build)
@@ -140,7 +140,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secondaryConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterSecondaryConfigArgs.Builder]):
+    inline def secondaryConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterSecondaryConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterSecondaryConfigArgs.builder
       builder.secondaryConfig(args(argsBuilder).build)
@@ -151,7 +151,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clientConnectionConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceClientConnectionConfigArgs.Builder]):
+    inline def clientConnectionConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceClientConnectionConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.InstanceClientConnectionConfigArgs.builder
       builder.clientConnectionConfig(args(argsBuilder).build)
@@ -161,7 +161,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectionPoolConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceConnectionPoolConfigArgs.Builder]):
+    inline def connectionPoolConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceConnectionPoolConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.InstanceConnectionPoolConfigArgs.builder
       builder.connectionPoolConfig(args(argsBuilder).build)
@@ -171,7 +171,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def machineConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceMachineConfigArgs.Builder]):
+    inline def machineConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceMachineConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.InstanceMachineConfigArgs.builder
       builder.machineConfig(args(argsBuilder).build)
@@ -181,7 +181,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceNetworkConfigArgs.Builder]):
+    inline def networkConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceNetworkConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.InstanceNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)
@@ -192,7 +192,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def observabilityConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceObservabilityConfigArgs.Builder]):
+    inline def observabilityConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceObservabilityConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.InstanceObservabilityConfigArgs.builder
       builder.observabilityConfig(args(argsBuilder).build)
@@ -202,7 +202,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscInstanceConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstancePscInstanceConfigArgs.Builder]):
+    inline def pscInstanceConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstancePscInstanceConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.InstancePscInstanceConfigArgs.builder
       builder.pscInstanceConfig(args(argsBuilder).build)
@@ -212,7 +212,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def queryInsightsConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceQueryInsightsConfigArgs.Builder]):
+    inline def queryInsightsConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceQueryInsightsConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.InstanceQueryInsightsConfigArgs.builder
       builder.queryInsightsConfig(args(argsBuilder).build)
@@ -222,7 +222,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def readPoolConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceReadPoolConfigArgs.Builder]):
+    inline def readPoolConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceReadPoolConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.InstanceReadPoolConfigArgs.builder
       builder.readPoolConfig(args(argsBuilder).build)
@@ -233,7 +233,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.BackupEncryptionConfigArgs.Builder]):
+    inline def encryptionConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.BackupEncryptionConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.BackupState.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.BackupEncryptionConfigArgs.builder
       builder.encryptionConfig(args(argsBuilder).build)
@@ -243,7 +243,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionInfos(args: Endofunction[com.pulumi.gcp.alloydb.inputs.BackupEncryptionInfoArgs.Builder]*):
+    inline def encryptionInfos(args: Endofunction[com.pulumi.gcp.alloydb.inputs.BackupEncryptionInfoArgs.Builder]*):
         com.pulumi.gcp.alloydb.inputs.BackupState.Builder =
       def argsBuilder = com.pulumi.gcp.alloydb.inputs.BackupEncryptionInfoArgs.builder
       builder.encryptionInfos(args.map(_(argsBuilder).build)*)
@@ -254,7 +254,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def expiryQuantities(args: Endofunction[com.pulumi.gcp.alloydb.inputs.BackupExpiryQuantityArgs.Builder]*):
+    inline def expiryQuantities(args: Endofunction[com.pulumi.gcp.alloydb.inputs.BackupExpiryQuantityArgs.Builder]*):
         com.pulumi.gcp.alloydb.inputs.BackupState.Builder =
       def argsBuilder = com.pulumi.gcp.alloydb.inputs.BackupExpiryQuantityArgs.builder
       builder.expiryQuantities(args.map(_(argsBuilder).build)*)
@@ -265,7 +265,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyEncryptionConfigArgs.Builder]):
+    inline def encryptionConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyEncryptionConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyEncryptionConfigArgs.builder
       builder.encryptionConfig(args(argsBuilder).build)
@@ -275,7 +275,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def quantityBasedRetention(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyQuantityBasedRetentionArgs.Builder]):
+    inline def quantityBasedRetention(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyQuantityBasedRetentionArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyQuantityBasedRetentionArgs.builder
       builder.quantityBasedRetention(args(argsBuilder).build)
@@ -285,7 +285,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeBasedRetention(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyTimeBasedRetentionArgs.Builder]):
+    inline def timeBasedRetention(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyTimeBasedRetentionArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyTimeBasedRetentionArgs.builder
       builder.timeBasedRetention(args(argsBuilder).build)
@@ -295,7 +295,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def weeklySchedule(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyWeeklyScheduleArgs.Builder]):
+    inline def weeklySchedule(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyWeeklyScheduleArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyWeeklyScheduleArgs.builder
       builder.weeklySchedule(args(argsBuilder).build)
@@ -306,7 +306,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def startTimes(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyWeeklyScheduleStartTimeArgs.Builder]*):
+    inline def startTimes(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyWeeklyScheduleStartTimeArgs.Builder]*):
         com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyWeeklyScheduleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyWeeklyScheduleStartTimeArgs.builder
       builder.startTimes(args.map(_(argsBuilder).build)*)
@@ -317,7 +317,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterContinuousBackupConfigEncryptionConfigArgs.Builder]):
+    inline def encryptionConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterContinuousBackupConfigEncryptionConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.ClusterContinuousBackupConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterContinuousBackupConfigEncryptionConfigArgs.builder
       builder.encryptionConfig(args(argsBuilder).build)
@@ -329,7 +329,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionInfos(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterContinuousBackupInfoEncryptionInfoArgs.Builder]*):
+    inline def encryptionInfos(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterContinuousBackupInfoEncryptionInfoArgs.Builder]*):
         com.pulumi.gcp.alloydb.inputs.ClusterContinuousBackupInfoArgs.Builder =
       def argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterContinuousBackupInfoEncryptionInfoArgs.builder
       builder.encryptionInfos(args.map(_(argsBuilder).build)*)
@@ -340,7 +340,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenanceWindows(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterMaintenanceUpdatePolicyMaintenanceWindowArgs.Builder]*):
+    inline def maintenanceWindows(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterMaintenanceUpdatePolicyMaintenanceWindowArgs.Builder]*):
         com.pulumi.gcp.alloydb.inputs.ClusterMaintenanceUpdatePolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterMaintenanceUpdatePolicyMaintenanceWindowArgs.builder
       builder.maintenanceWindows(args.map(_(argsBuilder).build)*)
@@ -351,7 +351,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def startTime(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterMaintenanceUpdatePolicyMaintenanceWindowStartTimeArgs.Builder]):
+    inline def startTime(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterMaintenanceUpdatePolicyMaintenanceWindowStartTimeArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.ClusterMaintenanceUpdatePolicyMaintenanceWindowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterMaintenanceUpdatePolicyMaintenanceWindowStartTimeArgs.builder
       builder.startTime(args(argsBuilder).build)
@@ -362,7 +362,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def automatedBackupPolicy(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyArgs.Builder]):
+    inline def automatedBackupPolicy(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterAutomatedBackupPolicyArgs.builder
       builder.automatedBackupPolicy(args(argsBuilder).build)
@@ -372,7 +372,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def backupSources(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterBackupSourceArgs.Builder]*):
+    inline def backupSources(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterBackupSourceArgs.Builder]*):
         com.pulumi.gcp.alloydb.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterBackupSourceArgs.builder
       builder.backupSources(args.map(_(argsBuilder).build)*)
@@ -382,7 +382,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def backupdrBackupSources(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterBackupdrBackupSourceArgs.Builder]*):
+    inline def backupdrBackupSources(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterBackupdrBackupSourceArgs.Builder]*):
         com.pulumi.gcp.alloydb.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterBackupdrBackupSourceArgs.builder
       builder.backupdrBackupSources(args.map(_(argsBuilder).build)*)
@@ -393,7 +393,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def continuousBackupConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterContinuousBackupConfigArgs.Builder]):
+    inline def continuousBackupConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterContinuousBackupConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterContinuousBackupConfigArgs.builder
       builder.continuousBackupConfig(args(argsBuilder).build)
@@ -403,7 +403,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def continuousBackupInfos(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterContinuousBackupInfoArgs.Builder]*):
+    inline def continuousBackupInfos(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterContinuousBackupInfoArgs.Builder]*):
         com.pulumi.gcp.alloydb.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterContinuousBackupInfoArgs.builder
       builder.continuousBackupInfos(args.map(_(argsBuilder).build)*)
@@ -413,7 +413,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataplexConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterDataplexConfigArgs.Builder]):
+    inline def dataplexConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterDataplexConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterDataplexConfigArgs.builder
       builder.dataplexConfig(args(argsBuilder).build)
@@ -423,7 +423,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterEncryptionConfigArgs.Builder]):
+    inline def encryptionConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterEncryptionConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterEncryptionConfigArgs.builder
       builder.encryptionConfig(args(argsBuilder).build)
@@ -434,7 +434,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionInfos(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterEncryptionInfoArgs.Builder]*):
+    inline def encryptionInfos(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterEncryptionInfoArgs.Builder]*):
         com.pulumi.gcp.alloydb.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterEncryptionInfoArgs.builder
       builder.encryptionInfos(args.map(_(argsBuilder).build)*)
@@ -444,7 +444,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def initialUser(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterInitialUserArgs.Builder]):
+    inline def initialUser(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterInitialUserArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterInitialUserArgs.builder
       builder.initialUser(args(argsBuilder).build)
@@ -454,7 +454,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenanceUpdatePolicy(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterMaintenanceUpdatePolicyArgs.Builder]):
+    inline def maintenanceUpdatePolicy(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterMaintenanceUpdatePolicyArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterMaintenanceUpdatePolicyArgs.builder
       builder.maintenanceUpdatePolicy(args(argsBuilder).build)
@@ -464,7 +464,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def migrationSources(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterMigrationSourceArgs.Builder]*):
+    inline def migrationSources(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterMigrationSourceArgs.Builder]*):
         com.pulumi.gcp.alloydb.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterMigrationSourceArgs.builder
       builder.migrationSources(args.map(_(argsBuilder).build)*)
@@ -474,7 +474,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterNetworkConfigArgs.Builder]):
+    inline def networkConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterNetworkConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)
@@ -484,7 +484,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterPscConfigArgs.Builder]):
+    inline def pscConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterPscConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterPscConfigArgs.builder
       builder.pscConfig(args(argsBuilder).build)
@@ -494,7 +494,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def restoreBackupSource(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterRestoreBackupSourceArgs.Builder]):
+    inline def restoreBackupSource(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterRestoreBackupSourceArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterRestoreBackupSourceArgs.builder
       builder.restoreBackupSource(args(argsBuilder).build)
@@ -504,7 +504,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def restoreBackupdrBackupSource(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterRestoreBackupdrBackupSourceArgs.Builder]):
+    inline def restoreBackupdrBackupSource(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterRestoreBackupdrBackupSourceArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterRestoreBackupdrBackupSourceArgs.builder
       builder.restoreBackupdrBackupSource(args(argsBuilder).build)
@@ -514,7 +514,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def restoreBackupdrPitrSource(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterRestoreBackupdrPitrSourceArgs.Builder]):
+    inline def restoreBackupdrPitrSource(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterRestoreBackupdrPitrSourceArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterRestoreBackupdrPitrSourceArgs.builder
       builder.restoreBackupdrPitrSource(args(argsBuilder).build)
@@ -524,7 +524,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def restoreContinuousBackupSource(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterRestoreContinuousBackupSourceArgs.Builder]):
+    inline def restoreContinuousBackupSource(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterRestoreContinuousBackupSourceArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterRestoreContinuousBackupSourceArgs.builder
       builder.restoreContinuousBackupSource(args(argsBuilder).build)
@@ -534,7 +534,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secondaryConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterSecondaryConfigArgs.Builder]):
+    inline def secondaryConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterSecondaryConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterSecondaryConfigArgs.builder
       builder.secondaryConfig(args(argsBuilder).build)
@@ -544,7 +544,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trialMetadatas(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterTrialMetadataArgs.Builder]*):
+    inline def trialMetadatas(args: Endofunction[com.pulumi.gcp.alloydb.inputs.ClusterTrialMetadataArgs.Builder]*):
         com.pulumi.gcp.alloydb.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.alloydb.inputs.ClusterTrialMetadataArgs.builder
       builder.trialMetadatas(args.map(_(argsBuilder).build)*)
@@ -555,7 +555,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sslConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceClientConnectionConfigSslConfigArgs.Builder]):
+    inline def sslConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceClientConnectionConfigSslConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.InstanceClientConnectionConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.InstanceClientConnectionConfigSslConfigArgs.builder
       builder.sslConfig(args(argsBuilder).build)
@@ -568,7 +568,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authorizedExternalNetworks(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceNetworkConfigAuthorizedExternalNetworkArgs.Builder]*):
+    inline def authorizedExternalNetworks(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceNetworkConfigAuthorizedExternalNetworkArgs.Builder]*):
         com.pulumi.gcp.alloydb.inputs.InstanceNetworkConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.alloydb.inputs.InstanceNetworkConfigAuthorizedExternalNetworkArgs.builder
       builder.authorizedExternalNetworks(args.map(_(argsBuilder).build)*)
@@ -579,7 +579,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscAutoConnections(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstancePscInstanceConfigPscAutoConnectionArgs.Builder]*):
+    inline def pscAutoConnections(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstancePscInstanceConfigPscAutoConnectionArgs.Builder]*):
         com.pulumi.gcp.alloydb.inputs.InstancePscInstanceConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.alloydb.inputs.InstancePscInstanceConfigPscAutoConnectionArgs.builder
       builder.pscAutoConnections(args.map(_(argsBuilder).build)*)
@@ -590,7 +590,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscInterfaceConfigs(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstancePscInstanceConfigPscInterfaceConfigArgs.Builder]*):
+    inline def pscInterfaceConfigs(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstancePscInstanceConfigPscInterfaceConfigArgs.Builder]*):
         com.pulumi.gcp.alloydb.inputs.InstancePscInstanceConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.alloydb.inputs.InstancePscInstanceConfigPscInterfaceConfigArgs.builder
       builder.pscInterfaceConfigs(args.map(_(argsBuilder).build)*)
@@ -601,7 +601,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clientConnectionConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceClientConnectionConfigArgs.Builder]):
+    inline def clientConnectionConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceClientConnectionConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.InstanceClientConnectionConfigArgs.builder
       builder.clientConnectionConfig(args(argsBuilder).build)
@@ -611,7 +611,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectionPoolConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceConnectionPoolConfigArgs.Builder]):
+    inline def connectionPoolConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceConnectionPoolConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.InstanceConnectionPoolConfigArgs.builder
       builder.connectionPoolConfig(args(argsBuilder).build)
@@ -621,7 +621,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def machineConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceMachineConfigArgs.Builder]):
+    inline def machineConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceMachineConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.InstanceMachineConfigArgs.builder
       builder.machineConfig(args(argsBuilder).build)
@@ -631,7 +631,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceNetworkConfigArgs.Builder]):
+    inline def networkConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceNetworkConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.InstanceNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)
@@ -642,7 +642,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def observabilityConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceObservabilityConfigArgs.Builder]):
+    inline def observabilityConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceObservabilityConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.InstanceObservabilityConfigArgs.builder
       builder.observabilityConfig(args(argsBuilder).build)
@@ -652,7 +652,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscInstanceConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstancePscInstanceConfigArgs.Builder]):
+    inline def pscInstanceConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstancePscInstanceConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.InstancePscInstanceConfigArgs.builder
       builder.pscInstanceConfig(args(argsBuilder).build)
@@ -662,7 +662,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def queryInsightsConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceQueryInsightsConfigArgs.Builder]):
+    inline def queryInsightsConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceQueryInsightsConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.InstanceQueryInsightsConfigArgs.builder
       builder.queryInsightsConfig(args(argsBuilder).build)
@@ -672,7 +672,7 @@ object alloydb_ext:
      * Structure is documented below.
      * @return builder
      */
-    def readPoolConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceReadPoolConfigArgs.Builder]):
+    inline def readPoolConfig(args: Endofunction[com.pulumi.gcp.alloydb.inputs.InstanceReadPoolConfigArgs.Builder]):
         com.pulumi.gcp.alloydb.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.InstanceReadPoolConfigArgs.builder
       builder.readPoolConfig(args(argsBuilder).build)

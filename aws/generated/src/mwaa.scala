@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object mwaa:
   /** Creates a MWAA Environment resource. */
-  def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.mwaa.EnvironmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.mwaa.EnvironmentArgs.builder
     conf.logicalName2physicalName(name) match

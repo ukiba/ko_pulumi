@@ -11,7 +11,7 @@ object redis:
    * 
    * &gt; **Note:** Redis version 4 is being retired and no longer supports creating new instances. Version 4 will be removed in a future release. [Redis Version 4 Retirement](https://learn.microsoft.com/azure/azure-cache-for-redis/cache-retired-features#important-upgrade-timelines)
    */
-  def Cache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.redis.CacheArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.redis.CacheArgs.builder
     conf.logicalName2physicalName(name) match
@@ -29,7 +29,7 @@ object redis:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Redis Cache Access Policy */
-  def CacheAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CacheAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.redis.CacheAccessPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.redis.CacheAccessPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -40,7 +40,7 @@ object redis:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Redis Cache Access Policy Assignment */
-  def CacheAccessPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CacheAccessPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.redis.CacheAccessPolicyAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.redis.CacheAccessPolicyAssignmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -55,7 +55,7 @@ object redis:
    * 
    * &gt; **Note:** This resource has been deprecated in favor of azurerm_managed_redis.
    */
-  def EnterpriseCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EnterpriseCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.redis.EnterpriseClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.redis.EnterpriseClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -77,7 +77,7 @@ object redis:
    * 
    * &gt; **Note:** This resource has been deprecated in favor of azurerm_managed_redis.
    */
-  def EnterpriseDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EnterpriseDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.redis.EnterpriseDatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.redis.EnterpriseDatabaseArgs.builder
     conf.logicalName2physicalName(name) match
@@ -88,7 +88,7 @@ object redis:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Firewall Rule associated with a Redis Cache. */
-  def FirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.redis.FirewallRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.redis.FirewallRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -99,7 +99,7 @@ object redis:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Redis Linked Server (ie Geo Location) */
-  def LinkedServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LinkedServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.redis.LinkedServerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.redis.LinkedServerArgs.builder
     com.pulumi.azure.redis.LinkedServer(name,

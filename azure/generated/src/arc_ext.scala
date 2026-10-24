@@ -7,7 +7,7 @@ object arc_ext:
      * @param identity An `identity` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.arc.inputs.ResourceBridgeApplianceIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.arc.inputs.ResourceBridgeApplianceIdentityArgs.Builder]):
         com.pulumi.azure.arc.ResourceBridgeApplianceArgs.Builder =
       val argsBuilder = com.pulumi.azure.arc.inputs.ResourceBridgeApplianceIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object arc_ext:
      * @param identity An `identity` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.arc.inputs.ResourceBridgeApplianceIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.arc.inputs.ResourceBridgeApplianceIdentityArgs.Builder]):
         com.pulumi.azure.arc.inputs.ResourceBridgeApplianceState.Builder =
       val argsBuilder = com.pulumi.azure.arc.inputs.ResourceBridgeApplianceIdentityArgs.builder
       builder.identity(args(argsBuilder).build)

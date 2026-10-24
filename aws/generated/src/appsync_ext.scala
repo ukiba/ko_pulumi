@@ -7,7 +7,7 @@ object appsync_ext:
      * @param eventConfig Configuration for the Event API. See `eventConfig` Block below.
      * @return builder
      */
-    def eventConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigArgs.Builder]):
+    inline def eventConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigArgs.Builder]):
         com.pulumi.aws.appsync.ApiArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.ApiEventConfigArgs.builder
       builder.eventConfig(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object appsync_ext:
      * @param handlerConfigs Configuration for the `onPublish` and `onSubscribe` handlers. See `handlerConfigs` below.
      * @return builder
      */
-    def handlerConfigs(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsArgs.Builder]):
+    inline def handlerConfigs(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsArgs.Builder]):
         com.pulumi.aws.appsync.ChannelNamespaceArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsArgs.builder
       builder.handlerConfigs(args(argsBuilder).build)
@@ -26,7 +26,7 @@ object appsync_ext:
      * @param publishAuthModes Authorization modes to use for publishing messages on the channel namespace. This configuration overrides the default API authorization configuration. See `publishAuthMode` below.
      * @return builder
      */
-    def publishAuthModes(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespacePublishAuthModeArgs.Builder]*):
+    inline def publishAuthModes(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespacePublishAuthModeArgs.Builder]*):
         com.pulumi.aws.appsync.ChannelNamespaceArgs.Builder =
       def argsBuilder = com.pulumi.aws.appsync.inputs.ChannelNamespacePublishAuthModeArgs.builder
       builder.publishAuthModes(args.map(_(argsBuilder).build)*)
@@ -35,7 +35,7 @@ object appsync_ext:
      * @param subscribeAuthModes Authorization modes to use for subscribing to messages on the channel namespace. This configuration overrides the default API authorization configuration. See `subscribeAuthMode` below.
      * @return builder
      */
-    def subscribeAuthModes(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceSubscribeAuthModeArgs.Builder]*):
+    inline def subscribeAuthModes(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceSubscribeAuthModeArgs.Builder]*):
         com.pulumi.aws.appsync.ChannelNamespaceArgs.Builder =
       def argsBuilder = com.pulumi.aws.appsync.inputs.ChannelNamespaceSubscribeAuthModeArgs.builder
       builder.subscribeAuthModes(args.map(_(argsBuilder).build)*)
@@ -45,7 +45,7 @@ object appsync_ext:
      * @param dynamodbConfig DynamoDB settings. See `dynamodbConfig` Block for details.
      * @return builder
      */
-    def dynamodbConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceDynamodbConfigArgs.Builder]):
+    inline def dynamodbConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceDynamodbConfigArgs.Builder]):
         com.pulumi.aws.appsync.DataSourceArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.DataSourceDynamodbConfigArgs.builder
       builder.dynamodbConfig(args(argsBuilder).build)
@@ -54,7 +54,7 @@ object appsync_ext:
      * @param elasticsearchConfig Amazon Elasticsearch settings. See `elasticsearchConfig` Block for details.
      * @return builder
      */
-    def elasticsearchConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceElasticsearchConfigArgs.Builder]):
+    inline def elasticsearchConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceElasticsearchConfigArgs.Builder]):
         com.pulumi.aws.appsync.DataSourceArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.DataSourceElasticsearchConfigArgs.builder
       builder.elasticsearchConfig(args(argsBuilder).build)
@@ -63,7 +63,7 @@ object appsync_ext:
      * @param eventBridgeConfig AWS EventBridge settings. See `eventBridgeConfig` Block for details.
      * @return builder
      */
-    def eventBridgeConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceEventBridgeConfigArgs.Builder]):
+    inline def eventBridgeConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceEventBridgeConfigArgs.Builder]):
         com.pulumi.aws.appsync.DataSourceArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.DataSourceEventBridgeConfigArgs.builder
       builder.eventBridgeConfig(args(argsBuilder).build)
@@ -72,7 +72,7 @@ object appsync_ext:
      * @param httpConfig HTTP settings. See `httpConfig` Block for details.
      * @return builder
      */
-    def httpConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceHttpConfigArgs.Builder]):
+    inline def httpConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceHttpConfigArgs.Builder]):
         com.pulumi.aws.appsync.DataSourceArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.DataSourceHttpConfigArgs.builder
       builder.httpConfig(args(argsBuilder).build)
@@ -81,7 +81,7 @@ object appsync_ext:
      * @param lambdaConfig AWS Lambda settings. See `lambdaConfig` Block for details.
      * @return builder
      */
-    def lambdaConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceLambdaConfigArgs.Builder]):
+    inline def lambdaConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceLambdaConfigArgs.Builder]):
         com.pulumi.aws.appsync.DataSourceArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.DataSourceLambdaConfigArgs.builder
       builder.lambdaConfig(args(argsBuilder).build)
@@ -90,7 +90,7 @@ object appsync_ext:
      * @param opensearchserviceConfig Amazon OpenSearch Service settings. See `opensearchserviceConfig` Block for details.
      * @return builder
      */
-    def opensearchserviceConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceOpensearchserviceConfigArgs.Builder]):
+    inline def opensearchserviceConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceOpensearchserviceConfigArgs.Builder]):
         com.pulumi.aws.appsync.DataSourceArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.DataSourceOpensearchserviceConfigArgs.builder
       builder.opensearchserviceConfig(args(argsBuilder).build)
@@ -99,7 +99,7 @@ object appsync_ext:
      * @param relationalDatabaseConfig AWS RDS settings. See `relationalDatabaseConfig` Block for details.
      * @return builder
      */
-    def relationalDatabaseConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceRelationalDatabaseConfigArgs.Builder]):
+    inline def relationalDatabaseConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceRelationalDatabaseConfigArgs.Builder]):
         com.pulumi.aws.appsync.DataSourceArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.DataSourceRelationalDatabaseConfigArgs.builder
       builder.relationalDatabaseConfig(args(argsBuilder).build)
@@ -109,7 +109,7 @@ object appsync_ext:
      * @param runtime Runtime used by an AWS AppSync pipeline resolver or AWS AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified. See `runtime` Block for details.
      * @return builder
      */
-    def runtime(args: Endofunction[com.pulumi.aws.appsync.inputs.FunctionRuntimeArgs.Builder]):
+    inline def runtime(args: Endofunction[com.pulumi.aws.appsync.inputs.FunctionRuntimeArgs.Builder]):
         com.pulumi.aws.appsync.FunctionArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.FunctionRuntimeArgs.builder
       builder.runtime(args(argsBuilder).build)
@@ -118,7 +118,7 @@ object appsync_ext:
      * @param syncConfig Sync configuration for a resolver. See `syncConfig` Block for details.
      * @return builder
      */
-    def syncConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.FunctionSyncConfigArgs.Builder]):
+    inline def syncConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.FunctionSyncConfigArgs.Builder]):
         com.pulumi.aws.appsync.FunctionArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.FunctionSyncConfigArgs.builder
       builder.syncConfig(args(argsBuilder).build)
@@ -128,7 +128,7 @@ object appsync_ext:
      * @param additionalAuthenticationProviders One or more additional authentication providers for the GraphQL API. See `additionalAuthenticationProvider` Block for details.
      * @return builder
      */
-    def additionalAuthenticationProviders(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiAdditionalAuthenticationProviderArgs.Builder]*):
+    inline def additionalAuthenticationProviders(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiAdditionalAuthenticationProviderArgs.Builder]*):
         com.pulumi.aws.appsync.GraphQLApiArgs.Builder =
       def argsBuilder = com.pulumi.aws.appsync.inputs.GraphQLApiAdditionalAuthenticationProviderArgs.builder
       builder.additionalAuthenticationProviders(args.map(_(argsBuilder).build)*)
@@ -137,7 +137,7 @@ object appsync_ext:
      * @param enhancedMetricsConfig Enables and controls the enhanced metrics feature. See `enhancedMetricsConfig` Block for details.
      * @return builder
      */
-    def enhancedMetricsConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiEnhancedMetricsConfigArgs.Builder]):
+    inline def enhancedMetricsConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiEnhancedMetricsConfigArgs.Builder]):
         com.pulumi.aws.appsync.GraphQLApiArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.GraphQLApiEnhancedMetricsConfigArgs.builder
       builder.enhancedMetricsConfig(args(argsBuilder).build)
@@ -146,7 +146,7 @@ object appsync_ext:
      * @param lambdaAuthorizerConfig Nested argument containing Lambda authorizer configuration. See `lambdaAuthorizerConfig` Block for details.
      * @return builder
      */
-    def lambdaAuthorizerConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiLambdaAuthorizerConfigArgs.Builder]):
+    inline def lambdaAuthorizerConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiLambdaAuthorizerConfigArgs.Builder]):
         com.pulumi.aws.appsync.GraphQLApiArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.GraphQLApiLambdaAuthorizerConfigArgs.builder
       builder.lambdaAuthorizerConfig(args(argsBuilder).build)
@@ -155,7 +155,7 @@ object appsync_ext:
      * @param logConfig Nested argument containing logging configuration. See `logConfig` Block for details.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiLogConfigArgs.Builder]):
         com.pulumi.aws.appsync.GraphQLApiArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.GraphQLApiLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -164,7 +164,7 @@ object appsync_ext:
      * @param openidConnectConfig Nested argument containing OpenID Connect configuration. See `openidConnectConfig` Block for details.
      * @return builder
      */
-    def openidConnectConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiOpenidConnectConfigArgs.Builder]):
+    inline def openidConnectConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiOpenidConnectConfigArgs.Builder]):
         com.pulumi.aws.appsync.GraphQLApiArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.GraphQLApiOpenidConnectConfigArgs.builder
       builder.openidConnectConfig(args(argsBuilder).build)
@@ -173,7 +173,7 @@ object appsync_ext:
      * @param userPoolConfig Amazon Cognito User Pool configuration. See `userPoolConfig` Block for details.
      * @return builder
      */
-    def userPoolConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiUserPoolConfigArgs.Builder]):
+    inline def userPoolConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiUserPoolConfigArgs.Builder]):
         com.pulumi.aws.appsync.GraphQLApiArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.GraphQLApiUserPoolConfigArgs.builder
       builder.userPoolConfig(args(argsBuilder).build)
@@ -183,7 +183,7 @@ object appsync_ext:
      * @param cachingConfig Caching Config. See Caching Config.
      * @return builder
      */
-    def cachingConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverCachingConfigArgs.Builder]):
+    inline def cachingConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverCachingConfigArgs.Builder]):
         com.pulumi.aws.appsync.ResolverArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.ResolverCachingConfigArgs.builder
       builder.cachingConfig(args(argsBuilder).build)
@@ -192,7 +192,7 @@ object appsync_ext:
      * @param pipelineConfig Caching configuration for the resolver. See Pipeline Config.
      * @return builder
      */
-    def pipelineConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverPipelineConfigArgs.Builder]):
+    inline def pipelineConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverPipelineConfigArgs.Builder]):
         com.pulumi.aws.appsync.ResolverArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.ResolverPipelineConfigArgs.builder
       builder.pipelineConfig(args(argsBuilder).build)
@@ -201,7 +201,7 @@ object appsync_ext:
      * @param runtime Runtime used by an AWS AppSync pipeline resolver or AWS AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified. See Runtime.
      * @return builder
      */
-    def runtime(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverRuntimeArgs.Builder]):
+    inline def runtime(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverRuntimeArgs.Builder]):
         com.pulumi.aws.appsync.ResolverArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.ResolverRuntimeArgs.builder
       builder.runtime(args(argsBuilder).build)
@@ -210,7 +210,7 @@ object appsync_ext:
      * @param syncConfig Sync configuration for a resolver. See Sync Config.
      * @return builder
      */
-    def syncConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverSyncConfigArgs.Builder]):
+    inline def syncConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverSyncConfigArgs.Builder]):
         com.pulumi.aws.appsync.ResolverArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.ResolverSyncConfigArgs.builder
       builder.syncConfig(args(argsBuilder).build)
@@ -220,12 +220,12 @@ object appsync_ext:
      * @param sourceApiAssociationConfigs Source API Association configuration. See `sourceApiAssociationConfig` Block for details.
      * @return builder
      */
-    def sourceApiAssociationConfigs(args: Endofunction[com.pulumi.aws.appsync.inputs.SourceApiAssociationSourceApiAssociationConfigArgs.Builder]*):
+    inline def sourceApiAssociationConfigs(args: Endofunction[com.pulumi.aws.appsync.inputs.SourceApiAssociationSourceApiAssociationConfigArgs.Builder]*):
         com.pulumi.aws.appsync.SourceApiAssociationArgs.Builder =
       def argsBuilder = com.pulumi.aws.appsync.inputs.SourceApiAssociationSourceApiAssociationConfigArgs.builder
       builder.sourceApiAssociationConfigs(args.map(_(argsBuilder).build)*)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.appsync.inputs.SourceApiAssociationTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.appsync.inputs.SourceApiAssociationTimeoutsArgs.Builder]):
         com.pulumi.aws.appsync.SourceApiAssociationArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.SourceApiAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -235,7 +235,7 @@ object appsync_ext:
      * @param authProviders List of authentication providers. See `event_config.auth_provider` Block below.
      * @return builder
      */
-    def authProviders(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigAuthProviderArgs.Builder]*):
+    inline def authProviders(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigAuthProviderArgs.Builder]*):
         com.pulumi.aws.appsync.inputs.ApiEventConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.appsync.inputs.ApiEventConfigAuthProviderArgs.builder
       builder.authProviders(args.map(_(argsBuilder).build)*)
@@ -244,7 +244,7 @@ object appsync_ext:
      * @param connectionAuthModes List of authentication modes for connections. See `event_config.connection_auth_mode` Block below.
      * @return builder
      */
-    def connectionAuthModes(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigConnectionAuthModeArgs.Builder]*):
+    inline def connectionAuthModes(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigConnectionAuthModeArgs.Builder]*):
         com.pulumi.aws.appsync.inputs.ApiEventConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.appsync.inputs.ApiEventConfigConnectionAuthModeArgs.builder
       builder.connectionAuthModes(args.map(_(argsBuilder).build)*)
@@ -253,7 +253,7 @@ object appsync_ext:
      * @param defaultPublishAuthModes List of default authentication modes for publishing. See `event_config.default_publish_auth_mode` Block below.
      * @return builder
      */
-    def defaultPublishAuthModes(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigDefaultPublishAuthModeArgs.Builder]*):
+    inline def defaultPublishAuthModes(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigDefaultPublishAuthModeArgs.Builder]*):
         com.pulumi.aws.appsync.inputs.ApiEventConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.appsync.inputs.ApiEventConfigDefaultPublishAuthModeArgs.builder
       builder.defaultPublishAuthModes(args.map(_(argsBuilder).build)*)
@@ -262,7 +262,7 @@ object appsync_ext:
      * @param defaultSubscribeAuthModes List of default authentication modes for subscribing. See `event_config.default_subscribe_auth_mode` Block below.
      * @return builder
      */
-    def defaultSubscribeAuthModes(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigDefaultSubscribeAuthModeArgs.Builder]*):
+    inline def defaultSubscribeAuthModes(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigDefaultSubscribeAuthModeArgs.Builder]*):
         com.pulumi.aws.appsync.inputs.ApiEventConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.appsync.inputs.ApiEventConfigDefaultSubscribeAuthModeArgs.builder
       builder.defaultSubscribeAuthModes(args.map(_(argsBuilder).build)*)
@@ -271,7 +271,7 @@ object appsync_ext:
      * @param logConfig Logging configuration. See `logConfig` Block below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigLogConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.ApiEventConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.ApiEventConfigLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -281,7 +281,7 @@ object appsync_ext:
      * @param cognitoConfig Configuration for Cognito user pool authentication. Required when `authType` is `AMAZON_COGNITO_USER_POOLS`. See `cognitoConfig` Block below.
      * @return builder
      */
-    def cognitoConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigAuthProviderCognitoConfigArgs.Builder]):
+    inline def cognitoConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigAuthProviderCognitoConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.ApiEventConfigAuthProviderArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.ApiEventConfigAuthProviderCognitoConfigArgs.builder
       builder.cognitoConfig(args(argsBuilder).build)
@@ -290,7 +290,7 @@ object appsync_ext:
      * @param lambdaAuthorizerConfig Configuration for Lambda authorization. Required when `authType` is `AWS_LAMBDA`. See `lambdaAuthorizerConfig` Block below.
      * @return builder
      */
-    def lambdaAuthorizerConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigAuthProviderLambdaAuthorizerConfigArgs.Builder]):
+    inline def lambdaAuthorizerConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigAuthProviderLambdaAuthorizerConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.ApiEventConfigAuthProviderArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.ApiEventConfigAuthProviderLambdaAuthorizerConfigArgs.builder
       builder.lambdaAuthorizerConfig(args(argsBuilder).build)
@@ -299,7 +299,7 @@ object appsync_ext:
      * @param openidConnectConfig Configuration for OpenID Connect. Required when `authType` is `OPENID_CONNECT`. See `openidConnectConfig` Block below.
      * @return builder
      */
-    def openidConnectConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigAuthProviderOpenidConnectConfigArgs.Builder]):
+    inline def openidConnectConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigAuthProviderOpenidConnectConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.ApiEventConfigAuthProviderArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.ApiEventConfigAuthProviderOpenidConnectConfigArgs.builder
       builder.openidConnectConfig(args(argsBuilder).build)
@@ -309,7 +309,7 @@ object appsync_ext:
      * @param eventConfig Configuration for the Event API. See `eventConfig` Block below.
      * @return builder
      */
-    def eventConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigArgs.Builder]):
+    inline def eventConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ApiEventConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.ApiState.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.ApiEventConfigArgs.builder
       builder.eventConfig(args(argsBuilder).build)
@@ -319,7 +319,7 @@ object appsync_ext:
      * @param onPublish Handler configuration for published events. See `onPublish` below.
      * @return builder
      */
-    def onPublish(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnPublishArgs.Builder]):
+    inline def onPublish(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnPublishArgs.Builder]):
         com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnPublishArgs.builder
       builder.onPublish(args(argsBuilder).build)
@@ -328,7 +328,7 @@ object appsync_ext:
      * @param onSubscribe Handler configuration for subscribe requests. See `onSubscribe` below.
      * @return builder
      */
-    def onSubscribe(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnSubscribeArgs.Builder]):
+    inline def onSubscribe(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnSubscribeArgs.Builder]):
         com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnSubscribeArgs.builder
       builder.onSubscribe(args(argsBuilder).build)
@@ -338,7 +338,7 @@ object appsync_ext:
      * @param integration Integration data source configuration for the handler. See `integration` below.
      * @return builder
      */
-    def integration(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnPublishIntegrationArgs.Builder]):
+    inline def integration(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnPublishIntegrationArgs.Builder]):
         com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnPublishArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnPublishIntegrationArgs.builder
       builder.integration(args(argsBuilder).build)
@@ -348,7 +348,7 @@ object appsync_ext:
      * @param lambdaConfig Configuration for a Lambda data source. See `lambdaConfig` below.
      * @return builder
      */
-    def lambdaConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnPublishIntegrationLambdaConfigArgs.Builder]):
+    inline def lambdaConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnPublishIntegrationLambdaConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnPublishIntegrationArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnPublishIntegrationLambdaConfigArgs.builder
       builder.lambdaConfig(args(argsBuilder).build)
@@ -358,7 +358,7 @@ object appsync_ext:
      * @param integration Integration data source configuration for the handler. See `integration` below.
      * @return builder
      */
-    def integration(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnSubscribeIntegrationArgs.Builder]):
+    inline def integration(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnSubscribeIntegrationArgs.Builder]):
         com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnSubscribeArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnSubscribeIntegrationArgs.builder
       builder.integration(args(argsBuilder).build)
@@ -368,7 +368,7 @@ object appsync_ext:
      * @param lambdaConfig Configuration for a Lambda data source. See `lambdaConfig` below.
      * @return builder
      */
-    def lambdaConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnSubscribeIntegrationLambdaConfigArgs.Builder]):
+    inline def lambdaConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnSubscribeIntegrationLambdaConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnSubscribeIntegrationArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsOnSubscribeIntegrationLambdaConfigArgs.builder
       builder.lambdaConfig(args(argsBuilder).build)
@@ -378,7 +378,7 @@ object appsync_ext:
      * @param handlerConfigs Configuration for the `onPublish` and `onSubscribe` handlers. See `handlerConfigs` below.
      * @return builder
      */
-    def handlerConfigs(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsArgs.Builder]):
+    inline def handlerConfigs(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsArgs.Builder]):
         com.pulumi.aws.appsync.inputs.ChannelNamespaceState.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.ChannelNamespaceHandlerConfigsArgs.builder
       builder.handlerConfigs(args(argsBuilder).build)
@@ -387,7 +387,7 @@ object appsync_ext:
      * @param publishAuthModes Authorization modes to use for publishing messages on the channel namespace. This configuration overrides the default API authorization configuration. See `publishAuthMode` below.
      * @return builder
      */
-    def publishAuthModes(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespacePublishAuthModeArgs.Builder]*):
+    inline def publishAuthModes(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespacePublishAuthModeArgs.Builder]*):
         com.pulumi.aws.appsync.inputs.ChannelNamespaceState.Builder =
       def argsBuilder = com.pulumi.aws.appsync.inputs.ChannelNamespacePublishAuthModeArgs.builder
       builder.publishAuthModes(args.map(_(argsBuilder).build)*)
@@ -396,7 +396,7 @@ object appsync_ext:
      * @param subscribeAuthModes Authorization modes to use for subscribing to messages on the channel namespace. This configuration overrides the default API authorization configuration. See `subscribeAuthMode` below.
      * @return builder
      */
-    def subscribeAuthModes(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceSubscribeAuthModeArgs.Builder]*):
+    inline def subscribeAuthModes(args: Endofunction[com.pulumi.aws.appsync.inputs.ChannelNamespaceSubscribeAuthModeArgs.Builder]*):
         com.pulumi.aws.appsync.inputs.ChannelNamespaceState.Builder =
       def argsBuilder = com.pulumi.aws.appsync.inputs.ChannelNamespaceSubscribeAuthModeArgs.builder
       builder.subscribeAuthModes(args.map(_(argsBuilder).build)*)
@@ -406,7 +406,7 @@ object appsync_ext:
      * @param deltaSyncConfig DeltaSyncConfig for a versioned data source. See `deltaSyncConfig` Block for details.
      * @return builder
      */
-    def deltaSyncConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceDynamodbConfigDeltaSyncConfigArgs.Builder]):
+    inline def deltaSyncConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceDynamodbConfigDeltaSyncConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.DataSourceDynamodbConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.DataSourceDynamodbConfigDeltaSyncConfigArgs.builder
       builder.deltaSyncConfig(args(argsBuilder).build)
@@ -416,7 +416,7 @@ object appsync_ext:
      * @param authorizationConfig Authorization configuration in case the HTTP endpoint requires authorization. See `authorizationConfig` Block for details.
      * @return builder
      */
-    def authorizationConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceHttpConfigAuthorizationConfigArgs.Builder]):
+    inline def authorizationConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceHttpConfigAuthorizationConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.DataSourceHttpConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.DataSourceHttpConfigAuthorizationConfigArgs.builder
       builder.authorizationConfig(args(argsBuilder).build)
@@ -426,7 +426,7 @@ object appsync_ext:
      * @param awsIamConfig Identity and Access Management (IAM) settings. See `awsIamConfig` Block for details.
      * @return builder
      */
-    def awsIamConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceHttpConfigAuthorizationConfigAwsIamConfigArgs.Builder]):
+    inline def awsIamConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceHttpConfigAuthorizationConfigAwsIamConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.DataSourceHttpConfigAuthorizationConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.DataSourceHttpConfigAuthorizationConfigAwsIamConfigArgs.builder
       builder.awsIamConfig(args(argsBuilder).build)
@@ -436,7 +436,7 @@ object appsync_ext:
      * @param httpEndpointConfig Amazon RDS HTTP endpoint configuration. See `httpEndpointConfig` Block for details.
      * @return builder
      */
-    def httpEndpointConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceRelationalDatabaseConfigHttpEndpointConfigArgs.Builder]):
+    inline def httpEndpointConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceRelationalDatabaseConfigHttpEndpointConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.DataSourceRelationalDatabaseConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.DataSourceRelationalDatabaseConfigHttpEndpointConfigArgs.builder
       builder.httpEndpointConfig(args(argsBuilder).build)
@@ -446,7 +446,7 @@ object appsync_ext:
      * @param dynamodbConfig DynamoDB settings. See `dynamodbConfig` Block for details.
      * @return builder
      */
-    def dynamodbConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceDynamodbConfigArgs.Builder]):
+    inline def dynamodbConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceDynamodbConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.DataSourceState.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.DataSourceDynamodbConfigArgs.builder
       builder.dynamodbConfig(args(argsBuilder).build)
@@ -455,7 +455,7 @@ object appsync_ext:
      * @param elasticsearchConfig Amazon Elasticsearch settings. See `elasticsearchConfig` Block for details.
      * @return builder
      */
-    def elasticsearchConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceElasticsearchConfigArgs.Builder]):
+    inline def elasticsearchConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceElasticsearchConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.DataSourceState.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.DataSourceElasticsearchConfigArgs.builder
       builder.elasticsearchConfig(args(argsBuilder).build)
@@ -464,7 +464,7 @@ object appsync_ext:
      * @param eventBridgeConfig AWS EventBridge settings. See `eventBridgeConfig` Block for details.
      * @return builder
      */
-    def eventBridgeConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceEventBridgeConfigArgs.Builder]):
+    inline def eventBridgeConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceEventBridgeConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.DataSourceState.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.DataSourceEventBridgeConfigArgs.builder
       builder.eventBridgeConfig(args(argsBuilder).build)
@@ -473,7 +473,7 @@ object appsync_ext:
      * @param httpConfig HTTP settings. See `httpConfig` Block for details.
      * @return builder
      */
-    def httpConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceHttpConfigArgs.Builder]):
+    inline def httpConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceHttpConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.DataSourceState.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.DataSourceHttpConfigArgs.builder
       builder.httpConfig(args(argsBuilder).build)
@@ -482,7 +482,7 @@ object appsync_ext:
      * @param lambdaConfig AWS Lambda settings. See `lambdaConfig` Block for details.
      * @return builder
      */
-    def lambdaConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceLambdaConfigArgs.Builder]):
+    inline def lambdaConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceLambdaConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.DataSourceState.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.DataSourceLambdaConfigArgs.builder
       builder.lambdaConfig(args(argsBuilder).build)
@@ -491,7 +491,7 @@ object appsync_ext:
      * @param opensearchserviceConfig Amazon OpenSearch Service settings. See `opensearchserviceConfig` Block for details.
      * @return builder
      */
-    def opensearchserviceConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceOpensearchserviceConfigArgs.Builder]):
+    inline def opensearchserviceConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceOpensearchserviceConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.DataSourceState.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.DataSourceOpensearchserviceConfigArgs.builder
       builder.opensearchserviceConfig(args(argsBuilder).build)
@@ -500,7 +500,7 @@ object appsync_ext:
      * @param relationalDatabaseConfig AWS RDS settings. See `relationalDatabaseConfig` Block for details.
      * @return builder
      */
-    def relationalDatabaseConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceRelationalDatabaseConfigArgs.Builder]):
+    inline def relationalDatabaseConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.DataSourceRelationalDatabaseConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.DataSourceState.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.DataSourceRelationalDatabaseConfigArgs.builder
       builder.relationalDatabaseConfig(args(argsBuilder).build)
@@ -510,7 +510,7 @@ object appsync_ext:
      * @param runtime Runtime used by an AWS AppSync pipeline resolver or AWS AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified. See `runtime` Block for details.
      * @return builder
      */
-    def runtime(args: Endofunction[com.pulumi.aws.appsync.inputs.FunctionRuntimeArgs.Builder]):
+    inline def runtime(args: Endofunction[com.pulumi.aws.appsync.inputs.FunctionRuntimeArgs.Builder]):
         com.pulumi.aws.appsync.inputs.FunctionState.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.FunctionRuntimeArgs.builder
       builder.runtime(args(argsBuilder).build)
@@ -519,7 +519,7 @@ object appsync_ext:
      * @param syncConfig Sync configuration for a resolver. See `syncConfig` Block for details.
      * @return builder
      */
-    def syncConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.FunctionSyncConfigArgs.Builder]):
+    inline def syncConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.FunctionSyncConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.FunctionState.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.FunctionSyncConfigArgs.builder
       builder.syncConfig(args(argsBuilder).build)
@@ -529,7 +529,7 @@ object appsync_ext:
      * @param lambdaConflictHandlerConfig Lambda Conflict Handler Config when configuring `LAMBDA` as the Conflict Handler. See `lambdaConflictHandlerConfig` Block for details.
      * @return builder
      */
-    def lambdaConflictHandlerConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.FunctionSyncConfigLambdaConflictHandlerConfigArgs.Builder]):
+    inline def lambdaConflictHandlerConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.FunctionSyncConfigLambdaConflictHandlerConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.FunctionSyncConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.FunctionSyncConfigLambdaConflictHandlerConfigArgs.builder
       builder.lambdaConflictHandlerConfig(args(argsBuilder).build)
@@ -539,7 +539,7 @@ object appsync_ext:
      * @param lambdaAuthorizerConfig Nested argument containing Lambda authorizer configuration. See `lambdaAuthorizerConfig` Block for details.
      * @return builder
      */
-    def lambdaAuthorizerConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiAdditionalAuthenticationProviderLambdaAuthorizerConfigArgs.Builder]):
+    inline def lambdaAuthorizerConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiAdditionalAuthenticationProviderLambdaAuthorizerConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.GraphQLApiAdditionalAuthenticationProviderArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.GraphQLApiAdditionalAuthenticationProviderLambdaAuthorizerConfigArgs.builder
       builder.lambdaAuthorizerConfig(args(argsBuilder).build)
@@ -548,7 +548,7 @@ object appsync_ext:
      * @param openidConnectConfig Nested argument containing OpenID Connect configuration. See `openidConnectConfig` Block for details.
      * @return builder
      */
-    def openidConnectConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiAdditionalAuthenticationProviderOpenidConnectConfigArgs.Builder]):
+    inline def openidConnectConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiAdditionalAuthenticationProviderOpenidConnectConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.GraphQLApiAdditionalAuthenticationProviderArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.GraphQLApiAdditionalAuthenticationProviderOpenidConnectConfigArgs.builder
       builder.openidConnectConfig(args(argsBuilder).build)
@@ -557,7 +557,7 @@ object appsync_ext:
      * @param userPoolConfig Amazon Cognito User Pool configuration. See `additional_authentication_provider.user_pool_config` Block for details.
      * @return builder
      */
-    def userPoolConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiAdditionalAuthenticationProviderUserPoolConfigArgs.Builder]):
+    inline def userPoolConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiAdditionalAuthenticationProviderUserPoolConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.GraphQLApiAdditionalAuthenticationProviderArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.GraphQLApiAdditionalAuthenticationProviderUserPoolConfigArgs.builder
       builder.userPoolConfig(args(argsBuilder).build)
@@ -567,7 +567,7 @@ object appsync_ext:
      * @param additionalAuthenticationProviders One or more additional authentication providers for the GraphQL API. See `additionalAuthenticationProvider` Block for details.
      * @return builder
      */
-    def additionalAuthenticationProviders(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiAdditionalAuthenticationProviderArgs.Builder]*):
+    inline def additionalAuthenticationProviders(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiAdditionalAuthenticationProviderArgs.Builder]*):
         com.pulumi.aws.appsync.inputs.GraphQLApiState.Builder =
       def argsBuilder = com.pulumi.aws.appsync.inputs.GraphQLApiAdditionalAuthenticationProviderArgs.builder
       builder.additionalAuthenticationProviders(args.map(_(argsBuilder).build)*)
@@ -576,7 +576,7 @@ object appsync_ext:
      * @param enhancedMetricsConfig Enables and controls the enhanced metrics feature. See `enhancedMetricsConfig` Block for details.
      * @return builder
      */
-    def enhancedMetricsConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiEnhancedMetricsConfigArgs.Builder]):
+    inline def enhancedMetricsConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiEnhancedMetricsConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.GraphQLApiState.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.GraphQLApiEnhancedMetricsConfigArgs.builder
       builder.enhancedMetricsConfig(args(argsBuilder).build)
@@ -585,7 +585,7 @@ object appsync_ext:
      * @param lambdaAuthorizerConfig Nested argument containing Lambda authorizer configuration. See `lambdaAuthorizerConfig` Block for details.
      * @return builder
      */
-    def lambdaAuthorizerConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiLambdaAuthorizerConfigArgs.Builder]):
+    inline def lambdaAuthorizerConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiLambdaAuthorizerConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.GraphQLApiState.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.GraphQLApiLambdaAuthorizerConfigArgs.builder
       builder.lambdaAuthorizerConfig(args(argsBuilder).build)
@@ -594,7 +594,7 @@ object appsync_ext:
      * @param logConfig Nested argument containing logging configuration. See `logConfig` Block for details.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiLogConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.GraphQLApiState.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.GraphQLApiLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -603,7 +603,7 @@ object appsync_ext:
      * @param openidConnectConfig Nested argument containing OpenID Connect configuration. See `openidConnectConfig` Block for details.
      * @return builder
      */
-    def openidConnectConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiOpenidConnectConfigArgs.Builder]):
+    inline def openidConnectConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiOpenidConnectConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.GraphQLApiState.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.GraphQLApiOpenidConnectConfigArgs.builder
       builder.openidConnectConfig(args(argsBuilder).build)
@@ -612,7 +612,7 @@ object appsync_ext:
      * @param userPoolConfig Amazon Cognito User Pool configuration. See `userPoolConfig` Block for details.
      * @return builder
      */
-    def userPoolConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiUserPoolConfigArgs.Builder]):
+    inline def userPoolConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.GraphQLApiUserPoolConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.GraphQLApiState.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.GraphQLApiUserPoolConfigArgs.builder
       builder.userPoolConfig(args(argsBuilder).build)
@@ -622,7 +622,7 @@ object appsync_ext:
      * @param cachingConfig Caching Config. See Caching Config.
      * @return builder
      */
-    def cachingConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverCachingConfigArgs.Builder]):
+    inline def cachingConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverCachingConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.ResolverState.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.ResolverCachingConfigArgs.builder
       builder.cachingConfig(args(argsBuilder).build)
@@ -631,7 +631,7 @@ object appsync_ext:
      * @param pipelineConfig Caching configuration for the resolver. See Pipeline Config.
      * @return builder
      */
-    def pipelineConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverPipelineConfigArgs.Builder]):
+    inline def pipelineConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverPipelineConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.ResolverState.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.ResolverPipelineConfigArgs.builder
       builder.pipelineConfig(args(argsBuilder).build)
@@ -640,7 +640,7 @@ object appsync_ext:
      * @param runtime Runtime used by an AWS AppSync pipeline resolver or AWS AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified. See Runtime.
      * @return builder
      */
-    def runtime(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverRuntimeArgs.Builder]):
+    inline def runtime(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverRuntimeArgs.Builder]):
         com.pulumi.aws.appsync.inputs.ResolverState.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.ResolverRuntimeArgs.builder
       builder.runtime(args(argsBuilder).build)
@@ -649,7 +649,7 @@ object appsync_ext:
      * @param syncConfig Sync configuration for a resolver. See Sync Config.
      * @return builder
      */
-    def syncConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverSyncConfigArgs.Builder]):
+    inline def syncConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverSyncConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.ResolverState.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.ResolverSyncConfigArgs.builder
       builder.syncConfig(args(argsBuilder).build)
@@ -659,7 +659,7 @@ object appsync_ext:
      * @param lambdaConflictHandlerConfig Lambda Conflict Handler Config when configuring `LAMBDA` as the Conflict Handler. See Lambda Conflict Handler Config.
      * @return builder
      */
-    def lambdaConflictHandlerConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverSyncConfigLambdaConflictHandlerConfigArgs.Builder]):
+    inline def lambdaConflictHandlerConfig(args: Endofunction[com.pulumi.aws.appsync.inputs.ResolverSyncConfigLambdaConflictHandlerConfigArgs.Builder]):
         com.pulumi.aws.appsync.inputs.ResolverSyncConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.ResolverSyncConfigLambdaConflictHandlerConfigArgs.builder
       builder.lambdaConflictHandlerConfig(args(argsBuilder).build)
@@ -669,12 +669,12 @@ object appsync_ext:
      * @param sourceApiAssociationConfigs Source API Association configuration. See `sourceApiAssociationConfig` Block for details.
      * @return builder
      */
-    def sourceApiAssociationConfigs(args: Endofunction[com.pulumi.aws.appsync.inputs.SourceApiAssociationSourceApiAssociationConfigArgs.Builder]*):
+    inline def sourceApiAssociationConfigs(args: Endofunction[com.pulumi.aws.appsync.inputs.SourceApiAssociationSourceApiAssociationConfigArgs.Builder]*):
         com.pulumi.aws.appsync.inputs.SourceApiAssociationState.Builder =
       def argsBuilder = com.pulumi.aws.appsync.inputs.SourceApiAssociationSourceApiAssociationConfigArgs.builder
       builder.sourceApiAssociationConfigs(args.map(_(argsBuilder).build)*)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.appsync.inputs.SourceApiAssociationTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.appsync.inputs.SourceApiAssociationTimeoutsArgs.Builder]):
         com.pulumi.aws.appsync.inputs.SourceApiAssociationState.Builder =
       val argsBuilder = com.pulumi.aws.appsync.inputs.SourceApiAssociationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)

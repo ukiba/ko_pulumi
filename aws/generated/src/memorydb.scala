@@ -11,7 +11,7 @@ object memorydb:
    * 
    * More information about users and ACL-s can be found in the [MemoryDB User Guide](https://docs.aws.amazon.com/memorydb/latest/devguide/clusters.acls.html).
    */
-  def Acl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Acl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.memorydb.AclArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.memorydb.AclArgs.builder
     conf.logicalName2physicalName(name) match
@@ -33,7 +33,7 @@ object memorydb:
    * 
    * More information about MemoryDB can be found in the [Developer Guide](https://docs.aws.amazon.com/memorydb/latest/devguide/what-is-memorydb-for-redis.html).
    */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.memorydb.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.memorydb.ClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -152,7 +152,7 @@ object memorydb:
    * 
    * More information about MemoryDB can be found in the [Developer Guide](https://docs.aws.amazon.com/memorydb/latest/devguide/what-is-memorydb-for-redis.html).
    */
-  def MultiRegionCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MultiRegionCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.memorydb.MultiRegionClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.memorydb.MultiRegionClusterArgs.builder
     argsBuilder = args(argsBuilder)
@@ -171,7 +171,7 @@ object memorydb:
    * 
    * More information about parameter groups can be found in the [MemoryDB User Guide](https://docs.aws.amazon.com/memorydb/latest/devguide/parametergroups.html).
    */
-  def ParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.memorydb.ParameterGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.memorydb.ParameterGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -193,7 +193,7 @@ object memorydb:
    * 
    * More information about snapshot and restore can be found in the [MemoryDB User Guide](https://docs.aws.amazon.com/memorydb/latest/devguide/snapshots.html).
    */
-  def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.memorydb.SnapshotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.memorydb.SnapshotArgs.builder
     conf.logicalName2physicalName(name) match
@@ -215,7 +215,7 @@ object memorydb:
    * 
    * More information about subnet groups can be found in the [MemoryDB User Guide](https://docs.aws.amazon.com/memorydb/latest/devguide/subnetgroups.html).
    */
-  def SubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.memorydb.SubnetGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.memorydb.SubnetGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -239,7 +239,7 @@ object memorydb:
    * 
    * &gt; **Note:** All arguments including the username and passwords will be stored in the raw state as plain-text.
    */
-  def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.memorydb.UserArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.memorydb.UserArgs.builder
     argsBuilder = args(argsBuilder)

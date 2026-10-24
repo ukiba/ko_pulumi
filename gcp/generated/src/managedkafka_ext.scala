@@ -8,7 +8,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def aclEntries(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.AclAclEntryArgs.Builder]*):
+    inline def aclEntries(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.AclAclEntryArgs.Builder]*):
         com.pulumi.gcp.managedkafka.AclArgs.Builder =
       def argsBuilder = com.pulumi.gcp.managedkafka.inputs.AclAclEntryArgs.builder
       builder.aclEntries(args.map(_(argsBuilder).build)*)
@@ -19,7 +19,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def brokerCapacityConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterBrokerCapacityConfigArgs.Builder]):
+    inline def brokerCapacityConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterBrokerCapacityConfigArgs.Builder]):
         com.pulumi.gcp.managedkafka.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.managedkafka.inputs.ClusterBrokerCapacityConfigArgs.builder
       builder.brokerCapacityConfig(args(argsBuilder).build)
@@ -29,7 +29,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def capacityConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterCapacityConfigArgs.Builder]):
+    inline def capacityConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterCapacityConfigArgs.Builder]):
         com.pulumi.gcp.managedkafka.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.managedkafka.inputs.ClusterCapacityConfigArgs.builder
       builder.capacityConfig(args(argsBuilder).build)
@@ -39,7 +39,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gcpConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterGcpConfigArgs.Builder]):
+    inline def gcpConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterGcpConfigArgs.Builder]):
         com.pulumi.gcp.managedkafka.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.managedkafka.inputs.ClusterGcpConfigArgs.builder
       builder.gcpConfig(args(argsBuilder).build)
@@ -49,7 +49,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rebalanceConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterRebalanceConfigArgs.Builder]):
+    inline def rebalanceConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterRebalanceConfigArgs.Builder]):
         com.pulumi.gcp.managedkafka.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.managedkafka.inputs.ClusterRebalanceConfigArgs.builder
       builder.rebalanceConfig(args(argsBuilder).build)
@@ -59,7 +59,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tlsConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterTlsConfigArgs.Builder]):
+    inline def tlsConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterTlsConfigArgs.Builder]):
         com.pulumi.gcp.managedkafka.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.managedkafka.inputs.ClusterTlsConfigArgs.builder
       builder.tlsConfig(args(argsBuilder).build)
@@ -70,7 +70,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def capacityConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ConnectClusterCapacityConfigArgs.Builder]):
+    inline def capacityConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ConnectClusterCapacityConfigArgs.Builder]):
         com.pulumi.gcp.managedkafka.ConnectClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.managedkafka.inputs.ConnectClusterCapacityConfigArgs.builder
       builder.capacityConfig(args(argsBuilder).build)
@@ -80,7 +80,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gcpConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ConnectClusterGcpConfigArgs.Builder]):
+    inline def gcpConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ConnectClusterGcpConfigArgs.Builder]):
         com.pulumi.gcp.managedkafka.ConnectClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.managedkafka.inputs.ConnectClusterGcpConfigArgs.builder
       builder.gcpConfig(args(argsBuilder).build)
@@ -91,7 +91,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def taskRestartPolicy(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ConnectorTaskRestartPolicyArgs.Builder]):
+    inline def taskRestartPolicy(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ConnectorTaskRestartPolicyArgs.Builder]):
         com.pulumi.gcp.managedkafka.ConnectorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.managedkafka.inputs.ConnectorTaskRestartPolicyArgs.builder
       builder.taskRestartPolicy(args(argsBuilder).build)
@@ -102,7 +102,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def aclEntries(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.AclAclEntryArgs.Builder]*):
+    inline def aclEntries(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.AclAclEntryArgs.Builder]*):
         com.pulumi.gcp.managedkafka.inputs.AclState.Builder =
       def argsBuilder = com.pulumi.gcp.managedkafka.inputs.AclAclEntryArgs.builder
       builder.aclEntries(args.map(_(argsBuilder).build)*)
@@ -113,7 +113,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfigs(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterGcpConfigAccessConfigNetworkConfigArgs.Builder]*):
+    inline def networkConfigs(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterGcpConfigAccessConfigNetworkConfigArgs.Builder]*):
         com.pulumi.gcp.managedkafka.inputs.ClusterGcpConfigAccessConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.managedkafka.inputs.ClusterGcpConfigAccessConfigNetworkConfigArgs.builder
       builder.networkConfigs(args.map(_(argsBuilder).build)*)
@@ -123,7 +123,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def publicClusterConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterGcpConfigAccessConfigPublicClusterConfigArgs.Builder]):
+    inline def publicClusterConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterGcpConfigAccessConfigPublicClusterConfigArgs.Builder]):
         com.pulumi.gcp.managedkafka.inputs.ClusterGcpConfigAccessConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.managedkafka.inputs.ClusterGcpConfigAccessConfigPublicClusterConfigArgs.builder
       builder.publicClusterConfig(args(argsBuilder).build)
@@ -134,7 +134,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accessConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterGcpConfigAccessConfigArgs.Builder]):
+    inline def accessConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterGcpConfigAccessConfigArgs.Builder]):
         com.pulumi.gcp.managedkafka.inputs.ClusterGcpConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.managedkafka.inputs.ClusterGcpConfigAccessConfigArgs.builder
       builder.accessConfig(args(argsBuilder).build)
@@ -145,7 +145,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def brokerCapacityConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterBrokerCapacityConfigArgs.Builder]):
+    inline def brokerCapacityConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterBrokerCapacityConfigArgs.Builder]):
         com.pulumi.gcp.managedkafka.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.managedkafka.inputs.ClusterBrokerCapacityConfigArgs.builder
       builder.brokerCapacityConfig(args(argsBuilder).build)
@@ -155,7 +155,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def capacityConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterCapacityConfigArgs.Builder]):
+    inline def capacityConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterCapacityConfigArgs.Builder]):
         com.pulumi.gcp.managedkafka.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.managedkafka.inputs.ClusterCapacityConfigArgs.builder
       builder.capacityConfig(args(argsBuilder).build)
@@ -165,7 +165,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gcpConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterGcpConfigArgs.Builder]):
+    inline def gcpConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterGcpConfigArgs.Builder]):
         com.pulumi.gcp.managedkafka.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.managedkafka.inputs.ClusterGcpConfigArgs.builder
       builder.gcpConfig(args(argsBuilder).build)
@@ -175,7 +175,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def publicClusterDetails(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterPublicClusterDetailArgs.Builder]*):
+    inline def publicClusterDetails(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterPublicClusterDetailArgs.Builder]*):
         com.pulumi.gcp.managedkafka.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.managedkafka.inputs.ClusterPublicClusterDetailArgs.builder
       builder.publicClusterDetails(args.map(_(argsBuilder).build)*)
@@ -185,7 +185,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rebalanceConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterRebalanceConfigArgs.Builder]):
+    inline def rebalanceConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterRebalanceConfigArgs.Builder]):
         com.pulumi.gcp.managedkafka.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.managedkafka.inputs.ClusterRebalanceConfigArgs.builder
       builder.rebalanceConfig(args(argsBuilder).build)
@@ -195,7 +195,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tlsConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterTlsConfigArgs.Builder]):
+    inline def tlsConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterTlsConfigArgs.Builder]):
         com.pulumi.gcp.managedkafka.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.managedkafka.inputs.ClusterTlsConfigArgs.builder
       builder.tlsConfig(args(argsBuilder).build)
@@ -206,7 +206,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trustConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterTlsConfigTrustConfigArgs.Builder]):
+    inline def trustConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterTlsConfigTrustConfigArgs.Builder]):
         com.pulumi.gcp.managedkafka.inputs.ClusterTlsConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.managedkafka.inputs.ClusterTlsConfigTrustConfigArgs.builder
       builder.trustConfig(args(argsBuilder).build)
@@ -217,7 +217,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def casConfigs(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterTlsConfigTrustConfigCasConfigArgs.Builder]*):
+    inline def casConfigs(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ClusterTlsConfigTrustConfigCasConfigArgs.Builder]*):
         com.pulumi.gcp.managedkafka.inputs.ClusterTlsConfigTrustConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.managedkafka.inputs.ClusterTlsConfigTrustConfigCasConfigArgs.builder
       builder.casConfigs(args.map(_(argsBuilder).build)*)
@@ -228,7 +228,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfigs(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ConnectClusterGcpConfigAccessConfigNetworkConfigArgs.Builder]*):
+    inline def networkConfigs(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ConnectClusterGcpConfigAccessConfigNetworkConfigArgs.Builder]*):
         com.pulumi.gcp.managedkafka.inputs.ConnectClusterGcpConfigAccessConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.managedkafka.inputs.ConnectClusterGcpConfigAccessConfigNetworkConfigArgs.builder
       builder.networkConfigs(args.map(_(argsBuilder).build)*)
@@ -239,7 +239,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accessConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ConnectClusterGcpConfigAccessConfigArgs.Builder]):
+    inline def accessConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ConnectClusterGcpConfigAccessConfigArgs.Builder]):
         com.pulumi.gcp.managedkafka.inputs.ConnectClusterGcpConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.managedkafka.inputs.ConnectClusterGcpConfigAccessConfigArgs.builder
       builder.accessConfig(args(argsBuilder).build)
@@ -250,7 +250,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def capacityConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ConnectClusterCapacityConfigArgs.Builder]):
+    inline def capacityConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ConnectClusterCapacityConfigArgs.Builder]):
         com.pulumi.gcp.managedkafka.inputs.ConnectClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.managedkafka.inputs.ConnectClusterCapacityConfigArgs.builder
       builder.capacityConfig(args(argsBuilder).build)
@@ -260,7 +260,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gcpConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ConnectClusterGcpConfigArgs.Builder]):
+    inline def gcpConfig(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ConnectClusterGcpConfigArgs.Builder]):
         com.pulumi.gcp.managedkafka.inputs.ConnectClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.managedkafka.inputs.ConnectClusterGcpConfigArgs.builder
       builder.gcpConfig(args(argsBuilder).build)
@@ -271,7 +271,7 @@ object managedkafka_ext:
      * Structure is documented below.
      * @return builder
      */
-    def taskRestartPolicy(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ConnectorTaskRestartPolicyArgs.Builder]):
+    inline def taskRestartPolicy(args: Endofunction[com.pulumi.gcp.managedkafka.inputs.ConnectorTaskRestartPolicyArgs.Builder]):
         com.pulumi.gcp.managedkafka.inputs.ConnectorState.Builder =
       val argsBuilder = com.pulumi.gcp.managedkafka.inputs.ConnectorTaskRestartPolicyArgs.builder
       builder.taskRestartPolicy(args(argsBuilder).build)

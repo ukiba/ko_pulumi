@@ -16,7 +16,7 @@ object diagflow:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dialogflow/docs/)
    */
-  def Agent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Agent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.AgentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.AgentArgs.builder
     com.pulumi.gcp.diagflow.Agent(name,
@@ -32,7 +32,7 @@ object diagflow:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dialogflow/docs/)
    */
-  def ConversationProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConversationProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.ConversationProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.ConversationProfileArgs.builder
     com.pulumi.gcp.diagflow.ConversationProfile(name,
@@ -48,7 +48,7 @@ object diagflow:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dialogflow/cx/docs)
    */
-  def CxAgent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CxAgent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.CxAgentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.CxAgentArgs.builder
     com.pulumi.gcp.diagflow.CxAgent(name,
@@ -65,7 +65,7 @@ object diagflow:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dialogflow/cx/docs)
    */
-  def CxEntityType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CxEntityType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.CxEntityTypeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.CxEntityTypeArgs.builder
     com.pulumi.gcp.diagflow.CxEntityType(name,
@@ -83,7 +83,7 @@ object diagflow:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dialogflow/cx/docs)
    */
-  def CxEnvironment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CxEnvironment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.CxEnvironmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.CxEnvironmentArgs.builder
     com.pulumi.gcp.diagflow.CxEnvironment(name,
@@ -99,7 +99,7 @@ object diagflow:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dialogflow/cx/docs)
    */
-  def CxFlow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CxFlow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.CxFlowArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.CxFlowArgs.builder
     com.pulumi.gcp.diagflow.CxFlow(name,
@@ -115,7 +115,7 @@ object diagflow:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dialogflow/cx/docs)
    */
-  def CxGenerativeSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CxGenerativeSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.CxGenerativeSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.CxGenerativeSettingsArgs.builder
     com.pulumi.gcp.diagflow.CxGenerativeSettings(name,
@@ -131,7 +131,7 @@ object diagflow:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dialogflow/cx/docs)
    */
-  def CxGenerator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CxGenerator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.CxGeneratorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.CxGeneratorArgs.builder
     com.pulumi.gcp.diagflow.CxGenerator(name,
@@ -147,7 +147,7 @@ object diagflow:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dialogflow/cx/docs)
    */
-  def CxIntent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CxIntent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.CxIntentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.CxIntentArgs.builder
     com.pulumi.gcp.diagflow.CxIntent(name,
@@ -163,7 +163,7 @@ object diagflow:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dialogflow/cx/docs)
    */
-  def CxPage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CxPage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.CxPageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.CxPageArgs.builder
     com.pulumi.gcp.diagflow.CxPage(name,
@@ -179,7 +179,7 @@ object diagflow:
    * * How-to Guides
    *     * [Official CX Documentation](https://cloud.google.com/dialogflow/cx/docs)
    */
-  def CxPlaybook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CxPlaybook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.CxPlaybookArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.CxPlaybookArgs.builder
     com.pulumi.gcp.diagflow.CxPlaybook(name,
@@ -196,7 +196,7 @@ object diagflow:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dialogflow/cx/docs)
    */
-  def CxSecuritySettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CxSecuritySettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.CxSecuritySettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.CxSecuritySettingsArgs.builder
     com.pulumi.gcp.diagflow.CxSecuritySettings(name,
@@ -212,7 +212,7 @@ object diagflow:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dialogflow/cx/docs)
    */
-  def CxTestCase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CxTestCase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.CxTestCaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.CxTestCaseArgs.builder
     com.pulumi.gcp.diagflow.CxTestCase(name,
@@ -229,7 +229,7 @@ object diagflow:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dialogflow/cx/docs)
    */
-  def CxTool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CxTool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.CxToolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.CxToolArgs.builder
     com.pulumi.gcp.diagflow.CxTool(name,
@@ -245,7 +245,7 @@ object diagflow:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dialogflow/cx/docs)
    */
-  def CxToolVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CxToolVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.CxToolVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.CxToolVersionArgs.builder
     com.pulumi.gcp.diagflow.CxToolVersion(name,
@@ -262,7 +262,7 @@ object diagflow:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dialogflow/cx/docs)
    */
-  def CxVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CxVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.CxVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.CxVersionArgs.builder
     com.pulumi.gcp.diagflow.CxVersion(name,
@@ -278,7 +278,7 @@ object diagflow:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dialogflow/cx/docs)
    */
-  def CxWebhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CxWebhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.CxWebhookArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.CxWebhookArgs.builder
     com.pulumi.gcp.diagflow.CxWebhook(name,
@@ -295,7 +295,7 @@ object diagflow:
    *     * [Official CX Documentation](https://cloud.google.com/dialogflow/cx/docs)
    *     * [Official ES Documentation](https://cloud.google.com/dialogflow/es/docs)
    */
-  def EncryptionSpec(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EncryptionSpec(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.EncryptionSpecArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.EncryptionSpecArgs.builder
     com.pulumi.gcp.diagflow.EncryptionSpec(name,
@@ -311,7 +311,7 @@ object diagflow:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dialogflow/docs/)
    */
-  def EntityType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EntityType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.EntityTypeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.EntityTypeArgs.builder
     com.pulumi.gcp.diagflow.EntityType(name,
@@ -327,7 +327,7 @@ object diagflow:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dialogflow/docs/)
    */
-  def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.EnvironmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.EnvironmentArgs.builder
     com.pulumi.gcp.diagflow.Environment(name,
@@ -343,7 +343,7 @@ object diagflow:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dialogflow/es/docs/fulfillment-overview)
    */
-  def Fulfillment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Fulfillment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.FulfillmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.FulfillmentArgs.builder
     com.pulumi.gcp.diagflow.Fulfillment(name,
@@ -359,7 +359,7 @@ object diagflow:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/agent-assist/docs)
    */
-  def Generator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Generator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.GeneratorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.GeneratorArgs.builder
     com.pulumi.gcp.diagflow.Generator(name,
@@ -376,7 +376,7 @@ object diagflow:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dialogflow/docs/)
    */
-  def Intent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Intent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.IntentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.IntentArgs.builder
     com.pulumi.gcp.diagflow.Intent(name,
@@ -390,7 +390,7 @@ object diagflow:
    * 
    * * [API documentation](https://cloud.google.com/dialogflow/es/docs/reference/rest/v2/projects.locations.sipTrunks)
    */
-  def SipTrunk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SipTrunk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.SipTrunkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.SipTrunkArgs.builder
     com.pulumi.gcp.diagflow.SipTrunk(name,
@@ -406,7 +406,7 @@ object diagflow:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/agent-assist/docs)
    */
-  def Tool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Tool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.ToolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.ToolArgs.builder
     com.pulumi.gcp.diagflow.Tool(name,
@@ -422,7 +422,7 @@ object diagflow:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dialogflow/docs/)
    */
-  def Version(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Version(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.diagflow.VersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.diagflow.VersionArgs.builder
     com.pulumi.gcp.diagflow.Version(name,

@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object bedrock:
   /** Manages an AWS Agents for Amazon Bedrock Agent. */
-  def AgentAgent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentAgent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentAgentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentAgentArgs.builder
     argsBuilder = args(argsBuilder)
@@ -22,7 +22,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Agents for Amazon Bedrock Agent Action Group. */
-  def AgentAgentActionGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentAgentActionGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentAgentActionGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.bedrock.AgentAgentActionGroupArgs.builder
     com.pulumi.aws.bedrock.AgentAgentActionGroup(name,
@@ -30,7 +30,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Agents for Amazon Bedrock Agent Alias. */
-  def AgentAgentAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentAgentAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentAgentAliasArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentAgentAliasArgs.builder
     argsBuilder = args(argsBuilder)
@@ -45,7 +45,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Bedrock Agents Agent Collaborator. */
-  def AgentAgentCollaborator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentAgentCollaborator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentAgentCollaboratorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.bedrock.AgentAgentCollaboratorArgs.builder
     com.pulumi.aws.bedrock.AgentAgentCollaborator(name,
@@ -53,7 +53,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Agents for Amazon Bedrock Agent Knowledge Base Association. */
-  def AgentAgentKnowledgeBaseAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentAgentKnowledgeBaseAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentAgentKnowledgeBaseAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.bedrock.AgentAgentKnowledgeBaseAssociationArgs.builder
     com.pulumi.aws.bedrock.AgentAgentKnowledgeBaseAssociation(name,
@@ -61,7 +61,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Agents for Amazon Bedrock Data Source. */
-  def AgentDataSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentDataSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentDataSourceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentDataSourceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -72,7 +72,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Bedrock Agents Flow. */
-  def AgentFlow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentFlow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentFlowArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentFlowArgs.builder
     conf.logicalName2physicalName(name) match
@@ -90,7 +90,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Agents for Amazon Bedrock Knowledge Base. */
-  def AgentKnowledgeBase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentKnowledgeBase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentKnowledgeBaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentKnowledgeBaseArgs.builder
     conf.logicalName2physicalName(name) match
@@ -108,7 +108,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Bedrock Agents Prompt. */
-  def AgentPrompt(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentPrompt(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentPromptArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentPromptArgs.builder
     conf.logicalName2physicalName(name) match
@@ -126,7 +126,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Bedrock AgentCore Agent Runtime. Agent Runtime provides a containerized execution environment for AI agents. */
-  def AgentcoreAgentRuntime(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentcoreAgentRuntime(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreAgentRuntimeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreAgentRuntimeArgs.builder
     argsBuilder = args(argsBuilder)
@@ -141,7 +141,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Bedrock AgentCore Agent Runtime Endpoint. Agent Runtime Endpoints provide a network-accessible interface for interacting with agent runtimes, enabling external systems to communicate with and invoke agent capabilities. */
-  def AgentcoreAgentRuntimeEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentcoreAgentRuntimeEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreAgentRuntimeEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreAgentRuntimeEndpointArgs.builder
     conf.logicalName2physicalName(name) match
@@ -163,7 +163,7 @@ object bedrock:
    * 
    * &gt; **Note:** Write-Only argument `apiKeyWo` is available to use in place of `apiKey`. Write-Only arguments are supported in HashiCorp Terraform 1.11.0 and later. Learn more.
    */
-  def AgentcoreApiKeyCredentialProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentcoreApiKeyCredentialProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreApiKeyCredentialProviderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreApiKeyCredentialProviderArgs.builder
     conf.logicalName2physicalName(name) match
@@ -181,7 +181,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Bedrock AgentCore Browser. Browser provides AI agents with web browsing capabilities, allowing them to navigate websites, extract information, and interact with web content in a controlled environment. */
-  def AgentcoreBrowser(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentcoreBrowser(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreBrowserArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreBrowserArgs.builder
     conf.logicalName2physicalName(name) match
@@ -199,7 +199,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Bedrock AgentCore Browser Profile. Browser profiles define browser state that can be re-used across different browser sessions within AgentCore Browser. Browser state includes cookies and local storage. */
-  def AgentcoreBrowserProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentcoreBrowserProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreBrowserProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreBrowserProfileArgs.builder
     conf.logicalName2physicalName(name) match
@@ -217,7 +217,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Bedrock AgentCore Code Interpreter. Code Interpreter provides a secure environment for AI agents to execute Python code, enabling data analysis, calculations, and file processing capabilities. */
-  def AgentcoreCodeInterpreter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentcoreCodeInterpreter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreCodeInterpreterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreCodeInterpreterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -235,7 +235,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Bedrock AgentCore Evaluator. An evaluator scores how an agent performs. You can configure it in one of two ways: an LLM-as-a-Judge evaluator that uses a model to score agent behavior against your instructions and a rating scale, or a code-based evaluator that runs a Lambda function you provide. */
-  def AgentcoreEvaluator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentcoreEvaluator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreEvaluatorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreEvaluatorArgs.builder
     argsBuilder = args(argsBuilder)
@@ -250,7 +250,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Bedrock AgentCore Gateway. With Gateway, developers can convert APIs, Lambda functions, and existing services into Model Context Protocol (MCP)-compatible tools. */
-  def AgentcoreGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentcoreGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreGatewayArgs.builder
     conf.logicalName2physicalName(name) match
@@ -268,7 +268,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Bedrock AgentCore Gateway Rule. Rules define conditions and actions that control how requests are routed and processed through a gateway, including principal-based access control, path-based routing, weighted target routing, and configuration bundle overrides. Rules are evaluated in order of `priority` (lower numbers first). */
-  def AgentcoreGatewayRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentcoreGatewayRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreGatewayRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.bedrock.AgentcoreGatewayRuleArgs.builder
     com.pulumi.aws.bedrock.AgentcoreGatewayRule(name,
@@ -276,7 +276,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Bedrock AgentCore Gateway Target. Gateway targets define the endpoints and configurations that a gateway can invoke, such as Lambda functions, APIs, or AgentCore Runtime agents, allowing agents to interact with external services through the Model Context Protocol (MCP) or by routing HTTP traffic directly to a runtime. */
-  def AgentcoreGatewayTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentcoreGatewayTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreGatewayTargetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreGatewayTargetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -287,7 +287,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Bedrock AgentCore Harness. A Harness is a managed agent loop that wraps model configuration, tools, skills, memory, and compute environment into a single deployable unit. */
-  def AgentcoreHarness(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentcoreHarness(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreHarnessArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreHarnessArgs.builder
     argsBuilder = args(argsBuilder)
@@ -302,7 +302,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Bedrock AgentCore Memory. Memory provides persistent storage for AI agent interactions, allowing agents to retain context across conversations and sessions. */
-  def AgentcoreMemory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentcoreMemory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreMemoryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreMemoryArgs.builder
     conf.logicalName2physicalName(name) match
@@ -324,7 +324,7 @@ object bedrock:
    * 
    * &gt; **Note:** Each memory can have a maximum of 6 strategies. Only one strategy of each built-in type (`SEMANTIC`, `SUMMARIZATION`, `USER_PREFERENCE`, `EPISODIC`) can exist per memory. Multiple `CUSTOM` strategies are allowed, subject to the total limit of 6.
    */
-  def AgentcoreMemoryStrategy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentcoreMemoryStrategy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreMemoryStrategyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreMemoryStrategyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -339,7 +339,7 @@ object bedrock:
    * 
    * &gt; **Note:** Write-Only arguments `clientIdWo` and `clientSecretWo` are available to use in place of `clientId` and `clientSecret`. Write-Only arguments are supported in HashiCorp Terraform 1.11.0 and later. Learn more.
    */
-  def AgentcoreOauth2CredentialProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentcoreOauth2CredentialProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreOauth2CredentialProviderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreOauth2CredentialProviderArgs.builder
     conf.logicalName2physicalName(name) match
@@ -361,7 +361,7 @@ object bedrock:
    * 
    * &gt; **Note:** CloudWatch Transaction Search must be [enabled](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Enable-TransactionSearch.html) before using this resource.
    */
-  def AgentcoreOnlineEvaluationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentcoreOnlineEvaluationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreOnlineEvaluationConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreOnlineEvaluationConfigArgs.builder
     argsBuilder = args(argsBuilder)
@@ -376,7 +376,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Bedrock AgentCore Policy. A Policy attaches Cedar authorization rules to a Policy Engine, which evaluates them at runtime to control agent access to resources. */
-  def AgentcorePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentcorePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcorePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcorePolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -387,7 +387,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Bedrock AgentCore Policy Engine. A Policy Engine controls what actions and resources an agent runtime can use. */
-  def AgentcorePolicyEngine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentcorePolicyEngine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcorePolicyEngineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcorePolicyEngineArgs.builder
     conf.logicalName2physicalName(name) match
@@ -409,7 +409,7 @@ object bedrock:
    * 
    * &gt; **Warning:** This resource is deprecated. AWS Agent Registry is currently available in public preview. [On August 6, 2026](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/registry-faq.html#registry-faq-what-is-changing) functionality will move from the `bedrock-agentcore` namespace to the `agent-registry` namespace. This resource will continue to work until [September 17, 2026](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/registry-faq.html). Use the `aws.agentregistry.Registry` resource for all new registries.
    */
-  def AgentcoreRegistry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentcoreRegistry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreRegistryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreRegistryArgs.builder
     conf.logicalName2physicalName(name) match
@@ -420,7 +420,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Bedrock AgentCore Resource Policy. Resource-based policies in Amazon Bedrock AgentCore allow you to control which principals (AWS accounts, IAM users, or IAM roles) can invoke and manage your Amazon Bedrock AgentCore Runtime and Gateway resources. */
-  def AgentcoreResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentcoreResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreResourcePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.bedrock.AgentcoreResourcePolicyArgs.builder
     com.pulumi.aws.bedrock.AgentcoreResourcePolicy(name,
@@ -432,7 +432,7 @@ object bedrock:
    * 
    * &gt; **Note:** Deletion of this resource will not modify the CMK, only remove the resource from state.
    */
-  def AgentcoreTokenVaultCmk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentcoreTokenVaultCmk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreTokenVaultCmkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.bedrock.AgentcoreTokenVaultCmkArgs.builder
     com.pulumi.aws.bedrock.AgentcoreTokenVaultCmk(name,
@@ -440,7 +440,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Bedrock AgentCore Workload Identity. Workload Identity provides OAuth2-based authentication and authorization for AI agents to access external resources securely. */
-  def AgentcoreWorkloadIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AgentcoreWorkloadIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.AgentcoreWorkloadIdentityArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.AgentcoreWorkloadIdentityArgs.builder
     conf.logicalName2physicalName(name) match
@@ -554,7 +554,7 @@ object bedrock:
    * * _Update_ updates the customization job&#39;s [tags](https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html).
    * * _Delete_ stops the customization job if it is still active. If the customization job has completed, the custom model output by the job is deleted.
    */
-  def CustomModel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomModel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.CustomModelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.CustomModelArgs.builder
     argsBuilder = args(argsBuilder)
@@ -573,7 +573,7 @@ object bedrock:
    * 
    * &gt; **Note:** Amazon Bedrock does not support permanently deleting an evaluation job. Destroying this resource stops the job (if it is still running) using the [StopEvaluationJob](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_StopEvaluationJob.html) API, then removes it from Terraform state. Set `skipDestroy` to leave the job in its current state instead.
    */
-  def EvaluationJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EvaluationJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.EvaluationJobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.EvaluationJobArgs.builder
     argsBuilder = args(argsBuilder)
@@ -588,7 +588,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Amazon Bedrock Guardrail. */
-  def Guardrail(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Guardrail(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.GuardrailArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.GuardrailArgs.builder
     conf.logicalName2physicalName(name) match
@@ -606,7 +606,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Bedrock Guardrail Version. */
-  def GuardrailVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GuardrailVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.GuardrailVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.bedrock.GuardrailVersionArgs.builder
     com.pulumi.aws.bedrock.GuardrailVersion(name,
@@ -614,7 +614,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Bedrock Inference Profile. */
-  def InferenceProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InferenceProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.InferenceProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.InferenceProfileArgs.builder
     conf.logicalName2physicalName(name) match
@@ -632,7 +632,7 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages [Provisioned Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html) for an Amazon Bedrock model. */
-  def ProvisionedModelThroughput(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProvisionedModelThroughput(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.ProvisionedModelThroughputArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.bedrock.ProvisionedModelThroughputArgs.builder
     argsBuilder = args(argsBuilder)
@@ -655,7 +655,7 @@ object bedrock:
    * If no Use Case For Model Access exists, Terraform creates a new Use Case For Model Access.
    * `terraform destroy` does not delete the Use Case For Model Access but does remove the resource from Terraform state. Real deletion does not exist for this resource.
    */
-  def UseCaseForModelAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UseCaseForModelAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrock.UseCaseForModelAccessArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.bedrock.UseCaseForModelAccessArgs.builder
     com.pulumi.aws.bedrock.UseCaseForModelAccess(name,

@@ -11,7 +11,7 @@ object ssmcontacts:
    * 
    * &gt; **NOTE:** A contact implicitly depends on a replication set. If you configured your replication set in Pulumi, we recommend you add it to the `dependsOn` argument for the Contact Resource.
    */
-  def Contact(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Contact(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssmcontacts.ContactArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssmcontacts.ContactArgs.builder
     argsBuilder = args(argsBuilder)
@@ -30,7 +30,7 @@ object ssmcontacts:
    * 
    * &gt; **NOTE:** The contact channel needs to be activated in the AWS Systems Manager console, otherwise it can&#39;t be used to engage the contact. See the [Contacts section of the Incident Manager User Guide](https://docs.aws.amazon.com/incident-manager/latest/userguide/contacts.html) for more information.
    */
-  def ContactChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ContactChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssmcontacts.ContactChannelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssmcontacts.ContactChannelArgs.builder
     conf.logicalName2physicalName(name) match
@@ -41,7 +41,7 @@ object ssmcontacts:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS SSM Contact Plan. */
-  def Plan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Plan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssmcontacts.PlanArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ssmcontacts.PlanArgs.builder
     com.pulumi.aws.ssmcontacts.Plan(name,

@@ -7,36 +7,36 @@ object dsql_ext:
      * @param multiRegionProperties Multi-region properties of the DSQL Cluster.
      * @return builder
      */
-    def multiRegionProperties(args: Endofunction[com.pulumi.aws.dsql.inputs.ClusterMultiRegionPropertiesArgs.Builder]):
+    inline def multiRegionProperties(args: Endofunction[com.pulumi.aws.dsql.inputs.ClusterMultiRegionPropertiesArgs.Builder]):
         com.pulumi.aws.dsql.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.aws.dsql.inputs.ClusterMultiRegionPropertiesArgs.builder
       builder.multiRegionProperties(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.dsql.inputs.ClusterTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.dsql.inputs.ClusterTimeoutsArgs.Builder]):
         com.pulumi.aws.dsql.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.aws.dsql.inputs.ClusterTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.dsql.ClusterPeeringArgs.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.dsql.inputs.ClusterPeeringTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.dsql.inputs.ClusterPeeringTimeoutsArgs.Builder]):
         com.pulumi.aws.dsql.ClusterPeeringArgs.Builder =
       val argsBuilder = com.pulumi.aws.dsql.inputs.ClusterPeeringTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.dsql.ClusterPolicyArgs.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.dsql.inputs.ClusterPolicyTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.dsql.inputs.ClusterPolicyTimeoutsArgs.Builder]):
         com.pulumi.aws.dsql.ClusterPolicyArgs.Builder =
       val argsBuilder = com.pulumi.aws.dsql.inputs.ClusterPolicyTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.dsql.inputs.ClusterPeeringState.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.dsql.inputs.ClusterPeeringTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.dsql.inputs.ClusterPeeringTimeoutsArgs.Builder]):
         com.pulumi.aws.dsql.inputs.ClusterPeeringState.Builder =
       val argsBuilder = com.pulumi.aws.dsql.inputs.ClusterPeeringTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.dsql.inputs.ClusterPolicyState.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.dsql.inputs.ClusterPolicyTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.dsql.inputs.ClusterPolicyTimeoutsArgs.Builder]):
         com.pulumi.aws.dsql.inputs.ClusterPolicyState.Builder =
       val argsBuilder = com.pulumi.aws.dsql.inputs.ClusterPolicyTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -46,7 +46,7 @@ object dsql_ext:
      * @param encryptionDetails Encryption configuration details for the DSQL Cluster.
      * @return builder
      */
-    def encryptionDetails(args: Endofunction[com.pulumi.aws.dsql.inputs.ClusterEncryptionDetailArgs.Builder]*):
+    inline def encryptionDetails(args: Endofunction[com.pulumi.aws.dsql.inputs.ClusterEncryptionDetailArgs.Builder]*):
         com.pulumi.aws.dsql.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.aws.dsql.inputs.ClusterEncryptionDetailArgs.builder
       builder.encryptionDetails(args.map(_(argsBuilder).build)*)
@@ -55,12 +55,12 @@ object dsql_ext:
      * @param multiRegionProperties Multi-region properties of the DSQL Cluster.
      * @return builder
      */
-    def multiRegionProperties(args: Endofunction[com.pulumi.aws.dsql.inputs.ClusterMultiRegionPropertiesArgs.Builder]):
+    inline def multiRegionProperties(args: Endofunction[com.pulumi.aws.dsql.inputs.ClusterMultiRegionPropertiesArgs.Builder]):
         com.pulumi.aws.dsql.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.aws.dsql.inputs.ClusterMultiRegionPropertiesArgs.builder
       builder.multiRegionProperties(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.dsql.inputs.ClusterTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.dsql.inputs.ClusterTimeoutsArgs.Builder]):
         com.pulumi.aws.dsql.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.aws.dsql.inputs.ClusterTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)

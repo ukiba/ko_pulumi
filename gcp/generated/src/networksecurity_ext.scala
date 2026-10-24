@@ -3,13 +3,13 @@ package gcp
 
 object networksecurity_ext:
   extension (builder: com.pulumi.gcp.networksecurity.AddressGroupIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AddressGroupIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AddressGroupIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.networksecurity.AddressGroupIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AddressGroupIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.networksecurity.AddressGroupIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AddressGroupIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AddressGroupIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.networksecurity.AddressGroupIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AddressGroupIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -21,7 +21,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthorizationPolicyRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthorizationPolicyRuleArgs.Builder]*):
         com.pulumi.gcp.networksecurity.AuthorizationPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthorizationPolicyRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -32,7 +32,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customProvider(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyCustomProviderArgs.Builder]):
+    inline def customProvider(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyCustomProviderArgs.Builder]):
         com.pulumi.gcp.networksecurity.AuthzPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyCustomProviderArgs.builder
       builder.customProvider(args(argsBuilder).build)
@@ -43,7 +43,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpRules(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleArgs.Builder]*):
+    inline def httpRules(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleArgs.Builder]*):
         com.pulumi.gcp.networksecurity.AuthzPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleArgs.builder
       builder.httpRules(args.map(_(argsBuilder).build)*)
@@ -54,7 +54,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkRules(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleArgs.Builder]*):
+    inline def networkRules(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleArgs.Builder]*):
         com.pulumi.gcp.networksecurity.AuthzPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleArgs.builder
       builder.networkRules(args.map(_(argsBuilder).build)*)
@@ -64,7 +64,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def target(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyTargetArgs.Builder]):
+    inline def target(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyTargetArgs.Builder]):
         com.pulumi.gcp.networksecurity.AuthzPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyTargetArgs.builder
       builder.target(args(argsBuilder).build)
@@ -75,7 +75,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clientCertificate(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyClientCertificateArgs.Builder]):
+    inline def clientCertificate(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyClientCertificateArgs.Builder]):
         com.pulumi.gcp.networksecurity.ClientTlsPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyClientCertificateArgs.builder
       builder.clientCertificate(args(argsBuilder).build)
@@ -85,7 +85,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serverValidationCas(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyServerValidationCaArgs.Builder]*):
+    inline def serverValidationCas(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyServerValidationCaArgs.Builder]*):
         com.pulumi.gcp.networksecurity.ClientTlsPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyServerValidationCaArgs.builder
       builder.serverValidationCas(args.map(_(argsBuilder).build)*)
@@ -96,7 +96,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endpointSettings(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.FirewallEndpointEndpointSettingsArgs.Builder]):
+    inline def endpointSettings(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.FirewallEndpointEndpointSettingsArgs.Builder]):
         com.pulumi.gcp.networksecurity.FirewallEndpointArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.FirewallEndpointEndpointSettingsArgs.builder
       builder.endpointSettings(args(argsBuilder).build)
@@ -107,7 +107,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def wildfireSettings(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.FirewallEndpointWildfireSettingsArgs.Builder]):
+    inline def wildfireSettings(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.FirewallEndpointWildfireSettingsArgs.Builder]):
         com.pulumi.gcp.networksecurity.FirewallEndpointArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.FirewallEndpointWildfireSettingsArgs.builder
       builder.wildfireSettings(args(argsBuilder).build)
@@ -118,7 +118,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def symantecOptions(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SacAttachmentSymantecOptionsArgs.Builder]):
+    inline def symantecOptions(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SacAttachmentSymantecOptionsArgs.Builder]):
         com.pulumi.gcp.networksecurity.SacAttachmentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.SacAttachmentSymantecOptionsArgs.builder
       builder.symantecOptions(args(argsBuilder).build)
@@ -129,7 +129,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def symantecOptions(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SacRealmSymantecOptionsArgs.Builder]):
+    inline def symantecOptions(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SacRealmSymantecOptionsArgs.Builder]):
         com.pulumi.gcp.networksecurity.SacRealmArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.SacRealmSymantecOptionsArgs.builder
       builder.symantecOptions(args(argsBuilder).build)
@@ -141,7 +141,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customInterceptProfile(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileCustomInterceptProfileArgs.Builder]):
+    inline def customInterceptProfile(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileCustomInterceptProfileArgs.Builder]):
         com.pulumi.gcp.networksecurity.SecurityProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileCustomInterceptProfileArgs.builder
       builder.customInterceptProfile(args(argsBuilder).build)
@@ -152,7 +152,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customMirroringProfile(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileCustomMirroringProfileArgs.Builder]):
+    inline def customMirroringProfile(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileCustomMirroringProfileArgs.Builder]):
         com.pulumi.gcp.networksecurity.SecurityProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileCustomMirroringProfileArgs.builder
       builder.customMirroringProfile(args(argsBuilder).build)
@@ -162,7 +162,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def threatPreventionProfile(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileThreatPreventionProfileArgs.Builder]):
+    inline def threatPreventionProfile(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileThreatPreventionProfileArgs.Builder]):
         com.pulumi.gcp.networksecurity.SecurityProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileThreatPreventionProfileArgs.builder
       builder.threatPreventionProfile(args(argsBuilder).build)
@@ -172,7 +172,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def urlFilteringProfile(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileUrlFilteringProfileArgs.Builder]):
+    inline def urlFilteringProfile(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileUrlFilteringProfileArgs.Builder]):
         com.pulumi.gcp.networksecurity.SecurityProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileUrlFilteringProfileArgs.builder
       builder.urlFilteringProfile(args(argsBuilder).build)
@@ -183,7 +183,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def wildfireAnalysisProfile(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileArgs.Builder]):
+    inline def wildfireAnalysisProfile(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileArgs.Builder]):
         com.pulumi.gcp.networksecurity.SecurityProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileArgs.builder
       builder.wildfireAnalysisProfile(args(argsBuilder).build)
@@ -195,7 +195,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mtlsPolicy(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyMtlsPolicyArgs.Builder]):
+    inline def mtlsPolicy(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyMtlsPolicyArgs.Builder]):
         com.pulumi.gcp.networksecurity.ServerTlsPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyMtlsPolicyArgs.builder
       builder.mtlsPolicy(args(argsBuilder).build)
@@ -205,7 +205,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serverCertificate(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyServerCertificateArgs.Builder]):
+    inline def serverCertificate(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyServerCertificateArgs.Builder]):
         com.pulumi.gcp.networksecurity.ServerTlsPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyServerCertificateArgs.builder
       builder.serverCertificate(args(argsBuilder).build)
@@ -216,19 +216,19 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.UllMirroringCollectorRuleMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.UllMirroringCollectorRuleMatchArgs.Builder]):
         com.pulumi.gcp.networksecurity.UllMirroringCollectorRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.UllMirroringCollectorRuleMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.networksecurity.inputs.AddressGroupIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AddressGroupIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AddressGroupIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AddressGroupIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AddressGroupIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.networksecurity.inputs.AddressGroupIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AddressGroupIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AddressGroupIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AddressGroupIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AddressGroupIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -240,7 +240,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthorizationPolicyRuleDestinationArgs.Builder]*):
+    inline def destinations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthorizationPolicyRuleDestinationArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthorizationPolicyRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthorizationPolicyRuleDestinationArgs.builder
       builder.destinations(args.map(_(argsBuilder).build)*)
@@ -251,7 +251,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sources(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthorizationPolicyRuleSourceArgs.Builder]*):
+    inline def sources(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthorizationPolicyRuleSourceArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthorizationPolicyRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthorizationPolicyRuleSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
@@ -263,7 +263,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpHeaderMatch(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthorizationPolicyRuleDestinationHttpHeaderMatchArgs.Builder]):
+    inline def httpHeaderMatch(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthorizationPolicyRuleDestinationHttpHeaderMatchArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthorizationPolicyRuleDestinationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthorizationPolicyRuleDestinationHttpHeaderMatchArgs.builder
       builder.httpHeaderMatch(args(argsBuilder).build)
@@ -275,7 +275,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthorizationPolicyRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthorizationPolicyRuleArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthorizationPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthorizationPolicyRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -286,7 +286,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authzExtension(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyCustomProviderAuthzExtensionArgs.Builder]):
+    inline def authzExtension(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyCustomProviderAuthzExtensionArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyCustomProviderArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyCustomProviderAuthzExtensionArgs.builder
       builder.authzExtension(args(argsBuilder).build)
@@ -296,7 +296,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudIap(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyCustomProviderCloudIapArgs.Builder]):
+    inline def cloudIap(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyCustomProviderCloudIapArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyCustomProviderArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyCustomProviderCloudIapArgs.builder
       builder.cloudIap(args(argsBuilder).build)
@@ -307,7 +307,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def from(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromArgs.Builder]):
+    inline def from(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromArgs.builder
       builder.from(args(argsBuilder).build)
@@ -317,7 +317,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def to(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToArgs.Builder]):
+    inline def to(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToArgs.builder
       builder.to(args(argsBuilder).build)
@@ -328,7 +328,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def notSources(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourceArgs.Builder]*):
+    inline def notSources(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourceArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourceArgs.builder
       builder.notSources(args.map(_(argsBuilder).build)*)
@@ -338,7 +338,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sources(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourceArgs.Builder]*):
+    inline def sources(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourceArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
@@ -349,7 +349,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ipBlocks(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourceIpBlockArgs.Builder]*):
+    inline def ipBlocks(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourceIpBlockArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourceIpBlockArgs.builder
       builder.ipBlocks(args.map(_(argsBuilder).build)*)
@@ -360,7 +360,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def principals(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourcePrincipalArgs.Builder]*):
+    inline def principals(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourcePrincipalArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourcePrincipalArgs.builder
       builder.principals(args.map(_(argsBuilder).build)*)
@@ -371,7 +371,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resources(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourceResourceArgs.Builder]*):
+    inline def resources(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourceResourceArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourceResourceArgs.builder
       builder.resources(args.map(_(argsBuilder).build)*)
@@ -383,7 +383,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def principal(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourcePrincipalPrincipalArgs.Builder]):
+    inline def principal(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourcePrincipalPrincipalArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourcePrincipalArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourcePrincipalPrincipalArgs.builder
       builder.principal(args(argsBuilder).build)
@@ -394,7 +394,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def iamServiceAccount(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourceResourceIamServiceAccountArgs.Builder]):
+    inline def iamServiceAccount(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourceResourceIamServiceAccountArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourceResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourceResourceIamServiceAccountArgs.builder
       builder.iamServiceAccount(args(argsBuilder).build)
@@ -404,7 +404,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tagValueIdSet(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourceResourceTagValueIdSetArgs.Builder]):
+    inline def tagValueIdSet(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourceResourceTagValueIdSetArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourceResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromNotSourceResourceTagValueIdSetArgs.builder
       builder.tagValueIdSet(args(argsBuilder).build)
@@ -415,7 +415,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ipBlocks(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourceIpBlockArgs.Builder]*):
+    inline def ipBlocks(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourceIpBlockArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourceIpBlockArgs.builder
       builder.ipBlocks(args.map(_(argsBuilder).build)*)
@@ -426,7 +426,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def principals(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourcePrincipalArgs.Builder]*):
+    inline def principals(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourcePrincipalArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourcePrincipalArgs.builder
       builder.principals(args.map(_(argsBuilder).build)*)
@@ -437,7 +437,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resources(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourceResourceArgs.Builder]*):
+    inline def resources(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourceResourceArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourceResourceArgs.builder
       builder.resources(args.map(_(argsBuilder).build)*)
@@ -449,7 +449,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def principal(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourcePrincipalPrincipalArgs.Builder]):
+    inline def principal(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourcePrincipalPrincipalArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourcePrincipalArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourcePrincipalPrincipalArgs.builder
       builder.principal(args(argsBuilder).build)
@@ -460,7 +460,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def iamServiceAccount(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourceResourceIamServiceAccountArgs.Builder]):
+    inline def iamServiceAccount(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourceResourceIamServiceAccountArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourceResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourceResourceIamServiceAccountArgs.builder
       builder.iamServiceAccount(args(argsBuilder).build)
@@ -470,7 +470,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tagValueIdSet(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourceResourceTagValueIdSetArgs.Builder]):
+    inline def tagValueIdSet(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourceResourceTagValueIdSetArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourceResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleFromSourceResourceTagValueIdSetArgs.builder
       builder.tagValueIdSet(args(argsBuilder).build)
@@ -481,7 +481,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def notOperations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToNotOperationArgs.Builder]*):
+    inline def notOperations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToNotOperationArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToNotOperationArgs.builder
       builder.notOperations(args.map(_(argsBuilder).build)*)
@@ -491,7 +491,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationArgs.Builder]*):
+    inline def operations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationArgs.builder
       builder.operations(args.map(_(argsBuilder).build)*)
@@ -502,7 +502,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headerSet(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToNotOperationHeaderSetArgs.Builder]):
+    inline def headerSet(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToNotOperationHeaderSetArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToNotOperationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToNotOperationHeaderSetArgs.builder
       builder.headerSet(args(argsBuilder).build)
@@ -513,7 +513,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hosts(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToNotOperationHostArgs.Builder]*):
+    inline def hosts(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToNotOperationHostArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToNotOperationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToNotOperationHostArgs.builder
       builder.hosts(args.map(_(argsBuilder).build)*)
@@ -525,7 +525,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def paths(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToNotOperationPathArgs.Builder]*):
+    inline def paths(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToNotOperationPathArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToNotOperationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToNotOperationPathArgs.builder
       builder.paths(args.map(_(argsBuilder).build)*)
@@ -536,7 +536,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToNotOperationHeaderSetHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToNotOperationHeaderSetHeaderArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToNotOperationHeaderSetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToNotOperationHeaderSetHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -547,7 +547,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def value(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToNotOperationHeaderSetHeaderValueArgs.Builder]):
+    inline def value(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToNotOperationHeaderSetHeaderValueArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToNotOperationHeaderSetHeaderArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToNotOperationHeaderSetHeaderValueArgs.builder
       builder.value(args(argsBuilder).build)
@@ -558,7 +558,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headerSet(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationHeaderSetArgs.Builder]):
+    inline def headerSet(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationHeaderSetArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationHeaderSetArgs.builder
       builder.headerSet(args(argsBuilder).build)
@@ -569,7 +569,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hosts(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationHostArgs.Builder]*):
+    inline def hosts(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationHostArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationHostArgs.builder
       builder.hosts(args.map(_(argsBuilder).build)*)
@@ -579,7 +579,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mcp(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationMcpArgs.Builder]):
+    inline def mcp(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationMcpArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationMcpArgs.builder
       builder.mcp(args(argsBuilder).build)
@@ -591,7 +591,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def paths(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationPathArgs.Builder]*):
+    inline def paths(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationPathArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationPathArgs.builder
       builder.paths(args.map(_(argsBuilder).build)*)
@@ -602,7 +602,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationHeaderSetHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationHeaderSetHeaderArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationHeaderSetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationHeaderSetHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -613,7 +613,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def value(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationHeaderSetHeaderValueArgs.Builder]):
+    inline def value(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationHeaderSetHeaderValueArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationHeaderSetHeaderArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationHeaderSetHeaderValueArgs.builder
       builder.value(args(argsBuilder).build)
@@ -624,7 +624,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def methods(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationMcpMethodArgs.Builder]*):
+    inline def methods(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationMcpMethodArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationMcpArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationMcpMethodArgs.builder
       builder.methods(args.map(_(argsBuilder).build)*)
@@ -635,7 +635,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationMcpMethodParamArgs.Builder]*):
+    inline def params(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationMcpMethodParamArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationMcpMethodArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleToOperationMcpMethodParamArgs.builder
       builder.params(args.map(_(argsBuilder).build)*)
@@ -646,7 +646,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def from(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromArgs.Builder]):
+    inline def from(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromArgs.builder
       builder.from(args(argsBuilder).build)
@@ -656,7 +656,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def to(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToArgs.Builder]):
+    inline def to(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToArgs.builder
       builder.to(args(argsBuilder).build)
@@ -667,7 +667,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def notSources(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceArgs.Builder]*):
+    inline def notSources(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceArgs.builder
       builder.notSources(args.map(_(argsBuilder).build)*)
@@ -677,7 +677,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sources(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceArgs.Builder]*):
+    inline def sources(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
@@ -688,7 +688,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ipBlocks(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceIpBlockArgs.Builder]*):
+    inline def ipBlocks(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceIpBlockArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceIpBlockArgs.builder
       builder.ipBlocks(args.map(_(argsBuilder).build)*)
@@ -699,7 +699,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def principals(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourcePrincipalArgs.Builder]*):
+    inline def principals(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourcePrincipalArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourcePrincipalArgs.builder
       builder.principals(args.map(_(argsBuilder).build)*)
@@ -710,7 +710,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resources(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceResourceArgs.Builder]*):
+    inline def resources(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceResourceArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceResourceArgs.builder
       builder.resources(args.map(_(argsBuilder).build)*)
@@ -722,7 +722,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def principal(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourcePrincipalPrincipalArgs.Builder]):
+    inline def principal(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourcePrincipalPrincipalArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourcePrincipalArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourcePrincipalPrincipalArgs.builder
       builder.principal(args(argsBuilder).build)
@@ -733,7 +733,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def iamServiceAccount(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceResourceIamServiceAccountArgs.Builder]):
+    inline def iamServiceAccount(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceResourceIamServiceAccountArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceResourceIamServiceAccountArgs.builder
       builder.iamServiceAccount(args(argsBuilder).build)
@@ -743,7 +743,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tagValueIdSet(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceResourceTagValueIdSetArgs.Builder]):
+    inline def tagValueIdSet(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceResourceTagValueIdSetArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromNotSourceResourceTagValueIdSetArgs.builder
       builder.tagValueIdSet(args(argsBuilder).build)
@@ -754,7 +754,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ipBlocks(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceIpBlockArgs.Builder]*):
+    inline def ipBlocks(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceIpBlockArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceIpBlockArgs.builder
       builder.ipBlocks(args.map(_(argsBuilder).build)*)
@@ -765,7 +765,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def principals(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourcePrincipalArgs.Builder]*):
+    inline def principals(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourcePrincipalArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourcePrincipalArgs.builder
       builder.principals(args.map(_(argsBuilder).build)*)
@@ -776,7 +776,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resources(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceResourceArgs.Builder]*):
+    inline def resources(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceResourceArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceResourceArgs.builder
       builder.resources(args.map(_(argsBuilder).build)*)
@@ -788,7 +788,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def principal(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourcePrincipalPrincipalArgs.Builder]):
+    inline def principal(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourcePrincipalPrincipalArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourcePrincipalArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourcePrincipalPrincipalArgs.builder
       builder.principal(args(argsBuilder).build)
@@ -799,7 +799,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def iamServiceAccount(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceResourceIamServiceAccountArgs.Builder]):
+    inline def iamServiceAccount(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceResourceIamServiceAccountArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceResourceIamServiceAccountArgs.builder
       builder.iamServiceAccount(args(argsBuilder).build)
@@ -809,7 +809,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tagValueIdSet(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceResourceTagValueIdSetArgs.Builder]):
+    inline def tagValueIdSet(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceResourceTagValueIdSetArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleFromSourceResourceTagValueIdSetArgs.builder
       builder.tagValueIdSet(args(argsBuilder).build)
@@ -820,7 +820,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def notOperations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToNotOperationArgs.Builder]*):
+    inline def notOperations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToNotOperationArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToNotOperationArgs.builder
       builder.notOperations(args.map(_(argsBuilder).build)*)
@@ -830,7 +830,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToOperationArgs.Builder]*):
+    inline def operations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToOperationArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToOperationArgs.builder
       builder.operations(args.map(_(argsBuilder).build)*)
@@ -840,7 +840,7 @@ object networksecurity_ext:
      * @param snis Structure is documented below.
      * @return builder
      */
-    def snis(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToNotOperationSniArgs.Builder]*):
+    inline def snis(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToNotOperationSniArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToNotOperationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToNotOperationSniArgs.builder
       builder.snis(args.map(_(argsBuilder).build)*)
@@ -850,7 +850,7 @@ object networksecurity_ext:
      * @param snis Structure is documented below.
      * @return builder
      */
-    def snis(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToOperationSniArgs.Builder]*):
+    inline def snis(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToOperationSniArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToOperationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleToOperationSniArgs.builder
       builder.snis(args.map(_(argsBuilder).build)*)
@@ -861,7 +861,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customProvider(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyCustomProviderArgs.Builder]):
+    inline def customProvider(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyCustomProviderArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyCustomProviderArgs.builder
       builder.customProvider(args(argsBuilder).build)
@@ -872,7 +872,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpRules(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleArgs.Builder]*):
+    inline def httpRules(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyHttpRuleArgs.builder
       builder.httpRules(args.map(_(argsBuilder).build)*)
@@ -883,7 +883,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkRules(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleArgs.Builder]*):
+    inline def networkRules(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyNetworkRuleArgs.builder
       builder.networkRules(args.map(_(argsBuilder).build)*)
@@ -893,7 +893,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def target(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyTargetArgs.Builder]):
+    inline def target(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.AuthzPolicyTargetArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.AuthzPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.AuthzPolicyTargetArgs.builder
       builder.target(args(argsBuilder).build)
@@ -904,7 +904,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def certificateProviderInstance(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyClientCertificateCertificateProviderInstanceArgs.Builder]):
+    inline def certificateProviderInstance(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyClientCertificateCertificateProviderInstanceArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyClientCertificateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyClientCertificateCertificateProviderInstanceArgs.builder
       builder.certificateProviderInstance(args(argsBuilder).build)
@@ -914,7 +914,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def grpcEndpoint(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyClientCertificateGrpcEndpointArgs.Builder]):
+    inline def grpcEndpoint(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyClientCertificateGrpcEndpointArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyClientCertificateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyClientCertificateGrpcEndpointArgs.builder
       builder.grpcEndpoint(args(argsBuilder).build)
@@ -925,7 +925,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def certificateProviderInstance(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyServerValidationCaCertificateProviderInstanceArgs.Builder]):
+    inline def certificateProviderInstance(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyServerValidationCaCertificateProviderInstanceArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyServerValidationCaArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyServerValidationCaCertificateProviderInstanceArgs.builder
       builder.certificateProviderInstance(args(argsBuilder).build)
@@ -935,7 +935,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def grpcEndpoint(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyServerValidationCaGrpcEndpointArgs.Builder]):
+    inline def grpcEndpoint(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyServerValidationCaGrpcEndpointArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyServerValidationCaArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyServerValidationCaGrpcEndpointArgs.builder
       builder.grpcEndpoint(args(argsBuilder).build)
@@ -946,7 +946,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clientCertificate(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyClientCertificateArgs.Builder]):
+    inline def clientCertificate(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyClientCertificateArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyClientCertificateArgs.builder
       builder.clientCertificate(args(argsBuilder).build)
@@ -956,7 +956,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serverValidationCas(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyServerValidationCaArgs.Builder]*):
+    inline def serverValidationCas(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyServerValidationCaArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.ClientTlsPolicyServerValidationCaArgs.builder
       builder.serverValidationCas(args.map(_(argsBuilder).build)*)
@@ -967,7 +967,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endpointSettings(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.FirewallEndpointEndpointSettingsArgs.Builder]):
+    inline def endpointSettings(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.FirewallEndpointEndpointSettingsArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.FirewallEndpointState.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.FirewallEndpointEndpointSettingsArgs.builder
       builder.endpointSettings(args(argsBuilder).build)
@@ -978,7 +978,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def wildfireSettings(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.FirewallEndpointWildfireSettingsArgs.Builder]):
+    inline def wildfireSettings(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.FirewallEndpointWildfireSettingsArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.FirewallEndpointState.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.FirewallEndpointWildfireSettingsArgs.builder
       builder.wildfireSettings(args(argsBuilder).build)
@@ -989,7 +989,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def wildfireInlineCloudAnalysisSettings(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.FirewallEndpointWildfireSettingsWildfireInlineCloudAnalysisSettingsArgs.Builder]):
+    inline def wildfireInlineCloudAnalysisSettings(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.FirewallEndpointWildfireSettingsWildfireInlineCloudAnalysisSettingsArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.FirewallEndpointWildfireSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.FirewallEndpointWildfireSettingsWildfireInlineCloudAnalysisSettingsArgs.builder
       builder.wildfireInlineCloudAnalysisSettings(args(argsBuilder).build)
@@ -1000,7 +1000,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectedEndpointGroups(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.InterceptDeploymentGroupConnectedEndpointGroupArgs.Builder]*):
+    inline def connectedEndpointGroups(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.InterceptDeploymentGroupConnectedEndpointGroupArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.InterceptDeploymentGroupState.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.InterceptDeploymentGroupConnectedEndpointGroupArgs.builder
       builder.connectedEndpointGroups(args.map(_(argsBuilder).build)*)
@@ -1010,7 +1010,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def locations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.InterceptDeploymentGroupLocationArgs.Builder]*):
+    inline def locations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.InterceptDeploymentGroupLocationArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.InterceptDeploymentGroupState.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.InterceptDeploymentGroupLocationArgs.builder
       builder.locations(args.map(_(argsBuilder).build)*)
@@ -1022,7 +1022,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def locations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.InterceptEndpointGroupAssociationLocationArgs.Builder]*):
+    inline def locations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.InterceptEndpointGroupAssociationLocationArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.InterceptEndpointGroupAssociationState.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.InterceptEndpointGroupAssociationLocationArgs.builder
       builder.locations(args.map(_(argsBuilder).build)*)
@@ -1036,7 +1036,7 @@ object networksecurity_ext:
      * @return builder
      * @deprecated `locationsDetails` is deprecated and will be removed in a future major release. Use `locations` instead.
      */
-    @deprecated("`locationsDetails` is deprecated and will be removed in a future major release. Use `locations` instead.") def locationsDetails(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.InterceptEndpointGroupAssociationLocationsDetailArgs.Builder]*):
+    @deprecated("`locationsDetails` is deprecated and will be removed in a future major release. Use `locations` instead.") inline def locationsDetails(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.InterceptEndpointGroupAssociationLocationsDetailArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.InterceptEndpointGroupAssociationState.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.InterceptEndpointGroupAssociationLocationsDetailArgs.builder
       builder.locationsDetails(args.map(_(argsBuilder).build)*)
@@ -1048,7 +1048,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def locations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.InterceptEndpointGroupConnectedDeploymentGroupLocationArgs.Builder]*):
+    inline def locations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.InterceptEndpointGroupConnectedDeploymentGroupLocationArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.InterceptEndpointGroupConnectedDeploymentGroupArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.InterceptEndpointGroupConnectedDeploymentGroupLocationArgs.builder
       builder.locations(args.map(_(argsBuilder).build)*)
@@ -1059,7 +1059,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def associations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.InterceptEndpointGroupAssociationArgs.Builder]*):
+    inline def associations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.InterceptEndpointGroupAssociationArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.InterceptEndpointGroupState.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.InterceptEndpointGroupAssociationArgs.builder
       builder.associations(args.map(_(argsBuilder).build)*)
@@ -1069,7 +1069,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectedDeploymentGroups(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.InterceptEndpointGroupConnectedDeploymentGroupArgs.Builder]*):
+    inline def connectedDeploymentGroups(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.InterceptEndpointGroupConnectedDeploymentGroupArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.InterceptEndpointGroupState.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.InterceptEndpointGroupConnectedDeploymentGroupArgs.builder
       builder.connectedDeploymentGroups(args.map(_(argsBuilder).build)*)
@@ -1080,7 +1080,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectedEndpointGroups(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.MirroringDeploymentGroupConnectedEndpointGroupArgs.Builder]*):
+    inline def connectedEndpointGroups(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.MirroringDeploymentGroupConnectedEndpointGroupArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.MirroringDeploymentGroupState.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.MirroringDeploymentGroupConnectedEndpointGroupArgs.builder
       builder.connectedEndpointGroups(args.map(_(argsBuilder).build)*)
@@ -1090,7 +1090,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def locations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.MirroringDeploymentGroupLocationArgs.Builder]*):
+    inline def locations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.MirroringDeploymentGroupLocationArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.MirroringDeploymentGroupState.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.MirroringDeploymentGroupLocationArgs.builder
       builder.locations(args.map(_(argsBuilder).build)*)
@@ -1102,7 +1102,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def locations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.MirroringEndpointGroupAssociationLocationArgs.Builder]*):
+    inline def locations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.MirroringEndpointGroupAssociationLocationArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.MirroringEndpointGroupAssociationState.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.MirroringEndpointGroupAssociationLocationArgs.builder
       builder.locations(args.map(_(argsBuilder).build)*)
@@ -1116,7 +1116,7 @@ object networksecurity_ext:
      * @return builder
      * @deprecated `locationsDetails` is deprecated and will be removed in a future major release. Use `locations` instead.
      */
-    @deprecated("`locationsDetails` is deprecated and will be removed in a future major release. Use `locations` instead.") def locationsDetails(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.MirroringEndpointGroupAssociationLocationsDetailArgs.Builder]*):
+    @deprecated("`locationsDetails` is deprecated and will be removed in a future major release. Use `locations` instead.") inline def locationsDetails(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.MirroringEndpointGroupAssociationLocationsDetailArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.MirroringEndpointGroupAssociationState.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.MirroringEndpointGroupAssociationLocationsDetailArgs.builder
       builder.locationsDetails(args.map(_(argsBuilder).build)*)
@@ -1128,7 +1128,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def locations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.MirroringEndpointGroupConnectedDeploymentGroupLocationArgs.Builder]*):
+    inline def locations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.MirroringEndpointGroupConnectedDeploymentGroupLocationArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.MirroringEndpointGroupConnectedDeploymentGroupArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.MirroringEndpointGroupConnectedDeploymentGroupLocationArgs.builder
       builder.locations(args.map(_(argsBuilder).build)*)
@@ -1139,7 +1139,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def associations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.MirroringEndpointGroupAssociationArgs.Builder]*):
+    inline def associations(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.MirroringEndpointGroupAssociationArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.MirroringEndpointGroupState.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.MirroringEndpointGroupAssociationArgs.builder
       builder.associations(args.map(_(argsBuilder).build)*)
@@ -1150,7 +1150,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectedDeploymentGroups(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.MirroringEndpointGroupConnectedDeploymentGroupArgs.Builder]*):
+    inline def connectedDeploymentGroups(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.MirroringEndpointGroupConnectedDeploymentGroupArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.MirroringEndpointGroupState.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.MirroringEndpointGroupConnectedDeploymentGroupArgs.builder
       builder.connectedDeploymentGroups(args.map(_(argsBuilder).build)*)
@@ -1161,7 +1161,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def symantecOptions(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SacAttachmentSymantecOptionsArgs.Builder]):
+    inline def symantecOptions(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SacAttachmentSymantecOptionsArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.SacAttachmentState.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.SacAttachmentSymantecOptionsArgs.builder
       builder.symantecOptions(args(argsBuilder).build)
@@ -1172,7 +1172,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pairingKeys(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SacRealmPairingKeyArgs.Builder]*):
+    inline def pairingKeys(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SacRealmPairingKeyArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.SacRealmState.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.SacRealmPairingKeyArgs.builder
       builder.pairingKeys(args.map(_(argsBuilder).build)*)
@@ -1182,7 +1182,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def symantecOptions(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SacRealmSymantecOptionsArgs.Builder]):
+    inline def symantecOptions(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SacRealmSymantecOptionsArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.SacRealmState.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.SacRealmSymantecOptionsArgs.builder
       builder.symantecOptions(args(argsBuilder).build)
@@ -1194,7 +1194,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customInterceptProfile(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileCustomInterceptProfileArgs.Builder]):
+    inline def customInterceptProfile(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileCustomInterceptProfileArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.SecurityProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileCustomInterceptProfileArgs.builder
       builder.customInterceptProfile(args(argsBuilder).build)
@@ -1205,7 +1205,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customMirroringProfile(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileCustomMirroringProfileArgs.Builder]):
+    inline def customMirroringProfile(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileCustomMirroringProfileArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.SecurityProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileCustomMirroringProfileArgs.builder
       builder.customMirroringProfile(args(argsBuilder).build)
@@ -1215,7 +1215,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def threatPreventionProfile(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileThreatPreventionProfileArgs.Builder]):
+    inline def threatPreventionProfile(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileThreatPreventionProfileArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.SecurityProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileThreatPreventionProfileArgs.builder
       builder.threatPreventionProfile(args(argsBuilder).build)
@@ -1225,7 +1225,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def urlFilteringProfile(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileUrlFilteringProfileArgs.Builder]):
+    inline def urlFilteringProfile(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileUrlFilteringProfileArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.SecurityProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileUrlFilteringProfileArgs.builder
       builder.urlFilteringProfile(args(argsBuilder).build)
@@ -1236,7 +1236,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def wildfireAnalysisProfile(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileArgs.Builder]):
+    inline def wildfireAnalysisProfile(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.SecurityProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileArgs.builder
       builder.wildfireAnalysisProfile(args(argsBuilder).build)
@@ -1247,7 +1247,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def antivirusOverrides(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileThreatPreventionProfileAntivirusOverrideArgs.Builder]*):
+    inline def antivirusOverrides(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileThreatPreventionProfileAntivirusOverrideArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.SecurityProfileThreatPreventionProfileArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileThreatPreventionProfileAntivirusOverrideArgs.builder
       builder.antivirusOverrides(args.map(_(argsBuilder).build)*)
@@ -1257,7 +1257,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def severityOverrides(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileThreatPreventionProfileSeverityOverrideArgs.Builder]*):
+    inline def severityOverrides(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileThreatPreventionProfileSeverityOverrideArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.SecurityProfileThreatPreventionProfileArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileThreatPreventionProfileSeverityOverrideArgs.builder
       builder.severityOverrides(args.map(_(argsBuilder).build)*)
@@ -1269,7 +1269,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def threatOverrides(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileThreatPreventionProfileThreatOverrideArgs.Builder]*):
+    inline def threatOverrides(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileThreatPreventionProfileThreatOverrideArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.SecurityProfileThreatPreventionProfileArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileThreatPreventionProfileThreatOverrideArgs.builder
       builder.threatOverrides(args.map(_(argsBuilder).build)*)
@@ -1282,7 +1282,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def urlFilters(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileUrlFilteringProfileUrlFilterArgs.Builder]*):
+    inline def urlFilters(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileUrlFilteringProfileUrlFilterArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.SecurityProfileUrlFilteringProfileArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileUrlFilteringProfileUrlFilterArgs.builder
       builder.urlFilters(args.map(_(argsBuilder).build)*)
@@ -1293,7 +1293,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def wildfireInlineCloudAnalysisRules(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineCloudAnalysisRuleArgs.Builder]*):
+    inline def wildfireInlineCloudAnalysisRules(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineCloudAnalysisRuleArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineCloudAnalysisRuleArgs.builder
       builder.wildfireInlineCloudAnalysisRules(args.map(_(argsBuilder).build)*)
@@ -1303,7 +1303,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def wildfireInlineMlOverrides(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineMlOverrideArgs.Builder]*):
+    inline def wildfireInlineMlOverrides(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineMlOverrideArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineMlOverrideArgs.builder
       builder.wildfireInlineMlOverrides(args.map(_(argsBuilder).build)*)
@@ -1313,7 +1313,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def wildfireInlineMlSetting(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineMlSettingArgs.Builder]):
+    inline def wildfireInlineMlSetting(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineMlSettingArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineMlSettingArgs.builder
       builder.wildfireInlineMlSetting(args(argsBuilder).build)
@@ -1323,7 +1323,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def wildfireOverrides(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireOverrideArgs.Builder]*):
+    inline def wildfireOverrides(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireOverrideArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireOverrideArgs.builder
       builder.wildfireOverrides(args.map(_(argsBuilder).build)*)
@@ -1333,7 +1333,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def wildfireSubmissionRules(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireSubmissionRuleArgs.Builder]*):
+    inline def wildfireSubmissionRules(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireSubmissionRuleArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireSubmissionRuleArgs.builder
       builder.wildfireSubmissionRules(args.map(_(argsBuilder).build)*)
@@ -1343,7 +1343,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def wildfireThreatOverrides(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireThreatOverrideArgs.Builder]*):
+    inline def wildfireThreatOverrides(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireThreatOverrideArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireThreatOverrideArgs.builder
       builder.wildfireThreatOverrides(args.map(_(argsBuilder).build)*)
@@ -1354,7 +1354,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customFileTypes(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineCloudAnalysisRuleCustomFileTypesArgs.Builder]):
+    inline def customFileTypes(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineCloudAnalysisRuleCustomFileTypesArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineCloudAnalysisRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineCloudAnalysisRuleCustomFileTypesArgs.builder
       builder.customFileTypes(args(argsBuilder).build)
@@ -1365,7 +1365,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fileExceptions(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineMlSettingFileExceptionArgs.Builder]*):
+    inline def fileExceptions(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineMlSettingFileExceptionArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineMlSettingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineMlSettingFileExceptionArgs.builder
       builder.fileExceptions(args.map(_(argsBuilder).build)*)
@@ -1375,7 +1375,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inlineMlConfigs(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineMlSettingInlineMlConfigArgs.Builder]*):
+    inline def inlineMlConfigs(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineMlSettingInlineMlConfigArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineMlSettingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireInlineMlSettingInlineMlConfigArgs.builder
       builder.inlineMlConfigs(args.map(_(argsBuilder).build)*)
@@ -1386,7 +1386,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customFileTypes(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireSubmissionRuleCustomFileTypesArgs.Builder]):
+    inline def customFileTypes(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireSubmissionRuleCustomFileTypesArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireSubmissionRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.SecurityProfileWildfireAnalysisProfileWildfireSubmissionRuleCustomFileTypesArgs.builder
       builder.customFileTypes(args(argsBuilder).build)
@@ -1398,7 +1398,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clientValidationCas(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyMtlsPolicyClientValidationCaArgs.Builder]*):
+    inline def clientValidationCas(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyMtlsPolicyClientValidationCaArgs.Builder]*):
         com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyMtlsPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyMtlsPolicyClientValidationCaArgs.builder
       builder.clientValidationCas(args.map(_(argsBuilder).build)*)
@@ -1410,7 +1410,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def certificateProviderInstance(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyMtlsPolicyClientValidationCaCertificateProviderInstanceArgs.Builder]):
+    inline def certificateProviderInstance(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyMtlsPolicyClientValidationCaCertificateProviderInstanceArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyMtlsPolicyClientValidationCaArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyMtlsPolicyClientValidationCaCertificateProviderInstanceArgs.builder
       builder.certificateProviderInstance(args(argsBuilder).build)
@@ -1420,7 +1420,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def grpcEndpoint(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyMtlsPolicyClientValidationCaGrpcEndpointArgs.Builder]):
+    inline def grpcEndpoint(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyMtlsPolicyClientValidationCaGrpcEndpointArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyMtlsPolicyClientValidationCaArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyMtlsPolicyClientValidationCaGrpcEndpointArgs.builder
       builder.grpcEndpoint(args(argsBuilder).build)
@@ -1432,7 +1432,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def certificateProviderInstance(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyServerCertificateCertificateProviderInstanceArgs.Builder]):
+    inline def certificateProviderInstance(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyServerCertificateCertificateProviderInstanceArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyServerCertificateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyServerCertificateCertificateProviderInstanceArgs.builder
       builder.certificateProviderInstance(args(argsBuilder).build)
@@ -1442,7 +1442,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def grpcEndpoint(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyServerCertificateGrpcEndpointArgs.Builder]):
+    inline def grpcEndpoint(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyServerCertificateGrpcEndpointArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyServerCertificateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyServerCertificateGrpcEndpointArgs.builder
       builder.grpcEndpoint(args(argsBuilder).build)
@@ -1454,7 +1454,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mtlsPolicy(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyMtlsPolicyArgs.Builder]):
+    inline def mtlsPolicy(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyMtlsPolicyArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyMtlsPolicyArgs.builder
       builder.mtlsPolicy(args(argsBuilder).build)
@@ -1464,7 +1464,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serverCertificate(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyServerCertificateArgs.Builder]):
+    inline def serverCertificate(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyServerCertificateArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.ServerTlsPolicyServerCertificateArgs.builder
       builder.serverCertificate(args(argsBuilder).build)
@@ -1475,7 +1475,7 @@ object networksecurity_ext:
      * Structure is documented below.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.UllMirroringCollectorRuleMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.UllMirroringCollectorRuleMatchArgs.Builder]):
         com.pulumi.gcp.networksecurity.inputs.UllMirroringCollectorRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.UllMirroringCollectorRuleMatchArgs.builder
       builder.`match`(args(argsBuilder).build)

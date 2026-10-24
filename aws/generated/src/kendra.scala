@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object kendra:
   /** Resource for managing an AWS Kendra Data Source. */
-  def DataSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kendra.DataSourceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.kendra.DataSourceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25,7 +25,7 @@ object kendra:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Kendra Experience. */
-  def Experience(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Experience(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kendra.ExperienceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.kendra.ExperienceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -36,7 +36,7 @@ object kendra:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Kendra FAQ. */
-  def Faq(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Faq(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kendra.FaqArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.kendra.FaqArgs.builder
     conf.logicalName2physicalName(name) match
@@ -54,7 +54,7 @@ object kendra:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Amazon Kendra Index resource. */
-  def Index(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Index(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kendra.IndexArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.kendra.IndexArgs.builder
     conf.logicalName2physicalName(name) match
@@ -153,7 +153,7 @@ object kendra:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Use the `aws.kendra.QuerySuggestionsBlockList` resource to manage an AWS Kendra block list used for query suggestions for an index. */
-  def QuerySuggestionsBlockList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def QuerySuggestionsBlockList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kendra.QuerySuggestionsBlockListArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.kendra.QuerySuggestionsBlockListArgs.builder
     conf.logicalName2physicalName(name) match
@@ -171,7 +171,7 @@ object kendra:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Kendra Thesaurus. */
-  def Thesaurus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Thesaurus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kendra.ThesaurusArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.kendra.ThesaurusArgs.builder
     conf.logicalName2physicalName(name) match

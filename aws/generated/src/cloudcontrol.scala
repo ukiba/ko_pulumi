@@ -24,7 +24,7 @@ object cloudcontrol:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Cloud Control API Resource. The configuration and lifecycle handling of these resources is proxied through Cloud Control API handlers to the backend service. */
-  def Resource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Resource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cloudcontrol.ResourceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.cloudcontrol.ResourceArgs.builder
     com.pulumi.aws.cloudcontrol.Resource(name,

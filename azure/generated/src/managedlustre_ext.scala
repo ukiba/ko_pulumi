@@ -9,7 +9,7 @@ object managedlustre_ext:
      * &gt; **Note:** Removing `encryptionKey` forces a new resource to be created.
      * @return builder
      */
-    def encryptionKey(args: Endofunction[com.pulumi.azure.managedlustre.inputs.FileSystemEncryptionKeyArgs.Builder]):
+    inline def encryptionKey(args: Endofunction[com.pulumi.azure.managedlustre.inputs.FileSystemEncryptionKeyArgs.Builder]):
         com.pulumi.azure.managedlustre.FileSystemArgs.Builder =
       val argsBuilder = com.pulumi.azure.managedlustre.inputs.FileSystemEncryptionKeyArgs.builder
       builder.encryptionKey(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object managedlustre_ext:
      * @param hsmSetting A `hsmSetting` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def hsmSetting(args: Endofunction[com.pulumi.azure.managedlustre.inputs.FileSystemHsmSettingArgs.Builder]):
+    inline def hsmSetting(args: Endofunction[com.pulumi.azure.managedlustre.inputs.FileSystemHsmSettingArgs.Builder]):
         com.pulumi.azure.managedlustre.FileSystemArgs.Builder =
       val argsBuilder = com.pulumi.azure.managedlustre.inputs.FileSystemHsmSettingArgs.builder
       builder.hsmSetting(args(argsBuilder).build)
@@ -27,7 +27,7 @@ object managedlustre_ext:
      * @param identity An `identity` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.managedlustre.inputs.FileSystemIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.managedlustre.inputs.FileSystemIdentityArgs.Builder]):
         com.pulumi.azure.managedlustre.FileSystemArgs.Builder =
       val argsBuilder = com.pulumi.azure.managedlustre.inputs.FileSystemIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -36,7 +36,7 @@ object managedlustre_ext:
      * @param maintenanceWindow A `maintenanceWindow` block as defined below.
      * @return builder
      */
-    def maintenanceWindow(args: Endofunction[com.pulumi.azure.managedlustre.inputs.FileSystemMaintenanceWindowArgs.Builder]):
+    inline def maintenanceWindow(args: Endofunction[com.pulumi.azure.managedlustre.inputs.FileSystemMaintenanceWindowArgs.Builder]):
         com.pulumi.azure.managedlustre.FileSystemArgs.Builder =
       val argsBuilder = com.pulumi.azure.managedlustre.inputs.FileSystemMaintenanceWindowArgs.builder
       builder.maintenanceWindow(args(argsBuilder).build)
@@ -45,7 +45,7 @@ object managedlustre_ext:
      * @param rootSquash A `rootSquash` block as defined below.
      * @return builder
      */
-    def rootSquash(args: Endofunction[com.pulumi.azure.managedlustre.inputs.FileSystemRootSquashArgs.Builder]):
+    inline def rootSquash(args: Endofunction[com.pulumi.azure.managedlustre.inputs.FileSystemRootSquashArgs.Builder]):
         com.pulumi.azure.managedlustre.FileSystemArgs.Builder =
       val argsBuilder = com.pulumi.azure.managedlustre.inputs.FileSystemRootSquashArgs.builder
       builder.rootSquash(args(argsBuilder).build)
@@ -57,7 +57,7 @@ object managedlustre_ext:
      * &gt; **Note:** Removing `encryptionKey` forces a new resource to be created.
      * @return builder
      */
-    def encryptionKey(args: Endofunction[com.pulumi.azure.managedlustre.inputs.FileSystemEncryptionKeyArgs.Builder]):
+    inline def encryptionKey(args: Endofunction[com.pulumi.azure.managedlustre.inputs.FileSystemEncryptionKeyArgs.Builder]):
         com.pulumi.azure.managedlustre.inputs.FileSystemState.Builder =
       val argsBuilder = com.pulumi.azure.managedlustre.inputs.FileSystemEncryptionKeyArgs.builder
       builder.encryptionKey(args(argsBuilder).build)
@@ -66,7 +66,7 @@ object managedlustre_ext:
      * @param hsmSetting A `hsmSetting` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def hsmSetting(args: Endofunction[com.pulumi.azure.managedlustre.inputs.FileSystemHsmSettingArgs.Builder]):
+    inline def hsmSetting(args: Endofunction[com.pulumi.azure.managedlustre.inputs.FileSystemHsmSettingArgs.Builder]):
         com.pulumi.azure.managedlustre.inputs.FileSystemState.Builder =
       val argsBuilder = com.pulumi.azure.managedlustre.inputs.FileSystemHsmSettingArgs.builder
       builder.hsmSetting(args(argsBuilder).build)
@@ -75,7 +75,7 @@ object managedlustre_ext:
      * @param identity An `identity` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.managedlustre.inputs.FileSystemIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.managedlustre.inputs.FileSystemIdentityArgs.Builder]):
         com.pulumi.azure.managedlustre.inputs.FileSystemState.Builder =
       val argsBuilder = com.pulumi.azure.managedlustre.inputs.FileSystemIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -84,7 +84,7 @@ object managedlustre_ext:
      * @param maintenanceWindow A `maintenanceWindow` block as defined below.
      * @return builder
      */
-    def maintenanceWindow(args: Endofunction[com.pulumi.azure.managedlustre.inputs.FileSystemMaintenanceWindowArgs.Builder]):
+    inline def maintenanceWindow(args: Endofunction[com.pulumi.azure.managedlustre.inputs.FileSystemMaintenanceWindowArgs.Builder]):
         com.pulumi.azure.managedlustre.inputs.FileSystemState.Builder =
       val argsBuilder = com.pulumi.azure.managedlustre.inputs.FileSystemMaintenanceWindowArgs.builder
       builder.maintenanceWindow(args(argsBuilder).build)
@@ -93,7 +93,7 @@ object managedlustre_ext:
      * @param rootSquash A `rootSquash` block as defined below.
      * @return builder
      */
-    def rootSquash(args: Endofunction[com.pulumi.azure.managedlustre.inputs.FileSystemRootSquashArgs.Builder]):
+    inline def rootSquash(args: Endofunction[com.pulumi.azure.managedlustre.inputs.FileSystemRootSquashArgs.Builder]):
         com.pulumi.azure.managedlustre.inputs.FileSystemState.Builder =
       val argsBuilder = com.pulumi.azure.managedlustre.inputs.FileSystemRootSquashArgs.builder
       builder.rootSquash(args(argsBuilder).build)

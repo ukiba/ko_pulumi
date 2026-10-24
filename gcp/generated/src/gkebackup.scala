@@ -18,7 +18,7 @@ object gkebackup:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke)
    */
-  def BackupChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackupChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gkebackup.BackupChannelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkebackup.BackupChannelArgs.builder
     conf.logicalName2physicalName(name) match
@@ -37,7 +37,7 @@ object gkebackup:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke)
    */
-  def BackupPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackupPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gkebackup.BackupPlanArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkebackup.BackupPlanArgs.builder
     conf.logicalName2physicalName(name) match
@@ -353,7 +353,7 @@ object gkebackup:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def BackupPlanIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackupPlanIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gkebackup.BackupPlanIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkebackup.BackupPlanIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -669,7 +669,7 @@ object gkebackup:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def BackupPlanIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackupPlanIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gkebackup.BackupPlanIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkebackup.BackupPlanIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -985,7 +985,7 @@ object gkebackup:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def BackupPlanIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackupPlanIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gkebackup.BackupPlanIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkebackup.BackupPlanIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1040,7 +1040,7 @@ object gkebackup:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke)
    */
-  def RestoreChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RestoreChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gkebackup.RestoreChannelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkebackup.RestoreChannelArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1059,7 +1059,7 @@ object gkebackup:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke)
    */
-  def RestorePlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RestorePlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gkebackup.RestorePlanArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkebackup.RestorePlanArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1375,7 +1375,7 @@ object gkebackup:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RestorePlanIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RestorePlanIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gkebackup.RestorePlanIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkebackup.RestorePlanIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1691,7 +1691,7 @@ object gkebackup:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RestorePlanIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RestorePlanIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gkebackup.RestorePlanIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkebackup.RestorePlanIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2007,7 +2007,7 @@ object gkebackup:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RestorePlanIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RestorePlanIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.gkebackup.RestorePlanIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkebackup.RestorePlanIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match

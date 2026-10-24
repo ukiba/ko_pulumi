@@ -40,7 +40,7 @@ object signer:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Creates a Signer Signing Job. */
-  def SigningJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SigningJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.signer.SigningJobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.signer.SigningJobArgs.builder
     com.pulumi.aws.signer.SigningJob(name,
@@ -48,7 +48,7 @@ object signer:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a Signer Signing Profile. A signing profile contains information about the code signing configuration parameters that can be used by a given code signing user. */
-  def SigningProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SigningProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.signer.SigningProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.signer.SigningProfileArgs.builder
     conf.logicalName2physicalName(name) match
@@ -66,7 +66,7 @@ object signer:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a Signer Signing Profile Permission. That is, a cross-account permission for a signing profile. */
-  def SigningProfilePermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SigningProfilePermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.signer.SigningProfilePermissionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.signer.SigningProfilePermissionArgs.builder
     com.pulumi.aws.signer.SigningProfilePermission(name,

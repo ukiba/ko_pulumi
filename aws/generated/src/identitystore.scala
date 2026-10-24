@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object identitystore:
   /** Resource for managing an AWS IdentityStore Group. */
-  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.identitystore.GroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.identitystore.GroupArgs.builder
     com.pulumi.aws.identitystore.Group(name,
@@ -15,7 +15,7 @@ object identitystore:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS IdentityStore Group Membership. */
-  def GroupMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GroupMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.identitystore.GroupMembershipArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.identitystore.GroupMembershipArgs.builder
     com.pulumi.aws.identitystore.GroupMembership(name,
@@ -111,7 +111,7 @@ object identitystore:
    * so your identity source does not automatically update with the changes that you make to
    * users using this resource.
    */
-  def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.identitystore.UserArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.identitystore.UserArgs.builder
     com.pulumi.aws.identitystore.User(name,

@@ -11,7 +11,7 @@ object quicksight:
    * 
    * &gt; Deletion of this resource will not modify any settings, only remove the resource from state.
    */
-  def AccountSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccountSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.AccountSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.quicksight.AccountSettingsArgs.builder
     com.pulumi.aws.quicksight.AccountSettings(name,
@@ -23,7 +23,7 @@ object quicksight:
    * 
    * &gt; Due to the absence of the `adminGroup`, `authorGroup`, `readerGroup`, `adminProGroup`, `authorProGroup`, and `readerProGroup` fields in the [`DescribeAccountSettings`](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAccountSettings.html) API response, changes made to these groups post-subscription will not be detected by this resource.
    */
-  def AccountSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccountSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.AccountSubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.quicksight.AccountSubscriptionArgs.builder
     com.pulumi.aws.quicksight.AccountSubscription(name,
@@ -31,7 +31,7 @@ object quicksight:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing a QuickSight Analysis. */
-  def Analysis(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Analysis(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.AnalysisArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.quicksight.AnalysisArgs.builder
     conf.logicalName2physicalName(name) match
@@ -49,7 +49,7 @@ object quicksight:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a QuickSight custom permissions profile. */
-  def CustomPermissions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomPermissions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.CustomPermissionsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.quicksight.CustomPermissionsArgs.builder
     argsBuilder = args(argsBuilder)
@@ -64,7 +64,7 @@ object quicksight:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing a QuickSight Dashboard. */
-  def Dashboard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Dashboard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.DashboardArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.quicksight.DashboardArgs.builder
     conf.logicalName2physicalName(name) match
@@ -82,7 +82,7 @@ object quicksight:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing a QuickSight Data Set. */
-  def DataSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.DataSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.quicksight.DataSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -100,7 +100,7 @@ object quicksight:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing QuickSight Data Source */
-  def DataSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.DataSourceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.quicksight.DataSourceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -118,7 +118,7 @@ object quicksight:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing a QuickSight Folder. */
-  def Folder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Folder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.FolderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.quicksight.FolderArgs.builder
     conf.logicalName2physicalName(name) match
@@ -136,7 +136,7 @@ object quicksight:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS QuickSight Folder Membership. */
-  def FolderMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FolderMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.FolderMembershipArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.quicksight.FolderMembershipArgs.builder
     com.pulumi.aws.quicksight.FolderMembership(name,
@@ -144,7 +144,7 @@ object quicksight:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing QuickSight Group */
-  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.GroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.quicksight.GroupArgs.builder
     com.pulumi.aws.quicksight.Group(name,
@@ -152,7 +152,7 @@ object quicksight:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing QuickSight Group Membership */
-  def GroupMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GroupMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.GroupMembershipArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.quicksight.GroupMembershipArgs.builder
     com.pulumi.aws.quicksight.GroupMembership(name,
@@ -160,7 +160,7 @@ object quicksight:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS QuickSight IAM Policy Assignment. */
-  def IamPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IamPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.IamPolicyAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.quicksight.IamPolicyAssignmentArgs.builder
     com.pulumi.aws.quicksight.IamPolicyAssignment(name,
@@ -168,7 +168,7 @@ object quicksight:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS QuickSight Ingestion. */
-  def Ingestion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Ingestion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.IngestionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.quicksight.IngestionArgs.builder
     com.pulumi.aws.quicksight.Ingestion(name,
@@ -180,7 +180,7 @@ object quicksight:
    * 
    * &gt; Deletion of this resource clears all IP restrictions from a QuickSight account.
    */
-  def IpRestriction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IpRestriction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.IpRestrictionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.quicksight.IpRestrictionArgs.builder
     com.pulumi.aws.quicksight.IpRestriction(name,
@@ -192,7 +192,7 @@ object quicksight:
    * 
    * &gt; Deletion of this resource clears all CMK registrations from a QuickSight account. QuickSight then uses AWS owned keys to encrypt your resources.
    */
-  def KeyRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def KeyRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.KeyRegistrationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.quicksight.KeyRegistrationArgs.builder
     com.pulumi.aws.quicksight.KeyRegistration(name,
@@ -200,7 +200,7 @@ object quicksight:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS QuickSight Namespace. */
-  def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.NamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.quicksight.NamespaceArgs.builder
     argsBuilder = args(argsBuilder)
@@ -312,7 +312,7 @@ object quicksight:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Resource for managing a QuickSight Refresh Schedule. */
-  def RefreshSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RefreshSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.RefreshScheduleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.quicksight.RefreshScheduleArgs.builder
     com.pulumi.aws.quicksight.RefreshSchedule(name,
@@ -320,7 +320,7 @@ object quicksight:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the custom permissions that are associated with a role. */
-  def RoleCustomPermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RoleCustomPermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.RoleCustomPermissionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.quicksight.RoleCustomPermissionArgs.builder
     com.pulumi.aws.quicksight.RoleCustomPermission(name,
@@ -332,7 +332,7 @@ object quicksight:
    * 
    * &gt; The role membership APIs are disabled for identities managed by QuickSight. This resource can only be used when the QuickSight account subscription uses the Active Directory or IAM Identity Center authentication method.
    */
-  def RoleMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RoleMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.RoleMembershipArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.quicksight.RoleMembershipArgs.builder
     com.pulumi.aws.quicksight.RoleMembership(name,
@@ -340,7 +340,7 @@ object quicksight:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing a QuickSight Template. */
-  def Template(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Template(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.TemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.quicksight.TemplateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -358,7 +358,7 @@ object quicksight:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS QuickSight Template Alias. */
-  def TemplateAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TemplateAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.TemplateAliasArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.quicksight.TemplateAliasArgs.builder
     com.pulumi.aws.quicksight.TemplateAlias(name,
@@ -366,7 +366,7 @@ object quicksight:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing a QuickSight Theme. */
-  def Theme(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Theme(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.ThemeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.quicksight.ThemeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -384,7 +384,7 @@ object quicksight:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing QuickSight User */
-  def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.UserArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.quicksight.UserArgs.builder
     com.pulumi.aws.quicksight.User(name,
@@ -392,7 +392,7 @@ object quicksight:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the custom permissions profile for a user. */
-  def UserCustomPermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UserCustomPermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.UserCustomPermissionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.quicksight.UserCustomPermissionArgs.builder
     com.pulumi.aws.quicksight.UserCustomPermission(name,
@@ -400,7 +400,7 @@ object quicksight:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS QuickSight VPC Connection. */
-  def VpcConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.quicksight.VpcConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.quicksight.VpcConnectionArgs.builder
     conf.logicalName2physicalName(name) match

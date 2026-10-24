@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object mongocluster:
   /** Manages a Mongo Cluster Firewall Rule. */
-  def FirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.mongocluster.FirewallRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.mongocluster.FirewallRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16,7 +16,7 @@ object mongocluster:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a MongoDB Cluster using vCore Architecture. */
-  def MongoCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MongoCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.mongocluster.MongoClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.mongocluster.MongoClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -34,7 +34,7 @@ object mongocluster:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Mongo Cluster User. */
-  def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.mongocluster.UserArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.mongocluster.UserArgs.builder
     com.pulumi.azure.mongocluster.User(name,

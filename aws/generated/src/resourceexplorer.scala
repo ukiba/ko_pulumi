@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object resourceexplorer:
   /** Provides a resource to manage a Resource Explorer index in the current AWS Region. */
-  def Index(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Index(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.resourceexplorer.IndexArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.resourceexplorer.IndexArgs.builder
     argsBuilder = args(argsBuilder)
@@ -39,7 +39,7 @@ object resourceexplorer:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides a resource to manage a Resource Explorer view. */
-  def View(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def View(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.resourceexplorer.ViewArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.resourceexplorer.ViewArgs.builder
     conf.logicalName2physicalName(name) match

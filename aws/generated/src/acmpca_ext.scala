@@ -7,7 +7,7 @@ object acmpca_ext:
      * @param validity Configures end of the validity period for the certificate. See validity block below.
      * @return builder
      */
-    def validity(args: Endofunction[com.pulumi.aws.acmpca.inputs.CertificateValidityArgs.Builder]):
+    inline def validity(args: Endofunction[com.pulumi.aws.acmpca.inputs.CertificateValidityArgs.Builder]):
         com.pulumi.aws.acmpca.CertificateArgs.Builder =
       val argsBuilder = com.pulumi.aws.acmpca.inputs.CertificateValidityArgs.builder
       builder.validity(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object acmpca_ext:
      * @param certificateAuthorityConfiguration Nested argument containing algorithms and certificate subject information. Defined below.
      * @return builder
      */
-    def certificateAuthorityConfiguration(args: Endofunction[com.pulumi.aws.acmpca.inputs.CertificateAuthorityCertificateAuthorityConfigurationArgs.Builder]):
+    inline def certificateAuthorityConfiguration(args: Endofunction[com.pulumi.aws.acmpca.inputs.CertificateAuthorityCertificateAuthorityConfigurationArgs.Builder]):
         com.pulumi.aws.acmpca.CertificateAuthorityArgs.Builder =
       val argsBuilder = com.pulumi.aws.acmpca.inputs.CertificateAuthorityCertificateAuthorityConfigurationArgs.builder
       builder.certificateAuthorityConfiguration(args(argsBuilder).build)
@@ -26,7 +26,7 @@ object acmpca_ext:
      * @param revocationConfiguration Nested argument containing revocation configuration. Defined below.
      * @return builder
      */
-    def revocationConfiguration(args: Endofunction[com.pulumi.aws.acmpca.inputs.CertificateAuthorityRevocationConfigurationArgs.Builder]):
+    inline def revocationConfiguration(args: Endofunction[com.pulumi.aws.acmpca.inputs.CertificateAuthorityRevocationConfigurationArgs.Builder]):
         com.pulumi.aws.acmpca.CertificateAuthorityArgs.Builder =
       val argsBuilder = com.pulumi.aws.acmpca.inputs.CertificateAuthorityRevocationConfigurationArgs.builder
       builder.revocationConfiguration(args(argsBuilder).build)
@@ -36,7 +36,7 @@ object acmpca_ext:
      * @param subject Nested argument that contains X.500 distinguished name information. At least one nested attribute must be specified.
      * @return builder
      */
-    def subject(args: Endofunction[com.pulumi.aws.acmpca.inputs.CertificateAuthorityCertificateAuthorityConfigurationSubjectArgs.Builder]):
+    inline def subject(args: Endofunction[com.pulumi.aws.acmpca.inputs.CertificateAuthorityCertificateAuthorityConfigurationSubjectArgs.Builder]):
         com.pulumi.aws.acmpca.inputs.CertificateAuthorityCertificateAuthorityConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.acmpca.inputs.CertificateAuthorityCertificateAuthorityConfigurationSubjectArgs.builder
       builder.subject(args(argsBuilder).build)
@@ -46,7 +46,7 @@ object acmpca_ext:
      * @param crlConfiguration Nested argument containing configuration of the certificate revocation list (CRL), if any, maintained by the certificate authority. Defined below.
      * @return builder
      */
-    def crlConfiguration(args: Endofunction[com.pulumi.aws.acmpca.inputs.CertificateAuthorityRevocationConfigurationCrlConfigurationArgs.Builder]):
+    inline def crlConfiguration(args: Endofunction[com.pulumi.aws.acmpca.inputs.CertificateAuthorityRevocationConfigurationCrlConfigurationArgs.Builder]):
         com.pulumi.aws.acmpca.inputs.CertificateAuthorityRevocationConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.acmpca.inputs.CertificateAuthorityRevocationConfigurationCrlConfigurationArgs.builder
       builder.crlConfiguration(args(argsBuilder).build)
@@ -56,7 +56,7 @@ object acmpca_ext:
      * the custom OCSP responder endpoint. Defined below.
      * @return builder
      */
-    def ocspConfiguration(args: Endofunction[com.pulumi.aws.acmpca.inputs.CertificateAuthorityRevocationConfigurationOcspConfigurationArgs.Builder]):
+    inline def ocspConfiguration(args: Endofunction[com.pulumi.aws.acmpca.inputs.CertificateAuthorityRevocationConfigurationOcspConfigurationArgs.Builder]):
         com.pulumi.aws.acmpca.inputs.CertificateAuthorityRevocationConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.acmpca.inputs.CertificateAuthorityRevocationConfigurationOcspConfigurationArgs.builder
       builder.ocspConfiguration(args(argsBuilder).build)
@@ -66,7 +66,7 @@ object acmpca_ext:
      * @param certificateAuthorityConfiguration Nested argument containing algorithms and certificate subject information. Defined below.
      * @return builder
      */
-    def certificateAuthorityConfiguration(args: Endofunction[com.pulumi.aws.acmpca.inputs.CertificateAuthorityCertificateAuthorityConfigurationArgs.Builder]):
+    inline def certificateAuthorityConfiguration(args: Endofunction[com.pulumi.aws.acmpca.inputs.CertificateAuthorityCertificateAuthorityConfigurationArgs.Builder]):
         com.pulumi.aws.acmpca.inputs.CertificateAuthorityState.Builder =
       val argsBuilder = com.pulumi.aws.acmpca.inputs.CertificateAuthorityCertificateAuthorityConfigurationArgs.builder
       builder.certificateAuthorityConfiguration(args(argsBuilder).build)
@@ -75,7 +75,7 @@ object acmpca_ext:
      * @param revocationConfiguration Nested argument containing revocation configuration. Defined below.
      * @return builder
      */
-    def revocationConfiguration(args: Endofunction[com.pulumi.aws.acmpca.inputs.CertificateAuthorityRevocationConfigurationArgs.Builder]):
+    inline def revocationConfiguration(args: Endofunction[com.pulumi.aws.acmpca.inputs.CertificateAuthorityRevocationConfigurationArgs.Builder]):
         com.pulumi.aws.acmpca.inputs.CertificateAuthorityState.Builder =
       val argsBuilder = com.pulumi.aws.acmpca.inputs.CertificateAuthorityRevocationConfigurationArgs.builder
       builder.revocationConfiguration(args(argsBuilder).build)
@@ -85,7 +85,7 @@ object acmpca_ext:
      * @param validity Configures end of the validity period for the certificate. See validity block below.
      * @return builder
      */
-    def validity(args: Endofunction[com.pulumi.aws.acmpca.inputs.CertificateValidityArgs.Builder]):
+    inline def validity(args: Endofunction[com.pulumi.aws.acmpca.inputs.CertificateValidityArgs.Builder]):
         com.pulumi.aws.acmpca.inputs.CertificateState.Builder =
       val argsBuilder = com.pulumi.aws.acmpca.inputs.CertificateValidityArgs.builder
       builder.validity(args(argsBuilder).build)

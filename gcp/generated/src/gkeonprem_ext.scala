@@ -8,7 +8,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clusterOperations(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterClusterOperationsArgs.Builder]):
+    inline def clusterOperations(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterClusterOperationsArgs.Builder]):
         com.pulumi.gcp.gkeonprem.BareMetalAdminClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterClusterOperationsArgs.builder
       builder.clusterOperations(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def controlPlane(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneArgs.Builder]):
+    inline def controlPlane(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneArgs.Builder]):
         com.pulumi.gcp.gkeonprem.BareMetalAdminClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneArgs.builder
       builder.controlPlane(args(argsBuilder).build)
@@ -28,7 +28,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loadBalancer(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerArgs.Builder]):
+    inline def loadBalancer(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerArgs.Builder]):
         com.pulumi.gcp.gkeonprem.BareMetalAdminClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerArgs.builder
       builder.loadBalancer(args(argsBuilder).build)
@@ -38,7 +38,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenanceConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterMaintenanceConfigArgs.Builder]):
+    inline def maintenanceConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterMaintenanceConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.BareMetalAdminClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterMaintenanceConfigArgs.builder
       builder.maintenanceConfig(args(argsBuilder).build)
@@ -48,7 +48,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNetworkConfigArgs.Builder]):
+    inline def networkConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNetworkConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.BareMetalAdminClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)
@@ -58,7 +58,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeAccessConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNodeAccessConfigArgs.Builder]):
+    inline def nodeAccessConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNodeAccessConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.BareMetalAdminClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNodeAccessConfigArgs.builder
       builder.nodeAccessConfig(args(argsBuilder).build)
@@ -68,7 +68,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNodeConfigArgs.Builder]):
+    inline def nodeConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNodeConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.BareMetalAdminClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNodeConfigArgs.builder
       builder.nodeConfig(args(argsBuilder).build)
@@ -78,7 +78,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def proxy(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterProxyArgs.Builder]):
+    inline def proxy(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterProxyArgs.Builder]):
         com.pulumi.gcp.gkeonprem.BareMetalAdminClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterProxyArgs.builder
       builder.proxy(args(argsBuilder).build)
@@ -88,7 +88,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def securityConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterSecurityConfigArgs.Builder]):
+    inline def securityConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterSecurityConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.BareMetalAdminClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterSecurityConfigArgs.builder
       builder.securityConfig(args(argsBuilder).build)
@@ -98,7 +98,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def storage(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterStorageArgs.Builder]):
+    inline def storage(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterStorageArgs.Builder]):
         com.pulumi.gcp.gkeonprem.BareMetalAdminClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterStorageArgs.builder
       builder.storage(args(argsBuilder).build)
@@ -109,7 +109,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def binaryAuthorization(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterBinaryAuthorizationArgs.Builder]):
+    inline def binaryAuthorization(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterBinaryAuthorizationArgs.Builder]):
         com.pulumi.gcp.gkeonprem.BareMetalClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterBinaryAuthorizationArgs.builder
       builder.binaryAuthorization(args(argsBuilder).build)
@@ -119,7 +119,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clusterOperations(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterClusterOperationsArgs.Builder]):
+    inline def clusterOperations(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterClusterOperationsArgs.Builder]):
         com.pulumi.gcp.gkeonprem.BareMetalClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterClusterOperationsArgs.builder
       builder.clusterOperations(args(argsBuilder).build)
@@ -129,7 +129,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def controlPlane(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneArgs.Builder]):
+    inline def controlPlane(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneArgs.Builder]):
         com.pulumi.gcp.gkeonprem.BareMetalClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneArgs.builder
       builder.controlPlane(args(argsBuilder).build)
@@ -139,7 +139,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loadBalancer(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerArgs.Builder]):
+    inline def loadBalancer(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerArgs.Builder]):
         com.pulumi.gcp.gkeonprem.BareMetalClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerArgs.builder
       builder.loadBalancer(args(argsBuilder).build)
@@ -149,7 +149,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenanceConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterMaintenanceConfigArgs.Builder]):
+    inline def maintenanceConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterMaintenanceConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.BareMetalClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterMaintenanceConfigArgs.builder
       builder.maintenanceConfig(args(argsBuilder).build)
@@ -159,7 +159,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNetworkConfigArgs.Builder]):
+    inline def networkConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNetworkConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.BareMetalClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)
@@ -169,7 +169,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeAccessConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNodeAccessConfigArgs.Builder]):
+    inline def nodeAccessConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNodeAccessConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.BareMetalClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNodeAccessConfigArgs.builder
       builder.nodeAccessConfig(args(argsBuilder).build)
@@ -179,7 +179,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNodeConfigArgs.Builder]):
+    inline def nodeConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNodeConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.BareMetalClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNodeConfigArgs.builder
       builder.nodeConfig(args(argsBuilder).build)
@@ -189,7 +189,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def osEnvironmentConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterOsEnvironmentConfigArgs.Builder]):
+    inline def osEnvironmentConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterOsEnvironmentConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.BareMetalClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterOsEnvironmentConfigArgs.builder
       builder.osEnvironmentConfig(args(argsBuilder).build)
@@ -199,7 +199,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def proxy(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterProxyArgs.Builder]):
+    inline def proxy(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterProxyArgs.Builder]):
         com.pulumi.gcp.gkeonprem.BareMetalClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterProxyArgs.builder
       builder.proxy(args(argsBuilder).build)
@@ -209,7 +209,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def securityConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterSecurityConfigArgs.Builder]):
+    inline def securityConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterSecurityConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.BareMetalClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterSecurityConfigArgs.builder
       builder.securityConfig(args(argsBuilder).build)
@@ -219,7 +219,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def storage(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterStorageArgs.Builder]):
+    inline def storage(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterStorageArgs.Builder]):
         com.pulumi.gcp.gkeonprem.BareMetalClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterStorageArgs.builder
       builder.storage(args(argsBuilder).build)
@@ -229,7 +229,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def upgradePolicy(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterUpgradePolicyArgs.Builder]):
+    inline def upgradePolicy(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterUpgradePolicyArgs.Builder]):
         com.pulumi.gcp.gkeonprem.BareMetalClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterUpgradePolicyArgs.builder
       builder.upgradePolicy(args(argsBuilder).build)
@@ -240,7 +240,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodePoolConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalNodePoolNodePoolConfigArgs.Builder]):
+    inline def nodePoolConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalNodePoolNodePoolConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.BareMetalNodePoolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalNodePoolNodePoolConfigArgs.builder
       builder.nodePoolConfig(args(argsBuilder).build)
@@ -252,7 +252,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def antiAffinityGroups(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterAntiAffinityGroupsArgs.Builder]):
+    inline def antiAffinityGroups(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterAntiAffinityGroupsArgs.Builder]):
         com.pulumi.gcp.gkeonprem.VMwareClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterAntiAffinityGroupsArgs.builder
       builder.antiAffinityGroups(args(argsBuilder).build)
@@ -262,7 +262,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authorization(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterAuthorizationArgs.Builder]):
+    inline def authorization(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterAuthorizationArgs.Builder]):
         com.pulumi.gcp.gkeonprem.VMwareClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterAuthorizationArgs.builder
       builder.authorization(args(argsBuilder).build)
@@ -272,7 +272,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoRepairConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterAutoRepairConfigArgs.Builder]):
+    inline def autoRepairConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterAutoRepairConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.VMwareClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterAutoRepairConfigArgs.builder
       builder.autoRepairConfig(args(argsBuilder).build)
@@ -282,7 +282,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def controlPlaneNode(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterControlPlaneNodeArgs.Builder]):
+    inline def controlPlaneNode(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterControlPlaneNodeArgs.Builder]):
         com.pulumi.gcp.gkeonprem.VMwareClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterControlPlaneNodeArgs.builder
       builder.controlPlaneNode(args(argsBuilder).build)
@@ -292,7 +292,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataplaneV2(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterDataplaneV2Args.Builder]):
+    inline def dataplaneV2(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterDataplaneV2Args.Builder]):
         com.pulumi.gcp.gkeonprem.VMwareClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterDataplaneV2Args.builder
       builder.dataplaneV2(args(argsBuilder).build)
@@ -302,7 +302,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loadBalancer(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerArgs.Builder]):
+    inline def loadBalancer(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerArgs.Builder]):
         com.pulumi.gcp.gkeonprem.VMwareClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerArgs.builder
       builder.loadBalancer(args(argsBuilder).build)
@@ -312,7 +312,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigArgs.Builder]):
+    inline def networkConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.VMwareClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)
@@ -322,7 +322,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def storage(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterStorageArgs.Builder]):
+    inline def storage(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterStorageArgs.Builder]):
         com.pulumi.gcp.gkeonprem.VMwareClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterStorageArgs.builder
       builder.storage(args(argsBuilder).build)
@@ -332,7 +332,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def upgradePolicy(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterUpgradePolicyArgs.Builder]):
+    inline def upgradePolicy(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterUpgradePolicyArgs.Builder]):
         com.pulumi.gcp.gkeonprem.VMwareClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterUpgradePolicyArgs.builder
       builder.upgradePolicy(args(argsBuilder).build)
@@ -343,7 +343,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vcenter(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterVcenterArgs.Builder]):
+    inline def vcenter(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterVcenterArgs.Builder]):
         com.pulumi.gcp.gkeonprem.VMwareClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterVcenterArgs.builder
       builder.vcenter(args(argsBuilder).build)
@@ -354,7 +354,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.VMwareNodePoolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -364,7 +364,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodePoolAutoscaling(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolNodePoolAutoscalingArgs.Builder]):
+    inline def nodePoolAutoscaling(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolNodePoolAutoscalingArgs.Builder]):
         com.pulumi.gcp.gkeonprem.VMwareNodePoolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolNodePoolAutoscalingArgs.builder
       builder.nodePoolAutoscaling(args(argsBuilder).build)
@@ -375,7 +375,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def addonNode(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAddonNodeArgs.Builder]):
+    inline def addonNode(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAddonNodeArgs.Builder]):
         com.pulumi.gcp.gkeonprem.VmwareAdminClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAddonNodeArgs.builder
       builder.addonNode(args(argsBuilder).build)
@@ -386,7 +386,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def antiAffinityGroups(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAntiAffinityGroupsArgs.Builder]):
+    inline def antiAffinityGroups(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAntiAffinityGroupsArgs.Builder]):
         com.pulumi.gcp.gkeonprem.VmwareAdminClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAntiAffinityGroupsArgs.builder
       builder.antiAffinityGroups(args(argsBuilder).build)
@@ -396,7 +396,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authorization(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAuthorizationArgs.Builder]):
+    inline def authorization(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAuthorizationArgs.Builder]):
         com.pulumi.gcp.gkeonprem.VmwareAdminClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAuthorizationArgs.builder
       builder.authorization(args(argsBuilder).build)
@@ -406,7 +406,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoRepairConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAutoRepairConfigArgs.Builder]):
+    inline def autoRepairConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAutoRepairConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.VmwareAdminClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAutoRepairConfigArgs.builder
       builder.autoRepairConfig(args(argsBuilder).build)
@@ -416,7 +416,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def controlPlaneNode(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterControlPlaneNodeArgs.Builder]):
+    inline def controlPlaneNode(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterControlPlaneNodeArgs.Builder]):
         com.pulumi.gcp.gkeonprem.VmwareAdminClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterControlPlaneNodeArgs.builder
       builder.controlPlaneNode(args(argsBuilder).build)
@@ -426,7 +426,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loadBalancer(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterLoadBalancerArgs.Builder]):
+    inline def loadBalancer(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterLoadBalancerArgs.Builder]):
         com.pulumi.gcp.gkeonprem.VmwareAdminClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterLoadBalancerArgs.builder
       builder.loadBalancer(args(argsBuilder).build)
@@ -436,7 +436,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigArgs.Builder]):
+    inline def networkConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.VmwareAdminClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)
@@ -446,7 +446,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def platformConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigArgs.Builder]):
+    inline def platformConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.VmwareAdminClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigArgs.builder
       builder.platformConfig(args(argsBuilder).build)
@@ -456,7 +456,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def privateRegistryConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPrivateRegistryConfigArgs.Builder]):
+    inline def privateRegistryConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPrivateRegistryConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.VmwareAdminClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPrivateRegistryConfigArgs.builder
       builder.privateRegistryConfig(args(argsBuilder).build)
@@ -466,7 +466,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def proxy(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterProxyArgs.Builder]):
+    inline def proxy(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterProxyArgs.Builder]):
         com.pulumi.gcp.gkeonprem.VmwareAdminClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterProxyArgs.builder
       builder.proxy(args(argsBuilder).build)
@@ -476,7 +476,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vcenter(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterVcenterArgs.Builder]):
+    inline def vcenter(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterVcenterArgs.Builder]):
         com.pulumi.gcp.gkeonprem.VmwareAdminClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterVcenterArgs.builder
       builder.vcenter(args(argsBuilder).build)
@@ -490,7 +490,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiServerArgs(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneApiServerArgArgs.Builder]*):
+    inline def apiServerArgs(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneApiServerArgArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneApiServerArgArgs.builder
       builder.apiServerArgs(args.map(_(argsBuilder).build)*)
@@ -500,7 +500,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def controlPlaneNodePoolConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfigArgs.Builder]):
+    inline def controlPlaneNodePoolConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfigArgs.builder
       builder.controlPlaneNodePoolConfig(args(argsBuilder).build)
@@ -511,7 +511,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodePoolConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigArgs.Builder]):
+    inline def nodePoolConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigArgs.builder
       builder.nodePoolConfig(args(argsBuilder).build)
@@ -521,7 +521,7 @@ object gkeonprem_ext:
      * @param nodeConfigs Structure is documented below.
      * @return builder
      */
-    def nodeConfigs(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigNodeConfigArgs.Builder]*):
+    inline def nodeConfigs(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigNodeConfigArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigNodeConfigArgs.builder
       builder.nodeConfigs(args.map(_(argsBuilder).build)*)
@@ -530,7 +530,7 @@ object gkeonprem_ext:
      * @param taints Structure is documented below.
      * @return builder
      */
-    def taints(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigTaintArgs.Builder]*):
+    inline def taints(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigTaintArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigTaintArgs.builder
       builder.taints(args.map(_(argsBuilder).build)*)
@@ -541,7 +541,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bgpLbConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigArgs.Builder]):
+    inline def bgpLbConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigArgs.builder
       builder.bgpLbConfig(args(argsBuilder).build)
@@ -551,7 +551,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def manualLbConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerManualLbConfigArgs.Builder]):
+    inline def manualLbConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerManualLbConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerManualLbConfigArgs.builder
       builder.manualLbConfig(args(argsBuilder).build)
@@ -561,7 +561,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def portConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerPortConfigArgs.Builder]):
+    inline def portConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerPortConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerPortConfigArgs.builder
       builder.portConfig(args(argsBuilder).build)
@@ -571,7 +571,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vipConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerVipConfigArgs.Builder]):
+    inline def vipConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerVipConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerVipConfigArgs.builder
       builder.vipConfig(args(argsBuilder).build)
@@ -583,7 +583,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def addressPools(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigAddressPoolArgs.Builder]*):
+    inline def addressPools(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigAddressPoolArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigAddressPoolArgs.builder
       builder.addressPools(args.map(_(argsBuilder).build)*)
@@ -593,7 +593,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bgpPeerConfigs(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigBgpPeerConfigArgs.Builder]*):
+    inline def bgpPeerConfigs(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigBgpPeerConfigArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigBgpPeerConfigArgs.builder
       builder.bgpPeerConfigs(args.map(_(argsBuilder).build)*)
@@ -603,7 +603,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loadBalancerNodePoolConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigArgs.Builder]):
+    inline def loadBalancerNodePoolConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigArgs.builder
       builder.loadBalancerNodePoolConfig(args(argsBuilder).build)
@@ -614,7 +614,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodePoolConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigArgs.Builder]):
+    inline def nodePoolConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigArgs.builder
       builder.nodePoolConfig(args(argsBuilder).build)
@@ -625,7 +625,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def kubeletConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigKubeletConfigArgs.Builder]):
+    inline def kubeletConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigKubeletConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigKubeletConfigArgs.builder
       builder.kubeletConfig(args(argsBuilder).build)
@@ -634,7 +634,7 @@ object gkeonprem_ext:
      * @param nodeConfigs Structure is documented below.
      * @return builder
      */
-    def nodeConfigs(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigNodeConfigArgs.Builder]*):
+    inline def nodeConfigs(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigNodeConfigArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigNodeConfigArgs.builder
       builder.nodeConfigs(args.map(_(argsBuilder).build)*)
@@ -643,7 +643,7 @@ object gkeonprem_ext:
      * @param taints Structure is documented below.
      * @return builder
      */
-    def taints(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigTaintArgs.Builder]*):
+    inline def taints(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigTaintArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigTaintArgs.builder
       builder.taints(args.map(_(argsBuilder).build)*)
@@ -654,7 +654,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def islandModeCidr(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNetworkConfigIslandModeCidrArgs.Builder]):
+    inline def islandModeCidr(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNetworkConfigIslandModeCidrArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNetworkConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNetworkConfigIslandModeCidrArgs.builder
       builder.islandModeCidr(args(argsBuilder).build)
@@ -664,7 +664,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def multipleNetworkInterfacesConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNetworkConfigMultipleNetworkInterfacesConfigArgs.Builder]):
+    inline def multipleNetworkInterfacesConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNetworkConfigMultipleNetworkInterfacesConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNetworkConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNetworkConfigMultipleNetworkInterfacesConfigArgs.builder
       builder.multipleNetworkInterfacesConfig(args(argsBuilder).build)
@@ -675,7 +675,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authorization(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterSecurityConfigAuthorizationArgs.Builder]):
+    inline def authorization(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterSecurityConfigAuthorizationArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterSecurityConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterSecurityConfigAuthorizationArgs.builder
       builder.authorization(args(argsBuilder).build)
@@ -686,7 +686,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def adminUsers(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterSecurityConfigAuthorizationAdminUserArgs.Builder]*):
+    inline def adminUsers(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterSecurityConfigAuthorizationAdminUserArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterSecurityConfigAuthorizationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterSecurityConfigAuthorizationAdminUserArgs.builder
       builder.adminUsers(args.map(_(argsBuilder).build)*)
@@ -697,7 +697,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clusterOperations(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterClusterOperationsArgs.Builder]):
+    inline def clusterOperations(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterClusterOperationsArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterClusterOperationsArgs.builder
       builder.clusterOperations(args(argsBuilder).build)
@@ -707,7 +707,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def controlPlane(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneArgs.Builder]):
+    inline def controlPlane(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterControlPlaneArgs.builder
       builder.controlPlane(args(argsBuilder).build)
@@ -722,7 +722,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fleets(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterFleetArgs.Builder]*):
+    inline def fleets(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterFleetArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterFleetArgs.builder
       builder.fleets(args.map(_(argsBuilder).build)*)
@@ -732,7 +732,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loadBalancer(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerArgs.Builder]):
+    inline def loadBalancer(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterLoadBalancerArgs.builder
       builder.loadBalancer(args(argsBuilder).build)
@@ -742,7 +742,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenanceConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterMaintenanceConfigArgs.Builder]):
+    inline def maintenanceConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterMaintenanceConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterMaintenanceConfigArgs.builder
       builder.maintenanceConfig(args(argsBuilder).build)
@@ -752,7 +752,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNetworkConfigArgs.Builder]):
+    inline def networkConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNetworkConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)
@@ -762,7 +762,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeAccessConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNodeAccessConfigArgs.Builder]):
+    inline def nodeAccessConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNodeAccessConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNodeAccessConfigArgs.builder
       builder.nodeAccessConfig(args(argsBuilder).build)
@@ -772,7 +772,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNodeConfigArgs.Builder]):
+    inline def nodeConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNodeConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterNodeConfigArgs.builder
       builder.nodeConfig(args(argsBuilder).build)
@@ -782,7 +782,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def proxy(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterProxyArgs.Builder]):
+    inline def proxy(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterProxyArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterProxyArgs.builder
       builder.proxy(args(argsBuilder).build)
@@ -792,7 +792,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def securityConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterSecurityConfigArgs.Builder]):
+    inline def securityConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterSecurityConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterSecurityConfigArgs.builder
       builder.securityConfig(args(argsBuilder).build)
@@ -803,7 +803,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def statuses(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterStatusArgs.Builder]*):
+    inline def statuses(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterStatusArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterStatusArgs.builder
       builder.statuses(args.map(_(argsBuilder).build)*)
@@ -813,7 +813,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def storage(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterStorageArgs.Builder]):
+    inline def storage(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterStorageArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterStorageArgs.builder
       builder.storage(args(argsBuilder).build)
@@ -823,7 +823,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def validationChecks(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterValidationCheckArgs.Builder]*):
+    inline def validationChecks(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterValidationCheckArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterValidationCheckArgs.builder
       builder.validationChecks(args.map(_(argsBuilder).build)*)
@@ -835,7 +835,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterStatusConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterStatusConditionArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterStatusConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -848,7 +848,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def lvpNodeMountsConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterStorageLvpNodeMountsConfigArgs.Builder]):
+    inline def lvpNodeMountsConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterStorageLvpNodeMountsConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterStorageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterStorageLvpNodeMountsConfigArgs.builder
       builder.lvpNodeMountsConfig(args(argsBuilder).build)
@@ -860,7 +860,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def lvpShareConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterStorageLvpShareConfigArgs.Builder]):
+    inline def lvpShareConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterStorageLvpShareConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterStorageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterStorageLvpShareConfigArgs.builder
       builder.lvpShareConfig(args(argsBuilder).build)
@@ -871,7 +871,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def lvpConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterStorageLvpShareConfigLvpConfigArgs.Builder]):
+    inline def lvpConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterStorageLvpShareConfigLvpConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterStorageLvpShareConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterStorageLvpShareConfigLvpConfigArgs.builder
       builder.lvpConfig(args(argsBuilder).build)
@@ -883,7 +883,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def statuses(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterValidationCheckStatusArgs.Builder]*):
+    inline def statuses(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterValidationCheckStatusArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterValidationCheckArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterValidationCheckStatusArgs.builder
       builder.statuses(args.map(_(argsBuilder).build)*)
@@ -895,7 +895,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def results(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterValidationCheckStatusResultArgs.Builder]*):
+    inline def results(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterValidationCheckStatusResultArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterValidationCheckStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalAdminClusterValidationCheckStatusResultArgs.builder
       builder.results(args.map(_(argsBuilder).build)*)
@@ -909,7 +909,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiServerArgs(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneApiServerArgArgs.Builder]*):
+    inline def apiServerArgs(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneApiServerArgArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneApiServerArgArgs.builder
       builder.apiServerArgs(args.map(_(argsBuilder).build)*)
@@ -919,7 +919,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def controlPlaneNodePoolConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneControlPlaneNodePoolConfigArgs.Builder]):
+    inline def controlPlaneNodePoolConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneControlPlaneNodePoolConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneControlPlaneNodePoolConfigArgs.builder
       builder.controlPlaneNodePoolConfig(args(argsBuilder).build)
@@ -930,7 +930,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodePoolConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigArgs.Builder]):
+    inline def nodePoolConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneControlPlaneNodePoolConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigArgs.builder
       builder.nodePoolConfig(args(argsBuilder).build)
@@ -941,7 +941,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeConfigs(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigNodeConfigArgs.Builder]*):
+    inline def nodeConfigs(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigNodeConfigArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigNodeConfigArgs.builder
       builder.nodeConfigs(args.map(_(argsBuilder).build)*)
@@ -951,7 +951,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def taints(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigTaintArgs.Builder]*):
+    inline def taints(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigTaintArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneControlPlaneNodePoolConfigNodePoolConfigTaintArgs.builder
       builder.taints(args.map(_(argsBuilder).build)*)
@@ -962,7 +962,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bgpLbConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigArgs.Builder]):
+    inline def bgpLbConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigArgs.builder
       builder.bgpLbConfig(args(argsBuilder).build)
@@ -972,7 +972,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def manualLbConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerManualLbConfigArgs.Builder]):
+    inline def manualLbConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerManualLbConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerManualLbConfigArgs.builder
       builder.manualLbConfig(args(argsBuilder).build)
@@ -982,7 +982,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metalLbConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerMetalLbConfigArgs.Builder]):
+    inline def metalLbConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerMetalLbConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerMetalLbConfigArgs.builder
       builder.metalLbConfig(args(argsBuilder).build)
@@ -992,7 +992,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def portConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerPortConfigArgs.Builder]):
+    inline def portConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerPortConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerPortConfigArgs.builder
       builder.portConfig(args(argsBuilder).build)
@@ -1002,7 +1002,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vipConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerVipConfigArgs.Builder]):
+    inline def vipConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerVipConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerVipConfigArgs.builder
       builder.vipConfig(args(argsBuilder).build)
@@ -1015,7 +1015,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def addressPools(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigAddressPoolArgs.Builder]*):
+    inline def addressPools(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigAddressPoolArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigAddressPoolArgs.builder
       builder.addressPools(args.map(_(argsBuilder).build)*)
@@ -1029,7 +1029,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bgpPeerConfigs(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigBgpPeerConfigArgs.Builder]*):
+    inline def bgpPeerConfigs(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigBgpPeerConfigArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigBgpPeerConfigArgs.builder
       builder.bgpPeerConfigs(args.map(_(argsBuilder).build)*)
@@ -1041,7 +1041,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loadBalancerNodePoolConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigArgs.Builder]):
+    inline def loadBalancerNodePoolConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigArgs.builder
       builder.loadBalancerNodePoolConfig(args(argsBuilder).build)
@@ -1052,7 +1052,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodePoolConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigArgs.Builder]):
+    inline def nodePoolConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigArgs.builder
       builder.nodePoolConfig(args(argsBuilder).build)
@@ -1063,7 +1063,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def kubeletConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigKubeletConfigArgs.Builder]):
+    inline def kubeletConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigKubeletConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigKubeletConfigArgs.builder
       builder.kubeletConfig(args(argsBuilder).build)
@@ -1073,7 +1073,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeConfigs(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigNodeConfigArgs.Builder]*):
+    inline def nodeConfigs(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigNodeConfigArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigNodeConfigArgs.builder
       builder.nodeConfigs(args.map(_(argsBuilder).build)*)
@@ -1083,7 +1083,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def taints(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigTaintArgs.Builder]*):
+    inline def taints(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigTaintArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerBgpLbConfigLoadBalancerNodePoolConfigNodePoolConfigTaintArgs.builder
       builder.taints(args.map(_(argsBuilder).build)*)
@@ -1096,7 +1096,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def addressPools(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerMetalLbConfigAddressPoolArgs.Builder]*):
+    inline def addressPools(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerMetalLbConfigAddressPoolArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerMetalLbConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerMetalLbConfigAddressPoolArgs.builder
       builder.addressPools(args.map(_(argsBuilder).build)*)
@@ -1106,7 +1106,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loadBalancerNodePoolConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfigArgs.Builder]):
+    inline def loadBalancerNodePoolConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerMetalLbConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfigArgs.builder
       builder.loadBalancerNodePoolConfig(args(argsBuilder).build)
@@ -1117,7 +1117,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodePoolConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfigNodePoolConfigArgs.Builder]):
+    inline def nodePoolConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfigNodePoolConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfigNodePoolConfigArgs.builder
       builder.nodePoolConfig(args(argsBuilder).build)
@@ -1128,7 +1128,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeConfigs(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfigNodePoolConfigNodeConfigArgs.Builder]*):
+    inline def nodeConfigs(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfigNodePoolConfigNodeConfigArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfigNodePoolConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfigNodePoolConfigNodeConfigArgs.builder
       builder.nodeConfigs(args.map(_(argsBuilder).build)*)
@@ -1138,7 +1138,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def taints(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfigNodePoolConfigTaintArgs.Builder]*):
+    inline def taints(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfigNodePoolConfigTaintArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfigNodePoolConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerMetalLbConfigLoadBalancerNodePoolConfigNodePoolConfigTaintArgs.builder
       builder.taints(args.map(_(argsBuilder).build)*)
@@ -1149,7 +1149,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def islandModeCidr(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNetworkConfigIslandModeCidrArgs.Builder]):
+    inline def islandModeCidr(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNetworkConfigIslandModeCidrArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNetworkConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNetworkConfigIslandModeCidrArgs.builder
       builder.islandModeCidr(args(argsBuilder).build)
@@ -1159,7 +1159,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def multipleNetworkInterfacesConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNetworkConfigMultipleNetworkInterfacesConfigArgs.Builder]):
+    inline def multipleNetworkInterfacesConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNetworkConfigMultipleNetworkInterfacesConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNetworkConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNetworkConfigMultipleNetworkInterfacesConfigArgs.builder
       builder.multipleNetworkInterfacesConfig(args(argsBuilder).build)
@@ -1169,7 +1169,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def srIovConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNetworkConfigSrIovConfigArgs.Builder]):
+    inline def srIovConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNetworkConfigSrIovConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNetworkConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNetworkConfigSrIovConfigArgs.builder
       builder.srIovConfig(args(argsBuilder).build)
@@ -1180,7 +1180,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authorization(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterSecurityConfigAuthorizationArgs.Builder]):
+    inline def authorization(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterSecurityConfigAuthorizationArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterSecurityConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterSecurityConfigAuthorizationArgs.builder
       builder.authorization(args(argsBuilder).build)
@@ -1191,7 +1191,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def adminUsers(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterSecurityConfigAuthorizationAdminUserArgs.Builder]*):
+    inline def adminUsers(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterSecurityConfigAuthorizationAdminUserArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterSecurityConfigAuthorizationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterSecurityConfigAuthorizationAdminUserArgs.builder
       builder.adminUsers(args.map(_(argsBuilder).build)*)
@@ -1202,7 +1202,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def binaryAuthorization(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterBinaryAuthorizationArgs.Builder]):
+    inline def binaryAuthorization(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterBinaryAuthorizationArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterBinaryAuthorizationArgs.builder
       builder.binaryAuthorization(args(argsBuilder).build)
@@ -1212,7 +1212,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clusterOperations(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterClusterOperationsArgs.Builder]):
+    inline def clusterOperations(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterClusterOperationsArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterClusterOperationsArgs.builder
       builder.clusterOperations(args(argsBuilder).build)
@@ -1222,7 +1222,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def controlPlane(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneArgs.Builder]):
+    inline def controlPlane(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterControlPlaneArgs.builder
       builder.controlPlane(args(argsBuilder).build)
@@ -1237,7 +1237,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fleets(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterFleetArgs.Builder]*):
+    inline def fleets(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterFleetArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterFleetArgs.builder
       builder.fleets(args.map(_(argsBuilder).build)*)
@@ -1247,7 +1247,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loadBalancer(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerArgs.Builder]):
+    inline def loadBalancer(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterLoadBalancerArgs.builder
       builder.loadBalancer(args(argsBuilder).build)
@@ -1257,7 +1257,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenanceConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterMaintenanceConfigArgs.Builder]):
+    inline def maintenanceConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterMaintenanceConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterMaintenanceConfigArgs.builder
       builder.maintenanceConfig(args(argsBuilder).build)
@@ -1267,7 +1267,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNetworkConfigArgs.Builder]):
+    inline def networkConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNetworkConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)
@@ -1277,7 +1277,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeAccessConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNodeAccessConfigArgs.Builder]):
+    inline def nodeAccessConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNodeAccessConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNodeAccessConfigArgs.builder
       builder.nodeAccessConfig(args(argsBuilder).build)
@@ -1287,7 +1287,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNodeConfigArgs.Builder]):
+    inline def nodeConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNodeConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterNodeConfigArgs.builder
       builder.nodeConfig(args(argsBuilder).build)
@@ -1297,7 +1297,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def osEnvironmentConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterOsEnvironmentConfigArgs.Builder]):
+    inline def osEnvironmentConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterOsEnvironmentConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterOsEnvironmentConfigArgs.builder
       builder.osEnvironmentConfig(args(argsBuilder).build)
@@ -1307,7 +1307,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def proxy(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterProxyArgs.Builder]):
+    inline def proxy(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterProxyArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterProxyArgs.builder
       builder.proxy(args(argsBuilder).build)
@@ -1317,7 +1317,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def securityConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterSecurityConfigArgs.Builder]):
+    inline def securityConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterSecurityConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterSecurityConfigArgs.builder
       builder.securityConfig(args(argsBuilder).build)
@@ -1328,7 +1328,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def statuses(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterStatusArgs.Builder]*):
+    inline def statuses(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterStatusArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterStatusArgs.builder
       builder.statuses(args.map(_(argsBuilder).build)*)
@@ -1338,7 +1338,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def storage(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterStorageArgs.Builder]):
+    inline def storage(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterStorageArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterStorageArgs.builder
       builder.storage(args(argsBuilder).build)
@@ -1348,7 +1348,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def upgradePolicy(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterUpgradePolicyArgs.Builder]):
+    inline def upgradePolicy(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterUpgradePolicyArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterUpgradePolicyArgs.builder
       builder.upgradePolicy(args(argsBuilder).build)
@@ -1358,7 +1358,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def validationChecks(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterValidationCheckArgs.Builder]*):
+    inline def validationChecks(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterValidationCheckArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterValidationCheckArgs.builder
       builder.validationChecks(args.map(_(argsBuilder).build)*)
@@ -1370,7 +1370,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterStatusConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterStatusConditionArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterStatusConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -1383,7 +1383,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def lvpNodeMountsConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterStorageLvpNodeMountsConfigArgs.Builder]):
+    inline def lvpNodeMountsConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterStorageLvpNodeMountsConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterStorageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterStorageLvpNodeMountsConfigArgs.builder
       builder.lvpNodeMountsConfig(args(argsBuilder).build)
@@ -1395,7 +1395,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def lvpShareConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterStorageLvpShareConfigArgs.Builder]):
+    inline def lvpShareConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterStorageLvpShareConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterStorageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterStorageLvpShareConfigArgs.builder
       builder.lvpShareConfig(args(argsBuilder).build)
@@ -1406,7 +1406,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def lvpConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterStorageLvpShareConfigLvpConfigArgs.Builder]):
+    inline def lvpConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterStorageLvpShareConfigLvpConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterStorageLvpShareConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterStorageLvpShareConfigLvpConfigArgs.builder
       builder.lvpConfig(args(argsBuilder).build)
@@ -1418,7 +1418,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def statuses(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterValidationCheckStatusArgs.Builder]*):
+    inline def statuses(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterValidationCheckStatusArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterValidationCheckArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterValidationCheckStatusArgs.builder
       builder.statuses(args.map(_(argsBuilder).build)*)
@@ -1430,7 +1430,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def results(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterValidationCheckStatusResultArgs.Builder]*):
+    inline def results(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterValidationCheckStatusResultArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterValidationCheckStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalClusterValidationCheckStatusResultArgs.builder
       builder.results(args.map(_(argsBuilder).build)*)
@@ -1441,7 +1441,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeConfigs(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalNodePoolNodePoolConfigNodeConfigArgs.Builder]*):
+    inline def nodeConfigs(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalNodePoolNodePoolConfigNodeConfigArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalNodePoolNodePoolConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalNodePoolNodePoolConfigNodeConfigArgs.builder
       builder.nodeConfigs(args.map(_(argsBuilder).build)*)
@@ -1451,7 +1451,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def taints(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalNodePoolNodePoolConfigTaintArgs.Builder]*):
+    inline def taints(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalNodePoolNodePoolConfigTaintArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalNodePoolNodePoolConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalNodePoolNodePoolConfigTaintArgs.builder
       builder.taints(args.map(_(argsBuilder).build)*)
@@ -1462,7 +1462,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodePoolConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalNodePoolNodePoolConfigArgs.Builder]):
+    inline def nodePoolConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalNodePoolNodePoolConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalNodePoolState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalNodePoolNodePoolConfigArgs.builder
       builder.nodePoolConfig(args(argsBuilder).build)
@@ -1472,7 +1472,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def statuses(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalNodePoolStatusArgs.Builder]*):
+    inline def statuses(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalNodePoolStatusArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalNodePoolState.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalNodePoolStatusArgs.builder
       builder.statuses(args.map(_(argsBuilder).build)*)
@@ -1484,7 +1484,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalNodePoolStatusConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.BareMetalNodePoolStatusConditionArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.BareMetalNodePoolStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.BareMetalNodePoolStatusConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -1496,7 +1496,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def adminUsers(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterAuthorizationAdminUserArgs.Builder]*):
+    inline def adminUsers(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterAuthorizationAdminUserArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterAuthorizationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterAuthorizationAdminUserArgs.builder
       builder.adminUsers(args.map(_(argsBuilder).build)*)
@@ -1507,7 +1507,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoResizeConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterControlPlaneNodeAutoResizeConfigArgs.Builder]):
+    inline def autoResizeConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterControlPlaneNodeAutoResizeConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterControlPlaneNodeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterControlPlaneNodeAutoResizeConfigArgs.builder
       builder.autoResizeConfig(args(argsBuilder).build)
@@ -1518,7 +1518,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vsphereConfigs(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterControlPlaneNodeVsphereConfigArgs.Builder]*):
+    inline def vsphereConfigs(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterControlPlaneNodeVsphereConfigArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterControlPlaneNodeArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterControlPlaneNodeVsphereConfigArgs.builder
       builder.vsphereConfigs(args.map(_(argsBuilder).build)*)
@@ -1529,7 +1529,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def f5Config(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerF5ConfigArgs.Builder]):
+    inline def f5Config(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerF5ConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerF5ConfigArgs.builder
       builder.f5Config(args(argsBuilder).build)
@@ -1539,7 +1539,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def manualLbConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerManualLbConfigArgs.Builder]):
+    inline def manualLbConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerManualLbConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerManualLbConfigArgs.builder
       builder.manualLbConfig(args(argsBuilder).build)
@@ -1549,7 +1549,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metalLbConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerMetalLbConfigArgs.Builder]):
+    inline def metalLbConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerMetalLbConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerMetalLbConfigArgs.builder
       builder.metalLbConfig(args(argsBuilder).build)
@@ -1559,7 +1559,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vipConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerVipConfigArgs.Builder]):
+    inline def vipConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerVipConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerVipConfigArgs.builder
       builder.vipConfig(args(argsBuilder).build)
@@ -1572,7 +1572,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def addressPools(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerMetalLbConfigAddressPoolArgs.Builder]*):
+    inline def addressPools(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerMetalLbConfigAddressPoolArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerMetalLbConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerMetalLbConfigAddressPoolArgs.builder
       builder.addressPools(args.map(_(argsBuilder).build)*)
@@ -1583,7 +1583,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def controlPlaneV2Config(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigControlPlaneV2ConfigArgs.Builder]):
+    inline def controlPlaneV2Config(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigControlPlaneV2ConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigControlPlaneV2ConfigArgs.builder
       builder.controlPlaneV2Config(args(argsBuilder).build)
@@ -1593,7 +1593,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dhcpIpConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigDhcpIpConfigArgs.Builder]):
+    inline def dhcpIpConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigDhcpIpConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigDhcpIpConfigArgs.builder
       builder.dhcpIpConfig(args(argsBuilder).build)
@@ -1603,7 +1603,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hostConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigHostConfigArgs.Builder]):
+    inline def hostConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigHostConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigHostConfigArgs.builder
       builder.hostConfig(args(argsBuilder).build)
@@ -1613,7 +1613,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def staticIpConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigStaticIpConfigArgs.Builder]):
+    inline def staticIpConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigStaticIpConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigStaticIpConfigArgs.builder
       builder.staticIpConfig(args(argsBuilder).build)
@@ -1623,7 +1623,7 @@ object gkeonprem_ext:
      * @param controlPlaneIpBlock Static IP addresses for the control plane nodes.
      * @return builder
      */
-    def controlPlaneIpBlock(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlockArgs.Builder]):
+    inline def controlPlaneIpBlock(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlockArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigControlPlaneV2ConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlockArgs.builder
       builder.controlPlaneIpBlock(args(argsBuilder).build)
@@ -1634,7 +1634,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ips(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlockIpArgs.Builder]*):
+    inline def ips(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlockIpArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlockArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigControlPlaneV2ConfigControlPlaneIpBlockIpArgs.builder
       builder.ips(args.map(_(argsBuilder).build)*)
@@ -1645,7 +1645,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ipBlocks(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigStaticIpConfigIpBlockArgs.Builder]*):
+    inline def ipBlocks(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigStaticIpConfigIpBlockArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigStaticIpConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigStaticIpConfigIpBlockArgs.builder
       builder.ipBlocks(args.map(_(argsBuilder).build)*)
@@ -1656,7 +1656,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ips(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigStaticIpConfigIpBlockIpArgs.Builder]*):
+    inline def ips(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigStaticIpConfigIpBlockIpArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigStaticIpConfigIpBlockArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigStaticIpConfigIpBlockIpArgs.builder
       builder.ips(args.map(_(argsBuilder).build)*)
@@ -1668,7 +1668,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def antiAffinityGroups(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterAntiAffinityGroupsArgs.Builder]):
+    inline def antiAffinityGroups(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterAntiAffinityGroupsArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterAntiAffinityGroupsArgs.builder
       builder.antiAffinityGroups(args(argsBuilder).build)
@@ -1678,7 +1678,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authorization(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterAuthorizationArgs.Builder]):
+    inline def authorization(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterAuthorizationArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterAuthorizationArgs.builder
       builder.authorization(args(argsBuilder).build)
@@ -1688,7 +1688,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoRepairConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterAutoRepairConfigArgs.Builder]):
+    inline def autoRepairConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterAutoRepairConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterAutoRepairConfigArgs.builder
       builder.autoRepairConfig(args(argsBuilder).build)
@@ -1698,7 +1698,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def controlPlaneNode(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterControlPlaneNodeArgs.Builder]):
+    inline def controlPlaneNode(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterControlPlaneNodeArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterControlPlaneNodeArgs.builder
       builder.controlPlaneNode(args(argsBuilder).build)
@@ -1708,7 +1708,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataplaneV2(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterDataplaneV2Args.Builder]):
+    inline def dataplaneV2(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterDataplaneV2Args.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterDataplaneV2Args.builder
       builder.dataplaneV2(args(argsBuilder).build)
@@ -1718,7 +1718,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fleets(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterFleetArgs.Builder]*):
+    inline def fleets(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterFleetArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterFleetArgs.builder
       builder.fleets(args.map(_(argsBuilder).build)*)
@@ -1728,7 +1728,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loadBalancer(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerArgs.Builder]):
+    inline def loadBalancer(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterLoadBalancerArgs.builder
       builder.loadBalancer(args(argsBuilder).build)
@@ -1738,7 +1738,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigArgs.Builder]):
+    inline def networkConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)
@@ -1749,7 +1749,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def statuses(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterStatusArgs.Builder]*):
+    inline def statuses(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterStatusArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterStatusArgs.builder
       builder.statuses(args.map(_(argsBuilder).build)*)
@@ -1759,7 +1759,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def storage(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterStorageArgs.Builder]):
+    inline def storage(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterStorageArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterStorageArgs.builder
       builder.storage(args(argsBuilder).build)
@@ -1769,7 +1769,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def upgradePolicy(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterUpgradePolicyArgs.Builder]):
+    inline def upgradePolicy(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterUpgradePolicyArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterUpgradePolicyArgs.builder
       builder.upgradePolicy(args(argsBuilder).build)
@@ -1779,7 +1779,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def validationChecks(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterValidationCheckArgs.Builder]*):
+    inline def validationChecks(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterValidationCheckArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterValidationCheckArgs.builder
       builder.validationChecks(args.map(_(argsBuilder).build)*)
@@ -1790,7 +1790,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vcenter(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterVcenterArgs.Builder]):
+    inline def vcenter(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterVcenterArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterVcenterArgs.builder
       builder.vcenter(args(argsBuilder).build)
@@ -1802,7 +1802,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterStatusConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterStatusConditionArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterStatusConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -1814,7 +1814,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def statuses(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterValidationCheckStatusArgs.Builder]*):
+    inline def statuses(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterValidationCheckStatusArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterValidationCheckArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterValidationCheckStatusArgs.builder
       builder.statuses(args.map(_(argsBuilder).build)*)
@@ -1826,7 +1826,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def results(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterValidationCheckStatusResultArgs.Builder]*):
+    inline def results(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareClusterValidationCheckStatusResultArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VMwareClusterValidationCheckStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareClusterValidationCheckStatusResultArgs.builder
       builder.results(args.map(_(argsBuilder).build)*)
@@ -1837,7 +1837,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def taints(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolConfigTaintArgs.Builder]*):
+    inline def taints(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolConfigTaintArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolConfigTaintArgs.builder
       builder.taints(args.map(_(argsBuilder).build)*)
@@ -1847,7 +1847,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vsphereConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolConfigVsphereConfigArgs.Builder]):
+    inline def vsphereConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolConfigVsphereConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolConfigVsphereConfigArgs.builder
       builder.vsphereConfig(args(argsBuilder).build)
@@ -1858,7 +1858,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tags(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolConfigVsphereConfigTagArgs.Builder]*):
+    inline def tags(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolConfigVsphereConfigTagArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolConfigVsphereConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolConfigVsphereConfigTagArgs.builder
       builder.tags(args.map(_(argsBuilder).build)*)
@@ -1869,7 +1869,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -1879,7 +1879,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodePoolAutoscaling(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolNodePoolAutoscalingArgs.Builder]):
+    inline def nodePoolAutoscaling(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolNodePoolAutoscalingArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolNodePoolAutoscalingArgs.builder
       builder.nodePoolAutoscaling(args(argsBuilder).build)
@@ -1889,7 +1889,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def statuses(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolStatusArgs.Builder]*):
+    inline def statuses(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolStatusArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolState.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolStatusArgs.builder
       builder.statuses(args.map(_(argsBuilder).build)*)
@@ -1901,7 +1901,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolStatusConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolStatusConditionArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VMwareNodePoolStatusConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -1912,7 +1912,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoResizeConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAddonNodeAutoResizeConfigArgs.Builder]):
+    inline def autoResizeConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAddonNodeAutoResizeConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAddonNodeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAddonNodeAutoResizeConfigArgs.builder
       builder.autoResizeConfig(args(argsBuilder).build)
@@ -1924,7 +1924,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def viewerUsers(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAuthorizationViewerUserArgs.Builder]*):
+    inline def viewerUsers(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAuthorizationViewerUserArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAuthorizationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAuthorizationViewerUserArgs.builder
       builder.viewerUsers(args.map(_(argsBuilder).build)*)
@@ -1935,7 +1935,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def f5Config(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterLoadBalancerF5ConfigArgs.Builder]):
+    inline def f5Config(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterLoadBalancerF5ConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterLoadBalancerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterLoadBalancerF5ConfigArgs.builder
       builder.f5Config(args(argsBuilder).build)
@@ -1945,7 +1945,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def manualLbConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterLoadBalancerManualLbConfigArgs.Builder]):
+    inline def manualLbConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterLoadBalancerManualLbConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterLoadBalancerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterLoadBalancerManualLbConfigArgs.builder
       builder.manualLbConfig(args(argsBuilder).build)
@@ -1955,7 +1955,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metalLbConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterLoadBalancerMetalLbConfigArgs.Builder]):
+    inline def metalLbConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterLoadBalancerMetalLbConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterLoadBalancerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterLoadBalancerMetalLbConfigArgs.builder
       builder.metalLbConfig(args(argsBuilder).build)
@@ -1965,7 +1965,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vipConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterLoadBalancerVipConfigArgs.Builder]):
+    inline def vipConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterLoadBalancerVipConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterLoadBalancerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterLoadBalancerVipConfigArgs.builder
       builder.vipConfig(args(argsBuilder).build)
@@ -1976,7 +1976,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dhcpIpConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigDhcpIpConfigArgs.Builder]):
+    inline def dhcpIpConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigDhcpIpConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigDhcpIpConfigArgs.builder
       builder.dhcpIpConfig(args(argsBuilder).build)
@@ -1986,7 +1986,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def haControlPlaneConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigHaControlPlaneConfigArgs.Builder]):
+    inline def haControlPlaneConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigHaControlPlaneConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigHaControlPlaneConfigArgs.builder
       builder.haControlPlaneConfig(args(argsBuilder).build)
@@ -1996,7 +1996,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hostConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigHostConfigArgs.Builder]):
+    inline def hostConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigHostConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigHostConfigArgs.builder
       builder.hostConfig(args(argsBuilder).build)
@@ -2006,7 +2006,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def staticIpConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigStaticIpConfigArgs.Builder]):
+    inline def staticIpConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigStaticIpConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigStaticIpConfigArgs.builder
       builder.staticIpConfig(args(argsBuilder).build)
@@ -2017,7 +2017,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def controlPlaneIpBlock(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigHaControlPlaneConfigControlPlaneIpBlockArgs.Builder]):
+    inline def controlPlaneIpBlock(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigHaControlPlaneConfigControlPlaneIpBlockArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigHaControlPlaneConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigHaControlPlaneConfigControlPlaneIpBlockArgs.builder
       builder.controlPlaneIpBlock(args(argsBuilder).build)
@@ -2028,7 +2028,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ips(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigHaControlPlaneConfigControlPlaneIpBlockIpArgs.Builder]*):
+    inline def ips(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigHaControlPlaneConfigControlPlaneIpBlockIpArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigHaControlPlaneConfigControlPlaneIpBlockArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigHaControlPlaneConfigControlPlaneIpBlockIpArgs.builder
       builder.ips(args.map(_(argsBuilder).build)*)
@@ -2039,7 +2039,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ipBlocks(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigStaticIpConfigIpBlockArgs.Builder]*):
+    inline def ipBlocks(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigStaticIpConfigIpBlockArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigStaticIpConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigStaticIpConfigIpBlockArgs.builder
       builder.ipBlocks(args.map(_(argsBuilder).build)*)
@@ -2050,7 +2050,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ips(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigStaticIpConfigIpBlockIpArgs.Builder]*):
+    inline def ips(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigStaticIpConfigIpBlockIpArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigStaticIpConfigIpBlockArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigStaticIpConfigIpBlockIpArgs.builder
       builder.ips(args.map(_(argsBuilder).build)*)
@@ -2062,7 +2062,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bundles(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigBundleArgs.Builder]*):
+    inline def bundles(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigBundleArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigBundleArgs.builder
       builder.bundles(args.map(_(argsBuilder).build)*)
@@ -2075,7 +2075,7 @@ object gkeonprem_ext:
      * &lt;a name=&#34;nestedPlatformConfigBundlesStatus&#34;&gt;&lt;/a&gt;The `status` block contains:
      * @return builder
      */
-    def statuses(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigStatusArgs.Builder]*):
+    inline def statuses(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigStatusArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigStatusArgs.builder
       builder.statuses(args.map(_(argsBuilder).build)*)
@@ -2086,7 +2086,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def statuses(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigBundleStatusArgs.Builder]*):
+    inline def statuses(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigBundleStatusArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigBundleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigBundleStatusArgs.builder
       builder.statuses(args.map(_(argsBuilder).build)*)
@@ -2098,7 +2098,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigBundleStatusConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigBundleStatusConditionArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigBundleStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigBundleStatusConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -2110,7 +2110,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigStatusConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigStatusConditionArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigStatusConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -2121,7 +2121,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def addonNode(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAddonNodeArgs.Builder]):
+    inline def addonNode(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAddonNodeArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAddonNodeArgs.builder
       builder.addonNode(args(argsBuilder).build)
@@ -2132,7 +2132,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def antiAffinityGroups(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAntiAffinityGroupsArgs.Builder]):
+    inline def antiAffinityGroups(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAntiAffinityGroupsArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAntiAffinityGroupsArgs.builder
       builder.antiAffinityGroups(args(argsBuilder).build)
@@ -2142,7 +2142,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authorization(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAuthorizationArgs.Builder]):
+    inline def authorization(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAuthorizationArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAuthorizationArgs.builder
       builder.authorization(args(argsBuilder).build)
@@ -2152,7 +2152,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoRepairConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAutoRepairConfigArgs.Builder]):
+    inline def autoRepairConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAutoRepairConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterAutoRepairConfigArgs.builder
       builder.autoRepairConfig(args(argsBuilder).build)
@@ -2162,7 +2162,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def controlPlaneNode(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterControlPlaneNodeArgs.Builder]):
+    inline def controlPlaneNode(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterControlPlaneNodeArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterControlPlaneNodeArgs.builder
       builder.controlPlaneNode(args(argsBuilder).build)
@@ -2172,7 +2172,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fleets(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterFleetArgs.Builder]*):
+    inline def fleets(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterFleetArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterFleetArgs.builder
       builder.fleets(args.map(_(argsBuilder).build)*)
@@ -2182,7 +2182,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loadBalancer(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterLoadBalancerArgs.Builder]):
+    inline def loadBalancer(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterLoadBalancerArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterLoadBalancerArgs.builder
       builder.loadBalancer(args(argsBuilder).build)
@@ -2192,7 +2192,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigArgs.Builder]):
+    inline def networkConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)
@@ -2202,7 +2202,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def platformConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigArgs.Builder]):
+    inline def platformConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPlatformConfigArgs.builder
       builder.platformConfig(args(argsBuilder).build)
@@ -2212,7 +2212,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def privateRegistryConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPrivateRegistryConfigArgs.Builder]):
+    inline def privateRegistryConfig(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPrivateRegistryConfigArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterPrivateRegistryConfigArgs.builder
       builder.privateRegistryConfig(args(argsBuilder).build)
@@ -2222,7 +2222,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def proxy(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterProxyArgs.Builder]):
+    inline def proxy(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterProxyArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterProxyArgs.builder
       builder.proxy(args(argsBuilder).build)
@@ -2232,7 +2232,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def statuses(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterStatusArgs.Builder]*):
+    inline def statuses(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterStatusArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterStatusArgs.builder
       builder.statuses(args.map(_(argsBuilder).build)*)
@@ -2242,7 +2242,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vcenter(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterVcenterArgs.Builder]):
+    inline def vcenter(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterVcenterArgs.Builder]):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterVcenterArgs.builder
       builder.vcenter(args(argsBuilder).build)
@@ -2254,7 +2254,7 @@ object gkeonprem_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterStatusConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterStatusConditionArgs.Builder]*):
         com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkeonprem.inputs.VmwareAdminClusterStatusConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)

@@ -15,7 +15,7 @@ object healthcare:
    * * How-to Guides
    *     * [Creating a Consent store](https://cloud.google.com/healthcare/docs/how-tos/consent)
    */
-  def ConsentStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConsentStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.healthcare.ConsentStoreArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.healthcare.ConsentStoreArgs.builder
     conf.logicalName2physicalName(name) match
@@ -324,7 +324,7 @@ object healthcare:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ConsentStoreIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConsentStoreIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.healthcare.ConsentStoreIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.healthcare.ConsentStoreIamBindingArgs.builder
     com.pulumi.gcp.healthcare.ConsentStoreIamBinding(name,
@@ -630,7 +630,7 @@ object healthcare:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ConsentStoreIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConsentStoreIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.healthcare.ConsentStoreIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.healthcare.ConsentStoreIamMemberArgs.builder
     com.pulumi.gcp.healthcare.ConsentStoreIamMember(name,
@@ -936,7 +936,7 @@ object healthcare:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ConsentStoreIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConsentStoreIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.healthcare.ConsentStoreIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.healthcare.ConsentStoreIamPolicyArgs.builder
     com.pulumi.gcp.healthcare.ConsentStoreIamPolicy(name,
@@ -952,7 +952,7 @@ object healthcare:
    * * How-to Guides
    *     * [Creating a dataset](https://cloud.google.com/healthcare/docs/how-tos/datasets)
    */
-  def Dataset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Dataset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.healthcare.DatasetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.healthcare.DatasetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1165,7 +1165,7 @@ object healthcare:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DatasetIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DatasetIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.healthcare.DatasetIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.healthcare.DatasetIamBindingArgs.builder
     com.pulumi.gcp.healthcare.DatasetIamBinding(name,
@@ -1375,7 +1375,7 @@ object healthcare:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DatasetIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DatasetIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.healthcare.DatasetIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.healthcare.DatasetIamMemberArgs.builder
     com.pulumi.gcp.healthcare.DatasetIamMember(name,
@@ -1585,7 +1585,7 @@ object healthcare:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DatasetIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DatasetIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.healthcare.DatasetIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.healthcare.DatasetIamPolicyArgs.builder
     com.pulumi.gcp.healthcare.DatasetIamPolicy(name,
@@ -1602,7 +1602,7 @@ object healthcare:
    * * How-to Guides
    *     * [Creating a DICOM store](https://cloud.google.com/healthcare/docs/how-tos/dicom)
    */
-  def DicomStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DicomStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.healthcare.DicomStoreArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.healthcare.DicomStoreArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1815,7 +1815,7 @@ object healthcare:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DicomStoreIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DicomStoreIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.healthcare.DicomStoreIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.healthcare.DicomStoreIamBindingArgs.builder
     com.pulumi.gcp.healthcare.DicomStoreIamBinding(name,
@@ -2025,7 +2025,7 @@ object healthcare:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DicomStoreIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DicomStoreIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.healthcare.DicomStoreIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.healthcare.DicomStoreIamMemberArgs.builder
     com.pulumi.gcp.healthcare.DicomStoreIamMember(name,
@@ -2235,7 +2235,7 @@ object healthcare:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DicomStoreIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DicomStoreIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.healthcare.DicomStoreIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.healthcare.DicomStoreIamPolicyArgs.builder
     com.pulumi.gcp.healthcare.DicomStoreIamPolicy(name,
@@ -2252,7 +2252,7 @@ object healthcare:
    * * How-to Guides
    *     * [Creating a FHIR store](https://cloud.google.com/healthcare/docs/how-tos/fhir)
    */
-  def FhirStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FhirStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.healthcare.FhirStoreArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.healthcare.FhirStoreArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2465,7 +2465,7 @@ object healthcare:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def FhirStoreIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FhirStoreIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.healthcare.FhirStoreIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.healthcare.FhirStoreIamBindingArgs.builder
     com.pulumi.gcp.healthcare.FhirStoreIamBinding(name,
@@ -2675,7 +2675,7 @@ object healthcare:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def FhirStoreIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FhirStoreIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.healthcare.FhirStoreIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.healthcare.FhirStoreIamMemberArgs.builder
     com.pulumi.gcp.healthcare.FhirStoreIamMember(name,
@@ -2885,7 +2885,7 @@ object healthcare:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def FhirStoreIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FhirStoreIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.healthcare.FhirStoreIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.healthcare.FhirStoreIamPolicyArgs.builder
     com.pulumi.gcp.healthcare.FhirStoreIamPolicy(name,
@@ -3263,7 +3263,7 @@ object healthcare:
    * * How-to Guides
    *     * [Creating a HL7v2 Store](https://cloud.google.com/healthcare/docs/how-tos/hl7v2)
    */
-  def Hl7Store(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Hl7Store(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.healthcare.Hl7StoreArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.healthcare.Hl7StoreArgs.builder
     conf.logicalName2physicalName(name) match
@@ -3476,7 +3476,7 @@ object healthcare:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def Hl7StoreIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Hl7StoreIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.healthcare.Hl7StoreIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.healthcare.Hl7StoreIamBindingArgs.builder
     com.pulumi.gcp.healthcare.Hl7StoreIamBinding(name,
@@ -3686,7 +3686,7 @@ object healthcare:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def Hl7StoreIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Hl7StoreIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.healthcare.Hl7StoreIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.healthcare.Hl7StoreIamMemberArgs.builder
     com.pulumi.gcp.healthcare.Hl7StoreIamMember(name,
@@ -3896,7 +3896,7 @@ object healthcare:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def Hl7StoreIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Hl7StoreIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.healthcare.Hl7StoreIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.healthcare.Hl7StoreIamPolicyArgs.builder
     com.pulumi.gcp.healthcare.Hl7StoreIamPolicy(name,
@@ -3913,7 +3913,7 @@ object healthcare:
    * * How-to Guides
    *     * [Creating a PipelineJob](https://cloud.google.com/healthcare-api/private/healthcare-data-engine/docs/reference/rest/v1/projects.locations.datasets.pipelineJobs#PipelineJob)
    */
-  def PipelineJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PipelineJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.healthcare.PipelineJobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.healthcare.PipelineJobArgs.builder
     conf.logicalName2physicalName(name) match
@@ -3932,7 +3932,7 @@ object healthcare:
    * * How-to Guides
    *     * [Create and manage Data Mapper workspaces ](https://cloud.google.com/healthcare-api/healthcare-data-engine/docs/manage-workspaces)
    */
-  def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.healthcare.WorkspaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.healthcare.WorkspaceArgs.builder
     conf.logicalName2physicalName(name) match

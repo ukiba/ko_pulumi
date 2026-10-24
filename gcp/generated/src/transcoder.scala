@@ -13,7 +13,7 @@ object transcoder:
    * * How-to Guides
    *     * [Transcoder](https://cloud.google.com/transcoder/docs/)
    */
-  def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.transcoder.JobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.transcoder.JobArgs.builder
     com.pulumi.gcp.transcoder.Job(name,
@@ -29,7 +29,7 @@ object transcoder:
    * * How-to Guides
    *     * [Transcoder](https://cloud.google.com/transcoder/docs/)
    */
-  def JobTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def JobTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.transcoder.JobTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.transcoder.JobTemplateArgs.builder
     com.pulumi.gcp.transcoder.JobTemplate(name,

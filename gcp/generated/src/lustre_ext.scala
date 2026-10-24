@@ -9,7 +9,7 @@ object lustre_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accessRulesOptions(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceAccessRulesOptionsArgs.Builder]):
+    inline def accessRulesOptions(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceAccessRulesOptionsArgs.Builder]):
         com.pulumi.gcp.lustre.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.lustre.inputs.InstanceAccessRulesOptionsArgs.builder
       builder.accessRulesOptions(args(argsBuilder).build)
@@ -19,7 +19,7 @@ object lustre_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dynamicTierOptions(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceDynamicTierOptionsArgs.Builder]):
+    inline def dynamicTierOptions(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceDynamicTierOptionsArgs.Builder]):
         com.pulumi.gcp.lustre.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.lustre.inputs.InstanceDynamicTierOptionsArgs.builder
       builder.dynamicTierOptions(args(argsBuilder).build)
@@ -29,7 +29,7 @@ object lustre_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenancePolicy(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyArgs.Builder]):
+    inline def maintenancePolicy(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyArgs.Builder]):
         com.pulumi.gcp.lustre.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyArgs.builder
       builder.maintenancePolicy(args(argsBuilder).build)
@@ -40,7 +40,7 @@ object lustre_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accessRules(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceAccessRulesOptionsAccessRuleArgs.Builder]*):
+    inline def accessRules(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceAccessRulesOptionsAccessRuleArgs.Builder]*):
         com.pulumi.gcp.lustre.inputs.InstanceAccessRulesOptionsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.lustre.inputs.InstanceAccessRulesOptionsAccessRuleArgs.builder
       builder.accessRules(args.map(_(argsBuilder).build)*)
@@ -51,7 +51,7 @@ object lustre_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenanceExclusionWindow(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyMaintenanceExclusionWindowArgs.Builder]):
+    inline def maintenanceExclusionWindow(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyMaintenanceExclusionWindowArgs.Builder]):
         com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyMaintenanceExclusionWindowArgs.builder
       builder.maintenanceExclusionWindow(args(argsBuilder).build)
@@ -62,7 +62,7 @@ object lustre_ext:
      * Structure is documented below.
      * @return builder
      */
-    def weeklyMaintenanceWindows(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowsArgs.Builder]):
+    inline def weeklyMaintenanceWindows(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowsArgs.Builder]):
         com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowsArgs.builder
       builder.weeklyMaintenanceWindows(args(argsBuilder).build)
@@ -85,7 +85,7 @@ object lustre_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def endDate(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyMaintenanceExclusionWindowEndDateArgs.Builder]):
+    inline def endDate(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyMaintenanceExclusionWindowEndDateArgs.Builder]):
         com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyMaintenanceExclusionWindowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyMaintenanceExclusionWindowEndDateArgs.builder
       builder.endDate(args(argsBuilder).build)
@@ -107,7 +107,7 @@ object lustre_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def startDate(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyMaintenanceExclusionWindowStartDateArgs.Builder]):
+    inline def startDate(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyMaintenanceExclusionWindowStartDateArgs.Builder]):
         com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyMaintenanceExclusionWindowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyMaintenanceExclusionWindowStartDateArgs.builder
       builder.startDate(args(argsBuilder).build)
@@ -119,7 +119,7 @@ object lustre_ext:
      * Structure is documented below.
      * @return builder
      */
-    def time(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyMaintenanceExclusionWindowTimeArgs.Builder]):
+    inline def time(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyMaintenanceExclusionWindowTimeArgs.Builder]):
         com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyMaintenanceExclusionWindowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyMaintenanceExclusionWindowTimeArgs.builder
       builder.time(args(argsBuilder).build)
@@ -132,7 +132,7 @@ object lustre_ext:
      * Structure is documented below.
      * @return builder
      */
-    def startTime(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowsStartTimeArgs.Builder]):
+    inline def startTime(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowsStartTimeArgs.Builder]):
         com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowsStartTimeArgs.builder
       builder.startTime(args(argsBuilder).build)
@@ -144,7 +144,7 @@ object lustre_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accessRulesOptions(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceAccessRulesOptionsArgs.Builder]):
+    inline def accessRulesOptions(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceAccessRulesOptionsArgs.Builder]):
         com.pulumi.gcp.lustre.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.lustre.inputs.InstanceAccessRulesOptionsArgs.builder
       builder.accessRulesOptions(args(argsBuilder).build)
@@ -154,7 +154,7 @@ object lustre_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dynamicTierOptions(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceDynamicTierOptionsArgs.Builder]):
+    inline def dynamicTierOptions(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceDynamicTierOptionsArgs.Builder]):
         com.pulumi.gcp.lustre.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.lustre.inputs.InstanceDynamicTierOptionsArgs.builder
       builder.dynamicTierOptions(args(argsBuilder).build)
@@ -164,7 +164,7 @@ object lustre_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenancePolicy(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyArgs.Builder]):
+    inline def maintenancePolicy(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyArgs.Builder]):
         com.pulumi.gcp.lustre.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.lustre.inputs.InstanceMaintenancePolicyArgs.builder
       builder.maintenancePolicy(args(argsBuilder).build)
@@ -174,7 +174,7 @@ object lustre_ext:
      * Structure is documented below.
      * @return builder
      */
-    def upcomingMaintenanceSchedules(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceUpcomingMaintenanceScheduleArgs.Builder]*):
+    inline def upcomingMaintenanceSchedules(args: Endofunction[com.pulumi.gcp.lustre.inputs.InstanceUpcomingMaintenanceScheduleArgs.Builder]*):
         com.pulumi.gcp.lustre.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.lustre.inputs.InstanceUpcomingMaintenanceScheduleArgs.builder
       builder.upcomingMaintenanceSchedules(args.map(_(argsBuilder).build)*)

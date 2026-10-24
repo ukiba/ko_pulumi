@@ -15,7 +15,7 @@ object oracledatabase:
    * * How-to Guides
    *     * [Create Autonomous databases](https://cloud.google.com/oracle/database/docs/create-databases)
    */
-  def AutonomousDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AutonomousDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.oracledatabase.AutonomousDatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.oracledatabase.AutonomousDatabaseArgs.builder
     com.pulumi.gcp.oracledatabase.AutonomousDatabase(name,
@@ -31,7 +31,7 @@ object oracledatabase:
    * * How-to Guides
    *     * [Create Exadata Infrastructure instances](https://cloud.google.com/oracle/database/docs/create-instances)
    */
-  def CloudExadataInfrastructure(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CloudExadataInfrastructure(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.oracledatabase.CloudExadataInfrastructureArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.oracledatabase.CloudExadataInfrastructureArgs.builder
     com.pulumi.gcp.oracledatabase.CloudExadataInfrastructure(name,
@@ -44,7 +44,7 @@ object oracledatabase:
    * &gt; **Note:** Oracle Database {@literal @} Google Cloud does not support deconfiguring Exascale storage on an Exadata Infrastructure.
    * Deleting this resource from Terraform state will only remove it from Terraform management; it will not delete or reset the Exascale configuration on the actual Exadata Infrastructure.
    */
-  def CloudExadataInfrastructureExascaleConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CloudExadataInfrastructureExascaleConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.oracledatabase.CloudExadataInfrastructureExascaleConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.oracledatabase.CloudExadataInfrastructureExascaleConfigArgs.builder
     com.pulumi.gcp.oracledatabase.CloudExadataInfrastructureExascaleConfig(name,
@@ -60,7 +60,7 @@ object oracledatabase:
    * * How-to Guides
    *     * [Create VM clusters](https://cloud.google.com/oracle/database/docs/create-clusters)
    */
-  def CloudVmCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CloudVmCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.oracledatabase.CloudVmClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.oracledatabase.CloudVmClusterArgs.builder
     com.pulumi.gcp.oracledatabase.CloudVmCluster(name,
@@ -68,7 +68,7 @@ object oracledatabase:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A DbSystem Resource */
-  def DbSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DbSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.oracledatabase.DbSystemArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.oracledatabase.DbSystemArgs.builder
     com.pulumi.gcp.oracledatabase.DbSystem(name,
@@ -76,7 +76,7 @@ object oracledatabase:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Description */
-  def ExadbVmCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ExadbVmCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.oracledatabase.ExadbVmClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.oracledatabase.ExadbVmClusterArgs.builder
     com.pulumi.gcp.oracledatabase.ExadbVmCluster(name,
@@ -84,7 +84,7 @@ object oracledatabase:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** An Exascale Storage Vault Resource */
-  def ExascaleDbStorageVault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ExascaleDbStorageVault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.oracledatabase.ExascaleDbStorageVaultArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.oracledatabase.ExascaleDbStorageVaultArgs.builder
     com.pulumi.gcp.oracledatabase.ExascaleDbStorageVault(name,
@@ -92,7 +92,7 @@ object oracledatabase:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** GoldengateConnection is a resource that represents metadata to establish a connection to a source or target data. */
-  def GoldengateConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GoldengateConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.oracledatabase.GoldengateConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.oracledatabase.GoldengateConnectionArgs.builder
     com.pulumi.gcp.oracledatabase.GoldengateConnection(name,
@@ -100,7 +100,7 @@ object oracledatabase:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** This resource helps to assign a GoldengateConnection to a GoldengateDeployment used for actual data replication and transformations. */
-  def GoldengateConnectionAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GoldengateConnectionAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.oracledatabase.GoldengateConnectionAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.oracledatabase.GoldengateConnectionAssignmentArgs.builder
     com.pulumi.gcp.oracledatabase.GoldengateConnectionAssignment(name,
@@ -108,7 +108,7 @@ object oracledatabase:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** This resource helps to create a GoldengateDeployment which enables running Oracle GoldenGate in Google Cloud. */
-  def GoldengateDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GoldengateDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.oracledatabase.GoldengateDeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.oracledatabase.GoldengateDeploymentArgs.builder
     com.pulumi.gcp.oracledatabase.GoldengateDeployment(name,
@@ -122,7 +122,7 @@ object oracledatabase:
    * * How-to Guides
    *     * [OracleDatabase{@literal @}Google Cloud](https://cloud.google.com/oracle/database/docs/overview&#39;)
    */
-  def OdbNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OdbNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.oracledatabase.OdbNetworkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.oracledatabase.OdbNetworkArgs.builder
     com.pulumi.gcp.oracledatabase.OdbNetwork(name,
@@ -136,7 +136,7 @@ object oracledatabase:
    * * How-to Guides
    *     * [OracleDatabase{@literal @}Google Cloud](https://cloud.google.com/oracle/database/docs/overview&#39;)
    */
-  def OdbSubnet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OdbSubnet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.oracledatabase.OdbSubnetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.oracledatabase.OdbSubnetArgs.builder
     com.pulumi.gcp.oracledatabase.OdbSubnet(name,

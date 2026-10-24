@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object billing:
   /** Manages a Cost Management Export for a Billing Account. */
-  def AccountCostManagementExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccountCostManagementExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.billing.AccountCostManagementExportArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.billing.AccountCostManagementExportArgs.builder
     conf.logicalName2physicalName(name) match

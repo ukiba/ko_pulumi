@@ -14,7 +14,7 @@ object network:
    * value is added or removed from the Set, Terraform considers the entire list of objects changed and the plan shows that it is removing every value in the list and re-adding it with the
    * new information. Though Terraform is showing all the values being removed and re-added, we are not actually removing anything unless the user specifies a removal in the configfile.
    */
-  def ApplicationGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApplicationGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.ApplicationGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.ApplicationGatewayArgs.builder
     conf.logicalName2physicalName(name) match
@@ -32,7 +32,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Application Security Group. */
-  def ApplicationSecurityGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApplicationSecurityGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.ApplicationSecurityGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.ApplicationSecurityGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -50,7 +50,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Bgp Connection for a Virtual Hub. */
-  def BgpConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BgpConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.BgpConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.BgpConnectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -67,7 +67,7 @@ object network:
    * 
    * &gt; **Note:** The DDoS Protection Plan is a [high-cost service](https://azure.microsoft.com/en-us/pricing/details/ddos-protection/#pricing). Please keep this in mind while testing and learning.
    */
-  def DdosProtectionPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DdosProtectionPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.DdosProtectionPlanArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.DdosProtectionPlanArgs.builder
     conf.logicalName2physicalName(name) match
@@ -85,7 +85,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an ExpressRoute circuit. */
-  def ExpressRouteCircuit(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ExpressRouteCircuit(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.ExpressRouteCircuitArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.ExpressRouteCircuitArgs.builder
     conf.logicalName2physicalName(name) match
@@ -103,7 +103,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an ExpressRoute Circuit Authorization. */
-  def ExpressRouteCircuitAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ExpressRouteCircuitAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.ExpressRouteCircuitAuthorizationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.ExpressRouteCircuitAuthorizationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -114,7 +114,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Express Route Circuit Connection. */
-  def ExpressRouteCircuitConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ExpressRouteCircuitConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.ExpressRouteCircuitConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.ExpressRouteCircuitConnectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -125,7 +125,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an ExpressRoute Circuit Peering. */
-  def ExpressRouteCircuitPeering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ExpressRouteCircuitPeering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.ExpressRouteCircuitPeeringArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.network.ExpressRouteCircuitPeeringArgs.builder
     com.pulumi.azure.network.ExpressRouteCircuitPeering(name,
@@ -137,7 +137,7 @@ object network:
    * 
    * &gt; **Note:** The provider status of the Express Route Circuit must be set as provisioned while creating the Express Route Connection. See more details [here](https://docs.microsoft.com/azure/expressroute/expressroute-howto-circuit-portal-resource-manager#send-the-service-key-to-your-connectivity-provider-for-provisioning).
    */
-  def ExpressRouteConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ExpressRouteConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.ExpressRouteConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.ExpressRouteConnectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -148,7 +148,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an ExpressRoute gateway. */
-  def ExpressRouteGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ExpressRouteGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.ExpressRouteGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.ExpressRouteGatewayArgs.builder
     conf.logicalName2physicalName(name) match
@@ -166,7 +166,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Express Route Port. */
-  def ExpressRoutePort(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ExpressRoutePort(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.ExpressRoutePortArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.ExpressRoutePortArgs.builder
     conf.logicalName2physicalName(name) match
@@ -184,7 +184,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an ExpressRoute Port Authorization. */
-  def ExpressRoutePortAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ExpressRoutePortAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.ExpressRoutePortAuthorizationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.ExpressRoutePortAuthorizationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -195,7 +195,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Firewall. */
-  def Firewall(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Firewall(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.FirewallArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.FirewallArgs.builder
     conf.logicalName2physicalName(name) match
@@ -213,7 +213,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Application Rule Collection within an Azure Firewall. */
-  def FirewallApplicationRuleCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FirewallApplicationRuleCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.FirewallApplicationRuleCollectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.FirewallApplicationRuleCollectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -224,7 +224,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a NAT Rule Collection within an Azure Firewall. */
-  def FirewallNatRuleCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FirewallNatRuleCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.FirewallNatRuleCollectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.FirewallNatRuleCollectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -235,7 +235,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Rule Collection within an Azure Firewall. */
-  def FirewallNetworkRuleCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FirewallNetworkRuleCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.FirewallNetworkRuleCollectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.FirewallNetworkRuleCollectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -246,7 +246,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Firewall Policy. */
-  def FirewallPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FirewallPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.FirewallPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.FirewallPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -264,7 +264,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Firewall Policy Rule Collection Group. */
-  def FirewallPolicyRuleCollectionGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FirewallPolicyRuleCollectionGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.FirewallPolicyRuleCollectionGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.FirewallPolicyRuleCollectionGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -275,7 +275,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an IP group that contains a list of CIDRs and/or IP addresses. */
-  def IPGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IPGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.IPGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.IPGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -299,7 +299,7 @@ object network:
    * `azure.network.IPGroup` resource for the same IP Group. Doing so will cause a conflict and
    * CIDRS will be removed.
    */
-  def IPGroupCIDR(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IPGroupCIDR(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.IPGroupCIDRArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.network.IPGroupCIDRArgs.builder
     com.pulumi.azure.network.IPGroupCIDR(name,
@@ -307,7 +307,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a local network gateway connection over which specific connections can be configured. */
-  def LocalNetworkGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LocalNetworkGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.LocalNetworkGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.LocalNetworkGatewayArgs.builder
     conf.logicalName2physicalName(name) match
@@ -325,7 +325,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure NAT Gateway. */
-  def NatGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NatGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NatGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NatGatewayArgs.builder
     conf.logicalName2physicalName(name) match
@@ -343,7 +343,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a NAT Gateway Public IP Address association. */
-  def NatGatewayPublicIpAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NatGatewayPublicIpAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NatGatewayPublicIpAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.network.NatGatewayPublicIpAssociationArgs.builder
     com.pulumi.azure.network.NatGatewayPublicIpAssociation(name,
@@ -351,7 +351,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a NAT Gateway Public IP Prefix association. */
-  def NatGatewayPublicIpPrefixAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NatGatewayPublicIpPrefixAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NatGatewayPublicIpPrefixAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.network.NatGatewayPublicIpPrefixAssociationArgs.builder
     com.pulumi.azure.network.NatGatewayPublicIpPrefixAssociation(name,
@@ -363,7 +363,7 @@ object network:
    * 
    * &gt; **NOTE:** Any Network Connection Monitor resource created with API versions 2019-06-01 or earlier (v1) are now incompatible with this provider, which now only supports v2.
    */
-  def NetworkConnectionMonitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkConnectionMonitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkConnectionMonitorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkConnectionMonitorArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1276,7 +1276,7 @@ object network:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Network Interface. */
-  def NetworkInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkInterfaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkInterfaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1294,7 +1294,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the association between a Network Interface and a Application Gateway&#39;s Backend Address Pool. */
-  def NetworkInterfaceApplicationGatewayBackendAddressPoolAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkInterfaceApplicationGatewayBackendAddressPoolAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkInterfaceApplicationGatewayBackendAddressPoolAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.network.NetworkInterfaceApplicationGatewayBackendAddressPoolAssociationArgs.builder
     com.pulumi.azure.network.NetworkInterfaceApplicationGatewayBackendAddressPoolAssociation(name,
@@ -1302,7 +1302,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the association between a Network Interface and a Application Security Group. */
-  def NetworkInterfaceApplicationSecurityGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkInterfaceApplicationSecurityGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkInterfaceApplicationSecurityGroupAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.network.NetworkInterfaceApplicationSecurityGroupAssociationArgs.builder
     com.pulumi.azure.network.NetworkInterfaceApplicationSecurityGroupAssociation(name,
@@ -1310,7 +1310,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the association between a Network Interface and a Load Balancer&#39;s Backend Address Pool. */
-  def NetworkInterfaceBackendAddressPoolAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkInterfaceBackendAddressPoolAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkInterfaceBackendAddressPoolAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.network.NetworkInterfaceBackendAddressPoolAssociationArgs.builder
     com.pulumi.azure.network.NetworkInterfaceBackendAddressPoolAssociation(name,
@@ -1318,7 +1318,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the association between a Network Interface and a Load Balancer&#39;s NAT Rule. */
-  def NetworkInterfaceNatRuleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkInterfaceNatRuleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkInterfaceNatRuleAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.network.NetworkInterfaceNatRuleAssociationArgs.builder
     com.pulumi.azure.network.NetworkInterfaceNatRuleAssociation(name,
@@ -1326,7 +1326,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the association between a Network Interface and a Network Security Group. */
-  def NetworkInterfaceSecurityGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkInterfaceSecurityGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkInterfaceSecurityGroupAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.network.NetworkInterfaceSecurityGroupAssociationArgs.builder
     com.pulumi.azure.network.NetworkInterfaceSecurityGroupAssociation(name,
@@ -1334,7 +1334,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager. */
-  def NetworkManager(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkManager(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkManagerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkManagerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1352,7 +1352,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager Admin Rule. */
-  def NetworkManagerAdminRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkManagerAdminRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkManagerAdminRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkManagerAdminRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1363,7 +1363,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager Admin Rule Collection. */
-  def NetworkManagerAdminRuleCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkManagerAdminRuleCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkManagerAdminRuleCollectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkManagerAdminRuleCollectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1378,7 +1378,7 @@ object network:
    * 
    * &gt; **Note:** The `azure.network.NetworkManagerConnectivityConfiguration` deployment may modify or delete existing Network Peering resource.
    */
-  def NetworkManagerConnectivityConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkManagerConnectivityConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkManagerConnectivityConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkManagerConnectivityConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1393,7 +1393,7 @@ object network:
    * 
    * &gt; **Note:** Using Network Manager Deployment to deploy Connectivity Configuration may modify or delete existing Virtual Network Peering. At this time you should not use Network Peering resource in conjunction with Network Manager Deployment. Doing so may cause a conflict of Peering configurations.
    */
-  def NetworkManagerDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkManagerDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkManagerDeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.network.NetworkManagerDeploymentArgs.builder
     com.pulumi.azure.network.NetworkManagerDeployment(name,
@@ -1401,7 +1401,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager IP Address Management (IPAM) Pool. */
-  def NetworkManagerIpamPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkManagerIpamPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkManagerIpamPoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkManagerIpamPoolArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1419,7 +1419,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager IPAM Pool Static CIDR. */
-  def NetworkManagerIpamPoolStaticCidr(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkManagerIpamPoolStaticCidr(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkManagerIpamPoolStaticCidrArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkManagerIpamPoolStaticCidrArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1430,7 +1430,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager Management Group Connection which may cross tenants. */
-  def NetworkManagerManagementGroupConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkManagerManagementGroupConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkManagerManagementGroupConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkManagerManagementGroupConnectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1441,7 +1441,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager Network Group. */
-  def NetworkManagerNetworkGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkManagerNetworkGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkManagerNetworkGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkManagerNetworkGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1452,7 +1452,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager Routing Configuration. */
-  def NetworkManagerRoutingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkManagerRoutingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkManagerRoutingConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkManagerRoutingConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1467,7 +1467,7 @@ object network:
    * 
    * &gt; **Note:** Terraform has enabled force deletion. This setting deletes the resource even if it&#39;s part of a deployed configuration. If the configuration is deployed, the service will perform a cleanup deployment in the background before the deletion.
    */
-  def NetworkManagerRoutingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkManagerRoutingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkManagerRoutingRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkManagerRoutingRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1482,7 +1482,7 @@ object network:
    * 
    * &gt; **Note:** Terraform has enabled force deletion. This setting deletes the resource even if it&#39;s part of a deployed configuration. If the configuration is deployed, the service will perform a cleanup deployment in the background before the deletion.
    */
-  def NetworkManagerRoutingRuleCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkManagerRoutingRuleCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkManagerRoutingRuleCollectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkManagerRoutingRuleCollectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1493,7 +1493,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager Scope Connection which may cross tenants. */
-  def NetworkManagerScopeConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkManagerScopeConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkManagerScopeConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkManagerScopeConnectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1504,7 +1504,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager Security Admin Configuration. */
-  def NetworkManagerSecurityAdminConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkManagerSecurityAdminConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkManagerSecurityAdminConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkManagerSecurityAdminConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1515,7 +1515,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager Static Member. */
-  def NetworkManagerStaticMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkManagerStaticMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkManagerStaticMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkManagerStaticMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1526,7 +1526,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager Subscription Connection which may cross tenants. */
-  def NetworkManagerSubscriptionConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkManagerSubscriptionConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkManagerSubscriptionConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkManagerSubscriptionConnectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1537,7 +1537,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager Verifier Workspace. */
-  def NetworkManagerVerifierWorkspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkManagerVerifierWorkspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkManagerVerifierWorkspaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkManagerVerifierWorkspaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1555,7 +1555,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager Verifier Workspace Reachability Analysis Intent. */
-  def NetworkManagerVerifierWorkspaceReachabilityAnalysisIntent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkManagerVerifierWorkspaceReachabilityAnalysisIntent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkManagerVerifierWorkspaceReachabilityAnalysisIntentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkManagerVerifierWorkspaceReachabilityAnalysisIntentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1572,7 +1572,7 @@ object network:
    * provides both a standalone Network Security Rule resource, and allows for Network Security Rules to be defined in-line within the Network Security Group resource.
    * At this time you cannot use a Network Security Group with in-line Network Security Rules in conjunction with any Network Security Rule resources. Doing so will cause a conflict of rule settings and will overwrite rules.
    */
-  def NetworkSecurityGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkSecurityGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkSecurityGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkSecurityGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1590,7 +1590,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Security Perimeter. */
-  def NetworkSecurityPerimeter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkSecurityPerimeter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkSecurityPerimeterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkSecurityPerimeterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1608,7 +1608,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Security Perimeter Access Rule. */
-  def NetworkSecurityPerimeterAccessRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkSecurityPerimeterAccessRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkSecurityPerimeterAccessRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkSecurityPerimeterAccessRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1619,7 +1619,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Security Perimeter Association. */
-  def NetworkSecurityPerimeterAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkSecurityPerimeterAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkSecurityPerimeterAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkSecurityPerimeterAssociationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1630,7 +1630,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Security Perimeter Profile. */
-  def NetworkSecurityPerimeterProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkSecurityPerimeterProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkSecurityPerimeterProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkSecurityPerimeterProfileArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1647,7 +1647,7 @@ object network:
    * provides both a standalone Network Security Rule resource, and allows for Network Security Rules to be defined in-line within the Network Security Group resource.
    * At this time you cannot use a Network Security Group with in-line Network Security Rules in conjunction with any Network Security Rule resources. Doing so will cause a conflict of rule settings and will overwrite rules.
    */
-  def NetworkSecurityRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkSecurityRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkSecurityRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkSecurityRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1658,7 +1658,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Watcher. */
-  def NetworkWatcher(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkWatcher(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkWatcherArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkWatcherArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1680,7 +1680,7 @@ object network:
    * 
    * &gt; **Note:** The `azure.network.NetworkWatcherFlowLog` creates a new storage lifecyle management rule that overwrites existing rules. Please make sure to use a `storageAccount` with no existing management rules, until the issue is fixed.
    */
-  def NetworkWatcherFlowLog(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkWatcherFlowLog(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.NetworkWatcherFlowLogArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.NetworkWatcherFlowLogArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1698,7 +1698,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Point-to-Site VPN Gateway. */
-  def PointToPointVpnGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PointToPointVpnGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.PointToPointVpnGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.PointToPointVpnGatewayArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1716,7 +1716,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Profile. */
-  def Profile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Profile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.ProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.ProfileArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1738,7 +1738,7 @@ object network:
    * 
    * &gt; **Note** If this resource is to be associated with a resource that requires disassociation before destruction (such as `azure.network.NetworkInterface`) it is recommended to set the `lifecycle` argument `createBeforeDestroy = true`. Otherwise, it can fail to disassociate on destruction.
    */
-  def PublicIp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PublicIp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.PublicIpArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.PublicIpArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1756,7 +1756,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Public IP Prefix. */
-  def PublicIpPrefix(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PublicIpPrefix(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.PublicIpPrefixArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.PublicIpPrefixArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1780,7 +1780,7 @@ object network:
    * provides both a standalone Route resource, and allows for Routes to be defined in-line within the Route Table resource.
    * At this time you cannot use a Route Table with in-line Routes in conjunction with any Route resources. Doing so will cause a conflict of Route configurations and will overwrite Routes.
    */
-  def Route(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Route(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.RouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.RouteArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1791,7 +1791,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Route Filter. */
-  def RouteFilter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RouteFilter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.RouteFilterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.RouteFilterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1809,7 +1809,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Route Map. */
-  def RouteMap(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RouteMap(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.RouteMapArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.RouteMapArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1820,7 +1820,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Route Server */
-  def RouteServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RouteServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.RouteServerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.RouteServerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1838,7 +1838,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Bgp Connection for a Route Server */
-  def RouteServerBgpConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RouteServerBgpConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.RouteServerBgpConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.RouteServerBgpConnectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1854,7 +1854,7 @@ object network:
    * &gt; **NOTE on Route Tables and Routes:** There is both a standalone `route` resource, and allows for Routes to be defined in-line within the `routeTable` resource.
    * At this time you cannot use a Route Table with in-line Routes in conjunction with any Route resources. Doing so will cause a conflict of Route configurations and will overwrite Routes.
    */
-  def RouteTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RouteTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.RouteTableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.RouteTableArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1872,7 +1872,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Hub Routing Intent. */
-  def RoutingIntent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RoutingIntent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.RoutingIntentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.RoutingIntentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1883,7 +1883,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Security Partner Provider which could be associated to virtual hub. */
-  def SecurityPartnerProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecurityPartnerProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.SecurityPartnerProviderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.SecurityPartnerProviderArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1907,7 +1907,7 @@ object network:
    * provides both a standalone Subnet resource, and allows for Subnets to be defined in-line within the Virtual Network resource.
    * At this time you cannot use a Virtual Network with in-line Subnets in conjunction with any Subnet resources. Doing so will cause a conflict of Subnet configurations and will overwrite Subnets.
    */
-  def Subnet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Subnet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.SubnetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.SubnetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1918,7 +1918,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Associates a NAT Gateway with a Subnet within a Virtual Network. */
-  def SubnetNatGatewayAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubnetNatGatewayAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.SubnetNatGatewayAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.network.SubnetNatGatewayAssociationArgs.builder
     com.pulumi.azure.network.SubnetNatGatewayAssociation(name,
@@ -1926,7 +1926,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Associates a Network Security Group with a Subnet within a Virtual Network. */
-  def SubnetNetworkSecurityGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubnetNetworkSecurityGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.SubnetNetworkSecurityGroupAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.network.SubnetNetworkSecurityGroupAssociationArgs.builder
     com.pulumi.azure.network.SubnetNetworkSecurityGroupAssociation(name,
@@ -1934,7 +1934,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Associates a Route Table with a Subnet within a Virtual Network. */
-  def SubnetRouteTableAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubnetRouteTableAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.SubnetRouteTableAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.network.SubnetRouteTableAssociationArgs.builder
     com.pulumi.azure.network.SubnetRouteTableAssociation(name,
@@ -1942,7 +1942,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Subnet Service Endpoint Storage Policy. */
-  def SubnetServiceEndpointStoragePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubnetServiceEndpointStoragePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.SubnetServiceEndpointStoragePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.SubnetServiceEndpointStoragePolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1960,7 +1960,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Endpoint within a Traffic Manager Profile. */
-  def TrafficManagerAzureEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TrafficManagerAzureEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.TrafficManagerAzureEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.TrafficManagerAzureEndpointArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1971,7 +1971,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an External Endpoint within a Traffic Manager Profile. */
-  def TrafficManagerExternalEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TrafficManagerExternalEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.TrafficManagerExternalEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.TrafficManagerExternalEndpointArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1982,7 +1982,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Nested Endpoint within a Traffic Manager Profile. */
-  def TrafficManagerNestedEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TrafficManagerNestedEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.TrafficManagerNestedEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.TrafficManagerNestedEndpointArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1993,7 +1993,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Traffic Manager Profile to which multiple endpoints can be attached. */
-  def TrafficManagerProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TrafficManagerProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.TrafficManagerProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.TrafficManagerProfileArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2011,7 +2011,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Hub within a Virtual WAN. */
-  def VirtualHub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VirtualHub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.VirtualHubArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.VirtualHubArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2029,7 +2029,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Connection for a Virtual Hub. */
-  def VirtualHubConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VirtualHubConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.VirtualHubConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.VirtualHubConnectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2044,7 +2044,7 @@ object network:
    * 
    * &gt; **Note:** Virtual Hub IP only supports Standard Virtual Hub without Virtual Wan.
    */
-  def VirtualHubIp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VirtualHubIp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.VirtualHubIpArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.VirtualHubIpArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2055,7 +2055,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Hub Route Table. */
-  def VirtualHubRouteTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VirtualHubRouteTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.VirtualHubRouteTableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.VirtualHubRouteTableArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2070,7 +2070,7 @@ object network:
    * 
    * &gt; **Note:** Route table routes can managed with this resource, or in-line with the virtualHubRouteTable resource. Using both is not supported.
    */
-  def VirtualHubRouteTableRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VirtualHubRouteTableRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.VirtualHubRouteTableRouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.VirtualHubRouteTableRouteArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2090,7 +2090,7 @@ object network:
    * **NOTE on Virtual Networks and DNS Servers:** This provider currently provides both a standalone virtual network DNS Servers resource, and allows for DNS servers to be defined in-line within the Virtual Network resource.
    * At this time you cannot use a Virtual Network with in-line DNS servers in conjunction with any Virtual Network DNS Servers resources. Doing so will cause a conflict of Virtual Network DNS Servers configurations and will overwrite virtual networks DNS servers.
    */
-  def VirtualNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VirtualNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.VirtualNetworkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.VirtualNetworkArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2113,7 +2113,7 @@ object network:
    * &gt; **Note:** Terraform currently provides both a standalone virtual network DNS Servers resource, and allows for DNS servers to be defined in-line within the Virtual Network resource.
    * At this time you cannot use a Virtual Network with in-line DNS servers in conjunction with any Virtual Network DNS Servers resources. Doing so will cause a conflict of Virtual Network DNS Servers configurations and will overwrite virtual networks DNS servers.
    */
-  def VirtualNetworkDnsServers(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VirtualNetworkDnsServers(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.VirtualNetworkDnsServersArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.network.VirtualNetworkDnsServersArgs.builder
     com.pulumi.azure.network.VirtualNetworkDnsServers(name,
@@ -2125,7 +2125,7 @@ object network:
    * 
    * &gt; **Note:** Please be aware that provisioning a Virtual Network Gateway takes a long time (between 30 minutes and 1 hour)
    */
-  def VirtualNetworkGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VirtualNetworkGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.VirtualNetworkGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.VirtualNetworkGatewayArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2143,7 +2143,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a connection in an existing Virtual Network Gateway. */
-  def VirtualNetworkGatewayConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VirtualNetworkGatewayConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.VirtualNetworkGatewayConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.VirtualNetworkGatewayConnectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2161,7 +2161,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Network Gateway Nat Rule. */
-  def VirtualNetworkGatewayNatRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VirtualNetworkGatewayNatRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.VirtualNetworkGatewayNatRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.VirtualNetworkGatewayNatRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2175,7 +2175,7 @@ object network:
    * Manages a virtual network peering which allows resources to access other
    * resources in the linked virtual network.
    */
-  def VirtualNetworkPeering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VirtualNetworkPeering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.VirtualNetworkPeeringArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.VirtualNetworkPeeringArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2186,7 +2186,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual WAN. */
-  def VirtualWan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VirtualWan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.VirtualWanArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.VirtualWanArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2204,7 +2204,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a VPN Gateway NAT Rule. */
-  def VnpGatewayNatRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VnpGatewayNatRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.VnpGatewayNatRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.VnpGatewayNatRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2215,7 +2215,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a VPN Gateway within a Virtual Hub, which enables Site-to-Site communication. */
-  def VpnGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpnGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.VpnGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.VpnGatewayArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2233,7 +2233,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a VPN Gateway Connection. */
-  def VpnGatewayConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpnGatewayConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.VpnGatewayConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.VpnGatewayConnectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2244,7 +2244,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a VPN Server Configuration. */
-  def VpnServerConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpnServerConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.VpnServerConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.VpnServerConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2262,7 +2262,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a VPN Server Configuration Policy Group. */
-  def VpnServerConfigurationPolicyGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpnServerConfigurationPolicyGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.VpnServerConfigurationPolicyGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.VpnServerConfigurationPolicyGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2273,7 +2273,7 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a VPN Site. */
-  def VpnSite(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpnSite(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.network.VpnSiteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.network.VpnSiteArgs.builder
     conf.logicalName2physicalName(name) match

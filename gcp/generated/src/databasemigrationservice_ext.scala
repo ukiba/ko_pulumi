@@ -8,7 +8,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def alloydb(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileAlloydbArgs.Builder]):
+    inline def alloydb(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileAlloydbArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.ConnectionProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileAlloydbArgs.builder
       builder.alloydb(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudsql(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileCloudsqlArgs.Builder]):
+    inline def cloudsql(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileCloudsqlArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.ConnectionProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileCloudsqlArgs.builder
       builder.cloudsql(args(argsBuilder).build)
@@ -28,7 +28,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mysql(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileMysqlArgs.Builder]):
+    inline def mysql(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileMysqlArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.ConnectionProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileMysqlArgs.builder
       builder.mysql(args(argsBuilder).build)
@@ -38,7 +38,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oracle(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileOracleArgs.Builder]):
+    inline def oracle(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileOracleArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.ConnectionProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileOracleArgs.builder
       builder.oracle(args(argsBuilder).build)
@@ -48,7 +48,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def postgresql(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfilePostgresqlArgs.Builder]):
+    inline def postgresql(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfilePostgresqlArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.ConnectionProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfilePostgresqlArgs.builder
       builder.postgresql(args(argsBuilder).build)
@@ -59,7 +59,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dumpFlags(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobDumpFlagsArgs.Builder]):
+    inline def dumpFlags(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobDumpFlagsArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.MigrationJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobDumpFlagsArgs.builder
       builder.dumpFlags(args(argsBuilder).build)
@@ -70,7 +70,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def objectsConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobObjectsConfigArgs.Builder]):
+    inline def objectsConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobObjectsConfigArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.MigrationJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobObjectsConfigArgs.builder
       builder.objectsConfig(args(argsBuilder).build)
@@ -80,7 +80,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def performanceConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobPerformanceConfigArgs.Builder]):
+    inline def performanceConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobPerformanceConfigArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.MigrationJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobPerformanceConfigArgs.builder
       builder.performanceConfig(args(argsBuilder).build)
@@ -90,7 +90,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def postgresHomogeneousConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobPostgresHomogeneousConfigArgs.Builder]):
+    inline def postgresHomogeneousConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobPostgresHomogeneousConfigArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.MigrationJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobPostgresHomogeneousConfigArgs.builder
       builder.postgresHomogeneousConfig(args(argsBuilder).build)
@@ -100,7 +100,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def reverseSshConnectivity(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobReverseSshConnectivityArgs.Builder]):
+    inline def reverseSshConnectivity(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobReverseSshConnectivityArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.MigrationJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobReverseSshConnectivityArgs.builder
       builder.reverseSshConnectivity(args(argsBuilder).build)
@@ -112,7 +112,7 @@ object databasemigrationservice_ext:
      * Cloud SQL console or using Cloud SQL APIs.
      * @return builder
      */
-    def staticIpConnectivity(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobStaticIpConnectivityArgs.Builder]):
+    inline def staticIpConnectivity(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobStaticIpConnectivityArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.MigrationJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobStaticIpConnectivityArgs.builder
       builder.staticIpConnectivity(args(argsBuilder).build)
@@ -122,7 +122,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcPeeringConnectivity(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobVpcPeeringConnectivityArgs.Builder]):
+    inline def vpcPeeringConnectivity(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobVpcPeeringConnectivityArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.MigrationJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobVpcPeeringConnectivityArgs.builder
       builder.vpcPeeringConnectivity(args(argsBuilder).build)
@@ -134,7 +134,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscInterfaceConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionPscInterfaceConfigArgs.Builder]):
+    inline def pscInterfaceConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionPscInterfaceConfigArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.PrivateConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionPscInterfaceConfigArgs.builder
       builder.pscInterfaceConfig(args(argsBuilder).build)
@@ -144,7 +144,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def reservedPublicIpConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionReservedPublicIpConfigArgs.Builder]):
+    inline def reservedPublicIpConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionReservedPublicIpConfigArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.PrivateConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionReservedPublicIpConfigArgs.builder
       builder.reservedPublicIpConfig(args(argsBuilder).build)
@@ -155,7 +155,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcPeeringConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionVpcPeeringConfigArgs.Builder]):
+    inline def vpcPeeringConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionVpcPeeringConfigArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.PrivateConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionVpcPeeringConfigArgs.builder
       builder.vpcPeeringConfig(args(argsBuilder).build)
@@ -166,7 +166,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def settings(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileAlloydbSettingsArgs.Builder]):
+    inline def settings(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileAlloydbSettingsArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileAlloydbArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileAlloydbSettingsArgs.builder
       builder.settings(args(argsBuilder).build)
@@ -177,7 +177,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def initialUser(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileAlloydbSettingsInitialUserArgs.Builder]):
+    inline def initialUser(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileAlloydbSettingsInitialUserArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileAlloydbSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileAlloydbSettingsInitialUserArgs.builder
       builder.initialUser(args(argsBuilder).build)
@@ -187,7 +187,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def primaryInstanceSettings(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileAlloydbSettingsPrimaryInstanceSettingsArgs.Builder]):
+    inline def primaryInstanceSettings(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileAlloydbSettingsPrimaryInstanceSettingsArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileAlloydbSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileAlloydbSettingsPrimaryInstanceSettingsArgs.builder
       builder.primaryInstanceSettings(args(argsBuilder).build)
@@ -198,7 +198,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def machineConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileAlloydbSettingsPrimaryInstanceSettingsMachineConfigArgs.Builder]):
+    inline def machineConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileAlloydbSettingsPrimaryInstanceSettingsMachineConfigArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileAlloydbSettingsPrimaryInstanceSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileAlloydbSettingsPrimaryInstanceSettingsMachineConfigArgs.builder
       builder.machineConfig(args(argsBuilder).build)
@@ -209,7 +209,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def settings(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileCloudsqlSettingsArgs.Builder]):
+    inline def settings(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileCloudsqlSettingsArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileCloudsqlArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileCloudsqlSettingsArgs.builder
       builder.settings(args(argsBuilder).build)
@@ -220,7 +220,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ipConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileCloudsqlSettingsIpConfigArgs.Builder]):
+    inline def ipConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileCloudsqlSettingsIpConfigArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileCloudsqlSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileCloudsqlSettingsIpConfigArgs.builder
       builder.ipConfig(args(argsBuilder).build)
@@ -231,7 +231,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authorizedNetworks(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileCloudsqlSettingsIpConfigAuthorizedNetworkArgs.Builder]*):
+    inline def authorizedNetworks(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileCloudsqlSettingsIpConfigAuthorizedNetworkArgs.Builder]*):
         com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileCloudsqlSettingsIpConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileCloudsqlSettingsIpConfigAuthorizedNetworkArgs.builder
       builder.authorizedNetworks(args.map(_(argsBuilder).build)*)
@@ -242,7 +242,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ssl(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileMysqlSslArgs.Builder]):
+    inline def ssl(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileMysqlSslArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileMysqlArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileMysqlSslArgs.builder
       builder.ssl(args(argsBuilder).build)
@@ -253,7 +253,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def forwardSshConnectivity(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileOracleForwardSshConnectivityArgs.Builder]):
+    inline def forwardSshConnectivity(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileOracleForwardSshConnectivityArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileOracleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileOracleForwardSshConnectivityArgs.builder
       builder.forwardSshConnectivity(args(argsBuilder).build)
@@ -263,7 +263,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def privateConnectivity(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileOraclePrivateConnectivityArgs.Builder]):
+    inline def privateConnectivity(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileOraclePrivateConnectivityArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileOracleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileOraclePrivateConnectivityArgs.builder
       builder.privateConnectivity(args(argsBuilder).build)
@@ -273,7 +273,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ssl(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileOracleSslArgs.Builder]):
+    inline def ssl(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileOracleSslArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileOracleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileOracleSslArgs.builder
       builder.ssl(args(argsBuilder).build)
@@ -283,7 +283,7 @@ object databasemigrationservice_ext:
      * Static IP address connectivity configured on service project.
      * @return builder
      */
-    def staticServiceIpConnectivity(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileOracleStaticServiceIpConnectivityArgs.Builder]):
+    inline def staticServiceIpConnectivity(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileOracleStaticServiceIpConnectivityArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileOracleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileOracleStaticServiceIpConnectivityArgs.builder
       builder.staticServiceIpConnectivity(args(argsBuilder).build)
@@ -294,7 +294,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def privateConnectivity(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfilePostgresqlPrivateConnectivityArgs.Builder]):
+    inline def privateConnectivity(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfilePostgresqlPrivateConnectivityArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfilePostgresqlArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfilePostgresqlPrivateConnectivityArgs.builder
       builder.privateConnectivity(args(argsBuilder).build)
@@ -304,7 +304,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ssl(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfilePostgresqlSslArgs.Builder]):
+    inline def ssl(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfilePostgresqlSslArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfilePostgresqlArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfilePostgresqlSslArgs.builder
       builder.ssl(args(argsBuilder).build)
@@ -315,7 +315,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def alloydb(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileAlloydbArgs.Builder]):
+    inline def alloydb(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileAlloydbArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileAlloydbArgs.builder
       builder.alloydb(args(argsBuilder).build)
@@ -325,7 +325,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudsql(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileCloudsqlArgs.Builder]):
+    inline def cloudsql(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileCloudsqlArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileCloudsqlArgs.builder
       builder.cloudsql(args(argsBuilder).build)
@@ -335,7 +335,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errors(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileErrorArgs.Builder]*):
+    inline def errors(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileErrorArgs.Builder]*):
         com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileState.Builder =
       def argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
@@ -345,7 +345,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mysql(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileMysqlArgs.Builder]):
+    inline def mysql(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileMysqlArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileMysqlArgs.builder
       builder.mysql(args(argsBuilder).build)
@@ -355,7 +355,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oracle(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileOracleArgs.Builder]):
+    inline def oracle(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileOracleArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileOracleArgs.builder
       builder.oracle(args(argsBuilder).build)
@@ -365,7 +365,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def postgresql(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfilePostgresqlArgs.Builder]):
+    inline def postgresql(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfilePostgresqlArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.ConnectionProfilePostgresqlArgs.builder
       builder.postgresql(args(argsBuilder).build)
@@ -376,7 +376,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dumpFlags(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobDumpFlagsDumpFlagArgs.Builder]*):
+    inline def dumpFlags(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobDumpFlagsDumpFlagArgs.Builder]*):
         com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobDumpFlagsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobDumpFlagsDumpFlagArgs.builder
       builder.dumpFlags(args.map(_(argsBuilder).build)*)
@@ -387,7 +387,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sourceObjectsConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobObjectsConfigSourceObjectsConfigArgs.Builder]):
+    inline def sourceObjectsConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobObjectsConfigSourceObjectsConfigArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobObjectsConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobObjectsConfigSourceObjectsConfigArgs.builder
       builder.sourceObjectsConfig(args(argsBuilder).build)
@@ -399,7 +399,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def objectConfigs(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobObjectsConfigSourceObjectsConfigObjectConfigArgs.Builder]*):
+    inline def objectConfigs(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobObjectsConfigSourceObjectsConfigObjectConfigArgs.Builder]*):
         com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobObjectsConfigSourceObjectsConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobObjectsConfigSourceObjectsConfigObjectConfigArgs.builder
       builder.objectConfigs(args.map(_(argsBuilder).build)*)
@@ -410,7 +410,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def objectIdentifier(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobObjectsConfigSourceObjectsConfigObjectConfigObjectIdentifierArgs.Builder]):
+    inline def objectIdentifier(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobObjectsConfigSourceObjectsConfigObjectConfigObjectIdentifierArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobObjectsConfigSourceObjectsConfigObjectConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobObjectsConfigSourceObjectsConfigObjectConfigObjectIdentifierArgs.builder
       builder.objectIdentifier(args(argsBuilder).build)
@@ -421,7 +421,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dumpFlags(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobDumpFlagsArgs.Builder]):
+    inline def dumpFlags(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobDumpFlagsArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobState.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobDumpFlagsArgs.builder
       builder.dumpFlags(args(argsBuilder).build)
@@ -431,7 +431,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errors(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobErrorArgs.Builder]*):
+    inline def errors(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobErrorArgs.Builder]*):
         com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobState.Builder =
       def argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
@@ -442,7 +442,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def objectsConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobObjectsConfigArgs.Builder]):
+    inline def objectsConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobObjectsConfigArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobState.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobObjectsConfigArgs.builder
       builder.objectsConfig(args(argsBuilder).build)
@@ -452,7 +452,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def performanceConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobPerformanceConfigArgs.Builder]):
+    inline def performanceConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobPerformanceConfigArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobState.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobPerformanceConfigArgs.builder
       builder.performanceConfig(args(argsBuilder).build)
@@ -462,7 +462,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def postgresHomogeneousConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobPostgresHomogeneousConfigArgs.Builder]):
+    inline def postgresHomogeneousConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobPostgresHomogeneousConfigArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobState.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobPostgresHomogeneousConfigArgs.builder
       builder.postgresHomogeneousConfig(args(argsBuilder).build)
@@ -472,7 +472,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def reverseSshConnectivity(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobReverseSshConnectivityArgs.Builder]):
+    inline def reverseSshConnectivity(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobReverseSshConnectivityArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobState.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobReverseSshConnectivityArgs.builder
       builder.reverseSshConnectivity(args(argsBuilder).build)
@@ -484,7 +484,7 @@ object databasemigrationservice_ext:
      * Cloud SQL console or using Cloud SQL APIs.
      * @return builder
      */
-    def staticIpConnectivity(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobStaticIpConnectivityArgs.Builder]):
+    inline def staticIpConnectivity(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobStaticIpConnectivityArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobState.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobStaticIpConnectivityArgs.builder
       builder.staticIpConnectivity(args(argsBuilder).build)
@@ -494,7 +494,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcPeeringConnectivity(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobVpcPeeringConnectivityArgs.Builder]):
+    inline def vpcPeeringConnectivity(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobVpcPeeringConnectivityArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobState.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.MigrationJobVpcPeeringConnectivityArgs.builder
       builder.vpcPeeringConnectivity(args(argsBuilder).build)
@@ -505,7 +505,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errors(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionErrorArgs.Builder]*):
+    inline def errors(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionErrorArgs.Builder]*):
         com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionState.Builder =
       def argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
@@ -516,7 +516,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscInterfaceConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionPscInterfaceConfigArgs.Builder]):
+    inline def pscInterfaceConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionPscInterfaceConfigArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionPscInterfaceConfigArgs.builder
       builder.pscInterfaceConfig(args(argsBuilder).build)
@@ -526,7 +526,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def reservedPublicIpConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionReservedPublicIpConfigArgs.Builder]):
+    inline def reservedPublicIpConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionReservedPublicIpConfigArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionReservedPublicIpConfigArgs.builder
       builder.reservedPublicIpConfig(args(argsBuilder).build)
@@ -537,7 +537,7 @@ object databasemigrationservice_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcPeeringConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionVpcPeeringConfigArgs.Builder]):
+    inline def vpcPeeringConfig(args: Endofunction[com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionVpcPeeringConfigArgs.Builder]):
         com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.databasemigrationservice.inputs.PrivateConnectionVpcPeeringConfigArgs.builder
       builder.vpcPeeringConfig(args(argsBuilder).build)

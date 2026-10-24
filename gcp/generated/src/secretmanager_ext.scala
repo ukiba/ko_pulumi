@@ -8,7 +8,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customerManagedEncryption(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.RegionalSecretCustomerManagedEncryptionArgs.Builder]):
+    inline def customerManagedEncryption(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.RegionalSecretCustomerManagedEncryptionArgs.Builder]):
         com.pulumi.gcp.secretmanager.RegionalSecretArgs.Builder =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.RegionalSecretCustomerManagedEncryptionArgs.builder
       builder.customerManagedEncryption(args(argsBuilder).build)
@@ -20,7 +20,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rotation(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.RegionalSecretRotationArgs.Builder]):
+    inline def rotation(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.RegionalSecretRotationArgs.Builder]):
         com.pulumi.gcp.secretmanager.RegionalSecretArgs.Builder =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.RegionalSecretRotationArgs.builder
       builder.rotation(args(argsBuilder).build)
@@ -31,7 +31,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def topics(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.RegionalSecretTopicArgs.Builder]*):
+    inline def topics(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.RegionalSecretTopicArgs.Builder]*):
         com.pulumi.gcp.secretmanager.RegionalSecretArgs.Builder =
       def argsBuilder = com.pulumi.gcp.secretmanager.inputs.RegionalSecretTopicArgs.builder
       builder.topics(args.map(_(argsBuilder).build)*)
@@ -42,7 +42,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.RegionalSecretIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.RegionalSecretIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.secretmanager.RegionalSecretIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.RegionalSecretIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -53,7 +53,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.RegionalSecretIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.RegionalSecretIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.secretmanager.RegionalSecretIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.RegionalSecretIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -65,7 +65,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def replication(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretReplicationArgs.Builder]):
+    inline def replication(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretReplicationArgs.Builder]):
         com.pulumi.gcp.secretmanager.SecretArgs.Builder =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.SecretReplicationArgs.builder
       builder.replication(args(argsBuilder).build)
@@ -75,7 +75,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rotation(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretRotationArgs.Builder]):
+    inline def rotation(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretRotationArgs.Builder]):
         com.pulumi.gcp.secretmanager.SecretArgs.Builder =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.SecretRotationArgs.builder
       builder.rotation(args(argsBuilder).build)
@@ -85,7 +85,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def topics(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretTopicArgs.Builder]*):
+    inline def topics(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretTopicArgs.Builder]*):
         com.pulumi.gcp.secretmanager.SecretArgs.Builder =
       def argsBuilder = com.pulumi.gcp.secretmanager.inputs.SecretTopicArgs.builder
       builder.topics(args.map(_(argsBuilder).build)*)
@@ -96,7 +96,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.secretmanager.SecretIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.SecretIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -107,7 +107,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.secretmanager.SecretIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.SecretIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -118,7 +118,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.RegionalSecretIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.RegionalSecretIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.secretmanager.inputs.RegionalSecretIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.RegionalSecretIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -129,7 +129,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.RegionalSecretIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.RegionalSecretIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.secretmanager.inputs.RegionalSecretIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.RegionalSecretIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -140,7 +140,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customerManagedEncryption(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.RegionalSecretCustomerManagedEncryptionArgs.Builder]):
+    inline def customerManagedEncryption(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.RegionalSecretCustomerManagedEncryptionArgs.Builder]):
         com.pulumi.gcp.secretmanager.inputs.RegionalSecretState.Builder =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.RegionalSecretCustomerManagedEncryptionArgs.builder
       builder.customerManagedEncryption(args(argsBuilder).build)
@@ -152,7 +152,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rotation(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.RegionalSecretRotationArgs.Builder]):
+    inline def rotation(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.RegionalSecretRotationArgs.Builder]):
         com.pulumi.gcp.secretmanager.inputs.RegionalSecretState.Builder =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.RegionalSecretRotationArgs.builder
       builder.rotation(args(argsBuilder).build)
@@ -163,7 +163,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def topics(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.RegionalSecretTopicArgs.Builder]*):
+    inline def topics(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.RegionalSecretTopicArgs.Builder]*):
         com.pulumi.gcp.secretmanager.inputs.RegionalSecretState.Builder =
       def argsBuilder = com.pulumi.gcp.secretmanager.inputs.RegionalSecretTopicArgs.builder
       builder.topics(args.map(_(argsBuilder).build)*)
@@ -174,7 +174,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customerManagedEncryptions(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.RegionalSecretVersionCustomerManagedEncryptionArgs.Builder]*):
+    inline def customerManagedEncryptions(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.RegionalSecretVersionCustomerManagedEncryptionArgs.Builder]*):
         com.pulumi.gcp.secretmanager.inputs.RegionalSecretVersionState.Builder =
       def argsBuilder = com.pulumi.gcp.secretmanager.inputs.RegionalSecretVersionCustomerManagedEncryptionArgs.builder
       builder.customerManagedEncryptions(args.map(_(argsBuilder).build)*)
@@ -185,7 +185,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.secretmanager.inputs.SecretIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.SecretIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -196,7 +196,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.secretmanager.inputs.SecretIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.SecretIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -207,7 +207,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def auto(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretReplicationAutoArgs.Builder]):
+    inline def auto(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretReplicationAutoArgs.Builder]):
         com.pulumi.gcp.secretmanager.inputs.SecretReplicationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.SecretReplicationAutoArgs.builder
       builder.auto(args(argsBuilder).build)
@@ -217,7 +217,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def userManaged(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretReplicationUserManagedArgs.Builder]):
+    inline def userManaged(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretReplicationUserManagedArgs.Builder]):
         com.pulumi.gcp.secretmanager.inputs.SecretReplicationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.SecretReplicationUserManagedArgs.builder
       builder.userManaged(args(argsBuilder).build)
@@ -230,7 +230,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customerManagedEncryption(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretReplicationAutoCustomerManagedEncryptionArgs.Builder]):
+    inline def customerManagedEncryption(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretReplicationAutoCustomerManagedEncryptionArgs.Builder]):
         com.pulumi.gcp.secretmanager.inputs.SecretReplicationAutoArgs.Builder =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.SecretReplicationAutoCustomerManagedEncryptionArgs.builder
       builder.customerManagedEncryption(args(argsBuilder).build)
@@ -241,7 +241,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def replicas(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretReplicationUserManagedReplicaArgs.Builder]*):
+    inline def replicas(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretReplicationUserManagedReplicaArgs.Builder]*):
         com.pulumi.gcp.secretmanager.inputs.SecretReplicationUserManagedArgs.Builder =
       def argsBuilder = com.pulumi.gcp.secretmanager.inputs.SecretReplicationUserManagedReplicaArgs.builder
       builder.replicas(args.map(_(argsBuilder).build)*)
@@ -252,7 +252,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customerManagedEncryption(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretReplicationUserManagedReplicaCustomerManagedEncryptionArgs.Builder]):
+    inline def customerManagedEncryption(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretReplicationUserManagedReplicaCustomerManagedEncryptionArgs.Builder]):
         com.pulumi.gcp.secretmanager.inputs.SecretReplicationUserManagedReplicaArgs.Builder =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.SecretReplicationUserManagedReplicaCustomerManagedEncryptionArgs.builder
       builder.customerManagedEncryption(args(argsBuilder).build)
@@ -264,7 +264,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def replication(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretReplicationArgs.Builder]):
+    inline def replication(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretReplicationArgs.Builder]):
         com.pulumi.gcp.secretmanager.inputs.SecretState.Builder =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.SecretReplicationArgs.builder
       builder.replication(args(argsBuilder).build)
@@ -274,7 +274,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rotation(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretRotationArgs.Builder]):
+    inline def rotation(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretRotationArgs.Builder]):
         com.pulumi.gcp.secretmanager.inputs.SecretState.Builder =
       val argsBuilder = com.pulumi.gcp.secretmanager.inputs.SecretRotationArgs.builder
       builder.rotation(args(argsBuilder).build)
@@ -284,7 +284,7 @@ object secretmanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def topics(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretTopicArgs.Builder]*):
+    inline def topics(args: Endofunction[com.pulumi.gcp.secretmanager.inputs.SecretTopicArgs.Builder]*):
         com.pulumi.gcp.secretmanager.inputs.SecretState.Builder =
       def argsBuilder = com.pulumi.gcp.secretmanager.inputs.SecretTopicArgs.builder
       builder.topics(args.map(_(argsBuilder).build)*)

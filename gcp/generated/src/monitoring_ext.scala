@@ -8,7 +8,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def alertStrategy(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyAlertStrategyArgs.Builder]):
+    inline def alertStrategy(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyAlertStrategyArgs.Builder]):
         com.pulumi.gcp.monitoring.AlertPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyAlertStrategyArgs.builder
       builder.alertStrategy(args(argsBuilder).build)
@@ -21,7 +21,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionArgs.Builder]*):
         com.pulumi.gcp.monitoring.AlertPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -35,7 +35,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def documentation(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyDocumentationArgs.Builder]):
+    inline def documentation(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyDocumentationArgs.Builder]):
         com.pulumi.gcp.monitoring.AlertPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyDocumentationArgs.builder
       builder.documentation(args(argsBuilder).build)
@@ -46,7 +46,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def telemetry(args: Endofunction[com.pulumi.gcp.monitoring.inputs.CustomServiceTelemetryArgs.Builder]):
+    inline def telemetry(args: Endofunction[com.pulumi.gcp.monitoring.inputs.CustomServiceTelemetryArgs.Builder]):
         com.pulumi.gcp.monitoring.CustomServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.CustomServiceTelemetryArgs.builder
       builder.telemetry(args(argsBuilder).build)
@@ -59,7 +59,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def basicService(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GenericServiceBasicServiceArgs.Builder]):
+    inline def basicService(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GenericServiceBasicServiceArgs.Builder]):
         com.pulumi.gcp.monitoring.GenericServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.GenericServiceBasicServiceArgs.builder
       builder.basicService(args(argsBuilder).build)
@@ -70,7 +70,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def labels(args: Endofunction[com.pulumi.gcp.monitoring.inputs.MetricDescriptorLabelArgs.Builder]*):
+    inline def labels(args: Endofunction[com.pulumi.gcp.monitoring.inputs.MetricDescriptorLabelArgs.Builder]*):
         com.pulumi.gcp.monitoring.MetricDescriptorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.monitoring.inputs.MetricDescriptorLabelArgs.builder
       builder.labels(args.map(_(argsBuilder).build)*)
@@ -80,7 +80,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metadata(args: Endofunction[com.pulumi.gcp.monitoring.inputs.MetricDescriptorMetadataArgs.Builder]):
+    inline def metadata(args: Endofunction[com.pulumi.gcp.monitoring.inputs.MetricDescriptorMetadataArgs.Builder]):
         com.pulumi.gcp.monitoring.MetricDescriptorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.MetricDescriptorMetadataArgs.builder
       builder.metadata(args(argsBuilder).build)
@@ -96,7 +96,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitiveLabels(args: Endofunction[com.pulumi.gcp.monitoring.inputs.NotificationChannelSensitiveLabelsArgs.Builder]):
+    inline def sensitiveLabels(args: Endofunction[com.pulumi.gcp.monitoring.inputs.NotificationChannelSensitiveLabelsArgs.Builder]):
         com.pulumi.gcp.monitoring.NotificationChannelArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.NotificationChannelSensitiveLabelsArgs.builder
       builder.sensitiveLabels(args(argsBuilder).build)
@@ -112,7 +112,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def basicSli(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloBasicSliArgs.Builder]):
+    inline def basicSli(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloBasicSliArgs.Builder]):
         com.pulumi.gcp.monitoring.SloArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SloBasicSliArgs.builder
       builder.basicSli(args(argsBuilder).build)
@@ -128,7 +128,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def requestBasedSli(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloRequestBasedSliArgs.Builder]):
+    inline def requestBasedSli(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloRequestBasedSliArgs.Builder]):
         com.pulumi.gcp.monitoring.SloArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SloRequestBasedSliArgs.builder
       builder.requestBasedSli(args(argsBuilder).build)
@@ -145,7 +145,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def windowsBasedSli(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliArgs.Builder]):
+    inline def windowsBasedSli(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliArgs.Builder]):
         com.pulumi.gcp.monitoring.SloArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliArgs.builder
       builder.windowsBasedSli(args(argsBuilder).build)
@@ -158,7 +158,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def criteria(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SnoozeCriteriaArgs.Builder]):
+    inline def criteria(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SnoozeCriteriaArgs.Builder]):
         com.pulumi.gcp.monitoring.SnoozeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SnoozeCriteriaArgs.builder
       builder.criteria(args(argsBuilder).build)
@@ -173,7 +173,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def interval(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SnoozeIntervalArgs.Builder]):
+    inline def interval(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SnoozeIntervalArgs.Builder]):
         com.pulumi.gcp.monitoring.SnoozeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SnoozeIntervalArgs.builder
       builder.interval(args(argsBuilder).build)
@@ -184,7 +184,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def contentMatchers(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigContentMatcherArgs.Builder]*):
+    inline def contentMatchers(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigContentMatcherArgs.Builder]*):
         com.pulumi.gcp.monitoring.UptimeCheckConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigContentMatcherArgs.builder
       builder.contentMatchers(args.map(_(argsBuilder).build)*)
@@ -194,7 +194,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpCheck(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigHttpCheckArgs.Builder]):
+    inline def httpCheck(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigHttpCheckArgs.Builder]):
         com.pulumi.gcp.monitoring.UptimeCheckConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigHttpCheckArgs.builder
       builder.httpCheck(args(argsBuilder).build)
@@ -205,7 +205,7 @@ object monitoring_ext:
      * uptime checks:
      * @return builder
      */
-    def monitoredResource(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigMonitoredResourceArgs.Builder]):
+    inline def monitoredResource(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigMonitoredResourceArgs.Builder]):
         com.pulumi.gcp.monitoring.UptimeCheckConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigMonitoredResourceArgs.builder
       builder.monitoredResource(args(argsBuilder).build)
@@ -215,7 +215,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resourceGroup(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigResourceGroupArgs.Builder]):
+    inline def resourceGroup(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigResourceGroupArgs.Builder]):
         com.pulumi.gcp.monitoring.UptimeCheckConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigResourceGroupArgs.builder
       builder.resourceGroup(args(argsBuilder).build)
@@ -225,7 +225,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def syntheticMonitor(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigSyntheticMonitorArgs.Builder]):
+    inline def syntheticMonitor(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigSyntheticMonitorArgs.Builder]):
         com.pulumi.gcp.monitoring.UptimeCheckConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigSyntheticMonitorArgs.builder
       builder.syntheticMonitor(args(argsBuilder).build)
@@ -235,7 +235,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tcpCheck(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigTcpCheckArgs.Builder]):
+    inline def tcpCheck(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigTcpCheckArgs.Builder]):
         com.pulumi.gcp.monitoring.UptimeCheckConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigTcpCheckArgs.builder
       builder.tcpCheck(args(argsBuilder).build)
@@ -247,7 +247,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def notificationChannelStrategies(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyAlertStrategyNotificationChannelStrategyArgs.Builder]*):
+    inline def notificationChannelStrategies(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyAlertStrategyNotificationChannelStrategyArgs.Builder]*):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyAlertStrategyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyAlertStrategyNotificationChannelStrategyArgs.builder
       builder.notificationChannelStrategies(args.map(_(argsBuilder).build)*)
@@ -258,7 +258,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def notificationRateLimit(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyAlertStrategyNotificationRateLimitArgs.Builder]):
+    inline def notificationRateLimit(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyAlertStrategyNotificationRateLimitArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyAlertStrategyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyAlertStrategyNotificationRateLimitArgs.builder
       builder.notificationRateLimit(args(argsBuilder).build)
@@ -270,7 +270,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditionAbsent(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionAbsentArgs.Builder]):
+    inline def conditionAbsent(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionAbsentArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionAbsentArgs.builder
       builder.conditionAbsent(args(argsBuilder).build)
@@ -281,7 +281,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditionMatchedLog(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionMatchedLogArgs.Builder]):
+    inline def conditionMatchedLog(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionMatchedLogArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionMatchedLogArgs.builder
       builder.conditionMatchedLog(args(argsBuilder).build)
@@ -291,7 +291,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditionMonitoringQueryLanguage(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionMonitoringQueryLanguageArgs.Builder]):
+    inline def conditionMonitoringQueryLanguage(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionMonitoringQueryLanguageArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionMonitoringQueryLanguageArgs.builder
       builder.conditionMonitoringQueryLanguage(args(argsBuilder).build)
@@ -304,7 +304,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditionPrometheusQueryLanguage(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionPrometheusQueryLanguageArgs.Builder]):
+    inline def conditionPrometheusQueryLanguage(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionPrometheusQueryLanguageArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionPrometheusQueryLanguageArgs.builder
       builder.conditionPrometheusQueryLanguage(args(argsBuilder).build)
@@ -316,7 +316,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditionSql(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlArgs.Builder]):
+    inline def conditionSql(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlArgs.builder
       builder.conditionSql(args(argsBuilder).build)
@@ -327,7 +327,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditionThreshold(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionThresholdArgs.Builder]):
+    inline def conditionThreshold(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionThresholdArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionThresholdArgs.builder
       builder.conditionThreshold(args(argsBuilder).build)
@@ -346,7 +346,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def aggregations(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionAbsentAggregationArgs.Builder]*):
+    inline def aggregations(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionAbsentAggregationArgs.Builder]*):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionAbsentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionAbsentAggregationArgs.builder
       builder.aggregations(args.map(_(argsBuilder).build)*)
@@ -361,7 +361,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trigger(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionAbsentTriggerArgs.Builder]):
+    inline def trigger(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionAbsentTriggerArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionAbsentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionAbsentTriggerArgs.builder
       builder.trigger(args(argsBuilder).build)
@@ -379,7 +379,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trigger(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionMonitoringQueryLanguageTriggerArgs.Builder]):
+    inline def trigger(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionMonitoringQueryLanguageTriggerArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionMonitoringQueryLanguageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionMonitoringQueryLanguageTriggerArgs.builder
       builder.trigger(args(argsBuilder).build)
@@ -390,7 +390,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def booleanTest(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlBooleanTestArgs.Builder]):
+    inline def booleanTest(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlBooleanTestArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlBooleanTestArgs.builder
       builder.booleanTest(args(argsBuilder).build)
@@ -400,7 +400,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def daily(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlDailyArgs.Builder]):
+    inline def daily(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlDailyArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlDailyArgs.builder
       builder.daily(args(argsBuilder).build)
@@ -410,7 +410,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hourly(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlHourlyArgs.Builder]):
+    inline def hourly(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlHourlyArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlHourlyArgs.builder
       builder.hourly(args(argsBuilder).build)
@@ -420,7 +420,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def minutes(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlMinutesArgs.Builder]):
+    inline def minutes(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlMinutesArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlMinutesArgs.builder
       builder.minutes(args(argsBuilder).build)
@@ -430,7 +430,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rowCountTest(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlRowCountTestArgs.Builder]):
+    inline def rowCountTest(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlRowCountTestArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlRowCountTestArgs.builder
       builder.rowCountTest(args(argsBuilder).build)
@@ -443,7 +443,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def executionTime(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlDailyExecutionTimeArgs.Builder]):
+    inline def executionTime(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlDailyExecutionTimeArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlDailyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionSqlDailyExecutionTimeArgs.builder
       builder.executionTime(args(argsBuilder).build)
@@ -466,7 +466,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def aggregations(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionThresholdAggregationArgs.Builder]*):
+    inline def aggregations(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionThresholdAggregationArgs.Builder]*):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionThresholdArgs.Builder =
       def argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionThresholdAggregationArgs.builder
       builder.aggregations(args.map(_(argsBuilder).build)*)
@@ -491,7 +491,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def denominatorAggregations(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionThresholdDenominatorAggregationArgs.Builder]*):
+    inline def denominatorAggregations(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionThresholdDenominatorAggregationArgs.Builder]*):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionThresholdArgs.Builder =
       def argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionThresholdDenominatorAggregationArgs.builder
       builder.denominatorAggregations(args.map(_(argsBuilder).build)*)
@@ -506,7 +506,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def forecastOptions(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionThresholdForecastOptionsArgs.Builder]):
+    inline def forecastOptions(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionThresholdForecastOptionsArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionThresholdArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionThresholdForecastOptionsArgs.builder
       builder.forecastOptions(args(argsBuilder).build)
@@ -523,7 +523,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trigger(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionThresholdTriggerArgs.Builder]):
+    inline def trigger(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionThresholdTriggerArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionThresholdArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionConditionThresholdTriggerArgs.builder
       builder.trigger(args(argsBuilder).build)
@@ -534,7 +534,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def links(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyDocumentationLinkArgs.Builder]*):
+    inline def links(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyDocumentationLinkArgs.Builder]*):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyDocumentationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyDocumentationLinkArgs.builder
       builder.links(args.map(_(argsBuilder).build)*)
@@ -545,7 +545,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def alertStrategy(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyAlertStrategyArgs.Builder]):
+    inline def alertStrategy(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyAlertStrategyArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyAlertStrategyArgs.builder
       builder.alertStrategy(args(argsBuilder).build)
@@ -558,7 +558,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionArgs.Builder]*):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -570,7 +570,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def creationRecords(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyCreationRecordArgs.Builder]*):
+    inline def creationRecords(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyCreationRecordArgs.Builder]*):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyCreationRecordArgs.builder
       builder.creationRecords(args.map(_(argsBuilder).build)*)
@@ -584,7 +584,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def documentation(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyDocumentationArgs.Builder]):
+    inline def documentation(args: Endofunction[com.pulumi.gcp.monitoring.inputs.AlertPolicyDocumentationArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.AlertPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.AlertPolicyDocumentationArgs.builder
       builder.documentation(args(argsBuilder).build)
@@ -595,7 +595,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def telemetry(args: Endofunction[com.pulumi.gcp.monitoring.inputs.CustomServiceTelemetryArgs.Builder]):
+    inline def telemetry(args: Endofunction[com.pulumi.gcp.monitoring.inputs.CustomServiceTelemetryArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.CustomServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.CustomServiceTelemetryArgs.builder
       builder.telemetry(args(argsBuilder).build)
@@ -608,7 +608,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def basicService(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GenericServiceBasicServiceArgs.Builder]):
+    inline def basicService(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GenericServiceBasicServiceArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.GenericServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.GenericServiceBasicServiceArgs.builder
       builder.basicService(args(argsBuilder).build)
@@ -618,7 +618,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def telemetries(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GenericServiceTelemetryArgs.Builder]*):
+    inline def telemetries(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GenericServiceTelemetryArgs.Builder]*):
         com.pulumi.gcp.monitoring.inputs.GenericServiceState.Builder =
       def argsBuilder = com.pulumi.gcp.monitoring.inputs.GenericServiceTelemetryArgs.builder
       builder.telemetries(args.map(_(argsBuilder).build)*)
@@ -629,7 +629,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def labels(args: Endofunction[com.pulumi.gcp.monitoring.inputs.MetricDescriptorLabelArgs.Builder]*):
+    inline def labels(args: Endofunction[com.pulumi.gcp.monitoring.inputs.MetricDescriptorLabelArgs.Builder]*):
         com.pulumi.gcp.monitoring.inputs.MetricDescriptorState.Builder =
       def argsBuilder = com.pulumi.gcp.monitoring.inputs.MetricDescriptorLabelArgs.builder
       builder.labels(args.map(_(argsBuilder).build)*)
@@ -639,7 +639,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metadata(args: Endofunction[com.pulumi.gcp.monitoring.inputs.MetricDescriptorMetadataArgs.Builder]):
+    inline def metadata(args: Endofunction[com.pulumi.gcp.monitoring.inputs.MetricDescriptorMetadataArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.MetricDescriptorState.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.MetricDescriptorMetadataArgs.builder
       builder.metadata(args(argsBuilder).build)
@@ -655,7 +655,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitiveLabels(args: Endofunction[com.pulumi.gcp.monitoring.inputs.NotificationChannelSensitiveLabelsArgs.Builder]):
+    inline def sensitiveLabels(args: Endofunction[com.pulumi.gcp.monitoring.inputs.NotificationChannelSensitiveLabelsArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.NotificationChannelState.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.NotificationChannelSensitiveLabelsArgs.builder
       builder.sensitiveLabels(args(argsBuilder).build)
@@ -666,7 +666,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def availability(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloBasicSliAvailabilityArgs.Builder]):
+    inline def availability(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloBasicSliAvailabilityArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.SloBasicSliArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SloBasicSliAvailabilityArgs.builder
       builder.availability(args(argsBuilder).build)
@@ -676,7 +676,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def latency(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloBasicSliLatencyArgs.Builder]):
+    inline def latency(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloBasicSliLatencyArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.SloBasicSliArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SloBasicSliLatencyArgs.builder
       builder.latency(args(argsBuilder).build)
@@ -692,7 +692,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def distributionCut(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloRequestBasedSliDistributionCutArgs.Builder]):
+    inline def distributionCut(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloRequestBasedSliDistributionCutArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.SloRequestBasedSliArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SloRequestBasedSliDistributionCutArgs.builder
       builder.distributionCut(args(argsBuilder).build)
@@ -707,7 +707,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def goodTotalRatio(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloRequestBasedSliGoodTotalRatioArgs.Builder]):
+    inline def goodTotalRatio(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloRequestBasedSliGoodTotalRatioArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.SloRequestBasedSliArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SloRequestBasedSliGoodTotalRatioArgs.builder
       builder.goodTotalRatio(args(argsBuilder).build)
@@ -722,7 +722,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def range(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloRequestBasedSliDistributionCutRangeArgs.Builder]):
+    inline def range(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloRequestBasedSliDistributionCutRangeArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.SloRequestBasedSliDistributionCutArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SloRequestBasedSliDistributionCutRangeArgs.builder
       builder.range(args(argsBuilder).build)
@@ -738,7 +738,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def basicSli(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloBasicSliArgs.Builder]):
+    inline def basicSli(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloBasicSliArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.SloState.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SloBasicSliArgs.builder
       builder.basicSli(args(argsBuilder).build)
@@ -754,7 +754,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def requestBasedSli(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloRequestBasedSliArgs.Builder]):
+    inline def requestBasedSli(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloRequestBasedSliArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.SloState.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SloRequestBasedSliArgs.builder
       builder.requestBasedSli(args(argsBuilder).build)
@@ -771,7 +771,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def windowsBasedSli(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliArgs.Builder]):
+    inline def windowsBasedSli(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.SloState.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliArgs.builder
       builder.windowsBasedSli(args(argsBuilder).build)
@@ -785,7 +785,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def goodTotalRatioThreshold(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdArgs.Builder]):
+    inline def goodTotalRatioThreshold(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdArgs.builder
       builder.goodTotalRatioThreshold(args(argsBuilder).build)
@@ -801,7 +801,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metricMeanInRange(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliMetricMeanInRangeArgs.Builder]):
+    inline def metricMeanInRange(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliMetricMeanInRangeArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliMetricMeanInRangeArgs.builder
       builder.metricMeanInRange(args(argsBuilder).build)
@@ -817,7 +817,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metricSumInRange(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliMetricSumInRangeArgs.Builder]):
+    inline def metricSumInRange(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliMetricSumInRangeArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliMetricSumInRangeArgs.builder
       builder.metricSumInRange(args(argsBuilder).build)
@@ -828,7 +828,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def basicSliPerformance(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceArgs.Builder]):
+    inline def basicSliPerformance(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceArgs.builder
       builder.basicSliPerformance(args(argsBuilder).build)
@@ -838,7 +838,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def performance(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdPerformanceArgs.Builder]):
+    inline def performance(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdPerformanceArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdPerformanceArgs.builder
       builder.performance(args(argsBuilder).build)
@@ -849,7 +849,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def availability(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceAvailabilityArgs.Builder]):
+    inline def availability(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceAvailabilityArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceAvailabilityArgs.builder
       builder.availability(args(argsBuilder).build)
@@ -859,7 +859,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def latency(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceLatencyArgs.Builder]):
+    inline def latency(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceLatencyArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdBasicSliPerformanceLatencyArgs.builder
       builder.latency(args(argsBuilder).build)
@@ -874,7 +874,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def distributionCut(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCutArgs.Builder]):
+    inline def distributionCut(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCutArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdPerformanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCutArgs.builder
       builder.distributionCut(args(argsBuilder).build)
@@ -888,7 +888,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def goodTotalRatio(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdPerformanceGoodTotalRatioArgs.Builder]):
+    inline def goodTotalRatio(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdPerformanceGoodTotalRatioArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdPerformanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdPerformanceGoodTotalRatioArgs.builder
       builder.goodTotalRatio(args(argsBuilder).build)
@@ -903,7 +903,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def range(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCutRangeArgs.Builder]):
+    inline def range(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCutRangeArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCutArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliGoodTotalRatioThresholdPerformanceDistributionCutRangeArgs.builder
       builder.range(args(argsBuilder).build)
@@ -920,7 +920,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def range(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliMetricMeanInRangeRangeArgs.Builder]):
+    inline def range(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliMetricMeanInRangeRangeArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliMetricMeanInRangeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliMetricMeanInRangeRangeArgs.builder
       builder.range(args(argsBuilder).build)
@@ -936,7 +936,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def range(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliMetricSumInRangeRangeArgs.Builder]):
+    inline def range(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliMetricSumInRangeRangeArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliMetricSumInRangeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SloWindowsBasedSliMetricSumInRangeRangeArgs.builder
       builder.range(args(argsBuilder).build)
@@ -949,7 +949,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def criteria(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SnoozeCriteriaArgs.Builder]):
+    inline def criteria(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SnoozeCriteriaArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.SnoozeState.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SnoozeCriteriaArgs.builder
       builder.criteria(args(argsBuilder).build)
@@ -964,7 +964,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def interval(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SnoozeIntervalArgs.Builder]):
+    inline def interval(args: Endofunction[com.pulumi.gcp.monitoring.inputs.SnoozeIntervalArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.SnoozeState.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.SnoozeIntervalArgs.builder
       builder.interval(args(argsBuilder).build)
@@ -975,7 +975,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def jsonPathMatcher(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigContentMatcherJsonPathMatcherArgs.Builder]):
+    inline def jsonPathMatcher(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigContentMatcherJsonPathMatcherArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigContentMatcherArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigContentMatcherJsonPathMatcherArgs.builder
       builder.jsonPathMatcher(args(argsBuilder).build)
@@ -986,7 +986,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def acceptedResponseStatusCodes(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigHttpCheckAcceptedResponseStatusCodeArgs.Builder]*):
+    inline def acceptedResponseStatusCodes(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigHttpCheckAcceptedResponseStatusCodeArgs.Builder]*):
         com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigHttpCheckArgs.Builder =
       def argsBuilder = com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigHttpCheckAcceptedResponseStatusCodeArgs.builder
       builder.acceptedResponseStatusCodes(args.map(_(argsBuilder).build)*)
@@ -996,7 +996,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authInfo(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigHttpCheckAuthInfoArgs.Builder]):
+    inline def authInfo(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigHttpCheckAuthInfoArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigHttpCheckArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigHttpCheckAuthInfoArgs.builder
       builder.authInfo(args(argsBuilder).build)
@@ -1006,7 +1006,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pingConfig(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigHttpCheckPingConfigArgs.Builder]):
+    inline def pingConfig(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigHttpCheckPingConfigArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigHttpCheckArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigHttpCheckPingConfigArgs.builder
       builder.pingConfig(args(argsBuilder).build)
@@ -1016,7 +1016,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceAgentAuthentication(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigHttpCheckServiceAgentAuthenticationArgs.Builder]):
+    inline def serviceAgentAuthentication(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigHttpCheckServiceAgentAuthenticationArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigHttpCheckArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigHttpCheckServiceAgentAuthenticationArgs.builder
       builder.serviceAgentAuthentication(args(argsBuilder).build)
@@ -1027,7 +1027,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def contentMatchers(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigContentMatcherArgs.Builder]*):
+    inline def contentMatchers(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigContentMatcherArgs.Builder]*):
         com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigContentMatcherArgs.builder
       builder.contentMatchers(args.map(_(argsBuilder).build)*)
@@ -1037,7 +1037,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpCheck(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigHttpCheckArgs.Builder]):
+    inline def httpCheck(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigHttpCheckArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigHttpCheckArgs.builder
       builder.httpCheck(args(argsBuilder).build)
@@ -1048,7 +1048,7 @@ object monitoring_ext:
      * uptime checks:
      * @return builder
      */
-    def monitoredResource(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigMonitoredResourceArgs.Builder]):
+    inline def monitoredResource(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigMonitoredResourceArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigMonitoredResourceArgs.builder
       builder.monitoredResource(args(argsBuilder).build)
@@ -1058,7 +1058,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resourceGroup(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigResourceGroupArgs.Builder]):
+    inline def resourceGroup(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigResourceGroupArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigResourceGroupArgs.builder
       builder.resourceGroup(args(argsBuilder).build)
@@ -1068,7 +1068,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def syntheticMonitor(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigSyntheticMonitorArgs.Builder]):
+    inline def syntheticMonitor(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigSyntheticMonitorArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigSyntheticMonitorArgs.builder
       builder.syntheticMonitor(args(argsBuilder).build)
@@ -1078,7 +1078,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tcpCheck(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigTcpCheckArgs.Builder]):
+    inline def tcpCheck(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigTcpCheckArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigTcpCheckArgs.builder
       builder.tcpCheck(args(argsBuilder).build)
@@ -1091,7 +1091,7 @@ object monitoring_ext:
      * &lt;a name=&#34;nestedSyntheticMonitorCloudFunctionV2&#34;&gt;&lt;/a&gt;The `cloudFunctionV2` block supports:
      * @return builder
      */
-    def cloudFunctionV2(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigSyntheticMonitorCloudFunctionV2Args.Builder]):
+    inline def cloudFunctionV2(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigSyntheticMonitorCloudFunctionV2Args.Builder]):
         com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigSyntheticMonitorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigSyntheticMonitorCloudFunctionV2Args.builder
       builder.cloudFunctionV2(args(argsBuilder).build)
@@ -1102,7 +1102,7 @@ object monitoring_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pingConfig(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigTcpCheckPingConfigArgs.Builder]):
+    inline def pingConfig(args: Endofunction[com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigTcpCheckPingConfigArgs.Builder]):
         com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigTcpCheckArgs.Builder =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.UptimeCheckConfigTcpCheckPingConfigArgs.builder
       builder.pingConfig(args(argsBuilder).build)

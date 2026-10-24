@@ -7,7 +7,7 @@ object mediaconvert_ext:
      * @param reservationPlanSettings Detail pricing plan of the reserved queue. See below.
      * @return builder
      */
-    def reservationPlanSettings(args: Endofunction[com.pulumi.aws.mediaconvert.inputs.QueueReservationPlanSettingsArgs.Builder]):
+    inline def reservationPlanSettings(args: Endofunction[com.pulumi.aws.mediaconvert.inputs.QueueReservationPlanSettingsArgs.Builder]):
         com.pulumi.aws.mediaconvert.QueueArgs.Builder =
       val argsBuilder = com.pulumi.aws.mediaconvert.inputs.QueueReservationPlanSettingsArgs.builder
       builder.reservationPlanSettings(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object mediaconvert_ext:
      * @param reservationPlanSettings Detail pricing plan of the reserved queue. See below.
      * @return builder
      */
-    def reservationPlanSettings(args: Endofunction[com.pulumi.aws.mediaconvert.inputs.QueueReservationPlanSettingsArgs.Builder]):
+    inline def reservationPlanSettings(args: Endofunction[com.pulumi.aws.mediaconvert.inputs.QueueReservationPlanSettingsArgs.Builder]):
         com.pulumi.aws.mediaconvert.inputs.QueueState.Builder =
       val argsBuilder = com.pulumi.aws.mediaconvert.inputs.QueueReservationPlanSettingsArgs.builder
       builder.reservationPlanSettings(args(argsBuilder).build)

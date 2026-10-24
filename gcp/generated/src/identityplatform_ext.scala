@@ -8,7 +8,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def blockingFunctions(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigBlockingFunctionsArgs.Builder]):
+    inline def blockingFunctions(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigBlockingFunctionsArgs.Builder]):
         com.pulumi.gcp.identityplatform.ConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigBlockingFunctionsArgs.builder
       builder.blockingFunctions(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def client(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigClientArgs.Builder]):
+    inline def client(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigClientArgs.Builder]):
         com.pulumi.gcp.identityplatform.ConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigClientArgs.builder
       builder.client(args(argsBuilder).build)
@@ -28,7 +28,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mfa(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigMfaArgs.Builder]):
+    inline def mfa(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigMfaArgs.Builder]):
         com.pulumi.gcp.identityplatform.ConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigMfaArgs.builder
       builder.mfa(args(argsBuilder).build)
@@ -38,7 +38,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def monitoring(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigMonitoringArgs.Builder]):
+    inline def monitoring(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigMonitoringArgs.Builder]):
         com.pulumi.gcp.identityplatform.ConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigMonitoringArgs.builder
       builder.monitoring(args(argsBuilder).build)
@@ -48,7 +48,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def multiTenant(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigMultiTenantArgs.Builder]):
+    inline def multiTenant(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigMultiTenantArgs.Builder]):
         com.pulumi.gcp.identityplatform.ConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigMultiTenantArgs.builder
       builder.multiTenant(args(argsBuilder).build)
@@ -58,7 +58,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def quota(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigQuotaArgs.Builder]):
+    inline def quota(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigQuotaArgs.Builder]):
         com.pulumi.gcp.identityplatform.ConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigQuotaArgs.builder
       builder.quota(args(argsBuilder).build)
@@ -68,7 +68,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def signIn(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigSignInArgs.Builder]):
+    inline def signIn(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigSignInArgs.Builder]):
         com.pulumi.gcp.identityplatform.ConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigSignInArgs.builder
       builder.signIn(args(argsBuilder).build)
@@ -78,7 +78,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def smsRegionConfig(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigSmsRegionConfigArgs.Builder]):
+    inline def smsRegionConfig(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigSmsRegionConfigArgs.Builder]):
         com.pulumi.gcp.identityplatform.ConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigSmsRegionConfigArgs.builder
       builder.smsRegionConfig(args(argsBuilder).build)
@@ -89,7 +89,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def idpConfig(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.InboundSamlConfigIdpConfigArgs.Builder]):
+    inline def idpConfig(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.InboundSamlConfigIdpConfigArgs.Builder]):
         com.pulumi.gcp.identityplatform.InboundSamlConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.InboundSamlConfigIdpConfigArgs.builder
       builder.idpConfig(args(argsBuilder).build)
@@ -100,7 +100,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def spConfig(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.InboundSamlConfigSpConfigArgs.Builder]):
+    inline def spConfig(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.InboundSamlConfigSpConfigArgs.Builder]):
         com.pulumi.gcp.identityplatform.InboundSamlConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.InboundSamlConfigSpConfigArgs.builder
       builder.spConfig(args(argsBuilder).build)
@@ -113,7 +113,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def responseType(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.OauthIdpConfigResponseTypeArgs.Builder]):
+    inline def responseType(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.OauthIdpConfigResponseTypeArgs.Builder]):
         com.pulumi.gcp.identityplatform.OauthIdpConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.OauthIdpConfigResponseTypeArgs.builder
       builder.responseType(args(argsBuilder).build)
@@ -124,7 +124,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def client(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.TenantClientArgs.Builder]):
+    inline def client(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.TenantClientArgs.Builder]):
         com.pulumi.gcp.identityplatform.TenantArgs.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.TenantClientArgs.builder
       builder.client(args(argsBuilder).build)
@@ -135,7 +135,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def idpConfig(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.TenantInboundSamlConfigIdpConfigArgs.Builder]):
+    inline def idpConfig(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.TenantInboundSamlConfigIdpConfigArgs.Builder]):
         com.pulumi.gcp.identityplatform.TenantInboundSamlConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.TenantInboundSamlConfigIdpConfigArgs.builder
       builder.idpConfig(args(argsBuilder).build)
@@ -146,7 +146,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def spConfig(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.TenantInboundSamlConfigSpConfigArgs.Builder]):
+    inline def spConfig(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.TenantInboundSamlConfigSpConfigArgs.Builder]):
         com.pulumi.gcp.identityplatform.TenantInboundSamlConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.TenantInboundSamlConfigSpConfigArgs.builder
       builder.spConfig(args(argsBuilder).build)
@@ -157,7 +157,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def forwardInboundCredentials(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigBlockingFunctionsForwardInboundCredentialsArgs.Builder]):
+    inline def forwardInboundCredentials(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigBlockingFunctionsForwardInboundCredentialsArgs.Builder]):
         com.pulumi.gcp.identityplatform.inputs.ConfigBlockingFunctionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigBlockingFunctionsForwardInboundCredentialsArgs.builder
       builder.forwardInboundCredentials(args(argsBuilder).build)
@@ -167,7 +167,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def triggers(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigBlockingFunctionsTriggerArgs.Builder]*):
+    inline def triggers(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigBlockingFunctionsTriggerArgs.Builder]*):
         com.pulumi.gcp.identityplatform.inputs.ConfigBlockingFunctionsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigBlockingFunctionsTriggerArgs.builder
       builder.triggers(args.map(_(argsBuilder).build)*)
@@ -178,7 +178,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def permissions(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigClientPermissionsArgs.Builder]):
+    inline def permissions(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigClientPermissionsArgs.Builder]):
         com.pulumi.gcp.identityplatform.inputs.ConfigClientArgs.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigClientPermissionsArgs.builder
       builder.permissions(args(argsBuilder).build)
@@ -190,7 +190,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def providerConfigs(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigMfaProviderConfigArgs.Builder]*):
+    inline def providerConfigs(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigMfaProviderConfigArgs.Builder]*):
         com.pulumi.gcp.identityplatform.inputs.ConfigMfaArgs.Builder =
       def argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigMfaProviderConfigArgs.builder
       builder.providerConfigs(args.map(_(argsBuilder).build)*)
@@ -201,7 +201,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def totpProviderConfig(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigMfaProviderConfigTotpProviderConfigArgs.Builder]):
+    inline def totpProviderConfig(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigMfaProviderConfigTotpProviderConfigArgs.Builder]):
         com.pulumi.gcp.identityplatform.inputs.ConfigMfaProviderConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigMfaProviderConfigTotpProviderConfigArgs.builder
       builder.totpProviderConfig(args(argsBuilder).build)
@@ -212,7 +212,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def requestLogging(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigMonitoringRequestLoggingArgs.Builder]):
+    inline def requestLogging(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigMonitoringRequestLoggingArgs.Builder]):
         com.pulumi.gcp.identityplatform.inputs.ConfigMonitoringArgs.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigMonitoringRequestLoggingArgs.builder
       builder.requestLogging(args(argsBuilder).build)
@@ -223,7 +223,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def signUpQuotaConfig(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigQuotaSignUpQuotaConfigArgs.Builder]):
+    inline def signUpQuotaConfig(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigQuotaSignUpQuotaConfigArgs.Builder]):
         com.pulumi.gcp.identityplatform.inputs.ConfigQuotaArgs.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigQuotaSignUpQuotaConfigArgs.builder
       builder.signUpQuotaConfig(args(argsBuilder).build)
@@ -234,7 +234,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def anonymous(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigSignInAnonymousArgs.Builder]):
+    inline def anonymous(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigSignInAnonymousArgs.Builder]):
         com.pulumi.gcp.identityplatform.inputs.ConfigSignInArgs.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigSignInAnonymousArgs.builder
       builder.anonymous(args(argsBuilder).build)
@@ -244,7 +244,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def email(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigSignInEmailArgs.Builder]):
+    inline def email(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigSignInEmailArgs.Builder]):
         com.pulumi.gcp.identityplatform.inputs.ConfigSignInArgs.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigSignInEmailArgs.builder
       builder.email(args(argsBuilder).build)
@@ -255,7 +255,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hashConfigs(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigSignInHashConfigArgs.Builder]*):
+    inline def hashConfigs(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigSignInHashConfigArgs.Builder]*):
         com.pulumi.gcp.identityplatform.inputs.ConfigSignInArgs.Builder =
       def argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigSignInHashConfigArgs.builder
       builder.hashConfigs(args.map(_(argsBuilder).build)*)
@@ -265,7 +265,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def phoneNumber(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigSignInPhoneNumberArgs.Builder]):
+    inline def phoneNumber(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigSignInPhoneNumberArgs.Builder]):
         com.pulumi.gcp.identityplatform.inputs.ConfigSignInArgs.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigSignInPhoneNumberArgs.builder
       builder.phoneNumber(args(argsBuilder).build)
@@ -276,7 +276,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allowByDefault(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigSmsRegionConfigAllowByDefaultArgs.Builder]):
+    inline def allowByDefault(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigSmsRegionConfigAllowByDefaultArgs.Builder]):
         com.pulumi.gcp.identityplatform.inputs.ConfigSmsRegionConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigSmsRegionConfigAllowByDefaultArgs.builder
       builder.allowByDefault(args(argsBuilder).build)
@@ -286,7 +286,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allowlistOnly(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigSmsRegionConfigAllowlistOnlyArgs.Builder]):
+    inline def allowlistOnly(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigSmsRegionConfigAllowlistOnlyArgs.Builder]):
         com.pulumi.gcp.identityplatform.inputs.ConfigSmsRegionConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigSmsRegionConfigAllowlistOnlyArgs.builder
       builder.allowlistOnly(args(argsBuilder).build)
@@ -297,7 +297,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def blockingFunctions(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigBlockingFunctionsArgs.Builder]):
+    inline def blockingFunctions(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigBlockingFunctionsArgs.Builder]):
         com.pulumi.gcp.identityplatform.inputs.ConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigBlockingFunctionsArgs.builder
       builder.blockingFunctions(args(argsBuilder).build)
@@ -307,7 +307,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def client(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigClientArgs.Builder]):
+    inline def client(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigClientArgs.Builder]):
         com.pulumi.gcp.identityplatform.inputs.ConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigClientArgs.builder
       builder.client(args(argsBuilder).build)
@@ -317,7 +317,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mfa(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigMfaArgs.Builder]):
+    inline def mfa(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigMfaArgs.Builder]):
         com.pulumi.gcp.identityplatform.inputs.ConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigMfaArgs.builder
       builder.mfa(args(argsBuilder).build)
@@ -327,7 +327,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def monitoring(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigMonitoringArgs.Builder]):
+    inline def monitoring(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigMonitoringArgs.Builder]):
         com.pulumi.gcp.identityplatform.inputs.ConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigMonitoringArgs.builder
       builder.monitoring(args(argsBuilder).build)
@@ -337,7 +337,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def multiTenant(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigMultiTenantArgs.Builder]):
+    inline def multiTenant(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigMultiTenantArgs.Builder]):
         com.pulumi.gcp.identityplatform.inputs.ConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigMultiTenantArgs.builder
       builder.multiTenant(args(argsBuilder).build)
@@ -347,7 +347,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def quota(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigQuotaArgs.Builder]):
+    inline def quota(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigQuotaArgs.Builder]):
         com.pulumi.gcp.identityplatform.inputs.ConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigQuotaArgs.builder
       builder.quota(args(argsBuilder).build)
@@ -357,7 +357,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def signIn(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigSignInArgs.Builder]):
+    inline def signIn(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigSignInArgs.Builder]):
         com.pulumi.gcp.identityplatform.inputs.ConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigSignInArgs.builder
       builder.signIn(args(argsBuilder).build)
@@ -367,7 +367,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def smsRegionConfig(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigSmsRegionConfigArgs.Builder]):
+    inline def smsRegionConfig(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.ConfigSmsRegionConfigArgs.Builder]):
         com.pulumi.gcp.identityplatform.inputs.ConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.ConfigSmsRegionConfigArgs.builder
       builder.smsRegionConfig(args(argsBuilder).build)
@@ -378,7 +378,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def idpCertificates(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.InboundSamlConfigIdpConfigIdpCertificateArgs.Builder]*):
+    inline def idpCertificates(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.InboundSamlConfigIdpConfigIdpCertificateArgs.Builder]*):
         com.pulumi.gcp.identityplatform.inputs.InboundSamlConfigIdpConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.identityplatform.inputs.InboundSamlConfigIdpConfigIdpCertificateArgs.builder
       builder.idpCertificates(args.map(_(argsBuilder).build)*)
@@ -392,7 +392,7 @@ object identityplatform_ext:
      * &lt;a name=&#34;nestedSpConfigSpCertificates&#34;&gt;&lt;/a&gt;The `spCertificates` block contains:
      * @return builder
      */
-    def spCertificates(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.InboundSamlConfigSpConfigSpCertificateArgs.Builder]*):
+    inline def spCertificates(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.InboundSamlConfigSpConfigSpCertificateArgs.Builder]*):
         com.pulumi.gcp.identityplatform.inputs.InboundSamlConfigSpConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.identityplatform.inputs.InboundSamlConfigSpConfigSpCertificateArgs.builder
       builder.spCertificates(args.map(_(argsBuilder).build)*)
@@ -403,7 +403,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def idpConfig(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.InboundSamlConfigIdpConfigArgs.Builder]):
+    inline def idpConfig(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.InboundSamlConfigIdpConfigArgs.Builder]):
         com.pulumi.gcp.identityplatform.inputs.InboundSamlConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.InboundSamlConfigIdpConfigArgs.builder
       builder.idpConfig(args(argsBuilder).build)
@@ -414,7 +414,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def spConfig(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.InboundSamlConfigSpConfigArgs.Builder]):
+    inline def spConfig(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.InboundSamlConfigSpConfigArgs.Builder]):
         com.pulumi.gcp.identityplatform.inputs.InboundSamlConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.InboundSamlConfigSpConfigArgs.builder
       builder.spConfig(args(argsBuilder).build)
@@ -427,7 +427,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def responseType(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.OauthIdpConfigResponseTypeArgs.Builder]):
+    inline def responseType(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.OauthIdpConfigResponseTypeArgs.Builder]):
         com.pulumi.gcp.identityplatform.inputs.OauthIdpConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.OauthIdpConfigResponseTypeArgs.builder
       builder.responseType(args(argsBuilder).build)
@@ -438,7 +438,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def permissions(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.TenantClientPermissionsArgs.Builder]):
+    inline def permissions(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.TenantClientPermissionsArgs.Builder]):
         com.pulumi.gcp.identityplatform.inputs.TenantClientArgs.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.TenantClientPermissionsArgs.builder
       builder.permissions(args(argsBuilder).build)
@@ -449,7 +449,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def idpCertificates(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.TenantInboundSamlConfigIdpConfigIdpCertificateArgs.Builder]*):
+    inline def idpCertificates(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.TenantInboundSamlConfigIdpConfigIdpCertificateArgs.Builder]*):
         com.pulumi.gcp.identityplatform.inputs.TenantInboundSamlConfigIdpConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.identityplatform.inputs.TenantInboundSamlConfigIdpConfigIdpCertificateArgs.builder
       builder.idpCertificates(args.map(_(argsBuilder).build)*)
@@ -463,7 +463,7 @@ object identityplatform_ext:
      * &lt;a name=&#34;nestedSpConfigSpCertificates&#34;&gt;&lt;/a&gt;The `spCertificates` block contains:
      * @return builder
      */
-    def spCertificates(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.TenantInboundSamlConfigSpConfigSpCertificateArgs.Builder]*):
+    inline def spCertificates(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.TenantInboundSamlConfigSpConfigSpCertificateArgs.Builder]*):
         com.pulumi.gcp.identityplatform.inputs.TenantInboundSamlConfigSpConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.identityplatform.inputs.TenantInboundSamlConfigSpConfigSpCertificateArgs.builder
       builder.spCertificates(args.map(_(argsBuilder).build)*)
@@ -474,7 +474,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def idpConfig(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.TenantInboundSamlConfigIdpConfigArgs.Builder]):
+    inline def idpConfig(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.TenantInboundSamlConfigIdpConfigArgs.Builder]):
         com.pulumi.gcp.identityplatform.inputs.TenantInboundSamlConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.TenantInboundSamlConfigIdpConfigArgs.builder
       builder.idpConfig(args(argsBuilder).build)
@@ -485,7 +485,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def spConfig(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.TenantInboundSamlConfigSpConfigArgs.Builder]):
+    inline def spConfig(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.TenantInboundSamlConfigSpConfigArgs.Builder]):
         com.pulumi.gcp.identityplatform.inputs.TenantInboundSamlConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.TenantInboundSamlConfigSpConfigArgs.builder
       builder.spConfig(args(argsBuilder).build)
@@ -496,7 +496,7 @@ object identityplatform_ext:
      * Structure is documented below.
      * @return builder
      */
-    def client(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.TenantClientArgs.Builder]):
+    inline def client(args: Endofunction[com.pulumi.gcp.identityplatform.inputs.TenantClientArgs.Builder]):
         com.pulumi.gcp.identityplatform.inputs.TenantState.Builder =
       val argsBuilder = com.pulumi.gcp.identityplatform.inputs.TenantClientArgs.builder
       builder.client(args(argsBuilder).build)

@@ -28,7 +28,7 @@ object compute:
    *     * [Reserving a Static External IP Address](https://cloud.google.com/compute/docs/instances-and-network)
    *     * [Reserving a Static Internal IP Address](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-internal-ip-address)
    */
-  def Address(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Address(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.AddressArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.AddressArgs.builder
     conf.logicalName2physicalName(name) match
@@ -53,7 +53,7 @@ object compute:
    * 
    * **Note:** When using `gcp.compute.AttachedDisk` you **must** use `lifecycle.ignore_changes = [&#34;attachedDisk&#34;]` on the `gcp.compute.Instance` resource that has the disks attached. Otherwise the two resources will fight for control of the attached disk block.
    */
-  def AttachedDisk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AttachedDisk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.AttachedDiskArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.AttachedDiskArgs.builder
     com.pulumi.gcp.compute.AttachedDisk(name,
@@ -73,7 +73,7 @@ object compute:
    * * How-to Guides
    *     * [Autoscaling Groups of Instances](https://cloud.google.com/compute/docs/autoscaler/)
    */
-  def Autoscaler(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Autoscaler(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.AutoscalerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.AutoscalerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -98,7 +98,7 @@ object compute:
    * * How-to Guides
    *     * [Using a Cloud Storage bucket as a load balancer backend](https://cloud.google.com/compute/docs/load-balancing/http/backend-bucket)
    */
-  def BackendBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackendBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.BackendBucketArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.BackendBucketArgs.builder
     conf.logicalName2physicalName(name) match
@@ -413,7 +413,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def BackendBucketIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackendBucketIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.BackendBucketIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.BackendBucketIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -728,7 +728,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def BackendBucketIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackendBucketIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.BackendBucketIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.BackendBucketIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1043,7 +1043,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def BackendBucketIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackendBucketIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.BackendBucketIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.BackendBucketIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1062,7 +1062,7 @@ object compute:
    * * How-to Guides
    *     * [Using Signed URLs](https://cloud.google.com/cdn/docs/using-signed-urls/)
    */
-  def BackendBucketSignedUrlKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackendBucketSignedUrlKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.BackendBucketSignedUrlKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.BackendBucketSignedUrlKeyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1092,7 +1092,7 @@ object compute:
    * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `iap.oauth2_client_id_wo`, `iap.oauth2_client_secret_wo`.
    * Read more about Write-only Arguments.
    */
-  def BackendService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackendService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.BackendServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.BackendServiceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1677,7 +1677,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def BackendServiceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackendServiceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.BackendServiceIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.BackendServiceIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2262,7 +2262,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def BackendServiceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackendServiceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.BackendServiceIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.BackendServiceIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2847,7 +2847,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def BackendServiceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackendServiceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.BackendServiceIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.BackendServiceIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2866,7 +2866,7 @@ object compute:
    * * How-to Guides
    *     * [Using Signed URLs](https://cloud.google.com/cdn/docs/using-signed-urls/)
    */
-  def BackendServiceSignedUrlKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackendServiceSignedUrlKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.BackendServiceSignedUrlKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.BackendServiceSignedUrlKeyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2885,7 +2885,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/compute/docs/instance-groups/bulk-create-instances-in-mig)
    */
-  def BulkPerInstanceConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BulkPerInstanceConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.BulkPerInstanceConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.BulkPerInstanceConfigArgs.builder
     com.pulumi.gcp.compute.BulkPerInstanceConfig(name,
@@ -2909,7 +2909,7 @@ object compute:
    * The EAB secret is invalidated if you don&#39;t use it within 7 days.
    * The ACME account registered by using an EAB secret has no expiration.
    */
-  def CaExternalAccountKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CaExternalAccountKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.CaExternalAccountKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.CaExternalAccountKeyArgs.builder
     com.pulumi.gcp.compute.CaExternalAccountKey(name,
@@ -5190,7 +5190,7 @@ object compute:
    * * How-to Guides
    *     * [Create a Cross-Site Interconnect](https://cloud.google.com/network-connectivity/docs/interconnect/how-to/cross-site/create-network)
    */
-  def CrossSiteNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CrossSiteNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.CrossSiteNetworkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.CrossSiteNetworkArgs.builder
     conf.logicalName2physicalName(name) match
@@ -5226,7 +5226,7 @@ object compute:
    * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `disk_encryption_key.raw_key_wo`, `disk_encryption_key.rsa_encrypted_key_wo`.
    * Read more about Write-only Arguments.
    */
-  def Disk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Disk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.DiskArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.DiskArgs.builder
     conf.logicalName2physicalName(name) match
@@ -5241,7 +5241,7 @@ object compute:
    * see [the official documentation](https://cloud.google.com/compute/docs/disks/async-pd/about)
    * and the [API](https://cloud.google.com/compute/docs/reference/rest/v1/disks).
    */
-  def DiskAsyncReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DiskAsyncReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.DiskAsyncReplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.DiskAsyncReplicationArgs.builder
     com.pulumi.gcp.compute.DiskAsyncReplication(name,
@@ -5554,7 +5554,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DiskIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DiskIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.DiskIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.DiskIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -5870,7 +5870,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DiskIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DiskIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.DiskIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.DiskIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -6186,7 +6186,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DiskIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DiskIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.DiskIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.DiskIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -6202,7 +6202,7 @@ object compute:
    * 
    * &gt; **Note:** This resource does not support regional disks (`gcp.compute.RegionDisk`). For regional disks, please refer to the `gcp.compute.RegionDiskResourcePolicyAttachment` resource.
    */
-  def DiskResourcePolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DiskResourcePolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.DiskResourcePolicyAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.DiskResourcePolicyAttachmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -6219,7 +6219,7 @@ object compute:
    * 
    * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/externalVpnGateways)
    */
-  def ExternalVpnGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ExternalVpnGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.ExternalVpnGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.ExternalVpnGatewayArgs.builder
     conf.logicalName2physicalName(name) match
@@ -6249,7 +6249,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/vpc/docs/firewalls)
    */
-  def Firewall(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Firewall(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.FirewallArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.FirewallArgs.builder
     conf.logicalName2physicalName(name) match
@@ -6270,7 +6270,7 @@ object compute:
    * 
    * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/firewallPolicies)
    */
-  def FirewallPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FirewallPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.FirewallPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.FirewallPolicyArgs.builder
     com.pulumi.gcp.compute.FirewallPolicy(name,
@@ -6285,7 +6285,7 @@ object compute:
    * 
    * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/firewallPolicies/addAssociation)
    */
-  def FirewallPolicyAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FirewallPolicyAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.FirewallPolicyAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.FirewallPolicyAssociationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -6588,7 +6588,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def FirewallPolicyIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FirewallPolicyIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.FirewallPolicyIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.FirewallPolicyIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -6891,7 +6891,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def FirewallPolicyIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FirewallPolicyIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.FirewallPolicyIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.FirewallPolicyIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -7194,7 +7194,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def FirewallPolicyIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FirewallPolicyIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.FirewallPolicyIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.FirewallPolicyIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -7211,7 +7211,7 @@ object compute:
    * 
    * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/firewallPolicies/addRule)
    */
-  def FirewallPolicyRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FirewallPolicyRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.FirewallPolicyRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.FirewallPolicyRuleArgs.builder
     com.pulumi.gcp.compute.FirewallPolicyRule(name,
@@ -7222,7 +7222,7 @@ object compute:
    * The Compute FirewallPolicy with rules resource. It declaratively manges all
    * rules in the firewall policy.
    */
-  def FirewallPolicyWithRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FirewallPolicyWithRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.FirewallPolicyWithRulesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.FirewallPolicyWithRulesArgs.builder
     com.pulumi.gcp.compute.FirewallPolicyWithRules(name,
@@ -7240,7 +7240,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/compute/docs/load-balancing/network/forwarding-rules)
    */
-  def ForwardingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ForwardingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.ForwardingRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.ForwardingRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -7270,7 +7270,7 @@ object compute:
    * * How-to Guides
    *     * [Future Reservations Guide](https://cloud.google.com/compute/docs/instances/future-reservations-overview)
    */
-  def FutureReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FutureReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.FutureReservationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.FutureReservationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -7290,7 +7290,7 @@ object compute:
    * * How-to Guides
    *     * [Reserving a Static External IP Address](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-external-ip-address)
    */
-  def GlobalAddress(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GlobalAddress(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.GlobalAddressArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.GlobalAddressArgs.builder
     conf.logicalName2physicalName(name) match
@@ -7308,7 +7308,7 @@ object compute:
    * 
    * For more information, see https://cloud.google.com/compute/docs/load-balancing/http/
    */
-  def GlobalForwardingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GlobalForwardingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.GlobalForwardingRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.GlobalForwardingRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -7329,7 +7329,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/load-balancing/docs/negs/)
    */
-  def GlobalNetworkEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GlobalNetworkEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.GlobalNetworkEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.GlobalNetworkEndpointArgs.builder
     com.pulumi.gcp.compute.GlobalNetworkEndpoint(name,
@@ -7350,7 +7350,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/load-balancing/docs/negs/internet-neg-concepts)
    */
-  def GlobalNetworkEndpointGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GlobalNetworkEndpointGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.GlobalNetworkEndpointGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.GlobalNetworkEndpointGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -7361,7 +7361,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A Global VM Extension Policy. */
-  def GlobalVmExtensionPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GlobalVmExtensionPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.GlobalVmExtensionPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.GlobalVmExtensionPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -7383,7 +7383,7 @@ object compute:
    *     * [Choosing a VPN](https://cloud.google.com/vpn/docs/how-to/choosing-a-vpn)
    *     * [Cloud VPN Overview](https://cloud.google.com/vpn/docs/concepts/overview)
    */
-  def HaVpnGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HaVpnGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.HaVpnGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.HaVpnGatewayArgs.builder
     conf.logicalName2physicalName(name) match
@@ -7416,7 +7416,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/load-balancing/docs/health-checks)
    */
-  def HealthCheck(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HealthCheck(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.HealthCheckArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.HealthCheckArgs.builder
     conf.logicalName2physicalName(name) match
@@ -7442,7 +7442,7 @@ object compute:
    * * How-to Guides
    *     * [Adding Health Checks](https://cloud.google.com/compute/docs/load-balancing/health-checks#legacy_health_checks)
    */
-  def HttpHealthCheck(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HttpHealthCheck(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.HttpHealthCheckArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.HttpHealthCheckArgs.builder
     conf.logicalName2physicalName(name) match
@@ -7468,7 +7468,7 @@ object compute:
    * * How-to Guides
    *     * [Adding Health Checks](https://cloud.google.com/compute/docs/load-balancing/health-checks#legacy_health_checks)
    */
-  def HttpsHealthCheck(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HttpsHealthCheck(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.HttpsHealthCheckArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.HttpsHealthCheckArgs.builder
     conf.logicalName2physicalName(name) match
@@ -7502,7 +7502,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/compute/docs/images)
    */
-  def Image(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Image(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.ImageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.ImageArgs.builder
     conf.logicalName2physicalName(name) match
@@ -8081,7 +8081,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ImageIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ImageIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.ImageIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.ImageIamBindingArgs.builder
     com.pulumi.gcp.compute.ImageIamBinding(name,
@@ -8657,7 +8657,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ImageIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ImageIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.ImageIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.ImageIamMemberArgs.builder
     com.pulumi.gcp.compute.ImageIamMember(name,
@@ -9233,7 +9233,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ImageIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ImageIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.ImageIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.ImageIamPolicyArgs.builder
     com.pulumi.gcp.compute.ImageIamPolicy(name,
@@ -9246,7 +9246,7 @@ object compute:
    * and
    * [API](https://cloud.google.com/compute/docs/reference/latest/instances).
    */
-  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.InstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.InstanceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -9269,7 +9269,7 @@ object compute:
    * `sourceMachineImage`. To create an instance without a machine image, use the
    * `gcp.compute.Instance` resource.
    */
-  def InstanceFromMachineImage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceFromMachineImage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.InstanceFromMachineImageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.InstanceFromMachineImageArgs.builder
     conf.logicalName2physicalName(name) match
@@ -9289,7 +9289,7 @@ object compute:
    * `sourceInstanceTemplate`. To create an instance without a template, use the
    * `gcp.compute.Instance` resource.
    */
-  def InstanceFromTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceFromTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.InstanceFromTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.InstanceFromTemplateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -9304,7 +9304,7 @@ object compute:
    * For more information, see [the official documentation](https://cloud.google.com/compute/docs/instance-groups/#unmanaged_instance_groups)
    * and [API](https://cloud.google.com/compute/docs/reference/latest/instanceGroups)
    */
-  def InstanceGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.InstanceGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.InstanceGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -9322,7 +9322,7 @@ object compute:
    * 
    * &gt; **Note:** Use [gcp.compute.RegionInstanceGroupManager](https://www.terraform.io/docs/providers/google/r/compute_region_instance_group_manager.html) to create a regional (multi-zone) instance group manager.
    */
-  def InstanceGroupManager(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceGroupManager(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.InstanceGroupManagerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.InstanceGroupManagerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -9352,7 +9352,7 @@ object compute:
    *     * [List instances](https://cloud.google.com/compute/docs/reference/rest/v1/instanceGroups/listInstances)
    *     * [Remove instances](https://cloud.google.com/compute/docs/reference/rest/v1/instanceGroups/removeInstances)
    */
-  def InstanceGroupMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceGroupMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.InstanceGroupMembershipArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.InstanceGroupMembershipArgs.builder
     com.pulumi.gcp.compute.InstanceGroupMembership(name,
@@ -9371,7 +9371,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/compute/docs/instance-groups/)
    */
-  def InstanceGroupNamedPort(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceGroupNamedPort(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.InstanceGroupNamedPortArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.InstanceGroupNamedPortArgs.builder
     conf.logicalName2physicalName(name) match
@@ -9963,7 +9963,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def InstanceIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.InstanceIAMBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.InstanceIAMBindingArgs.builder
     com.pulumi.gcp.compute.InstanceIAMBinding(name,
@@ -10552,7 +10552,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def InstanceIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.InstanceIAMMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.InstanceIAMMemberArgs.builder
     com.pulumi.gcp.compute.InstanceIAMMember(name,
@@ -11141,7 +11141,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def InstanceIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.InstanceIAMPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.InstanceIAMPolicyArgs.builder
     com.pulumi.gcp.compute.InstanceIAMPolicy(name,
@@ -11157,7 +11157,7 @@ object compute:
    * * How-to Guides
    *     * [Update Instance Settings](https://cloud.google.com/compute/docs/metadata/setting-custom-metadata#set-custom-project-zonal-metadata)
    */
-  def InstanceSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.InstanceSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.InstanceSettingsArgs.builder
     com.pulumi.gcp.compute.InstanceSettings(name,
@@ -11172,7 +11172,7 @@ object compute:
    * and
    * [API](https://cloud.google.com/compute/docs/reference/latest/instanceTemplates).
    */
-  def InstanceTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.InstanceTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.InstanceTemplateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -11751,7 +11751,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def InstanceTemplateIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceTemplateIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.InstanceTemplateIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.InstanceTemplateIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -12330,7 +12330,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def InstanceTemplateIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceTemplateIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.InstanceTemplateIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.InstanceTemplateIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -12909,7 +12909,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def InstanceTemplateIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceTemplateIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.InstanceTemplateIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.InstanceTemplateIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -12934,7 +12934,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/compute/docs/disks/instant-snapshots)
    */
-  def InstantSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstantSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.InstantSnapshotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.InstantSnapshotArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13526,7 +13526,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def InstantSnapshotIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstantSnapshotIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.InstantSnapshotIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.InstantSnapshotIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14118,7 +14118,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def InstantSnapshotIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstantSnapshotIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.InstantSnapshotIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.InstantSnapshotIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14710,7 +14710,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def InstantSnapshotIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstantSnapshotIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.InstantSnapshotIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.InstantSnapshotIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14730,7 +14730,7 @@ object compute:
    * * How-to Guides
    *     * [Create a Dedicated Interconnect](https://cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview)
    */
-  def Interconnect(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Interconnect(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.InterconnectArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.InterconnectArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14750,7 +14750,7 @@ object compute:
    * * How-to Guides
    *     * [Create a Interconnect attachment](https://cloud.google.com/network-connectivity/docs/interconnect/how-to/dedicated/creating-vlan-attachments)
    */
-  def InterconnectAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InterconnectAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.InterconnectAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.InterconnectAttachmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14770,7 +14770,7 @@ object compute:
    * * How-to Guides
    *     * [Create a Dedicated Interconnect](https://cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview)
    */
-  def InterconnectAttachmentGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InterconnectAttachmentGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.InterconnectAttachmentGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.InterconnectAttachmentGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14790,7 +14790,7 @@ object compute:
    * * How-to Guides
    *     * [Create a Dedicated Interconnect](https://cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview)
    */
-  def InterconnectGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InterconnectGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.InterconnectGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.InterconnectGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14814,7 +14814,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/compute/docs/machine-images)
    */
-  def MachineImage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MachineImage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.MachineImageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.MachineImageArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15399,7 +15399,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def MachineImageIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MachineImageIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.MachineImageIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.MachineImageIamBindingArgs.builder
     com.pulumi.gcp.compute.MachineImageIamBinding(name,
@@ -15981,7 +15981,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def MachineImageIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MachineImageIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.MachineImageIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.MachineImageIamMemberArgs.builder
     com.pulumi.gcp.compute.MachineImageIamMember(name,
@@ -16563,7 +16563,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def MachineImageIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MachineImageIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.MachineImageIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.MachineImageIamPolicyArgs.builder
     com.pulumi.gcp.compute.MachineImageIamPolicy(name,
@@ -16597,7 +16597,7 @@ object compute:
    * 
    * In conclusion: Be extremely cautious.
    */
-  def ManagedSslCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedSslCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.ManagedSslCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.ManagedSslCertificateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16634,7 +16634,7 @@ object compute:
    * 
    * In conclusion: Be extremely cautious.
    */
-  @deprecated("gcp.compute.MangedSslCertificate has been deprecated in favor of gcp.compute.ManagedSslCertificate") def MangedSslCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("gcp.compute.MangedSslCertificate has been deprecated in favor of gcp.compute.ManagedSslCertificate") inline def MangedSslCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.MangedSslCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.MangedSslCertificateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16653,7 +16653,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/vpc/docs/vpc)
    */
-  def Network(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Network(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.NetworkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.NetworkArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16672,7 +16672,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/vpc/docs/about-network-attachments)
    */
-  def NetworkAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.NetworkAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.NetworkAttachmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16691,7 +16691,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/armor/docs/advanced-network-ddos)
    */
-  def NetworkEdgeSecurityService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkEdgeSecurityService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.NetworkEdgeSecurityServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.NetworkEdgeSecurityServiceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16718,7 +16718,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/load-balancing/docs/negs/)
    */
-  def NetworkEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.NetworkEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.NetworkEndpointArgs.builder
     com.pulumi.gcp.compute.NetworkEndpoint(name,
@@ -16747,7 +16747,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/load-balancing/docs/negs/)
    */
-  def NetworkEndpointGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkEndpointGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.NetworkEndpointGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.NetworkEndpointGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16777,7 +16777,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/load-balancing/docs/negs/)
    */
-  def NetworkEndpointList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkEndpointList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.NetworkEndpointListArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.NetworkEndpointListArgs.builder
     com.pulumi.gcp.compute.NetworkEndpointList(name,
@@ -16785,7 +16785,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The Compute NetworkFirewallPolicy resource */
-  def NetworkFirewallPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkFirewallPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.NetworkFirewallPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.NetworkFirewallPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16802,7 +16802,7 @@ object compute:
    * 
    * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/networkFirewallPolicies/addAssociation)
    */
-  def NetworkFirewallPolicyAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkFirewallPolicyAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.NetworkFirewallPolicyAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.NetworkFirewallPolicyAssociationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -17111,7 +17111,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def NetworkFirewallPolicyIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkFirewallPolicyIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.NetworkFirewallPolicyIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.NetworkFirewallPolicyIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -17420,7 +17420,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def NetworkFirewallPolicyIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkFirewallPolicyIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.NetworkFirewallPolicyIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.NetworkFirewallPolicyIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -17729,7 +17729,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def NetworkFirewallPolicyIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkFirewallPolicyIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.NetworkFirewallPolicyIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.NetworkFirewallPolicyIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -17749,7 +17749,7 @@ object compute:
    * 
    * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/beta/networkFirewallPolicies/addPacketMirroringRule)
    */
-  def NetworkFirewallPolicyPacketMirroringRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkFirewallPolicyPacketMirroringRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.NetworkFirewallPolicyPacketMirroringRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.NetworkFirewallPolicyPacketMirroringRuleArgs.builder
     com.pulumi.gcp.compute.NetworkFirewallPolicyPacketMirroringRule(name,
@@ -17763,7 +17763,7 @@ object compute:
    * 
    * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/networkFirewallPolicies/addRule)
    */
-  def NetworkFirewallPolicyRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkFirewallPolicyRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.NetworkFirewallPolicyRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.NetworkFirewallPolicyRuleArgs.builder
     com.pulumi.gcp.compute.NetworkFirewallPolicyRule(name,
@@ -17771,7 +17771,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The Compute NetworkFirewallPolicy with rules resource */
-  def NetworkFirewallPolicyWithRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkFirewallPolicyWithRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.NetworkFirewallPolicyWithRulesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.NetworkFirewallPolicyWithRulesArgs.builder
     conf.logicalName2physicalName(name) match
@@ -17792,7 +17792,7 @@ object compute:
    * 
    * &gt; Subnets IP ranges across peered VPC networks cannot overlap.
    */
-  def NetworkPeering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkPeering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.NetworkPeeringArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.NetworkPeeringArgs.builder
     conf.logicalName2physicalName(name) match
@@ -17814,7 +17814,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/vpc/docs/vpc-peering)
    */
-  def NetworkPeeringRoutesConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkPeeringRoutesConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.NetworkPeeringRoutesConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.NetworkPeeringRoutesConfigArgs.builder
     com.pulumi.gcp.compute.NetworkPeeringRoutesConfig(name,
@@ -17835,7 +17835,7 @@ object compute:
    * through provider config or through external changes will cause
    * the provider to delete and recreate the node group.
    */
-  def NodeGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NodeGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.NodeGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.NodeGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -17856,7 +17856,7 @@ object compute:
    * * How-to Guides
    *     * [Sole-Tenant Nodes](https://cloud.google.com/compute/docs/nodes/)
    */
-  def NodeTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NodeTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.NodeTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.NodeTemplateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -17875,7 +17875,7 @@ object compute:
    * * How-to Guides
    *     * [Creating a firewall policy](https://cloud.google.com/vpc/docs/using-firewall-policies#create-policy)
    */
-  def OrganizationSecurityPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationSecurityPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.OrganizationSecurityPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.OrganizationSecurityPolicyArgs.builder
     com.pulumi.gcp.compute.OrganizationSecurityPolicy(name,
@@ -17891,7 +17891,7 @@ object compute:
    * * How-to Guides
    *     * [Associating a policy with the organization or folder](https://cloud.google.com/vpc/docs/using-firewall-policies#associate)
    */
-  def OrganizationSecurityPolicyAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationSecurityPolicyAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.OrganizationSecurityPolicyAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.OrganizationSecurityPolicyAssociationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -17910,7 +17910,7 @@ object compute:
    * * How-to Guides
    *     * [Configure hierarchical security policies](https://docs.cloud.google.com/armor/docs/hierarchical-policies-using)
    */
-  def OrganizationSecurityPolicyRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationSecurityPolicyRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.OrganizationSecurityPolicyRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.OrganizationSecurityPolicyRuleArgs.builder
     com.pulumi.gcp.compute.OrganizationSecurityPolicyRule(name,
@@ -17933,7 +17933,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://docs.cloud.google.com/compute/docs/disks/configure-recycle-bin)
    */
-  def OrganizationSnapshotRecycleBinPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationSnapshotRecycleBinPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.OrganizationSnapshotRecycleBinPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.OrganizationSnapshotRecycleBinPolicyArgs.builder
     com.pulumi.gcp.compute.OrganizationSnapshotRecycleBinPolicy(name,
@@ -17951,7 +17951,7 @@ object compute:
    * * How-to Guides
    *     * [Using Packet Mirroring](https://cloud.google.com/vpc/docs/using-packet-mirroring#creating)
    */
-  def PacketMirroring(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PacketMirroring(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.PacketMirroringArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.PacketMirroringArgs.builder
     conf.logicalName2physicalName(name) match
@@ -17971,7 +17971,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/compute/docs/instance-groups/stateful-migs#per-instance_configs)
    */
-  def PerInstanceConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PerInstanceConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.PerInstanceConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.PerInstanceConfigArgs.builder
     conf.logicalName2physicalName(name) match
@@ -17990,7 +17990,7 @@ object compute:
    * * How-to Guides
    *     * [Use the Compute Engine alpha API](https://cloud.google.com/compute/docs/reference/rest/alpha)
    */
-  def PreviewFeature(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PreviewFeature(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.PreviewFeatureArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.PreviewFeatureArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18009,7 +18009,7 @@ object compute:
    * * How-to Guides
    *     * [Subscribing to Cloud Armor Enterprise](https://cloud.google.com/armor/docs/managed-protection-overview#subscribing_to_plus)
    */
-  def ProjectCloudArmorTier(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProjectCloudArmorTier(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.ProjectCloudArmorTierArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.ProjectCloudArmorTierArgs.builder
     com.pulumi.gcp.compute.ProjectCloudArmorTier(name,
@@ -18024,7 +18024,7 @@ object compute:
    * For more information, see,
    * [the Project API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/projects/setDefaultNetworkTier).
    */
-  def ProjectDefaultNetworkTier(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProjectDefaultNetworkTier(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.ProjectDefaultNetworkTierArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.ProjectDefaultNetworkTierArgs.builder
     com.pulumi.gcp.compute.ProjectDefaultNetworkTier(name,
@@ -18042,7 +18042,7 @@ object compute:
    * key/value pairs within the project metadata rather than the entire set, then use
    * google_compute_project_metadata_item.
    */
-  def ProjectMetadata(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProjectMetadata(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.ProjectMetadataArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.ProjectMetadataArgs.builder
     com.pulumi.gcp.compute.ProjectMetadata(name,
@@ -18055,7 +18055,7 @@ object compute:
    * manage a single key/value setting in the provider rather than the entire
    * project metadata map.
    */
-  def ProjectMetadataItem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProjectMetadataItem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.ProjectMetadataItemArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.ProjectMetadataItemArgs.builder
     com.pulumi.gcp.compute.ProjectMetadataItem(name,
@@ -18071,7 +18071,7 @@ object compute:
    * * How-to Guides
    *     * [Using bring your own IP](https://cloud.google.com/vpc/docs/using-bring-your-own-ip)
    */
-  def PublicAdvertisedPrefix(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PublicAdvertisedPrefix(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.PublicAdvertisedPrefixArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.PublicAdvertisedPrefixArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18090,7 +18090,7 @@ object compute:
    * * How-to Guides
    *     * [Using bring your own IP](https://cloud.google.com/vpc/docs/using-bring-your-own-ip)
    */
-  def PublicDelegatedPrefix(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PublicDelegatedPrefix(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.PublicDelegatedPrefixArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.PublicDelegatedPrefixArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18113,7 +18113,7 @@ object compute:
    * * How-to Guides
    *     * [Autoscaling Groups of Instances](https://cloud.google.com/compute/docs/autoscaler/)
    */
-  def RegionAutoscaler(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionAutoscaler(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionAutoscalerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionAutoscalerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18152,7 +18152,7 @@ object compute:
    * * How-to Guides
    *     * [Using a Cloud Storage bucket as a load balancer backend](https://cloud.google.com/compute/docs/load-balancing/http/backend-bucket)
    */
-  def RegionBackendBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionBackendBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionBackendBucketArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionBackendBucketArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18750,7 +18750,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RegionBackendBucketIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionBackendBucketIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionBackendBucketIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionBackendBucketIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -19348,7 +19348,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RegionBackendBucketIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionBackendBucketIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionBackendBucketIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionBackendBucketIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -19946,7 +19946,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RegionBackendBucketIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionBackendBucketIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionBackendBucketIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionBackendBucketIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -19969,7 +19969,7 @@ object compute:
    * * How-to Guides
    *     * [Internal TCP/UDP Load Balancing](https://cloud.google.com/compute/docs/load-balancing/internal/)
    */
-  def RegionBackendService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionBackendService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionBackendServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionBackendServiceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -20567,7 +20567,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RegionBackendServiceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionBackendServiceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionBackendServiceIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionBackendServiceIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -21165,7 +21165,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RegionBackendServiceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionBackendServiceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionBackendServiceIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionBackendServiceIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -21763,7 +21763,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RegionBackendServiceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionBackendServiceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionBackendServiceIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionBackendServiceIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -21786,7 +21786,7 @@ object compute:
    * * How-to Guides
    *     * [Committed use discounts for Compute Engine](https://cloud.google.com/compute/docs/instances/committed-use-discounts-overview)
    */
-  def RegionCommitment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionCommitment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionCommitmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionCommitmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -21807,7 +21807,7 @@ object compute:
    * * How-to Guides
    *     * [Health checks overview](https://cloud.google.com/load-balancing/docs/health-check-concepts)
    */
-  def RegionCompositeHealthCheck(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionCompositeHealthCheck(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionCompositeHealthCheckArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionCompositeHealthCheckArgs.builder
     conf.logicalName2physicalName(name) match
@@ -21843,7 +21843,7 @@ object compute:
    * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `disk_encryption_key.raw_key_wo`, `disk_encryption_key.rsa_encrypted_key_wo`.
    * Read more about Write-only Arguments.
    */
-  def RegionDisk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionDisk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionDiskArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionDiskArgs.builder
     conf.logicalName2physicalName(name) match
@@ -22159,7 +22159,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RegionDiskIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionDiskIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionDiskIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionDiskIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -22475,7 +22475,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RegionDiskIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionDiskIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionDiskIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionDiskIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -22791,7 +22791,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RegionDiskIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionDiskIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionDiskIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionDiskIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -22807,7 +22807,7 @@ object compute:
    * 
    * &gt; **Note:** This resource does not support zonal disks (`gcp.compute.Disk`). For zonal disks, please refer to the `gcp.compute.DiskResourcePolicyAttachment` resource.
    */
-  def RegionDiskResourcePolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionDiskResourcePolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionDiskResourcePolicyAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionDiskResourcePolicyAttachmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -22826,7 +22826,7 @@ object compute:
    * * How-to Guides
    *     * [Health checks overview](https://cloud.google.com/load-balancing/docs/health-check-concepts)
    */
-  def RegionHealthAggregationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionHealthAggregationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionHealthAggregationPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionHealthAggregationPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -22855,7 +22855,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/load-balancing/docs/health-checks)
    */
-  def RegionHealthCheck(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionHealthCheck(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionHealthCheckArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionHealthCheckArgs.builder
     conf.logicalName2physicalName(name) match
@@ -22876,7 +22876,7 @@ object compute:
    * * How-to Guides
    *     * [Health checks overview](https://cloud.google.com/load-balancing/docs/health-check-concepts)
    */
-  def RegionHealthSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionHealthSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionHealthSourceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionHealthSourceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -22899,7 +22899,7 @@ object compute:
    * 
    * &gt; **Note:** Use [gcp.compute.InstanceGroupManager](https://www.terraform.io/docs/providers/google/r/compute_instance_group_manager.html) to create a zonal instance group manager.
    */
-  def RegionInstanceGroupManager(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionInstanceGroupManager(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionInstanceGroupManagerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionInstanceGroupManagerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -22915,7 +22915,7 @@ object compute:
    * and
    * [API](https://cloud.google.com/compute/docs/reference/rest/v1/regionInstanceTemplates).
    */
-  def RegionInstanceTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionInstanceTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionInstanceTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionInstanceTemplateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -22940,7 +22940,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/compute/docs/disks/instant-snapshots)
    */
-  def RegionInstantSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionInstantSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionInstantSnapshotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionInstantSnapshotArgs.builder
     conf.logicalName2physicalName(name) match
@@ -23532,7 +23532,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RegionInstantSnapshotIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionInstantSnapshotIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionInstantSnapshotIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionInstantSnapshotIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -24124,7 +24124,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RegionInstantSnapshotIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionInstantSnapshotIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionInstantSnapshotIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionInstantSnapshotIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -24716,7 +24716,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RegionInstantSnapshotIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionInstantSnapshotIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionInstantSnapshotIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionInstantSnapshotIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -24739,7 +24739,7 @@ object compute:
    *     * [Internet NEGs Official Documentation](https://cloud.google.com/load-balancing/docs/negs/internet-neg-concepts)
    *     * [Official Documentation](https://cloud.google.com/load-balancing/docs/negs/)
    */
-  def RegionNetworkEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionNetworkEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionNetworkEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.RegionNetworkEndpointArgs.builder
     com.pulumi.gcp.compute.RegionNetworkEndpoint(name,
@@ -24757,7 +24757,7 @@ object compute:
    *     * [Internet NEGs Official Documentation](https://cloud.google.com/load-balancing/docs/negs/internet-neg-concepts)
    *     * [Serverless NEGs Official Documentation](https://cloud.google.com/load-balancing/docs/negs/serverless-neg-concepts)
    */
-  def RegionNetworkEndpointGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionNetworkEndpointGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionNetworkEndpointGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionNetworkEndpointGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -24768,7 +24768,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The Compute NetworkFirewallPolicy resource */
-  def RegionNetworkFirewallPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionNetworkFirewallPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionNetworkFirewallPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionNetworkFirewallPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -24785,7 +24785,7 @@ object compute:
    * 
    * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/regionNetworkFirewallPolicies/addAssociation)
    */
-  def RegionNetworkFirewallPolicyAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionNetworkFirewallPolicyAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionNetworkFirewallPolicyAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionNetworkFirewallPolicyAssociationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25101,7 +25101,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RegionNetworkFirewallPolicyIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionNetworkFirewallPolicyIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25417,7 +25417,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RegionNetworkFirewallPolicyIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionNetworkFirewallPolicyIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25733,7 +25733,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RegionNetworkFirewallPolicyIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionNetworkFirewallPolicyIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25750,7 +25750,7 @@ object compute:
    * 
    * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/regionNetworkFirewallPolicies/addRule)
    */
-  def RegionNetworkFirewallPolicyRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionNetworkFirewallPolicyRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionNetworkFirewallPolicyRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.RegionNetworkFirewallPolicyRuleArgs.builder
     com.pulumi.gcp.compute.RegionNetworkFirewallPolicyRule(name,
@@ -25758,7 +25758,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The Compute NetworkFirewallPolicy with rules resource */
-  def RegionNetworkFirewallPolicyWithRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionNetworkFirewallPolicyWithRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionNetworkFirewallPolicyWithRulesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionNetworkFirewallPolicyWithRulesArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25774,7 +25774,7 @@ object compute:
    * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
    * See Provider Versions for more details on beta resources.
    */
-  def RegionNetworkPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionNetworkPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionNetworkPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionNetworkPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25794,7 +25794,7 @@ object compute:
    * 
    * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/beta/networkPolicies/addTrafficClassificationRule)
    */
-  def RegionNetworkPolicyTrafficClassificationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionNetworkPolicyTrafficClassificationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionNetworkPolicyTrafficClassificationRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.RegionNetworkPolicyTrafficClassificationRuleArgs.builder
     com.pulumi.gcp.compute.RegionNetworkPolicyTrafficClassificationRule(name,
@@ -25812,7 +25812,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/compute/docs/instance-groups/stateful-migs#per-instance_configs)
    */
-  def RegionPerInstanceConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionPerInstanceConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionPerInstanceConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionPerInstanceConfigArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25835,7 +25835,7 @@ object compute:
    * * How-to Guides
    *     * [About resize requests in a MIG](https://cloud.google.com/compute/docs/instance-groups/about-resize-requests-mig)
    */
-  def RegionResizeRequest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionResizeRequest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionResizeRequestArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionResizeRequestArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25854,7 +25854,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/armor/docs/security-policy-concepts)
    */
-  def RegionSecurityPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionSecurityPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionSecurityPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionSecurityPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25873,7 +25873,7 @@ object compute:
    * * How-to Guides
    *     * [Creating region security policy rules](https://cloud.google.com/armor/docs/configure-security-policies)
    */
-  def RegionSecurityPolicyRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionSecurityPolicyRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionSecurityPolicyRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.RegionSecurityPolicyRuleArgs.builder
     com.pulumi.gcp.compute.RegionSecurityPolicyRule(name,
@@ -25894,7 +25894,7 @@ object compute:
    * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `privateKeyWo`.
    * Read more about Write-only Arguments.
    */
-  def RegionSslCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionSslCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionSslCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionSslCertificateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25914,7 +25914,7 @@ object compute:
    * * How-to Guides
    *     * [Using SSL Policies](https://cloud.google.com/compute/docs/load-balancing/ssl-policies)
    */
-  def RegionSslPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionSslPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionSslPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionSslPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25934,7 +25934,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/compute/docs/load-balancing/http/target-proxies)
    */
-  def RegionTargetHttpProxy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionTargetHttpProxy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionTargetHttpProxyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionTargetHttpProxyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25954,7 +25954,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/compute/docs/load-balancing/http/target-proxies)
    */
-  def RegionTargetHttpsProxy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionTargetHttpsProxy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionTargetHttpsProxyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionTargetHttpsProxyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25975,7 +25975,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/load-balancing/docs/tcp/internal-proxy)
    */
-  def RegionTargetTcpProxy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionTargetTcpProxy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionTargetTcpProxyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionTargetTcpProxyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25989,7 +25989,7 @@ object compute:
    * UrlMaps are used to route requests to a backend service based on rules
    * that you define for the host and path of an incoming URL.
    */
-  def RegionUrlMap(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionUrlMap(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RegionUrlMapArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RegionUrlMapArgs.builder
     conf.logicalName2physicalName(name) match
@@ -26015,7 +26015,7 @@ object compute:
    * * How-to Guides
    *     * [Reserving zonal resources](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources)
    */
-  def Reservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Reservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.ReservationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.ReservationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -26038,7 +26038,7 @@ object compute:
    * * How-to Guides
    *     * [About resize requests in a MIG](https://cloud.google.com/compute/docs/instance-groups/about-resize-requests-mig)
    */
-  def ResizeRequest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResizeRequest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.ResizeRequestArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.ResizeRequestArgs.builder
     conf.logicalName2physicalName(name) match
@@ -26055,7 +26055,7 @@ object compute:
    * 
    * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/resourcePolicies)
    */
-  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.ResourcePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.ResourcePolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -26073,7 +26073,7 @@ object compute:
    * compute instance resource to avoid dependency issues when using instance-level IAM
    * permissions.
    */
-  def ResourcePolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourcePolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.ResourcePolicyAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.ResourcePolicyAttachmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -26093,7 +26093,7 @@ object compute:
    * 
    * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/rolloutPlans)
    */
-  def RolloutPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RolloutPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RolloutPlanArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RolloutPlanArgs.builder
     conf.logicalName2physicalName(name) match
@@ -26133,7 +26133,7 @@ object compute:
    * * How-to Guides
    *     * [Using Routes](https://cloud.google.com/vpc/docs/using-routes)
    */
-  def Route(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Route(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RouteArgs.builder
     conf.logicalName2physicalName(name) match
@@ -26152,7 +26152,7 @@ object compute:
    * * How-to Guides
    *     * [Google Cloud Router](https://cloud.google.com/router/docs/)
    */
-  def Router(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Router(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RouterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RouterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -26168,7 +26168,7 @@ object compute:
    * and
    * [API](https://cloud.google.com/compute/docs/reference/latest/routers).
    */
-  def RouterInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RouterInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RouterInterfaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RouterInterfaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -26188,7 +26188,7 @@ object compute:
    * * How-to Guides
    *     * [Google Cloud Router](https://cloud.google.com/router/docs/)
    */
-  def RouterNamedSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RouterNamedSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RouterNamedSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RouterNamedSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -26210,7 +26210,7 @@ object compute:
    * * How-to Guides
    *     * [Google Cloud Router](https://cloud.google.com/router/docs/)
    */
-  def RouterNat(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RouterNat(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RouterNatArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RouterNatArgs.builder
     conf.logicalName2physicalName(name) match
@@ -26233,7 +26233,7 @@ object compute:
    * * How-to Guides
    *     * [Google Cloud Router](https://cloud.google.com/router/docs/)
    */
-  def RouterNatAddress(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RouterNatAddress(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RouterNatAddressArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.RouterNatAddressArgs.builder
     com.pulumi.gcp.compute.RouterNatAddress(name,
@@ -26252,7 +26252,7 @@ object compute:
    * * How-to Guides
    *     * [Google Cloud Router](https://cloud.google.com/router/docs/)
    */
-  def RouterPeer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RouterPeer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RouterPeerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RouterPeerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -26271,7 +26271,7 @@ object compute:
    * * How-to Guides
    *     * [Google Cloud Router](https://cloud.google.com/router/docs/)
    */
-  def RouterRoutePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RouterRoutePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.RouterRoutePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.RouterRoutePolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -26295,7 +26295,7 @@ object compute:
    * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `privateKeyWo`.
    * Read more about Write-only Arguments.
    */
-  def SSLCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SSLCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.SSLCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.SSLCertificateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -26315,7 +26315,7 @@ object compute:
    * * How-to Guides
    *     * [Using SSL Policies](https://cloud.google.com/compute/docs/load-balancing/ssl-policies)
    */
-  def SSLPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SSLPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.SSLPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.SSLPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -26332,7 +26332,7 @@ object compute:
    * 
    * Security Policy is used by google_compute_backend_service.
    */
-  def SecurityPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecurityPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.SecurityPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.SecurityPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -26351,7 +26351,7 @@ object compute:
    * * How-to Guides
    *     * [Creating global security policy rules](https://cloud.google.com/armor/docs/configure-security-policies)
    */
-  def SecurityPolicyRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecurityPolicyRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.SecurityPolicyRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.SecurityPolicyRuleArgs.builder
     com.pulumi.gcp.compute.SecurityPolicyRule(name,
@@ -26370,7 +26370,7 @@ object compute:
    * * How-to Guides
    *     * [Using Cloud Security Scanner](https://cloud.google.com/security-scanner/docs/scanning)
    */
-  def SecurityScanConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecurityScanConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.SecurityScanConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.SecurityScanConfigArgs.builder
     com.pulumi.gcp.compute.SecurityScanConfig(name,
@@ -26386,7 +26386,7 @@ object compute:
    * * How-to Guides
    *     * [Configuring Private Service Connect to access services](https://cloud.google.com/vpc/docs/configure-private-service-connect-services)
    */
-  def ServiceAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServiceAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.ServiceAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.ServiceAttachmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -26405,7 +26405,7 @@ object compute:
    * [the Project API documentation](https://cloud.google.com/compute/docs/reference/latest/projects),
    * where the Shared VPC feature is referred to by its former name &#34;XPN&#34;.
    */
-  def SharedVPCHostProject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SharedVPCHostProject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.SharedVPCHostProjectArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.SharedVPCHostProjectArgs.builder
     com.pulumi.gcp.compute.SharedVPCHostProject(name,
@@ -26422,7 +26422,7 @@ object compute:
    * [the Project API documentation](https://cloud.google.com/compute/docs/reference/latest/projects),
    * where the Shared VPC feature is referred to by its former name &#34;XPN&#34;.
    */
-  def SharedVPCServiceProject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SharedVPCServiceProject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.SharedVPCServiceProjectArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.SharedVPCServiceProjectArgs.builder
     com.pulumi.gcp.compute.SharedVPCServiceProject(name,
@@ -26449,7 +26449,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/compute/docs/disks/create-snapshots)
    */
-  def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.SnapshotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.SnapshotArgs.builder
     conf.logicalName2physicalName(name) match
@@ -26758,7 +26758,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SnapshotIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SnapshotIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.SnapshotIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.SnapshotIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -27067,7 +27067,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SnapshotIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SnapshotIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.SnapshotIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.SnapshotIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -27376,7 +27376,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SnapshotIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SnapshotIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.SnapshotIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.SnapshotIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -27399,7 +27399,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://docs.cloud.google.com/compute/docs/disks/configure-recycle-bin)
    */
-  def SnapshotRecycleBinPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SnapshotRecycleBinPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.SnapshotRecycleBinPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.SnapshotRecycleBinPolicyArgs.builder
     com.pulumi.gcp.compute.SnapshotRecycleBinPolicy(name,
@@ -27415,7 +27415,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/compute/docs/disks/snapshot-settings#snapshot_settings_how_to_update)
    */
-  def SnapshotSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SnapshotSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.SnapshotSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.SnapshotSettingsArgs.builder
     com.pulumi.gcp.compute.SnapshotSettings(name,
@@ -27433,7 +27433,7 @@ object compute:
    * * How-to Guides
    *     * [Create Hyperdisk Storage Pools](https://cloud.google.com/compute/docs/disks/create-storage-pools)
    */
-  def StoragePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StoragePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.StoragePoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.StoragePoolArgs.builder
     conf.logicalName2physicalName(name) match
@@ -28025,7 +28025,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def StoragePoolIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StoragePoolIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.StoragePoolIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.StoragePoolIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -28617,7 +28617,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def StoragePoolIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StoragePoolIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.StoragePoolIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.StoragePoolIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -29209,7 +29209,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def StoragePoolIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StoragePoolIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.StoragePoolIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.StoragePoolIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -29250,7 +29250,7 @@ object compute:
    *     * [Cloud Networking](https://cloud.google.com/vpc/docs/using-vpc)
    *     * [Private Google Access](https://cloud.google.com/vpc/docs/configure-private-google-access)
    */
-  def Subnetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Subnetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.SubnetworkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.SubnetworkArgs.builder
     conf.logicalName2physicalName(name) match
@@ -29842,7 +29842,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SubnetworkIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubnetworkIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.SubnetworkIAMBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.SubnetworkIAMBindingArgs.builder
     com.pulumi.gcp.compute.SubnetworkIAMBinding(name,
@@ -30431,7 +30431,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SubnetworkIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubnetworkIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.SubnetworkIAMMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.SubnetworkIAMMemberArgs.builder
     com.pulumi.gcp.compute.SubnetworkIAMMember(name,
@@ -31020,7 +31020,7 @@ object compute:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SubnetworkIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubnetworkIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.SubnetworkIAMPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.compute.SubnetworkIAMPolicyArgs.builder
     com.pulumi.gcp.compute.SubnetworkIAMPolicy(name,
@@ -31039,7 +31039,7 @@ object compute:
    * * How-to Guides
    *     * [Using Target gRPC Proxies](https://cloud.google.com/traffic-director/docs/proxyless-overview)
    */
-  def TargetGrpcProxy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TargetGrpcProxy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.TargetGrpcProxyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.TargetGrpcProxyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -31059,7 +31059,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/compute/docs/load-balancing/http/target-proxies)
    */
-  def TargetHttpProxy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TargetHttpProxy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.TargetHttpProxyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.TargetHttpProxyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -31079,7 +31079,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/compute/docs/load-balancing/http/target-proxies)
    */
-  def TargetHttpsProxy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TargetHttpsProxy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.TargetHttpsProxyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.TargetHttpsProxyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -31103,7 +31103,7 @@ object compute:
    * * How-to Guides
    *     * [Using Protocol Forwarding](https://cloud.google.com/compute/docs/protocol-forwarding)
    */
-  def TargetInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TargetInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.TargetInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.TargetInstanceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -31120,7 +31120,7 @@ object compute:
    * documentation](https://cloud.google.com/compute/docs/load-balancing/network/target-pools)
    * and [API](https://cloud.google.com/compute/docs/reference/latest/targetPools).
    */
-  def TargetPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TargetPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.TargetPoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.TargetPoolArgs.builder
     conf.logicalName2physicalName(name) match
@@ -31141,7 +31141,7 @@ object compute:
    * * How-to Guides
    *     * [Setting Up SSL proxy for Google Cloud Load Balancing](https://cloud.google.com/compute/docs/load-balancing/tcp-ssl/)
    */
-  def TargetSSLProxy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TargetSSLProxy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.TargetSSLProxyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.TargetSSLProxyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -31162,7 +31162,7 @@ object compute:
    * * How-to Guides
    *     * [Setting Up TCP proxy for Google Cloud Load Balancing](https://cloud.google.com/compute/docs/load-balancing/tcp-ssl/tcp-proxy)
    */
-  def TargetTCPProxy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TargetTCPProxy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.TargetTCPProxyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.TargetTCPProxyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -31182,7 +31182,7 @@ object compute:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/load-balancing/docs/url-map-concepts)
    */
-  def URLMap(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def URLMap(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.URLMapArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.URLMapArgs.builder
     conf.logicalName2physicalName(name) match
@@ -31203,7 +31203,7 @@ object compute:
    * &gt; **Warning:** Classic VPN is deprecating certain functionality on October 31, 2021. For more information,
    * see the [Classic VPN partial deprecation page](https://cloud.google.com/network-connectivity/docs/vpn/deprecations/classic-vpn-deprecation).
    */
-  def VPNGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VPNGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.VPNGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.VPNGatewayArgs.builder
     conf.logicalName2physicalName(name) match
@@ -31226,7 +31226,7 @@ object compute:
    * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `sharedSecretWo`.
    * Read more about Write-only Arguments.
    */
-  def VPNTunnel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VPNTunnel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.VPNTunnelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.VPNTunnelArgs.builder
     conf.logicalName2physicalName(name) match
@@ -31245,7 +31245,7 @@ object compute:
    * * How-to Guides
    *     * [Create a WireGroup](https://cloud.google.com/network-connectivity/docs/interconnect/how-to/cross-site/modify-network#add-wire-group)
    */
-  def WireGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WireGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.WireGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.WireGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -31256,7 +31256,7 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A Zone VM Extension Policy. */
-  def ZoneVmExtensionPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZoneVmExtensionPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.compute.ZoneVmExtensionPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.compute.ZoneVmExtensionPolicyArgs.builder
     conf.logicalName2physicalName(name) match

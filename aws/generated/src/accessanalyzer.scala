@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object accessanalyzer:
   /** Manages an Access Analyzer Analyzer. More information can be found in the [Access Analyzer User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html). */
-  def Analyzer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Analyzer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.accessanalyzer.AnalyzerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.accessanalyzer.AnalyzerArgs.builder
     argsBuilder = args(argsBuilder)
@@ -20,7 +20,7 @@ object accessanalyzer:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS AccessAnalyzer Archive Rule. */
-  def ArchiveRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ArchiveRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.accessanalyzer.ArchiveRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.accessanalyzer.ArchiveRuleArgs.builder
     com.pulumi.aws.accessanalyzer.ArchiveRule(name,

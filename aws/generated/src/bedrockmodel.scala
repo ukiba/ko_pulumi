@@ -11,7 +11,7 @@ object bedrockmodel:
    * 
    * &gt; **Note:** This resource does not support `tags`. Amazon Bedrock does not allow retrieving tags for a batch inference job that has already finished running, which would cause errors when importing or listing existing jobs.
    */
-  def InvocationJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InvocationJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrockmodel.InvocationJobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.bedrockmodel.InvocationJobArgs.builder
     com.pulumi.aws.bedrockmodel.InvocationJob(name,
@@ -23,7 +23,7 @@ object bedrockmodel:
    * 
    * &gt; **Note:** Model invocation logging is configured per AWS region. To avoid overwriting settings, this resource should not be defined in multiple configurations.
    */
-  def InvocationLoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InvocationLoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrockmodel.InvocationLoggingConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.bedrockmodel.InvocationLoggingConfigurationArgs.builder
     com.pulumi.aws.bedrockmodel.InvocationLoggingConfiguration(name,

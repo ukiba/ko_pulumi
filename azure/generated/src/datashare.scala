@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object datashare:
   /** Manages a Data Share Account. */
-  def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.datashare.AccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.datashare.AccountArgs.builder
     conf.logicalName2physicalName(name) match
@@ -35,7 +35,7 @@ object datashare:
    * \$ pulumi import azure:datashare/datasetBlobStorage:DatasetBlobStorage example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.DataShare/accounts/account1/shares/share1/dataSets/dataSet1
    * ```
    */
-  def DatasetBlobStorage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DatasetBlobStorage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.datashare.DatasetBlobStorageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.datashare.DatasetBlobStorageArgs.builder
     conf.logicalName2physicalName(name) match
@@ -56,7 +56,7 @@ object datashare:
    * \$ pulumi import azure:datashare/datasetDataLakeGen2:DatasetDataLakeGen2 example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.DataShare/accounts/account1/shares/share1/dataSets/dataSet1
    * ```
    */
-  def DatasetDataLakeGen2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DatasetDataLakeGen2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.datashare.DatasetDataLakeGen2Args.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.datashare.DatasetDataLakeGen2Args.builder
     conf.logicalName2physicalName(name) match
@@ -67,7 +67,7 @@ object datashare:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Data Share Kusto Cluster Dataset. */
-  def DatasetKustoCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DatasetKustoCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.datashare.DatasetKustoClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.datashare.DatasetKustoClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -78,7 +78,7 @@ object datashare:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Data Share Kusto Database Dataset. */
-  def DatasetKustoDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DatasetKustoDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.datashare.DatasetKustoDatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.datashare.DatasetKustoDatabaseArgs.builder
     conf.logicalName2physicalName(name) match
@@ -186,7 +186,7 @@ object datashare:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Data Share. */
-  def Share(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Share(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.datashare.ShareArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.datashare.ShareArgs.builder
     conf.logicalName2physicalName(name) match

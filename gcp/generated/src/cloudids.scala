@@ -11,7 +11,7 @@ object cloudids:
    * 
    * * [API documentation](https://cloud.google.com/intrusion-detection-system/docs/configuring-ids)
    */
-  def Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudids.EndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudids.EndpointArgs.builder
     conf.logicalName2physicalName(name) match

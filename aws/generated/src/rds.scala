@@ -11,7 +11,7 @@ object rds:
    * 
    * &gt; **NOTE:** Removing this Terraform resource removes the override. New DB instances will use the system-default certificate for the current AWS region.
    */
-  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.CertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.rds.CertificateArgs.builder
     com.pulumi.aws.rds.Certificate(name,
@@ -34,7 +34,7 @@ object rds:
    * &gt; **Note:** All arguments including the username and password will be stored in the raw state as plain-text.
    * **NOTE on RDS Clusters and RDS Cluster Role Associations:** Pulumi provides both a standalone RDS Cluster Role Association - (an association between an RDS Cluster and a single IAM Role) and an RDS Cluster resource with `iamRoles` attributes. Use one resource or the other to associate IAM Roles and RDS Clusters. Not doing so will cause a conflict of associations and will result in the association being overwritten.
    */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rds.ClusterArgs.builder
     argsBuilder = args(argsBuilder)
@@ -59,7 +59,7 @@ object rds:
    * 
    * &gt; **Note:** This resource is available in all regions except the following: `cn-north-1`, `cn-northwest-1`, `us-gov-east-1`, `us-gov-west-1`
    */
-  def ClusterActivityStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterActivityStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ClusterActivityStreamArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.rds.ClusterActivityStreamArgs.builder
     com.pulumi.aws.rds.ClusterActivityStream(name,
@@ -70,7 +70,7 @@ object rds:
    * Manages an RDS Aurora Cluster Custom Endpoint.
    * You can refer to the [User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.Endpoints.html#Aurora.Endpoints.Cluster).
    */
-  def ClusterEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ClusterEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rds.ClusterEndpointArgs.builder
     argsBuilder = args(argsBuilder)
@@ -102,7 +102,7 @@ object rds:
    * 
    * &gt; **NOTE:** `aurora` is no longer a valid `engine` because of [Amazon Aurora&#39;s MySQL-Compatible Edition version 1 end of life](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.MySQL56.EOL.html).
    */
-  def ClusterInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ClusterInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rds.ClusterInstanceArgs.builder
     argsBuilder = args(argsBuilder)
@@ -122,7 +122,7 @@ object rds:
    * * [Aurora MySQL Parameters](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AuroraMySQL.Reference.html)
    * * [Aurora PostgreSQL Parameters](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AuroraPostgreSQL.Reference.html)
    */
-  def ClusterParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ClusterParameterGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rds.ClusterParameterGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -145,7 +145,7 @@ object rds:
    * * [Creating an IAM Role to Allow Amazon Aurora to Access AWS Services](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.IAM.CreateRole.html)
    * * [Importing Amazon S3 Data into an RDS PostgreSQL DB Cluster](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PostgreSQL.S3Import.html)
    */
-  def ClusterRoleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterRoleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ClusterRoleAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.rds.ClusterRoleAssociationArgs.builder
     com.pulumi.aws.rds.ClusterRoleAssociation(name,
@@ -153,7 +153,7 @@ object rds:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an RDS database cluster snapshot for Aurora clusters. For managing RDS database instance snapshots, see the `aws.rds.Snapshot` resource. */
-  def ClusterSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ClusterSnapshotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rds.ClusterSnapshotArgs.builder
     argsBuilder = args(argsBuilder)
@@ -168,7 +168,7 @@ object rds:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an RDS database cluster snapshot copy. For managing RDS database instance snapshot copies, see the `aws.rds.SnapshotCopy` resource. */
-  def ClusterSnapshotCopy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterSnapshotCopy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ClusterSnapshotCopyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rds.ClusterSnapshotCopyArgs.builder
     argsBuilder = args(argsBuilder)
@@ -183,7 +183,7 @@ object rds:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an custom engine version (CEV) resource for Amazon RDS Custom. For additional information, see [Working with CEVs for RDS Custom for Oracle](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html) and [Working with CEVs for RDS Custom for SQL Server](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev-sqlserver.html) in the the [RDS User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html). */
-  def CustomDbEngineVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomDbEngineVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.CustomDbEngineVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rds.CustomDbEngineVersionArgs.builder
     argsBuilder = args(argsBuilder)
@@ -198,7 +198,7 @@ object rds:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a DB event subscription resource. */
-  def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.EventSubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rds.EventSubscriptionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -216,7 +216,7 @@ object rds:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS RDS (Relational Database) Export Task. */
-  def ExportTask(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ExportTask(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ExportTaskArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.rds.ExportTaskArgs.builder
     com.pulumi.aws.rds.ExportTask(name,
@@ -228,7 +228,7 @@ object rds:
    * 
    * More information about Aurora global databases can be found in the [Aurora User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database-creating).
    */
-  def GlobalCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GlobalCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.GlobalClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rds.GlobalClusterArgs.builder
     argsBuilder = args(argsBuilder)
@@ -264,7 +264,7 @@ object rds:
    * 
    * Amazon RDS supports instance classes for General-purpose, Memory-optimized, Burstable Performance, and Optimized-reads use cases. For more information see [DB Instance Class Types](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html).
    */
-  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.InstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rds.InstanceArgs.builder
     argsBuilder = args(argsBuilder)
@@ -285,7 +285,7 @@ object rds:
    * 
    * &gt; **Note:** This resource has to be created in the destination region.
    */
-  def InstanceAutomatedBackupsReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceAutomatedBackupsReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.InstanceAutomatedBackupsReplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.rds.InstanceAutomatedBackupsReplicationArgs.builder
     com.pulumi.aws.rds.InstanceAutomatedBackupsReplication(name,
@@ -297,7 +297,7 @@ object rds:
    * 
    * &gt; Destruction of this resource is a no-op and **will not** modify the instance state
    */
-  def InstanceDesiredState(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceDesiredState(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.InstanceDesiredStateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.rds.InstanceDesiredStateArgs.builder
     com.pulumi.aws.rds.InstanceDesiredState(name,
@@ -305,7 +305,7 @@ object rds:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS RDS (Relational Database) zero-ETL integration. You can refer to the [User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.setting-up.html). */
-  def Integration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Integration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.IntegrationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rds.IntegrationArgs.builder
     argsBuilder = args(argsBuilder)
@@ -327,7 +327,7 @@ object rds:
    * * [MySQL Options](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.MySQL.Options.html)
    * * [Oracle Options](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.Options.html)
    */
-  def OptionGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OptionGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.OptionGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rds.OptionGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -357,7 +357,7 @@ object rds:
    * 
    * &gt; **NOTE:** If you encounter a pulumi preview showing parameter changes after an apply (_i.e._, _perpetual diffs_), see the Problematic Plan Changes example below for additional guidance.
    */
-  def ParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ParameterGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rds.ParameterGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -379,7 +379,7 @@ object rds:
    * 
    * &gt; **Note:** Not all Availability Zones (AZs) support DB proxies. Specifying `vpcSubnetIds` for AZs that do not support proxies will not trigger an error as long as at least one `vpcSubnetId` is valid. However, this will cause Terraform to continuously detect differences between the configuration and the actual infrastructure. Refer to the Unsupported Availability Zones section below for potential workarounds.
    */
-  def Proxy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Proxy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ProxyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rds.ProxyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -411,7 +411,7 @@ object rds:
    * \$ pulumi import aws:rds/proxyDefaultTargetGroup:ProxyDefaultTargetGroup example example
    * ```
    */
-  def ProxyDefaultTargetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProxyDefaultTargetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ProxyDefaultTargetGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.rds.ProxyDefaultTargetGroupArgs.builder
     com.pulumi.aws.rds.ProxyDefaultTargetGroup(name,
@@ -419,7 +419,7 @@ object rds:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an RDS DB proxy endpoint resource. For additional information, see the [RDS User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy-endpoints.html). */
-  def ProxyEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProxyEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ProxyEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rds.ProxyEndpointArgs.builder
     argsBuilder = args(argsBuilder)
@@ -456,7 +456,7 @@ object rds:
    * \$ pulumi import aws:rds/proxyTarget:ProxyTarget example example-proxy/default/TRACKED_CLUSTER/example-cluster
    * ```
    */
-  def ProxyTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProxyTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ProxyTargetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.rds.ProxyTargetArgs.builder
     com.pulumi.aws.rds.ProxyTarget(name,
@@ -807,7 +807,7 @@ object rds:
    * 
    * &gt; **NOTE:** Due to the expense of testing this resource, we provide it as best effort. If you find it useful, and have the ability to help test or notice issues, consider reaching out to us on GitHub.
    */
-  def ReservedInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ReservedInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ReservedInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rds.ReservedInstanceArgs.builder
     argsBuilder = args(argsBuilder)
@@ -837,7 +837,7 @@ object rds:
    * \$ pulumi import aws:rds/roleAssociation:RoleAssociation example my-db-instance,arn:aws:iam::123456789012:role/my-role
    * ```
    */
-  def RoleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RoleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.RoleAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.rds.RoleAssociationArgs.builder
     com.pulumi.aws.rds.RoleAssociation(name,
@@ -845,7 +845,7 @@ object rds:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an Amazon Aurora Limitless Database DB shard group */
-  def ShardGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ShardGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.ShardGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rds.ShardGroupArgs.builder
     argsBuilder = args(argsBuilder)
@@ -860,7 +860,7 @@ object rds:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an RDS database instance snapshot. For managing RDS database cluster snapshots, see the `aws.rds.ClusterSnapshot` resource. */
-  def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.SnapshotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rds.SnapshotArgs.builder
     argsBuilder = args(argsBuilder)
@@ -875,7 +875,7 @@ object rds:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an RDS database instance snapshot copy. For managing RDS database cluster snapshots, see the `aws.rds.ClusterSnapshot` resource. */
-  def SnapshotCopy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SnapshotCopy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.SnapshotCopyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rds.SnapshotCopyArgs.builder
     argsBuilder = args(argsBuilder)
@@ -890,7 +890,7 @@ object rds:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an RDS DB subnet group resource. */
-  def SubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rds.SubnetGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rds.SubnetGroupArgs.builder
     conf.logicalName2physicalName(name) match

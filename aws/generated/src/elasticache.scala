@@ -26,7 +26,7 @@ object elasticache:
    * 
    * &gt; **Note:** Any attribute changes that re-create the resource will be applied immediately, regardless of the value of `applyImmediately`.
    */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.elasticache.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.elasticache.ClusterArgs.builder
     argsBuilder = args(argsBuilder)
@@ -178,7 +178,7 @@ object elasticache:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides an ElastiCache Global Replication Group resource, which manages replication between two or more Replication Groups in different regions. For more information, see the [ElastiCache User Guide](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastore.html). */
-  def GlobalReplicationGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GlobalReplicationGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.elasticache.GlobalReplicationGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.elasticache.GlobalReplicationGroupArgs.builder
     com.pulumi.aws.elasticache.GlobalReplicationGroup(name,
@@ -190,7 +190,7 @@ object elasticache:
    * 
    * &gt; **NOTE:** Attempting to remove the `reserved-memory` parameter when `family` is set to `redis2.6` or `redis2.8` may show a perpetual difference in this provider due to an ElastiCache API limitation. Leave that parameter configured with any value to workaround the issue.
    */
-  def ParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.elasticache.ParameterGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.elasticache.ParameterGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -229,7 +229,7 @@ object elasticache:
    * 
    * &gt; **Note:** Be aware of the terminology collision around &#34;cluster&#34; for `aws.elasticache.ReplicationGroup`. For example, it is possible to create a [&#34;Cluster Mode Disabled [Redis] Cluster&#34;](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Create.CON.Redis.html). With &#34;Cluster Mode Enabled&#34;, the data will be stored in shards (called &#34;node groups&#34;). See [Redis Cluster Configuration](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/cluster-create-determine-requirements.html#redis-cluster-configuration) for a diagram of the differences. To enable cluster mode, use a parameter group that has cluster mode enabled. The default parameter groups provided by AWS end with &#34;.cluster.on&#34;, for example `default.redis6.x.cluster.on`.
    */
-  def ReplicationGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ReplicationGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.elasticache.ReplicationGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.elasticache.ReplicationGroupArgs.builder
     argsBuilder = args(argsBuilder)
@@ -250,7 +250,7 @@ object elasticache:
    * 
    * &gt; **NOTE:** Due to the expense of testing this resource, we provide it as best effort. If you find it useful, and have the ability to help test or notice issues, consider reaching out to us on GitHub.
    */
-  def ReservedCacheNode(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ReservedCacheNode(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.elasticache.ReservedCacheNodeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.elasticache.ReservedCacheNodeArgs.builder
     argsBuilder = args(argsBuilder)
@@ -265,7 +265,7 @@ object elasticache:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an ElastiCache Serverless Cache resource which manages memcached, redis or valkey. */
-  def ServerlessCache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServerlessCache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.elasticache.ServerlessCacheArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.elasticache.ServerlessCacheArgs.builder
     conf.logicalName2physicalName(name) match
@@ -283,7 +283,7 @@ object elasticache:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an ElastiCache Subnet Group resource. */
-  def SubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.elasticache.SubnetGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.elasticache.SubnetGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -305,7 +305,7 @@ object elasticache:
    * 
    * &gt; **Note:** All arguments including the username and passwords will be stored in the raw state as plain-text unless you use the write-only `passwordsWo` argument.
    */
-  def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.elasticache.UserArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.elasticache.UserArgs.builder
     argsBuilder = args(argsBuilder)
@@ -320,7 +320,7 @@ object elasticache:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an ElastiCache user group resource. */
-  def UserGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UserGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.elasticache.UserGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.elasticache.UserGroupArgs.builder
     argsBuilder = args(argsBuilder)
@@ -339,7 +339,7 @@ object elasticache:
    * 
    * &gt; Pulumi will detect changes in the `aws.elasticache.UserGroup` since `aws.elasticache.UserGroupAssociation` changes the user IDs associated with the user group. You can ignore these changes with the `lifecycle` `ignoreChanges` meta argument as shown in the example.
    */
-  def UserGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UserGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.elasticache.UserGroupAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.elasticache.UserGroupAssociationArgs.builder
     com.pulumi.aws.elasticache.UserGroupAssociation(name,

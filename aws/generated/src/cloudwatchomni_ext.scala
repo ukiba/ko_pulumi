@@ -7,7 +7,7 @@ object cloudwatchomni_ext:
      * @param identityProviderConfiguration Identity provider configuration. Required when `identityProviders` includes `IDC`. See below.
      * @return builder
      */
-    def identityProviderConfiguration(args: Endofunction[com.pulumi.aws.cloudwatchomni.inputs.DomainIdentityProviderConfigurationArgs.Builder]):
+    inline def identityProviderConfiguration(args: Endofunction[com.pulumi.aws.cloudwatchomni.inputs.DomainIdentityProviderConfigurationArgs.Builder]):
         com.pulumi.aws.cloudwatchomni.DomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudwatchomni.inputs.DomainIdentityProviderConfigurationArgs.builder
       builder.identityProviderConfiguration(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object cloudwatchomni_ext:
      * @param encryptionConfiguration Encryption of the space&#39;s data at rest. Omit for AWS owned encryption. See below.
      * @return builder
      */
-    def encryptionConfiguration(args: Endofunction[com.pulumi.aws.cloudwatchomni.inputs.SpaceEncryptionConfigurationArgs.Builder]):
+    inline def encryptionConfiguration(args: Endofunction[com.pulumi.aws.cloudwatchomni.inputs.SpaceEncryptionConfigurationArgs.Builder]):
         com.pulumi.aws.cloudwatchomni.SpaceArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudwatchomni.inputs.SpaceEncryptionConfigurationArgs.builder
       builder.encryptionConfiguration(args(argsBuilder).build)
@@ -27,7 +27,7 @@ object cloudwatchomni_ext:
      * @param identityCenterConfiguration IAM Identity Center configuration. See below.
      * @return builder
      */
-    def identityCenterConfiguration(args: Endofunction[com.pulumi.aws.cloudwatchomni.inputs.DomainIdentityProviderConfigurationIdentityCenterConfigurationArgs.Builder]):
+    inline def identityCenterConfiguration(args: Endofunction[com.pulumi.aws.cloudwatchomni.inputs.DomainIdentityProviderConfigurationIdentityCenterConfigurationArgs.Builder]):
         com.pulumi.aws.cloudwatchomni.inputs.DomainIdentityProviderConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.cloudwatchomni.inputs.DomainIdentityProviderConfigurationIdentityCenterConfigurationArgs.builder
       builder.identityCenterConfiguration(args(argsBuilder).build)
@@ -37,7 +37,7 @@ object cloudwatchomni_ext:
      * @param identityProviderConfiguration Identity provider configuration. Required when `identityProviders` includes `IDC`. See below.
      * @return builder
      */
-    def identityProviderConfiguration(args: Endofunction[com.pulumi.aws.cloudwatchomni.inputs.DomainIdentityProviderConfigurationArgs.Builder]):
+    inline def identityProviderConfiguration(args: Endofunction[com.pulumi.aws.cloudwatchomni.inputs.DomainIdentityProviderConfigurationArgs.Builder]):
         com.pulumi.aws.cloudwatchomni.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.cloudwatchomni.inputs.DomainIdentityProviderConfigurationArgs.builder
       builder.identityProviderConfiguration(args(argsBuilder).build)
@@ -47,7 +47,7 @@ object cloudwatchomni_ext:
      * @param encryptionConfiguration Encryption of the space&#39;s data at rest. Omit for AWS owned encryption. See below.
      * @return builder
      */
-    def encryptionConfiguration(args: Endofunction[com.pulumi.aws.cloudwatchomni.inputs.SpaceEncryptionConfigurationArgs.Builder]):
+    inline def encryptionConfiguration(args: Endofunction[com.pulumi.aws.cloudwatchomni.inputs.SpaceEncryptionConfigurationArgs.Builder]):
         com.pulumi.aws.cloudwatchomni.inputs.SpaceState.Builder =
       val argsBuilder = com.pulumi.aws.cloudwatchomni.inputs.SpaceEncryptionConfigurationArgs.builder
       builder.encryptionConfiguration(args(argsBuilder).build)

@@ -7,7 +7,7 @@ object fabric_ext:
      * @param sku A `sku` block as defined below.
      * @return builder
      */
-    def sku(args: Endofunction[com.pulumi.azure.fabric.inputs.CapacitySkuArgs.Builder]):
+    inline def sku(args: Endofunction[com.pulumi.azure.fabric.inputs.CapacitySkuArgs.Builder]):
         com.pulumi.azure.fabric.CapacityArgs.Builder =
       val argsBuilder = com.pulumi.azure.fabric.inputs.CapacitySkuArgs.builder
       builder.sku(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object fabric_ext:
      * @param sku A `sku` block as defined below.
      * @return builder
      */
-    def sku(args: Endofunction[com.pulumi.azure.fabric.inputs.CapacitySkuArgs.Builder]):
+    inline def sku(args: Endofunction[com.pulumi.azure.fabric.inputs.CapacitySkuArgs.Builder]):
         com.pulumi.azure.fabric.inputs.CapacityState.Builder =
       val argsBuilder = com.pulumi.azure.fabric.inputs.CapacitySkuArgs.builder
       builder.sku(args(argsBuilder).build)

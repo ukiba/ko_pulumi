@@ -16,7 +16,7 @@ object filestore:
    *     * [Creating Backups](https://cloud.google.com/filestore/docs/create-backups)
    *     * [Official Documentation](https://cloud.google.com/filestore/docs/backups)
    */
-  def Backup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Backup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.filestore.BackupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.filestore.BackupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -54,7 +54,7 @@ object filestore:
    *     * [Official Documentation](https://cloud.google.com/filestore/docs/creating-instances)
    *     * [Use with Kubernetes](https://cloud.google.com/filestore/docs/accessing-fileshares)
    */
-  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.filestore.InstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.filestore.InstanceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -74,7 +74,7 @@ object filestore:
    *     * [Creating Snapshots](https://cloud.google.com/filestore/docs/create-snapshots)
    *     * [Official Documentation](https://cloud.google.com/filestore/docs/snapshots)
    */
-  def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.filestore.SnapshotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.filestore.SnapshotArgs.builder
     conf.logicalName2physicalName(name) match

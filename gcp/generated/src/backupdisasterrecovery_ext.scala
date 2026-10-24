@@ -10,7 +10,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def backupPlanDetails(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyBackupPlanDetailArgs.Builder]*):
+    inline def backupPlanDetails(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyBackupPlanDetailArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.AutoProtectionPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyBackupPlanDetailArgs.builder
       builder.backupPlanDetails(args.map(_(argsBuilder).build)*)
@@ -20,7 +20,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def criteria(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaArgs.Builder]):
+    inline def criteria(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.AutoProtectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaArgs.builder
       builder.criteria(args(argsBuilder).build)
@@ -31,7 +31,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def backupRules(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanBackupRuleArgs.Builder]*):
+    inline def backupRules(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanBackupRuleArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.BackupPlanArgs.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanBackupRuleArgs.builder
       builder.backupRules(args.map(_(argsBuilder).build)*)
@@ -41,7 +41,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def computeInstanceBackupPlanProperties(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanComputeInstanceBackupPlanPropertiesArgs.Builder]):
+    inline def computeInstanceBackupPlanProperties(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanComputeInstanceBackupPlanPropertiesArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.BackupPlanArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanComputeInstanceBackupPlanPropertiesArgs.builder
       builder.computeInstanceBackupPlanProperties(args(argsBuilder).build)
@@ -51,7 +51,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def diskBackupPlanProperties(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanDiskBackupPlanPropertiesArgs.Builder]):
+    inline def diskBackupPlanProperties(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanDiskBackupPlanPropertiesArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.BackupPlanArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanDiskBackupPlanPropertiesArgs.builder
       builder.diskBackupPlanProperties(args(argsBuilder).build)
@@ -62,7 +62,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionConfig(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupVaultEncryptionConfigArgs.Builder]):
+    inline def encryptionConfig(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupVaultEncryptionConfigArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.BackupVaultArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.BackupVaultEncryptionConfigArgs.builder
       builder.encryptionConfig(args(argsBuilder).build)
@@ -73,7 +73,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networks(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.ManagementServerNetworkArgs.Builder]*):
+    inline def networks(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.ManagementServerNetworkArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.ManagementServerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.ManagementServerNetworkArgs.builder
       builder.networks(args.map(_(argsBuilder).build)*)
@@ -84,7 +84,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def computeInstanceRestoreProperties(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesArgs.Builder]):
+    inline def computeInstanceRestoreProperties(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.RestoreWorkloadArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesArgs.builder
       builder.computeInstanceRestoreProperties(args(argsBuilder).build)
@@ -94,7 +94,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def computeInstanceTargetEnvironment(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceTargetEnvironmentArgs.Builder]):
+    inline def computeInstanceTargetEnvironment(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceTargetEnvironmentArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.RestoreWorkloadArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceTargetEnvironmentArgs.builder
       builder.computeInstanceTargetEnvironment(args(argsBuilder).build)
@@ -104,7 +104,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def diskRestoreProperties(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskRestorePropertiesArgs.Builder]):
+    inline def diskRestoreProperties(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskRestorePropertiesArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.RestoreWorkloadArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskRestorePropertiesArgs.builder
       builder.diskRestoreProperties(args(argsBuilder).build)
@@ -114,7 +114,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def diskTargetEnvironment(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskTargetEnvironmentArgs.Builder]):
+    inline def diskTargetEnvironment(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskTargetEnvironmentArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.RestoreWorkloadArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskTargetEnvironmentArgs.builder
       builder.diskTargetEnvironment(args(argsBuilder).build)
@@ -124,7 +124,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def regionDiskTargetEnvironment(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadRegionDiskTargetEnvironmentArgs.Builder]):
+    inline def regionDiskTargetEnvironment(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadRegionDiskTargetEnvironmentArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.RestoreWorkloadArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadRegionDiskTargetEnvironmentArgs.builder
       builder.regionDiskTargetEnvironment(args(argsBuilder).build)
@@ -136,7 +136,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def matchingConditions(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaMatchingConditionArgs.Builder]*):
+    inline def matchingConditions(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaMatchingConditionArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaMatchingConditionArgs.builder
       builder.matchingConditions(args.map(_(argsBuilder).build)*)
@@ -147,7 +147,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def labelCondition(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaMatchingConditionLabelConditionArgs.Builder]):
+    inline def labelCondition(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaMatchingConditionLabelConditionArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaMatchingConditionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaMatchingConditionLabelConditionArgs.builder
       builder.labelCondition(args(argsBuilder).build)
@@ -160,7 +160,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def backupPlanDetails(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyBackupPlanDetailArgs.Builder]*):
+    inline def backupPlanDetails(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyBackupPlanDetailArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyBackupPlanDetailArgs.builder
       builder.backupPlanDetails(args.map(_(argsBuilder).build)*)
@@ -170,7 +170,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bindingSummaries(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyBindingSummaryArgs.Builder]*):
+    inline def bindingSummaries(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyBindingSummaryArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyBindingSummaryArgs.builder
       builder.bindingSummaries(args.map(_(argsBuilder).build)*)
@@ -180,7 +180,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def criteria(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaArgs.Builder]):
+    inline def criteria(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyCriteriaArgs.builder
       builder.criteria(args(argsBuilder).build)
@@ -190,7 +190,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def policyEvaluationSummaries(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyPolicyEvaluationSummaryArgs.Builder]*):
+    inline def policyEvaluationSummaries(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyPolicyEvaluationSummaryArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.AutoProtectionPolicyPolicyEvaluationSummaryArgs.builder
       builder.policyEvaluationSummaries(args.map(_(argsBuilder).build)*)
@@ -202,7 +202,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def lastBackupErrors(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanAssociationRulesConfigInfoLastBackupErrorArgs.Builder]*):
+    inline def lastBackupErrors(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanAssociationRulesConfigInfoLastBackupErrorArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanAssociationRulesConfigInfoArgs.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanAssociationRulesConfigInfoLastBackupErrorArgs.builder
       builder.lastBackupErrors(args.map(_(argsBuilder).build)*)
@@ -213,7 +213,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rulesConfigInfos(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanAssociationRulesConfigInfoArgs.Builder]*):
+    inline def rulesConfigInfos(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanAssociationRulesConfigInfoArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanAssociationState.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanAssociationRulesConfigInfoArgs.builder
       builder.rulesConfigInfos(args.map(_(argsBuilder).build)*)
@@ -224,7 +224,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def standardSchedule(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanBackupRuleStandardScheduleArgs.Builder]):
+    inline def standardSchedule(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanBackupRuleStandardScheduleArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanBackupRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanBackupRuleStandardScheduleArgs.builder
       builder.standardSchedule(args(argsBuilder).build)
@@ -236,7 +236,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def backupWindow(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanBackupRuleStandardScheduleBackupWindowArgs.Builder]):
+    inline def backupWindow(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanBackupRuleStandardScheduleBackupWindowArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanBackupRuleStandardScheduleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanBackupRuleStandardScheduleBackupWindowArgs.builder
       builder.backupWindow(args(argsBuilder).build)
@@ -246,7 +246,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def weekDayOfMonth(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanBackupRuleStandardScheduleWeekDayOfMonthArgs.Builder]):
+    inline def weekDayOfMonth(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanBackupRuleStandardScheduleWeekDayOfMonthArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanBackupRuleStandardScheduleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanBackupRuleStandardScheduleWeekDayOfMonthArgs.builder
       builder.weekDayOfMonth(args(argsBuilder).build)
@@ -257,7 +257,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def backupRules(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanBackupRuleArgs.Builder]*):
+    inline def backupRules(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanBackupRuleArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanState.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanBackupRuleArgs.builder
       builder.backupRules(args.map(_(argsBuilder).build)*)
@@ -267,7 +267,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def computeInstanceBackupPlanProperties(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanComputeInstanceBackupPlanPropertiesArgs.Builder]):
+    inline def computeInstanceBackupPlanProperties(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanComputeInstanceBackupPlanPropertiesArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanState.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanComputeInstanceBackupPlanPropertiesArgs.builder
       builder.computeInstanceBackupPlanProperties(args(argsBuilder).build)
@@ -277,7 +277,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def diskBackupPlanProperties(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanDiskBackupPlanPropertiesArgs.Builder]):
+    inline def diskBackupPlanProperties(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanDiskBackupPlanPropertiesArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanState.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.BackupPlanDiskBackupPlanPropertiesArgs.builder
       builder.diskBackupPlanProperties(args(argsBuilder).build)
@@ -288,7 +288,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionConfig(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupVaultEncryptionConfigArgs.Builder]):
+    inline def encryptionConfig(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.BackupVaultEncryptionConfigArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.BackupVaultState.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.BackupVaultEncryptionConfigArgs.builder
       builder.encryptionConfig(args(argsBuilder).build)
@@ -299,7 +299,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def managementUris(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.ManagementServerManagementUriArgs.Builder]*):
+    inline def managementUris(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.ManagementServerManagementUriArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.inputs.ManagementServerState.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.ManagementServerManagementUriArgs.builder
       builder.managementUris(args.map(_(argsBuilder).build)*)
@@ -309,7 +309,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networks(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.ManagementServerNetworkArgs.Builder]*):
+    inline def networks(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.ManagementServerNetworkArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.inputs.ManagementServerState.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.ManagementServerNetworkArgs.builder
       builder.networks(args.map(_(argsBuilder).build)*)
@@ -320,7 +320,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def advancedMachineFeatures(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesAdvancedMachineFeaturesArgs.Builder]):
+    inline def advancedMachineFeatures(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesAdvancedMachineFeaturesArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesAdvancedMachineFeaturesArgs.builder
       builder.advancedMachineFeatures(args(argsBuilder).build)
@@ -330,7 +330,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allocationAffinity(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesAllocationAffinityArgs.Builder]):
+    inline def allocationAffinity(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesAllocationAffinityArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesAllocationAffinityArgs.builder
       builder.allocationAffinity(args(argsBuilder).build)
@@ -340,7 +340,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesConfidentialInstanceConfigArgs.Builder]):
+    inline def confidentialInstanceConfig(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesConfidentialInstanceConfigArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesConfidentialInstanceConfigArgs.builder
       builder.confidentialInstanceConfig(args(argsBuilder).build)
@@ -350,7 +350,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def disks(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesDiskArgs.Builder]*):
+    inline def disks(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesDiskArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesDiskArgs.builder
       builder.disks(args.map(_(argsBuilder).build)*)
@@ -360,7 +360,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def displayDevice(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesDisplayDeviceArgs.Builder]):
+    inline def displayDevice(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesDisplayDeviceArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesDisplayDeviceArgs.builder
       builder.displayDevice(args(argsBuilder).build)
@@ -370,7 +370,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def guestAccelerators(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesGuestAcceleratorArgs.Builder]*):
+    inline def guestAccelerators(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesGuestAcceleratorArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesGuestAcceleratorArgs.builder
       builder.guestAccelerators(args.map(_(argsBuilder).build)*)
@@ -380,7 +380,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def instanceEncryptionKey(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesInstanceEncryptionKeyArgs.Builder]):
+    inline def instanceEncryptionKey(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesInstanceEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesInstanceEncryptionKeyArgs.builder
       builder.instanceEncryptionKey(args(argsBuilder).build)
@@ -390,7 +390,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def labels(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesLabelArgs.Builder]*):
+    inline def labels(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesLabelArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesLabelArgs.builder
       builder.labels(args.map(_(argsBuilder).build)*)
@@ -400,7 +400,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metadata(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesMetadataArgs.Builder]):
+    inline def metadata(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesMetadataArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesMetadataArgs.builder
       builder.metadata(args(argsBuilder).build)
@@ -410,7 +410,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkInterfaces(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesNetworkInterfaceArgs.Builder]*):
+    inline def networkInterfaces(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesNetworkInterfaceArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
@@ -420,7 +420,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkPerformanceConfig(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesNetworkPerformanceConfigArgs.Builder]):
+    inline def networkPerformanceConfig(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesNetworkPerformanceConfigArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesNetworkPerformanceConfigArgs.builder
       builder.networkPerformanceConfig(args(argsBuilder).build)
@@ -430,7 +430,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesParamsArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -440,7 +440,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scheduling(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesSchedulingArgs.Builder]):
+    inline def scheduling(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesSchedulingArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesSchedulingArgs.builder
       builder.scheduling(args(argsBuilder).build)
@@ -450,7 +450,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceAccounts(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesServiceAccountArgs.Builder]*):
+    inline def serviceAccounts(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesServiceAccountArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesServiceAccountArgs.builder
       builder.serviceAccounts(args.map(_(argsBuilder).build)*)
@@ -460,7 +460,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesShieldedInstanceConfigArgs.Builder]):
+    inline def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesShieldedInstanceConfigArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesShieldedInstanceConfigArgs.builder
       builder.shieldedInstanceConfig(args(argsBuilder).build)
@@ -470,7 +470,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tags(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesTagsArgs.Builder]):
+    inline def tags(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesTagsArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesTagsArgs.builder
       builder.tags(args(argsBuilder).build)
@@ -481,7 +481,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def diskEncryptionKey(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesDiskDiskEncryptionKeyArgs.Builder]):
+    inline def diskEncryptionKey(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesDiskDiskEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesDiskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesDiskDiskEncryptionKeyArgs.builder
       builder.diskEncryptionKey(args(argsBuilder).build)
@@ -491,7 +491,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def guestOsFeatures(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesDiskGuestOsFeatureArgs.Builder]*):
+    inline def guestOsFeatures(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesDiskGuestOsFeatureArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesDiskArgs.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesDiskGuestOsFeatureArgs.builder
       builder.guestOsFeatures(args.map(_(argsBuilder).build)*)
@@ -501,7 +501,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def initializeParams(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesDiskInitializeParamsArgs.Builder]):
+    inline def initializeParams(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesDiskInitializeParamsArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesDiskArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesDiskInitializeParamsArgs.builder
       builder.initializeParams(args(argsBuilder).build)
@@ -511,7 +511,7 @@ object backupdisasterrecovery_ext:
      * @param items Structure is documented below.
      * @return builder
      */
-    def items(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesMetadataItemArgs.Builder]*):
+    inline def items(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesMetadataItemArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesMetadataArgs.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesMetadataItemArgs.builder
       builder.items(args.map(_(argsBuilder).build)*)
@@ -521,7 +521,7 @@ object backupdisasterrecovery_ext:
      * @param accessConfigs Structure is documented below.
      * @return builder
      */
-    def accessConfigs(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesNetworkInterfaceAccessConfigArgs.Builder]*):
+    inline def accessConfigs(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesNetworkInterfaceAccessConfigArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesNetworkInterfaceAccessConfigArgs.builder
       builder.accessConfigs(args.map(_(argsBuilder).build)*)
@@ -530,7 +530,7 @@ object backupdisasterrecovery_ext:
      * @param aliasIpRanges Structure is documented below.
      * @return builder
      */
-    def aliasIpRanges(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesNetworkInterfaceAliasIpRangeArgs.Builder]*):
+    inline def aliasIpRanges(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesNetworkInterfaceAliasIpRangeArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesNetworkInterfaceAliasIpRangeArgs.builder
       builder.aliasIpRanges(args.map(_(argsBuilder).build)*)
@@ -539,7 +539,7 @@ object backupdisasterrecovery_ext:
      * @param ipv6AccessConfigs Structure is documented below.
      * @return builder
      */
-    def ipv6AccessConfigs(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesNetworkInterfaceIpv6AccessConfigArgs.Builder]*):
+    inline def ipv6AccessConfigs(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesNetworkInterfaceIpv6AccessConfigArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesNetworkInterfaceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesNetworkInterfaceIpv6AccessConfigArgs.builder
       builder.ipv6AccessConfigs(args.map(_(argsBuilder).build)*)
@@ -549,7 +549,7 @@ object backupdisasterrecovery_ext:
      * @param resourceManagerTags Structure is documented below.
      * @return builder
      */
-    def resourceManagerTags(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesParamsResourceManagerTagArgs.Builder]*):
+    inline def resourceManagerTags(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesParamsResourceManagerTagArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesParamsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesParamsResourceManagerTagArgs.builder
       builder.resourceManagerTags(args.map(_(argsBuilder).build)*)
@@ -560,7 +560,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def localSsdRecoveryTimeout(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesSchedulingLocalSsdRecoveryTimeoutArgs.Builder]):
+    inline def localSsdRecoveryTimeout(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesSchedulingLocalSsdRecoveryTimeoutArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesSchedulingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesSchedulingLocalSsdRecoveryTimeoutArgs.builder
       builder.localSsdRecoveryTimeout(args(argsBuilder).build)
@@ -570,7 +570,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maxRunDuration(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesSchedulingMaxRunDurationArgs.Builder]):
+    inline def maxRunDuration(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesSchedulingMaxRunDurationArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesSchedulingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesSchedulingMaxRunDurationArgs.builder
       builder.maxRunDuration(args(argsBuilder).build)
@@ -579,7 +579,7 @@ object backupdisasterrecovery_ext:
      * @param nodeAffinities Structure is documented below.
      * @return builder
      */
-    def nodeAffinities(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesSchedulingNodeAffinityArgs.Builder]*):
+    inline def nodeAffinities(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesSchedulingNodeAffinityArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesSchedulingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesSchedulingNodeAffinityArgs.builder
       builder.nodeAffinities(args.map(_(argsBuilder).build)*)
@@ -590,7 +590,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def diskEncryptionKey(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskRestorePropertiesDiskEncryptionKeyArgs.Builder]):
+    inline def diskEncryptionKey(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskRestorePropertiesDiskEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskRestorePropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskRestorePropertiesDiskEncryptionKeyArgs.builder
       builder.diskEncryptionKey(args(argsBuilder).build)
@@ -600,7 +600,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def guestOsFeatures(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskRestorePropertiesGuestOsFeatureArgs.Builder]*):
+    inline def guestOsFeatures(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskRestorePropertiesGuestOsFeatureArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskRestorePropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskRestorePropertiesGuestOsFeatureArgs.builder
       builder.guestOsFeatures(args.map(_(argsBuilder).build)*)
@@ -610,7 +610,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def labels(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskRestorePropertiesLabelArgs.Builder]*):
+    inline def labels(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskRestorePropertiesLabelArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskRestorePropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskRestorePropertiesLabelArgs.builder
       builder.labels(args.map(_(argsBuilder).build)*)
@@ -620,7 +620,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resourceManagerTags(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskRestorePropertiesResourceManagerTagArgs.Builder]*):
+    inline def resourceManagerTags(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskRestorePropertiesResourceManagerTagArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskRestorePropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskRestorePropertiesResourceManagerTagArgs.builder
       builder.resourceManagerTags(args.map(_(argsBuilder).build)*)
@@ -631,7 +631,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def computeInstanceRestoreProperties(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesArgs.Builder]):
+    inline def computeInstanceRestoreProperties(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadState.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceRestorePropertiesArgs.builder
       builder.computeInstanceRestoreProperties(args(argsBuilder).build)
@@ -641,7 +641,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def computeInstanceTargetEnvironment(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceTargetEnvironmentArgs.Builder]):
+    inline def computeInstanceTargetEnvironment(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceTargetEnvironmentArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadState.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadComputeInstanceTargetEnvironmentArgs.builder
       builder.computeInstanceTargetEnvironment(args(argsBuilder).build)
@@ -651,7 +651,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def diskRestoreProperties(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskRestorePropertiesArgs.Builder]):
+    inline def diskRestoreProperties(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskRestorePropertiesArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadState.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskRestorePropertiesArgs.builder
       builder.diskRestoreProperties(args(argsBuilder).build)
@@ -661,7 +661,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def diskTargetEnvironment(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskTargetEnvironmentArgs.Builder]):
+    inline def diskTargetEnvironment(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskTargetEnvironmentArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadState.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadDiskTargetEnvironmentArgs.builder
       builder.diskTargetEnvironment(args(argsBuilder).build)
@@ -671,7 +671,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def regionDiskTargetEnvironment(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadRegionDiskTargetEnvironmentArgs.Builder]):
+    inline def regionDiskTargetEnvironment(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadRegionDiskTargetEnvironmentArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadState.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadRegionDiskTargetEnvironmentArgs.builder
       builder.regionDiskTargetEnvironment(args(argsBuilder).build)
@@ -681,7 +681,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def targetResources(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadTargetResourceArgs.Builder]*):
+    inline def targetResources(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadTargetResourceArgs.Builder]*):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadState.Builder =
       def argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadTargetResourceArgs.builder
       builder.targetResources(args.map(_(argsBuilder).build)*)
@@ -692,7 +692,7 @@ object backupdisasterrecovery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gcpResource(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadTargetResourceGcpResourceArgs.Builder]):
+    inline def gcpResource(args: Endofunction[com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadTargetResourceGcpResourceArgs.Builder]):
         com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadTargetResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.inputs.RestoreWorkloadTargetResourceGcpResourceArgs.builder
       builder.gcpResource(args(argsBuilder).build)

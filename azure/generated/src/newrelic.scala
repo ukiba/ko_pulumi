@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object newrelic:
   /** Manages an Azure Native New Relic Monitor. */
-  def Monitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Monitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.newrelic.MonitorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.newrelic.MonitorArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16,7 +16,7 @@ object newrelic:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Native New Relic Tag Rule. */
-  def TagRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TagRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.newrelic.TagRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.newrelic.TagRuleArgs.builder
     com.pulumi.azure.newrelic.TagRule(name,

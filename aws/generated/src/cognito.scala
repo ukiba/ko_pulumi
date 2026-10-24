@@ -136,7 +136,7 @@ object cognito:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides an AWS Cognito Identity Pool. */
-  def IdentityPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IdentityPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cognito.IdentityPoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cognito.IdentityPoolArgs.builder
     argsBuilder = args(argsBuilder)
@@ -151,7 +151,7 @@ object cognito:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Cognito Identity Principal Mapping. */
-  def IdentityPoolProviderPrincipalTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IdentityPoolProviderPrincipalTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cognito.IdentityPoolProviderPrincipalTagArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.cognito.IdentityPoolProviderPrincipalTagArgs.builder
     com.pulumi.aws.cognito.IdentityPoolProviderPrincipalTag(name,
@@ -169,7 +169,7 @@ object cognito:
    * \$ pulumi import aws:cognito/identityPoolRoleAttachment:IdentityPoolRoleAttachment example us-west-2:b64805ad-cb56-40ba-9ffc-f5d8207e6d42
    * ```
    */
-  def IdentityPoolRoleAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IdentityPoolRoleAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cognito.IdentityPoolRoleAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.cognito.IdentityPoolRoleAttachmentArgs.builder
     com.pulumi.aws.cognito.IdentityPoolRoleAttachment(name,
@@ -177,7 +177,7 @@ object cognito:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Cognito User Identity Provider resource. */
-  def IdentityProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IdentityProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cognito.IdentityProviderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.cognito.IdentityProviderArgs.builder
     com.pulumi.aws.cognito.IdentityProvider(name,
@@ -185,7 +185,7 @@ object cognito:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Cognito IDP (Identity Provider) Log Delivery Configuration. */
-  def LogDeliveryConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LogDeliveryConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cognito.LogDeliveryConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.cognito.LogDeliveryConfigurationArgs.builder
     com.pulumi.aws.cognito.LogDeliveryConfiguration(name,
@@ -193,7 +193,7 @@ object cognito:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages branding settings for a user pool style and associates it with an app client. */
-  def ManagedLoginBranding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedLoginBranding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cognito.ManagedLoginBrandingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.cognito.ManagedLoginBrandingArgs.builder
     com.pulumi.aws.cognito.ManagedLoginBranding(name,
@@ -209,7 +209,7 @@ object cognito:
    * 
    * Use the `aws.cognito.UserPoolClient` resource to manage Cognito User Pool Clients for normal use cases.
    */
-  def ManagedUserPoolClient(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedUserPoolClient(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cognito.ManagedUserPoolClientArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.cognito.ManagedUserPoolClientArgs.builder
     com.pulumi.aws.cognito.ManagedUserPoolClient(name,
@@ -217,7 +217,7 @@ object cognito:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Cognito Resource Server. */
-  def ResourceServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourceServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cognito.ResourceServerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cognito.ResourceServerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -228,7 +228,7 @@ object cognito:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Cognito Risk Configuration resource. */
-  def RiskConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RiskConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cognito.RiskConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.cognito.RiskConfigurationArgs.builder
     com.pulumi.aws.cognito.RiskConfiguration(name,
@@ -236,7 +236,7 @@ object cognito:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Cognito User Resource. */
-  def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cognito.UserArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.cognito.UserArgs.builder
     com.pulumi.aws.cognito.User(name,
@@ -244,7 +244,7 @@ object cognito:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Cognito User Group resource. */
-  def UserGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UserGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cognito.UserGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cognito.UserGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -255,7 +255,7 @@ object cognito:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Adds the specified user to the specified group. */
-  def UserInGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UserInGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cognito.UserInGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.cognito.UserInGroupArgs.builder
     com.pulumi.aws.cognito.UserInGroup(name,
@@ -263,7 +263,7 @@ object cognito:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Cognito User Pool resource. */
-  def UserPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UserPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cognito.UserPoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cognito.UserPoolArgs.builder
     conf.logicalName2physicalName(name) match
@@ -286,7 +286,7 @@ object cognito:
    * To manage a User Pool Client created by another service, such as when [configuring an OpenSearch Domain to use Cognito authentication](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html),
    * use the `aws.cognito.ManagedUserPoolClient` resource instead.
    */
-  def UserPoolClient(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UserPoolClient(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cognito.UserPoolClientArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cognito.UserPoolClientArgs.builder
     conf.logicalName2physicalName(name) match
@@ -297,7 +297,7 @@ object cognito:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Cognito User Pool Domain resource. */
-  def UserPoolDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UserPoolDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cognito.UserPoolDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.cognito.UserPoolDomainArgs.builder
     com.pulumi.aws.cognito.UserPoolDomain(name,
@@ -309,7 +309,7 @@ object cognito:
    * 
    * &gt; **Note:** To use this resource, the user pool must have a domain associated with it. For more information, see the Amazon Cognito Developer Guide on [Customizing the Built-in Sign-In and Sign-up Webpages](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-app-ui-customization.html).
    */
-  def UserPoolUICustomization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UserPoolUICustomization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.cognito.UserPoolUICustomizationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.cognito.UserPoolUICustomizationArgs.builder
     com.pulumi.aws.cognito.UserPoolUICustomization(name,

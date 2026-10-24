@@ -11,7 +11,7 @@ object oam:
    * 
    * &gt; **NOTE:** Creating an `aws.oam.Link` may sometimes fail if the `aws.oam.SinkPolicy` for the attached `aws.oam.Sink` is not created before the `aws.oam.Link`. To prevent this, declare an explicit dependency using a `dependsOn` meta-argument.
    */
-  def Link(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Link(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.oam.LinkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.oam.LinkArgs.builder
     argsBuilder = args(argsBuilder)
@@ -91,7 +91,7 @@ object oam:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Resource for managing an AWS CloudWatch Observability Access Manager Sink. */
-  def Sink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Sink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.oam.SinkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.oam.SinkArgs.builder
     conf.logicalName2physicalName(name) match
@@ -109,7 +109,7 @@ object oam:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS CloudWatch Observability Access Manager Sink Policy. */
-  def SinkPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SinkPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.oam.SinkPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.oam.SinkPolicyArgs.builder
     com.pulumi.aws.oam.SinkPolicy(name,

@@ -15,7 +15,7 @@ object s3:
    * 
    * &gt; This resource can be used with s3 directory buckets. Please see [AWS Documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-directory-buckets.html) for more information.
    */
-  def AccessPoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccessPoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.AccessPointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3.AccessPointArgs.builder
     conf.logicalName2physicalName(name) match
@@ -39,7 +39,7 @@ object s3:
    * 
    * &gt; Advanced usage: To use a custom API endpoint for this resource, use the `s3control` endpoint provider configuration, not the `s3` endpoint provider configuration.
    */
-  def AccountPublicAccessBlock(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccountPublicAccessBlock(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.AccountPublicAccessBlockArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.AccountPublicAccessBlockArgs.builder
     com.pulumi.aws.s3.AccountPublicAccessBlock(name,
@@ -51,7 +51,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  def AnalyticsConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AnalyticsConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.AnalyticsConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3.AnalyticsConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -70,7 +70,7 @@ object s3:
    * 
    * &gt; To support ABAC (Attribute Based Access Control) in general purpose buckets, this resource will now attempt to send tags in the create request and use the S3 Control tagging APIs [`TagResource`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html), [`UntagResource`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html), and [`ListTagsForResource`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListTagsForResource.html) for read and update operations. The calling principal must have the corresponding `s3:TagResource`, `s3:UntagResource`, and `s3:ListTagsForResource` [IAM permissions](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-actions-as-permissions). If the principal lacks the appropriate permissions, the provider will fall back to tagging after creation and using the S3 tagging APIs [`PutBucketTagging`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html), [`DeleteBucketTagging`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html), and [`GetBucketTagging`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html) instead. With ABAC enabled, tag modifications may fail with the fall back behavior. See the [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html) for additional details on enabling ABAC in general purpose buckets.
    */
-  def Bucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Bucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3.BucketArgs.builder
     argsBuilder = args(argsBuilder)
@@ -88,7 +88,7 @@ object s3:
    * Manages ABAC (Attribute Based Access Control) for an AWS S3 (Simple Storage) Bucket.
    * See the [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html) on enabling ABAC for general purpose buckets for additional information.
    */
-  def BucketAbac(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketAbac(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketAbacArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketAbacArgs.builder
     com.pulumi.aws.s3.BucketAbac(name,
@@ -100,7 +100,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  def BucketAccelerateConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketAccelerateConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketAccelerateConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketAccelerateConfigurationArgs.builder
     com.pulumi.aws.s3.BucketAccelerateConfiguration(name,
@@ -112,7 +112,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  @deprecated("aws.s3/bucketaccelerateconfigurationv2.BucketAccelerateConfigurationV2 has been deprecated in favor of aws.s3/bucketaccelerateconfiguration.BucketAccelerateConfiguration") def BucketAccelerateConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("aws.s3/bucketaccelerateconfigurationv2.BucketAccelerateConfigurationV2 has been deprecated in favor of aws.s3/bucketaccelerateconfiguration.BucketAccelerateConfiguration") inline def BucketAccelerateConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketAccelerateConfigurationV2Args.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketAccelerateConfigurationV2Args.builder
     com.pulumi.aws.s3.BucketAccelerateConfigurationV2(name,
@@ -126,7 +126,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  def BucketAcl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketAcl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketAclArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketAclArgs.builder
     com.pulumi.aws.s3.BucketAcl(name,
@@ -140,7 +140,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  @deprecated("aws.s3/bucketaclv2.BucketAclV2 has been deprecated in favor of aws.s3/bucketacl.BucketAcl") def BucketAclV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("aws.s3/bucketaclv2.BucketAclV2 has been deprecated in favor of aws.s3/bucketacl.BucketAcl") inline def BucketAclV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketAclV2Args.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketAclV2Args.builder
     com.pulumi.aws.s3.BucketAclV2(name,
@@ -154,7 +154,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  def BucketCorsConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketCorsConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketCorsConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketCorsConfigurationArgs.builder
     com.pulumi.aws.s3.BucketCorsConfiguration(name,
@@ -168,7 +168,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  @deprecated("aws.s3/bucketcorsconfigurationv2.BucketCorsConfigurationV2 has been deprecated in favor of aws.s3/bucketcorsconfiguration.BucketCorsConfiguration") def BucketCorsConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("aws.s3/bucketcorsconfigurationv2.BucketCorsConfigurationV2 has been deprecated in favor of aws.s3/bucketcorsconfiguration.BucketCorsConfiguration") inline def BucketCorsConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketCorsConfigurationV2Args.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketCorsConfigurationV2Args.builder
     com.pulumi.aws.s3.BucketCorsConfigurationV2(name,
@@ -180,7 +180,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  def BucketIntelligentTieringConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketIntelligentTieringConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketIntelligentTieringConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3.BucketIntelligentTieringConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -207,7 +207,7 @@ object s3:
    * Running Pulumi operations shortly after creating a lifecycle configuration may result in changes that affect configuration idempotence.
    * See the Amazon S3 User Guide on [setting lifecycle configuration on a bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/how-to-set-lifecycle-configuration-intro.html).
    */
-  def BucketLifecycleConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketLifecycleConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketLifecycleConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketLifecycleConfigurationArgs.builder
     com.pulumi.aws.s3.BucketLifecycleConfiguration(name,
@@ -231,7 +231,7 @@ object s3:
    * Running Pulumi operations shortly after creating a lifecycle configuration may result in changes that affect configuration idempotence.
    * See the Amazon S3 User Guide on [setting lifecycle configuration on a bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/how-to-set-lifecycle-configuration-intro.html).
    */
-  @deprecated("aws.s3/bucketlifecycleconfigurationv2.BucketLifecycleConfigurationV2 has been deprecated in favor of aws.s3/bucketlifecycleconfiguration.BucketLifecycleConfiguration") def BucketLifecycleConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("aws.s3/bucketlifecycleconfigurationv2.BucketLifecycleConfigurationV2 has been deprecated in favor of aws.s3/bucketlifecycleconfiguration.BucketLifecycleConfiguration") inline def BucketLifecycleConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketLifecycleConfigurationV2Args.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketLifecycleConfigurationV2Args.builder
     com.pulumi.aws.s3.BucketLifecycleConfigurationV2(name,
@@ -247,7 +247,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  def BucketLogging(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketLogging(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketLoggingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketLoggingArgs.builder
     com.pulumi.aws.s3.BucketLogging(name,
@@ -263,7 +263,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  @deprecated("aws.s3/bucketloggingv2.BucketLoggingV2 has been deprecated in favor of aws.s3/bucketlogging.BucketLogging") def BucketLoggingV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("aws.s3/bucketloggingv2.BucketLoggingV2 has been deprecated in favor of aws.s3/bucketlogging.BucketLogging") inline def BucketLoggingV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketLoggingV2Args.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketLoggingV2Args.builder
     com.pulumi.aws.s3.BucketLoggingV2(name,
@@ -271,7 +271,7 @@ object s3:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages Amazon S3 Metadata for a bucket. */
-  def BucketMetadataConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketMetadataConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketMetadataConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketMetadataConfigurationArgs.builder
     com.pulumi.aws.s3.BucketMetadataConfiguration(name,
@@ -279,7 +279,7 @@ object s3:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a S3 bucket [metrics configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/metrics-configurations.html) resource. */
-  def BucketMetric(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketMetric(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketMetricArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3.BucketMetricArgs.builder
     conf.logicalName2physicalName(name) match
@@ -296,7 +296,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  def BucketNotification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketNotification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketNotificationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketNotificationArgs.builder
     com.pulumi.aws.s3.BucketNotification(name,
@@ -304,7 +304,7 @@ object s3:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an S3 object resource. */
-  def BucketObject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketObject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketObjectArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3.BucketObjectArgs.builder
     argsBuilder = args(argsBuilder)
@@ -325,7 +325,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  def BucketObjectLockConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketObjectLockConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketObjectLockConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketObjectLockConfigurationArgs.builder
     com.pulumi.aws.s3.BucketObjectLockConfiguration(name,
@@ -339,7 +339,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  @deprecated("aws.s3/bucketobjectlockconfigurationv2.BucketObjectLockConfigurationV2 has been deprecated in favor of aws.s3/bucketobjectlockconfiguration.BucketObjectLockConfiguration") def BucketObjectLockConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("aws.s3/bucketobjectlockconfigurationv2.BucketObjectLockConfigurationV2 has been deprecated in favor of aws.s3/bucketobjectlockconfiguration.BucketObjectLockConfiguration") inline def BucketObjectLockConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketObjectLockConfigurationV2Args.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketObjectLockConfigurationV2Args.builder
     com.pulumi.aws.s3.BucketObjectLockConfigurationV2(name,
@@ -347,7 +347,7 @@ object s3:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an S3 object resource. */
-  def BucketObjectv2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketObjectv2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketObjectv2Args.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3.BucketObjectv2Args.builder
     argsBuilder = args(argsBuilder)
@@ -366,7 +366,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  def BucketOwnershipControls(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketOwnershipControls(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketOwnershipControlsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketOwnershipControlsArgs.builder
     com.pulumi.aws.s3.BucketOwnershipControls(name,
@@ -378,7 +378,7 @@ object s3:
    * 
    * &gt; Policies can be attached to both S3 general purpose buckets and S3 directory buckets.
    */
-  def BucketPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketPolicyArgs.builder
     com.pulumi.aws.s3.BucketPolicy(name,
@@ -392,7 +392,7 @@ object s3:
    * 
    * &gt; Setting `skipDestroy` to `true` means that the AWS Provider will not destroy a public access block, even when running `terraform destroy`. The configuration is thus an intentional dangling resource that is not managed by Terraform and will remain in-place in your AWS account.
    */
-  def BucketPublicAccessBlock(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketPublicAccessBlock(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketPublicAccessBlockArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketPublicAccessBlockArgs.builder
     com.pulumi.aws.s3.BucketPublicAccessBlock(name,
@@ -406,7 +406,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  def BucketReplicationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketReplicationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketReplicationConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketReplicationConfigArgs.builder
     com.pulumi.aws.s3.BucketReplicationConfig(name,
@@ -420,7 +420,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  def BucketRequestPaymentConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketRequestPaymentConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketRequestPaymentConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketRequestPaymentConfigurationArgs.builder
     com.pulumi.aws.s3.BucketRequestPaymentConfiguration(name,
@@ -434,7 +434,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  @deprecated("aws.s3/bucketrequestpaymentconfigurationv2.BucketRequestPaymentConfigurationV2 has been deprecated in favor of aws.s3/bucketrequestpaymentconfiguration.BucketRequestPaymentConfiguration") def BucketRequestPaymentConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("aws.s3/bucketrequestpaymentconfigurationv2.BucketRequestPaymentConfigurationV2 has been deprecated in favor of aws.s3/bucketrequestpaymentconfiguration.BucketRequestPaymentConfiguration") inline def BucketRequestPaymentConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketRequestPaymentConfigurationV2Args.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketRequestPaymentConfigurationV2Args.builder
     com.pulumi.aws.s3.BucketRequestPaymentConfigurationV2(name,
@@ -448,7 +448,7 @@ object s3:
    * 
    * &gt; **NOTE:** Starting in April 2026, Amazon S3 will automatically block server-side encryption with customer-provided keys (SSE-C) for all new buckets. Use the `blockedEncryptionTypes` argument to manage this behavior. For more information, see the [SSE-C changes FAQ](https://docs.aws.amazon.com/AmazonS3/latest/userguide/default-s3-c-encryption-setting-faq.html).
    */
-  def BucketServerSideEncryptionConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketServerSideEncryptionConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketServerSideEncryptionConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketServerSideEncryptionConfigurationArgs.builder
     com.pulumi.aws.s3.BucketServerSideEncryptionConfiguration(name,
@@ -462,7 +462,7 @@ object s3:
    * 
    * &gt; **NOTE:** Starting in April 2026, Amazon S3 will automatically block server-side encryption with customer-provided keys (SSE-C) for all new buckets. Use the `blockedEncryptionTypes` argument to manage this behavior. For more information, see the [SSE-C changes FAQ](https://docs.aws.amazon.com/AmazonS3/latest/userguide/default-s3-c-encryption-setting-faq.html).
    */
-  @deprecated("aws.s3/bucketserversideencryptionconfigurationv2.BucketServerSideEncryptionConfigurationV2 has been deprecated in favor of aws.s3/bucketserversideencryptionconfiguration.BucketServerSideEncryptionConfiguration") def BucketServerSideEncryptionConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("aws.s3/bucketserversideencryptionconfigurationv2.BucketServerSideEncryptionConfigurationV2 has been deprecated in favor of aws.s3/bucketserversideencryptionconfiguration.BucketServerSideEncryptionConfiguration") inline def BucketServerSideEncryptionConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketServerSideEncryptionConfigurationV2Args.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketServerSideEncryptionConfigurationV2Args.builder
     com.pulumi.aws.s3.BucketServerSideEncryptionConfigurationV2(name,
@@ -478,7 +478,7 @@ object s3:
    * 
    * &gt; To support ABAC (Attribute Based Access Control) in general purpose buckets, this resource will now attempt to send tags in the create request and use the S3 Control tagging APIs [`TagResource`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html), [`UntagResource`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html), and [`ListTagsForResource`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListTagsForResource.html) for read and update operations. The calling principal must have the corresponding `s3:TagResource`, `s3:UntagResource`, and `s3:ListTagsForResource` [IAM permissions](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-actions-as-permissions). If the principal lacks the appropriate permissions, the provider will fall back to tagging after creation and using the S3 tagging APIs [`PutBucketTagging`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html), [`DeleteBucketTagging`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html), and [`GetBucketTagging`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html) instead. With ABAC enabled, tag modifications may fail with the fall back behavior. See the [AWS documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html) for additional details on enabling ABAC in general purpose buckets.
    */
-  @deprecated("s3.BucketV2 has been deprecated in favor of s3.Bucket") def BucketV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("s3.BucketV2 has been deprecated in favor of s3.Bucket") inline def BucketV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketV2Args.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3.BucketV2Args.builder
     argsBuilder = args(argsBuilder)
@@ -503,7 +503,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  def BucketVersioning(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketVersioning(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketVersioningArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketVersioningArgs.builder
     com.pulumi.aws.s3.BucketVersioning(name,
@@ -521,7 +521,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  @deprecated("aws.s3/bucketversioningv2.BucketVersioningV2 has been deprecated in favor of aws.s3/bucketversioning.BucketVersioning") def BucketVersioningV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("aws.s3/bucketversioningv2.BucketVersioningV2 has been deprecated in favor of aws.s3/bucketversioning.BucketVersioning") inline def BucketVersioningV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketVersioningV2Args.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketVersioningV2Args.builder
     com.pulumi.aws.s3.BucketVersioningV2(name,
@@ -533,7 +533,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  def BucketWebsiteConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BucketWebsiteConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketWebsiteConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketWebsiteConfigurationArgs.builder
     com.pulumi.aws.s3.BucketWebsiteConfiguration(name,
@@ -545,7 +545,7 @@ object s3:
    * 
    * &gt; This resource cannot be used with S3 directory buckets.
    */
-  @deprecated("aws.s3/bucketwebsiteconfigurationv2.BucketWebsiteConfigurationV2 has been deprecated in favor of aws.s3/bucketwebsiteconfiguration.BucketWebsiteConfiguration") def BucketWebsiteConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("aws.s3/bucketwebsiteconfigurationv2.BucketWebsiteConfigurationV2 has been deprecated in favor of aws.s3/bucketwebsiteconfiguration.BucketWebsiteConfiguration") inline def BucketWebsiteConfigurationV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.BucketWebsiteConfigurationV2Args.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.BucketWebsiteConfigurationV2Args.builder
     com.pulumi.aws.s3.BucketWebsiteConfigurationV2(name,
@@ -553,7 +553,7 @@ object s3:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Amazon S3 Express directory bucket resource. */
-  def DirectoryBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DirectoryBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.DirectoryBucketArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3.DirectoryBucketArgs.builder
     argsBuilder = args(argsBuilder)
@@ -568,7 +568,7 @@ object s3:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an S3 Files Access Point. */
-  def FilesAccessPoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FilesAccessPoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.FilesAccessPointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3.FilesAccessPointArgs.builder
     argsBuilder = args(argsBuilder)
@@ -583,7 +583,7 @@ object s3:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an S3 Files File System. */
-  def FilesFileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FilesFileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.FilesFileSystemArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3.FilesFileSystemArgs.builder
     argsBuilder = args(argsBuilder)
@@ -598,7 +598,7 @@ object s3:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an S3 Files File System Policy. */
-  def FilesFileSystemPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FilesFileSystemPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.FilesFileSystemPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.FilesFileSystemPolicyArgs.builder
     com.pulumi.aws.s3.FilesFileSystemPolicy(name,
@@ -606,7 +606,7 @@ object s3:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an S3 Files Mount Target. */
-  def FilesMountTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FilesMountTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.FilesMountTargetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.FilesMountTargetArgs.builder
     com.pulumi.aws.s3.FilesMountTarget(name,
@@ -614,7 +614,7 @@ object s3:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an S3 Files Synchronization configuration. */
-  def FilesSynchronizationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FilesSynchronizationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.FilesSynchronizationConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.FilesSynchronizationConfigurationArgs.builder
     com.pulumi.aws.s3.FilesSynchronizationConfiguration(name,
@@ -622,7 +622,7 @@ object s3:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a S3 bucket [inventory configuration](https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-inventory.html) resource. */
-  def Inventory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Inventory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.InventoryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3.InventoryArgs.builder
     conf.logicalName2physicalName(name) match
@@ -633,7 +633,7 @@ object s3:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource for copying an S3 object. */
-  def ObjectCopy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ObjectCopy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.ObjectCopyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3.ObjectCopyArgs.builder
     argsBuilder = args(argsBuilder)
@@ -1037,7 +1037,7 @@ object s3:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Resource for managing an Amazon S3 Vectors Index. */
-  def VectorsIndex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VectorsIndex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.VectorsIndexArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3.VectorsIndexArgs.builder
     argsBuilder = args(argsBuilder)
@@ -1052,7 +1052,7 @@ object s3:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an Amazon S3 Vectors Vector Bucket. */
-  def VectorsVectorBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VectorsVectorBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.VectorsVectorBucketArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3.VectorsVectorBucketArgs.builder
     argsBuilder = args(argsBuilder)
@@ -1067,7 +1067,7 @@ object s3:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an Amazon S3 Vectors Vector Bucket policy. */
-  def VectorsVectorBucketPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VectorsVectorBucketPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.s3.VectorsVectorBucketPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3.VectorsVectorBucketPolicyArgs.builder
     com.pulumi.aws.s3.VectorsVectorBucketPolicy(name,

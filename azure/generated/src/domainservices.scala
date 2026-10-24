@@ -32,7 +32,7 @@ object domainservices:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Replica Set for an Active Directory Domain Service. */
-  def ReplicaSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ReplicaSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.domainservices.ReplicaSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.domainservices.ReplicaSetArgs.builder
     com.pulumi.azure.domainservices.ReplicaSet(name,
@@ -46,7 +46,7 @@ object domainservices:
    * 
    * &gt; **Note:** At present this resource only supports **User Forest** mode and _not_ **Resource Forest** mode. [Read more](https://docs.microsoft.com/azure/active-directory-domain-services/concepts-resource-forest) about the different operation modes for this service.
    */
-  def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.domainservices.ServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.domainservices.ServiceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -64,7 +64,7 @@ object domainservices:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Active Directory Domain Service Trust. */
-  def ServiceTrust(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServiceTrust(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.domainservices.ServiceTrustArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.domainservices.ServiceTrustArgs.builder
     conf.logicalName2physicalName(name) match

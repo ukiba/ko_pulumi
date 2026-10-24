@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object dax:
   /** Provides a DAX Cluster resource. */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dax.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.dax.ClusterArgs.builder
     argsBuilder = args(argsBuilder)
@@ -20,7 +20,7 @@ object dax:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a DAX Parameter Group resource. */
-  def ParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dax.ParameterGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.dax.ParameterGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -31,7 +31,7 @@ object dax:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a DAX Subnet Group resource. */
-  def SubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.dax.SubnetGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.dax.SubnetGroupArgs.builder
     conf.logicalName2physicalName(name) match

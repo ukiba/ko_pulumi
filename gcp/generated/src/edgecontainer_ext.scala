@@ -8,7 +8,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authorization(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterAuthorizationArgs.Builder]):
+    inline def authorization(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterAuthorizationArgs.Builder]):
         com.pulumi.gcp.edgecontainer.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.ClusterAuthorizationArgs.builder
       builder.authorization(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def controlPlane(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterControlPlaneArgs.Builder]):
+    inline def controlPlane(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterControlPlaneArgs.Builder]):
         com.pulumi.gcp.edgecontainer.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.ClusterControlPlaneArgs.builder
       builder.controlPlane(args(argsBuilder).build)
@@ -29,7 +29,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def controlPlaneEncryption(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterControlPlaneEncryptionArgs.Builder]):
+    inline def controlPlaneEncryption(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterControlPlaneEncryptionArgs.Builder]):
         com.pulumi.gcp.edgecontainer.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.ClusterControlPlaneEncryptionArgs.builder
       builder.controlPlaneEncryption(args(argsBuilder).build)
@@ -42,7 +42,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fleet(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterFleetArgs.Builder]):
+    inline def fleet(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterFleetArgs.Builder]):
         com.pulumi.gcp.edgecontainer.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.ClusterFleetArgs.builder
       builder.fleet(args(argsBuilder).build)
@@ -52,7 +52,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenancePolicy(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyArgs.Builder]):
+    inline def maintenancePolicy(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyArgs.Builder]):
         com.pulumi.gcp.edgecontainer.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyArgs.builder
       builder.maintenancePolicy(args(argsBuilder).build)
@@ -65,7 +65,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networking(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterNetworkingArgs.Builder]):
+    inline def networking(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterNetworkingArgs.Builder]):
         com.pulumi.gcp.edgecontainer.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.ClusterNetworkingArgs.builder
       builder.networking(args(argsBuilder).build)
@@ -75,7 +75,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def systemAddonsConfig(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterSystemAddonsConfigArgs.Builder]):
+    inline def systemAddonsConfig(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterSystemAddonsConfigArgs.Builder]):
         com.pulumi.gcp.edgecontainer.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.ClusterSystemAddonsConfigArgs.builder
       builder.systemAddonsConfig(args(argsBuilder).build)
@@ -86,7 +86,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def localDiskEncryption(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.NodePoolLocalDiskEncryptionArgs.Builder]):
+    inline def localDiskEncryption(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.NodePoolLocalDiskEncryptionArgs.Builder]):
         com.pulumi.gcp.edgecontainer.NodePoolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.NodePoolLocalDiskEncryptionArgs.builder
       builder.localDiskEncryption(args(argsBuilder).build)
@@ -96,7 +96,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeConfig(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.NodePoolNodeConfigArgs.Builder]):
+    inline def nodeConfig(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.NodePoolNodeConfigArgs.Builder]):
         com.pulumi.gcp.edgecontainer.NodePoolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.NodePoolNodeConfigArgs.builder
       builder.nodeConfig(args(argsBuilder).build)
@@ -107,7 +107,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcProject(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.VpnConnectionVpcProjectArgs.Builder]):
+    inline def vpcProject(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.VpnConnectionVpcProjectArgs.Builder]):
         com.pulumi.gcp.edgecontainer.VpnConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.VpnConnectionVpcProjectArgs.builder
       builder.vpcProject(args(argsBuilder).build)
@@ -120,7 +120,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def adminUsers(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterAuthorizationAdminUsersArgs.Builder]):
+    inline def adminUsers(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterAuthorizationAdminUsersArgs.Builder]):
         com.pulumi.gcp.edgecontainer.inputs.ClusterAuthorizationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.ClusterAuthorizationAdminUsersArgs.builder
       builder.adminUsers(args(argsBuilder).build)
@@ -131,7 +131,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def local(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterControlPlaneLocalArgs.Builder]):
+    inline def local(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterControlPlaneLocalArgs.Builder]):
         com.pulumi.gcp.edgecontainer.inputs.ClusterControlPlaneArgs.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.ClusterControlPlaneLocalArgs.builder
       builder.local(args(argsBuilder).build)
@@ -141,7 +141,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def remote(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterControlPlaneRemoteArgs.Builder]):
+    inline def remote(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterControlPlaneRemoteArgs.Builder]):
         com.pulumi.gcp.edgecontainer.inputs.ClusterControlPlaneArgs.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.ClusterControlPlaneRemoteArgs.builder
       builder.remote(args(argsBuilder).build)
@@ -157,7 +157,7 @@ object edgecontainer_ext:
      * &lt;a name=&#34;nestedControlPlaneEncryptionKmsStatus&#34;&gt;&lt;/a&gt;The `kmsStatus` block contains:
      * @return builder
      */
-    def kmsStatuses(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterControlPlaneEncryptionKmsStatusArgs.Builder]*):
+    inline def kmsStatuses(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterControlPlaneEncryptionKmsStatusArgs.Builder]*):
         com.pulumi.gcp.edgecontainer.inputs.ClusterControlPlaneEncryptionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.edgecontainer.inputs.ClusterControlPlaneEncryptionKmsStatusArgs.builder
       builder.kmsStatuses(args.map(_(argsBuilder).build)*)
@@ -170,7 +170,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenanceExclusions(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyMaintenanceExclusionArgs.Builder]*):
+    inline def maintenanceExclusions(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyMaintenanceExclusionArgs.Builder]*):
         com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyMaintenanceExclusionArgs.builder
       builder.maintenanceExclusions(args.map(_(argsBuilder).build)*)
@@ -180,7 +180,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def window(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyWindowArgs.Builder]):
+    inline def window(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyWindowArgs.Builder]):
         com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyWindowArgs.builder
       builder.window(args(argsBuilder).build)
@@ -191,7 +191,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def window(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyMaintenanceExclusionWindowArgs.Builder]):
+    inline def window(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyMaintenanceExclusionWindowArgs.Builder]):
         com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyMaintenanceExclusionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyMaintenanceExclusionWindowArgs.builder
       builder.window(args(argsBuilder).build)
@@ -202,7 +202,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def recurringWindow(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyWindowRecurringWindowArgs.Builder]):
+    inline def recurringWindow(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyWindowRecurringWindowArgs.Builder]):
         com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyWindowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyWindowRecurringWindowArgs.builder
       builder.recurringWindow(args(argsBuilder).build)
@@ -213,7 +213,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def window(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyWindowRecurringWindowWindowArgs.Builder]):
+    inline def window(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyWindowRecurringWindowWindowArgs.Builder]):
         com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyWindowRecurringWindowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyWindowRecurringWindowWindowArgs.builder
       builder.window(args(argsBuilder).build)
@@ -224,7 +224,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authorization(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterAuthorizationArgs.Builder]):
+    inline def authorization(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterAuthorizationArgs.Builder]):
         com.pulumi.gcp.edgecontainer.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.ClusterAuthorizationArgs.builder
       builder.authorization(args(argsBuilder).build)
@@ -234,7 +234,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def controlPlane(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterControlPlaneArgs.Builder]):
+    inline def controlPlane(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterControlPlaneArgs.Builder]):
         com.pulumi.gcp.edgecontainer.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.ClusterControlPlaneArgs.builder
       builder.controlPlane(args(argsBuilder).build)
@@ -245,7 +245,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def controlPlaneEncryption(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterControlPlaneEncryptionArgs.Builder]):
+    inline def controlPlaneEncryption(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterControlPlaneEncryptionArgs.Builder]):
         com.pulumi.gcp.edgecontainer.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.ClusterControlPlaneEncryptionArgs.builder
       builder.controlPlaneEncryption(args(argsBuilder).build)
@@ -258,7 +258,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fleet(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterFleetArgs.Builder]):
+    inline def fleet(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterFleetArgs.Builder]):
         com.pulumi.gcp.edgecontainer.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.ClusterFleetArgs.builder
       builder.fleet(args(argsBuilder).build)
@@ -269,7 +269,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenanceEvents(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenanceEventArgs.Builder]*):
+    inline def maintenanceEvents(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenanceEventArgs.Builder]*):
         com.pulumi.gcp.edgecontainer.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenanceEventArgs.builder
       builder.maintenanceEvents(args.map(_(argsBuilder).build)*)
@@ -279,7 +279,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenancePolicy(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyArgs.Builder]):
+    inline def maintenancePolicy(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyArgs.Builder]):
         com.pulumi.gcp.edgecontainer.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.ClusterMaintenancePolicyArgs.builder
       builder.maintenancePolicy(args(argsBuilder).build)
@@ -292,7 +292,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networking(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterNetworkingArgs.Builder]):
+    inline def networking(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterNetworkingArgs.Builder]):
         com.pulumi.gcp.edgecontainer.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.ClusterNetworkingArgs.builder
       builder.networking(args(argsBuilder).build)
@@ -302,7 +302,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def systemAddonsConfig(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterSystemAddonsConfigArgs.Builder]):
+    inline def systemAddonsConfig(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterSystemAddonsConfigArgs.Builder]):
         com.pulumi.gcp.edgecontainer.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.ClusterSystemAddonsConfigArgs.builder
       builder.systemAddonsConfig(args(argsBuilder).build)
@@ -315,7 +315,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingress(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterSystemAddonsConfigIngressArgs.Builder]):
+    inline def ingress(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.ClusterSystemAddonsConfigIngressArgs.Builder]):
         com.pulumi.gcp.edgecontainer.inputs.ClusterSystemAddonsConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.ClusterSystemAddonsConfigIngressArgs.builder
       builder.ingress(args(argsBuilder).build)
@@ -326,7 +326,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def localDiskEncryption(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.NodePoolLocalDiskEncryptionArgs.Builder]):
+    inline def localDiskEncryption(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.NodePoolLocalDiskEncryptionArgs.Builder]):
         com.pulumi.gcp.edgecontainer.inputs.NodePoolState.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.NodePoolLocalDiskEncryptionArgs.builder
       builder.localDiskEncryption(args(argsBuilder).build)
@@ -336,7 +336,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeConfig(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.NodePoolNodeConfigArgs.Builder]):
+    inline def nodeConfig(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.NodePoolNodeConfigArgs.Builder]):
         com.pulumi.gcp.edgecontainer.inputs.NodePoolState.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.NodePoolNodeConfigArgs.builder
       builder.nodeConfig(args(argsBuilder).build)
@@ -348,7 +348,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudRouters(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.VpnConnectionDetailCloudRouterArgs.Builder]*):
+    inline def cloudRouters(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.VpnConnectionDetailCloudRouterArgs.Builder]*):
         com.pulumi.gcp.edgecontainer.inputs.VpnConnectionDetailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.edgecontainer.inputs.VpnConnectionDetailCloudRouterArgs.builder
       builder.cloudRouters(args.map(_(argsBuilder).build)*)
@@ -359,7 +359,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudVpns(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.VpnConnectionDetailCloudVpnArgs.Builder]*):
+    inline def cloudVpns(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.VpnConnectionDetailCloudVpnArgs.Builder]*):
         com.pulumi.gcp.edgecontainer.inputs.VpnConnectionDetailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.edgecontainer.inputs.VpnConnectionDetailCloudVpnArgs.builder
       builder.cloudVpns(args.map(_(argsBuilder).build)*)
@@ -370,7 +370,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def details(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.VpnConnectionDetailArgs.Builder]*):
+    inline def details(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.VpnConnectionDetailArgs.Builder]*):
         com.pulumi.gcp.edgecontainer.inputs.VpnConnectionState.Builder =
       def argsBuilder = com.pulumi.gcp.edgecontainer.inputs.VpnConnectionDetailArgs.builder
       builder.details(args.map(_(argsBuilder).build)*)
@@ -380,7 +380,7 @@ object edgecontainer_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcProject(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.VpnConnectionVpcProjectArgs.Builder]):
+    inline def vpcProject(args: Endofunction[com.pulumi.gcp.edgecontainer.inputs.VpnConnectionVpcProjectArgs.Builder]):
         com.pulumi.gcp.edgecontainer.inputs.VpnConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.edgecontainer.inputs.VpnConnectionVpcProjectArgs.builder
       builder.vpcProject(args(argsBuilder).build)

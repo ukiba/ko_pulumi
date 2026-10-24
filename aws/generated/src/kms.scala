@@ -11,7 +11,7 @@ object kms:
    * but API (hence this provider too) allows you to create as many aliases as
    * the [account limits](http://docs.aws.amazon.com/kms/latest/developerguide/limits.html) allow you.
    */
-  def Alias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Alias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kms.AliasArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.kms.AliasArgs.builder
     conf.logicalName2physicalName(name) match
@@ -27,7 +27,7 @@ object kms:
    * is stable across every apply. For a changing ciphertext value each apply, see
    * the `aws.kms.Ciphertext` data source.
    */
-  def Ciphertext(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Ciphertext(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kms.CiphertextArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.kms.CiphertextArgs.builder
     com.pulumi.aws.kms.Ciphertext(name,
@@ -35,7 +35,7 @@ object kms:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS KMS (Key Management) Custom Key Store. */
-  def CustomKeyStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomKeyStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kms.CustomKeyStoreArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.kms.CustomKeyStoreArgs.builder
     com.pulumi.aws.kms.CustomKeyStore(name,
@@ -46,7 +46,7 @@ object kms:
    * Manages a single-Region or multi-Region primary KMS key that uses external key material.
    * To instead manage a single-Region or multi-Region primary KMS key where AWS automatically generates and potentially rotates key material, see the `aws.kms.Key` resource.
    */
-  def ExternalKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ExternalKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kms.ExternalKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.kms.ExternalKeyArgs.builder
     argsBuilder = args(argsBuilder)
@@ -72,7 +72,7 @@ object kms:
    * \$ pulumi import aws:kms/grant:Grant test 1234abcd-12ab-34cd-56ef-1234567890ab:abcde1237f76e4ba7987489ac329fbfba6ad343d6f7075dbd1ef191f0120514
    * ```
    */
-  def Grant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Grant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kms.GrantArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.kms.GrantArgs.builder
     conf.logicalName2physicalName(name) match
@@ -89,7 +89,7 @@ object kms:
    * or with the parameter `policy` in this resource.
    * Configuring with both will cause inconsistencies and may overwrite configuration.
    */
-  def Key(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Key(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kms.KeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.kms.KeyArgs.builder
     argsBuilder = args(argsBuilder)
@@ -104,7 +104,7 @@ object kms:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Attaches a policy to a KMS Key. */
-  def KeyPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def KeyPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kms.KeyPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.kms.KeyPolicyArgs.builder
     com.pulumi.aws.kms.KeyPolicy(name,
@@ -264,7 +264,7 @@ object kms:
    * Manages a KMS multi-Region replica key that uses external key material.
    * See the [AWS KMS Developer Guide](https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-import.html) for more information on importing key material into multi-Region keys.
    */
-  def ReplicaExternalKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ReplicaExternalKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kms.ReplicaExternalKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.kms.ReplicaExternalKeyArgs.builder
     argsBuilder = args(argsBuilder)
@@ -279,7 +279,7 @@ object kms:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a KMS multi-Region replica key. */
-  def ReplicaKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ReplicaKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kms.ReplicaKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.kms.ReplicaKeyArgs.builder
     argsBuilder = args(argsBuilder)

@@ -7,7 +7,7 @@ object arckubernetes_ext:
      * @param identity An `identity` block as defined below. Changing this forces a new Arc Kubernetes Cluster to be created.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.ClusterIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.ClusterIdentityArgs.Builder]):
         com.pulumi.azure.arckubernetes.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.arckubernetes.inputs.ClusterIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object arckubernetes_ext:
      * @param identity An `identity` block as defined below. Changing this forces a new Arc Kubernetes Cluster Extension to be created.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.ClusterExtensionIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.ClusterExtensionIdentityArgs.Builder]):
         com.pulumi.azure.arckubernetes.ClusterExtensionArgs.Builder =
       val argsBuilder = com.pulumi.azure.arckubernetes.inputs.ClusterExtensionIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -27,7 +27,7 @@ object arckubernetes_ext:
      * @param blobStorage An `blobStorage` block as defined below.
      * @return builder
      */
-    def blobStorage(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.FluxConfigurationBlobStorageArgs.Builder]):
+    inline def blobStorage(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.FluxConfigurationBlobStorageArgs.Builder]):
         com.pulumi.azure.arckubernetes.FluxConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.azure.arckubernetes.inputs.FluxConfigurationBlobStorageArgs.builder
       builder.blobStorage(args(argsBuilder).build)
@@ -36,7 +36,7 @@ object arckubernetes_ext:
      * @param bucket A `bucket` block as defined below.
      * @return builder
      */
-    def bucket(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.FluxConfigurationBucketArgs.Builder]):
+    inline def bucket(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.FluxConfigurationBucketArgs.Builder]):
         com.pulumi.azure.arckubernetes.FluxConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.azure.arckubernetes.inputs.FluxConfigurationBucketArgs.builder
       builder.bucket(args(argsBuilder).build)
@@ -45,7 +45,7 @@ object arckubernetes_ext:
      * @param gitRepository A `gitRepository` block as defined below.
      * @return builder
      */
-    def gitRepository(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.FluxConfigurationGitRepositoryArgs.Builder]):
+    inline def gitRepository(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.FluxConfigurationGitRepositoryArgs.Builder]):
         com.pulumi.azure.arckubernetes.FluxConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.azure.arckubernetes.inputs.FluxConfigurationGitRepositoryArgs.builder
       builder.gitRepository(args(argsBuilder).build)
@@ -54,7 +54,7 @@ object arckubernetes_ext:
      * @param kustomizations A `kustomizations` block as defined below.
      * @return builder
      */
-    def kustomizations(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.FluxConfigurationKustomizationArgs.Builder]*):
+    inline def kustomizations(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.FluxConfigurationKustomizationArgs.Builder]*):
         com.pulumi.azure.arckubernetes.FluxConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.azure.arckubernetes.inputs.FluxConfigurationKustomizationArgs.builder
       builder.kustomizations(args.map(_(argsBuilder).build)*)
@@ -64,7 +64,7 @@ object arckubernetes_ext:
      * @param azureActiveDirectory An `azureActiveDirectory` block as defined below.
      * @return builder
      */
-    def azureActiveDirectory(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.ProvisionedClusterAzureActiveDirectoryArgs.Builder]):
+    inline def azureActiveDirectory(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.ProvisionedClusterAzureActiveDirectoryArgs.Builder]):
         com.pulumi.azure.arckubernetes.ProvisionedClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.arckubernetes.inputs.ProvisionedClusterAzureActiveDirectoryArgs.builder
       builder.azureActiveDirectory(args(argsBuilder).build)
@@ -73,7 +73,7 @@ object arckubernetes_ext:
      * @param identity An `identity` block as defined below. Changing this forces a new Arc Kubernetes Provisioned Cluster to be created.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.ProvisionedClusterIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.ProvisionedClusterIdentityArgs.Builder]):
         com.pulumi.azure.arckubernetes.ProvisionedClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.arckubernetes.inputs.ProvisionedClusterIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -83,7 +83,7 @@ object arckubernetes_ext:
      * @param identity An `identity` block as defined below. Changing this forces a new Arc Kubernetes Cluster Extension to be created.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.ClusterExtensionIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.ClusterExtensionIdentityArgs.Builder]):
         com.pulumi.azure.arckubernetes.inputs.ClusterExtensionState.Builder =
       val argsBuilder = com.pulumi.azure.arckubernetes.inputs.ClusterExtensionIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -93,7 +93,7 @@ object arckubernetes_ext:
      * @param identity An `identity` block as defined below. Changing this forces a new Arc Kubernetes Cluster to be created.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.ClusterIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.ClusterIdentityArgs.Builder]):
         com.pulumi.azure.arckubernetes.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.azure.arckubernetes.inputs.ClusterIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -103,7 +103,7 @@ object arckubernetes_ext:
      * @param servicePrincipal A `servicePrincipal` block as defined below.
      * @return builder
      */
-    def servicePrincipal(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.FluxConfigurationBlobStorageServicePrincipalArgs.Builder]):
+    inline def servicePrincipal(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.FluxConfigurationBlobStorageServicePrincipalArgs.Builder]):
         com.pulumi.azure.arckubernetes.inputs.FluxConfigurationBlobStorageArgs.Builder =
       val argsBuilder = com.pulumi.azure.arckubernetes.inputs.FluxConfigurationBlobStorageServicePrincipalArgs.builder
       builder.servicePrincipal(args(argsBuilder).build)
@@ -113,7 +113,7 @@ object arckubernetes_ext:
      * @param blobStorage An `blobStorage` block as defined below.
      * @return builder
      */
-    def blobStorage(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.FluxConfigurationBlobStorageArgs.Builder]):
+    inline def blobStorage(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.FluxConfigurationBlobStorageArgs.Builder]):
         com.pulumi.azure.arckubernetes.inputs.FluxConfigurationState.Builder =
       val argsBuilder = com.pulumi.azure.arckubernetes.inputs.FluxConfigurationBlobStorageArgs.builder
       builder.blobStorage(args(argsBuilder).build)
@@ -122,7 +122,7 @@ object arckubernetes_ext:
      * @param bucket A `bucket` block as defined below.
      * @return builder
      */
-    def bucket(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.FluxConfigurationBucketArgs.Builder]):
+    inline def bucket(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.FluxConfigurationBucketArgs.Builder]):
         com.pulumi.azure.arckubernetes.inputs.FluxConfigurationState.Builder =
       val argsBuilder = com.pulumi.azure.arckubernetes.inputs.FluxConfigurationBucketArgs.builder
       builder.bucket(args(argsBuilder).build)
@@ -131,7 +131,7 @@ object arckubernetes_ext:
      * @param gitRepository A `gitRepository` block as defined below.
      * @return builder
      */
-    def gitRepository(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.FluxConfigurationGitRepositoryArgs.Builder]):
+    inline def gitRepository(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.FluxConfigurationGitRepositoryArgs.Builder]):
         com.pulumi.azure.arckubernetes.inputs.FluxConfigurationState.Builder =
       val argsBuilder = com.pulumi.azure.arckubernetes.inputs.FluxConfigurationGitRepositoryArgs.builder
       builder.gitRepository(args(argsBuilder).build)
@@ -140,7 +140,7 @@ object arckubernetes_ext:
      * @param kustomizations A `kustomizations` block as defined below.
      * @return builder
      */
-    def kustomizations(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.FluxConfigurationKustomizationArgs.Builder]*):
+    inline def kustomizations(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.FluxConfigurationKustomizationArgs.Builder]*):
         com.pulumi.azure.arckubernetes.inputs.FluxConfigurationState.Builder =
       def argsBuilder = com.pulumi.azure.arckubernetes.inputs.FluxConfigurationKustomizationArgs.builder
       builder.kustomizations(args.map(_(argsBuilder).build)*)
@@ -150,7 +150,7 @@ object arckubernetes_ext:
      * @param azureActiveDirectory An `azureActiveDirectory` block as defined below.
      * @return builder
      */
-    def azureActiveDirectory(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.ProvisionedClusterAzureActiveDirectoryArgs.Builder]):
+    inline def azureActiveDirectory(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.ProvisionedClusterAzureActiveDirectoryArgs.Builder]):
         com.pulumi.azure.arckubernetes.inputs.ProvisionedClusterState.Builder =
       val argsBuilder = com.pulumi.azure.arckubernetes.inputs.ProvisionedClusterAzureActiveDirectoryArgs.builder
       builder.azureActiveDirectory(args(argsBuilder).build)
@@ -159,7 +159,7 @@ object arckubernetes_ext:
      * @param identity An `identity` block as defined below. Changing this forces a new Arc Kubernetes Provisioned Cluster to be created.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.ProvisionedClusterIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.arckubernetes.inputs.ProvisionedClusterIdentityArgs.Builder]):
         com.pulumi.azure.arckubernetes.inputs.ProvisionedClusterState.Builder =
       val argsBuilder = com.pulumi.azure.arckubernetes.inputs.ProvisionedClusterIdentityArgs.builder
       builder.identity(args(argsBuilder).build)

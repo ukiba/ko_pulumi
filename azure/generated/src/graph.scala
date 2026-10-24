@@ -24,7 +24,7 @@ object graph:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Microsoft Graph Services Account. */
-  def ServicesAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServicesAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.graph.ServicesAccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.graph.ServicesAccountArgs.builder
     conf.logicalName2physicalName(name) match

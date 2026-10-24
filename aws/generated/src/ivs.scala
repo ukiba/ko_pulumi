@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object ivs:
   /** Resource for managing an AWS IVS (Interactive Video) Channel. */
-  def Channel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Channel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ivs.ChannelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ivs.ChannelArgs.builder
     conf.logicalName2physicalName(name) match
@@ -42,7 +42,7 @@ object ivs:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Resource for managing an AWS IVS (Interactive Video) Playback Key Pair. */
-  def PlaybackKeyPair(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PlaybackKeyPair(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ivs.PlaybackKeyPairArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ivs.PlaybackKeyPairArgs.builder
     conf.logicalName2physicalName(name) match
@@ -60,7 +60,7 @@ object ivs:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS IVS (Interactive Video) Recording Configuration. */
-  def RecordingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RecordingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ivs.RecordingConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ivs.RecordingConfigurationArgs.builder
     conf.logicalName2physicalName(name) match

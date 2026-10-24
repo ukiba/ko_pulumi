@@ -7,7 +7,7 @@ object codegurureviewer_ext:
      * @param kmsKeyDetails An object describing the KMS key to associate. Block is documented below.
      * @return builder
      */
-    def kmsKeyDetails(args: Endofunction[com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationKmsKeyDetailsArgs.Builder]):
+    inline def kmsKeyDetails(args: Endofunction[com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationKmsKeyDetailsArgs.Builder]):
         com.pulumi.aws.codegurureviewer.RepositoryAssociationArgs.Builder =
       val argsBuilder = com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationKmsKeyDetailsArgs.builder
       builder.kmsKeyDetails(args(argsBuilder).build)
@@ -18,34 +18,34 @@ object codegurureviewer_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def repository(args: Endofunction[com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationRepositoryArgs.Builder]):
+    inline def repository(args: Endofunction[com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationRepositoryArgs.Builder]):
         com.pulumi.aws.codegurureviewer.RepositoryAssociationArgs.Builder =
       val argsBuilder = com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationRepositoryArgs.builder
       builder.repository(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationRepositoryArgs.Builder)
-    def bitbucket(args: Endofunction[com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationRepositoryBitbucketArgs.Builder]):
+    inline def bitbucket(args: Endofunction[com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationRepositoryBitbucketArgs.Builder]):
         com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationRepositoryArgs.Builder =
       val argsBuilder = com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationRepositoryBitbucketArgs.builder
       builder.bitbucket(args(argsBuilder).build)
 
-    def codecommit(args: Endofunction[com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationRepositoryCodecommitArgs.Builder]):
+    inline def codecommit(args: Endofunction[com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationRepositoryCodecommitArgs.Builder]):
         com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationRepositoryArgs.Builder =
       val argsBuilder = com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationRepositoryCodecommitArgs.builder
       builder.codecommit(args(argsBuilder).build)
 
-    def githubEnterpriseServer(args: Endofunction[com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationRepositoryGithubEnterpriseServerArgs.Builder]):
+    inline def githubEnterpriseServer(args: Endofunction[com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationRepositoryGithubEnterpriseServerArgs.Builder]):
         com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationRepositoryArgs.Builder =
       val argsBuilder = com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationRepositoryGithubEnterpriseServerArgs.builder
       builder.githubEnterpriseServer(args(argsBuilder).build)
 
-    def s3Bucket(args: Endofunction[com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationRepositoryS3BucketArgs.Builder]):
+    inline def s3Bucket(args: Endofunction[com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationRepositoryS3BucketArgs.Builder]):
         com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationRepositoryArgs.Builder =
       val argsBuilder = com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationRepositoryS3BucketArgs.builder
       builder.s3Bucket(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationS3RepositoryDetailArgs.Builder)
-    def codeArtifacts(args: Endofunction[com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationS3RepositoryDetailCodeArtifactArgs.Builder]*):
+    inline def codeArtifacts(args: Endofunction[com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationS3RepositoryDetailCodeArtifactArgs.Builder]*):
         com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationS3RepositoryDetailArgs.Builder =
       def argsBuilder = com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationS3RepositoryDetailCodeArtifactArgs.builder
       builder.codeArtifacts(args.map(_(argsBuilder).build)*)
@@ -55,7 +55,7 @@ object codegurureviewer_ext:
      * @param kmsKeyDetails An object describing the KMS key to associate. Block is documented below.
      * @return builder
      */
-    def kmsKeyDetails(args: Endofunction[com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationKmsKeyDetailsArgs.Builder]):
+    inline def kmsKeyDetails(args: Endofunction[com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationKmsKeyDetailsArgs.Builder]):
         com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationState.Builder =
       val argsBuilder = com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationKmsKeyDetailsArgs.builder
       builder.kmsKeyDetails(args(argsBuilder).build)
@@ -66,12 +66,12 @@ object codegurureviewer_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def repository(args: Endofunction[com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationRepositoryArgs.Builder]):
+    inline def repository(args: Endofunction[com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationRepositoryArgs.Builder]):
         com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationState.Builder =
       val argsBuilder = com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationRepositoryArgs.builder
       builder.repository(args(argsBuilder).build)
 
-    def s3RepositoryDetails(args: Endofunction[com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationS3RepositoryDetailArgs.Builder]*):
+    inline def s3RepositoryDetails(args: Endofunction[com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationS3RepositoryDetailArgs.Builder]*):
         com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationState.Builder =
       def argsBuilder = com.pulumi.aws.codegurureviewer.inputs.RepositoryAssociationS3RepositoryDetailArgs.builder
       builder.s3RepositoryDetails(args.map(_(argsBuilder).build)*)

@@ -18,7 +18,7 @@ object osconfig:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/compute/docs/os-config-management)
    */
-  def GuestPolicies(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GuestPolicies(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.osconfig.GuestPoliciesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.osconfig.GuestPoliciesArgs.builder
     com.pulumi.gcp.osconfig.GuestPolicies(name,
@@ -40,7 +40,7 @@ object osconfig:
    * *   How-to Guides
    *     *   [Official Documentation](https://cloud.google.com/compute/docs/os-configuration-management/create-os-policy-assignment)
    */
-  def OsPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OsPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.osconfig.OsPolicyAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.osconfig.OsPolicyAssignmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -60,7 +60,7 @@ object osconfig:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/compute/docs/os-patch-management)
    */
-  def PatchDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PatchDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.osconfig.PatchDeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.osconfig.PatchDeploymentArgs.builder
     com.pulumi.gcp.osconfig.PatchDeployment(name,
@@ -72,7 +72,7 @@ object osconfig:
    * OS Policy Assignments), by providing tools to create, update and delete them
    * across projects and locations, at scale.
    */
-  def V2PolicyOrchestrator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2PolicyOrchestrator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.osconfig.V2PolicyOrchestratorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.osconfig.V2PolicyOrchestratorArgs.builder
     com.pulumi.gcp.osconfig.V2PolicyOrchestrator(name,
@@ -84,7 +84,7 @@ object osconfig:
    * OS Policy Assignments), by providing tools to create, update and delete them
    * across projects and locations, at scale.
    */
-  def V2PolicyOrchestratorForFolder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2PolicyOrchestratorForFolder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.osconfig.V2PolicyOrchestratorForFolderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.osconfig.V2PolicyOrchestratorForFolderArgs.builder
     com.pulumi.gcp.osconfig.V2PolicyOrchestratorForFolder(name,
@@ -96,7 +96,7 @@ object osconfig:
    * OS Policy Assignments), by providing tools to create, update and delete them
    * across projects and locations, at scale.
    */
-  def V2PolicyOrchestratorForOrganization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2PolicyOrchestratorForOrganization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.osconfig.V2PolicyOrchestratorForOrganizationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.osconfig.V2PolicyOrchestratorForOrganizationArgs.builder
     com.pulumi.gcp.osconfig.V2PolicyOrchestratorForOrganization(name,

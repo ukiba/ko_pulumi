@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object medialive:
   /** Resource for managing an AWS MediaLive Channel. */
-  def Channel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Channel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.medialive.ChannelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.medialive.ChannelArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25,7 +25,7 @@ object medialive:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS MediaLive Input. */
-  def Input(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Input(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.medialive.InputArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.medialive.InputArgs.builder
     conf.logicalName2physicalName(name) match
@@ -43,7 +43,7 @@ object medialive:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS MediaLive Input Security Group. */
-  def InputSecurityGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InputSecurityGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.medialive.InputSecurityGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.medialive.InputSecurityGroupArgs.builder
     argsBuilder = args(argsBuilder)
@@ -75,7 +75,7 @@ object medialive:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Resource for managing an AWS MediaLive Multiplex. */
-  def Multiplex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Multiplex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.medialive.MultiplexArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.medialive.MultiplexArgs.builder
     conf.logicalName2physicalName(name) match
@@ -93,7 +93,7 @@ object medialive:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS MediaLive MultiplexProgram. */
-  def MultiplexProgram(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MultiplexProgram(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.medialive.MultiplexProgramArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.medialive.MultiplexProgramArgs.builder
     com.pulumi.aws.medialive.MultiplexProgram(name,

@@ -7,12 +7,12 @@ object route53domains_ext:
      * @param signingAttributes The information about a key, including the algorithm, public key-value, and flags.
      * @return builder
      */
-    def signingAttributes(args: Endofunction[com.pulumi.aws.route53domains.inputs.DelegationSignerRecordSigningAttributesArgs.Builder]):
+    inline def signingAttributes(args: Endofunction[com.pulumi.aws.route53domains.inputs.DelegationSignerRecordSigningAttributesArgs.Builder]):
         com.pulumi.aws.route53domains.DelegationSignerRecordArgs.Builder =
       val argsBuilder = com.pulumi.aws.route53domains.inputs.DelegationSignerRecordSigningAttributesArgs.builder
       builder.signingAttributes(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.route53domains.inputs.DelegationSignerRecordTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.route53domains.inputs.DelegationSignerRecordTimeoutsArgs.Builder]):
         com.pulumi.aws.route53domains.DelegationSignerRecordArgs.Builder =
       val argsBuilder = com.pulumi.aws.route53domains.inputs.DelegationSignerRecordTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -22,7 +22,7 @@ object route53domains_ext:
      * @param adminContact Details about the domain administrative contact. See Contact Blocks for more details.
      * @return builder
      */
-    def adminContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainAdminContactArgs.Builder]):
+    inline def adminContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainAdminContactArgs.Builder]):
         com.pulumi.aws.route53domains.DomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.route53domains.inputs.DomainAdminContactArgs.builder
       builder.adminContact(args(argsBuilder).build)
@@ -31,7 +31,7 @@ object route53domains_ext:
      * @param billingContacts Details about the domain billing contact. See Contact Blocks for more details.
      * @return builder
      */
-    def billingContacts(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainBillingContactArgs.Builder]*):
+    inline def billingContacts(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainBillingContactArgs.Builder]*):
         com.pulumi.aws.route53domains.DomainArgs.Builder =
       def argsBuilder = com.pulumi.aws.route53domains.inputs.DomainBillingContactArgs.builder
       builder.billingContacts(args.map(_(argsBuilder).build)*)
@@ -40,7 +40,7 @@ object route53domains_ext:
      * @param nameServers The list of nameservers for the domain. See `nameServer` Blocks for more details.
      * @return builder
      */
-    def nameServers(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainNameServerArgs.Builder]*):
+    inline def nameServers(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainNameServerArgs.Builder]*):
         com.pulumi.aws.route53domains.DomainArgs.Builder =
       def argsBuilder = com.pulumi.aws.route53domains.inputs.DomainNameServerArgs.builder
       builder.nameServers(args.map(_(argsBuilder).build)*)
@@ -49,7 +49,7 @@ object route53domains_ext:
      * @param registrantContact Details about the domain registrant. See Contact Blocks for more details.
      * @return builder
      */
-    def registrantContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainRegistrantContactArgs.Builder]):
+    inline def registrantContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainRegistrantContactArgs.Builder]):
         com.pulumi.aws.route53domains.DomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.route53domains.inputs.DomainRegistrantContactArgs.builder
       builder.registrantContact(args(argsBuilder).build)
@@ -58,12 +58,12 @@ object route53domains_ext:
      * @param techContact Details about the domain technical contact. See Contact Blocks for more details.
      * @return builder
      */
-    def techContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainTechContactArgs.Builder]):
+    inline def techContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainTechContactArgs.Builder]):
         com.pulumi.aws.route53domains.DomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.route53domains.inputs.DomainTechContactArgs.builder
       builder.techContact(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainTimeoutsArgs.Builder]):
         com.pulumi.aws.route53domains.DomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.route53domains.inputs.DomainTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -73,7 +73,7 @@ object route53domains_ext:
      * @param adminContact Details about the domain administrative contact. See Contact Blocks for more details.
      * @return builder
      */
-    def adminContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.RegisteredDomainAdminContactArgs.Builder]):
+    inline def adminContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.RegisteredDomainAdminContactArgs.Builder]):
         com.pulumi.aws.route53domains.RegisteredDomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.route53domains.inputs.RegisteredDomainAdminContactArgs.builder
       builder.adminContact(args(argsBuilder).build)
@@ -82,7 +82,7 @@ object route53domains_ext:
      * @param billingContact Details about the domain billing contact. See Contact Blocks for more details.
      * @return builder
      */
-    def billingContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.RegisteredDomainBillingContactArgs.Builder]):
+    inline def billingContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.RegisteredDomainBillingContactArgs.Builder]):
         com.pulumi.aws.route53domains.RegisteredDomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.route53domains.inputs.RegisteredDomainBillingContactArgs.builder
       builder.billingContact(args(argsBuilder).build)
@@ -91,7 +91,7 @@ object route53domains_ext:
      * @param nameServers The list of nameservers for the domain. See `nameServer` Blocks for more details.
      * @return builder
      */
-    def nameServers(args: Endofunction[com.pulumi.aws.route53domains.inputs.RegisteredDomainNameServerArgs.Builder]*):
+    inline def nameServers(args: Endofunction[com.pulumi.aws.route53domains.inputs.RegisteredDomainNameServerArgs.Builder]*):
         com.pulumi.aws.route53domains.RegisteredDomainArgs.Builder =
       def argsBuilder = com.pulumi.aws.route53domains.inputs.RegisteredDomainNameServerArgs.builder
       builder.nameServers(args.map(_(argsBuilder).build)*)
@@ -100,7 +100,7 @@ object route53domains_ext:
      * @param registrantContact Details about the domain registrant. See Contact Blocks for more details.
      * @return builder
      */
-    def registrantContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.RegisteredDomainRegistrantContactArgs.Builder]):
+    inline def registrantContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.RegisteredDomainRegistrantContactArgs.Builder]):
         com.pulumi.aws.route53domains.RegisteredDomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.route53domains.inputs.RegisteredDomainRegistrantContactArgs.builder
       builder.registrantContact(args(argsBuilder).build)
@@ -109,7 +109,7 @@ object route53domains_ext:
      * @param techContact Details about the domain technical contact. See Contact Blocks for more details.
      * @return builder
      */
-    def techContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.RegisteredDomainTechContactArgs.Builder]):
+    inline def techContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.RegisteredDomainTechContactArgs.Builder]):
         com.pulumi.aws.route53domains.RegisteredDomainArgs.Builder =
       val argsBuilder = com.pulumi.aws.route53domains.inputs.RegisteredDomainTechContactArgs.builder
       builder.techContact(args(argsBuilder).build)
@@ -119,12 +119,12 @@ object route53domains_ext:
      * @param signingAttributes The information about a key, including the algorithm, public key-value, and flags.
      * @return builder
      */
-    def signingAttributes(args: Endofunction[com.pulumi.aws.route53domains.inputs.DelegationSignerRecordSigningAttributesArgs.Builder]):
+    inline def signingAttributes(args: Endofunction[com.pulumi.aws.route53domains.inputs.DelegationSignerRecordSigningAttributesArgs.Builder]):
         com.pulumi.aws.route53domains.inputs.DelegationSignerRecordState.Builder =
       val argsBuilder = com.pulumi.aws.route53domains.inputs.DelegationSignerRecordSigningAttributesArgs.builder
       builder.signingAttributes(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.route53domains.inputs.DelegationSignerRecordTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.route53domains.inputs.DelegationSignerRecordTimeoutsArgs.Builder]):
         com.pulumi.aws.route53domains.inputs.DelegationSignerRecordState.Builder =
       val argsBuilder = com.pulumi.aws.route53domains.inputs.DelegationSignerRecordTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -134,7 +134,7 @@ object route53domains_ext:
      * @param extraParams A list of name-value pairs for parameters required by certain top-level domains.
      * @return builder
      */
-    def extraParams(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainAdminContactExtraParamArgs.Builder]*):
+    inline def extraParams(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainAdminContactExtraParamArgs.Builder]*):
         com.pulumi.aws.route53domains.inputs.DomainAdminContactArgs.Builder =
       def argsBuilder = com.pulumi.aws.route53domains.inputs.DomainAdminContactExtraParamArgs.builder
       builder.extraParams(args.map(_(argsBuilder).build)*)
@@ -144,7 +144,7 @@ object route53domains_ext:
      * @param extraParams A list of name-value pairs for parameters required by certain top-level domains.
      * @return builder
      */
-    def extraParams(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainBillingContactExtraParamArgs.Builder]*):
+    inline def extraParams(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainBillingContactExtraParamArgs.Builder]*):
         com.pulumi.aws.route53domains.inputs.DomainBillingContactArgs.Builder =
       def argsBuilder = com.pulumi.aws.route53domains.inputs.DomainBillingContactExtraParamArgs.builder
       builder.extraParams(args.map(_(argsBuilder).build)*)
@@ -154,7 +154,7 @@ object route53domains_ext:
      * @param extraParams A list of name-value pairs for parameters required by certain top-level domains.
      * @return builder
      */
-    def extraParams(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainRegistrantContactExtraParamArgs.Builder]*):
+    inline def extraParams(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainRegistrantContactExtraParamArgs.Builder]*):
         com.pulumi.aws.route53domains.inputs.DomainRegistrantContactArgs.Builder =
       def argsBuilder = com.pulumi.aws.route53domains.inputs.DomainRegistrantContactExtraParamArgs.builder
       builder.extraParams(args.map(_(argsBuilder).build)*)
@@ -164,7 +164,7 @@ object route53domains_ext:
      * @param adminContact Details about the domain administrative contact. See Contact Blocks for more details.
      * @return builder
      */
-    def adminContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainAdminContactArgs.Builder]):
+    inline def adminContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainAdminContactArgs.Builder]):
         com.pulumi.aws.route53domains.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.route53domains.inputs.DomainAdminContactArgs.builder
       builder.adminContact(args(argsBuilder).build)
@@ -173,7 +173,7 @@ object route53domains_ext:
      * @param billingContacts Details about the domain billing contact. See Contact Blocks for more details.
      * @return builder
      */
-    def billingContacts(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainBillingContactArgs.Builder]*):
+    inline def billingContacts(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainBillingContactArgs.Builder]*):
         com.pulumi.aws.route53domains.inputs.DomainState.Builder =
       def argsBuilder = com.pulumi.aws.route53domains.inputs.DomainBillingContactArgs.builder
       builder.billingContacts(args.map(_(argsBuilder).build)*)
@@ -182,7 +182,7 @@ object route53domains_ext:
      * @param nameServers The list of nameservers for the domain. See `nameServer` Blocks for more details.
      * @return builder
      */
-    def nameServers(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainNameServerArgs.Builder]*):
+    inline def nameServers(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainNameServerArgs.Builder]*):
         com.pulumi.aws.route53domains.inputs.DomainState.Builder =
       def argsBuilder = com.pulumi.aws.route53domains.inputs.DomainNameServerArgs.builder
       builder.nameServers(args.map(_(argsBuilder).build)*)
@@ -191,7 +191,7 @@ object route53domains_ext:
      * @param registrantContact Details about the domain registrant. See Contact Blocks for more details.
      * @return builder
      */
-    def registrantContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainRegistrantContactArgs.Builder]):
+    inline def registrantContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainRegistrantContactArgs.Builder]):
         com.pulumi.aws.route53domains.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.route53domains.inputs.DomainRegistrantContactArgs.builder
       builder.registrantContact(args(argsBuilder).build)
@@ -200,12 +200,12 @@ object route53domains_ext:
      * @param techContact Details about the domain technical contact. See Contact Blocks for more details.
      * @return builder
      */
-    def techContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainTechContactArgs.Builder]):
+    inline def techContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainTechContactArgs.Builder]):
         com.pulumi.aws.route53domains.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.route53domains.inputs.DomainTechContactArgs.builder
       builder.techContact(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainTimeoutsArgs.Builder]):
         com.pulumi.aws.route53domains.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.aws.route53domains.inputs.DomainTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -215,7 +215,7 @@ object route53domains_ext:
      * @param extraParams A list of name-value pairs for parameters required by certain top-level domains.
      * @return builder
      */
-    def extraParams(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainTechContactExtraParamArgs.Builder]*):
+    inline def extraParams(args: Endofunction[com.pulumi.aws.route53domains.inputs.DomainTechContactExtraParamArgs.Builder]*):
         com.pulumi.aws.route53domains.inputs.DomainTechContactArgs.Builder =
       def argsBuilder = com.pulumi.aws.route53domains.inputs.DomainTechContactExtraParamArgs.builder
       builder.extraParams(args.map(_(argsBuilder).build)*)
@@ -225,7 +225,7 @@ object route53domains_ext:
      * @param adminContact Details about the domain administrative contact. See Contact Blocks for more details.
      * @return builder
      */
-    def adminContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.RegisteredDomainAdminContactArgs.Builder]):
+    inline def adminContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.RegisteredDomainAdminContactArgs.Builder]):
         com.pulumi.aws.route53domains.inputs.RegisteredDomainState.Builder =
       val argsBuilder = com.pulumi.aws.route53domains.inputs.RegisteredDomainAdminContactArgs.builder
       builder.adminContact(args(argsBuilder).build)
@@ -234,7 +234,7 @@ object route53domains_ext:
      * @param billingContact Details about the domain billing contact. See Contact Blocks for more details.
      * @return builder
      */
-    def billingContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.RegisteredDomainBillingContactArgs.Builder]):
+    inline def billingContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.RegisteredDomainBillingContactArgs.Builder]):
         com.pulumi.aws.route53domains.inputs.RegisteredDomainState.Builder =
       val argsBuilder = com.pulumi.aws.route53domains.inputs.RegisteredDomainBillingContactArgs.builder
       builder.billingContact(args(argsBuilder).build)
@@ -243,7 +243,7 @@ object route53domains_ext:
      * @param nameServers The list of nameservers for the domain. See `nameServer` Blocks for more details.
      * @return builder
      */
-    def nameServers(args: Endofunction[com.pulumi.aws.route53domains.inputs.RegisteredDomainNameServerArgs.Builder]*):
+    inline def nameServers(args: Endofunction[com.pulumi.aws.route53domains.inputs.RegisteredDomainNameServerArgs.Builder]*):
         com.pulumi.aws.route53domains.inputs.RegisteredDomainState.Builder =
       def argsBuilder = com.pulumi.aws.route53domains.inputs.RegisteredDomainNameServerArgs.builder
       builder.nameServers(args.map(_(argsBuilder).build)*)
@@ -252,7 +252,7 @@ object route53domains_ext:
      * @param registrantContact Details about the domain registrant. See Contact Blocks for more details.
      * @return builder
      */
-    def registrantContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.RegisteredDomainRegistrantContactArgs.Builder]):
+    inline def registrantContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.RegisteredDomainRegistrantContactArgs.Builder]):
         com.pulumi.aws.route53domains.inputs.RegisteredDomainState.Builder =
       val argsBuilder = com.pulumi.aws.route53domains.inputs.RegisteredDomainRegistrantContactArgs.builder
       builder.registrantContact(args(argsBuilder).build)
@@ -261,7 +261,7 @@ object route53domains_ext:
      * @param techContact Details about the domain technical contact. See Contact Blocks for more details.
      * @return builder
      */
-    def techContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.RegisteredDomainTechContactArgs.Builder]):
+    inline def techContact(args: Endofunction[com.pulumi.aws.route53domains.inputs.RegisteredDomainTechContactArgs.Builder]):
         com.pulumi.aws.route53domains.inputs.RegisteredDomainState.Builder =
       val argsBuilder = com.pulumi.aws.route53domains.inputs.RegisteredDomainTechContactArgs.builder
       builder.techContact(args(argsBuilder).build)

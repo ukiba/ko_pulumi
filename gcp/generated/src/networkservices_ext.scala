@@ -8,7 +8,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def egressNetworkConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateEgressNetworkConfigArgs.Builder]):
+    inline def egressNetworkConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateEgressNetworkConfigArgs.Builder]):
         com.pulumi.gcp.networkservices.AgentConnectivityTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateEgressNetworkConfigArgs.builder
       builder.egressNetworkConfig(args(argsBuilder).build)
@@ -20,7 +20,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleManaged(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentGatewayGoogleManagedArgs.Builder]):
+    inline def googleManaged(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentGatewayGoogleManagedArgs.Builder]):
         com.pulumi.gcp.networkservices.AgentGatewayArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.AgentGatewayGoogleManagedArgs.builder
       builder.googleManaged(args(argsBuilder).build)
@@ -30,7 +30,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentGatewayNetworkConfigArgs.Builder]):
+    inline def networkConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentGatewayNetworkConfigArgs.Builder]):
         com.pulumi.gcp.networkservices.AgentGatewayArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.AgentGatewayNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)
@@ -41,7 +41,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def selfManaged(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentGatewaySelfManagedArgs.Builder]):
+    inline def selfManaged(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentGatewaySelfManagedArgs.Builder]):
         com.pulumi.gcp.networkservices.AgentGatewayArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.AgentGatewaySelfManagedArgs.builder
       builder.selfManaged(args(argsBuilder).build)
@@ -57,7 +57,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def publicKeys(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheKeysetPublicKeyArgs.Builder]*):
+    inline def publicKeys(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheKeysetPublicKeyArgs.Builder]*):
         com.pulumi.gcp.networkservices.EdgeCacheKeysetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheKeysetPublicKeyArgs.builder
       builder.publicKeys(args.map(_(argsBuilder).build)*)
@@ -70,7 +70,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def validationSharedKeys(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheKeysetValidationSharedKeyArgs.Builder]*):
+    inline def validationSharedKeys(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheKeysetValidationSharedKeyArgs.Builder]*):
         com.pulumi.gcp.networkservices.EdgeCacheKeysetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheKeysetValidationSharedKeyArgs.builder
       builder.validationSharedKeys(args.map(_(argsBuilder).build)*)
@@ -81,7 +81,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def awsV4Authentication(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginAwsV4AuthenticationArgs.Builder]):
+    inline def awsV4Authentication(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginAwsV4AuthenticationArgs.Builder]):
         com.pulumi.gcp.networkservices.EdgeCacheOriginArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginAwsV4AuthenticationArgs.builder
       builder.awsV4Authentication(args(argsBuilder).build)
@@ -92,7 +92,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def flexShielding(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginFlexShieldingArgs.Builder]):
+    inline def flexShielding(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginFlexShieldingArgs.Builder]):
         com.pulumi.gcp.networkservices.EdgeCacheOriginArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginFlexShieldingArgs.builder
       builder.flexShielding(args(argsBuilder).build)
@@ -103,7 +103,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def originOverrideAction(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginOriginOverrideActionArgs.Builder]):
+    inline def originOverrideAction(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginOriginOverrideActionArgs.Builder]):
         com.pulumi.gcp.networkservices.EdgeCacheOriginArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginOriginOverrideActionArgs.builder
       builder.originOverrideAction(args(argsBuilder).build)
@@ -113,7 +113,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def originRedirect(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginOriginRedirectArgs.Builder]):
+    inline def originRedirect(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginOriginRedirectArgs.Builder]):
         com.pulumi.gcp.networkservices.EdgeCacheOriginArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginOriginRedirectArgs.builder
       builder.originRedirect(args(argsBuilder).build)
@@ -123,7 +123,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeout(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginTimeoutArgs.Builder]):
+    inline def timeout(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginTimeoutArgs.Builder]):
         com.pulumi.gcp.networkservices.EdgeCacheOriginArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginTimeoutArgs.builder
       builder.timeout(args(argsBuilder).build)
@@ -134,7 +134,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceLogConfigArgs.Builder]):
         com.pulumi.gcp.networkservices.EdgeCacheServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -144,7 +144,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def routing(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingArgs.Builder]):
+    inline def routing(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingArgs.Builder]):
         com.pulumi.gcp.networkservices.EdgeCacheServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingArgs.builder
       builder.routing(args(argsBuilder).build)
@@ -155,7 +155,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endpointMatcher(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EndpointPolicyEndpointMatcherArgs.Builder]):
+    inline def endpointMatcher(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EndpointPolicyEndpointMatcherArgs.Builder]):
         com.pulumi.gcp.networkservices.EndpointPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EndpointPolicyEndpointMatcherArgs.builder
       builder.endpointMatcher(args(argsBuilder).build)
@@ -165,7 +165,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trafficPortSelector(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EndpointPolicyTrafficPortSelectorArgs.Builder]):
+    inline def trafficPortSelector(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EndpointPolicyTrafficPortSelectorArgs.Builder]):
         com.pulumi.gcp.networkservices.EndpointPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EndpointPolicyTrafficPortSelectorArgs.builder
       builder.trafficPortSelector(args(argsBuilder).build)
@@ -176,7 +176,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleArgs.Builder]*):
         com.pulumi.gcp.networkservices.GrpcRouteArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -187,7 +187,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleArgs.Builder]*):
         com.pulumi.gcp.networkservices.HttpRouteArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.HttpRouteRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -201,7 +201,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def extensionChains(args: Endofunction[com.pulumi.gcp.networkservices.inputs.LbEdgeExtensionExtensionChainArgs.Builder]*):
+    inline def extensionChains(args: Endofunction[com.pulumi.gcp.networkservices.inputs.LbEdgeExtensionExtensionChainArgs.Builder]*):
         com.pulumi.gcp.networkservices.LbEdgeExtensionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.LbEdgeExtensionExtensionChainArgs.builder
       builder.extensionChains(args.map(_(argsBuilder).build)*)
@@ -216,7 +216,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def extensionChains(args: Endofunction[com.pulumi.gcp.networkservices.inputs.LbRouteExtensionExtensionChainArgs.Builder]*):
+    inline def extensionChains(args: Endofunction[com.pulumi.gcp.networkservices.inputs.LbRouteExtensionExtensionChainArgs.Builder]*):
         com.pulumi.gcp.networkservices.LbRouteExtensionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.LbRouteExtensionExtensionChainArgs.builder
       builder.extensionChains(args.map(_(argsBuilder).build)*)
@@ -231,7 +231,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def extensionChains(args: Endofunction[com.pulumi.gcp.networkservices.inputs.LbTrafficExtensionExtensionChainArgs.Builder]*):
+    inline def extensionChains(args: Endofunction[com.pulumi.gcp.networkservices.inputs.LbTrafficExtensionExtensionChainArgs.Builder]*):
         com.pulumi.gcp.networkservices.LbTrafficExtensionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.LbTrafficExtensionExtensionChainArgs.builder
       builder.extensionChains(args.map(_(argsBuilder).build)*)
@@ -243,7 +243,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trafficSpec(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastDomainActivationTrafficSpecArgs.Builder]):
+    inline def trafficSpec(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastDomainActivationTrafficSpecArgs.Builder]):
         com.pulumi.gcp.networkservices.MulticastDomainActivationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.MulticastDomainActivationTrafficSpecArgs.builder
       builder.trafficSpec(args(argsBuilder).build)
@@ -254,7 +254,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectionConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastDomainConnectionConfigArgs.Builder]):
+    inline def connectionConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastDomainConnectionConfigArgs.Builder]):
         com.pulumi.gcp.networkservices.MulticastDomainArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.MulticastDomainConnectionConfigArgs.builder
       builder.connectionConfig(args(argsBuilder).build)
@@ -264,7 +264,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ullMulticastDomain(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastDomainUllMulticastDomainArgs.Builder]):
+    inline def ullMulticastDomain(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastDomainUllMulticastDomainArgs.Builder]):
         com.pulumi.gcp.networkservices.MulticastDomainArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.MulticastDomainUllMulticastDomainArgs.builder
       builder.ullMulticastDomain(args(argsBuilder).build)
@@ -275,7 +275,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastGroupConsumerActivationLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastGroupConsumerActivationLogConfigArgs.Builder]):
         com.pulumi.gcp.networkservices.MulticastGroupConsumerActivationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.MulticastGroupConsumerActivationLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -286,7 +286,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastGroupRangeActivationLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastGroupRangeActivationLogConfigArgs.Builder]):
         com.pulumi.gcp.networkservices.MulticastGroupRangeActivationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.MulticastGroupRangeActivationLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -297,7 +297,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastGroupRangeLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastGroupRangeLogConfigArgs.Builder]):
         com.pulumi.gcp.networkservices.MulticastGroupRangeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.MulticastGroupRangeLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -308,7 +308,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoCapacityDrain(args: Endofunction[com.pulumi.gcp.networkservices.inputs.ServiceLbPoliciesAutoCapacityDrainArgs.Builder]):
+    inline def autoCapacityDrain(args: Endofunction[com.pulumi.gcp.networkservices.inputs.ServiceLbPoliciesAutoCapacityDrainArgs.Builder]):
         com.pulumi.gcp.networkservices.ServiceLbPoliciesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.ServiceLbPoliciesAutoCapacityDrainArgs.builder
       builder.autoCapacityDrain(args(argsBuilder).build)
@@ -318,7 +318,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def failoverConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.ServiceLbPoliciesFailoverConfigArgs.Builder]):
+    inline def failoverConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.ServiceLbPoliciesFailoverConfigArgs.Builder]):
         com.pulumi.gcp.networkservices.ServiceLbPoliciesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.ServiceLbPoliciesFailoverConfigArgs.builder
       builder.failoverConfig(args(argsBuilder).build)
@@ -328,7 +328,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def isolationConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.ServiceLbPoliciesIsolationConfigArgs.Builder]):
+    inline def isolationConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.ServiceLbPoliciesIsolationConfigArgs.Builder]):
         com.pulumi.gcp.networkservices.ServiceLbPoliciesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.ServiceLbPoliciesIsolationConfigArgs.builder
       builder.isolationConfig(args(argsBuilder).build)
@@ -340,7 +340,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.networkservices.inputs.TcpRouteRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.networkservices.inputs.TcpRouteRuleArgs.Builder]*):
         com.pulumi.gcp.networkservices.TcpRouteArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.TcpRouteRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -351,7 +351,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.networkservices.inputs.TlsRouteRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.networkservices.inputs.TlsRouteRuleArgs.Builder]*):
         com.pulumi.gcp.networkservices.TlsRouteArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.TlsRouteRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -363,7 +363,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.WasmPluginLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.WasmPluginLogConfigArgs.Builder]):
         com.pulumi.gcp.networkservices.WasmPluginArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.WasmPluginLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -373,7 +373,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def versions(args: Endofunction[com.pulumi.gcp.networkservices.inputs.WasmPluginVersionArgs.Builder]*):
+    inline def versions(args: Endofunction[com.pulumi.gcp.networkservices.inputs.WasmPluginVersionArgs.Builder]*):
         com.pulumi.gcp.networkservices.WasmPluginArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.WasmPluginVersionArgs.builder
       builder.versions(args.map(_(argsBuilder).build)*)
@@ -386,7 +386,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dnsPeeringConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateEgressNetworkConfigDnsPeeringConfigArgs.Builder]):
+    inline def dnsPeeringConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateEgressNetworkConfigDnsPeeringConfigArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateEgressNetworkConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateEgressNetworkConfigDnsPeeringConfigArgs.builder
       builder.dnsPeeringConfig(args(argsBuilder).build)
@@ -396,7 +396,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tlsConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateEgressNetworkConfigTlsConfigArgs.Builder]):
+    inline def tlsConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateEgressNetworkConfigTlsConfigArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateEgressNetworkConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateEgressNetworkConfigTlsConfigArgs.builder
       builder.tlsConfig(args(argsBuilder).build)
@@ -407,7 +407,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def egressNetworkConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateEgressNetworkConfigArgs.Builder]):
+    inline def egressNetworkConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateEgressNetworkConfigArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.AgentConnectivityTemplateEgressNetworkConfigArgs.builder
       builder.egressNetworkConfig(args(argsBuilder).build)
@@ -420,7 +420,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dnsPeeringConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentGatewayNetworkConfigDnsPeeringConfigArgs.Builder]):
+    inline def dnsPeeringConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentGatewayNetworkConfigDnsPeeringConfigArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.AgentGatewayNetworkConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.AgentGatewayNetworkConfigDnsPeeringConfigArgs.builder
       builder.dnsPeeringConfig(args(argsBuilder).build)
@@ -431,7 +431,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def egress(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentGatewayNetworkConfigEgressArgs.Builder]):
+    inline def egress(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentGatewayNetworkConfigEgressArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.AgentGatewayNetworkConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.AgentGatewayNetworkConfigEgressArgs.builder
       builder.egress(args(argsBuilder).build)
@@ -442,7 +442,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def agentGatewayCards(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentGatewayAgentGatewayCardArgs.Builder]*):
+    inline def agentGatewayCards(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentGatewayAgentGatewayCardArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.AgentGatewayState.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.AgentGatewayAgentGatewayCardArgs.builder
       builder.agentGatewayCards(args.map(_(argsBuilder).build)*)
@@ -453,7 +453,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleManaged(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentGatewayGoogleManagedArgs.Builder]):
+    inline def googleManaged(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentGatewayGoogleManagedArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.AgentGatewayState.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.AgentGatewayGoogleManagedArgs.builder
       builder.googleManaged(args(argsBuilder).build)
@@ -463,7 +463,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentGatewayNetworkConfigArgs.Builder]):
+    inline def networkConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentGatewayNetworkConfigArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.AgentGatewayState.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.AgentGatewayNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)
@@ -474,7 +474,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def selfManaged(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentGatewaySelfManagedArgs.Builder]):
+    inline def selfManaged(args: Endofunction[com.pulumi.gcp.networkservices.inputs.AgentGatewaySelfManagedArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.AgentGatewayState.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.AgentGatewaySelfManagedArgs.builder
       builder.selfManaged(args(argsBuilder).build)
@@ -490,7 +490,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def publicKeys(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheKeysetPublicKeyArgs.Builder]*):
+    inline def publicKeys(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheKeysetPublicKeyArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheKeysetState.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheKeysetPublicKeyArgs.builder
       builder.publicKeys(args.map(_(argsBuilder).build)*)
@@ -503,7 +503,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def validationSharedKeys(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheKeysetValidationSharedKeyArgs.Builder]*):
+    inline def validationSharedKeys(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheKeysetValidationSharedKeyArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheKeysetState.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheKeysetValidationSharedKeyArgs.builder
       builder.validationSharedKeys(args.map(_(argsBuilder).build)*)
@@ -515,7 +515,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headerAction(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginOriginOverrideActionHeaderActionArgs.Builder]):
+    inline def headerAction(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginOriginOverrideActionHeaderActionArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginOriginOverrideActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginOriginOverrideActionHeaderActionArgs.builder
       builder.headerAction(args(argsBuilder).build)
@@ -526,7 +526,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def urlRewrite(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginOriginOverrideActionUrlRewriteArgs.Builder]):
+    inline def urlRewrite(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginOriginOverrideActionUrlRewriteArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginOriginOverrideActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginOriginOverrideActionUrlRewriteArgs.builder
       builder.urlRewrite(args(argsBuilder).build)
@@ -538,7 +538,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginOriginOverrideActionHeaderActionRequestHeadersToAddArgs.Builder]*):
+    inline def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginOriginOverrideActionHeaderActionRequestHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginOriginOverrideActionHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginOriginOverrideActionHeaderActionRequestHeadersToAddArgs.builder
       builder.requestHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -549,7 +549,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def awsV4Authentication(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginAwsV4AuthenticationArgs.Builder]):
+    inline def awsV4Authentication(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginAwsV4AuthenticationArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginState.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginAwsV4AuthenticationArgs.builder
       builder.awsV4Authentication(args(argsBuilder).build)
@@ -560,7 +560,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def flexShielding(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginFlexShieldingArgs.Builder]):
+    inline def flexShielding(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginFlexShieldingArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginState.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginFlexShieldingArgs.builder
       builder.flexShielding(args(argsBuilder).build)
@@ -571,7 +571,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def originOverrideAction(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginOriginOverrideActionArgs.Builder]):
+    inline def originOverrideAction(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginOriginOverrideActionArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginState.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginOriginOverrideActionArgs.builder
       builder.originOverrideAction(args(argsBuilder).build)
@@ -581,7 +581,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def originRedirect(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginOriginRedirectArgs.Builder]):
+    inline def originRedirect(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginOriginRedirectArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginState.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginOriginRedirectArgs.builder
       builder.originRedirect(args(argsBuilder).build)
@@ -591,7 +591,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeout(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginTimeoutArgs.Builder]):
+    inline def timeout(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginTimeoutArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginState.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheOriginTimeoutArgs.builder
       builder.timeout(args(argsBuilder).build)
@@ -602,7 +602,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hostRules(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingHostRuleArgs.Builder]*):
+    inline def hostRules(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingHostRuleArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingHostRuleArgs.builder
       builder.hostRules(args.map(_(argsBuilder).build)*)
@@ -612,7 +612,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pathMatchers(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherArgs.Builder]*):
+    inline def pathMatchers(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherArgs.builder
       builder.pathMatchers(args.map(_(argsBuilder).build)*)
@@ -623,7 +623,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def routeRules(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleArgs.Builder]*):
+    inline def routeRules(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleArgs.builder
       builder.routeRules(args.map(_(argsBuilder).build)*)
@@ -634,7 +634,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headerAction(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionArgs.Builder]):
+    inline def headerAction(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionArgs.builder
       builder.headerAction(args(argsBuilder).build)
@@ -645,7 +645,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def matchRules(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleMatchRuleArgs.Builder]*):
+    inline def matchRules(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleMatchRuleArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleMatchRuleArgs.builder
       builder.matchRules(args.map(_(argsBuilder).build)*)
@@ -655,7 +655,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def routeAction(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionArgs.Builder]):
+    inline def routeAction(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionArgs.builder
       builder.routeAction(args(argsBuilder).build)
@@ -666,7 +666,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def routeMethods(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteMethodsArgs.Builder]):
+    inline def routeMethods(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteMethodsArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteMethodsArgs.builder
       builder.routeMethods(args(argsBuilder).build)
@@ -676,7 +676,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def urlRedirect(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleUrlRedirectArgs.Builder]):
+    inline def urlRedirect(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleUrlRedirectArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleUrlRedirectArgs.builder
       builder.urlRedirect(args(argsBuilder).build)
@@ -687,7 +687,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def requestHeaderToAdds(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToAddArgs.Builder]*):
+    inline def requestHeaderToAdds(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToAddArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToAddArgs.builder
       builder.requestHeaderToAdds(args.map(_(argsBuilder).build)*)
@@ -697,7 +697,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def requestHeaderToRemoves(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToRemoveArgs.Builder]*):
+    inline def requestHeaderToRemoves(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToRemoveArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionRequestHeaderToRemoveArgs.builder
       builder.requestHeaderToRemoves(args.map(_(argsBuilder).build)*)
@@ -708,7 +708,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def responseHeaderToAdds(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionResponseHeaderToAddArgs.Builder]*):
+    inline def responseHeaderToAdds(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionResponseHeaderToAddArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionResponseHeaderToAddArgs.builder
       builder.responseHeaderToAdds(args.map(_(argsBuilder).build)*)
@@ -718,7 +718,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def responseHeaderToRemoves(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionResponseHeaderToRemoveArgs.Builder]*):
+    inline def responseHeaderToRemoves(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionResponseHeaderToRemoveArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleHeaderActionResponseHeaderToRemoveArgs.builder
       builder.responseHeaderToRemoves(args.map(_(argsBuilder).build)*)
@@ -729,7 +729,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headerMatches(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleMatchRuleHeaderMatchArgs.Builder]*):
+    inline def headerMatches(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleMatchRuleHeaderMatchArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleMatchRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleMatchRuleHeaderMatchArgs.builder
       builder.headerMatches(args.map(_(argsBuilder).build)*)
@@ -739,7 +739,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def queryParameterMatches(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleMatchRuleQueryParameterMatchArgs.Builder]*):
+    inline def queryParameterMatches(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleMatchRuleQueryParameterMatchArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleMatchRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleMatchRuleQueryParameterMatchArgs.builder
       builder.queryParameterMatches(args.map(_(argsBuilder).build)*)
@@ -750,7 +750,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cdnPolicy(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyArgs.Builder]):
+    inline def cdnPolicy(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyArgs.builder
       builder.cdnPolicy(args(argsBuilder).build)
@@ -760,7 +760,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def corsPolicy(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCorsPolicyArgs.Builder]):
+    inline def corsPolicy(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCorsPolicyArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCorsPolicyArgs.builder
       builder.corsPolicy(args(argsBuilder).build)
@@ -770,7 +770,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def urlRewrite(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionUrlRewriteArgs.Builder]):
+    inline def urlRewrite(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionUrlRewriteArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionUrlRewriteArgs.builder
       builder.urlRewrite(args(argsBuilder).build)
@@ -782,7 +782,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def addSignatures(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyAddSignaturesArgs.Builder]):
+    inline def addSignatures(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyAddSignaturesArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyAddSignaturesArgs.builder
       builder.addSignatures(args(argsBuilder).build)
@@ -792,7 +792,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cacheKeyPolicy(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyCacheKeyPolicyArgs.Builder]):
+    inline def cacheKeyPolicy(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyCacheKeyPolicyArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyCacheKeyPolicyArgs.builder
       builder.cacheKeyPolicy(args(argsBuilder).build)
@@ -803,7 +803,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def signedTokenOptions(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicySignedTokenOptionsArgs.Builder]):
+    inline def signedTokenOptions(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicySignedTokenOptionsArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingPathMatcherRouteRuleRouteActionCdnPolicySignedTokenOptionsArgs.builder
       builder.signedTokenOptions(args(argsBuilder).build)
@@ -814,7 +814,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceLogConfigArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -824,7 +824,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def routing(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingArgs.Builder]):
+    inline def routing(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EdgeCacheServiceRoutingArgs.builder
       builder.routing(args(argsBuilder).build)
@@ -835,7 +835,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metadataLabelMatcher(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EndpointPolicyEndpointMatcherMetadataLabelMatcherArgs.Builder]):
+    inline def metadataLabelMatcher(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EndpointPolicyEndpointMatcherMetadataLabelMatcherArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.EndpointPolicyEndpointMatcherArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EndpointPolicyEndpointMatcherMetadataLabelMatcherArgs.builder
       builder.metadataLabelMatcher(args(argsBuilder).build)
@@ -846,7 +846,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metadataLabels(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EndpointPolicyEndpointMatcherMetadataLabelMatcherMetadataLabelArgs.Builder]*):
+    inline def metadataLabels(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EndpointPolicyEndpointMatcherMetadataLabelMatcherMetadataLabelArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.EndpointPolicyEndpointMatcherMetadataLabelMatcherArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.EndpointPolicyEndpointMatcherMetadataLabelMatcherMetadataLabelArgs.builder
       builder.metadataLabels(args.map(_(argsBuilder).build)*)
@@ -857,7 +857,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endpointMatcher(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EndpointPolicyEndpointMatcherArgs.Builder]):
+    inline def endpointMatcher(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EndpointPolicyEndpointMatcherArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.EndpointPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EndpointPolicyEndpointMatcherArgs.builder
       builder.endpointMatcher(args(argsBuilder).build)
@@ -867,7 +867,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trafficPortSelector(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EndpointPolicyTrafficPortSelectorArgs.Builder]):
+    inline def trafficPortSelector(args: Endofunction[com.pulumi.gcp.networkservices.inputs.EndpointPolicyTrafficPortSelectorArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.EndpointPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.EndpointPolicyTrafficPortSelectorArgs.builder
       builder.trafficPortSelector(args(argsBuilder).build)
@@ -878,7 +878,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinations(args: Endofunction[com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleActionDestinationArgs.Builder]*):
+    inline def destinations(args: Endofunction[com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleActionDestinationArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleActionDestinationArgs.builder
       builder.destinations(args.map(_(argsBuilder).build)*)
@@ -888,7 +888,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def faultInjectionPolicy(args: Endofunction[com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleActionFaultInjectionPolicyArgs.Builder]):
+    inline def faultInjectionPolicy(args: Endofunction[com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleActionFaultInjectionPolicyArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleActionFaultInjectionPolicyArgs.builder
       builder.faultInjectionPolicy(args(argsBuilder).build)
@@ -898,7 +898,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def retryPolicy(args: Endofunction[com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleActionRetryPolicyArgs.Builder]):
+    inline def retryPolicy(args: Endofunction[com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleActionRetryPolicyArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleActionRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
@@ -909,7 +909,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def abort(args: Endofunction[com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleActionFaultInjectionPolicyAbortArgs.Builder]):
+    inline def abort(args: Endofunction[com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleActionFaultInjectionPolicyAbortArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleActionFaultInjectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleActionFaultInjectionPolicyAbortArgs.builder
       builder.abort(args(argsBuilder).build)
@@ -919,7 +919,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def delay(args: Endofunction[com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleActionFaultInjectionPolicyDelayArgs.Builder]):
+    inline def delay(args: Endofunction[com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleActionFaultInjectionPolicyDelayArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleActionFaultInjectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleActionFaultInjectionPolicyDelayArgs.builder
       builder.delay(args(argsBuilder).build)
@@ -930,7 +930,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def action(args: Endofunction[com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleActionArgs.Builder]):
+    inline def action(args: Endofunction[com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleActionArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleActionArgs.builder
       builder.action(args(argsBuilder).build)
@@ -940,7 +940,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def matches(args: Endofunction[com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleMatchArgs.Builder]*):
+    inline def matches(args: Endofunction[com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleMatchArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleMatchArgs.builder
       builder.matches(args.map(_(argsBuilder).build)*)
@@ -951,7 +951,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleMatchHeaderArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleMatchArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -961,7 +961,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def method(args: Endofunction[com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleMatchMethodArgs.Builder]):
+    inline def method(args: Endofunction[com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleMatchMethodArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleMatchArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleMatchMethodArgs.builder
       builder.method(args(argsBuilder).build)
@@ -972,7 +972,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.GrpcRouteState.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.GrpcRouteRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -983,7 +983,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def corsPolicy(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionCorsPolicyArgs.Builder]):
+    inline def corsPolicy(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionCorsPolicyArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionCorsPolicyArgs.builder
       builder.corsPolicy(args(argsBuilder).build)
@@ -993,7 +993,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinations(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionDestinationArgs.Builder]*):
+    inline def destinations(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionDestinationArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionDestinationArgs.builder
       builder.destinations(args.map(_(argsBuilder).build)*)
@@ -1003,7 +1003,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def faultInjectionPolicy(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionFaultInjectionPolicyArgs.Builder]):
+    inline def faultInjectionPolicy(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionFaultInjectionPolicyArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionFaultInjectionPolicyArgs.builder
       builder.faultInjectionPolicy(args(argsBuilder).build)
@@ -1013,7 +1013,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def redirect(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionRedirectArgs.Builder]):
+    inline def redirect(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionRedirectArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionRedirectArgs.builder
       builder.redirect(args(argsBuilder).build)
@@ -1023,7 +1023,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def requestHeaderModifier(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionRequestHeaderModifierArgs.Builder]):
+    inline def requestHeaderModifier(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionRequestHeaderModifierArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionRequestHeaderModifierArgs.builder
       builder.requestHeaderModifier(args(argsBuilder).build)
@@ -1033,7 +1033,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def requestMirrorPolicy(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionRequestMirrorPolicyArgs.Builder]):
+    inline def requestMirrorPolicy(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionRequestMirrorPolicyArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionRequestMirrorPolicyArgs.builder
       builder.requestMirrorPolicy(args(argsBuilder).build)
@@ -1043,7 +1043,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def responseHeaderModifier(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionResponseHeaderModifierArgs.Builder]):
+    inline def responseHeaderModifier(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionResponseHeaderModifierArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionResponseHeaderModifierArgs.builder
       builder.responseHeaderModifier(args(argsBuilder).build)
@@ -1053,7 +1053,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def retryPolicy(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionRetryPolicyArgs.Builder]):
+    inline def retryPolicy(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionRetryPolicyArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
@@ -1063,7 +1063,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def urlRewrite(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionUrlRewriteArgs.Builder]):
+    inline def urlRewrite(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionUrlRewriteArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionUrlRewriteArgs.builder
       builder.urlRewrite(args(argsBuilder).build)
@@ -1074,7 +1074,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def abort(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionFaultInjectionPolicyAbortArgs.Builder]):
+    inline def abort(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionFaultInjectionPolicyAbortArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionFaultInjectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionFaultInjectionPolicyAbortArgs.builder
       builder.abort(args(argsBuilder).build)
@@ -1084,7 +1084,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def delay(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionFaultInjectionPolicyDelayArgs.Builder]):
+    inline def delay(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionFaultInjectionPolicyDelayArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionFaultInjectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionFaultInjectionPolicyDelayArgs.builder
       builder.delay(args(argsBuilder).build)
@@ -1095,7 +1095,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destination(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionRequestMirrorPolicyDestinationArgs.Builder]):
+    inline def destination(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionRequestMirrorPolicyDestinationArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionRequestMirrorPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionRequestMirrorPolicyDestinationArgs.builder
       builder.destination(args(argsBuilder).build)
@@ -1106,7 +1106,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def action(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionArgs.Builder]):
+    inline def action(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.HttpRouteRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.HttpRouteRuleActionArgs.builder
       builder.action(args(argsBuilder).build)
@@ -1118,7 +1118,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def matches(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleMatchArgs.Builder]*):
+    inline def matches(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleMatchArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.HttpRouteRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.HttpRouteRuleMatchArgs.builder
       builder.matches(args.map(_(argsBuilder).build)*)
@@ -1129,7 +1129,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleMatchHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleMatchHeaderArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.HttpRouteRuleMatchArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.HttpRouteRuleMatchHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -1139,7 +1139,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def queryParameters(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleMatchQueryParameterArgs.Builder]*):
+    inline def queryParameters(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleMatchQueryParameterArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.HttpRouteRuleMatchArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.HttpRouteRuleMatchQueryParameterArgs.builder
       builder.queryParameters(args.map(_(argsBuilder).build)*)
@@ -1150,7 +1150,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rangeMatch(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleMatchHeaderRangeMatchArgs.Builder]):
+    inline def rangeMatch(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleMatchHeaderRangeMatchArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.HttpRouteRuleMatchHeaderArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.HttpRouteRuleMatchHeaderRangeMatchArgs.builder
       builder.rangeMatch(args(argsBuilder).build)
@@ -1161,7 +1161,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.networkservices.inputs.HttpRouteRuleArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.HttpRouteState.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.HttpRouteRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -1174,7 +1174,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def extensions(args: Endofunction[com.pulumi.gcp.networkservices.inputs.LbEdgeExtensionExtensionChainExtensionArgs.Builder]*):
+    inline def extensions(args: Endofunction[com.pulumi.gcp.networkservices.inputs.LbEdgeExtensionExtensionChainExtensionArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.LbEdgeExtensionExtensionChainArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.LbEdgeExtensionExtensionChainExtensionArgs.builder
       builder.extensions(args.map(_(argsBuilder).build)*)
@@ -1184,7 +1184,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def matchCondition(args: Endofunction[com.pulumi.gcp.networkservices.inputs.LbEdgeExtensionExtensionChainMatchConditionArgs.Builder]):
+    inline def matchCondition(args: Endofunction[com.pulumi.gcp.networkservices.inputs.LbEdgeExtensionExtensionChainMatchConditionArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.LbEdgeExtensionExtensionChainArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.LbEdgeExtensionExtensionChainMatchConditionArgs.builder
       builder.matchCondition(args(argsBuilder).build)
@@ -1198,7 +1198,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def extensionChains(args: Endofunction[com.pulumi.gcp.networkservices.inputs.LbEdgeExtensionExtensionChainArgs.Builder]*):
+    inline def extensionChains(args: Endofunction[com.pulumi.gcp.networkservices.inputs.LbEdgeExtensionExtensionChainArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.LbEdgeExtensionState.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.LbEdgeExtensionExtensionChainArgs.builder
       builder.extensionChains(args.map(_(argsBuilder).build)*)
@@ -1212,7 +1212,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def extensions(args: Endofunction[com.pulumi.gcp.networkservices.inputs.LbRouteExtensionExtensionChainExtensionArgs.Builder]*):
+    inline def extensions(args: Endofunction[com.pulumi.gcp.networkservices.inputs.LbRouteExtensionExtensionChainExtensionArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.LbRouteExtensionExtensionChainArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.LbRouteExtensionExtensionChainExtensionArgs.builder
       builder.extensions(args.map(_(argsBuilder).build)*)
@@ -1222,7 +1222,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def matchCondition(args: Endofunction[com.pulumi.gcp.networkservices.inputs.LbRouteExtensionExtensionChainMatchConditionArgs.Builder]):
+    inline def matchCondition(args: Endofunction[com.pulumi.gcp.networkservices.inputs.LbRouteExtensionExtensionChainMatchConditionArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.LbRouteExtensionExtensionChainArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.LbRouteExtensionExtensionChainMatchConditionArgs.builder
       builder.matchCondition(args(argsBuilder).build)
@@ -1237,7 +1237,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def extensionChains(args: Endofunction[com.pulumi.gcp.networkservices.inputs.LbRouteExtensionExtensionChainArgs.Builder]*):
+    inline def extensionChains(args: Endofunction[com.pulumi.gcp.networkservices.inputs.LbRouteExtensionExtensionChainArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.LbRouteExtensionState.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.LbRouteExtensionExtensionChainArgs.builder
       builder.extensionChains(args.map(_(argsBuilder).build)*)
@@ -1251,7 +1251,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def extensions(args: Endofunction[com.pulumi.gcp.networkservices.inputs.LbTrafficExtensionExtensionChainExtensionArgs.Builder]*):
+    inline def extensions(args: Endofunction[com.pulumi.gcp.networkservices.inputs.LbTrafficExtensionExtensionChainExtensionArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.LbTrafficExtensionExtensionChainArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.LbTrafficExtensionExtensionChainExtensionArgs.builder
       builder.extensions(args.map(_(argsBuilder).build)*)
@@ -1261,7 +1261,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def matchCondition(args: Endofunction[com.pulumi.gcp.networkservices.inputs.LbTrafficExtensionExtensionChainMatchConditionArgs.Builder]):
+    inline def matchCondition(args: Endofunction[com.pulumi.gcp.networkservices.inputs.LbTrafficExtensionExtensionChainMatchConditionArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.LbTrafficExtensionExtensionChainArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.LbTrafficExtensionExtensionChainMatchConditionArgs.builder
       builder.matchCondition(args(argsBuilder).build)
@@ -1276,7 +1276,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def extensionChains(args: Endofunction[com.pulumi.gcp.networkservices.inputs.LbTrafficExtensionExtensionChainArgs.Builder]*):
+    inline def extensionChains(args: Endofunction[com.pulumi.gcp.networkservices.inputs.LbTrafficExtensionExtensionChainArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.LbTrafficExtensionState.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.LbTrafficExtensionExtensionChainArgs.builder
       builder.extensionChains(args.map(_(argsBuilder).build)*)
@@ -1295,7 +1295,7 @@ object networkservices_ext:
      * INACTIVE
      * @return builder
      */
-    def states(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastConsumerAssociationStateArgs.Builder]*):
+    inline def states(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastConsumerAssociationStateArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.MulticastConsumerAssociationState.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.MulticastConsumerAssociationStateArgs.builder
       builder.states(args.map(_(argsBuilder).build)*)
@@ -1314,7 +1314,7 @@ object networkservices_ext:
      * INACTIVE
      * @return builder
      */
-    def states(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastDomainActivationStateArgs.Builder]*):
+    inline def states(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastDomainActivationStateArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.MulticastDomainActivationState.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.MulticastDomainActivationStateArgs.builder
       builder.states(args.map(_(argsBuilder).build)*)
@@ -1325,7 +1325,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trafficSpec(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastDomainActivationTrafficSpecArgs.Builder]):
+    inline def trafficSpec(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastDomainActivationTrafficSpecArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.MulticastDomainActivationState.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.MulticastDomainActivationTrafficSpecArgs.builder
       builder.trafficSpec(args(argsBuilder).build)
@@ -1344,7 +1344,7 @@ object networkservices_ext:
      * INACTIVE
      * @return builder
      */
-    def states(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastDomainGroupStateArgs.Builder]*):
+    inline def states(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastDomainGroupStateArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.MulticastDomainGroupState.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.MulticastDomainGroupStateArgs.builder
       builder.states(args.map(_(argsBuilder).build)*)
@@ -1355,7 +1355,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectionConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastDomainConnectionConfigArgs.Builder]):
+    inline def connectionConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastDomainConnectionConfigArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.MulticastDomainState.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.MulticastDomainConnectionConfigArgs.builder
       builder.connectionConfig(args(argsBuilder).build)
@@ -1373,7 +1373,7 @@ object networkservices_ext:
      * INACTIVE
      * @return builder
      */
-    def states(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastDomainStateArgs.Builder]*):
+    inline def states(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastDomainStateArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.MulticastDomainState.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.MulticastDomainStateArgs.builder
       builder.states(args.map(_(argsBuilder).build)*)
@@ -1383,7 +1383,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ullMulticastDomain(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastDomainUllMulticastDomainArgs.Builder]):
+    inline def ullMulticastDomain(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastDomainUllMulticastDomainArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.MulticastDomainState.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.MulticastDomainUllMulticastDomainArgs.builder
       builder.ullMulticastDomain(args(argsBuilder).build)
@@ -1394,7 +1394,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastGroupConsumerActivationLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastGroupConsumerActivationLogConfigArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.MulticastGroupConsumerActivationState.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.MulticastGroupConsumerActivationLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -1412,7 +1412,7 @@ object networkservices_ext:
      * INACTIVE
      * @return builder
      */
-    def states(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastGroupConsumerActivationStateArgs.Builder]*):
+    inline def states(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastGroupConsumerActivationStateArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.MulticastGroupConsumerActivationState.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.MulticastGroupConsumerActivationStateArgs.builder
       builder.states(args.map(_(argsBuilder).build)*)
@@ -1431,7 +1431,7 @@ object networkservices_ext:
      * INACTIVE
      * @return builder
      */
-    def states(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastGroupProducerActivationStateArgs.Builder]*):
+    inline def states(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastGroupProducerActivationStateArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.MulticastGroupProducerActivationState.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.MulticastGroupProducerActivationStateArgs.builder
       builder.states(args.map(_(argsBuilder).build)*)
@@ -1442,7 +1442,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastGroupRangeActivationLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastGroupRangeActivationLogConfigArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.MulticastGroupRangeActivationState.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.MulticastGroupRangeActivationLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -1460,7 +1460,7 @@ object networkservices_ext:
      * INACTIVE
      * @return builder
      */
-    def states(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastGroupRangeActivationStateArgs.Builder]*):
+    inline def states(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastGroupRangeActivationStateArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.MulticastGroupRangeActivationState.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.MulticastGroupRangeActivationStateArgs.builder
       builder.states(args.map(_(argsBuilder).build)*)
@@ -1471,7 +1471,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastGroupRangeLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastGroupRangeLogConfigArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.MulticastGroupRangeState.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.MulticastGroupRangeLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -1489,7 +1489,7 @@ object networkservices_ext:
      * INACTIVE
      * @return builder
      */
-    def states(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastGroupRangeStateArgs.Builder]*):
+    inline def states(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastGroupRangeStateArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.MulticastGroupRangeState.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.MulticastGroupRangeStateArgs.builder
       builder.states(args.map(_(argsBuilder).build)*)
@@ -1508,7 +1508,7 @@ object networkservices_ext:
      * INACTIVE
      * @return builder
      */
-    def states(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastProducerAssociationStateArgs.Builder]*):
+    inline def states(args: Endofunction[com.pulumi.gcp.networkservices.inputs.MulticastProducerAssociationStateArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.MulticastProducerAssociationState.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.MulticastProducerAssociationStateArgs.builder
       builder.states(args.map(_(argsBuilder).build)*)
@@ -1519,7 +1519,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoCapacityDrain(args: Endofunction[com.pulumi.gcp.networkservices.inputs.ServiceLbPoliciesAutoCapacityDrainArgs.Builder]):
+    inline def autoCapacityDrain(args: Endofunction[com.pulumi.gcp.networkservices.inputs.ServiceLbPoliciesAutoCapacityDrainArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.ServiceLbPoliciesState.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.ServiceLbPoliciesAutoCapacityDrainArgs.builder
       builder.autoCapacityDrain(args(argsBuilder).build)
@@ -1529,7 +1529,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def failoverConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.ServiceLbPoliciesFailoverConfigArgs.Builder]):
+    inline def failoverConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.ServiceLbPoliciesFailoverConfigArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.ServiceLbPoliciesState.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.ServiceLbPoliciesFailoverConfigArgs.builder
       builder.failoverConfig(args(argsBuilder).build)
@@ -1539,7 +1539,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def isolationConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.ServiceLbPoliciesIsolationConfigArgs.Builder]):
+    inline def isolationConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.ServiceLbPoliciesIsolationConfigArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.ServiceLbPoliciesState.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.ServiceLbPoliciesIsolationConfigArgs.builder
       builder.isolationConfig(args(argsBuilder).build)
@@ -1550,7 +1550,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinations(args: Endofunction[com.pulumi.gcp.networkservices.inputs.TcpRouteRuleActionDestinationArgs.Builder]*):
+    inline def destinations(args: Endofunction[com.pulumi.gcp.networkservices.inputs.TcpRouteRuleActionDestinationArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.TcpRouteRuleActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.TcpRouteRuleActionDestinationArgs.builder
       builder.destinations(args.map(_(argsBuilder).build)*)
@@ -1561,7 +1561,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def action(args: Endofunction[com.pulumi.gcp.networkservices.inputs.TcpRouteRuleActionArgs.Builder]):
+    inline def action(args: Endofunction[com.pulumi.gcp.networkservices.inputs.TcpRouteRuleActionArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.TcpRouteRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.TcpRouteRuleActionArgs.builder
       builder.action(args(argsBuilder).build)
@@ -1572,7 +1572,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def matches(args: Endofunction[com.pulumi.gcp.networkservices.inputs.TcpRouteRuleMatchArgs.Builder]*):
+    inline def matches(args: Endofunction[com.pulumi.gcp.networkservices.inputs.TcpRouteRuleMatchArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.TcpRouteRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.TcpRouteRuleMatchArgs.builder
       builder.matches(args.map(_(argsBuilder).build)*)
@@ -1584,7 +1584,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.networkservices.inputs.TcpRouteRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.networkservices.inputs.TcpRouteRuleArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.TcpRouteState.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.TcpRouteRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -1595,7 +1595,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinations(args: Endofunction[com.pulumi.gcp.networkservices.inputs.TlsRouteRuleActionDestinationArgs.Builder]*):
+    inline def destinations(args: Endofunction[com.pulumi.gcp.networkservices.inputs.TlsRouteRuleActionDestinationArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.TlsRouteRuleActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.TlsRouteRuleActionDestinationArgs.builder
       builder.destinations(args.map(_(argsBuilder).build)*)
@@ -1606,7 +1606,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def action(args: Endofunction[com.pulumi.gcp.networkservices.inputs.TlsRouteRuleActionArgs.Builder]):
+    inline def action(args: Endofunction[com.pulumi.gcp.networkservices.inputs.TlsRouteRuleActionArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.TlsRouteRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.TlsRouteRuleActionArgs.builder
       builder.action(args(argsBuilder).build)
@@ -1616,7 +1616,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def matches(args: Endofunction[com.pulumi.gcp.networkservices.inputs.TlsRouteRuleMatchArgs.Builder]*):
+    inline def matches(args: Endofunction[com.pulumi.gcp.networkservices.inputs.TlsRouteRuleMatchArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.TlsRouteRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.TlsRouteRuleMatchArgs.builder
       builder.matches(args.map(_(argsBuilder).build)*)
@@ -1627,7 +1627,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.networkservices.inputs.TlsRouteRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.networkservices.inputs.TlsRouteRuleArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.TlsRouteState.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.TlsRouteRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -1639,7 +1639,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.WasmPluginLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.networkservices.inputs.WasmPluginLogConfigArgs.Builder]):
         com.pulumi.gcp.networkservices.inputs.WasmPluginState.Builder =
       val argsBuilder = com.pulumi.gcp.networkservices.inputs.WasmPluginLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -1649,7 +1649,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def usedBies(args: Endofunction[com.pulumi.gcp.networkservices.inputs.WasmPluginUsedByArgs.Builder]*):
+    inline def usedBies(args: Endofunction[com.pulumi.gcp.networkservices.inputs.WasmPluginUsedByArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.WasmPluginState.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.WasmPluginUsedByArgs.builder
       builder.usedBies(args.map(_(argsBuilder).build)*)
@@ -1659,7 +1659,7 @@ object networkservices_ext:
      * Structure is documented below.
      * @return builder
      */
-    def versions(args: Endofunction[com.pulumi.gcp.networkservices.inputs.WasmPluginVersionArgs.Builder]*):
+    inline def versions(args: Endofunction[com.pulumi.gcp.networkservices.inputs.WasmPluginVersionArgs.Builder]*):
         com.pulumi.gcp.networkservices.inputs.WasmPluginState.Builder =
       def argsBuilder = com.pulumi.gcp.networkservices.inputs.WasmPluginVersionArgs.builder
       builder.versions(args.map(_(argsBuilder).build)*)

@@ -8,7 +8,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def idpConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.AclConfigIdpConfigArgs.Builder]):
+    inline def idpConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.AclConfigIdpConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.AclConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.AclConfigIdpConfigArgs.builder
       builder.idpConfig(args(argsBuilder).build)
@@ -19,7 +19,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customerPolicy(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.AssistantCustomerPolicyArgs.Builder]):
+    inline def customerPolicy(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.AssistantCustomerPolicyArgs.Builder]):
         com.pulumi.gcp.discoveryengine.AssistantArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.AssistantCustomerPolicyArgs.builder
       builder.customerPolicy(args(argsBuilder).build)
@@ -29,7 +29,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def generationConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.AssistantGenerationConfigArgs.Builder]):
+    inline def generationConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.AssistantGenerationConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.AssistantArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.AssistantGenerationConfigArgs.builder
       builder.generationConfig(args(argsBuilder).build)
@@ -40,7 +40,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def chatEngineConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ChatEngineChatEngineConfigArgs.Builder]):
+    inline def chatEngineConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ChatEngineChatEngineConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.ChatEngineArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.ChatEngineChatEngineConfigArgs.builder
       builder.chatEngineConfig(args(argsBuilder).build)
@@ -50,7 +50,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def commonConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ChatEngineCommonConfigArgs.Builder]):
+    inline def commonConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ChatEngineCommonConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.ChatEngineArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.ChatEngineCommonConfigArgs.builder
       builder.commonConfig(args(argsBuilder).build)
@@ -61,7 +61,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def singleRegionKeys(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.CmekConfigSingleRegionKeyArgs.Builder]*):
+    inline def singleRegionKeys(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.CmekConfigSingleRegionKeyArgs.Builder]*):
         com.pulumi.gcp.discoveryengine.CmekConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.discoveryengine.inputs.CmekConfigSingleRegionKeyArgs.builder
       builder.singleRegionKeys(args.map(_(argsBuilder).build)*)
@@ -72,7 +72,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def boostAction(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlBoostActionArgs.Builder]):
+    inline def boostAction(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlBoostActionArgs.Builder]):
         com.pulumi.gcp.discoveryengine.ControlArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.ControlBoostActionArgs.builder
       builder.boostAction(args(argsBuilder).build)
@@ -82,7 +82,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlConditionArgs.Builder]*):
         com.pulumi.gcp.discoveryengine.ControlArgs.Builder =
       def argsBuilder = com.pulumi.gcp.discoveryengine.inputs.ControlConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -92,7 +92,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def filterAction(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlFilterActionArgs.Builder]):
+    inline def filterAction(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlFilterActionArgs.Builder]):
         com.pulumi.gcp.discoveryengine.ControlArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.ControlFilterActionArgs.builder
       builder.filterAction(args(argsBuilder).build)
@@ -102,7 +102,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def promoteAction(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlPromoteActionArgs.Builder]):
+    inline def promoteAction(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlPromoteActionArgs.Builder]):
         com.pulumi.gcp.discoveryengine.ControlArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.ControlPromoteActionArgs.builder
       builder.promoteAction(args(argsBuilder).build)
@@ -112,7 +112,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def redirectAction(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlRedirectActionArgs.Builder]):
+    inline def redirectAction(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlRedirectActionArgs.Builder]):
         com.pulumi.gcp.discoveryengine.ControlArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.ControlRedirectActionArgs.builder
       builder.redirectAction(args(argsBuilder).build)
@@ -122,7 +122,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def synonymsAction(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlSynonymsActionArgs.Builder]):
+    inline def synonymsAction(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlSynonymsActionArgs.Builder]):
         com.pulumi.gcp.discoveryengine.ControlArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.ControlSynonymsActionArgs.builder
       builder.synonymsAction(args(argsBuilder).build)
@@ -134,7 +134,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def actionConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorActionConfigArgs.Builder]):
+    inline def actionConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorActionConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.DataConnectorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataConnectorActionConfigArgs.builder
       builder.actionConfig(args(argsBuilder).build)
@@ -146,7 +146,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bapConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorBapConfigArgs.Builder]):
+    inline def bapConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorBapConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.DataConnectorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataConnectorBapConfigArgs.builder
       builder.bapConfig(args(argsBuilder).build)
@@ -157,7 +157,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinationConfigs(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorDestinationConfigArgs.Builder]*):
+    inline def destinationConfigs(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorDestinationConfigArgs.Builder]*):
         com.pulumi.gcp.discoveryengine.DataConnectorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataConnectorDestinationConfigArgs.builder
       builder.destinationConfigs(args.map(_(argsBuilder).build)*)
@@ -167,7 +167,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entities(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorEntityArgs.Builder]*):
+    inline def entities(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorEntityArgs.Builder]*):
         com.pulumi.gcp.discoveryengine.DataConnectorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataConnectorEntityArgs.builder
       builder.entities(args.map(_(argsBuilder).build)*)
@@ -177,7 +177,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metadata(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorMetadataArgs.Builder]):
+    inline def metadata(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorMetadataArgs.Builder]):
         com.pulumi.gcp.discoveryengine.DataConnectorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataConnectorMetadataArgs.builder
       builder.metadata(args(argsBuilder).build)
@@ -188,7 +188,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def advancedSiteSearchConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreAdvancedSiteSearchConfigArgs.Builder]):
+    inline def advancedSiteSearchConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreAdvancedSiteSearchConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.DataStoreArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataStoreAdvancedSiteSearchConfigArgs.builder
       builder.advancedSiteSearchConfig(args(argsBuilder).build)
@@ -198,7 +198,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def documentProcessingConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigArgs.Builder]):
+    inline def documentProcessingConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.DataStoreArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigArgs.builder
       builder.documentProcessingConfig(args(argsBuilder).build)
@@ -209,7 +209,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endDate(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.LicenseConfigEndDateArgs.Builder]):
+    inline def endDate(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.LicenseConfigEndDateArgs.Builder]):
         com.pulumi.gcp.discoveryengine.LicenseConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.LicenseConfigEndDateArgs.builder
       builder.endDate(args(argsBuilder).build)
@@ -219,7 +219,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def startDate(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.LicenseConfigStartDateArgs.Builder]):
+    inline def startDate(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.LicenseConfigStartDateArgs.Builder]):
         com.pulumi.gcp.discoveryengine.LicenseConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.LicenseConfigStartDateArgs.builder
       builder.startDate(args(argsBuilder).build)
@@ -230,7 +230,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def commonConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineCommonConfigArgs.Builder]):
+    inline def commonConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineCommonConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.RecommendationEngineArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineCommonConfigArgs.builder
       builder.commonConfig(args(argsBuilder).build)
@@ -241,7 +241,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mediaRecommendationEngineConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineMediaRecommendationEngineConfigArgs.Builder]):
+    inline def mediaRecommendationEngineConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineMediaRecommendationEngineConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.RecommendationEngineArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineMediaRecommendationEngineConfigArgs.builder
       builder.mediaRecommendationEngineConfig(args(argsBuilder).build)
@@ -252,7 +252,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def commonConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.SearchEngineCommonConfigArgs.Builder]):
+    inline def commonConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.SearchEngineCommonConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.SearchEngineArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.SearchEngineCommonConfigArgs.builder
       builder.commonConfig(args(argsBuilder).build)
@@ -262,7 +262,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def knowledgeGraphConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.SearchEngineKnowledgeGraphConfigArgs.Builder]):
+    inline def knowledgeGraphConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.SearchEngineKnowledgeGraphConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.SearchEngineArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.SearchEngineKnowledgeGraphConfigArgs.builder
       builder.knowledgeGraphConfig(args(argsBuilder).build)
@@ -272,19 +272,19 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def searchEngineConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.SearchEngineSearchEngineConfigArgs.Builder]):
+    inline def searchEngineConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.SearchEngineSearchEngineConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.SearchEngineArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.SearchEngineSearchEngineConfigArgs.builder
       builder.searchEngineConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.discoveryengine.SearchEngineIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.SearchEngineIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.SearchEngineIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.discoveryengine.SearchEngineIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.SearchEngineIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.discoveryengine.SearchEngineIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.SearchEngineIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.SearchEngineIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.discoveryengine.SearchEngineIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.SearchEngineIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -295,7 +295,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accessSettings(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigAccessSettingsArgs.Builder]):
+    inline def accessSettings(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigAccessSettingsArgs.Builder]):
         com.pulumi.gcp.discoveryengine.WidgetConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.WidgetConfigAccessSettingsArgs.builder
       builder.accessSettings(args(argsBuilder).build)
@@ -306,7 +306,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def homepageSetting(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigHomepageSettingArgs.Builder]):
+    inline def homepageSetting(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigHomepageSettingArgs.Builder]):
         com.pulumi.gcp.discoveryengine.WidgetConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.WidgetConfigHomepageSettingArgs.builder
       builder.homepageSetting(args(argsBuilder).build)
@@ -317,7 +317,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def uiBranding(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiBrandingArgs.Builder]):
+    inline def uiBranding(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiBrandingArgs.Builder]):
         com.pulumi.gcp.discoveryengine.WidgetConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiBrandingArgs.builder
       builder.uiBranding(args(argsBuilder).build)
@@ -327,7 +327,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def uiSettings(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsArgs.Builder]):
+    inline def uiSettings(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsArgs.Builder]):
         com.pulumi.gcp.discoveryengine.WidgetConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsArgs.builder
       builder.uiSettings(args(argsBuilder).build)
@@ -338,7 +338,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def externalIdpConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.AclConfigIdpConfigExternalIdpConfigArgs.Builder]):
+    inline def externalIdpConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.AclConfigIdpConfigExternalIdpConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.AclConfigIdpConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.AclConfigIdpConfigExternalIdpConfigArgs.builder
       builder.externalIdpConfig(args(argsBuilder).build)
@@ -349,7 +349,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def idpConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.AclConfigIdpConfigArgs.Builder]):
+    inline def idpConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.AclConfigIdpConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.AclConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.AclConfigIdpConfigArgs.builder
       builder.idpConfig(args(argsBuilder).build)
@@ -360,7 +360,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bannedPhrases(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.AssistantCustomerPolicyBannedPhraseArgs.Builder]*):
+    inline def bannedPhrases(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.AssistantCustomerPolicyBannedPhraseArgs.Builder]*):
         com.pulumi.gcp.discoveryengine.inputs.AssistantCustomerPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.discoveryengine.inputs.AssistantCustomerPolicyBannedPhraseArgs.builder
       builder.bannedPhrases(args.map(_(argsBuilder).build)*)
@@ -370,7 +370,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modelArmorConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.AssistantCustomerPolicyModelArmorConfigArgs.Builder]):
+    inline def modelArmorConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.AssistantCustomerPolicyModelArmorConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.AssistantCustomerPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.AssistantCustomerPolicyModelArmorConfigArgs.builder
       builder.modelArmorConfig(args(argsBuilder).build)
@@ -382,7 +382,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def systemInstruction(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.AssistantGenerationConfigSystemInstructionArgs.Builder]):
+    inline def systemInstruction(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.AssistantGenerationConfigSystemInstructionArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.AssistantGenerationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.AssistantGenerationConfigSystemInstructionArgs.builder
       builder.systemInstruction(args(argsBuilder).build)
@@ -393,7 +393,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customerPolicy(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.AssistantCustomerPolicyArgs.Builder]):
+    inline def customerPolicy(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.AssistantCustomerPolicyArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.AssistantState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.AssistantCustomerPolicyArgs.builder
       builder.customerPolicy(args(argsBuilder).build)
@@ -403,7 +403,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def generationConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.AssistantGenerationConfigArgs.Builder]):
+    inline def generationConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.AssistantGenerationConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.AssistantState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.AssistantGenerationConfigArgs.builder
       builder.generationConfig(args(argsBuilder).build)
@@ -415,7 +415,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def agentCreationConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ChatEngineChatEngineConfigAgentCreationConfigArgs.Builder]):
+    inline def agentCreationConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ChatEngineChatEngineConfigAgentCreationConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.ChatEngineChatEngineConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.ChatEngineChatEngineConfigAgentCreationConfigArgs.builder
       builder.agentCreationConfig(args(argsBuilder).build)
@@ -426,7 +426,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def chatEngineConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ChatEngineChatEngineConfigArgs.Builder]):
+    inline def chatEngineConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ChatEngineChatEngineConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.ChatEngineState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.ChatEngineChatEngineConfigArgs.builder
       builder.chatEngineConfig(args(argsBuilder).build)
@@ -436,7 +436,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def chatEngineMetadatas(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ChatEngineChatEngineMetadataArgs.Builder]*):
+    inline def chatEngineMetadatas(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ChatEngineChatEngineMetadataArgs.Builder]*):
         com.pulumi.gcp.discoveryengine.inputs.ChatEngineState.Builder =
       def argsBuilder = com.pulumi.gcp.discoveryengine.inputs.ChatEngineChatEngineMetadataArgs.builder
       builder.chatEngineMetadatas(args.map(_(argsBuilder).build)*)
@@ -446,7 +446,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def commonConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ChatEngineCommonConfigArgs.Builder]):
+    inline def commonConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ChatEngineCommonConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.ChatEngineState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.ChatEngineCommonConfigArgs.builder
       builder.commonConfig(args(argsBuilder).build)
@@ -457,7 +457,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def singleRegionKeys(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.CmekConfigSingleRegionKeyArgs.Builder]*):
+    inline def singleRegionKeys(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.CmekConfigSingleRegionKeyArgs.Builder]*):
         com.pulumi.gcp.discoveryengine.inputs.CmekConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.discoveryengine.inputs.CmekConfigSingleRegionKeyArgs.builder
       builder.singleRegionKeys(args.map(_(argsBuilder).build)*)
@@ -468,7 +468,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def interpolationBoostSpec(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlBoostActionInterpolationBoostSpecArgs.Builder]):
+    inline def interpolationBoostSpec(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlBoostActionInterpolationBoostSpecArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.ControlBoostActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.ControlBoostActionInterpolationBoostSpecArgs.builder
       builder.interpolationBoostSpec(args(argsBuilder).build)
@@ -479,7 +479,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def controlPoint(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlBoostActionInterpolationBoostSpecControlPointArgs.Builder]):
+    inline def controlPoint(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlBoostActionInterpolationBoostSpecControlPointArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.ControlBoostActionInterpolationBoostSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.ControlBoostActionInterpolationBoostSpecControlPointArgs.builder
       builder.controlPoint(args(argsBuilder).build)
@@ -490,7 +490,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def activeTimeRanges(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlConditionActiveTimeRangeArgs.Builder]*):
+    inline def activeTimeRanges(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlConditionActiveTimeRangeArgs.Builder]*):
         com.pulumi.gcp.discoveryengine.inputs.ControlConditionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.discoveryengine.inputs.ControlConditionActiveTimeRangeArgs.builder
       builder.activeTimeRanges(args.map(_(argsBuilder).build)*)
@@ -500,7 +500,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def queryTerms(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlConditionQueryTermArgs.Builder]*):
+    inline def queryTerms(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlConditionQueryTermArgs.Builder]*):
         com.pulumi.gcp.discoveryengine.inputs.ControlConditionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.discoveryengine.inputs.ControlConditionQueryTermArgs.builder
       builder.queryTerms(args.map(_(argsBuilder).build)*)
@@ -511,7 +511,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def searchLinkPromotion(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlPromoteActionSearchLinkPromotionArgs.Builder]):
+    inline def searchLinkPromotion(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlPromoteActionSearchLinkPromotionArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.ControlPromoteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.ControlPromoteActionSearchLinkPromotionArgs.builder
       builder.searchLinkPromotion(args(argsBuilder).build)
@@ -522,7 +522,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def boostAction(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlBoostActionArgs.Builder]):
+    inline def boostAction(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlBoostActionArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.ControlState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.ControlBoostActionArgs.builder
       builder.boostAction(args(argsBuilder).build)
@@ -532,7 +532,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlConditionArgs.Builder]*):
         com.pulumi.gcp.discoveryengine.inputs.ControlState.Builder =
       def argsBuilder = com.pulumi.gcp.discoveryengine.inputs.ControlConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -542,7 +542,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def filterAction(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlFilterActionArgs.Builder]):
+    inline def filterAction(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlFilterActionArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.ControlState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.ControlFilterActionArgs.builder
       builder.filterAction(args(argsBuilder).build)
@@ -552,7 +552,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def promoteAction(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlPromoteActionArgs.Builder]):
+    inline def promoteAction(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlPromoteActionArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.ControlState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.ControlPromoteActionArgs.builder
       builder.promoteAction(args(argsBuilder).build)
@@ -562,7 +562,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def redirectAction(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlRedirectActionArgs.Builder]):
+    inline def redirectAction(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlRedirectActionArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.ControlState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.ControlRedirectActionArgs.builder
       builder.redirectAction(args(argsBuilder).build)
@@ -572,7 +572,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def synonymsAction(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlSynonymsActionArgs.Builder]):
+    inline def synonymsAction(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.ControlSynonymsActionArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.ControlState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.ControlSynonymsActionArgs.builder
       builder.synonymsAction(args(argsBuilder).build)
@@ -583,7 +583,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinations(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorDestinationConfigDestinationArgs.Builder]*):
+    inline def destinations(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorDestinationConfigDestinationArgs.Builder]*):
         com.pulumi.gcp.discoveryengine.inputs.DataConnectorDestinationConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataConnectorDestinationConfigDestinationArgs.builder
       builder.destinations(args.map(_(argsBuilder).build)*)
@@ -595,7 +595,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def actionConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorActionConfigArgs.Builder]):
+    inline def actionConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorActionConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.DataConnectorState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataConnectorActionConfigArgs.builder
       builder.actionConfig(args(argsBuilder).build)
@@ -607,7 +607,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bapConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorBapConfigArgs.Builder]):
+    inline def bapConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorBapConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.DataConnectorState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataConnectorBapConfigArgs.builder
       builder.bapConfig(args(argsBuilder).build)
@@ -618,7 +618,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinationConfigs(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorDestinationConfigArgs.Builder]*):
+    inline def destinationConfigs(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorDestinationConfigArgs.Builder]*):
         com.pulumi.gcp.discoveryengine.inputs.DataConnectorState.Builder =
       def argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataConnectorDestinationConfigArgs.builder
       builder.destinationConfigs(args.map(_(argsBuilder).build)*)
@@ -628,7 +628,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entities(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorEntityArgs.Builder]*):
+    inline def entities(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorEntityArgs.Builder]*):
         com.pulumi.gcp.discoveryengine.inputs.DataConnectorState.Builder =
       def argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataConnectorEntityArgs.builder
       builder.entities(args.map(_(argsBuilder).build)*)
@@ -638,7 +638,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errors(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorErrorArgs.Builder]*):
+    inline def errors(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorErrorArgs.Builder]*):
         com.pulumi.gcp.discoveryengine.inputs.DataConnectorState.Builder =
       def argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataConnectorErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
@@ -648,7 +648,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metadata(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorMetadataArgs.Builder]):
+    inline def metadata(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataConnectorMetadataArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.DataConnectorState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataConnectorMetadataArgs.builder
       builder.metadata(args(argsBuilder).build)
@@ -659,7 +659,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def chunkingConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigChunkingConfigArgs.Builder]):
+    inline def chunkingConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigChunkingConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigChunkingConfigArgs.builder
       builder.chunkingConfig(args(argsBuilder).build)
@@ -671,7 +671,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultParsingConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigDefaultParsingConfigArgs.Builder]):
+    inline def defaultParsingConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigDefaultParsingConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigDefaultParsingConfigArgs.builder
       builder.defaultParsingConfig(args(argsBuilder).build)
@@ -680,7 +680,7 @@ object discoveryengine_ext:
      * @param parsingConfigOverrides Map from file type to override the default parsing configuration based on the file type. Supported keys:
      * @return builder
      */
-    def parsingConfigOverrides(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigParsingConfigOverrideArgs.Builder]*):
+    inline def parsingConfigOverrides(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigParsingConfigOverrideArgs.Builder]*):
         com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigParsingConfigOverrideArgs.builder
       builder.parsingConfigOverrides(args.map(_(argsBuilder).build)*)
@@ -691,7 +691,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def layoutBasedChunkingConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigChunkingConfigLayoutBasedChunkingConfigArgs.Builder]):
+    inline def layoutBasedChunkingConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigChunkingConfigLayoutBasedChunkingConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigChunkingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigChunkingConfigLayoutBasedChunkingConfigArgs.builder
       builder.layoutBasedChunkingConfig(args(argsBuilder).build)
@@ -701,7 +701,7 @@ object discoveryengine_ext:
      * @param digitalParsingConfig Configurations applied to digital parser.
      * @return builder
      */
-    def digitalParsingConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigDefaultParsingConfigDigitalParsingConfigArgs.Builder]):
+    inline def digitalParsingConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigDefaultParsingConfigDigitalParsingConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigDefaultParsingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigDefaultParsingConfigDigitalParsingConfigArgs.builder
       builder.digitalParsingConfig(args(argsBuilder).build)
@@ -711,7 +711,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def layoutParsingConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigDefaultParsingConfigLayoutParsingConfigArgs.Builder]):
+    inline def layoutParsingConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigDefaultParsingConfigLayoutParsingConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigDefaultParsingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigDefaultParsingConfigLayoutParsingConfigArgs.builder
       builder.layoutParsingConfig(args(argsBuilder).build)
@@ -721,7 +721,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ocrParsingConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigDefaultParsingConfigOcrParsingConfigArgs.Builder]):
+    inline def ocrParsingConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigDefaultParsingConfigOcrParsingConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigDefaultParsingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigDefaultParsingConfigOcrParsingConfigArgs.builder
       builder.ocrParsingConfig(args(argsBuilder).build)
@@ -731,7 +731,7 @@ object discoveryengine_ext:
      * @param digitalParsingConfig Configurations applied to digital parser.
      * @return builder
      */
-    def digitalParsingConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigParsingConfigOverrideDigitalParsingConfigArgs.Builder]):
+    inline def digitalParsingConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigParsingConfigOverrideDigitalParsingConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigParsingConfigOverrideArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigParsingConfigOverrideDigitalParsingConfigArgs.builder
       builder.digitalParsingConfig(args(argsBuilder).build)
@@ -741,7 +741,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def layoutParsingConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigParsingConfigOverrideLayoutParsingConfigArgs.Builder]):
+    inline def layoutParsingConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigParsingConfigOverrideLayoutParsingConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigParsingConfigOverrideArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigParsingConfigOverrideLayoutParsingConfigArgs.builder
       builder.layoutParsingConfig(args(argsBuilder).build)
@@ -751,7 +751,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ocrParsingConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigParsingConfigOverrideOcrParsingConfigArgs.Builder]):
+    inline def ocrParsingConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigParsingConfigOverrideOcrParsingConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigParsingConfigOverrideArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigParsingConfigOverrideOcrParsingConfigArgs.builder
       builder.ocrParsingConfig(args(argsBuilder).build)
@@ -762,7 +762,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def advancedSiteSearchConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreAdvancedSiteSearchConfigArgs.Builder]):
+    inline def advancedSiteSearchConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreAdvancedSiteSearchConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.DataStoreState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataStoreAdvancedSiteSearchConfigArgs.builder
       builder.advancedSiteSearchConfig(args(argsBuilder).build)
@@ -772,7 +772,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def documentProcessingConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigArgs.Builder]):
+    inline def documentProcessingConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.DataStoreState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.DataStoreDocumentProcessingConfigArgs.builder
       builder.documentProcessingConfig(args(argsBuilder).build)
@@ -783,7 +783,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endDate(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.LicenseConfigEndDateArgs.Builder]):
+    inline def endDate(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.LicenseConfigEndDateArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.LicenseConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.LicenseConfigEndDateArgs.builder
       builder.endDate(args(argsBuilder).build)
@@ -793,7 +793,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def startDate(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.LicenseConfigStartDateArgs.Builder]):
+    inline def startDate(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.LicenseConfigStartDateArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.LicenseConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.LicenseConfigStartDateArgs.builder
       builder.startDate(args(argsBuilder).build)
@@ -804,7 +804,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def engineFeaturesConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineMediaRecommendationEngineConfigEngineFeaturesConfigArgs.Builder]):
+    inline def engineFeaturesConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineMediaRecommendationEngineConfigEngineFeaturesConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineMediaRecommendationEngineConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineMediaRecommendationEngineConfigEngineFeaturesConfigArgs.builder
       builder.engineFeaturesConfig(args(argsBuilder).build)
@@ -819,7 +819,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def optimizationObjectiveConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineMediaRecommendationEngineConfigOptimizationObjectiveConfigArgs.Builder]):
+    inline def optimizationObjectiveConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineMediaRecommendationEngineConfigOptimizationObjectiveConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineMediaRecommendationEngineConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineMediaRecommendationEngineConfigOptimizationObjectiveConfigArgs.builder
       builder.optimizationObjectiveConfig(args(argsBuilder).build)
@@ -830,7 +830,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mostPopularConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineMediaRecommendationEngineConfigEngineFeaturesConfigMostPopularConfigArgs.Builder]):
+    inline def mostPopularConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineMediaRecommendationEngineConfigEngineFeaturesConfigMostPopularConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineMediaRecommendationEngineConfigEngineFeaturesConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineMediaRecommendationEngineConfigEngineFeaturesConfigMostPopularConfigArgs.builder
       builder.mostPopularConfig(args(argsBuilder).build)
@@ -840,7 +840,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def recommendedForYouConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineMediaRecommendationEngineConfigEngineFeaturesConfigRecommendedForYouConfigArgs.Builder]):
+    inline def recommendedForYouConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineMediaRecommendationEngineConfigEngineFeaturesConfigRecommendedForYouConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineMediaRecommendationEngineConfigEngineFeaturesConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineMediaRecommendationEngineConfigEngineFeaturesConfigRecommendedForYouConfigArgs.builder
       builder.recommendedForYouConfig(args(argsBuilder).build)
@@ -851,7 +851,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def commonConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineCommonConfigArgs.Builder]):
+    inline def commonConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineCommonConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineCommonConfigArgs.builder
       builder.commonConfig(args(argsBuilder).build)
@@ -862,19 +862,19 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mediaRecommendationEngineConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineMediaRecommendationEngineConfigArgs.Builder]):
+    inline def mediaRecommendationEngineConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineMediaRecommendationEngineConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.RecommendationEngineMediaRecommendationEngineConfigArgs.builder
       builder.mediaRecommendationEngineConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.discoveryengine.inputs.SearchEngineIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.SearchEngineIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.SearchEngineIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.SearchEngineIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.SearchEngineIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.discoveryengine.inputs.SearchEngineIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.SearchEngineIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.SearchEngineIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.SearchEngineIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.SearchEngineIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -885,7 +885,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def featureConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.SearchEngineKnowledgeGraphConfigFeatureConfigArgs.Builder]):
+    inline def featureConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.SearchEngineKnowledgeGraphConfigFeatureConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.SearchEngineKnowledgeGraphConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.SearchEngineKnowledgeGraphConfigFeatureConfigArgs.builder
       builder.featureConfig(args(argsBuilder).build)
@@ -896,7 +896,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def commonConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.SearchEngineCommonConfigArgs.Builder]):
+    inline def commonConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.SearchEngineCommonConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.SearchEngineState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.SearchEngineCommonConfigArgs.builder
       builder.commonConfig(args(argsBuilder).build)
@@ -906,7 +906,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def knowledgeGraphConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.SearchEngineKnowledgeGraphConfigArgs.Builder]):
+    inline def knowledgeGraphConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.SearchEngineKnowledgeGraphConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.SearchEngineState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.SearchEngineKnowledgeGraphConfigArgs.builder
       builder.knowledgeGraphConfig(args(argsBuilder).build)
@@ -916,7 +916,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def searchEngineConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.SearchEngineSearchEngineConfigArgs.Builder]):
+    inline def searchEngineConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.SearchEngineSearchEngineConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.SearchEngineState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.SearchEngineSearchEngineConfigArgs.builder
       builder.searchEngineConfig(args(argsBuilder).build)
@@ -927,7 +927,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def quotaFailure(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.TargetSiteFailureReasonQuotaFailureArgs.Builder]):
+    inline def quotaFailure(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.TargetSiteFailureReasonQuotaFailureArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.TargetSiteFailureReasonArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.TargetSiteFailureReasonQuotaFailureArgs.builder
       builder.quotaFailure(args(argsBuilder).build)
@@ -938,7 +938,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def failureReasons(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.TargetSiteFailureReasonArgs.Builder]*):
+    inline def failureReasons(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.TargetSiteFailureReasonArgs.Builder]*):
         com.pulumi.gcp.discoveryengine.inputs.TargetSiteState.Builder =
       def argsBuilder = com.pulumi.gcp.discoveryengine.inputs.TargetSiteFailureReasonArgs.builder
       builder.failureReasons(args.map(_(argsBuilder).build)*)
@@ -948,7 +948,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def siteVerificationInfos(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.TargetSiteSiteVerificationInfoArgs.Builder]*):
+    inline def siteVerificationInfos(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.TargetSiteSiteVerificationInfoArgs.Builder]*):
         com.pulumi.gcp.discoveryengine.inputs.TargetSiteState.Builder =
       def argsBuilder = com.pulumi.gcp.discoveryengine.inputs.TargetSiteSiteVerificationInfoArgs.builder
       builder.siteVerificationInfos(args.map(_(argsBuilder).build)*)
@@ -959,7 +959,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def shortcuts(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigHomepageSettingShortcutArgs.Builder]*):
+    inline def shortcuts(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigHomepageSettingShortcutArgs.Builder]*):
         com.pulumi.gcp.discoveryengine.inputs.WidgetConfigHomepageSettingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.discoveryengine.inputs.WidgetConfigHomepageSettingShortcutArgs.builder
       builder.shortcuts(args.map(_(argsBuilder).build)*)
@@ -970,7 +970,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def icon(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigHomepageSettingShortcutIconArgs.Builder]):
+    inline def icon(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigHomepageSettingShortcutIconArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.WidgetConfigHomepageSettingShortcutArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.WidgetConfigHomepageSettingShortcutIconArgs.builder
       builder.icon(args(argsBuilder).build)
@@ -981,7 +981,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accessSettings(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigAccessSettingsArgs.Builder]):
+    inline def accessSettings(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigAccessSettingsArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.WidgetConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.WidgetConfigAccessSettingsArgs.builder
       builder.accessSettings(args(argsBuilder).build)
@@ -992,7 +992,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def homepageSetting(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigHomepageSettingArgs.Builder]):
+    inline def homepageSetting(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigHomepageSettingArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.WidgetConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.WidgetConfigHomepageSettingArgs.builder
       builder.homepageSetting(args(argsBuilder).build)
@@ -1003,7 +1003,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def uiBranding(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiBrandingArgs.Builder]):
+    inline def uiBranding(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiBrandingArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.WidgetConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiBrandingArgs.builder
       builder.uiBranding(args(argsBuilder).build)
@@ -1013,7 +1013,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def uiSettings(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsArgs.Builder]):
+    inline def uiSettings(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.WidgetConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsArgs.builder
       builder.uiSettings(args(argsBuilder).build)
@@ -1024,7 +1024,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def logo(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiBrandingLogoArgs.Builder]):
+    inline def logo(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiBrandingLogoArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiBrandingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiBrandingLogoArgs.builder
       builder.logo(args(argsBuilder).build)
@@ -1035,7 +1035,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataStoreUiConfigs(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsDataStoreUiConfigArgs.Builder]*):
+    inline def dataStoreUiConfigs(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsDataStoreUiConfigArgs.Builder]*):
         com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsDataStoreUiConfigArgs.builder
       builder.dataStoreUiConfigs(args.map(_(argsBuilder).build)*)
@@ -1045,7 +1045,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def generativeAnswerConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsGenerativeAnswerConfigArgs.Builder]):
+    inline def generativeAnswerConfig(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsGenerativeAnswerConfigArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsGenerativeAnswerConfigArgs.builder
       builder.generativeAnswerConfig(args(argsBuilder).build)
@@ -1057,7 +1057,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def searchAddonSpec(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsSearchAddonSpecArgs.Builder]):
+    inline def searchAddonSpec(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsSearchAddonSpecArgs.Builder]):
         com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsSearchAddonSpecArgs.builder
       builder.searchAddonSpec(args(argsBuilder).build)
@@ -1067,7 +1067,7 @@ object discoveryengine_ext:
      * @param facetFields Structure is documented below.
      * @return builder
      */
-    def facetFields(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsDataStoreUiConfigFacetFieldArgs.Builder]*):
+    inline def facetFields(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsDataStoreUiConfigFacetFieldArgs.Builder]*):
         com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsDataStoreUiConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsDataStoreUiConfigFacetFieldArgs.builder
       builder.facetFields(args.map(_(argsBuilder).build)*)
@@ -1081,7 +1081,7 @@ object discoveryengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fieldsUiComponentsMaps(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsDataStoreUiConfigFieldsUiComponentsMapArgs.Builder]*):
+    inline def fieldsUiComponentsMaps(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsDataStoreUiConfigFieldsUiComponentsMapArgs.Builder]*):
         com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsDataStoreUiConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.discoveryengine.inputs.WidgetConfigUiSettingsDataStoreUiConfigFieldsUiComponentsMapArgs.builder
       builder.fieldsUiComponentsMaps(args.map(_(argsBuilder).build)*)

@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object ec2transitgateway:
   /** Manages an EC2 Transit Gateway Connect. */
-  def Connect(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Connect(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.ConnectArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2transitgateway.ConnectArgs.builder
     argsBuilder = args(argsBuilder)
@@ -22,7 +22,7 @@ object ec2transitgateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway Connect Peer. */
-  def ConnectPeer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConnectPeer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.ConnectPeerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2transitgateway.ConnectPeerArgs.builder
     argsBuilder = args(argsBuilder)
@@ -37,7 +37,7 @@ object ec2transitgateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS EC2 Transit Gateway Default Route Table Association. */
-  def DefaultRouteTableAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DefaultRouteTableAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.DefaultRouteTableAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2transitgateway.DefaultRouteTableAssociationArgs.builder
     com.pulumi.aws.ec2transitgateway.DefaultRouteTableAssociation(name,
@@ -45,7 +45,7 @@ object ec2transitgateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS EC2 Transit Gateway Default Route Table Propagation. */
-  def DefaultRouteTablePropagation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DefaultRouteTablePropagation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.DefaultRouteTablePropagationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2transitgateway.DefaultRouteTablePropagationArgs.builder
     com.pulumi.aws.ec2transitgateway.DefaultRouteTablePropagation(name,
@@ -334,7 +334,7 @@ object ec2transitgateway:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an EC2 Instance Connect Endpoint. */
-  def InstanceConnectEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceConnectEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.InstanceConnectEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2transitgateway.InstanceConnectEndpointArgs.builder
     argsBuilder = args(argsBuilder)
@@ -353,7 +353,7 @@ object ec2transitgateway:
    * 
    * &gt; **NOTE on Instance State Management:** AWS does not currently have an EC2 API operation to determine an instance has finished processing user data. As a result, this resource can interfere with user data processing. For example, this resource may stop an instance while the user data script is in mid run.
    */
-  def InstanceState(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceState(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.InstanceStateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2transitgateway.InstanceStateArgs.builder
     com.pulumi.aws.ec2transitgateway.InstanceState(name,
@@ -361,7 +361,7 @@ object ec2transitgateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway Metering Policy for Flexible Cost Allocation (FCA). A metering policy defines how traffic is metered for cost allocation purposes on a Transit Gateway. */
-  def MeteringPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MeteringPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.MeteringPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2transitgateway.MeteringPolicyArgs.builder
     argsBuilder = args(argsBuilder)
@@ -376,7 +376,7 @@ object ec2transitgateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway Metering Policy Entry. Each entry defines a traffic matching rule within a Transit Gateway Metering Policy that determines which account is charged for matching traffic flows. */
-  def MeteringPolicyEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MeteringPolicyEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.MeteringPolicyEntryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2transitgateway.MeteringPolicyEntryArgs.builder
     com.pulumi.aws.ec2transitgateway.MeteringPolicyEntry(name,
@@ -384,7 +384,7 @@ object ec2transitgateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway Multicast Domain. */
-  def MulticastDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MulticastDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.MulticastDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2transitgateway.MulticastDomainArgs.builder
     argsBuilder = args(argsBuilder)
@@ -399,7 +399,7 @@ object ec2transitgateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Associates the specified subnet and transit gateway attachment with the specified transit gateway multicast domain. */
-  def MulticastDomainAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MulticastDomainAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.MulticastDomainAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2transitgateway.MulticastDomainAssociationArgs.builder
     com.pulumi.aws.ec2transitgateway.MulticastDomainAssociation(name,
@@ -410,7 +410,7 @@ object ec2transitgateway:
    * Registers members (network interfaces) with the transit gateway multicast group.
    * A member is a network interface associated with a supported EC2 instance that receives multicast traffic.
    */
-  def MulticastGroupMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MulticastGroupMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.MulticastGroupMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2transitgateway.MulticastGroupMemberArgs.builder
     com.pulumi.aws.ec2transitgateway.MulticastGroupMember(name,
@@ -421,7 +421,7 @@ object ec2transitgateway:
    * Registers sources (network interfaces) with the transit gateway multicast group.
    * A multicast source is a network interface attached to a supported instance that sends multicast traffic.
    */
-  def MulticastGroupSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MulticastGroupSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.MulticastGroupSourceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2transitgateway.MulticastGroupSourceArgs.builder
     com.pulumi.aws.ec2transitgateway.MulticastGroupSource(name,
@@ -432,7 +432,7 @@ object ec2transitgateway:
    * Manages an EC2 Transit Gateway Peering Attachment.
    * For examples of custom route table association and propagation, see the [EC2 Transit Gateway Networking Examples Guide](https://docs.aws.amazon.com/vpc/latest/tgw/TGW_Scenarios.html).
    */
-  def PeeringAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PeeringAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.PeeringAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2transitgateway.PeeringAttachmentArgs.builder
     argsBuilder = args(argsBuilder)
@@ -447,7 +447,7 @@ object ec2transitgateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the accepter&#39;s side of an EC2 Transit Gateway Peering Attachment. */
-  def PeeringAttachmentAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PeeringAttachmentAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.PeeringAttachmentAccepterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2transitgateway.PeeringAttachmentAccepterArgs.builder
     argsBuilder = args(argsBuilder)
@@ -462,7 +462,7 @@ object ec2transitgateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway Policy Table. */
-  def PolicyTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PolicyTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.PolicyTableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2transitgateway.PolicyTableArgs.builder
     argsBuilder = args(argsBuilder)
@@ -477,7 +477,7 @@ object ec2transitgateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway Policy Table association. */
-  def PolicyTableAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PolicyTableAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.PolicyTableAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2transitgateway.PolicyTableAssociationArgs.builder
     com.pulumi.aws.ec2transitgateway.PolicyTableAssociation(name,
@@ -485,7 +485,7 @@ object ec2transitgateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway Policy Table Entry. Each entry defines a traffic matching rule within a Transit Gateway Policy Table that routes matching traffic to a specified transit gateway route table, enabling Policy-Based Routing (PBR). */
-  def PolicyTableEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PolicyTableEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.PolicyTableEntryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2transitgateway.PolicyTableEntryArgs.builder
     com.pulumi.aws.ec2transitgateway.PolicyTableEntry(name,
@@ -493,7 +493,7 @@ object ec2transitgateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway Prefix List Reference. */
-  def PrefixListReference(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PrefixListReference(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.PrefixListReferenceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2transitgateway.PrefixListReferenceArgs.builder
     com.pulumi.aws.ec2transitgateway.PrefixListReference(name,
@@ -501,7 +501,7 @@ object ec2transitgateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway Route. */
-  def Route(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Route(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.RouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2transitgateway.RouteArgs.builder
     com.pulumi.aws.ec2transitgateway.Route(name,
@@ -509,7 +509,7 @@ object ec2transitgateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway Route Table. */
-  def RouteTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RouteTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.RouteTableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2transitgateway.RouteTableArgs.builder
     argsBuilder = args(argsBuilder)
@@ -524,7 +524,7 @@ object ec2transitgateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway Route Table association. */
-  def RouteTableAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RouteTableAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.RouteTableAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2transitgateway.RouteTableAssociationArgs.builder
     com.pulumi.aws.ec2transitgateway.RouteTableAssociation(name,
@@ -532,7 +532,7 @@ object ec2transitgateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway Route Table propagation. */
-  def RouteTablePropagation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RouteTablePropagation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.RouteTablePropagationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2transitgateway.RouteTablePropagationArgs.builder
     com.pulumi.aws.ec2transitgateway.RouteTablePropagation(name,
@@ -540,7 +540,7 @@ object ec2transitgateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway. */
-  def TransitGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TransitGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.TransitGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2transitgateway.TransitGatewayArgs.builder
     argsBuilder = args(argsBuilder)
@@ -555,7 +555,7 @@ object ec2transitgateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway VPC Attachment. For examples of custom route table association and propagation, see the EC2 Transit Gateway Networking Examples Guide. */
-  def VpcAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.VpcAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2transitgateway.VpcAttachmentArgs.builder
     argsBuilder = args(argsBuilder)
@@ -578,7 +578,7 @@ object ec2transitgateway:
    * and the accepter can use the `aws.ec2transitgateway.VpcAttachmentAccepter` resource to &#34;adopt&#34; its side of the
    * connection into management.
    */
-  def VpcAttachmentAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcAttachmentAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2transitgateway.VpcAttachmentAccepterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2transitgateway.VpcAttachmentAccepterArgs.builder
     argsBuilder = args(argsBuilder)

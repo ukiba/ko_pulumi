@@ -8,7 +8,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def adminSettings(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceAdminSettingsArgs.Builder]):
+    inline def adminSettings(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceAdminSettingsArgs.Builder]):
         com.pulumi.gcp.looker.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.looker.inputs.InstanceAdminSettingsArgs.builder
       builder.adminSettings(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def controlledEgressConfig(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceControlledEgressConfigArgs.Builder]):
+    inline def controlledEgressConfig(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceControlledEgressConfigArgs.Builder]):
         com.pulumi.gcp.looker.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.looker.inputs.InstanceControlledEgressConfigArgs.builder
       builder.controlledEgressConfig(args(argsBuilder).build)
@@ -28,7 +28,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customDomain(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceCustomDomainArgs.Builder]):
+    inline def customDomain(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceCustomDomainArgs.Builder]):
         com.pulumi.gcp.looker.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.looker.inputs.InstanceCustomDomainArgs.builder
       builder.customDomain(args(argsBuilder).build)
@@ -40,7 +40,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def denyMaintenancePeriod(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceDenyMaintenancePeriodArgs.Builder]):
+    inline def denyMaintenancePeriod(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceDenyMaintenancePeriodArgs.Builder]):
         com.pulumi.gcp.looker.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.looker.inputs.InstanceDenyMaintenancePeriodArgs.builder
       builder.denyMaintenancePeriod(args(argsBuilder).build)
@@ -50,7 +50,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionConfig(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceEncryptionConfigArgs.Builder]):
+    inline def encryptionConfig(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceEncryptionConfigArgs.Builder]):
         com.pulumi.gcp.looker.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.looker.inputs.InstanceEncryptionConfigArgs.builder
       builder.encryptionConfig(args(argsBuilder).build)
@@ -63,7 +63,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenanceWindow(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceMaintenanceWindowArgs.Builder]):
+    inline def maintenanceWindow(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceMaintenanceWindowArgs.Builder]):
         com.pulumi.gcp.looker.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.looker.inputs.InstanceMaintenanceWindowArgs.builder
       builder.maintenanceWindow(args(argsBuilder).build)
@@ -73,7 +73,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauthConfig(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceOauthConfigArgs.Builder]):
+    inline def oauthConfig(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceOauthConfigArgs.Builder]):
         com.pulumi.gcp.looker.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.looker.inputs.InstanceOauthConfigArgs.builder
       builder.oauthConfig(args(argsBuilder).build)
@@ -83,7 +83,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def periodicExportConfig(args: Endofunction[com.pulumi.gcp.looker.inputs.InstancePeriodicExportConfigArgs.Builder]):
+    inline def periodicExportConfig(args: Endofunction[com.pulumi.gcp.looker.inputs.InstancePeriodicExportConfigArgs.Builder]):
         com.pulumi.gcp.looker.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.looker.inputs.InstancePeriodicExportConfigArgs.builder
       builder.periodicExportConfig(args(argsBuilder).build)
@@ -93,7 +93,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscConfig(args: Endofunction[com.pulumi.gcp.looker.inputs.InstancePscConfigArgs.Builder]):
+    inline def pscConfig(args: Endofunction[com.pulumi.gcp.looker.inputs.InstancePscConfigArgs.Builder]):
         com.pulumi.gcp.looker.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.looker.inputs.InstancePscConfigArgs.builder
       builder.pscConfig(args(argsBuilder).build)
@@ -109,7 +109,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def userMetadata(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceUserMetadataArgs.Builder]):
+    inline def userMetadata(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceUserMetadataArgs.Builder]):
         com.pulumi.gcp.looker.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.looker.inputs.InstanceUserMetadataArgs.builder
       builder.userMetadata(args(argsBuilder).build)
@@ -120,7 +120,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endDate(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceDenyMaintenancePeriodEndDateArgs.Builder]):
+    inline def endDate(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceDenyMaintenancePeriodEndDateArgs.Builder]):
         com.pulumi.gcp.looker.inputs.InstanceDenyMaintenancePeriodArgs.Builder =
       val argsBuilder = com.pulumi.gcp.looker.inputs.InstanceDenyMaintenancePeriodEndDateArgs.builder
       builder.endDate(args(argsBuilder).build)
@@ -130,7 +130,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def startDate(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceDenyMaintenancePeriodStartDateArgs.Builder]):
+    inline def startDate(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceDenyMaintenancePeriodStartDateArgs.Builder]):
         com.pulumi.gcp.looker.inputs.InstanceDenyMaintenancePeriodArgs.Builder =
       val argsBuilder = com.pulumi.gcp.looker.inputs.InstanceDenyMaintenancePeriodStartDateArgs.builder
       builder.startDate(args(argsBuilder).build)
@@ -140,7 +140,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def time(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceDenyMaintenancePeriodTimeArgs.Builder]):
+    inline def time(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceDenyMaintenancePeriodTimeArgs.Builder]):
         com.pulumi.gcp.looker.inputs.InstanceDenyMaintenancePeriodArgs.Builder =
       val argsBuilder = com.pulumi.gcp.looker.inputs.InstanceDenyMaintenancePeriodTimeArgs.builder
       builder.time(args(argsBuilder).build)
@@ -151,7 +151,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def startTime(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceMaintenanceWindowStartTimeArgs.Builder]):
+    inline def startTime(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceMaintenanceWindowStartTimeArgs.Builder]):
         com.pulumi.gcp.looker.inputs.InstanceMaintenanceWindowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.looker.inputs.InstanceMaintenanceWindowStartTimeArgs.builder
       builder.startTime(args(argsBuilder).build)
@@ -162,7 +162,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def startTime(args: Endofunction[com.pulumi.gcp.looker.inputs.InstancePeriodicExportConfigStartTimeArgs.Builder]):
+    inline def startTime(args: Endofunction[com.pulumi.gcp.looker.inputs.InstancePeriodicExportConfigStartTimeArgs.Builder]):
         com.pulumi.gcp.looker.inputs.InstancePeriodicExportConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.looker.inputs.InstancePeriodicExportConfigStartTimeArgs.builder
       builder.startTime(args(argsBuilder).build)
@@ -173,7 +173,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceAttachments(args: Endofunction[com.pulumi.gcp.looker.inputs.InstancePscConfigServiceAttachmentArgs.Builder]*):
+    inline def serviceAttachments(args: Endofunction[com.pulumi.gcp.looker.inputs.InstancePscConfigServiceAttachmentArgs.Builder]*):
         com.pulumi.gcp.looker.inputs.InstancePscConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.looker.inputs.InstancePscConfigServiceAttachmentArgs.builder
       builder.serviceAttachments(args.map(_(argsBuilder).build)*)
@@ -184,7 +184,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def adminSettings(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceAdminSettingsArgs.Builder]):
+    inline def adminSettings(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceAdminSettingsArgs.Builder]):
         com.pulumi.gcp.looker.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.looker.inputs.InstanceAdminSettingsArgs.builder
       builder.adminSettings(args(argsBuilder).build)
@@ -194,7 +194,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def controlledEgressConfig(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceControlledEgressConfigArgs.Builder]):
+    inline def controlledEgressConfig(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceControlledEgressConfigArgs.Builder]):
         com.pulumi.gcp.looker.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.looker.inputs.InstanceControlledEgressConfigArgs.builder
       builder.controlledEgressConfig(args(argsBuilder).build)
@@ -204,7 +204,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customDomain(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceCustomDomainArgs.Builder]):
+    inline def customDomain(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceCustomDomainArgs.Builder]):
         com.pulumi.gcp.looker.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.looker.inputs.InstanceCustomDomainArgs.builder
       builder.customDomain(args(argsBuilder).build)
@@ -216,7 +216,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def denyMaintenancePeriod(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceDenyMaintenancePeriodArgs.Builder]):
+    inline def denyMaintenancePeriod(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceDenyMaintenancePeriodArgs.Builder]):
         com.pulumi.gcp.looker.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.looker.inputs.InstanceDenyMaintenancePeriodArgs.builder
       builder.denyMaintenancePeriod(args(argsBuilder).build)
@@ -226,7 +226,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionConfig(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceEncryptionConfigArgs.Builder]):
+    inline def encryptionConfig(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceEncryptionConfigArgs.Builder]):
         com.pulumi.gcp.looker.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.looker.inputs.InstanceEncryptionConfigArgs.builder
       builder.encryptionConfig(args(argsBuilder).build)
@@ -239,7 +239,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenanceWindow(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceMaintenanceWindowArgs.Builder]):
+    inline def maintenanceWindow(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceMaintenanceWindowArgs.Builder]):
         com.pulumi.gcp.looker.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.looker.inputs.InstanceMaintenanceWindowArgs.builder
       builder.maintenanceWindow(args(argsBuilder).build)
@@ -249,7 +249,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauthConfig(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceOauthConfigArgs.Builder]):
+    inline def oauthConfig(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceOauthConfigArgs.Builder]):
         com.pulumi.gcp.looker.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.looker.inputs.InstanceOauthConfigArgs.builder
       builder.oauthConfig(args(argsBuilder).build)
@@ -259,7 +259,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def periodicExportConfig(args: Endofunction[com.pulumi.gcp.looker.inputs.InstancePeriodicExportConfigArgs.Builder]):
+    inline def periodicExportConfig(args: Endofunction[com.pulumi.gcp.looker.inputs.InstancePeriodicExportConfigArgs.Builder]):
         com.pulumi.gcp.looker.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.looker.inputs.InstancePeriodicExportConfigArgs.builder
       builder.periodicExportConfig(args(argsBuilder).build)
@@ -269,7 +269,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscConfig(args: Endofunction[com.pulumi.gcp.looker.inputs.InstancePscConfigArgs.Builder]):
+    inline def pscConfig(args: Endofunction[com.pulumi.gcp.looker.inputs.InstancePscConfigArgs.Builder]):
         com.pulumi.gcp.looker.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.looker.inputs.InstancePscConfigArgs.builder
       builder.pscConfig(args(argsBuilder).build)
@@ -285,7 +285,7 @@ object looker_ext:
      * Structure is documented below.
      * @return builder
      */
-    def userMetadata(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceUserMetadataArgs.Builder]):
+    inline def userMetadata(args: Endofunction[com.pulumi.gcp.looker.inputs.InstanceUserMetadataArgs.Builder]):
         com.pulumi.gcp.looker.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.looker.inputs.InstanceUserMetadataArgs.builder
       builder.userMetadata(args(argsBuilder).build)

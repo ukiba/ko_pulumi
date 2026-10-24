@@ -10,7 +10,7 @@ object certificatemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def managed(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.CertificateManagedArgs.Builder]):
+    inline def managed(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.CertificateManagedArgs.Builder]):
         com.pulumi.gcp.certificatemanager.CertificateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificatemanager.inputs.CertificateManagedArgs.builder
       builder.managed(args(argsBuilder).build)
@@ -25,7 +25,7 @@ object certificatemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def selfManaged(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.CertificateSelfManagedArgs.Builder]):
+    inline def selfManaged(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.CertificateSelfManagedArgs.Builder]):
         com.pulumi.gcp.certificatemanager.CertificateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificatemanager.inputs.CertificateSelfManagedArgs.builder
       builder.selfManaged(args(argsBuilder).build)
@@ -36,7 +36,7 @@ object certificatemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def certificateAuthorityConfig(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.CertificateIssuanceConfigCertificateAuthorityConfigArgs.Builder]):
+    inline def certificateAuthorityConfig(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.CertificateIssuanceConfigCertificateAuthorityConfigArgs.Builder]):
         com.pulumi.gcp.certificatemanager.CertificateIssuanceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificatemanager.inputs.CertificateIssuanceConfigCertificateAuthorityConfigArgs.builder
       builder.certificateAuthorityConfig(args(argsBuilder).build)
@@ -48,7 +48,7 @@ object certificatemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allowlistedCertificates(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.TrustConfigAllowlistedCertificateArgs.Builder]*):
+    inline def allowlistedCertificates(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.TrustConfigAllowlistedCertificateArgs.Builder]*):
         com.pulumi.gcp.certificatemanager.TrustConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificatemanager.inputs.TrustConfigAllowlistedCertificateArgs.builder
       builder.allowlistedCertificates(args.map(_(argsBuilder).build)*)
@@ -59,7 +59,7 @@ object certificatemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trustStores(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.TrustConfigTrustStoreArgs.Builder]*):
+    inline def trustStores(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.TrustConfigTrustStoreArgs.Builder]*):
         com.pulumi.gcp.certificatemanager.TrustConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificatemanager.inputs.TrustConfigTrustStoreArgs.builder
       builder.trustStores(args.map(_(argsBuilder).build)*)
@@ -70,7 +70,7 @@ object certificatemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def certificateAuthorityServiceConfig(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfigArgs.Builder]):
+    inline def certificateAuthorityServiceConfig(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfigArgs.Builder]):
         com.pulumi.gcp.certificatemanager.inputs.CertificateIssuanceConfigCertificateAuthorityConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificatemanager.inputs.CertificateIssuanceConfigCertificateAuthorityConfigCertificateAuthorityServiceConfigArgs.builder
       builder.certificateAuthorityServiceConfig(args(argsBuilder).build)
@@ -81,7 +81,7 @@ object certificatemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def certificateAuthorityConfig(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.CertificateIssuanceConfigCertificateAuthorityConfigArgs.Builder]):
+    inline def certificateAuthorityConfig(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.CertificateIssuanceConfigCertificateAuthorityConfigArgs.Builder]):
         com.pulumi.gcp.certificatemanager.inputs.CertificateIssuanceConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.certificatemanager.inputs.CertificateIssuanceConfigCertificateAuthorityConfigArgs.builder
       builder.certificateAuthorityConfig(args(argsBuilder).build)
@@ -96,7 +96,7 @@ object certificatemanager_ext:
      * &lt;a name=&#34;nestedManagedProvisioningIssue&#34;&gt;&lt;/a&gt;The `provisioningIssue` block contains:
      * @return builder
      */
-    def authorizationAttemptInfos(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.CertificateManagedAuthorizationAttemptInfoArgs.Builder]*):
+    inline def authorizationAttemptInfos(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.CertificateManagedAuthorizationAttemptInfoArgs.Builder]*):
         com.pulumi.gcp.certificatemanager.inputs.CertificateManagedArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificatemanager.inputs.CertificateManagedAuthorizationAttemptInfoArgs.builder
       builder.authorizationAttemptInfos(args.map(_(argsBuilder).build)*)
@@ -107,7 +107,7 @@ object certificatemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def provisioningIssues(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.CertificateManagedProvisioningIssueArgs.Builder]*):
+    inline def provisioningIssues(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.CertificateManagedProvisioningIssueArgs.Builder]*):
         com.pulumi.gcp.certificatemanager.inputs.CertificateManagedArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificatemanager.inputs.CertificateManagedProvisioningIssueArgs.builder
       builder.provisioningIssues(args.map(_(argsBuilder).build)*)
@@ -118,7 +118,7 @@ object certificatemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ipConfigs(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.CertificateMapGclbTargetIpConfigArgs.Builder]*):
+    inline def ipConfigs(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.CertificateMapGclbTargetIpConfigArgs.Builder]*):
         com.pulumi.gcp.certificatemanager.inputs.CertificateMapGclbTargetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificatemanager.inputs.CertificateMapGclbTargetIpConfigArgs.builder
       builder.ipConfigs(args.map(_(argsBuilder).build)*)
@@ -129,7 +129,7 @@ object certificatemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gclbTargets(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.CertificateMapGclbTargetArgs.Builder]*):
+    inline def gclbTargets(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.CertificateMapGclbTargetArgs.Builder]*):
         com.pulumi.gcp.certificatemanager.inputs.CertificateMapState.Builder =
       def argsBuilder = com.pulumi.gcp.certificatemanager.inputs.CertificateMapGclbTargetArgs.builder
       builder.gclbTargets(args.map(_(argsBuilder).build)*)
@@ -142,7 +142,7 @@ object certificatemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def managed(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.CertificateManagedArgs.Builder]):
+    inline def managed(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.CertificateManagedArgs.Builder]):
         com.pulumi.gcp.certificatemanager.inputs.CertificateState.Builder =
       val argsBuilder = com.pulumi.gcp.certificatemanager.inputs.CertificateManagedArgs.builder
       builder.managed(args(argsBuilder).build)
@@ -157,7 +157,7 @@ object certificatemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def selfManaged(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.CertificateSelfManagedArgs.Builder]):
+    inline def selfManaged(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.CertificateSelfManagedArgs.Builder]):
         com.pulumi.gcp.certificatemanager.inputs.CertificateState.Builder =
       val argsBuilder = com.pulumi.gcp.certificatemanager.inputs.CertificateSelfManagedArgs.builder
       builder.selfManaged(args(argsBuilder).build)
@@ -170,7 +170,7 @@ object certificatemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dnsResourceRecords(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.DnsAuthorizationDnsResourceRecordArgs.Builder]*):
+    inline def dnsResourceRecords(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.DnsAuthorizationDnsResourceRecordArgs.Builder]*):
         com.pulumi.gcp.certificatemanager.inputs.DnsAuthorizationState.Builder =
       def argsBuilder = com.pulumi.gcp.certificatemanager.inputs.DnsAuthorizationDnsResourceRecordArgs.builder
       builder.dnsResourceRecords(args.map(_(argsBuilder).build)*)
@@ -182,7 +182,7 @@ object certificatemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allowlistedCertificates(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.TrustConfigAllowlistedCertificateArgs.Builder]*):
+    inline def allowlistedCertificates(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.TrustConfigAllowlistedCertificateArgs.Builder]*):
         com.pulumi.gcp.certificatemanager.inputs.TrustConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.certificatemanager.inputs.TrustConfigAllowlistedCertificateArgs.builder
       builder.allowlistedCertificates(args.map(_(argsBuilder).build)*)
@@ -193,7 +193,7 @@ object certificatemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trustStores(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.TrustConfigTrustStoreArgs.Builder]*):
+    inline def trustStores(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.TrustConfigTrustStoreArgs.Builder]*):
         com.pulumi.gcp.certificatemanager.inputs.TrustConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.certificatemanager.inputs.TrustConfigTrustStoreArgs.builder
       builder.trustStores(args.map(_(argsBuilder).build)*)
@@ -205,7 +205,7 @@ object certificatemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def intermediateCas(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.TrustConfigTrustStoreIntermediateCaArgs.Builder]*):
+    inline def intermediateCas(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.TrustConfigTrustStoreIntermediateCaArgs.Builder]*):
         com.pulumi.gcp.certificatemanager.inputs.TrustConfigTrustStoreArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificatemanager.inputs.TrustConfigTrustStoreIntermediateCaArgs.builder
       builder.intermediateCas(args.map(_(argsBuilder).build)*)
@@ -215,7 +215,7 @@ object certificatemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trustAnchors(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.TrustConfigTrustStoreTrustAnchorArgs.Builder]*):
+    inline def trustAnchors(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.TrustConfigTrustStoreTrustAnchorArgs.Builder]*):
         com.pulumi.gcp.certificatemanager.inputs.TrustConfigTrustStoreArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificatemanager.inputs.TrustConfigTrustStoreTrustAnchorArgs.builder
       builder.trustAnchors(args.map(_(argsBuilder).build)*)

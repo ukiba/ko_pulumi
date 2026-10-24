@@ -24,7 +24,7 @@ object mediaconvert:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides an AWS Elemental MediaConvert Queue. */
-  def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.mediaconvert.QueueArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.mediaconvert.QueueArgs.builder
     conf.logicalName2physicalName(name) match

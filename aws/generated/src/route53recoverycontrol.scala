@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object route53recoverycontrol:
   /** Provides an AWS Route 53 Recovery Control Config Cluster. */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53recoverycontrol.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53recoverycontrol.ClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -23,7 +23,7 @@ object route53recoverycontrol:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Route 53 Recovery Control Config Control Panel. */
-  def ControlPanel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ControlPanel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53recoverycontrol.ControlPanelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53recoverycontrol.ControlPanelArgs.builder
     conf.logicalName2physicalName(name) match
@@ -41,7 +41,7 @@ object route53recoverycontrol:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Route 53 Recovery Control Config Routing Control. */
-  def RoutingControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RoutingControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53recoverycontrol.RoutingControlArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53recoverycontrol.RoutingControlArgs.builder
     conf.logicalName2physicalName(name) match
@@ -52,7 +52,7 @@ object route53recoverycontrol:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Route 53 Recovery Control Config Safety Rule */
-  def SafetyRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SafetyRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.route53recoverycontrol.SafetyRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.route53recoverycontrol.SafetyRuleArgs.builder
     conf.logicalName2physicalName(name) match

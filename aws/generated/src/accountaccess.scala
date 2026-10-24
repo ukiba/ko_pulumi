@@ -46,7 +46,7 @@ object accountaccess:
    * 
    * &gt; **Note:** Granting access to roles in target accounts is done with `aws.accountaccess.Entitlement`. Each target role must trust the Account Access service in its `assumeRolePolicy` \u2014 see that resource&#39;s documentation for the required trust policy.
    */
-  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.accountaccess.ApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.accountaccess.ApplicationArgs.builder
     argsBuilder = args(argsBuilder)
@@ -67,7 +67,7 @@ object accountaccess:
    * 
    * &gt; **Note:** The IAM role referenced by `entitlement.principal_role.role_arn` must have a trust policy that allows the Account Access service to assume it. The role&#39;s `assumeRolePolicy` must grant `sts:AssumeRole`, `sts:SetContext`, and `sts:TagSession` to the `account-access.amazonaws.com` service principal. Without `sts:TagSession`, credential retrieval for the entitlement fails. See the Complete Example below.
    */
-  def Entitlement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Entitlement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.accountaccess.EntitlementArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.accountaccess.EntitlementArgs.builder
     com.pulumi.aws.accountaccess.Entitlement(name,

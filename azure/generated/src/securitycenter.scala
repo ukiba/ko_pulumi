@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object securitycenter:
   /** Manages a resources Advanced Threat Protection setting. */
-  def AdvancedThreatProtection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AdvancedThreatProtection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.securitycenter.AdvancedThreatProtectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.securitycenter.AdvancedThreatProtectionArgs.builder
     com.pulumi.azure.securitycenter.AdvancedThreatProtection(name,
@@ -13,7 +13,7 @@ object securitycenter:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Security Center Assessment for Azure Security Center. */
-  def Assessment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Assessment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.securitycenter.AssessmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.securitycenter.AssessmentArgs.builder
     com.pulumi.azure.securitycenter.Assessment(name,
@@ -21,7 +21,7 @@ object securitycenter:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Security Center Assessment Metadata for Azure Security Center. */
-  def AssessmentPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AssessmentPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.securitycenter.AssessmentPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.securitycenter.AssessmentPolicyArgs.builder
     com.pulumi.azure.securitycenter.AssessmentPolicy(name,
@@ -35,7 +35,7 @@ object securitycenter:
    * 
    * &gt; **Note:** There is no resource name required, it will always be &#34;default&#34;
    */
-  def AutoProvisioning(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AutoProvisioning(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.securitycenter.AutoProvisioningArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.securitycenter.AutoProvisioningArgs.builder
     com.pulumi.azure.securitycenter.AutoProvisioning(name,
@@ -43,7 +43,7 @@ object securitycenter:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages Security Center Automation and Continuous Export. This resource supports three types of destination in the `action`, Logic Apps, Log Analytics and Event Hubs */
-  def Automation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Automation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.securitycenter.AutomationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.securitycenter.AutomationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -65,7 +65,7 @@ object securitycenter:
    * 
    * &gt; **Note:** Owner access permission is required.
    */
-  def Contact(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Contact(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.securitycenter.ContactArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.securitycenter.ContactArgs.builder
     conf.logicalName2physicalName(name) match
@@ -81,7 +81,7 @@ object securitycenter:
    * &gt; **Note:** Azure Defender has to be enabled on the subscription in order for this resource to work.
    * See this [documentation](https://docs.microsoft.com/azure/security-center/security-center-get-started) to get started.
    */
-  def ServerVulnerabilityAssessmentVirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServerVulnerabilityAssessmentVirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.securitycenter.ServerVulnerabilityAssessmentVirtualMachineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.securitycenter.ServerVulnerabilityAssessmentVirtualMachineArgs.builder
     com.pulumi.azure.securitycenter.ServerVulnerabilityAssessmentVirtualMachine(name,
@@ -95,7 +95,7 @@ object securitycenter:
    * 
    * &gt; **Note:** Deletion of this resource disables the setting.
    */
-  def ServerVulnerabilityAssessmentsSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServerVulnerabilityAssessmentsSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.securitycenter.ServerVulnerabilityAssessmentsSettingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.securitycenter.ServerVulnerabilityAssessmentsSettingArgs.builder
     com.pulumi.azure.securitycenter.ServerVulnerabilityAssessmentsSetting(name,
@@ -109,7 +109,7 @@ object securitycenter:
    * 
    * &gt; **Note:** Deletion of this resource disables the setting.
    */
-  def Setting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Setting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.securitycenter.SettingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.securitycenter.SettingArgs.builder
     com.pulumi.azure.securitycenter.Setting(name,
@@ -117,7 +117,7 @@ object securitycenter:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Defender for Storage. */
-  def StorageDefender(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StorageDefender(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.securitycenter.StorageDefenderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.securitycenter.StorageDefenderArgs.builder
     com.pulumi.azure.securitycenter.StorageDefender(name,
@@ -129,7 +129,7 @@ object securitycenter:
    * 
    * &gt; **Note:** Deletion of this resource will reset the pricing tier to `Free`
    */
-  def SubscriptionPricing(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubscriptionPricing(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.securitycenter.SubscriptionPricingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.securitycenter.SubscriptionPricingArgs.builder
     com.pulumi.azure.securitycenter.SubscriptionPricing(name,
@@ -141,7 +141,7 @@ object securitycenter:
    * 
    * &gt; **Note:** Owner access permission is required.
    */
-  def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.securitycenter.WorkspaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.securitycenter.WorkspaceArgs.builder
     com.pulumi.azure.securitycenter.Workspace(name,

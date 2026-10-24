@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object opensearchingest:
   /** Resource for managing an AWS OpenSearch Ingestion Pipeline. */
-  def Pipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Pipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.opensearchingest.PipelineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.opensearchingest.PipelineArgs.builder
     argsBuilder = args(argsBuilder)
@@ -20,7 +20,7 @@ object opensearchingest:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS OpenSearch Ingestion Pipeline Endpoint. */
-  def PipelineEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PipelineEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.opensearchingest.PipelineEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.opensearchingest.PipelineEndpointArgs.builder
     com.pulumi.aws.opensearchingest.PipelineEndpoint(name,
@@ -28,7 +28,7 @@ object opensearchingest:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS OpenSearch Ingestion Resource Policy. */
-  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.opensearchingest.ResourcePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.opensearchingest.ResourcePolicyArgs.builder
     com.pulumi.aws.opensearchingest.ResourcePolicy(name,

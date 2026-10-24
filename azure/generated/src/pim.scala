@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object pim:
   /** Manages a PIM Active Role Assignment. */
-  def ActiveRoleAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ActiveRoleAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.pim.ActiveRoleAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.pim.ActiveRoleAssignmentArgs.builder
     com.pulumi.azure.pim.ActiveRoleAssignment(name,
@@ -15,7 +15,7 @@ object pim:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a PIM Eligible Role Assignment. */
-  def EligibleRoleAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EligibleRoleAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.pim.EligibleRoleAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.pim.EligibleRoleAssignmentArgs.builder
     com.pulumi.azure.pim.EligibleRoleAssignment(name,
@@ -56,7 +56,7 @@ object pim:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manage a role policy for an Azure Management Group, Subscription, Resource Group or resource. */
-  def RoleManagementPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RoleManagementPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.pim.RoleManagementPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.pim.RoleManagementPolicyArgs.builder
     com.pulumi.azure.pim.RoleManagementPolicy(name,

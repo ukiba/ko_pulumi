@@ -11,7 +11,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def computeResources(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceArgs.Builder]*):
+    inline def computeResources(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceArgs.Builder]*):
         com.pulumi.gcp.hypercomputecluster.ClusterArgs.Builder =
       def argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceArgs.builder
       builder.computeResources(args.map(_(argsBuilder).build)*)
@@ -25,7 +25,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkResources(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterNetworkResourceArgs.Builder]*):
+    inline def networkResources(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterNetworkResourceArgs.Builder]*):
         com.pulumi.gcp.hypercomputecluster.ClusterArgs.Builder =
       def argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterNetworkResourceArgs.builder
       builder.networkResources(args.map(_(argsBuilder).build)*)
@@ -37,7 +37,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def orchestrator(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorArgs.Builder]):
+    inline def orchestrator(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorArgs.Builder]):
         com.pulumi.gcp.hypercomputecluster.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorArgs.builder
       builder.orchestrator(args(argsBuilder).build)
@@ -50,7 +50,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def storageResources(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceArgs.Builder]*):
+    inline def storageResources(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceArgs.Builder]*):
         com.pulumi.gcp.hypercomputecluster.ClusterArgs.Builder =
       def argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceArgs.builder
       builder.storageResources(args.map(_(argsBuilder).build)*)
@@ -61,7 +61,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceConfigArgs.Builder]):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -74,7 +74,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def newFlexStartInstances(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceConfigNewFlexStartInstancesArgs.Builder]):
+    inline def newFlexStartInstances(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceConfigNewFlexStartInstancesArgs.Builder]):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceConfigNewFlexStartInstancesArgs.builder
       builder.newFlexStartInstances(args(argsBuilder).build)
@@ -85,7 +85,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def newOnDemandInstances(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceConfigNewOnDemandInstancesArgs.Builder]):
+    inline def newOnDemandInstances(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceConfigNewOnDemandInstancesArgs.Builder]):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceConfigNewOnDemandInstancesArgs.builder
       builder.newOnDemandInstances(args(argsBuilder).build)
@@ -97,7 +97,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def newReservedInstances(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceConfigNewReservedInstancesArgs.Builder]):
+    inline def newReservedInstances(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceConfigNewReservedInstancesArgs.Builder]):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceConfigNewReservedInstancesArgs.builder
       builder.newReservedInstances(args(argsBuilder).build)
@@ -109,7 +109,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def newSpotInstances(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceConfigNewSpotInstancesArgs.Builder]):
+    inline def newSpotInstances(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceConfigNewSpotInstancesArgs.Builder]):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceConfigNewSpotInstancesArgs.builder
       builder.newSpotInstances(args(argsBuilder).build)
@@ -122,7 +122,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterNetworkResourceConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterNetworkResourceConfigArgs.Builder]):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterNetworkResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterNetworkResourceConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -134,7 +134,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networks(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterNetworkResourceNetworkArgs.Builder]*):
+    inline def networks(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterNetworkResourceNetworkArgs.Builder]*):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterNetworkResourceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterNetworkResourceNetworkArgs.builder
       builder.networks(args.map(_(argsBuilder).build)*)
@@ -146,7 +146,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def existingNetwork(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterNetworkResourceConfigExistingNetworkArgs.Builder]):
+    inline def existingNetwork(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterNetworkResourceConfigExistingNetworkArgs.Builder]):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterNetworkResourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterNetworkResourceConfigExistingNetworkArgs.builder
       builder.existingNetwork(args(argsBuilder).build)
@@ -157,7 +157,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def newNetwork(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterNetworkResourceConfigNewNetworkArgs.Builder]):
+    inline def newNetwork(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterNetworkResourceConfigNewNetworkArgs.Builder]):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterNetworkResourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterNetworkResourceConfigNewNetworkArgs.builder
       builder.newNetwork(args(argsBuilder).build)
@@ -169,7 +169,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def slurm(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmArgs.Builder]):
+    inline def slurm(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmArgs.Builder]):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmArgs.builder
       builder.slurm(args(argsBuilder).build)
@@ -183,7 +183,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loginNodes(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmLoginNodesArgs.Builder]):
+    inline def loginNodes(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmLoginNodesArgs.Builder]):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmArgs.Builder =
       val argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmLoginNodesArgs.builder
       builder.loginNodes(args(argsBuilder).build)
@@ -194,7 +194,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeSets(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmNodeSetArgs.Builder]*):
+    inline def nodeSets(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmNodeSetArgs.Builder]*):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmArgs.Builder =
       def argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmNodeSetArgs.builder
       builder.nodeSets(args.map(_(argsBuilder).build)*)
@@ -206,7 +206,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def partitions(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmPartitionArgs.Builder]*):
+    inline def partitions(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmPartitionArgs.Builder]*):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmArgs.Builder =
       def argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmPartitionArgs.builder
       builder.partitions(args.map(_(argsBuilder).build)*)
@@ -218,7 +218,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bootDisk(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmLoginNodesBootDiskArgs.Builder]):
+    inline def bootDisk(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmLoginNodesBootDiskArgs.Builder]):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmLoginNodesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmLoginNodesBootDiskArgs.builder
       builder.bootDisk(args(argsBuilder).build)
@@ -230,7 +230,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def instances(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmLoginNodesInstanceArgs.Builder]*):
+    inline def instances(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmLoginNodesInstanceArgs.Builder]*):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmLoginNodesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmLoginNodesInstanceArgs.builder
       builder.instances(args.map(_(argsBuilder).build)*)
@@ -241,7 +241,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def storageConfigs(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmLoginNodesStorageConfigArgs.Builder]*):
+    inline def storageConfigs(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmLoginNodesStorageConfigArgs.Builder]*):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmLoginNodesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmLoginNodesStorageConfigArgs.builder
       builder.storageConfigs(args.map(_(argsBuilder).build)*)
@@ -253,7 +253,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def computeInstance(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmNodeSetComputeInstanceArgs.Builder]):
+    inline def computeInstance(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmNodeSetComputeInstanceArgs.Builder]):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmNodeSetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmNodeSetComputeInstanceArgs.builder
       builder.computeInstance(args(argsBuilder).build)
@@ -264,7 +264,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def storageConfigs(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmNodeSetStorageConfigArgs.Builder]*):
+    inline def storageConfigs(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmNodeSetStorageConfigArgs.Builder]*):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmNodeSetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmNodeSetStorageConfigArgs.builder
       builder.storageConfigs(args.map(_(argsBuilder).build)*)
@@ -276,7 +276,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bootDisk(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmNodeSetComputeInstanceBootDiskArgs.Builder]):
+    inline def bootDisk(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmNodeSetComputeInstanceBootDiskArgs.Builder]):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmNodeSetComputeInstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorSlurmNodeSetComputeInstanceBootDiskArgs.builder
       builder.bootDisk(args(argsBuilder).build)
@@ -290,7 +290,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def computeResources(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceArgs.Builder]*):
+    inline def computeResources(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceArgs.Builder]*):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterComputeResourceArgs.builder
       builder.computeResources(args.map(_(argsBuilder).build)*)
@@ -304,7 +304,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkResources(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterNetworkResourceArgs.Builder]*):
+    inline def networkResources(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterNetworkResourceArgs.Builder]*):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterNetworkResourceArgs.builder
       builder.networkResources(args.map(_(argsBuilder).build)*)
@@ -316,7 +316,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def orchestrator(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorArgs.Builder]):
+    inline def orchestrator(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorArgs.Builder]):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterOrchestratorArgs.builder
       builder.orchestrator(args(argsBuilder).build)
@@ -329,7 +329,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def storageResources(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceArgs.Builder]*):
+    inline def storageResources(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceArgs.Builder]*):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceArgs.builder
       builder.storageResources(args.map(_(argsBuilder).build)*)
@@ -340,7 +340,7 @@ object hypercomputecluster_ext:
      * Name of the bucket.
      * @return builder
      */
-    def buckets(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceBucketArgs.Builder]*):
+    inline def buckets(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceBucketArgs.Builder]*):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceBucketArgs.builder
       builder.buckets(args.map(_(argsBuilder).build)*)
@@ -352,7 +352,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigArgs.Builder]):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -363,7 +363,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def filestores(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceFilestoreArgs.Builder]*):
+    inline def filestores(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceFilestoreArgs.Builder]*):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceFilestoreArgs.builder
       builder.filestores(args.map(_(argsBuilder).build)*)
@@ -377,7 +377,7 @@ object hypercomputecluster_ext:
      * &lt;a name=&#34;nestedStorageResourcesBucket&#34;&gt;&lt;/a&gt;The `bucket` block contains:
      * @return builder
      */
-    def lustres(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceLustreArgs.Builder]*):
+    inline def lustres(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceLustreArgs.Builder]*):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceLustreArgs.builder
       builder.lustres(args.map(_(argsBuilder).build)*)
@@ -390,7 +390,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def existingBucket(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigExistingBucketArgs.Builder]):
+    inline def existingBucket(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigExistingBucketArgs.Builder]):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigExistingBucketArgs.builder
       builder.existingBucket(args(argsBuilder).build)
@@ -401,7 +401,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def existingFilestore(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigExistingFilestoreArgs.Builder]):
+    inline def existingFilestore(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigExistingFilestoreArgs.Builder]):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigExistingFilestoreArgs.builder
       builder.existingFilestore(args(argsBuilder).build)
@@ -413,7 +413,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def existingLustre(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigExistingLustreArgs.Builder]):
+    inline def existingLustre(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigExistingLustreArgs.Builder]):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigExistingLustreArgs.builder
       builder.existingLustre(args(argsBuilder).build)
@@ -425,7 +425,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def newBucket(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigNewBucketArgs.Builder]):
+    inline def newBucket(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigNewBucketArgs.Builder]):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigNewBucketArgs.builder
       builder.newBucket(args(argsBuilder).build)
@@ -436,7 +436,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def newFilestore(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigNewFilestoreArgs.Builder]):
+    inline def newFilestore(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigNewFilestoreArgs.Builder]):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigNewFilestoreArgs.builder
       builder.newFilestore(args(argsBuilder).build)
@@ -448,7 +448,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def newLustre(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigNewLustreArgs.Builder]):
+    inline def newLustre(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigNewLustreArgs.Builder]):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigNewLustreArgs.builder
       builder.newLustre(args(argsBuilder).build)
@@ -459,7 +459,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoclass(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigNewBucketAutoclassArgs.Builder]):
+    inline def autoclass(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigNewBucketAutoclassArgs.Builder]):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigNewBucketArgs.Builder =
       val argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigNewBucketAutoclassArgs.builder
       builder.autoclass(args(argsBuilder).build)
@@ -469,7 +469,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hierarchicalNamespace(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigNewBucketHierarchicalNamespaceArgs.Builder]):
+    inline def hierarchicalNamespace(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigNewBucketHierarchicalNamespaceArgs.Builder]):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigNewBucketArgs.Builder =
       val argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigNewBucketHierarchicalNamespaceArgs.builder
       builder.hierarchicalNamespace(args(argsBuilder).build)
@@ -481,7 +481,7 @@ object hypercomputecluster_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fileShares(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigNewFilestoreFileShareArgs.Builder]*):
+    inline def fileShares(args: Endofunction[com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigNewFilestoreFileShareArgs.Builder]*):
         com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigNewFilestoreArgs.Builder =
       def argsBuilder = com.pulumi.gcp.hypercomputecluster.inputs.ClusterStorageResourceConfigNewFilestoreFileShareArgs.builder
       builder.fileShares(args.map(_(argsBuilder).build)*)

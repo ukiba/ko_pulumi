@@ -10,7 +10,7 @@ object lex:
    * Provides an Amazon Lex Bot resource. For more information see
    * [Amazon Lex: How It Works](https://docs.aws.amazon.com/lex/latest/dg/how-it-works.html)
    */
-  def Bot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Bot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lex.BotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lex.BotArgs.builder
     conf.logicalName2physicalName(name) match
@@ -24,7 +24,7 @@ object lex:
    * Provides an Amazon Lex Bot Alias resource. For more information see
    * [Amazon Lex: How It Works](https://docs.aws.amazon.com/lex/latest/dg/how-it-works.html)
    */
-  def BotAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BotAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lex.BotAliasArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lex.BotAliasArgs.builder
     conf.logicalName2physicalName(name) match
@@ -38,7 +38,7 @@ object lex:
    * Provides an Amazon Lex Intent resource. For more information see
    * [Amazon Lex: How It Works](https://docs.aws.amazon.com/lex/latest/dg/how-it-works.html)
    */
-  def Intent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Intent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lex.IntentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lex.IntentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -117,7 +117,7 @@ object lex:
    * Provides an Amazon Lex Slot Type resource. For more information see
    * [Amazon Lex: How It Works](https://docs.aws.amazon.com/lex/latest/dg/how-it-works.html)
    */
-  def SlotType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SlotType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lex.SlotTypeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lex.SlotTypeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -128,7 +128,7 @@ object lex:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Lex V2 Models Bot. */
-  def V2modelsBot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2modelsBot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lex.V2modelsBotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lex.V2modelsBotArgs.builder
     conf.logicalName2physicalName(name) match
@@ -146,7 +146,7 @@ object lex:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Lex V2 Models Bot Locale. */
-  def V2modelsBotLocale(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2modelsBotLocale(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lex.V2modelsBotLocaleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lex.V2modelsBotLocaleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -157,7 +157,7 @@ object lex:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Lex V2 Models Bot Version. */
-  def V2modelsBotVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2modelsBotVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lex.V2modelsBotVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.lex.V2modelsBotVersionArgs.builder
     com.pulumi.aws.lex.V2modelsBotVersion(name,
@@ -165,7 +165,7 @@ object lex:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Lex V2 Models Intent. */
-  def V2modelsIntent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2modelsIntent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lex.V2modelsIntentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lex.V2modelsIntentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -176,7 +176,7 @@ object lex:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Lex V2 Models Slot. */
-  def V2modelsSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2modelsSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lex.V2modelsSlotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lex.V2modelsSlotArgs.builder
     conf.logicalName2physicalName(name) match
@@ -187,7 +187,7 @@ object lex:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Lex V2 Models Slot Type. */
-  def V2modelsSlotType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2modelsSlotType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lex.V2modelsSlotTypeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lex.V2modelsSlotTypeArgs.builder
     conf.logicalName2physicalName(name) match

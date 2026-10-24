@@ -7,7 +7,7 @@ object digitaltwins_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.digitaltwins.inputs.InstanceIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.digitaltwins.inputs.InstanceIdentityArgs.Builder]):
         com.pulumi.azure.digitaltwins.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.azure.digitaltwins.inputs.InstanceIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object digitaltwins_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.digitaltwins.inputs.InstanceIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.digitaltwins.inputs.InstanceIdentityArgs.Builder]):
         com.pulumi.azure.digitaltwins.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.azure.digitaltwins.inputs.InstanceIdentityArgs.builder
       builder.identity(args(argsBuilder).build)

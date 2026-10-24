@@ -8,7 +8,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.iam.inputs.AccessBoundaryPolicyRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.iam.inputs.AccessBoundaryPolicyRuleArgs.Builder]*):
         com.pulumi.gcp.iam.AccessBoundaryPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.iam.inputs.AccessBoundaryPolicyRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -19,7 +19,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.iam.inputs.DenyPolicyRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.iam.inputs.DenyPolicyRuleArgs.Builder]*):
         com.pulumi.gcp.iam.DenyPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.iam.inputs.DenyPolicyRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -30,7 +30,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def details(args: Endofunction[com.pulumi.gcp.iam.inputs.FolderAccessPolicyDetailsArgs.Builder]):
+    inline def details(args: Endofunction[com.pulumi.gcp.iam.inputs.FolderAccessPolicyDetailsArgs.Builder]):
         com.pulumi.gcp.iam.FolderAccessPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.FolderAccessPolicyDetailsArgs.builder
       builder.details(args(argsBuilder).build)
@@ -64,7 +64,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.FoldersPolicyBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.FoldersPolicyBindingConditionArgs.Builder]):
         com.pulumi.gcp.iam.FoldersPolicyBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.FoldersPolicyBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -76,7 +76,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def target(args: Endofunction[com.pulumi.gcp.iam.inputs.FoldersPolicyBindingTargetArgs.Builder]):
+    inline def target(args: Endofunction[com.pulumi.gcp.iam.inputs.FoldersPolicyBindingTargetArgs.Builder]):
         com.pulumi.gcp.iam.FoldersPolicyBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.FoldersPolicyBindingTargetArgs.builder
       builder.target(args(argsBuilder).build)
@@ -87,7 +87,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def details(args: Endofunction[com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsArgs.Builder]):
+    inline def details(args: Endofunction[com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsArgs.Builder]):
         com.pulumi.gcp.iam.OrganizationAccessPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsArgs.builder
       builder.details(args(argsBuilder).build)
@@ -121,7 +121,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.OrganizationsPolicyBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.OrganizationsPolicyBindingConditionArgs.Builder]):
         com.pulumi.gcp.iam.OrganizationsPolicyBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.OrganizationsPolicyBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -133,7 +133,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def target(args: Endofunction[com.pulumi.gcp.iam.inputs.OrganizationsPolicyBindingTargetArgs.Builder]):
+    inline def target(args: Endofunction[com.pulumi.gcp.iam.inputs.OrganizationsPolicyBindingTargetArgs.Builder]):
         com.pulumi.gcp.iam.OrganizationsPolicyBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.OrganizationsPolicyBindingTargetArgs.builder
       builder.target(args(argsBuilder).build)
@@ -144,7 +144,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def details(args: Endofunction[com.pulumi.gcp.iam.inputs.PrincipalAccessBoundaryPolicyDetailsArgs.Builder]):
+    inline def details(args: Endofunction[com.pulumi.gcp.iam.inputs.PrincipalAccessBoundaryPolicyDetailsArgs.Builder]):
         com.pulumi.gcp.iam.PrincipalAccessBoundaryPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.PrincipalAccessBoundaryPolicyDetailsArgs.builder
       builder.details(args(argsBuilder).build)
@@ -155,7 +155,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def details(args: Endofunction[com.pulumi.gcp.iam.inputs.ProjectAccessPolicyDetailsArgs.Builder]):
+    inline def details(args: Endofunction[com.pulumi.gcp.iam.inputs.ProjectAccessPolicyDetailsArgs.Builder]):
         com.pulumi.gcp.iam.ProjectAccessPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.ProjectAccessPolicyDetailsArgs.builder
       builder.details(args(argsBuilder).build)
@@ -189,7 +189,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.ProjectsPolicyBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.ProjectsPolicyBindingConditionArgs.Builder]):
         com.pulumi.gcp.iam.ProjectsPolicyBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.ProjectsPolicyBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -201,7 +201,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def target(args: Endofunction[com.pulumi.gcp.iam.inputs.ProjectsPolicyBindingTargetArgs.Builder]):
+    inline def target(args: Endofunction[com.pulumi.gcp.iam.inputs.ProjectsPolicyBindingTargetArgs.Builder]):
         com.pulumi.gcp.iam.ProjectsPolicyBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.ProjectsPolicyBindingTargetArgs.builder
       builder.target(args(argsBuilder).build)
@@ -213,19 +213,19 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accessRestrictions(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolAccessRestrictionsArgs.Builder]):
+    inline def accessRestrictions(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolAccessRestrictionsArgs.Builder]):
         com.pulumi.gcp.iam.WorkforcePoolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolAccessRestrictionsArgs.builder
       builder.accessRestrictions(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.iam.WorkforcePoolIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iam.WorkforcePoolIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.iam.WorkforcePoolIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iam.WorkforcePoolIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -249,7 +249,7 @@ object iam_ext:
      * @return builder
      * @deprecated `extendedAttributesOauth2Client` is deprecated. Use SCIM instead.
      */
-    @deprecated("`extendedAttributesOauth2Client` is deprecated. Use SCIM instead.") def extendedAttributesOauth2Client(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtendedAttributesOauth2ClientArgs.Builder]):
+    @deprecated("`extendedAttributesOauth2Client` is deprecated. Use SCIM instead.") inline def extendedAttributesOauth2Client(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtendedAttributesOauth2ClientArgs.Builder]):
         com.pulumi.gcp.iam.WorkforcePoolProviderArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtendedAttributesOauth2ClientArgs.builder
       builder.extendedAttributesOauth2Client(args(argsBuilder).build)
@@ -262,7 +262,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def extraAttributesOauth2Client(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtraAttributesOauth2ClientArgs.Builder]):
+    inline def extraAttributesOauth2Client(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtraAttributesOauth2ClientArgs.Builder]):
         com.pulumi.gcp.iam.WorkforcePoolProviderArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtraAttributesOauth2ClientArgs.builder
       builder.extraAttributesOauth2Client(args(argsBuilder).build)
@@ -272,7 +272,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oidc(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderOidcArgs.Builder]):
+    inline def oidc(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderOidcArgs.Builder]):
         com.pulumi.gcp.iam.WorkforcePoolProviderArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolProviderOidcArgs.builder
       builder.oidc(args(argsBuilder).build)
@@ -282,7 +282,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def saml(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderSamlArgs.Builder]):
+    inline def saml(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderSamlArgs.Builder]):
         com.pulumi.gcp.iam.WorkforcePoolProviderArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolProviderSamlArgs.builder
       builder.saml(args(argsBuilder).build)
@@ -293,7 +293,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def keyData(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderKeyKeyDataArgs.Builder]):
+    inline def keyData(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderKeyKeyDataArgs.Builder]):
         com.pulumi.gcp.iam.WorkforcePoolProviderKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolProviderKeyKeyDataArgs.builder
       builder.keyData(args(argsBuilder).build)
@@ -306,7 +306,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attestationRules(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolAttestationRuleArgs.Builder]*):
+    inline def attestationRules(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolAttestationRuleArgs.Builder]*):
         com.pulumi.gcp.iam.WorkloadIdentityPoolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolAttestationRuleArgs.builder
       builder.attestationRules(args.map(_(argsBuilder).build)*)
@@ -318,7 +318,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inlineCertificateIssuanceConfig(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolInlineCertificateIssuanceConfigArgs.Builder]):
+    inline def inlineCertificateIssuanceConfig(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolInlineCertificateIssuanceConfigArgs.Builder]):
         com.pulumi.gcp.iam.WorkloadIdentityPoolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolInlineCertificateIssuanceConfigArgs.builder
       builder.inlineCertificateIssuanceConfig(args(argsBuilder).build)
@@ -332,7 +332,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inlineTrustConfig(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolInlineTrustConfigArgs.Builder]):
+    inline def inlineTrustConfig(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolInlineTrustConfigArgs.Builder]):
         com.pulumi.gcp.iam.WorkloadIdentityPoolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolInlineTrustConfigArgs.builder
       builder.inlineTrustConfig(args(argsBuilder).build)
@@ -343,7 +343,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iam.WorkloadIdentityPoolIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -354,7 +354,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iam.WorkloadIdentityPoolIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -367,7 +367,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attestationRules(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolManagedIdentityAttestationRuleArgs.Builder]*):
+    inline def attestationRules(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolManagedIdentityAttestationRuleArgs.Builder]*):
         com.pulumi.gcp.iam.WorkloadIdentityPoolManagedIdentityArgs.Builder =
       def argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolManagedIdentityAttestationRuleArgs.builder
       builder.attestationRules(args.map(_(argsBuilder).build)*)
@@ -378,7 +378,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def aws(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderAwsArgs.Builder]):
+    inline def aws(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderAwsArgs.Builder]):
         com.pulumi.gcp.iam.WorkloadIdentityPoolProviderArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderAwsArgs.builder
       builder.aws(args(argsBuilder).build)
@@ -388,7 +388,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oidc(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderOidcArgs.Builder]):
+    inline def oidc(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderOidcArgs.Builder]):
         com.pulumi.gcp.iam.WorkloadIdentityPoolProviderArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderOidcArgs.builder
       builder.oidc(args(argsBuilder).build)
@@ -398,7 +398,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def saml(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderSamlArgs.Builder]):
+    inline def saml(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderSamlArgs.Builder]):
         com.pulumi.gcp.iam.WorkloadIdentityPoolProviderArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderSamlArgs.builder
       builder.saml(args(argsBuilder).build)
@@ -409,7 +409,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def x509(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderX509Args.Builder]):
+    inline def x509(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderX509Args.Builder]):
         com.pulumi.gcp.iam.WorkloadIdentityPoolProviderArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderX509Args.builder
       builder.x509(args(argsBuilder).build)
@@ -420,7 +420,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def availabilityCondition(args: Endofunction[com.pulumi.gcp.iam.inputs.AccessBoundaryPolicyRuleAccessBoundaryRuleAvailabilityConditionArgs.Builder]):
+    inline def availabilityCondition(args: Endofunction[com.pulumi.gcp.iam.inputs.AccessBoundaryPolicyRuleAccessBoundaryRuleAvailabilityConditionArgs.Builder]):
         com.pulumi.gcp.iam.inputs.AccessBoundaryPolicyRuleAccessBoundaryRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.AccessBoundaryPolicyRuleAccessBoundaryRuleAvailabilityConditionArgs.builder
       builder.availabilityCondition(args(argsBuilder).build)
@@ -431,7 +431,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accessBoundaryRule(args: Endofunction[com.pulumi.gcp.iam.inputs.AccessBoundaryPolicyRuleAccessBoundaryRuleArgs.Builder]):
+    inline def accessBoundaryRule(args: Endofunction[com.pulumi.gcp.iam.inputs.AccessBoundaryPolicyRuleAccessBoundaryRuleArgs.Builder]):
         com.pulumi.gcp.iam.inputs.AccessBoundaryPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.AccessBoundaryPolicyRuleAccessBoundaryRuleArgs.builder
       builder.accessBoundaryRule(args(argsBuilder).build)
@@ -442,7 +442,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.iam.inputs.AccessBoundaryPolicyRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.iam.inputs.AccessBoundaryPolicyRuleArgs.Builder]*):
         com.pulumi.gcp.iam.inputs.AccessBoundaryPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.iam.inputs.AccessBoundaryPolicyRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -453,7 +453,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def denyRule(args: Endofunction[com.pulumi.gcp.iam.inputs.DenyPolicyRuleDenyRuleArgs.Builder]):
+    inline def denyRule(args: Endofunction[com.pulumi.gcp.iam.inputs.DenyPolicyRuleDenyRuleArgs.Builder]):
         com.pulumi.gcp.iam.inputs.DenyPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.DenyPolicyRuleDenyRuleArgs.builder
       builder.denyRule(args(argsBuilder).build)
@@ -464,7 +464,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def denialCondition(args: Endofunction[com.pulumi.gcp.iam.inputs.DenyPolicyRuleDenyRuleDenialConditionArgs.Builder]):
+    inline def denialCondition(args: Endofunction[com.pulumi.gcp.iam.inputs.DenyPolicyRuleDenyRuleDenialConditionArgs.Builder]):
         com.pulumi.gcp.iam.inputs.DenyPolicyRuleDenyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.DenyPolicyRuleDenyRuleDenialConditionArgs.builder
       builder.denialCondition(args(argsBuilder).build)
@@ -475,7 +475,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.iam.inputs.DenyPolicyRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.iam.inputs.DenyPolicyRuleArgs.Builder]*):
         com.pulumi.gcp.iam.inputs.DenyPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.iam.inputs.DenyPolicyRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -486,7 +486,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.iam.inputs.FolderAccessPolicyDetailsRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.iam.inputs.FolderAccessPolicyDetailsRuleArgs.Builder]*):
         com.pulumi.gcp.iam.inputs.FolderAccessPolicyDetailsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.iam.inputs.FolderAccessPolicyDetailsRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -510,7 +510,7 @@ object iam_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.iam.inputs.FolderAccessPolicyDetailsRuleConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.iam.inputs.FolderAccessPolicyDetailsRuleConditionArgs.Builder]*):
         com.pulumi.gcp.iam.inputs.FolderAccessPolicyDetailsRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.iam.inputs.FolderAccessPolicyDetailsRuleConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -521,7 +521,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operation(args: Endofunction[com.pulumi.gcp.iam.inputs.FolderAccessPolicyDetailsRuleOperationArgs.Builder]):
+    inline def operation(args: Endofunction[com.pulumi.gcp.iam.inputs.FolderAccessPolicyDetailsRuleOperationArgs.Builder]):
         com.pulumi.gcp.iam.inputs.FolderAccessPolicyDetailsRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.FolderAccessPolicyDetailsRuleOperationArgs.builder
       builder.operation(args(argsBuilder).build)
@@ -532,7 +532,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def details(args: Endofunction[com.pulumi.gcp.iam.inputs.FolderAccessPolicyDetailsArgs.Builder]):
+    inline def details(args: Endofunction[com.pulumi.gcp.iam.inputs.FolderAccessPolicyDetailsArgs.Builder]):
         com.pulumi.gcp.iam.inputs.FolderAccessPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.FolderAccessPolicyDetailsArgs.builder
       builder.details(args(argsBuilder).build)
@@ -566,7 +566,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.FoldersPolicyBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.FoldersPolicyBindingConditionArgs.Builder]):
         com.pulumi.gcp.iam.inputs.FoldersPolicyBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.FoldersPolicyBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -578,7 +578,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def target(args: Endofunction[com.pulumi.gcp.iam.inputs.FoldersPolicyBindingTargetArgs.Builder]):
+    inline def target(args: Endofunction[com.pulumi.gcp.iam.inputs.FoldersPolicyBindingTargetArgs.Builder]):
         com.pulumi.gcp.iam.inputs.FoldersPolicyBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.FoldersPolicyBindingTargetArgs.builder
       builder.target(args(argsBuilder).build)
@@ -589,7 +589,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsRuleArgs.Builder]*):
         com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -613,7 +613,7 @@ object iam_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsRuleConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsRuleConditionArgs.Builder]*):
         com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsRuleConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -624,7 +624,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operation(args: Endofunction[com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsRuleOperationArgs.Builder]):
+    inline def operation(args: Endofunction[com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsRuleOperationArgs.Builder]):
         com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsRuleOperationArgs.builder
       builder.operation(args(argsBuilder).build)
@@ -635,7 +635,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def details(args: Endofunction[com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsArgs.Builder]):
+    inline def details(args: Endofunction[com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsArgs.Builder]):
         com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.OrganizationAccessPolicyDetailsArgs.builder
       builder.details(args(argsBuilder).build)
@@ -669,7 +669,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.OrganizationsPolicyBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.OrganizationsPolicyBindingConditionArgs.Builder]):
         com.pulumi.gcp.iam.inputs.OrganizationsPolicyBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.OrganizationsPolicyBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -681,7 +681,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def target(args: Endofunction[com.pulumi.gcp.iam.inputs.OrganizationsPolicyBindingTargetArgs.Builder]):
+    inline def target(args: Endofunction[com.pulumi.gcp.iam.inputs.OrganizationsPolicyBindingTargetArgs.Builder]):
         com.pulumi.gcp.iam.inputs.OrganizationsPolicyBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.OrganizationsPolicyBindingTargetArgs.builder
       builder.target(args(argsBuilder).build)
@@ -692,7 +692,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.iam.inputs.PrincipalAccessBoundaryPolicyDetailsRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.iam.inputs.PrincipalAccessBoundaryPolicyDetailsRuleArgs.Builder]*):
         com.pulumi.gcp.iam.inputs.PrincipalAccessBoundaryPolicyDetailsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.iam.inputs.PrincipalAccessBoundaryPolicyDetailsRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -703,7 +703,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def details(args: Endofunction[com.pulumi.gcp.iam.inputs.PrincipalAccessBoundaryPolicyDetailsArgs.Builder]):
+    inline def details(args: Endofunction[com.pulumi.gcp.iam.inputs.PrincipalAccessBoundaryPolicyDetailsArgs.Builder]):
         com.pulumi.gcp.iam.inputs.PrincipalAccessBoundaryPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.PrincipalAccessBoundaryPolicyDetailsArgs.builder
       builder.details(args(argsBuilder).build)
@@ -714,7 +714,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.iam.inputs.ProjectAccessPolicyDetailsRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.iam.inputs.ProjectAccessPolicyDetailsRuleArgs.Builder]*):
         com.pulumi.gcp.iam.inputs.ProjectAccessPolicyDetailsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.iam.inputs.ProjectAccessPolicyDetailsRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -738,7 +738,7 @@ object iam_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.iam.inputs.ProjectAccessPolicyDetailsRuleConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.iam.inputs.ProjectAccessPolicyDetailsRuleConditionArgs.Builder]*):
         com.pulumi.gcp.iam.inputs.ProjectAccessPolicyDetailsRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.iam.inputs.ProjectAccessPolicyDetailsRuleConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -749,7 +749,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operation(args: Endofunction[com.pulumi.gcp.iam.inputs.ProjectAccessPolicyDetailsRuleOperationArgs.Builder]):
+    inline def operation(args: Endofunction[com.pulumi.gcp.iam.inputs.ProjectAccessPolicyDetailsRuleOperationArgs.Builder]):
         com.pulumi.gcp.iam.inputs.ProjectAccessPolicyDetailsRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.ProjectAccessPolicyDetailsRuleOperationArgs.builder
       builder.operation(args(argsBuilder).build)
@@ -760,7 +760,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def details(args: Endofunction[com.pulumi.gcp.iam.inputs.ProjectAccessPolicyDetailsArgs.Builder]):
+    inline def details(args: Endofunction[com.pulumi.gcp.iam.inputs.ProjectAccessPolicyDetailsArgs.Builder]):
         com.pulumi.gcp.iam.inputs.ProjectAccessPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.ProjectAccessPolicyDetailsArgs.builder
       builder.details(args(argsBuilder).build)
@@ -794,7 +794,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.ProjectsPolicyBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.ProjectsPolicyBindingConditionArgs.Builder]):
         com.pulumi.gcp.iam.inputs.ProjectsPolicyBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.ProjectsPolicyBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -806,7 +806,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def target(args: Endofunction[com.pulumi.gcp.iam.inputs.ProjectsPolicyBindingTargetArgs.Builder]):
+    inline def target(args: Endofunction[com.pulumi.gcp.iam.inputs.ProjectsPolicyBindingTargetArgs.Builder]):
         com.pulumi.gcp.iam.inputs.ProjectsPolicyBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.ProjectsPolicyBindingTargetArgs.builder
       builder.target(args(argsBuilder).build)
@@ -818,19 +818,19 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allowedServices(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolAccessRestrictionsAllowedServiceArgs.Builder]*):
+    inline def allowedServices(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolAccessRestrictionsAllowedServiceArgs.Builder]*):
         com.pulumi.gcp.iam.inputs.WorkforcePoolAccessRestrictionsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolAccessRestrictionsAllowedServiceArgs.builder
       builder.allowedServices(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.iam.inputs.WorkforcePoolIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkforcePoolIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.iam.inputs.WorkforcePoolIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkforcePoolIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -840,7 +840,7 @@ object iam_ext:
      * @param clientSecret The OAuth 2.0 client secret for retrieving extended attributes from the identity provider. Required to get the Access Token using client credentials grant flow.
      * @return builder
      */
-    def clientSecret(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtendedAttributesOauth2ClientClientSecretArgs.Builder]):
+    inline def clientSecret(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtendedAttributesOauth2ClientClientSecretArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtendedAttributesOauth2ClientArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtendedAttributesOauth2ClientClientSecretArgs.builder
       builder.clientSecret(args(argsBuilder).build)
@@ -849,7 +849,7 @@ object iam_ext:
      * @param queryParameters Represents the parameters to control which claims are fetched from an IdP.
      * @return builder
      */
-    def queryParameters(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtendedAttributesOauth2ClientQueryParametersArgs.Builder]):
+    inline def queryParameters(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtendedAttributesOauth2ClientQueryParametersArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtendedAttributesOauth2ClientArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtendedAttributesOauth2ClientQueryParametersArgs.builder
       builder.queryParameters(args(argsBuilder).build)
@@ -860,7 +860,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def value(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtendedAttributesOauth2ClientClientSecretValueArgs.Builder]):
+    inline def value(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtendedAttributesOauth2ClientClientSecretValueArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtendedAttributesOauth2ClientClientSecretArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtendedAttributesOauth2ClientClientSecretValueArgs.builder
       builder.value(args(argsBuilder).build)
@@ -870,7 +870,7 @@ object iam_ext:
      * @param clientSecret The OAuth 2.0 client secret for retrieving extra attributes from the identity provider. Required to get the Access Token using client credentials grant flow.
      * @return builder
      */
-    def clientSecret(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtraAttributesOauth2ClientClientSecretArgs.Builder]):
+    inline def clientSecret(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtraAttributesOauth2ClientClientSecretArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtraAttributesOauth2ClientArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtraAttributesOauth2ClientClientSecretArgs.builder
       builder.clientSecret(args(argsBuilder).build)
@@ -879,7 +879,7 @@ object iam_ext:
      * @param queryParameters Represents the parameters to control which claims are fetched from an IdP.
      * @return builder
      */
-    def queryParameters(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtraAttributesOauth2ClientQueryParametersArgs.Builder]):
+    inline def queryParameters(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtraAttributesOauth2ClientQueryParametersArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtraAttributesOauth2ClientArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtraAttributesOauth2ClientQueryParametersArgs.builder
       builder.queryParameters(args(argsBuilder).build)
@@ -890,7 +890,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def value(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtraAttributesOauth2ClientClientSecretValueArgs.Builder]):
+    inline def value(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtraAttributesOauth2ClientClientSecretValueArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtraAttributesOauth2ClientClientSecretArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtraAttributesOauth2ClientClientSecretValueArgs.builder
       builder.value(args(argsBuilder).build)
@@ -901,7 +901,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def keyData(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderKeyKeyDataArgs.Builder]):
+    inline def keyData(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderKeyKeyDataArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkforcePoolProviderKeyState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolProviderKeyKeyDataArgs.builder
       builder.keyData(args(argsBuilder).build)
@@ -912,7 +912,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clientSecret(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderOidcClientSecretArgs.Builder]):
+    inline def clientSecret(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderOidcClientSecretArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkforcePoolProviderOidcArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolProviderOidcClientSecretArgs.builder
       builder.clientSecret(args(argsBuilder).build)
@@ -922,7 +922,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def webSsoConfig(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderOidcWebSsoConfigArgs.Builder]):
+    inline def webSsoConfig(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderOidcWebSsoConfigArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkforcePoolProviderOidcArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolProviderOidcWebSsoConfigArgs.builder
       builder.webSsoConfig(args(argsBuilder).build)
@@ -933,7 +933,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def value(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderOidcClientSecretValueArgs.Builder]):
+    inline def value(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderOidcClientSecretValueArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkforcePoolProviderOidcClientSecretArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolProviderOidcClientSecretValueArgs.builder
       builder.value(args(argsBuilder).build)
@@ -957,7 +957,7 @@ object iam_ext:
      * @return builder
      * @deprecated `extendedAttributesOauth2Client` is deprecated. Use SCIM instead.
      */
-    @deprecated("`extendedAttributesOauth2Client` is deprecated. Use SCIM instead.") def extendedAttributesOauth2Client(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtendedAttributesOauth2ClientArgs.Builder]):
+    @deprecated("`extendedAttributesOauth2Client` is deprecated. Use SCIM instead.") inline def extendedAttributesOauth2Client(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtendedAttributesOauth2ClientArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkforcePoolProviderState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtendedAttributesOauth2ClientArgs.builder
       builder.extendedAttributesOauth2Client(args(argsBuilder).build)
@@ -970,7 +970,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def extraAttributesOauth2Client(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtraAttributesOauth2ClientArgs.Builder]):
+    inline def extraAttributesOauth2Client(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtraAttributesOauth2ClientArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkforcePoolProviderState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolProviderExtraAttributesOauth2ClientArgs.builder
       builder.extraAttributesOauth2Client(args(argsBuilder).build)
@@ -980,7 +980,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oidc(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderOidcArgs.Builder]):
+    inline def oidc(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderOidcArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkforcePoolProviderState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolProviderOidcArgs.builder
       builder.oidc(args(argsBuilder).build)
@@ -990,7 +990,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def saml(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderSamlArgs.Builder]):
+    inline def saml(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolProviderSamlArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkforcePoolProviderState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolProviderSamlArgs.builder
       builder.saml(args(argsBuilder).build)
@@ -1002,7 +1002,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accessRestrictions(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolAccessRestrictionsArgs.Builder]):
+    inline def accessRestrictions(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkforcePoolAccessRestrictionsArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkforcePoolState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkforcePoolAccessRestrictionsArgs.builder
       builder.accessRestrictions(args(argsBuilder).build)
@@ -1013,7 +1013,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1024,7 +1024,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1037,7 +1037,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trustAnchors(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolInlineTrustConfigAdditionalTrustBundleTrustAnchorArgs.Builder]*):
+    inline def trustAnchors(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolInlineTrustConfigAdditionalTrustBundleTrustAnchorArgs.Builder]*):
         com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolInlineTrustConfigAdditionalTrustBundleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolInlineTrustConfigAdditionalTrustBundleTrustAnchorArgs.builder
       builder.trustAnchors(args.map(_(argsBuilder).build)*)
@@ -1054,7 +1054,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def additionalTrustBundles(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolInlineTrustConfigAdditionalTrustBundleArgs.Builder]*):
+    inline def additionalTrustBundles(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolInlineTrustConfigAdditionalTrustBundleArgs.Builder]*):
         com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolInlineTrustConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolInlineTrustConfigAdditionalTrustBundleArgs.builder
       builder.additionalTrustBundles(args.map(_(argsBuilder).build)*)
@@ -1067,7 +1067,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attestationRules(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolManagedIdentityAttestationRuleArgs.Builder]*):
+    inline def attestationRules(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolManagedIdentityAttestationRuleArgs.Builder]*):
         com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolManagedIdentityState.Builder =
       def argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolManagedIdentityAttestationRuleArgs.builder
       builder.attestationRules(args.map(_(argsBuilder).build)*)
@@ -1079,7 +1079,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ownerServices(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolNamespaceOwnerServiceArgs.Builder]*):
+    inline def ownerServices(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolNamespaceOwnerServiceArgs.Builder]*):
         com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolNamespaceState.Builder =
       def argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolNamespaceOwnerServiceArgs.builder
       builder.ownerServices(args.map(_(argsBuilder).build)*)
@@ -1090,7 +1090,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def aws(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderAwsArgs.Builder]):
+    inline def aws(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderAwsArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderAwsArgs.builder
       builder.aws(args(argsBuilder).build)
@@ -1100,7 +1100,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oidc(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderOidcArgs.Builder]):
+    inline def oidc(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderOidcArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderOidcArgs.builder
       builder.oidc(args(argsBuilder).build)
@@ -1110,7 +1110,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def saml(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderSamlArgs.Builder]):
+    inline def saml(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderSamlArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderSamlArgs.builder
       builder.saml(args(argsBuilder).build)
@@ -1121,7 +1121,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def x509(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderX509Args.Builder]):
+    inline def x509(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderX509Args.Builder]):
         com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderX509Args.builder
       builder.x509(args(argsBuilder).build)
@@ -1135,7 +1135,7 @@ object iam_ext:
      * supported.
      * @return builder
      */
-    def trustStore(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderX509TrustStoreArgs.Builder]):
+    inline def trustStore(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderX509TrustStoreArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderX509Args.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderX509TrustStoreArgs.builder
       builder.trustStore(args(argsBuilder).build)
@@ -1148,7 +1148,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def intermediateCas(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderX509TrustStoreIntermediateCaArgs.Builder]*):
+    inline def intermediateCas(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderX509TrustStoreIntermediateCaArgs.Builder]*):
         com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderX509TrustStoreArgs.Builder =
       def argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderX509TrustStoreIntermediateCaArgs.builder
       builder.intermediateCas(args.map(_(argsBuilder).build)*)
@@ -1160,7 +1160,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trustAnchors(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderX509TrustStoreTrustAnchorArgs.Builder]*):
+    inline def trustAnchors(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderX509TrustStoreTrustAnchorArgs.Builder]*):
         com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderX509TrustStoreArgs.Builder =
       def argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolProviderX509TrustStoreTrustAnchorArgs.builder
       builder.trustAnchors(args.map(_(argsBuilder).build)*)
@@ -1173,7 +1173,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attestationRules(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolAttestationRuleArgs.Builder]*):
+    inline def attestationRules(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolAttestationRuleArgs.Builder]*):
         com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolState.Builder =
       def argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolAttestationRuleArgs.builder
       builder.attestationRules(args.map(_(argsBuilder).build)*)
@@ -1185,7 +1185,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inlineCertificateIssuanceConfig(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolInlineCertificateIssuanceConfigArgs.Builder]):
+    inline def inlineCertificateIssuanceConfig(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolInlineCertificateIssuanceConfigArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolInlineCertificateIssuanceConfigArgs.builder
       builder.inlineCertificateIssuanceConfig(args(argsBuilder).build)
@@ -1199,7 +1199,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inlineTrustConfig(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolInlineTrustConfigArgs.Builder]):
+    inline def inlineTrustConfig(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolInlineTrustConfigArgs.Builder]):
         com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolState.Builder =
       val argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityPoolInlineTrustConfigArgs.builder
       builder.inlineTrustConfig(args(argsBuilder).build)
@@ -1210,7 +1210,7 @@ object iam_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceAgents(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityServiceAgentServiceAgentArgs.Builder]*):
+    inline def serviceAgents(args: Endofunction[com.pulumi.gcp.iam.inputs.WorkloadIdentityServiceAgentServiceAgentArgs.Builder]*):
         com.pulumi.gcp.iam.inputs.WorkloadIdentityServiceAgentState.Builder =
       def argsBuilder = com.pulumi.gcp.iam.inputs.WorkloadIdentityServiceAgentServiceAgentArgs.builder
       builder.serviceAgents(args.map(_(argsBuilder).build)*)

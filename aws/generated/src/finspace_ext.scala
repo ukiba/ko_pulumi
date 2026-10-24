@@ -7,7 +7,7 @@ object finspace_ext:
      * @param autoScalingConfiguration Configuration based on which FinSpace will scale in or scale out nodes in your cluster. See `autoScalingConfiguration` Block.
      * @return builder
      */
-    def autoScalingConfiguration(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterAutoScalingConfigurationArgs.Builder]):
+    inline def autoScalingConfiguration(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterAutoScalingConfigurationArgs.Builder]):
         com.pulumi.aws.finspace.KxClusterArgs.Builder =
       val argsBuilder = com.pulumi.aws.finspace.inputs.KxClusterAutoScalingConfigurationArgs.builder
       builder.autoScalingConfiguration(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object finspace_ext:
      * @param cacheStorageConfigurations Configurations for a read only cache storage associated with a cluster. This cache will be stored as an FSx Lustre that reads from the S3 store. See `cacheStorageConfigurations` Block.
      * @return builder
      */
-    def cacheStorageConfigurations(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterCacheStorageConfigurationArgs.Builder]*):
+    inline def cacheStorageConfigurations(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterCacheStorageConfigurationArgs.Builder]*):
         com.pulumi.aws.finspace.KxClusterArgs.Builder =
       def argsBuilder = com.pulumi.aws.finspace.inputs.KxClusterCacheStorageConfigurationArgs.builder
       builder.cacheStorageConfigurations(args.map(_(argsBuilder).build)*)
@@ -25,7 +25,7 @@ object finspace_ext:
      * @param capacityConfiguration Structure for the metadata of a cluster. Includes information like the CPUs needed, memory of instances, and number of instances. See `capacityConfiguration` Block.
      * @return builder
      */
-    def capacityConfiguration(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterCapacityConfigurationArgs.Builder]):
+    inline def capacityConfiguration(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterCapacityConfigurationArgs.Builder]):
         com.pulumi.aws.finspace.KxClusterArgs.Builder =
       val argsBuilder = com.pulumi.aws.finspace.inputs.KxClusterCapacityConfigurationArgs.builder
       builder.capacityConfiguration(args(argsBuilder).build)
@@ -34,7 +34,7 @@ object finspace_ext:
      * @param code Details of the custom code that you want to use inside a cluster when analyzing data. Consists of the S3 source bucket, location, object version, and the relative path from where the custom code is loaded into the cluster. See `code` Block.
      * @return builder
      */
-    def code(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterCodeArgs.Builder]):
+    inline def code(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterCodeArgs.Builder]):
         com.pulumi.aws.finspace.KxClusterArgs.Builder =
       val argsBuilder = com.pulumi.aws.finspace.inputs.KxClusterCodeArgs.builder
       builder.code(args(argsBuilder).build)
@@ -43,7 +43,7 @@ object finspace_ext:
      * @param databases KX database that will be available for querying. See `database` Block.
      * @return builder
      */
-    def databases(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterDatabaseArgs.Builder]*):
+    inline def databases(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterDatabaseArgs.Builder]*):
         com.pulumi.aws.finspace.KxClusterArgs.Builder =
       def argsBuilder = com.pulumi.aws.finspace.inputs.KxClusterDatabaseArgs.builder
       builder.databases(args.map(_(argsBuilder).build)*)
@@ -52,7 +52,7 @@ object finspace_ext:
      * @param savedownStorageConfiguration Size and type of the temporary storage that is used to hold data during the savedown process. This parameter is required when you choose `type` as RDB. All the data written to this storage space is lost when the cluster node is restarted. See `savedownStorageConfiguration` Block.
      * @return builder
      */
-    def savedownStorageConfiguration(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterSavedownStorageConfigurationArgs.Builder]):
+    inline def savedownStorageConfiguration(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterSavedownStorageConfigurationArgs.Builder]):
         com.pulumi.aws.finspace.KxClusterArgs.Builder =
       val argsBuilder = com.pulumi.aws.finspace.inputs.KxClusterSavedownStorageConfigurationArgs.builder
       builder.savedownStorageConfiguration(args(argsBuilder).build)
@@ -61,7 +61,7 @@ object finspace_ext:
      * @param scalingGroupConfiguration Structure that stores the configuration details of a scaling group. See `scalingGroupConfiguration` Block.
      * @return builder
      */
-    def scalingGroupConfiguration(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterScalingGroupConfigurationArgs.Builder]):
+    inline def scalingGroupConfiguration(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterScalingGroupConfigurationArgs.Builder]):
         com.pulumi.aws.finspace.KxClusterArgs.Builder =
       val argsBuilder = com.pulumi.aws.finspace.inputs.KxClusterScalingGroupConfigurationArgs.builder
       builder.scalingGroupConfiguration(args(argsBuilder).build)
@@ -70,7 +70,7 @@ object finspace_ext:
      * @param tickerplantLogConfigurations Configuration to store Tickerplant logs. It consists of a list of volumes that will be mounted to your cluster. For the cluster type Tickerplant, the location of the TP volume on the cluster will be available by using the global variable .aws.tp_log_path. See `tickerplantLogConfiguration` Block.
      * @return builder
      */
-    def tickerplantLogConfigurations(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterTickerplantLogConfigurationArgs.Builder]*):
+    inline def tickerplantLogConfigurations(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterTickerplantLogConfigurationArgs.Builder]*):
         com.pulumi.aws.finspace.KxClusterArgs.Builder =
       def argsBuilder = com.pulumi.aws.finspace.inputs.KxClusterTickerplantLogConfigurationArgs.builder
       builder.tickerplantLogConfigurations(args.map(_(argsBuilder).build)*)
@@ -81,7 +81,7 @@ object finspace_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def vpcConfiguration(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterVpcConfigurationArgs.Builder]):
+    inline def vpcConfiguration(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterVpcConfigurationArgs.Builder]):
         com.pulumi.aws.finspace.KxClusterArgs.Builder =
       val argsBuilder = com.pulumi.aws.finspace.inputs.KxClusterVpcConfigurationArgs.builder
       builder.vpcConfiguration(args(argsBuilder).build)
@@ -91,7 +91,7 @@ object finspace_ext:
      * @param segmentConfigurations Configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment. See `segmentConfigurations` below.
      * @return builder
      */
-    def segmentConfigurations(args: Endofunction[com.pulumi.aws.finspace.inputs.KxDataviewSegmentConfigurationArgs.Builder]*):
+    inline def segmentConfigurations(args: Endofunction[com.pulumi.aws.finspace.inputs.KxDataviewSegmentConfigurationArgs.Builder]*):
         com.pulumi.aws.finspace.KxDataviewArgs.Builder =
       def argsBuilder = com.pulumi.aws.finspace.inputs.KxDataviewSegmentConfigurationArgs.builder
       builder.segmentConfigurations(args.map(_(argsBuilder).build)*)
@@ -101,7 +101,7 @@ object finspace_ext:
      * @param customDnsConfigurations List of DNS server name and server IP. This is used to set up Route-53 outbound resolvers. Defined below.
      * @return builder
      */
-    def customDnsConfigurations(args: Endofunction[com.pulumi.aws.finspace.inputs.KxEnvironmentCustomDnsConfigurationArgs.Builder]*):
+    inline def customDnsConfigurations(args: Endofunction[com.pulumi.aws.finspace.inputs.KxEnvironmentCustomDnsConfigurationArgs.Builder]*):
         com.pulumi.aws.finspace.KxEnvironmentArgs.Builder =
       def argsBuilder = com.pulumi.aws.finspace.inputs.KxEnvironmentCustomDnsConfigurationArgs.builder
       builder.customDnsConfigurations(args.map(_(argsBuilder).build)*)
@@ -110,7 +110,7 @@ object finspace_ext:
      * @param transitGatewayConfiguration Transit gateway and network configuration that is used to connect the KX environment to an internal network. Defined below.
      * @return builder
      */
-    def transitGatewayConfiguration(args: Endofunction[com.pulumi.aws.finspace.inputs.KxEnvironmentTransitGatewayConfigurationArgs.Builder]):
+    inline def transitGatewayConfiguration(args: Endofunction[com.pulumi.aws.finspace.inputs.KxEnvironmentTransitGatewayConfigurationArgs.Builder]):
         com.pulumi.aws.finspace.KxEnvironmentArgs.Builder =
       val argsBuilder = com.pulumi.aws.finspace.inputs.KxEnvironmentTransitGatewayConfigurationArgs.builder
       builder.transitGatewayConfiguration(args(argsBuilder).build)
@@ -120,7 +120,7 @@ object finspace_ext:
      * @param nas1Configurations Configuration for the Network attached storage (`NAS_1`) file system volume. This parameter is required when `volumeType` is `NAS_1`. See `nas1Configuration` Block below.
      * @return builder
      */
-    def nas1Configurations(args: Endofunction[com.pulumi.aws.finspace.inputs.KxVolumeNas1ConfigurationArgs.Builder]*):
+    inline def nas1Configurations(args: Endofunction[com.pulumi.aws.finspace.inputs.KxVolumeNas1ConfigurationArgs.Builder]*):
         com.pulumi.aws.finspace.KxVolumeArgs.Builder =
       def argsBuilder = com.pulumi.aws.finspace.inputs.KxVolumeNas1ConfigurationArgs.builder
       builder.nas1Configurations(args.map(_(argsBuilder).build)*)
@@ -130,7 +130,7 @@ object finspace_ext:
      * @param cacheConfigurations Configuration details for the disk cache to increase performance reading from a KX database mounted to the cluster. See `cacheConfigurations` Block.
      * @return builder
      */
-    def cacheConfigurations(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterDatabaseCacheConfigurationArgs.Builder]*):
+    inline def cacheConfigurations(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterDatabaseCacheConfigurationArgs.Builder]*):
         com.pulumi.aws.finspace.inputs.KxClusterDatabaseArgs.Builder =
       def argsBuilder = com.pulumi.aws.finspace.inputs.KxClusterDatabaseCacheConfigurationArgs.builder
       builder.cacheConfigurations(args.map(_(argsBuilder).build)*)
@@ -140,7 +140,7 @@ object finspace_ext:
      * @param autoScalingConfiguration Configuration based on which FinSpace will scale in or scale out nodes in your cluster. See `autoScalingConfiguration` Block.
      * @return builder
      */
-    def autoScalingConfiguration(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterAutoScalingConfigurationArgs.Builder]):
+    inline def autoScalingConfiguration(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterAutoScalingConfigurationArgs.Builder]):
         com.pulumi.aws.finspace.inputs.KxClusterState.Builder =
       val argsBuilder = com.pulumi.aws.finspace.inputs.KxClusterAutoScalingConfigurationArgs.builder
       builder.autoScalingConfiguration(args(argsBuilder).build)
@@ -149,7 +149,7 @@ object finspace_ext:
      * @param cacheStorageConfigurations Configurations for a read only cache storage associated with a cluster. This cache will be stored as an FSx Lustre that reads from the S3 store. See `cacheStorageConfigurations` Block.
      * @return builder
      */
-    def cacheStorageConfigurations(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterCacheStorageConfigurationArgs.Builder]*):
+    inline def cacheStorageConfigurations(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterCacheStorageConfigurationArgs.Builder]*):
         com.pulumi.aws.finspace.inputs.KxClusterState.Builder =
       def argsBuilder = com.pulumi.aws.finspace.inputs.KxClusterCacheStorageConfigurationArgs.builder
       builder.cacheStorageConfigurations(args.map(_(argsBuilder).build)*)
@@ -158,7 +158,7 @@ object finspace_ext:
      * @param capacityConfiguration Structure for the metadata of a cluster. Includes information like the CPUs needed, memory of instances, and number of instances. See `capacityConfiguration` Block.
      * @return builder
      */
-    def capacityConfiguration(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterCapacityConfigurationArgs.Builder]):
+    inline def capacityConfiguration(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterCapacityConfigurationArgs.Builder]):
         com.pulumi.aws.finspace.inputs.KxClusterState.Builder =
       val argsBuilder = com.pulumi.aws.finspace.inputs.KxClusterCapacityConfigurationArgs.builder
       builder.capacityConfiguration(args(argsBuilder).build)
@@ -167,7 +167,7 @@ object finspace_ext:
      * @param code Details of the custom code that you want to use inside a cluster when analyzing data. Consists of the S3 source bucket, location, object version, and the relative path from where the custom code is loaded into the cluster. See `code` Block.
      * @return builder
      */
-    def code(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterCodeArgs.Builder]):
+    inline def code(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterCodeArgs.Builder]):
         com.pulumi.aws.finspace.inputs.KxClusterState.Builder =
       val argsBuilder = com.pulumi.aws.finspace.inputs.KxClusterCodeArgs.builder
       builder.code(args(argsBuilder).build)
@@ -176,7 +176,7 @@ object finspace_ext:
      * @param databases KX database that will be available for querying. See `database` Block.
      * @return builder
      */
-    def databases(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterDatabaseArgs.Builder]*):
+    inline def databases(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterDatabaseArgs.Builder]*):
         com.pulumi.aws.finspace.inputs.KxClusterState.Builder =
       def argsBuilder = com.pulumi.aws.finspace.inputs.KxClusterDatabaseArgs.builder
       builder.databases(args.map(_(argsBuilder).build)*)
@@ -185,7 +185,7 @@ object finspace_ext:
      * @param savedownStorageConfiguration Size and type of the temporary storage that is used to hold data during the savedown process. This parameter is required when you choose `type` as RDB. All the data written to this storage space is lost when the cluster node is restarted. See `savedownStorageConfiguration` Block.
      * @return builder
      */
-    def savedownStorageConfiguration(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterSavedownStorageConfigurationArgs.Builder]):
+    inline def savedownStorageConfiguration(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterSavedownStorageConfigurationArgs.Builder]):
         com.pulumi.aws.finspace.inputs.KxClusterState.Builder =
       val argsBuilder = com.pulumi.aws.finspace.inputs.KxClusterSavedownStorageConfigurationArgs.builder
       builder.savedownStorageConfiguration(args(argsBuilder).build)
@@ -194,7 +194,7 @@ object finspace_ext:
      * @param scalingGroupConfiguration Structure that stores the configuration details of a scaling group. See `scalingGroupConfiguration` Block.
      * @return builder
      */
-    def scalingGroupConfiguration(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterScalingGroupConfigurationArgs.Builder]):
+    inline def scalingGroupConfiguration(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterScalingGroupConfigurationArgs.Builder]):
         com.pulumi.aws.finspace.inputs.KxClusterState.Builder =
       val argsBuilder = com.pulumi.aws.finspace.inputs.KxClusterScalingGroupConfigurationArgs.builder
       builder.scalingGroupConfiguration(args(argsBuilder).build)
@@ -203,7 +203,7 @@ object finspace_ext:
      * @param tickerplantLogConfigurations Configuration to store Tickerplant logs. It consists of a list of volumes that will be mounted to your cluster. For the cluster type Tickerplant, the location of the TP volume on the cluster will be available by using the global variable .aws.tp_log_path. See `tickerplantLogConfiguration` Block.
      * @return builder
      */
-    def tickerplantLogConfigurations(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterTickerplantLogConfigurationArgs.Builder]*):
+    inline def tickerplantLogConfigurations(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterTickerplantLogConfigurationArgs.Builder]*):
         com.pulumi.aws.finspace.inputs.KxClusterState.Builder =
       def argsBuilder = com.pulumi.aws.finspace.inputs.KxClusterTickerplantLogConfigurationArgs.builder
       builder.tickerplantLogConfigurations(args.map(_(argsBuilder).build)*)
@@ -214,7 +214,7 @@ object finspace_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def vpcConfiguration(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterVpcConfigurationArgs.Builder]):
+    inline def vpcConfiguration(args: Endofunction[com.pulumi.aws.finspace.inputs.KxClusterVpcConfigurationArgs.Builder]):
         com.pulumi.aws.finspace.inputs.KxClusterState.Builder =
       val argsBuilder = com.pulumi.aws.finspace.inputs.KxClusterVpcConfigurationArgs.builder
       builder.vpcConfiguration(args(argsBuilder).build)
@@ -224,7 +224,7 @@ object finspace_ext:
      * @param segmentConfigurations Configuration that contains the database path of the data that you want to place on each selected volume. Each segment must have a unique database path for each volume. If you do not explicitly specify any database path for a volume, they are accessible from the cluster through the default S3/object store segment. See `segmentConfigurations` below.
      * @return builder
      */
-    def segmentConfigurations(args: Endofunction[com.pulumi.aws.finspace.inputs.KxDataviewSegmentConfigurationArgs.Builder]*):
+    inline def segmentConfigurations(args: Endofunction[com.pulumi.aws.finspace.inputs.KxDataviewSegmentConfigurationArgs.Builder]*):
         com.pulumi.aws.finspace.inputs.KxDataviewState.Builder =
       def argsBuilder = com.pulumi.aws.finspace.inputs.KxDataviewSegmentConfigurationArgs.builder
       builder.segmentConfigurations(args.map(_(argsBuilder).build)*)
@@ -234,7 +234,7 @@ object finspace_ext:
      * @param customDnsConfigurations List of DNS server name and server IP. This is used to set up Route-53 outbound resolvers. Defined below.
      * @return builder
      */
-    def customDnsConfigurations(args: Endofunction[com.pulumi.aws.finspace.inputs.KxEnvironmentCustomDnsConfigurationArgs.Builder]*):
+    inline def customDnsConfigurations(args: Endofunction[com.pulumi.aws.finspace.inputs.KxEnvironmentCustomDnsConfigurationArgs.Builder]*):
         com.pulumi.aws.finspace.inputs.KxEnvironmentState.Builder =
       def argsBuilder = com.pulumi.aws.finspace.inputs.KxEnvironmentCustomDnsConfigurationArgs.builder
       builder.customDnsConfigurations(args.map(_(argsBuilder).build)*)
@@ -243,7 +243,7 @@ object finspace_ext:
      * @param transitGatewayConfiguration Transit gateway and network configuration that is used to connect the KX environment to an internal network. Defined below.
      * @return builder
      */
-    def transitGatewayConfiguration(args: Endofunction[com.pulumi.aws.finspace.inputs.KxEnvironmentTransitGatewayConfigurationArgs.Builder]):
+    inline def transitGatewayConfiguration(args: Endofunction[com.pulumi.aws.finspace.inputs.KxEnvironmentTransitGatewayConfigurationArgs.Builder]):
         com.pulumi.aws.finspace.inputs.KxEnvironmentState.Builder =
       val argsBuilder = com.pulumi.aws.finspace.inputs.KxEnvironmentTransitGatewayConfigurationArgs.builder
       builder.transitGatewayConfiguration(args(argsBuilder).build)
@@ -253,7 +253,7 @@ object finspace_ext:
      * @param attachmentNetworkAclConfigurations Rules that define how you manage outbound traffic from kdb network to your internal network. Defined below.
      * @return builder
      */
-    def attachmentNetworkAclConfigurations(args: Endofunction[com.pulumi.aws.finspace.inputs.KxEnvironmentTransitGatewayConfigurationAttachmentNetworkAclConfigurationArgs.Builder]*):
+    inline def attachmentNetworkAclConfigurations(args: Endofunction[com.pulumi.aws.finspace.inputs.KxEnvironmentTransitGatewayConfigurationAttachmentNetworkAclConfigurationArgs.Builder]*):
         com.pulumi.aws.finspace.inputs.KxEnvironmentTransitGatewayConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.aws.finspace.inputs.KxEnvironmentTransitGatewayConfigurationAttachmentNetworkAclConfigurationArgs.builder
       builder.attachmentNetworkAclConfigurations(args.map(_(argsBuilder).build)*)
@@ -263,7 +263,7 @@ object finspace_ext:
      * @param icmpTypeCode ICMP protocol that consists of the ICMP type and code. Defined below.
      * @return builder
      */
-    def icmpTypeCode(args: Endofunction[com.pulumi.aws.finspace.inputs.KxEnvironmentTransitGatewayConfigurationAttachmentNetworkAclConfigurationIcmpTypeCodeArgs.Builder]):
+    inline def icmpTypeCode(args: Endofunction[com.pulumi.aws.finspace.inputs.KxEnvironmentTransitGatewayConfigurationAttachmentNetworkAclConfigurationIcmpTypeCodeArgs.Builder]):
         com.pulumi.aws.finspace.inputs.KxEnvironmentTransitGatewayConfigurationAttachmentNetworkAclConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.finspace.inputs.KxEnvironmentTransitGatewayConfigurationAttachmentNetworkAclConfigurationIcmpTypeCodeArgs.builder
       builder.icmpTypeCode(args(argsBuilder).build)
@@ -272,7 +272,7 @@ object finspace_ext:
      * @param portRange Range of ports the rule applies to. Defined below.
      * @return builder
      */
-    def portRange(args: Endofunction[com.pulumi.aws.finspace.inputs.KxEnvironmentTransitGatewayConfigurationAttachmentNetworkAclConfigurationPortRangeArgs.Builder]):
+    inline def portRange(args: Endofunction[com.pulumi.aws.finspace.inputs.KxEnvironmentTransitGatewayConfigurationAttachmentNetworkAclConfigurationPortRangeArgs.Builder]):
         com.pulumi.aws.finspace.inputs.KxEnvironmentTransitGatewayConfigurationAttachmentNetworkAclConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.finspace.inputs.KxEnvironmentTransitGatewayConfigurationAttachmentNetworkAclConfigurationPortRangeArgs.builder
       builder.portRange(args(argsBuilder).build)
@@ -282,7 +282,7 @@ object finspace_ext:
      * @param attachedClusters Clusters attached to the volume. See `attachedClusters` Block below.
      * @return builder
      */
-    def attachedClusters(args: Endofunction[com.pulumi.aws.finspace.inputs.KxVolumeAttachedClusterArgs.Builder]*):
+    inline def attachedClusters(args: Endofunction[com.pulumi.aws.finspace.inputs.KxVolumeAttachedClusterArgs.Builder]*):
         com.pulumi.aws.finspace.inputs.KxVolumeState.Builder =
       def argsBuilder = com.pulumi.aws.finspace.inputs.KxVolumeAttachedClusterArgs.builder
       builder.attachedClusters(args.map(_(argsBuilder).build)*)
@@ -291,7 +291,7 @@ object finspace_ext:
      * @param nas1Configurations Configuration for the Network attached storage (`NAS_1`) file system volume. This parameter is required when `volumeType` is `NAS_1`. See `nas1Configuration` Block below.
      * @return builder
      */
-    def nas1Configurations(args: Endofunction[com.pulumi.aws.finspace.inputs.KxVolumeNas1ConfigurationArgs.Builder]*):
+    inline def nas1Configurations(args: Endofunction[com.pulumi.aws.finspace.inputs.KxVolumeNas1ConfigurationArgs.Builder]*):
         com.pulumi.aws.finspace.inputs.KxVolumeState.Builder =
       def argsBuilder = com.pulumi.aws.finspace.inputs.KxVolumeNas1ConfigurationArgs.builder
       builder.nas1Configurations(args.map(_(argsBuilder).build)*)

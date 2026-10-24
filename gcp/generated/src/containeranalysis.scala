@@ -34,7 +34,7 @@ object containeranalysis:
    *     * [Creating Attestations (Occurrences)](https://cloud.google.com/binary-authorization/docs/making-attestations)
    *     * [Official Documentation](https://cloud.google.com/container-analysis/)
    */
-  def Note(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Note(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.containeranalysis.NoteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.containeranalysis.NoteArgs.builder
     conf.logicalName2physicalName(name) match
@@ -343,7 +343,7 @@ object containeranalysis:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def NoteIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NoteIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.containeranalysis.NoteIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.containeranalysis.NoteIamBindingArgs.builder
     com.pulumi.gcp.containeranalysis.NoteIamBinding(name,
@@ -649,7 +649,7 @@ object containeranalysis:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def NoteIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NoteIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.containeranalysis.NoteIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.containeranalysis.NoteIamMemberArgs.builder
     com.pulumi.gcp.containeranalysis.NoteIamMember(name,
@@ -955,7 +955,7 @@ object containeranalysis:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def NoteIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NoteIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.containeranalysis.NoteIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.containeranalysis.NoteIamPolicyArgs.builder
     com.pulumi.gcp.containeranalysis.NoteIamPolicy(name,
@@ -972,7 +972,7 @@ object containeranalysis:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/container-analysis/)
    */
-  def Occurence(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Occurence(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.containeranalysis.OccurenceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.containeranalysis.OccurenceArgs.builder
     com.pulumi.gcp.containeranalysis.Occurence(name,

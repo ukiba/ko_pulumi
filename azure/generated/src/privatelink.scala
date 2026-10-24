@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object privatelink:
   /** Manages an association between Private Endpoint and Application Security Group. */
-  def ApplicationSecurityGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApplicationSecurityGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.privatelink.ApplicationSecurityGroupAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.privatelink.ApplicationSecurityGroupAssociationArgs.builder
     com.pulumi.azure.privatelink.ApplicationSecurityGroupAssociation(name,
@@ -19,7 +19,7 @@ object privatelink:
    * 
    * Azure Private Endpoint is a network interface that connects you privately and securely to a service powered by Azure Private Link. Private Endpoint uses a private IP address from your VNet, effectively bringing the service into your VNet. The service could be an Azure service such as Azure Storage, SQL, etc. or your own Private Link Service.
    */
-  def Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.privatelink.EndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.privatelink.EndpointArgs.builder
     conf.logicalName2physicalName(name) match

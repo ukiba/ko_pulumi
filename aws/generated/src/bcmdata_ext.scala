@@ -7,12 +7,12 @@ object bcmdata_ext:
      * @param export Details of the export, including data query, name, description, and destination configuration. See the `export` block below.
      * @return builder
      */
-    def `export`(args: Endofunction[com.pulumi.aws.bcmdata.inputs.ExportExportArgs.Builder]):
+    inline def `export`(args: Endofunction[com.pulumi.aws.bcmdata.inputs.ExportExportArgs.Builder]):
         com.pulumi.aws.bcmdata.ExportArgs.Builder =
       val argsBuilder = com.pulumi.aws.bcmdata.inputs.ExportExportArgs.builder
       builder.`export`(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.bcmdata.inputs.ExportTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.bcmdata.inputs.ExportTimeoutsArgs.Builder]):
         com.pulumi.aws.bcmdata.ExportArgs.Builder =
       val argsBuilder = com.pulumi.aws.bcmdata.inputs.ExportTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -22,7 +22,7 @@ object bcmdata_ext:
      * @param dataQueries Data query for this specific data export. See the `dataQuery` block below.
      * @return builder
      */
-    def dataQueries(args: Endofunction[com.pulumi.aws.bcmdata.inputs.ExportExportDataQueryArgs.Builder]*):
+    inline def dataQueries(args: Endofunction[com.pulumi.aws.bcmdata.inputs.ExportExportDataQueryArgs.Builder]*):
         com.pulumi.aws.bcmdata.inputs.ExportExportArgs.Builder =
       def argsBuilder = com.pulumi.aws.bcmdata.inputs.ExportExportDataQueryArgs.builder
       builder.dataQueries(args.map(_(argsBuilder).build)*)
@@ -31,7 +31,7 @@ object bcmdata_ext:
      * @param destinationConfigurations Destination configuration for this specific data export. See the `destinationConfigurations` block below.
      * @return builder
      */
-    def destinationConfigurations(args: Endofunction[com.pulumi.aws.bcmdata.inputs.ExportExportDestinationConfigurationArgs.Builder]*):
+    inline def destinationConfigurations(args: Endofunction[com.pulumi.aws.bcmdata.inputs.ExportExportDestinationConfigurationArgs.Builder]*):
         com.pulumi.aws.bcmdata.inputs.ExportExportArgs.Builder =
       def argsBuilder = com.pulumi.aws.bcmdata.inputs.ExportExportDestinationConfigurationArgs.builder
       builder.destinationConfigurations(args.map(_(argsBuilder).build)*)
@@ -40,7 +40,7 @@ object bcmdata_ext:
      * @param refreshCadences Cadence for Amazon Web Services to update the export in your S3 bucket. See the `refreshCadence` block below.
      * @return builder
      */
-    def refreshCadences(args: Endofunction[com.pulumi.aws.bcmdata.inputs.ExportExportRefreshCadenceArgs.Builder]*):
+    inline def refreshCadences(args: Endofunction[com.pulumi.aws.bcmdata.inputs.ExportExportRefreshCadenceArgs.Builder]*):
         com.pulumi.aws.bcmdata.inputs.ExportExportArgs.Builder =
       def argsBuilder = com.pulumi.aws.bcmdata.inputs.ExportExportRefreshCadenceArgs.builder
       builder.refreshCadences(args.map(_(argsBuilder).build)*)
@@ -50,7 +50,7 @@ object bcmdata_ext:
      * @param s3Destinations Object that describes the destination of the data exports file. See the `s3Destination` block below.
      * @return builder
      */
-    def s3Destinations(args: Endofunction[com.pulumi.aws.bcmdata.inputs.ExportExportDestinationConfigurationS3DestinationArgs.Builder]*):
+    inline def s3Destinations(args: Endofunction[com.pulumi.aws.bcmdata.inputs.ExportExportDestinationConfigurationS3DestinationArgs.Builder]*):
         com.pulumi.aws.bcmdata.inputs.ExportExportDestinationConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.aws.bcmdata.inputs.ExportExportDestinationConfigurationS3DestinationArgs.builder
       builder.s3Destinations(args.map(_(argsBuilder).build)*)
@@ -60,7 +60,7 @@ object bcmdata_ext:
      * @param s3OutputConfigurations Output configuration for the data export. See the `s3OutputConfigurations` block below.
      * @return builder
      */
-    def s3OutputConfigurations(args: Endofunction[com.pulumi.aws.bcmdata.inputs.ExportExportDestinationConfigurationS3DestinationS3OutputConfigurationArgs.Builder]*):
+    inline def s3OutputConfigurations(args: Endofunction[com.pulumi.aws.bcmdata.inputs.ExportExportDestinationConfigurationS3DestinationS3OutputConfigurationArgs.Builder]*):
         com.pulumi.aws.bcmdata.inputs.ExportExportDestinationConfigurationS3DestinationArgs.Builder =
       def argsBuilder = com.pulumi.aws.bcmdata.inputs.ExportExportDestinationConfigurationS3DestinationS3OutputConfigurationArgs.builder
       builder.s3OutputConfigurations(args.map(_(argsBuilder).build)*)
@@ -70,12 +70,12 @@ object bcmdata_ext:
      * @param export Details of the export, including data query, name, description, and destination configuration. See the `export` block below.
      * @return builder
      */
-    def `export`(args: Endofunction[com.pulumi.aws.bcmdata.inputs.ExportExportArgs.Builder]):
+    inline def `export`(args: Endofunction[com.pulumi.aws.bcmdata.inputs.ExportExportArgs.Builder]):
         com.pulumi.aws.bcmdata.inputs.ExportState.Builder =
       val argsBuilder = com.pulumi.aws.bcmdata.inputs.ExportExportArgs.builder
       builder.`export`(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.bcmdata.inputs.ExportTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.bcmdata.inputs.ExportTimeoutsArgs.Builder]):
         com.pulumi.aws.bcmdata.inputs.ExportState.Builder =
       val argsBuilder = com.pulumi.aws.bcmdata.inputs.ExportTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)

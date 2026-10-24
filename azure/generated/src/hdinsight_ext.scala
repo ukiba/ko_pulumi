@@ -7,7 +7,7 @@ object hdinsight_ext:
      * @param componentVersion A `componentVersion` block as defined below.
      * @return builder
      */
-    def componentVersion(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterComponentVersionArgs.Builder]):
+    inline def componentVersion(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterComponentVersionArgs.Builder]):
         com.pulumi.azure.hdinsight.HBaseClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterComponentVersionArgs.builder
       builder.componentVersion(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object hdinsight_ext:
      * @param computeIsolation A `computeIsolation` block as defined below.
      * @return builder
      */
-    def computeIsolation(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterComputeIsolationArgs.Builder]):
+    inline def computeIsolation(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterComputeIsolationArgs.Builder]):
         com.pulumi.azure.hdinsight.HBaseClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterComputeIsolationArgs.builder
       builder.computeIsolation(args(argsBuilder).build)
@@ -25,7 +25,7 @@ object hdinsight_ext:
      * @param diskEncryptions One or more `diskEncryption` block as defined below.
      * @return builder
      */
-    def diskEncryptions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterDiskEncryptionArgs.Builder]*):
+    inline def diskEncryptions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterDiskEncryptionArgs.Builder]*):
         com.pulumi.azure.hdinsight.HBaseClusterArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterDiskEncryptionArgs.builder
       builder.diskEncryptions(args.map(_(argsBuilder).build)*)
@@ -34,7 +34,7 @@ object hdinsight_ext:
      * @param extension An `extension` block as defined below.
      * @return builder
      */
-    def extension(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterExtensionArgs.Builder]):
+    inline def extension(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterExtensionArgs.Builder]):
         com.pulumi.azure.hdinsight.HBaseClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterExtensionArgs.builder
       builder.extension(args(argsBuilder).build)
@@ -43,7 +43,7 @@ object hdinsight_ext:
      * @param gateway A `gateway` block as defined below.
      * @return builder
      */
-    def gateway(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterGatewayArgs.Builder]):
+    inline def gateway(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterGatewayArgs.Builder]):
         com.pulumi.azure.hdinsight.HBaseClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterGatewayArgs.builder
       builder.gateway(args(argsBuilder).build)
@@ -52,7 +52,7 @@ object hdinsight_ext:
      * @param metastores A `metastores` block as defined below.
      * @return builder
      */
-    def metastores(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterMetastoresArgs.Builder]):
+    inline def metastores(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterMetastoresArgs.Builder]):
         com.pulumi.azure.hdinsight.HBaseClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterMetastoresArgs.builder
       builder.metastores(args(argsBuilder).build)
@@ -61,7 +61,7 @@ object hdinsight_ext:
      * @param monitor A `monitor` block as defined below.
      * @return builder
      */
-    def monitor(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterMonitorArgs.Builder]):
+    inline def monitor(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterMonitorArgs.Builder]):
         com.pulumi.azure.hdinsight.HBaseClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterMonitorArgs.builder
       builder.monitor(args(argsBuilder).build)
@@ -70,7 +70,7 @@ object hdinsight_ext:
      * @param network A `network` block as defined below.
      * @return builder
      */
-    def network(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterNetworkArgs.Builder]):
+    inline def network(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterNetworkArgs.Builder]):
         com.pulumi.azure.hdinsight.HBaseClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterNetworkArgs.builder
       builder.network(args(argsBuilder).build)
@@ -79,7 +79,7 @@ object hdinsight_ext:
      * @param privateLinkConfiguration A `privateLinkConfiguration` block as defined below.
      * @return builder
      */
-    def privateLinkConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterPrivateLinkConfigurationArgs.Builder]):
+    inline def privateLinkConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterPrivateLinkConfigurationArgs.Builder]):
         com.pulumi.azure.hdinsight.HBaseClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterPrivateLinkConfigurationArgs.builder
       builder.privateLinkConfiguration(args(argsBuilder).build)
@@ -88,7 +88,7 @@ object hdinsight_ext:
      * @param roles A `roles` block as defined below.
      * @return builder
      */
-    def roles(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesArgs.Builder]):
+    inline def roles(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesArgs.Builder]):
         com.pulumi.azure.hdinsight.HBaseClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesArgs.builder
       builder.roles(args(argsBuilder).build)
@@ -97,7 +97,7 @@ object hdinsight_ext:
      * @param securityProfile A `securityProfile` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def securityProfile(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterSecurityProfileArgs.Builder]):
+    inline def securityProfile(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterSecurityProfileArgs.Builder]):
         com.pulumi.azure.hdinsight.HBaseClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterSecurityProfileArgs.builder
       builder.securityProfile(args(argsBuilder).build)
@@ -106,7 +106,7 @@ object hdinsight_ext:
      * @param storageAccountGen2 A `storageAccountGen2` block as defined below.
      * @return builder
      */
-    def storageAccountGen2(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterStorageAccountGen2Args.Builder]):
+    inline def storageAccountGen2(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterStorageAccountGen2Args.Builder]):
         com.pulumi.azure.hdinsight.HBaseClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterStorageAccountGen2Args.builder
       builder.storageAccountGen2(args(argsBuilder).build)
@@ -115,7 +115,7 @@ object hdinsight_ext:
      * @param storageAccounts One or more `storageAccount` block as defined below.
      * @return builder
      */
-    def storageAccounts(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterStorageAccountArgs.Builder]*):
+    inline def storageAccounts(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterStorageAccountArgs.Builder]*):
         com.pulumi.azure.hdinsight.HBaseClusterArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterStorageAccountArgs.builder
       builder.storageAccounts(args.map(_(argsBuilder).build)*)
@@ -125,7 +125,7 @@ object hdinsight_ext:
      * @param componentVersion A `componentVersion` block as defined below.
      * @return builder
      */
-    def componentVersion(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterComponentVersionArgs.Builder]):
+    inline def componentVersion(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterComponentVersionArgs.Builder]):
         com.pulumi.azure.hdinsight.HadoopClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterComponentVersionArgs.builder
       builder.componentVersion(args(argsBuilder).build)
@@ -134,7 +134,7 @@ object hdinsight_ext:
      * @param computeIsolation A `computeIsolation` block as defined below.
      * @return builder
      */
-    def computeIsolation(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterComputeIsolationArgs.Builder]):
+    inline def computeIsolation(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterComputeIsolationArgs.Builder]):
         com.pulumi.azure.hdinsight.HadoopClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterComputeIsolationArgs.builder
       builder.computeIsolation(args(argsBuilder).build)
@@ -143,7 +143,7 @@ object hdinsight_ext:
      * @param diskEncryptions One or more `diskEncryption` block as defined below.
      * @return builder
      */
-    def diskEncryptions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterDiskEncryptionArgs.Builder]*):
+    inline def diskEncryptions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterDiskEncryptionArgs.Builder]*):
         com.pulumi.azure.hdinsight.HadoopClusterArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterDiskEncryptionArgs.builder
       builder.diskEncryptions(args.map(_(argsBuilder).build)*)
@@ -152,7 +152,7 @@ object hdinsight_ext:
      * @param extension An `extension` block as defined below.
      * @return builder
      */
-    def extension(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterExtensionArgs.Builder]):
+    inline def extension(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterExtensionArgs.Builder]):
         com.pulumi.azure.hdinsight.HadoopClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterExtensionArgs.builder
       builder.extension(args(argsBuilder).build)
@@ -161,7 +161,7 @@ object hdinsight_ext:
      * @param gateway A `gateway` block as defined below.
      * @return builder
      */
-    def gateway(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterGatewayArgs.Builder]):
+    inline def gateway(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterGatewayArgs.Builder]):
         com.pulumi.azure.hdinsight.HadoopClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterGatewayArgs.builder
       builder.gateway(args(argsBuilder).build)
@@ -170,7 +170,7 @@ object hdinsight_ext:
      * @param metastores A `metastores` block as defined below.
      * @return builder
      */
-    def metastores(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterMetastoresArgs.Builder]):
+    inline def metastores(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterMetastoresArgs.Builder]):
         com.pulumi.azure.hdinsight.HadoopClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterMetastoresArgs.builder
       builder.metastores(args(argsBuilder).build)
@@ -179,7 +179,7 @@ object hdinsight_ext:
      * @param monitor A `monitor` block as defined below.
      * @return builder
      */
-    def monitor(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterMonitorArgs.Builder]):
+    inline def monitor(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterMonitorArgs.Builder]):
         com.pulumi.azure.hdinsight.HadoopClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterMonitorArgs.builder
       builder.monitor(args(argsBuilder).build)
@@ -188,7 +188,7 @@ object hdinsight_ext:
      * @param network A `network` block as defined below.
      * @return builder
      */
-    def network(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterNetworkArgs.Builder]):
+    inline def network(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterNetworkArgs.Builder]):
         com.pulumi.azure.hdinsight.HadoopClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterNetworkArgs.builder
       builder.network(args(argsBuilder).build)
@@ -197,7 +197,7 @@ object hdinsight_ext:
      * @param privateLinkConfiguration A `privateLinkConfiguration` block as defined below.
      * @return builder
      */
-    def privateLinkConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterPrivateLinkConfigurationArgs.Builder]):
+    inline def privateLinkConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterPrivateLinkConfigurationArgs.Builder]):
         com.pulumi.azure.hdinsight.HadoopClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterPrivateLinkConfigurationArgs.builder
       builder.privateLinkConfiguration(args(argsBuilder).build)
@@ -206,7 +206,7 @@ object hdinsight_ext:
      * @param roles A `roles` block as defined below.
      * @return builder
      */
-    def roles(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesArgs.Builder]):
+    inline def roles(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesArgs.Builder]):
         com.pulumi.azure.hdinsight.HadoopClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesArgs.builder
       builder.roles(args(argsBuilder).build)
@@ -215,7 +215,7 @@ object hdinsight_ext:
      * @param securityProfile A `securityProfile` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def securityProfile(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterSecurityProfileArgs.Builder]):
+    inline def securityProfile(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterSecurityProfileArgs.Builder]):
         com.pulumi.azure.hdinsight.HadoopClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterSecurityProfileArgs.builder
       builder.securityProfile(args(argsBuilder).build)
@@ -224,7 +224,7 @@ object hdinsight_ext:
      * @param storageAccountGen2 A `storageAccountGen2` block as defined below.
      * @return builder
      */
-    def storageAccountGen2(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterStorageAccountGen2Args.Builder]):
+    inline def storageAccountGen2(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterStorageAccountGen2Args.Builder]):
         com.pulumi.azure.hdinsight.HadoopClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterStorageAccountGen2Args.builder
       builder.storageAccountGen2(args(argsBuilder).build)
@@ -233,7 +233,7 @@ object hdinsight_ext:
      * @param storageAccounts One or more `storageAccount` block as defined below.
      * @return builder
      */
-    def storageAccounts(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterStorageAccountArgs.Builder]*):
+    inline def storageAccounts(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterStorageAccountArgs.Builder]*):
         com.pulumi.azure.hdinsight.HadoopClusterArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterStorageAccountArgs.builder
       builder.storageAccounts(args.map(_(argsBuilder).build)*)
@@ -243,7 +243,7 @@ object hdinsight_ext:
      * @param componentVersion A `componentVersion` block as defined below.
      * @return builder
      */
-    def componentVersion(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterComponentVersionArgs.Builder]):
+    inline def componentVersion(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterComponentVersionArgs.Builder]):
         com.pulumi.azure.hdinsight.InteractiveQueryClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterComponentVersionArgs.builder
       builder.componentVersion(args(argsBuilder).build)
@@ -252,7 +252,7 @@ object hdinsight_ext:
      * @param computeIsolation A `computeIsolation` block as defined below.
      * @return builder
      */
-    def computeIsolation(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterComputeIsolationArgs.Builder]):
+    inline def computeIsolation(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterComputeIsolationArgs.Builder]):
         com.pulumi.azure.hdinsight.InteractiveQueryClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterComputeIsolationArgs.builder
       builder.computeIsolation(args(argsBuilder).build)
@@ -261,7 +261,7 @@ object hdinsight_ext:
      * @param diskEncryptions A `diskEncryption` block as defined below.
      * @return builder
      */
-    def diskEncryptions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterDiskEncryptionArgs.Builder]*):
+    inline def diskEncryptions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterDiskEncryptionArgs.Builder]*):
         com.pulumi.azure.hdinsight.InteractiveQueryClusterArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterDiskEncryptionArgs.builder
       builder.diskEncryptions(args.map(_(argsBuilder).build)*)
@@ -270,7 +270,7 @@ object hdinsight_ext:
      * @param extension An `extension` block as defined below.
      * @return builder
      */
-    def extension(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterExtensionArgs.Builder]):
+    inline def extension(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterExtensionArgs.Builder]):
         com.pulumi.azure.hdinsight.InteractiveQueryClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterExtensionArgs.builder
       builder.extension(args(argsBuilder).build)
@@ -279,7 +279,7 @@ object hdinsight_ext:
      * @param gateway A `gateway` block as defined below.
      * @return builder
      */
-    def gateway(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterGatewayArgs.Builder]):
+    inline def gateway(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterGatewayArgs.Builder]):
         com.pulumi.azure.hdinsight.InteractiveQueryClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterGatewayArgs.builder
       builder.gateway(args(argsBuilder).build)
@@ -288,7 +288,7 @@ object hdinsight_ext:
      * @param metastores A `metastores` block as defined below.
      * @return builder
      */
-    def metastores(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterMetastoresArgs.Builder]):
+    inline def metastores(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterMetastoresArgs.Builder]):
         com.pulumi.azure.hdinsight.InteractiveQueryClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterMetastoresArgs.builder
       builder.metastores(args(argsBuilder).build)
@@ -297,7 +297,7 @@ object hdinsight_ext:
      * @param monitor A `monitor` block as defined below.
      * @return builder
      */
-    def monitor(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterMonitorArgs.Builder]):
+    inline def monitor(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterMonitorArgs.Builder]):
         com.pulumi.azure.hdinsight.InteractiveQueryClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterMonitorArgs.builder
       builder.monitor(args(argsBuilder).build)
@@ -306,7 +306,7 @@ object hdinsight_ext:
      * @param network A `network` block as defined below.
      * @return builder
      */
-    def network(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterNetworkArgs.Builder]):
+    inline def network(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterNetworkArgs.Builder]):
         com.pulumi.azure.hdinsight.InteractiveQueryClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterNetworkArgs.builder
       builder.network(args(argsBuilder).build)
@@ -315,7 +315,7 @@ object hdinsight_ext:
      * @param privateLinkConfiguration A `privateLinkConfiguration` block as defined below.
      * @return builder
      */
-    def privateLinkConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterPrivateLinkConfigurationArgs.Builder]):
+    inline def privateLinkConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterPrivateLinkConfigurationArgs.Builder]):
         com.pulumi.azure.hdinsight.InteractiveQueryClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterPrivateLinkConfigurationArgs.builder
       builder.privateLinkConfiguration(args(argsBuilder).build)
@@ -324,7 +324,7 @@ object hdinsight_ext:
      * @param roles A `roles` block as defined below.
      * @return builder
      */
-    def roles(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesArgs.Builder]):
+    inline def roles(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesArgs.Builder]):
         com.pulumi.azure.hdinsight.InteractiveQueryClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesArgs.builder
       builder.roles(args(argsBuilder).build)
@@ -333,7 +333,7 @@ object hdinsight_ext:
      * @param securityProfile A `securityProfile` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def securityProfile(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterSecurityProfileArgs.Builder]):
+    inline def securityProfile(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterSecurityProfileArgs.Builder]):
         com.pulumi.azure.hdinsight.InteractiveQueryClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterSecurityProfileArgs.builder
       builder.securityProfile(args(argsBuilder).build)
@@ -342,7 +342,7 @@ object hdinsight_ext:
      * @param storageAccountGen2 A `storageAccountGen2` block as defined below.
      * @return builder
      */
-    def storageAccountGen2(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterStorageAccountGen2Args.Builder]):
+    inline def storageAccountGen2(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterStorageAccountGen2Args.Builder]):
         com.pulumi.azure.hdinsight.InteractiveQueryClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterStorageAccountGen2Args.builder
       builder.storageAccountGen2(args(argsBuilder).build)
@@ -351,7 +351,7 @@ object hdinsight_ext:
      * @param storageAccounts One or more `storageAccount` block as defined below.
      * @return builder
      */
-    def storageAccounts(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterStorageAccountArgs.Builder]*):
+    inline def storageAccounts(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterStorageAccountArgs.Builder]*):
         com.pulumi.azure.hdinsight.InteractiveQueryClusterArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterStorageAccountArgs.builder
       builder.storageAccounts(args.map(_(argsBuilder).build)*)
@@ -361,7 +361,7 @@ object hdinsight_ext:
      * @param componentVersion A `componentVersion` block as defined below.
      * @return builder
      */
-    def componentVersion(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterComponentVersionArgs.Builder]):
+    inline def componentVersion(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterComponentVersionArgs.Builder]):
         com.pulumi.azure.hdinsight.KafkaClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterComponentVersionArgs.builder
       builder.componentVersion(args(argsBuilder).build)
@@ -370,7 +370,7 @@ object hdinsight_ext:
      * @param computeIsolation A `computeIsolation` block as defined below.
      * @return builder
      */
-    def computeIsolation(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterComputeIsolationArgs.Builder]):
+    inline def computeIsolation(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterComputeIsolationArgs.Builder]):
         com.pulumi.azure.hdinsight.KafkaClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterComputeIsolationArgs.builder
       builder.computeIsolation(args(argsBuilder).build)
@@ -381,7 +381,7 @@ object hdinsight_ext:
      * &gt; **Note:** Starting on June 30, 2020, Azure HDInsight will enforce TLS 1.2 or later versions for all HTTPS connections. For more information, see [Azure HDInsight TLS 1.2 Enforcement](https://azure.microsoft.com/en-us/updates/azure-hdinsight-tls-12-enforcement/).
      * @return builder
      */
-    def diskEncryptions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterDiskEncryptionArgs.Builder]*):
+    inline def diskEncryptions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterDiskEncryptionArgs.Builder]*):
         com.pulumi.azure.hdinsight.KafkaClusterArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterDiskEncryptionArgs.builder
       builder.diskEncryptions(args.map(_(argsBuilder).build)*)
@@ -390,7 +390,7 @@ object hdinsight_ext:
      * @param extension An `extension` block as defined below.
      * @return builder
      */
-    def extension(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterExtensionArgs.Builder]):
+    inline def extension(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterExtensionArgs.Builder]):
         com.pulumi.azure.hdinsight.KafkaClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterExtensionArgs.builder
       builder.extension(args(argsBuilder).build)
@@ -399,7 +399,7 @@ object hdinsight_ext:
      * @param gateway A `gateway` block as defined below.
      * @return builder
      */
-    def gateway(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterGatewayArgs.Builder]):
+    inline def gateway(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterGatewayArgs.Builder]):
         com.pulumi.azure.hdinsight.KafkaClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterGatewayArgs.builder
       builder.gateway(args(argsBuilder).build)
@@ -408,7 +408,7 @@ object hdinsight_ext:
      * @param metastores A `metastores` block as defined below.
      * @return builder
      */
-    def metastores(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterMetastoresArgs.Builder]):
+    inline def metastores(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterMetastoresArgs.Builder]):
         com.pulumi.azure.hdinsight.KafkaClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterMetastoresArgs.builder
       builder.metastores(args(argsBuilder).build)
@@ -417,7 +417,7 @@ object hdinsight_ext:
      * @param monitor A `monitor` block as defined below.
      * @return builder
      */
-    def monitor(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterMonitorArgs.Builder]):
+    inline def monitor(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterMonitorArgs.Builder]):
         com.pulumi.azure.hdinsight.KafkaClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterMonitorArgs.builder
       builder.monitor(args(argsBuilder).build)
@@ -426,7 +426,7 @@ object hdinsight_ext:
      * @param network A `network` block as defined below.
      * @return builder
      */
-    def network(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterNetworkArgs.Builder]):
+    inline def network(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterNetworkArgs.Builder]):
         com.pulumi.azure.hdinsight.KafkaClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterNetworkArgs.builder
       builder.network(args(argsBuilder).build)
@@ -435,7 +435,7 @@ object hdinsight_ext:
      * @param privateLinkConfiguration A `privateLinkConfiguration` block as defined below.
      * @return builder
      */
-    def privateLinkConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterPrivateLinkConfigurationArgs.Builder]):
+    inline def privateLinkConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterPrivateLinkConfigurationArgs.Builder]):
         com.pulumi.azure.hdinsight.KafkaClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterPrivateLinkConfigurationArgs.builder
       builder.privateLinkConfiguration(args(argsBuilder).build)
@@ -444,7 +444,7 @@ object hdinsight_ext:
      * @param restProxy A `restProxy` block as defined below.
      * @return builder
      */
-    def restProxy(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterRestProxyArgs.Builder]):
+    inline def restProxy(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterRestProxyArgs.Builder]):
         com.pulumi.azure.hdinsight.KafkaClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterRestProxyArgs.builder
       builder.restProxy(args(argsBuilder).build)
@@ -453,7 +453,7 @@ object hdinsight_ext:
      * @param roles A `roles` block as defined below.
      * @return builder
      */
-    def roles(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesArgs.Builder]):
+    inline def roles(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesArgs.Builder]):
         com.pulumi.azure.hdinsight.KafkaClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesArgs.builder
       builder.roles(args(argsBuilder).build)
@@ -462,7 +462,7 @@ object hdinsight_ext:
      * @param securityProfile A `securityProfile` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def securityProfile(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterSecurityProfileArgs.Builder]):
+    inline def securityProfile(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterSecurityProfileArgs.Builder]):
         com.pulumi.azure.hdinsight.KafkaClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterSecurityProfileArgs.builder
       builder.securityProfile(args(argsBuilder).build)
@@ -471,7 +471,7 @@ object hdinsight_ext:
      * @param storageAccountGen2 A `storageAccountGen2` block as defined below.
      * @return builder
      */
-    def storageAccountGen2(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterStorageAccountGen2Args.Builder]):
+    inline def storageAccountGen2(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterStorageAccountGen2Args.Builder]):
         com.pulumi.azure.hdinsight.KafkaClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterStorageAccountGen2Args.builder
       builder.storageAccountGen2(args(argsBuilder).build)
@@ -480,7 +480,7 @@ object hdinsight_ext:
      * @param storageAccounts One or more `storageAccount` block as defined below.
      * @return builder
      */
-    def storageAccounts(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterStorageAccountArgs.Builder]*):
+    inline def storageAccounts(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterStorageAccountArgs.Builder]*):
         com.pulumi.azure.hdinsight.KafkaClusterArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterStorageAccountArgs.builder
       builder.storageAccounts(args.map(_(argsBuilder).build)*)
@@ -490,7 +490,7 @@ object hdinsight_ext:
      * @param componentVersion A `componentVersion` block as defined below.
      * @return builder
      */
-    def componentVersion(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterComponentVersionArgs.Builder]):
+    inline def componentVersion(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterComponentVersionArgs.Builder]):
         com.pulumi.azure.hdinsight.SparkClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterComponentVersionArgs.builder
       builder.componentVersion(args(argsBuilder).build)
@@ -499,7 +499,7 @@ object hdinsight_ext:
      * @param computeIsolation A `computeIsolation` block as defined below.
      * @return builder
      */
-    def computeIsolation(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterComputeIsolationArgs.Builder]):
+    inline def computeIsolation(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterComputeIsolationArgs.Builder]):
         com.pulumi.azure.hdinsight.SparkClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterComputeIsolationArgs.builder
       builder.computeIsolation(args(argsBuilder).build)
@@ -508,7 +508,7 @@ object hdinsight_ext:
      * @param diskEncryptions One or more `diskEncryption` block as defined below.
      * @return builder
      */
-    def diskEncryptions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterDiskEncryptionArgs.Builder]*):
+    inline def diskEncryptions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterDiskEncryptionArgs.Builder]*):
         com.pulumi.azure.hdinsight.SparkClusterArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterDiskEncryptionArgs.builder
       builder.diskEncryptions(args.map(_(argsBuilder).build)*)
@@ -517,7 +517,7 @@ object hdinsight_ext:
      * @param extension An `extension` block as defined below.
      * @return builder
      */
-    def extension(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterExtensionArgs.Builder]):
+    inline def extension(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterExtensionArgs.Builder]):
         com.pulumi.azure.hdinsight.SparkClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterExtensionArgs.builder
       builder.extension(args(argsBuilder).build)
@@ -526,7 +526,7 @@ object hdinsight_ext:
      * @param gateway A `gateway` block as defined below.
      * @return builder
      */
-    def gateway(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterGatewayArgs.Builder]):
+    inline def gateway(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterGatewayArgs.Builder]):
         com.pulumi.azure.hdinsight.SparkClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterGatewayArgs.builder
       builder.gateway(args(argsBuilder).build)
@@ -535,7 +535,7 @@ object hdinsight_ext:
      * @param metastores A `metastores` block as defined below.
      * @return builder
      */
-    def metastores(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterMetastoresArgs.Builder]):
+    inline def metastores(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterMetastoresArgs.Builder]):
         com.pulumi.azure.hdinsight.SparkClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterMetastoresArgs.builder
       builder.metastores(args(argsBuilder).build)
@@ -544,7 +544,7 @@ object hdinsight_ext:
      * @param monitor A `monitor` block as defined below.
      * @return builder
      */
-    def monitor(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterMonitorArgs.Builder]):
+    inline def monitor(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterMonitorArgs.Builder]):
         com.pulumi.azure.hdinsight.SparkClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterMonitorArgs.builder
       builder.monitor(args(argsBuilder).build)
@@ -553,7 +553,7 @@ object hdinsight_ext:
      * @param network A `network` block as defined below.
      * @return builder
      */
-    def network(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterNetworkArgs.Builder]):
+    inline def network(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterNetworkArgs.Builder]):
         com.pulumi.azure.hdinsight.SparkClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterNetworkArgs.builder
       builder.network(args(argsBuilder).build)
@@ -562,7 +562,7 @@ object hdinsight_ext:
      * @param privateLinkConfiguration A `privateLinkConfiguration` block as defined below.
      * @return builder
      */
-    def privateLinkConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterPrivateLinkConfigurationArgs.Builder]):
+    inline def privateLinkConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterPrivateLinkConfigurationArgs.Builder]):
         com.pulumi.azure.hdinsight.SparkClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterPrivateLinkConfigurationArgs.builder
       builder.privateLinkConfiguration(args(argsBuilder).build)
@@ -571,7 +571,7 @@ object hdinsight_ext:
      * @param roles A `roles` block as defined below.
      * @return builder
      */
-    def roles(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterRolesArgs.Builder]):
+    inline def roles(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterRolesArgs.Builder]):
         com.pulumi.azure.hdinsight.SparkClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterRolesArgs.builder
       builder.roles(args(argsBuilder).build)
@@ -580,7 +580,7 @@ object hdinsight_ext:
      * @param securityProfile A `securityProfile` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def securityProfile(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterSecurityProfileArgs.Builder]):
+    inline def securityProfile(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterSecurityProfileArgs.Builder]):
         com.pulumi.azure.hdinsight.SparkClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterSecurityProfileArgs.builder
       builder.securityProfile(args(argsBuilder).build)
@@ -589,7 +589,7 @@ object hdinsight_ext:
      * @param storageAccountGen2 A `storageAccountGen2` block as defined below.
      * @return builder
      */
-    def storageAccountGen2(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterStorageAccountGen2Args.Builder]):
+    inline def storageAccountGen2(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterStorageAccountGen2Args.Builder]):
         com.pulumi.azure.hdinsight.SparkClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterStorageAccountGen2Args.builder
       builder.storageAccountGen2(args(argsBuilder).build)
@@ -598,7 +598,7 @@ object hdinsight_ext:
      * @param storageAccounts One or more `storageAccount` block as defined below.
      * @return builder
      */
-    def storageAccounts(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterStorageAccountArgs.Builder]*):
+    inline def storageAccounts(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterStorageAccountArgs.Builder]*):
         com.pulumi.azure.hdinsight.SparkClusterArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterStorageAccountArgs.builder
       builder.storageAccounts(args.map(_(argsBuilder).build)*)
@@ -608,7 +608,7 @@ object hdinsight_ext:
      * @param ambari An `ambari` block as defined below.
      * @return builder
      */
-    def ambari(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterMetastoresAmbariArgs.Builder]):
+    inline def ambari(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterMetastoresAmbariArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterMetastoresArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterMetastoresAmbariArgs.builder
       builder.ambari(args(argsBuilder).build)
@@ -617,7 +617,7 @@ object hdinsight_ext:
      * @param hive A `hive` block as defined below.
      * @return builder
      */
-    def hive(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterMetastoresHiveArgs.Builder]):
+    inline def hive(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterMetastoresHiveArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterMetastoresArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterMetastoresHiveArgs.builder
       builder.hive(args(argsBuilder).build)
@@ -626,7 +626,7 @@ object hdinsight_ext:
      * @param oozie An `oozie` block as defined below.
      * @return builder
      */
-    def oozie(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterMetastoresOozieArgs.Builder]):
+    inline def oozie(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterMetastoresOozieArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterMetastoresArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterMetastoresOozieArgs.builder
       builder.oozie(args(argsBuilder).build)
@@ -636,7 +636,7 @@ object hdinsight_ext:
      * @param ipConfiguration An `ipConfiguration` block as defined below.
      * @return builder
      */
-    def ipConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterPrivateLinkConfigurationIpConfigurationArgs.Builder]):
+    inline def ipConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterPrivateLinkConfigurationIpConfigurationArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterPrivateLinkConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterPrivateLinkConfigurationIpConfigurationArgs.builder
       builder.ipConfiguration(args(argsBuilder).build)
@@ -646,7 +646,7 @@ object hdinsight_ext:
      * @param headNode A `headNode` block as defined above.
      * @return builder
      */
-    def headNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesHeadNodeArgs.Builder]):
+    inline def headNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesHeadNodeArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesHeadNodeArgs.builder
       builder.headNode(args(argsBuilder).build)
@@ -655,7 +655,7 @@ object hdinsight_ext:
      * @param workerNode A `workerNode` block as defined below.
      * @return builder
      */
-    def workerNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesWorkerNodeArgs.Builder]):
+    inline def workerNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesWorkerNodeArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesWorkerNodeArgs.builder
       builder.workerNode(args(argsBuilder).build)
@@ -664,7 +664,7 @@ object hdinsight_ext:
      * @param zookeeperNode A `zookeeperNode` block as defined below.
      * @return builder
      */
-    def zookeeperNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesZookeeperNodeArgs.Builder]):
+    inline def zookeeperNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesZookeeperNodeArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesZookeeperNodeArgs.builder
       builder.zookeeperNode(args(argsBuilder).build)
@@ -674,7 +674,7 @@ object hdinsight_ext:
      * @param scriptActions The script action which will run on the cluster. One or more `scriptActions` blocks as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesHeadNodeScriptActionArgs.Builder]*):
+    inline def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesHeadNodeScriptActionArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesHeadNodeArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesHeadNodeScriptActionArgs.builder
       builder.scriptActions(args.map(_(argsBuilder).build)*)
@@ -684,7 +684,7 @@ object hdinsight_ext:
      * @param autoscale A `autoscale` block as defined below.
      * @return builder
      */
-    def autoscale(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesWorkerNodeAutoscaleArgs.Builder]):
+    inline def autoscale(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesWorkerNodeAutoscaleArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesWorkerNodeArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesWorkerNodeAutoscaleArgs.builder
       builder.autoscale(args(argsBuilder).build)
@@ -693,7 +693,7 @@ object hdinsight_ext:
      * @param scriptActions The script action which will run on the cluster. One or more `scriptActions` blocks as defined above. Changing this forces a new resource to be created.
      * @return builder
      */
-    def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesWorkerNodeScriptActionArgs.Builder]*):
+    inline def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesWorkerNodeScriptActionArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesWorkerNodeArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesWorkerNodeScriptActionArgs.builder
       builder.scriptActions(args.map(_(argsBuilder).build)*)
@@ -705,7 +705,7 @@ object hdinsight_ext:
      * &gt; **Note:** Either a `capacity` or `recurrence` block must be specified - but not both.
      * @return builder
      */
-    def recurrence(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesWorkerNodeAutoscaleRecurrenceArgs.Builder]):
+    inline def recurrence(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesWorkerNodeAutoscaleRecurrenceArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesWorkerNodeAutoscaleArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesWorkerNodeAutoscaleRecurrenceArgs.builder
       builder.recurrence(args(argsBuilder).build)
@@ -715,7 +715,7 @@ object hdinsight_ext:
      * @param schedules A list of `schedule` blocks as defined below.
      * @return builder
      */
-    def schedules(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesWorkerNodeAutoscaleRecurrenceScheduleArgs.Builder]*):
+    inline def schedules(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesWorkerNodeAutoscaleRecurrenceScheduleArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesWorkerNodeAutoscaleRecurrenceArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesWorkerNodeAutoscaleRecurrenceScheduleArgs.builder
       builder.schedules(args.map(_(argsBuilder).build)*)
@@ -725,7 +725,7 @@ object hdinsight_ext:
      * @param scriptActions The script action which will run on the cluster. One or more `scriptActions` blocks as defined above. Changing this forces a new resource to be created.
      * @return builder
      */
-    def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesZookeeperNodeScriptActionArgs.Builder]*):
+    inline def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesZookeeperNodeScriptActionArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesZookeeperNodeArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesZookeeperNodeScriptActionArgs.builder
       builder.scriptActions(args.map(_(argsBuilder).build)*)
@@ -735,7 +735,7 @@ object hdinsight_ext:
      * @param componentVersion A `componentVersion` block as defined below.
      * @return builder
      */
-    def componentVersion(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterComponentVersionArgs.Builder]):
+    inline def componentVersion(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterComponentVersionArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterComponentVersionArgs.builder
       builder.componentVersion(args(argsBuilder).build)
@@ -744,7 +744,7 @@ object hdinsight_ext:
      * @param computeIsolation A `computeIsolation` block as defined below.
      * @return builder
      */
-    def computeIsolation(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterComputeIsolationArgs.Builder]):
+    inline def computeIsolation(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterComputeIsolationArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterComputeIsolationArgs.builder
       builder.computeIsolation(args(argsBuilder).build)
@@ -753,7 +753,7 @@ object hdinsight_ext:
      * @param diskEncryptions One or more `diskEncryption` block as defined below.
      * @return builder
      */
-    def diskEncryptions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterDiskEncryptionArgs.Builder]*):
+    inline def diskEncryptions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterDiskEncryptionArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterState.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterDiskEncryptionArgs.builder
       builder.diskEncryptions(args.map(_(argsBuilder).build)*)
@@ -762,7 +762,7 @@ object hdinsight_ext:
      * @param extension An `extension` block as defined below.
      * @return builder
      */
-    def extension(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterExtensionArgs.Builder]):
+    inline def extension(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterExtensionArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterExtensionArgs.builder
       builder.extension(args(argsBuilder).build)
@@ -771,7 +771,7 @@ object hdinsight_ext:
      * @param gateway A `gateway` block as defined below.
      * @return builder
      */
-    def gateway(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterGatewayArgs.Builder]):
+    inline def gateway(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterGatewayArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterGatewayArgs.builder
       builder.gateway(args(argsBuilder).build)
@@ -780,7 +780,7 @@ object hdinsight_ext:
      * @param metastores A `metastores` block as defined below.
      * @return builder
      */
-    def metastores(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterMetastoresArgs.Builder]):
+    inline def metastores(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterMetastoresArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterMetastoresArgs.builder
       builder.metastores(args(argsBuilder).build)
@@ -789,7 +789,7 @@ object hdinsight_ext:
      * @param monitor A `monitor` block as defined below.
      * @return builder
      */
-    def monitor(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterMonitorArgs.Builder]):
+    inline def monitor(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterMonitorArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterMonitorArgs.builder
       builder.monitor(args(argsBuilder).build)
@@ -798,7 +798,7 @@ object hdinsight_ext:
      * @param network A `network` block as defined below.
      * @return builder
      */
-    def network(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterNetworkArgs.Builder]):
+    inline def network(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterNetworkArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterNetworkArgs.builder
       builder.network(args(argsBuilder).build)
@@ -807,7 +807,7 @@ object hdinsight_ext:
      * @param privateLinkConfiguration A `privateLinkConfiguration` block as defined below.
      * @return builder
      */
-    def privateLinkConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterPrivateLinkConfigurationArgs.Builder]):
+    inline def privateLinkConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterPrivateLinkConfigurationArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterPrivateLinkConfigurationArgs.builder
       builder.privateLinkConfiguration(args(argsBuilder).build)
@@ -816,7 +816,7 @@ object hdinsight_ext:
      * @param roles A `roles` block as defined below.
      * @return builder
      */
-    def roles(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesArgs.Builder]):
+    inline def roles(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterRolesArgs.builder
       builder.roles(args(argsBuilder).build)
@@ -825,7 +825,7 @@ object hdinsight_ext:
      * @param securityProfile A `securityProfile` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def securityProfile(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterSecurityProfileArgs.Builder]):
+    inline def securityProfile(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterSecurityProfileArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterSecurityProfileArgs.builder
       builder.securityProfile(args(argsBuilder).build)
@@ -834,7 +834,7 @@ object hdinsight_ext:
      * @param storageAccountGen2 A `storageAccountGen2` block as defined below.
      * @return builder
      */
-    def storageAccountGen2(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterStorageAccountGen2Args.Builder]):
+    inline def storageAccountGen2(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterStorageAccountGen2Args.Builder]):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterStorageAccountGen2Args.builder
       builder.storageAccountGen2(args(argsBuilder).build)
@@ -843,7 +843,7 @@ object hdinsight_ext:
      * @param storageAccounts One or more `storageAccount` block as defined below.
      * @return builder
      */
-    def storageAccounts(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterStorageAccountArgs.Builder]*):
+    inline def storageAccounts(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HBaseClusterStorageAccountArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.HBaseClusterState.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.HBaseClusterStorageAccountArgs.builder
       builder.storageAccounts(args.map(_(argsBuilder).build)*)
@@ -853,7 +853,7 @@ object hdinsight_ext:
      * @param ambari An `ambari` block as defined below.
      * @return builder
      */
-    def ambari(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterMetastoresAmbariArgs.Builder]):
+    inline def ambari(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterMetastoresAmbariArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterMetastoresArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterMetastoresAmbariArgs.builder
       builder.ambari(args(argsBuilder).build)
@@ -862,7 +862,7 @@ object hdinsight_ext:
      * @param hive A `hive` block as defined below.
      * @return builder
      */
-    def hive(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterMetastoresHiveArgs.Builder]):
+    inline def hive(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterMetastoresHiveArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterMetastoresArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterMetastoresHiveArgs.builder
       builder.hive(args(argsBuilder).build)
@@ -871,7 +871,7 @@ object hdinsight_ext:
      * @param oozie An `oozie` block as defined below.
      * @return builder
      */
-    def oozie(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterMetastoresOozieArgs.Builder]):
+    inline def oozie(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterMetastoresOozieArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterMetastoresArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterMetastoresOozieArgs.builder
       builder.oozie(args(argsBuilder).build)
@@ -881,7 +881,7 @@ object hdinsight_ext:
      * @param ipConfiguration An `ipConfiguration` block as defined below.
      * @return builder
      */
-    def ipConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterPrivateLinkConfigurationIpConfigurationArgs.Builder]):
+    inline def ipConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterPrivateLinkConfigurationIpConfigurationArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterPrivateLinkConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterPrivateLinkConfigurationIpConfigurationArgs.builder
       builder.ipConfiguration(args(argsBuilder).build)
@@ -891,7 +891,7 @@ object hdinsight_ext:
      * @param edgeNode A `edgeNode` block as defined below.
      * @return builder
      */
-    def edgeNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesEdgeNodeArgs.Builder]):
+    inline def edgeNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesEdgeNodeArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesEdgeNodeArgs.builder
       builder.edgeNode(args(argsBuilder).build)
@@ -900,7 +900,7 @@ object hdinsight_ext:
      * @param headNode A `headNode` block as defined above.
      * @return builder
      */
-    def headNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesHeadNodeArgs.Builder]):
+    inline def headNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesHeadNodeArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesHeadNodeArgs.builder
       builder.headNode(args(argsBuilder).build)
@@ -909,7 +909,7 @@ object hdinsight_ext:
      * @param workerNode A `workerNode` block as defined below.
      * @return builder
      */
-    def workerNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesWorkerNodeArgs.Builder]):
+    inline def workerNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesWorkerNodeArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesWorkerNodeArgs.builder
       builder.workerNode(args(argsBuilder).build)
@@ -918,7 +918,7 @@ object hdinsight_ext:
      * @param zookeeperNode A `zookeeperNode` block as defined below.
      * @return builder
      */
-    def zookeeperNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesZookeeperNodeArgs.Builder]):
+    inline def zookeeperNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesZookeeperNodeArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesZookeeperNodeArgs.builder
       builder.zookeeperNode(args(argsBuilder).build)
@@ -928,7 +928,7 @@ object hdinsight_ext:
      * @param httpsEndpoints The HTTPS Connectivity Endpoint for this HDInsight Hadoop Cluster. One or more `httpsEndpoints` blocks as defined below.
      * @return builder
      */
-    def httpsEndpoints(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesEdgeNodeHttpsEndpointArgs.Builder]*):
+    inline def httpsEndpoints(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesEdgeNodeHttpsEndpointArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesEdgeNodeArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesEdgeNodeHttpsEndpointArgs.builder
       builder.httpsEndpoints(args.map(_(argsBuilder).build)*)
@@ -937,7 +937,7 @@ object hdinsight_ext:
      * @param installScriptActions A `installScriptAction` block as defined below.
      * @return builder
      */
-    def installScriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesEdgeNodeInstallScriptActionArgs.Builder]*):
+    inline def installScriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesEdgeNodeInstallScriptActionArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesEdgeNodeArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesEdgeNodeInstallScriptActionArgs.builder
       builder.installScriptActions(args.map(_(argsBuilder).build)*)
@@ -946,7 +946,7 @@ object hdinsight_ext:
      * @param uninstallScriptActions A `uninstallScriptActions` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def uninstallScriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesEdgeNodeUninstallScriptActionArgs.Builder]*):
+    inline def uninstallScriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesEdgeNodeUninstallScriptActionArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesEdgeNodeArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesEdgeNodeUninstallScriptActionArgs.builder
       builder.uninstallScriptActions(args.map(_(argsBuilder).build)*)
@@ -956,7 +956,7 @@ object hdinsight_ext:
      * @param scriptActions The script action which will run on the cluster. One or more `scriptActions` blocks as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesHeadNodeScriptActionArgs.Builder]*):
+    inline def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesHeadNodeScriptActionArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesHeadNodeArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesHeadNodeScriptActionArgs.builder
       builder.scriptActions(args.map(_(argsBuilder).build)*)
@@ -966,7 +966,7 @@ object hdinsight_ext:
      * @param autoscale A `autoscale` block as defined below.
      * @return builder
      */
-    def autoscale(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesWorkerNodeAutoscaleArgs.Builder]):
+    inline def autoscale(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesWorkerNodeAutoscaleArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesWorkerNodeArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesWorkerNodeAutoscaleArgs.builder
       builder.autoscale(args(argsBuilder).build)
@@ -975,7 +975,7 @@ object hdinsight_ext:
      * @param scriptActions The script action which will run on the cluster. One or more `scriptActions` blocks as defined above. Changing this forces a new resource to be created.
      * @return builder
      */
-    def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesWorkerNodeScriptActionArgs.Builder]*):
+    inline def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesWorkerNodeScriptActionArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesWorkerNodeArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesWorkerNodeScriptActionArgs.builder
       builder.scriptActions(args.map(_(argsBuilder).build)*)
@@ -985,7 +985,7 @@ object hdinsight_ext:
      * @param capacity A `capacity` block as defined below.
      * @return builder
      */
-    def capacity(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesWorkerNodeAutoscaleCapacityArgs.Builder]):
+    inline def capacity(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesWorkerNodeAutoscaleCapacityArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesWorkerNodeAutoscaleArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesWorkerNodeAutoscaleCapacityArgs.builder
       builder.capacity(args(argsBuilder).build)
@@ -996,7 +996,7 @@ object hdinsight_ext:
      * &gt; **Note:** Either a `capacity` or `recurrence` block must be specified - but not both.
      * @return builder
      */
-    def recurrence(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesWorkerNodeAutoscaleRecurrenceArgs.Builder]):
+    inline def recurrence(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesWorkerNodeAutoscaleRecurrenceArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesWorkerNodeAutoscaleArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesWorkerNodeAutoscaleRecurrenceArgs.builder
       builder.recurrence(args(argsBuilder).build)
@@ -1006,7 +1006,7 @@ object hdinsight_ext:
      * @param schedules A list of `schedule` blocks as defined below.
      * @return builder
      */
-    def schedules(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesWorkerNodeAutoscaleRecurrenceScheduleArgs.Builder]*):
+    inline def schedules(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesWorkerNodeAutoscaleRecurrenceScheduleArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesWorkerNodeAutoscaleRecurrenceArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesWorkerNodeAutoscaleRecurrenceScheduleArgs.builder
       builder.schedules(args.map(_(argsBuilder).build)*)
@@ -1016,7 +1016,7 @@ object hdinsight_ext:
      * @param scriptActions The script action which will run on the cluster. One or more `scriptActions` blocks as defined above. Changing this forces a new resource to be created.
      * @return builder
      */
-    def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesZookeeperNodeScriptActionArgs.Builder]*):
+    inline def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesZookeeperNodeScriptActionArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesZookeeperNodeArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesZookeeperNodeScriptActionArgs.builder
       builder.scriptActions(args.map(_(argsBuilder).build)*)
@@ -1026,7 +1026,7 @@ object hdinsight_ext:
      * @param componentVersion A `componentVersion` block as defined below.
      * @return builder
      */
-    def componentVersion(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterComponentVersionArgs.Builder]):
+    inline def componentVersion(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterComponentVersionArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterComponentVersionArgs.builder
       builder.componentVersion(args(argsBuilder).build)
@@ -1035,7 +1035,7 @@ object hdinsight_ext:
      * @param computeIsolation A `computeIsolation` block as defined below.
      * @return builder
      */
-    def computeIsolation(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterComputeIsolationArgs.Builder]):
+    inline def computeIsolation(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterComputeIsolationArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterComputeIsolationArgs.builder
       builder.computeIsolation(args(argsBuilder).build)
@@ -1044,7 +1044,7 @@ object hdinsight_ext:
      * @param diskEncryptions One or more `diskEncryption` block as defined below.
      * @return builder
      */
-    def diskEncryptions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterDiskEncryptionArgs.Builder]*):
+    inline def diskEncryptions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterDiskEncryptionArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterState.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterDiskEncryptionArgs.builder
       builder.diskEncryptions(args.map(_(argsBuilder).build)*)
@@ -1053,7 +1053,7 @@ object hdinsight_ext:
      * @param extension An `extension` block as defined below.
      * @return builder
      */
-    def extension(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterExtensionArgs.Builder]):
+    inline def extension(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterExtensionArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterExtensionArgs.builder
       builder.extension(args(argsBuilder).build)
@@ -1062,7 +1062,7 @@ object hdinsight_ext:
      * @param gateway A `gateway` block as defined below.
      * @return builder
      */
-    def gateway(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterGatewayArgs.Builder]):
+    inline def gateway(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterGatewayArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterGatewayArgs.builder
       builder.gateway(args(argsBuilder).build)
@@ -1071,7 +1071,7 @@ object hdinsight_ext:
      * @param metastores A `metastores` block as defined below.
      * @return builder
      */
-    def metastores(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterMetastoresArgs.Builder]):
+    inline def metastores(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterMetastoresArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterMetastoresArgs.builder
       builder.metastores(args(argsBuilder).build)
@@ -1080,7 +1080,7 @@ object hdinsight_ext:
      * @param monitor A `monitor` block as defined below.
      * @return builder
      */
-    def monitor(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterMonitorArgs.Builder]):
+    inline def monitor(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterMonitorArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterMonitorArgs.builder
       builder.monitor(args(argsBuilder).build)
@@ -1089,7 +1089,7 @@ object hdinsight_ext:
      * @param network A `network` block as defined below.
      * @return builder
      */
-    def network(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterNetworkArgs.Builder]):
+    inline def network(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterNetworkArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterNetworkArgs.builder
       builder.network(args(argsBuilder).build)
@@ -1098,7 +1098,7 @@ object hdinsight_ext:
      * @param privateLinkConfiguration A `privateLinkConfiguration` block as defined below.
      * @return builder
      */
-    def privateLinkConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterPrivateLinkConfigurationArgs.Builder]):
+    inline def privateLinkConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterPrivateLinkConfigurationArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterPrivateLinkConfigurationArgs.builder
       builder.privateLinkConfiguration(args(argsBuilder).build)
@@ -1107,7 +1107,7 @@ object hdinsight_ext:
      * @param roles A `roles` block as defined below.
      * @return builder
      */
-    def roles(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesArgs.Builder]):
+    inline def roles(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterRolesArgs.builder
       builder.roles(args(argsBuilder).build)
@@ -1116,7 +1116,7 @@ object hdinsight_ext:
      * @param securityProfile A `securityProfile` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def securityProfile(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterSecurityProfileArgs.Builder]):
+    inline def securityProfile(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterSecurityProfileArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterSecurityProfileArgs.builder
       builder.securityProfile(args(argsBuilder).build)
@@ -1125,7 +1125,7 @@ object hdinsight_ext:
      * @param storageAccountGen2 A `storageAccountGen2` block as defined below.
      * @return builder
      */
-    def storageAccountGen2(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterStorageAccountGen2Args.Builder]):
+    inline def storageAccountGen2(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterStorageAccountGen2Args.Builder]):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterStorageAccountGen2Args.builder
       builder.storageAccountGen2(args(argsBuilder).build)
@@ -1134,7 +1134,7 @@ object hdinsight_ext:
      * @param storageAccounts One or more `storageAccount` block as defined below.
      * @return builder
      */
-    def storageAccounts(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterStorageAccountArgs.Builder]*):
+    inline def storageAccounts(args: Endofunction[com.pulumi.azure.hdinsight.inputs.HadoopClusterStorageAccountArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.HadoopClusterState.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.HadoopClusterStorageAccountArgs.builder
       builder.storageAccounts(args.map(_(argsBuilder).build)*)
@@ -1144,7 +1144,7 @@ object hdinsight_ext:
      * @param ambari An `ambari` block as defined below.
      * @return builder
      */
-    def ambari(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterMetastoresAmbariArgs.Builder]):
+    inline def ambari(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterMetastoresAmbariArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterMetastoresArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterMetastoresAmbariArgs.builder
       builder.ambari(args(argsBuilder).build)
@@ -1153,7 +1153,7 @@ object hdinsight_ext:
      * @param hive A `hive` block as defined below.
      * @return builder
      */
-    def hive(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterMetastoresHiveArgs.Builder]):
+    inline def hive(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterMetastoresHiveArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterMetastoresArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterMetastoresHiveArgs.builder
       builder.hive(args(argsBuilder).build)
@@ -1162,7 +1162,7 @@ object hdinsight_ext:
      * @param oozie An `oozie` block as defined below.
      * @return builder
      */
-    def oozie(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterMetastoresOozieArgs.Builder]):
+    inline def oozie(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterMetastoresOozieArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterMetastoresArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterMetastoresOozieArgs.builder
       builder.oozie(args(argsBuilder).build)
@@ -1172,7 +1172,7 @@ object hdinsight_ext:
      * @param ipConfiguration An `ipConfiguration` block as defined below.
      * @return builder
      */
-    def ipConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterPrivateLinkConfigurationIpConfigurationArgs.Builder]):
+    inline def ipConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterPrivateLinkConfigurationIpConfigurationArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterPrivateLinkConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterPrivateLinkConfigurationIpConfigurationArgs.builder
       builder.ipConfiguration(args(argsBuilder).build)
@@ -1182,7 +1182,7 @@ object hdinsight_ext:
      * @param headNode A `headNode` block as defined above.
      * @return builder
      */
-    def headNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesHeadNodeArgs.Builder]):
+    inline def headNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesHeadNodeArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesHeadNodeArgs.builder
       builder.headNode(args(argsBuilder).build)
@@ -1191,7 +1191,7 @@ object hdinsight_ext:
      * @param workerNode A `workerNode` block as defined below.
      * @return builder
      */
-    def workerNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesWorkerNodeArgs.Builder]):
+    inline def workerNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesWorkerNodeArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesWorkerNodeArgs.builder
       builder.workerNode(args(argsBuilder).build)
@@ -1200,7 +1200,7 @@ object hdinsight_ext:
      * @param zookeeperNode A `zookeeperNode` block as defined below.
      * @return builder
      */
-    def zookeeperNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesZookeeperNodeArgs.Builder]):
+    inline def zookeeperNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesZookeeperNodeArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesZookeeperNodeArgs.builder
       builder.zookeeperNode(args(argsBuilder).build)
@@ -1210,7 +1210,7 @@ object hdinsight_ext:
      * @param scriptActions The script action which will run on the cluster. One or more `scriptActions` blocks as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesHeadNodeScriptActionArgs.Builder]*):
+    inline def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesHeadNodeScriptActionArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesHeadNodeArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesHeadNodeScriptActionArgs.builder
       builder.scriptActions(args.map(_(argsBuilder).build)*)
@@ -1220,7 +1220,7 @@ object hdinsight_ext:
      * @param autoscale A `autoscale` block as defined below.
      * @return builder
      */
-    def autoscale(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesWorkerNodeAutoscaleArgs.Builder]):
+    inline def autoscale(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesWorkerNodeAutoscaleArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesWorkerNodeArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesWorkerNodeAutoscaleArgs.builder
       builder.autoscale(args(argsBuilder).build)
@@ -1229,7 +1229,7 @@ object hdinsight_ext:
      * @param scriptActions The script action which will run on the cluster. One or more `scriptActions` blocks as defined above. Changing this forces a new resource to be created.
      * @return builder
      */
-    def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesWorkerNodeScriptActionArgs.Builder]*):
+    inline def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesWorkerNodeScriptActionArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesWorkerNodeArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesWorkerNodeScriptActionArgs.builder
       builder.scriptActions(args.map(_(argsBuilder).build)*)
@@ -1239,7 +1239,7 @@ object hdinsight_ext:
      * @param recurrence A `recurrence` block as defined below.
      * @return builder
      */
-    def recurrence(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesWorkerNodeAutoscaleRecurrenceArgs.Builder]):
+    inline def recurrence(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesWorkerNodeAutoscaleRecurrenceArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesWorkerNodeAutoscaleArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesWorkerNodeAutoscaleRecurrenceArgs.builder
       builder.recurrence(args(argsBuilder).build)
@@ -1249,7 +1249,7 @@ object hdinsight_ext:
      * @param schedules A list of `schedule` blocks as defined below.
      * @return builder
      */
-    def schedules(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesWorkerNodeAutoscaleRecurrenceScheduleArgs.Builder]*):
+    inline def schedules(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesWorkerNodeAutoscaleRecurrenceScheduleArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesWorkerNodeAutoscaleRecurrenceArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesWorkerNodeAutoscaleRecurrenceScheduleArgs.builder
       builder.schedules(args.map(_(argsBuilder).build)*)
@@ -1259,7 +1259,7 @@ object hdinsight_ext:
      * @param scriptActions The script action which will run on the cluster. One or more `scriptActions` blocks as defined above. Changing this forces a new resource to be created.
      * @return builder
      */
-    def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesZookeeperNodeScriptActionArgs.Builder]*):
+    inline def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesZookeeperNodeScriptActionArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesZookeeperNodeArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesZookeeperNodeScriptActionArgs.builder
       builder.scriptActions(args.map(_(argsBuilder).build)*)
@@ -1269,7 +1269,7 @@ object hdinsight_ext:
      * @param componentVersion A `componentVersion` block as defined below.
      * @return builder
      */
-    def componentVersion(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterComponentVersionArgs.Builder]):
+    inline def componentVersion(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterComponentVersionArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterComponentVersionArgs.builder
       builder.componentVersion(args(argsBuilder).build)
@@ -1278,7 +1278,7 @@ object hdinsight_ext:
      * @param computeIsolation A `computeIsolation` block as defined below.
      * @return builder
      */
-    def computeIsolation(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterComputeIsolationArgs.Builder]):
+    inline def computeIsolation(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterComputeIsolationArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterComputeIsolationArgs.builder
       builder.computeIsolation(args(argsBuilder).build)
@@ -1287,7 +1287,7 @@ object hdinsight_ext:
      * @param diskEncryptions A `diskEncryption` block as defined below.
      * @return builder
      */
-    def diskEncryptions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterDiskEncryptionArgs.Builder]*):
+    inline def diskEncryptions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterDiskEncryptionArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterState.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterDiskEncryptionArgs.builder
       builder.diskEncryptions(args.map(_(argsBuilder).build)*)
@@ -1296,7 +1296,7 @@ object hdinsight_ext:
      * @param extension An `extension` block as defined below.
      * @return builder
      */
-    def extension(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterExtensionArgs.Builder]):
+    inline def extension(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterExtensionArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterExtensionArgs.builder
       builder.extension(args(argsBuilder).build)
@@ -1305,7 +1305,7 @@ object hdinsight_ext:
      * @param gateway A `gateway` block as defined below.
      * @return builder
      */
-    def gateway(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterGatewayArgs.Builder]):
+    inline def gateway(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterGatewayArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterGatewayArgs.builder
       builder.gateway(args(argsBuilder).build)
@@ -1314,7 +1314,7 @@ object hdinsight_ext:
      * @param metastores A `metastores` block as defined below.
      * @return builder
      */
-    def metastores(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterMetastoresArgs.Builder]):
+    inline def metastores(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterMetastoresArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterMetastoresArgs.builder
       builder.metastores(args(argsBuilder).build)
@@ -1323,7 +1323,7 @@ object hdinsight_ext:
      * @param monitor A `monitor` block as defined below.
      * @return builder
      */
-    def monitor(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterMonitorArgs.Builder]):
+    inline def monitor(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterMonitorArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterMonitorArgs.builder
       builder.monitor(args(argsBuilder).build)
@@ -1332,7 +1332,7 @@ object hdinsight_ext:
      * @param network A `network` block as defined below.
      * @return builder
      */
-    def network(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterNetworkArgs.Builder]):
+    inline def network(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterNetworkArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterNetworkArgs.builder
       builder.network(args(argsBuilder).build)
@@ -1341,7 +1341,7 @@ object hdinsight_ext:
      * @param privateLinkConfiguration A `privateLinkConfiguration` block as defined below.
      * @return builder
      */
-    def privateLinkConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterPrivateLinkConfigurationArgs.Builder]):
+    inline def privateLinkConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterPrivateLinkConfigurationArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterPrivateLinkConfigurationArgs.builder
       builder.privateLinkConfiguration(args(argsBuilder).build)
@@ -1350,7 +1350,7 @@ object hdinsight_ext:
      * @param roles A `roles` block as defined below.
      * @return builder
      */
-    def roles(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesArgs.Builder]):
+    inline def roles(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterRolesArgs.builder
       builder.roles(args(argsBuilder).build)
@@ -1359,7 +1359,7 @@ object hdinsight_ext:
      * @param securityProfile A `securityProfile` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def securityProfile(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterSecurityProfileArgs.Builder]):
+    inline def securityProfile(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterSecurityProfileArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterSecurityProfileArgs.builder
       builder.securityProfile(args(argsBuilder).build)
@@ -1368,7 +1368,7 @@ object hdinsight_ext:
      * @param storageAccountGen2 A `storageAccountGen2` block as defined below.
      * @return builder
      */
-    def storageAccountGen2(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterStorageAccountGen2Args.Builder]):
+    inline def storageAccountGen2(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterStorageAccountGen2Args.Builder]):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterStorageAccountGen2Args.builder
       builder.storageAccountGen2(args(argsBuilder).build)
@@ -1377,7 +1377,7 @@ object hdinsight_ext:
      * @param storageAccounts One or more `storageAccount` block as defined below.
      * @return builder
      */
-    def storageAccounts(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterStorageAccountArgs.Builder]*):
+    inline def storageAccounts(args: Endofunction[com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterStorageAccountArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterState.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.InteractiveQueryClusterStorageAccountArgs.builder
       builder.storageAccounts(args.map(_(argsBuilder).build)*)
@@ -1387,7 +1387,7 @@ object hdinsight_ext:
      * @param ambari An `ambari` block as defined below.
      * @return builder
      */
-    def ambari(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterMetastoresAmbariArgs.Builder]):
+    inline def ambari(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterMetastoresAmbariArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterMetastoresArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterMetastoresAmbariArgs.builder
       builder.ambari(args(argsBuilder).build)
@@ -1396,7 +1396,7 @@ object hdinsight_ext:
      * @param hive A `hive` block as defined below.
      * @return builder
      */
-    def hive(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterMetastoresHiveArgs.Builder]):
+    inline def hive(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterMetastoresHiveArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterMetastoresArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterMetastoresHiveArgs.builder
       builder.hive(args(argsBuilder).build)
@@ -1405,7 +1405,7 @@ object hdinsight_ext:
      * @param oozie An `oozie` block as defined below.
      * @return builder
      */
-    def oozie(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterMetastoresOozieArgs.Builder]):
+    inline def oozie(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterMetastoresOozieArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterMetastoresArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterMetastoresOozieArgs.builder
       builder.oozie(args(argsBuilder).build)
@@ -1415,7 +1415,7 @@ object hdinsight_ext:
      * @param ipConfiguration An `ipConfiguration` block as defined below.
      * @return builder
      */
-    def ipConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterPrivateLinkConfigurationIpConfigurationArgs.Builder]):
+    inline def ipConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterPrivateLinkConfigurationIpConfigurationArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterPrivateLinkConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterPrivateLinkConfigurationIpConfigurationArgs.builder
       builder.ipConfiguration(args(argsBuilder).build)
@@ -1425,7 +1425,7 @@ object hdinsight_ext:
      * @param headNode A `headNode` block as defined above.
      * @return builder
      */
-    def headNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesHeadNodeArgs.Builder]):
+    inline def headNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesHeadNodeArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesHeadNodeArgs.builder
       builder.headNode(args(argsBuilder).build)
@@ -1436,7 +1436,7 @@ object hdinsight_ext:
      * &gt; **Note:** This property has been deprecated and will be removed in version 4.0.
      * @return builder
      */
-    def kafkaManagementNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesKafkaManagementNodeArgs.Builder]):
+    inline def kafkaManagementNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesKafkaManagementNodeArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesKafkaManagementNodeArgs.builder
       builder.kafkaManagementNode(args(argsBuilder).build)
@@ -1445,7 +1445,7 @@ object hdinsight_ext:
      * @param workerNode A `workerNode` block as defined below.
      * @return builder
      */
-    def workerNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesWorkerNodeArgs.Builder]):
+    inline def workerNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesWorkerNodeArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesWorkerNodeArgs.builder
       builder.workerNode(args(argsBuilder).build)
@@ -1454,7 +1454,7 @@ object hdinsight_ext:
      * @param zookeeperNode A `zookeeperNode` block as defined below.
      * @return builder
      */
-    def zookeeperNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesZookeeperNodeArgs.Builder]):
+    inline def zookeeperNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesZookeeperNodeArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesZookeeperNodeArgs.builder
       builder.zookeeperNode(args(argsBuilder).build)
@@ -1464,7 +1464,7 @@ object hdinsight_ext:
      * @param scriptActions The script action which will run on the cluster. One or more `scriptActions` blocks as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesHeadNodeScriptActionArgs.Builder]*):
+    inline def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesHeadNodeScriptActionArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesHeadNodeArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesHeadNodeScriptActionArgs.builder
       builder.scriptActions(args.map(_(argsBuilder).build)*)
@@ -1474,7 +1474,7 @@ object hdinsight_ext:
      * @param scriptActions The script action which will run on the cluster. One or more `scriptActions` blocks as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesKafkaManagementNodeScriptActionArgs.Builder]*):
+    inline def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesKafkaManagementNodeScriptActionArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesKafkaManagementNodeArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesKafkaManagementNodeScriptActionArgs.builder
       builder.scriptActions(args.map(_(argsBuilder).build)*)
@@ -1484,7 +1484,7 @@ object hdinsight_ext:
      * @param scriptActions The script action which will run on the cluster. One or more `scriptActions` blocks as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesWorkerNodeScriptActionArgs.Builder]*):
+    inline def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesWorkerNodeScriptActionArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesWorkerNodeArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesWorkerNodeScriptActionArgs.builder
       builder.scriptActions(args.map(_(argsBuilder).build)*)
@@ -1494,7 +1494,7 @@ object hdinsight_ext:
      * @param scriptActions The script action which will run on the cluster. One or more `scriptActions` blocks as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesZookeeperNodeScriptActionArgs.Builder]*):
+    inline def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesZookeeperNodeScriptActionArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesZookeeperNodeArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesZookeeperNodeScriptActionArgs.builder
       builder.scriptActions(args.map(_(argsBuilder).build)*)
@@ -1504,7 +1504,7 @@ object hdinsight_ext:
      * @param componentVersion A `componentVersion` block as defined below.
      * @return builder
      */
-    def componentVersion(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterComponentVersionArgs.Builder]):
+    inline def componentVersion(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterComponentVersionArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterComponentVersionArgs.builder
       builder.componentVersion(args(argsBuilder).build)
@@ -1513,7 +1513,7 @@ object hdinsight_ext:
      * @param computeIsolation A `computeIsolation` block as defined below.
      * @return builder
      */
-    def computeIsolation(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterComputeIsolationArgs.Builder]):
+    inline def computeIsolation(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterComputeIsolationArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterComputeIsolationArgs.builder
       builder.computeIsolation(args(argsBuilder).build)
@@ -1524,7 +1524,7 @@ object hdinsight_ext:
      * &gt; **Note:** Starting on June 30, 2020, Azure HDInsight will enforce TLS 1.2 or later versions for all HTTPS connections. For more information, see [Azure HDInsight TLS 1.2 Enforcement](https://azure.microsoft.com/en-us/updates/azure-hdinsight-tls-12-enforcement/).
      * @return builder
      */
-    def diskEncryptions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterDiskEncryptionArgs.Builder]*):
+    inline def diskEncryptions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterDiskEncryptionArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterState.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterDiskEncryptionArgs.builder
       builder.diskEncryptions(args.map(_(argsBuilder).build)*)
@@ -1533,7 +1533,7 @@ object hdinsight_ext:
      * @param extension An `extension` block as defined below.
      * @return builder
      */
-    def extension(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterExtensionArgs.Builder]):
+    inline def extension(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterExtensionArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterExtensionArgs.builder
       builder.extension(args(argsBuilder).build)
@@ -1542,7 +1542,7 @@ object hdinsight_ext:
      * @param gateway A `gateway` block as defined below.
      * @return builder
      */
-    def gateway(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterGatewayArgs.Builder]):
+    inline def gateway(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterGatewayArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterGatewayArgs.builder
       builder.gateway(args(argsBuilder).build)
@@ -1551,7 +1551,7 @@ object hdinsight_ext:
      * @param metastores A `metastores` block as defined below.
      * @return builder
      */
-    def metastores(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterMetastoresArgs.Builder]):
+    inline def metastores(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterMetastoresArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterMetastoresArgs.builder
       builder.metastores(args(argsBuilder).build)
@@ -1560,7 +1560,7 @@ object hdinsight_ext:
      * @param monitor A `monitor` block as defined below.
      * @return builder
      */
-    def monitor(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterMonitorArgs.Builder]):
+    inline def monitor(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterMonitorArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterMonitorArgs.builder
       builder.monitor(args(argsBuilder).build)
@@ -1569,7 +1569,7 @@ object hdinsight_ext:
      * @param network A `network` block as defined below.
      * @return builder
      */
-    def network(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterNetworkArgs.Builder]):
+    inline def network(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterNetworkArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterNetworkArgs.builder
       builder.network(args(argsBuilder).build)
@@ -1578,7 +1578,7 @@ object hdinsight_ext:
      * @param privateLinkConfiguration A `privateLinkConfiguration` block as defined below.
      * @return builder
      */
-    def privateLinkConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterPrivateLinkConfigurationArgs.Builder]):
+    inline def privateLinkConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterPrivateLinkConfigurationArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterPrivateLinkConfigurationArgs.builder
       builder.privateLinkConfiguration(args(argsBuilder).build)
@@ -1587,7 +1587,7 @@ object hdinsight_ext:
      * @param restProxy A `restProxy` block as defined below.
      * @return builder
      */
-    def restProxy(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterRestProxyArgs.Builder]):
+    inline def restProxy(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterRestProxyArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterRestProxyArgs.builder
       builder.restProxy(args(argsBuilder).build)
@@ -1596,7 +1596,7 @@ object hdinsight_ext:
      * @param roles A `roles` block as defined below.
      * @return builder
      */
-    def roles(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesArgs.Builder]):
+    inline def roles(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterRolesArgs.builder
       builder.roles(args(argsBuilder).build)
@@ -1605,7 +1605,7 @@ object hdinsight_ext:
      * @param securityProfile A `securityProfile` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def securityProfile(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterSecurityProfileArgs.Builder]):
+    inline def securityProfile(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterSecurityProfileArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterSecurityProfileArgs.builder
       builder.securityProfile(args(argsBuilder).build)
@@ -1614,7 +1614,7 @@ object hdinsight_ext:
      * @param storageAccountGen2 A `storageAccountGen2` block as defined below.
      * @return builder
      */
-    def storageAccountGen2(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterStorageAccountGen2Args.Builder]):
+    inline def storageAccountGen2(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterStorageAccountGen2Args.Builder]):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterStorageAccountGen2Args.builder
       builder.storageAccountGen2(args(argsBuilder).build)
@@ -1623,7 +1623,7 @@ object hdinsight_ext:
      * @param storageAccounts One or more `storageAccount` block as defined below.
      * @return builder
      */
-    def storageAccounts(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterStorageAccountArgs.Builder]*):
+    inline def storageAccounts(args: Endofunction[com.pulumi.azure.hdinsight.inputs.KafkaClusterStorageAccountArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.KafkaClusterState.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.KafkaClusterStorageAccountArgs.builder
       builder.storageAccounts(args.map(_(argsBuilder).build)*)
@@ -1633,7 +1633,7 @@ object hdinsight_ext:
      * @param ambari An `ambari` block as defined below.
      * @return builder
      */
-    def ambari(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterMetastoresAmbariArgs.Builder]):
+    inline def ambari(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterMetastoresAmbariArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.SparkClusterMetastoresArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterMetastoresAmbariArgs.builder
       builder.ambari(args(argsBuilder).build)
@@ -1642,7 +1642,7 @@ object hdinsight_ext:
      * @param hive A `hive` block as defined below.
      * @return builder
      */
-    def hive(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterMetastoresHiveArgs.Builder]):
+    inline def hive(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterMetastoresHiveArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.SparkClusterMetastoresArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterMetastoresHiveArgs.builder
       builder.hive(args(argsBuilder).build)
@@ -1651,7 +1651,7 @@ object hdinsight_ext:
      * @param oozie An `oozie` block as defined below.
      * @return builder
      */
-    def oozie(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterMetastoresOozieArgs.Builder]):
+    inline def oozie(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterMetastoresOozieArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.SparkClusterMetastoresArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterMetastoresOozieArgs.builder
       builder.oozie(args(argsBuilder).build)
@@ -1661,7 +1661,7 @@ object hdinsight_ext:
      * @param ipConfiguration An `ipConfiguration` block as defined below.
      * @return builder
      */
-    def ipConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterPrivateLinkConfigurationIpConfigurationArgs.Builder]):
+    inline def ipConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterPrivateLinkConfigurationIpConfigurationArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.SparkClusterPrivateLinkConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterPrivateLinkConfigurationIpConfigurationArgs.builder
       builder.ipConfiguration(args(argsBuilder).build)
@@ -1671,7 +1671,7 @@ object hdinsight_ext:
      * @param headNode A `headNode` block as defined above.
      * @return builder
      */
-    def headNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterRolesHeadNodeArgs.Builder]):
+    inline def headNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterRolesHeadNodeArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.SparkClusterRolesArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterRolesHeadNodeArgs.builder
       builder.headNode(args(argsBuilder).build)
@@ -1680,7 +1680,7 @@ object hdinsight_ext:
      * @param workerNode A `workerNode` block as defined below.
      * @return builder
      */
-    def workerNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterRolesWorkerNodeArgs.Builder]):
+    inline def workerNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterRolesWorkerNodeArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.SparkClusterRolesArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterRolesWorkerNodeArgs.builder
       builder.workerNode(args(argsBuilder).build)
@@ -1689,7 +1689,7 @@ object hdinsight_ext:
      * @param zookeeperNode A `zookeeperNode` block as defined below.
      * @return builder
      */
-    def zookeeperNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterRolesZookeeperNodeArgs.Builder]):
+    inline def zookeeperNode(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterRolesZookeeperNodeArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.SparkClusterRolesArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterRolesZookeeperNodeArgs.builder
       builder.zookeeperNode(args(argsBuilder).build)
@@ -1699,7 +1699,7 @@ object hdinsight_ext:
      * @param scriptActions The script action which will run on the cluster. One or more `scriptActions` blocks as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterRolesHeadNodeScriptActionArgs.Builder]*):
+    inline def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterRolesHeadNodeScriptActionArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.SparkClusterRolesHeadNodeArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterRolesHeadNodeScriptActionArgs.builder
       builder.scriptActions(args.map(_(argsBuilder).build)*)
@@ -1709,7 +1709,7 @@ object hdinsight_ext:
      * @param autoscale A `autoscale` block as defined below.
      * @return builder
      */
-    def autoscale(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterRolesWorkerNodeAutoscaleArgs.Builder]):
+    inline def autoscale(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterRolesWorkerNodeAutoscaleArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.SparkClusterRolesWorkerNodeArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterRolesWorkerNodeAutoscaleArgs.builder
       builder.autoscale(args(argsBuilder).build)
@@ -1718,7 +1718,7 @@ object hdinsight_ext:
      * @param scriptActions The script action which will run on the cluster. One or more `scriptActions` blocks as defined above. Changing this forces a new resource to be created.
      * @return builder
      */
-    def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterRolesWorkerNodeScriptActionArgs.Builder]*):
+    inline def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterRolesWorkerNodeScriptActionArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.SparkClusterRolesWorkerNodeArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterRolesWorkerNodeScriptActionArgs.builder
       builder.scriptActions(args.map(_(argsBuilder).build)*)
@@ -1728,7 +1728,7 @@ object hdinsight_ext:
      * @param capacity A `capacity` block as defined below.
      * @return builder
      */
-    def capacity(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterRolesWorkerNodeAutoscaleCapacityArgs.Builder]):
+    inline def capacity(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterRolesWorkerNodeAutoscaleCapacityArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.SparkClusterRolesWorkerNodeAutoscaleArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterRolesWorkerNodeAutoscaleCapacityArgs.builder
       builder.capacity(args(argsBuilder).build)
@@ -1739,7 +1739,7 @@ object hdinsight_ext:
      * &gt; **Note:** Either a `capacity` or `recurrence` block must be specified - but not both.
      * @return builder
      */
-    def recurrence(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterRolesWorkerNodeAutoscaleRecurrenceArgs.Builder]):
+    inline def recurrence(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterRolesWorkerNodeAutoscaleRecurrenceArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.SparkClusterRolesWorkerNodeAutoscaleArgs.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterRolesWorkerNodeAutoscaleRecurrenceArgs.builder
       builder.recurrence(args(argsBuilder).build)
@@ -1749,7 +1749,7 @@ object hdinsight_ext:
      * @param schedules A list of `schedule` blocks as defined below.
      * @return builder
      */
-    def schedules(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterRolesWorkerNodeAutoscaleRecurrenceScheduleArgs.Builder]*):
+    inline def schedules(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterRolesWorkerNodeAutoscaleRecurrenceScheduleArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.SparkClusterRolesWorkerNodeAutoscaleRecurrenceArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterRolesWorkerNodeAutoscaleRecurrenceScheduleArgs.builder
       builder.schedules(args.map(_(argsBuilder).build)*)
@@ -1759,7 +1759,7 @@ object hdinsight_ext:
      * @param scriptActions The script action which will run on the cluster. One or more `scriptActions` blocks as defined above. Changing this forces a new resource to be created.
      * @return builder
      */
-    def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterRolesZookeeperNodeScriptActionArgs.Builder]*):
+    inline def scriptActions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterRolesZookeeperNodeScriptActionArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.SparkClusterRolesZookeeperNodeArgs.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterRolesZookeeperNodeScriptActionArgs.builder
       builder.scriptActions(args.map(_(argsBuilder).build)*)
@@ -1769,7 +1769,7 @@ object hdinsight_ext:
      * @param componentVersion A `componentVersion` block as defined below.
      * @return builder
      */
-    def componentVersion(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterComponentVersionArgs.Builder]):
+    inline def componentVersion(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterComponentVersionArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.SparkClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterComponentVersionArgs.builder
       builder.componentVersion(args(argsBuilder).build)
@@ -1778,7 +1778,7 @@ object hdinsight_ext:
      * @param computeIsolation A `computeIsolation` block as defined below.
      * @return builder
      */
-    def computeIsolation(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterComputeIsolationArgs.Builder]):
+    inline def computeIsolation(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterComputeIsolationArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.SparkClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterComputeIsolationArgs.builder
       builder.computeIsolation(args(argsBuilder).build)
@@ -1787,7 +1787,7 @@ object hdinsight_ext:
      * @param diskEncryptions One or more `diskEncryption` block as defined below.
      * @return builder
      */
-    def diskEncryptions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterDiskEncryptionArgs.Builder]*):
+    inline def diskEncryptions(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterDiskEncryptionArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.SparkClusterState.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterDiskEncryptionArgs.builder
       builder.diskEncryptions(args.map(_(argsBuilder).build)*)
@@ -1796,7 +1796,7 @@ object hdinsight_ext:
      * @param extension An `extension` block as defined below.
      * @return builder
      */
-    def extension(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterExtensionArgs.Builder]):
+    inline def extension(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterExtensionArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.SparkClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterExtensionArgs.builder
       builder.extension(args(argsBuilder).build)
@@ -1805,7 +1805,7 @@ object hdinsight_ext:
      * @param gateway A `gateway` block as defined below.
      * @return builder
      */
-    def gateway(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterGatewayArgs.Builder]):
+    inline def gateway(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterGatewayArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.SparkClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterGatewayArgs.builder
       builder.gateway(args(argsBuilder).build)
@@ -1814,7 +1814,7 @@ object hdinsight_ext:
      * @param metastores A `metastores` block as defined below.
      * @return builder
      */
-    def metastores(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterMetastoresArgs.Builder]):
+    inline def metastores(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterMetastoresArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.SparkClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterMetastoresArgs.builder
       builder.metastores(args(argsBuilder).build)
@@ -1823,7 +1823,7 @@ object hdinsight_ext:
      * @param monitor A `monitor` block as defined below.
      * @return builder
      */
-    def monitor(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterMonitorArgs.Builder]):
+    inline def monitor(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterMonitorArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.SparkClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterMonitorArgs.builder
       builder.monitor(args(argsBuilder).build)
@@ -1832,7 +1832,7 @@ object hdinsight_ext:
      * @param network A `network` block as defined below.
      * @return builder
      */
-    def network(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterNetworkArgs.Builder]):
+    inline def network(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterNetworkArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.SparkClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterNetworkArgs.builder
       builder.network(args(argsBuilder).build)
@@ -1841,7 +1841,7 @@ object hdinsight_ext:
      * @param privateLinkConfiguration A `privateLinkConfiguration` block as defined below.
      * @return builder
      */
-    def privateLinkConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterPrivateLinkConfigurationArgs.Builder]):
+    inline def privateLinkConfiguration(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterPrivateLinkConfigurationArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.SparkClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterPrivateLinkConfigurationArgs.builder
       builder.privateLinkConfiguration(args(argsBuilder).build)
@@ -1850,7 +1850,7 @@ object hdinsight_ext:
      * @param roles A `roles` block as defined below.
      * @return builder
      */
-    def roles(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterRolesArgs.Builder]):
+    inline def roles(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterRolesArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.SparkClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterRolesArgs.builder
       builder.roles(args(argsBuilder).build)
@@ -1859,7 +1859,7 @@ object hdinsight_ext:
      * @param securityProfile A `securityProfile` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def securityProfile(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterSecurityProfileArgs.Builder]):
+    inline def securityProfile(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterSecurityProfileArgs.Builder]):
         com.pulumi.azure.hdinsight.inputs.SparkClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterSecurityProfileArgs.builder
       builder.securityProfile(args(argsBuilder).build)
@@ -1868,7 +1868,7 @@ object hdinsight_ext:
      * @param storageAccountGen2 A `storageAccountGen2` block as defined below.
      * @return builder
      */
-    def storageAccountGen2(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterStorageAccountGen2Args.Builder]):
+    inline def storageAccountGen2(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterStorageAccountGen2Args.Builder]):
         com.pulumi.azure.hdinsight.inputs.SparkClusterState.Builder =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterStorageAccountGen2Args.builder
       builder.storageAccountGen2(args(argsBuilder).build)
@@ -1877,7 +1877,7 @@ object hdinsight_ext:
      * @param storageAccounts One or more `storageAccount` block as defined below.
      * @return builder
      */
-    def storageAccounts(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterStorageAccountArgs.Builder]*):
+    inline def storageAccounts(args: Endofunction[com.pulumi.azure.hdinsight.inputs.SparkClusterStorageAccountArgs.Builder]*):
         com.pulumi.azure.hdinsight.inputs.SparkClusterState.Builder =
       def argsBuilder = com.pulumi.azure.hdinsight.inputs.SparkClusterStorageAccountArgs.builder
       builder.storageAccounts(args.map(_(argsBuilder).build)*)

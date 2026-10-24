@@ -7,7 +7,7 @@ object videoindexer_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.videoindexer.inputs.AccountIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.videoindexer.inputs.AccountIdentityArgs.Builder]):
         com.pulumi.azure.videoindexer.AccountArgs.Builder =
       val argsBuilder = com.pulumi.azure.videoindexer.inputs.AccountIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object videoindexer_ext:
      * @param storage A `storage` block as defined below.
      * @return builder
      */
-    def storage(args: Endofunction[com.pulumi.azure.videoindexer.inputs.AccountStorageArgs.Builder]):
+    inline def storage(args: Endofunction[com.pulumi.azure.videoindexer.inputs.AccountStorageArgs.Builder]):
         com.pulumi.azure.videoindexer.AccountArgs.Builder =
       val argsBuilder = com.pulumi.azure.videoindexer.inputs.AccountStorageArgs.builder
       builder.storage(args(argsBuilder).build)
@@ -26,7 +26,7 @@ object videoindexer_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.videoindexer.inputs.AccountIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.videoindexer.inputs.AccountIdentityArgs.Builder]):
         com.pulumi.azure.videoindexer.inputs.AccountState.Builder =
       val argsBuilder = com.pulumi.azure.videoindexer.inputs.AccountIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -35,7 +35,7 @@ object videoindexer_ext:
      * @param storage A `storage` block as defined below.
      * @return builder
      */
-    def storage(args: Endofunction[com.pulumi.azure.videoindexer.inputs.AccountStorageArgs.Builder]):
+    inline def storage(args: Endofunction[com.pulumi.azure.videoindexer.inputs.AccountStorageArgs.Builder]):
         com.pulumi.azure.videoindexer.inputs.AccountState.Builder =
       val argsBuilder = com.pulumi.azure.videoindexer.inputs.AccountStorageArgs.builder
       builder.storage(args(argsBuilder).build)

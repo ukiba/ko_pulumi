@@ -13,7 +13,7 @@ object networkmanagement_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destination(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestDestinationArgs.Builder]):
+    inline def destination(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestDestinationArgs.Builder]):
         com.pulumi.gcp.networkmanagement.ConnectivityTestArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestDestinationArgs.builder
       builder.destination(args(argsBuilder).build)
@@ -28,7 +28,7 @@ object networkmanagement_ext:
      * Structure is documented below.
      * @return builder
      */
-    def source(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestSourceArgs.Builder]):
+    inline def source(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestSourceArgs.Builder]):
         com.pulumi.gcp.networkmanagement.ConnectivityTestArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestSourceArgs.builder
       builder.source(args(argsBuilder).build)
@@ -39,7 +39,7 @@ object networkmanagement_ext:
      * Structure is documented below.
      * @return builder
      */
-    def appEngineVersion(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestSourceAppEngineVersionArgs.Builder]):
+    inline def appEngineVersion(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestSourceAppEngineVersionArgs.Builder]):
         com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestSourceAppEngineVersionArgs.builder
       builder.appEngineVersion(args(argsBuilder).build)
@@ -49,7 +49,7 @@ object networkmanagement_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudFunction(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestSourceCloudFunctionArgs.Builder]):
+    inline def cloudFunction(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestSourceCloudFunctionArgs.Builder]):
         com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestSourceCloudFunctionArgs.builder
       builder.cloudFunction(args(argsBuilder).build)
@@ -59,7 +59,7 @@ object networkmanagement_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudRunRevision(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestSourceCloudRunRevisionArgs.Builder]):
+    inline def cloudRunRevision(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestSourceCloudRunRevisionArgs.Builder]):
         com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestSourceCloudRunRevisionArgs.builder
       builder.cloudRunRevision(args(argsBuilder).build)
@@ -75,7 +75,7 @@ object networkmanagement_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destination(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestDestinationArgs.Builder]):
+    inline def destination(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestDestinationArgs.Builder]):
         com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestState.Builder =
       val argsBuilder = com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestDestinationArgs.builder
       builder.destination(args(argsBuilder).build)
@@ -90,7 +90,7 @@ object networkmanagement_ext:
      * Structure is documented below.
      * @return builder
      */
-    def source(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestSourceArgs.Builder]):
+    inline def source(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestSourceArgs.Builder]):
         com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestState.Builder =
       val argsBuilder = com.pulumi.gcp.networkmanagement.inputs.ConnectivityTestSourceArgs.builder
       builder.source(args(argsBuilder).build)

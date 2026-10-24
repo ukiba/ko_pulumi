@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object elasticsan:
   /** Manages an Elastic SAN resource. */
-  def ElasticSan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ElasticSan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.elasticsan.ElasticSanArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.elasticsan.ElasticSanArgs.builder
     conf.logicalName2physicalName(name) match
@@ -74,7 +74,7 @@ object elasticsan:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an Elastic SAN Volume resource. */
-  def Volume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Volume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.elasticsan.VolumeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.elasticsan.VolumeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -85,7 +85,7 @@ object elasticsan:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Elastic SAN Volume Group resource. */
-  def VolumeGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VolumeGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.elasticsan.VolumeGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.elasticsan.VolumeGroupArgs.builder
     conf.logicalName2physicalName(name) match

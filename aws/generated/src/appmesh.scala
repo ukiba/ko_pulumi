@@ -120,7 +120,7 @@ object appmesh:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides an AWS App Mesh gateway route resource. */
-  def GatewayRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GatewayRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appmesh.GatewayRouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appmesh.GatewayRouteArgs.builder
     conf.logicalName2physicalName(name) match
@@ -138,7 +138,7 @@ object appmesh:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS App Mesh service mesh resource. */
-  def Mesh(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Mesh(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appmesh.MeshArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appmesh.MeshArgs.builder
     conf.logicalName2physicalName(name) match
@@ -156,7 +156,7 @@ object appmesh:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS App Mesh route resource. */
-  def Route(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Route(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appmesh.RouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appmesh.RouteArgs.builder
     conf.logicalName2physicalName(name) match
@@ -174,7 +174,7 @@ object appmesh:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS App Mesh virtual gateway resource. */
-  def VirtualGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VirtualGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appmesh.VirtualGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appmesh.VirtualGatewayArgs.builder
     conf.logicalName2physicalName(name) match
@@ -196,7 +196,7 @@ object appmesh:
    * 
    * &gt; **Note:** Because of backward incompatible API changes ([see issue](https://github.com/awslabs/aws-app-mesh-examples/issues/92)), resource definitions created with provider versions earlier than v2.3.0 must be modified: rename the `serviceName` attribute of the `dns` object to `hostname`; replace the `backends` attribute of the `spec` object with one or more `backend` configuration blocks, setting `virtualServiceName` to the name of the service. Existing Pulumi state is automatically migrated.
    */
-  def VirtualNode(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VirtualNode(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appmesh.VirtualNodeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appmesh.VirtualNodeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -218,7 +218,7 @@ object appmesh:
    * 
    * &gt; **Note:** Because of backward incompatible API changes ([see issue](https://github.com/awslabs/aws-app-mesh-examples/issues/92), [and here](https://github.com/awslabs/aws-app-mesh-examples/issues/94)), resource definitions created with provider versions earlier than v2.3.0 must be modified: remove `serviceNames` from the `spec` argument (AWS created `aws.appmesh.VirtualService` resources for each \u2014 import them with `pulumi import`); add a `listener` configuration block to the `spec` argument. Existing Pulumi state is automatically migrated.
    */
-  def VirtualRouter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VirtualRouter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appmesh.VirtualRouterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appmesh.VirtualRouterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -236,7 +236,7 @@ object appmesh:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS App Mesh virtual service resource. */
-  def VirtualService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VirtualService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appmesh.VirtualServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appmesh.VirtualServiceArgs.builder
     conf.logicalName2physicalName(name) match

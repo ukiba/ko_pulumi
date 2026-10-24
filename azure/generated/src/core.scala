@@ -184,7 +184,7 @@ object core:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an Azure Custom Provider. */
-  def CustomProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.core.CustomProviderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.CustomProviderArgs.builder
     conf.logicalName2physicalName(name) match
@@ -212,7 +212,7 @@ object core:
    * 
    * &gt; **Note:** While assigning the role to the existing/new Service Principal at the Tenant Scope, the user assigning role must already have the `Owner` role assigned at the Tenant Scope.
    */
-  def PortalTenantConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PortalTenantConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.core.PortalTenantConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.core.PortalTenantConfigurationArgs.builder
     com.pulumi.azure.core.PortalTenantConfiguration(name,
@@ -220,7 +220,7 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Resource Deployment Script of Azure Cli. */
-  def ResourceDeploymentScriptAzureCli(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourceDeploymentScriptAzureCli(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.core.ResourceDeploymentScriptAzureCliArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourceDeploymentScriptAzureCliArgs.builder
     conf.logicalName2physicalName(name) match
@@ -238,7 +238,7 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Resource Deployment Script of Azure PowerShell. */
-  def ResourceDeploymentScriptPowerShell(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourceDeploymentScriptPowerShell(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.core.ResourceDeploymentScriptPowerShellArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourceDeploymentScriptPowerShellArgs.builder
     conf.logicalName2physicalName(name) match
@@ -262,7 +262,7 @@ object core:
    * 
    * &gt; **Note:** Version 2.72 and later of the Azure Provider include a Feature Toggle which can error if there are any Resources left within the Resource Group at deletion time. This Feature Toggle is disabled in 2.x but enabled by default from 3.0 onwards, and is intended to avoid the unintentional destruction of resources managed outside of Terraform (for example, provisioned by an ARM Template). See the Features block documentation for more information on Feature Toggles within Terraform.
    */
-  def ResourceGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourceGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.core.ResourceGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourceGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -280,7 +280,7 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Cost Management Export for a Resource Group. */
-  def ResourceGroupCostManagementExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourceGroupCostManagementExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.core.ResourceGroupCostManagementExportArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourceGroupCostManagementExportArgs.builder
     conf.logicalName2physicalName(name) match
@@ -291,7 +291,7 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Cost Management View for a Resource Group. */
-  def ResourceGroupCostManagementView(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourceGroupCostManagementView(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.core.ResourceGroupCostManagementViewArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourceGroupCostManagementViewArgs.builder
     conf.logicalName2physicalName(name) match
@@ -302,7 +302,7 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Resource Group Policy Assignment. */
-  def ResourceGroupPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourceGroupPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.core.ResourceGroupPolicyAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourceGroupPolicyAssignmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -313,7 +313,7 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Resource Group Policy Exemption. */
-  def ResourceGroupPolicyExemption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourceGroupPolicyExemption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.core.ResourceGroupPolicyExemptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourceGroupPolicyExemptionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -324,7 +324,7 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Resource Group Policy Remediation. */
-  def ResourceGroupPolicyRemediation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourceGroupPolicyRemediation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.core.ResourceGroupPolicyRemediationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourceGroupPolicyRemediationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -339,7 +339,7 @@ object core:
    * 
    * &gt; **Note:** This resource will automatically attempt to delete resources deployed by the ARM Template when it is deleted. This behavior can be disabled in the provider `features` block by setting the `deleteNestedItemsDuringDeletion` field to `false` within the `templateDeployment` block.
    */
-  def ResourceGroupTemplateDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourceGroupTemplateDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.core.ResourceGroupTemplateDeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourceGroupTemplateDeploymentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -357,7 +357,7 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Policy Assignment to a Resource. */
-  def ResourcePolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourcePolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.core.ResourcePolicyAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourcePolicyAssignmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -368,7 +368,7 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Resource Policy Exemption. */
-  def ResourcePolicyExemption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourcePolicyExemption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.core.ResourcePolicyExemptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourcePolicyExemptionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -379,7 +379,7 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Resource Policy Remediation. */
-  def ResourcePolicyRemediation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourcePolicyRemediation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.core.ResourcePolicyRemediationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourcePolicyRemediationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -396,7 +396,7 @@ object core:
    * 
    * &gt; **Note:** Only Preview Features which have an `ApprovalType` of `AutoApproval` can be managed in Terraform, features which require manual approval by Service Teams are unsupported. [More information on Resource Provider Preview Features can be found in this document](https://docs.microsoft.com/rest/api/resources/features)
    */
-  def ResourceProviderFeatureRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourceProviderFeatureRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.core.ResourceProviderFeatureRegistrationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourceProviderFeatureRegistrationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -415,7 +415,7 @@ object core:
    * 
    * &gt; **Note:** Adding or Removing a Preview Feature will re-register the Resource Provider.
    */
-  def ResourceProviderRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourceProviderRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.core.ResourceProviderRegistrationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourceProviderRegistrationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -440,7 +440,7 @@ object core:
    * 
    * &gt; **NOTE:** When using this resource across tenants the `clientId` and `tenantId` of the `provider` config block should be for the home tenant details for the SPN / User or a permissions error will likely be encountered. See [the official documentation](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/programmatically-create-subscription) for more details.
    */
-  def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.core.SubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.SubscriptionArgs.builder
     argsBuilder = args(argsBuilder)
@@ -455,7 +455,7 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Cost Management Export for a Subscription. */
-  def SubscriptionCostManagementExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubscriptionCostManagementExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.core.SubscriptionCostManagementExportArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.SubscriptionCostManagementExportArgs.builder
     conf.logicalName2physicalName(name) match
@@ -466,7 +466,7 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Cost Management View for a Subscription. */
-  def SubscriptionCostManagementView(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubscriptionCostManagementView(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.core.SubscriptionCostManagementViewArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.SubscriptionCostManagementViewArgs.builder
     conf.logicalName2physicalName(name) match
@@ -477,7 +477,7 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Subscription Policy Assignment. */
-  def SubscriptionPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubscriptionPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.core.SubscriptionPolicyAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.SubscriptionPolicyAssignmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -488,7 +488,7 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Subscription Policy Exemption. */
-  def SubscriptionPolicyExemption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubscriptionPolicyExemption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.core.SubscriptionPolicyExemptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.SubscriptionPolicyExemptionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -499,7 +499,7 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Subscription Policy Remediation. */
-  def SubscriptionPolicyRemediation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubscriptionPolicyRemediation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.core.SubscriptionPolicyRemediationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.SubscriptionPolicyRemediationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -510,7 +510,7 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Subscription Template Deployment. */
-  def SubscriptionTemplateDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubscriptionTemplateDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.core.SubscriptionTemplateDeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.SubscriptionTemplateDeploymentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -536,7 +536,7 @@ object core:
    * 
    * &gt; **Note:** Tenant Template Deployments are always targeted at the Tenant in which the current User, Managed Identity, or Service Principal being used by Terraform is homed.
    */
-  def TenantTemplateDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TenantTemplateDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.core.TenantTemplateDeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.TenantTemplateDeploymentArgs.builder
     conf.logicalName2physicalName(name) match

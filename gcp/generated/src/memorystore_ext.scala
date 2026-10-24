@@ -8,7 +8,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.memorystore.inputs.AclPolicyRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.memorystore.inputs.AclPolicyRuleArgs.Builder]*):
         com.pulumi.gcp.memorystore.AclPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.AclPolicyRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -19,7 +19,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def automatedBackupConfig(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceAutomatedBackupConfigArgs.Builder]):
+    inline def automatedBackupConfig(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceAutomatedBackupConfigArgs.Builder]):
         com.pulumi.gcp.memorystore.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceAutomatedBackupConfigArgs.builder
       builder.automatedBackupConfig(args(argsBuilder).build)
@@ -29,7 +29,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def crossInstanceReplicationConfig(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigArgs.Builder]):
+    inline def crossInstanceReplicationConfig(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigArgs.Builder]):
         com.pulumi.gcp.memorystore.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigArgs.builder
       builder.crossInstanceReplicationConfig(args(argsBuilder).build)
@@ -38,7 +38,7 @@ object memorystore_ext:
      * @param desiredAutoCreatedEndpoints Immutable. User inputs for the auto-created endpoints connections.
      * @return builder
      */
-    def desiredAutoCreatedEndpoints(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceDesiredAutoCreatedEndpointArgs.Builder]*):
+    inline def desiredAutoCreatedEndpoints(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceDesiredAutoCreatedEndpointArgs.Builder]*):
         com.pulumi.gcp.memorystore.InstanceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceDesiredAutoCreatedEndpointArgs.builder
       builder.desiredAutoCreatedEndpoints(args.map(_(argsBuilder).build)*)
@@ -48,7 +48,7 @@ object memorystore_ext:
      * @return builder
      * @deprecated `desiredPscAutoConnections` is deprecated. Use `desiredAutoCreatedEndpoints` instead. `terraform import` will only work with desiredAutoCreatedEndpoints`.
      */
-    @deprecated("`desiredPscAutoConnections` is deprecated. Use `desiredAutoCreatedEndpoints` instead. `terraform import` will only work with desiredAutoCreatedEndpoints`.") def desiredPscAutoConnections(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceDesiredPscAutoConnectionArgs.Builder]*):
+    @deprecated("`desiredPscAutoConnections` is deprecated. Use `desiredAutoCreatedEndpoints` instead. `terraform import` will only work with desiredAutoCreatedEndpoints`.") inline def desiredPscAutoConnections(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceDesiredPscAutoConnectionArgs.Builder]*):
         com.pulumi.gcp.memorystore.InstanceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceDesiredPscAutoConnectionArgs.builder
       builder.desiredPscAutoConnections(args.map(_(argsBuilder).build)*)
@@ -58,7 +58,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gcsSource(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceGcsSourceArgs.Builder]):
+    inline def gcsSource(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceGcsSourceArgs.Builder]):
         com.pulumi.gcp.memorystore.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceGcsSourceArgs.builder
       builder.gcsSource(args(argsBuilder).build)
@@ -68,7 +68,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenancePolicy(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceMaintenancePolicyArgs.Builder]):
+    inline def maintenancePolicy(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceMaintenancePolicyArgs.Builder]):
         com.pulumi.gcp.memorystore.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceMaintenancePolicyArgs.builder
       builder.maintenancePolicy(args(argsBuilder).build)
@@ -78,7 +78,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def managedBackupSource(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceManagedBackupSourceArgs.Builder]):
+    inline def managedBackupSource(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceManagedBackupSourceArgs.Builder]):
         com.pulumi.gcp.memorystore.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceManagedBackupSourceArgs.builder
       builder.managedBackupSource(args(argsBuilder).build)
@@ -88,7 +88,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def persistenceConfig(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstancePersistenceConfigArgs.Builder]):
+    inline def persistenceConfig(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstancePersistenceConfigArgs.Builder]):
         com.pulumi.gcp.memorystore.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.InstancePersistenceConfigArgs.builder
       builder.persistenceConfig(args(argsBuilder).build)
@@ -98,7 +98,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def zoneDistributionConfig(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceZoneDistributionConfigArgs.Builder]):
+    inline def zoneDistributionConfig(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceZoneDistributionConfigArgs.Builder]):
         com.pulumi.gcp.memorystore.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceZoneDistributionConfigArgs.builder
       builder.zoneDistributionConfig(args(argsBuilder).build)
@@ -109,7 +109,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def desiredUserCreatedEndpoints(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceDesiredUserCreatedEndpointsDesiredUserCreatedEndpointArgs.Builder]*):
+    inline def desiredUserCreatedEndpoints(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceDesiredUserCreatedEndpointsDesiredUserCreatedEndpointArgs.Builder]*):
         com.pulumi.gcp.memorystore.InstanceDesiredUserCreatedEndpointsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceDesiredUserCreatedEndpointsDesiredUserCreatedEndpointArgs.builder
       builder.desiredUserCreatedEndpoints(args.map(_(argsBuilder).build)*)
@@ -120,7 +120,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.memorystore.inputs.AclPolicyRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.memorystore.inputs.AclPolicyRuleArgs.Builder]*):
         com.pulumi.gcp.memorystore.inputs.AclPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.AclPolicyRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -131,7 +131,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fixedFrequencySchedule(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceAutomatedBackupConfigFixedFrequencyScheduleArgs.Builder]):
+    inline def fixedFrequencySchedule(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceAutomatedBackupConfigFixedFrequencyScheduleArgs.Builder]):
         com.pulumi.gcp.memorystore.inputs.InstanceAutomatedBackupConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceAutomatedBackupConfigFixedFrequencyScheduleArgs.builder
       builder.fixedFrequencySchedule(args(argsBuilder).build)
@@ -143,7 +143,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def startTime(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceAutomatedBackupConfigFixedFrequencyScheduleStartTimeArgs.Builder]):
+    inline def startTime(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceAutomatedBackupConfigFixedFrequencyScheduleStartTimeArgs.Builder]):
         com.pulumi.gcp.memorystore.inputs.InstanceAutomatedBackupConfigFixedFrequencyScheduleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceAutomatedBackupConfigFixedFrequencyScheduleStartTimeArgs.builder
       builder.startTime(args(argsBuilder).build)
@@ -155,7 +155,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def memberships(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigMembershipArgs.Builder]*):
+    inline def memberships(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigMembershipArgs.Builder]*):
         com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigMembershipArgs.builder
       builder.memberships(args.map(_(argsBuilder).build)*)
@@ -165,7 +165,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def primaryInstance(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigPrimaryInstanceArgs.Builder]):
+    inline def primaryInstance(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigPrimaryInstanceArgs.Builder]):
         com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigPrimaryInstanceArgs.builder
       builder.primaryInstance(args(argsBuilder).build)
@@ -175,7 +175,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secondaryInstances(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigSecondaryInstanceArgs.Builder]*):
+    inline def secondaryInstances(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigSecondaryInstanceArgs.Builder]*):
         com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigSecondaryInstanceArgs.builder
       builder.secondaryInstances(args.map(_(argsBuilder).build)*)
@@ -185,7 +185,7 @@ object memorystore_ext:
      * @param primaryInstances Details of the primary instance that is used as the replication source for all the secondary instances.
      * @return builder
      */
-    def primaryInstances(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigMembershipPrimaryInstanceArgs.Builder]*):
+    inline def primaryInstances(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigMembershipPrimaryInstanceArgs.Builder]*):
         com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigMembershipArgs.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigMembershipPrimaryInstanceArgs.builder
       builder.primaryInstances(args.map(_(argsBuilder).build)*)
@@ -194,7 +194,7 @@ object memorystore_ext:
      * @param secondaryInstances List of secondary instances that are replicating from the primary instance.
      * @return builder
      */
-    def secondaryInstances(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigMembershipSecondaryInstanceArgs.Builder]*):
+    inline def secondaryInstances(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigMembershipSecondaryInstanceArgs.Builder]*):
         com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigMembershipArgs.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigMembershipSecondaryInstanceArgs.builder
       builder.secondaryInstances(args.map(_(argsBuilder).build)*)
@@ -204,7 +204,7 @@ object memorystore_ext:
      * @param connections Structure is documented below.
      * @return builder
      */
-    def connections(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceDesiredUserCreatedEndpointsDesiredUserCreatedEndpointConnectionArgs.Builder]*):
+    inline def connections(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceDesiredUserCreatedEndpointsDesiredUserCreatedEndpointConnectionArgs.Builder]*):
         com.pulumi.gcp.memorystore.inputs.InstanceDesiredUserCreatedEndpointsDesiredUserCreatedEndpointArgs.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceDesiredUserCreatedEndpointsDesiredUserCreatedEndpointConnectionArgs.builder
       builder.connections(args.map(_(argsBuilder).build)*)
@@ -216,7 +216,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscConnection(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceDesiredUserCreatedEndpointsDesiredUserCreatedEndpointConnectionPscConnectionArgs.Builder]):
+    inline def pscConnection(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceDesiredUserCreatedEndpointsDesiredUserCreatedEndpointConnectionPscConnectionArgs.Builder]):
         com.pulumi.gcp.memorystore.inputs.InstanceDesiredUserCreatedEndpointsDesiredUserCreatedEndpointConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceDesiredUserCreatedEndpointsDesiredUserCreatedEndpointConnectionPscConnectionArgs.builder
       builder.pscConnection(args(argsBuilder).build)
@@ -227,7 +227,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def desiredUserCreatedEndpoints(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceDesiredUserCreatedEndpointsDesiredUserCreatedEndpointArgs.Builder]*):
+    inline def desiredUserCreatedEndpoints(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceDesiredUserCreatedEndpointsDesiredUserCreatedEndpointArgs.Builder]*):
         com.pulumi.gcp.memorystore.inputs.InstanceDesiredUserCreatedEndpointsState.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceDesiredUserCreatedEndpointsDesiredUserCreatedEndpointArgs.builder
       builder.desiredUserCreatedEndpoints(args.map(_(argsBuilder).build)*)
@@ -238,7 +238,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connections(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceEndpointConnectionArgs.Builder]*):
+    inline def connections(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceEndpointConnectionArgs.Builder]*):
         com.pulumi.gcp.memorystore.inputs.InstanceEndpointArgs.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceEndpointConnectionArgs.builder
       builder.connections(args.map(_(argsBuilder).build)*)
@@ -249,7 +249,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscAutoConnection(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceEndpointConnectionPscAutoConnectionArgs.Builder]):
+    inline def pscAutoConnection(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceEndpointConnectionPscAutoConnectionArgs.Builder]):
         com.pulumi.gcp.memorystore.inputs.InstanceEndpointConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceEndpointConnectionPscAutoConnectionArgs.builder
       builder.pscAutoConnection(args(argsBuilder).build)
@@ -262,7 +262,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def weeklyMaintenanceWindows(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowArgs.Builder]*):
+    inline def weeklyMaintenanceWindows(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowArgs.Builder]*):
         com.pulumi.gcp.memorystore.inputs.InstanceMaintenancePolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowArgs.builder
       builder.weeklyMaintenanceWindows(args.map(_(argsBuilder).build)*)
@@ -273,7 +273,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def startTime(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowStartTimeArgs.Builder]):
+    inline def startTime(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowStartTimeArgs.Builder]):
         com.pulumi.gcp.memorystore.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowStartTimeArgs.builder
       builder.startTime(args(argsBuilder).build)
@@ -285,7 +285,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def caCerts(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceManagedServerCaCaCertArgs.Builder]*):
+    inline def caCerts(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceManagedServerCaCaCertArgs.Builder]*):
         com.pulumi.gcp.memorystore.inputs.InstanceManagedServerCaArgs.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceManagedServerCaCaCertArgs.builder
       builder.caCerts(args.map(_(argsBuilder).build)*)
@@ -296,7 +296,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def aofConfig(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstancePersistenceConfigAofConfigArgs.Builder]):
+    inline def aofConfig(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstancePersistenceConfigAofConfigArgs.Builder]):
         com.pulumi.gcp.memorystore.inputs.InstancePersistenceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.InstancePersistenceConfigAofConfigArgs.builder
       builder.aofConfig(args(argsBuilder).build)
@@ -306,7 +306,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rdbConfig(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstancePersistenceConfigRdbConfigArgs.Builder]):
+    inline def rdbConfig(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstancePersistenceConfigRdbConfigArgs.Builder]):
         com.pulumi.gcp.memorystore.inputs.InstancePersistenceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.InstancePersistenceConfigRdbConfigArgs.builder
       builder.rdbConfig(args(argsBuilder).build)
@@ -317,7 +317,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def automatedBackupConfig(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceAutomatedBackupConfigArgs.Builder]):
+    inline def automatedBackupConfig(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceAutomatedBackupConfigArgs.Builder]):
         com.pulumi.gcp.memorystore.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceAutomatedBackupConfigArgs.builder
       builder.automatedBackupConfig(args(argsBuilder).build)
@@ -327,7 +327,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def crossInstanceReplicationConfig(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigArgs.Builder]):
+    inline def crossInstanceReplicationConfig(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigArgs.Builder]):
         com.pulumi.gcp.memorystore.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceCrossInstanceReplicationConfigArgs.builder
       builder.crossInstanceReplicationConfig(args(argsBuilder).build)
@@ -336,7 +336,7 @@ object memorystore_ext:
      * @param desiredAutoCreatedEndpoints Immutable. User inputs for the auto-created endpoints connections.
      * @return builder
      */
-    def desiredAutoCreatedEndpoints(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceDesiredAutoCreatedEndpointArgs.Builder]*):
+    inline def desiredAutoCreatedEndpoints(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceDesiredAutoCreatedEndpointArgs.Builder]*):
         com.pulumi.gcp.memorystore.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceDesiredAutoCreatedEndpointArgs.builder
       builder.desiredAutoCreatedEndpoints(args.map(_(argsBuilder).build)*)
@@ -346,7 +346,7 @@ object memorystore_ext:
      * @return builder
      * @deprecated `desiredPscAutoConnections` is deprecated. Use `desiredAutoCreatedEndpoints` instead. `terraform import` will only work with desiredAutoCreatedEndpoints`.
      */
-    @deprecated("`desiredPscAutoConnections` is deprecated. Use `desiredAutoCreatedEndpoints` instead. `terraform import` will only work with desiredAutoCreatedEndpoints`.") def desiredPscAutoConnections(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceDesiredPscAutoConnectionArgs.Builder]*):
+    @deprecated("`desiredPscAutoConnections` is deprecated. Use `desiredAutoCreatedEndpoints` instead. `terraform import` will only work with desiredAutoCreatedEndpoints`.") inline def desiredPscAutoConnections(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceDesiredPscAutoConnectionArgs.Builder]*):
         com.pulumi.gcp.memorystore.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceDesiredPscAutoConnectionArgs.builder
       builder.desiredPscAutoConnections(args.map(_(argsBuilder).build)*)
@@ -358,7 +358,7 @@ object memorystore_ext:
      * @return builder
      * @deprecated This field is deprecated. As a result it will not be populated if the connections are created using `desiredAutoCreatedEndpoints` parameter or `gcp.memorystore.InstanceDesiredUserCreatedEndpoints` resource. Instead of this parameter, for discovery, use `endpoints.connections.pscConnection` and `endpoints.connections.pscAutoConnection` with `connectionType` CONNECTION_TYPE_DISCOVERY.
      */
-    @deprecated("This field is deprecated. As a result it will not be populated if the connections are created using `desiredAutoCreatedEndpoints` parameter or `gcp.memorystore.InstanceDesiredUserCreatedEndpoints` resource. Instead of this parameter, for discovery, use `endpoints.connections.pscConnection` and `endpoints.connections.pscAutoConnection` with `connectionType` CONNECTION_TYPE_DISCOVERY.") def discoveryEndpoints(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceDiscoveryEndpointArgs.Builder]*):
+    @deprecated("This field is deprecated. As a result it will not be populated if the connections are created using `desiredAutoCreatedEndpoints` parameter or `gcp.memorystore.InstanceDesiredUserCreatedEndpoints` resource. Instead of this parameter, for discovery, use `endpoints.connections.pscConnection` and `endpoints.connections.pscAutoConnection` with `connectionType` CONNECTION_TYPE_DISCOVERY.") inline def discoveryEndpoints(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceDiscoveryEndpointArgs.Builder]*):
         com.pulumi.gcp.memorystore.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceDiscoveryEndpointArgs.builder
       builder.discoveryEndpoints(args.map(_(argsBuilder).build)*)
@@ -368,7 +368,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endpoints(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceEndpointArgs.Builder]*):
+    inline def endpoints(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceEndpointArgs.Builder]*):
         com.pulumi.gcp.memorystore.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceEndpointArgs.builder
       builder.endpoints(args.map(_(argsBuilder).build)*)
@@ -378,7 +378,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gcsSource(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceGcsSourceArgs.Builder]):
+    inline def gcsSource(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceGcsSourceArgs.Builder]):
         com.pulumi.gcp.memorystore.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceGcsSourceArgs.builder
       builder.gcsSource(args(argsBuilder).build)
@@ -388,7 +388,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenancePolicy(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceMaintenancePolicyArgs.Builder]):
+    inline def maintenancePolicy(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceMaintenancePolicyArgs.Builder]):
         com.pulumi.gcp.memorystore.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceMaintenancePolicyArgs.builder
       builder.maintenancePolicy(args(argsBuilder).build)
@@ -398,7 +398,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenanceSchedules(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceMaintenanceScheduleArgs.Builder]*):
+    inline def maintenanceSchedules(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceMaintenanceScheduleArgs.Builder]*):
         com.pulumi.gcp.memorystore.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceMaintenanceScheduleArgs.builder
       builder.maintenanceSchedules(args.map(_(argsBuilder).build)*)
@@ -408,7 +408,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def managedBackupSource(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceManagedBackupSourceArgs.Builder]):
+    inline def managedBackupSource(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceManagedBackupSourceArgs.Builder]):
         com.pulumi.gcp.memorystore.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceManagedBackupSourceArgs.builder
       builder.managedBackupSource(args(argsBuilder).build)
@@ -418,7 +418,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def managedServerCas(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceManagedServerCaArgs.Builder]*):
+    inline def managedServerCas(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceManagedServerCaArgs.Builder]*):
         com.pulumi.gcp.memorystore.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceManagedServerCaArgs.builder
       builder.managedServerCas(args.map(_(argsBuilder).build)*)
@@ -428,7 +428,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeConfigs(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceNodeConfigArgs.Builder]*):
+    inline def nodeConfigs(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceNodeConfigArgs.Builder]*):
         com.pulumi.gcp.memorystore.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceNodeConfigArgs.builder
       builder.nodeConfigs(args.map(_(argsBuilder).build)*)
@@ -438,7 +438,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def persistenceConfig(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstancePersistenceConfigArgs.Builder]):
+    inline def persistenceConfig(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstancePersistenceConfigArgs.Builder]):
         com.pulumi.gcp.memorystore.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.InstancePersistenceConfigArgs.builder
       builder.persistenceConfig(args(argsBuilder).build)
@@ -448,7 +448,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscAttachmentDetails(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstancePscAttachmentDetailArgs.Builder]*):
+    inline def pscAttachmentDetails(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstancePscAttachmentDetailArgs.Builder]*):
         com.pulumi.gcp.memorystore.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstancePscAttachmentDetailArgs.builder
       builder.pscAttachmentDetails(args.map(_(argsBuilder).build)*)
@@ -460,7 +460,7 @@ object memorystore_ext:
      * @return builder
      * @deprecated `pscAutoConnections` is deprecated  Use `endpoints.connections.pscAutoConnections` instead.
      */
-    @deprecated("`pscAutoConnections` is deprecated Use `endpoints.connections.pscAutoConnections` instead.") def pscAutoConnections(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstancePscAutoConnectionArgs.Builder]*):
+    @deprecated("`pscAutoConnections` is deprecated Use `endpoints.connections.pscAutoConnections` instead.") inline def pscAutoConnections(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstancePscAutoConnectionArgs.Builder]*):
         com.pulumi.gcp.memorystore.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstancePscAutoConnectionArgs.builder
       builder.pscAutoConnections(args.map(_(argsBuilder).build)*)
@@ -470,7 +470,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stateInfos(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceStateInfoArgs.Builder]*):
+    inline def stateInfos(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceStateInfoArgs.Builder]*):
         com.pulumi.gcp.memorystore.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceStateInfoArgs.builder
       builder.stateInfos(args.map(_(argsBuilder).build)*)
@@ -480,7 +480,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def zoneDistributionConfig(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceZoneDistributionConfigArgs.Builder]):
+    inline def zoneDistributionConfig(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceZoneDistributionConfigArgs.Builder]):
         com.pulumi.gcp.memorystore.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceZoneDistributionConfigArgs.builder
       builder.zoneDistributionConfig(args(argsBuilder).build)
@@ -492,7 +492,7 @@ object memorystore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def updateInfos(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceStateInfoUpdateInfoArgs.Builder]*):
+    inline def updateInfos(args: Endofunction[com.pulumi.gcp.memorystore.inputs.InstanceStateInfoUpdateInfoArgs.Builder]*):
         com.pulumi.gcp.memorystore.inputs.InstanceStateInfoArgs.Builder =
       def argsBuilder = com.pulumi.gcp.memorystore.inputs.InstanceStateInfoUpdateInfoArgs.builder
       builder.updateInfos(args.map(_(argsBuilder).build)*)

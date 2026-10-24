@@ -9,12 +9,12 @@ object observabilityadmin_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def rule(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleArgs.Builder]):
+    inline def rule(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleArgs.Builder]):
         com.pulumi.aws.observabilityadmin.CentralizationRuleForOrganizationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleArgs.builder
       builder.rule(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationTimeoutsArgs.Builder]):
         com.pulumi.aws.observabilityadmin.CentralizationRuleForOrganizationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -24,30 +24,30 @@ object observabilityadmin_ext:
      * @param encryption Encryption configuration block. Documented below.
      * @return builder
      */
-    def encryption(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.S3TableIntegrationEncryptionArgs.Builder]):
+    inline def encryption(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.S3TableIntegrationEncryptionArgs.Builder]):
         com.pulumi.aws.observabilityadmin.S3TableIntegrationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.S3TableIntegrationEncryptionArgs.builder
       builder.encryption(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.S3TableIntegrationTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.S3TableIntegrationTimeoutsArgs.Builder]):
         com.pulumi.aws.observabilityadmin.S3TableIntegrationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.S3TableIntegrationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.observabilityadmin.TelemetryEnrichmentArgs.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryEnrichmentTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryEnrichmentTimeoutsArgs.Builder]):
         com.pulumi.aws.observabilityadmin.TelemetryEnrichmentArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryEnrichmentTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.observabilityadmin.TelemetryEvaluationArgs.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationTimeoutsArgs.Builder]):
         com.pulumi.aws.observabilityadmin.TelemetryEvaluationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.observabilityadmin.TelemetryEvaluationForOrganizationArgs.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationForOrganizationTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationForOrganizationTimeoutsArgs.Builder]):
         com.pulumi.aws.observabilityadmin.TelemetryEvaluationForOrganizationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationForOrganizationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -59,12 +59,12 @@ object observabilityadmin_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def configuration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryPipelineConfigurationArgs.Builder]):
+    inline def configuration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryPipelineConfigurationArgs.Builder]):
         com.pulumi.aws.observabilityadmin.TelemetryPipelineArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryPipelineConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryPipelineTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryPipelineTimeoutsArgs.Builder]):
         com.pulumi.aws.observabilityadmin.TelemetryPipelineArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryPipelineTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -74,12 +74,12 @@ object observabilityadmin_ext:
      * @param rule Configuration block for the telemetry rule. See `rule` below.
      * @return builder
      */
-    def rule(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleArgs.Builder]):
+    inline def rule(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleArgs.Builder]):
         com.pulumi.aws.observabilityadmin.TelemetryRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleArgs.builder
       builder.rule(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleTimeoutsArgs.Builder]):
         com.pulumi.aws.observabilityadmin.TelemetryRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -89,12 +89,12 @@ object observabilityadmin_ext:
      * @param rule Configuration block for the organization telemetry rule. See `rule` below.
      * @return builder
      */
-    def rule(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleArgs.Builder]):
+    inline def rule(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleArgs.Builder]):
         com.pulumi.aws.observabilityadmin.TelemetryRuleForOrganizationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleArgs.builder
       builder.rule(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationTimeoutsArgs.Builder]):
         com.pulumi.aws.observabilityadmin.TelemetryRuleForOrganizationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -104,7 +104,7 @@ object observabilityadmin_ext:
      * @param destination Configuration block for the destination where telemetry will be centralized. See `destination` below.
      * @return builder
      */
-    def destination(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationArgs.Builder]):
+    inline def destination(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationArgs.builder
       builder.destination(args(argsBuilder).build)
@@ -113,7 +113,7 @@ object observabilityadmin_ext:
      * @param source Configuration block for the source of logs to be centralized. See `source` below.
      * @return builder
      */
-    def source(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleSourceArgs.Builder]):
+    inline def source(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleSourceArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleSourceArgs.builder
       builder.source(args(argsBuilder).build)
@@ -123,7 +123,7 @@ object observabilityadmin_ext:
      * @param destinationLogsConfiguration Configuration block for destination logs settings. See `destinationLogsConfiguration` below.
      * @return builder
      */
-    def destinationLogsConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationArgs.Builder]):
+    inline def destinationLogsConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationArgs.builder
       builder.destinationLogsConfiguration(args(argsBuilder).build)
@@ -132,7 +132,7 @@ object observabilityadmin_ext:
      * @param destinationMetricsConfiguration Configuration block for destination metrics settings. See `destinationMetricsConfiguration` below.
      * @return builder
      */
-    def destinationMetricsConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationMetricsConfigurationArgs.Builder]):
+    inline def destinationMetricsConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationMetricsConfigurationArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationMetricsConfigurationArgs.builder
       builder.destinationMetricsConfiguration(args(argsBuilder).build)
@@ -142,7 +142,7 @@ object observabilityadmin_ext:
      * @param backupConfiguration Configuration block for backup settings. See `backupConfiguration` below.
      * @return builder
      */
-    def backupConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationBackupConfigurationArgs.Builder]):
+    inline def backupConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationBackupConfigurationArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationBackupConfigurationArgs.builder
       builder.backupConfiguration(args(argsBuilder).build)
@@ -151,7 +151,7 @@ object observabilityadmin_ext:
      * @param logGroupNameConfiguration Configuration block for a naming pattern for destination log groups created during centralization. See `logGroupNameConfiguration` below.
      * @return builder
      */
-    def logGroupNameConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationLogGroupNameConfigurationArgs.Builder]):
+    inline def logGroupNameConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationLogGroupNameConfigurationArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationLogGroupNameConfigurationArgs.builder
       builder.logGroupNameConfiguration(args(argsBuilder).build)
@@ -160,7 +160,7 @@ object observabilityadmin_ext:
      * @param logsEncryptionConfiguration Configuration block for logs encryption settings. See `logsEncryptionConfiguration` below.
      * @return builder
      */
-    def logsEncryptionConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationLogsEncryptionConfigurationArgs.Builder]):
+    inline def logsEncryptionConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationLogsEncryptionConfigurationArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationLogsEncryptionConfigurationArgs.builder
       builder.logsEncryptionConfiguration(args(argsBuilder).build)
@@ -169,7 +169,7 @@ object observabilityadmin_ext:
      * @param tagPropagationConfiguration Configuration block for propagating source resource tags to centralized destination log groups. See `tagPropagationConfiguration` below.
      * @return builder
      */
-    def tagPropagationConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationTagPropagationConfigurationArgs.Builder]):
+    inline def tagPropagationConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationTagPropagationConfigurationArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationLogsConfigurationTagPropagationConfigurationArgs.builder
       builder.tagPropagationConfiguration(args(argsBuilder).build)
@@ -179,7 +179,7 @@ object observabilityadmin_ext:
      * @param backupConfiguration Configuration block for metrics backup settings. See `destinationMetricsBackupConfiguration` below.
      * @return builder
      */
-    def backupConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationMetricsConfigurationBackupConfigurationArgs.Builder]):
+    inline def backupConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationMetricsConfigurationBackupConfigurationArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationMetricsConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleDestinationDestinationMetricsConfigurationBackupConfigurationArgs.builder
       builder.backupConfiguration(args(argsBuilder).build)
@@ -189,7 +189,7 @@ object observabilityadmin_ext:
      * @param sourceLogsConfiguration Configuration block for source logs settings. See `sourceLogsConfiguration` below.
      * @return builder
      */
-    def sourceLogsConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleSourceSourceLogsConfigurationArgs.Builder]):
+    inline def sourceLogsConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleSourceSourceLogsConfigurationArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleSourceArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleSourceSourceLogsConfigurationArgs.builder
       builder.sourceLogsConfiguration(args(argsBuilder).build)
@@ -198,7 +198,7 @@ object observabilityadmin_ext:
      * @param sourceMetricsConfiguration Configuration block for source metrics settings. See `sourceMetricsConfiguration` below.
      * @return builder
      */
-    def sourceMetricsConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleSourceSourceMetricsConfigurationArgs.Builder]):
+    inline def sourceMetricsConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleSourceSourceMetricsConfigurationArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleSourceArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleSourceSourceMetricsConfigurationArgs.builder
       builder.sourceMetricsConfiguration(args(argsBuilder).build)
@@ -210,12 +210,12 @@ object observabilityadmin_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def rule(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleArgs.Builder]):
+    inline def rule(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationState.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationRuleArgs.builder
       builder.rule(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationTimeoutsArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationState.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.CentralizationRuleForOrganizationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -225,30 +225,30 @@ object observabilityadmin_ext:
      * @param encryption Encryption configuration block. Documented below.
      * @return builder
      */
-    def encryption(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.S3TableIntegrationEncryptionArgs.Builder]):
+    inline def encryption(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.S3TableIntegrationEncryptionArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.S3TableIntegrationState.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.S3TableIntegrationEncryptionArgs.builder
       builder.encryption(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.S3TableIntegrationTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.S3TableIntegrationTimeoutsArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.S3TableIntegrationState.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.S3TableIntegrationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.observabilityadmin.inputs.TelemetryEnrichmentState.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryEnrichmentTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryEnrichmentTimeoutsArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryEnrichmentState.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryEnrichmentTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationForOrganizationState.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationForOrganizationTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationForOrganizationTimeoutsArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationForOrganizationState.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationForOrganizationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationState.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationTimeoutsArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationState.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryEvaluationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -260,12 +260,12 @@ object observabilityadmin_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def configuration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryPipelineConfigurationArgs.Builder]):
+    inline def configuration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryPipelineConfigurationArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryPipelineState.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryPipelineConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryPipelineTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryPipelineTimeoutsArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryPipelineState.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryPipelineTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -275,7 +275,7 @@ object observabilityadmin_ext:
      * @param destinationConfiguration Configuration block specifying where and how the telemetry data is delivered. See `destinationConfiguration` below.
      * @return builder
      */
-    def destinationConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationArgs.Builder]):
+    inline def destinationConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationArgs.builder
       builder.destinationConfiguration(args(argsBuilder).build)
@@ -285,7 +285,7 @@ object observabilityadmin_ext:
      * @param cloudtrailParameters CloudTrail-specific parameters when CloudTrail is the source. See `cloudtrailParameters` below.
      * @return builder
      */
-    def cloudtrailParameters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationCloudtrailParametersArgs.Builder]):
+    inline def cloudtrailParameters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationCloudtrailParametersArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationCloudtrailParametersArgs.builder
       builder.cloudtrailParameters(args(argsBuilder).build)
@@ -294,7 +294,7 @@ object observabilityadmin_ext:
      * @param elbLoadBalancerLoggingParameters ELB load balancer logging parameters when the resource is an ELB. See `elbLoadBalancerLoggingParameters` below.
      * @return builder
      */
-    def elbLoadBalancerLoggingParameters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationElbLoadBalancerLoggingParametersArgs.Builder]):
+    inline def elbLoadBalancerLoggingParameters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationElbLoadBalancerLoggingParametersArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationElbLoadBalancerLoggingParametersArgs.builder
       builder.elbLoadBalancerLoggingParameters(args(argsBuilder).build)
@@ -303,7 +303,7 @@ object observabilityadmin_ext:
      * @param logDeliveryParameters Amazon Bedrock AgentCore log delivery parameters. See `logDeliveryParameters` below.
      * @return builder
      */
-    def logDeliveryParameters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationLogDeliveryParametersArgs.Builder]):
+    inline def logDeliveryParameters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationLogDeliveryParametersArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationLogDeliveryParametersArgs.builder
       builder.logDeliveryParameters(args(argsBuilder).build)
@@ -312,7 +312,7 @@ object observabilityadmin_ext:
      * @param mskMonitoringParameters Amazon MSK cluster monitoring parameters. See `mskMonitoringParameters` below.
      * @return builder
      */
-    def mskMonitoringParameters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationMskMonitoringParametersArgs.Builder]):
+    inline def mskMonitoringParameters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationMskMonitoringParametersArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationMskMonitoringParametersArgs.builder
       builder.mskMonitoringParameters(args(argsBuilder).build)
@@ -321,7 +321,7 @@ object observabilityadmin_ext:
      * @param vpcFlowLogParameters VPC Flow Logs-specific parameters when the resource is `AWS::EC2::VPC`. See `vpcFlowLogParameters` below.
      * @return builder
      */
-    def vpcFlowLogParameters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationVpcFlowLogParametersArgs.Builder]):
+    inline def vpcFlowLogParameters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationVpcFlowLogParametersArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationVpcFlowLogParametersArgs.builder
       builder.vpcFlowLogParameters(args(argsBuilder).build)
@@ -330,7 +330,7 @@ object observabilityadmin_ext:
      * @param wafLoggingParameters WAF logging parameters when the resource is `AWS::WAFv2::WebACL`. See `wafLoggingParameters` below.
      * @return builder
      */
-    def wafLoggingParameters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersArgs.Builder]):
+    inline def wafLoggingParameters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersArgs.builder
       builder.wafLoggingParameters(args(argsBuilder).build)
@@ -340,7 +340,7 @@ object observabilityadmin_ext:
      * @param fieldSelectors List of field selectors that compose the selector statement. See `fieldSelectors` below.
      * @return builder
      */
-    def fieldSelectors(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationCloudtrailParametersAdvancedEventSelectorFieldSelectorArgs.Builder]*):
+    inline def fieldSelectors(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationCloudtrailParametersAdvancedEventSelectorFieldSelectorArgs.Builder]*):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationCloudtrailParametersAdvancedEventSelectorArgs.Builder =
       def argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationCloudtrailParametersAdvancedEventSelectorFieldSelectorArgs.builder
       builder.fieldSelectors(args.map(_(argsBuilder).build)*)
@@ -350,7 +350,7 @@ object observabilityadmin_ext:
      * @param advancedEventSelectors List of advanced event selectors used to filter CloudTrail events. See `advancedEventSelectors` below.
      * @return builder
      */
-    def advancedEventSelectors(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationCloudtrailParametersAdvancedEventSelectorArgs.Builder]*):
+    inline def advancedEventSelectors(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationCloudtrailParametersAdvancedEventSelectorArgs.Builder]*):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationCloudtrailParametersArgs.Builder =
       def argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationCloudtrailParametersAdvancedEventSelectorArgs.builder
       builder.advancedEventSelectors(args.map(_(argsBuilder).build)*)
@@ -360,7 +360,7 @@ object observabilityadmin_ext:
      * @param loggingFilter Filter configuration that determines which WAF log records to include or exclude. See `loggingFilter` below.
      * @return builder
      */
-    def loggingFilter(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersLoggingFilterArgs.Builder]):
+    inline def loggingFilter(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersLoggingFilterArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersLoggingFilterArgs.builder
       builder.loggingFilter(args(argsBuilder).build)
@@ -369,7 +369,7 @@ object observabilityadmin_ext:
      * @param redactedFields List of fields to redact from WAF logs. See `redactedFields` below.
      * @return builder
      */
-    def redactedFields(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersRedactedFieldArgs.Builder]*):
+    inline def redactedFields(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersRedactedFieldArgs.Builder]*):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersArgs.Builder =
       def argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersRedactedFieldArgs.builder
       builder.redactedFields(args.map(_(argsBuilder).build)*)
@@ -379,7 +379,7 @@ object observabilityadmin_ext:
      * @param filters List of filter configurations. See `filters` below.
      * @return builder
      */
-    def filters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterArgs.Builder]*):
+    inline def filters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterArgs.Builder]*):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersLoggingFilterArgs.Builder =
       def argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
@@ -389,7 +389,7 @@ object observabilityadmin_ext:
      * @param conditions Conditions that determine if a log record matches this filter. See `conditions` below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterConditionArgs.Builder]*):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterArgs.Builder =
       def argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -399,7 +399,7 @@ object observabilityadmin_ext:
      * @param actionCondition Condition that matches based on the WAF action. See `actionCondition` below.
      * @return builder
      */
-    def actionCondition(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterConditionActionConditionArgs.Builder]):
+    inline def actionCondition(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterConditionActionConditionArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterConditionArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterConditionActionConditionArgs.builder
       builder.actionCondition(args(argsBuilder).build)
@@ -408,7 +408,7 @@ object observabilityadmin_ext:
      * @param labelNameCondition Condition that matches based on WAF rule labels. See `labelNameCondition` below.
      * @return builder
      */
-    def labelNameCondition(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterConditionLabelNameConditionArgs.Builder]):
+    inline def labelNameCondition(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterConditionLabelNameConditionArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterConditionArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterConditionLabelNameConditionArgs.builder
       builder.labelNameCondition(args(argsBuilder).build)
@@ -418,7 +418,7 @@ object observabilityadmin_ext:
      * @param singleHeader Redact a specific header by name from WAF logs. See `singleHeader` below.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersRedactedFieldSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersRedactedFieldSingleHeaderArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersRedactedFieldArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleDestinationConfigurationWafLoggingParametersRedactedFieldSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -428,12 +428,12 @@ object observabilityadmin_ext:
      * @param rule Configuration block for the organization telemetry rule. See `rule` below.
      * @return builder
      */
-    def rule(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleArgs.Builder]):
+    inline def rule(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationState.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationRuleArgs.builder
       builder.rule(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationTimeoutsArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationState.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleForOrganizationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -443,7 +443,7 @@ object observabilityadmin_ext:
      * @param destinationConfiguration Configuration block specifying where and how the telemetry data is delivered. See `destinationConfiguration` below.
      * @return builder
      */
-    def destinationConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationArgs.Builder]):
+    inline def destinationConfiguration(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationArgs.builder
       builder.destinationConfiguration(args(argsBuilder).build)
@@ -453,7 +453,7 @@ object observabilityadmin_ext:
      * @param cloudtrailParameters CloudTrail-specific parameters when CloudTrail is the source. See `cloudtrailParameters` below.
      * @return builder
      */
-    def cloudtrailParameters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationCloudtrailParametersArgs.Builder]):
+    inline def cloudtrailParameters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationCloudtrailParametersArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationCloudtrailParametersArgs.builder
       builder.cloudtrailParameters(args(argsBuilder).build)
@@ -462,7 +462,7 @@ object observabilityadmin_ext:
      * @param elbLoadBalancerLoggingParameters ELB load balancer logging parameters when the resource is an ELB. See `elbLoadBalancerLoggingParameters` below.
      * @return builder
      */
-    def elbLoadBalancerLoggingParameters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationElbLoadBalancerLoggingParametersArgs.Builder]):
+    inline def elbLoadBalancerLoggingParameters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationElbLoadBalancerLoggingParametersArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationElbLoadBalancerLoggingParametersArgs.builder
       builder.elbLoadBalancerLoggingParameters(args(argsBuilder).build)
@@ -471,7 +471,7 @@ object observabilityadmin_ext:
      * @param logDeliveryParameters Amazon Bedrock AgentCore log delivery parameters. See `logDeliveryParameters` below.
      * @return builder
      */
-    def logDeliveryParameters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationLogDeliveryParametersArgs.Builder]):
+    inline def logDeliveryParameters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationLogDeliveryParametersArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationLogDeliveryParametersArgs.builder
       builder.logDeliveryParameters(args(argsBuilder).build)
@@ -480,7 +480,7 @@ object observabilityadmin_ext:
      * @param mskMonitoringParameters Amazon MSK cluster monitoring parameters. See `mskMonitoringParameters` below.
      * @return builder
      */
-    def mskMonitoringParameters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationMskMonitoringParametersArgs.Builder]):
+    inline def mskMonitoringParameters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationMskMonitoringParametersArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationMskMonitoringParametersArgs.builder
       builder.mskMonitoringParameters(args(argsBuilder).build)
@@ -489,7 +489,7 @@ object observabilityadmin_ext:
      * @param vpcFlowLogParameters VPC Flow Logs-specific parameters when the resource is `AWS::EC2::VPC`. See `vpcFlowLogParameters` below.
      * @return builder
      */
-    def vpcFlowLogParameters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationVpcFlowLogParametersArgs.Builder]):
+    inline def vpcFlowLogParameters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationVpcFlowLogParametersArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationVpcFlowLogParametersArgs.builder
       builder.vpcFlowLogParameters(args(argsBuilder).build)
@@ -498,7 +498,7 @@ object observabilityadmin_ext:
      * @param wafLoggingParameters WAF logging parameters when the resource is `AWS::WAFv2::WebACL`. See `wafLoggingParameters` below.
      * @return builder
      */
-    def wafLoggingParameters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersArgs.Builder]):
+    inline def wafLoggingParameters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersArgs.builder
       builder.wafLoggingParameters(args(argsBuilder).build)
@@ -508,7 +508,7 @@ object observabilityadmin_ext:
      * @param fieldSelectors List of field selectors that compose the selector statement. See `fieldSelectors` below.
      * @return builder
      */
-    def fieldSelectors(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationCloudtrailParametersAdvancedEventSelectorFieldSelectorArgs.Builder]*):
+    inline def fieldSelectors(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationCloudtrailParametersAdvancedEventSelectorFieldSelectorArgs.Builder]*):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationCloudtrailParametersAdvancedEventSelectorArgs.Builder =
       def argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationCloudtrailParametersAdvancedEventSelectorFieldSelectorArgs.builder
       builder.fieldSelectors(args.map(_(argsBuilder).build)*)
@@ -518,7 +518,7 @@ object observabilityadmin_ext:
      * @param advancedEventSelectors List of advanced event selectors used to filter CloudTrail events. See `advancedEventSelectors` below.
      * @return builder
      */
-    def advancedEventSelectors(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationCloudtrailParametersAdvancedEventSelectorArgs.Builder]*):
+    inline def advancedEventSelectors(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationCloudtrailParametersAdvancedEventSelectorArgs.Builder]*):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationCloudtrailParametersArgs.Builder =
       def argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationCloudtrailParametersAdvancedEventSelectorArgs.builder
       builder.advancedEventSelectors(args.map(_(argsBuilder).build)*)
@@ -528,7 +528,7 @@ object observabilityadmin_ext:
      * @param loggingFilter Filter configuration that determines which WAF log records to include or exclude. See `loggingFilter` below.
      * @return builder
      */
-    def loggingFilter(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersLoggingFilterArgs.Builder]):
+    inline def loggingFilter(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersLoggingFilterArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersLoggingFilterArgs.builder
       builder.loggingFilter(args(argsBuilder).build)
@@ -537,7 +537,7 @@ object observabilityadmin_ext:
      * @param redactedFields List of fields to redact from WAF logs. See `redactedFields` below.
      * @return builder
      */
-    def redactedFields(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersRedactedFieldArgs.Builder]*):
+    inline def redactedFields(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersRedactedFieldArgs.Builder]*):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersArgs.Builder =
       def argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersRedactedFieldArgs.builder
       builder.redactedFields(args.map(_(argsBuilder).build)*)
@@ -547,7 +547,7 @@ object observabilityadmin_ext:
      * @param filters List of filter configurations. See `filters` below.
      * @return builder
      */
-    def filters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterArgs.Builder]*):
+    inline def filters(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterArgs.Builder]*):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersLoggingFilterArgs.Builder =
       def argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
@@ -557,7 +557,7 @@ object observabilityadmin_ext:
      * @param conditions Conditions that determine if a log record matches this filter. See `conditions` below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterConditionArgs.Builder]*):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterArgs.Builder =
       def argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -567,7 +567,7 @@ object observabilityadmin_ext:
      * @param actionCondition Condition that matches based on the WAF action. See `actionCondition` below.
      * @return builder
      */
-    def actionCondition(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterConditionActionConditionArgs.Builder]):
+    inline def actionCondition(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterConditionActionConditionArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterConditionArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterConditionActionConditionArgs.builder
       builder.actionCondition(args(argsBuilder).build)
@@ -576,7 +576,7 @@ object observabilityadmin_ext:
      * @param labelNameCondition Condition that matches based on WAF rule labels. See `labelNameCondition` below.
      * @return builder
      */
-    def labelNameCondition(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterConditionLabelNameConditionArgs.Builder]):
+    inline def labelNameCondition(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterConditionLabelNameConditionArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterConditionArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersLoggingFilterFilterConditionLabelNameConditionArgs.builder
       builder.labelNameCondition(args(argsBuilder).build)
@@ -586,7 +586,7 @@ object observabilityadmin_ext:
      * @param singleHeader Redact a specific header by name from WAF logs. See `singleHeader` below.
      * @return builder
      */
-    def singleHeader(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersRedactedFieldSingleHeaderArgs.Builder]):
+    inline def singleHeader(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersRedactedFieldSingleHeaderArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersRedactedFieldArgs.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleDestinationConfigurationWafLoggingParametersRedactedFieldSingleHeaderArgs.builder
       builder.singleHeader(args(argsBuilder).build)
@@ -596,12 +596,12 @@ object observabilityadmin_ext:
      * @param rule Configuration block for the telemetry rule. See `rule` below.
      * @return builder
      */
-    def rule(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleArgs.Builder]):
+    inline def rule(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleState.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleRuleArgs.builder
       builder.rule(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleTimeoutsArgs.Builder]):
         com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleState.Builder =
       val argsBuilder = com.pulumi.aws.observabilityadmin.inputs.TelemetryRuleTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)

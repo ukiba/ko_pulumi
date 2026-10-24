@@ -9,7 +9,7 @@ object msi:
    * 
    * Manages a User Assigned Identity.
    */
-  @deprecated("azure.msi.UserAssignedIdentity has been deprecated in favor of azure.authorization.UserAssignedIdentity") def UserAssignedIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("azure.msi.UserAssignedIdentity has been deprecated in favor of azure.authorization.UserAssignedIdentity") inline def UserAssignedIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.msi.UserAssignedIdentityArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.msi.UserAssignedIdentityArgs.builder
     conf.logicalName2physicalName(name) match

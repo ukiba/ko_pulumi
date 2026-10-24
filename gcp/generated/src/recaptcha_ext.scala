@@ -7,7 +7,7 @@ object recaptcha_ext:
      * @param androidSettings Settings for keys that can be used by Android apps.
      * @return builder
      */
-    def androidSettings(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyAndroidSettingsArgs.Builder]):
+    inline def androidSettings(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyAndroidSettingsArgs.Builder]):
         com.pulumi.gcp.recaptcha.EnterpriseKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyAndroidSettingsArgs.builder
       builder.androidSettings(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object recaptcha_ext:
      * @param iosSettings Settings for keys that can be used by iOS apps.
      * @return builder
      */
-    def iosSettings(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyIosSettingsArgs.Builder]):
+    inline def iosSettings(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyIosSettingsArgs.Builder]):
         com.pulumi.gcp.recaptcha.EnterpriseKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyIosSettingsArgs.builder
       builder.iosSettings(args(argsBuilder).build)
@@ -25,7 +25,7 @@ object recaptcha_ext:
      * @param testingOptions Options for user acceptance testing.
      * @return builder
      */
-    def testingOptions(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyTestingOptionsArgs.Builder]):
+    inline def testingOptions(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyTestingOptionsArgs.Builder]):
         com.pulumi.gcp.recaptcha.EnterpriseKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyTestingOptionsArgs.builder
       builder.testingOptions(args(argsBuilder).build)
@@ -34,7 +34,7 @@ object recaptcha_ext:
      * @param wafSettings Settings specific to keys that can be used for WAF (Web Application Firewall).
      * @return builder
      */
-    def wafSettings(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyWafSettingsArgs.Builder]):
+    inline def wafSettings(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyWafSettingsArgs.Builder]):
         com.pulumi.gcp.recaptcha.EnterpriseKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyWafSettingsArgs.builder
       builder.wafSettings(args(argsBuilder).build)
@@ -43,7 +43,7 @@ object recaptcha_ext:
      * @param webSettings Settings for keys that can be used by websites.
      * @return builder
      */
-    def webSettings(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyWebSettingsArgs.Builder]):
+    inline def webSettings(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyWebSettingsArgs.Builder]):
         com.pulumi.gcp.recaptcha.EnterpriseKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyWebSettingsArgs.builder
       builder.webSettings(args(argsBuilder).build)
@@ -53,7 +53,7 @@ object recaptcha_ext:
      * @param androidSettings Settings for keys that can be used by Android apps.
      * @return builder
      */
-    def androidSettings(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyAndroidSettingsArgs.Builder]):
+    inline def androidSettings(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyAndroidSettingsArgs.Builder]):
         com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyState.Builder =
       val argsBuilder = com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyAndroidSettingsArgs.builder
       builder.androidSettings(args(argsBuilder).build)
@@ -62,7 +62,7 @@ object recaptcha_ext:
      * @param iosSettings Settings for keys that can be used by iOS apps.
      * @return builder
      */
-    def iosSettings(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyIosSettingsArgs.Builder]):
+    inline def iosSettings(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyIosSettingsArgs.Builder]):
         com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyState.Builder =
       val argsBuilder = com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyIosSettingsArgs.builder
       builder.iosSettings(args(argsBuilder).build)
@@ -71,7 +71,7 @@ object recaptcha_ext:
      * @param testingOptions Options for user acceptance testing.
      * @return builder
      */
-    def testingOptions(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyTestingOptionsArgs.Builder]):
+    inline def testingOptions(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyTestingOptionsArgs.Builder]):
         com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyState.Builder =
       val argsBuilder = com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyTestingOptionsArgs.builder
       builder.testingOptions(args(argsBuilder).build)
@@ -80,7 +80,7 @@ object recaptcha_ext:
      * @param wafSettings Settings specific to keys that can be used for WAF (Web Application Firewall).
      * @return builder
      */
-    def wafSettings(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyWafSettingsArgs.Builder]):
+    inline def wafSettings(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyWafSettingsArgs.Builder]):
         com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyState.Builder =
       val argsBuilder = com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyWafSettingsArgs.builder
       builder.wafSettings(args(argsBuilder).build)
@@ -89,7 +89,7 @@ object recaptcha_ext:
      * @param webSettings Settings for keys that can be used by websites.
      * @return builder
      */
-    def webSettings(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyWebSettingsArgs.Builder]):
+    inline def webSettings(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyWebSettingsArgs.Builder]):
         com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyState.Builder =
       val argsBuilder = com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyWebSettingsArgs.builder
       builder.webSettings(args(argsBuilder).build)
@@ -100,7 +100,7 @@ object recaptcha_ext:
      * Structure is documented below.
      * @return builder
      */
-    def challengeSettings(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyWebSettingsChallengeSettingsArgs.Builder]):
+    inline def challengeSettings(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyWebSettingsChallengeSettingsArgs.Builder]):
         com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyWebSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyWebSettingsChallengeSettingsArgs.builder
       builder.challengeSettings(args(argsBuilder).build)
@@ -111,7 +111,7 @@ object recaptcha_ext:
      * Structure is documented below.
      * @return builder
      */
-    def actionSettings(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyWebSettingsChallengeSettingsActionSettingArgs.Builder]*):
+    inline def actionSettings(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyWebSettingsChallengeSettingsActionSettingArgs.Builder]*):
         com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyWebSettingsChallengeSettingsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyWebSettingsChallengeSettingsActionSettingArgs.builder
       builder.actionSettings(args.map(_(argsBuilder).build)*)
@@ -121,7 +121,7 @@ object recaptcha_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultSettings(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyWebSettingsChallengeSettingsDefaultSettingsArgs.Builder]):
+    inline def defaultSettings(args: Endofunction[com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyWebSettingsChallengeSettingsDefaultSettingsArgs.Builder]):
         com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyWebSettingsChallengeSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.recaptcha.inputs.EnterpriseKeyWebSettingsChallengeSettingsDefaultSettingsArgs.builder
       builder.defaultSettings(args(argsBuilder).build)

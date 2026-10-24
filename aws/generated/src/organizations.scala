@@ -13,7 +13,7 @@ object organizations:
    * 
    * &gt; **Note:** By default, deleting this resource will only remove an AWS account from an organization. You must set the `closeOnDeletion` flag to true to close the account. It is worth noting that quotas are enforced when using the `closeOnDeletion` argument, which can produce a [CLOSE_ACCOUNT_QUOTA_EXCEEDED](https://docs.aws.amazon.com/organizations/latest/APIReference/API_CloseAccount.html) error, and require you to close the account manually.
    */
-  def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.organizations.AccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.organizations.AccountArgs.builder
     conf.logicalName2physicalName(name) match
@@ -39,7 +39,7 @@ object organizations:
    * 
    * &gt; **NOTE:** Terraform provides both this standalone AWS service access resource and exclusive service access defined in-line in the `aws.organizations.Organization` resource via the `awsServiceAccessPrincipals` argument. At this time, you cannot use the service access in conjunction with this resource otherwise it will cause a perpetual difference in plan output. You can optionally use the generic Terraform resource lifecycle configuration block with `ignoreChanges` in the `aws.organizations.Organization` resource to manage additional service access via this resource.
    */
-  def AwsServiceAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AwsServiceAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.organizations.AwsServiceAccessArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.organizations.AwsServiceAccessArgs.builder
     com.pulumi.aws.organizations.AwsServiceAccess(name,
@@ -47,7 +47,7 @@ object organizations:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage an [AWS Organizations Delegated Administrator](https://docs.aws.amazon.com/organizations/latest/APIReference/API_RegisterDelegatedAdministrator.html). */
-  def DelegatedAdministrator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DelegatedAdministrator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.organizations.DelegatedAdministratorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.organizations.DelegatedAdministratorArgs.builder
     com.pulumi.aws.organizations.DelegatedAdministrator(name,
@@ -61,7 +61,7 @@ object organizations:
    * 
    * &gt; **WARNING:** [Warning from the AWS Docs](https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAWSServiceAccess.html): &#34;We recommend that you enable integration between AWS Organizations and the specified AWS service by using the console or commands that are provided by the specified service. Doing so ensures that the service is aware that it can create the resources that are required for the integration. How the service creates those resources in the organization&#39;s accounts depends on that service. For more information, see the documentation for the other AWS service.&#34;
    */
-  def Organization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Organization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.organizations.OrganizationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.organizations.OrganizationArgs.builder
     com.pulumi.aws.organizations.Organization(name,
@@ -69,7 +69,7 @@ object organizations:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to create an organizational unit. */
-  def OrganizationalUnit(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationalUnit(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.organizations.OrganizationalUnitArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.organizations.OrganizationalUnitArgs.builder
     conf.logicalName2physicalName(name) match
@@ -312,7 +312,7 @@ object organizations:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides a resource to manage an [AWS Organizations policy](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html). */
-  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.organizations.PolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.organizations.PolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -330,7 +330,7 @@ object organizations:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to attach an AWS Organizations policy to an organization account, root, or unit. */
-  def PolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.organizations.PolicyAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.organizations.PolicyAttachmentArgs.builder
     com.pulumi.aws.organizations.PolicyAttachment(name,
@@ -338,7 +338,7 @@ object organizations:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage a resource-based delegation policy that can be used to delegate policy management for AWS Organizations to specified member accounts to perform policy actions that are by default available only to the management account. See the [_AWS Organizations User Guide_](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_delegate_policies.html) for more information. */
-  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.organizations.ResourcePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.organizations.ResourcePolicyArgs.builder
     argsBuilder = args(argsBuilder)
@@ -359,7 +359,7 @@ object organizations:
    * 
    * &gt; **NOTE:** This tagging resource does not use the provider `ignoreTags` configuration.
    */
-  def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.organizations.TagArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.organizations.TagArgs.builder
     com.pulumi.aws.organizations.Tag(name,

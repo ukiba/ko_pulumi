@@ -11,7 +11,7 @@ object cloudsecuritycompliance:
    * 
    * * [API documentation](https://docs.cloud.google.com/security-command-center/docs/reference/cloudsecuritycompliance/rest/v1/organizations.locations.cloudControls)
    */
-  def CloudControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CloudControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.CloudControlArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.CloudControlArgs.builder
     com.pulumi.gcp.cloudsecuritycompliance.CloudControl(name,
@@ -25,7 +25,7 @@ object cloudsecuritycompliance:
    * 
    * * [API documentation](https://docs.cloud.google.com/security-command-center/docs/reference/cloudsecuritycompliance/rest/v1/organizations.locations.frameworks)
    */
-  def Framework(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Framework(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.FrameworkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.FrameworkArgs.builder
     com.pulumi.gcp.cloudsecuritycompliance.Framework(name,
@@ -39,7 +39,7 @@ object cloudsecuritycompliance:
    * 
    * * [API documentation](https://docs.cloud.google.com/security-command-center/docs/reference/cloudsecuritycompliance/rest/v1/organizations.locations.frameworkDeployments)
    */
-  def FrameworkDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FrameworkDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudsecuritycompliance.FrameworkDeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.FrameworkDeploymentArgs.builder
     com.pulumi.gcp.cloudsecuritycompliance.FrameworkDeployment(name,

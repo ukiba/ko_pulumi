@@ -8,7 +8,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigArgs.Builder]):
+    inline def authConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigArgs.builder
       builder.authConfig(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def configVariables(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionConfigVariableArgs.Builder]*):
+    inline def configVariables(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionConfigVariableArgs.Builder]*):
         com.pulumi.gcp.integrationconnectors.ConnectionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionConfigVariableArgs.builder
       builder.configVariables(args.map(_(argsBuilder).build)*)
@@ -28,7 +28,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinationConfigs(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionDestinationConfigArgs.Builder]*):
+    inline def destinationConfigs(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionDestinationConfigArgs.Builder]*):
         com.pulumi.gcp.integrationconnectors.ConnectionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionDestinationConfigArgs.builder
       builder.destinationConfigs(args.map(_(argsBuilder).build)*)
@@ -38,7 +38,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def eventingConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigArgs.Builder]):
+    inline def eventingConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigArgs.builder
       builder.eventingConfig(args(argsBuilder).build)
@@ -48,7 +48,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def lockConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionLockConfigArgs.Builder]):
+    inline def lockConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionLockConfigArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionLockConfigArgs.builder
       builder.lockConfig(args(argsBuilder).build)
@@ -58,7 +58,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionLogConfigArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -68,7 +68,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionNodeConfigArgs.Builder]):
+    inline def nodeConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionNodeConfigArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionNodeConfigArgs.builder
       builder.nodeConfig(args(argsBuilder).build)
@@ -78,7 +78,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sslConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigArgs.Builder]):
+    inline def sslConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigArgs.builder
       builder.sslConfig(args(argsBuilder).build)
@@ -89,7 +89,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionKeyValue(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigAdditionalVariableEncryptionKeyValueArgs.Builder]):
+    inline def encryptionKeyValue(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigAdditionalVariableEncryptionKeyValueArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigAdditionalVariableArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigAdditionalVariableEncryptionKeyValueArgs.builder
       builder.encryptionKeyValue(args(argsBuilder).build)
@@ -99,7 +99,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secretValue(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigAdditionalVariableSecretValueArgs.Builder]):
+    inline def secretValue(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigAdditionalVariableSecretValueArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigAdditionalVariableArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigAdditionalVariableSecretValueArgs.builder
       builder.secretValue(args(argsBuilder).build)
@@ -110,7 +110,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def additionalVariables(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigAdditionalVariableArgs.Builder]*):
+    inline def additionalVariables(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigAdditionalVariableArgs.Builder]*):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigAdditionalVariableArgs.builder
       builder.additionalVariables(args.map(_(argsBuilder).build)*)
@@ -120,7 +120,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauth2AuthCodeFlow(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigOauth2AuthCodeFlowArgs.Builder]):
+    inline def oauth2AuthCodeFlow(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigOauth2AuthCodeFlowArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigOauth2AuthCodeFlowArgs.builder
       builder.oauth2AuthCodeFlow(args(argsBuilder).build)
@@ -130,7 +130,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauth2ClientCredentials(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigOauth2ClientCredentialsArgs.Builder]):
+    inline def oauth2ClientCredentials(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigOauth2ClientCredentialsArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigOauth2ClientCredentialsArgs.builder
       builder.oauth2ClientCredentials(args(argsBuilder).build)
@@ -140,7 +140,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauth2JwtBearer(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigOauth2JwtBearerArgs.Builder]):
+    inline def oauth2JwtBearer(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigOauth2JwtBearerArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigOauth2JwtBearerArgs.builder
       builder.oauth2JwtBearer(args(argsBuilder).build)
@@ -150,7 +150,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sshPublicKey(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigSshPublicKeyArgs.Builder]):
+    inline def sshPublicKey(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigSshPublicKeyArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigSshPublicKeyArgs.builder
       builder.sshPublicKey(args(argsBuilder).build)
@@ -160,7 +160,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def userPassword(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigUserPasswordArgs.Builder]):
+    inline def userPassword(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigUserPasswordArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigUserPasswordArgs.builder
       builder.userPassword(args(argsBuilder).build)
@@ -170,7 +170,7 @@ object integrationconnectors_ext:
      * @param clientSecret Client secret for user-provided OAuth app.
      * @return builder
      */
-    def clientSecret(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigOauth2AuthCodeFlowClientSecretArgs.Builder]):
+    inline def clientSecret(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigOauth2AuthCodeFlowClientSecretArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigOauth2AuthCodeFlowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigOauth2AuthCodeFlowClientSecretArgs.builder
       builder.clientSecret(args(argsBuilder).build)
@@ -180,7 +180,7 @@ object integrationconnectors_ext:
      * @param clientSecret Secret version reference containing the client secret.
      * @return builder
      */
-    def clientSecret(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigOauth2ClientCredentialsClientSecretArgs.Builder]):
+    inline def clientSecret(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigOauth2ClientCredentialsClientSecretArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigOauth2ClientCredentialsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigOauth2ClientCredentialsClientSecretArgs.builder
       builder.clientSecret(args(argsBuilder).build)
@@ -192,7 +192,7 @@ object integrationconnectors_ext:
      * Specified in the form as: projects&#47;&#42;&#47;secrets&#47;&#42;&#47;versions&#47;&#42;.
      * @return builder
      */
-    def clientKey(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigOauth2JwtBearerClientKeyArgs.Builder]):
+    inline def clientKey(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigOauth2JwtBearerClientKeyArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigOauth2JwtBearerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigOauth2JwtBearerClientKeyArgs.builder
       builder.clientKey(args(argsBuilder).build)
@@ -201,7 +201,7 @@ object integrationconnectors_ext:
      * @param jwtClaims JwtClaims providers fields to generate the token.
      * @return builder
      */
-    def jwtClaims(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigOauth2JwtBearerJwtClaimsArgs.Builder]):
+    inline def jwtClaims(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigOauth2JwtBearerJwtClaimsArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigOauth2JwtBearerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigOauth2JwtBearerJwtClaimsArgs.builder
       builder.jwtClaims(args(argsBuilder).build)
@@ -212,7 +212,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sshClientCert(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigSshPublicKeySshClientCertArgs.Builder]):
+    inline def sshClientCert(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigSshPublicKeySshClientCertArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigSshPublicKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigSshPublicKeySshClientCertArgs.builder
       builder.sshClientCert(args(argsBuilder).build)
@@ -222,7 +222,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sshClientCertPass(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigSshPublicKeySshClientCertPassArgs.Builder]):
+    inline def sshClientCertPass(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigSshPublicKeySshClientCertPassArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigSshPublicKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigSshPublicKeySshClientCertPassArgs.builder
       builder.sshClientCertPass(args(argsBuilder).build)
@@ -233,7 +233,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def password(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigUserPasswordPasswordArgs.Builder]):
+    inline def password(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigUserPasswordPasswordArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigUserPasswordArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigUserPasswordPasswordArgs.builder
       builder.password(args(argsBuilder).build)
@@ -244,7 +244,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionKeyValue(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionConfigVariableEncryptionKeyValueArgs.Builder]):
+    inline def encryptionKeyValue(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionConfigVariableEncryptionKeyValueArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionConfigVariableArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionConfigVariableEncryptionKeyValueArgs.builder
       builder.encryptionKeyValue(args(argsBuilder).build)
@@ -254,7 +254,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secretValue(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionConfigVariableSecretValueArgs.Builder]):
+    inline def secretValue(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionConfigVariableSecretValueArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionConfigVariableArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionConfigVariableSecretValueArgs.builder
       builder.secretValue(args(argsBuilder).build)
@@ -265,7 +265,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinations(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionDestinationConfigDestinationArgs.Builder]*):
+    inline def destinations(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionDestinationConfigDestinationArgs.Builder]*):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionDestinationConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionDestinationConfigDestinationArgs.builder
       builder.destinations(args.map(_(argsBuilder).build)*)
@@ -276,7 +276,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionKeyValue(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAdditionalVariableEncryptionKeyValueArgs.Builder]):
+    inline def encryptionKeyValue(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAdditionalVariableEncryptionKeyValueArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAdditionalVariableArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAdditionalVariableEncryptionKeyValueArgs.builder
       builder.encryptionKeyValue(args(argsBuilder).build)
@@ -286,7 +286,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secretValue(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAdditionalVariableSecretValueArgs.Builder]):
+    inline def secretValue(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAdditionalVariableSecretValueArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAdditionalVariableArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAdditionalVariableSecretValueArgs.builder
       builder.secretValue(args(argsBuilder).build)
@@ -297,7 +297,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def additionalVariables(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAdditionalVariableArgs.Builder]*):
+    inline def additionalVariables(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAdditionalVariableArgs.Builder]*):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAdditionalVariableArgs.builder
       builder.additionalVariables(args.map(_(argsBuilder).build)*)
@@ -307,7 +307,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAuthConfigArgs.Builder]):
+    inline def authConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAuthConfigArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAuthConfigArgs.builder
       builder.authConfig(args(argsBuilder).build)
@@ -317,7 +317,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def registrationDestinationConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigRegistrationDestinationConfigArgs.Builder]):
+    inline def registrationDestinationConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigRegistrationDestinationConfigArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigRegistrationDestinationConfigArgs.builder
       builder.registrationDestinationConfig(args(argsBuilder).build)
@@ -328,7 +328,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionKeyValue(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAuthConfigAdditionalVariableEncryptionKeyValueArgs.Builder]):
+    inline def encryptionKeyValue(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAuthConfigAdditionalVariableEncryptionKeyValueArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAuthConfigAdditionalVariableArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAuthConfigAdditionalVariableEncryptionKeyValueArgs.builder
       builder.encryptionKeyValue(args(argsBuilder).build)
@@ -338,7 +338,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secretValue(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAuthConfigAdditionalVariableSecretValueArgs.Builder]):
+    inline def secretValue(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAuthConfigAdditionalVariableSecretValueArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAuthConfigAdditionalVariableArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAuthConfigAdditionalVariableSecretValueArgs.builder
       builder.secretValue(args(argsBuilder).build)
@@ -349,7 +349,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def additionalVariables(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAuthConfigAdditionalVariableArgs.Builder]*):
+    inline def additionalVariables(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAuthConfigAdditionalVariableArgs.Builder]*):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAuthConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAuthConfigAdditionalVariableArgs.builder
       builder.additionalVariables(args.map(_(argsBuilder).build)*)
@@ -359,7 +359,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def userPassword(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAuthConfigUserPasswordArgs.Builder]):
+    inline def userPassword(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAuthConfigUserPasswordArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAuthConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAuthConfigUserPasswordArgs.builder
       builder.userPassword(args(argsBuilder).build)
@@ -370,7 +370,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def password(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAuthConfigUserPasswordPasswordArgs.Builder]):
+    inline def password(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAuthConfigUserPasswordPasswordArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAuthConfigUserPasswordArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigAuthConfigUserPasswordPasswordArgs.builder
       builder.password(args(argsBuilder).build)
@@ -381,7 +381,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinations(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigRegistrationDestinationConfigDestinationArgs.Builder]*):
+    inline def destinations(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigRegistrationDestinationConfigDestinationArgs.Builder]*):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigRegistrationDestinationConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigRegistrationDestinationConfigDestinationArgs.builder
       builder.destinations(args.map(_(argsBuilder).build)*)
@@ -393,7 +393,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def statuses(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingRuntimeDataStatusArgs.Builder]*):
+    inline def statuses(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingRuntimeDataStatusArgs.Builder]*):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingRuntimeDataArgs.Builder =
       def argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingRuntimeDataStatusArgs.builder
       builder.statuses(args.map(_(argsBuilder).build)*)
@@ -404,7 +404,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionKeyValue(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigAdditionalVariableEncryptionKeyValueArgs.Builder]):
+    inline def encryptionKeyValue(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigAdditionalVariableEncryptionKeyValueArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigAdditionalVariableArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigAdditionalVariableEncryptionKeyValueArgs.builder
       builder.encryptionKeyValue(args(argsBuilder).build)
@@ -414,7 +414,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secretValue(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigAdditionalVariableSecretValueArgs.Builder]):
+    inline def secretValue(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigAdditionalVariableSecretValueArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigAdditionalVariableArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigAdditionalVariableSecretValueArgs.builder
       builder.secretValue(args(argsBuilder).build)
@@ -425,7 +425,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def additionalVariables(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigAdditionalVariableArgs.Builder]*):
+    inline def additionalVariables(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigAdditionalVariableArgs.Builder]*):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigAdditionalVariableArgs.builder
       builder.additionalVariables(args.map(_(argsBuilder).build)*)
@@ -435,7 +435,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clientCertificate(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigClientCertificateArgs.Builder]):
+    inline def clientCertificate(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigClientCertificateArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigClientCertificateArgs.builder
       builder.clientCertificate(args(argsBuilder).build)
@@ -445,7 +445,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clientPrivateKey(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigClientPrivateKeyArgs.Builder]):
+    inline def clientPrivateKey(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigClientPrivateKeyArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigClientPrivateKeyArgs.builder
       builder.clientPrivateKey(args(argsBuilder).build)
@@ -455,7 +455,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clientPrivateKeyPass(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigClientPrivateKeyPassArgs.Builder]):
+    inline def clientPrivateKeyPass(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigClientPrivateKeyPassArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigClientPrivateKeyPassArgs.builder
       builder.clientPrivateKeyPass(args(argsBuilder).build)
@@ -465,7 +465,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def privateServerCertificate(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigPrivateServerCertificateArgs.Builder]):
+    inline def privateServerCertificate(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigPrivateServerCertificateArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigPrivateServerCertificateArgs.builder
       builder.privateServerCertificate(args(argsBuilder).build)
@@ -476,7 +476,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigArgs.Builder]):
+    inline def authConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionAuthConfigArgs.builder
       builder.authConfig(args(argsBuilder).build)
@@ -486,7 +486,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def configVariables(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionConfigVariableArgs.Builder]*):
+    inline def configVariables(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionConfigVariableArgs.Builder]*):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionState.Builder =
       def argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionConfigVariableArgs.builder
       builder.configVariables(args.map(_(argsBuilder).build)*)
@@ -496,7 +496,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectorVersionInfraConfigs(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionConnectorVersionInfraConfigArgs.Builder]*):
+    inline def connectorVersionInfraConfigs(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionConnectorVersionInfraConfigArgs.Builder]*):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionState.Builder =
       def argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionConnectorVersionInfraConfigArgs.builder
       builder.connectorVersionInfraConfigs(args.map(_(argsBuilder).build)*)
@@ -506,7 +506,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinationConfigs(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionDestinationConfigArgs.Builder]*):
+    inline def destinationConfigs(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionDestinationConfigArgs.Builder]*):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionState.Builder =
       def argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionDestinationConfigArgs.builder
       builder.destinationConfigs(args.map(_(argsBuilder).build)*)
@@ -516,7 +516,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def eventingConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigArgs.Builder]):
+    inline def eventingConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingConfigArgs.builder
       builder.eventingConfig(args(argsBuilder).build)
@@ -526,7 +526,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def eventingRuntimeDatas(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingRuntimeDataArgs.Builder]*):
+    inline def eventingRuntimeDatas(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingRuntimeDataArgs.Builder]*):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionState.Builder =
       def argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionEventingRuntimeDataArgs.builder
       builder.eventingRuntimeDatas(args.map(_(argsBuilder).build)*)
@@ -536,7 +536,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def lockConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionLockConfigArgs.Builder]):
+    inline def lockConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionLockConfigArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionLockConfigArgs.builder
       builder.lockConfig(args(argsBuilder).build)
@@ -546,7 +546,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionLogConfigArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -556,7 +556,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionNodeConfigArgs.Builder]):
+    inline def nodeConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionNodeConfigArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionNodeConfigArgs.builder
       builder.nodeConfig(args(argsBuilder).build)
@@ -566,7 +566,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sslConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigArgs.Builder]):
+    inline def sslConfig(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigArgs.Builder]):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionSslConfigArgs.builder
       builder.sslConfig(args(argsBuilder).build)
@@ -577,7 +577,7 @@ object integrationconnectors_ext:
      * Structure is documented below.
      * @return builder
      */
-    def statuses(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionStatusArgs.Builder]*):
+    inline def statuses(args: Endofunction[com.pulumi.gcp.integrationconnectors.inputs.ConnectionStatusArgs.Builder]*):
         com.pulumi.gcp.integrationconnectors.inputs.ConnectionState.Builder =
       def argsBuilder = com.pulumi.gcp.integrationconnectors.inputs.ConnectionStatusArgs.builder
       builder.statuses(args.map(_(argsBuilder).build)*)

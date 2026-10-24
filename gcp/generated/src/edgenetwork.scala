@@ -13,7 +13,7 @@ object edgenetwork:
    * * How-to Guides
    *     * [Create and manage interconnect attachments](https://cloud.google.com/distributed-cloud/edge/latest/docs/attachments#api)
    */
-  def InterconnectAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InterconnectAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.edgenetwork.InterconnectAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.edgenetwork.InterconnectAttachmentArgs.builder
     com.pulumi.gcp.edgenetwork.InterconnectAttachment(name,
@@ -29,7 +29,7 @@ object edgenetwork:
    * * How-to Guides
    *     * [Create and manage networks](https://cloud.google.com/distributed-cloud/edge/latest/docs/networks#api)
    */
-  def Network(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Network(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.edgenetwork.NetworkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.edgenetwork.NetworkArgs.builder
     com.pulumi.gcp.edgenetwork.Network(name,
@@ -45,7 +45,7 @@ object edgenetwork:
    * * How-to Guides
    *     * [Create and manage subnetworks](https://cloud.google.com/distributed-cloud/edge/latest/docs/subnetworks#api)
    */
-  def Subnet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Subnet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.edgenetwork.SubnetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.edgenetwork.SubnetArgs.builder
     com.pulumi.gcp.edgenetwork.Subnet(name,

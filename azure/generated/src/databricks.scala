@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object databricks:
   /** Manages a Databricks Access Connector */
-  def AccessConnector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccessConnector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.databricks.AccessConnectorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.databricks.AccessConnectorArgs.builder
     conf.logicalName2physicalName(name) match
@@ -74,7 +74,7 @@ object databricks:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Databricks Virtual Network Peering */
-  def VirtualNetworkPeering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VirtualNetworkPeering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.databricks.VirtualNetworkPeeringArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.databricks.VirtualNetworkPeeringArgs.builder
     conf.logicalName2physicalName(name) match
@@ -85,7 +85,7 @@ object databricks:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Databricks Workspace */
-  def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.databricks.WorkspaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.databricks.WorkspaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -103,7 +103,7 @@ object databricks:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Databricks Workspace */
-  def WorkspaceCustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkspaceCustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.databricks.WorkspaceCustomerManagedKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.databricks.WorkspaceCustomerManagedKeyArgs.builder
     com.pulumi.azure.databricks.WorkspaceCustomerManagedKey(name,
@@ -111,7 +111,7 @@ object databricks:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Customer Managed Key for the Databricks Workspaces Root Databricks File System (DBFS) */
-  def WorkspaceRootDbfsCustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkspaceRootDbfsCustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.databricks.WorkspaceRootDbfsCustomerManagedKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.databricks.WorkspaceRootDbfsCustomerManagedKeyArgs.builder
     com.pulumi.azure.databricks.WorkspaceRootDbfsCustomerManagedKey(name,

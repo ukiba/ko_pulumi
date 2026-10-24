@@ -13,7 +13,7 @@ object blueprint:
    * 
    * &gt; **NOTE:** Azure Blueprint Assignments can only be applied to Subscriptions.  Assignments to Management Groups is not currently supported by the service or by this provider.
    */
-  def Assignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Assignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.blueprint.AssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.blueprint.AssignmentArgs.builder
     conf.logicalName2physicalName(name) match

@@ -17,7 +17,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Overview of custom modules for Event Threat Detection](https://cloud.google.com/security-command-center/docs/custom-modules-etd-overview)
    */
-  def EventThreatDetectionCustomModule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EventThreatDetectionCustomModule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.EventThreatDetectionCustomModuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.EventThreatDetectionCustomModuleArgs.builder
     com.pulumi.gcp.securitycenter.EventThreatDetectionCustomModule(name,
@@ -37,7 +37,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Overview of custom modules for Security Health Analytics](https://cloud.google.com/security-command-center/docs/custom-modules-sha-overview)
    */
-  def FolderCustomModule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FolderCustomModule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.FolderCustomModuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.FolderCustomModuleArgs.builder
     com.pulumi.gcp.securitycenter.FolderCustomModule(name,
@@ -59,7 +59,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/security-command-center/docs)
    */
-  def FolderNotificationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FolderNotificationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.FolderNotificationConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.FolderNotificationConfigArgs.builder
     com.pulumi.gcp.securitycenter.FolderNotificationConfig(name,
@@ -81,7 +81,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/security-command-center/docs/how-to-analyze-findings-in-big-query)
    */
-  def FolderSccBigQueryExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FolderSccBigQueryExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.FolderSccBigQueryExportArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.FolderSccBigQueryExportArgs.builder
     com.pulumi.gcp.securitycenter.FolderSccBigQueryExport(name,
@@ -97,7 +97,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/data-fusion/docs/)
    */
-  def InstanceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.InstanceIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.securitycenter.InstanceIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -116,7 +116,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/data-fusion/docs/)
    */
-  def InstanceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.InstanceIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.securitycenter.InstanceIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -135,7 +135,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/data-fusion/docs/)
    */
-  def InstanceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.InstanceIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.securitycenter.InstanceIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -158,7 +158,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Overview of custom modules for Security Health Analytics](https://cloud.google.com/security-command-center/docs/custom-modules-sha-overview)
    */
-  def ManagementFolderSecurityHealthAnalyticsCustomModule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagementFolderSecurityHealthAnalyticsCustomModule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.ManagementFolderSecurityHealthAnalyticsCustomModuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.ManagementFolderSecurityHealthAnalyticsCustomModuleArgs.builder
     com.pulumi.gcp.securitycenter.ManagementFolderSecurityHealthAnalyticsCustomModule(name,
@@ -176,7 +176,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Overview of custom modules for Event Threat Detection](https://cloud.google.com/security-command-center/docs/custom-modules-etd-overview)
    */
-  def ManagementOrganizationEventThreatDetectionCustomModule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagementOrganizationEventThreatDetectionCustomModule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.ManagementOrganizationEventThreatDetectionCustomModuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.ManagementOrganizationEventThreatDetectionCustomModuleArgs.builder
     com.pulumi.gcp.securitycenter.ManagementOrganizationEventThreatDetectionCustomModule(name,
@@ -196,7 +196,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Overview of custom modules for Security Health Analytics](https://cloud.google.com/security-command-center/docs/custom-modules-sha-overview)
    */
-  def ManagementOrganizationSecurityHealthAnalyticsCustomModule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagementOrganizationSecurityHealthAnalyticsCustomModule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.ManagementOrganizationSecurityHealthAnalyticsCustomModuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.ManagementOrganizationSecurityHealthAnalyticsCustomModuleArgs.builder
     com.pulumi.gcp.securitycenter.ManagementOrganizationSecurityHealthAnalyticsCustomModule(name,
@@ -216,7 +216,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Overview of custom modules for Security Health Analytics](https://cloud.google.com/security-command-center/docs/custom-modules-sha-overview)
    */
-  def ManagementProjectSecurityHealthAnalyticsCustomModule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagementProjectSecurityHealthAnalyticsCustomModule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.ManagementProjectSecurityHealthAnalyticsCustomModuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.ManagementProjectSecurityHealthAnalyticsCustomModuleArgs.builder
     com.pulumi.gcp.securitycenter.ManagementProjectSecurityHealthAnalyticsCustomModule(name,
@@ -233,7 +233,7 @@ object securitycenter:
    * 
    * * [API documentation](https://cloud.google.com/security-command-center/docs/reference/rest/v1/organizations.muteConfigs)
    */
-  def MuteConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MuteConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.MuteConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.MuteConfigArgs.builder
     com.pulumi.gcp.securitycenter.MuteConfig(name,
@@ -255,7 +255,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/security-command-center/docs)
    */
-  def NotificationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NotificationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.NotificationConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.NotificationConfigArgs.builder
     com.pulumi.gcp.securitycenter.NotificationConfig(name,
@@ -274,7 +274,7 @@ object securitycenter:
    * 
    * * [API documentation](https://cloud.google.com/service-usage/docs/reference/rest/v1beta1/services/generateServiceIdentity)
    */
-  def NotificationServiceAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NotificationServiceAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.NotificationServiceAccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.NotificationServiceAccountArgs.builder
     com.pulumi.gcp.securitycenter.NotificationServiceAccount(name,
@@ -294,7 +294,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Overview of custom modules for Security Health Analytics](https://cloud.google.com/security-command-center/docs/custom-modules-sha-overview)
    */
-  def OrganizationCustomModule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationCustomModule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.OrganizationCustomModuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.OrganizationCustomModuleArgs.builder
     com.pulumi.gcp.securitycenter.OrganizationCustomModule(name,
@@ -315,7 +315,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/security-command-center/docs/how-to-analyze-findings-in-big-query)
    */
-  def OrganizationSccBigQueryExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationSccBigQueryExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.OrganizationSccBigQueryExportArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.OrganizationSccBigQueryExportArgs.builder
     com.pulumi.gcp.securitycenter.OrganizationSccBigQueryExport(name,
@@ -335,7 +335,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Overview of custom modules for Security Health Analytics](https://cloud.google.com/security-command-center/docs/custom-modules-sha-overview)
    */
-  def ProjectCustomModule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProjectCustomModule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.ProjectCustomModuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.ProjectCustomModuleArgs.builder
     com.pulumi.gcp.securitycenter.ProjectCustomModule(name,
@@ -357,7 +357,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/security-command-center/docs)
    */
-  def ProjectNotificationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProjectNotificationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.ProjectNotificationConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.ProjectNotificationConfigArgs.builder
     com.pulumi.gcp.securitycenter.ProjectNotificationConfig(name,
@@ -378,7 +378,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/security-command-center/docs/how-to-analyze-findings-in-big-query)
    */
-  def ProjectSccBigQueryExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProjectSccBigQueryExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.ProjectSccBigQueryExportArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.ProjectSccBigQueryExportArgs.builder
     com.pulumi.gcp.securitycenter.ProjectSccBigQueryExport(name,
@@ -430,7 +430,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/security-command-center/docs)
    */
-  def Source(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Source(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.SourceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.SourceArgs.builder
     com.pulumi.gcp.securitycenter.Source(name,
@@ -449,7 +449,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/security-command-center/docs)
    */
-  def SourceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SourceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.SourceIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.SourceIamBindingArgs.builder
     com.pulumi.gcp.securitycenter.SourceIamBinding(name,
@@ -468,7 +468,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/security-command-center/docs)
    */
-  def SourceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SourceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.SourceIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.SourceIamMemberArgs.builder
     com.pulumi.gcp.securitycenter.SourceIamMember(name,
@@ -487,7 +487,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/security-command-center/docs)
    */
-  def SourceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SourceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.SourceIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.SourceIamPolicyArgs.builder
     com.pulumi.gcp.securitycenter.SourceIamPolicy(name,
@@ -504,7 +504,7 @@ object securitycenter:
    * 
    * * [API documentation](https://cloud.google.com/security-command-center/docs/reference/rest/v2/folders.muteConfigs)
    */
-  def V2FolderMuteConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2FolderMuteConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.V2FolderMuteConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.V2FolderMuteConfigArgs.builder
     com.pulumi.gcp.securitycenter.V2FolderMuteConfig(name,
@@ -520,7 +520,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/security-command-center/docs)
    */
-  def V2FolderNotificationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2FolderNotificationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.V2FolderNotificationConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.V2FolderNotificationConfigArgs.builder
     com.pulumi.gcp.securitycenter.V2FolderNotificationConfig(name,
@@ -541,7 +541,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/security-command-center/docs/how-to-analyze-findings-in-big-query)
    */
-  def V2FolderSccBigQueryExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2FolderSccBigQueryExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.V2FolderSccBigQueryExportArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.V2FolderSccBigQueryExportArgs.builder
     com.pulumi.gcp.securitycenter.V2FolderSccBigQueryExport(name,
@@ -558,7 +558,7 @@ object securitycenter:
    * 
    * * [API documentation](https://cloud.google.com/security-command-center/docs/reference/rest/v2/organizations.muteConfigs)
    */
-  def V2OrganizationMuteConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2OrganizationMuteConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.V2OrganizationMuteConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.V2OrganizationMuteConfigArgs.builder
     com.pulumi.gcp.securitycenter.V2OrganizationMuteConfig(name,
@@ -574,7 +574,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/security-command-center/docs)
    */
-  def V2OrganizationNotificationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2OrganizationNotificationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.V2OrganizationNotificationConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.V2OrganizationNotificationConfigArgs.builder
     com.pulumi.gcp.securitycenter.V2OrganizationNotificationConfig(name,
@@ -595,7 +595,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/security-command-center/docs/how-to-analyze-findings-in-big-query)
    */
-  def V2OrganizationSccBigQueryExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2OrganizationSccBigQueryExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.V2OrganizationSccBigQueryExportArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.securitycenter.V2OrganizationSccBigQueryExportArgs.builder
     conf.logicalName2physicalName(name) match
@@ -621,7 +621,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/security-command-center/docs/how-to-analyze-findings-in-big-query)
    */
-  def V2OrganizationSccBigQueryExports(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2OrganizationSccBigQueryExports(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.V2OrganizationSccBigQueryExportsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.securitycenter.V2OrganizationSccBigQueryExportsArgs.builder
     conf.logicalName2physicalName(name) match
@@ -643,7 +643,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/security-command-center/docs)
    */
-  def V2OrganizationSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2OrganizationSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.V2OrganizationSourceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.V2OrganizationSourceArgs.builder
     com.pulumi.gcp.securitycenter.V2OrganizationSource(name,
@@ -944,7 +944,7 @@ object securitycenter:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def V2OrganizationSourceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2OrganizationSourceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.V2OrganizationSourceIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.V2OrganizationSourceIamBindingArgs.builder
     com.pulumi.gcp.securitycenter.V2OrganizationSourceIamBinding(name,
@@ -1245,7 +1245,7 @@ object securitycenter:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def V2OrganizationSourceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2OrganizationSourceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.V2OrganizationSourceIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.V2OrganizationSourceIamMemberArgs.builder
     com.pulumi.gcp.securitycenter.V2OrganizationSourceIamMember(name,
@@ -1546,7 +1546,7 @@ object securitycenter:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def V2OrganizationSourceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2OrganizationSourceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.V2OrganizationSourceIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.V2OrganizationSourceIamPolicyArgs.builder
     com.pulumi.gcp.securitycenter.V2OrganizationSourceIamPolicy(name,
@@ -1563,7 +1563,7 @@ object securitycenter:
    * 
    * * [API documentation](https://cloud.google.com/security-command-center/docs/reference/rest/v2/projects.muteConfigs)
    */
-  def V2ProjectMuteConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2ProjectMuteConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.V2ProjectMuteConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.V2ProjectMuteConfigArgs.builder
     com.pulumi.gcp.securitycenter.V2ProjectMuteConfig(name,
@@ -1579,7 +1579,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/security-command-center/docs)
    */
-  def V2ProjectNotificationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2ProjectNotificationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.V2ProjectNotificationConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.V2ProjectNotificationConfigArgs.builder
     com.pulumi.gcp.securitycenter.V2ProjectNotificationConfig(name,
@@ -1600,7 +1600,7 @@ object securitycenter:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/security-command-center/docs/how-to-analyze-findings-in-big-query)
    */
-  def V2ProjectSccBigQueryExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def V2ProjectSccBigQueryExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.securitycenter.V2ProjectSccBigQueryExportArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securitycenter.V2ProjectSccBigQueryExportArgs.builder
     com.pulumi.gcp.securitycenter.V2ProjectSccBigQueryExport(name,

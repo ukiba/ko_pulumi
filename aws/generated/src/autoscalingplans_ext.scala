@@ -7,7 +7,7 @@ object autoscalingplans_ext:
      * @param applicationSource CloudFormation stack or set of tags. You can create one scaling plan per application source.
      * @return builder
      */
-    def applicationSource(args: Endofunction[com.pulumi.aws.autoscalingplans.inputs.ScalingPlanApplicationSourceArgs.Builder]):
+    inline def applicationSource(args: Endofunction[com.pulumi.aws.autoscalingplans.inputs.ScalingPlanApplicationSourceArgs.Builder]):
         com.pulumi.aws.autoscalingplans.ScalingPlanArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscalingplans.inputs.ScalingPlanApplicationSourceArgs.builder
       builder.applicationSource(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object autoscalingplans_ext:
      * @param scalingInstructions Scaling instructions. More details can be found in the [AWS Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html).
      * @return builder
      */
-    def scalingInstructions(args: Endofunction[com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionArgs.Builder]*):
+    inline def scalingInstructions(args: Endofunction[com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionArgs.Builder]*):
         com.pulumi.aws.autoscalingplans.ScalingPlanArgs.Builder =
       def argsBuilder = com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionArgs.builder
       builder.scalingInstructions(args.map(_(argsBuilder).build)*)
@@ -26,7 +26,7 @@ object autoscalingplans_ext:
      * @param tagFilters Set of tags.
      * @return builder
      */
-    def tagFilters(args: Endofunction[com.pulumi.aws.autoscalingplans.inputs.ScalingPlanApplicationSourceTagFilterArgs.Builder]*):
+    inline def tagFilters(args: Endofunction[com.pulumi.aws.autoscalingplans.inputs.ScalingPlanApplicationSourceTagFilterArgs.Builder]*):
         com.pulumi.aws.autoscalingplans.inputs.ScalingPlanApplicationSourceArgs.Builder =
       def argsBuilder = com.pulumi.aws.autoscalingplans.inputs.ScalingPlanApplicationSourceTagFilterArgs.builder
       builder.tagFilters(args.map(_(argsBuilder).build)*)
@@ -37,7 +37,7 @@ object autoscalingplans_ext:
      * More details can be found in the [AWS Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_CustomizedLoadMetricSpecification.html).
      * @return builder
      */
-    def customizedLoadMetricSpecification(args: Endofunction[com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionCustomizedLoadMetricSpecificationArgs.Builder]):
+    inline def customizedLoadMetricSpecification(args: Endofunction[com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionCustomizedLoadMetricSpecificationArgs.Builder]):
         com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionCustomizedLoadMetricSpecificationArgs.builder
       builder.customizedLoadMetricSpecification(args(argsBuilder).build)
@@ -47,7 +47,7 @@ object autoscalingplans_ext:
      * More details can be found in the [AWS Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_PredefinedLoadMetricSpecification.html).
      * @return builder
      */
-    def predefinedLoadMetricSpecification(args: Endofunction[com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionPredefinedLoadMetricSpecificationArgs.Builder]):
+    inline def predefinedLoadMetricSpecification(args: Endofunction[com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionPredefinedLoadMetricSpecificationArgs.Builder]):
         com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionPredefinedLoadMetricSpecificationArgs.builder
       builder.predefinedLoadMetricSpecification(args(argsBuilder).build)
@@ -57,7 +57,7 @@ object autoscalingplans_ext:
      * More details can be found in the [AWS Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_TargetTrackingConfiguration.html).
      * @return builder
      */
-    def targetTrackingConfigurations(args: Endofunction[com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionTargetTrackingConfigurationArgs.Builder]*):
+    inline def targetTrackingConfigurations(args: Endofunction[com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionTargetTrackingConfigurationArgs.Builder]*):
         com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionArgs.Builder =
       def argsBuilder = com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionTargetTrackingConfigurationArgs.builder
       builder.targetTrackingConfigurations(args.map(_(argsBuilder).build)*)
@@ -68,7 +68,7 @@ object autoscalingplans_ext:
      * More details can be found in the [AWS Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_CustomizedScalingMetricSpecification.html).
      * @return builder
      */
-    def customizedScalingMetricSpecification(args: Endofunction[com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecificationArgs.Builder]):
+    inline def customizedScalingMetricSpecification(args: Endofunction[com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecificationArgs.Builder]):
         com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionTargetTrackingConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionTargetTrackingConfigurationCustomizedScalingMetricSpecificationArgs.builder
       builder.customizedScalingMetricSpecification(args(argsBuilder).build)
@@ -78,7 +78,7 @@ object autoscalingplans_ext:
      * More details can be found in the [AWS Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_PredefinedScalingMetricSpecification.html).
      * @return builder
      */
-    def predefinedScalingMetricSpecification(args: Endofunction[com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecificationArgs.Builder]):
+    inline def predefinedScalingMetricSpecification(args: Endofunction[com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecificationArgs.Builder]):
         com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionTargetTrackingConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionTargetTrackingConfigurationPredefinedScalingMetricSpecificationArgs.builder
       builder.predefinedScalingMetricSpecification(args(argsBuilder).build)
@@ -88,7 +88,7 @@ object autoscalingplans_ext:
      * @param applicationSource CloudFormation stack or set of tags. You can create one scaling plan per application source.
      * @return builder
      */
-    def applicationSource(args: Endofunction[com.pulumi.aws.autoscalingplans.inputs.ScalingPlanApplicationSourceArgs.Builder]):
+    inline def applicationSource(args: Endofunction[com.pulumi.aws.autoscalingplans.inputs.ScalingPlanApplicationSourceArgs.Builder]):
         com.pulumi.aws.autoscalingplans.inputs.ScalingPlanState.Builder =
       val argsBuilder = com.pulumi.aws.autoscalingplans.inputs.ScalingPlanApplicationSourceArgs.builder
       builder.applicationSource(args(argsBuilder).build)
@@ -97,7 +97,7 @@ object autoscalingplans_ext:
      * @param scalingInstructions Scaling instructions. More details can be found in the [AWS Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html).
      * @return builder
      */
-    def scalingInstructions(args: Endofunction[com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionArgs.Builder]*):
+    inline def scalingInstructions(args: Endofunction[com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionArgs.Builder]*):
         com.pulumi.aws.autoscalingplans.inputs.ScalingPlanState.Builder =
       def argsBuilder = com.pulumi.aws.autoscalingplans.inputs.ScalingPlanScalingInstructionArgs.builder
       builder.scalingInstructions(args.map(_(argsBuilder).build)*)

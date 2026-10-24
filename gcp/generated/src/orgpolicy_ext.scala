@@ -8,7 +8,7 @@ object orgpolicy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dryRunSpec(args: Endofunction[com.pulumi.gcp.orgpolicy.inputs.PolicyDryRunSpecArgs.Builder]):
+    inline def dryRunSpec(args: Endofunction[com.pulumi.gcp.orgpolicy.inputs.PolicyDryRunSpecArgs.Builder]):
         com.pulumi.gcp.orgpolicy.PolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.orgpolicy.inputs.PolicyDryRunSpecArgs.builder
       builder.dryRunSpec(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object orgpolicy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def spec(args: Endofunction[com.pulumi.gcp.orgpolicy.inputs.PolicySpecArgs.Builder]):
+    inline def spec(args: Endofunction[com.pulumi.gcp.orgpolicy.inputs.PolicySpecArgs.Builder]):
         com.pulumi.gcp.orgpolicy.PolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.orgpolicy.inputs.PolicySpecArgs.builder
       builder.spec(args(argsBuilder).build)
@@ -29,7 +29,7 @@ object orgpolicy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.orgpolicy.inputs.PolicyDryRunSpecRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.orgpolicy.inputs.PolicyDryRunSpecRuleArgs.Builder]*):
         com.pulumi.gcp.orgpolicy.inputs.PolicyDryRunSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.orgpolicy.inputs.PolicyDryRunSpecRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -40,7 +40,7 @@ object orgpolicy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.orgpolicy.inputs.PolicyDryRunSpecRuleConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.orgpolicy.inputs.PolicyDryRunSpecRuleConditionArgs.Builder]):
         com.pulumi.gcp.orgpolicy.inputs.PolicyDryRunSpecRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.orgpolicy.inputs.PolicyDryRunSpecRuleConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -50,7 +50,7 @@ object orgpolicy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def values(args: Endofunction[com.pulumi.gcp.orgpolicy.inputs.PolicyDryRunSpecRuleValuesArgs.Builder]):
+    inline def values(args: Endofunction[com.pulumi.gcp.orgpolicy.inputs.PolicyDryRunSpecRuleValuesArgs.Builder]):
         com.pulumi.gcp.orgpolicy.inputs.PolicyDryRunSpecRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.orgpolicy.inputs.PolicyDryRunSpecRuleValuesArgs.builder
       builder.values(args(argsBuilder).build)
@@ -61,7 +61,7 @@ object orgpolicy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.orgpolicy.inputs.PolicySpecRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.orgpolicy.inputs.PolicySpecRuleArgs.Builder]*):
         com.pulumi.gcp.orgpolicy.inputs.PolicySpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.orgpolicy.inputs.PolicySpecRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -72,7 +72,7 @@ object orgpolicy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.orgpolicy.inputs.PolicySpecRuleConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.orgpolicy.inputs.PolicySpecRuleConditionArgs.Builder]):
         com.pulumi.gcp.orgpolicy.inputs.PolicySpecRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.orgpolicy.inputs.PolicySpecRuleConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -82,7 +82,7 @@ object orgpolicy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def values(args: Endofunction[com.pulumi.gcp.orgpolicy.inputs.PolicySpecRuleValuesArgs.Builder]):
+    inline def values(args: Endofunction[com.pulumi.gcp.orgpolicy.inputs.PolicySpecRuleValuesArgs.Builder]):
         com.pulumi.gcp.orgpolicy.inputs.PolicySpecRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.orgpolicy.inputs.PolicySpecRuleValuesArgs.builder
       builder.values(args(argsBuilder).build)
@@ -93,7 +93,7 @@ object orgpolicy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dryRunSpec(args: Endofunction[com.pulumi.gcp.orgpolicy.inputs.PolicyDryRunSpecArgs.Builder]):
+    inline def dryRunSpec(args: Endofunction[com.pulumi.gcp.orgpolicy.inputs.PolicyDryRunSpecArgs.Builder]):
         com.pulumi.gcp.orgpolicy.inputs.PolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.orgpolicy.inputs.PolicyDryRunSpecArgs.builder
       builder.dryRunSpec(args(argsBuilder).build)
@@ -103,7 +103,7 @@ object orgpolicy_ext:
      * Structure is documented below.
      * @return builder
      */
-    def spec(args: Endofunction[com.pulumi.gcp.orgpolicy.inputs.PolicySpecArgs.Builder]):
+    inline def spec(args: Endofunction[com.pulumi.gcp.orgpolicy.inputs.PolicySpecArgs.Builder]):
         com.pulumi.gcp.orgpolicy.inputs.PolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.orgpolicy.inputs.PolicySpecArgs.builder
       builder.spec(args(argsBuilder).build)

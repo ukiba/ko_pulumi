@@ -9,7 +9,7 @@ object cloudtasks_ext:
      * Structure is documented below.
      * @return builder
      */
-    def appEngineRoutingOverride(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueAppEngineRoutingOverrideArgs.Builder]):
+    inline def appEngineRoutingOverride(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueAppEngineRoutingOverrideArgs.Builder]):
         com.pulumi.gcp.cloudtasks.QueueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudtasks.inputs.QueueAppEngineRoutingOverrideArgs.builder
       builder.appEngineRoutingOverride(args(argsBuilder).build)
@@ -19,7 +19,7 @@ object cloudtasks_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpTarget(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetArgs.Builder]):
+    inline def httpTarget(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetArgs.Builder]):
         com.pulumi.gcp.cloudtasks.QueueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetArgs.builder
       builder.httpTarget(args(argsBuilder).build)
@@ -35,7 +35,7 @@ object cloudtasks_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def rateLimits(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueRateLimitsArgs.Builder]):
+    inline def rateLimits(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueRateLimitsArgs.Builder]):
         com.pulumi.gcp.cloudtasks.QueueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudtasks.inputs.QueueRateLimitsArgs.builder
       builder.rateLimits(args(argsBuilder).build)
@@ -45,7 +45,7 @@ object cloudtasks_ext:
      * Structure is documented below.
      * @return builder
      */
-    def retryConfig(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueRetryConfigArgs.Builder]):
+    inline def retryConfig(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueRetryConfigArgs.Builder]):
         com.pulumi.gcp.cloudtasks.QueueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudtasks.inputs.QueueRetryConfigArgs.builder
       builder.retryConfig(args(argsBuilder).build)
@@ -55,19 +55,19 @@ object cloudtasks_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stackdriverLoggingConfig(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueStackdriverLoggingConfigArgs.Builder]):
+    inline def stackdriverLoggingConfig(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueStackdriverLoggingConfigArgs.Builder]):
         com.pulumi.gcp.cloudtasks.QueueArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudtasks.inputs.QueueStackdriverLoggingConfigArgs.builder
       builder.stackdriverLoggingConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.cloudtasks.QueueIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.cloudtasks.QueueIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudtasks.inputs.QueueIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.cloudtasks.QueueIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.cloudtasks.QueueIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudtasks.inputs.QueueIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -84,7 +84,7 @@ object cloudtasks_ext:
      * Structure is documented below.
      * @return builder
      */
-    def headerOverrides(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetHeaderOverrideArgs.Builder]*):
+    inline def headerOverrides(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetHeaderOverrideArgs.Builder]*):
         com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetHeaderOverrideArgs.builder
       builder.headerOverrides(args.map(_(argsBuilder).build)*)
@@ -96,7 +96,7 @@ object cloudtasks_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauthToken(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetOauthTokenArgs.Builder]):
+    inline def oauthToken(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetOauthTokenArgs.Builder]):
         com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetOauthTokenArgs.builder
       builder.oauthToken(args(argsBuilder).build)
@@ -108,7 +108,7 @@ object cloudtasks_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oidcToken(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetOidcTokenArgs.Builder]):
+    inline def oidcToken(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetOidcTokenArgs.Builder]):
         com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetOidcTokenArgs.builder
       builder.oidcToken(args(argsBuilder).build)
@@ -119,7 +119,7 @@ object cloudtasks_ext:
      * Structure is documented below.
      * @return builder
      */
-    def uriOverride(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetUriOverrideArgs.Builder]):
+    inline def uriOverride(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetUriOverrideArgs.Builder]):
         com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetUriOverrideArgs.builder
       builder.uriOverride(args(argsBuilder).build)
@@ -130,7 +130,7 @@ object cloudtasks_ext:
      * Structure is documented below.
      * @return builder
      */
-    def header(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetHeaderOverrideHeaderArgs.Builder]):
+    inline def header(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetHeaderOverrideHeaderArgs.Builder]):
         com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetHeaderOverrideArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetHeaderOverrideHeaderArgs.builder
       builder.header(args(argsBuilder).build)
@@ -143,7 +143,7 @@ object cloudtasks_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pathOverride(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetUriOverridePathOverrideArgs.Builder]):
+    inline def pathOverride(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetUriOverridePathOverrideArgs.Builder]):
         com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetUriOverrideArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetUriOverridePathOverrideArgs.builder
       builder.pathOverride(args(argsBuilder).build)
@@ -154,19 +154,19 @@ object cloudtasks_ext:
      * Structure is documented below.
      * @return builder
      */
-    def queryOverride(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetUriOverrideQueryOverrideArgs.Builder]):
+    inline def queryOverride(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetUriOverrideQueryOverrideArgs.Builder]):
         com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetUriOverrideArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetUriOverrideQueryOverrideArgs.builder
       builder.queryOverride(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.cloudtasks.inputs.QueueIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.cloudtasks.inputs.QueueIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudtasks.inputs.QueueIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.cloudtasks.inputs.QueueIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.cloudtasks.inputs.QueueIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudtasks.inputs.QueueIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -178,7 +178,7 @@ object cloudtasks_ext:
      * Structure is documented below.
      * @return builder
      */
-    def appEngineRoutingOverride(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueAppEngineRoutingOverrideArgs.Builder]):
+    inline def appEngineRoutingOverride(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueAppEngineRoutingOverrideArgs.Builder]):
         com.pulumi.gcp.cloudtasks.inputs.QueueState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudtasks.inputs.QueueAppEngineRoutingOverrideArgs.builder
       builder.appEngineRoutingOverride(args(argsBuilder).build)
@@ -188,7 +188,7 @@ object cloudtasks_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpTarget(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetArgs.Builder]):
+    inline def httpTarget(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetArgs.Builder]):
         com.pulumi.gcp.cloudtasks.inputs.QueueState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudtasks.inputs.QueueHttpTargetArgs.builder
       builder.httpTarget(args(argsBuilder).build)
@@ -204,7 +204,7 @@ object cloudtasks_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def rateLimits(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueRateLimitsArgs.Builder]):
+    inline def rateLimits(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueRateLimitsArgs.Builder]):
         com.pulumi.gcp.cloudtasks.inputs.QueueState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudtasks.inputs.QueueRateLimitsArgs.builder
       builder.rateLimits(args(argsBuilder).build)
@@ -214,7 +214,7 @@ object cloudtasks_ext:
      * Structure is documented below.
      * @return builder
      */
-    def retryConfig(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueRetryConfigArgs.Builder]):
+    inline def retryConfig(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueRetryConfigArgs.Builder]):
         com.pulumi.gcp.cloudtasks.inputs.QueueState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudtasks.inputs.QueueRetryConfigArgs.builder
       builder.retryConfig(args(argsBuilder).build)
@@ -224,7 +224,7 @@ object cloudtasks_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stackdriverLoggingConfig(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueStackdriverLoggingConfigArgs.Builder]):
+    inline def stackdriverLoggingConfig(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.QueueStackdriverLoggingConfigArgs.Builder]):
         com.pulumi.gcp.cloudtasks.inputs.QueueState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudtasks.inputs.QueueStackdriverLoggingConfigArgs.builder
       builder.stackdriverLoggingConfig(args(argsBuilder).build)

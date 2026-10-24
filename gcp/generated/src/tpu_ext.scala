@@ -8,7 +8,7 @@ object tpu_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tpu(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2QueuedResourceTpuArgs.Builder]):
+    inline def tpu(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2QueuedResourceTpuArgs.Builder]):
         com.pulumi.gcp.tpu.V2QueuedResourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.tpu.inputs.V2QueuedResourceTpuArgs.builder
       builder.tpu(args(argsBuilder).build)
@@ -20,7 +20,7 @@ object tpu_ext:
      * Structure is documented below.
      * @return builder
      */
-    def acceleratorConfig(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmAcceleratorConfigArgs.Builder]):
+    inline def acceleratorConfig(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmAcceleratorConfigArgs.Builder]):
         com.pulumi.gcp.tpu.V2VmArgs.Builder =
       val argsBuilder = com.pulumi.gcp.tpu.inputs.V2VmAcceleratorConfigArgs.builder
       builder.acceleratorConfig(args(argsBuilder).build)
@@ -30,7 +30,7 @@ object tpu_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataDisks(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmDataDiskArgs.Builder]*):
+    inline def dataDisks(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmDataDiskArgs.Builder]*):
         com.pulumi.gcp.tpu.V2VmArgs.Builder =
       def argsBuilder = com.pulumi.gcp.tpu.inputs.V2VmDataDiskArgs.builder
       builder.dataDisks(args.map(_(argsBuilder).build)*)
@@ -40,7 +40,7 @@ object tpu_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfig(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmNetworkConfigArgs.Builder]):
+    inline def networkConfig(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmNetworkConfigArgs.Builder]):
         com.pulumi.gcp.tpu.V2VmArgs.Builder =
       val argsBuilder = com.pulumi.gcp.tpu.inputs.V2VmNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)
@@ -51,7 +51,7 @@ object tpu_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfigs(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmNetworkConfigArgs.Builder]*):
+    inline def networkConfigs(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmNetworkConfigArgs.Builder]*):
         com.pulumi.gcp.tpu.V2VmArgs.Builder =
       def argsBuilder = com.pulumi.gcp.tpu.inputs.V2VmNetworkConfigArgs.builder
       builder.networkConfigs(args.map(_(argsBuilder).build)*)
@@ -61,7 +61,7 @@ object tpu_ext:
      * Structure is documented below.
      * @return builder
      */
-    def schedulingConfig(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmSchedulingConfigArgs.Builder]):
+    inline def schedulingConfig(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmSchedulingConfigArgs.Builder]):
         com.pulumi.gcp.tpu.V2VmArgs.Builder =
       val argsBuilder = com.pulumi.gcp.tpu.inputs.V2VmSchedulingConfigArgs.builder
       builder.schedulingConfig(args(argsBuilder).build)
@@ -72,7 +72,7 @@ object tpu_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceAccount(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmServiceAccountArgs.Builder]):
+    inline def serviceAccount(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmServiceAccountArgs.Builder]):
         com.pulumi.gcp.tpu.V2VmArgs.Builder =
       val argsBuilder = com.pulumi.gcp.tpu.inputs.V2VmServiceAccountArgs.builder
       builder.serviceAccount(args(argsBuilder).build)
@@ -82,7 +82,7 @@ object tpu_ext:
      * Structure is documented below.
      * @return builder
      */
-    def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmShieldedInstanceConfigArgs.Builder]):
+    inline def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmShieldedInstanceConfigArgs.Builder]):
         com.pulumi.gcp.tpu.V2VmArgs.Builder =
       val argsBuilder = com.pulumi.gcp.tpu.inputs.V2VmShieldedInstanceConfigArgs.builder
       builder.shieldedInstanceConfig(args(argsBuilder).build)
@@ -93,7 +93,7 @@ object tpu_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tpu(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2QueuedResourceTpuArgs.Builder]):
+    inline def tpu(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2QueuedResourceTpuArgs.Builder]):
         com.pulumi.gcp.tpu.inputs.V2QueuedResourceState.Builder =
       val argsBuilder = com.pulumi.gcp.tpu.inputs.V2QueuedResourceTpuArgs.builder
       builder.tpu(args(argsBuilder).build)
@@ -104,7 +104,7 @@ object tpu_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeSpecs(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2QueuedResourceTpuNodeSpecArgs.Builder]*):
+    inline def nodeSpecs(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2QueuedResourceTpuNodeSpecArgs.Builder]*):
         com.pulumi.gcp.tpu.inputs.V2QueuedResourceTpuArgs.Builder =
       def argsBuilder = com.pulumi.gcp.tpu.inputs.V2QueuedResourceTpuNodeSpecArgs.builder
       builder.nodeSpecs(args.map(_(argsBuilder).build)*)
@@ -115,7 +115,7 @@ object tpu_ext:
      * Structure is documented below.
      * @return builder
      */
-    def node(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2QueuedResourceTpuNodeSpecNodeArgs.Builder]):
+    inline def node(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2QueuedResourceTpuNodeSpecNodeArgs.Builder]):
         com.pulumi.gcp.tpu.inputs.V2QueuedResourceTpuNodeSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.tpu.inputs.V2QueuedResourceTpuNodeSpecNodeArgs.builder
       builder.node(args(argsBuilder).build)
@@ -126,7 +126,7 @@ object tpu_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfig(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2QueuedResourceTpuNodeSpecNodeNetworkConfigArgs.Builder]):
+    inline def networkConfig(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2QueuedResourceTpuNodeSpecNodeNetworkConfigArgs.Builder]):
         com.pulumi.gcp.tpu.inputs.V2QueuedResourceTpuNodeSpecNodeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.tpu.inputs.V2QueuedResourceTpuNodeSpecNodeNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)
@@ -138,7 +138,7 @@ object tpu_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accessConfigs(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmNetworkEndpointAccessConfigArgs.Builder]*):
+    inline def accessConfigs(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmNetworkEndpointAccessConfigArgs.Builder]*):
         com.pulumi.gcp.tpu.inputs.V2VmNetworkEndpointArgs.Builder =
       def argsBuilder = com.pulumi.gcp.tpu.inputs.V2VmNetworkEndpointAccessConfigArgs.builder
       builder.accessConfigs(args.map(_(argsBuilder).build)*)
@@ -150,7 +150,7 @@ object tpu_ext:
      * Structure is documented below.
      * @return builder
      */
-    def acceleratorConfig(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmAcceleratorConfigArgs.Builder]):
+    inline def acceleratorConfig(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmAcceleratorConfigArgs.Builder]):
         com.pulumi.gcp.tpu.inputs.V2VmState.Builder =
       val argsBuilder = com.pulumi.gcp.tpu.inputs.V2VmAcceleratorConfigArgs.builder
       builder.acceleratorConfig(args(argsBuilder).build)
@@ -160,7 +160,7 @@ object tpu_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataDisks(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmDataDiskArgs.Builder]*):
+    inline def dataDisks(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmDataDiskArgs.Builder]*):
         com.pulumi.gcp.tpu.inputs.V2VmState.Builder =
       def argsBuilder = com.pulumi.gcp.tpu.inputs.V2VmDataDiskArgs.builder
       builder.dataDisks(args.map(_(argsBuilder).build)*)
@@ -170,7 +170,7 @@ object tpu_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfig(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmNetworkConfigArgs.Builder]):
+    inline def networkConfig(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmNetworkConfigArgs.Builder]):
         com.pulumi.gcp.tpu.inputs.V2VmState.Builder =
       val argsBuilder = com.pulumi.gcp.tpu.inputs.V2VmNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)
@@ -181,7 +181,7 @@ object tpu_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfigs(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmNetworkConfigArgs.Builder]*):
+    inline def networkConfigs(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmNetworkConfigArgs.Builder]*):
         com.pulumi.gcp.tpu.inputs.V2VmState.Builder =
       def argsBuilder = com.pulumi.gcp.tpu.inputs.V2VmNetworkConfigArgs.builder
       builder.networkConfigs(args.map(_(argsBuilder).build)*)
@@ -192,7 +192,7 @@ object tpu_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkEndpoints(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmNetworkEndpointArgs.Builder]*):
+    inline def networkEndpoints(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmNetworkEndpointArgs.Builder]*):
         com.pulumi.gcp.tpu.inputs.V2VmState.Builder =
       def argsBuilder = com.pulumi.gcp.tpu.inputs.V2VmNetworkEndpointArgs.builder
       builder.networkEndpoints(args.map(_(argsBuilder).build)*)
@@ -202,7 +202,7 @@ object tpu_ext:
      * Structure is documented below.
      * @return builder
      */
-    def schedulingConfig(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmSchedulingConfigArgs.Builder]):
+    inline def schedulingConfig(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmSchedulingConfigArgs.Builder]):
         com.pulumi.gcp.tpu.inputs.V2VmState.Builder =
       val argsBuilder = com.pulumi.gcp.tpu.inputs.V2VmSchedulingConfigArgs.builder
       builder.schedulingConfig(args(argsBuilder).build)
@@ -213,7 +213,7 @@ object tpu_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceAccount(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmServiceAccountArgs.Builder]):
+    inline def serviceAccount(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmServiceAccountArgs.Builder]):
         com.pulumi.gcp.tpu.inputs.V2VmState.Builder =
       val argsBuilder = com.pulumi.gcp.tpu.inputs.V2VmServiceAccountArgs.builder
       builder.serviceAccount(args(argsBuilder).build)
@@ -223,7 +223,7 @@ object tpu_ext:
      * Structure is documented below.
      * @return builder
      */
-    def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmShieldedInstanceConfigArgs.Builder]):
+    inline def shieldedInstanceConfig(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmShieldedInstanceConfigArgs.Builder]):
         com.pulumi.gcp.tpu.inputs.V2VmState.Builder =
       val argsBuilder = com.pulumi.gcp.tpu.inputs.V2VmShieldedInstanceConfigArgs.builder
       builder.shieldedInstanceConfig(args(argsBuilder).build)
@@ -233,7 +233,7 @@ object tpu_ext:
      * Structure is documented below.
      * @return builder
      */
-    def symptoms(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmSymptomArgs.Builder]*):
+    inline def symptoms(args: Endofunction[com.pulumi.gcp.tpu.inputs.V2VmSymptomArgs.Builder]*):
         com.pulumi.gcp.tpu.inputs.V2VmState.Builder =
       def argsBuilder = com.pulumi.gcp.tpu.inputs.V2VmSymptomArgs.builder
       builder.symptoms(args.map(_(argsBuilder).build)*)

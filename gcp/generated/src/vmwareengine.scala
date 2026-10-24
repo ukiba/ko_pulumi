@@ -13,7 +13,7 @@ object vmwareengine:
    * 
    * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.privateClouds.clusters)
    */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vmwareengine.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vmwareengine.ClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -234,7 +234,7 @@ object vmwareengine:
    * \$ pulumi import gcp:vmwareengine/datastore:Datastore default {{location}}/{{name}}
    * ```
    */
-  def Datastore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Datastore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vmwareengine.DatastoreArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vmwareengine.DatastoreArgs.builder
     conf.logicalName2physicalName(name) match
@@ -251,7 +251,7 @@ object vmwareengine:
    * 
    * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.networkPolicies.externalAccessRules)
    */
-  def ExternalAccessRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ExternalAccessRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vmwareengine.ExternalAccessRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vmwareengine.ExternalAccessRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -268,7 +268,7 @@ object vmwareengine:
    * 
    * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.privateClouds.externalAddresses)
    */
-  def ExternalAddress(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ExternalAddress(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vmwareengine.ExternalAddressArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vmwareengine.ExternalAddressArgs.builder
     conf.logicalName2physicalName(name) match
@@ -285,7 +285,7 @@ object vmwareengine:
    * 
    * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.vmwareEngineNetworks)
    */
-  def Network(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Network(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vmwareengine.NetworkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vmwareengine.NetworkArgs.builder
     conf.logicalName2physicalName(name) match
@@ -302,7 +302,7 @@ object vmwareengine:
    * 
    * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/networks/addPeering)
    */
-  def NetworkPeering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkPeering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vmwareengine.NetworkPeeringArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vmwareengine.NetworkPeeringArgs.builder
     conf.logicalName2physicalName(name) match
@@ -319,7 +319,7 @@ object vmwareengine:
    * 
    * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.networkPolicies)
    */
-  def NetworkPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vmwareengine.NetworkPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vmwareengine.NetworkPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -336,7 +336,7 @@ object vmwareengine:
    * 
    * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.privateClouds)
    */
-  def PrivateCloud(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PrivateCloud(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vmwareengine.PrivateCloudArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vmwareengine.PrivateCloudArgs.builder
     conf.logicalName2physicalName(name) match
@@ -355,7 +355,7 @@ object vmwareengine:
    * 
    * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.privateClouds.subnets)
    */
-  def Subnet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Subnet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vmwareengine.SubnetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vmwareengine.SubnetArgs.builder
     conf.logicalName2physicalName(name) match

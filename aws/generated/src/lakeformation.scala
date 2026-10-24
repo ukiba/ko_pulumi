@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object lakeformation:
   /** Resource for managing an AWS Lake Formation Data Cells Filter. */
-  def DataCellsFilter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataCellsFilter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.DataCellsFilterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.lakeformation.DataCellsFilterArgs.builder
     com.pulumi.aws.lakeformation.DataCellsFilter(name,
@@ -19,7 +19,7 @@ object lakeformation:
    * 
    * &gt; **NOTE:** Lake Formation introduces fine-grained access control for data in your data lake. Part of the changes include the `IAMAllowedPrincipals` principal in order to make Lake Formation backwards compatible with existing IAM and Glue permissions. For more information, see [Changing the Default Security Settings for Your Data Lake](https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html) and [Upgrading AWS Glue Data Permissions to the AWS Lake Formation Model](https://docs.aws.amazon.com/lake-formation/latest/dg/upgrade-glue-lake-formation.html).
    */
-  def DataLakeSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataLakeSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.DataLakeSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.lakeformation.DataLakeSettingsArgs.builder
     com.pulumi.aws.lakeformation.DataLakeSettings(name,
@@ -27,7 +27,7 @@ object lakeformation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Lake Formation Identity Center Configuration. */
-  def IdentityCenterConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IdentityCenterConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.IdentityCenterConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.lakeformation.IdentityCenterConfigurationArgs.builder
     com.pulumi.aws.lakeformation.IdentityCenterConfiguration(name,
@@ -92,7 +92,7 @@ object lakeformation:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Creates an LF-Tag with the specified name and values. Each key must have at least one value. The maximum number of values permitted is 1000. */
-  def LfTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LfTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.LfTagArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.lakeformation.LfTagArgs.builder
     com.pulumi.aws.lakeformation.LfTag(name,
@@ -100,7 +100,7 @@ object lakeformation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Lake Formation LF Tag Expression. */
-  def LfTagExpression(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LfTagExpression(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.LfTagExpressionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lakeformation.LfTagExpressionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -111,7 +111,7 @@ object lakeformation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Lake Formation Opt In. */
-  def OptIn(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OptIn(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.OptInArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.lakeformation.OptInArgs.builder
     com.pulumi.aws.lakeformation.OptIn(name,
@@ -125,7 +125,7 @@ object lakeformation:
    * 
    * &gt; **NOTE:** In general, the `principal` should _NOT_ be a Lake Formation administrator or the entity (e.g., IAM role) that is running the deployment. Administrators have implicit permissions. These should be managed by granting or not granting administrator rights using `aws.lakeformation.DataLakeSettings`, _not_ with this resource.
    */
-  def Permissions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Permissions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.PermissionsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.lakeformation.PermissionsArgs.builder
     com.pulumi.aws.lakeformation.Permissions(name,
@@ -140,7 +140,7 @@ object lakeformation:
    * Lake Formation adds the first path to the inline policy and attaches it to the service-linked role.
    * When you register subsequent paths, Lake Formation adds the path to the existing policy.
    */
-  def Resource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Resource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.ResourceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.lakeformation.ResourceArgs.builder
     com.pulumi.aws.lakeformation.Resource(name,
@@ -148,7 +148,7 @@ object lakeformation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Lake Formation Resource LF Tag. */
-  def ResourceLfTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourceLfTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.ResourceLfTagArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.lakeformation.ResourceLfTagArgs.builder
     com.pulumi.aws.lakeformation.ResourceLfTag(name,
@@ -156,7 +156,7 @@ object lakeformation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an attachment between one or more existing LF-tags and an existing Lake Formation resource. */
-  def ResourceLfTags(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourceLfTags(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lakeformation.ResourceLfTagsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.lakeformation.ResourceLfTagsArgs.builder
     com.pulumi.aws.lakeformation.ResourceLfTags(name,

@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object iot:
   /** Manages an IotHub Certificate. */
-  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.iot.CertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.iot.CertificateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18,7 +18,7 @@ object iot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Consumer Group within an IotHub */
-  def ConsumerGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConsumerGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.iot.ConsumerGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.iot.ConsumerGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -29,7 +29,7 @@ object iot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an IotHub Device Provisioning Service Shared Access Policy */
-  def DpsSharedAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DpsSharedAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.iot.DpsSharedAccessPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.iot.DpsSharedAccessPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -44,7 +44,7 @@ object iot:
    * 
    * &gt; **Note:** Endpoints can be defined either directly on the `azure.iot.IoTHub` resource, or using the `azurerm_iothub_endpoint_*` resources - but the two ways of defining the endpoints cannot be used together. If both are used against the same IoTHub, spurious changes will occur. Also, defining a `azurerm_iothub_endpoint_*` resource and another endpoint of a different type directly on the `azure.iot.IoTHub` resource is not supported.
    */
-  def EndpointCosmosdbAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EndpointCosmosdbAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.iot.EndpointCosmosdbAccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.iot.EndpointCosmosdbAccountArgs.builder
     conf.logicalName2physicalName(name) match
@@ -59,7 +59,7 @@ object iot:
    * 
    * &gt; **Note:** Endpoints can be defined either directly on the `azure.iot.IoTHub` resource, or using the `azurerm_iothub_endpoint_*` resources - but the two ways of defining the endpoints cannot be used together. If both are used against the same IoTHub, spurious changes will occur. Also, defining a `azurerm_iothub_endpoint_*` resource and another endpoint of a different type directly on the `azure.iot.IoTHub` resource is not supported.
    */
-  def EndpointEventhub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EndpointEventhub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.iot.EndpointEventhubArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.iot.EndpointEventhubArgs.builder
     conf.logicalName2physicalName(name) match
@@ -74,7 +74,7 @@ object iot:
    * 
    * &gt; **Note:** Endpoints can be defined either directly on the `azure.iot.IoTHub` resource, or using the `azurerm_iothub_endpoint_*` resources - but the two ways of defining the endpoints cannot be used together. If both are used against the same IoTHub, spurious changes will occur. Also, defining a `azurerm_iothub_endpoint_*` resource and another endpoint of a different type directly on the `azure.iot.IoTHub` resource is not supported.
    */
-  def EndpointServicebusQueue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EndpointServicebusQueue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.iot.EndpointServicebusQueueArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.iot.EndpointServicebusQueueArgs.builder
     conf.logicalName2physicalName(name) match
@@ -89,7 +89,7 @@ object iot:
    * 
    * &gt; **Note:** Endpoints can be defined either directly on the `azure.iot.IoTHub` resource, or using the `azurerm_iothub_endpoint_*` resources - but the two ways of defining the endpoints cannot be used together. If both are used against the same IoTHub, spurious changes will occur. Also, defining a `azurerm_iothub_endpoint_*` resource and another endpoint of a different type directly on the `azure.iot.IoTHub` resource is not supported.
    */
-  def EndpointServicebusTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EndpointServicebusTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.iot.EndpointServicebusTopicArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.iot.EndpointServicebusTopicArgs.builder
     conf.logicalName2physicalName(name) match
@@ -104,7 +104,7 @@ object iot:
    * 
    * &gt; **Note:** Endpoints can be defined either directly on the `azure.iot.IoTHub` resource, or using the `azurerm_iothub_endpoint_*` resources - but the two ways of defining the endpoints cannot be used together. If both are used against the same IoTHub, spurious changes will occur. Also, defining a `azurerm_iothub_endpoint_*` resource and another endpoint of a different type directly on the `azure.iot.IoTHub` resource is not supported.
    */
-  def EndpointStorageContainer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EndpointStorageContainer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.iot.EndpointStorageContainerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.iot.EndpointStorageContainerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -119,7 +119,7 @@ object iot:
    * 
    * &gt; **Note:** Enrichment can be defined either directly on the `azure.iot.IoTHub` resource, or using the `azure.iot.Enrichment` resources - but the two cannot be used together. If both are used against the same IoTHub, spurious changes will occur.
    */
-  def Enrichment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Enrichment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.iot.EnrichmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.iot.EnrichmentArgs.builder
     com.pulumi.azure.iot.Enrichment(name,
@@ -135,7 +135,7 @@ object iot:
    * 
    * &gt; **Note:** Since this resource is provisioned by default, the Azure Provider will not check for the presence of an existing resource prior to attempting to create it.
    */
-  def FallbackRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FallbackRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.iot.FallbackRouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.iot.FallbackRouteArgs.builder
     com.pulumi.azure.iot.FallbackRoute(name,
@@ -147,7 +147,7 @@ object iot:
    * 
    * &gt; **Note:** File upload can be defined either directly on the `azure.iot.IoTHub` resource, or using the `azure.iot.FileUpload` resource - but the two cannot be used together. If both are used against the same IoTHub, spurious changes will occur.
    */
-  def FileUpload(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FileUpload(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.iot.FileUploadArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.iot.FileUploadArgs.builder
     com.pulumi.azure.iot.FileUpload(name,
@@ -167,7 +167,7 @@ object iot:
    * 
    * &gt; **Note:** File upload can be defined either directly on the `azure.iot.IoTHub` resource, or using the `azure.iot.FileUpload` resource - but the two cannot be used together. If both are used against the same IoTHub, spurious changes will occur.
    */
-  def IoTHub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IoTHub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.iot.IoTHubArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.iot.IoTHubArgs.builder
     conf.logicalName2physicalName(name) match
@@ -250,7 +250,7 @@ object iot:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an IotHub Device Provisioning Service Certificate. */
-  def IotHubCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IotHubCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.iot.IotHubCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.iot.IotHubCertificateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -261,7 +261,7 @@ object iot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an IoT Hub Device Update Account. */
-  def IotHubDeviceUpdateAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IotHubDeviceUpdateAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.iot.IotHubDeviceUpdateAccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.iot.IotHubDeviceUpdateAccountArgs.builder
     conf.logicalName2physicalName(name) match
@@ -279,7 +279,7 @@ object iot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an IoT Hub Device Update Instance. */
-  def IotHubDeviceUpdateInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IotHubDeviceUpdateInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.iot.IotHubDeviceUpdateInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.iot.IotHubDeviceUpdateInstanceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -297,7 +297,7 @@ object iot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an IotHub Device Provisioning Service. */
-  def IotHubDps(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IotHubDps(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.iot.IotHubDpsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.iot.IotHubDpsArgs.builder
     conf.logicalName2physicalName(name) match
@@ -319,7 +319,7 @@ object iot:
    * 
    * &gt; **Note:** Routes can be defined either directly on the `azure.iot.IoTHub` resource, or using the `azure.iot.Route` resource - but the two cannot be used together. If both are used against the same IoTHub, spurious changes will occur.
    */
-  def Route(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Route(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.iot.RouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.iot.RouteArgs.builder
     conf.logicalName2physicalName(name) match
@@ -330,7 +330,7 @@ object iot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Iot Security Device Group. */
-  def SecurityDeviceGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecurityDeviceGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.iot.SecurityDeviceGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.iot.SecurityDeviceGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -341,7 +341,7 @@ object iot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an iot security solution. */
-  def SecuritySolution(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecuritySolution(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.iot.SecuritySolutionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.iot.SecuritySolutionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -359,7 +359,7 @@ object iot:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an IotHub Shared Access Policy */
-  def SharedAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SharedAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.iot.SharedAccessPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.iot.SharedAccessPolicyArgs.builder
     conf.logicalName2physicalName(name) match

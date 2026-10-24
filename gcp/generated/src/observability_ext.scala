@@ -8,7 +8,7 @@ object observability_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cmekSettings(args: Endofunction[com.pulumi.gcp.observability.inputs.BucketCmekSettingsArgs.Builder]):
+    inline def cmekSettings(args: Endofunction[com.pulumi.gcp.observability.inputs.BucketCmekSettingsArgs.Builder]):
         com.pulumi.gcp.observability.BucketArgs.Builder =
       val argsBuilder = com.pulumi.gcp.observability.inputs.BucketCmekSettingsArgs.builder
       builder.cmekSettings(args(argsBuilder).build)
@@ -19,7 +19,7 @@ object observability_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cmekSettings(args: Endofunction[com.pulumi.gcp.observability.inputs.BucketCmekSettingsArgs.Builder]):
+    inline def cmekSettings(args: Endofunction[com.pulumi.gcp.observability.inputs.BucketCmekSettingsArgs.Builder]):
         com.pulumi.gcp.observability.inputs.BucketState.Builder =
       val argsBuilder = com.pulumi.gcp.observability.inputs.BucketCmekSettingsArgs.builder
       builder.cmekSettings(args(argsBuilder).build)

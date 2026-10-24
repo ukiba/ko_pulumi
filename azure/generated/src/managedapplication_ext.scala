@@ -7,7 +7,7 @@ object managedapplication_ext:
      * @param plan One `plan` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def plan(args: Endofunction[com.pulumi.azure.managedapplication.inputs.ApplicationPlanArgs.Builder]):
+    inline def plan(args: Endofunction[com.pulumi.azure.managedapplication.inputs.ApplicationPlanArgs.Builder]):
         com.pulumi.azure.managedapplication.ApplicationArgs.Builder =
       val argsBuilder = com.pulumi.azure.managedapplication.inputs.ApplicationPlanArgs.builder
       builder.plan(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object managedapplication_ext:
      * @param authorizations One or more `authorization` block defined below.
      * @return builder
      */
-    def authorizations(args: Endofunction[com.pulumi.azure.managedapplication.inputs.DefinitionAuthorizationArgs.Builder]*):
+    inline def authorizations(args: Endofunction[com.pulumi.azure.managedapplication.inputs.DefinitionAuthorizationArgs.Builder]*):
         com.pulumi.azure.managedapplication.DefinitionArgs.Builder =
       def argsBuilder = com.pulumi.azure.managedapplication.inputs.DefinitionAuthorizationArgs.builder
       builder.authorizations(args.map(_(argsBuilder).build)*)
@@ -27,7 +27,7 @@ object managedapplication_ext:
      * @param plan One `plan` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def plan(args: Endofunction[com.pulumi.azure.managedapplication.inputs.ApplicationPlanArgs.Builder]):
+    inline def plan(args: Endofunction[com.pulumi.azure.managedapplication.inputs.ApplicationPlanArgs.Builder]):
         com.pulumi.azure.managedapplication.inputs.ApplicationState.Builder =
       val argsBuilder = com.pulumi.azure.managedapplication.inputs.ApplicationPlanArgs.builder
       builder.plan(args(argsBuilder).build)
@@ -37,7 +37,7 @@ object managedapplication_ext:
      * @param authorizations One or more `authorization` block defined below.
      * @return builder
      */
-    def authorizations(args: Endofunction[com.pulumi.azure.managedapplication.inputs.DefinitionAuthorizationArgs.Builder]*):
+    inline def authorizations(args: Endofunction[com.pulumi.azure.managedapplication.inputs.DefinitionAuthorizationArgs.Builder]*):
         com.pulumi.azure.managedapplication.inputs.DefinitionState.Builder =
       def argsBuilder = com.pulumi.azure.managedapplication.inputs.DefinitionAuthorizationArgs.builder
       builder.authorizations(args.map(_(argsBuilder).build)*)

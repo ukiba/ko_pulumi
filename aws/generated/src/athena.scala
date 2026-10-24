@@ -28,7 +28,7 @@ object athena:
    * 
    * &gt; Destruction of this resource will both [cancel](https://docs.aws.amazon.com/athena/latest/ug/capacity-management-cancelling-a-capacity-reservation.html) and [delete](https://docs.aws.amazon.com/athena/latest/ug/capacity-management-deleting-a-capacity-reservation.html) the capacity reservation.
    */
-  def CapacityReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CapacityReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.athena.CapacityReservationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.athena.CapacityReservationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -52,7 +52,7 @@ object athena:
    * 
    * &gt; **Tip:** for a more detailed explanation on the usage of `parameters`, see the [DataCatalog API documentation](https://docs.aws.amazon.com/athena/latest/APIReference/API_DataCatalog.html)
    */
-  def DataCatalog(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataCatalog(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.athena.DataCatalogArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.athena.DataCatalogArgs.builder
     conf.logicalName2physicalName(name) match
@@ -70,7 +70,7 @@ object athena:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Athena database. */
-  def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.athena.DatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.athena.DatabaseArgs.builder
     conf.logicalName2physicalName(name) match
@@ -81,7 +81,7 @@ object athena:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Athena Named Query resource. */
-  def NamedQuery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NamedQuery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.athena.NamedQueryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.athena.NamedQueryArgs.builder
     conf.logicalName2physicalName(name) match
@@ -92,7 +92,7 @@ object athena:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an Athena Prepared Statement. */
-  def PreparedStatement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PreparedStatement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.athena.PreparedStatementArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.athena.PreparedStatementArgs.builder
     conf.logicalName2physicalName(name) match
@@ -103,7 +103,7 @@ object athena:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Athena Workgroup. */
-  def Workgroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Workgroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.athena.WorkgroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.athena.WorkgroupArgs.builder
     conf.logicalName2physicalName(name) match

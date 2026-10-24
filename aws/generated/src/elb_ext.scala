@@ -7,7 +7,7 @@ object elb_ext:
      * @param accessLogs An Access Logs block. Access Logs documented below.
      * @return builder
      */
-    def accessLogs(args: Endofunction[com.pulumi.aws.elb.inputs.LoadBalancerAccessLogsArgs.Builder]):
+    inline def accessLogs(args: Endofunction[com.pulumi.aws.elb.inputs.LoadBalancerAccessLogsArgs.Builder]):
         com.pulumi.aws.elb.LoadBalancerArgs.Builder =
       val argsBuilder = com.pulumi.aws.elb.inputs.LoadBalancerAccessLogsArgs.builder
       builder.accessLogs(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object elb_ext:
      * @param healthCheck A healthCheck block. Health Check documented below.
      * @return builder
      */
-    def healthCheck(args: Endofunction[com.pulumi.aws.elb.inputs.LoadBalancerHealthCheckArgs.Builder]):
+    inline def healthCheck(args: Endofunction[com.pulumi.aws.elb.inputs.LoadBalancerHealthCheckArgs.Builder]):
         com.pulumi.aws.elb.LoadBalancerArgs.Builder =
       val argsBuilder = com.pulumi.aws.elb.inputs.LoadBalancerHealthCheckArgs.builder
       builder.healthCheck(args(argsBuilder).build)
@@ -25,7 +25,7 @@ object elb_ext:
      * @param listeners A list of listener blocks. Listeners documented below.
      * @return builder
      */
-    def listeners(args: Endofunction[com.pulumi.aws.elb.inputs.LoadBalancerListenerArgs.Builder]*):
+    inline def listeners(args: Endofunction[com.pulumi.aws.elb.inputs.LoadBalancerListenerArgs.Builder]*):
         com.pulumi.aws.elb.LoadBalancerArgs.Builder =
       def argsBuilder = com.pulumi.aws.elb.inputs.LoadBalancerListenerArgs.builder
       builder.listeners(args.map(_(argsBuilder).build)*)
@@ -35,7 +35,7 @@ object elb_ext:
      * @param policyAttributes Policy attribute to apply to the policy.
      * @return builder
      */
-    def policyAttributes(args: Endofunction[com.pulumi.aws.elb.inputs.LoadBalancerPolicyPolicyAttributeArgs.Builder]*):
+    inline def policyAttributes(args: Endofunction[com.pulumi.aws.elb.inputs.LoadBalancerPolicyPolicyAttributeArgs.Builder]*):
         com.pulumi.aws.elb.LoadBalancerPolicyArgs.Builder =
       def argsBuilder = com.pulumi.aws.elb.inputs.LoadBalancerPolicyPolicyAttributeArgs.builder
       builder.policyAttributes(args.map(_(argsBuilder).build)*)
@@ -45,7 +45,7 @@ object elb_ext:
      * @param attributes An SSL Negotiation policy attribute. Each has two properties:
      * @return builder
      */
-    def attributes(args: Endofunction[com.pulumi.aws.elb.inputs.SslNegotiationPolicyAttributeArgs.Builder]*):
+    inline def attributes(args: Endofunction[com.pulumi.aws.elb.inputs.SslNegotiationPolicyAttributeArgs.Builder]*):
         com.pulumi.aws.elb.SslNegotiationPolicyArgs.Builder =
       def argsBuilder = com.pulumi.aws.elb.inputs.SslNegotiationPolicyAttributeArgs.builder
       builder.attributes(args.map(_(argsBuilder).build)*)
@@ -55,7 +55,7 @@ object elb_ext:
      * @param policyAttributes Policy attribute to apply to the policy.
      * @return builder
      */
-    def policyAttributes(args: Endofunction[com.pulumi.aws.elb.inputs.LoadBalancerPolicyPolicyAttributeArgs.Builder]*):
+    inline def policyAttributes(args: Endofunction[com.pulumi.aws.elb.inputs.LoadBalancerPolicyPolicyAttributeArgs.Builder]*):
         com.pulumi.aws.elb.inputs.LoadBalancerPolicyState.Builder =
       def argsBuilder = com.pulumi.aws.elb.inputs.LoadBalancerPolicyPolicyAttributeArgs.builder
       builder.policyAttributes(args.map(_(argsBuilder).build)*)
@@ -65,7 +65,7 @@ object elb_ext:
      * @param accessLogs An Access Logs block. Access Logs documented below.
      * @return builder
      */
-    def accessLogs(args: Endofunction[com.pulumi.aws.elb.inputs.LoadBalancerAccessLogsArgs.Builder]):
+    inline def accessLogs(args: Endofunction[com.pulumi.aws.elb.inputs.LoadBalancerAccessLogsArgs.Builder]):
         com.pulumi.aws.elb.inputs.LoadBalancerState.Builder =
       val argsBuilder = com.pulumi.aws.elb.inputs.LoadBalancerAccessLogsArgs.builder
       builder.accessLogs(args(argsBuilder).build)
@@ -74,7 +74,7 @@ object elb_ext:
      * @param healthCheck A healthCheck block. Health Check documented below.
      * @return builder
      */
-    def healthCheck(args: Endofunction[com.pulumi.aws.elb.inputs.LoadBalancerHealthCheckArgs.Builder]):
+    inline def healthCheck(args: Endofunction[com.pulumi.aws.elb.inputs.LoadBalancerHealthCheckArgs.Builder]):
         com.pulumi.aws.elb.inputs.LoadBalancerState.Builder =
       val argsBuilder = com.pulumi.aws.elb.inputs.LoadBalancerHealthCheckArgs.builder
       builder.healthCheck(args(argsBuilder).build)
@@ -83,7 +83,7 @@ object elb_ext:
      * @param listeners A list of listener blocks. Listeners documented below.
      * @return builder
      */
-    def listeners(args: Endofunction[com.pulumi.aws.elb.inputs.LoadBalancerListenerArgs.Builder]*):
+    inline def listeners(args: Endofunction[com.pulumi.aws.elb.inputs.LoadBalancerListenerArgs.Builder]*):
         com.pulumi.aws.elb.inputs.LoadBalancerState.Builder =
       def argsBuilder = com.pulumi.aws.elb.inputs.LoadBalancerListenerArgs.builder
       builder.listeners(args.map(_(argsBuilder).build)*)
@@ -93,7 +93,7 @@ object elb_ext:
      * @param attributes An SSL Negotiation policy attribute. Each has two properties:
      * @return builder
      */
-    def attributes(args: Endofunction[com.pulumi.aws.elb.inputs.SslNegotiationPolicyAttributeArgs.Builder]*):
+    inline def attributes(args: Endofunction[com.pulumi.aws.elb.inputs.SslNegotiationPolicyAttributeArgs.Builder]*):
         com.pulumi.aws.elb.inputs.SslNegotiationPolicyState.Builder =
       def argsBuilder = com.pulumi.aws.elb.inputs.SslNegotiationPolicyAttributeArgs.builder
       builder.attributes(args.map(_(argsBuilder).build)*)

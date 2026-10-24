@@ -11,7 +11,7 @@ object monitoring:
    * 
    * &gt; **Note:** When using Service Principal authentication, the Service Principal must be assigned the _Contributor_ role at the scope `/providers/Microsoft.aadiam`. You can assign this role using the `az` CLI command: `az role assignment create --assignee-principal-type ServicePrincipal --assignee-object-id &#34;&lt;sp-object-id&gt;&#34; --scope &#34;/providers/Microsoft.aadiam&#34; --role &#34;Contributor&#34;`. The assigning user must be a User Access Administrator at the root level. Refer to the [Azure elevation guide](https://learn.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin) for details.
    */
-  def AadDiagnosticSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AadDiagnosticSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.monitoring.AadDiagnosticSettingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.monitoring.AadDiagnosticSettingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -22,7 +22,7 @@ object monitoring:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Action Group within Azure Monitor. */
-  def ActionGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ActionGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.monitoring.ActionGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.monitoring.ActionGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -40,7 +40,7 @@ object monitoring:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Activity Log Alert within Azure Monitor. */
-  def ActivityLogAlert(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ActivityLogAlert(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.monitoring.ActivityLogAlertArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.monitoring.ActivityLogAlertArgs.builder
     conf.logicalName2physicalName(name) match
@@ -58,7 +58,7 @@ object monitoring:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Alert Processing Rule which apply action group. */
-  def AlertProcessingRuleActionGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AlertProcessingRuleActionGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.monitoring.AlertProcessingRuleActionGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.monitoring.AlertProcessingRuleActionGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -76,7 +76,7 @@ object monitoring:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Alert Processing Rule which suppress notifications. */
-  def AlertProcessingRuleSuppression(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AlertProcessingRuleSuppression(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.monitoring.AlertProcessingRuleSuppressionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.monitoring.AlertProcessingRuleSuppressionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -94,7 +94,7 @@ object monitoring:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Alert Management Prometheus Rule Group. */
-  def AlertPrometheusRuleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AlertPrometheusRuleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.monitoring.AlertPrometheusRuleGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.monitoring.AlertPrometheusRuleGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -112,7 +112,7 @@ object monitoring:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a AutoScale Setting which can be applied to Virtual Machine Scale Sets, App Services and other scalable resources. */
-  def AutoscaleSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AutoscaleSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.monitoring.AutoscaleSettingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.monitoring.AutoscaleSettingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -130,7 +130,7 @@ object monitoring:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Data Collection Endpoint. */
-  def DataCollectionEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataCollectionEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.monitoring.DataCollectionEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.monitoring.DataCollectionEndpointArgs.builder
     conf.logicalName2physicalName(name) match
@@ -158,7 +158,7 @@ object monitoring:
    * \$ pulumi import azure:monitoring/dataCollectionRule:DataCollectionRule example /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/group1/providers/Microsoft.Insights/dataCollectionRules/rule1
    * ```
    */
-  def DataCollectionRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataCollectionRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.monitoring.DataCollectionRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.monitoring.DataCollectionRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -176,7 +176,7 @@ object monitoring:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Data Collection Rule Association. */
-  def DataCollectionRuleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataCollectionRuleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.monitoring.DataCollectionRuleAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.monitoring.DataCollectionRuleAssociationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -187,7 +187,7 @@ object monitoring:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Diagnostic Setting for an existing Resource. */
-  def DiagnosticSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DiagnosticSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.monitoring.DiagnosticSettingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.monitoring.DiagnosticSettingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -198,7 +198,7 @@ object monitoring:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Metric Alert within Azure Monitor. */
-  def MetricAlert(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MetricAlert(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.monitoring.MetricAlertArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.monitoring.MetricAlertArgs.builder
     conf.logicalName2physicalName(name) match
@@ -329,7 +329,7 @@ object monitoring:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an Azure Monitor Private Link Scope. */
-  def PrivateLinkScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PrivateLinkScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.monitoring.PrivateLinkScopeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.monitoring.PrivateLinkScopeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -347,7 +347,7 @@ object monitoring:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Monitor Private Link Scoped Service. */
-  def PrivateLinkScopedService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PrivateLinkScopedService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.monitoring.PrivateLinkScopedServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.monitoring.PrivateLinkScopedServiceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -362,7 +362,7 @@ object monitoring:
    * 
    * &gt; **Note:** This resource is using an older AzureRM API version which is known to cause problems e.g. with custom webhook properties not included in triggered alerts. This resource is superseded by the azure.monitoring.ScheduledQueryRulesAlertV2 resource using newer API versions.
    */
-  def ScheduledQueryRulesAlert(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ScheduledQueryRulesAlert(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.monitoring.ScheduledQueryRulesAlertArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.monitoring.ScheduledQueryRulesAlertArgs.builder
     conf.logicalName2physicalName(name) match
@@ -380,7 +380,7 @@ object monitoring:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AlertingAction Scheduled Query Rules Version 2 resource within Azure Monitor */
-  def ScheduledQueryRulesAlertV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ScheduledQueryRulesAlertV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.monitoring.ScheduledQueryRulesAlertV2Args.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.monitoring.ScheduledQueryRulesAlertV2Args.builder
     conf.logicalName2physicalName(name) match
@@ -398,7 +398,7 @@ object monitoring:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a LogToMetricAction Scheduled Query Rules resource within Azure Monitor. */
-  def ScheduledQueryRulesLog(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ScheduledQueryRulesLog(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.monitoring.ScheduledQueryRulesLogArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.monitoring.ScheduledQueryRulesLogArgs.builder
     conf.logicalName2physicalName(name) match
@@ -416,7 +416,7 @@ object monitoring:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Monitor Smart Detector Alert Rule. */
-  def SmartDetectorAlertRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SmartDetectorAlertRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.monitoring.SmartDetectorAlertRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.monitoring.SmartDetectorAlertRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -434,7 +434,7 @@ object monitoring:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Monitor Workspace. */
-  def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.monitoring.WorkspaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.monitoring.WorkspaceArgs.builder
     conf.logicalName2physicalName(name) match

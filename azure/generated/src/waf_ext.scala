@@ -7,7 +7,7 @@ object waf_ext:
      * @param customRules One or more `customRules` blocks as defined below.
      * @return builder
      */
-    def customRules(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyCustomRuleArgs.Builder]*):
+    inline def customRules(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyCustomRuleArgs.Builder]*):
         com.pulumi.azure.waf.PolicyArgs.Builder =
       def argsBuilder = com.pulumi.azure.waf.inputs.PolicyCustomRuleArgs.builder
       builder.customRules(args.map(_(argsBuilder).build)*)
@@ -16,7 +16,7 @@ object waf_ext:
      * @param managedRules A `managedRules` blocks as defined below.
      * @return builder
      */
-    def managedRules(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyManagedRulesArgs.Builder]):
+    inline def managedRules(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyManagedRulesArgs.Builder]):
         com.pulumi.azure.waf.PolicyArgs.Builder =
       val argsBuilder = com.pulumi.azure.waf.inputs.PolicyManagedRulesArgs.builder
       builder.managedRules(args(argsBuilder).build)
@@ -25,7 +25,7 @@ object waf_ext:
      * @param policySettings A `policySettings` block as defined below.
      * @return builder
      */
-    def policySettings(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyPolicySettingsArgs.Builder]):
+    inline def policySettings(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyPolicySettingsArgs.Builder]):
         com.pulumi.azure.waf.PolicyArgs.Builder =
       val argsBuilder = com.pulumi.azure.waf.inputs.PolicyPolicySettingsArgs.builder
       builder.policySettings(args(argsBuilder).build)
@@ -35,7 +35,7 @@ object waf_ext:
      * @param matchConditions One or more `matchConditions` blocks as defined below.
      * @return builder
      */
-    def matchConditions(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyCustomRuleMatchConditionArgs.Builder]*):
+    inline def matchConditions(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyCustomRuleMatchConditionArgs.Builder]*):
         com.pulumi.azure.waf.inputs.PolicyCustomRuleArgs.Builder =
       def argsBuilder = com.pulumi.azure.waf.inputs.PolicyCustomRuleMatchConditionArgs.builder
       builder.matchConditions(args.map(_(argsBuilder).build)*)
@@ -45,7 +45,7 @@ object waf_ext:
      * @param matchVariables One or more `matchVariables` blocks as defined below.
      * @return builder
      */
-    def matchVariables(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyCustomRuleMatchConditionMatchVariableArgs.Builder]*):
+    inline def matchVariables(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyCustomRuleMatchConditionMatchVariableArgs.Builder]*):
         com.pulumi.azure.waf.inputs.PolicyCustomRuleMatchConditionArgs.Builder =
       def argsBuilder = com.pulumi.azure.waf.inputs.PolicyCustomRuleMatchConditionMatchVariableArgs.builder
       builder.matchVariables(args.map(_(argsBuilder).build)*)
@@ -55,7 +55,7 @@ object waf_ext:
      * @param exclusions One or more `exclusion` block defined below.
      * @return builder
      */
-    def exclusions(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyManagedRulesExclusionArgs.Builder]*):
+    inline def exclusions(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyManagedRulesExclusionArgs.Builder]*):
         com.pulumi.azure.waf.inputs.PolicyManagedRulesArgs.Builder =
       def argsBuilder = com.pulumi.azure.waf.inputs.PolicyManagedRulesExclusionArgs.builder
       builder.exclusions(args.map(_(argsBuilder).build)*)
@@ -64,7 +64,7 @@ object waf_ext:
      * @param managedRuleSets One or more `managedRuleSet` block defined below.
      * @return builder
      */
-    def managedRuleSets(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyManagedRulesManagedRuleSetArgs.Builder]*):
+    inline def managedRuleSets(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyManagedRulesManagedRuleSetArgs.Builder]*):
         com.pulumi.azure.waf.inputs.PolicyManagedRulesArgs.Builder =
       def argsBuilder = com.pulumi.azure.waf.inputs.PolicyManagedRulesManagedRuleSetArgs.builder
       builder.managedRuleSets(args.map(_(argsBuilder).build)*)
@@ -74,7 +74,7 @@ object waf_ext:
      * @param excludedRuleSet One or more `excludedRuleSet` block defined below.
      * @return builder
      */
-    def excludedRuleSet(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyManagedRulesExclusionExcludedRuleSetArgs.Builder]):
+    inline def excludedRuleSet(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyManagedRulesExclusionExcludedRuleSetArgs.Builder]):
         com.pulumi.azure.waf.inputs.PolicyManagedRulesExclusionArgs.Builder =
       val argsBuilder = com.pulumi.azure.waf.inputs.PolicyManagedRulesExclusionExcludedRuleSetArgs.builder
       builder.excludedRuleSet(args(argsBuilder).build)
@@ -84,7 +84,7 @@ object waf_ext:
      * @param ruleGroups One or more `ruleGroup` block defined below.
      * @return builder
      */
-    def ruleGroups(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyManagedRulesExclusionExcludedRuleSetRuleGroupArgs.Builder]*):
+    inline def ruleGroups(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyManagedRulesExclusionExcludedRuleSetRuleGroupArgs.Builder]*):
         com.pulumi.azure.waf.inputs.PolicyManagedRulesExclusionExcludedRuleSetArgs.Builder =
       def argsBuilder = com.pulumi.azure.waf.inputs.PolicyManagedRulesExclusionExcludedRuleSetRuleGroupArgs.builder
       builder.ruleGroups(args.map(_(argsBuilder).build)*)
@@ -94,7 +94,7 @@ object waf_ext:
      * @param ruleGroupOverrides One or more `ruleGroupOverride` block defined below.
      * @return builder
      */
-    def ruleGroupOverrides(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyManagedRulesManagedRuleSetRuleGroupOverrideArgs.Builder]*):
+    inline def ruleGroupOverrides(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyManagedRulesManagedRuleSetRuleGroupOverrideArgs.Builder]*):
         com.pulumi.azure.waf.inputs.PolicyManagedRulesManagedRuleSetArgs.Builder =
       def argsBuilder = com.pulumi.azure.waf.inputs.PolicyManagedRulesManagedRuleSetRuleGroupOverrideArgs.builder
       builder.ruleGroupOverrides(args.map(_(argsBuilder).build)*)
@@ -104,7 +104,7 @@ object waf_ext:
      * @param rules One or more `rule` block defined below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyManagedRulesManagedRuleSetRuleGroupOverrideRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyManagedRulesManagedRuleSetRuleGroupOverrideRuleArgs.Builder]*):
         com.pulumi.azure.waf.inputs.PolicyManagedRulesManagedRuleSetRuleGroupOverrideArgs.Builder =
       def argsBuilder = com.pulumi.azure.waf.inputs.PolicyManagedRulesManagedRuleSetRuleGroupOverrideRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -114,7 +114,7 @@ object waf_ext:
      * @param logScrubbing One `logScrubbing` block as defined below.
      * @return builder
      */
-    def logScrubbing(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyPolicySettingsLogScrubbingArgs.Builder]):
+    inline def logScrubbing(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyPolicySettingsLogScrubbingArgs.Builder]):
         com.pulumi.azure.waf.inputs.PolicyPolicySettingsArgs.Builder =
       val argsBuilder = com.pulumi.azure.waf.inputs.PolicyPolicySettingsLogScrubbingArgs.builder
       builder.logScrubbing(args(argsBuilder).build)
@@ -124,7 +124,7 @@ object waf_ext:
      * @param rules One or more `scrubbingRule` blocks as define below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyPolicySettingsLogScrubbingRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyPolicySettingsLogScrubbingRuleArgs.Builder]*):
         com.pulumi.azure.waf.inputs.PolicyPolicySettingsLogScrubbingArgs.Builder =
       def argsBuilder = com.pulumi.azure.waf.inputs.PolicyPolicySettingsLogScrubbingRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -134,7 +134,7 @@ object waf_ext:
      * @param customRules One or more `customRules` blocks as defined below.
      * @return builder
      */
-    def customRules(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyCustomRuleArgs.Builder]*):
+    inline def customRules(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyCustomRuleArgs.Builder]*):
         com.pulumi.azure.waf.inputs.PolicyState.Builder =
       def argsBuilder = com.pulumi.azure.waf.inputs.PolicyCustomRuleArgs.builder
       builder.customRules(args.map(_(argsBuilder).build)*)
@@ -143,7 +143,7 @@ object waf_ext:
      * @param managedRules A `managedRules` blocks as defined below.
      * @return builder
      */
-    def managedRules(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyManagedRulesArgs.Builder]):
+    inline def managedRules(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyManagedRulesArgs.Builder]):
         com.pulumi.azure.waf.inputs.PolicyState.Builder =
       val argsBuilder = com.pulumi.azure.waf.inputs.PolicyManagedRulesArgs.builder
       builder.managedRules(args(argsBuilder).build)
@@ -152,7 +152,7 @@ object waf_ext:
      * @param policySettings A `policySettings` block as defined below.
      * @return builder
      */
-    def policySettings(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyPolicySettingsArgs.Builder]):
+    inline def policySettings(args: Endofunction[com.pulumi.azure.waf.inputs.PolicyPolicySettingsArgs.Builder]):
         com.pulumi.azure.waf.inputs.PolicyState.Builder =
       val argsBuilder = com.pulumi.azure.waf.inputs.PolicyPolicySettingsArgs.builder
       builder.policySettings(args(argsBuilder).build)

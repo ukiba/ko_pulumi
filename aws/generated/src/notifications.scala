@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object notifications:
   /** Resource for managing an AWS User Notifications Channel Association. This resource associates a channel (such as an email contact) with a notification configuration. */
-  def ChannelAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ChannelAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.notifications.ChannelAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.notifications.ChannelAssociationArgs.builder
     com.pulumi.aws.notifications.ChannelAssociation(name,
@@ -13,7 +13,7 @@ object notifications:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing AWS User Notifications Contacts Email Contact. */
-  def ContactsEmailContact(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ContactsEmailContact(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.notifications.ContactsEmailContactArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.notifications.ContactsEmailContactArgs.builder
     conf.logicalName2physicalName(name) match
@@ -31,7 +31,7 @@ object notifications:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS User Notifications Event Rule. */
-  def EventRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EventRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.notifications.EventRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.notifications.EventRuleArgs.builder
     com.pulumi.aws.notifications.EventRule(name,
@@ -39,7 +39,7 @@ object notifications:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS User Notifications Managed Notification Account Contact Association. This resource associates an account contact with a managed notification configuration. */
-  def ManagedNotificationAccountContactAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedNotificationAccountContactAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.notifications.ManagedNotificationAccountContactAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.notifications.ManagedNotificationAccountContactAssociationArgs.builder
     com.pulumi.aws.notifications.ManagedNotificationAccountContactAssociation(name,
@@ -47,7 +47,7 @@ object notifications:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS User Notifications Managed Notification Additional Channel Association. This resource associates a channel (such as an email contact, mobile device, or chat channel) with a managed notification. */
-  def ManagedNotificationAdditionalChannelAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedNotificationAdditionalChannelAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.notifications.ManagedNotificationAdditionalChannelAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.notifications.ManagedNotificationAdditionalChannelAssociationArgs.builder
     com.pulumi.aws.notifications.ManagedNotificationAdditionalChannelAssociation(name,
@@ -55,7 +55,7 @@ object notifications:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS User Notifications Notification Configuration. */
-  def NotificationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NotificationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.notifications.NotificationConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.notifications.NotificationConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -73,7 +73,7 @@ object notifications:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS User Notifications Notification Hub. */
-  def NotificationHub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NotificationHub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.notifications.NotificationHubArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.notifications.NotificationHubArgs.builder
     com.pulumi.aws.notifications.NotificationHub(name,
@@ -81,7 +81,7 @@ object notifications:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS User Notifications Organizational Unit Association. This resource associates an organizational unit with a notification configuration. */
-  def OrganizationalUnitAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationalUnitAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.notifications.OrganizationalUnitAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.notifications.OrganizationalUnitAssociationArgs.builder
     com.pulumi.aws.notifications.OrganizationalUnitAssociation(name,
@@ -95,7 +95,7 @@ object notifications:
    * 
    * &gt; **NOTE:** Deleting this resource will always disable organizations access for AWS User Notifications, regardless of the `enabled` attribute value.
    */
-  def OrganizationsAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationsAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.notifications.OrganizationsAccessArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.notifications.OrganizationsAccessArgs.builder
     com.pulumi.aws.notifications.OrganizationsAccess(name,

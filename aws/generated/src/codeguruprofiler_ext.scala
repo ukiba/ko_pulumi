@@ -7,7 +7,7 @@ object codeguruprofiler_ext:
      * @param agentOrchestrationConfig Specifies whether profiling is enabled or disabled for the created profiling. See Agent Orchestration Config for more details.
      * @return builder
      */
-    def agentOrchestrationConfig(args: Endofunction[com.pulumi.aws.codeguruprofiler.inputs.ProfilingGroupAgentOrchestrationConfigArgs.Builder]):
+    inline def agentOrchestrationConfig(args: Endofunction[com.pulumi.aws.codeguruprofiler.inputs.ProfilingGroupAgentOrchestrationConfigArgs.Builder]):
         com.pulumi.aws.codeguruprofiler.ProfilingGroupArgs.Builder =
       val argsBuilder = com.pulumi.aws.codeguruprofiler.inputs.ProfilingGroupAgentOrchestrationConfigArgs.builder
       builder.agentOrchestrationConfig(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object codeguruprofiler_ext:
      * @param agentOrchestrationConfig Specifies whether profiling is enabled or disabled for the created profiling. See Agent Orchestration Config for more details.
      * @return builder
      */
-    def agentOrchestrationConfig(args: Endofunction[com.pulumi.aws.codeguruprofiler.inputs.ProfilingGroupAgentOrchestrationConfigArgs.Builder]):
+    inline def agentOrchestrationConfig(args: Endofunction[com.pulumi.aws.codeguruprofiler.inputs.ProfilingGroupAgentOrchestrationConfigArgs.Builder]):
         com.pulumi.aws.codeguruprofiler.inputs.ProfilingGroupState.Builder =
       val argsBuilder = com.pulumi.aws.codeguruprofiler.inputs.ProfilingGroupAgentOrchestrationConfigArgs.builder
       builder.agentOrchestrationConfig(args(argsBuilder).build)

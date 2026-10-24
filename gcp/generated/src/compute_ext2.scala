@@ -13,7 +13,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def routeAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionArgs.Builder]):
+    inline def routeAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionArgs.builder
       builder.routeAction(args(argsBuilder).build)
@@ -25,7 +25,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def urlRedirect(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleUrlRedirectArgs.Builder]):
+    inline def urlRedirect(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleUrlRedirectArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleUrlRedirectArgs.builder
       builder.urlRedirect(args(argsBuilder).build)
@@ -37,7 +37,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def corsPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionCorsPolicyArgs.Builder]):
+    inline def corsPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionCorsPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionCorsPolicyArgs.builder
       builder.corsPolicy(args(argsBuilder).build)
@@ -53,7 +53,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def faultInjectionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicyArgs.Builder]):
+    inline def faultInjectionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicyArgs.builder
       builder.faultInjectionPolicy(args(argsBuilder).build)
@@ -66,7 +66,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def requestMirrorPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionRequestMirrorPolicyArgs.Builder]):
+    inline def requestMirrorPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionRequestMirrorPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionRequestMirrorPolicyArgs.builder
       builder.requestMirrorPolicy(args(argsBuilder).build)
@@ -76,7 +76,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def retryPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionRetryPolicyArgs.Builder]):
+    inline def retryPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionRetryPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
@@ -89,7 +89,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def timeout(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionTimeoutArgs.Builder]):
+    inline def timeout(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionTimeoutArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionTimeoutArgs.builder
       builder.timeout(args(argsBuilder).build)
@@ -100,7 +100,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def urlRewrite(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionUrlRewriteArgs.Builder]):
+    inline def urlRewrite(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionUrlRewriteArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionUrlRewriteArgs.builder
       builder.urlRewrite(args(argsBuilder).build)
@@ -117,7 +117,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def weightedBackendServices(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceArgs.Builder]*):
+    inline def weightedBackendServices(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceArgs.builder
       builder.weightedBackendServices(args.map(_(argsBuilder).build)*)
@@ -128,7 +128,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def abort(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicyAbortArgs.Builder]):
+    inline def abort(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicyAbortArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicyAbortArgs.builder
       builder.abort(args(argsBuilder).build)
@@ -138,7 +138,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def delay(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicyDelayArgs.Builder]):
+    inline def delay(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicyDelayArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicyDelayArgs.builder
       builder.delay(args(argsBuilder).build)
@@ -149,7 +149,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def fixedDelay(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicyDelayFixedDelayArgs.Builder]):
+    inline def fixedDelay(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicyDelayFixedDelayArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicyDelayArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionFaultInjectionPolicyDelayFixedDelayArgs.builder
       builder.fixedDelay(args(argsBuilder).build)
@@ -162,7 +162,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def perTryTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionRetryPolicyPerTryTimeoutArgs.Builder]):
+    inline def perTryTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionRetryPolicyPerTryTimeoutArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionRetryPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionRetryPolicyPerTryTimeoutArgs.builder
       builder.perTryTimeout(args(argsBuilder).build)
@@ -176,7 +176,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionArgs.Builder]):
+    inline def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionArgs.builder
       builder.headerAction(args(argsBuilder).build)
@@ -187,7 +187,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAddArgs.Builder]*):
+    inline def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAddArgs.builder
       builder.requestHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -197,7 +197,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAddArgs.Builder]*):
+    inline def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAddArgs.builder
       builder.responseHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -211,7 +211,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleHeaderActionArgs.Builder]):
+    inline def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleHeaderActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleHeaderActionArgs.builder
       builder.headerAction(args(argsBuilder).build)
@@ -221,7 +221,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def matchRules(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleMatchRuleArgs.Builder]*):
+    inline def matchRules(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleMatchRuleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleMatchRuleArgs.builder
       builder.matchRules(args.map(_(argsBuilder).build)*)
@@ -236,7 +236,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def routeAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionArgs.Builder]):
+    inline def routeAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionArgs.builder
       builder.routeAction(args(argsBuilder).build)
@@ -248,7 +248,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def urlRedirect(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleUrlRedirectArgs.Builder]):
+    inline def urlRedirect(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleUrlRedirectArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleUrlRedirectArgs.builder
       builder.urlRedirect(args(argsBuilder).build)
@@ -259,7 +259,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleHeaderActionRequestHeadersToAddArgs.Builder]*):
+    inline def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleHeaderActionRequestHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleHeaderActionRequestHeadersToAddArgs.builder
       builder.requestHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -269,7 +269,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleHeaderActionResponseHeadersToAddArgs.Builder]*):
+    inline def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleHeaderActionResponseHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleHeaderActionResponseHeadersToAddArgs.builder
       builder.responseHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -281,7 +281,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def headerMatches(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatchArgs.Builder]*):
+    inline def headerMatches(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatchArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleMatchRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatchArgs.builder
       builder.headerMatches(args.map(_(argsBuilder).build)*)
@@ -301,7 +301,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def metadataFilters(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterArgs.Builder]*):
+    inline def metadataFilters(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleMatchRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterArgs.builder
       builder.metadataFilters(args.map(_(argsBuilder).build)*)
@@ -312,7 +312,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def queryParameterMatches(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleMatchRuleQueryParameterMatchArgs.Builder]*):
+    inline def queryParameterMatches(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleMatchRuleQueryParameterMatchArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleMatchRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleMatchRuleQueryParameterMatchArgs.builder
       builder.queryParameterMatches(args.map(_(argsBuilder).build)*)
@@ -331,7 +331,7 @@ object compute_ext2:
      *   Structure is documented below.
      * @return builder
      */
-    def rangeMatch(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatchRangeMatchArgs.Builder]):
+    inline def rangeMatch(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatchRangeMatchArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatchArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleMatchRuleHeaderMatchRangeMatchArgs.builder
       builder.rangeMatch(args(argsBuilder).build)
@@ -344,7 +344,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def filterLabels(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabelArgs.Builder]*):
+    inline def filterLabels(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabelArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabelArgs.builder
       builder.filterLabels(args.map(_(argsBuilder).build)*)
@@ -356,7 +356,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def corsPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionCorsPolicyArgs.Builder]):
+    inline def corsPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionCorsPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionCorsPolicyArgs.builder
       builder.corsPolicy(args(argsBuilder).build)
@@ -372,7 +372,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def faultInjectionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyArgs.Builder]):
+    inline def faultInjectionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyArgs.builder
       builder.faultInjectionPolicy(args(argsBuilder).build)
@@ -385,7 +385,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def requestMirrorPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionRequestMirrorPolicyArgs.Builder]):
+    inline def requestMirrorPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionRequestMirrorPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionRequestMirrorPolicyArgs.builder
       builder.requestMirrorPolicy(args(argsBuilder).build)
@@ -395,7 +395,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def retryPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionRetryPolicyArgs.Builder]):
+    inline def retryPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionRetryPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
@@ -408,7 +408,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def timeout(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionTimeoutArgs.Builder]):
+    inline def timeout(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionTimeoutArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionTimeoutArgs.builder
       builder.timeout(args(argsBuilder).build)
@@ -419,7 +419,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def urlRewrite(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionUrlRewriteArgs.Builder]):
+    inline def urlRewrite(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionUrlRewriteArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionUrlRewriteArgs.builder
       builder.urlRewrite(args(argsBuilder).build)
@@ -436,7 +436,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def weightedBackendServices(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionWeightedBackendServiceArgs.Builder]*):
+    inline def weightedBackendServices(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionWeightedBackendServiceArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionWeightedBackendServiceArgs.builder
       builder.weightedBackendServices(args.map(_(argsBuilder).build)*)
@@ -447,7 +447,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def abort(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyAbortArgs.Builder]):
+    inline def abort(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyAbortArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyAbortArgs.builder
       builder.abort(args(argsBuilder).build)
@@ -457,7 +457,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def delay(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelayArgs.Builder]):
+    inline def delay(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelayArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelayArgs.builder
       builder.delay(args(argsBuilder).build)
@@ -468,7 +468,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def fixedDelay(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelayFixedDelayArgs.Builder]):
+    inline def fixedDelay(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelayFixedDelayArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelayArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelayFixedDelayArgs.builder
       builder.fixedDelay(args(argsBuilder).build)
@@ -481,7 +481,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def perTryTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionRetryPolicyPerTryTimeoutArgs.Builder]):
+    inline def perTryTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionRetryPolicyPerTryTimeoutArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionRetryPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionRetryPolicyPerTryTimeoutArgs.builder
       builder.perTryTimeout(args(argsBuilder).build)
@@ -494,7 +494,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def regexRewrite(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionUrlRewriteRegexRewriteArgs.Builder]):
+    inline def regexRewrite(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionUrlRewriteRegexRewriteArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionUrlRewriteArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionUrlRewriteRegexRewriteArgs.builder
       builder.regexRewrite(args(argsBuilder).build)
@@ -508,7 +508,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderActionArgs.Builder]):
+    inline def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionWeightedBackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderActionArgs.builder
       builder.headerAction(args(argsBuilder).build)
@@ -519,7 +519,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAddArgs.Builder]*):
+    inline def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAddArgs.builder
       builder.requestHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -529,7 +529,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAddArgs.Builder]*):
+    inline def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAddArgs.builder
       builder.responseHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -543,7 +543,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def defaultRouteAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionArgs.Builder]):
+    inline def defaultRouteAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultRouteActionArgs.builder
       builder.defaultRouteAction(args(argsBuilder).build)
@@ -555,7 +555,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def defaultUrlRedirect(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultUrlRedirectArgs.Builder]):
+    inline def defaultUrlRedirect(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultUrlRedirectArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapDefaultUrlRedirectArgs.builder
       builder.defaultUrlRedirect(args(argsBuilder).build)
@@ -568,7 +568,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapHeaderActionArgs.Builder]):
+    inline def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapHeaderActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RegionUrlMapState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapHeaderActionArgs.builder
       builder.headerAction(args(argsBuilder).build)
@@ -578,7 +578,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def hostRules(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapHostRuleArgs.Builder]*):
+    inline def hostRules(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapHostRuleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapHostRuleArgs.builder
       builder.hostRules(args.map(_(argsBuilder).build)*)
@@ -588,7 +588,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def pathMatchers(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherArgs.Builder]*):
+    inline def pathMatchers(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapPathMatcherArgs.builder
       builder.pathMatchers(args.map(_(argsBuilder).build)*)
@@ -599,7 +599,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def tests(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapTestArgs.Builder]*):
+    inline def tests(args: Endofunction[com.pulumi.gcp.compute.inputs.RegionUrlMapTestArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RegionUrlMapState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RegionUrlMapTestArgs.builder
       builder.tests(args.map(_(argsBuilder).build)*)
@@ -611,7 +611,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def healthInfos(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationResourceStatusHealthInfoArgs.Builder]*):
+    inline def healthInfos(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationResourceStatusHealthInfoArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ReservationResourceStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ReservationResourceStatusHealthInfoArgs.builder
       builder.healthInfos(args.map(_(argsBuilder).build)*)
@@ -622,7 +622,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def reservationMaintenances(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationResourceStatusReservationMaintenanceArgs.Builder]*):
+    inline def reservationMaintenances(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationResourceStatusReservationMaintenanceArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ReservationResourceStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ReservationResourceStatusReservationMaintenanceArgs.builder
       builder.reservationMaintenances(args.map(_(argsBuilder).build)*)
@@ -633,7 +633,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def specificSkuAllocations(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationResourceStatusSpecificSkuAllocationArgs.Builder]*):
+    inline def specificSkuAllocations(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationResourceStatusSpecificSkuAllocationArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ReservationResourceStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ReservationResourceStatusSpecificSkuAllocationArgs.builder
       builder.specificSkuAllocations(args.map(_(argsBuilder).build)*)
@@ -645,7 +645,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def upcomingGroupMaintenances(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationResourceStatusReservationMaintenanceUpcomingGroupMaintenanceArgs.Builder]*):
+    inline def upcomingGroupMaintenances(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationResourceStatusReservationMaintenanceUpcomingGroupMaintenanceArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ReservationResourceStatusReservationMaintenanceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ReservationResourceStatusReservationMaintenanceUpcomingGroupMaintenanceArgs.builder
       builder.upcomingGroupMaintenances(args.map(_(argsBuilder).build)*)
@@ -656,7 +656,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def projectMaps(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationShareSettingsProjectMapArgs.Builder]*):
+    inline def projectMaps(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationShareSettingsProjectMapArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ReservationShareSettingsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ReservationShareSettingsProjectMapArgs.builder
       builder.projectMaps(args.map(_(argsBuilder).build)*)
@@ -667,7 +667,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def instanceProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationSpecificReservationInstancePropertiesArgs.Builder]):
+    inline def instanceProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationSpecificReservationInstancePropertiesArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ReservationSpecificReservationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ReservationSpecificReservationInstancePropertiesArgs.builder
       builder.instanceProperties(args(argsBuilder).build)
@@ -678,7 +678,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationSpecificReservationInstancePropertiesGuestAcceleratorArgs.Builder]*):
+    inline def guestAccelerators(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationSpecificReservationInstancePropertiesGuestAcceleratorArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ReservationSpecificReservationInstancePropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ReservationSpecificReservationInstancePropertiesGuestAcceleratorArgs.builder
       builder.guestAccelerators(args.map(_(argsBuilder).build)*)
@@ -689,7 +689,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def localSsds(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationSpecificReservationInstancePropertiesLocalSsdArgs.Builder]*):
+    inline def localSsds(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationSpecificReservationInstancePropertiesLocalSsdArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ReservationSpecificReservationInstancePropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ReservationSpecificReservationInstancePropertiesLocalSsdArgs.builder
       builder.localSsds(args.map(_(argsBuilder).build)*)
@@ -700,7 +700,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def deleteAfterDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationDeleteAfterDurationArgs.Builder]):
+    inline def deleteAfterDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationDeleteAfterDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ReservationState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ReservationDeleteAfterDurationArgs.builder
       builder.deleteAfterDuration(args(argsBuilder).build)
@@ -710,7 +710,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ReservationState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ReservationParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -720,7 +720,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def reservationSharingPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationReservationSharingPolicyArgs.Builder]):
+    inline def reservationSharingPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationReservationSharingPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ReservationState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ReservationReservationSharingPolicyArgs.builder
       builder.reservationSharingPolicy(args(argsBuilder).build)
@@ -730,7 +730,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def resourceStatuses(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationResourceStatusArgs.Builder]*):
+    inline def resourceStatuses(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationResourceStatusArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ReservationState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ReservationResourceStatusArgs.builder
       builder.resourceStatuses(args.map(_(argsBuilder).build)*)
@@ -740,7 +740,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def shareSettings(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationShareSettingsArgs.Builder]):
+    inline def shareSettings(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationShareSettingsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ReservationState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ReservationShareSettingsArgs.builder
       builder.shareSettings(args(argsBuilder).build)
@@ -750,7 +750,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def specificReservation(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationSpecificReservationArgs.Builder]):
+    inline def specificReservation(args: Endofunction[com.pulumi.gcp.compute.inputs.ReservationSpecificReservationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ReservationState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ReservationSpecificReservationArgs.builder
       builder.specificReservation(args(argsBuilder).build)
@@ -761,7 +761,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def requestedRunDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestRequestedRunDurationArgs.Builder]):
+    inline def requestedRunDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestRequestedRunDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ResizeRequestState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ResizeRequestRequestedRunDurationArgs.builder
       builder.requestedRunDuration(args(argsBuilder).build)
@@ -771,7 +771,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def statuses(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusArgs.Builder]*):
+    inline def statuses(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ResizeRequestState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ResizeRequestStatusArgs.builder
       builder.statuses(args.map(_(argsBuilder).build)*)
@@ -783,7 +783,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def errors(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorArgs.Builder]*):
+    inline def errors(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ResizeRequestStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
@@ -794,7 +794,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def lastAttempts(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptArgs.Builder]*):
+    inline def lastAttempts(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ResizeRequestStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptArgs.builder
       builder.lastAttempts(args.map(_(argsBuilder).build)*)
@@ -806,7 +806,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def errors(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorArgs.Builder]*):
+    inline def errors(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
@@ -818,7 +818,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def errorDetails(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorErrorDetailArgs.Builder]*):
+    inline def errorDetails(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorErrorDetailArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorErrorDetailArgs.builder
       builder.errorDetails(args.map(_(argsBuilder).build)*)
@@ -830,7 +830,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def errorInfos(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorErrorDetailErrorInfoArgs.Builder]*):
+    inline def errorInfos(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorErrorDetailErrorInfoArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorErrorDetailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorErrorDetailErrorInfoArgs.builder
       builder.errorInfos(args.map(_(argsBuilder).build)*)
@@ -841,7 +841,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def helps(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorErrorDetailHelpArgs.Builder]*):
+    inline def helps(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorErrorDetailHelpArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorErrorDetailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorErrorDetailHelpArgs.builder
       builder.helps(args.map(_(argsBuilder).build)*)
@@ -852,7 +852,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def localizedMessages(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorErrorDetailLocalizedMessageArgs.Builder]*):
+    inline def localizedMessages(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorErrorDetailLocalizedMessageArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorErrorDetailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorErrorDetailLocalizedMessageArgs.builder
       builder.localizedMessages(args.map(_(argsBuilder).build)*)
@@ -863,7 +863,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def quotaInfos(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorErrorDetailQuotaInfoArgs.Builder]*):
+    inline def quotaInfos(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorErrorDetailQuotaInfoArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorErrorDetailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorErrorDetailQuotaInfoArgs.builder
       builder.quotaInfos(args.map(_(argsBuilder).build)*)
@@ -875,7 +875,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def links(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorErrorDetailHelpLinkArgs.Builder]*):
+    inline def links(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorErrorDetailHelpLinkArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorErrorDetailHelpArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ResizeRequestStatusErrorErrorErrorDetailHelpLinkArgs.builder
       builder.links(args.map(_(argsBuilder).build)*)
@@ -887,7 +887,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def errors(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorArgs.Builder]*):
+    inline def errors(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
@@ -899,7 +899,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def errors(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorArgs.Builder]*):
+    inline def errors(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
@@ -911,7 +911,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def errorDetails(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorErrorDetailArgs.Builder]*):
+    inline def errorDetails(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorErrorDetailArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorErrorDetailArgs.builder
       builder.errorDetails(args.map(_(argsBuilder).build)*)
@@ -923,7 +923,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def errorInfos(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorErrorDetailErrorInfoArgs.Builder]*):
+    inline def errorInfos(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorErrorDetailErrorInfoArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorErrorDetailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorErrorDetailErrorInfoArgs.builder
       builder.errorInfos(args.map(_(argsBuilder).build)*)
@@ -934,7 +934,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def helps(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorErrorDetailHelpArgs.Builder]*):
+    inline def helps(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorErrorDetailHelpArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorErrorDetailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorErrorDetailHelpArgs.builder
       builder.helps(args.map(_(argsBuilder).build)*)
@@ -945,7 +945,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def localizedMessages(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorErrorDetailLocalizedMessageArgs.Builder]*):
+    inline def localizedMessages(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorErrorDetailLocalizedMessageArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorErrorDetailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorErrorDetailLocalizedMessageArgs.builder
       builder.localizedMessages(args.map(_(argsBuilder).build)*)
@@ -956,7 +956,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def quotaInfos(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorErrorDetailQuotaInfoArgs.Builder]*):
+    inline def quotaInfos(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorErrorDetailQuotaInfoArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorErrorDetailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorErrorDetailQuotaInfoArgs.builder
       builder.quotaInfos(args.map(_(argsBuilder).build)*)
@@ -968,7 +968,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def links(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorErrorDetailHelpLinkArgs.Builder]*):
+    inline def links(args: Endofunction[com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorErrorDetailHelpLinkArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorErrorDetailHelpArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ResizeRequestStatusLastAttemptErrorErrorErrorDetailHelpLinkArgs.builder
       builder.links(args.map(_(argsBuilder).build)*)
@@ -979,7 +979,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def vmStartSchedule(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicyInstanceSchedulePolicyVmStartScheduleArgs.Builder]):
+    inline def vmStartSchedule(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicyInstanceSchedulePolicyVmStartScheduleArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ResourcePolicyInstanceSchedulePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ResourcePolicyInstanceSchedulePolicyVmStartScheduleArgs.builder
       builder.vmStartSchedule(args(argsBuilder).build)
@@ -989,7 +989,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def vmStopSchedule(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicyInstanceSchedulePolicyVmStopScheduleArgs.Builder]):
+    inline def vmStopSchedule(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicyInstanceSchedulePolicyVmStopScheduleArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ResourcePolicyInstanceSchedulePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ResourcePolicyInstanceSchedulePolicyVmStopScheduleArgs.builder
       builder.vmStopSchedule(args(argsBuilder).build)
@@ -1000,7 +1000,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def retentionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyRetentionPolicyArgs.Builder]):
+    inline def retentionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyRetentionPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyRetentionPolicyArgs.builder
       builder.retentionPolicy(args(argsBuilder).build)
@@ -1010,7 +1010,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def schedule(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyScheduleArgs.Builder]):
+    inline def schedule(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyScheduleArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyScheduleArgs.builder
       builder.schedule(args(argsBuilder).build)
@@ -1020,7 +1020,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def snapshotProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicySnapshotPropertiesArgs.Builder]):
+    inline def snapshotProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicySnapshotPropertiesArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicySnapshotPropertiesArgs.builder
       builder.snapshotProperties(args(argsBuilder).build)
@@ -1031,7 +1031,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def dailySchedule(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyScheduleDailyScheduleArgs.Builder]):
+    inline def dailySchedule(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyScheduleDailyScheduleArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyScheduleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyScheduleDailyScheduleArgs.builder
       builder.dailySchedule(args(argsBuilder).build)
@@ -1041,7 +1041,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def hourlySchedule(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyScheduleHourlyScheduleArgs.Builder]):
+    inline def hourlySchedule(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyScheduleHourlyScheduleArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyScheduleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyScheduleHourlyScheduleArgs.builder
       builder.hourlySchedule(args(argsBuilder).build)
@@ -1051,7 +1051,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def weeklySchedule(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleArgs.Builder]):
+    inline def weeklySchedule(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyScheduleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleArgs.builder
       builder.weeklySchedule(args(argsBuilder).build)
@@ -1062,7 +1062,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def dayOfWeeks(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeekArgs.Builder]*):
+    inline def dayOfWeeks(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeekArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyScheduleWeeklyScheduleDayOfWeekArgs.builder
       builder.dayOfWeeks(args.map(_(argsBuilder).build)*)
@@ -1073,7 +1073,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def diskConsistencyGroupPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicyDiskConsistencyGroupPolicyArgs.Builder]):
+    inline def diskConsistencyGroupPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicyDiskConsistencyGroupPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ResourcePolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ResourcePolicyDiskConsistencyGroupPolicyArgs.builder
       builder.diskConsistencyGroupPolicy(args(argsBuilder).build)
@@ -1083,7 +1083,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def groupPlacementPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicyGroupPlacementPolicyArgs.Builder]):
+    inline def groupPlacementPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicyGroupPlacementPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ResourcePolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ResourcePolicyGroupPlacementPolicyArgs.builder
       builder.groupPlacementPolicy(args(argsBuilder).build)
@@ -1093,7 +1093,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def instanceSchedulePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicyInstanceSchedulePolicyArgs.Builder]):
+    inline def instanceSchedulePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicyInstanceSchedulePolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ResourcePolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ResourcePolicyInstanceSchedulePolicyArgs.builder
       builder.instanceSchedulePolicy(args(argsBuilder).build)
@@ -1103,7 +1103,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def snapshotSchedulePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyArgs.Builder]):
+    inline def snapshotSchedulePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ResourcePolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ResourcePolicySnapshotSchedulePolicyArgs.builder
       builder.snapshotSchedulePolicy(args(argsBuilder).build)
@@ -1113,7 +1113,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def workloadPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicyWorkloadPolicyArgs.Builder]):
+    inline def workloadPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.ResourcePolicyWorkloadPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ResourcePolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ResourcePolicyWorkloadPolicyArgs.builder
       builder.workloadPolicy(args(argsBuilder).build)
@@ -1124,7 +1124,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def waves(args: Endofunction[com.pulumi.gcp.compute.inputs.RolloutPlanWaveArgs.Builder]*):
+    inline def waves(args: Endofunction[com.pulumi.gcp.compute.inputs.RolloutPlanWaveArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RolloutPlanState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RolloutPlanWaveArgs.builder
       builder.waves(args.map(_(argsBuilder).build)*)
@@ -1135,7 +1135,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def orchestrationOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.RolloutPlanWaveOrchestrationOptionsArgs.Builder]):
+    inline def orchestrationOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.RolloutPlanWaveOrchestrationOptionsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RolloutPlanWaveArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RolloutPlanWaveOrchestrationOptionsArgs.builder
       builder.orchestrationOptions(args(argsBuilder).build)
@@ -1147,7 +1147,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def selectors(args: Endofunction[com.pulumi.gcp.compute.inputs.RolloutPlanWaveSelectorArgs.Builder]*):
+    inline def selectors(args: Endofunction[com.pulumi.gcp.compute.inputs.RolloutPlanWaveSelectorArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RolloutPlanWaveArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RolloutPlanWaveSelectorArgs.builder
       builder.selectors(args.map(_(argsBuilder).build)*)
@@ -1157,7 +1157,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def validation(args: Endofunction[com.pulumi.gcp.compute.inputs.RolloutPlanWaveValidationArgs.Builder]):
+    inline def validation(args: Endofunction[com.pulumi.gcp.compute.inputs.RolloutPlanWaveValidationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RolloutPlanWaveArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RolloutPlanWaveValidationArgs.builder
       builder.validation(args(argsBuilder).build)
@@ -1168,7 +1168,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def delays(args: Endofunction[com.pulumi.gcp.compute.inputs.RolloutPlanWaveOrchestrationOptionsDelayArgs.Builder]*):
+    inline def delays(args: Endofunction[com.pulumi.gcp.compute.inputs.RolloutPlanWaveOrchestrationOptionsDelayArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RolloutPlanWaveOrchestrationOptionsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RolloutPlanWaveOrchestrationOptionsDelayArgs.builder
       builder.delays(args.map(_(argsBuilder).build)*)
@@ -1179,7 +1179,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def locationSelector(args: Endofunction[com.pulumi.gcp.compute.inputs.RolloutPlanWaveSelectorLocationSelectorArgs.Builder]):
+    inline def locationSelector(args: Endofunction[com.pulumi.gcp.compute.inputs.RolloutPlanWaveSelectorLocationSelectorArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RolloutPlanWaveSelectorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RolloutPlanWaveSelectorLocationSelectorArgs.builder
       builder.locationSelector(args(argsBuilder).build)
@@ -1189,7 +1189,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def resourceHierarchySelector(args: Endofunction[com.pulumi.gcp.compute.inputs.RolloutPlanWaveSelectorResourceHierarchySelectorArgs.Builder]):
+    inline def resourceHierarchySelector(args: Endofunction[com.pulumi.gcp.compute.inputs.RolloutPlanWaveSelectorResourceHierarchySelectorArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RolloutPlanWaveSelectorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RolloutPlanWaveSelectorResourceHierarchySelectorArgs.builder
       builder.resourceHierarchySelector(args(argsBuilder).build)
@@ -1200,7 +1200,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def timeBasedValidationMetadata(args: Endofunction[com.pulumi.gcp.compute.inputs.RolloutPlanWaveValidationTimeBasedValidationMetadataArgs.Builder]):
+    inline def timeBasedValidationMetadata(args: Endofunction[com.pulumi.gcp.compute.inputs.RolloutPlanWaveValidationTimeBasedValidationMetadataArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RolloutPlanWaveValidationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RolloutPlanWaveValidationTimeBasedValidationMetadataArgs.builder
       builder.timeBasedValidationMetadata(args(argsBuilder).build)
@@ -1210,7 +1210,7 @@ object compute_ext2:
      * @param asPaths Structure is documented below.
      * @return builder
      */
-    def asPaths(args: Endofunction[com.pulumi.gcp.compute.inputs.RouteAsPathArgs.Builder]*):
+    inline def asPaths(args: Endofunction[com.pulumi.gcp.compute.inputs.RouteAsPathArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RouteState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RouteAsPathArgs.builder
       builder.asPaths(args.map(_(argsBuilder).build)*)
@@ -1220,7 +1220,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.RouteParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.RouteParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RouteState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RouteParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -1230,7 +1230,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def warnings(args: Endofunction[com.pulumi.gcp.compute.inputs.RouteWarningArgs.Builder]*):
+    inline def warnings(args: Endofunction[com.pulumi.gcp.compute.inputs.RouteWarningArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RouteState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RouteWarningArgs.builder
       builder.warnings(args.map(_(argsBuilder).build)*)
@@ -1243,7 +1243,7 @@ object compute_ext2:
      * Structure is [documented below.
      * @return builder
      */
-    def datas(args: Endofunction[com.pulumi.gcp.compute.inputs.RouteWarningDataArgs.Builder]*):
+    inline def datas(args: Endofunction[com.pulumi.gcp.compute.inputs.RouteWarningDataArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RouteWarningArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RouteWarningDataArgs.builder
       builder.datas(args.map(_(argsBuilder).build)*)
@@ -1258,7 +1258,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def advertisedIpRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterBgpAdvertisedIpRangeArgs.Builder]*):
+    inline def advertisedIpRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterBgpAdvertisedIpRangeArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RouterBgpArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RouterBgpAdvertisedIpRangeArgs.builder
       builder.advertisedIpRanges(args.map(_(argsBuilder).build)*)
@@ -1269,7 +1269,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def elements(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterNamedSetElementArgs.Builder]*):
+    inline def elements(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterNamedSetElementArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RouterNamedSetState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RouterNamedSetElementArgs.builder
       builder.elements(args.map(_(argsBuilder).build)*)
@@ -1280,7 +1280,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def action(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterNatRuleActionArgs.Builder]):
+    inline def action(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterNatRuleActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RouterNatRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RouterNatRuleActionArgs.builder
       builder.action(args(argsBuilder).build)
@@ -1291,7 +1291,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterNatLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterNatLogConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RouterNatState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RouterNatLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -1302,7 +1302,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def nat64Subnetworks(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterNatNat64SubnetworkArgs.Builder]*):
+    inline def nat64Subnetworks(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterNatNat64SubnetworkArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RouterNatState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RouterNatNat64SubnetworkArgs.builder
       builder.nat64Subnetworks(args.map(_(argsBuilder).build)*)
@@ -1312,7 +1312,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterNatRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterNatRuleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RouterNatState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RouterNatRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -1323,7 +1323,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def subnetworks(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterNatSubnetworkArgs.Builder]*):
+    inline def subnetworks(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterNatSubnetworkArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RouterNatState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RouterNatSubnetworkArgs.builder
       builder.subnetworks(args.map(_(argsBuilder).build)*)
@@ -1338,7 +1338,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def advertisedIpRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterPeerAdvertisedIpRangeArgs.Builder]*):
+    inline def advertisedIpRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterPeerAdvertisedIpRangeArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RouterPeerState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RouterPeerAdvertisedIpRangeArgs.builder
       builder.advertisedIpRanges(args.map(_(argsBuilder).build)*)
@@ -1348,7 +1348,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def bfd(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterPeerBfdArgs.Builder]):
+    inline def bfd(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterPeerBfdArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RouterPeerState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RouterPeerBfdArgs.builder
       builder.bfd(args(argsBuilder).build)
@@ -1360,7 +1360,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def customLearnedIpRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterPeerCustomLearnedIpRangeArgs.Builder]*):
+    inline def customLearnedIpRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterPeerCustomLearnedIpRangeArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RouterPeerState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RouterPeerCustomLearnedIpRangeArgs.builder
       builder.customLearnedIpRanges(args.map(_(argsBuilder).build)*)
@@ -1370,7 +1370,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def md5AuthenticationKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterPeerMd5AuthenticationKeyArgs.Builder]):
+    inline def md5AuthenticationKey(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterPeerMd5AuthenticationKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RouterPeerState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RouterPeerMd5AuthenticationKeyArgs.builder
       builder.md5AuthenticationKey(args(argsBuilder).build)
@@ -1381,7 +1381,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def terms(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterRoutePolicyTermArgs.Builder]*):
+    inline def terms(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterRoutePolicyTermArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RouterRoutePolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RouterRoutePolicyTermArgs.builder
       builder.terms(args.map(_(argsBuilder).build)*)
@@ -1392,7 +1392,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def actions(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterRoutePolicyTermActionArgs.Builder]*):
+    inline def actions(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterRoutePolicyTermActionArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.RouterRoutePolicyTermArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.RouterRoutePolicyTermActionArgs.builder
       builder.actions(args.map(_(argsBuilder).build)*)
@@ -1402,7 +1402,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterRoutePolicyTermMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterRoutePolicyTermMatchArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RouterRoutePolicyTermArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RouterRoutePolicyTermMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -1413,7 +1413,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def bgp(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterBgpArgs.Builder]):
+    inline def bgp(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterBgpArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RouterState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RouterBgpArgs.builder
       builder.bgp(args(argsBuilder).build)
@@ -1423,7 +1423,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def md5AuthenticationKeys(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterMd5AuthenticationKeysArgs.Builder]):
+    inline def md5AuthenticationKeys(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterMd5AuthenticationKeysArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RouterState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RouterMd5AuthenticationKeysArgs.builder
       builder.md5AuthenticationKeys(args(argsBuilder).build)
@@ -1433,7 +1433,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.RouterParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.RouterState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.RouterParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -1445,7 +1445,7 @@ object compute_ext2:
      * &lt;a name=&#34;nestedLayer7DdosDefenseConfig&#34;&gt;&lt;/a&gt;The `layer7DdosDefenseConfig` block supports:
      * @return builder
      */
-    def autoDeployConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyAdaptiveProtectionConfigAutoDeployConfigArgs.Builder]):
+    inline def autoDeployConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyAdaptiveProtectionConfigAutoDeployConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityPolicyAdaptiveProtectionConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyAdaptiveProtectionConfigAutoDeployConfigArgs.builder
       builder.autoDeployConfig(args(argsBuilder).build)
@@ -1454,7 +1454,7 @@ object compute_ext2:
      * @param layer7DdosDefenseConfig Configuration for [Google Cloud Armor Adaptive Protection Layer 7 DDoS Defense](https://cloud.google.com/armor/docs/adaptive-protection-overview?hl=en). Structure is documented below.
      * @return builder
      */
-    def layer7DdosDefenseConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigArgs.Builder]):
+    inline def layer7DdosDefenseConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityPolicyAdaptiveProtectionConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigArgs.builder
       builder.layer7DdosDefenseConfig(args(argsBuilder).build)
@@ -1464,7 +1464,7 @@ object compute_ext2:
      * @param thresholdConfigs Configuration options for layer7 adaptive protection for various customizable thresholds.
      * @return builder
      */
-    def thresholdConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigArgs.Builder]*):
+    inline def thresholdConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigArgs.builder
       builder.thresholdConfigs(args.map(_(argsBuilder).build)*)
@@ -1474,7 +1474,7 @@ object compute_ext2:
      * @param trafficGranularityConfigs Configuration options for enabling Adaptive Protection to work on the specified service granularity. Structure is documented below.
      * @return builder
      */
-    def trafficGranularityConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfigArgs.Builder]*):
+    inline def trafficGranularityConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfigArgs.builder
       builder.trafficGranularityConfigs(args.map(_(argsBuilder).build)*)
@@ -1485,7 +1485,7 @@ object compute_ext2:
      * `jsonParsing` is set to `STANDARD`. Structure is documented below.
      * @return builder
      */
-    def jsonCustomConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyAdvancedOptionsConfigJsonCustomConfigArgs.Builder]):
+    inline def jsonCustomConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyAdvancedOptionsConfigJsonCustomConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityPolicyAdvancedOptionsConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyAdvancedOptionsConfigJsonCustomConfigArgs.builder
       builder.jsonCustomConfig(args(argsBuilder).build)
@@ -1495,7 +1495,7 @@ object compute_ext2:
      * @param headerAction Additional actions that are performed on headers. Structure is documented below.
      * @return builder
      */
-    def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleHeaderActionArgs.Builder]):
+    inline def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleHeaderActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRuleHeaderActionArgs.builder
       builder.headerAction(args(argsBuilder).build)
@@ -1505,7 +1505,7 @@ object compute_ext2:
      * If it evaluates to true, the corresponding `action` is enforced. Structure is documented below.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleMatchArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRuleMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -1514,7 +1514,7 @@ object compute_ext2:
      * @param preconfiguredWafConfig Preconfigured WAF configuration to be applied for the rule. If the rule does not evaluate preconfigured WAF rules, i.e., if `evaluatePreconfiguredWaf()` is not used, this field will have no effect. Structure is documented below.
      * @return builder
      */
-    def preconfiguredWafConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigArgs.Builder]):
+    inline def preconfiguredWafConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigArgs.builder
       builder.preconfiguredWafConfig(args(argsBuilder).build)
@@ -1523,7 +1523,7 @@ object compute_ext2:
      * @param rateLimitOptions Must be specified if the `action` is `rateBasedBan` or `throttle`. Cannot be specified for other actions. Structure is documented below.
      * @return builder
      */
-    def rateLimitOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRateLimitOptionsArgs.Builder]):
+    inline def rateLimitOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRateLimitOptionsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRateLimitOptionsArgs.builder
       builder.rateLimitOptions(args(argsBuilder).build)
@@ -1532,7 +1532,7 @@ object compute_ext2:
      * @param redirectOptions Can be specified if the `action` is `redirect`. Cannot be specified for other actions. Structure is documented below.
      * @return builder
      */
-    def redirectOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRedirectOptionsArgs.Builder]):
+    inline def redirectOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRedirectOptionsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRedirectOptionsArgs.builder
       builder.redirectOptions(args(argsBuilder).build)
@@ -1543,7 +1543,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleHeaderActionRequestHeadersToAddArgs.Builder]*):
+    inline def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleHeaderActionRequestHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.SecurityPolicyRuleHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRuleHeaderActionRequestHeadersToAddArgs.builder
       builder.requestHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -1555,7 +1555,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleMatchConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleMatchConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityPolicyRuleMatchArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRuleMatchConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -1565,7 +1565,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def expr(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleMatchExprArgs.Builder]):
+    inline def expr(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleMatchExprArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityPolicyRuleMatchArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRuleMatchExprArgs.builder
       builder.expr(args(argsBuilder).build)
@@ -1575,7 +1575,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def exprOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleMatchExprOptionsArgs.Builder]):
+    inline def exprOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleMatchExprOptionsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityPolicyRuleMatchArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRuleMatchExprOptionsArgs.builder
       builder.exprOptions(args(argsBuilder).build)
@@ -1586,7 +1586,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def recaptchaOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleMatchExprOptionsRecaptchaOptionsArgs.Builder]):
+    inline def recaptchaOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleMatchExprOptionsRecaptchaOptionsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityPolicyRuleMatchExprOptionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRuleMatchExprOptionsRecaptchaOptionsArgs.builder
       builder.recaptchaOptions(args(argsBuilder).build)
@@ -1597,7 +1597,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def exclusions(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigExclusionArgs.Builder]*):
+    inline def exclusions(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigExclusionArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigExclusionArgs.builder
       builder.exclusions(args.map(_(argsBuilder).build)*)
@@ -1609,7 +1609,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def requestBodies(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigExclusionRequestBodyArgs.Builder]*):
+    inline def requestBodies(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigExclusionRequestBodyArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigExclusionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigExclusionRequestBodyArgs.builder
       builder.requestBodies(args.map(_(argsBuilder).build)*)
@@ -1619,7 +1619,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def requestCookies(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigExclusionRequestCookyArgs.Builder]*):
+    inline def requestCookies(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigExclusionRequestCookyArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigExclusionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigExclusionRequestCookyArgs.builder
       builder.requestCookies(args.map(_(argsBuilder).build)*)
@@ -1629,7 +1629,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def requestHeaders(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigExclusionRequestHeaderArgs.Builder]*):
+    inline def requestHeaders(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigExclusionRequestHeaderArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigExclusionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigExclusionRequestHeaderArgs.builder
       builder.requestHeaders(args.map(_(argsBuilder).build)*)
@@ -1640,7 +1640,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def requestQueryParams(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigExclusionRequestQueryParamArgs.Builder]*):
+    inline def requestQueryParams(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigExclusionRequestQueryParamArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigExclusionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigExclusionRequestQueryParamArgs.builder
       builder.requestQueryParams(args.map(_(argsBuilder).build)*)
@@ -1651,7 +1651,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def requestUris(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigExclusionRequestUriArgs.Builder]*):
+    inline def requestUris(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigExclusionRequestUriArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigExclusionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigExclusionRequestUriArgs.builder
       builder.requestUris(args.map(_(argsBuilder).build)*)
@@ -1663,7 +1663,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def banThreshold(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRateLimitOptionsBanThresholdArgs.Builder]):
+    inline def banThreshold(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRateLimitOptionsBanThresholdArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRateLimitOptionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRateLimitOptionsBanThresholdArgs.builder
       builder.banThreshold(args(argsBuilder).build)
@@ -1675,7 +1675,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def enforceOnKeyConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfigArgs.Builder]*):
+    inline def enforceOnKeyConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRateLimitOptionsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRateLimitOptionsEnforceOnKeyConfigArgs.builder
       builder.enforceOnKeyConfigs(args.map(_(argsBuilder).build)*)
@@ -1685,7 +1685,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def exceedRedirectOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRateLimitOptionsExceedRedirectOptionsArgs.Builder]):
+    inline def exceedRedirectOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRateLimitOptionsExceedRedirectOptionsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRateLimitOptionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRateLimitOptionsExceedRedirectOptionsArgs.builder
       builder.exceedRedirectOptions(args(argsBuilder).build)
@@ -1695,7 +1695,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def rateLimitThreshold(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRateLimitOptionsRateLimitThresholdArgs.Builder]):
+    inline def rateLimitThreshold(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRateLimitOptionsRateLimitThresholdArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRateLimitOptionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRateLimitOptionsRateLimitThresholdArgs.builder
       builder.rateLimitThreshold(args(argsBuilder).build)
@@ -1706,7 +1706,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleHeaderActionArgs.Builder]):
+    inline def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleHeaderActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityPolicyRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRuleHeaderActionArgs.builder
       builder.headerAction(args(argsBuilder).build)
@@ -1717,7 +1717,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleMatchArgs.Builder]):
+    inline def `match`(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleMatchArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityPolicyRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRuleMatchArgs.builder
       builder.`match`(args(argsBuilder).build)
@@ -1728,7 +1728,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def preconfiguredWafConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigArgs.Builder]):
+    inline def preconfiguredWafConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityPolicyRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRulePreconfiguredWafConfigArgs.builder
       builder.preconfiguredWafConfig(args(argsBuilder).build)
@@ -1738,7 +1738,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def rateLimitOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRateLimitOptionsArgs.Builder]):
+    inline def rateLimitOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRateLimitOptionsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityPolicyRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRateLimitOptionsArgs.builder
       builder.rateLimitOptions(args(argsBuilder).build)
@@ -1748,7 +1748,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def redirectOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRedirectOptionsArgs.Builder]):
+    inline def redirectOptions(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRedirectOptionsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityPolicyRuleState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRuleRedirectOptionsArgs.builder
       builder.redirectOptions(args(argsBuilder).build)
@@ -1758,7 +1758,7 @@ object compute_ext2:
      * @param adaptiveProtectionConfig Configuration for [Google Cloud Armor Adaptive Protection](https://cloud.google.com/armor/docs/adaptive-protection-overview?hl=en). Structure is documented below.
      * @return builder
      */
-    def adaptiveProtectionConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyAdaptiveProtectionConfigArgs.Builder]):
+    inline def adaptiveProtectionConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyAdaptiveProtectionConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyAdaptiveProtectionConfigArgs.builder
       builder.adaptiveProtectionConfig(args(argsBuilder).build)
@@ -1768,7 +1768,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def advancedOptionsConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyAdvancedOptionsConfigArgs.Builder]):
+    inline def advancedOptionsConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyAdvancedOptionsConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyAdvancedOptionsConfigArgs.builder
       builder.advancedOptionsConfig(args(argsBuilder).build)
@@ -1777,7 +1777,7 @@ object compute_ext2:
      * @param recaptchaOptionsConfig [reCAPTCHA Configuration Options](https://cloud.google.com/armor/docs/configure-security-policies?hl=en#use_a_manual_challenge_to_distinguish_between_human_or_automated_clients). Structure is documented below.
      * @return builder
      */
-    def recaptchaOptionsConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRecaptchaOptionsConfigArgs.Builder]):
+    inline def recaptchaOptionsConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRecaptchaOptionsConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRecaptchaOptionsConfigArgs.builder
       builder.recaptchaOptionsConfig(args(argsBuilder).build)
@@ -1788,7 +1788,7 @@ object compute_ext2:
      * security policy, a default rule with action &#34;allow&#34; will be added. Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityPolicyRuleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.SecurityPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.SecurityPolicyRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -1799,7 +1799,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def customAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityScanConfigAuthenticationCustomAccountArgs.Builder]):
+    inline def customAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityScanConfigAuthenticationCustomAccountArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityScanConfigAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityScanConfigAuthenticationCustomAccountArgs.builder
       builder.customAccount(args(argsBuilder).build)
@@ -1809,7 +1809,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def googleAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityScanConfigAuthenticationGoogleAccountArgs.Builder]):
+    inline def googleAccount(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityScanConfigAuthenticationGoogleAccountArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityScanConfigAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityScanConfigAuthenticationGoogleAccountArgs.builder
       builder.googleAccount(args(argsBuilder).build)
@@ -1821,7 +1821,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityScanConfigAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityScanConfigAuthenticationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityScanConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityScanConfigAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -1831,7 +1831,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def schedule(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityScanConfigScheduleArgs.Builder]):
+    inline def schedule(args: Endofunction[com.pulumi.gcp.compute.inputs.SecurityScanConfigScheduleArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SecurityScanConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SecurityScanConfigScheduleArgs.builder
       builder.schedule(args(argsBuilder).build)
@@ -1843,7 +1843,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def connectedEndpoints(args: Endofunction[com.pulumi.gcp.compute.inputs.ServiceAttachmentConnectedEndpointArgs.Builder]*):
+    inline def connectedEndpoints(args: Endofunction[com.pulumi.gcp.compute.inputs.ServiceAttachmentConnectedEndpointArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ServiceAttachmentState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ServiceAttachmentConnectedEndpointArgs.builder
       builder.connectedEndpoints(args.map(_(argsBuilder).build)*)
@@ -1854,7 +1854,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def consumerAcceptLists(args: Endofunction[com.pulumi.gcp.compute.inputs.ServiceAttachmentConsumerAcceptListArgs.Builder]*):
+    inline def consumerAcceptLists(args: Endofunction[com.pulumi.gcp.compute.inputs.ServiceAttachmentConsumerAcceptListArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ServiceAttachmentState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ServiceAttachmentConsumerAcceptListArgs.builder
       builder.consumerAcceptLists(args.map(_(argsBuilder).build)*)
@@ -1864,7 +1864,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def pscServiceAttachmentIds(args: Endofunction[com.pulumi.gcp.compute.inputs.ServiceAttachmentPscServiceAttachmentIdArgs.Builder]*):
+    inline def pscServiceAttachmentIds(args: Endofunction[com.pulumi.gcp.compute.inputs.ServiceAttachmentPscServiceAttachmentIdArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ServiceAttachmentState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ServiceAttachmentPscServiceAttachmentIdArgs.builder
       builder.pscServiceAttachmentIds(args.map(_(argsBuilder).build)*)
@@ -1875,19 +1875,19 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def tunnelingConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.ServiceAttachmentTunnelingConfigArgs.Builder]):
+    inline def tunnelingConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.ServiceAttachmentTunnelingConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ServiceAttachmentState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ServiceAttachmentTunnelingConfigArgs.builder
       builder.tunnelingConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.inputs.SnapshotIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SnapshotIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.compute.inputs.SnapshotIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SnapshotIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1898,7 +1898,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def standardSnapshots(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicyRuleStandardSnapshotsArgs.Builder]):
+    inline def standardSnapshots(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicyRuleStandardSnapshotsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicyRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicyRuleStandardSnapshotsArgs.builder
       builder.standardSnapshots(args(argsBuilder).build)
@@ -1914,7 +1914,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicyRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicyRuleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicyRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -1925,7 +1925,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def systemRules(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicySystemRuleArgs.Builder]*):
+    inline def systemRules(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicySystemRuleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicySystemRuleArgs.builder
       builder.systemRules(args.map(_(argsBuilder).build)*)
@@ -1937,7 +1937,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def standardSnapshots(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicySystemRuleStandardSnapshotArgs.Builder]*):
+    inline def standardSnapshots(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicySystemRuleStandardSnapshotArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicySystemRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotRecycleBinPolicySystemRuleStandardSnapshotArgs.builder
       builder.standardSnapshots(args.map(_(argsBuilder).build)*)
@@ -1949,7 +1949,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def storageLocation(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotSettingsStorageLocationArgs.Builder]):
+    inline def storageLocation(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotSettingsStorageLocationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SnapshotSettingsState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotSettingsStorageLocationArgs.builder
       builder.storageLocation(args(argsBuilder).build)
@@ -1962,7 +1962,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def locations(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotSettingsStorageLocationLocationArgs.Builder]*):
+    inline def locations(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotSettingsStorageLocationLocationArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.SnapshotSettingsStorageLocationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotSettingsStorageLocationLocationArgs.builder
       builder.locations(args.map(_(argsBuilder).build)*)
@@ -1973,7 +1973,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SnapshotState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -1994,7 +1994,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def snapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotSnapshotEncryptionKeyArgs.Builder]):
+    inline def snapshotEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotSnapshotEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SnapshotState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotSnapshotEncryptionKeyArgs.builder
       builder.snapshotEncryptionKey(args(argsBuilder).build)
@@ -2006,7 +2006,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def sourceDiskEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotSourceDiskEncryptionKeyArgs.Builder]):
+    inline def sourceDiskEncryptionKey(args: Endofunction[com.pulumi.gcp.compute.inputs.SnapshotSourceDiskEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SnapshotState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SnapshotSourceDiskEncryptionKeyArgs.builder
       builder.sourceDiskEncryptionKey(args(argsBuilder).build)
@@ -2017,7 +2017,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.StoragePoolIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.StoragePoolIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.StoragePoolIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.StoragePoolIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -2028,7 +2028,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.StoragePoolIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.StoragePoolIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.StoragePoolIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.StoragePoolIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -2039,7 +2039,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.StoragePoolParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.StoragePoolParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.StoragePoolState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.StoragePoolParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -2049,7 +2049,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def resourceStatuses(args: Endofunction[com.pulumi.gcp.compute.inputs.StoragePoolResourceStatusArgs.Builder]*):
+    inline def resourceStatuses(args: Endofunction[com.pulumi.gcp.compute.inputs.StoragePoolResourceStatusArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.StoragePoolState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.StoragePoolResourceStatusArgs.builder
       builder.resourceStatuses(args.map(_(argsBuilder).build)*)
@@ -2059,7 +2059,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def statuses(args: Endofunction[com.pulumi.gcp.compute.inputs.StoragePoolStatusArgs.Builder]*):
+    inline def statuses(args: Endofunction[com.pulumi.gcp.compute.inputs.StoragePoolStatusArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.StoragePoolState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.StoragePoolStatusArgs.builder
       builder.statuses(args.map(_(argsBuilder).build)*)
@@ -2070,7 +2070,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.SubnetworkIAMBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.SubnetworkIAMBindingConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SubnetworkIAMBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SubnetworkIAMBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -2081,7 +2081,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.SubnetworkIAMMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.compute.inputs.SubnetworkIAMMemberConditionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SubnetworkIAMMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SubnetworkIAMMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -2095,7 +2095,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SubnetworkLogConfigArgs.Builder]):
+    inline def logConfig(args: Endofunction[com.pulumi.gcp.compute.inputs.SubnetworkLogConfigArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SubnetworkState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SubnetworkLogConfigArgs.builder
       builder.logConfig(args(argsBuilder).build)
@@ -2105,7 +2105,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.SubnetworkParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.SubnetworkParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.SubnetworkState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.SubnetworkParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -2118,7 +2118,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def secondaryIpRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.SubnetworkSecondaryIpRangeArgs.Builder]*):
+    inline def secondaryIpRanges(args: Endofunction[com.pulumi.gcp.compute.inputs.SubnetworkSecondaryIpRangeArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.SubnetworkState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.SubnetworkSecondaryIpRangeArgs.builder
       builder.secondaryIpRanges(args.map(_(argsBuilder).build)*)
@@ -2132,7 +2132,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def errorResponseRules(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultCustomErrorResponsePolicyErrorResponseRuleArgs.Builder]*):
+    inline def errorResponseRules(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultCustomErrorResponsePolicyErrorResponseRuleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapDefaultCustomErrorResponsePolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultCustomErrorResponsePolicyErrorResponseRuleArgs.builder
       builder.errorResponseRules(args.map(_(argsBuilder).build)*)
@@ -2146,7 +2146,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def cachePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyArgs.Builder]):
+    inline def cachePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyArgs.builder
       builder.cachePolicy(args(argsBuilder).build)
@@ -2157,7 +2157,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def corsPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCorsPolicyArgs.Builder]):
+    inline def corsPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCorsPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCorsPolicyArgs.builder
       builder.corsPolicy(args(argsBuilder).build)
@@ -2169,7 +2169,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def dynamicCompressionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionDynamicCompressionPolicyArgs.Builder]):
+    inline def dynamicCompressionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionDynamicCompressionPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionDynamicCompressionPolicyArgs.builder
       builder.dynamicCompressionPolicy(args(argsBuilder).build)
@@ -2183,7 +2183,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def faultInjectionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionFaultInjectionPolicyArgs.Builder]):
+    inline def faultInjectionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionFaultInjectionPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionFaultInjectionPolicyArgs.builder
       builder.faultInjectionPolicy(args(argsBuilder).build)
@@ -2194,7 +2194,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def imageOptimizationPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionImageOptimizationPolicyArgs.Builder]):
+    inline def imageOptimizationPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionImageOptimizationPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionImageOptimizationPolicyArgs.builder
       builder.imageOptimizationPolicy(args(argsBuilder).build)
@@ -2208,7 +2208,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def maxStreamDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionMaxStreamDurationArgs.Builder]):
+    inline def maxStreamDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionMaxStreamDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionMaxStreamDurationArgs.builder
       builder.maxStreamDuration(args(argsBuilder).build)
@@ -2220,7 +2220,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def requestMirrorPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionRequestMirrorPolicyArgs.Builder]):
+    inline def requestMirrorPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionRequestMirrorPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionRequestMirrorPolicyArgs.builder
       builder.requestMirrorPolicy(args(argsBuilder).build)
@@ -2230,7 +2230,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def retryPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionRetryPolicyArgs.Builder]):
+    inline def retryPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionRetryPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
@@ -2242,7 +2242,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def timeout(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionTimeoutArgs.Builder]):
+    inline def timeout(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionTimeoutArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionTimeoutArgs.builder
       builder.timeout(args(argsBuilder).build)
@@ -2252,7 +2252,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def urlRewrite(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionUrlRewriteArgs.Builder]):
+    inline def urlRewrite(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionUrlRewriteArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionUrlRewriteArgs.builder
       builder.urlRewrite(args(argsBuilder).build)
@@ -2268,7 +2268,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def weightedBackendServices(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionWeightedBackendServiceArgs.Builder]*):
+    inline def weightedBackendServices(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionWeightedBackendServiceArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionWeightedBackendServiceArgs.builder
       builder.weightedBackendServices(args.map(_(argsBuilder).build)*)
@@ -2282,7 +2282,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def cacheKeyPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyCacheKeyPolicyArgs.Builder]):
+    inline def cacheKeyPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyCacheKeyPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyCacheKeyPolicyArgs.builder
       builder.cacheKeyPolicy(args(argsBuilder).build)
@@ -2302,7 +2302,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def clientTtl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyClientTtlArgs.Builder]):
+    inline def clientTtl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyClientTtlArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyClientTtlArgs.builder
       builder.clientTtl(args(argsBuilder).build)
@@ -2321,7 +2321,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def defaultTtl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyDefaultTtlArgs.Builder]):
+    inline def defaultTtl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyDefaultTtlArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyDefaultTtlArgs.builder
       builder.defaultTtl(args(argsBuilder).build)
@@ -2340,7 +2340,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def maxTtl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyMaxTtlArgs.Builder]):
+    inline def maxTtl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyMaxTtlArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyMaxTtlArgs.builder
       builder.maxTtl(args(argsBuilder).build)
@@ -2356,7 +2356,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def negativeCachingPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyNegativeCachingPolicyArgs.Builder]*):
+    inline def negativeCachingPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyNegativeCachingPolicyArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyNegativeCachingPolicyArgs.builder
       builder.negativeCachingPolicies(args.map(_(argsBuilder).build)*)
@@ -2374,7 +2374,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def serveWhileStale(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyServeWhileStaleArgs.Builder]):
+    inline def serveWhileStale(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyServeWhileStaleArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyServeWhileStaleArgs.builder
       builder.serveWhileStale(args(argsBuilder).build)
@@ -2388,7 +2388,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def ttl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyNegativeCachingPolicyTtlArgs.Builder]):
+    inline def ttl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyNegativeCachingPolicyTtlArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyNegativeCachingPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionCachePolicyNegativeCachingPolicyTtlArgs.builder
       builder.ttl(args(argsBuilder).build)
@@ -2399,7 +2399,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def abort(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionFaultInjectionPolicyAbortArgs.Builder]):
+    inline def abort(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionFaultInjectionPolicyAbortArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionFaultInjectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionFaultInjectionPolicyAbortArgs.builder
       builder.abort(args(argsBuilder).build)
@@ -2409,7 +2409,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def delay(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionFaultInjectionPolicyDelayArgs.Builder]):
+    inline def delay(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionFaultInjectionPolicyDelayArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionFaultInjectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionFaultInjectionPolicyDelayArgs.builder
       builder.delay(args(argsBuilder).build)
@@ -2420,7 +2420,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def fixedDelay(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionFaultInjectionPolicyDelayFixedDelayArgs.Builder]):
+    inline def fixedDelay(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionFaultInjectionPolicyDelayFixedDelayArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionFaultInjectionPolicyDelayArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionFaultInjectionPolicyDelayFixedDelayArgs.builder
       builder.fixedDelay(args(argsBuilder).build)
@@ -2433,7 +2433,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def perTryTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionRetryPolicyPerTryTimeoutArgs.Builder]):
+    inline def perTryTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionRetryPolicyPerTryTimeoutArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionRetryPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionRetryPolicyPerTryTimeoutArgs.builder
       builder.perTryTimeout(args(argsBuilder).build)
@@ -2447,7 +2447,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionWeightedBackendServiceHeaderActionArgs.Builder]):
+    inline def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionWeightedBackendServiceHeaderActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionWeightedBackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionWeightedBackendServiceHeaderActionArgs.builder
       builder.headerAction(args(argsBuilder).build)
@@ -2458,7 +2458,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAddArgs.Builder]*):
+    inline def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionWeightedBackendServiceHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAddArgs.builder
       builder.requestHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -2468,7 +2468,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAddArgs.Builder]*):
+    inline def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionWeightedBackendServiceHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAddArgs.builder
       builder.responseHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -2479,7 +2479,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapHeaderActionRequestHeadersToAddArgs.Builder]*):
+    inline def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapHeaderActionRequestHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapHeaderActionRequestHeadersToAddArgs.builder
       builder.requestHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -2489,7 +2489,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapHeaderActionResponseHeadersToAddArgs.Builder]*):
+    inline def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapHeaderActionResponseHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapHeaderActionResponseHeadersToAddArgs.builder
       builder.responseHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -2507,7 +2507,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def defaultCustomErrorResponsePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultCustomErrorResponsePolicyArgs.Builder]):
+    inline def defaultCustomErrorResponsePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultCustomErrorResponsePolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultCustomErrorResponsePolicyArgs.builder
       builder.defaultCustomErrorResponsePolicy(args(argsBuilder).build)
@@ -2521,7 +2521,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def defaultRouteAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionArgs.Builder]):
+    inline def defaultRouteAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionArgs.builder
       builder.defaultRouteAction(args(argsBuilder).build)
@@ -2533,7 +2533,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def defaultUrlRedirect(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultUrlRedirectArgs.Builder]):
+    inline def defaultUrlRedirect(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultUrlRedirectArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultUrlRedirectArgs.builder
       builder.defaultUrlRedirect(args(argsBuilder).build)
@@ -2545,7 +2545,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherHeaderActionArgs.Builder]):
+    inline def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherHeaderActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherHeaderActionArgs.builder
       builder.headerAction(args(argsBuilder).build)
@@ -2560,7 +2560,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def pathRules(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleArgs.Builder]*):
+    inline def pathRules(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleArgs.builder
       builder.pathRules(args.map(_(argsBuilder).build)*)
@@ -2575,7 +2575,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def routeRules(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleArgs.Builder]*):
+    inline def routeRules(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleArgs.builder
       builder.routeRules(args.map(_(argsBuilder).build)*)
@@ -2589,7 +2589,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def errorResponseRules(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultCustomErrorResponsePolicyErrorResponseRuleArgs.Builder]*):
+    inline def errorResponseRules(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultCustomErrorResponsePolicyErrorResponseRuleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultCustomErrorResponsePolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultCustomErrorResponsePolicyErrorResponseRuleArgs.builder
       builder.errorResponseRules(args.map(_(argsBuilder).build)*)
@@ -2603,7 +2603,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def cachePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyArgs.Builder]):
+    inline def cachePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyArgs.builder
       builder.cachePolicy(args(argsBuilder).build)
@@ -2614,7 +2614,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def corsPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCorsPolicyArgs.Builder]):
+    inline def corsPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCorsPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCorsPolicyArgs.builder
       builder.corsPolicy(args(argsBuilder).build)
@@ -2626,7 +2626,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def dynamicCompressionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionDynamicCompressionPolicyArgs.Builder]):
+    inline def dynamicCompressionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionDynamicCompressionPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionDynamicCompressionPolicyArgs.builder
       builder.dynamicCompressionPolicy(args(argsBuilder).build)
@@ -2640,7 +2640,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def faultInjectionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyArgs.Builder]):
+    inline def faultInjectionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyArgs.builder
       builder.faultInjectionPolicy(args(argsBuilder).build)
@@ -2651,7 +2651,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def imageOptimizationPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionImageOptimizationPolicyArgs.Builder]):
+    inline def imageOptimizationPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionImageOptimizationPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionImageOptimizationPolicyArgs.builder
       builder.imageOptimizationPolicy(args(argsBuilder).build)
@@ -2665,7 +2665,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def maxStreamDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionMaxStreamDurationArgs.Builder]):
+    inline def maxStreamDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionMaxStreamDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionMaxStreamDurationArgs.builder
       builder.maxStreamDuration(args(argsBuilder).build)
@@ -2677,7 +2677,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def requestMirrorPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionRequestMirrorPolicyArgs.Builder]):
+    inline def requestMirrorPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionRequestMirrorPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionRequestMirrorPolicyArgs.builder
       builder.requestMirrorPolicy(args(argsBuilder).build)
@@ -2687,7 +2687,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def retryPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionRetryPolicyArgs.Builder]):
+    inline def retryPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionRetryPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
@@ -2699,7 +2699,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def timeout(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionTimeoutArgs.Builder]):
+    inline def timeout(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionTimeoutArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionTimeoutArgs.builder
       builder.timeout(args(argsBuilder).build)
@@ -2709,7 +2709,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def urlRewrite(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionUrlRewriteArgs.Builder]):
+    inline def urlRewrite(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionUrlRewriteArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionUrlRewriteArgs.builder
       builder.urlRewrite(args(argsBuilder).build)
@@ -2725,7 +2725,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def weightedBackendServices(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionWeightedBackendServiceArgs.Builder]*):
+    inline def weightedBackendServices(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionWeightedBackendServiceArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionWeightedBackendServiceArgs.builder
       builder.weightedBackendServices(args.map(_(argsBuilder).build)*)
@@ -2739,7 +2739,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def cacheKeyPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyCacheKeyPolicyArgs.Builder]):
+    inline def cacheKeyPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyCacheKeyPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyCacheKeyPolicyArgs.builder
       builder.cacheKeyPolicy(args(argsBuilder).build)
@@ -2759,7 +2759,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def clientTtl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyClientTtlArgs.Builder]):
+    inline def clientTtl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyClientTtlArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyClientTtlArgs.builder
       builder.clientTtl(args(argsBuilder).build)
@@ -2778,7 +2778,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def defaultTtl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyDefaultTtlArgs.Builder]):
+    inline def defaultTtl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyDefaultTtlArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyDefaultTtlArgs.builder
       builder.defaultTtl(args(argsBuilder).build)
@@ -2797,7 +2797,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def maxTtl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyMaxTtlArgs.Builder]):
+    inline def maxTtl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyMaxTtlArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyMaxTtlArgs.builder
       builder.maxTtl(args(argsBuilder).build)
@@ -2813,7 +2813,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def negativeCachingPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyNegativeCachingPolicyArgs.Builder]*):
+    inline def negativeCachingPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyNegativeCachingPolicyArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyNegativeCachingPolicyArgs.builder
       builder.negativeCachingPolicies(args.map(_(argsBuilder).build)*)
@@ -2831,7 +2831,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def serveWhileStale(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyServeWhileStaleArgs.Builder]):
+    inline def serveWhileStale(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyServeWhileStaleArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyServeWhileStaleArgs.builder
       builder.serveWhileStale(args(argsBuilder).build)
@@ -2845,7 +2845,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def ttl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyNegativeCachingPolicyTtlArgs.Builder]):
+    inline def ttl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyNegativeCachingPolicyTtlArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyNegativeCachingPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionCachePolicyNegativeCachingPolicyTtlArgs.builder
       builder.ttl(args(argsBuilder).build)
@@ -2856,7 +2856,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def abort(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyAbortArgs.Builder]):
+    inline def abort(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyAbortArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyAbortArgs.builder
       builder.abort(args(argsBuilder).build)
@@ -2866,7 +2866,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def delay(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelayArgs.Builder]):
+    inline def delay(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelayArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelayArgs.builder
       builder.delay(args(argsBuilder).build)
@@ -2877,7 +2877,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def fixedDelay(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelayFixedDelayArgs.Builder]):
+    inline def fixedDelay(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelayFixedDelayArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelayArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionFaultInjectionPolicyDelayFixedDelayArgs.builder
       builder.fixedDelay(args(argsBuilder).build)
@@ -2890,7 +2890,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def perTryTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionRetryPolicyPerTryTimeoutArgs.Builder]):
+    inline def perTryTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionRetryPolicyPerTryTimeoutArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionRetryPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionRetryPolicyPerTryTimeoutArgs.builder
       builder.perTryTimeout(args(argsBuilder).build)
@@ -2904,7 +2904,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionArgs.Builder]):
+    inline def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionWeightedBackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionArgs.builder
       builder.headerAction(args(argsBuilder).build)
@@ -2915,7 +2915,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAddArgs.Builder]*):
+    inline def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAddArgs.builder
       builder.requestHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -2925,7 +2925,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAddArgs.Builder]*):
+    inline def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherDefaultRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAddArgs.builder
       builder.responseHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -2936,7 +2936,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherHeaderActionRequestHeadersToAddArgs.Builder]*):
+    inline def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherHeaderActionRequestHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherHeaderActionRequestHeadersToAddArgs.builder
       builder.requestHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -2946,7 +2946,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherHeaderActionResponseHeadersToAddArgs.Builder]*):
+    inline def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherHeaderActionResponseHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherHeaderActionResponseHeadersToAddArgs.builder
       builder.responseHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -2963,7 +2963,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def customErrorResponsePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleCustomErrorResponsePolicyArgs.Builder]):
+    inline def customErrorResponsePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleCustomErrorResponsePolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleCustomErrorResponsePolicyArgs.builder
       builder.customErrorResponsePolicy(args(argsBuilder).build)
@@ -2978,7 +2978,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def routeAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionArgs.Builder]):
+    inline def routeAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionArgs.builder
       builder.routeAction(args(argsBuilder).build)
@@ -2990,7 +2990,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def urlRedirect(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleUrlRedirectArgs.Builder]):
+    inline def urlRedirect(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleUrlRedirectArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleUrlRedirectArgs.builder
       builder.urlRedirect(args(argsBuilder).build)
@@ -3004,7 +3004,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def errorResponseRules(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleCustomErrorResponsePolicyErrorResponseRuleArgs.Builder]*):
+    inline def errorResponseRules(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleCustomErrorResponsePolicyErrorResponseRuleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleCustomErrorResponsePolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleCustomErrorResponsePolicyErrorResponseRuleArgs.builder
       builder.errorResponseRules(args.map(_(argsBuilder).build)*)
@@ -3018,7 +3018,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def cachePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyArgs.Builder]):
+    inline def cachePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyArgs.builder
       builder.cachePolicy(args(argsBuilder).build)
@@ -3029,7 +3029,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def corsPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCorsPolicyArgs.Builder]):
+    inline def corsPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCorsPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCorsPolicyArgs.builder
       builder.corsPolicy(args(argsBuilder).build)
@@ -3041,7 +3041,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def dynamicCompressionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionDynamicCompressionPolicyArgs.Builder]):
+    inline def dynamicCompressionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionDynamicCompressionPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionDynamicCompressionPolicyArgs.builder
       builder.dynamicCompressionPolicy(args(argsBuilder).build)
@@ -3057,7 +3057,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def faultInjectionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionFaultInjectionPolicyArgs.Builder]):
+    inline def faultInjectionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionFaultInjectionPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionFaultInjectionPolicyArgs.builder
       builder.faultInjectionPolicy(args(argsBuilder).build)
@@ -3068,7 +3068,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def imageOptimizationPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionImageOptimizationPolicyArgs.Builder]):
+    inline def imageOptimizationPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionImageOptimizationPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionImageOptimizationPolicyArgs.builder
       builder.imageOptimizationPolicy(args(argsBuilder).build)
@@ -3082,7 +3082,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def maxStreamDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionMaxStreamDurationArgs.Builder]):
+    inline def maxStreamDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionMaxStreamDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionMaxStreamDurationArgs.builder
       builder.maxStreamDuration(args(argsBuilder).build)
@@ -3095,7 +3095,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def requestMirrorPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionRequestMirrorPolicyArgs.Builder]):
+    inline def requestMirrorPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionRequestMirrorPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionRequestMirrorPolicyArgs.builder
       builder.requestMirrorPolicy(args(argsBuilder).build)
@@ -3105,7 +3105,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def retryPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionRetryPolicyArgs.Builder]):
+    inline def retryPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionRetryPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
@@ -3118,7 +3118,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def timeout(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionTimeoutArgs.Builder]):
+    inline def timeout(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionTimeoutArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionTimeoutArgs.builder
       builder.timeout(args(argsBuilder).build)
@@ -3129,7 +3129,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def urlRewrite(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionUrlRewriteArgs.Builder]):
+    inline def urlRewrite(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionUrlRewriteArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionUrlRewriteArgs.builder
       builder.urlRewrite(args(argsBuilder).build)
@@ -3146,7 +3146,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def weightedBackendServices(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionWeightedBackendServiceArgs.Builder]*):
+    inline def weightedBackendServices(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionWeightedBackendServiceArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionWeightedBackendServiceArgs.builder
       builder.weightedBackendServices(args.map(_(argsBuilder).build)*)
@@ -3160,7 +3160,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def cacheKeyPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyCacheKeyPolicyArgs.Builder]):
+    inline def cacheKeyPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyCacheKeyPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyCacheKeyPolicyArgs.builder
       builder.cacheKeyPolicy(args(argsBuilder).build)
@@ -3180,7 +3180,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def clientTtl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyClientTtlArgs.Builder]):
+    inline def clientTtl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyClientTtlArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyClientTtlArgs.builder
       builder.clientTtl(args(argsBuilder).build)
@@ -3199,7 +3199,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def defaultTtl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyDefaultTtlArgs.Builder]):
+    inline def defaultTtl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyDefaultTtlArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyDefaultTtlArgs.builder
       builder.defaultTtl(args(argsBuilder).build)
@@ -3218,7 +3218,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def maxTtl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyMaxTtlArgs.Builder]):
+    inline def maxTtl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyMaxTtlArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyMaxTtlArgs.builder
       builder.maxTtl(args(argsBuilder).build)
@@ -3234,7 +3234,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def negativeCachingPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyNegativeCachingPolicyArgs.Builder]*):
+    inline def negativeCachingPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyNegativeCachingPolicyArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyNegativeCachingPolicyArgs.builder
       builder.negativeCachingPolicies(args.map(_(argsBuilder).build)*)
@@ -3252,7 +3252,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def serveWhileStale(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyServeWhileStaleArgs.Builder]):
+    inline def serveWhileStale(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyServeWhileStaleArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyServeWhileStaleArgs.builder
       builder.serveWhileStale(args(argsBuilder).build)
@@ -3266,7 +3266,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def ttl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyNegativeCachingPolicyTtlArgs.Builder]):
+    inline def ttl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyNegativeCachingPolicyTtlArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyNegativeCachingPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionCachePolicyNegativeCachingPolicyTtlArgs.builder
       builder.ttl(args(argsBuilder).build)
@@ -3277,7 +3277,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def abort(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionFaultInjectionPolicyAbortArgs.Builder]):
+    inline def abort(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionFaultInjectionPolicyAbortArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionFaultInjectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionFaultInjectionPolicyAbortArgs.builder
       builder.abort(args(argsBuilder).build)
@@ -3287,7 +3287,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def delay(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionFaultInjectionPolicyDelayArgs.Builder]):
+    inline def delay(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionFaultInjectionPolicyDelayArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionFaultInjectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionFaultInjectionPolicyDelayArgs.builder
       builder.delay(args(argsBuilder).build)
@@ -3298,7 +3298,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def fixedDelay(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionFaultInjectionPolicyDelayFixedDelayArgs.Builder]):
+    inline def fixedDelay(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionFaultInjectionPolicyDelayFixedDelayArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionFaultInjectionPolicyDelayArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionFaultInjectionPolicyDelayFixedDelayArgs.builder
       builder.fixedDelay(args(argsBuilder).build)
@@ -3311,7 +3311,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def perTryTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionRetryPolicyPerTryTimeoutArgs.Builder]):
+    inline def perTryTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionRetryPolicyPerTryTimeoutArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionRetryPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionRetryPolicyPerTryTimeoutArgs.builder
       builder.perTryTimeout(args(argsBuilder).build)
@@ -3325,7 +3325,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionArgs.Builder]):
+    inline def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionWeightedBackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionArgs.builder
       builder.headerAction(args(argsBuilder).build)
@@ -3336,7 +3336,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAddArgs.Builder]*):
+    inline def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAddArgs.builder
       builder.requestHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -3346,7 +3346,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAddArgs.Builder]*):
+    inline def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherPathRuleRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAddArgs.builder
       builder.responseHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -3357,7 +3357,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def customErrorResponsePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleCustomErrorResponsePolicyArgs.Builder]):
+    inline def customErrorResponsePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleCustomErrorResponsePolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleCustomErrorResponsePolicyArgs.builder
       builder.customErrorResponsePolicy(args(argsBuilder).build)
@@ -3370,7 +3370,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleHeaderActionArgs.Builder]):
+    inline def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleHeaderActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleHeaderActionArgs.builder
       builder.headerAction(args(argsBuilder).build)
@@ -3384,7 +3384,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def httpFilterConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleHttpFilterConfigArgs.Builder]*):
+    inline def httpFilterConfigs(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleHttpFilterConfigArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleHttpFilterConfigArgs.builder
       builder.httpFilterConfigs(args.map(_(argsBuilder).build)*)
@@ -3398,7 +3398,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def httpFilterMetadatas(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleHttpFilterMetadataArgs.Builder]*):
+    inline def httpFilterMetadatas(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleHttpFilterMetadataArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleHttpFilterMetadataArgs.builder
       builder.httpFilterMetadatas(args.map(_(argsBuilder).build)*)
@@ -3408,7 +3408,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def matchRules(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleMatchRuleArgs.Builder]*):
+    inline def matchRules(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleMatchRuleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleMatchRuleArgs.builder
       builder.matchRules(args.map(_(argsBuilder).build)*)
@@ -3423,7 +3423,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def routeAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionArgs.Builder]):
+    inline def routeAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionArgs.builder
       builder.routeAction(args(argsBuilder).build)
@@ -3435,7 +3435,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def urlRedirect(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleUrlRedirectArgs.Builder]):
+    inline def urlRedirect(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleUrlRedirectArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleUrlRedirectArgs.builder
       builder.urlRedirect(args(argsBuilder).build)
@@ -3449,7 +3449,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def errorResponseRules(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleCustomErrorResponsePolicyErrorResponseRuleArgs.Builder]*):
+    inline def errorResponseRules(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleCustomErrorResponsePolicyErrorResponseRuleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleCustomErrorResponsePolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleCustomErrorResponsePolicyErrorResponseRuleArgs.builder
       builder.errorResponseRules(args.map(_(argsBuilder).build)*)
@@ -3460,7 +3460,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleHeaderActionRequestHeadersToAddArgs.Builder]*):
+    inline def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleHeaderActionRequestHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleHeaderActionRequestHeadersToAddArgs.builder
       builder.requestHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -3470,7 +3470,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleHeaderActionResponseHeadersToAddArgs.Builder]*):
+    inline def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleHeaderActionResponseHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleHeaderActionResponseHeadersToAddArgs.builder
       builder.responseHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -3482,7 +3482,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def headerMatches(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleMatchRuleHeaderMatchArgs.Builder]*):
+    inline def headerMatches(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleMatchRuleHeaderMatchArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleMatchRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleMatchRuleHeaderMatchArgs.builder
       builder.headerMatches(args.map(_(argsBuilder).build)*)
@@ -3502,7 +3502,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def metadataFilters(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleMatchRuleMetadataFilterArgs.Builder]*):
+    inline def metadataFilters(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleMatchRuleMetadataFilterArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleMatchRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleMatchRuleMetadataFilterArgs.builder
       builder.metadataFilters(args.map(_(argsBuilder).build)*)
@@ -3513,7 +3513,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def queryParameterMatches(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleMatchRuleQueryParameterMatchArgs.Builder]*):
+    inline def queryParameterMatches(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleMatchRuleQueryParameterMatchArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleMatchRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleMatchRuleQueryParameterMatchArgs.builder
       builder.queryParameterMatches(args.map(_(argsBuilder).build)*)
@@ -3529,7 +3529,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def rangeMatch(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleMatchRuleHeaderMatchRangeMatchArgs.Builder]):
+    inline def rangeMatch(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleMatchRuleHeaderMatchRangeMatchArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleMatchRuleHeaderMatchArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleMatchRuleHeaderMatchRangeMatchArgs.builder
       builder.rangeMatch(args(argsBuilder).build)
@@ -3542,7 +3542,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def filterLabels(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabelArgs.Builder]*):
+    inline def filterLabels(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabelArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleMatchRuleMetadataFilterArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleMatchRuleMetadataFilterFilterLabelArgs.builder
       builder.filterLabels(args.map(_(argsBuilder).build)*)
@@ -3556,7 +3556,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def cachePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyArgs.Builder]):
+    inline def cachePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyArgs.builder
       builder.cachePolicy(args(argsBuilder).build)
@@ -3567,7 +3567,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def corsPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCorsPolicyArgs.Builder]):
+    inline def corsPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCorsPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCorsPolicyArgs.builder
       builder.corsPolicy(args(argsBuilder).build)
@@ -3579,7 +3579,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def dynamicCompressionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionDynamicCompressionPolicyArgs.Builder]):
+    inline def dynamicCompressionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionDynamicCompressionPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionDynamicCompressionPolicyArgs.builder
       builder.dynamicCompressionPolicy(args(argsBuilder).build)
@@ -3595,7 +3595,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def faultInjectionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyArgs.Builder]):
+    inline def faultInjectionPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyArgs.builder
       builder.faultInjectionPolicy(args(argsBuilder).build)
@@ -3606,7 +3606,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def imageOptimizationPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionImageOptimizationPolicyArgs.Builder]):
+    inline def imageOptimizationPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionImageOptimizationPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionImageOptimizationPolicyArgs.builder
       builder.imageOptimizationPolicy(args(argsBuilder).build)
@@ -3620,7 +3620,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def maxStreamDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionMaxStreamDurationArgs.Builder]):
+    inline def maxStreamDuration(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionMaxStreamDurationArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionMaxStreamDurationArgs.builder
       builder.maxStreamDuration(args(argsBuilder).build)
@@ -3633,7 +3633,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def requestMirrorPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionRequestMirrorPolicyArgs.Builder]):
+    inline def requestMirrorPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionRequestMirrorPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionRequestMirrorPolicyArgs.builder
       builder.requestMirrorPolicy(args(argsBuilder).build)
@@ -3643,7 +3643,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def retryPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionRetryPolicyArgs.Builder]):
+    inline def retryPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionRetryPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
@@ -3656,7 +3656,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def timeout(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionTimeoutArgs.Builder]):
+    inline def timeout(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionTimeoutArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionTimeoutArgs.builder
       builder.timeout(args(argsBuilder).build)
@@ -3667,7 +3667,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def urlRewrite(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionUrlRewriteArgs.Builder]):
+    inline def urlRewrite(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionUrlRewriteArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionUrlRewriteArgs.builder
       builder.urlRewrite(args(argsBuilder).build)
@@ -3684,7 +3684,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def weightedBackendServices(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionWeightedBackendServiceArgs.Builder]*):
+    inline def weightedBackendServices(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionWeightedBackendServiceArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionWeightedBackendServiceArgs.builder
       builder.weightedBackendServices(args.map(_(argsBuilder).build)*)
@@ -3698,7 +3698,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def cacheKeyPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyCacheKeyPolicyArgs.Builder]):
+    inline def cacheKeyPolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyCacheKeyPolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyCacheKeyPolicyArgs.builder
       builder.cacheKeyPolicy(args(argsBuilder).build)
@@ -3718,7 +3718,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def clientTtl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyClientTtlArgs.Builder]):
+    inline def clientTtl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyClientTtlArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyClientTtlArgs.builder
       builder.clientTtl(args(argsBuilder).build)
@@ -3737,7 +3737,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def defaultTtl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyDefaultTtlArgs.Builder]):
+    inline def defaultTtl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyDefaultTtlArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyDefaultTtlArgs.builder
       builder.defaultTtl(args(argsBuilder).build)
@@ -3756,7 +3756,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def maxTtl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyMaxTtlArgs.Builder]):
+    inline def maxTtl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyMaxTtlArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyMaxTtlArgs.builder
       builder.maxTtl(args(argsBuilder).build)
@@ -3772,7 +3772,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def negativeCachingPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyNegativeCachingPolicyArgs.Builder]*):
+    inline def negativeCachingPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyNegativeCachingPolicyArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyNegativeCachingPolicyArgs.builder
       builder.negativeCachingPolicies(args.map(_(argsBuilder).build)*)
@@ -3790,7 +3790,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def serveWhileStale(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyServeWhileStaleArgs.Builder]):
+    inline def serveWhileStale(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyServeWhileStaleArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyServeWhileStaleArgs.builder
       builder.serveWhileStale(args(argsBuilder).build)
@@ -3804,7 +3804,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def ttl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyNegativeCachingPolicyTtlArgs.Builder]):
+    inline def ttl(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyNegativeCachingPolicyTtlArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyNegativeCachingPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionCachePolicyNegativeCachingPolicyTtlArgs.builder
       builder.ttl(args(argsBuilder).build)
@@ -3815,7 +3815,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def abort(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyAbortArgs.Builder]):
+    inline def abort(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyAbortArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyAbortArgs.builder
       builder.abort(args(argsBuilder).build)
@@ -3825,7 +3825,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def delay(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelayArgs.Builder]):
+    inline def delay(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelayArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelayArgs.builder
       builder.delay(args(argsBuilder).build)
@@ -3836,7 +3836,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def fixedDelay(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelayFixedDelayArgs.Builder]):
+    inline def fixedDelay(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelayFixedDelayArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelayArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionFaultInjectionPolicyDelayFixedDelayArgs.builder
       builder.fixedDelay(args(argsBuilder).build)
@@ -3849,7 +3849,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def perTryTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionRetryPolicyPerTryTimeoutArgs.Builder]):
+    inline def perTryTimeout(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionRetryPolicyPerTryTimeoutArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionRetryPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionRetryPolicyPerTryTimeoutArgs.builder
       builder.perTryTimeout(args(argsBuilder).build)
@@ -3862,7 +3862,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def regexRewrite(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionUrlRewriteRegexRewriteArgs.Builder]):
+    inline def regexRewrite(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionUrlRewriteRegexRewriteArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionUrlRewriteArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionUrlRewriteRegexRewriteArgs.builder
       builder.regexRewrite(args(argsBuilder).build)
@@ -3876,7 +3876,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderActionArgs.Builder]):
+    inline def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionWeightedBackendServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderActionArgs.builder
       builder.headerAction(args(argsBuilder).build)
@@ -3887,7 +3887,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAddArgs.Builder]*):
+    inline def requestHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderActionRequestHeadersToAddArgs.builder
       builder.requestHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -3897,7 +3897,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAddArgs.Builder]*):
+    inline def responseHeadersToAdds(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAddArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderActionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherRouteRuleRouteActionWeightedBackendServiceHeaderActionResponseHeadersToAddArgs.builder
       builder.responseHeadersToAdds(args.map(_(argsBuilder).build)*)
@@ -3915,7 +3915,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def defaultCustomErrorResponsePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultCustomErrorResponsePolicyArgs.Builder]):
+    inline def defaultCustomErrorResponsePolicy(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultCustomErrorResponsePolicyArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultCustomErrorResponsePolicyArgs.builder
       builder.defaultCustomErrorResponsePolicy(args(argsBuilder).build)
@@ -3929,7 +3929,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def defaultRouteAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionArgs.Builder]):
+    inline def defaultRouteAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultRouteActionArgs.builder
       builder.defaultRouteAction(args(argsBuilder).build)
@@ -3941,7 +3941,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def defaultUrlRedirect(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultUrlRedirectArgs.Builder]):
+    inline def defaultUrlRedirect(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapDefaultUrlRedirectArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapDefaultUrlRedirectArgs.builder
       builder.defaultUrlRedirect(args(argsBuilder).build)
@@ -3953,7 +3953,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapHeaderActionArgs.Builder]):
+    inline def headerAction(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapHeaderActionArgs.Builder]):
         com.pulumi.gcp.compute.inputs.URLMapState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.URLMapHeaderActionArgs.builder
       builder.headerAction(args(argsBuilder).build)
@@ -3963,7 +3963,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def hostRules(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapHostRuleArgs.Builder]*):
+    inline def hostRules(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapHostRuleArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapHostRuleArgs.builder
       builder.hostRules(args.map(_(argsBuilder).build)*)
@@ -3973,7 +3973,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def pathMatchers(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherArgs.Builder]*):
+    inline def pathMatchers(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapPathMatcherArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapPathMatcherArgs.builder
       builder.pathMatchers(args.map(_(argsBuilder).build)*)
@@ -3985,7 +3985,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def tests(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapTestArgs.Builder]*):
+    inline def tests(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapTestArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapTestArgs.builder
       builder.tests(args.map(_(argsBuilder).build)*)
@@ -3996,7 +3996,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def headers(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapTestHeaderArgs.Builder]*):
+    inline def headers(args: Endofunction[com.pulumi.gcp.compute.inputs.URLMapTestHeaderArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.URLMapTestArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.URLMapTestHeaderArgs.builder
       builder.headers(args.map(_(argsBuilder).build)*)
@@ -4007,7 +4007,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.VPNGatewayParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.VPNGatewayParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.VPNGatewayState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.VPNGatewayParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -4018,7 +4018,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def phase1(args: Endofunction[com.pulumi.gcp.compute.inputs.VPNTunnelCipherSuitePhase1Args.Builder]):
+    inline def phase1(args: Endofunction[com.pulumi.gcp.compute.inputs.VPNTunnelCipherSuitePhase1Args.Builder]):
         com.pulumi.gcp.compute.inputs.VPNTunnelCipherSuiteArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.VPNTunnelCipherSuitePhase1Args.builder
       builder.phase1(args(argsBuilder).build)
@@ -4030,7 +4030,7 @@ object compute_ext2:
      * &lt;a name=&#34;nestedCipherSuitePhase1&#34;&gt;&lt;/a&gt;The `phase1` block supports:
      * @return builder
      */
-    def phase2(args: Endofunction[com.pulumi.gcp.compute.inputs.VPNTunnelCipherSuitePhase2Args.Builder]):
+    inline def phase2(args: Endofunction[com.pulumi.gcp.compute.inputs.VPNTunnelCipherSuitePhase2Args.Builder]):
         com.pulumi.gcp.compute.inputs.VPNTunnelCipherSuiteArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.VPNTunnelCipherSuitePhase2Args.builder
       builder.phase2(args(argsBuilder).build)
@@ -4041,7 +4041,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def cipherSuite(args: Endofunction[com.pulumi.gcp.compute.inputs.VPNTunnelCipherSuiteArgs.Builder]):
+    inline def cipherSuite(args: Endofunction[com.pulumi.gcp.compute.inputs.VPNTunnelCipherSuiteArgs.Builder]):
         com.pulumi.gcp.compute.inputs.VPNTunnelState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.VPNTunnelCipherSuiteArgs.builder
       builder.cipherSuite(args(argsBuilder).build)
@@ -4051,7 +4051,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def params(args: Endofunction[com.pulumi.gcp.compute.inputs.VPNTunnelParamsArgs.Builder]):
+    inline def params(args: Endofunction[com.pulumi.gcp.compute.inputs.VPNTunnelParamsArgs.Builder]):
         com.pulumi.gcp.compute.inputs.VPNTunnelState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.VPNTunnelParamsArgs.builder
       builder.params(args(argsBuilder).build)
@@ -4061,7 +4061,7 @@ object compute_ext2:
      * @param interconnects Structure is documented below.
      * @return builder
      */
-    def interconnects(args: Endofunction[com.pulumi.gcp.compute.inputs.WireGroupEndpointInterconnectArgs.Builder]*):
+    inline def interconnects(args: Endofunction[com.pulumi.gcp.compute.inputs.WireGroupEndpointInterconnectArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.WireGroupEndpointArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.WireGroupEndpointInterconnectArgs.builder
       builder.interconnects(args.map(_(argsBuilder).build)*)
@@ -4072,7 +4072,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def endpoints(args: Endofunction[com.pulumi.gcp.compute.inputs.WireGroupEndpointArgs.Builder]*):
+    inline def endpoints(args: Endofunction[com.pulumi.gcp.compute.inputs.WireGroupEndpointArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.WireGroupState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.WireGroupEndpointArgs.builder
       builder.endpoints(args.map(_(argsBuilder).build)*)
@@ -4082,7 +4082,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def topologies(args: Endofunction[com.pulumi.gcp.compute.inputs.WireGroupTopologyArgs.Builder]*):
+    inline def topologies(args: Endofunction[com.pulumi.gcp.compute.inputs.WireGroupTopologyArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.WireGroupState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.WireGroupTopologyArgs.builder
       builder.topologies(args.map(_(argsBuilder).build)*)
@@ -4093,7 +4093,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def wireGroupProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.WireGroupWireGroupPropertiesArgs.Builder]):
+    inline def wireGroupProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.WireGroupWireGroupPropertiesArgs.Builder]):
         com.pulumi.gcp.compute.inputs.WireGroupState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.WireGroupWireGroupPropertiesArgs.builder
       builder.wireGroupProperties(args(argsBuilder).build)
@@ -4103,7 +4103,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def wireProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.WireGroupWirePropertiesArgs.Builder]):
+    inline def wireProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.WireGroupWirePropertiesArgs.Builder]):
         com.pulumi.gcp.compute.inputs.WireGroupState.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.WireGroupWirePropertiesArgs.builder
       builder.wireProperties(args(argsBuilder).build)
@@ -4113,7 +4113,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def wires(args: Endofunction[com.pulumi.gcp.compute.inputs.WireGroupWireArgs.Builder]*):
+    inline def wires(args: Endofunction[com.pulumi.gcp.compute.inputs.WireGroupWireArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.WireGroupState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.WireGroupWireArgs.builder
       builder.wires(args.map(_(argsBuilder).build)*)
@@ -4124,7 +4124,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def endpoints(args: Endofunction[com.pulumi.gcp.compute.inputs.WireGroupTopologyEndpointArgs.Builder]*):
+    inline def endpoints(args: Endofunction[com.pulumi.gcp.compute.inputs.WireGroupTopologyEndpointArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.WireGroupTopologyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.WireGroupTopologyEndpointArgs.builder
       builder.endpoints(args.map(_(argsBuilder).build)*)
@@ -4135,7 +4135,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def endpoints(args: Endofunction[com.pulumi.gcp.compute.inputs.WireGroupWireEndpointArgs.Builder]*):
+    inline def endpoints(args: Endofunction[com.pulumi.gcp.compute.inputs.WireGroupWireEndpointArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.WireGroupWireArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.WireGroupWireEndpointArgs.builder
       builder.endpoints(args.map(_(argsBuilder).build)*)
@@ -4145,7 +4145,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def wireProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.WireGroupWireWirePropertyArgs.Builder]*):
+    inline def wireProperties(args: Endofunction[com.pulumi.gcp.compute.inputs.WireGroupWireWirePropertyArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.WireGroupWireArgs.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.WireGroupWireWirePropertyArgs.builder
       builder.wireProperties(args.map(_(argsBuilder).build)*)
@@ -4156,7 +4156,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def labelSelector(args: Endofunction[com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyInstanceSelectorLabelSelectorArgs.Builder]):
+    inline def labelSelector(args: Endofunction[com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyInstanceSelectorLabelSelectorArgs.Builder]):
         com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyInstanceSelectorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyInstanceSelectorLabelSelectorArgs.builder
       builder.labelSelector(args(argsBuilder).build)
@@ -4167,7 +4167,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def extensionPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyExtensionPolicyArgs.Builder]*):
+    inline def extensionPolicies(args: Endofunction[com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyExtensionPolicyArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyExtensionPolicyArgs.builder
       builder.extensionPolicies(args.map(_(argsBuilder).build)*)
@@ -4177,7 +4177,7 @@ object compute_ext2:
      * Structure is documented below.
      * @return builder
      */
-    def instanceSelectors(args: Endofunction[com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyInstanceSelectorArgs.Builder]*):
+    inline def instanceSelectors(args: Endofunction[com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyInstanceSelectorArgs.Builder]*):
         com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.compute.inputs.ZoneVmExtensionPolicyInstanceSelectorArgs.builder
       builder.instanceSelectors(args.map(_(argsBuilder).build)*)

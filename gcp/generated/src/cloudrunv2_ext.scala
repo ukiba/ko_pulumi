@@ -8,7 +8,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def binaryAuthorization(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobBinaryAuthorizationArgs.Builder]):
+    inline def binaryAuthorization(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobBinaryAuthorizationArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.JobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobBinaryAuthorizationArgs.builder
       builder.binaryAuthorization(args(argsBuilder).build)
@@ -18,19 +18,19 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def template(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateArgs.Builder]):
+    inline def template(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.JobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateArgs.builder
       builder.template(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.cloudrunv2.JobIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.JobIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.cloudrunv2.JobIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.JobIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -41,7 +41,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def binaryAuthorization(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceBinaryAuthorizationArgs.Builder]):
+    inline def binaryAuthorization(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceBinaryAuthorizationArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.ServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceBinaryAuthorizationArgs.builder
       builder.binaryAuthorization(args(argsBuilder).build)
@@ -51,7 +51,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def buildConfig(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceBuildConfigArgs.Builder]):
+    inline def buildConfig(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceBuildConfigArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.ServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceBuildConfigArgs.builder
       builder.buildConfig(args(argsBuilder).build)
@@ -61,7 +61,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def multiRegionSettings(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceMultiRegionSettingsArgs.Builder]):
+    inline def multiRegionSettings(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceMultiRegionSettingsArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.ServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceMultiRegionSettingsArgs.builder
       builder.multiRegionSettings(args(argsBuilder).build)
@@ -71,7 +71,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scaling(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceScalingArgs.Builder]):
+    inline def scaling(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceScalingArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.ServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceScalingArgs.builder
       builder.scaling(args(argsBuilder).build)
@@ -81,7 +81,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def template(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateArgs.Builder]):
+    inline def template(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.ServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateArgs.builder
       builder.template(args(argsBuilder).build)
@@ -91,19 +91,19 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def traffics(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTrafficArgs.Builder]*):
+    inline def traffics(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTrafficArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.ServiceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTrafficArgs.builder
       builder.traffics(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.cloudrunv2.ServiceIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.ServiceIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.cloudrunv2.ServiceIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.ServiceIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -114,7 +114,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def binaryAuthorization(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolBinaryAuthorizationArgs.Builder]):
+    inline def binaryAuthorization(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolBinaryAuthorizationArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.WorkerPoolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolBinaryAuthorizationArgs.builder
       builder.binaryAuthorization(args(argsBuilder).build)
@@ -124,7 +124,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def instanceSplits(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolInstanceSplitArgs.Builder]*):
+    inline def instanceSplits(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolInstanceSplitArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.WorkerPoolArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolInstanceSplitArgs.builder
       builder.instanceSplits(args.map(_(argsBuilder).build)*)
@@ -134,7 +134,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scaling(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolScalingArgs.Builder]):
+    inline def scaling(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolScalingArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.WorkerPoolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolScalingArgs.builder
       builder.scaling(args(argsBuilder).build)
@@ -144,31 +144,31 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def template(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateArgs.Builder]):
+    inline def template(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.WorkerPoolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateArgs.builder
       builder.template(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.cloudrunv2.WorkerPoolIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.WorkerPoolIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.cloudrunv2.WorkerPoolIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.WorkerPoolIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.cloudrunv2.inputs.JobIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.JobIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.cloudrunv2.inputs.JobIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.JobIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -179,7 +179,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def binaryAuthorization(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobBinaryAuthorizationArgs.Builder]):
+    inline def binaryAuthorization(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobBinaryAuthorizationArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.JobState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobBinaryAuthorizationArgs.builder
       builder.binaryAuthorization(args(argsBuilder).build)
@@ -189,7 +189,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobConditionArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.JobState.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -199,7 +199,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def latestCreatedExecutions(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobLatestCreatedExecutionArgs.Builder]*):
+    inline def latestCreatedExecutions(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobLatestCreatedExecutionArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.JobState.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobLatestCreatedExecutionArgs.builder
       builder.latestCreatedExecutions(args.map(_(argsBuilder).build)*)
@@ -209,7 +209,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def template(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateArgs.Builder]):
+    inline def template(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.JobState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateArgs.builder
       builder.template(args(argsBuilder).build)
@@ -219,7 +219,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def terminalConditions(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTerminalConditionArgs.Builder]*):
+    inline def terminalConditions(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTerminalConditionArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.JobState.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTerminalConditionArgs.builder
       builder.terminalConditions(args.map(_(argsBuilder).build)*)
@@ -230,7 +230,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def template(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateArgs.Builder]):
+    inline def template(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.JobTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateArgs.builder
       builder.template(args(argsBuilder).build)
@@ -241,7 +241,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def containers(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerArgs.Builder]*):
+    inline def containers(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerArgs.builder
       builder.containers(args.map(_(argsBuilder).build)*)
@@ -251,7 +251,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeSelector(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateNodeSelectorArgs.Builder]):
+    inline def nodeSelector(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateNodeSelectorArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateNodeSelectorArgs.builder
       builder.nodeSelector(args(argsBuilder).build)
@@ -261,7 +261,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def volumes(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeArgs.Builder]*):
+    inline def volumes(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeArgs.builder
       builder.volumes(args.map(_(argsBuilder).build)*)
@@ -271,7 +271,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcAccess(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVpcAccessArgs.Builder]):
+    inline def vpcAccess(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVpcAccessArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVpcAccessArgs.builder
       builder.vpcAccess(args(argsBuilder).build)
@@ -283,7 +283,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateWorkloadIdentityConfigArgs.Builder]):
+    inline def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateWorkloadIdentityConfigArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateWorkloadIdentityConfigArgs.builder
       builder.workloadIdentityConfig(args(argsBuilder).build)
@@ -294,7 +294,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def envs(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerEnvArgs.Builder]*):
+    inline def envs(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerEnvArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerEnvArgs.builder
       builder.envs(args.map(_(argsBuilder).build)*)
@@ -305,7 +305,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ports(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerPortArgs.Builder]*):
+    inline def ports(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerPortArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerPortArgs.builder
       builder.ports(args.map(_(argsBuilder).build)*)
@@ -315,7 +315,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resources(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerResourcesArgs.Builder]):
+    inline def resources(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerResourcesArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerResourcesArgs.builder
       builder.resources(args(argsBuilder).build)
@@ -327,7 +327,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def startupProbe(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerStartupProbeArgs.Builder]):
+    inline def startupProbe(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerStartupProbeArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerStartupProbeArgs.builder
       builder.startupProbe(args(argsBuilder).build)
@@ -337,7 +337,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def volumeMounts(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerVolumeMountArgs.Builder]*):
+    inline def volumeMounts(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerVolumeMountArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerVolumeMountArgs.builder
       builder.volumeMounts(args.map(_(argsBuilder).build)*)
@@ -348,7 +348,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def valueSource(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerEnvValueSourceArgs.Builder]):
+    inline def valueSource(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerEnvValueSourceArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerEnvArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerEnvValueSourceArgs.builder
       builder.valueSource(args(argsBuilder).build)
@@ -359,7 +359,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secretKeyRef(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerEnvValueSourceSecretKeyRefArgs.Builder]):
+    inline def secretKeyRef(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerEnvValueSourceSecretKeyRefArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerEnvValueSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerEnvValueSourceSecretKeyRefArgs.builder
       builder.secretKeyRef(args(argsBuilder).build)
@@ -370,7 +370,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def grpc(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerStartupProbeGrpcArgs.Builder]):
+    inline def grpc(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerStartupProbeGrpcArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerStartupProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerStartupProbeGrpcArgs.builder
       builder.grpc(args(argsBuilder).build)
@@ -380,7 +380,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpGet(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerStartupProbeHttpGetArgs.Builder]):
+    inline def httpGet(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerStartupProbeHttpGetArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerStartupProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerStartupProbeHttpGetArgs.builder
       builder.httpGet(args(argsBuilder).build)
@@ -390,7 +390,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tcpSocket(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerStartupProbeTcpSocketArgs.Builder]):
+    inline def tcpSocket(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerStartupProbeTcpSocketArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerStartupProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerStartupProbeTcpSocketArgs.builder
       builder.tcpSocket(args(argsBuilder).build)
@@ -401,7 +401,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpHeaders(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerStartupProbeHttpGetHttpHeaderArgs.Builder]*):
+    inline def httpHeaders(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerStartupProbeHttpGetHttpHeaderArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerStartupProbeHttpGetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateContainerStartupProbeHttpGetHttpHeaderArgs.builder
       builder.httpHeaders(args.map(_(argsBuilder).build)*)
@@ -412,7 +412,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudSqlInstance(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeCloudSqlInstanceArgs.Builder]):
+    inline def cloudSqlInstance(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeCloudSqlInstanceArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeCloudSqlInstanceArgs.builder
       builder.cloudSqlInstance(args(argsBuilder).build)
@@ -422,7 +422,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def emptyDir(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeEmptyDirArgs.Builder]):
+    inline def emptyDir(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeEmptyDirArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeEmptyDirArgs.builder
       builder.emptyDir(args(argsBuilder).build)
@@ -432,7 +432,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gcs(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeGcsArgs.Builder]):
+    inline def gcs(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeGcsArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeGcsArgs.builder
       builder.gcs(args(argsBuilder).build)
@@ -442,7 +442,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nfs(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeNfsArgs.Builder]):
+    inline def nfs(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeNfsArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeNfsArgs.builder
       builder.nfs(args(argsBuilder).build)
@@ -452,7 +452,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secret(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeSecretArgs.Builder]):
+    inline def secret(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeSecretArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeSecretArgs.builder
       builder.secret(args(argsBuilder).build)
@@ -463,7 +463,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def items(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeSecretItemArgs.Builder]*):
+    inline def items(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeSecretItemArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeSecretArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVolumeSecretItemArgs.builder
       builder.items(args.map(_(argsBuilder).build)*)
@@ -474,19 +474,19 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkInterfaces(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVpcAccessNetworkInterfaceArgs.Builder]*):
+    inline def networkInterfaces(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVpcAccessNetworkInterfaceArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVpcAccessArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.JobTemplateTemplateVpcAccessNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.cloudrunv2.inputs.ServiceIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.cloudrunv2.inputs.ServiceIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -497,7 +497,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def binaryAuthorization(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceBinaryAuthorizationArgs.Builder]):
+    inline def binaryAuthorization(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceBinaryAuthorizationArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceBinaryAuthorizationArgs.builder
       builder.binaryAuthorization(args(argsBuilder).build)
@@ -507,7 +507,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def buildConfig(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceBuildConfigArgs.Builder]):
+    inline def buildConfig(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceBuildConfigArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceBuildConfigArgs.builder
       builder.buildConfig(args(argsBuilder).build)
@@ -517,7 +517,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceConditionArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceState.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -527,7 +527,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def multiRegionSettings(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceMultiRegionSettingsArgs.Builder]):
+    inline def multiRegionSettings(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceMultiRegionSettingsArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceMultiRegionSettingsArgs.builder
       builder.multiRegionSettings(args(argsBuilder).build)
@@ -537,7 +537,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scaling(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceScalingArgs.Builder]):
+    inline def scaling(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceScalingArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceScalingArgs.builder
       builder.scaling(args(argsBuilder).build)
@@ -547,7 +547,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def template(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateArgs.Builder]):
+    inline def template(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateArgs.builder
       builder.template(args(argsBuilder).build)
@@ -557,7 +557,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def terminalConditions(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTerminalConditionArgs.Builder]*):
+    inline def terminalConditions(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTerminalConditionArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceState.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTerminalConditionArgs.builder
       builder.terminalConditions(args.map(_(argsBuilder).build)*)
@@ -567,7 +567,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trafficStatuses(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTrafficStatusArgs.Builder]*):
+    inline def trafficStatuses(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTrafficStatusArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceState.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTrafficStatusArgs.builder
       builder.trafficStatuses(args.map(_(argsBuilder).build)*)
@@ -577,7 +577,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def traffics(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTrafficArgs.Builder]*):
+    inline def traffics(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTrafficArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceState.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTrafficArgs.builder
       builder.traffics(args.map(_(argsBuilder).build)*)
@@ -588,7 +588,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def containers(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerArgs.Builder]*):
+    inline def containers(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerArgs.builder
       builder.containers(args.map(_(argsBuilder).build)*)
@@ -598,7 +598,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeSelector(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateNodeSelectorArgs.Builder]):
+    inline def nodeSelector(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateNodeSelectorArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateNodeSelectorArgs.builder
       builder.nodeSelector(args(argsBuilder).build)
@@ -608,7 +608,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sandboxes(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesArgs.Builder]):
+    inline def sandboxes(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesArgs.builder
       builder.sandboxes(args(argsBuilder).build)
@@ -618,7 +618,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scaling(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateScalingArgs.Builder]):
+    inline def scaling(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateScalingArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateScalingArgs.builder
       builder.scaling(args(argsBuilder).build)
@@ -629,7 +629,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceMesh(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateServiceMeshArgs.Builder]):
+    inline def serviceMesh(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateServiceMeshArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateServiceMeshArgs.builder
       builder.serviceMesh(args(argsBuilder).build)
@@ -639,7 +639,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def volumes(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeArgs.Builder]*):
+    inline def volumes(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeArgs.builder
       builder.volumes(args.map(_(argsBuilder).build)*)
@@ -649,7 +649,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcAccess(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVpcAccessArgs.Builder]):
+    inline def vpcAccess(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVpcAccessArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVpcAccessArgs.builder
       builder.vpcAccess(args(argsBuilder).build)
@@ -660,7 +660,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateWorkloadIdentityConfigArgs.Builder]):
+    inline def workloadIdentityConfig(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateWorkloadIdentityConfigArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateWorkloadIdentityConfigArgs.builder
       builder.workloadIdentityConfig(args(argsBuilder).build)
@@ -672,7 +672,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def buildInfos(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerBuildInfoArgs.Builder]*):
+    inline def buildInfos(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerBuildInfoArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerBuildInfoArgs.builder
       builder.buildInfos(args.map(_(argsBuilder).build)*)
@@ -682,7 +682,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def envs(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerEnvArgs.Builder]*):
+    inline def envs(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerEnvArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerEnvArgs.builder
       builder.envs(args.map(_(argsBuilder).build)*)
@@ -692,7 +692,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def livenessProbe(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerLivenessProbeArgs.Builder]):
+    inline def livenessProbe(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerLivenessProbeArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerLivenessProbeArgs.builder
       builder.livenessProbe(args(argsBuilder).build)
@@ -703,7 +703,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ports(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerPortsArgs.Builder]):
+    inline def ports(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerPortsArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerPortsArgs.builder
       builder.ports(args(argsBuilder).build)
@@ -713,7 +713,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def readinessProbe(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerReadinessProbeArgs.Builder]):
+    inline def readinessProbe(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerReadinessProbeArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerReadinessProbeArgs.builder
       builder.readinessProbe(args(argsBuilder).build)
@@ -723,7 +723,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resources(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerResourcesArgs.Builder]):
+    inline def resources(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerResourcesArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerResourcesArgs.builder
       builder.resources(args(argsBuilder).build)
@@ -734,7 +734,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sourceCode(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerSourceCodeArgs.Builder]):
+    inline def sourceCode(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerSourceCodeArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerSourceCodeArgs.builder
       builder.sourceCode(args(argsBuilder).build)
@@ -744,7 +744,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def startupProbe(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerStartupProbeArgs.Builder]):
+    inline def startupProbe(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerStartupProbeArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerStartupProbeArgs.builder
       builder.startupProbe(args(argsBuilder).build)
@@ -754,7 +754,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def volumeMounts(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerVolumeMountArgs.Builder]*):
+    inline def volumeMounts(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerVolumeMountArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerVolumeMountArgs.builder
       builder.volumeMounts(args.map(_(argsBuilder).build)*)
@@ -765,7 +765,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def valueSource(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerEnvValueSourceArgs.Builder]):
+    inline def valueSource(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerEnvValueSourceArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerEnvArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerEnvValueSourceArgs.builder
       builder.valueSource(args(argsBuilder).build)
@@ -776,7 +776,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secretKeyRef(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerEnvValueSourceSecretKeyRefArgs.Builder]):
+    inline def secretKeyRef(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerEnvValueSourceSecretKeyRefArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerEnvValueSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerEnvValueSourceSecretKeyRefArgs.builder
       builder.secretKeyRef(args(argsBuilder).build)
@@ -787,7 +787,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def grpc(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerLivenessProbeGrpcArgs.Builder]):
+    inline def grpc(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerLivenessProbeGrpcArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerLivenessProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerLivenessProbeGrpcArgs.builder
       builder.grpc(args(argsBuilder).build)
@@ -797,7 +797,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpGet(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerLivenessProbeHttpGetArgs.Builder]):
+    inline def httpGet(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerLivenessProbeHttpGetArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerLivenessProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerLivenessProbeHttpGetArgs.builder
       builder.httpGet(args(argsBuilder).build)
@@ -807,7 +807,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tcpSocket(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerLivenessProbeTcpSocketArgs.Builder]):
+    inline def tcpSocket(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerLivenessProbeTcpSocketArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerLivenessProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerLivenessProbeTcpSocketArgs.builder
       builder.tcpSocket(args(argsBuilder).build)
@@ -818,7 +818,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpHeaders(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerLivenessProbeHttpGetHttpHeaderArgs.Builder]*):
+    inline def httpHeaders(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerLivenessProbeHttpGetHttpHeaderArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerLivenessProbeHttpGetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerLivenessProbeHttpGetHttpHeaderArgs.builder
       builder.httpHeaders(args.map(_(argsBuilder).build)*)
@@ -829,7 +829,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def grpc(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerReadinessProbeGrpcArgs.Builder]):
+    inline def grpc(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerReadinessProbeGrpcArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerReadinessProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerReadinessProbeGrpcArgs.builder
       builder.grpc(args(argsBuilder).build)
@@ -839,7 +839,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpGet(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerReadinessProbeHttpGetArgs.Builder]):
+    inline def httpGet(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerReadinessProbeHttpGetArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerReadinessProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerReadinessProbeHttpGetArgs.builder
       builder.httpGet(args(argsBuilder).build)
@@ -850,7 +850,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudStorageSource(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerSourceCodeCloudStorageSourceArgs.Builder]):
+    inline def cloudStorageSource(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerSourceCodeCloudStorageSourceArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerSourceCodeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerSourceCodeCloudStorageSourceArgs.builder
       builder.cloudStorageSource(args(argsBuilder).build)
@@ -861,7 +861,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def grpc(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerStartupProbeGrpcArgs.Builder]):
+    inline def grpc(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerStartupProbeGrpcArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerStartupProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerStartupProbeGrpcArgs.builder
       builder.grpc(args(argsBuilder).build)
@@ -871,7 +871,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpGet(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerStartupProbeHttpGetArgs.Builder]):
+    inline def httpGet(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerStartupProbeHttpGetArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerStartupProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerStartupProbeHttpGetArgs.builder
       builder.httpGet(args(argsBuilder).build)
@@ -881,7 +881,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tcpSocket(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerStartupProbeTcpSocketArgs.Builder]):
+    inline def tcpSocket(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerStartupProbeTcpSocketArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerStartupProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerStartupProbeTcpSocketArgs.builder
       builder.tcpSocket(args(argsBuilder).build)
@@ -892,7 +892,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpHeaders(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerStartupProbeHttpGetHttpHeaderArgs.Builder]*):
+    inline def httpHeaders(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerStartupProbeHttpGetHttpHeaderArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerStartupProbeHttpGetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateContainerStartupProbeHttpGetHttpHeaderArgs.builder
       builder.httpHeaders(args.map(_(argsBuilder).build)*)
@@ -903,7 +903,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def templates(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesTemplateArgs.Builder]*):
+    inline def templates(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesTemplateArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesTemplateArgs.builder
       builder.templates(args.map(_(argsBuilder).build)*)
@@ -914,7 +914,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def envs(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesTemplateEnvArgs.Builder]*):
+    inline def envs(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesTemplateEnvArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesTemplateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesTemplateEnvArgs.builder
       builder.envs(args.map(_(argsBuilder).build)*)
@@ -924,7 +924,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def volumeMounts(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesTemplateVolumeMountArgs.Builder]*):
+    inline def volumeMounts(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesTemplateVolumeMountArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesTemplateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateSandboxesTemplateVolumeMountArgs.builder
       builder.volumeMounts(args.map(_(argsBuilder).build)*)
@@ -935,7 +935,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudSqlInstance(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeCloudSqlInstanceArgs.Builder]):
+    inline def cloudSqlInstance(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeCloudSqlInstanceArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeCloudSqlInstanceArgs.builder
       builder.cloudSqlInstance(args(argsBuilder).build)
@@ -945,7 +945,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def emptyDir(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeEmptyDirArgs.Builder]):
+    inline def emptyDir(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeEmptyDirArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeEmptyDirArgs.builder
       builder.emptyDir(args(argsBuilder).build)
@@ -955,7 +955,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gcs(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeGcsArgs.Builder]):
+    inline def gcs(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeGcsArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeGcsArgs.builder
       builder.gcs(args(argsBuilder).build)
@@ -965,7 +965,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nfs(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeNfsArgs.Builder]):
+    inline def nfs(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeNfsArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeNfsArgs.builder
       builder.nfs(args(argsBuilder).build)
@@ -975,7 +975,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secret(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeSecretArgs.Builder]):
+    inline def secret(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeSecretArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeSecretArgs.builder
       builder.secret(args(argsBuilder).build)
@@ -986,7 +986,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def items(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeSecretItemArgs.Builder]*):
+    inline def items(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeSecretItemArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeSecretArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVolumeSecretItemArgs.builder
       builder.items(args.map(_(argsBuilder).build)*)
@@ -997,19 +997,19 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkInterfaces(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVpcAccessNetworkInterfaceArgs.Builder]*):
+    inline def networkInterfaces(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVpcAccessNetworkInterfaceArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVpcAccessArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.ServiceTemplateVpcAccessNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1020,7 +1020,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def binaryAuthorization(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolBinaryAuthorizationArgs.Builder]):
+    inline def binaryAuthorization(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolBinaryAuthorizationArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolBinaryAuthorizationArgs.builder
       builder.binaryAuthorization(args(argsBuilder).build)
@@ -1030,7 +1030,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditions(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolConditionArgs.Builder]*):
+    inline def conditions(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolConditionArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolState.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolConditionArgs.builder
       builder.conditions(args.map(_(argsBuilder).build)*)
@@ -1040,7 +1040,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def instanceSplitStatuses(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolInstanceSplitStatusArgs.Builder]*):
+    inline def instanceSplitStatuses(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolInstanceSplitStatusArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolState.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolInstanceSplitStatusArgs.builder
       builder.instanceSplitStatuses(args.map(_(argsBuilder).build)*)
@@ -1050,7 +1050,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def instanceSplits(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolInstanceSplitArgs.Builder]*):
+    inline def instanceSplits(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolInstanceSplitArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolState.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolInstanceSplitArgs.builder
       builder.instanceSplits(args.map(_(argsBuilder).build)*)
@@ -1060,7 +1060,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scaling(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolScalingArgs.Builder]):
+    inline def scaling(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolScalingArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolScalingArgs.builder
       builder.scaling(args(argsBuilder).build)
@@ -1070,7 +1070,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def template(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateArgs.Builder]):
+    inline def template(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolState.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateArgs.builder
       builder.template(args(argsBuilder).build)
@@ -1080,7 +1080,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def terminalConditions(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTerminalConditionArgs.Builder]*):
+    inline def terminalConditions(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTerminalConditionArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolState.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTerminalConditionArgs.builder
       builder.terminalConditions(args.map(_(argsBuilder).build)*)
@@ -1091,7 +1091,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def containers(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerArgs.Builder]*):
+    inline def containers(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerArgs.builder
       builder.containers(args.map(_(argsBuilder).build)*)
@@ -1101,7 +1101,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeSelector(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateNodeSelectorArgs.Builder]):
+    inline def nodeSelector(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateNodeSelectorArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateNodeSelectorArgs.builder
       builder.nodeSelector(args(argsBuilder).build)
@@ -1111,7 +1111,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def volumes(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeArgs.Builder]*):
+    inline def volumes(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeArgs.builder
       builder.volumes(args.map(_(argsBuilder).build)*)
@@ -1121,7 +1121,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vpcAccess(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVpcAccessArgs.Builder]):
+    inline def vpcAccess(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVpcAccessArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVpcAccessArgs.builder
       builder.vpcAccess(args(argsBuilder).build)
@@ -1132,7 +1132,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def envs(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerEnvArgs.Builder]*):
+    inline def envs(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerEnvArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerEnvArgs.builder
       builder.envs(args.map(_(argsBuilder).build)*)
@@ -1142,7 +1142,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def livenessProbe(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerLivenessProbeArgs.Builder]):
+    inline def livenessProbe(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerLivenessProbeArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerLivenessProbeArgs.builder
       builder.livenessProbe(args(argsBuilder).build)
@@ -1152,7 +1152,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resources(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerResourcesArgs.Builder]):
+    inline def resources(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerResourcesArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerResourcesArgs.builder
       builder.resources(args(argsBuilder).build)
@@ -1162,7 +1162,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def startupProbe(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerStartupProbeArgs.Builder]):
+    inline def startupProbe(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerStartupProbeArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerStartupProbeArgs.builder
       builder.startupProbe(args(argsBuilder).build)
@@ -1172,7 +1172,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def volumeMounts(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerVolumeMountArgs.Builder]*):
+    inline def volumeMounts(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerVolumeMountArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerVolumeMountArgs.builder
       builder.volumeMounts(args.map(_(argsBuilder).build)*)
@@ -1183,7 +1183,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def valueSource(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerEnvValueSourceArgs.Builder]):
+    inline def valueSource(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerEnvValueSourceArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerEnvArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerEnvValueSourceArgs.builder
       builder.valueSource(args(argsBuilder).build)
@@ -1194,7 +1194,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secretKeyRef(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerEnvValueSourceSecretKeyRefArgs.Builder]):
+    inline def secretKeyRef(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerEnvValueSourceSecretKeyRefArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerEnvValueSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerEnvValueSourceSecretKeyRefArgs.builder
       builder.secretKeyRef(args(argsBuilder).build)
@@ -1205,7 +1205,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def grpc(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerLivenessProbeGrpcArgs.Builder]):
+    inline def grpc(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerLivenessProbeGrpcArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerLivenessProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerLivenessProbeGrpcArgs.builder
       builder.grpc(args(argsBuilder).build)
@@ -1215,7 +1215,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpGet(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerLivenessProbeHttpGetArgs.Builder]):
+    inline def httpGet(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerLivenessProbeHttpGetArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerLivenessProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerLivenessProbeHttpGetArgs.builder
       builder.httpGet(args(argsBuilder).build)
@@ -1225,7 +1225,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tcpSocket(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerLivenessProbeTcpSocketArgs.Builder]):
+    inline def tcpSocket(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerLivenessProbeTcpSocketArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerLivenessProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerLivenessProbeTcpSocketArgs.builder
       builder.tcpSocket(args(argsBuilder).build)
@@ -1236,7 +1236,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpHeaders(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerLivenessProbeHttpGetHttpHeaderArgs.Builder]*):
+    inline def httpHeaders(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerLivenessProbeHttpGetHttpHeaderArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerLivenessProbeHttpGetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerLivenessProbeHttpGetHttpHeaderArgs.builder
       builder.httpHeaders(args.map(_(argsBuilder).build)*)
@@ -1247,7 +1247,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def grpc(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerStartupProbeGrpcArgs.Builder]):
+    inline def grpc(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerStartupProbeGrpcArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerStartupProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerStartupProbeGrpcArgs.builder
       builder.grpc(args(argsBuilder).build)
@@ -1257,7 +1257,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpGet(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerStartupProbeHttpGetArgs.Builder]):
+    inline def httpGet(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerStartupProbeHttpGetArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerStartupProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerStartupProbeHttpGetArgs.builder
       builder.httpGet(args(argsBuilder).build)
@@ -1267,7 +1267,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tcpSocket(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerStartupProbeTcpSocketArgs.Builder]):
+    inline def tcpSocket(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerStartupProbeTcpSocketArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerStartupProbeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerStartupProbeTcpSocketArgs.builder
       builder.tcpSocket(args(argsBuilder).build)
@@ -1278,7 +1278,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpHeaders(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerStartupProbeHttpGetHttpHeaderArgs.Builder]*):
+    inline def httpHeaders(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerStartupProbeHttpGetHttpHeaderArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerStartupProbeHttpGetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateContainerStartupProbeHttpGetHttpHeaderArgs.builder
       builder.httpHeaders(args.map(_(argsBuilder).build)*)
@@ -1289,7 +1289,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudSqlInstance(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeCloudSqlInstanceArgs.Builder]):
+    inline def cloudSqlInstance(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeCloudSqlInstanceArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeCloudSqlInstanceArgs.builder
       builder.cloudSqlInstance(args(argsBuilder).build)
@@ -1299,7 +1299,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def emptyDir(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeEmptyDirArgs.Builder]):
+    inline def emptyDir(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeEmptyDirArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeEmptyDirArgs.builder
       builder.emptyDir(args(argsBuilder).build)
@@ -1309,7 +1309,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gcs(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeGcsArgs.Builder]):
+    inline def gcs(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeGcsArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeGcsArgs.builder
       builder.gcs(args(argsBuilder).build)
@@ -1319,7 +1319,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nfs(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeNfsArgs.Builder]):
+    inline def nfs(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeNfsArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeNfsArgs.builder
       builder.nfs(args(argsBuilder).build)
@@ -1329,7 +1329,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secret(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeSecretArgs.Builder]):
+    inline def secret(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeSecretArgs.Builder]):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeSecretArgs.builder
       builder.secret(args(argsBuilder).build)
@@ -1340,7 +1340,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def items(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeSecretItemArgs.Builder]*):
+    inline def items(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeSecretItemArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeSecretArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVolumeSecretItemArgs.builder
       builder.items(args.map(_(argsBuilder).build)*)
@@ -1351,7 +1351,7 @@ object cloudrunv2_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkInterfaces(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVpcAccessNetworkInterfaceArgs.Builder]*):
+    inline def networkInterfaces(args: Endofunction[com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVpcAccessNetworkInterfaceArgs.Builder]*):
         com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVpcAccessArgs.Builder =
       def argsBuilder = com.pulumi.gcp.cloudrunv2.inputs.WorkerPoolTemplateVpcAccessNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)

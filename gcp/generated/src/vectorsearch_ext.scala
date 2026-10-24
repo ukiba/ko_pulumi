@@ -9,7 +9,7 @@ object vectorsearch_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.CollectionEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.CollectionEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vectorsearch.CollectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vectorsearch.inputs.CollectionEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -22,7 +22,7 @@ object vectorsearch_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vectorSchemas(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.CollectionVectorSchemaArgs.Builder]*):
+    inline def vectorSchemas(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.CollectionVectorSchemaArgs.Builder]*):
         com.pulumi.gcp.vectorsearch.CollectionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vectorsearch.inputs.CollectionVectorSchemaArgs.builder
       builder.vectorSchemas(args.map(_(argsBuilder).build)*)
@@ -38,7 +38,7 @@ object vectorsearch_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vectors(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.DataObjectVectorArgs.Builder]*):
+    inline def vectors(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.DataObjectVectorArgs.Builder]*):
         com.pulumi.gcp.vectorsearch.DataObjectArgs.Builder =
       def argsBuilder = com.pulumi.gcp.vectorsearch.inputs.DataObjectVectorArgs.builder
       builder.vectors(args.map(_(argsBuilder).build)*)
@@ -52,7 +52,7 @@ object vectorsearch_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dedicatedInfrastructure(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.IndexDedicatedInfrastructureArgs.Builder]):
+    inline def dedicatedInfrastructure(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.IndexDedicatedInfrastructureArgs.Builder]):
         com.pulumi.gcp.vectorsearch.IndexArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vectorsearch.inputs.IndexDedicatedInfrastructureArgs.builder
       builder.dedicatedInfrastructure(args(argsBuilder).build)
@@ -64,7 +64,7 @@ object vectorsearch_ext:
      * Structure is documented below.
      * @return builder
      */
-    def denseScann(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.IndexDenseScannArgs.Builder]):
+    inline def denseScann(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.IndexDenseScannArgs.Builder]):
         com.pulumi.gcp.vectorsearch.IndexArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vectorsearch.inputs.IndexDenseScannArgs.builder
       builder.denseScann(args(argsBuilder).build)
@@ -76,7 +76,7 @@ object vectorsearch_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.CollectionEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.CollectionEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.vectorsearch.inputs.CollectionState.Builder =
       val argsBuilder = com.pulumi.gcp.vectorsearch.inputs.CollectionEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -89,7 +89,7 @@ object vectorsearch_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vectorSchemas(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.CollectionVectorSchemaArgs.Builder]*):
+    inline def vectorSchemas(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.CollectionVectorSchemaArgs.Builder]*):
         com.pulumi.gcp.vectorsearch.inputs.CollectionState.Builder =
       def argsBuilder = com.pulumi.gcp.vectorsearch.inputs.CollectionVectorSchemaArgs.builder
       builder.vectorSchemas(args.map(_(argsBuilder).build)*)
@@ -100,7 +100,7 @@ object vectorsearch_ext:
      * Structure is documented below.
      * @return builder
      */
-    def denseVector(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.CollectionVectorSchemaDenseVectorArgs.Builder]):
+    inline def denseVector(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.CollectionVectorSchemaDenseVectorArgs.Builder]):
         com.pulumi.gcp.vectorsearch.inputs.CollectionVectorSchemaArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vectorsearch.inputs.CollectionVectorSchemaDenseVectorArgs.builder
       builder.denseVector(args(argsBuilder).build)
@@ -109,7 +109,7 @@ object vectorsearch_ext:
      * @param sparseVector Message describing a sparse vector field.
      * @return builder
      */
-    def sparseVector(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.CollectionVectorSchemaSparseVectorArgs.Builder]):
+    inline def sparseVector(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.CollectionVectorSchemaSparseVectorArgs.Builder]):
         com.pulumi.gcp.vectorsearch.inputs.CollectionVectorSchemaArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vectorsearch.inputs.CollectionVectorSchemaSparseVectorArgs.builder
       builder.sparseVector(args(argsBuilder).build)
@@ -121,7 +121,7 @@ object vectorsearch_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vertexEmbeddingConfig(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.CollectionVectorSchemaDenseVectorVertexEmbeddingConfigArgs.Builder]):
+    inline def vertexEmbeddingConfig(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.CollectionVectorSchemaDenseVectorVertexEmbeddingConfigArgs.Builder]):
         com.pulumi.gcp.vectorsearch.inputs.CollectionVectorSchemaDenseVectorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vectorsearch.inputs.CollectionVectorSchemaDenseVectorVertexEmbeddingConfigArgs.builder
       builder.vertexEmbeddingConfig(args(argsBuilder).build)
@@ -137,7 +137,7 @@ object vectorsearch_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vectors(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.DataObjectVectorArgs.Builder]*):
+    inline def vectors(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.DataObjectVectorArgs.Builder]*):
         com.pulumi.gcp.vectorsearch.inputs.DataObjectState.Builder =
       def argsBuilder = com.pulumi.gcp.vectorsearch.inputs.DataObjectVectorArgs.builder
       builder.vectors(args.map(_(argsBuilder).build)*)
@@ -148,7 +148,7 @@ object vectorsearch_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dense(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.DataObjectVectorDenseArgs.Builder]):
+    inline def dense(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.DataObjectVectorDenseArgs.Builder]):
         com.pulumi.gcp.vectorsearch.inputs.DataObjectVectorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vectorsearch.inputs.DataObjectVectorDenseArgs.builder
       builder.dense(args(argsBuilder).build)
@@ -158,7 +158,7 @@ object vectorsearch_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sparse(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.DataObjectVectorSparseArgs.Builder]):
+    inline def sparse(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.DataObjectVectorSparseArgs.Builder]):
         com.pulumi.gcp.vectorsearch.inputs.DataObjectVectorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vectorsearch.inputs.DataObjectVectorSparseArgs.builder
       builder.sparse(args(argsBuilder).build)
@@ -169,7 +169,7 @@ object vectorsearch_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoscalingSpec(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.IndexDedicatedInfrastructureAutoscalingSpecArgs.Builder]):
+    inline def autoscalingSpec(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.IndexDedicatedInfrastructureAutoscalingSpecArgs.Builder]):
         com.pulumi.gcp.vectorsearch.inputs.IndexDedicatedInfrastructureArgs.Builder =
       val argsBuilder = com.pulumi.gcp.vectorsearch.inputs.IndexDedicatedInfrastructureAutoscalingSpecArgs.builder
       builder.autoscalingSpec(args(argsBuilder).build)
@@ -183,7 +183,7 @@ object vectorsearch_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dedicatedInfrastructure(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.IndexDedicatedInfrastructureArgs.Builder]):
+    inline def dedicatedInfrastructure(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.IndexDedicatedInfrastructureArgs.Builder]):
         com.pulumi.gcp.vectorsearch.inputs.IndexState.Builder =
       val argsBuilder = com.pulumi.gcp.vectorsearch.inputs.IndexDedicatedInfrastructureArgs.builder
       builder.dedicatedInfrastructure(args(argsBuilder).build)
@@ -195,7 +195,7 @@ object vectorsearch_ext:
      * Structure is documented below.
      * @return builder
      */
-    def denseScann(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.IndexDenseScannArgs.Builder]):
+    inline def denseScann(args: Endofunction[com.pulumi.gcp.vectorsearch.inputs.IndexDenseScannArgs.Builder]):
         com.pulumi.gcp.vectorsearch.inputs.IndexState.Builder =
       val argsBuilder = com.pulumi.gcp.vectorsearch.inputs.IndexDenseScannArgs.builder
       builder.denseScann(args(argsBuilder).build)

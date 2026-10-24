@@ -70,7 +70,7 @@ object cloudasset:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/asset-inventory/docs)
    */
-  def FolderFeed(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FolderFeed(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudasset.FolderFeedArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.cloudasset.FolderFeedArgs.builder
     com.pulumi.gcp.cloudasset.FolderFeed(name,
@@ -86,7 +86,7 @@ object cloudasset:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/asset-inventory/docs)
    */
-  def OrganizationFeed(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationFeed(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudasset.OrganizationFeedArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.cloudasset.OrganizationFeedArgs.builder
     com.pulumi.gcp.cloudasset.OrganizationFeed(name,
@@ -102,7 +102,7 @@ object cloudasset:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/asset-inventory/docs)
    */
-  def ProjectFeed(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProjectFeed(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudasset.ProjectFeedArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.cloudasset.ProjectFeedArgs.builder
     com.pulumi.gcp.cloudasset.ProjectFeed(name,

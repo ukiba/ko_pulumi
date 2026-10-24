@@ -18,7 +18,7 @@ object msk:
    * 
    * &gt; **Note:** A channel does not backfill previously produced data; only data produced after creation is delivered. For the Iceberg destination, a channel creates a new Iceberg table for each configuration.
    */
-  def Channel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Channel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.msk.ChannelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.msk.ChannelArgs.builder
     argsBuilder = args(argsBuilder)
@@ -37,7 +37,7 @@ object msk:
    * 
    * &gt; **Note:** This resource manages _provisioned_ clusters. To manage a _serverless_ Amazon MSK cluster, use the `aws.msk.ServerlessCluster` resource.
    */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.msk.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.msk.ClusterArgs.builder
     argsBuilder = args(argsBuilder)
@@ -52,7 +52,7 @@ object msk:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Managed Streaming for Kafka Cluster Policy. */
-  def ClusterPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.msk.ClusterPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.msk.ClusterPolicyArgs.builder
     com.pulumi.aws.msk.ClusterPolicy(name,
@@ -60,7 +60,7 @@ object msk:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Amazon Managed Streaming for Kafka configuration. More information can be found on the [MSK Developer Guide](https://docs.aws.amazon.com/msk/latest/developerguide/msk-configuration.html). */
-  def Configuration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Configuration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.msk.ConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.msk.ConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -192,7 +192,7 @@ object msk:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Resource for managing an AWS Managed Streaming for Kafka Replicator. */
-  def Replicator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Replicator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.msk.ReplicatorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.msk.ReplicatorArgs.builder
     argsBuilder = args(argsBuilder)
@@ -221,7 +221,7 @@ object msk:
    * however, this policy will not be in the state and as such, will present a diff on plan/apply. For that reason, you must use the `aws.secretsmanager.SecretPolicy`
    * resource](/docs/providers/aws/r/secretsmanager_secret_policy.html) as shown below in order to ensure that the state is in a clean state after the creation of secret and the association to the cluster.
    */
-  def ScramSecretAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ScramSecretAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.msk.ScramSecretAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.msk.ScramSecretAssociationArgs.builder
     com.pulumi.aws.msk.ScramSecretAssociation(name,
@@ -233,7 +233,7 @@ object msk:
    * 
    * &gt; **Note:** To manage a _provisioned_ Amazon MSK cluster, use the `aws.msk.Cluster` resource.
    */
-  def ServerlessCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServerlessCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.msk.ServerlessClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.msk.ServerlessClusterArgs.builder
     argsBuilder = args(argsBuilder)
@@ -248,7 +248,7 @@ object msk:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Associates a single SCRAM secret with a Managed Streaming for Kafka (MSK) cluster. */
-  def SingleScramSecretAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SingleScramSecretAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.msk.SingleScramSecretAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.msk.SingleScramSecretAssociationArgs.builder
     com.pulumi.aws.msk.SingleScramSecretAssociation(name,
@@ -256,7 +256,7 @@ object msk:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Managed Streaming for Kafka Topic. */
-  def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.msk.TopicArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.msk.TopicArgs.builder
     conf.logicalName2physicalName(name) match
@@ -267,7 +267,7 @@ object msk:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Managed Streaming for Kafka VPC Connection. */
-  def VpcConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.msk.VpcConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.msk.VpcConnectionArgs.builder
     argsBuilder = args(argsBuilder)

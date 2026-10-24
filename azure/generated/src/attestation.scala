@@ -24,7 +24,7 @@ object attestation:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an Attestation Provider. */
-  def Provider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Provider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.attestation.ProviderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.attestation.ProviderArgs.builder
     conf.logicalName2physicalName(name) match

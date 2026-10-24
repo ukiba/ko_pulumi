@@ -11,7 +11,7 @@ object observabilityadmin:
    * 
    * This requires an AWS account within an organization with at least [delegated administrator permissions](https://docs.aws.amazon.com/organizations/latest/APIReference/API_RegisterDelegatedAdministrator.html).
    */
-  def CentralizationRuleForOrganization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CentralizationRuleForOrganization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.observabilityadmin.CentralizationRuleForOrganizationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.observabilityadmin.CentralizationRuleForOrganizationArgs.builder
     argsBuilder = args(argsBuilder)
@@ -30,7 +30,7 @@ object observabilityadmin:
    * 
    * For more information, see the [CloudWatch Logs S3 Tables integration documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/s3-tables-integration.html).
    */
-  def S3TableIntegration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def S3TableIntegration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.observabilityadmin.S3TableIntegrationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.observabilityadmin.S3TableIntegrationArgs.builder
     argsBuilder = args(argsBuilder)
@@ -53,7 +53,7 @@ object observabilityadmin:
    * 
    * &gt; **NOTE:** Only one telemetry enrichment can exist per account per region. Creating this resource enables the feature; destroying it disables the feature.
    */
-  def TelemetryEnrichment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TelemetryEnrichment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.observabilityadmin.TelemetryEnrichmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.observabilityadmin.TelemetryEnrichmentArgs.builder
     com.pulumi.aws.observabilityadmin.TelemetryEnrichment(name,
@@ -71,7 +71,7 @@ object observabilityadmin:
    * 
    * &gt; **NOTE:** Do not use this resource in an account where telemetry evaluation is centrally managed by an AWS Organization via `aws.observabilityadmin.TelemetryEvaluationForOrganization`. In that case, the per-account `StartTelemetryEvaluation` API silently returns success without changing per-account state, and `GetTelemetryEvaluationStatus` reports the org-derived `RUNNING` status \u2014 so `pulumi up` appears to succeed. However, the matching `StopTelemetryEvaluation` call is rejected with `ValidationException: Telemetry evaluation is managed by the caller&#39;s organization`, so a later `terraform destroy` will fail and leave the resource in state. Use the organization variant from the management account instead.
    */
-  def TelemetryEvaluation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TelemetryEvaluation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.observabilityadmin.TelemetryEvaluationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.observabilityadmin.TelemetryEvaluationArgs.builder
     com.pulumi.aws.observabilityadmin.TelemetryEvaluation(name,
@@ -87,7 +87,7 @@ object observabilityadmin:
    * 
    * &gt; **NOTE:** This resource can only be used from the management account or a delegated admin account of an AWS Organization. Only one telemetry evaluation for organization can exist per organization. Creating this resource enables the feature; destroying it disables the feature.
    */
-  def TelemetryEvaluationForOrganization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TelemetryEvaluationForOrganization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.observabilityadmin.TelemetryEvaluationForOrganizationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.observabilityadmin.TelemetryEvaluationForOrganizationArgs.builder
     com.pulumi.aws.observabilityadmin.TelemetryEvaluationForOrganization(name,
@@ -103,7 +103,7 @@ object observabilityadmin:
    * 
    * &gt; **NOTE:** Only one telemetry pipeline per data source type is allowed per account. For example, you can have one pipeline for `amazon_api_gateway/access` and another for `amazon_vpc/flow`, but not two pipelines for the same data source type.
    */
-  def TelemetryPipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TelemetryPipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.observabilityadmin.TelemetryPipelineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.observabilityadmin.TelemetryPipelineArgs.builder
     conf.logicalName2physicalName(name) match
@@ -127,7 +127,7 @@ object observabilityadmin:
    * 
    * &gt; **NOTE:** Before using this resource, telemetry evaluation must be enabled for your AWS account. Use the `aws.observabilityadmin.TelemetryEvaluation` resource to enable it.
    */
-  def TelemetryRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TelemetryRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.observabilityadmin.TelemetryRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.observabilityadmin.TelemetryRuleArgs.builder
     argsBuilder = args(argsBuilder)
@@ -150,7 +150,7 @@ object observabilityadmin:
    * 
    * &gt; **NOTE:** This resource can only be used from the organization management account.
    */
-  def TelemetryRuleForOrganization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TelemetryRuleForOrganization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.observabilityadmin.TelemetryRuleForOrganizationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.observabilityadmin.TelemetryRuleForOrganizationArgs.builder
     argsBuilder = args(argsBuilder)

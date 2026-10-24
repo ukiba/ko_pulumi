@@ -24,7 +24,7 @@ object search:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Search Service. */
-  def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.search.ServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.search.ServiceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -42,7 +42,7 @@ object search:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Shared Private Link Service for an Azure Search Service. */
-  def SharedPrivateLinkService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SharedPrivateLinkService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.search.SharedPrivateLinkServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.search.SharedPrivateLinkServiceArgs.builder
     conf.logicalName2physicalName(name) match

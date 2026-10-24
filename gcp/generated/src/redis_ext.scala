@@ -8,7 +8,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterAclPolicyRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterAclPolicyRuleArgs.Builder]*):
         com.pulumi.gcp.redis.ClusterAclPolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.redis.inputs.ClusterAclPolicyRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -19,7 +19,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def automatedBackupConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterAutomatedBackupConfigArgs.Builder]):
+    inline def automatedBackupConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterAutomatedBackupConfigArgs.Builder]):
         com.pulumi.gcp.redis.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.ClusterAutomatedBackupConfigArgs.builder
       builder.automatedBackupConfig(args(argsBuilder).build)
@@ -29,7 +29,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def crossClusterReplicationConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigArgs.Builder]):
+    inline def crossClusterReplicationConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigArgs.Builder]):
         com.pulumi.gcp.redis.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigArgs.builder
       builder.crossClusterReplicationConfig(args(argsBuilder).build)
@@ -39,7 +39,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gcsSource(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterGcsSourceArgs.Builder]):
+    inline def gcsSource(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterGcsSourceArgs.Builder]):
         com.pulumi.gcp.redis.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.ClusterGcsSourceArgs.builder
       builder.gcsSource(args(argsBuilder).build)
@@ -49,7 +49,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenancePolicy(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterMaintenancePolicyArgs.Builder]):
+    inline def maintenancePolicy(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterMaintenancePolicyArgs.Builder]):
         com.pulumi.gcp.redis.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.ClusterMaintenancePolicyArgs.builder
       builder.maintenancePolicy(args(argsBuilder).build)
@@ -59,7 +59,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def managedBackupSource(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterManagedBackupSourceArgs.Builder]):
+    inline def managedBackupSource(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterManagedBackupSourceArgs.Builder]):
         com.pulumi.gcp.redis.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.ClusterManagedBackupSourceArgs.builder
       builder.managedBackupSource(args(argsBuilder).build)
@@ -69,7 +69,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def persistenceConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterPersistenceConfigArgs.Builder]):
+    inline def persistenceConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterPersistenceConfigArgs.Builder]):
         com.pulumi.gcp.redis.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.ClusterPersistenceConfigArgs.builder
       builder.persistenceConfig(args(argsBuilder).build)
@@ -81,7 +81,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscConfigs(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterPscConfigArgs.Builder]*):
+    inline def pscConfigs(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterPscConfigArgs.Builder]*):
         com.pulumi.gcp.redis.ClusterArgs.Builder =
       def argsBuilder = com.pulumi.gcp.redis.inputs.ClusterPscConfigArgs.builder
       builder.pscConfigs(args.map(_(argsBuilder).build)*)
@@ -91,7 +91,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def zoneDistributionConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterZoneDistributionConfigArgs.Builder]):
+    inline def zoneDistributionConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterZoneDistributionConfigArgs.Builder]):
         com.pulumi.gcp.redis.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.ClusterZoneDistributionConfigArgs.builder
       builder.zoneDistributionConfig(args(argsBuilder).build)
@@ -102,7 +102,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clusterEndpoints(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterUserCreatedConnectionsClusterEndpointArgs.Builder]*):
+    inline def clusterEndpoints(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterUserCreatedConnectionsClusterEndpointArgs.Builder]*):
         com.pulumi.gcp.redis.ClusterUserCreatedConnectionsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.redis.inputs.ClusterUserCreatedConnectionsClusterEndpointArgs.builder
       builder.clusterEndpoints(args.map(_(argsBuilder).build)*)
@@ -113,7 +113,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenancePolicy(args: Endofunction[com.pulumi.gcp.redis.inputs.InstanceMaintenancePolicyArgs.Builder]):
+    inline def maintenancePolicy(args: Endofunction[com.pulumi.gcp.redis.inputs.InstanceMaintenancePolicyArgs.Builder]):
         com.pulumi.gcp.redis.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.InstanceMaintenancePolicyArgs.builder
       builder.maintenancePolicy(args(argsBuilder).build)
@@ -123,7 +123,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def persistenceConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.InstancePersistenceConfigArgs.Builder]):
+    inline def persistenceConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.InstancePersistenceConfigArgs.Builder]):
         com.pulumi.gcp.redis.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.InstancePersistenceConfigArgs.builder
       builder.persistenceConfig(args(argsBuilder).build)
@@ -134,7 +134,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterAclPolicyRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterAclPolicyRuleArgs.Builder]*):
         com.pulumi.gcp.redis.inputs.ClusterAclPolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.redis.inputs.ClusterAclPolicyRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -145,7 +145,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fixedFrequencySchedule(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterAutomatedBackupConfigFixedFrequencyScheduleArgs.Builder]):
+    inline def fixedFrequencySchedule(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterAutomatedBackupConfigFixedFrequencyScheduleArgs.Builder]):
         com.pulumi.gcp.redis.inputs.ClusterAutomatedBackupConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.ClusterAutomatedBackupConfigFixedFrequencyScheduleArgs.builder
       builder.fixedFrequencySchedule(args(argsBuilder).build)
@@ -157,7 +157,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def startTime(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterAutomatedBackupConfigFixedFrequencyScheduleStartTimeArgs.Builder]):
+    inline def startTime(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterAutomatedBackupConfigFixedFrequencyScheduleStartTimeArgs.Builder]):
         com.pulumi.gcp.redis.inputs.ClusterAutomatedBackupConfigFixedFrequencyScheduleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.ClusterAutomatedBackupConfigFixedFrequencyScheduleStartTimeArgs.builder
       builder.startTime(args(argsBuilder).build)
@@ -169,7 +169,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def memberships(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigMembershipArgs.Builder]*):
+    inline def memberships(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigMembershipArgs.Builder]*):
         com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigMembershipArgs.builder
       builder.memberships(args.map(_(argsBuilder).build)*)
@@ -179,7 +179,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def primaryCluster(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigPrimaryClusterArgs.Builder]):
+    inline def primaryCluster(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigPrimaryClusterArgs.Builder]):
         com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigPrimaryClusterArgs.builder
       builder.primaryCluster(args(argsBuilder).build)
@@ -189,7 +189,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secondaryClusters(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigSecondaryClusterArgs.Builder]*):
+    inline def secondaryClusters(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigSecondaryClusterArgs.Builder]*):
         com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigSecondaryClusterArgs.builder
       builder.secondaryClusters(args.map(_(argsBuilder).build)*)
@@ -199,7 +199,7 @@ object redis_ext:
      * @param primaryClusters Details of the primary cluster that is used as the replication source for all the secondary clusters.
      * @return builder
      */
-    def primaryClusters(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigMembershipPrimaryClusterArgs.Builder]*):
+    inline def primaryClusters(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigMembershipPrimaryClusterArgs.Builder]*):
         com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigMembershipArgs.Builder =
       def argsBuilder = com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigMembershipPrimaryClusterArgs.builder
       builder.primaryClusters(args.map(_(argsBuilder).build)*)
@@ -208,7 +208,7 @@ object redis_ext:
      * @param secondaryClusters List of secondary clusters that are replicating from the primary cluster.
      * @return builder
      */
-    def secondaryClusters(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigMembershipSecondaryClusterArgs.Builder]*):
+    inline def secondaryClusters(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigMembershipSecondaryClusterArgs.Builder]*):
         com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigMembershipArgs.Builder =
       def argsBuilder = com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigMembershipSecondaryClusterArgs.builder
       builder.secondaryClusters(args.map(_(argsBuilder).build)*)
@@ -220,7 +220,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterDiscoveryEndpointPscConfigArgs.Builder]):
+    inline def pscConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterDiscoveryEndpointPscConfigArgs.Builder]):
         com.pulumi.gcp.redis.inputs.ClusterDiscoveryEndpointArgs.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.ClusterDiscoveryEndpointPscConfigArgs.builder
       builder.pscConfig(args(argsBuilder).build)
@@ -233,7 +233,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def weeklyMaintenanceWindows(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterMaintenancePolicyWeeklyMaintenanceWindowArgs.Builder]*):
+    inline def weeklyMaintenanceWindows(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterMaintenancePolicyWeeklyMaintenanceWindowArgs.Builder]*):
         com.pulumi.gcp.redis.inputs.ClusterMaintenancePolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.redis.inputs.ClusterMaintenancePolicyWeeklyMaintenanceWindowArgs.builder
       builder.weeklyMaintenanceWindows(args.map(_(argsBuilder).build)*)
@@ -244,7 +244,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def startTime(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterMaintenancePolicyWeeklyMaintenanceWindowStartTimeArgs.Builder]):
+    inline def startTime(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterMaintenancePolicyWeeklyMaintenanceWindowStartTimeArgs.Builder]):
         com.pulumi.gcp.redis.inputs.ClusterMaintenancePolicyWeeklyMaintenanceWindowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.ClusterMaintenancePolicyWeeklyMaintenanceWindowStartTimeArgs.builder
       builder.startTime(args(argsBuilder).build)
@@ -256,7 +256,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def caCerts(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterManagedServerCaCaCertArgs.Builder]*):
+    inline def caCerts(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterManagedServerCaCaCertArgs.Builder]*):
         com.pulumi.gcp.redis.inputs.ClusterManagedServerCaArgs.Builder =
       def argsBuilder = com.pulumi.gcp.redis.inputs.ClusterManagedServerCaCaCertArgs.builder
       builder.caCerts(args.map(_(argsBuilder).build)*)
@@ -267,7 +267,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def aofConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterPersistenceConfigAofConfigArgs.Builder]):
+    inline def aofConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterPersistenceConfigAofConfigArgs.Builder]):
         com.pulumi.gcp.redis.inputs.ClusterPersistenceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.ClusterPersistenceConfigAofConfigArgs.builder
       builder.aofConfig(args(argsBuilder).build)
@@ -277,7 +277,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rdbConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterPersistenceConfigRdbConfigArgs.Builder]):
+    inline def rdbConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterPersistenceConfigRdbConfigArgs.Builder]):
         com.pulumi.gcp.redis.inputs.ClusterPersistenceConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.ClusterPersistenceConfigRdbConfigArgs.builder
       builder.rdbConfig(args(argsBuilder).build)
@@ -288,7 +288,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def automatedBackupConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterAutomatedBackupConfigArgs.Builder]):
+    inline def automatedBackupConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterAutomatedBackupConfigArgs.Builder]):
         com.pulumi.gcp.redis.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.ClusterAutomatedBackupConfigArgs.builder
       builder.automatedBackupConfig(args(argsBuilder).build)
@@ -298,7 +298,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def crossClusterReplicationConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigArgs.Builder]):
+    inline def crossClusterReplicationConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigArgs.Builder]):
         com.pulumi.gcp.redis.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.ClusterCrossClusterReplicationConfigArgs.builder
       builder.crossClusterReplicationConfig(args(argsBuilder).build)
@@ -310,7 +310,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def discoveryEndpoints(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterDiscoveryEndpointArgs.Builder]*):
+    inline def discoveryEndpoints(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterDiscoveryEndpointArgs.Builder]*):
         com.pulumi.gcp.redis.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.redis.inputs.ClusterDiscoveryEndpointArgs.builder
       builder.discoveryEndpoints(args.map(_(argsBuilder).build)*)
@@ -320,7 +320,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gcsSource(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterGcsSourceArgs.Builder]):
+    inline def gcsSource(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterGcsSourceArgs.Builder]):
         com.pulumi.gcp.redis.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.ClusterGcsSourceArgs.builder
       builder.gcsSource(args(argsBuilder).build)
@@ -330,7 +330,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenancePolicy(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterMaintenancePolicyArgs.Builder]):
+    inline def maintenancePolicy(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterMaintenancePolicyArgs.Builder]):
         com.pulumi.gcp.redis.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.ClusterMaintenancePolicyArgs.builder
       builder.maintenancePolicy(args(argsBuilder).build)
@@ -340,7 +340,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenanceSchedules(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterMaintenanceScheduleArgs.Builder]*):
+    inline def maintenanceSchedules(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterMaintenanceScheduleArgs.Builder]*):
         com.pulumi.gcp.redis.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.redis.inputs.ClusterMaintenanceScheduleArgs.builder
       builder.maintenanceSchedules(args.map(_(argsBuilder).build)*)
@@ -350,7 +350,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def managedBackupSource(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterManagedBackupSourceArgs.Builder]):
+    inline def managedBackupSource(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterManagedBackupSourceArgs.Builder]):
         com.pulumi.gcp.redis.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.ClusterManagedBackupSourceArgs.builder
       builder.managedBackupSource(args(argsBuilder).build)
@@ -360,7 +360,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def managedServerCas(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterManagedServerCaArgs.Builder]*):
+    inline def managedServerCas(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterManagedServerCaArgs.Builder]*):
         com.pulumi.gcp.redis.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.redis.inputs.ClusterManagedServerCaArgs.builder
       builder.managedServerCas(args.map(_(argsBuilder).build)*)
@@ -370,7 +370,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def persistenceConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterPersistenceConfigArgs.Builder]):
+    inline def persistenceConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterPersistenceConfigArgs.Builder]):
         com.pulumi.gcp.redis.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.ClusterPersistenceConfigArgs.builder
       builder.persistenceConfig(args(argsBuilder).build)
@@ -382,7 +382,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscConfigs(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterPscConfigArgs.Builder]*):
+    inline def pscConfigs(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterPscConfigArgs.Builder]*):
         com.pulumi.gcp.redis.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.redis.inputs.ClusterPscConfigArgs.builder
       builder.pscConfigs(args.map(_(argsBuilder).build)*)
@@ -392,7 +392,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscConnections(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterPscConnectionArgs.Builder]*):
+    inline def pscConnections(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterPscConnectionArgs.Builder]*):
         com.pulumi.gcp.redis.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.redis.inputs.ClusterPscConnectionArgs.builder
       builder.pscConnections(args.map(_(argsBuilder).build)*)
@@ -402,7 +402,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscServiceAttachments(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterPscServiceAttachmentArgs.Builder]*):
+    inline def pscServiceAttachments(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterPscServiceAttachmentArgs.Builder]*):
         com.pulumi.gcp.redis.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.redis.inputs.ClusterPscServiceAttachmentArgs.builder
       builder.pscServiceAttachments(args.map(_(argsBuilder).build)*)
@@ -412,7 +412,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stateInfos(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterStateInfoArgs.Builder]*):
+    inline def stateInfos(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterStateInfoArgs.Builder]*):
         com.pulumi.gcp.redis.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.redis.inputs.ClusterStateInfoArgs.builder
       builder.stateInfos(args.map(_(argsBuilder).build)*)
@@ -422,7 +422,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def zoneDistributionConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterZoneDistributionConfigArgs.Builder]):
+    inline def zoneDistributionConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterZoneDistributionConfigArgs.Builder]):
         com.pulumi.gcp.redis.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.ClusterZoneDistributionConfigArgs.builder
       builder.zoneDistributionConfig(args(argsBuilder).build)
@@ -433,7 +433,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def updateInfo(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterStateInfoUpdateInfoArgs.Builder]):
+    inline def updateInfo(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterStateInfoUpdateInfoArgs.Builder]):
         com.pulumi.gcp.redis.inputs.ClusterStateInfoArgs.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.ClusterStateInfoUpdateInfoArgs.builder
       builder.updateInfo(args(argsBuilder).build)
@@ -443,7 +443,7 @@ object redis_ext:
      * @param connections Structure is documented below.
      * @return builder
      */
-    def connections(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterUserCreatedConnectionsClusterEndpointConnectionArgs.Builder]*):
+    inline def connections(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterUserCreatedConnectionsClusterEndpointConnectionArgs.Builder]*):
         com.pulumi.gcp.redis.inputs.ClusterUserCreatedConnectionsClusterEndpointArgs.Builder =
       def argsBuilder = com.pulumi.gcp.redis.inputs.ClusterUserCreatedConnectionsClusterEndpointConnectionArgs.builder
       builder.connections(args.map(_(argsBuilder).build)*)
@@ -455,7 +455,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pscConnection(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterUserCreatedConnectionsClusterEndpointConnectionPscConnectionArgs.Builder]):
+    inline def pscConnection(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterUserCreatedConnectionsClusterEndpointConnectionPscConnectionArgs.Builder]):
         com.pulumi.gcp.redis.inputs.ClusterUserCreatedConnectionsClusterEndpointConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.ClusterUserCreatedConnectionsClusterEndpointConnectionPscConnectionArgs.builder
       builder.pscConnection(args(argsBuilder).build)
@@ -466,7 +466,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clusterEndpoints(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterUserCreatedConnectionsClusterEndpointArgs.Builder]*):
+    inline def clusterEndpoints(args: Endofunction[com.pulumi.gcp.redis.inputs.ClusterUserCreatedConnectionsClusterEndpointArgs.Builder]*):
         com.pulumi.gcp.redis.inputs.ClusterUserCreatedConnectionsState.Builder =
       def argsBuilder = com.pulumi.gcp.redis.inputs.ClusterUserCreatedConnectionsClusterEndpointArgs.builder
       builder.clusterEndpoints(args.map(_(argsBuilder).build)*)
@@ -479,7 +479,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def weeklyMaintenanceWindows(args: Endofunction[com.pulumi.gcp.redis.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowArgs.Builder]*):
+    inline def weeklyMaintenanceWindows(args: Endofunction[com.pulumi.gcp.redis.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowArgs.Builder]*):
         com.pulumi.gcp.redis.inputs.InstanceMaintenancePolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.redis.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowArgs.builder
       builder.weeklyMaintenanceWindows(args.map(_(argsBuilder).build)*)
@@ -490,7 +490,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def startTime(args: Endofunction[com.pulumi.gcp.redis.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowStartTimeArgs.Builder]):
+    inline def startTime(args: Endofunction[com.pulumi.gcp.redis.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowStartTimeArgs.Builder]):
         com.pulumi.gcp.redis.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowStartTimeArgs.builder
       builder.startTime(args(argsBuilder).build)
@@ -501,7 +501,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenancePolicy(args: Endofunction[com.pulumi.gcp.redis.inputs.InstanceMaintenancePolicyArgs.Builder]):
+    inline def maintenancePolicy(args: Endofunction[com.pulumi.gcp.redis.inputs.InstanceMaintenancePolicyArgs.Builder]):
         com.pulumi.gcp.redis.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.InstanceMaintenancePolicyArgs.builder
       builder.maintenancePolicy(args(argsBuilder).build)
@@ -511,7 +511,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenanceSchedules(args: Endofunction[com.pulumi.gcp.redis.inputs.InstanceMaintenanceScheduleArgs.Builder]*):
+    inline def maintenanceSchedules(args: Endofunction[com.pulumi.gcp.redis.inputs.InstanceMaintenanceScheduleArgs.Builder]*):
         com.pulumi.gcp.redis.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.redis.inputs.InstanceMaintenanceScheduleArgs.builder
       builder.maintenanceSchedules(args.map(_(argsBuilder).build)*)
@@ -521,7 +521,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodes(args: Endofunction[com.pulumi.gcp.redis.inputs.InstanceNodeArgs.Builder]*):
+    inline def nodes(args: Endofunction[com.pulumi.gcp.redis.inputs.InstanceNodeArgs.Builder]*):
         com.pulumi.gcp.redis.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.redis.inputs.InstanceNodeArgs.builder
       builder.nodes(args.map(_(argsBuilder).build)*)
@@ -531,7 +531,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def persistenceConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.InstancePersistenceConfigArgs.Builder]):
+    inline def persistenceConfig(args: Endofunction[com.pulumi.gcp.redis.inputs.InstancePersistenceConfigArgs.Builder]):
         com.pulumi.gcp.redis.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.redis.inputs.InstancePersistenceConfigArgs.builder
       builder.persistenceConfig(args(argsBuilder).build)
@@ -541,7 +541,7 @@ object redis_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serverCaCerts(args: Endofunction[com.pulumi.gcp.redis.inputs.InstanceServerCaCertArgs.Builder]*):
+    inline def serverCaCerts(args: Endofunction[com.pulumi.gcp.redis.inputs.InstanceServerCaCertArgs.Builder]*):
         com.pulumi.gcp.redis.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.redis.inputs.InstanceServerCaCertArgs.builder
       builder.serverCaCerts(args.map(_(argsBuilder).build)*)

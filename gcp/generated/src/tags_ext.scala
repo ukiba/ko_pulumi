@@ -8,7 +8,7 @@ object tags_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.tags.inputs.TagKeyIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.tags.inputs.TagKeyIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.tags.TagKeyIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.tags.inputs.TagKeyIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -19,7 +19,7 @@ object tags_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.tags.inputs.TagKeyIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.tags.inputs.TagKeyIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.tags.TagKeyIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.tags.inputs.TagKeyIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -30,7 +30,7 @@ object tags_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.tags.inputs.TagValueIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.tags.inputs.TagValueIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.tags.TagValueIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.tags.inputs.TagValueIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -41,7 +41,7 @@ object tags_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.tags.inputs.TagValueIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.tags.inputs.TagValueIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.tags.TagValueIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.tags.inputs.TagValueIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -52,7 +52,7 @@ object tags_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.tags.inputs.TagKeyIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.tags.inputs.TagKeyIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.tags.inputs.TagKeyIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.tags.inputs.TagKeyIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -63,7 +63,7 @@ object tags_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.tags.inputs.TagKeyIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.tags.inputs.TagKeyIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.tags.inputs.TagKeyIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.tags.inputs.TagKeyIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -74,7 +74,7 @@ object tags_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.tags.inputs.TagValueIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.tags.inputs.TagValueIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.tags.inputs.TagValueIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.tags.inputs.TagValueIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -85,7 +85,7 @@ object tags_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.tags.inputs.TagValueIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.tags.inputs.TagValueIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.tags.inputs.TagValueIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.tags.inputs.TagValueIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)

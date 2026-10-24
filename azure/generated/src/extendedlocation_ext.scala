@@ -7,7 +7,7 @@ object extendedlocation_ext:
      * @param authentication An `authentication` block as defined below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.azure.extendedlocation.inputs.CustomLocationAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.azure.extendedlocation.inputs.CustomLocationAuthenticationArgs.Builder]):
         com.pulumi.azure.extendedlocation.CustomLocationArgs.Builder =
       val argsBuilder = com.pulumi.azure.extendedlocation.inputs.CustomLocationAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object extendedlocation_ext:
      * @param authentication An `authentication` block as defined below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.azure.extendedlocation.inputs.CustomLocationAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.azure.extendedlocation.inputs.CustomLocationAuthenticationArgs.Builder]):
         com.pulumi.azure.extendedlocation.inputs.CustomLocationState.Builder =
       val argsBuilder = com.pulumi.azure.extendedlocation.inputs.CustomLocationAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)

@@ -7,7 +7,7 @@ object datafactory_ext:
      * @param servicePrincipalKey A `servicePrincipalKey` block as defined below.
      * @return builder
      */
-    def servicePrincipalKey(args: Endofunction[com.pulumi.azure.datafactory.inputs.CredentialServicePrincipalServicePrincipalKeyArgs.Builder]):
+    inline def servicePrincipalKey(args: Endofunction[com.pulumi.azure.datafactory.inputs.CredentialServicePrincipalServicePrincipalKeyArgs.Builder]):
         com.pulumi.azure.datafactory.CredentialServicePrincipalArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.CredentialServicePrincipalServicePrincipalKeyArgs.builder
       builder.servicePrincipalKey(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object datafactory_ext:
      * @param linkedService A `linkedService` block as defined below.
      * @return builder
      */
-    def linkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.CustomDatasetLinkedServiceArgs.Builder]):
+    inline def linkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.CustomDatasetLinkedServiceArgs.Builder]):
         com.pulumi.azure.datafactory.CustomDatasetArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.CustomDatasetLinkedServiceArgs.builder
       builder.linkedService(args(argsBuilder).build)
@@ -27,7 +27,7 @@ object datafactory_ext:
      * @param sinks One or more `sink` blocks as defined below.
      * @return builder
      */
-    def sinks(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSinkArgs.Builder]*):
+    inline def sinks(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSinkArgs.Builder]*):
         com.pulumi.azure.datafactory.DataFlowArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DataFlowSinkArgs.builder
       builder.sinks(args.map(_(argsBuilder).build)*)
@@ -36,7 +36,7 @@ object datafactory_ext:
      * @param sources One or more `source` blocks as defined below.
      * @return builder
      */
-    def sources(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSourceArgs.Builder]*):
+    inline def sources(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSourceArgs.Builder]*):
         com.pulumi.azure.datafactory.DataFlowArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DataFlowSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
@@ -45,7 +45,7 @@ object datafactory_ext:
      * @param transformations One or more `transformation` blocks as defined below.
      * @return builder
      */
-    def transformations(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowTransformationArgs.Builder]*):
+    inline def transformations(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowTransformationArgs.Builder]*):
         com.pulumi.azure.datafactory.DataFlowArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DataFlowTransformationArgs.builder
       builder.transformations(args.map(_(argsBuilder).build)*)
@@ -55,7 +55,7 @@ object datafactory_ext:
      * @param schemaColumns A `schemaColumn` block as defined below.
      * @return builder
      */
-    def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetAzureBlobSchemaColumnArgs.Builder]*):
+    inline def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetAzureBlobSchemaColumnArgs.Builder]*):
         com.pulumi.azure.datafactory.DatasetAzureBlobArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetAzureBlobSchemaColumnArgs.builder
       builder.schemaColumns(args.map(_(argsBuilder).build)*)
@@ -65,7 +65,7 @@ object datafactory_ext:
      * @param schemaColumns A `schemaColumn` block as defined below.
      * @return builder
      */
-    def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetAzureSqlTableSchemaColumnArgs.Builder]*):
+    inline def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetAzureSqlTableSchemaColumnArgs.Builder]*):
         com.pulumi.azure.datafactory.DatasetAzureSqlTableArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetAzureSqlTableSchemaColumnArgs.builder
       builder.schemaColumns(args.map(_(argsBuilder).build)*)
@@ -75,7 +75,7 @@ object datafactory_ext:
      * @param azureBlobStorageLocation A `azureBlobStorageLocation` block as defined below.
      * @return builder
      */
-    def azureBlobStorageLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetBinaryAzureBlobStorageLocationArgs.Builder]):
+    inline def azureBlobStorageLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetBinaryAzureBlobStorageLocationArgs.Builder]):
         com.pulumi.azure.datafactory.DatasetBinaryArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetBinaryAzureBlobStorageLocationArgs.builder
       builder.azureBlobStorageLocation(args(argsBuilder).build)
@@ -84,7 +84,7 @@ object datafactory_ext:
      * @param compression A `compression` block as defined below.
      * @return builder
      */
-    def compression(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetBinaryCompressionArgs.Builder]):
+    inline def compression(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetBinaryCompressionArgs.Builder]):
         com.pulumi.azure.datafactory.DatasetBinaryArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetBinaryCompressionArgs.builder
       builder.compression(args(argsBuilder).build)
@@ -93,7 +93,7 @@ object datafactory_ext:
      * @param httpServerLocation A `httpServerLocation` block as defined below.
      * @return builder
      */
-    def httpServerLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetBinaryHttpServerLocationArgs.Builder]):
+    inline def httpServerLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetBinaryHttpServerLocationArgs.Builder]):
         com.pulumi.azure.datafactory.DatasetBinaryArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetBinaryHttpServerLocationArgs.builder
       builder.httpServerLocation(args(argsBuilder).build)
@@ -102,7 +102,7 @@ object datafactory_ext:
      * @param sftpServerLocation A `sftpServerLocation` block as defined below.
      * @return builder
      */
-    def sftpServerLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetBinarySftpServerLocationArgs.Builder]):
+    inline def sftpServerLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetBinarySftpServerLocationArgs.Builder]):
         com.pulumi.azure.datafactory.DatasetBinaryArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetBinarySftpServerLocationArgs.builder
       builder.sftpServerLocation(args(argsBuilder).build)
@@ -112,7 +112,7 @@ object datafactory_ext:
      * @param schemaColumns A `schemaColumn` block as defined below.
      * @return builder
      */
-    def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetCosmosDBApiSchemaColumnArgs.Builder]*):
+    inline def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetCosmosDBApiSchemaColumnArgs.Builder]*):
         com.pulumi.azure.datafactory.DatasetCosmosDBApiArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetCosmosDBApiSchemaColumnArgs.builder
       builder.schemaColumns(args.map(_(argsBuilder).build)*)
@@ -122,7 +122,7 @@ object datafactory_ext:
      * @param azureBlobFsLocation An `azureBlobFsLocation` block as defined below.
      * @return builder
      */
-    def azureBlobFsLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextAzureBlobFsLocationArgs.Builder]):
+    inline def azureBlobFsLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextAzureBlobFsLocationArgs.Builder]):
         com.pulumi.azure.datafactory.DatasetDelimitedTextArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextAzureBlobFsLocationArgs.builder
       builder.azureBlobFsLocation(args(argsBuilder).build)
@@ -131,7 +131,7 @@ object datafactory_ext:
      * @param azureBlobStorageLocation An `azureBlobStorageLocation` block as defined below.
      * @return builder
      */
-    def azureBlobStorageLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextAzureBlobStorageLocationArgs.Builder]):
+    inline def azureBlobStorageLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextAzureBlobStorageLocationArgs.Builder]):
         com.pulumi.azure.datafactory.DatasetDelimitedTextArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextAzureBlobStorageLocationArgs.builder
       builder.azureBlobStorageLocation(args(argsBuilder).build)
@@ -142,7 +142,7 @@ object datafactory_ext:
      * The following supported arguments are specific to Delimited Text Dataset:
      * @return builder
      */
-    def httpServerLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextHttpServerLocationArgs.Builder]):
+    inline def httpServerLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextHttpServerLocationArgs.Builder]):
         com.pulumi.azure.datafactory.DatasetDelimitedTextArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextHttpServerLocationArgs.builder
       builder.httpServerLocation(args(argsBuilder).build)
@@ -151,7 +151,7 @@ object datafactory_ext:
      * @param schemaColumns A `schemaColumn` block as defined below.
      * @return builder
      */
-    def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextSchemaColumnArgs.Builder]*):
+    inline def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextSchemaColumnArgs.Builder]*):
         com.pulumi.azure.datafactory.DatasetDelimitedTextArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextSchemaColumnArgs.builder
       builder.schemaColumns(args.map(_(argsBuilder).build)*)
@@ -161,7 +161,7 @@ object datafactory_ext:
      * @param schemaColumns A `schemaColumn` block as defined below.
      * @return builder
      */
-    def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetHttpSchemaColumnArgs.Builder]*):
+    inline def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetHttpSchemaColumnArgs.Builder]*):
         com.pulumi.azure.datafactory.DatasetHttpArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetHttpSchemaColumnArgs.builder
       builder.schemaColumns(args.map(_(argsBuilder).build)*)
@@ -173,7 +173,7 @@ object datafactory_ext:
      * The following supported arguments are specific to Delimited Text Dataset:
      * @return builder
      */
-    def azureBlobStorageLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetJsonAzureBlobStorageLocationArgs.Builder]):
+    inline def azureBlobStorageLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetJsonAzureBlobStorageLocationArgs.Builder]):
         com.pulumi.azure.datafactory.DatasetJsonArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetJsonAzureBlobStorageLocationArgs.builder
       builder.azureBlobStorageLocation(args(argsBuilder).build)
@@ -182,7 +182,7 @@ object datafactory_ext:
      * @param httpServerLocation A `httpServerLocation` block as defined below.
      * @return builder
      */
-    def httpServerLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetJsonHttpServerLocationArgs.Builder]):
+    inline def httpServerLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetJsonHttpServerLocationArgs.Builder]):
         com.pulumi.azure.datafactory.DatasetJsonArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetJsonHttpServerLocationArgs.builder
       builder.httpServerLocation(args(argsBuilder).build)
@@ -191,7 +191,7 @@ object datafactory_ext:
      * @param schemaColumns A `schemaColumn` block as defined below.
      * @return builder
      */
-    def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetJsonSchemaColumnArgs.Builder]*):
+    inline def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetJsonSchemaColumnArgs.Builder]*):
         com.pulumi.azure.datafactory.DatasetJsonArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetJsonSchemaColumnArgs.builder
       builder.schemaColumns(args.map(_(argsBuilder).build)*)
@@ -201,7 +201,7 @@ object datafactory_ext:
      * @param schemaColumns A `schemaColumn` block as defined below.
      * @return builder
      */
-    def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetMysqlSchemaColumnArgs.Builder]*):
+    inline def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetMysqlSchemaColumnArgs.Builder]*):
         com.pulumi.azure.datafactory.DatasetMysqlArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetMysqlSchemaColumnArgs.builder
       builder.schemaColumns(args.map(_(argsBuilder).build)*)
@@ -211,7 +211,7 @@ object datafactory_ext:
      * @param azureBlobFsLocation A `azureBlobFsLocation` block as defined below.
      * @return builder
      */
-    def azureBlobFsLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetParquetAzureBlobFsLocationArgs.Builder]):
+    inline def azureBlobFsLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetParquetAzureBlobFsLocationArgs.Builder]):
         com.pulumi.azure.datafactory.DatasetParquetArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetParquetAzureBlobFsLocationArgs.builder
       builder.azureBlobFsLocation(args(argsBuilder).build)
@@ -222,7 +222,7 @@ object datafactory_ext:
      * The following supported arguments are specific to Parquet Dataset:
      * @return builder
      */
-    def azureBlobStorageLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetParquetAzureBlobStorageLocationArgs.Builder]):
+    inline def azureBlobStorageLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetParquetAzureBlobStorageLocationArgs.Builder]):
         com.pulumi.azure.datafactory.DatasetParquetArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetParquetAzureBlobStorageLocationArgs.builder
       builder.azureBlobStorageLocation(args(argsBuilder).build)
@@ -231,7 +231,7 @@ object datafactory_ext:
      * @param httpServerLocation A `httpServerLocation` block as defined below.
      * @return builder
      */
-    def httpServerLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetParquetHttpServerLocationArgs.Builder]):
+    inline def httpServerLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetParquetHttpServerLocationArgs.Builder]):
         com.pulumi.azure.datafactory.DatasetParquetArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetParquetHttpServerLocationArgs.builder
       builder.httpServerLocation(args(argsBuilder).build)
@@ -240,7 +240,7 @@ object datafactory_ext:
      * @param schemaColumns A `schemaColumn` block as defined below.
      * @return builder
      */
-    def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetParquetSchemaColumnArgs.Builder]*):
+    inline def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetParquetSchemaColumnArgs.Builder]*):
         com.pulumi.azure.datafactory.DatasetParquetArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetParquetSchemaColumnArgs.builder
       builder.schemaColumns(args.map(_(argsBuilder).build)*)
@@ -250,7 +250,7 @@ object datafactory_ext:
      * @param schemaColumns A `schemaColumn` block as defined below.
      * @return builder
      */
-    def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetPostgresqlSchemaColumnArgs.Builder]*):
+    inline def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetPostgresqlSchemaColumnArgs.Builder]*):
         com.pulumi.azure.datafactory.DatasetPostgresqlArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetPostgresqlSchemaColumnArgs.builder
       builder.schemaColumns(args.map(_(argsBuilder).build)*)
@@ -260,7 +260,7 @@ object datafactory_ext:
      * @param schemaColumns A `schemaColumn` block as defined below.
      * @return builder
      */
-    def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetSnowflakeSchemaColumnArgs.Builder]*):
+    inline def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetSnowflakeSchemaColumnArgs.Builder]*):
         com.pulumi.azure.datafactory.DatasetSnowflakeArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetSnowflakeSchemaColumnArgs.builder
       builder.schemaColumns(args.map(_(argsBuilder).build)*)
@@ -270,7 +270,7 @@ object datafactory_ext:
      * @param schemaColumns A `schemaColumn` block as defined below.
      * @return builder
      */
-    def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetSqlServerTableSchemaColumnArgs.Builder]*):
+    inline def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetSqlServerTableSchemaColumnArgs.Builder]*):
         com.pulumi.azure.datafactory.DatasetSqlServerTableArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetSqlServerTableSchemaColumnArgs.builder
       builder.schemaColumns(args.map(_(argsBuilder).build)*)
@@ -280,7 +280,7 @@ object datafactory_ext:
      * @param githubConfiguration A `githubConfiguration` block as defined below.
      * @return builder
      */
-    def githubConfiguration(args: Endofunction[com.pulumi.azure.datafactory.inputs.FactoryGithubConfigurationArgs.Builder]):
+    inline def githubConfiguration(args: Endofunction[com.pulumi.azure.datafactory.inputs.FactoryGithubConfigurationArgs.Builder]):
         com.pulumi.azure.datafactory.FactoryArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.FactoryGithubConfigurationArgs.builder
       builder.githubConfiguration(args(argsBuilder).build)
@@ -289,7 +289,7 @@ object datafactory_ext:
      * @param globalParameters A list of `globalParameter` blocks as defined above.
      * @return builder
      */
-    def globalParameters(args: Endofunction[com.pulumi.azure.datafactory.inputs.FactoryGlobalParameterArgs.Builder]*):
+    inline def globalParameters(args: Endofunction[com.pulumi.azure.datafactory.inputs.FactoryGlobalParameterArgs.Builder]*):
         com.pulumi.azure.datafactory.FactoryArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.FactoryGlobalParameterArgs.builder
       builder.globalParameters(args.map(_(argsBuilder).build)*)
@@ -298,7 +298,7 @@ object datafactory_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.datafactory.inputs.FactoryIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.datafactory.inputs.FactoryIdentityArgs.Builder]):
         com.pulumi.azure.datafactory.FactoryArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.FactoryIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -307,7 +307,7 @@ object datafactory_ext:
      * @param vstsConfiguration A `vstsConfiguration` block as defined below.
      * @return builder
      */
-    def vstsConfiguration(args: Endofunction[com.pulumi.azure.datafactory.inputs.FactoryVstsConfigurationArgs.Builder]):
+    inline def vstsConfiguration(args: Endofunction[com.pulumi.azure.datafactory.inputs.FactoryVstsConfigurationArgs.Builder]):
         com.pulumi.azure.datafactory.FactoryArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.FactoryVstsConfigurationArgs.builder
       builder.vstsConfiguration(args(argsBuilder).build)
@@ -317,7 +317,7 @@ object datafactory_ext:
      * @param sinks One or more `sink` blocks as defined below.
      * @return builder
      */
-    def sinks(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkArgs.Builder]*):
+    inline def sinks(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkArgs.Builder]*):
         com.pulumi.azure.datafactory.FlowletDataFlowArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkArgs.builder
       builder.sinks(args.map(_(argsBuilder).build)*)
@@ -326,7 +326,7 @@ object datafactory_ext:
      * @param sources One or more `source` blocks as defined below.
      * @return builder
      */
-    def sources(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceArgs.Builder]*):
+    inline def sources(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceArgs.Builder]*):
         com.pulumi.azure.datafactory.FlowletDataFlowArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
@@ -335,7 +335,7 @@ object datafactory_ext:
      * @param transformations One or more `transformation` blocks as defined below.
      * @return builder
      */
-    def transformations(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowTransformationArgs.Builder]*):
+    inline def transformations(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowTransformationArgs.Builder]*):
         com.pulumi.azure.datafactory.FlowletDataFlowArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.FlowletDataFlowTransformationArgs.builder
       builder.transformations(args.map(_(argsBuilder).build)*)
@@ -345,7 +345,7 @@ object datafactory_ext:
      * @param rbacAuthorizations A `rbacAuthorization` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def rbacAuthorizations(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSelfHostedRbacAuthorizationArgs.Builder]*):
+    inline def rbacAuthorizations(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSelfHostedRbacAuthorizationArgs.Builder]*):
         com.pulumi.azure.datafactory.IntegrationRuntimeSelfHostedArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSelfHostedRbacAuthorizationArgs.builder
       builder.rbacAuthorizations(args.map(_(argsBuilder).build)*)
@@ -355,7 +355,7 @@ object datafactory_ext:
      * @param catalogInfo A `catalogInfo` block as defined below.
      * @return builder
      */
-    def catalogInfo(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisCatalogInfoArgs.Builder]):
+    inline def catalogInfo(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisCatalogInfoArgs.Builder]):
         com.pulumi.azure.datafactory.IntegrationRuntimeSsisArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisCatalogInfoArgs.builder
       builder.catalogInfo(args(argsBuilder).build)
@@ -364,7 +364,7 @@ object datafactory_ext:
      * @param copyComputeScale One `copyComputeScale` block as defined below.
      * @return builder
      */
-    def copyComputeScale(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisCopyComputeScaleArgs.Builder]):
+    inline def copyComputeScale(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisCopyComputeScaleArgs.Builder]):
         com.pulumi.azure.datafactory.IntegrationRuntimeSsisArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisCopyComputeScaleArgs.builder
       builder.copyComputeScale(args(argsBuilder).build)
@@ -373,7 +373,7 @@ object datafactory_ext:
      * @param customSetupScript A `customSetupScript` block as defined below.
      * @return builder
      */
-    def customSetupScript(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisCustomSetupScriptArgs.Builder]):
+    inline def customSetupScript(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisCustomSetupScriptArgs.Builder]):
         com.pulumi.azure.datafactory.IntegrationRuntimeSsisArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisCustomSetupScriptArgs.builder
       builder.customSetupScript(args(argsBuilder).build)
@@ -382,7 +382,7 @@ object datafactory_ext:
      * @param expressCustomSetup An `expressCustomSetup` block as defined below.
      * @return builder
      */
-    def expressCustomSetup(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressCustomSetupArgs.Builder]):
+    inline def expressCustomSetup(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressCustomSetupArgs.Builder]):
         com.pulumi.azure.datafactory.IntegrationRuntimeSsisArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressCustomSetupArgs.builder
       builder.expressCustomSetup(args(argsBuilder).build)
@@ -391,7 +391,7 @@ object datafactory_ext:
      * @param expressVnetIntegration A `expressVnetIntegration` block as defined below.
      * @return builder
      */
-    def expressVnetIntegration(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressVnetIntegrationArgs.Builder]):
+    inline def expressVnetIntegration(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressVnetIntegrationArgs.Builder]):
         com.pulumi.azure.datafactory.IntegrationRuntimeSsisArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressVnetIntegrationArgs.builder
       builder.expressVnetIntegration(args(argsBuilder).build)
@@ -400,7 +400,7 @@ object datafactory_ext:
      * @param packageStores One or more `packageStore` block as defined below.
      * @return builder
      */
-    def packageStores(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisPackageStoreArgs.Builder]*):
+    inline def packageStores(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisPackageStoreArgs.Builder]*):
         com.pulumi.azure.datafactory.IntegrationRuntimeSsisArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisPackageStoreArgs.builder
       builder.packageStores(args.map(_(argsBuilder).build)*)
@@ -409,7 +409,7 @@ object datafactory_ext:
      * @param pipelineExternalComputeScale One `pipelineExternalComputeScale` block as defined below.
      * @return builder
      */
-    def pipelineExternalComputeScale(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisPipelineExternalComputeScaleArgs.Builder]):
+    inline def pipelineExternalComputeScale(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisPipelineExternalComputeScaleArgs.Builder]):
         com.pulumi.azure.datafactory.IntegrationRuntimeSsisArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisPipelineExternalComputeScaleArgs.builder
       builder.pipelineExternalComputeScale(args(argsBuilder).build)
@@ -418,7 +418,7 @@ object datafactory_ext:
      * @param proxy A `proxy` block as defined below.
      * @return builder
      */
-    def proxy(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisProxyArgs.Builder]):
+    inline def proxy(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisProxyArgs.Builder]):
         com.pulumi.azure.datafactory.IntegrationRuntimeSsisArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisProxyArgs.builder
       builder.proxy(args(argsBuilder).build)
@@ -427,7 +427,7 @@ object datafactory_ext:
      * @param vnetIntegration A `vnetIntegration` block as defined below.
      * @return builder
      */
-    def vnetIntegration(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisVnetIntegrationArgs.Builder]):
+    inline def vnetIntegration(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisVnetIntegrationArgs.Builder]):
         com.pulumi.azure.datafactory.IntegrationRuntimeSsisArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisVnetIntegrationArgs.builder
       builder.vnetIntegration(args(argsBuilder).build)
@@ -437,7 +437,7 @@ object datafactory_ext:
      * @param integrationRuntime An `integrationRuntime` block as defined below.
      * @return builder
      */
-    def integrationRuntime(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedCustomServiceIntegrationRuntimeArgs.Builder]):
+    inline def integrationRuntime(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedCustomServiceIntegrationRuntimeArgs.Builder]):
         com.pulumi.azure.datafactory.LinkedCustomServiceArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedCustomServiceIntegrationRuntimeArgs.builder
       builder.integrationRuntime(args(argsBuilder).build)
@@ -447,7 +447,7 @@ object datafactory_ext:
      * @return builder
      * @deprecated the `keyVaultSasToken` property has been deprecated in favour of the `sasTokenLinkedKeyVaultKey` property and will be removed in v5.0 of the AzureRM Provider
      */
-    @deprecated("the `keyVaultSasToken` property has been deprecated in favour of the `sasTokenLinkedKeyVaultKey` property and will be removed in v5.0 of the AzureRM Provider") def keyVaultSasToken(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageKeyVaultSasTokenArgs.Builder]):
+    @deprecated("the `keyVaultSasToken` property has been deprecated in favour of the `sasTokenLinkedKeyVaultKey` property and will be removed in v5.0 of the AzureRM Provider") inline def keyVaultSasToken(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageKeyVaultSasTokenArgs.Builder]):
         com.pulumi.azure.datafactory.LinkedServiceAzureBlobStorageArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageKeyVaultSasTokenArgs.builder
       builder.keyVaultSasToken(args(argsBuilder).build)
@@ -456,12 +456,12 @@ object datafactory_ext:
      * @param sasTokenLinkedKeyVaultKey A `sasTokenLinkedKeyVaultKey` block as defined below. Use this argument to store SAS Token in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service. A `sasUri` is required.
      * @return builder
      */
-    def sasTokenLinkedKeyVaultKey(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageSasTokenLinkedKeyVaultKeyArgs.Builder]):
+    inline def sasTokenLinkedKeyVaultKey(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageSasTokenLinkedKeyVaultKeyArgs.Builder]):
         com.pulumi.azure.datafactory.LinkedServiceAzureBlobStorageArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageSasTokenLinkedKeyVaultKeyArgs.builder
       builder.sasTokenLinkedKeyVaultKey(args(argsBuilder).build)
 
-    def servicePrincipalLinkedKeyVaultKey(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageServicePrincipalLinkedKeyVaultKeyArgs.Builder]):
+    inline def servicePrincipalLinkedKeyVaultKey(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageServicePrincipalLinkedKeyVaultKeyArgs.Builder]):
         com.pulumi.azure.datafactory.LinkedServiceAzureBlobStorageArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageServicePrincipalLinkedKeyVaultKeyArgs.builder
       builder.servicePrincipalLinkedKeyVaultKey(args(argsBuilder).build)
@@ -471,7 +471,7 @@ object datafactory_ext:
      * @param instancePool Leverages an instance pool within the linked ADB instance as one `instancePool` block defined below.
      * @return builder
      */
-    def instancePool(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureDatabricksInstancePoolArgs.Builder]):
+    inline def instancePool(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureDatabricksInstancePoolArgs.Builder]):
         com.pulumi.azure.datafactory.LinkedServiceAzureDatabricksArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceAzureDatabricksInstancePoolArgs.builder
       builder.instancePool(args(argsBuilder).build)
@@ -480,7 +480,7 @@ object datafactory_ext:
      * @param keyVaultPassword Authenticate to ADB via Azure Key Vault Linked Service as defined in the `keyVaultPassword` block below.
      * @return builder
      */
-    def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureDatabricksKeyVaultPasswordArgs.Builder]):
+    inline def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureDatabricksKeyVaultPasswordArgs.Builder]):
         com.pulumi.azure.datafactory.LinkedServiceAzureDatabricksArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceAzureDatabricksKeyVaultPasswordArgs.builder
       builder.keyVaultPassword(args(argsBuilder).build)
@@ -489,7 +489,7 @@ object datafactory_ext:
      * @param newClusterConfig Creates new clusters within the linked ADB instance as defined in the `newClusterConfig` block below.
      * @return builder
      */
-    def newClusterConfig(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureDatabricksNewClusterConfigArgs.Builder]):
+    inline def newClusterConfig(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureDatabricksNewClusterConfigArgs.Builder]):
         com.pulumi.azure.datafactory.LinkedServiceAzureDatabricksArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceAzureDatabricksNewClusterConfigArgs.builder
       builder.newClusterConfig(args(argsBuilder).build)
@@ -499,7 +499,7 @@ object datafactory_ext:
      * @param keyVaultPassword A `keyVaultPassword` block as defined below. Use this argument to store Azure File Storage password in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service.
      * @return builder
      */
-    def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureFileStorageKeyVaultPasswordArgs.Builder]):
+    inline def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureFileStorageKeyVaultPasswordArgs.Builder]):
         com.pulumi.azure.datafactory.LinkedServiceAzureFileStorageArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceAzureFileStorageKeyVaultPasswordArgs.builder
       builder.keyVaultPassword(args(argsBuilder).build)
@@ -509,7 +509,7 @@ object datafactory_ext:
      * @param keyVaultKey A `keyVaultKey` block as defined below. Use this Argument to store the system key of the Azure Function in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service. Exactly one of either `key` or `keyVaultKey` is required.
      * @return builder
      */
-    def keyVaultKey(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureFunctionKeyVaultKeyArgs.Builder]):
+    inline def keyVaultKey(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureFunctionKeyVaultKeyArgs.Builder]):
         com.pulumi.azure.datafactory.LinkedServiceAzureFunctionArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceAzureFunctionKeyVaultKeyArgs.builder
       builder.keyVaultKey(args(argsBuilder).build)
@@ -519,7 +519,7 @@ object datafactory_ext:
      * @param keyVaultConnectionString A `keyVaultConnectionString` block as defined below. Use this argument to store Azure SQL Database connection string in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service. Exactly one of either `connectionString` or `keyVaultConnectionString` is required.
      * @return builder
      */
-    def keyVaultConnectionString(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureSqlDatabaseKeyVaultConnectionStringArgs.Builder]):
+    inline def keyVaultConnectionString(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureSqlDatabaseKeyVaultConnectionStringArgs.Builder]):
         com.pulumi.azure.datafactory.LinkedServiceAzureSqlDatabaseArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceAzureSqlDatabaseKeyVaultConnectionStringArgs.builder
       builder.keyVaultConnectionString(args(argsBuilder).build)
@@ -528,7 +528,7 @@ object datafactory_ext:
      * @param keyVaultPassword A `keyVaultPassword` block as defined below. Use this argument to store SQL Server password in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service.
      * @return builder
      */
-    def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureSqlDatabaseKeyVaultPasswordArgs.Builder]):
+    inline def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureSqlDatabaseKeyVaultPasswordArgs.Builder]):
         com.pulumi.azure.datafactory.LinkedServiceAzureSqlDatabaseArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceAzureSqlDatabaseKeyVaultPasswordArgs.builder
       builder.keyVaultPassword(args(argsBuilder).build)
@@ -538,7 +538,7 @@ object datafactory_ext:
      * @param basicAuthentication A `basicAuthentication` block as defined below.
      * @return builder
      */
-    def basicAuthentication(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceOdataBasicAuthenticationArgs.Builder]):
+    inline def basicAuthentication(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceOdataBasicAuthenticationArgs.Builder]):
         com.pulumi.azure.datafactory.LinkedServiceOdataArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceOdataBasicAuthenticationArgs.builder
       builder.basicAuthentication(args(argsBuilder).build)
@@ -548,7 +548,7 @@ object datafactory_ext:
      * @param basicAuthentication A `basicAuthentication` block as defined below.
      * @return builder
      */
-    def basicAuthentication(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceOdbcBasicAuthenticationArgs.Builder]):
+    inline def basicAuthentication(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceOdbcBasicAuthenticationArgs.Builder]):
         com.pulumi.azure.datafactory.LinkedServiceOdbcArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceOdbcBasicAuthenticationArgs.builder
       builder.basicAuthentication(args(argsBuilder).build)
@@ -560,7 +560,7 @@ object datafactory_ext:
      * &gt; **Note:** Either `password` or `keyVaultPassword` is required when `authenticationType` is set to `Basic`.
      * @return builder
      */
-    def keyVaultPasswords(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSftpKeyVaultPasswordArgs.Builder]*):
+    inline def keyVaultPasswords(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSftpKeyVaultPasswordArgs.Builder]*):
         com.pulumi.azure.datafactory.LinkedServiceSftpArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceSftpKeyVaultPasswordArgs.builder
       builder.keyVaultPasswords(args.map(_(argsBuilder).build)*)
@@ -569,7 +569,7 @@ object datafactory_ext:
      * @param keyVaultPrivateKeyContentBase64 A `keyVaultPrivateKeyContentBase64` block as defined below.
      * @return builder
      */
-    def keyVaultPrivateKeyContentBase64(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSftpKeyVaultPrivateKeyContentBase64Args.Builder]):
+    inline def keyVaultPrivateKeyContentBase64(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSftpKeyVaultPrivateKeyContentBase64Args.Builder]):
         com.pulumi.azure.datafactory.LinkedServiceSftpArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceSftpKeyVaultPrivateKeyContentBase64Args.builder
       builder.keyVaultPrivateKeyContentBase64(args(argsBuilder).build)
@@ -580,7 +580,7 @@ object datafactory_ext:
      * &gt; **Note:** One of `privateKeyContentBase64` or `privateKeyPath` (or their Key Vault equivalent) is required when `authenticationType` is set to `SshPublicKey`.
      * @return builder
      */
-    def keyVaultPrivateKeyPassphrase(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSftpKeyVaultPrivateKeyPassphraseArgs.Builder]):
+    inline def keyVaultPrivateKeyPassphrase(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSftpKeyVaultPrivateKeyPassphraseArgs.Builder]):
         com.pulumi.azure.datafactory.LinkedServiceSftpArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceSftpKeyVaultPrivateKeyPassphraseArgs.builder
       builder.keyVaultPrivateKeyPassphrase(args(argsBuilder).build)
@@ -590,7 +590,7 @@ object datafactory_ext:
      * @param keyVaultPassword A `keyVaultPassword` block as defined below. Use this argument to store Snowflake password in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service.
      * @return builder
      */
-    def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSnowflakeKeyVaultPasswordArgs.Builder]):
+    inline def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSnowflakeKeyVaultPasswordArgs.Builder]):
         com.pulumi.azure.datafactory.LinkedServiceSnowflakeArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceSnowflakeKeyVaultPasswordArgs.builder
       builder.keyVaultPassword(args(argsBuilder).build)
@@ -600,7 +600,7 @@ object datafactory_ext:
      * @param keyVaultConnectionString A `keyVaultConnectionString` block as defined below. Use this argument to store SQL Managed Instance connection string in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service. Exactly one of either `connectionString` or `keyVaultConnectionString` is required.
      * @return builder
      */
-    def keyVaultConnectionString(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSqlManagedInstanceKeyVaultConnectionStringArgs.Builder]):
+    inline def keyVaultConnectionString(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSqlManagedInstanceKeyVaultConnectionStringArgs.Builder]):
         com.pulumi.azure.datafactory.LinkedServiceSqlManagedInstanceArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceSqlManagedInstanceKeyVaultConnectionStringArgs.builder
       builder.keyVaultConnectionString(args(argsBuilder).build)
@@ -609,7 +609,7 @@ object datafactory_ext:
      * @param keyVaultPassword A `keyVaultPassword` block as defined below. Use this argument to store SQL Managed Instance password in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service.
      * @return builder
      */
-    def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSqlManagedInstanceKeyVaultPasswordArgs.Builder]):
+    inline def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSqlManagedInstanceKeyVaultPasswordArgs.Builder]):
         com.pulumi.azure.datafactory.LinkedServiceSqlManagedInstanceArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceSqlManagedInstanceKeyVaultPasswordArgs.builder
       builder.keyVaultPassword(args(argsBuilder).build)
@@ -619,7 +619,7 @@ object datafactory_ext:
      * @param keyVaultConnectionString A `keyVaultConnectionString` block as defined below. Use this argument to store SQL Server connection string in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service. Exactly one of either `connectionString` or `keyVaultConnectionString` is required.
      * @return builder
      */
-    def keyVaultConnectionString(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSqlServerKeyVaultConnectionStringArgs.Builder]):
+    inline def keyVaultConnectionString(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSqlServerKeyVaultConnectionStringArgs.Builder]):
         com.pulumi.azure.datafactory.LinkedServiceSqlServerArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceSqlServerKeyVaultConnectionStringArgs.builder
       builder.keyVaultConnectionString(args(argsBuilder).build)
@@ -628,7 +628,7 @@ object datafactory_ext:
      * @param keyVaultPassword A `keyVaultPassword` block as defined below. Use this argument to store SQL Server password in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service.
      * @return builder
      */
-    def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSqlServerKeyVaultPasswordArgs.Builder]):
+    inline def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSqlServerKeyVaultPasswordArgs.Builder]):
         com.pulumi.azure.datafactory.LinkedServiceSqlServerArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceSqlServerKeyVaultPasswordArgs.builder
       builder.keyVaultPassword(args(argsBuilder).build)
@@ -638,7 +638,7 @@ object datafactory_ext:
      * @param keyVaultPassword A `keyVaultPassword` block as defined below. Use this argument to store Synapse password in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service.
      * @return builder
      */
-    def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSynapseKeyVaultPasswordArgs.Builder]):
+    inline def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSynapseKeyVaultPasswordArgs.Builder]):
         com.pulumi.azure.datafactory.LinkedServiceSynapseArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceSynapseKeyVaultPasswordArgs.builder
       builder.keyVaultPassword(args(argsBuilder).build)
@@ -648,7 +648,7 @@ object datafactory_ext:
      * @param pipelines One or more `pipeline` blocks as defined below.
      * @return builder
      */
-    def pipelines(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerBlobEventPipelineArgs.Builder]*):
+    inline def pipelines(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerBlobEventPipelineArgs.Builder]*):
         com.pulumi.azure.datafactory.TriggerBlobEventArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.TriggerBlobEventPipelineArgs.builder
       builder.pipelines(args.map(_(argsBuilder).build)*)
@@ -658,7 +658,7 @@ object datafactory_ext:
      * @param pipelines One or more `pipeline` blocks as defined below.
      * @return builder
      */
-    def pipelines(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerCustomEventPipelineArgs.Builder]*):
+    inline def pipelines(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerCustomEventPipelineArgs.Builder]*):
         com.pulumi.azure.datafactory.TriggerCustomEventArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.TriggerCustomEventPipelineArgs.builder
       builder.pipelines(args.map(_(argsBuilder).build)*)
@@ -668,7 +668,7 @@ object datafactory_ext:
      * @param pipelines A `pipeline` block as defined below.
      * @return builder
      */
-    def pipelines(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerSchedulePipelineArgs.Builder]*):
+    inline def pipelines(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerSchedulePipelineArgs.Builder]*):
         com.pulumi.azure.datafactory.TriggerScheduleArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.TriggerSchedulePipelineArgs.builder
       builder.pipelines(args.map(_(argsBuilder).build)*)
@@ -677,7 +677,7 @@ object datafactory_ext:
      * @param schedule A `schedule` block as defined below, which further specifies the recurrence schedule for the trigger. A schedule is capable of limiting or increasing the number of trigger executions specified by the `frequency` and `interval` properties.
      * @return builder
      */
-    def schedule(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerScheduleScheduleArgs.Builder]):
+    inline def schedule(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerScheduleScheduleArgs.Builder]):
         com.pulumi.azure.datafactory.TriggerScheduleArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.TriggerScheduleScheduleArgs.builder
       builder.schedule(args(argsBuilder).build)
@@ -687,7 +687,7 @@ object datafactory_ext:
      * @param pipeline A `pipeline` block as defined below.
      * @return builder
      */
-    def pipeline(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerTumblingWindowPipelineArgs.Builder]):
+    inline def pipeline(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerTumblingWindowPipelineArgs.Builder]):
         com.pulumi.azure.datafactory.TriggerTumblingWindowArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.TriggerTumblingWindowPipelineArgs.builder
       builder.pipeline(args(argsBuilder).build)
@@ -696,7 +696,7 @@ object datafactory_ext:
      * @param retry A `retry` block as defined below.
      * @return builder
      */
-    def retry(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerTumblingWindowRetryArgs.Builder]):
+    inline def retry(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerTumblingWindowRetryArgs.Builder]):
         com.pulumi.azure.datafactory.TriggerTumblingWindowArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.TriggerTumblingWindowRetryArgs.builder
       builder.retry(args(argsBuilder).build)
@@ -705,7 +705,7 @@ object datafactory_ext:
      * @param triggerDependencies One or more `triggerDependency` block as defined below.
      * @return builder
      */
-    def triggerDependencies(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerTumblingWindowTriggerDependencyArgs.Builder]*):
+    inline def triggerDependencies(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerTumblingWindowTriggerDependencyArgs.Builder]*):
         com.pulumi.azure.datafactory.TriggerTumblingWindowArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.TriggerTumblingWindowTriggerDependencyArgs.builder
       builder.triggerDependencies(args.map(_(argsBuilder).build)*)
@@ -715,7 +715,7 @@ object datafactory_ext:
      * @param servicePrincipalKey A `servicePrincipalKey` block as defined below.
      * @return builder
      */
-    def servicePrincipalKey(args: Endofunction[com.pulumi.azure.datafactory.inputs.CredentialServicePrincipalServicePrincipalKeyArgs.Builder]):
+    inline def servicePrincipalKey(args: Endofunction[com.pulumi.azure.datafactory.inputs.CredentialServicePrincipalServicePrincipalKeyArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.CredentialServicePrincipalState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.CredentialServicePrincipalServicePrincipalKeyArgs.builder
       builder.servicePrincipalKey(args(argsBuilder).build)
@@ -725,7 +725,7 @@ object datafactory_ext:
      * @param linkedService A `linkedService` block as defined below.
      * @return builder
      */
-    def linkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.CustomDatasetLinkedServiceArgs.Builder]):
+    inline def linkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.CustomDatasetLinkedServiceArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.CustomDatasetState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.CustomDatasetLinkedServiceArgs.builder
       builder.linkedService(args(argsBuilder).build)
@@ -735,7 +735,7 @@ object datafactory_ext:
      * @param dataset A `dataset` block as defined below.
      * @return builder
      */
-    def dataset(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSinkDatasetArgs.Builder]):
+    inline def dataset(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSinkDatasetArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.DataFlowSinkArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DataFlowSinkDatasetArgs.builder
       builder.dataset(args(argsBuilder).build)
@@ -744,7 +744,7 @@ object datafactory_ext:
      * @param flowlet A `flowlet` block as defined below.
      * @return builder
      */
-    def flowlet(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSinkFlowletArgs.Builder]):
+    inline def flowlet(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSinkFlowletArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.DataFlowSinkArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DataFlowSinkFlowletArgs.builder
       builder.flowlet(args(argsBuilder).build)
@@ -753,7 +753,7 @@ object datafactory_ext:
      * @param linkedService A `linkedService` block as defined below.
      * @return builder
      */
-    def linkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSinkLinkedServiceArgs.Builder]):
+    inline def linkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSinkLinkedServiceArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.DataFlowSinkArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DataFlowSinkLinkedServiceArgs.builder
       builder.linkedService(args(argsBuilder).build)
@@ -762,7 +762,7 @@ object datafactory_ext:
      * @param rejectedLinkedService A `rejectedLinkedService` block as defined below.
      * @return builder
      */
-    def rejectedLinkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSinkRejectedLinkedServiceArgs.Builder]):
+    inline def rejectedLinkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSinkRejectedLinkedServiceArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.DataFlowSinkArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DataFlowSinkRejectedLinkedServiceArgs.builder
       builder.rejectedLinkedService(args(argsBuilder).build)
@@ -771,7 +771,7 @@ object datafactory_ext:
      * @param schemaLinkedService A `schemaLinkedService` block as defined below.
      * @return builder
      */
-    def schemaLinkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSinkSchemaLinkedServiceArgs.Builder]):
+    inline def schemaLinkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSinkSchemaLinkedServiceArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.DataFlowSinkArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DataFlowSinkSchemaLinkedServiceArgs.builder
       builder.schemaLinkedService(args(argsBuilder).build)
@@ -781,7 +781,7 @@ object datafactory_ext:
      * @param dataset A `dataset` block as defined below.
      * @return builder
      */
-    def dataset(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSourceDatasetArgs.Builder]):
+    inline def dataset(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSourceDatasetArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.DataFlowSourceArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DataFlowSourceDatasetArgs.builder
       builder.dataset(args(argsBuilder).build)
@@ -790,7 +790,7 @@ object datafactory_ext:
      * @param flowlet A `flowlet` block as defined below.
      * @return builder
      */
-    def flowlet(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSourceFlowletArgs.Builder]):
+    inline def flowlet(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSourceFlowletArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.DataFlowSourceArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DataFlowSourceFlowletArgs.builder
       builder.flowlet(args(argsBuilder).build)
@@ -799,7 +799,7 @@ object datafactory_ext:
      * @param linkedService A `linkedService` block as defined below.
      * @return builder
      */
-    def linkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSourceLinkedServiceArgs.Builder]):
+    inline def linkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSourceLinkedServiceArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.DataFlowSourceArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DataFlowSourceLinkedServiceArgs.builder
       builder.linkedService(args(argsBuilder).build)
@@ -808,7 +808,7 @@ object datafactory_ext:
      * @param rejectedLinkedService A `rejectedLinkedService` block as defined below.
      * @return builder
      */
-    def rejectedLinkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSourceRejectedLinkedServiceArgs.Builder]):
+    inline def rejectedLinkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSourceRejectedLinkedServiceArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.DataFlowSourceArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DataFlowSourceRejectedLinkedServiceArgs.builder
       builder.rejectedLinkedService(args(argsBuilder).build)
@@ -817,7 +817,7 @@ object datafactory_ext:
      * @param schemaLinkedService A `schemaLinkedService` block as defined below.
      * @return builder
      */
-    def schemaLinkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSourceSchemaLinkedServiceArgs.Builder]):
+    inline def schemaLinkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSourceSchemaLinkedServiceArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.DataFlowSourceArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DataFlowSourceSchemaLinkedServiceArgs.builder
       builder.schemaLinkedService(args(argsBuilder).build)
@@ -827,7 +827,7 @@ object datafactory_ext:
      * @param sinks One or more `sink` blocks as defined below.
      * @return builder
      */
-    def sinks(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSinkArgs.Builder]*):
+    inline def sinks(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSinkArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.DataFlowState.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DataFlowSinkArgs.builder
       builder.sinks(args.map(_(argsBuilder).build)*)
@@ -836,7 +836,7 @@ object datafactory_ext:
      * @param sources One or more `source` blocks as defined below.
      * @return builder
      */
-    def sources(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSourceArgs.Builder]*):
+    inline def sources(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowSourceArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.DataFlowState.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DataFlowSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
@@ -845,7 +845,7 @@ object datafactory_ext:
      * @param transformations One or more `transformation` blocks as defined below.
      * @return builder
      */
-    def transformations(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowTransformationArgs.Builder]*):
+    inline def transformations(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowTransformationArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.DataFlowState.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DataFlowTransformationArgs.builder
       builder.transformations(args.map(_(argsBuilder).build)*)
@@ -855,7 +855,7 @@ object datafactory_ext:
      * @param dataset A `dataset` block as defined below.
      * @return builder
      */
-    def dataset(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowTransformationDatasetArgs.Builder]):
+    inline def dataset(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowTransformationDatasetArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.DataFlowTransformationArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DataFlowTransformationDatasetArgs.builder
       builder.dataset(args(argsBuilder).build)
@@ -864,7 +864,7 @@ object datafactory_ext:
      * @param flowlet A `flowlet` block as defined below.
      * @return builder
      */
-    def flowlet(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowTransformationFlowletArgs.Builder]):
+    inline def flowlet(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowTransformationFlowletArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.DataFlowTransformationArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DataFlowTransformationFlowletArgs.builder
       builder.flowlet(args(argsBuilder).build)
@@ -873,7 +873,7 @@ object datafactory_ext:
      * @param linkedService A `linkedService` block as defined below.
      * @return builder
      */
-    def linkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowTransformationLinkedServiceArgs.Builder]):
+    inline def linkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.DataFlowTransformationLinkedServiceArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.DataFlowTransformationArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DataFlowTransformationLinkedServiceArgs.builder
       builder.linkedService(args(argsBuilder).build)
@@ -883,7 +883,7 @@ object datafactory_ext:
      * @param schemaColumns A `schemaColumn` block as defined below.
      * @return builder
      */
-    def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetAzureBlobSchemaColumnArgs.Builder]*):
+    inline def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetAzureBlobSchemaColumnArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.DatasetAzureBlobState.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetAzureBlobSchemaColumnArgs.builder
       builder.schemaColumns(args.map(_(argsBuilder).build)*)
@@ -893,7 +893,7 @@ object datafactory_ext:
      * @param schemaColumns A `schemaColumn` block as defined below.
      * @return builder
      */
-    def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetAzureSqlTableSchemaColumnArgs.Builder]*):
+    inline def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetAzureSqlTableSchemaColumnArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.DatasetAzureSqlTableState.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetAzureSqlTableSchemaColumnArgs.builder
       builder.schemaColumns(args.map(_(argsBuilder).build)*)
@@ -903,7 +903,7 @@ object datafactory_ext:
      * @param azureBlobStorageLocation A `azureBlobStorageLocation` block as defined below.
      * @return builder
      */
-    def azureBlobStorageLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetBinaryAzureBlobStorageLocationArgs.Builder]):
+    inline def azureBlobStorageLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetBinaryAzureBlobStorageLocationArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.DatasetBinaryState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetBinaryAzureBlobStorageLocationArgs.builder
       builder.azureBlobStorageLocation(args(argsBuilder).build)
@@ -912,7 +912,7 @@ object datafactory_ext:
      * @param compression A `compression` block as defined below.
      * @return builder
      */
-    def compression(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetBinaryCompressionArgs.Builder]):
+    inline def compression(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetBinaryCompressionArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.DatasetBinaryState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetBinaryCompressionArgs.builder
       builder.compression(args(argsBuilder).build)
@@ -921,7 +921,7 @@ object datafactory_ext:
      * @param httpServerLocation A `httpServerLocation` block as defined below.
      * @return builder
      */
-    def httpServerLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetBinaryHttpServerLocationArgs.Builder]):
+    inline def httpServerLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetBinaryHttpServerLocationArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.DatasetBinaryState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetBinaryHttpServerLocationArgs.builder
       builder.httpServerLocation(args(argsBuilder).build)
@@ -930,7 +930,7 @@ object datafactory_ext:
      * @param sftpServerLocation A `sftpServerLocation` block as defined below.
      * @return builder
      */
-    def sftpServerLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetBinarySftpServerLocationArgs.Builder]):
+    inline def sftpServerLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetBinarySftpServerLocationArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.DatasetBinaryState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetBinarySftpServerLocationArgs.builder
       builder.sftpServerLocation(args(argsBuilder).build)
@@ -940,7 +940,7 @@ object datafactory_ext:
      * @param schemaColumns A `schemaColumn` block as defined below.
      * @return builder
      */
-    def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetCosmosDBApiSchemaColumnArgs.Builder]*):
+    inline def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetCosmosDBApiSchemaColumnArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.DatasetCosmosDBApiState.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetCosmosDBApiSchemaColumnArgs.builder
       builder.schemaColumns(args.map(_(argsBuilder).build)*)
@@ -950,7 +950,7 @@ object datafactory_ext:
      * @param azureBlobFsLocation An `azureBlobFsLocation` block as defined below.
      * @return builder
      */
-    def azureBlobFsLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextAzureBlobFsLocationArgs.Builder]):
+    inline def azureBlobFsLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextAzureBlobFsLocationArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextAzureBlobFsLocationArgs.builder
       builder.azureBlobFsLocation(args(argsBuilder).build)
@@ -959,7 +959,7 @@ object datafactory_ext:
      * @param azureBlobStorageLocation An `azureBlobStorageLocation` block as defined below.
      * @return builder
      */
-    def azureBlobStorageLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextAzureBlobStorageLocationArgs.Builder]):
+    inline def azureBlobStorageLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextAzureBlobStorageLocationArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextAzureBlobStorageLocationArgs.builder
       builder.azureBlobStorageLocation(args(argsBuilder).build)
@@ -970,7 +970,7 @@ object datafactory_ext:
      * The following supported arguments are specific to Delimited Text Dataset:
      * @return builder
      */
-    def httpServerLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextHttpServerLocationArgs.Builder]):
+    inline def httpServerLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextHttpServerLocationArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextHttpServerLocationArgs.builder
       builder.httpServerLocation(args(argsBuilder).build)
@@ -979,7 +979,7 @@ object datafactory_ext:
      * @param schemaColumns A `schemaColumn` block as defined below.
      * @return builder
      */
-    def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextSchemaColumnArgs.Builder]*):
+    inline def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextSchemaColumnArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextState.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetDelimitedTextSchemaColumnArgs.builder
       builder.schemaColumns(args.map(_(argsBuilder).build)*)
@@ -989,7 +989,7 @@ object datafactory_ext:
      * @param schemaColumns A `schemaColumn` block as defined below.
      * @return builder
      */
-    def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetHttpSchemaColumnArgs.Builder]*):
+    inline def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetHttpSchemaColumnArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.DatasetHttpState.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetHttpSchemaColumnArgs.builder
       builder.schemaColumns(args.map(_(argsBuilder).build)*)
@@ -1001,7 +1001,7 @@ object datafactory_ext:
      * The following supported arguments are specific to Delimited Text Dataset:
      * @return builder
      */
-    def azureBlobStorageLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetJsonAzureBlobStorageLocationArgs.Builder]):
+    inline def azureBlobStorageLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetJsonAzureBlobStorageLocationArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.DatasetJsonState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetJsonAzureBlobStorageLocationArgs.builder
       builder.azureBlobStorageLocation(args(argsBuilder).build)
@@ -1010,7 +1010,7 @@ object datafactory_ext:
      * @param httpServerLocation A `httpServerLocation` block as defined below.
      * @return builder
      */
-    def httpServerLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetJsonHttpServerLocationArgs.Builder]):
+    inline def httpServerLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetJsonHttpServerLocationArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.DatasetJsonState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetJsonHttpServerLocationArgs.builder
       builder.httpServerLocation(args(argsBuilder).build)
@@ -1019,7 +1019,7 @@ object datafactory_ext:
      * @param schemaColumns A `schemaColumn` block as defined below.
      * @return builder
      */
-    def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetJsonSchemaColumnArgs.Builder]*):
+    inline def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetJsonSchemaColumnArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.DatasetJsonState.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetJsonSchemaColumnArgs.builder
       builder.schemaColumns(args.map(_(argsBuilder).build)*)
@@ -1029,7 +1029,7 @@ object datafactory_ext:
      * @param schemaColumns A `schemaColumn` block as defined below.
      * @return builder
      */
-    def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetMysqlSchemaColumnArgs.Builder]*):
+    inline def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetMysqlSchemaColumnArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.DatasetMysqlState.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetMysqlSchemaColumnArgs.builder
       builder.schemaColumns(args.map(_(argsBuilder).build)*)
@@ -1039,7 +1039,7 @@ object datafactory_ext:
      * @param azureBlobFsLocation A `azureBlobFsLocation` block as defined below.
      * @return builder
      */
-    def azureBlobFsLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetParquetAzureBlobFsLocationArgs.Builder]):
+    inline def azureBlobFsLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetParquetAzureBlobFsLocationArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.DatasetParquetState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetParquetAzureBlobFsLocationArgs.builder
       builder.azureBlobFsLocation(args(argsBuilder).build)
@@ -1050,7 +1050,7 @@ object datafactory_ext:
      * The following supported arguments are specific to Parquet Dataset:
      * @return builder
      */
-    def azureBlobStorageLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetParquetAzureBlobStorageLocationArgs.Builder]):
+    inline def azureBlobStorageLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetParquetAzureBlobStorageLocationArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.DatasetParquetState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetParquetAzureBlobStorageLocationArgs.builder
       builder.azureBlobStorageLocation(args(argsBuilder).build)
@@ -1059,7 +1059,7 @@ object datafactory_ext:
      * @param httpServerLocation A `httpServerLocation` block as defined below.
      * @return builder
      */
-    def httpServerLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetParquetHttpServerLocationArgs.Builder]):
+    inline def httpServerLocation(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetParquetHttpServerLocationArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.DatasetParquetState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetParquetHttpServerLocationArgs.builder
       builder.httpServerLocation(args(argsBuilder).build)
@@ -1068,7 +1068,7 @@ object datafactory_ext:
      * @param schemaColumns A `schemaColumn` block as defined below.
      * @return builder
      */
-    def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetParquetSchemaColumnArgs.Builder]*):
+    inline def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetParquetSchemaColumnArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.DatasetParquetState.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetParquetSchemaColumnArgs.builder
       builder.schemaColumns(args.map(_(argsBuilder).build)*)
@@ -1078,7 +1078,7 @@ object datafactory_ext:
      * @param schemaColumns A `schemaColumn` block as defined below.
      * @return builder
      */
-    def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetPostgresqlSchemaColumnArgs.Builder]*):
+    inline def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetPostgresqlSchemaColumnArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.DatasetPostgresqlState.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetPostgresqlSchemaColumnArgs.builder
       builder.schemaColumns(args.map(_(argsBuilder).build)*)
@@ -1088,7 +1088,7 @@ object datafactory_ext:
      * @param schemaColumns A `schemaColumn` block as defined below.
      * @return builder
      */
-    def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetSnowflakeSchemaColumnArgs.Builder]*):
+    inline def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetSnowflakeSchemaColumnArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.DatasetSnowflakeState.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetSnowflakeSchemaColumnArgs.builder
       builder.schemaColumns(args.map(_(argsBuilder).build)*)
@@ -1098,7 +1098,7 @@ object datafactory_ext:
      * @param schemaColumns A `schemaColumn` block as defined below.
      * @return builder
      */
-    def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetSqlServerTableSchemaColumnArgs.Builder]*):
+    inline def schemaColumns(args: Endofunction[com.pulumi.azure.datafactory.inputs.DatasetSqlServerTableSchemaColumnArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.DatasetSqlServerTableState.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.DatasetSqlServerTableSchemaColumnArgs.builder
       builder.schemaColumns(args.map(_(argsBuilder).build)*)
@@ -1108,7 +1108,7 @@ object datafactory_ext:
      * @param githubConfiguration A `githubConfiguration` block as defined below.
      * @return builder
      */
-    def githubConfiguration(args: Endofunction[com.pulumi.azure.datafactory.inputs.FactoryGithubConfigurationArgs.Builder]):
+    inline def githubConfiguration(args: Endofunction[com.pulumi.azure.datafactory.inputs.FactoryGithubConfigurationArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.FactoryState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.FactoryGithubConfigurationArgs.builder
       builder.githubConfiguration(args(argsBuilder).build)
@@ -1117,7 +1117,7 @@ object datafactory_ext:
      * @param globalParameters A list of `globalParameter` blocks as defined above.
      * @return builder
      */
-    def globalParameters(args: Endofunction[com.pulumi.azure.datafactory.inputs.FactoryGlobalParameterArgs.Builder]*):
+    inline def globalParameters(args: Endofunction[com.pulumi.azure.datafactory.inputs.FactoryGlobalParameterArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.FactoryState.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.FactoryGlobalParameterArgs.builder
       builder.globalParameters(args.map(_(argsBuilder).build)*)
@@ -1126,7 +1126,7 @@ object datafactory_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.datafactory.inputs.FactoryIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.datafactory.inputs.FactoryIdentityArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.FactoryState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.FactoryIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -1135,7 +1135,7 @@ object datafactory_ext:
      * @param vstsConfiguration A `vstsConfiguration` block as defined below.
      * @return builder
      */
-    def vstsConfiguration(args: Endofunction[com.pulumi.azure.datafactory.inputs.FactoryVstsConfigurationArgs.Builder]):
+    inline def vstsConfiguration(args: Endofunction[com.pulumi.azure.datafactory.inputs.FactoryVstsConfigurationArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.FactoryState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.FactoryVstsConfigurationArgs.builder
       builder.vstsConfiguration(args(argsBuilder).build)
@@ -1145,7 +1145,7 @@ object datafactory_ext:
      * @param dataset A `dataset` block as defined below.
      * @return builder
      */
-    def dataset(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkDatasetArgs.Builder]):
+    inline def dataset(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkDatasetArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkDatasetArgs.builder
       builder.dataset(args(argsBuilder).build)
@@ -1154,7 +1154,7 @@ object datafactory_ext:
      * @param flowlet A `flowlet` block as defined below.
      * @return builder
      */
-    def flowlet(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkFlowletArgs.Builder]):
+    inline def flowlet(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkFlowletArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkFlowletArgs.builder
       builder.flowlet(args(argsBuilder).build)
@@ -1163,7 +1163,7 @@ object datafactory_ext:
      * @param linkedService A `linkedService` block as defined below.
      * @return builder
      */
-    def linkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkLinkedServiceArgs.Builder]):
+    inline def linkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkLinkedServiceArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkLinkedServiceArgs.builder
       builder.linkedService(args(argsBuilder).build)
@@ -1172,7 +1172,7 @@ object datafactory_ext:
      * @param rejectedLinkedService A `rejectedLinkedService` block as defined below.
      * @return builder
      */
-    def rejectedLinkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkRejectedLinkedServiceArgs.Builder]):
+    inline def rejectedLinkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkRejectedLinkedServiceArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkRejectedLinkedServiceArgs.builder
       builder.rejectedLinkedService(args(argsBuilder).build)
@@ -1181,7 +1181,7 @@ object datafactory_ext:
      * @param schemaLinkedService A `schemaLinkedService` block as defined below.
      * @return builder
      */
-    def schemaLinkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkSchemaLinkedServiceArgs.Builder]):
+    inline def schemaLinkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkSchemaLinkedServiceArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkSchemaLinkedServiceArgs.builder
       builder.schemaLinkedService(args(argsBuilder).build)
@@ -1191,7 +1191,7 @@ object datafactory_ext:
      * @param dataset A `dataset` block as defined below.
      * @return builder
      */
-    def dataset(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceDatasetArgs.Builder]):
+    inline def dataset(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceDatasetArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceDatasetArgs.builder
       builder.dataset(args(argsBuilder).build)
@@ -1200,7 +1200,7 @@ object datafactory_ext:
      * @param flowlet A `flowlet` block as defined below.
      * @return builder
      */
-    def flowlet(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceFlowletArgs.Builder]):
+    inline def flowlet(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceFlowletArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceFlowletArgs.builder
       builder.flowlet(args(argsBuilder).build)
@@ -1209,7 +1209,7 @@ object datafactory_ext:
      * @param linkedService A `linkedService` block as defined below.
      * @return builder
      */
-    def linkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceLinkedServiceArgs.Builder]):
+    inline def linkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceLinkedServiceArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceLinkedServiceArgs.builder
       builder.linkedService(args(argsBuilder).build)
@@ -1218,7 +1218,7 @@ object datafactory_ext:
      * @param rejectedLinkedService A `rejectedLinkedService` block as defined below.
      * @return builder
      */
-    def rejectedLinkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceRejectedLinkedServiceArgs.Builder]):
+    inline def rejectedLinkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceRejectedLinkedServiceArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceRejectedLinkedServiceArgs.builder
       builder.rejectedLinkedService(args(argsBuilder).build)
@@ -1227,7 +1227,7 @@ object datafactory_ext:
      * @param schemaLinkedService A `schemaLinkedService` block as defined below.
      * @return builder
      */
-    def schemaLinkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceSchemaLinkedServiceArgs.Builder]):
+    inline def schemaLinkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceSchemaLinkedServiceArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceSchemaLinkedServiceArgs.builder
       builder.schemaLinkedService(args(argsBuilder).build)
@@ -1237,7 +1237,7 @@ object datafactory_ext:
      * @param sinks One or more `sink` blocks as defined below.
      * @return builder
      */
-    def sinks(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkArgs.Builder]*):
+    inline def sinks(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.FlowletDataFlowState.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.FlowletDataFlowSinkArgs.builder
       builder.sinks(args.map(_(argsBuilder).build)*)
@@ -1246,7 +1246,7 @@ object datafactory_ext:
      * @param sources One or more `source` blocks as defined below.
      * @return builder
      */
-    def sources(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceArgs.Builder]*):
+    inline def sources(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.FlowletDataFlowState.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.FlowletDataFlowSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
@@ -1255,7 +1255,7 @@ object datafactory_ext:
      * @param transformations One or more `transformation` blocks as defined below.
      * @return builder
      */
-    def transformations(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowTransformationArgs.Builder]*):
+    inline def transformations(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowTransformationArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.FlowletDataFlowState.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.FlowletDataFlowTransformationArgs.builder
       builder.transformations(args.map(_(argsBuilder).build)*)
@@ -1265,7 +1265,7 @@ object datafactory_ext:
      * @param dataset A `dataset` block as defined below.
      * @return builder
      */
-    def dataset(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowTransformationDatasetArgs.Builder]):
+    inline def dataset(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowTransformationDatasetArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.FlowletDataFlowTransformationArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.FlowletDataFlowTransformationDatasetArgs.builder
       builder.dataset(args(argsBuilder).build)
@@ -1274,7 +1274,7 @@ object datafactory_ext:
      * @param flowlet A `flowlet` block as defined below.
      * @return builder
      */
-    def flowlet(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowTransformationFlowletArgs.Builder]):
+    inline def flowlet(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowTransformationFlowletArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.FlowletDataFlowTransformationArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.FlowletDataFlowTransformationFlowletArgs.builder
       builder.flowlet(args(argsBuilder).build)
@@ -1283,7 +1283,7 @@ object datafactory_ext:
      * @param linkedService A `linkedService` block as defined below.
      * @return builder
      */
-    def linkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowTransformationLinkedServiceArgs.Builder]):
+    inline def linkedService(args: Endofunction[com.pulumi.azure.datafactory.inputs.FlowletDataFlowTransformationLinkedServiceArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.FlowletDataFlowTransformationArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.FlowletDataFlowTransformationLinkedServiceArgs.builder
       builder.linkedService(args(argsBuilder).build)
@@ -1293,7 +1293,7 @@ object datafactory_ext:
      * @param rbacAuthorizations A `rbacAuthorization` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def rbacAuthorizations(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSelfHostedRbacAuthorizationArgs.Builder]*):
+    inline def rbacAuthorizations(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSelfHostedRbacAuthorizationArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSelfHostedState.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSelfHostedRbacAuthorizationArgs.builder
       builder.rbacAuthorizations(args.map(_(argsBuilder).build)*)
@@ -1303,7 +1303,7 @@ object datafactory_ext:
      * @param commandKeys One or more `commandKey` blocks as defined below.
      * @return builder
      */
-    def commandKeys(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressCustomSetupCommandKeyArgs.Builder]*):
+    inline def commandKeys(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressCustomSetupCommandKeyArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressCustomSetupArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressCustomSetupCommandKeyArgs.builder
       builder.commandKeys(args.map(_(argsBuilder).build)*)
@@ -1312,7 +1312,7 @@ object datafactory_ext:
      * @param components One or more `component` blocks as defined below.
      * @return builder
      */
-    def components(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressCustomSetupComponentArgs.Builder]*):
+    inline def components(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressCustomSetupComponentArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressCustomSetupArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressCustomSetupComponentArgs.builder
       builder.components(args.map(_(argsBuilder).build)*)
@@ -1322,7 +1322,7 @@ object datafactory_ext:
      * @param keyVaultPassword A `keyVaultSecretReference` block as defined below.
      * @return builder
      */
-    def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressCustomSetupCommandKeyKeyVaultPasswordArgs.Builder]):
+    inline def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressCustomSetupCommandKeyKeyVaultPasswordArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressCustomSetupCommandKeyArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressCustomSetupCommandKeyKeyVaultPasswordArgs.builder
       builder.keyVaultPassword(args(argsBuilder).build)
@@ -1332,7 +1332,7 @@ object datafactory_ext:
      * @param keyVaultLicense A `keyVaultSecretReference` block as defined below.
      * @return builder
      */
-    def keyVaultLicense(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressCustomSetupComponentKeyVaultLicenseArgs.Builder]):
+    inline def keyVaultLicense(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressCustomSetupComponentKeyVaultLicenseArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressCustomSetupComponentArgs.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressCustomSetupComponentKeyVaultLicenseArgs.builder
       builder.keyVaultLicense(args(argsBuilder).build)
@@ -1342,7 +1342,7 @@ object datafactory_ext:
      * @param catalogInfo A `catalogInfo` block as defined below.
      * @return builder
      */
-    def catalogInfo(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisCatalogInfoArgs.Builder]):
+    inline def catalogInfo(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisCatalogInfoArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisCatalogInfoArgs.builder
       builder.catalogInfo(args(argsBuilder).build)
@@ -1351,7 +1351,7 @@ object datafactory_ext:
      * @param copyComputeScale One `copyComputeScale` block as defined below.
      * @return builder
      */
-    def copyComputeScale(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisCopyComputeScaleArgs.Builder]):
+    inline def copyComputeScale(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisCopyComputeScaleArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisCopyComputeScaleArgs.builder
       builder.copyComputeScale(args(argsBuilder).build)
@@ -1360,7 +1360,7 @@ object datafactory_ext:
      * @param customSetupScript A `customSetupScript` block as defined below.
      * @return builder
      */
-    def customSetupScript(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisCustomSetupScriptArgs.Builder]):
+    inline def customSetupScript(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisCustomSetupScriptArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisCustomSetupScriptArgs.builder
       builder.customSetupScript(args(argsBuilder).build)
@@ -1369,7 +1369,7 @@ object datafactory_ext:
      * @param expressCustomSetup An `expressCustomSetup` block as defined below.
      * @return builder
      */
-    def expressCustomSetup(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressCustomSetupArgs.Builder]):
+    inline def expressCustomSetup(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressCustomSetupArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressCustomSetupArgs.builder
       builder.expressCustomSetup(args(argsBuilder).build)
@@ -1378,7 +1378,7 @@ object datafactory_ext:
      * @param expressVnetIntegration A `expressVnetIntegration` block as defined below.
      * @return builder
      */
-    def expressVnetIntegration(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressVnetIntegrationArgs.Builder]):
+    inline def expressVnetIntegration(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressVnetIntegrationArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisExpressVnetIntegrationArgs.builder
       builder.expressVnetIntegration(args(argsBuilder).build)
@@ -1387,7 +1387,7 @@ object datafactory_ext:
      * @param packageStores One or more `packageStore` block as defined below.
      * @return builder
      */
-    def packageStores(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisPackageStoreArgs.Builder]*):
+    inline def packageStores(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisPackageStoreArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisState.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisPackageStoreArgs.builder
       builder.packageStores(args.map(_(argsBuilder).build)*)
@@ -1396,7 +1396,7 @@ object datafactory_ext:
      * @param pipelineExternalComputeScale One `pipelineExternalComputeScale` block as defined below.
      * @return builder
      */
-    def pipelineExternalComputeScale(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisPipelineExternalComputeScaleArgs.Builder]):
+    inline def pipelineExternalComputeScale(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisPipelineExternalComputeScaleArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisPipelineExternalComputeScaleArgs.builder
       builder.pipelineExternalComputeScale(args(argsBuilder).build)
@@ -1405,7 +1405,7 @@ object datafactory_ext:
      * @param proxy A `proxy` block as defined below.
      * @return builder
      */
-    def proxy(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisProxyArgs.Builder]):
+    inline def proxy(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisProxyArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisProxyArgs.builder
       builder.proxy(args(argsBuilder).build)
@@ -1414,7 +1414,7 @@ object datafactory_ext:
      * @param vnetIntegration A `vnetIntegration` block as defined below.
      * @return builder
      */
-    def vnetIntegration(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisVnetIntegrationArgs.Builder]):
+    inline def vnetIntegration(args: Endofunction[com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisVnetIntegrationArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.IntegrationRuntimeSsisVnetIntegrationArgs.builder
       builder.vnetIntegration(args(argsBuilder).build)
@@ -1424,7 +1424,7 @@ object datafactory_ext:
      * @param integrationRuntime An `integrationRuntime` block as defined below.
      * @return builder
      */
-    def integrationRuntime(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedCustomServiceIntegrationRuntimeArgs.Builder]):
+    inline def integrationRuntime(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedCustomServiceIntegrationRuntimeArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.LinkedCustomServiceState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedCustomServiceIntegrationRuntimeArgs.builder
       builder.integrationRuntime(args(argsBuilder).build)
@@ -1434,7 +1434,7 @@ object datafactory_ext:
      * @return builder
      * @deprecated the `keyVaultSasToken` property has been deprecated in favour of the `sasTokenLinkedKeyVaultKey` property and will be removed in v5.0 of the AzureRM Provider
      */
-    @deprecated("the `keyVaultSasToken` property has been deprecated in favour of the `sasTokenLinkedKeyVaultKey` property and will be removed in v5.0 of the AzureRM Provider") def keyVaultSasToken(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageKeyVaultSasTokenArgs.Builder]):
+    @deprecated("the `keyVaultSasToken` property has been deprecated in favour of the `sasTokenLinkedKeyVaultKey` property and will be removed in v5.0 of the AzureRM Provider") inline def keyVaultSasToken(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageKeyVaultSasTokenArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageKeyVaultSasTokenArgs.builder
       builder.keyVaultSasToken(args(argsBuilder).build)
@@ -1443,12 +1443,12 @@ object datafactory_ext:
      * @param sasTokenLinkedKeyVaultKey A `sasTokenLinkedKeyVaultKey` block as defined below. Use this argument to store SAS Token in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service. A `sasUri` is required.
      * @return builder
      */
-    def sasTokenLinkedKeyVaultKey(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageSasTokenLinkedKeyVaultKeyArgs.Builder]):
+    inline def sasTokenLinkedKeyVaultKey(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageSasTokenLinkedKeyVaultKeyArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageSasTokenLinkedKeyVaultKeyArgs.builder
       builder.sasTokenLinkedKeyVaultKey(args(argsBuilder).build)
 
-    def servicePrincipalLinkedKeyVaultKey(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageServicePrincipalLinkedKeyVaultKeyArgs.Builder]):
+    inline def servicePrincipalLinkedKeyVaultKey(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageServicePrincipalLinkedKeyVaultKeyArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceAzureBlobStorageServicePrincipalLinkedKeyVaultKeyArgs.builder
       builder.servicePrincipalLinkedKeyVaultKey(args(argsBuilder).build)
@@ -1458,7 +1458,7 @@ object datafactory_ext:
      * @param instancePool Leverages an instance pool within the linked ADB instance as one `instancePool` block defined below.
      * @return builder
      */
-    def instancePool(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureDatabricksInstancePoolArgs.Builder]):
+    inline def instancePool(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureDatabricksInstancePoolArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.LinkedServiceAzureDatabricksState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceAzureDatabricksInstancePoolArgs.builder
       builder.instancePool(args(argsBuilder).build)
@@ -1467,7 +1467,7 @@ object datafactory_ext:
      * @param keyVaultPassword Authenticate to ADB via Azure Key Vault Linked Service as defined in the `keyVaultPassword` block below.
      * @return builder
      */
-    def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureDatabricksKeyVaultPasswordArgs.Builder]):
+    inline def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureDatabricksKeyVaultPasswordArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.LinkedServiceAzureDatabricksState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceAzureDatabricksKeyVaultPasswordArgs.builder
       builder.keyVaultPassword(args(argsBuilder).build)
@@ -1476,7 +1476,7 @@ object datafactory_ext:
      * @param newClusterConfig Creates new clusters within the linked ADB instance as defined in the `newClusterConfig` block below.
      * @return builder
      */
-    def newClusterConfig(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureDatabricksNewClusterConfigArgs.Builder]):
+    inline def newClusterConfig(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureDatabricksNewClusterConfigArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.LinkedServiceAzureDatabricksState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceAzureDatabricksNewClusterConfigArgs.builder
       builder.newClusterConfig(args(argsBuilder).build)
@@ -1486,7 +1486,7 @@ object datafactory_ext:
      * @param keyVaultPassword A `keyVaultPassword` block as defined below. Use this argument to store Azure File Storage password in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service.
      * @return builder
      */
-    def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureFileStorageKeyVaultPasswordArgs.Builder]):
+    inline def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureFileStorageKeyVaultPasswordArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.LinkedServiceAzureFileStorageState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceAzureFileStorageKeyVaultPasswordArgs.builder
       builder.keyVaultPassword(args(argsBuilder).build)
@@ -1496,7 +1496,7 @@ object datafactory_ext:
      * @param keyVaultKey A `keyVaultKey` block as defined below. Use this Argument to store the system key of the Azure Function in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service. Exactly one of either `key` or `keyVaultKey` is required.
      * @return builder
      */
-    def keyVaultKey(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureFunctionKeyVaultKeyArgs.Builder]):
+    inline def keyVaultKey(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureFunctionKeyVaultKeyArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.LinkedServiceAzureFunctionState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceAzureFunctionKeyVaultKeyArgs.builder
       builder.keyVaultKey(args(argsBuilder).build)
@@ -1506,7 +1506,7 @@ object datafactory_ext:
      * @param keyVaultConnectionString A `keyVaultConnectionString` block as defined below. Use this argument to store Azure SQL Database connection string in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service. Exactly one of either `connectionString` or `keyVaultConnectionString` is required.
      * @return builder
      */
-    def keyVaultConnectionString(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureSqlDatabaseKeyVaultConnectionStringArgs.Builder]):
+    inline def keyVaultConnectionString(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureSqlDatabaseKeyVaultConnectionStringArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.LinkedServiceAzureSqlDatabaseState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceAzureSqlDatabaseKeyVaultConnectionStringArgs.builder
       builder.keyVaultConnectionString(args(argsBuilder).build)
@@ -1515,7 +1515,7 @@ object datafactory_ext:
      * @param keyVaultPassword A `keyVaultPassword` block as defined below. Use this argument to store SQL Server password in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service.
      * @return builder
      */
-    def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureSqlDatabaseKeyVaultPasswordArgs.Builder]):
+    inline def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceAzureSqlDatabaseKeyVaultPasswordArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.LinkedServiceAzureSqlDatabaseState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceAzureSqlDatabaseKeyVaultPasswordArgs.builder
       builder.keyVaultPassword(args(argsBuilder).build)
@@ -1525,7 +1525,7 @@ object datafactory_ext:
      * @param basicAuthentication A `basicAuthentication` block as defined below.
      * @return builder
      */
-    def basicAuthentication(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceOdataBasicAuthenticationArgs.Builder]):
+    inline def basicAuthentication(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceOdataBasicAuthenticationArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.LinkedServiceOdataState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceOdataBasicAuthenticationArgs.builder
       builder.basicAuthentication(args(argsBuilder).build)
@@ -1535,7 +1535,7 @@ object datafactory_ext:
      * @param basicAuthentication A `basicAuthentication` block as defined below.
      * @return builder
      */
-    def basicAuthentication(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceOdbcBasicAuthenticationArgs.Builder]):
+    inline def basicAuthentication(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceOdbcBasicAuthenticationArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.LinkedServiceOdbcState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceOdbcBasicAuthenticationArgs.builder
       builder.basicAuthentication(args(argsBuilder).build)
@@ -1547,7 +1547,7 @@ object datafactory_ext:
      * &gt; **Note:** Either `password` or `keyVaultPassword` is required when `authenticationType` is set to `Basic`.
      * @return builder
      */
-    def keyVaultPasswords(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSftpKeyVaultPasswordArgs.Builder]*):
+    inline def keyVaultPasswords(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSftpKeyVaultPasswordArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.LinkedServiceSftpState.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceSftpKeyVaultPasswordArgs.builder
       builder.keyVaultPasswords(args.map(_(argsBuilder).build)*)
@@ -1556,7 +1556,7 @@ object datafactory_ext:
      * @param keyVaultPrivateKeyContentBase64 A `keyVaultPrivateKeyContentBase64` block as defined below.
      * @return builder
      */
-    def keyVaultPrivateKeyContentBase64(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSftpKeyVaultPrivateKeyContentBase64Args.Builder]):
+    inline def keyVaultPrivateKeyContentBase64(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSftpKeyVaultPrivateKeyContentBase64Args.Builder]):
         com.pulumi.azure.datafactory.inputs.LinkedServiceSftpState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceSftpKeyVaultPrivateKeyContentBase64Args.builder
       builder.keyVaultPrivateKeyContentBase64(args(argsBuilder).build)
@@ -1567,7 +1567,7 @@ object datafactory_ext:
      * &gt; **Note:** One of `privateKeyContentBase64` or `privateKeyPath` (or their Key Vault equivalent) is required when `authenticationType` is set to `SshPublicKey`.
      * @return builder
      */
-    def keyVaultPrivateKeyPassphrase(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSftpKeyVaultPrivateKeyPassphraseArgs.Builder]):
+    inline def keyVaultPrivateKeyPassphrase(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSftpKeyVaultPrivateKeyPassphraseArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.LinkedServiceSftpState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceSftpKeyVaultPrivateKeyPassphraseArgs.builder
       builder.keyVaultPrivateKeyPassphrase(args(argsBuilder).build)
@@ -1577,7 +1577,7 @@ object datafactory_ext:
      * @param keyVaultPassword A `keyVaultPassword` block as defined below. Use this argument to store Snowflake password in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service.
      * @return builder
      */
-    def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSnowflakeKeyVaultPasswordArgs.Builder]):
+    inline def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSnowflakeKeyVaultPasswordArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.LinkedServiceSnowflakeState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceSnowflakeKeyVaultPasswordArgs.builder
       builder.keyVaultPassword(args(argsBuilder).build)
@@ -1587,7 +1587,7 @@ object datafactory_ext:
      * @param keyVaultConnectionString A `keyVaultConnectionString` block as defined below. Use this argument to store SQL Managed Instance connection string in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service. Exactly one of either `connectionString` or `keyVaultConnectionString` is required.
      * @return builder
      */
-    def keyVaultConnectionString(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSqlManagedInstanceKeyVaultConnectionStringArgs.Builder]):
+    inline def keyVaultConnectionString(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSqlManagedInstanceKeyVaultConnectionStringArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.LinkedServiceSqlManagedInstanceState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceSqlManagedInstanceKeyVaultConnectionStringArgs.builder
       builder.keyVaultConnectionString(args(argsBuilder).build)
@@ -1596,7 +1596,7 @@ object datafactory_ext:
      * @param keyVaultPassword A `keyVaultPassword` block as defined below. Use this argument to store SQL Managed Instance password in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service.
      * @return builder
      */
-    def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSqlManagedInstanceKeyVaultPasswordArgs.Builder]):
+    inline def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSqlManagedInstanceKeyVaultPasswordArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.LinkedServiceSqlManagedInstanceState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceSqlManagedInstanceKeyVaultPasswordArgs.builder
       builder.keyVaultPassword(args(argsBuilder).build)
@@ -1606,7 +1606,7 @@ object datafactory_ext:
      * @param keyVaultConnectionString A `keyVaultConnectionString` block as defined below. Use this argument to store SQL Server connection string in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service. Exactly one of either `connectionString` or `keyVaultConnectionString` is required.
      * @return builder
      */
-    def keyVaultConnectionString(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSqlServerKeyVaultConnectionStringArgs.Builder]):
+    inline def keyVaultConnectionString(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSqlServerKeyVaultConnectionStringArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.LinkedServiceSqlServerState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceSqlServerKeyVaultConnectionStringArgs.builder
       builder.keyVaultConnectionString(args(argsBuilder).build)
@@ -1615,7 +1615,7 @@ object datafactory_ext:
      * @param keyVaultPassword A `keyVaultPassword` block as defined below. Use this argument to store SQL Server password in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service.
      * @return builder
      */
-    def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSqlServerKeyVaultPasswordArgs.Builder]):
+    inline def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSqlServerKeyVaultPasswordArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.LinkedServiceSqlServerState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceSqlServerKeyVaultPasswordArgs.builder
       builder.keyVaultPassword(args(argsBuilder).build)
@@ -1625,7 +1625,7 @@ object datafactory_ext:
      * @param keyVaultPassword A `keyVaultPassword` block as defined below. Use this argument to store Synapse password in an existing Key Vault. It needs an existing Key Vault Data Factory Linked Service.
      * @return builder
      */
-    def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSynapseKeyVaultPasswordArgs.Builder]):
+    inline def keyVaultPassword(args: Endofunction[com.pulumi.azure.datafactory.inputs.LinkedServiceSynapseKeyVaultPasswordArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.LinkedServiceSynapseState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.LinkedServiceSynapseKeyVaultPasswordArgs.builder
       builder.keyVaultPassword(args(argsBuilder).build)
@@ -1635,7 +1635,7 @@ object datafactory_ext:
      * @param pipelines One or more `pipeline` blocks as defined below.
      * @return builder
      */
-    def pipelines(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerBlobEventPipelineArgs.Builder]*):
+    inline def pipelines(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerBlobEventPipelineArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.TriggerBlobEventState.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.TriggerBlobEventPipelineArgs.builder
       builder.pipelines(args.map(_(argsBuilder).build)*)
@@ -1645,7 +1645,7 @@ object datafactory_ext:
      * @param pipelines One or more `pipeline` blocks as defined below.
      * @return builder
      */
-    def pipelines(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerCustomEventPipelineArgs.Builder]*):
+    inline def pipelines(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerCustomEventPipelineArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.TriggerCustomEventState.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.TriggerCustomEventPipelineArgs.builder
       builder.pipelines(args.map(_(argsBuilder).build)*)
@@ -1655,7 +1655,7 @@ object datafactory_ext:
      * @param monthlies A `monthly` block as documented below, which specifies the days of the month on which the trigger is scheduled. The value can be specified only with a monthly frequency.
      * @return builder
      */
-    def monthlies(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerScheduleScheduleMonthlyArgs.Builder]*):
+    inline def monthlies(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerScheduleScheduleMonthlyArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.TriggerScheduleScheduleArgs.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.TriggerScheduleScheduleMonthlyArgs.builder
       builder.monthlies(args.map(_(argsBuilder).build)*)
@@ -1665,7 +1665,7 @@ object datafactory_ext:
      * @param pipelines A `pipeline` block as defined below.
      * @return builder
      */
-    def pipelines(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerSchedulePipelineArgs.Builder]*):
+    inline def pipelines(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerSchedulePipelineArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.TriggerScheduleState.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.TriggerSchedulePipelineArgs.builder
       builder.pipelines(args.map(_(argsBuilder).build)*)
@@ -1674,7 +1674,7 @@ object datafactory_ext:
      * @param schedule A `schedule` block as defined below, which further specifies the recurrence schedule for the trigger. A schedule is capable of limiting or increasing the number of trigger executions specified by the `frequency` and `interval` properties.
      * @return builder
      */
-    def schedule(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerScheduleScheduleArgs.Builder]):
+    inline def schedule(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerScheduleScheduleArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.TriggerScheduleState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.TriggerScheduleScheduleArgs.builder
       builder.schedule(args(argsBuilder).build)
@@ -1684,7 +1684,7 @@ object datafactory_ext:
      * @param pipeline A `pipeline` block as defined below.
      * @return builder
      */
-    def pipeline(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerTumblingWindowPipelineArgs.Builder]):
+    inline def pipeline(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerTumblingWindowPipelineArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.TriggerTumblingWindowState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.TriggerTumblingWindowPipelineArgs.builder
       builder.pipeline(args(argsBuilder).build)
@@ -1693,7 +1693,7 @@ object datafactory_ext:
      * @param retry A `retry` block as defined below.
      * @return builder
      */
-    def retry(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerTumblingWindowRetryArgs.Builder]):
+    inline def retry(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerTumblingWindowRetryArgs.Builder]):
         com.pulumi.azure.datafactory.inputs.TriggerTumblingWindowState.Builder =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.TriggerTumblingWindowRetryArgs.builder
       builder.retry(args(argsBuilder).build)
@@ -1702,7 +1702,7 @@ object datafactory_ext:
      * @param triggerDependencies One or more `triggerDependency` block as defined below.
      * @return builder
      */
-    def triggerDependencies(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerTumblingWindowTriggerDependencyArgs.Builder]*):
+    inline def triggerDependencies(args: Endofunction[com.pulumi.azure.datafactory.inputs.TriggerTumblingWindowTriggerDependencyArgs.Builder]*):
         com.pulumi.azure.datafactory.inputs.TriggerTumblingWindowState.Builder =
       def argsBuilder = com.pulumi.azure.datafactory.inputs.TriggerTumblingWindowTriggerDependencyArgs.builder
       builder.triggerDependencies(args.map(_(argsBuilder).build)*)

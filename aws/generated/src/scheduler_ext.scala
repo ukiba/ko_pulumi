@@ -7,7 +7,7 @@ object scheduler_ext:
      * @param flexibleTimeWindow Configures a time window during which EventBridge Scheduler invokes the schedule. Detailed below.
      * @return builder
      */
-    def flexibleTimeWindow(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleFlexibleTimeWindowArgs.Builder]):
+    inline def flexibleTimeWindow(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleFlexibleTimeWindowArgs.Builder]):
         com.pulumi.aws.scheduler.ScheduleArgs.Builder =
       val argsBuilder = com.pulumi.aws.scheduler.inputs.ScheduleFlexibleTimeWindowArgs.builder
       builder.flexibleTimeWindow(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object scheduler_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def target(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetArgs.Builder]):
+    inline def target(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetArgs.Builder]):
         com.pulumi.aws.scheduler.ScheduleArgs.Builder =
       val argsBuilder = com.pulumi.aws.scheduler.inputs.ScheduleTargetArgs.builder
       builder.target(args(argsBuilder).build)
@@ -28,7 +28,7 @@ object scheduler_ext:
      * @param flexibleTimeWindow Configures a time window during which EventBridge Scheduler invokes the schedule. Detailed below.
      * @return builder
      */
-    def flexibleTimeWindow(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleFlexibleTimeWindowArgs.Builder]):
+    inline def flexibleTimeWindow(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleFlexibleTimeWindowArgs.Builder]):
         com.pulumi.aws.scheduler.inputs.ScheduleState.Builder =
       val argsBuilder = com.pulumi.aws.scheduler.inputs.ScheduleFlexibleTimeWindowArgs.builder
       builder.flexibleTimeWindow(args(argsBuilder).build)
@@ -39,7 +39,7 @@ object scheduler_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def target(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetArgs.Builder]):
+    inline def target(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetArgs.Builder]):
         com.pulumi.aws.scheduler.inputs.ScheduleState.Builder =
       val argsBuilder = com.pulumi.aws.scheduler.inputs.ScheduleTargetArgs.builder
       builder.target(args(argsBuilder).build)
@@ -49,7 +49,7 @@ object scheduler_ext:
      * @param deadLetterConfig Information about an Amazon SQS queue that EventBridge Scheduler uses as a dead-letter queue for your schedule. If specified, EventBridge Scheduler delivers failed events that could not be successfully delivered to a target to the queue. Detailed below.
      * @return builder
      */
-    def deadLetterConfig(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetDeadLetterConfigArgs.Builder]):
+    inline def deadLetterConfig(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetDeadLetterConfigArgs.Builder]):
         com.pulumi.aws.scheduler.inputs.ScheduleTargetArgs.Builder =
       val argsBuilder = com.pulumi.aws.scheduler.inputs.ScheduleTargetDeadLetterConfigArgs.builder
       builder.deadLetterConfig(args(argsBuilder).build)
@@ -58,7 +58,7 @@ object scheduler_ext:
      * @param ecsParameters Templated target type for the Amazon ECS [`RunTask`](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html) API operation. Detailed below.
      * @return builder
      */
-    def ecsParameters(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetEcsParametersArgs.Builder]):
+    inline def ecsParameters(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetEcsParametersArgs.Builder]):
         com.pulumi.aws.scheduler.inputs.ScheduleTargetArgs.Builder =
       val argsBuilder = com.pulumi.aws.scheduler.inputs.ScheduleTargetEcsParametersArgs.builder
       builder.ecsParameters(args(argsBuilder).build)
@@ -67,7 +67,7 @@ object scheduler_ext:
      * @param eventbridgeParameters Templated target type for the EventBridge [`PutEvents`](https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html) API operation. Detailed below.
      * @return builder
      */
-    def eventbridgeParameters(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetEventbridgeParametersArgs.Builder]):
+    inline def eventbridgeParameters(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetEventbridgeParametersArgs.Builder]):
         com.pulumi.aws.scheduler.inputs.ScheduleTargetArgs.Builder =
       val argsBuilder = com.pulumi.aws.scheduler.inputs.ScheduleTargetEventbridgeParametersArgs.builder
       builder.eventbridgeParameters(args(argsBuilder).build)
@@ -76,7 +76,7 @@ object scheduler_ext:
      * @param kinesisParameters Templated target type for the Amazon Kinesis [`PutRecord`](https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecord.html) API operation. Detailed below.
      * @return builder
      */
-    def kinesisParameters(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetKinesisParametersArgs.Builder]):
+    inline def kinesisParameters(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetKinesisParametersArgs.Builder]):
         com.pulumi.aws.scheduler.inputs.ScheduleTargetArgs.Builder =
       val argsBuilder = com.pulumi.aws.scheduler.inputs.ScheduleTargetKinesisParametersArgs.builder
       builder.kinesisParameters(args(argsBuilder).build)
@@ -85,7 +85,7 @@ object scheduler_ext:
      * @param retryPolicy Information about the retry policy settings. Detailed below.
      * @return builder
      */
-    def retryPolicy(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetRetryPolicyArgs.Builder]):
+    inline def retryPolicy(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetRetryPolicyArgs.Builder]):
         com.pulumi.aws.scheduler.inputs.ScheduleTargetArgs.Builder =
       val argsBuilder = com.pulumi.aws.scheduler.inputs.ScheduleTargetRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
@@ -94,7 +94,7 @@ object scheduler_ext:
      * @param sagemakerPipelineParameters Templated target type for the Amazon SageMaker AI [`StartPipelineExecution`](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartPipelineExecution.html) API operation. Detailed below.
      * @return builder
      */
-    def sagemakerPipelineParameters(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetSagemakerPipelineParametersArgs.Builder]):
+    inline def sagemakerPipelineParameters(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetSagemakerPipelineParametersArgs.Builder]):
         com.pulumi.aws.scheduler.inputs.ScheduleTargetArgs.Builder =
       val argsBuilder = com.pulumi.aws.scheduler.inputs.ScheduleTargetSagemakerPipelineParametersArgs.builder
       builder.sagemakerPipelineParameters(args(argsBuilder).build)
@@ -103,7 +103,7 @@ object scheduler_ext:
      * @param sqsParameters The templated target type for the Amazon SQS [`SendMessage`](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html) API operation. Detailed below.
      * @return builder
      */
-    def sqsParameters(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetSqsParametersArgs.Builder]):
+    inline def sqsParameters(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetSqsParametersArgs.Builder]):
         com.pulumi.aws.scheduler.inputs.ScheduleTargetArgs.Builder =
       val argsBuilder = com.pulumi.aws.scheduler.inputs.ScheduleTargetSqsParametersArgs.builder
       builder.sqsParameters(args(argsBuilder).build)
@@ -113,7 +113,7 @@ object scheduler_ext:
      * @param capacityProviderStrategies Up to `6` capacity provider strategies to use for the task. Detailed below.
      * @return builder
      */
-    def capacityProviderStrategies(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetEcsParametersCapacityProviderStrategyArgs.Builder]*):
+    inline def capacityProviderStrategies(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetEcsParametersCapacityProviderStrategyArgs.Builder]*):
         com.pulumi.aws.scheduler.inputs.ScheduleTargetEcsParametersArgs.Builder =
       def argsBuilder = com.pulumi.aws.scheduler.inputs.ScheduleTargetEcsParametersCapacityProviderStrategyArgs.builder
       builder.capacityProviderStrategies(args.map(_(argsBuilder).build)*)
@@ -122,7 +122,7 @@ object scheduler_ext:
      * @param networkConfiguration Configures the networking associated with the task. Detailed below.
      * @return builder
      */
-    def networkConfiguration(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetEcsParametersNetworkConfigurationArgs.Builder]):
+    inline def networkConfiguration(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetEcsParametersNetworkConfigurationArgs.Builder]):
         com.pulumi.aws.scheduler.inputs.ScheduleTargetEcsParametersArgs.Builder =
       val argsBuilder = com.pulumi.aws.scheduler.inputs.ScheduleTargetEcsParametersNetworkConfigurationArgs.builder
       builder.networkConfiguration(args(argsBuilder).build)
@@ -131,7 +131,7 @@ object scheduler_ext:
      * @param placementConstraints A set of up to 10 placement constraints to use for the task. Detailed below.
      * @return builder
      */
-    def placementConstraints(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetEcsParametersPlacementConstraintArgs.Builder]*):
+    inline def placementConstraints(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetEcsParametersPlacementConstraintArgs.Builder]*):
         com.pulumi.aws.scheduler.inputs.ScheduleTargetEcsParametersArgs.Builder =
       def argsBuilder = com.pulumi.aws.scheduler.inputs.ScheduleTargetEcsParametersPlacementConstraintArgs.builder
       builder.placementConstraints(args.map(_(argsBuilder).build)*)
@@ -140,7 +140,7 @@ object scheduler_ext:
      * @param placementStrategies A set of up to 5 placement strategies. Detailed below.
      * @return builder
      */
-    def placementStrategies(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetEcsParametersPlacementStrategyArgs.Builder]*):
+    inline def placementStrategies(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetEcsParametersPlacementStrategyArgs.Builder]*):
         com.pulumi.aws.scheduler.inputs.ScheduleTargetEcsParametersArgs.Builder =
       def argsBuilder = com.pulumi.aws.scheduler.inputs.ScheduleTargetEcsParametersPlacementStrategyArgs.builder
       builder.placementStrategies(args.map(_(argsBuilder).build)*)
@@ -150,7 +150,7 @@ object scheduler_ext:
      * @param pipelineParameters Set of up to 200 parameter names and values to use when executing the SageMaker AI Model Building Pipeline. Detailed below.
      * @return builder
      */
-    def pipelineParameters(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetSagemakerPipelineParametersPipelineParameterArgs.Builder]*):
+    inline def pipelineParameters(args: Endofunction[com.pulumi.aws.scheduler.inputs.ScheduleTargetSagemakerPipelineParametersPipelineParameterArgs.Builder]*):
         com.pulumi.aws.scheduler.inputs.ScheduleTargetSagemakerPipelineParametersArgs.Builder =
       def argsBuilder = com.pulumi.aws.scheduler.inputs.ScheduleTargetSagemakerPipelineParametersPipelineParameterArgs.builder
       builder.pipelineParameters(args.map(_(argsBuilder).build)*)

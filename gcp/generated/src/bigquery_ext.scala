@@ -8,7 +8,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataBoostIsolationReadOnly(args: Endofunction[com.pulumi.gcp.bigquery.inputs.AppProfileDataBoostIsolationReadOnlyArgs.Builder]):
+    inline def dataBoostIsolationReadOnly(args: Endofunction[com.pulumi.gcp.bigquery.inputs.AppProfileDataBoostIsolationReadOnlyArgs.Builder]):
         com.pulumi.gcp.bigquery.AppProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.AppProfileDataBoostIsolationReadOnlyArgs.builder
       builder.dataBoostIsolationReadOnly(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def singleClusterRouting(args: Endofunction[com.pulumi.gcp.bigquery.inputs.AppProfileSingleClusterRoutingArgs.Builder]):
+    inline def singleClusterRouting(args: Endofunction[com.pulumi.gcp.bigquery.inputs.AppProfileSingleClusterRoutingArgs.Builder]):
         com.pulumi.gcp.bigquery.AppProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.AppProfileSingleClusterRoutingArgs.builder
       builder.singleClusterRouting(args(argsBuilder).build)
@@ -28,7 +28,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def standardIsolation(args: Endofunction[com.pulumi.gcp.bigquery.inputs.AppProfileStandardIsolationArgs.Builder]):
+    inline def standardIsolation(args: Endofunction[com.pulumi.gcp.bigquery.inputs.AppProfileStandardIsolationArgs.Builder]):
         com.pulumi.gcp.bigquery.AppProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.AppProfileStandardIsolationArgs.builder
       builder.standardIsolation(args(argsBuilder).build)
@@ -39,7 +39,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def preferredTables(args: Endofunction[com.pulumi.gcp.bigquery.inputs.BiReservationPreferredTableArgs.Builder]*):
+    inline def preferredTables(args: Endofunction[com.pulumi.gcp.bigquery.inputs.BiReservationPreferredTableArgs.Builder]*):
         com.pulumi.gcp.bigquery.BiReservationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.bigquery.inputs.BiReservationPreferredTableArgs.builder
       builder.preferredTables(args.map(_(argsBuilder).build)*)
@@ -50,7 +50,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def aws(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionAwsArgs.Builder]):
+    inline def aws(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionAwsArgs.Builder]):
         com.pulumi.gcp.bigquery.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionAwsArgs.builder
       builder.aws(args(argsBuilder).build)
@@ -60,7 +60,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def azure(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionAzureArgs.Builder]):
+    inline def azure(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionAzureArgs.Builder]):
         com.pulumi.gcp.bigquery.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionAzureArgs.builder
       builder.azure(args(argsBuilder).build)
@@ -70,7 +70,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudResource(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionCloudResourceArgs.Builder]):
+    inline def cloudResource(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionCloudResourceArgs.Builder]):
         com.pulumi.gcp.bigquery.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionCloudResourceArgs.builder
       builder.cloudResource(args(argsBuilder).build)
@@ -80,7 +80,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudSpanner(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionCloudSpannerArgs.Builder]):
+    inline def cloudSpanner(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionCloudSpannerArgs.Builder]):
         com.pulumi.gcp.bigquery.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionCloudSpannerArgs.builder
       builder.cloudSpanner(args(argsBuilder).build)
@@ -90,7 +90,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudSql(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionCloudSqlArgs.Builder]):
+    inline def cloudSql(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionCloudSqlArgs.Builder]):
         com.pulumi.gcp.bigquery.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionCloudSqlArgs.builder
       builder.cloudSql(args(argsBuilder).build)
@@ -102,7 +102,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def configuration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationArgs.Builder]):
+    inline def configuration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationArgs.Builder]):
         com.pulumi.gcp.bigquery.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
@@ -112,19 +112,19 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def spark(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionSparkArgs.Builder]):
+    inline def spark(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionSparkArgs.Builder]):
         com.pulumi.gcp.bigquery.ConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionSparkArgs.builder
       builder.spark(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.bigquery.ConnectionIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.bigquery.ConnectionIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.bigquery.ConnectionIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.bigquery.ConnectionIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -136,7 +136,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def emailPreferences(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DataTransferConfigEmailPreferencesArgs.Builder]):
+    inline def emailPreferences(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DataTransferConfigEmailPreferencesArgs.Builder]):
         com.pulumi.gcp.bigquery.DataTransferConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DataTransferConfigEmailPreferencesArgs.builder
       builder.emailPreferences(args(argsBuilder).build)
@@ -146,7 +146,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DataTransferConfigEncryptionConfigurationArgs.Builder]):
+    inline def encryptionConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DataTransferConfigEncryptionConfigurationArgs.Builder]):
         com.pulumi.gcp.bigquery.DataTransferConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DataTransferConfigEncryptionConfigurationArgs.builder
       builder.encryptionConfiguration(args(argsBuilder).build)
@@ -156,7 +156,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scheduleOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DataTransferConfigScheduleOptionsArgs.Builder]):
+    inline def scheduleOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DataTransferConfigScheduleOptionsArgs.Builder]):
         com.pulumi.gcp.bigquery.DataTransferConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DataTransferConfigScheduleOptionsArgs.builder
       builder.scheduleOptions(args(argsBuilder).build)
@@ -171,7 +171,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitiveParams(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DataTransferConfigSensitiveParamsArgs.Builder]):
+    inline def sensitiveParams(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DataTransferConfigSensitiveParamsArgs.Builder]):
         com.pulumi.gcp.bigquery.DataTransferConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DataTransferConfigSensitiveParamsArgs.builder
       builder.sensitiveParams(args(argsBuilder).build)
@@ -182,7 +182,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataGovernanceTag(args: Endofunction[com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyDataGovernanceTagArgs.Builder]):
+    inline def dataGovernanceTag(args: Endofunction[com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyDataGovernanceTagArgs.Builder]):
         com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyDataGovernanceTagArgs.builder
       builder.dataGovernanceTag(args(argsBuilder).build)
@@ -192,19 +192,19 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataMaskingPolicy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyDataMaskingPolicyArgs.Builder]):
+    inline def dataMaskingPolicy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyDataMaskingPolicyArgs.Builder]):
         com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyDataMaskingPolicyArgs.builder
       builder.dataMaskingPolicy(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -215,7 +215,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authorizedDataset(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessAuthorizedDatasetArgs.Builder]):
+    inline def authorizedDataset(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessAuthorizedDatasetArgs.Builder]):
         com.pulumi.gcp.bigquery.DatasetAccessArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetAccessAuthorizedDatasetArgs.builder
       builder.authorizedDataset(args(argsBuilder).build)
@@ -226,7 +226,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessConditionArgs.Builder]):
         com.pulumi.gcp.bigquery.DatasetAccessArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetAccessConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -240,7 +240,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def routine(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessRoutineArgs.Builder]):
+    inline def routine(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessRoutineArgs.Builder]):
         com.pulumi.gcp.bigquery.DatasetAccessArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetAccessRoutineArgs.builder
       builder.routine(args(argsBuilder).build)
@@ -254,7 +254,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def view(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessViewArgs.Builder]):
+    inline def view(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessViewArgs.Builder]):
         com.pulumi.gcp.bigquery.DatasetAccessArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetAccessViewArgs.builder
       builder.view(args(argsBuilder).build)
@@ -265,7 +265,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accesses(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessArgs.Builder]*):
+    inline def accesses(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessArgs.Builder]*):
         com.pulumi.gcp.bigquery.DatasetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetAccessArgs.builder
       builder.accesses(args.map(_(argsBuilder).build)*)
@@ -277,7 +277,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultEncryptionConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetDefaultEncryptionConfigurationArgs.Builder]):
+    inline def defaultEncryptionConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetDefaultEncryptionConfigurationArgs.Builder]):
         com.pulumi.gcp.bigquery.DatasetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetDefaultEncryptionConfigurationArgs.builder
       builder.defaultEncryptionConfiguration(args(argsBuilder).build)
@@ -288,7 +288,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def externalCatalogDatasetOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetExternalCatalogDatasetOptionsArgs.Builder]):
+    inline def externalCatalogDatasetOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetExternalCatalogDatasetOptionsArgs.Builder]):
         com.pulumi.gcp.bigquery.DatasetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetExternalCatalogDatasetOptionsArgs.builder
       builder.externalCatalogDatasetOptions(args(argsBuilder).build)
@@ -298,7 +298,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def externalDatasetReference(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetExternalDatasetReferenceArgs.Builder]):
+    inline def externalDatasetReference(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetExternalDatasetReferenceArgs.Builder]):
         com.pulumi.gcp.bigquery.DatasetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetExternalDatasetReferenceArgs.builder
       builder.externalDatasetReference(args(argsBuilder).build)
@@ -309,7 +309,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.bigquery.DatasetIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -320,19 +320,19 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.bigquery.DatasetIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.bigquery.IamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.IamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.IamBindingConditionArgs.Builder]):
         com.pulumi.gcp.bigquery.IamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.IamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.bigquery.IamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.IamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.IamMemberConditionArgs.Builder]):
         com.pulumi.gcp.bigquery.IamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.IamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -343,7 +343,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def copy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobCopyArgs.Builder]):
+    inline def copy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobCopyArgs.Builder]):
         com.pulumi.gcp.bigquery.JobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.JobCopyArgs.builder
       builder.copy(args(argsBuilder).build)
@@ -353,7 +353,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def extract(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobExtractArgs.Builder]):
+    inline def extract(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobExtractArgs.Builder]):
         com.pulumi.gcp.bigquery.JobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.JobExtractArgs.builder
       builder.extract(args(argsBuilder).build)
@@ -363,7 +363,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def load(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobLoadArgs.Builder]):
+    inline def load(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobLoadArgs.Builder]):
         com.pulumi.gcp.bigquery.JobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.JobLoadArgs.builder
       builder.load(args(argsBuilder).build)
@@ -373,7 +373,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def query(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobQueryArgs.Builder]):
+    inline def query(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobQueryArgs.Builder]):
         com.pulumi.gcp.bigquery.JobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.JobQueryArgs.builder
       builder.query(args(argsBuilder).build)
@@ -384,7 +384,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoscale(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ReservationAutoscaleArgs.Builder]):
+    inline def autoscale(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ReservationAutoscaleArgs.Builder]):
         com.pulumi.gcp.bigquery.ReservationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ReservationAutoscaleArgs.builder
       builder.autoscale(args(argsBuilder).build)
@@ -395,7 +395,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def arguments(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineArgumentArgs.Builder]*):
+    inline def arguments(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineArgumentArgs.Builder]*):
         com.pulumi.gcp.bigquery.RoutineArgs.Builder =
       def argsBuilder = com.pulumi.gcp.bigquery.inputs.RoutineArgumentArgs.builder
       builder.arguments(args.map(_(argsBuilder).build)*)
@@ -407,7 +407,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def externalRuntimeOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineExternalRuntimeOptionsArgs.Builder]):
+    inline def externalRuntimeOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineExternalRuntimeOptionsArgs.Builder]):
         com.pulumi.gcp.bigquery.RoutineArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.RoutineExternalRuntimeOptionsArgs.builder
       builder.externalRuntimeOptions(args(argsBuilder).build)
@@ -418,7 +418,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pythonOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutinePythonOptionsArgs.Builder]):
+    inline def pythonOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutinePythonOptionsArgs.Builder]):
         com.pulumi.gcp.bigquery.RoutineArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.RoutinePythonOptionsArgs.builder
       builder.pythonOptions(args(argsBuilder).build)
@@ -428,7 +428,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def remoteFunctionOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineRemoteFunctionOptionsArgs.Builder]):
+    inline def remoteFunctionOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineRemoteFunctionOptionsArgs.Builder]):
         com.pulumi.gcp.bigquery.RoutineArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.RoutineRemoteFunctionOptionsArgs.builder
       builder.remoteFunctionOptions(args(argsBuilder).build)
@@ -438,19 +438,19 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sparkOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineSparkOptionsArgs.Builder]):
+    inline def sparkOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineSparkOptionsArgs.Builder]):
         com.pulumi.gcp.bigquery.RoutineArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.RoutineSparkOptionsArgs.builder
       builder.sparkOptions(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.bigquery.RoutineIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.bigquery.RoutineIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.RoutineIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.bigquery.RoutineIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.bigquery.RoutineIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.RoutineIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -460,7 +460,7 @@ object bigquery_ext:
      * @param biglakeConfiguration Specifies the configuration of a BigLake managed table. Structure is documented below
      * @return builder
      */
-    def biglakeConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableBiglakeConfigurationArgs.Builder]):
+    inline def biglakeConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableBiglakeConfigurationArgs.Builder]):
         com.pulumi.gcp.bigquery.TableArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableBiglakeConfigurationArgs.builder
       builder.biglakeConfiguration(args(argsBuilder).build)
@@ -471,7 +471,7 @@ object bigquery_ext:
      * is transparent to the user.  Structure is documented below.
      * @return builder
      */
-    def encryptionConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableEncryptionConfigurationArgs.Builder]):
+    inline def encryptionConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableEncryptionConfigurationArgs.Builder]):
         com.pulumi.gcp.bigquery.TableArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableEncryptionConfigurationArgs.builder
       builder.encryptionConfiguration(args(argsBuilder).build)
@@ -481,7 +481,7 @@ object bigquery_ext:
      * compatible table. Structure is documented below.
      * @return builder
      */
-    def externalCatalogTableOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalCatalogTableOptionsArgs.Builder]):
+    inline def externalCatalogTableOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalCatalogTableOptionsArgs.Builder]):
         com.pulumi.gcp.bigquery.TableArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableExternalCatalogTableOptionsArgs.builder
       builder.externalCatalogTableOptions(args(argsBuilder).build)
@@ -493,7 +493,7 @@ object bigquery_ext:
      * if it were a standard BigQuery table. Structure is documented below.
      * @return builder
      */
-    def externalDataConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationArgs.Builder]):
+    inline def externalDataConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationArgs.Builder]):
         com.pulumi.gcp.bigquery.TableArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationArgs.builder
       builder.externalDataConfiguration(args(argsBuilder).build)
@@ -503,7 +503,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def materializedView(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableMaterializedViewArgs.Builder]):
+    inline def materializedView(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableMaterializedViewArgs.Builder]):
         com.pulumi.gcp.bigquery.TableArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableMaterializedViewArgs.builder
       builder.materializedView(args(argsBuilder).build)
@@ -513,7 +513,7 @@ object bigquery_ext:
      * partitioning for this table. Structure is documented below.
      * @return builder
      */
-    def rangePartitioning(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableRangePartitioningArgs.Builder]):
+    inline def rangePartitioning(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableRangePartitioningArgs.Builder]):
         com.pulumi.gcp.bigquery.TableArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableRangePartitioningArgs.builder
       builder.rangePartitioning(args(argsBuilder).build)
@@ -523,7 +523,7 @@ object bigquery_ext:
      * type definition in field schema. Structure is documented below.
      * @return builder
      */
-    def schemaForeignTypeInfo(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableSchemaForeignTypeInfoArgs.Builder]):
+    inline def schemaForeignTypeInfo(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableSchemaForeignTypeInfoArgs.Builder]):
         com.pulumi.gcp.bigquery.TableArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableSchemaForeignTypeInfoArgs.builder
       builder.schemaForeignTypeInfo(args(argsBuilder).build)
@@ -533,7 +533,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tableConstraints(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableTableConstraintsArgs.Builder]):
+    inline def tableConstraints(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableTableConstraintsArgs.Builder]):
         com.pulumi.gcp.bigquery.TableArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableTableConstraintsArgs.builder
       builder.tableConstraints(args(argsBuilder).build)
@@ -545,7 +545,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tableReplicationInfo(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableTableReplicationInfoArgs.Builder]):
+    inline def tableReplicationInfo(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableTableReplicationInfoArgs.Builder]):
         com.pulumi.gcp.bigquery.TableArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableTableReplicationInfoArgs.builder
       builder.tableReplicationInfo(args(argsBuilder).build)
@@ -555,7 +555,7 @@ object bigquery_ext:
      * partitioning for this table. Structure is documented below.
      * @return builder
      */
-    def timePartitioning(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableTimePartitioningArgs.Builder]):
+    inline def timePartitioning(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableTimePartitioningArgs.Builder]):
         com.pulumi.gcp.bigquery.TableArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableTimePartitioningArgs.builder
       builder.timePartitioning(args(argsBuilder).build)
@@ -565,7 +565,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def view(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableViewArgs.Builder]):
+    inline def view(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableViewArgs.Builder]):
         com.pulumi.gcp.bigquery.TableArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableViewArgs.builder
       builder.view(args(argsBuilder).build)
@@ -576,7 +576,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataBoostIsolationReadOnly(args: Endofunction[com.pulumi.gcp.bigquery.inputs.AppProfileDataBoostIsolationReadOnlyArgs.Builder]):
+    inline def dataBoostIsolationReadOnly(args: Endofunction[com.pulumi.gcp.bigquery.inputs.AppProfileDataBoostIsolationReadOnlyArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.AppProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.AppProfileDataBoostIsolationReadOnlyArgs.builder
       builder.dataBoostIsolationReadOnly(args(argsBuilder).build)
@@ -586,7 +586,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def singleClusterRouting(args: Endofunction[com.pulumi.gcp.bigquery.inputs.AppProfileSingleClusterRoutingArgs.Builder]):
+    inline def singleClusterRouting(args: Endofunction[com.pulumi.gcp.bigquery.inputs.AppProfileSingleClusterRoutingArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.AppProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.AppProfileSingleClusterRoutingArgs.builder
       builder.singleClusterRouting(args(argsBuilder).build)
@@ -596,7 +596,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def standardIsolation(args: Endofunction[com.pulumi.gcp.bigquery.inputs.AppProfileStandardIsolationArgs.Builder]):
+    inline def standardIsolation(args: Endofunction[com.pulumi.gcp.bigquery.inputs.AppProfileStandardIsolationArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.AppProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.AppProfileStandardIsolationArgs.builder
       builder.standardIsolation(args(argsBuilder).build)
@@ -607,7 +607,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def preferredTables(args: Endofunction[com.pulumi.gcp.bigquery.inputs.BiReservationPreferredTableArgs.Builder]*):
+    inline def preferredTables(args: Endofunction[com.pulumi.gcp.bigquery.inputs.BiReservationPreferredTableArgs.Builder]*):
         com.pulumi.gcp.bigquery.inputs.BiReservationState.Builder =
       def argsBuilder = com.pulumi.gcp.bigquery.inputs.BiReservationPreferredTableArgs.builder
       builder.preferredTables(args.map(_(argsBuilder).build)*)
@@ -618,7 +618,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accessRole(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionAwsAccessRoleArgs.Builder]):
+    inline def accessRole(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionAwsAccessRoleArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.ConnectionAwsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionAwsAccessRoleArgs.builder
       builder.accessRole(args(argsBuilder).build)
@@ -629,7 +629,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def credential(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionCloudSqlCredentialArgs.Builder]):
+    inline def credential(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionCloudSqlCredentialArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.ConnectionCloudSqlArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionCloudSqlCredentialArgs.builder
       builder.credential(args(argsBuilder).build)
@@ -640,7 +640,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def asset(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationAssetArgs.Builder]):
+    inline def asset(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationAssetArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationAssetArgs.builder
       builder.asset(args(argsBuilder).build)
@@ -650,7 +650,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationAuthenticationArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -660,7 +660,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endpoint(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationEndpointArgs.Builder]):
+    inline def endpoint(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationEndpointArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationEndpointArgs.builder
       builder.endpoint(args(argsBuilder).build)
@@ -670,7 +670,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def network(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationNetworkArgs.Builder]):
+    inline def network(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationNetworkArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationNetworkArgs.builder
       builder.network(args(argsBuilder).build)
@@ -681,7 +681,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def usernamePassword(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationAuthenticationUsernamePasswordArgs.Builder]):
+    inline def usernamePassword(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationAuthenticationUsernamePasswordArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationAuthenticationUsernamePasswordArgs.builder
       builder.usernamePassword(args(argsBuilder).build)
@@ -692,7 +692,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def password(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationAuthenticationUsernamePasswordPasswordArgs.Builder]):
+    inline def password(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationAuthenticationUsernamePasswordPasswordArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationAuthenticationUsernamePasswordArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationAuthenticationUsernamePasswordPasswordArgs.builder
       builder.password(args(argsBuilder).build)
@@ -703,19 +703,19 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def privateServiceConnect(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationNetworkPrivateServiceConnectArgs.Builder]):
+    inline def privateServiceConnect(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationNetworkPrivateServiceConnectArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationNetworkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationNetworkPrivateServiceConnectArgs.builder
       builder.privateServiceConnect(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.bigquery.inputs.ConnectionIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.ConnectionIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.bigquery.inputs.ConnectionIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.ConnectionIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -726,7 +726,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metastoreServiceConfig(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionSparkMetastoreServiceConfigArgs.Builder]):
+    inline def metastoreServiceConfig(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionSparkMetastoreServiceConfigArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.ConnectionSparkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionSparkMetastoreServiceConfigArgs.builder
       builder.metastoreServiceConfig(args(argsBuilder).build)
@@ -736,7 +736,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sparkHistoryServerConfig(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionSparkSparkHistoryServerConfigArgs.Builder]):
+    inline def sparkHistoryServerConfig(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionSparkSparkHistoryServerConfigArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.ConnectionSparkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionSparkSparkHistoryServerConfigArgs.builder
       builder.sparkHistoryServerConfig(args(argsBuilder).build)
@@ -747,7 +747,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def aws(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionAwsArgs.Builder]):
+    inline def aws(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionAwsArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionAwsArgs.builder
       builder.aws(args(argsBuilder).build)
@@ -757,7 +757,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def azure(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionAzureArgs.Builder]):
+    inline def azure(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionAzureArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionAzureArgs.builder
       builder.azure(args(argsBuilder).build)
@@ -767,7 +767,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudResource(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionCloudResourceArgs.Builder]):
+    inline def cloudResource(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionCloudResourceArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionCloudResourceArgs.builder
       builder.cloudResource(args(argsBuilder).build)
@@ -777,7 +777,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudSpanner(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionCloudSpannerArgs.Builder]):
+    inline def cloudSpanner(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionCloudSpannerArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionCloudSpannerArgs.builder
       builder.cloudSpanner(args(argsBuilder).build)
@@ -787,7 +787,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudSql(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionCloudSqlArgs.Builder]):
+    inline def cloudSql(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionCloudSqlArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionCloudSqlArgs.builder
       builder.cloudSql(args(argsBuilder).build)
@@ -799,7 +799,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def configuration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationArgs.Builder]):
+    inline def configuration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
@@ -809,7 +809,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def spark(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionSparkArgs.Builder]):
+    inline def spark(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ConnectionSparkArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.ConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ConnectionSparkArgs.builder
       builder.spark(args(argsBuilder).build)
@@ -821,7 +821,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def emailPreferences(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DataTransferConfigEmailPreferencesArgs.Builder]):
+    inline def emailPreferences(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DataTransferConfigEmailPreferencesArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.DataTransferConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DataTransferConfigEmailPreferencesArgs.builder
       builder.emailPreferences(args(argsBuilder).build)
@@ -831,7 +831,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DataTransferConfigEncryptionConfigurationArgs.Builder]):
+    inline def encryptionConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DataTransferConfigEncryptionConfigurationArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.DataTransferConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DataTransferConfigEncryptionConfigurationArgs.builder
       builder.encryptionConfiguration(args(argsBuilder).build)
@@ -841,7 +841,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scheduleOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DataTransferConfigScheduleOptionsArgs.Builder]):
+    inline def scheduleOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DataTransferConfigScheduleOptionsArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.DataTransferConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DataTransferConfigScheduleOptionsArgs.builder
       builder.scheduleOptions(args(argsBuilder).build)
@@ -856,7 +856,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sensitiveParams(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DataTransferConfigSensitiveParamsArgs.Builder]):
+    inline def sensitiveParams(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DataTransferConfigSensitiveParamsArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.DataTransferConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DataTransferConfigSensitiveParamsArgs.builder
       builder.sensitiveParams(args(argsBuilder).build)
@@ -867,19 +867,19 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameters(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DataTransferDataSourceEnrollmentParameterArgs.Builder]*):
+    inline def parameters(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DataTransferDataSourceEnrollmentParameterArgs.Builder]*):
         com.pulumi.gcp.bigquery.inputs.DataTransferDataSourceEnrollmentState.Builder =
       def argsBuilder = com.pulumi.gcp.bigquery.inputs.DataTransferDataSourceEnrollmentParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -890,7 +890,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataGovernanceTag(args: Endofunction[com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyDataGovernanceTagArgs.Builder]):
+    inline def dataGovernanceTag(args: Endofunction[com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyDataGovernanceTagArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyDataGovernanceTagArgs.builder
       builder.dataGovernanceTag(args(argsBuilder).build)
@@ -900,7 +900,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataMaskingPolicy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyDataMaskingPolicyArgs.Builder]):
+    inline def dataMaskingPolicy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyDataMaskingPolicyArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.Datapolicyv2DataPolicyDataMaskingPolicyArgs.builder
       builder.dataMaskingPolicy(args(argsBuilder).build)
@@ -912,7 +912,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessConditionArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.DatasetAccessArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetAccessConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -922,7 +922,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataset(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessDatasetArgs.Builder]):
+    inline def dataset(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessDatasetArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.DatasetAccessArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetAccessDatasetArgs.builder
       builder.dataset(args(argsBuilder).build)
@@ -936,7 +936,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def routine(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessRoutineArgs.Builder]):
+    inline def routine(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessRoutineArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.DatasetAccessArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetAccessRoutineArgs.builder
       builder.routine(args(argsBuilder).build)
@@ -950,7 +950,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def view(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessViewArgs.Builder]):
+    inline def view(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessViewArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.DatasetAccessArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetAccessViewArgs.builder
       builder.view(args(argsBuilder).build)
@@ -961,7 +961,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataset(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessAuthorizedDatasetDatasetArgs.Builder]):
+    inline def dataset(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessAuthorizedDatasetDatasetArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.DatasetAccessAuthorizedDatasetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetAccessAuthorizedDatasetDatasetArgs.builder
       builder.dataset(args(argsBuilder).build)
@@ -972,7 +972,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataset(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessDatasetDatasetArgs.Builder]):
+    inline def dataset(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessDatasetDatasetArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.DatasetAccessDatasetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetAccessDatasetDatasetArgs.builder
       builder.dataset(args(argsBuilder).build)
@@ -983,7 +983,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authorizedDataset(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessAuthorizedDatasetArgs.Builder]):
+    inline def authorizedDataset(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessAuthorizedDatasetArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.DatasetAccessState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetAccessAuthorizedDatasetArgs.builder
       builder.authorizedDataset(args(argsBuilder).build)
@@ -994,7 +994,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessConditionArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.DatasetAccessState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetAccessConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1008,7 +1008,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def routine(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessRoutineArgs.Builder]):
+    inline def routine(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessRoutineArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.DatasetAccessState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetAccessRoutineArgs.builder
       builder.routine(args(argsBuilder).build)
@@ -1022,7 +1022,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def view(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessViewArgs.Builder]):
+    inline def view(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessViewArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.DatasetAccessState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetAccessViewArgs.builder
       builder.view(args(argsBuilder).build)
@@ -1033,7 +1033,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.DatasetIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1044,7 +1044,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.DatasetIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1055,7 +1055,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accesses(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessArgs.Builder]*):
+    inline def accesses(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetAccessArgs.Builder]*):
         com.pulumi.gcp.bigquery.inputs.DatasetState.Builder =
       def argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetAccessArgs.builder
       builder.accesses(args.map(_(argsBuilder).build)*)
@@ -1067,7 +1067,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultEncryptionConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetDefaultEncryptionConfigurationArgs.Builder]):
+    inline def defaultEncryptionConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetDefaultEncryptionConfigurationArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.DatasetState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetDefaultEncryptionConfigurationArgs.builder
       builder.defaultEncryptionConfiguration(args(argsBuilder).build)
@@ -1078,7 +1078,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def externalCatalogDatasetOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetExternalCatalogDatasetOptionsArgs.Builder]):
+    inline def externalCatalogDatasetOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetExternalCatalogDatasetOptionsArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.DatasetState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetExternalCatalogDatasetOptionsArgs.builder
       builder.externalCatalogDatasetOptions(args(argsBuilder).build)
@@ -1088,19 +1088,19 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def externalDatasetReference(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetExternalDatasetReferenceArgs.Builder]):
+    inline def externalDatasetReference(args: Endofunction[com.pulumi.gcp.bigquery.inputs.DatasetExternalDatasetReferenceArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.DatasetState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.DatasetExternalDatasetReferenceArgs.builder
       builder.externalDatasetReference(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.bigquery.inputs.IamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.IamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.IamBindingConditionArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.IamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.IamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.bigquery.inputs.IamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.IamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.IamMemberConditionArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.IamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.IamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1111,7 +1111,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinationEncryptionConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobCopyDestinationEncryptionConfigurationArgs.Builder]):
+    inline def destinationEncryptionConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobCopyDestinationEncryptionConfigurationArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.JobCopyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.JobCopyDestinationEncryptionConfigurationArgs.builder
       builder.destinationEncryptionConfiguration(args(argsBuilder).build)
@@ -1121,7 +1121,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinationTable(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobCopyDestinationTableArgs.Builder]):
+    inline def destinationTable(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobCopyDestinationTableArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.JobCopyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.JobCopyDestinationTableArgs.builder
       builder.destinationTable(args(argsBuilder).build)
@@ -1131,7 +1131,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sourceTables(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobCopySourceTableArgs.Builder]*):
+    inline def sourceTables(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobCopySourceTableArgs.Builder]*):
         com.pulumi.gcp.bigquery.inputs.JobCopyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.bigquery.inputs.JobCopySourceTableArgs.builder
       builder.sourceTables(args.map(_(argsBuilder).build)*)
@@ -1142,7 +1142,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sourceModel(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobExtractSourceModelArgs.Builder]):
+    inline def sourceModel(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobExtractSourceModelArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.JobExtractArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.JobExtractSourceModelArgs.builder
       builder.sourceModel(args(argsBuilder).build)
@@ -1152,7 +1152,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sourceTable(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobExtractSourceTableArgs.Builder]):
+    inline def sourceTable(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobExtractSourceTableArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.JobExtractArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.JobExtractSourceTableArgs.builder
       builder.sourceTable(args(argsBuilder).build)
@@ -1163,7 +1163,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinationEncryptionConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobLoadDestinationEncryptionConfigurationArgs.Builder]):
+    inline def destinationEncryptionConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobLoadDestinationEncryptionConfigurationArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.JobLoadArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.JobLoadDestinationEncryptionConfigurationArgs.builder
       builder.destinationEncryptionConfiguration(args(argsBuilder).build)
@@ -1173,7 +1173,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinationTable(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobLoadDestinationTableArgs.Builder]):
+    inline def destinationTable(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobLoadDestinationTableArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.JobLoadArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.JobLoadDestinationTableArgs.builder
       builder.destinationTable(args(argsBuilder).build)
@@ -1183,7 +1183,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parquetOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobLoadParquetOptionsArgs.Builder]):
+    inline def parquetOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobLoadParquetOptionsArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.JobLoadArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.JobLoadParquetOptionsArgs.builder
       builder.parquetOptions(args(argsBuilder).build)
@@ -1193,7 +1193,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timePartitioning(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobLoadTimePartitioningArgs.Builder]):
+    inline def timePartitioning(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobLoadTimePartitioningArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.JobLoadArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.JobLoadTimePartitioningArgs.builder
       builder.timePartitioning(args(argsBuilder).build)
@@ -1206,7 +1206,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectionProperties(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobQueryConnectionPropertyArgs.Builder]*):
+    inline def connectionProperties(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobQueryConnectionPropertyArgs.Builder]*):
         com.pulumi.gcp.bigquery.inputs.JobQueryArgs.Builder =
       def argsBuilder = com.pulumi.gcp.bigquery.inputs.JobQueryConnectionPropertyArgs.builder
       builder.connectionProperties(args.map(_(argsBuilder).build)*)
@@ -1216,7 +1216,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultDataset(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobQueryDefaultDatasetArgs.Builder]):
+    inline def defaultDataset(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobQueryDefaultDatasetArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.JobQueryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.JobQueryDefaultDatasetArgs.builder
       builder.defaultDataset(args(argsBuilder).build)
@@ -1226,7 +1226,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinationEncryptionConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobQueryDestinationEncryptionConfigurationArgs.Builder]):
+    inline def destinationEncryptionConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobQueryDestinationEncryptionConfigurationArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.JobQueryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.JobQueryDestinationEncryptionConfigurationArgs.builder
       builder.destinationEncryptionConfiguration(args(argsBuilder).build)
@@ -1238,7 +1238,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinationTable(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobQueryDestinationTableArgs.Builder]):
+    inline def destinationTable(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobQueryDestinationTableArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.JobQueryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.JobQueryDestinationTableArgs.builder
       builder.destinationTable(args(argsBuilder).build)
@@ -1248,7 +1248,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scriptOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobQueryScriptOptionsArgs.Builder]):
+    inline def scriptOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobQueryScriptOptionsArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.JobQueryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.JobQueryScriptOptionsArgs.builder
       builder.scriptOptions(args(argsBuilder).build)
@@ -1258,7 +1258,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def userDefinedFunctionResources(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobQueryUserDefinedFunctionResourceArgs.Builder]*):
+    inline def userDefinedFunctionResources(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobQueryUserDefinedFunctionResourceArgs.Builder]*):
         com.pulumi.gcp.bigquery.inputs.JobQueryArgs.Builder =
       def argsBuilder = com.pulumi.gcp.bigquery.inputs.JobQueryUserDefinedFunctionResourceArgs.builder
       builder.userDefinedFunctionResources(args.map(_(argsBuilder).build)*)
@@ -1269,7 +1269,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def copy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobCopyArgs.Builder]):
+    inline def copy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobCopyArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.JobState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.JobCopyArgs.builder
       builder.copy(args(argsBuilder).build)
@@ -1279,7 +1279,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def extract(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobExtractArgs.Builder]):
+    inline def extract(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobExtractArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.JobState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.JobExtractArgs.builder
       builder.extract(args(argsBuilder).build)
@@ -1289,7 +1289,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def load(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobLoadArgs.Builder]):
+    inline def load(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobLoadArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.JobState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.JobLoadArgs.builder
       builder.load(args(argsBuilder).build)
@@ -1299,7 +1299,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def query(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobQueryArgs.Builder]):
+    inline def query(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobQueryArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.JobState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.JobQueryArgs.builder
       builder.query(args(argsBuilder).build)
@@ -1309,7 +1309,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def statuses(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobStatusArgs.Builder]*):
+    inline def statuses(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobStatusArgs.Builder]*):
         com.pulumi.gcp.bigquery.inputs.JobState.Builder =
       def argsBuilder = com.pulumi.gcp.bigquery.inputs.JobStatusArgs.builder
       builder.statuses(args.map(_(argsBuilder).build)*)
@@ -1321,7 +1321,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errorResults(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobStatusErrorResultArgs.Builder]*):
+    inline def errorResults(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobStatusErrorResultArgs.Builder]*):
         com.pulumi.gcp.bigquery.inputs.JobStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.bigquery.inputs.JobStatusErrorResultArgs.builder
       builder.errorResults(args.map(_(argsBuilder).build)*)
@@ -1334,7 +1334,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errors(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobStatusErrorArgs.Builder]*):
+    inline def errors(args: Endofunction[com.pulumi.gcp.bigquery.inputs.JobStatusErrorArgs.Builder]*):
         com.pulumi.gcp.bigquery.inputs.JobStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.bigquery.inputs.JobStatusErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
@@ -1347,7 +1347,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errors(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ReservationReplicationStatusErrorArgs.Builder]*):
+    inline def errors(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ReservationReplicationStatusErrorArgs.Builder]*):
         com.pulumi.gcp.bigquery.inputs.ReservationReplicationStatusArgs.Builder =
       def argsBuilder = com.pulumi.gcp.bigquery.inputs.ReservationReplicationStatusErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
@@ -1358,7 +1358,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoscale(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ReservationAutoscaleArgs.Builder]):
+    inline def autoscale(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ReservationAutoscaleArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.ReservationState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.ReservationAutoscaleArgs.builder
       builder.autoscale(args(argsBuilder).build)
@@ -1373,7 +1373,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def replicationStatuses(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ReservationReplicationStatusArgs.Builder]*):
+    inline def replicationStatuses(args: Endofunction[com.pulumi.gcp.bigquery.inputs.ReservationReplicationStatusArgs.Builder]*):
         com.pulumi.gcp.bigquery.inputs.ReservationState.Builder =
       def argsBuilder = com.pulumi.gcp.bigquery.inputs.ReservationReplicationStatusArgs.builder
       builder.replicationStatuses(args.map(_(argsBuilder).build)*)
@@ -1384,7 +1384,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tableType(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineArgumentTableTypeArgs.Builder]):
+    inline def tableType(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineArgumentTableTypeArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.RoutineArgumentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.RoutineArgumentTableTypeArgs.builder
       builder.tableType(args(argsBuilder).build)
@@ -1395,19 +1395,19 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def columns(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineArgumentTableTypeColumnArgs.Builder]*):
+    inline def columns(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineArgumentTableTypeColumnArgs.Builder]*):
         com.pulumi.gcp.bigquery.inputs.RoutineArgumentTableTypeArgs.Builder =
       def argsBuilder = com.pulumi.gcp.bigquery.inputs.RoutineArgumentTableTypeColumnArgs.builder
       builder.columns(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.bigquery.inputs.RoutineIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.RoutineIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.RoutineIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.bigquery.inputs.RoutineIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.RoutineIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.RoutineIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1418,7 +1418,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def arguments(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineArgumentArgs.Builder]*):
+    inline def arguments(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineArgumentArgs.Builder]*):
         com.pulumi.gcp.bigquery.inputs.RoutineState.Builder =
       def argsBuilder = com.pulumi.gcp.bigquery.inputs.RoutineArgumentArgs.builder
       builder.arguments(args.map(_(argsBuilder).build)*)
@@ -1430,7 +1430,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def externalRuntimeOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineExternalRuntimeOptionsArgs.Builder]):
+    inline def externalRuntimeOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineExternalRuntimeOptionsArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.RoutineState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.RoutineExternalRuntimeOptionsArgs.builder
       builder.externalRuntimeOptions(args(argsBuilder).build)
@@ -1441,7 +1441,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pythonOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutinePythonOptionsArgs.Builder]):
+    inline def pythonOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutinePythonOptionsArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.RoutineState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.RoutinePythonOptionsArgs.builder
       builder.pythonOptions(args(argsBuilder).build)
@@ -1451,7 +1451,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def remoteFunctionOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineRemoteFunctionOptionsArgs.Builder]):
+    inline def remoteFunctionOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineRemoteFunctionOptionsArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.RoutineState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.RoutineRemoteFunctionOptionsArgs.builder
       builder.remoteFunctionOptions(args(argsBuilder).build)
@@ -1461,7 +1461,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sparkOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineSparkOptionsArgs.Builder]):
+    inline def sparkOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.RoutineSparkOptionsArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.RoutineState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.RoutineSparkOptionsArgs.builder
       builder.sparkOptions(args(argsBuilder).build)
@@ -1472,7 +1472,7 @@ object bigquery_ext:
      * about the physical storage of this table. Structure is documented below.
      * @return builder
      */
-    def storageDescriptor(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalCatalogTableOptionsStorageDescriptorArgs.Builder]):
+    inline def storageDescriptor(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalCatalogTableOptionsStorageDescriptorArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.TableExternalCatalogTableOptionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableExternalCatalogTableOptionsStorageDescriptorArgs.builder
       builder.storageDescriptor(args(argsBuilder).build)
@@ -1483,7 +1483,7 @@ object bigquery_ext:
      * is documented below.
      * @return builder
      */
-    def serdeInfo(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalCatalogTableOptionsStorageDescriptorSerdeInfoArgs.Builder]):
+    inline def serdeInfo(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalCatalogTableOptionsStorageDescriptorSerdeInfoArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.TableExternalCatalogTableOptionsStorageDescriptorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableExternalCatalogTableOptionsStorageDescriptorSerdeInfoArgs.builder
       builder.serdeInfo(args(argsBuilder).build)
@@ -1494,7 +1494,7 @@ object bigquery_ext:
      * &#34;AVRO&#34;.  Structure is documented below.
      * @return builder
      */
-    def avroOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationAvroOptionsArgs.Builder]):
+    inline def avroOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationAvroOptionsArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationAvroOptionsArgs.builder
       builder.avroOptions(args(argsBuilder).build)
@@ -1504,7 +1504,7 @@ object bigquery_ext:
      * `sourceFormat` is set to &#34;BIGTABLE&#34;. Structure is documented below.
      * @return builder
      */
-    def bigtableOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationBigtableOptionsArgs.Builder]):
+    inline def bigtableOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationBigtableOptionsArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationBigtableOptionsArgs.builder
       builder.bigtableOptions(args(argsBuilder).build)
@@ -1514,7 +1514,7 @@ object bigquery_ext:
      * `sourceFormat` is set to &#34;CSV&#34;. Structure is documented below.
      * @return builder
      */
-    def csvOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationCsvOptionsArgs.Builder]):
+    inline def csvOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationCsvOptionsArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationCsvOptionsArgs.builder
       builder.csvOptions(args(argsBuilder).build)
@@ -1525,7 +1525,7 @@ object bigquery_ext:
      * documented below.
      * @return builder
      */
-    def googleSheetsOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationGoogleSheetsOptionsArgs.Builder]):
+    inline def googleSheetsOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationGoogleSheetsOptionsArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationGoogleSheetsOptionsArgs.builder
       builder.googleSheetsOptions(args(argsBuilder).build)
@@ -1537,7 +1537,7 @@ object bigquery_ext:
      * an invalid specification. Structure is documented below.
      * @return builder
      */
-    def hivePartitioningOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationHivePartitioningOptionsArgs.Builder]):
+    inline def hivePartitioningOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationHivePartitioningOptionsArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationHivePartitioningOptionsArgs.builder
       builder.hivePartitioningOptions(args(argsBuilder).build)
@@ -1547,7 +1547,7 @@ object bigquery_ext:
      * `sourceFormat` is set to &#34;JSON&#34;. Structure is documented below.
      * @return builder
      */
-    def jsonOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationJsonOptionsArgs.Builder]):
+    inline def jsonOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationJsonOptionsArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationJsonOptionsArgs.builder
       builder.jsonOptions(args(argsBuilder).build)
@@ -1557,7 +1557,7 @@ object bigquery_ext:
      * `sourceFormat` is set to &#34;PARQUET&#34;. Structure is documented below.
      * @return builder
      */
-    def parquetOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationParquetOptionsArgs.Builder]):
+    inline def parquetOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationParquetOptionsArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationParquetOptionsArgs.builder
       builder.parquetOptions(args(argsBuilder).build)
@@ -1567,7 +1567,7 @@ object bigquery_ext:
      * @param columnFamilies A list of column families to expose in the table schema along with their types. This list restricts the column families that can be referenced in queries and specifies their value types. You can use this list to do type conversions - see the &#39;type&#39; field for more details. If you leave this list empty, all column families are present in the table schema and their values are read as BYTES. During a query only the column families referenced in that query are read from Bigtable.  Structure is documented below.
      * @return builder
      */
-    def columnFamilies(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationBigtableOptionsColumnFamilyArgs.Builder]*):
+    inline def columnFamilies(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationBigtableOptionsColumnFamilyArgs.Builder]*):
         com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationBigtableOptionsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationBigtableOptionsColumnFamilyArgs.builder
       builder.columnFamilies(args.map(_(argsBuilder).build)*)
@@ -1577,7 +1577,7 @@ object bigquery_ext:
      * @param columns A List of columns that should be exposed as individual fields as opposed to a list of (column name, value) pairs. All columns whose qualifier matches a qualifier in this list can be accessed as Other columns can be accessed as a list through column field.  Structure is documented below.
      * @return builder
      */
-    def columns(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationBigtableOptionsColumnFamilyColumnArgs.Builder]*):
+    inline def columns(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationBigtableOptionsColumnFamilyColumnArgs.Builder]*):
         com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationBigtableOptionsColumnFamilyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationBigtableOptionsColumnFamilyColumnArgs.builder
       builder.columns(args.map(_(argsBuilder).build)*)
@@ -1588,7 +1588,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def range(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableRangePartitioningRangeArgs.Builder]):
+    inline def range(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableRangePartitioningRangeArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.TableRangePartitioningArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableRangePartitioningRangeArgs.builder
       builder.range(args(argsBuilder).build)
@@ -1598,7 +1598,7 @@ object bigquery_ext:
      * @param biglakeConfiguration Specifies the configuration of a BigLake managed table. Structure is documented below
      * @return builder
      */
-    def biglakeConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableBiglakeConfigurationArgs.Builder]):
+    inline def biglakeConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableBiglakeConfigurationArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.TableState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableBiglakeConfigurationArgs.builder
       builder.biglakeConfiguration(args(argsBuilder).build)
@@ -1609,7 +1609,7 @@ object bigquery_ext:
      * is transparent to the user.  Structure is documented below.
      * @return builder
      */
-    def encryptionConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableEncryptionConfigurationArgs.Builder]):
+    inline def encryptionConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableEncryptionConfigurationArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.TableState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableEncryptionConfigurationArgs.builder
       builder.encryptionConfiguration(args(argsBuilder).build)
@@ -1619,7 +1619,7 @@ object bigquery_ext:
      * compatible table. Structure is documented below.
      * @return builder
      */
-    def externalCatalogTableOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalCatalogTableOptionsArgs.Builder]):
+    inline def externalCatalogTableOptions(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalCatalogTableOptionsArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.TableState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableExternalCatalogTableOptionsArgs.builder
       builder.externalCatalogTableOptions(args(argsBuilder).build)
@@ -1631,7 +1631,7 @@ object bigquery_ext:
      * if it were a standard BigQuery table. Structure is documented below.
      * @return builder
      */
-    def externalDataConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationArgs.Builder]):
+    inline def externalDataConfiguration(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.TableState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableExternalDataConfigurationArgs.builder
       builder.externalDataConfiguration(args(argsBuilder).build)
@@ -1641,7 +1641,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def materializedView(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableMaterializedViewArgs.Builder]):
+    inline def materializedView(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableMaterializedViewArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.TableState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableMaterializedViewArgs.builder
       builder.materializedView(args(argsBuilder).build)
@@ -1651,7 +1651,7 @@ object bigquery_ext:
      * partitioning for this table. Structure is documented below.
      * @return builder
      */
-    def rangePartitioning(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableRangePartitioningArgs.Builder]):
+    inline def rangePartitioning(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableRangePartitioningArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.TableState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableRangePartitioningArgs.builder
       builder.rangePartitioning(args(argsBuilder).build)
@@ -1661,7 +1661,7 @@ object bigquery_ext:
      * type definition in field schema. Structure is documented below.
      * @return builder
      */
-    def schemaForeignTypeInfo(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableSchemaForeignTypeInfoArgs.Builder]):
+    inline def schemaForeignTypeInfo(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableSchemaForeignTypeInfoArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.TableState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableSchemaForeignTypeInfoArgs.builder
       builder.schemaForeignTypeInfo(args(argsBuilder).build)
@@ -1671,7 +1671,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tableConstraints(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableTableConstraintsArgs.Builder]):
+    inline def tableConstraints(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableTableConstraintsArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.TableState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableTableConstraintsArgs.builder
       builder.tableConstraints(args(argsBuilder).build)
@@ -1683,7 +1683,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tableReplicationInfo(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableTableReplicationInfoArgs.Builder]):
+    inline def tableReplicationInfo(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableTableReplicationInfoArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.TableState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableTableReplicationInfoArgs.builder
       builder.tableReplicationInfo(args(argsBuilder).build)
@@ -1693,7 +1693,7 @@ object bigquery_ext:
      * partitioning for this table. Structure is documented below.
      * @return builder
      */
-    def timePartitioning(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableTimePartitioningArgs.Builder]):
+    inline def timePartitioning(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableTimePartitioningArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.TableState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableTimePartitioningArgs.builder
       builder.timePartitioning(args(argsBuilder).build)
@@ -1703,7 +1703,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def view(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableViewArgs.Builder]):
+    inline def view(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableViewArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.TableState.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableViewArgs.builder
       builder.view(args(argsBuilder).build)
@@ -1715,7 +1715,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def foreignKeys(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableTableConstraintsForeignKeyArgs.Builder]*):
+    inline def foreignKeys(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableTableConstraintsForeignKeyArgs.Builder]*):
         com.pulumi.gcp.bigquery.inputs.TableTableConstraintsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.bigquery.inputs.TableTableConstraintsForeignKeyArgs.builder
       builder.foreignKeys(args.map(_(argsBuilder).build)*)
@@ -1727,7 +1727,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def primaryKey(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableTableConstraintsPrimaryKeyArgs.Builder]):
+    inline def primaryKey(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableTableConstraintsPrimaryKeyArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.TableTableConstraintsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableTableConstraintsPrimaryKeyArgs.builder
       builder.primaryKey(args(argsBuilder).build)
@@ -1738,7 +1738,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def columnReferences(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableTableConstraintsForeignKeyColumnReferencesArgs.Builder]):
+    inline def columnReferences(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableTableConstraintsForeignKeyColumnReferencesArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.TableTableConstraintsForeignKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableTableConstraintsForeignKeyColumnReferencesArgs.builder
       builder.columnReferences(args(argsBuilder).build)
@@ -1749,7 +1749,7 @@ object bigquery_ext:
      * Structure is documented below.
      * @return builder
      */
-    def referencedTable(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableTableConstraintsForeignKeyReferencedTableArgs.Builder]):
+    inline def referencedTable(args: Endofunction[com.pulumi.gcp.bigquery.inputs.TableTableConstraintsForeignKeyReferencedTableArgs.Builder]):
         com.pulumi.gcp.bigquery.inputs.TableTableConstraintsForeignKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.TableTableConstraintsForeignKeyReferencedTableArgs.builder
       builder.referencedTable(args(argsBuilder).build)

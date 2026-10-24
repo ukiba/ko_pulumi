@@ -9,7 +9,7 @@ object mysql_ext:
      * &gt; **Note:** `identity` is required when `customerManagedKey` is specified.
      * @return builder
      */
-    def customerManagedKey(args: Endofunction[com.pulumi.azure.mysql.inputs.FlexibleServerCustomerManagedKeyArgs.Builder]):
+    inline def customerManagedKey(args: Endofunction[com.pulumi.azure.mysql.inputs.FlexibleServerCustomerManagedKeyArgs.Builder]):
         com.pulumi.azure.mysql.FlexibleServerArgs.Builder =
       val argsBuilder = com.pulumi.azure.mysql.inputs.FlexibleServerCustomerManagedKeyArgs.builder
       builder.customerManagedKey(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object mysql_ext:
      * @param highAvailability A `highAvailability` block as defined below.
      * @return builder
      */
-    def highAvailability(args: Endofunction[com.pulumi.azure.mysql.inputs.FlexibleServerHighAvailabilityArgs.Builder]):
+    inline def highAvailability(args: Endofunction[com.pulumi.azure.mysql.inputs.FlexibleServerHighAvailabilityArgs.Builder]):
         com.pulumi.azure.mysql.FlexibleServerArgs.Builder =
       val argsBuilder = com.pulumi.azure.mysql.inputs.FlexibleServerHighAvailabilityArgs.builder
       builder.highAvailability(args(argsBuilder).build)
@@ -27,7 +27,7 @@ object mysql_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.mysql.inputs.FlexibleServerIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.mysql.inputs.FlexibleServerIdentityArgs.Builder]):
         com.pulumi.azure.mysql.FlexibleServerArgs.Builder =
       val argsBuilder = com.pulumi.azure.mysql.inputs.FlexibleServerIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -36,7 +36,7 @@ object mysql_ext:
      * @param maintenanceWindow A `maintenanceWindow` block as defined below.
      * @return builder
      */
-    def maintenanceWindow(args: Endofunction[com.pulumi.azure.mysql.inputs.FlexibleServerMaintenanceWindowArgs.Builder]):
+    inline def maintenanceWindow(args: Endofunction[com.pulumi.azure.mysql.inputs.FlexibleServerMaintenanceWindowArgs.Builder]):
         com.pulumi.azure.mysql.FlexibleServerArgs.Builder =
       val argsBuilder = com.pulumi.azure.mysql.inputs.FlexibleServerMaintenanceWindowArgs.builder
       builder.maintenanceWindow(args(argsBuilder).build)
@@ -45,7 +45,7 @@ object mysql_ext:
      * @param storage A `storage` block as defined below.
      * @return builder
      */
-    def storage(args: Endofunction[com.pulumi.azure.mysql.inputs.FlexibleServerStorageArgs.Builder]):
+    inline def storage(args: Endofunction[com.pulumi.azure.mysql.inputs.FlexibleServerStorageArgs.Builder]):
         com.pulumi.azure.mysql.FlexibleServerArgs.Builder =
       val argsBuilder = com.pulumi.azure.mysql.inputs.FlexibleServerStorageArgs.builder
       builder.storage(args(argsBuilder).build)
@@ -57,7 +57,7 @@ object mysql_ext:
      * &gt; **Note:** `identity` is required when `customerManagedKey` is specified.
      * @return builder
      */
-    def customerManagedKey(args: Endofunction[com.pulumi.azure.mysql.inputs.FlexibleServerCustomerManagedKeyArgs.Builder]):
+    inline def customerManagedKey(args: Endofunction[com.pulumi.azure.mysql.inputs.FlexibleServerCustomerManagedKeyArgs.Builder]):
         com.pulumi.azure.mysql.inputs.FlexibleServerState.Builder =
       val argsBuilder = com.pulumi.azure.mysql.inputs.FlexibleServerCustomerManagedKeyArgs.builder
       builder.customerManagedKey(args(argsBuilder).build)
@@ -66,7 +66,7 @@ object mysql_ext:
      * @param highAvailability A `highAvailability` block as defined below.
      * @return builder
      */
-    def highAvailability(args: Endofunction[com.pulumi.azure.mysql.inputs.FlexibleServerHighAvailabilityArgs.Builder]):
+    inline def highAvailability(args: Endofunction[com.pulumi.azure.mysql.inputs.FlexibleServerHighAvailabilityArgs.Builder]):
         com.pulumi.azure.mysql.inputs.FlexibleServerState.Builder =
       val argsBuilder = com.pulumi.azure.mysql.inputs.FlexibleServerHighAvailabilityArgs.builder
       builder.highAvailability(args(argsBuilder).build)
@@ -75,7 +75,7 @@ object mysql_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.mysql.inputs.FlexibleServerIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.mysql.inputs.FlexibleServerIdentityArgs.Builder]):
         com.pulumi.azure.mysql.inputs.FlexibleServerState.Builder =
       val argsBuilder = com.pulumi.azure.mysql.inputs.FlexibleServerIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -84,7 +84,7 @@ object mysql_ext:
      * @param maintenanceWindow A `maintenanceWindow` block as defined below.
      * @return builder
      */
-    def maintenanceWindow(args: Endofunction[com.pulumi.azure.mysql.inputs.FlexibleServerMaintenanceWindowArgs.Builder]):
+    inline def maintenanceWindow(args: Endofunction[com.pulumi.azure.mysql.inputs.FlexibleServerMaintenanceWindowArgs.Builder]):
         com.pulumi.azure.mysql.inputs.FlexibleServerState.Builder =
       val argsBuilder = com.pulumi.azure.mysql.inputs.FlexibleServerMaintenanceWindowArgs.builder
       builder.maintenanceWindow(args(argsBuilder).build)
@@ -93,7 +93,7 @@ object mysql_ext:
      * @param storage A `storage` block as defined below.
      * @return builder
      */
-    def storage(args: Endofunction[com.pulumi.azure.mysql.inputs.FlexibleServerStorageArgs.Builder]):
+    inline def storage(args: Endofunction[com.pulumi.azure.mysql.inputs.FlexibleServerStorageArgs.Builder]):
         com.pulumi.azure.mysql.inputs.FlexibleServerState.Builder =
       val argsBuilder = com.pulumi.azure.mysql.inputs.FlexibleServerStorageArgs.builder
       builder.storage(args(argsBuilder).build)

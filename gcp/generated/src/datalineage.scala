@@ -18,7 +18,7 @@ object datalineage:
    * * How-to Guides
    *     * [Official Documentation](https://docs.cloud.google.com/dataplex/docs/about-data-lineage#control-lineage-ingestion)
    */
-  def Config(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Config(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.datalineage.ConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datalineage.ConfigArgs.builder
     com.pulumi.gcp.datalineage.Config(name,

@@ -24,7 +24,7 @@ object digitaltwins:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Digital Twins Event Grid Endpoint. */
-  def EndpointEventGrid(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EndpointEventGrid(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.digitaltwins.EndpointEventGridArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.digitaltwins.EndpointEventGridArgs.builder
     conf.logicalName2physicalName(name) match
@@ -35,7 +35,7 @@ object digitaltwins:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Digital Twins Event Hub Endpoint. */
-  def EndpointEventHub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EndpointEventHub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.digitaltwins.EndpointEventHubArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.digitaltwins.EndpointEventHubArgs.builder
     conf.logicalName2physicalName(name) match
@@ -46,7 +46,7 @@ object digitaltwins:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Digital Twins Service Bus Endpoint. */
-  def EndpointServicebus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EndpointServicebus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.digitaltwins.EndpointServicebusArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.digitaltwins.EndpointServicebusArgs.builder
     conf.logicalName2physicalName(name) match
@@ -57,7 +57,7 @@ object digitaltwins:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Digital Twins instance. */
-  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.digitaltwins.InstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.digitaltwins.InstanceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -75,7 +75,7 @@ object digitaltwins:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Digital Twins Time Series Database Connection. */
-  def TimeSeriesDatabaseConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TimeSeriesDatabaseConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.digitaltwins.TimeSeriesDatabaseConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.digitaltwins.TimeSeriesDatabaseConnectionArgs.builder
     conf.logicalName2physicalName(name) match

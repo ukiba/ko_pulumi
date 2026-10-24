@@ -7,7 +7,7 @@ object redhatopenshift_ext:
      * @param apiServerProfile An `apiServerProfile` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def apiServerProfile(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterApiServerProfileArgs.Builder]):
+    inline def apiServerProfile(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterApiServerProfileArgs.Builder]):
         com.pulumi.azure.redhatopenshift.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.redhatopenshift.inputs.ClusterApiServerProfileArgs.builder
       builder.apiServerProfile(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object redhatopenshift_ext:
      * @param clusterProfile A `clusterProfile` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def clusterProfile(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterClusterProfileArgs.Builder]):
+    inline def clusterProfile(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterClusterProfileArgs.Builder]):
         com.pulumi.azure.redhatopenshift.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.redhatopenshift.inputs.ClusterClusterProfileArgs.builder
       builder.clusterProfile(args(argsBuilder).build)
@@ -25,7 +25,7 @@ object redhatopenshift_ext:
      * @param ingressProfile An `ingressProfile` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def ingressProfile(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterIngressProfileArgs.Builder]):
+    inline def ingressProfile(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterIngressProfileArgs.Builder]):
         com.pulumi.azure.redhatopenshift.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.redhatopenshift.inputs.ClusterIngressProfileArgs.builder
       builder.ingressProfile(args(argsBuilder).build)
@@ -34,7 +34,7 @@ object redhatopenshift_ext:
      * @param mainProfile A `mainProfile` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def mainProfile(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterMainProfileArgs.Builder]):
+    inline def mainProfile(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterMainProfileArgs.Builder]):
         com.pulumi.azure.redhatopenshift.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.redhatopenshift.inputs.ClusterMainProfileArgs.builder
       builder.mainProfile(args(argsBuilder).build)
@@ -43,7 +43,7 @@ object redhatopenshift_ext:
      * @param networkProfile A `networkProfile` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def networkProfile(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterNetworkProfileArgs.Builder]):
+    inline def networkProfile(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterNetworkProfileArgs.Builder]):
         com.pulumi.azure.redhatopenshift.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.redhatopenshift.inputs.ClusterNetworkProfileArgs.builder
       builder.networkProfile(args(argsBuilder).build)
@@ -52,7 +52,7 @@ object redhatopenshift_ext:
      * @param servicePrincipal A `servicePrincipal` block as defined below.
      * @return builder
      */
-    def servicePrincipal(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterServicePrincipalArgs.Builder]):
+    inline def servicePrincipal(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterServicePrincipalArgs.Builder]):
         com.pulumi.azure.redhatopenshift.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.redhatopenshift.inputs.ClusterServicePrincipalArgs.builder
       builder.servicePrincipal(args(argsBuilder).build)
@@ -61,7 +61,7 @@ object redhatopenshift_ext:
      * @param workerProfile A `workerProfile` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def workerProfile(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterWorkerProfileArgs.Builder]):
+    inline def workerProfile(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterWorkerProfileArgs.Builder]):
         com.pulumi.azure.redhatopenshift.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.redhatopenshift.inputs.ClusterWorkerProfileArgs.builder
       builder.workerProfile(args(argsBuilder).build)
@@ -71,7 +71,7 @@ object redhatopenshift_ext:
      * @param apiServerProfile An `apiServerProfile` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def apiServerProfile(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterApiServerProfileArgs.Builder]):
+    inline def apiServerProfile(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterApiServerProfileArgs.Builder]):
         com.pulumi.azure.redhatopenshift.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.azure.redhatopenshift.inputs.ClusterApiServerProfileArgs.builder
       builder.apiServerProfile(args(argsBuilder).build)
@@ -80,7 +80,7 @@ object redhatopenshift_ext:
      * @param clusterProfile A `clusterProfile` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def clusterProfile(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterClusterProfileArgs.Builder]):
+    inline def clusterProfile(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterClusterProfileArgs.Builder]):
         com.pulumi.azure.redhatopenshift.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.azure.redhatopenshift.inputs.ClusterClusterProfileArgs.builder
       builder.clusterProfile(args(argsBuilder).build)
@@ -89,7 +89,7 @@ object redhatopenshift_ext:
      * @param ingressProfile An `ingressProfile` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def ingressProfile(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterIngressProfileArgs.Builder]):
+    inline def ingressProfile(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterIngressProfileArgs.Builder]):
         com.pulumi.azure.redhatopenshift.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.azure.redhatopenshift.inputs.ClusterIngressProfileArgs.builder
       builder.ingressProfile(args(argsBuilder).build)
@@ -98,7 +98,7 @@ object redhatopenshift_ext:
      * @param mainProfile A `mainProfile` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def mainProfile(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterMainProfileArgs.Builder]):
+    inline def mainProfile(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterMainProfileArgs.Builder]):
         com.pulumi.azure.redhatopenshift.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.azure.redhatopenshift.inputs.ClusterMainProfileArgs.builder
       builder.mainProfile(args(argsBuilder).build)
@@ -107,7 +107,7 @@ object redhatopenshift_ext:
      * @param networkProfile A `networkProfile` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def networkProfile(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterNetworkProfileArgs.Builder]):
+    inline def networkProfile(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterNetworkProfileArgs.Builder]):
         com.pulumi.azure.redhatopenshift.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.azure.redhatopenshift.inputs.ClusterNetworkProfileArgs.builder
       builder.networkProfile(args(argsBuilder).build)
@@ -116,7 +116,7 @@ object redhatopenshift_ext:
      * @param servicePrincipal A `servicePrincipal` block as defined below.
      * @return builder
      */
-    def servicePrincipal(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterServicePrincipalArgs.Builder]):
+    inline def servicePrincipal(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterServicePrincipalArgs.Builder]):
         com.pulumi.azure.redhatopenshift.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.azure.redhatopenshift.inputs.ClusterServicePrincipalArgs.builder
       builder.servicePrincipal(args(argsBuilder).build)
@@ -125,7 +125,7 @@ object redhatopenshift_ext:
      * @param workerProfile A `workerProfile` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def workerProfile(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterWorkerProfileArgs.Builder]):
+    inline def workerProfile(args: Endofunction[com.pulumi.azure.redhatopenshift.inputs.ClusterWorkerProfileArgs.Builder]):
         com.pulumi.azure.redhatopenshift.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.azure.redhatopenshift.inputs.ClusterWorkerProfileArgs.builder
       builder.workerProfile(args(argsBuilder).build)

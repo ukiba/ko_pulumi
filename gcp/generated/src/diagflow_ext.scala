@@ -8,7 +8,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def automatedAgentConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileAutomatedAgentConfigArgs.Builder]):
+    inline def automatedAgentConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileAutomatedAgentConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.ConversationProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileAutomatedAgentConfigArgs.builder
       builder.automatedAgentConfig(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def humanAgentAssistantConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigArgs.Builder]):
+    inline def humanAgentAssistantConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.ConversationProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigArgs.builder
       builder.humanAgentAssistantConfig(args(argsBuilder).build)
@@ -28,7 +28,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def humanAgentHandoffConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentHandoffConfigArgs.Builder]):
+    inline def humanAgentHandoffConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentHandoffConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.ConversationProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentHandoffConfigArgs.builder
       builder.humanAgentHandoffConfig(args(argsBuilder).build)
@@ -38,7 +38,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loggingConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileLoggingConfigArgs.Builder]):
+    inline def loggingConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileLoggingConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.ConversationProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileLoggingConfigArgs.builder
       builder.loggingConfig(args(argsBuilder).build)
@@ -49,7 +49,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def newMessageEventNotificationConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileNewMessageEventNotificationConfigArgs.Builder]):
+    inline def newMessageEventNotificationConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileNewMessageEventNotificationConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.ConversationProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileNewMessageEventNotificationConfigArgs.builder
       builder.newMessageEventNotificationConfig(args(argsBuilder).build)
@@ -59,7 +59,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def newRecognitionResultNotificationConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileNewRecognitionResultNotificationConfigArgs.Builder]):
+    inline def newRecognitionResultNotificationConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileNewRecognitionResultNotificationConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.ConversationProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileNewRecognitionResultNotificationConfigArgs.builder
       builder.newRecognitionResultNotificationConfig(args(argsBuilder).build)
@@ -70,7 +70,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def notificationConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileNotificationConfigArgs.Builder]):
+    inline def notificationConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileNotificationConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.ConversationProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileNotificationConfigArgs.builder
       builder.notificationConfig(args(argsBuilder).build)
@@ -81,7 +81,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sipConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileSipConfigArgs.Builder]):
+    inline def sipConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileSipConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.ConversationProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileSipConfigArgs.builder
       builder.sipConfig(args(argsBuilder).build)
@@ -91,7 +91,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sttConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileSttConfigArgs.Builder]):
+    inline def sttConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileSttConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.ConversationProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileSttConfigArgs.builder
       builder.sttConfig(args(argsBuilder).build)
@@ -101,7 +101,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ttsConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileTtsConfigArgs.Builder]):
+    inline def ttsConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileTtsConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.ConversationProfileArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileTtsConfigArgs.builder
       builder.ttsConfig(args(argsBuilder).build)
@@ -113,7 +113,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def advancedSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentAdvancedSettingsArgs.Builder]):
+    inline def advancedSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentAdvancedSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.CxAgentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxAgentAdvancedSettingsArgs.builder
       builder.advancedSettings(args(argsBuilder).build)
@@ -123,7 +123,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def answerFeedbackSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentAnswerFeedbackSettingsArgs.Builder]):
+    inline def answerFeedbackSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentAnswerFeedbackSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.CxAgentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxAgentAnswerFeedbackSettingsArgs.builder
       builder.answerFeedbackSettings(args(argsBuilder).build)
@@ -133,7 +133,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clientCertificateSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentClientCertificateSettingsArgs.Builder]):
+    inline def clientCertificateSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentClientCertificateSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.CxAgentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxAgentClientCertificateSettingsArgs.builder
       builder.clientCertificateSettings(args(argsBuilder).build)
@@ -143,7 +143,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def genAppBuilderSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentGenAppBuilderSettingsArgs.Builder]):
+    inline def genAppBuilderSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentGenAppBuilderSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.CxAgentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxAgentGenAppBuilderSettingsArgs.builder
       builder.genAppBuilderSettings(args(argsBuilder).build)
@@ -153,7 +153,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gitIntegrationSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentGitIntegrationSettingsArgs.Builder]):
+    inline def gitIntegrationSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentGitIntegrationSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.CxAgentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxAgentGitIntegrationSettingsArgs.builder
       builder.gitIntegrationSettings(args(argsBuilder).build)
@@ -163,7 +163,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def personalizationSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentPersonalizationSettingsArgs.Builder]):
+    inline def personalizationSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentPersonalizationSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.CxAgentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxAgentPersonalizationSettingsArgs.builder
       builder.personalizationSettings(args(argsBuilder).build)
@@ -173,7 +173,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def speechToTextSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentSpeechToTextSettingsArgs.Builder]):
+    inline def speechToTextSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentSpeechToTextSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.CxAgentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxAgentSpeechToTextSettingsArgs.builder
       builder.speechToTextSettings(args(argsBuilder).build)
@@ -183,7 +183,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def textToSpeechSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentTextToSpeechSettingsArgs.Builder]):
+    inline def textToSpeechSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentTextToSpeechSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.CxAgentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxAgentTextToSpeechSettingsArgs.builder
       builder.textToSpeechSettings(args(argsBuilder).build)
@@ -194,7 +194,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entities(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxEntityTypeEntityArgs.Builder]*):
+    inline def entities(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxEntityTypeEntityArgs.Builder]*):
         com.pulumi.gcp.diagflow.CxEntityTypeArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxEntityTypeEntityArgs.builder
       builder.entities(args.map(_(argsBuilder).build)*)
@@ -205,7 +205,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def excludedPhrases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxEntityTypeExcludedPhraseArgs.Builder]*):
+    inline def excludedPhrases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxEntityTypeExcludedPhraseArgs.Builder]*):
         com.pulumi.gcp.diagflow.CxEntityTypeArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxEntityTypeExcludedPhraseArgs.builder
       builder.excludedPhrases(args.map(_(argsBuilder).build)*)
@@ -216,7 +216,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def versionConfigs(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxEnvironmentVersionConfigArgs.Builder]*):
+    inline def versionConfigs(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxEnvironmentVersionConfigArgs.Builder]*):
         com.pulumi.gcp.diagflow.CxEnvironmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxEnvironmentVersionConfigArgs.builder
       builder.versionConfigs(args.map(_(argsBuilder).build)*)
@@ -228,7 +228,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def advancedSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowAdvancedSettingsArgs.Builder]):
+    inline def advancedSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowAdvancedSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.CxFlowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowAdvancedSettingsArgs.builder
       builder.advancedSettings(args(argsBuilder).build)
@@ -241,7 +241,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def eventHandlers(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerArgs.Builder]*):
+    inline def eventHandlers(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerArgs.Builder]*):
         com.pulumi.gcp.diagflow.CxFlowArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerArgs.builder
       builder.eventHandlers(args.map(_(argsBuilder).build)*)
@@ -251,7 +251,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def knowledgeConnectorSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsArgs.Builder]):
+    inline def knowledgeConnectorSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.CxFlowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsArgs.builder
       builder.knowledgeConnectorSettings(args(argsBuilder).build)
@@ -261,7 +261,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nluSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowNluSettingsArgs.Builder]):
+    inline def nluSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowNluSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.CxFlowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowNluSettingsArgs.builder
       builder.nluSettings(args(argsBuilder).build)
@@ -277,7 +277,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transitionRoutes(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteArgs.Builder]*):
+    inline def transitionRoutes(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteArgs.Builder]*):
         com.pulumi.gcp.diagflow.CxFlowArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteArgs.builder
       builder.transitionRoutes(args.map(_(argsBuilder).build)*)
@@ -288,7 +288,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fallbackSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsFallbackSettingsArgs.Builder]):
+    inline def fallbackSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsFallbackSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.CxGenerativeSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsFallbackSettingsArgs.builder
       builder.fallbackSettings(args(argsBuilder).build)
@@ -298,7 +298,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def generativeSafetySettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsGenerativeSafetySettingsArgs.Builder]):
+    inline def generativeSafetySettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsGenerativeSafetySettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.CxGenerativeSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsGenerativeSafetySettingsArgs.builder
       builder.generativeSafetySettings(args(argsBuilder).build)
@@ -308,7 +308,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def knowledgeConnectorSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsKnowledgeConnectorSettingsArgs.Builder]):
+    inline def knowledgeConnectorSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsKnowledgeConnectorSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.CxGenerativeSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsKnowledgeConnectorSettingsArgs.builder
       builder.knowledgeConnectorSettings(args(argsBuilder).build)
@@ -318,7 +318,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def llmModelSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsLlmModelSettingsArgs.Builder]):
+    inline def llmModelSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsLlmModelSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.CxGenerativeSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsLlmModelSettingsArgs.builder
       builder.llmModelSettings(args(argsBuilder).build)
@@ -329,7 +329,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def llmModelSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGeneratorLlmModelSettingsArgs.Builder]):
+    inline def llmModelSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGeneratorLlmModelSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.CxGeneratorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxGeneratorLlmModelSettingsArgs.builder
       builder.llmModelSettings(args(argsBuilder).build)
@@ -339,7 +339,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modelParameter(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGeneratorModelParameterArgs.Builder]):
+    inline def modelParameter(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGeneratorModelParameterArgs.Builder]):
         com.pulumi.gcp.diagflow.CxGeneratorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxGeneratorModelParameterArgs.builder
       builder.modelParameter(args(argsBuilder).build)
@@ -349,7 +349,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def placeholders(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGeneratorPlaceholderArgs.Builder]*):
+    inline def placeholders(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGeneratorPlaceholderArgs.Builder]*):
         com.pulumi.gcp.diagflow.CxGeneratorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxGeneratorPlaceholderArgs.builder
       builder.placeholders(args.map(_(argsBuilder).build)*)
@@ -359,7 +359,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def promptText(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGeneratorPromptTextArgs.Builder]):
+    inline def promptText(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGeneratorPromptTextArgs.Builder]):
         com.pulumi.gcp.diagflow.CxGeneratorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxGeneratorPromptTextArgs.builder
       builder.promptText(args(argsBuilder).build)
@@ -370,7 +370,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameters(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxIntentParameterArgs.Builder]*):
+    inline def parameters(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxIntentParameterArgs.Builder]*):
         com.pulumi.gcp.diagflow.CxIntentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxIntentParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
@@ -380,7 +380,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trainingPhrases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxIntentTrainingPhraseArgs.Builder]*):
+    inline def trainingPhrases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxIntentTrainingPhraseArgs.Builder]*):
         com.pulumi.gcp.diagflow.CxIntentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxIntentTrainingPhraseArgs.builder
       builder.trainingPhrases(args.map(_(argsBuilder).build)*)
@@ -392,7 +392,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def advancedSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageAdvancedSettingsArgs.Builder]):
+    inline def advancedSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageAdvancedSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.CxPageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageAdvancedSettingsArgs.builder
       builder.advancedSettings(args(argsBuilder).build)
@@ -402,7 +402,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entryFulfillment(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentArgs.Builder]):
+    inline def entryFulfillment(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentArgs.Builder]):
         com.pulumi.gcp.diagflow.CxPageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentArgs.builder
       builder.entryFulfillment(args(argsBuilder).build)
@@ -412,7 +412,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def eventHandlers(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerArgs.Builder]*):
+    inline def eventHandlers(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerArgs.Builder]*):
         com.pulumi.gcp.diagflow.CxPageArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerArgs.builder
       builder.eventHandlers(args.map(_(argsBuilder).build)*)
@@ -422,7 +422,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def form(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormArgs.Builder]):
+    inline def form(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormArgs.Builder]):
         com.pulumi.gcp.diagflow.CxPageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormArgs.builder
       builder.form(args(argsBuilder).build)
@@ -432,7 +432,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def knowledgeConnectorSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsArgs.Builder]):
+    inline def knowledgeConnectorSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.CxPageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsArgs.builder
       builder.knowledgeConnectorSettings(args(argsBuilder).build)
@@ -449,7 +449,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transitionRoutes(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteArgs.Builder]*):
+    inline def transitionRoutes(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteArgs.Builder]*):
         com.pulumi.gcp.diagflow.CxPageArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteArgs.builder
       builder.transitionRoutes(args.map(_(argsBuilder).build)*)
@@ -460,7 +460,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def instruction(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPlaybookInstructionArgs.Builder]):
+    inline def instruction(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPlaybookInstructionArgs.Builder]):
         com.pulumi.gcp.diagflow.CxPlaybookArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPlaybookInstructionArgs.builder
       builder.instruction(args(argsBuilder).build)
@@ -470,7 +470,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def llmModelSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPlaybookLlmModelSettingsArgs.Builder]):
+    inline def llmModelSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPlaybookLlmModelSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.CxPlaybookArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPlaybookLlmModelSettingsArgs.builder
       builder.llmModelSettings(args(argsBuilder).build)
@@ -484,7 +484,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def audioExportSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxSecuritySettingsAudioExportSettingsArgs.Builder]):
+    inline def audioExportSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxSecuritySettingsAudioExportSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.CxSecuritySettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxSecuritySettingsAudioExportSettingsArgs.builder
       builder.audioExportSettings(args(argsBuilder).build)
@@ -495,7 +495,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def insightsExportSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxSecuritySettingsInsightsExportSettingsArgs.Builder]):
+    inline def insightsExportSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxSecuritySettingsInsightsExportSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.CxSecuritySettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxSecuritySettingsInsightsExportSettingsArgs.builder
       builder.insightsExportSettings(args(argsBuilder).build)
@@ -506,7 +506,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def testCaseConversationTurns(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnArgs.Builder]*):
+    inline def testCaseConversationTurns(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnArgs.Builder]*):
         com.pulumi.gcp.diagflow.CxTestCaseArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnArgs.builder
       builder.testCaseConversationTurns(args.map(_(argsBuilder).build)*)
@@ -516,7 +516,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def testConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestConfigArgs.Builder]):
+    inline def testConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.CxTestCaseArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseTestConfigArgs.builder
       builder.testConfig(args(argsBuilder).build)
@@ -529,7 +529,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectorSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecArgs.Builder]):
+    inline def connectorSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecArgs.Builder]):
         com.pulumi.gcp.diagflow.CxToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecArgs.builder
       builder.connectorSpec(args(argsBuilder).build)
@@ -540,7 +540,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataStoreSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolDataStoreSpecArgs.Builder]):
+    inline def dataStoreSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolDataStoreSpecArgs.Builder]):
         com.pulumi.gcp.diagflow.CxToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolDataStoreSpecArgs.builder
       builder.dataStoreSpec(args(argsBuilder).build)
@@ -551,7 +551,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def functionSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolFunctionSpecArgs.Builder]):
+    inline def functionSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolFunctionSpecArgs.Builder]):
         com.pulumi.gcp.diagflow.CxToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolFunctionSpecArgs.builder
       builder.functionSpec(args(argsBuilder).build)
@@ -562,7 +562,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def openApiSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecArgs.Builder]):
+    inline def openApiSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecArgs.Builder]):
         com.pulumi.gcp.diagflow.CxToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecArgs.builder
       builder.openApiSpec(args(argsBuilder).build)
@@ -573,7 +573,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tool(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolArgs.Builder]):
+    inline def tool(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolArgs.Builder]):
         com.pulumi.gcp.diagflow.CxToolVersionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolVersionToolArgs.builder
       builder.tool(args(argsBuilder).build)
@@ -584,7 +584,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def genericWebService(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxWebhookGenericWebServiceArgs.Builder]):
+    inline def genericWebService(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxWebhookGenericWebServiceArgs.Builder]):
         com.pulumi.gcp.diagflow.CxWebhookArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxWebhookGenericWebServiceArgs.builder
       builder.genericWebService(args(argsBuilder).build)
@@ -594,7 +594,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectory(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxWebhookServiceDirectoryArgs.Builder]):
+    inline def serviceDirectory(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxWebhookServiceDirectoryArgs.Builder]):
         com.pulumi.gcp.diagflow.CxWebhookArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxWebhookServiceDirectoryArgs.builder
       builder.serviceDirectory(args(argsBuilder).build)
@@ -605,7 +605,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.EncryptionSpecEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.EncryptionSpecEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.diagflow.EncryptionSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.EncryptionSpecEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -616,7 +616,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entities(args: Endofunction[com.pulumi.gcp.diagflow.inputs.EntityTypeEntityArgs.Builder]*):
+    inline def entities(args: Endofunction[com.pulumi.gcp.diagflow.inputs.EntityTypeEntityArgs.Builder]*):
         com.pulumi.gcp.diagflow.EntityTypeArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.EntityTypeEntityArgs.builder
       builder.entities(args.map(_(argsBuilder).build)*)
@@ -627,7 +627,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fulfillment(args: Endofunction[com.pulumi.gcp.diagflow.inputs.EnvironmentFulfillmentArgs.Builder]):
+    inline def fulfillment(args: Endofunction[com.pulumi.gcp.diagflow.inputs.EnvironmentFulfillmentArgs.Builder]):
         com.pulumi.gcp.diagflow.EnvironmentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.EnvironmentFulfillmentArgs.builder
       builder.fulfillment(args(argsBuilder).build)
@@ -637,7 +637,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def textToSpeechSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.EnvironmentTextToSpeechSettingsArgs.Builder]):
+    inline def textToSpeechSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.EnvironmentTextToSpeechSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.EnvironmentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.EnvironmentTextToSpeechSettingsArgs.builder
       builder.textToSpeechSettings(args(argsBuilder).build)
@@ -648,7 +648,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def features(args: Endofunction[com.pulumi.gcp.diagflow.inputs.FulfillmentFeatureArgs.Builder]*):
+    inline def features(args: Endofunction[com.pulumi.gcp.diagflow.inputs.FulfillmentFeatureArgs.Builder]*):
         com.pulumi.gcp.diagflow.FulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.FulfillmentFeatureArgs.builder
       builder.features(args.map(_(argsBuilder).build)*)
@@ -658,7 +658,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def genericWebService(args: Endofunction[com.pulumi.gcp.diagflow.inputs.FulfillmentGenericWebServiceArgs.Builder]):
+    inline def genericWebService(args: Endofunction[com.pulumi.gcp.diagflow.inputs.FulfillmentGenericWebServiceArgs.Builder]):
         com.pulumi.gcp.diagflow.FulfillmentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.FulfillmentGenericWebServiceArgs.builder
       builder.genericWebService(args(argsBuilder).build)
@@ -669,7 +669,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def agentCoachingContext(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorAgentCoachingContextArgs.Builder]):
+    inline def agentCoachingContext(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorAgentCoachingContextArgs.Builder]):
         com.pulumi.gcp.diagflow.GeneratorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorAgentCoachingContextArgs.builder
       builder.agentCoachingContext(args(argsBuilder).build)
@@ -679,7 +679,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def freeFormContext(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorFreeFormContextArgs.Builder]):
+    inline def freeFormContext(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorFreeFormContextArgs.Builder]):
         com.pulumi.gcp.diagflow.GeneratorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorFreeFormContextArgs.builder
       builder.freeFormContext(args(argsBuilder).build)
@@ -689,7 +689,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inferenceParameter(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorInferenceParameterArgs.Builder]):
+    inline def inferenceParameter(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorInferenceParameterArgs.Builder]):
         com.pulumi.gcp.diagflow.GeneratorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorInferenceParameterArgs.builder
       builder.inferenceParameter(args(argsBuilder).build)
@@ -699,7 +699,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def summarizationContext(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextArgs.Builder]):
+    inline def summarizationContext(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextArgs.Builder]):
         com.pulumi.gcp.diagflow.GeneratorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextArgs.builder
       builder.summarizationContext(args(argsBuilder).build)
@@ -711,7 +711,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectorSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecArgs.Builder]):
+    inline def connectorSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecArgs.Builder]):
         com.pulumi.gcp.diagflow.ToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecArgs.builder
       builder.connectorSpec(args(argsBuilder).build)
@@ -722,7 +722,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def functionSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolFunctionSpecArgs.Builder]):
+    inline def functionSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolFunctionSpecArgs.Builder]):
         com.pulumi.gcp.diagflow.ToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolFunctionSpecArgs.builder
       builder.functionSpec(args(argsBuilder).build)
@@ -733,7 +733,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def openApiSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecArgs.Builder]):
+    inline def openApiSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecArgs.Builder]):
         com.pulumi.gcp.diagflow.ToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecArgs.builder
       builder.openApiSpec(args(argsBuilder).build)
@@ -744,7 +744,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endUserSuggestionConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigArgs.Builder]):
+    inline def endUserSuggestionConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigArgs.builder
       builder.endUserSuggestionConfig(args(argsBuilder).build)
@@ -754,7 +754,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def humanAgentSuggestionConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigArgs.Builder]):
+    inline def humanAgentSuggestionConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigArgs.builder
       builder.humanAgentSuggestionConfig(args(argsBuilder).build)
@@ -764,7 +764,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def messageAnalysisConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigMessageAnalysisConfigArgs.Builder]):
+    inline def messageAnalysisConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigMessageAnalysisConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigMessageAnalysisConfigArgs.builder
       builder.messageAnalysisConfig(args(argsBuilder).build)
@@ -775,7 +775,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def notificationConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigNotificationConfigArgs.Builder]):
+    inline def notificationConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigNotificationConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigNotificationConfigArgs.builder
       builder.notificationConfig(args(argsBuilder).build)
@@ -786,7 +786,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def featureConfigs(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigArgs.Builder]*):
+    inline def featureConfigs(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigArgs.builder
       builder.featureConfigs(args.map(_(argsBuilder).build)*)
@@ -797,7 +797,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conversationModelConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigConversationModelConfigArgs.Builder]):
+    inline def conversationModelConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigConversationModelConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigConversationModelConfigArgs.builder
       builder.conversationModelConfig(args(argsBuilder).build)
@@ -807,7 +807,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conversationProcessConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigConversationProcessConfigArgs.Builder]):
+    inline def conversationProcessConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigConversationProcessConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigConversationProcessConfigArgs.builder
       builder.conversationProcessConfig(args(argsBuilder).build)
@@ -817,7 +817,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def queryConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigArgs.Builder]):
+    inline def queryConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigArgs.builder
       builder.queryConfig(args(argsBuilder).build)
@@ -827,7 +827,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def suggestionFeature(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigSuggestionFeatureArgs.Builder]):
+    inline def suggestionFeature(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigSuggestionFeatureArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigSuggestionFeatureArgs.builder
       builder.suggestionFeature(args(argsBuilder).build)
@@ -838,7 +838,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def suggestionTriggerSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigSuggestionTriggerSettingsArgs.Builder]):
+    inline def suggestionTriggerSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigSuggestionTriggerSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigSuggestionTriggerSettingsArgs.builder
       builder.suggestionTriggerSettings(args(argsBuilder).build)
@@ -849,7 +849,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def contextFilterSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigContextFilterSettingsArgs.Builder]):
+    inline def contextFilterSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigContextFilterSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigContextFilterSettingsArgs.builder
       builder.contextFilterSettings(args(argsBuilder).build)
@@ -860,7 +860,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dialogflowQuerySource(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigDialogflowQuerySourceArgs.Builder]):
+    inline def dialogflowQuerySource(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigDialogflowQuerySourceArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigDialogflowQuerySourceArgs.builder
       builder.dialogflowQuerySource(args(argsBuilder).build)
@@ -871,7 +871,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def documentQuerySource(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigDocumentQuerySourceArgs.Builder]):
+    inline def documentQuerySource(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigDocumentQuerySourceArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigDocumentQuerySourceArgs.builder
       builder.documentQuerySource(args(argsBuilder).build)
@@ -882,7 +882,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def knowledgeBaseQuerySource(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigKnowledgeBaseQuerySourceArgs.Builder]):
+    inline def knowledgeBaseQuerySource(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigKnowledgeBaseQuerySourceArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigKnowledgeBaseQuerySourceArgs.builder
       builder.knowledgeBaseQuerySource(args(argsBuilder).build)
@@ -892,7 +892,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sections(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigSectionsArgs.Builder]):
+    inline def sections(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigSectionsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigSectionsArgs.builder
       builder.sections(args(argsBuilder).build)
@@ -903,7 +903,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def humanAgentSideConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigDialogflowQuerySourceHumanAgentSideConfigArgs.Builder]):
+    inline def humanAgentSideConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigDialogflowQuerySourceHumanAgentSideConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigDialogflowQuerySourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigEndUserSuggestionConfigFeatureConfigQueryConfigDialogflowQuerySourceHumanAgentSideConfigArgs.builder
       builder.humanAgentSideConfig(args(argsBuilder).build)
@@ -914,7 +914,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def featureConfigs(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigArgs.Builder]*):
+    inline def featureConfigs(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigArgs.builder
       builder.featureConfigs(args.map(_(argsBuilder).build)*)
@@ -925,7 +925,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conversationModelConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigConversationModelConfigArgs.Builder]):
+    inline def conversationModelConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigConversationModelConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigConversationModelConfigArgs.builder
       builder.conversationModelConfig(args(argsBuilder).build)
@@ -935,7 +935,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conversationProcessConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigConversationProcessConfigArgs.Builder]):
+    inline def conversationProcessConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigConversationProcessConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigConversationProcessConfigArgs.builder
       builder.conversationProcessConfig(args(argsBuilder).build)
@@ -945,7 +945,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def queryConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigQueryConfigArgs.Builder]):
+    inline def queryConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigQueryConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigQueryConfigArgs.builder
       builder.queryConfig(args(argsBuilder).build)
@@ -955,7 +955,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def suggestionFeature(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigSuggestionFeatureArgs.Builder]):
+    inline def suggestionFeature(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigSuggestionFeatureArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigSuggestionFeatureArgs.builder
       builder.suggestionFeature(args(argsBuilder).build)
@@ -966,7 +966,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def suggestionTriggerSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigSuggestionTriggerSettingsArgs.Builder]):
+    inline def suggestionTriggerSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigSuggestionTriggerSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigSuggestionTriggerSettingsArgs.builder
       builder.suggestionTriggerSettings(args(argsBuilder).build)
@@ -977,7 +977,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def contextFilterSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigQueryConfigContextFilterSettingsArgs.Builder]):
+    inline def contextFilterSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigQueryConfigContextFilterSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigQueryConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigQueryConfigContextFilterSettingsArgs.builder
       builder.contextFilterSettings(args(argsBuilder).build)
@@ -988,7 +988,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dialogflowQuerySource(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigQueryConfigDialogflowQuerySourceArgs.Builder]):
+    inline def dialogflowQuerySource(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigQueryConfigDialogflowQuerySourceArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigQueryConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigQueryConfigDialogflowQuerySourceArgs.builder
       builder.dialogflowQuerySource(args(argsBuilder).build)
@@ -998,7 +998,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sections(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigQueryConfigSectionsArgs.Builder]):
+    inline def sections(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigQueryConfigSectionsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigQueryConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigQueryConfigSectionsArgs.builder
       builder.sections(args(argsBuilder).build)
@@ -1009,7 +1009,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def humanAgentSideConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigQueryConfigDialogflowQuerySourceHumanAgentSideConfigArgs.Builder]):
+    inline def humanAgentSideConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigQueryConfigDialogflowQuerySourceHumanAgentSideConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigQueryConfigDialogflowQuerySourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigHumanAgentSuggestionConfigFeatureConfigQueryConfigDialogflowQuerySourceHumanAgentSideConfigArgs.builder
       builder.humanAgentSideConfig(args(argsBuilder).build)
@@ -1020,7 +1020,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def livePersonConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentHandoffConfigLivePersonConfigArgs.Builder]):
+    inline def livePersonConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentHandoffConfigLivePersonConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentHandoffConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentHandoffConfigLivePersonConfigArgs.builder
       builder.livePersonConfig(args(argsBuilder).build)
@@ -1031,7 +1031,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def automatedAgentConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileAutomatedAgentConfigArgs.Builder]):
+    inline def automatedAgentConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileAutomatedAgentConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileAutomatedAgentConfigArgs.builder
       builder.automatedAgentConfig(args(argsBuilder).build)
@@ -1041,7 +1041,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def humanAgentAssistantConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigArgs.Builder]):
+    inline def humanAgentAssistantConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentAssistantConfigArgs.builder
       builder.humanAgentAssistantConfig(args(argsBuilder).build)
@@ -1051,7 +1051,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def humanAgentHandoffConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentHandoffConfigArgs.Builder]):
+    inline def humanAgentHandoffConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentHandoffConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileHumanAgentHandoffConfigArgs.builder
       builder.humanAgentHandoffConfig(args(argsBuilder).build)
@@ -1061,7 +1061,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loggingConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileLoggingConfigArgs.Builder]):
+    inline def loggingConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileLoggingConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileLoggingConfigArgs.builder
       builder.loggingConfig(args(argsBuilder).build)
@@ -1072,7 +1072,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def newMessageEventNotificationConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileNewMessageEventNotificationConfigArgs.Builder]):
+    inline def newMessageEventNotificationConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileNewMessageEventNotificationConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileNewMessageEventNotificationConfigArgs.builder
       builder.newMessageEventNotificationConfig(args(argsBuilder).build)
@@ -1082,7 +1082,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def newRecognitionResultNotificationConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileNewRecognitionResultNotificationConfigArgs.Builder]):
+    inline def newRecognitionResultNotificationConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileNewRecognitionResultNotificationConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileNewRecognitionResultNotificationConfigArgs.builder
       builder.newRecognitionResultNotificationConfig(args(argsBuilder).build)
@@ -1093,7 +1093,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def notificationConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileNotificationConfigArgs.Builder]):
+    inline def notificationConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileNotificationConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileNotificationConfigArgs.builder
       builder.notificationConfig(args(argsBuilder).build)
@@ -1104,7 +1104,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sipConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileSipConfigArgs.Builder]):
+    inline def sipConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileSipConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileSipConfigArgs.builder
       builder.sipConfig(args(argsBuilder).build)
@@ -1114,7 +1114,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sttConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileSttConfigArgs.Builder]):
+    inline def sttConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileSttConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileSttConfigArgs.builder
       builder.sttConfig(args(argsBuilder).build)
@@ -1124,7 +1124,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ttsConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileTtsConfigArgs.Builder]):
+    inline def ttsConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileTtsConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileTtsConfigArgs.builder
       builder.ttsConfig(args(argsBuilder).build)
@@ -1135,7 +1135,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def voice(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileTtsConfigVoiceArgs.Builder]):
+    inline def voice(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ConversationProfileTtsConfigVoiceArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ConversationProfileTtsConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ConversationProfileTtsConfigVoiceArgs.builder
       builder.voice(args(argsBuilder).build)
@@ -1148,7 +1148,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def audioExportGcsDestination(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentAdvancedSettingsAudioExportGcsDestinationArgs.Builder]):
+    inline def audioExportGcsDestination(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentAdvancedSettingsAudioExportGcsDestinationArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxAgentAdvancedSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxAgentAdvancedSettingsAudioExportGcsDestinationArgs.builder
       builder.audioExportGcsDestination(args(argsBuilder).build)
@@ -1162,7 +1162,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def dtmfSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentAdvancedSettingsDtmfSettingsArgs.Builder]):
+    inline def dtmfSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentAdvancedSettingsDtmfSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxAgentAdvancedSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxAgentAdvancedSettingsDtmfSettingsArgs.builder
       builder.dtmfSettings(args(argsBuilder).build)
@@ -1173,7 +1173,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def loggingSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentAdvancedSettingsLoggingSettingsArgs.Builder]):
+    inline def loggingSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentAdvancedSettingsLoggingSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxAgentAdvancedSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxAgentAdvancedSettingsLoggingSettingsArgs.builder
       builder.loggingSettings(args(argsBuilder).build)
@@ -1187,7 +1187,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def speechSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentAdvancedSettingsSpeechSettingsArgs.Builder]):
+    inline def speechSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentAdvancedSettingsSpeechSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxAgentAdvancedSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxAgentAdvancedSettingsSpeechSettingsArgs.builder
       builder.speechSettings(args(argsBuilder).build)
@@ -1198,7 +1198,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def githubSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentGitIntegrationSettingsGithubSettingsArgs.Builder]):
+    inline def githubSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentGitIntegrationSettingsGithubSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxAgentGitIntegrationSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxAgentGitIntegrationSettingsGithubSettingsArgs.builder
       builder.githubSettings(args(argsBuilder).build)
@@ -1210,7 +1210,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def advancedSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentAdvancedSettingsArgs.Builder]):
+    inline def advancedSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentAdvancedSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxAgentState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxAgentAdvancedSettingsArgs.builder
       builder.advancedSettings(args(argsBuilder).build)
@@ -1220,7 +1220,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def answerFeedbackSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentAnswerFeedbackSettingsArgs.Builder]):
+    inline def answerFeedbackSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentAnswerFeedbackSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxAgentState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxAgentAnswerFeedbackSettingsArgs.builder
       builder.answerFeedbackSettings(args(argsBuilder).build)
@@ -1230,7 +1230,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clientCertificateSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentClientCertificateSettingsArgs.Builder]):
+    inline def clientCertificateSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentClientCertificateSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxAgentState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxAgentClientCertificateSettingsArgs.builder
       builder.clientCertificateSettings(args(argsBuilder).build)
@@ -1240,7 +1240,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def genAppBuilderSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentGenAppBuilderSettingsArgs.Builder]):
+    inline def genAppBuilderSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentGenAppBuilderSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxAgentState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxAgentGenAppBuilderSettingsArgs.builder
       builder.genAppBuilderSettings(args(argsBuilder).build)
@@ -1250,7 +1250,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gitIntegrationSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentGitIntegrationSettingsArgs.Builder]):
+    inline def gitIntegrationSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentGitIntegrationSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxAgentState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxAgentGitIntegrationSettingsArgs.builder
       builder.gitIntegrationSettings(args(argsBuilder).build)
@@ -1260,7 +1260,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def personalizationSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentPersonalizationSettingsArgs.Builder]):
+    inline def personalizationSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentPersonalizationSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxAgentState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxAgentPersonalizationSettingsArgs.builder
       builder.personalizationSettings(args(argsBuilder).build)
@@ -1270,7 +1270,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def speechToTextSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentSpeechToTextSettingsArgs.Builder]):
+    inline def speechToTextSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentSpeechToTextSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxAgentState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxAgentSpeechToTextSettingsArgs.builder
       builder.speechToTextSettings(args(argsBuilder).build)
@@ -1280,7 +1280,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def textToSpeechSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentTextToSpeechSettingsArgs.Builder]):
+    inline def textToSpeechSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxAgentTextToSpeechSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxAgentState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxAgentTextToSpeechSettingsArgs.builder
       builder.textToSpeechSettings(args(argsBuilder).build)
@@ -1291,7 +1291,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entities(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxEntityTypeEntityArgs.Builder]*):
+    inline def entities(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxEntityTypeEntityArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxEntityTypeState.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxEntityTypeEntityArgs.builder
       builder.entities(args.map(_(argsBuilder).build)*)
@@ -1302,7 +1302,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def excludedPhrases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxEntityTypeExcludedPhraseArgs.Builder]*):
+    inline def excludedPhrases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxEntityTypeExcludedPhraseArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxEntityTypeState.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxEntityTypeExcludedPhraseArgs.builder
       builder.excludedPhrases(args.map(_(argsBuilder).build)*)
@@ -1313,7 +1313,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def versionConfigs(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxEnvironmentVersionConfigArgs.Builder]*):
+    inline def versionConfigs(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxEnvironmentVersionConfigArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxEnvironmentState.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxEnvironmentVersionConfigArgs.builder
       builder.versionConfigs(args.map(_(argsBuilder).build)*)
@@ -1326,7 +1326,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def audioExportGcsDestination(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowAdvancedSettingsAudioExportGcsDestinationArgs.Builder]):
+    inline def audioExportGcsDestination(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowAdvancedSettingsAudioExportGcsDestinationArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowAdvancedSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowAdvancedSettingsAudioExportGcsDestinationArgs.builder
       builder.audioExportGcsDestination(args(argsBuilder).build)
@@ -1340,7 +1340,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def dtmfSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowAdvancedSettingsDtmfSettingsArgs.Builder]):
+    inline def dtmfSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowAdvancedSettingsDtmfSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowAdvancedSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowAdvancedSettingsDtmfSettingsArgs.builder
       builder.dtmfSettings(args(argsBuilder).build)
@@ -1351,7 +1351,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def loggingSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowAdvancedSettingsLoggingSettingsArgs.Builder]):
+    inline def loggingSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowAdvancedSettingsLoggingSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowAdvancedSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowAdvancedSettingsLoggingSettingsArgs.builder
       builder.loggingSettings(args(argsBuilder).build)
@@ -1365,7 +1365,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def speechSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowAdvancedSettingsSpeechSettingsArgs.Builder]):
+    inline def speechSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowAdvancedSettingsSpeechSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowAdvancedSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowAdvancedSettingsSpeechSettingsArgs.builder
       builder.speechSettings(args(argsBuilder).build)
@@ -1376,7 +1376,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def triggerFulfillment(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentArgs.Builder]):
+    inline def triggerFulfillment(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentArgs.builder
       builder.triggerFulfillment(args(argsBuilder).build)
@@ -1387,7 +1387,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditionalCases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentConditionalCaseArgs.Builder]*):
+    inline def conditionalCases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentConditionalCaseArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentConditionalCaseArgs.builder
       builder.conditionalCases(args.map(_(argsBuilder).build)*)
@@ -1397,7 +1397,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def messages(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessageArgs.Builder]*):
+    inline def messages(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessageArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessageArgs.builder
       builder.messages(args.map(_(argsBuilder).build)*)
@@ -1407,7 +1407,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def setParameterActions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentSetParameterActionArgs.Builder]*):
+    inline def setParameterActions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentSetParameterActionArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentSetParameterActionArgs.builder
       builder.setParameterActions(args.map(_(argsBuilder).build)*)
@@ -1423,7 +1423,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def conversationSuccess(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessageConversationSuccessArgs.Builder]):
+    inline def conversationSuccess(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessageConversationSuccessArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessageConversationSuccessArgs.builder
       builder.conversationSuccess(args(argsBuilder).build)
@@ -1438,7 +1438,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def liveAgentHandoff(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessageLiveAgentHandoffArgs.Builder]):
+    inline def liveAgentHandoff(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessageLiveAgentHandoffArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessageLiveAgentHandoffArgs.builder
       builder.liveAgentHandoff(args(argsBuilder).build)
@@ -1449,7 +1449,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def outputAudioText(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessageOutputAudioTextArgs.Builder]):
+    inline def outputAudioText(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessageOutputAudioTextArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessageOutputAudioTextArgs.builder
       builder.outputAudioText(args(argsBuilder).build)
@@ -1460,7 +1460,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def playAudio(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessagePlayAudioArgs.Builder]):
+    inline def playAudio(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessagePlayAudioArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessagePlayAudioArgs.builder
       builder.playAudio(args(argsBuilder).build)
@@ -1471,7 +1471,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def telephonyTransferCall(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessageTelephonyTransferCallArgs.Builder]):
+    inline def telephonyTransferCall(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessageTelephonyTransferCallArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessageTelephonyTransferCallArgs.builder
       builder.telephonyTransferCall(args(argsBuilder).build)
@@ -1482,7 +1482,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def text(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessageTextArgs.Builder]):
+    inline def text(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessageTextArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerTriggerFulfillmentMessageTextArgs.builder
       builder.text(args(argsBuilder).build)
@@ -1493,7 +1493,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataStoreConnections(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsDataStoreConnectionArgs.Builder]*):
+    inline def dataStoreConnections(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsDataStoreConnectionArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsDataStoreConnectionArgs.builder
       builder.dataStoreConnections(args.map(_(argsBuilder).build)*)
@@ -1504,7 +1504,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def triggerFulfillment(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentArgs.Builder]):
+    inline def triggerFulfillment(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentArgs.builder
       builder.triggerFulfillment(args(argsBuilder).build)
@@ -1519,7 +1519,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def dtmfSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsDtmfSettingsArgs.Builder]):
+    inline def dtmfSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsDtmfSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsDtmfSettingsArgs.builder
       builder.dtmfSettings(args(argsBuilder).build)
@@ -1530,7 +1530,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def loggingSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsLoggingSettingsArgs.Builder]):
+    inline def loggingSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsLoggingSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsLoggingSettingsArgs.builder
       builder.loggingSettings(args(argsBuilder).build)
@@ -1544,7 +1544,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def speechSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsSpeechSettingsArgs.Builder]):
+    inline def speechSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsSpeechSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsSpeechSettingsArgs.builder
       builder.speechSettings(args(argsBuilder).build)
@@ -1557,7 +1557,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def advancedSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsArgs.Builder]):
+    inline def advancedSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsArgs.builder
       builder.advancedSettings(args(argsBuilder).build)
@@ -1567,7 +1567,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditionalCases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentConditionalCaseArgs.Builder]*):
+    inline def conditionalCases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentConditionalCaseArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentConditionalCaseArgs.builder
       builder.conditionalCases(args.map(_(argsBuilder).build)*)
@@ -1577,7 +1577,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def messages(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageArgs.Builder]*):
+    inline def messages(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageArgs.builder
       builder.messages(args.map(_(argsBuilder).build)*)
@@ -1587,7 +1587,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def setParameterActions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentSetParameterActionArgs.Builder]*):
+    inline def setParameterActions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentSetParameterActionArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentSetParameterActionArgs.builder
       builder.setParameterActions(args.map(_(argsBuilder).build)*)
@@ -1603,7 +1603,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def conversationSuccess(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageConversationSuccessArgs.Builder]):
+    inline def conversationSuccess(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageConversationSuccessArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageConversationSuccessArgs.builder
       builder.conversationSuccess(args(argsBuilder).build)
@@ -1615,7 +1615,7 @@ object diagflow_ext:
      * This field is part of a union field `message`: Only one of `text`, `payload`, `conversationSuccess`, `outputAudioText`, `liveAgentHandoff`, `endInteraction`, `playAudio`, `mixedAudio`, `telephonyTransferCall`, or `knowledgeInfoCard` may be set.
      * @return builder
      */
-    def endInteractions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageEndInteractionArgs.Builder]*):
+    inline def endInteractions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageEndInteractionArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageEndInteractionArgs.builder
       builder.endInteractions(args.map(_(argsBuilder).build)*)
@@ -1627,7 +1627,7 @@ object diagflow_ext:
      * This field is part of a union field `message`: Only one of `text`, `payload`, `conversationSuccess`, `outputAudioText`, `liveAgentHandoff`, `endInteraction`, `playAudio`, `mixedAudio`, `telephonyTransferCall`, or `knowledgeInfoCard` may be set.
      * @return builder
      */
-    def knowledgeInfoCard(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageKnowledgeInfoCardArgs.Builder]):
+    inline def knowledgeInfoCard(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageKnowledgeInfoCardArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageKnowledgeInfoCardArgs.builder
       builder.knowledgeInfoCard(args(argsBuilder).build)
@@ -1642,7 +1642,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def liveAgentHandoff(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageLiveAgentHandoffArgs.Builder]):
+    inline def liveAgentHandoff(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageLiveAgentHandoffArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageLiveAgentHandoffArgs.builder
       builder.liveAgentHandoff(args(argsBuilder).build)
@@ -1654,7 +1654,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mixedAudios(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageMixedAudioArgs.Builder]*):
+    inline def mixedAudios(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageMixedAudioArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageMixedAudioArgs.builder
       builder.mixedAudios(args.map(_(argsBuilder).build)*)
@@ -1665,7 +1665,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def outputAudioText(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageOutputAudioTextArgs.Builder]):
+    inline def outputAudioText(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageOutputAudioTextArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageOutputAudioTextArgs.builder
       builder.outputAudioText(args(argsBuilder).build)
@@ -1676,7 +1676,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def playAudio(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessagePlayAudioArgs.Builder]):
+    inline def playAudio(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessagePlayAudioArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessagePlayAudioArgs.builder
       builder.playAudio(args(argsBuilder).build)
@@ -1687,7 +1687,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def telephonyTransferCall(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageTelephonyTransferCallArgs.Builder]):
+    inline def telephonyTransferCall(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageTelephonyTransferCallArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageTelephonyTransferCallArgs.builder
       builder.telephonyTransferCall(args(argsBuilder).build)
@@ -1698,7 +1698,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def text(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageTextArgs.Builder]):
+    inline def text(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageTextArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageTextArgs.builder
       builder.text(args(argsBuilder).build)
@@ -1708,7 +1708,7 @@ object diagflow_ext:
      * @param segments Segments this audio response is composed of.
      * @return builder
      */
-    def segments(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageMixedAudioSegmentArgs.Builder]*):
+    inline def segments(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageMixedAudioSegmentArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageMixedAudioArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsTriggerFulfillmentMessageMixedAudioSegmentArgs.builder
       builder.segments(args.map(_(argsBuilder).build)*)
@@ -1720,7 +1720,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def advancedSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowAdvancedSettingsArgs.Builder]):
+    inline def advancedSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowAdvancedSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowAdvancedSettingsArgs.builder
       builder.advancedSettings(args(argsBuilder).build)
@@ -1733,7 +1733,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def eventHandlers(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerArgs.Builder]*):
+    inline def eventHandlers(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxFlowState.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowEventHandlerArgs.builder
       builder.eventHandlers(args.map(_(argsBuilder).build)*)
@@ -1743,7 +1743,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def knowledgeConnectorSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsArgs.Builder]):
+    inline def knowledgeConnectorSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowKnowledgeConnectorSettingsArgs.builder
       builder.knowledgeConnectorSettings(args(argsBuilder).build)
@@ -1753,7 +1753,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nluSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowNluSettingsArgs.Builder]):
+    inline def nluSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowNluSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowNluSettingsArgs.builder
       builder.nluSettings(args(argsBuilder).build)
@@ -1769,7 +1769,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transitionRoutes(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteArgs.Builder]*):
+    inline def transitionRoutes(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxFlowState.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteArgs.builder
       builder.transitionRoutes(args.map(_(argsBuilder).build)*)
@@ -1780,7 +1780,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def triggerFulfillment(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentArgs.Builder]):
+    inline def triggerFulfillment(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentArgs.builder
       builder.triggerFulfillment(args(argsBuilder).build)
@@ -1791,7 +1791,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditionalCases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentConditionalCaseArgs.Builder]*):
+    inline def conditionalCases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentConditionalCaseArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentConditionalCaseArgs.builder
       builder.conditionalCases(args.map(_(argsBuilder).build)*)
@@ -1801,7 +1801,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def messages(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessageArgs.Builder]*):
+    inline def messages(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessageArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessageArgs.builder
       builder.messages(args.map(_(argsBuilder).build)*)
@@ -1811,7 +1811,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def setParameterActions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentSetParameterActionArgs.Builder]*):
+    inline def setParameterActions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentSetParameterActionArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentSetParameterActionArgs.builder
       builder.setParameterActions(args.map(_(argsBuilder).build)*)
@@ -1827,7 +1827,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def conversationSuccess(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessageConversationSuccessArgs.Builder]):
+    inline def conversationSuccess(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessageConversationSuccessArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessageConversationSuccessArgs.builder
       builder.conversationSuccess(args(argsBuilder).build)
@@ -1842,7 +1842,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def liveAgentHandoff(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessageLiveAgentHandoffArgs.Builder]):
+    inline def liveAgentHandoff(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessageLiveAgentHandoffArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessageLiveAgentHandoffArgs.builder
       builder.liveAgentHandoff(args(argsBuilder).build)
@@ -1853,7 +1853,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def outputAudioText(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessageOutputAudioTextArgs.Builder]):
+    inline def outputAudioText(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessageOutputAudioTextArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessageOutputAudioTextArgs.builder
       builder.outputAudioText(args(argsBuilder).build)
@@ -1864,7 +1864,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def playAudio(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessagePlayAudioArgs.Builder]):
+    inline def playAudio(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessagePlayAudioArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessagePlayAudioArgs.builder
       builder.playAudio(args(argsBuilder).build)
@@ -1875,7 +1875,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def telephonyTransferCall(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessageTelephonyTransferCallArgs.Builder]):
+    inline def telephonyTransferCall(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessageTelephonyTransferCallArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessageTelephonyTransferCallArgs.builder
       builder.telephonyTransferCall(args(argsBuilder).build)
@@ -1886,7 +1886,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def text(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessageTextArgs.Builder]):
+    inline def text(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessageTextArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxFlowTransitionRouteTriggerFulfillmentMessageTextArgs.builder
       builder.text(args(argsBuilder).build)
@@ -1897,7 +1897,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def promptTemplates(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsFallbackSettingsPromptTemplateArgs.Builder]*):
+    inline def promptTemplates(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsFallbackSettingsPromptTemplateArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsFallbackSettingsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsFallbackSettingsPromptTemplateArgs.builder
       builder.promptTemplates(args.map(_(argsBuilder).build)*)
@@ -1908,7 +1908,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bannedPhrases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsGenerativeSafetySettingsBannedPhraseArgs.Builder]*):
+    inline def bannedPhrases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsGenerativeSafetySettingsBannedPhraseArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsGenerativeSafetySettingsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsGenerativeSafetySettingsBannedPhraseArgs.builder
       builder.bannedPhrases(args.map(_(argsBuilder).build)*)
@@ -1919,7 +1919,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fallbackSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsFallbackSettingsArgs.Builder]):
+    inline def fallbackSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsFallbackSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsFallbackSettingsArgs.builder
       builder.fallbackSettings(args(argsBuilder).build)
@@ -1929,7 +1929,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def generativeSafetySettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsGenerativeSafetySettingsArgs.Builder]):
+    inline def generativeSafetySettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsGenerativeSafetySettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsGenerativeSafetySettingsArgs.builder
       builder.generativeSafetySettings(args(argsBuilder).build)
@@ -1939,7 +1939,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def knowledgeConnectorSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsKnowledgeConnectorSettingsArgs.Builder]):
+    inline def knowledgeConnectorSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsKnowledgeConnectorSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsKnowledgeConnectorSettingsArgs.builder
       builder.knowledgeConnectorSettings(args(argsBuilder).build)
@@ -1949,7 +1949,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def llmModelSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsLlmModelSettingsArgs.Builder]):
+    inline def llmModelSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsLlmModelSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxGenerativeSettingsLlmModelSettingsArgs.builder
       builder.llmModelSettings(args(argsBuilder).build)
@@ -1960,7 +1960,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def llmModelSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGeneratorLlmModelSettingsArgs.Builder]):
+    inline def llmModelSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGeneratorLlmModelSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxGeneratorState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxGeneratorLlmModelSettingsArgs.builder
       builder.llmModelSettings(args(argsBuilder).build)
@@ -1970,7 +1970,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def modelParameter(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGeneratorModelParameterArgs.Builder]):
+    inline def modelParameter(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGeneratorModelParameterArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxGeneratorState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxGeneratorModelParameterArgs.builder
       builder.modelParameter(args(argsBuilder).build)
@@ -1980,7 +1980,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def placeholders(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGeneratorPlaceholderArgs.Builder]*):
+    inline def placeholders(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGeneratorPlaceholderArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxGeneratorState.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxGeneratorPlaceholderArgs.builder
       builder.placeholders(args.map(_(argsBuilder).build)*)
@@ -1990,7 +1990,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def promptText(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGeneratorPromptTextArgs.Builder]):
+    inline def promptText(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxGeneratorPromptTextArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxGeneratorState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxGeneratorPromptTextArgs.builder
       builder.promptText(args(argsBuilder).build)
@@ -2001,7 +2001,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameters(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxIntentParameterArgs.Builder]*):
+    inline def parameters(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxIntentParameterArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxIntentState.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxIntentParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
@@ -2011,7 +2011,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def trainingPhrases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxIntentTrainingPhraseArgs.Builder]*):
+    inline def trainingPhrases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxIntentTrainingPhraseArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxIntentState.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxIntentTrainingPhraseArgs.builder
       builder.trainingPhrases(args.map(_(argsBuilder).build)*)
@@ -2028,7 +2028,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parts(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxIntentTrainingPhrasePartArgs.Builder]*):
+    inline def parts(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxIntentTrainingPhrasePartArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxIntentTrainingPhraseArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxIntentTrainingPhrasePartArgs.builder
       builder.parts(args.map(_(argsBuilder).build)*)
@@ -2043,7 +2043,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def dtmfSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageAdvancedSettingsDtmfSettingsArgs.Builder]):
+    inline def dtmfSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageAdvancedSettingsDtmfSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageAdvancedSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageAdvancedSettingsDtmfSettingsArgs.builder
       builder.dtmfSettings(args(argsBuilder).build)
@@ -2054,7 +2054,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditionalCases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentConditionalCaseArgs.Builder]*):
+    inline def conditionalCases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentConditionalCaseArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentConditionalCaseArgs.builder
       builder.conditionalCases(args.map(_(argsBuilder).build)*)
@@ -2064,7 +2064,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def messages(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessageArgs.Builder]*):
+    inline def messages(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessageArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessageArgs.builder
       builder.messages(args.map(_(argsBuilder).build)*)
@@ -2074,7 +2074,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def setParameterActions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentSetParameterActionArgs.Builder]*):
+    inline def setParameterActions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentSetParameterActionArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentSetParameterActionArgs.builder
       builder.setParameterActions(args.map(_(argsBuilder).build)*)
@@ -2090,7 +2090,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def conversationSuccess(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessageConversationSuccessArgs.Builder]):
+    inline def conversationSuccess(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessageConversationSuccessArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessageConversationSuccessArgs.builder
       builder.conversationSuccess(args(argsBuilder).build)
@@ -2105,7 +2105,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def liveAgentHandoff(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessageLiveAgentHandoffArgs.Builder]):
+    inline def liveAgentHandoff(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessageLiveAgentHandoffArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessageLiveAgentHandoffArgs.builder
       builder.liveAgentHandoff(args(argsBuilder).build)
@@ -2116,7 +2116,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def outputAudioText(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessageOutputAudioTextArgs.Builder]):
+    inline def outputAudioText(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessageOutputAudioTextArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessageOutputAudioTextArgs.builder
       builder.outputAudioText(args(argsBuilder).build)
@@ -2127,7 +2127,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def playAudio(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessagePlayAudioArgs.Builder]):
+    inline def playAudio(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessagePlayAudioArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessagePlayAudioArgs.builder
       builder.playAudio(args(argsBuilder).build)
@@ -2138,7 +2138,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def telephonyTransferCall(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessageTelephonyTransferCallArgs.Builder]):
+    inline def telephonyTransferCall(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessageTelephonyTransferCallArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessageTelephonyTransferCallArgs.builder
       builder.telephonyTransferCall(args(argsBuilder).build)
@@ -2149,7 +2149,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def text(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessageTextArgs.Builder]):
+    inline def text(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessageTextArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentMessageTextArgs.builder
       builder.text(args(argsBuilder).build)
@@ -2160,7 +2160,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def triggerFulfillment(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentArgs.Builder]):
+    inline def triggerFulfillment(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentArgs.builder
       builder.triggerFulfillment(args(argsBuilder).build)
@@ -2171,7 +2171,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditionalCases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentConditionalCaseArgs.Builder]*):
+    inline def conditionalCases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentConditionalCaseArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentConditionalCaseArgs.builder
       builder.conditionalCases(args.map(_(argsBuilder).build)*)
@@ -2181,7 +2181,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def messages(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessageArgs.Builder]*):
+    inline def messages(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessageArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessageArgs.builder
       builder.messages(args.map(_(argsBuilder).build)*)
@@ -2191,7 +2191,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def setParameterActions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentSetParameterActionArgs.Builder]*):
+    inline def setParameterActions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentSetParameterActionArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentSetParameterActionArgs.builder
       builder.setParameterActions(args.map(_(argsBuilder).build)*)
@@ -2207,7 +2207,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def conversationSuccess(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessageConversationSuccessArgs.Builder]):
+    inline def conversationSuccess(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessageConversationSuccessArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessageConversationSuccessArgs.builder
       builder.conversationSuccess(args(argsBuilder).build)
@@ -2222,7 +2222,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def liveAgentHandoff(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessageLiveAgentHandoffArgs.Builder]):
+    inline def liveAgentHandoff(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessageLiveAgentHandoffArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessageLiveAgentHandoffArgs.builder
       builder.liveAgentHandoff(args(argsBuilder).build)
@@ -2233,7 +2233,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def outputAudioText(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessageOutputAudioTextArgs.Builder]):
+    inline def outputAudioText(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessageOutputAudioTextArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessageOutputAudioTextArgs.builder
       builder.outputAudioText(args(argsBuilder).build)
@@ -2244,7 +2244,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def playAudio(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessagePlayAudioArgs.Builder]):
+    inline def playAudio(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessagePlayAudioArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessagePlayAudioArgs.builder
       builder.playAudio(args(argsBuilder).build)
@@ -2255,7 +2255,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def telephonyTransferCall(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessageTelephonyTransferCallArgs.Builder]):
+    inline def telephonyTransferCall(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessageTelephonyTransferCallArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessageTelephonyTransferCallArgs.builder
       builder.telephonyTransferCall(args(argsBuilder).build)
@@ -2266,7 +2266,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def text(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessageTextArgs.Builder]):
+    inline def text(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessageTextArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerTriggerFulfillmentMessageTextArgs.builder
       builder.text(args(argsBuilder).build)
@@ -2277,7 +2277,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parameters(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterArgs.Builder]*):
+    inline def parameters(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageFormArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
@@ -2292,7 +2292,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def dtmfSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterAdvancedSettingsDtmfSettingsArgs.Builder]):
+    inline def dtmfSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterAdvancedSettingsDtmfSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageFormParameterAdvancedSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormParameterAdvancedSettingsDtmfSettingsArgs.builder
       builder.dtmfSettings(args(argsBuilder).build)
@@ -2304,7 +2304,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def advancedSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterAdvancedSettingsArgs.Builder]):
+    inline def advancedSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterAdvancedSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageFormParameterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormParameterAdvancedSettingsArgs.builder
       builder.advancedSettings(args(argsBuilder).build)
@@ -2314,7 +2314,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fillBehavior(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorArgs.Builder]):
+    inline def fillBehavior(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageFormParameterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorArgs.builder
       builder.fillBehavior(args(argsBuilder).build)
@@ -2325,7 +2325,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def initialPromptFulfillment(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentArgs.Builder]):
+    inline def initialPromptFulfillment(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentArgs.builder
       builder.initialPromptFulfillment(args(argsBuilder).build)
@@ -2345,7 +2345,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def repromptEventHandlers(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerArgs.Builder]*):
+    inline def repromptEventHandlers(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerArgs.builder
       builder.repromptEventHandlers(args.map(_(argsBuilder).build)*)
@@ -2356,7 +2356,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditionalCases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentConditionalCaseArgs.Builder]*):
+    inline def conditionalCases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentConditionalCaseArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentConditionalCaseArgs.builder
       builder.conditionalCases(args.map(_(argsBuilder).build)*)
@@ -2366,7 +2366,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def messages(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageArgs.Builder]*):
+    inline def messages(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageArgs.builder
       builder.messages(args.map(_(argsBuilder).build)*)
@@ -2376,7 +2376,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def setParameterActions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentSetParameterActionArgs.Builder]*):
+    inline def setParameterActions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentSetParameterActionArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentSetParameterActionArgs.builder
       builder.setParameterActions(args.map(_(argsBuilder).build)*)
@@ -2392,7 +2392,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def conversationSuccess(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageConversationSuccessArgs.Builder]):
+    inline def conversationSuccess(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageConversationSuccessArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageConversationSuccessArgs.builder
       builder.conversationSuccess(args(argsBuilder).build)
@@ -2407,7 +2407,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def liveAgentHandoff(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageLiveAgentHandoffArgs.Builder]):
+    inline def liveAgentHandoff(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageLiveAgentHandoffArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageLiveAgentHandoffArgs.builder
       builder.liveAgentHandoff(args(argsBuilder).build)
@@ -2418,7 +2418,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def outputAudioText(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageOutputAudioTextArgs.Builder]):
+    inline def outputAudioText(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageOutputAudioTextArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageOutputAudioTextArgs.builder
       builder.outputAudioText(args(argsBuilder).build)
@@ -2429,7 +2429,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def playAudio(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessagePlayAudioArgs.Builder]):
+    inline def playAudio(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessagePlayAudioArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessagePlayAudioArgs.builder
       builder.playAudio(args(argsBuilder).build)
@@ -2440,7 +2440,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def telephonyTransferCall(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageTelephonyTransferCallArgs.Builder]):
+    inline def telephonyTransferCall(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageTelephonyTransferCallArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageTelephonyTransferCallArgs.builder
       builder.telephonyTransferCall(args(argsBuilder).build)
@@ -2451,7 +2451,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def text(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageTextArgs.Builder]):
+    inline def text(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageTextArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorInitialPromptFulfillmentMessageTextArgs.builder
       builder.text(args(argsBuilder).build)
@@ -2462,7 +2462,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def triggerFulfillment(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentArgs.Builder]):
+    inline def triggerFulfillment(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentArgs.builder
       builder.triggerFulfillment(args(argsBuilder).build)
@@ -2473,7 +2473,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditionalCases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentConditionalCaseArgs.Builder]*):
+    inline def conditionalCases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentConditionalCaseArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentConditionalCaseArgs.builder
       builder.conditionalCases(args.map(_(argsBuilder).build)*)
@@ -2483,7 +2483,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def messages(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageArgs.Builder]*):
+    inline def messages(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageArgs.builder
       builder.messages(args.map(_(argsBuilder).build)*)
@@ -2493,7 +2493,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def setParameterActions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentSetParameterActionArgs.Builder]*):
+    inline def setParameterActions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentSetParameterActionArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentSetParameterActionArgs.builder
       builder.setParameterActions(args.map(_(argsBuilder).build)*)
@@ -2509,7 +2509,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def conversationSuccess(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageConversationSuccessArgs.Builder]):
+    inline def conversationSuccess(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageConversationSuccessArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageConversationSuccessArgs.builder
       builder.conversationSuccess(args(argsBuilder).build)
@@ -2524,7 +2524,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def liveAgentHandoff(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageLiveAgentHandoffArgs.Builder]):
+    inline def liveAgentHandoff(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageLiveAgentHandoffArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageLiveAgentHandoffArgs.builder
       builder.liveAgentHandoff(args(argsBuilder).build)
@@ -2535,7 +2535,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def outputAudioText(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageOutputAudioTextArgs.Builder]):
+    inline def outputAudioText(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageOutputAudioTextArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageOutputAudioTextArgs.builder
       builder.outputAudioText(args(argsBuilder).build)
@@ -2546,7 +2546,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def playAudio(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessagePlayAudioArgs.Builder]):
+    inline def playAudio(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessagePlayAudioArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessagePlayAudioArgs.builder
       builder.playAudio(args(argsBuilder).build)
@@ -2557,7 +2557,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def telephonyTransferCall(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageTelephonyTransferCallArgs.Builder]):
+    inline def telephonyTransferCall(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageTelephonyTransferCallArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageTelephonyTransferCallArgs.builder
       builder.telephonyTransferCall(args(argsBuilder).build)
@@ -2568,7 +2568,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def text(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageTextArgs.Builder]):
+    inline def text(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageTextArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormParameterFillBehaviorRepromptEventHandlerTriggerFulfillmentMessageTextArgs.builder
       builder.text(args(argsBuilder).build)
@@ -2579,7 +2579,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataStoreConnections(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsDataStoreConnectionArgs.Builder]*):
+    inline def dataStoreConnections(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsDataStoreConnectionArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsDataStoreConnectionArgs.builder
       builder.dataStoreConnections(args.map(_(argsBuilder).build)*)
@@ -2590,7 +2590,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def triggerFulfillment(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentArgs.Builder]):
+    inline def triggerFulfillment(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentArgs.builder
       builder.triggerFulfillment(args(argsBuilder).build)
@@ -2605,7 +2605,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def dtmfSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsDtmfSettingsArgs.Builder]):
+    inline def dtmfSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsDtmfSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsDtmfSettingsArgs.builder
       builder.dtmfSettings(args(argsBuilder).build)
@@ -2616,7 +2616,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def loggingSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsLoggingSettingsArgs.Builder]):
+    inline def loggingSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsLoggingSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsLoggingSettingsArgs.builder
       builder.loggingSettings(args(argsBuilder).build)
@@ -2630,7 +2630,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def speechSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsSpeechSettingsArgs.Builder]):
+    inline def speechSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsSpeechSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsSpeechSettingsArgs.builder
       builder.speechSettings(args(argsBuilder).build)
@@ -2643,7 +2643,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def advancedSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsArgs.Builder]):
+    inline def advancedSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentAdvancedSettingsArgs.builder
       builder.advancedSettings(args(argsBuilder).build)
@@ -2653,7 +2653,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditionalCases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentConditionalCaseArgs.Builder]*):
+    inline def conditionalCases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentConditionalCaseArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentConditionalCaseArgs.builder
       builder.conditionalCases(args.map(_(argsBuilder).build)*)
@@ -2663,7 +2663,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def messages(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageArgs.Builder]*):
+    inline def messages(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageArgs.builder
       builder.messages(args.map(_(argsBuilder).build)*)
@@ -2673,7 +2673,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def setParameterActions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentSetParameterActionArgs.Builder]*):
+    inline def setParameterActions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentSetParameterActionArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentSetParameterActionArgs.builder
       builder.setParameterActions(args.map(_(argsBuilder).build)*)
@@ -2689,7 +2689,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def conversationSuccess(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageConversationSuccessArgs.Builder]):
+    inline def conversationSuccess(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageConversationSuccessArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageConversationSuccessArgs.builder
       builder.conversationSuccess(args(argsBuilder).build)
@@ -2701,7 +2701,7 @@ object diagflow_ext:
      * This field is part of a union field `message`: Only one of `text`, `payload`, `conversationSuccess`, `outputAudioText`, `liveAgentHandoff`, `endInteraction`, `playAudio`, `mixedAudio`, `telephonyTransferCall`, or `knowledgeInfoCard` may be set.
      * @return builder
      */
-    def endInteractions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageEndInteractionArgs.Builder]*):
+    inline def endInteractions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageEndInteractionArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageEndInteractionArgs.builder
       builder.endInteractions(args.map(_(argsBuilder).build)*)
@@ -2713,7 +2713,7 @@ object diagflow_ext:
      * This field is part of a union field `message`: Only one of `text`, `payload`, `conversationSuccess`, `outputAudioText`, `liveAgentHandoff`, `endInteraction`, `playAudio`, `mixedAudio`, `telephonyTransferCall`, or `knowledgeInfoCard` may be set.
      * @return builder
      */
-    def knowledgeInfoCard(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageKnowledgeInfoCardArgs.Builder]):
+    inline def knowledgeInfoCard(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageKnowledgeInfoCardArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageKnowledgeInfoCardArgs.builder
       builder.knowledgeInfoCard(args(argsBuilder).build)
@@ -2728,7 +2728,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def liveAgentHandoff(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageLiveAgentHandoffArgs.Builder]):
+    inline def liveAgentHandoff(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageLiveAgentHandoffArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageLiveAgentHandoffArgs.builder
       builder.liveAgentHandoff(args(argsBuilder).build)
@@ -2740,7 +2740,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mixedAudios(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageMixedAudioArgs.Builder]*):
+    inline def mixedAudios(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageMixedAudioArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageMixedAudioArgs.builder
       builder.mixedAudios(args.map(_(argsBuilder).build)*)
@@ -2751,7 +2751,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def outputAudioText(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageOutputAudioTextArgs.Builder]):
+    inline def outputAudioText(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageOutputAudioTextArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageOutputAudioTextArgs.builder
       builder.outputAudioText(args(argsBuilder).build)
@@ -2762,7 +2762,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def playAudio(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessagePlayAudioArgs.Builder]):
+    inline def playAudio(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessagePlayAudioArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessagePlayAudioArgs.builder
       builder.playAudio(args(argsBuilder).build)
@@ -2773,7 +2773,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def telephonyTransferCall(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageTelephonyTransferCallArgs.Builder]):
+    inline def telephonyTransferCall(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageTelephonyTransferCallArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageTelephonyTransferCallArgs.builder
       builder.telephonyTransferCall(args(argsBuilder).build)
@@ -2784,7 +2784,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def text(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageTextArgs.Builder]):
+    inline def text(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageTextArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageTextArgs.builder
       builder.text(args(argsBuilder).build)
@@ -2794,7 +2794,7 @@ object diagflow_ext:
      * @param segments Segments this audio response is composed of.
      * @return builder
      */
-    def segments(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageMixedAudioSegmentArgs.Builder]*):
+    inline def segments(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageMixedAudioSegmentArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageMixedAudioArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsTriggerFulfillmentMessageMixedAudioSegmentArgs.builder
       builder.segments(args.map(_(argsBuilder).build)*)
@@ -2806,7 +2806,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def advancedSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageAdvancedSettingsArgs.Builder]):
+    inline def advancedSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageAdvancedSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageAdvancedSettingsArgs.builder
       builder.advancedSettings(args(argsBuilder).build)
@@ -2816,7 +2816,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entryFulfillment(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentArgs.Builder]):
+    inline def entryFulfillment(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageEntryFulfillmentArgs.builder
       builder.entryFulfillment(args(argsBuilder).build)
@@ -2826,7 +2826,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def eventHandlers(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerArgs.Builder]*):
+    inline def eventHandlers(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageState.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageEventHandlerArgs.builder
       builder.eventHandlers(args.map(_(argsBuilder).build)*)
@@ -2836,7 +2836,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def form(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormArgs.Builder]):
+    inline def form(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageFormArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageFormArgs.builder
       builder.form(args(argsBuilder).build)
@@ -2846,7 +2846,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def knowledgeConnectorSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsArgs.Builder]):
+    inline def knowledgeConnectorSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageKnowledgeConnectorSettingsArgs.builder
       builder.knowledgeConnectorSettings(args(argsBuilder).build)
@@ -2863,7 +2863,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transitionRoutes(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteArgs.Builder]*):
+    inline def transitionRoutes(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageState.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteArgs.builder
       builder.transitionRoutes(args.map(_(argsBuilder).build)*)
@@ -2874,7 +2874,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def triggerFulfillment(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentArgs.Builder]):
+    inline def triggerFulfillment(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentArgs.builder
       builder.triggerFulfillment(args(argsBuilder).build)
@@ -2885,7 +2885,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conditionalCases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentConditionalCaseArgs.Builder]*):
+    inline def conditionalCases(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentConditionalCaseArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentConditionalCaseArgs.builder
       builder.conditionalCases(args.map(_(argsBuilder).build)*)
@@ -2895,7 +2895,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def messages(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessageArgs.Builder]*):
+    inline def messages(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessageArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessageArgs.builder
       builder.messages(args.map(_(argsBuilder).build)*)
@@ -2905,7 +2905,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def setParameterActions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentSetParameterActionArgs.Builder]*):
+    inline def setParameterActions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentSetParameterActionArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentSetParameterActionArgs.builder
       builder.setParameterActions(args.map(_(argsBuilder).build)*)
@@ -2921,7 +2921,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def conversationSuccess(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessageConversationSuccessArgs.Builder]):
+    inline def conversationSuccess(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessageConversationSuccessArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessageConversationSuccessArgs.builder
       builder.conversationSuccess(args(argsBuilder).build)
@@ -2936,7 +2936,7 @@ object diagflow_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def liveAgentHandoff(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessageLiveAgentHandoffArgs.Builder]):
+    inline def liveAgentHandoff(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessageLiveAgentHandoffArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessageLiveAgentHandoffArgs.builder
       builder.liveAgentHandoff(args(argsBuilder).build)
@@ -2947,7 +2947,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def outputAudioText(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessageOutputAudioTextArgs.Builder]):
+    inline def outputAudioText(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessageOutputAudioTextArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessageOutputAudioTextArgs.builder
       builder.outputAudioText(args(argsBuilder).build)
@@ -2958,7 +2958,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def playAudio(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessagePlayAudioArgs.Builder]):
+    inline def playAudio(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessagePlayAudioArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessagePlayAudioArgs.builder
       builder.playAudio(args(argsBuilder).build)
@@ -2969,7 +2969,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def telephonyTransferCall(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessageTelephonyTransferCallArgs.Builder]):
+    inline def telephonyTransferCall(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessageTelephonyTransferCallArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessageTelephonyTransferCallArgs.builder
       builder.telephonyTransferCall(args(argsBuilder).build)
@@ -2980,7 +2980,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def text(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessageTextArgs.Builder]):
+    inline def text(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessageTextArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPageTransitionRouteTriggerFulfillmentMessageTextArgs.builder
       builder.text(args(argsBuilder).build)
@@ -2991,7 +2991,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def steps(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPlaybookInstructionStepArgs.Builder]*):
+    inline def steps(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPlaybookInstructionStepArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxPlaybookInstructionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPlaybookInstructionStepArgs.builder
       builder.steps(args.map(_(argsBuilder).build)*)
@@ -3002,7 +3002,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def instruction(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPlaybookInstructionArgs.Builder]):
+    inline def instruction(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPlaybookInstructionArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPlaybookState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPlaybookInstructionArgs.builder
       builder.instruction(args(argsBuilder).build)
@@ -3012,7 +3012,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def llmModelSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPlaybookLlmModelSettingsArgs.Builder]):
+    inline def llmModelSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxPlaybookLlmModelSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxPlaybookState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxPlaybookLlmModelSettingsArgs.builder
       builder.llmModelSettings(args(argsBuilder).build)
@@ -3026,7 +3026,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def audioExportSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxSecuritySettingsAudioExportSettingsArgs.Builder]):
+    inline def audioExportSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxSecuritySettingsAudioExportSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxSecuritySettingsState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxSecuritySettingsAudioExportSettingsArgs.builder
       builder.audioExportSettings(args(argsBuilder).build)
@@ -3037,7 +3037,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def insightsExportSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxSecuritySettingsInsightsExportSettingsArgs.Builder]):
+    inline def insightsExportSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxSecuritySettingsInsightsExportSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxSecuritySettingsState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxSecuritySettingsInsightsExportSettingsArgs.builder
       builder.insightsExportSettings(args(argsBuilder).build)
@@ -3048,7 +3048,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conversationTurns(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnArgs.Builder]*):
+    inline def conversationTurns(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnArgs.builder
       builder.conversationTurns(args.map(_(argsBuilder).build)*)
@@ -3059,7 +3059,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def userInput(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnUserInputArgs.Builder]):
+    inline def userInput(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnUserInputArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnUserInputArgs.builder
       builder.userInput(args(argsBuilder).build)
@@ -3069,7 +3069,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def virtualAgentOutput(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnVirtualAgentOutputArgs.Builder]):
+    inline def virtualAgentOutput(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnVirtualAgentOutputArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnVirtualAgentOutputArgs.builder
       builder.virtualAgentOutput(args(argsBuilder).build)
@@ -3080,7 +3080,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def input(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnUserInputInputArgs.Builder]):
+    inline def input(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnUserInputInputArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnUserInputArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnUserInputInputArgs.builder
       builder.input(args(argsBuilder).build)
@@ -3091,7 +3091,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dtmf(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnUserInputInputDtmfArgs.Builder]):
+    inline def dtmf(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnUserInputInputDtmfArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnUserInputInputArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnUserInputInputDtmfArgs.builder
       builder.dtmf(args(argsBuilder).build)
@@ -3101,7 +3101,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def event(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnUserInputInputEventArgs.Builder]):
+    inline def event(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnUserInputInputEventArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnUserInputInputArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnUserInputInputEventArgs.builder
       builder.event(args(argsBuilder).build)
@@ -3111,7 +3111,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def text(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnUserInputInputTextArgs.Builder]):
+    inline def text(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnUserInputInputTextArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnUserInputInputArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnUserInputInputTextArgs.builder
       builder.text(args(argsBuilder).build)
@@ -3122,7 +3122,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def currentPage(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnVirtualAgentOutputCurrentPageArgs.Builder]):
+    inline def currentPage(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnVirtualAgentOutputCurrentPageArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnVirtualAgentOutputArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnVirtualAgentOutputCurrentPageArgs.builder
       builder.currentPage(args(argsBuilder).build)
@@ -3132,7 +3132,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def differences(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnVirtualAgentOutputDifferenceArgs.Builder]*):
+    inline def differences(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnVirtualAgentOutputDifferenceArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnVirtualAgentOutputArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnVirtualAgentOutputDifferenceArgs.builder
       builder.differences(args.map(_(argsBuilder).build)*)
@@ -3142,7 +3142,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def status(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnVirtualAgentOutputStatusArgs.Builder]):
+    inline def status(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnVirtualAgentOutputStatusArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnVirtualAgentOutputArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnVirtualAgentOutputStatusArgs.builder
       builder.status(args(argsBuilder).build)
@@ -3152,7 +3152,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def textResponses(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTextResponseArgs.Builder]*):
+    inline def textResponses(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTextResponseArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnVirtualAgentOutputArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTextResponseArgs.builder
       builder.textResponses(args.map(_(argsBuilder).build)*)
@@ -3162,7 +3162,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def triggeredIntent(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTriggeredIntentArgs.Builder]):
+    inline def triggeredIntent(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTriggeredIntentArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnVirtualAgentOutputArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultConversationTurnVirtualAgentOutputTriggeredIntentArgs.builder
       builder.triggeredIntent(args(argsBuilder).build)
@@ -3173,7 +3173,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def lastTestResults(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultArgs.Builder]*):
+    inline def lastTestResults(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxTestCaseState.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseLastTestResultArgs.builder
       builder.lastTestResults(args.map(_(argsBuilder).build)*)
@@ -3183,7 +3183,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def testCaseConversationTurns(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnArgs.Builder]*):
+    inline def testCaseConversationTurns(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxTestCaseState.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnArgs.builder
       builder.testCaseConversationTurns(args.map(_(argsBuilder).build)*)
@@ -3193,7 +3193,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def testConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestConfigArgs.Builder]):
+    inline def testConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxTestCaseState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseTestConfigArgs.builder
       builder.testConfig(args(argsBuilder).build)
@@ -3204,7 +3204,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def userInput(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnUserInputArgs.Builder]):
+    inline def userInput(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnUserInputArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnUserInputArgs.builder
       builder.userInput(args(argsBuilder).build)
@@ -3214,7 +3214,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def virtualAgentOutput(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnVirtualAgentOutputArgs.Builder]):
+    inline def virtualAgentOutput(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnVirtualAgentOutputArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnVirtualAgentOutputArgs.builder
       builder.virtualAgentOutput(args(argsBuilder).build)
@@ -3225,7 +3225,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def input(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnUserInputInputArgs.Builder]):
+    inline def input(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnUserInputInputArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnUserInputArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnUserInputInputArgs.builder
       builder.input(args(argsBuilder).build)
@@ -3236,7 +3236,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dtmf(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnUserInputInputDtmfArgs.Builder]):
+    inline def dtmf(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnUserInputInputDtmfArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnUserInputInputArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnUserInputInputDtmfArgs.builder
       builder.dtmf(args(argsBuilder).build)
@@ -3246,7 +3246,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def event(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnUserInputInputEventArgs.Builder]):
+    inline def event(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnUserInputInputEventArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnUserInputInputArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnUserInputInputEventArgs.builder
       builder.event(args(argsBuilder).build)
@@ -3256,7 +3256,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def text(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnUserInputInputTextArgs.Builder]):
+    inline def text(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnUserInputInputTextArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnUserInputInputArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnUserInputInputTextArgs.builder
       builder.text(args(argsBuilder).build)
@@ -3267,7 +3267,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def currentPage(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnVirtualAgentOutputCurrentPageArgs.Builder]):
+    inline def currentPage(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnVirtualAgentOutputCurrentPageArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnVirtualAgentOutputArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnVirtualAgentOutputCurrentPageArgs.builder
       builder.currentPage(args(argsBuilder).build)
@@ -3277,7 +3277,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def textResponses(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnVirtualAgentOutputTextResponseArgs.Builder]*):
+    inline def textResponses(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnVirtualAgentOutputTextResponseArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnVirtualAgentOutputArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnVirtualAgentOutputTextResponseArgs.builder
       builder.textResponses(args.map(_(argsBuilder).build)*)
@@ -3287,7 +3287,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def triggeredIntent(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnVirtualAgentOutputTriggeredIntentArgs.Builder]):
+    inline def triggeredIntent(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnVirtualAgentOutputTriggeredIntentArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnVirtualAgentOutputArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxTestCaseTestCaseConversationTurnVirtualAgentOutputTriggeredIntentArgs.builder
       builder.triggeredIntent(args(argsBuilder).build)
@@ -3298,7 +3298,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entityOperation(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecActionEntityOperationArgs.Builder]):
+    inline def entityOperation(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecActionEntityOperationArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecActionEntityOperationArgs.builder
       builder.entityOperation(args(argsBuilder).build)
@@ -3309,7 +3309,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def actions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecActionArgs.Builder]*):
+    inline def actions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecActionArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecActionArgs.builder
       builder.actions(args.map(_(argsBuilder).build)*)
@@ -3324,7 +3324,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endUserAuthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecEndUserAuthConfigArgs.Builder]):
+    inline def endUserAuthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecEndUserAuthConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecEndUserAuthConfigArgs.builder
       builder.endUserAuthConfig(args(argsBuilder).build)
@@ -3335,7 +3335,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauth2AuthCodeConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecEndUserAuthConfigOauth2AuthCodeConfigArgs.Builder]):
+    inline def oauth2AuthCodeConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecEndUserAuthConfigOauth2AuthCodeConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecEndUserAuthConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecEndUserAuthConfigOauth2AuthCodeConfigArgs.builder
       builder.oauth2AuthCodeConfig(args(argsBuilder).build)
@@ -3347,7 +3347,7 @@ object diagflow_ext:
      * &lt;a name=&#34;nestedConnectorSpecEndUserAuthConfigOauth2AuthCodeConfig&#34;&gt;&lt;/a&gt;The `oauth2AuthCodeConfig` block supports:
      * @return builder
      */
-    def oauth2JwtBearerConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecEndUserAuthConfigOauth2JwtBearerConfigArgs.Builder]):
+    inline def oauth2JwtBearerConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecEndUserAuthConfigOauth2JwtBearerConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecEndUserAuthConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecEndUserAuthConfigOauth2JwtBearerConfigArgs.builder
       builder.oauth2JwtBearerConfig(args(argsBuilder).build)
@@ -3358,7 +3358,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataStoreConnections(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolDataStoreSpecDataStoreConnectionArgs.Builder]*):
+    inline def dataStoreConnections(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolDataStoreSpecDataStoreConnectionArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxToolDataStoreSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolDataStoreSpecDataStoreConnectionArgs.builder
       builder.dataStoreConnections(args.map(_(argsBuilder).build)*)
@@ -3367,7 +3367,7 @@ object diagflow_ext:
      * @param fallbackPrompt Fallback prompt configurations to use.
      * @return builder
      */
-    def fallbackPrompt(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolDataStoreSpecFallbackPromptArgs.Builder]):
+    inline def fallbackPrompt(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolDataStoreSpecFallbackPromptArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolDataStoreSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolDataStoreSpecFallbackPromptArgs.builder
       builder.fallbackPrompt(args(argsBuilder).build)
@@ -3378,7 +3378,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecAuthenticationArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -3388,7 +3388,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecServiceDirectoryConfigArgs.Builder]):
+    inline def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecServiceDirectoryConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecServiceDirectoryConfigArgs.builder
       builder.serviceDirectoryConfig(args(argsBuilder).build)
@@ -3398,7 +3398,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tlsConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecTlsConfigArgs.Builder]):
+    inline def tlsConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecTlsConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecTlsConfigArgs.builder
       builder.tlsConfig(args(argsBuilder).build)
@@ -3410,7 +3410,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiKeyConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecAuthenticationApiKeyConfigArgs.Builder]):
+    inline def apiKeyConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecAuthenticationApiKeyConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecAuthenticationApiKeyConfigArgs.builder
       builder.apiKeyConfig(args(argsBuilder).build)
@@ -3421,7 +3421,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bearerTokenConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecAuthenticationBearerTokenConfigArgs.Builder]):
+    inline def bearerTokenConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecAuthenticationBearerTokenConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecAuthenticationBearerTokenConfigArgs.builder
       builder.bearerTokenConfig(args(argsBuilder).build)
@@ -3432,7 +3432,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecAuthenticationOauthConfigArgs.Builder]):
+    inline def oauthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecAuthenticationOauthConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecAuthenticationOauthConfigArgs.builder
       builder.oauthConfig(args(argsBuilder).build)
@@ -3443,7 +3443,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceAgentAuthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecAuthenticationServiceAgentAuthConfigArgs.Builder]):
+    inline def serviceAgentAuthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecAuthenticationServiceAgentAuthConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecAuthenticationServiceAgentAuthConfigArgs.builder
       builder.serviceAgentAuthConfig(args(argsBuilder).build)
@@ -3454,7 +3454,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def caCerts(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecTlsConfigCaCertArgs.Builder]*):
+    inline def caCerts(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecTlsConfigCaCertArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecTlsConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecTlsConfigCaCertArgs.builder
       builder.caCerts(args.map(_(argsBuilder).build)*)
@@ -3467,7 +3467,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectorSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecArgs.Builder]):
+    inline def connectorSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolConnectorSpecArgs.builder
       builder.connectorSpec(args(argsBuilder).build)
@@ -3478,7 +3478,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataStoreSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolDataStoreSpecArgs.Builder]):
+    inline def dataStoreSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolDataStoreSpecArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolDataStoreSpecArgs.builder
       builder.dataStoreSpec(args(argsBuilder).build)
@@ -3489,7 +3489,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def functionSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolFunctionSpecArgs.Builder]):
+    inline def functionSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolFunctionSpecArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolFunctionSpecArgs.builder
       builder.functionSpec(args(argsBuilder).build)
@@ -3500,7 +3500,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def openApiSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecArgs.Builder]):
+    inline def openApiSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolOpenApiSpecArgs.builder
       builder.openApiSpec(args(argsBuilder).build)
@@ -3511,7 +3511,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tool(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolArgs.Builder]):
+    inline def tool(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolVersionState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolVersionToolArgs.builder
       builder.tool(args(argsBuilder).build)
@@ -3524,7 +3524,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectorSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolConnectorSpecArgs.Builder]):
+    inline def connectorSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolConnectorSpecArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolVersionToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolVersionToolConnectorSpecArgs.builder
       builder.connectorSpec(args(argsBuilder).build)
@@ -3535,7 +3535,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataStoreSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolDataStoreSpecArgs.Builder]):
+    inline def dataStoreSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolDataStoreSpecArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolVersionToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolVersionToolDataStoreSpecArgs.builder
       builder.dataStoreSpec(args(argsBuilder).build)
@@ -3546,7 +3546,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def functionSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolFunctionSpecArgs.Builder]):
+    inline def functionSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolFunctionSpecArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolVersionToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolVersionToolFunctionSpecArgs.builder
       builder.functionSpec(args(argsBuilder).build)
@@ -3557,7 +3557,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def openApiSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecArgs.Builder]):
+    inline def openApiSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolVersionToolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecArgs.builder
       builder.openApiSpec(args(argsBuilder).build)
@@ -3568,7 +3568,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entityOperation(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolConnectorSpecActionEntityOperationArgs.Builder]):
+    inline def entityOperation(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolConnectorSpecActionEntityOperationArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolVersionToolConnectorSpecActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolVersionToolConnectorSpecActionEntityOperationArgs.builder
       builder.entityOperation(args(argsBuilder).build)
@@ -3579,7 +3579,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def actions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolConnectorSpecActionArgs.Builder]*):
+    inline def actions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolConnectorSpecActionArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxToolVersionToolConnectorSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolVersionToolConnectorSpecActionArgs.builder
       builder.actions(args.map(_(argsBuilder).build)*)
@@ -3594,7 +3594,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endUserAuthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolConnectorSpecEndUserAuthConfigArgs.Builder]):
+    inline def endUserAuthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolConnectorSpecEndUserAuthConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolVersionToolConnectorSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolVersionToolConnectorSpecEndUserAuthConfigArgs.builder
       builder.endUserAuthConfig(args(argsBuilder).build)
@@ -3605,7 +3605,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauth2AuthCodeConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolConnectorSpecEndUserAuthConfigOauth2AuthCodeConfigArgs.Builder]):
+    inline def oauth2AuthCodeConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolConnectorSpecEndUserAuthConfigOauth2AuthCodeConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolVersionToolConnectorSpecEndUserAuthConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolVersionToolConnectorSpecEndUserAuthConfigOauth2AuthCodeConfigArgs.builder
       builder.oauth2AuthCodeConfig(args(argsBuilder).build)
@@ -3617,7 +3617,7 @@ object diagflow_ext:
      * &lt;a name=&#34;nestedToolConnectorSpecEndUserAuthConfigOauth2AuthCodeConfig&#34;&gt;&lt;/a&gt;The `oauth2AuthCodeConfig` block supports:
      * @return builder
      */
-    def oauth2JwtBearerConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolConnectorSpecEndUserAuthConfigOauth2JwtBearerConfigArgs.Builder]):
+    inline def oauth2JwtBearerConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolConnectorSpecEndUserAuthConfigOauth2JwtBearerConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolVersionToolConnectorSpecEndUserAuthConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolVersionToolConnectorSpecEndUserAuthConfigOauth2JwtBearerConfigArgs.builder
       builder.oauth2JwtBearerConfig(args(argsBuilder).build)
@@ -3628,7 +3628,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataStoreConnections(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolDataStoreSpecDataStoreConnectionArgs.Builder]*):
+    inline def dataStoreConnections(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolDataStoreSpecDataStoreConnectionArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxToolVersionToolDataStoreSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolVersionToolDataStoreSpecDataStoreConnectionArgs.builder
       builder.dataStoreConnections(args.map(_(argsBuilder).build)*)
@@ -3637,7 +3637,7 @@ object diagflow_ext:
      * @param fallbackPrompt Fallback prompt configurations to use.
      * @return builder
      */
-    def fallbackPrompt(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolDataStoreSpecFallbackPromptArgs.Builder]):
+    inline def fallbackPrompt(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolDataStoreSpecFallbackPromptArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolVersionToolDataStoreSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolVersionToolDataStoreSpecFallbackPromptArgs.builder
       builder.fallbackPrompt(args(argsBuilder).build)
@@ -3648,7 +3648,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecAuthenticationArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -3658,7 +3658,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecServiceDirectoryConfigArgs.Builder]):
+    inline def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecServiceDirectoryConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecServiceDirectoryConfigArgs.builder
       builder.serviceDirectoryConfig(args(argsBuilder).build)
@@ -3668,7 +3668,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tlsConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecTlsConfigArgs.Builder]):
+    inline def tlsConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecTlsConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecTlsConfigArgs.builder
       builder.tlsConfig(args(argsBuilder).build)
@@ -3680,7 +3680,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiKeyConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecAuthenticationApiKeyConfigArgs.Builder]):
+    inline def apiKeyConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecAuthenticationApiKeyConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecAuthenticationApiKeyConfigArgs.builder
       builder.apiKeyConfig(args(argsBuilder).build)
@@ -3691,7 +3691,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bearerTokenConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecAuthenticationBearerTokenConfigArgs.Builder]):
+    inline def bearerTokenConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecAuthenticationBearerTokenConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecAuthenticationBearerTokenConfigArgs.builder
       builder.bearerTokenConfig(args(argsBuilder).build)
@@ -3702,7 +3702,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecAuthenticationOauthConfigArgs.Builder]):
+    inline def oauthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecAuthenticationOauthConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecAuthenticationOauthConfigArgs.builder
       builder.oauthConfig(args(argsBuilder).build)
@@ -3713,7 +3713,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceAgentAuthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecAuthenticationServiceAgentAuthConfigArgs.Builder]):
+    inline def serviceAgentAuthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecAuthenticationServiceAgentAuthConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecAuthenticationServiceAgentAuthConfigArgs.builder
       builder.serviceAgentAuthConfig(args(argsBuilder).build)
@@ -3724,7 +3724,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def caCerts(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecTlsConfigCaCertArgs.Builder]*):
+    inline def caCerts(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecTlsConfigCaCertArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecTlsConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxToolVersionToolOpenApiSpecTlsConfigCaCertArgs.builder
       builder.caCerts(args.map(_(argsBuilder).build)*)
@@ -3735,7 +3735,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nluSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxVersionNluSettingArgs.Builder]*):
+    inline def nluSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxVersionNluSettingArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxVersionState.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxVersionNluSettingArgs.builder
       builder.nluSettings(args.map(_(argsBuilder).build)*)
@@ -3747,7 +3747,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxWebhookGenericWebServiceOauthConfigArgs.Builder]):
+    inline def oauthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxWebhookGenericWebServiceOauthConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxWebhookGenericWebServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxWebhookGenericWebServiceOauthConfigArgs.builder
       builder.oauthConfig(args(argsBuilder).build)
@@ -3761,7 +3761,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secretVersionsForRequestHeaders(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxWebhookGenericWebServiceSecretVersionsForRequestHeaderArgs.Builder]*):
+    inline def secretVersionsForRequestHeaders(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxWebhookGenericWebServiceSecretVersionsForRequestHeaderArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxWebhookGenericWebServiceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxWebhookGenericWebServiceSecretVersionsForRequestHeaderArgs.builder
       builder.secretVersionsForRequestHeaders(args.map(_(argsBuilder).build)*)
@@ -3771,7 +3771,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceAccountAuthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxWebhookGenericWebServiceServiceAccountAuthConfigArgs.Builder]):
+    inline def serviceAccountAuthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxWebhookGenericWebServiceServiceAccountAuthConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxWebhookGenericWebServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxWebhookGenericWebServiceServiceAccountAuthConfigArgs.builder
       builder.serviceAccountAuthConfig(args(argsBuilder).build)
@@ -3782,7 +3782,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def genericWebService(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxWebhookServiceDirectoryGenericWebServiceArgs.Builder]):
+    inline def genericWebService(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxWebhookServiceDirectoryGenericWebServiceArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxWebhookServiceDirectoryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxWebhookServiceDirectoryGenericWebServiceArgs.builder
       builder.genericWebService(args(argsBuilder).build)
@@ -3794,7 +3794,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxWebhookServiceDirectoryGenericWebServiceOauthConfigArgs.Builder]):
+    inline def oauthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxWebhookServiceDirectoryGenericWebServiceOauthConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxWebhookServiceDirectoryGenericWebServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxWebhookServiceDirectoryGenericWebServiceOauthConfigArgs.builder
       builder.oauthConfig(args(argsBuilder).build)
@@ -3808,7 +3808,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secretVersionsForRequestHeaders(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxWebhookServiceDirectoryGenericWebServiceSecretVersionsForRequestHeaderArgs.Builder]*):
+    inline def secretVersionsForRequestHeaders(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxWebhookServiceDirectoryGenericWebServiceSecretVersionsForRequestHeaderArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.CxWebhookServiceDirectoryGenericWebServiceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.CxWebhookServiceDirectoryGenericWebServiceSecretVersionsForRequestHeaderArgs.builder
       builder.secretVersionsForRequestHeaders(args.map(_(argsBuilder).build)*)
@@ -3818,7 +3818,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceAccountAuthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxWebhookServiceDirectoryGenericWebServiceServiceAccountAuthConfigArgs.Builder]):
+    inline def serviceAccountAuthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxWebhookServiceDirectoryGenericWebServiceServiceAccountAuthConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxWebhookServiceDirectoryGenericWebServiceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxWebhookServiceDirectoryGenericWebServiceServiceAccountAuthConfigArgs.builder
       builder.serviceAccountAuthConfig(args(argsBuilder).build)
@@ -3829,7 +3829,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def genericWebService(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxWebhookGenericWebServiceArgs.Builder]):
+    inline def genericWebService(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxWebhookGenericWebServiceArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxWebhookState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxWebhookGenericWebServiceArgs.builder
       builder.genericWebService(args(argsBuilder).build)
@@ -3839,7 +3839,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectory(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxWebhookServiceDirectoryArgs.Builder]):
+    inline def serviceDirectory(args: Endofunction[com.pulumi.gcp.diagflow.inputs.CxWebhookServiceDirectoryArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.CxWebhookState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.CxWebhookServiceDirectoryArgs.builder
       builder.serviceDirectory(args(argsBuilder).build)
@@ -3850,7 +3850,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.EncryptionSpecEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.EncryptionSpecEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.EncryptionSpecState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.EncryptionSpecEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -3861,7 +3861,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entities(args: Endofunction[com.pulumi.gcp.diagflow.inputs.EntityTypeEntityArgs.Builder]*):
+    inline def entities(args: Endofunction[com.pulumi.gcp.diagflow.inputs.EntityTypeEntityArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.EntityTypeState.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.EntityTypeEntityArgs.builder
       builder.entities(args.map(_(argsBuilder).build)*)
@@ -3872,7 +3872,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def features(args: Endofunction[com.pulumi.gcp.diagflow.inputs.EnvironmentFulfillmentFeatureArgs.Builder]*):
+    inline def features(args: Endofunction[com.pulumi.gcp.diagflow.inputs.EnvironmentFulfillmentFeatureArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.EnvironmentFulfillmentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.EnvironmentFulfillmentFeatureArgs.builder
       builder.features(args.map(_(argsBuilder).build)*)
@@ -3882,7 +3882,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def genericWebService(args: Endofunction[com.pulumi.gcp.diagflow.inputs.EnvironmentFulfillmentGenericWebServiceArgs.Builder]):
+    inline def genericWebService(args: Endofunction[com.pulumi.gcp.diagflow.inputs.EnvironmentFulfillmentGenericWebServiceArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.EnvironmentFulfillmentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.EnvironmentFulfillmentGenericWebServiceArgs.builder
       builder.genericWebService(args(argsBuilder).build)
@@ -3893,7 +3893,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fulfillment(args: Endofunction[com.pulumi.gcp.diagflow.inputs.EnvironmentFulfillmentArgs.Builder]):
+    inline def fulfillment(args: Endofunction[com.pulumi.gcp.diagflow.inputs.EnvironmentFulfillmentArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.EnvironmentState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.EnvironmentFulfillmentArgs.builder
       builder.fulfillment(args(argsBuilder).build)
@@ -3903,7 +3903,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def textToSpeechSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.EnvironmentTextToSpeechSettingsArgs.Builder]):
+    inline def textToSpeechSettings(args: Endofunction[com.pulumi.gcp.diagflow.inputs.EnvironmentTextToSpeechSettingsArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.EnvironmentState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.EnvironmentTextToSpeechSettingsArgs.builder
       builder.textToSpeechSettings(args(argsBuilder).build)
@@ -3914,7 +3914,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def synthesizeSpeechConfigs(args: Endofunction[com.pulumi.gcp.diagflow.inputs.EnvironmentTextToSpeechSettingsSynthesizeSpeechConfigArgs.Builder]*):
+    inline def synthesizeSpeechConfigs(args: Endofunction[com.pulumi.gcp.diagflow.inputs.EnvironmentTextToSpeechSettingsSynthesizeSpeechConfigArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.EnvironmentTextToSpeechSettingsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.EnvironmentTextToSpeechSettingsSynthesizeSpeechConfigArgs.builder
       builder.synthesizeSpeechConfigs(args.map(_(argsBuilder).build)*)
@@ -3925,7 +3925,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def voice(args: Endofunction[com.pulumi.gcp.diagflow.inputs.EnvironmentTextToSpeechSettingsSynthesizeSpeechConfigVoiceArgs.Builder]):
+    inline def voice(args: Endofunction[com.pulumi.gcp.diagflow.inputs.EnvironmentTextToSpeechSettingsSynthesizeSpeechConfigVoiceArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.EnvironmentTextToSpeechSettingsSynthesizeSpeechConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.EnvironmentTextToSpeechSettingsSynthesizeSpeechConfigVoiceArgs.builder
       builder.voice(args(argsBuilder).build)
@@ -3936,7 +3936,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def features(args: Endofunction[com.pulumi.gcp.diagflow.inputs.FulfillmentFeatureArgs.Builder]*):
+    inline def features(args: Endofunction[com.pulumi.gcp.diagflow.inputs.FulfillmentFeatureArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.FulfillmentState.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.FulfillmentFeatureArgs.builder
       builder.features(args.map(_(argsBuilder).build)*)
@@ -3946,7 +3946,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def genericWebService(args: Endofunction[com.pulumi.gcp.diagflow.inputs.FulfillmentGenericWebServiceArgs.Builder]):
+    inline def genericWebService(args: Endofunction[com.pulumi.gcp.diagflow.inputs.FulfillmentGenericWebServiceArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.FulfillmentState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.FulfillmentGenericWebServiceArgs.builder
       builder.genericWebService(args(argsBuilder).build)
@@ -3957,7 +3957,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def instructions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorAgentCoachingContextInstructionArgs.Builder]*):
+    inline def instructions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorAgentCoachingContextInstructionArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.GeneratorAgentCoachingContextArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorAgentCoachingContextInstructionArgs.builder
       builder.instructions(args.map(_(argsBuilder).build)*)
@@ -3968,7 +3968,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def agentCoachingContext(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorAgentCoachingContextArgs.Builder]):
+    inline def agentCoachingContext(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorAgentCoachingContextArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.GeneratorState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorAgentCoachingContextArgs.builder
       builder.agentCoachingContext(args(argsBuilder).build)
@@ -3978,7 +3978,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def freeFormContext(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorFreeFormContextArgs.Builder]):
+    inline def freeFormContext(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorFreeFormContextArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.GeneratorState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorFreeFormContextArgs.builder
       builder.freeFormContext(args(argsBuilder).build)
@@ -3988,7 +3988,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inferenceParameter(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorInferenceParameterArgs.Builder]):
+    inline def inferenceParameter(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorInferenceParameterArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.GeneratorState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorInferenceParameterArgs.builder
       builder.inferenceParameter(args(argsBuilder).build)
@@ -3998,7 +3998,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def summarizationContext(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextArgs.Builder]):
+    inline def summarizationContext(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.GeneratorState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextArgs.builder
       builder.summarizationContext(args(argsBuilder).build)
@@ -4009,7 +4009,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fewShotExamples(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleArgs.Builder]*):
+    inline def fewShotExamples(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleArgs.builder
       builder.fewShotExamples(args.map(_(argsBuilder).build)*)
@@ -4019,7 +4019,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def summarizationSections(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextSummarizationSectionArgs.Builder]*):
+    inline def summarizationSections(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextSummarizationSectionArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextSummarizationSectionArgs.builder
       builder.summarizationSections(args.map(_(argsBuilder).build)*)
@@ -4030,7 +4030,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def conversationContext(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleConversationContextArgs.Builder]):
+    inline def conversationContext(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleConversationContextArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleConversationContextArgs.builder
       builder.conversationContext(args(argsBuilder).build)
@@ -4040,7 +4040,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def output(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputArgs.Builder]):
+    inline def output(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputArgs.builder
       builder.output(args(argsBuilder).build)
@@ -4050,7 +4050,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def summarizationSectionList(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleSummarizationSectionListArgs.Builder]):
+    inline def summarizationSectionList(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleSummarizationSectionListArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleSummarizationSectionListArgs.builder
       builder.summarizationSectionList(args(argsBuilder).build)
@@ -4061,7 +4061,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def messageEntries(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleConversationContextMessageEntryArgs.Builder]*):
+    inline def messageEntries(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleConversationContextMessageEntryArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleConversationContextArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleConversationContextMessageEntryArgs.builder
       builder.messageEntries(args.map(_(argsBuilder).build)*)
@@ -4072,7 +4072,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def summarySuggestion(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputSummarySuggestionArgs.Builder]):
+    inline def summarySuggestion(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputSummarySuggestionArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputSummarySuggestionArgs.builder
       builder.summarySuggestion(args(argsBuilder).build)
@@ -4082,7 +4082,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolCallInfos(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoArgs.Builder]*):
+    inline def toolCallInfos(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoArgs.builder
       builder.toolCallInfos(args.map(_(argsBuilder).build)*)
@@ -4093,7 +4093,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def summarySections(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputSummarySuggestionSummarySectionArgs.Builder]*):
+    inline def summarySections(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputSummarySuggestionSummarySectionArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputSummarySuggestionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputSummarySuggestionSummarySectionArgs.builder
       builder.summarySections(args.map(_(argsBuilder).build)*)
@@ -4104,7 +4104,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolCall(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoToolCallArgs.Builder]):
+    inline def toolCall(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoToolCallArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoToolCallArgs.builder
       builder.toolCall(args(argsBuilder).build)
@@ -4114,7 +4114,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def toolCallResult(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoToolCallResultArgs.Builder]):
+    inline def toolCallResult(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoToolCallResultArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoToolCallResultArgs.builder
       builder.toolCallResult(args(argsBuilder).build)
@@ -4125,7 +4125,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def error(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoToolCallResultErrorArgs.Builder]):
+    inline def error(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoToolCallResultErrorArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoToolCallResultArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleOutputToolCallInfoToolCallResultErrorArgs.builder
       builder.error(args(argsBuilder).build)
@@ -4136,7 +4136,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def summarizationSections(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleSummarizationSectionListSummarizationSectionArgs.Builder]*):
+    inline def summarizationSections(args: Endofunction[com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleSummarizationSectionListSummarizationSectionArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleSummarizationSectionListArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.GeneratorSummarizationContextFewShotExampleSummarizationSectionListSummarizationSectionArgs.builder
       builder.summarizationSections(args.map(_(argsBuilder).build)*)
@@ -4148,7 +4148,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def followupIntentInfos(args: Endofunction[com.pulumi.gcp.diagflow.inputs.IntentFollowupIntentInfoArgs.Builder]*):
+    inline def followupIntentInfos(args: Endofunction[com.pulumi.gcp.diagflow.inputs.IntentFollowupIntentInfoArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.IntentState.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.IntentFollowupIntentInfoArgs.builder
       builder.followupIntentInfos(args.map(_(argsBuilder).build)*)
@@ -4160,7 +4160,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errorDetails(args: Endofunction[com.pulumi.gcp.diagflow.inputs.SipTrunkConnectionErrorDetailArgs.Builder]*):
+    inline def errorDetails(args: Endofunction[com.pulumi.gcp.diagflow.inputs.SipTrunkConnectionErrorDetailArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.SipTrunkConnectionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.SipTrunkConnectionErrorDetailArgs.builder
       builder.errorDetails(args.map(_(argsBuilder).build)*)
@@ -4171,7 +4171,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connections(args: Endofunction[com.pulumi.gcp.diagflow.inputs.SipTrunkConnectionArgs.Builder]*):
+    inline def connections(args: Endofunction[com.pulumi.gcp.diagflow.inputs.SipTrunkConnectionArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.SipTrunkState.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.SipTrunkConnectionArgs.builder
       builder.connections(args.map(_(argsBuilder).build)*)
@@ -4182,7 +4182,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entityOperation(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecActionEntityOperationArgs.Builder]):
+    inline def entityOperation(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecActionEntityOperationArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecActionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecActionEntityOperationArgs.builder
       builder.entityOperation(args(argsBuilder).build)
@@ -4193,7 +4193,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def actions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecActionArgs.Builder]*):
+    inline def actions(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecActionArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecActionArgs.builder
       builder.actions(args.map(_(argsBuilder).build)*)
@@ -4204,7 +4204,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -4214,7 +4214,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecServiceDirectoryConfigArgs.Builder]):
+    inline def serviceDirectoryConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecServiceDirectoryConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecServiceDirectoryConfigArgs.builder
       builder.serviceDirectoryConfig(args(argsBuilder).build)
@@ -4224,7 +4224,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tlsConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecTlsConfigArgs.Builder]):
+    inline def tlsConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecTlsConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecTlsConfigArgs.builder
       builder.tlsConfig(args(argsBuilder).build)
@@ -4236,7 +4236,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apiKeyConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationApiKeyConfigArgs.Builder]):
+    inline def apiKeyConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationApiKeyConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationApiKeyConfigArgs.builder
       builder.apiKeyConfig(args(argsBuilder).build)
@@ -4247,7 +4247,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bearerTokenConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationBearerTokenConfigArgs.Builder]):
+    inline def bearerTokenConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationBearerTokenConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationBearerTokenConfigArgs.builder
       builder.bearerTokenConfig(args(argsBuilder).build)
@@ -4258,7 +4258,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationOauthConfigArgs.Builder]):
+    inline def oauthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationOauthConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationOauthConfigArgs.builder
       builder.oauthConfig(args(argsBuilder).build)
@@ -4269,7 +4269,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def serviceAgentAuthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationServiceAgentAuthConfigArgs.Builder]):
+    inline def serviceAgentAuthConfig(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationServiceAgentAuthConfigArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecAuthenticationServiceAgentAuthConfigArgs.builder
       builder.serviceAgentAuthConfig(args(argsBuilder).build)
@@ -4280,7 +4280,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def caCerts(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecTlsConfigCaCertArgs.Builder]*):
+    inline def caCerts(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecTlsConfigCaCertArgs.Builder]*):
         com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecTlsConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecTlsConfigCaCertArgs.builder
       builder.caCerts(args.map(_(argsBuilder).build)*)
@@ -4292,7 +4292,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectorSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecArgs.Builder]):
+    inline def connectorSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ToolState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolConnectorSpecArgs.builder
       builder.connectorSpec(args(argsBuilder).build)
@@ -4303,7 +4303,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def functionSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolFunctionSpecArgs.Builder]):
+    inline def functionSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolFunctionSpecArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ToolState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolFunctionSpecArgs.builder
       builder.functionSpec(args(argsBuilder).build)
@@ -4314,7 +4314,7 @@ object diagflow_ext:
      * Structure is documented below.
      * @return builder
      */
-    def openApiSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecArgs.Builder]):
+    inline def openApiSpec(args: Endofunction[com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecArgs.Builder]):
         com.pulumi.gcp.diagflow.inputs.ToolState.Builder =
       val argsBuilder = com.pulumi.gcp.diagflow.inputs.ToolOpenApiSpecArgs.builder
       builder.openApiSpec(args(argsBuilder).build)

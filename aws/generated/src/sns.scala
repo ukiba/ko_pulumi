@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object sns:
   /** Provides an SNS data protection topic policy resource */
-  def DataProtectionPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataProtectionPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sns.DataProtectionPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.sns.DataProtectionPolicyArgs.builder
     com.pulumi.aws.sns.DataProtectionPolicy(name,
@@ -15,7 +15,7 @@ object sns:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an SNS platform application resource */
-  def PlatformApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PlatformApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sns.PlatformApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sns.PlatformApplicationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -26,7 +26,7 @@ object sns:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a way to set SNS SMS preferences. */
-  def SmsPreferences(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SmsPreferences(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sns.SmsPreferencesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.sns.SmsPreferencesArgs.builder
     com.pulumi.aws.sns.SmsPreferences(name,
@@ -59,7 +59,7 @@ object sns:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides an SNS topic resource */
-  def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sns.TopicArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sns.TopicArgs.builder
     conf.logicalName2physicalName(name) match
@@ -81,7 +81,7 @@ object sns:
    * 
    * &gt; **NOTE:** If a Principal is specified as just an AWS account ID rather than an ARN, AWS silently converts it to the ARN for the root user, causing future deployments to differ. To avoid this problem, just specify the full ARN, e.g. `arn:aws:iam::123456789012:root`
    */
-  def TopicPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TopicPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sns.TopicPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.sns.TopicPolicyArgs.builder
     com.pulumi.aws.sns.TopicPolicy(name,
@@ -101,7 +101,7 @@ object sns:
    * 
    * &gt; **NOTE:** You cannot unsubscribe to a subscription that is pending confirmation. If you use `email`, `email-json`, or `http`/`https` (without auto-confirmation enabled), until the subscription is confirmed (e.g., outside of this provider), AWS does not allow this provider to delete / unsubscribe the subscription. If you `destroy` an unconfirmed subscription, this provider will remove the subscription from its state but the subscription will still exist in AWS. However, if you delete an SNS topic, SNS [deletes all the subscriptions](https://docs.aws.amazon.com/sns/latest/dg/sns-delete-subscription-topic.html) associated with the topic. Also, you can import a subscription after confirmation and then have the capability to delete it.
    */
-  def TopicSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TopicSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sns.TopicSubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.sns.TopicSubscriptionArgs.builder
     com.pulumi.aws.sns.TopicSubscription(name,

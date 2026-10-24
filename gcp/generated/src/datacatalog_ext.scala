@@ -8,31 +8,31 @@ object datacatalog_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gcsFilesetSpec(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.EntryGcsFilesetSpecArgs.Builder]):
+    inline def gcsFilesetSpec(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.EntryGcsFilesetSpecArgs.Builder]):
         com.pulumi.gcp.datacatalog.EntryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.EntryGcsFilesetSpecArgs.builder
       builder.gcsFilesetSpec(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.datacatalog.EntryGroupIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.EntryGroupIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.EntryGroupIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.datacatalog.EntryGroupIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.EntryGroupIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.datacatalog.EntryGroupIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.EntryGroupIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.EntryGroupIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.datacatalog.EntryGroupIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.EntryGroupIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.datacatalog.PolicyTagIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.PolicyTagIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.PolicyTagIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.datacatalog.PolicyTagIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.PolicyTagIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.datacatalog.PolicyTagIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.PolicyTagIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.PolicyTagIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.datacatalog.PolicyTagIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.PolicyTagIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -44,7 +44,7 @@ object datacatalog_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fields(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TagFieldArgs.Builder]*):
+    inline def fields(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TagFieldArgs.Builder]*):
         com.pulumi.gcp.datacatalog.TagArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datacatalog.inputs.TagFieldArgs.builder
       builder.fields(args.map(_(argsBuilder).build)*)
@@ -55,31 +55,31 @@ object datacatalog_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fields(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TagTemplateFieldArgs.Builder]*):
+    inline def fields(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TagTemplateFieldArgs.Builder]*):
         com.pulumi.gcp.datacatalog.TagTemplateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datacatalog.inputs.TagTemplateFieldArgs.builder
       builder.fields(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.datacatalog.TagTemplateIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TagTemplateIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TagTemplateIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.datacatalog.TagTemplateIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.TagTemplateIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.datacatalog.TagTemplateIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TagTemplateIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TagTemplateIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.datacatalog.TagTemplateIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.TagTemplateIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.datacatalog.TaxonomyIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TaxonomyIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TaxonomyIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.datacatalog.TaxonomyIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.TaxonomyIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.datacatalog.TaxonomyIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TaxonomyIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TaxonomyIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.datacatalog.TaxonomyIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.TaxonomyIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -91,7 +91,7 @@ object datacatalog_ext:
      * Structure is documented below.
      * @return builder
      */
-    def tableSpecs(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.EntryBigqueryTableSpecTableSpecArgs.Builder]*):
+    inline def tableSpecs(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.EntryBigqueryTableSpecTableSpecArgs.Builder]*):
         com.pulumi.gcp.datacatalog.inputs.EntryBigqueryTableSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datacatalog.inputs.EntryBigqueryTableSpecTableSpecArgs.builder
       builder.tableSpecs(args.map(_(argsBuilder).build)*)
@@ -102,7 +102,7 @@ object datacatalog_ext:
      * Structure is documented below.
      * @return builder
      */
-    def viewSpecs(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.EntryBigqueryTableSpecViewSpecArgs.Builder]*):
+    inline def viewSpecs(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.EntryBigqueryTableSpecViewSpecArgs.Builder]*):
         com.pulumi.gcp.datacatalog.inputs.EntryBigqueryTableSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datacatalog.inputs.EntryBigqueryTableSpecViewSpecArgs.builder
       builder.viewSpecs(args.map(_(argsBuilder).build)*)
@@ -116,19 +116,19 @@ object datacatalog_ext:
      * &lt;a name=&#34;nestedGcsFilesetSpecSampleGcsFileSpecs&#34;&gt;&lt;/a&gt;The `sampleGcsFileSpecs` block contains:
      * @return builder
      */
-    def sampleGcsFileSpecs(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.EntryGcsFilesetSpecSampleGcsFileSpecArgs.Builder]*):
+    inline def sampleGcsFileSpecs(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.EntryGcsFilesetSpecSampleGcsFileSpecArgs.Builder]*):
         com.pulumi.gcp.datacatalog.inputs.EntryGcsFilesetSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datacatalog.inputs.EntryGcsFilesetSpecSampleGcsFileSpecArgs.builder
       builder.sampleGcsFileSpecs(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.datacatalog.inputs.EntryGroupIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.EntryGroupIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.EntryGroupIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.datacatalog.inputs.EntryGroupIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.EntryGroupIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.datacatalog.inputs.EntryGroupIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.EntryGroupIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.EntryGroupIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.datacatalog.inputs.EntryGroupIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.EntryGroupIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -140,7 +140,7 @@ object datacatalog_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigqueryDateShardedSpecs(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.EntryBigqueryDateShardedSpecArgs.Builder]*):
+    inline def bigqueryDateShardedSpecs(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.EntryBigqueryDateShardedSpecArgs.Builder]*):
         com.pulumi.gcp.datacatalog.inputs.EntryState.Builder =
       def argsBuilder = com.pulumi.gcp.datacatalog.inputs.EntryBigqueryDateShardedSpecArgs.builder
       builder.bigqueryDateShardedSpecs(args.map(_(argsBuilder).build)*)
@@ -150,7 +150,7 @@ object datacatalog_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigqueryTableSpecs(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.EntryBigqueryTableSpecArgs.Builder]*):
+    inline def bigqueryTableSpecs(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.EntryBigqueryTableSpecArgs.Builder]*):
         com.pulumi.gcp.datacatalog.inputs.EntryState.Builder =
       def argsBuilder = com.pulumi.gcp.datacatalog.inputs.EntryBigqueryTableSpecArgs.builder
       builder.bigqueryTableSpecs(args.map(_(argsBuilder).build)*)
@@ -160,19 +160,19 @@ object datacatalog_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gcsFilesetSpec(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.EntryGcsFilesetSpecArgs.Builder]):
+    inline def gcsFilesetSpec(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.EntryGcsFilesetSpecArgs.Builder]):
         com.pulumi.gcp.datacatalog.inputs.EntryState.Builder =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.EntryGcsFilesetSpecArgs.builder
       builder.gcsFilesetSpec(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.datacatalog.inputs.PolicyTagIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.PolicyTagIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.PolicyTagIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.datacatalog.inputs.PolicyTagIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.PolicyTagIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.datacatalog.inputs.PolicyTagIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.PolicyTagIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.PolicyTagIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.datacatalog.inputs.PolicyTagIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.PolicyTagIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -184,7 +184,7 @@ object datacatalog_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fields(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TagFieldArgs.Builder]*):
+    inline def fields(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TagFieldArgs.Builder]*):
         com.pulumi.gcp.datacatalog.inputs.TagState.Builder =
       def argsBuilder = com.pulumi.gcp.datacatalog.inputs.TagFieldArgs.builder
       builder.fields(args.map(_(argsBuilder).build)*)
@@ -195,7 +195,7 @@ object datacatalog_ext:
      * Structure is documented below.
      * @return builder
      */
-    def `type`(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TagTemplateFieldTypeArgs.Builder]):
+    inline def `type`(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TagTemplateFieldTypeArgs.Builder]):
         com.pulumi.gcp.datacatalog.inputs.TagTemplateFieldArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.TagTemplateFieldTypeArgs.builder
       builder.`type`(args(argsBuilder).build)
@@ -207,7 +207,7 @@ object datacatalog_ext:
      * Structure is documented below.
      * @return builder
      */
-    def enumType(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TagTemplateFieldTypeEnumTypeArgs.Builder]):
+    inline def enumType(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TagTemplateFieldTypeEnumTypeArgs.Builder]):
         com.pulumi.gcp.datacatalog.inputs.TagTemplateFieldTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.TagTemplateFieldTypeEnumTypeArgs.builder
       builder.enumType(args(argsBuilder).build)
@@ -222,19 +222,19 @@ object datacatalog_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allowedValues(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TagTemplateFieldTypeEnumTypeAllowedValueArgs.Builder]*):
+    inline def allowedValues(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TagTemplateFieldTypeEnumTypeAllowedValueArgs.Builder]*):
         com.pulumi.gcp.datacatalog.inputs.TagTemplateFieldTypeEnumTypeArgs.Builder =
       def argsBuilder = com.pulumi.gcp.datacatalog.inputs.TagTemplateFieldTypeEnumTypeAllowedValueArgs.builder
       builder.allowedValues(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.datacatalog.inputs.TagTemplateIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TagTemplateIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TagTemplateIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.datacatalog.inputs.TagTemplateIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.TagTemplateIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.datacatalog.inputs.TagTemplateIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TagTemplateIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TagTemplateIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.datacatalog.inputs.TagTemplateIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.TagTemplateIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -245,19 +245,19 @@ object datacatalog_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fields(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TagTemplateFieldArgs.Builder]*):
+    inline def fields(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TagTemplateFieldArgs.Builder]*):
         com.pulumi.gcp.datacatalog.inputs.TagTemplateState.Builder =
       def argsBuilder = com.pulumi.gcp.datacatalog.inputs.TagTemplateFieldArgs.builder
       builder.fields(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.datacatalog.inputs.TaxonomyIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TaxonomyIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TaxonomyIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.datacatalog.inputs.TaxonomyIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.TaxonomyIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.datacatalog.inputs.TaxonomyIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TaxonomyIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.datacatalog.inputs.TaxonomyIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.datacatalog.inputs.TaxonomyIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.datacatalog.inputs.TaxonomyIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)

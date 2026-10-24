@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object wafregional:
   /** Provides a WAF Regional Byte Match Set Resource for use with Application Load Balancer. */
-  def ByteMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ByteMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.wafregional.ByteMatchSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.wafregional.ByteMatchSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18,7 +18,7 @@ object wafregional:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF Regional Geo Match Set Resource */
-  def GeoMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GeoMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.wafregional.GeoMatchSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.wafregional.GeoMatchSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -29,7 +29,7 @@ object wafregional:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF Regional IPSet Resource for use with Application Load Balancer. */
-  def IpSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IpSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.wafregional.IpSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.wafregional.IpSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -40,7 +40,7 @@ object wafregional:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF Rate Based Rule Resource */
-  def RateBasedRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RateBasedRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.wafregional.RateBasedRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.wafregional.RateBasedRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -58,7 +58,7 @@ object wafregional:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF Regional Regex Match Set Resource */
-  def RegexMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegexMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.wafregional.RegexMatchSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.wafregional.RegexMatchSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -69,7 +69,7 @@ object wafregional:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF Regional Regex Pattern Set Resource */
-  def RegexPatternSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegexPatternSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.wafregional.RegexPatternSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.wafregional.RegexPatternSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -80,7 +80,7 @@ object wafregional:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an WAF Regional Rule Resource for use with Application Load Balancer. */
-  def Rule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Rule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.wafregional.RuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.wafregional.RuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -98,7 +98,7 @@ object wafregional:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF Regional Rule Group Resource */
-  def RuleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RuleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.wafregional.RuleGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.wafregional.RuleGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -116,7 +116,7 @@ object wafregional:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF Regional Size Constraint Set Resource for use with Application Load Balancer. */
-  def SizeConstraintSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SizeConstraintSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.wafregional.SizeConstraintSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.wafregional.SizeConstraintSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -127,7 +127,7 @@ object wafregional:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF Regional SQL Injection Match Set Resource for use with Application Load Balancer. */
-  def SqlInjectionMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SqlInjectionMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.wafregional.SqlInjectionMatchSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.wafregional.SqlInjectionMatchSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -219,7 +219,7 @@ object wafregional:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides a WAF Regional Web ACL Resource for use with Application Load Balancer. */
-  def WebAcl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WebAcl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.wafregional.WebAclArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.wafregional.WebAclArgs.builder
     conf.logicalName2physicalName(name) match
@@ -241,7 +241,7 @@ object wafregional:
    * 
    * &gt; **Note:** An Application Load Balancer can only be associated with one WAF Regional WebACL.
    */
-  def WebAclAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WebAclAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.wafregional.WebAclAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.wafregional.WebAclAssociationArgs.builder
     com.pulumi.aws.wafregional.WebAclAssociation(name,
@@ -249,7 +249,7 @@ object wafregional:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF Regional XSS Match Set Resource for use with Application Load Balancer. */
-  def XssMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def XssMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.wafregional.XssMatchSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.wafregional.XssMatchSetArgs.builder
     conf.logicalName2physicalName(name) match

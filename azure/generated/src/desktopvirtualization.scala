@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object desktopvirtualization:
   /** Manages a Virtual Desktop Application. */
-  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.desktopvirtualization.ApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.desktopvirtualization.ApplicationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18,7 +18,7 @@ object desktopvirtualization:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Desktop Application Group. */
-  def ApplicationGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApplicationGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.desktopvirtualization.ApplicationGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.desktopvirtualization.ApplicationGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -85,7 +85,7 @@ object desktopvirtualization:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages the Registration Info for a Virtual Desktop Host Pool. */
-  def GetHostPoolRegistrationInfo(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GetHostPoolRegistrationInfo(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.desktopvirtualization.GetHostPoolRegistrationInfoArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.desktopvirtualization.GetHostPoolRegistrationInfoArgs.builder
     com.pulumi.azure.desktopvirtualization.GetHostPoolRegistrationInfo(name,
@@ -93,7 +93,7 @@ object desktopvirtualization:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Desktop Host Pool. */
-  def HostPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HostPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.desktopvirtualization.HostPoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.desktopvirtualization.HostPoolArgs.builder
     conf.logicalName2physicalName(name) match
@@ -127,7 +127,7 @@ object desktopvirtualization:
    * \$ pulumi import azure:desktopvirtualization/scalingPlan:ScalingPlan example /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.DesktopVirtualization/scalingPlans/plan1
    * ```
    */
-  def ScalingPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ScalingPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.desktopvirtualization.ScalingPlanArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.desktopvirtualization.ScalingPlanArgs.builder
     conf.logicalName2physicalName(name) match
@@ -157,7 +157,7 @@ object desktopvirtualization:
    * 
    * &gt; **Note:** This ID is specific to Terraform - and is of the format `{virtualDesktopScalingPlanID}|{virtualDesktopHostPoolID}`.
    */
-  def ScalingPlanHostPoolAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ScalingPlanHostPoolAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.desktopvirtualization.ScalingPlanHostPoolAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.desktopvirtualization.ScalingPlanHostPoolAssociationArgs.builder
     com.pulumi.azure.desktopvirtualization.ScalingPlanHostPoolAssociation(name,
@@ -165,7 +165,7 @@ object desktopvirtualization:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Desktop Workspace. */
-  def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.desktopvirtualization.WorkspaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.desktopvirtualization.WorkspaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -183,7 +183,7 @@ object desktopvirtualization:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Desktop Workspace Application Group Association. */
-  def WorkspaceApplicationGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkspaceApplicationGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.desktopvirtualization.WorkspaceApplicationGroupAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.desktopvirtualization.WorkspaceApplicationGroupAssociationArgs.builder
     com.pulumi.azure.desktopvirtualization.WorkspaceApplicationGroupAssociation(name,

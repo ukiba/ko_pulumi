@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object managedapplication:
   /** Manages a Managed Application. */
-  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.managedapplication.ApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.managedapplication.ApplicationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25,7 +25,7 @@ object managedapplication:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Managed Application Definition. */
-  def Definition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Definition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.managedapplication.DefinitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.managedapplication.DefinitionArgs.builder
     conf.logicalName2physicalName(name) match

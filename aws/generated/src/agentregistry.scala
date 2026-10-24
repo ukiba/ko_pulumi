@@ -28,7 +28,7 @@ object agentregistry:
    * 
    * A registry allows developers to discover, manage, and govern reusable agentic components such as tools, prompts, guardrails, and knowledge bases.
    */
-  def Registry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Registry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.agentregistry.RegistryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.agentregistry.RegistryArgs.builder
     conf.logicalName2physicalName(name) match

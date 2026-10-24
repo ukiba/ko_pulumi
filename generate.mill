@@ -389,7 +389,7 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
         val builderVarOrVal = if confs.nonEmpty then "var" else "val"
         val argsTypeName = argsType.getQualifiedName
         packageMembers(packageComps) :+= CustomResourceMember(s"""
-          |  ${clsDoc}${deprecated}def $clsName(name: String, resourceOptions: $resourceFuncType)
+          |  ${clsDoc}${deprecated}inline def $clsName(name: String, resourceOptions: $resourceFuncType)
           |      (args: Endofunction[$argsTypeName.Builder] = identity)(using conf: KoPulumiConf) =
           |    $builderVarOrVal argsBuilder = $argsTypeName.builder${confs.map(_.code).mkString}
           |    ${clsElem.getQualifiedName}(name,
@@ -449,14 +449,14 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
           val argsFuncType = s"Endofunction[$argsTypeName.Builder]"
           if !isVararg then
             s"""
-              |    ${methodDoc}${deprecated}def $methodName(args: $argsFuncType):
+              |    ${methodDoc}${deprecated}inline def $methodName(args: $argsFuncType):
               |        ${renderScalaType(method.returnType)} =
               |      val argsBuilder = $argsTypeName.builder
               |      builder.$methodName(args(argsBuilder).build)
               |""".stripMargin
           else
             s"""
-              |    ${methodDoc}${deprecated}def $methodName(args: $argsFuncType*):
+              |    ${methodDoc}${deprecated}inline def $methodName(args: $argsFuncType*):
               |        ${renderScalaType(method.returnType)} =
               |      def argsBuilder = $argsTypeName.builder
               |      builder.$methodName(args.map(_(argsBuilder).build)*)

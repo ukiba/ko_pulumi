@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object macie2:
   /** Provides a resource to manage an [AWS Macie Account](https://docs.aws.amazon.com/macie/latest/APIReference/macie.html). */
-  def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.macie2.AccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.macie2.AccountArgs.builder
     com.pulumi.aws.macie2.Account(name,
@@ -13,7 +13,7 @@ object macie2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage an [Amazon Macie Classification Export Configuration](https://docs.aws.amazon.com/macie/latest/APIReference/classification-export-configuration.html). */
-  def ClassificationExportConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClassificationExportConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.macie2.ClassificationExportConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.macie2.ClassificationExportConfigurationArgs.builder
     com.pulumi.aws.macie2.ClassificationExportConfiguration(name,
@@ -21,7 +21,7 @@ object macie2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage an [AWS Macie Classification Job](https://docs.aws.amazon.com/macie/latest/APIReference/jobs.html). */
-  def ClassificationJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClassificationJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.macie2.ClassificationJobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.macie2.ClassificationJobArgs.builder
     conf.logicalName2physicalName(name) match
@@ -39,7 +39,7 @@ object macie2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage an [Amazon Macie Invitation Accepter](https://docs.aws.amazon.com/macie/latest/APIReference/invitations-accept.html). */
-  def InvitationAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InvitationAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.macie2.InvitationAccepterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.macie2.InvitationAccepterArgs.builder
     com.pulumi.aws.macie2.InvitationAccepter(name,
@@ -47,7 +47,7 @@ object macie2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage an [Amazon Macie Member](https://docs.aws.amazon.com/macie/latest/APIReference/members-id.html). */
-  def Member(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Member(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.macie2.MemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.macie2.MemberArgs.builder
     argsBuilder = args(argsBuilder)
@@ -62,7 +62,7 @@ object macie2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage an [Amazon Macie Organization Admin Account](https://docs.aws.amazon.com/macie/latest/APIReference/admin.html). */
-  def OrganizationAdminAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationAdminAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.macie2.OrganizationAdminAccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.macie2.OrganizationAdminAccountArgs.builder
     com.pulumi.aws.macie2.OrganizationAdminAccount(name,
@@ -70,7 +70,7 @@ object macie2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage Amazon Macie configuration settings for an organization in AWS Organizations. */
-  def OrganizationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.macie2.OrganizationConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.macie2.OrganizationConfigurationArgs.builder
     com.pulumi.aws.macie2.OrganizationConfiguration(name,

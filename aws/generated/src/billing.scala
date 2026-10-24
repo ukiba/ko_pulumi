@@ -24,7 +24,7 @@ object billing:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an AWS Billing View. */
-  def View(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def View(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.billing.ViewArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.billing.ViewArgs.builder
     conf.logicalName2physicalName(name) match

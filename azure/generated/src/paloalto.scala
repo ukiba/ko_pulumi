@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object paloalto:
   /** Manages a Palo Alto Networks Rulestack. */
-  def LocalRulestack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LocalRulestack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.paloalto.LocalRulestackArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.paloalto.LocalRulestackArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18,7 +18,7 @@ object paloalto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Palo Alto Networks Rulestack Certificate. */
-  def LocalRulestackCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LocalRulestackCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.paloalto.LocalRulestackCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.paloalto.LocalRulestackCertificateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -29,7 +29,7 @@ object paloalto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Palo Alto Local Rulestack FQDN List. */
-  def LocalRulestackFqdnList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LocalRulestackFqdnList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.paloalto.LocalRulestackFqdnListArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.paloalto.LocalRulestackFqdnListArgs.builder
     conf.logicalName2physicalName(name) match
@@ -40,7 +40,7 @@ object paloalto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Palo Alto Networks Rulestack Outbound Trust Certificate Association. */
-  def LocalRulestackOutboundTrustCertificateAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LocalRulestackOutboundTrustCertificateAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.paloalto.LocalRulestackOutboundTrustCertificateAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.paloalto.LocalRulestackOutboundTrustCertificateAssociationArgs.builder
     com.pulumi.azure.paloalto.LocalRulestackOutboundTrustCertificateAssociation(name,
@@ -48,7 +48,7 @@ object paloalto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Palo Alto Networks Rulestack Outbound Untrust Certificate Association. */
-  def LocalRulestackOutboundUntrustCertificateAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LocalRulestackOutboundUntrustCertificateAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.paloalto.LocalRulestackOutboundUntrustCertificateAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.paloalto.LocalRulestackOutboundUntrustCertificateAssociationArgs.builder
     com.pulumi.azure.paloalto.LocalRulestackOutboundUntrustCertificateAssociation(name,
@@ -56,7 +56,7 @@ object paloalto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Palo Alto Local Rulestack Prefix List. */
-  def LocalRulestackPrefixList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LocalRulestackPrefixList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.paloalto.LocalRulestackPrefixListArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.paloalto.LocalRulestackPrefixListArgs.builder
     conf.logicalName2physicalName(name) match
@@ -67,7 +67,7 @@ object paloalto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Palo Alto Local Rulestack Rule. */
-  def LocalRulestackRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LocalRulestackRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.paloalto.LocalRulestackRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.paloalto.LocalRulestackRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -85,7 +85,7 @@ object paloalto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Palo Alto Next Generation Firewall VHub Local Rulestack. */
-  def NextGenerationFirewallVirtualHubLocalRulestack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NextGenerationFirewallVirtualHubLocalRulestack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.paloalto.NextGenerationFirewallVirtualHubLocalRulestackArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.paloalto.NextGenerationFirewallVirtualHubLocalRulestackArgs.builder
     conf.logicalName2physicalName(name) match
@@ -103,7 +103,7 @@ object paloalto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Palo Alto Next Generation Firewall VHub Panorama. */
-  def NextGenerationFirewallVirtualHubPanorama(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NextGenerationFirewallVirtualHubPanorama(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.paloalto.NextGenerationFirewallVirtualHubPanoramaArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.paloalto.NextGenerationFirewallVirtualHubPanoramaArgs.builder
     conf.logicalName2physicalName(name) match
@@ -121,7 +121,7 @@ object paloalto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Palo Alto Next Generation Firewall Virtual Hub Strata Cloud Manager. */
-  def NextGenerationFirewallVirtualHubStrataCloudManager(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NextGenerationFirewallVirtualHubStrataCloudManager(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.paloalto.NextGenerationFirewallVirtualHubStrataCloudManagerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.paloalto.NextGenerationFirewallVirtualHubStrataCloudManagerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -139,7 +139,7 @@ object paloalto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Palo Alto Next Generation Firewall Deployed in a Virtual Network and configured via a Local Rulestack. */
-  def NextGenerationFirewallVirtualNetworkLocalRulestack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NextGenerationFirewallVirtualNetworkLocalRulestack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.paloalto.NextGenerationFirewallVirtualNetworkLocalRulestackArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.paloalto.NextGenerationFirewallVirtualNetworkLocalRulestackArgs.builder
     conf.logicalName2physicalName(name) match
@@ -157,7 +157,7 @@ object paloalto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Palo Alto Next Generation Firewall Virtual Network Panorama. */
-  def NextGenerationFirewallVirtualNetworkPanorama(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NextGenerationFirewallVirtualNetworkPanorama(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.paloalto.NextGenerationFirewallVirtualNetworkPanoramaArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.paloalto.NextGenerationFirewallVirtualNetworkPanoramaArgs.builder
     conf.logicalName2physicalName(name) match
@@ -175,7 +175,7 @@ object paloalto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Palo Alto Next Generation Firewall Virtual Network Strata Cloud Manager. */
-  def NextGenerationFirewallVirtualNetworkStrataCloudManager(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NextGenerationFirewallVirtualNetworkStrataCloudManager(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.paloalto.NextGenerationFirewallVirtualNetworkStrataCloudManagerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.paloalto.NextGenerationFirewallVirtualNetworkStrataCloudManagerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -210,7 +210,7 @@ object paloalto:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Palo Alto Network Virtual Appliance. */
-  def VirtualNetworkAppliance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VirtualNetworkAppliance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.paloalto.VirtualNetworkApplianceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.paloalto.VirtualNetworkApplianceArgs.builder
     conf.logicalName2physicalName(name) match

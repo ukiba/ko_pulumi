@@ -44,7 +44,7 @@ object devtest:
    * this resource applies only to standard VMs, not DevTest Lab VMs. To manage automated shutdown schedules for DevTest Lab VMs, reference the
    * `azure.devtest.Schedule` resource
    */
-  def GlobalVMShutdownSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GlobalVMShutdownSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.devtest.GlobalVMShutdownScheduleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.devtest.GlobalVMShutdownScheduleArgs.builder
     argsBuilder = args(argsBuilder)
@@ -59,7 +59,7 @@ object devtest:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Dev Test Lab. */
-  def Lab(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Lab(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.devtest.LabArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.devtest.LabArgs.builder
     conf.logicalName2physicalName(name) match
@@ -77,7 +77,7 @@ object devtest:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linux Virtual Machine within a Dev Test Lab. */
-  def LinuxVirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LinuxVirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.devtest.LinuxVirtualMachineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.devtest.LinuxVirtualMachineArgs.builder
     conf.logicalName2physicalName(name) match
@@ -95,7 +95,7 @@ object devtest:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Policy within a Dev Test Policy Set. */
-  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.devtest.PolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.devtest.PolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -113,7 +113,7 @@ object devtest:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages automated startup and shutdown schedules for Azure Dev Test Lab. */
-  def Schedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Schedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.devtest.ScheduleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.devtest.ScheduleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -131,7 +131,7 @@ object devtest:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Network within a DevTest Lab. */
-  def VirtualNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VirtualNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.devtest.VirtualNetworkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.devtest.VirtualNetworkArgs.builder
     conf.logicalName2physicalName(name) match
@@ -149,7 +149,7 @@ object devtest:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Windows Virtual Machine within a Dev Test Lab. */
-  def WindowsVirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WindowsVirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.devtest.WindowsVirtualMachineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.devtest.WindowsVirtualMachineArgs.builder
     conf.logicalName2physicalName(name) match

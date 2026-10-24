@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object observability:
   /** Bucket configuration for storing observability data. */
-  def Bucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Bucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.observability.BucketArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.observability.BucketArgs.builder
     com.pulumi.gcp.observability.Bucket(name,
@@ -15,7 +15,7 @@ object observability:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages Cloud Observability settings for a folder. */
-  def FolderSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FolderSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.observability.FolderSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.observability.FolderSettingsArgs.builder
     com.pulumi.gcp.observability.FolderSettings(name,
@@ -23,7 +23,7 @@ object observability:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Link configuration for exposing observability dataset data. */
-  def Link(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Link(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.observability.LinkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.observability.LinkArgs.builder
     com.pulumi.gcp.observability.Link(name,
@@ -128,7 +128,7 @@ object observability:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages Cloud Observability settings for an organization. */
-  def OrganizationSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.observability.OrganizationSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.observability.OrganizationSettingsArgs.builder
     com.pulumi.gcp.observability.OrganizationSettings(name,
@@ -136,7 +136,7 @@ object observability:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages Cloud Observability settings for a project. */
-  def ProjectSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProjectSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.observability.ProjectSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.observability.ProjectSettingsArgs.builder
     com.pulumi.gcp.observability.ProjectSettings(name,
@@ -144,7 +144,7 @@ object observability:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A trace scope is a collection of resources whose traces are queried together */
-  def TraceScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TraceScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.observability.TraceScopeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.observability.TraceScopeArgs.builder
     com.pulumi.gcp.observability.TraceScope(name,

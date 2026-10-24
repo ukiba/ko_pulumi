@@ -56,7 +56,7 @@ object beyondcorp:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Deployment of Security Gateway. */
-  def SecurityGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecurityGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.beyondcorp.SecurityGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.beyondcorp.SecurityGatewayArgs.builder
     com.pulumi.gcp.beyondcorp.SecurityGateway(name,
@@ -64,7 +64,7 @@ object beyondcorp:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Specifies application endpoint(s) to protect behind a Security Gateway. */
-  def SecurityGatewayApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecurityGatewayApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationArgs.builder
     com.pulumi.gcp.beyondcorp.SecurityGatewayApplication(name,
@@ -653,7 +653,7 @@ object beyondcorp:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SecurityGatewayApplicationIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecurityGatewayApplicationIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamBindingArgs.builder
     com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamBinding(name,
@@ -1242,7 +1242,7 @@ object beyondcorp:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SecurityGatewayApplicationIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecurityGatewayApplicationIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamMemberArgs.builder
     com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamMember(name,
@@ -1831,7 +1831,7 @@ object beyondcorp:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SecurityGatewayApplicationIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecurityGatewayApplicationIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamPolicyArgs.builder
     com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamPolicy(name,
@@ -2420,7 +2420,7 @@ object beyondcorp:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SecurityGatewayIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecurityGatewayIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.beyondcorp.SecurityGatewayIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.beyondcorp.SecurityGatewayIamBindingArgs.builder
     com.pulumi.gcp.beyondcorp.SecurityGatewayIamBinding(name,
@@ -3009,7 +3009,7 @@ object beyondcorp:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SecurityGatewayIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecurityGatewayIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.beyondcorp.SecurityGatewayIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.beyondcorp.SecurityGatewayIamMemberArgs.builder
     com.pulumi.gcp.beyondcorp.SecurityGatewayIamMember(name,
@@ -3598,7 +3598,7 @@ object beyondcorp:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SecurityGatewayIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecurityGatewayIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.beyondcorp.SecurityGatewayIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.beyondcorp.SecurityGatewayIamPolicyArgs.builder
     com.pulumi.gcp.beyondcorp.SecurityGatewayIamPolicy(name,

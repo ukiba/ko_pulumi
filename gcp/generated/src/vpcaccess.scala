@@ -15,7 +15,7 @@ object vpcaccess:
    * * How-to Guides
    *     * [Configuring Serverless VPC Access](https://cloud.google.com/vpc/docs/configure-serverless-vpc-access)
    */
-  def Connector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Connector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.vpcaccess.ConnectorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vpcaccess.ConnectorArgs.builder
     conf.logicalName2physicalName(name) match

@@ -18,7 +18,7 @@ object docdb:
    * 
    * &gt; **Note:** using `applyImmediately` can result in a brief downtime as the server reboots.
    */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.docdb.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.docdb.ClusterArgs.builder
     argsBuilder = args(argsBuilder)
@@ -37,7 +37,7 @@ object docdb:
    * 
    * You do not designate a primary and subsequent replicas. Instead, you simply add DocumentDB Instances and DocumentDB manages the replication. You can use the count meta-parameter to make multiple instances and join them all to the same DocumentDB Cluster, or you may specify different Cluster Instance resources with various `instanceClass` sizes.
    */
-  def ClusterInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.docdb.ClusterInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.docdb.ClusterInstanceArgs.builder
     argsBuilder = args(argsBuilder)
@@ -52,7 +52,7 @@ object docdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a DocumentDB Cluster Parameter Group */
-  def ClusterParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.docdb.ClusterParameterGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.docdb.ClusterParameterGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -70,7 +70,7 @@ object docdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a DocumentDB database cluster snapshot for DocumentDB clusters. */
-  def ClusterSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClusterSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.docdb.ClusterSnapshotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.docdb.ClusterSnapshotArgs.builder
     com.pulumi.aws.docdb.ClusterSnapshot(name,
@@ -111,7 +111,7 @@ object docdb:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an AWS DocDB (DocumentDB) Elastic Cluster. */
-  def ElasticCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ElasticCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.docdb.ElasticClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.docdb.ElasticClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -129,7 +129,7 @@ object docdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a DocumentDB event subscription resource. */
-  def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.docdb.EventSubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.docdb.EventSubscriptionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -151,7 +151,7 @@ object docdb:
    * 
    * More information about DocumentDB Global Clusters can be found in the [DocumentDB Developer Guide](https://docs.aws.amazon.com/documentdb/latest/developerguide/global-clusters.html).
    */
-  def GlobalCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GlobalCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.docdb.GlobalClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.docdb.GlobalClusterArgs.builder
     com.pulumi.aws.docdb.GlobalCluster(name,
@@ -159,7 +159,7 @@ object docdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an DocumentDB subnet group resource. */
-  def SubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.docdb.SubnetGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.docdb.SubnetGroupArgs.builder
     conf.logicalName2physicalName(name) match

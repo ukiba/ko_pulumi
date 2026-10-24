@@ -80,7 +80,7 @@ object alloydb:
    * * How-to Guides
    *     * [AlloyDB](https://cloud.google.com/alloydb/docs/)
    */
-  def Backup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Backup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.alloydb.BackupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.alloydb.BackupArgs.builder
     com.pulumi.gcp.alloydb.Backup(name,
@@ -110,7 +110,7 @@ object alloydb:
    * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `initial_user.password_wo`.
    * Read more about Write-only Arguments.
    */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.alloydb.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.alloydb.ClusterArgs.builder
     com.pulumi.gcp.alloydb.Cluster(name,
@@ -130,7 +130,7 @@ object alloydb:
    * Use deletionPolicy = &#34;FORCE&#34; in the associated secondary cluster and delete the cluster forcefully to delete the secondary cluster as well its associated secondary instance.
    * Users can undo the delete secondary instance action by importing the deleted secondary instance by calling terraform import.
    */
-  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.alloydb.InstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.alloydb.InstanceArgs.builder
     com.pulumi.gcp.alloydb.Instance(name,
@@ -149,7 +149,7 @@ object alloydb:
    * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `passwordWo`.
    * Read more about Write-only Arguments.
    */
-  def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.alloydb.UserArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.alloydb.UserArgs.builder
     com.pulumi.gcp.alloydb.User(name,

@@ -8,7 +8,7 @@ object securesourcemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pushOption(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.HookPushOptionArgs.Builder]):
+    inline def pushOption(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.HookPushOptionArgs.Builder]):
         com.pulumi.gcp.securesourcemanager.HookArgs.Builder =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.HookPushOptionArgs.builder
       builder.pushOption(args(argsBuilder).build)
@@ -19,7 +19,7 @@ object securesourcemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def privateConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstancePrivateConfigArgs.Builder]):
+    inline def privateConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstancePrivateConfigArgs.Builder]):
         com.pulumi.gcp.securesourcemanager.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.InstancePrivateConfigArgs.builder
       builder.privateConfig(args(argsBuilder).build)
@@ -30,19 +30,19 @@ object securesourcemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def workforceIdentityFederationConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstanceWorkforceIdentityFederationConfigArgs.Builder]):
+    inline def workforceIdentityFederationConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstanceWorkforceIdentityFederationConfigArgs.Builder]):
         com.pulumi.gcp.securesourcemanager.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.InstanceWorkforceIdentityFederationConfigArgs.builder
       builder.workforceIdentityFederationConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.securesourcemanager.InstanceIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstanceIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstanceIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.securesourcemanager.InstanceIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.InstanceIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.securesourcemanager.InstanceIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstanceIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstanceIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.securesourcemanager.InstanceIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.InstanceIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -53,7 +53,7 @@ object securesourcemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def initialConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryInitialConfigArgs.Builder]):
+    inline def initialConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryInitialConfigArgs.Builder]):
         com.pulumi.gcp.securesourcemanager.RepositoryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryInitialConfigArgs.builder
       builder.initialConfig(args(argsBuilder).build)
@@ -63,19 +63,19 @@ object securesourcemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scanConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigArgs.Builder]):
+    inline def scanConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigArgs.Builder]):
         com.pulumi.gcp.securesourcemanager.RepositoryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigArgs.builder
       builder.scanConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.securesourcemanager.RepositoryIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.securesourcemanager.RepositoryIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.securesourcemanager.RepositoryIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.securesourcemanager.RepositoryIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -86,19 +86,19 @@ object securesourcemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pushOption(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.HookPushOptionArgs.Builder]):
+    inline def pushOption(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.HookPushOptionArgs.Builder]):
         com.pulumi.gcp.securesourcemanager.inputs.HookState.Builder =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.HookPushOptionArgs.builder
       builder.pushOption(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.securesourcemanager.inputs.InstanceIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstanceIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstanceIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.securesourcemanager.inputs.InstanceIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.InstanceIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.securesourcemanager.inputs.InstanceIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstanceIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstanceIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.securesourcemanager.inputs.InstanceIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.InstanceIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -109,7 +109,7 @@ object securesourcemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customHostConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstancePrivateConfigCustomHostConfigArgs.Builder]):
+    inline def customHostConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstancePrivateConfigCustomHostConfigArgs.Builder]):
         com.pulumi.gcp.securesourcemanager.inputs.InstancePrivateConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.InstancePrivateConfigCustomHostConfigArgs.builder
       builder.customHostConfig(args(argsBuilder).build)
@@ -120,7 +120,7 @@ object securesourcemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hostConfigs(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstanceHostConfigArgs.Builder]*):
+    inline def hostConfigs(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstanceHostConfigArgs.Builder]*):
         com.pulumi.gcp.securesourcemanager.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.InstanceHostConfigArgs.builder
       builder.hostConfigs(args.map(_(argsBuilder).build)*)
@@ -130,7 +130,7 @@ object securesourcemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def privateConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstancePrivateConfigArgs.Builder]):
+    inline def privateConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstancePrivateConfigArgs.Builder]):
         com.pulumi.gcp.securesourcemanager.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.InstancePrivateConfigArgs.builder
       builder.privateConfig(args(argsBuilder).build)
@@ -141,19 +141,19 @@ object securesourcemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def workforceIdentityFederationConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstanceWorkforceIdentityFederationConfigArgs.Builder]):
+    inline def workforceIdentityFederationConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.InstanceWorkforceIdentityFederationConfigArgs.Builder]):
         com.pulumi.gcp.securesourcemanager.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.InstanceWorkforceIdentityFederationConfigArgs.builder
       builder.workforceIdentityFederationConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -164,7 +164,7 @@ object securesourcemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def secretScanConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigSecretScanConfigArgs.Builder]):
+    inline def secretScanConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigSecretScanConfigArgs.Builder]):
         com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigSecretScanConfigArgs.builder
       builder.secretScanConfig(args(argsBuilder).build)
@@ -175,7 +175,7 @@ object securesourcemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def initialConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryInitialConfigArgs.Builder]):
+    inline def initialConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryInitialConfigArgs.Builder]):
         com.pulumi.gcp.securesourcemanager.inputs.RepositoryState.Builder =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryInitialConfigArgs.builder
       builder.initialConfig(args(argsBuilder).build)
@@ -185,7 +185,7 @@ object securesourcemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scanConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigArgs.Builder]):
+    inline def scanConfig(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigArgs.Builder]):
         com.pulumi.gcp.securesourcemanager.inputs.RepositoryState.Builder =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryScanConfigArgs.builder
       builder.scanConfig(args(argsBuilder).build)
@@ -195,7 +195,7 @@ object securesourcemanager_ext:
      * Structure is documented below.
      * @return builder
      */
-    def uris(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryUriArgs.Builder]*):
+    inline def uris(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.RepositoryUriArgs.Builder]*):
         com.pulumi.gcp.securesourcemanager.inputs.RepositoryState.Builder =
       def argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.RepositoryUriArgs.builder
       builder.uris(args.map(_(argsBuilder).build)*)

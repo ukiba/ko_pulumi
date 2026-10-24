@@ -11,7 +11,7 @@ object storagegateway:
    * 
    * &gt; **NOTE:** The Storage Gateway API provides no method to remove a cache disk. Destroying this resource does not perform any Storage Gateway actions.
    */
-  def Cache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.storagegateway.CacheArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.storagegateway.CacheArgs.builder
     com.pulumi.aws.storagegateway.Cache(name,
@@ -25,7 +25,7 @@ object storagegateway:
    * 
    * &gt; **NOTE:** The gateway must have an upload buffer added (e.g., via the `aws.storagegateway.UploadBuffer` resource) before the volume is operational to clients, however the Storage Gateway API will allow volume creation without error in that case and return volume status as `UPLOAD BUFFER NOT CONFIGURED`.
    */
-  def CachesIscsiVolume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CachesIscsiVolume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.storagegateway.CachesIscsiVolumeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.storagegateway.CachesIscsiVolumeArgs.builder
     argsBuilder = args(argsBuilder)
@@ -44,7 +44,7 @@ object storagegateway:
    * 
    * [FSx File Gateway requirements](https://docs.aws.amazon.com/filegateway/latest/filefsxw/Requirements.html).
    */
-  def FileSystemAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FileSystemAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.storagegateway.FileSystemAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.storagegateway.FileSystemAssociationArgs.builder
     argsBuilder = args(argsBuilder)
@@ -63,7 +63,7 @@ object storagegateway:
    * 
    * &gt; **NOTE:** The Storage Gateway API requires the gateway to be connected to properly return information after activation. If you are receiving `The specified gateway is not connected` errors during resource creation (gateway activation), ensure your gateway instance meets the [Storage Gateway requirements](https://docs.aws.amazon.com/storagegateway/latest/userguide/Requirements.html).
    */
-  def Gateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Gateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.storagegateway.GatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.storagegateway.GatewayArgs.builder
     argsBuilder = args(argsBuilder)
@@ -78,7 +78,7 @@ object storagegateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Storage Gateway NFS File Share. */
-  def NfsFileShare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NfsFileShare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.storagegateway.NfsFileShareArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.storagegateway.NfsFileShareArgs.builder
     argsBuilder = args(argsBuilder)
@@ -93,7 +93,7 @@ object storagegateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Storage Gateway SMB File Share. */
-  def SmbFileShare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SmbFileShare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.storagegateway.SmbFileShareArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.storagegateway.SmbFileShareArgs.builder
     argsBuilder = args(argsBuilder)
@@ -129,7 +129,7 @@ object storagegateway:
    * 
    * &gt; **NOTE:** The gateway must have a working storage added (e.g., via the `aws.storagegateway.WorkingStorage` resource) before the volume is operational to clients, however the Storage Gateway API will allow volume creation without error in that case and return volume status as `WORKING STORAGE NOT CONFIGURED`.
    */
-  def StoredIscsiVolume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StoredIscsiVolume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.storagegateway.StoredIscsiVolumeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.storagegateway.StoredIscsiVolumeArgs.builder
     argsBuilder = args(argsBuilder)
@@ -144,7 +144,7 @@ object storagegateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Storage Gateway Tape Pool. */
-  def TapePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TapePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.storagegateway.TapePoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.storagegateway.TapePoolArgs.builder
     argsBuilder = args(argsBuilder)
@@ -163,7 +163,7 @@ object storagegateway:
    * 
    * &gt; **NOTE:** The Storage Gateway API provides no method to remove an upload buffer disk. Destroying this resource does not perform any Storage Gateway actions.
    */
-  def UploadBuffer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UploadBuffer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.storagegateway.UploadBufferArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.storagegateway.UploadBufferArgs.builder
     com.pulumi.aws.storagegateway.UploadBuffer(name,
@@ -175,7 +175,7 @@ object storagegateway:
    * 
    * &gt; **NOTE:** The Storage Gateway API provides no method to remove a working storage disk. Destroying this resource does not perform any Storage Gateway actions.
    */
-  def WorkingStorage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkingStorage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.storagegateway.WorkingStorageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.storagegateway.WorkingStorageArgs.builder
     com.pulumi.aws.storagegateway.WorkingStorage(name,

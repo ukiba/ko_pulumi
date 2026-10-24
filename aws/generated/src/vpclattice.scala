@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object vpclattice:
   /** Resource for managing an AWS VPC Lattice Service Network or Service Access log subscription. */
-  def AccessLogSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccessLogSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpclattice.AccessLogSubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.vpclattice.AccessLogSubscriptionArgs.builder
     argsBuilder = args(argsBuilder)
@@ -22,7 +22,7 @@ object vpclattice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Lattice Auth Policy. */
-  def AuthPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AuthPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpclattice.AuthPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.vpclattice.AuthPolicyArgs.builder
     com.pulumi.aws.vpclattice.AuthPolicy(name,
@@ -34,7 +34,7 @@ object vpclattice:
    * 
    * Starts the domain verification process for a custom domain name. Use this resource to verify ownership of a domain before associating it with VPC Lattice resources.
    */
-  def DomainVerification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DomainVerification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpclattice.DomainVerificationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.vpclattice.DomainVerificationArgs.builder
     argsBuilder = args(argsBuilder)
@@ -49,7 +49,7 @@ object vpclattice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Lattice Listener. */
-  def Listener(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Listener(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpclattice.ListenerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.vpclattice.ListenerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -67,7 +67,7 @@ object vpclattice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Lattice Listener Rule. */
-  def ListenerRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ListenerRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpclattice.ListenerRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.vpclattice.ListenerRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -85,7 +85,7 @@ object vpclattice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Lattice Resource Configuration. */
-  def ResourceConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourceConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpclattice.ResourceConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.vpclattice.ResourceConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -103,7 +103,7 @@ object vpclattice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Lattice Resource Gateway. */
-  def ResourceGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourceGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpclattice.ResourceGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.vpclattice.ResourceGatewayArgs.builder
     conf.logicalName2physicalName(name) match
@@ -121,7 +121,7 @@ object vpclattice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Lattice Resource Policy. */
-  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpclattice.ResourcePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.vpclattice.ResourcePolicyArgs.builder
     com.pulumi.aws.vpclattice.ResourcePolicy(name,
@@ -129,7 +129,7 @@ object vpclattice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Lattice Service. */
-  def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpclattice.ServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.vpclattice.ServiceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -147,7 +147,7 @@ object vpclattice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Lattice Service Network. */
-  def ServiceNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServiceNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpclattice.ServiceNetworkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.vpclattice.ServiceNetworkArgs.builder
     conf.logicalName2physicalName(name) match
@@ -165,7 +165,7 @@ object vpclattice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Lattice Service Network Resource Association. */
-  def ServiceNetworkResourceAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServiceNetworkResourceAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpclattice.ServiceNetworkResourceAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.vpclattice.ServiceNetworkResourceAssociationArgs.builder
     argsBuilder = args(argsBuilder)
@@ -180,7 +180,7 @@ object vpclattice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Lattice Service Network Service Association. */
-  def ServiceNetworkServiceAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServiceNetworkServiceAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpclattice.ServiceNetworkServiceAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.vpclattice.ServiceNetworkServiceAssociationArgs.builder
     argsBuilder = args(argsBuilder)
@@ -195,7 +195,7 @@ object vpclattice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Lattice Service Network VPC Association. */
-  def ServiceNetworkVpcAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServiceNetworkVpcAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpclattice.ServiceNetworkVpcAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.vpclattice.ServiceNetworkVpcAssociationArgs.builder
     argsBuilder = args(argsBuilder)
@@ -210,7 +210,7 @@ object vpclattice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Lattice Target Group. */
-  def TargetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TargetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpclattice.TargetGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.vpclattice.TargetGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -228,7 +228,7 @@ object vpclattice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides the ability to register a target with an AWS VPC Lattice Target Group. */
-  def TargetGroupAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TargetGroupAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.vpclattice.TargetGroupAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.vpclattice.TargetGroupAttachmentArgs.builder
     com.pulumi.aws.vpclattice.TargetGroupAttachment(name,

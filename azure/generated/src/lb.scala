@@ -11,7 +11,7 @@ object lb:
    * 
    * &gt; **Note:** When using this resource, the Load Balancer needs to have a FrontEnd IP Configuration Attached
    */
-  def BackendAddressPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackendAddressPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.lb.BackendAddressPoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.lb.BackendAddressPoolArgs.builder
     conf.logicalName2physicalName(name) match
@@ -26,7 +26,7 @@ object lb:
    * 
    * &gt; **Note:** Backend Addresses can only be added to a `Standard` SKU Load Balancer.
    */
-  def BackendAddressPoolAddress(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackendAddressPoolAddress(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.lb.BackendAddressPoolAddressArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.lb.BackendAddressPoolAddressArgs.builder
     conf.logicalName2physicalName(name) match
@@ -102,7 +102,7 @@ object lb:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Load Balancer Resource. */
-  def LoadBalancer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LoadBalancer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.lb.LoadBalancerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.lb.LoadBalancerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -126,7 +126,7 @@ object lb:
    * 
    * &gt; **Note:** When using this resource, the Load Balancer needs to have a FrontEnd IP Configuration Attached
    */
-  def NatPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NatPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.lb.NatPoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.lb.NatPoolArgs.builder
     conf.logicalName2physicalName(name) match
@@ -143,7 +143,7 @@ object lb:
    * 
    * &gt; **Note:** When using this resource, the Load Balancer needs to have a FrontEnd IP Configuration Attached
    */
-  def NatRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NatRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.lb.NatRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.lb.NatRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -158,7 +158,7 @@ object lb:
    * 
    * &gt; **Note:** When using this resource, the Load Balancer needs to have a FrontEnd IP Configuration and a Backend Address Pool Attached.
    */
-  def OutboundRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OutboundRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.lb.OutboundRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.lb.OutboundRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -173,7 +173,7 @@ object lb:
    * 
    * &gt; **Note:** When using this resource, the Load Balancer needs to have a FrontEnd IP Configuration Attached
    */
-  def Probe(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Probe(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.lb.ProbeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.lb.ProbeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -188,7 +188,7 @@ object lb:
    * 
    * &gt; **Note:** When using this resource, the Load Balancer needs to have a FrontEnd IP Configuration Attached
    */
-  def Rule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Rule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.lb.RuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.lb.RuleArgs.builder
     conf.logicalName2physicalName(name) match

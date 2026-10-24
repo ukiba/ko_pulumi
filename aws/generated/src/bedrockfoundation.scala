@@ -56,7 +56,7 @@ object bedrockfoundation:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an AWS Bedrock Foundation Model Agreement. */
-  def ModelAgreement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ModelAgreement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.bedrockfoundation.ModelAgreementArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.bedrockfoundation.ModelAgreementArgs.builder
     com.pulumi.aws.bedrockfoundation.ModelAgreement(name,

@@ -7,7 +7,7 @@ object privatedns_ext:
      * @param natIpConfigurations One or more (up to 8) `natIpConfiguration` block as defined below.
      * @return builder
      */
-    def natIpConfigurations(args: Endofunction[com.pulumi.azure.privatedns.inputs.LinkServiceNatIpConfigurationArgs.Builder]*):
+    inline def natIpConfigurations(args: Endofunction[com.pulumi.azure.privatedns.inputs.LinkServiceNatIpConfigurationArgs.Builder]*):
         com.pulumi.azure.privatedns.LinkServiceArgs.Builder =
       def argsBuilder = com.pulumi.azure.privatedns.inputs.LinkServiceNatIpConfigurationArgs.builder
       builder.natIpConfigurations(args.map(_(argsBuilder).build)*)
@@ -17,7 +17,7 @@ object privatedns_ext:
      * @param records One or more `record` blocks as defined below.
      * @return builder
      */
-    def records(args: Endofunction[com.pulumi.azure.privatedns.inputs.MxRecordRecordArgs.Builder]*):
+    inline def records(args: Endofunction[com.pulumi.azure.privatedns.inputs.MxRecordRecordArgs.Builder]*):
         com.pulumi.azure.privatedns.MxRecordArgs.Builder =
       def argsBuilder = com.pulumi.azure.privatedns.inputs.MxRecordRecordArgs.builder
       builder.records(args.map(_(argsBuilder).build)*)
@@ -27,7 +27,7 @@ object privatedns_ext:
      * @param targetDnsServers Can be specified multiple times to define multiple target DNS servers. Each `targetDnsServers` block as defined below.
      * @return builder
      */
-    def targetDnsServers(args: Endofunction[com.pulumi.azure.privatedns.inputs.ResolverForwardingRuleTargetDnsServerArgs.Builder]*):
+    inline def targetDnsServers(args: Endofunction[com.pulumi.azure.privatedns.inputs.ResolverForwardingRuleTargetDnsServerArgs.Builder]*):
         com.pulumi.azure.privatedns.ResolverForwardingRuleArgs.Builder =
       def argsBuilder = com.pulumi.azure.privatedns.inputs.ResolverForwardingRuleTargetDnsServerArgs.builder
       builder.targetDnsServers(args.map(_(argsBuilder).build)*)
@@ -37,7 +37,7 @@ object privatedns_ext:
      * @param ipConfigurations One `ipConfigurations` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def ipConfigurations(args: Endofunction[com.pulumi.azure.privatedns.inputs.ResolverInboundEndpointIpConfigurationsArgs.Builder]):
+    inline def ipConfigurations(args: Endofunction[com.pulumi.azure.privatedns.inputs.ResolverInboundEndpointIpConfigurationsArgs.Builder]):
         com.pulumi.azure.privatedns.ResolverInboundEndpointArgs.Builder =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.ResolverInboundEndpointIpConfigurationsArgs.builder
       builder.ipConfigurations(args(argsBuilder).build)
@@ -47,7 +47,7 @@ object privatedns_ext:
      * @param records One or more `record` blocks as defined below.
      * @return builder
      */
-    def records(args: Endofunction[com.pulumi.azure.privatedns.inputs.SRVRecordRecordArgs.Builder]*):
+    inline def records(args: Endofunction[com.pulumi.azure.privatedns.inputs.SRVRecordRecordArgs.Builder]*):
         com.pulumi.azure.privatedns.SRVRecordArgs.Builder =
       def argsBuilder = com.pulumi.azure.privatedns.inputs.SRVRecordRecordArgs.builder
       builder.records(args.map(_(argsBuilder).build)*)
@@ -57,7 +57,7 @@ object privatedns_ext:
      * @param records One or more `record` blocks as defined below.
      * @return builder
      */
-    def records(args: Endofunction[com.pulumi.azure.privatedns.inputs.TxtRecordRecordArgs.Builder]*):
+    inline def records(args: Endofunction[com.pulumi.azure.privatedns.inputs.TxtRecordRecordArgs.Builder]*):
         com.pulumi.azure.privatedns.TxtRecordArgs.Builder =
       def argsBuilder = com.pulumi.azure.privatedns.inputs.TxtRecordRecordArgs.builder
       builder.records(args.map(_(argsBuilder).build)*)
@@ -67,7 +67,7 @@ object privatedns_ext:
      * @param soaRecord An `soaRecord` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def soaRecord(args: Endofunction[com.pulumi.azure.privatedns.inputs.ZoneSoaRecordArgs.Builder]):
+    inline def soaRecord(args: Endofunction[com.pulumi.azure.privatedns.inputs.ZoneSoaRecordArgs.Builder]):
         com.pulumi.azure.privatedns.ZoneArgs.Builder =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.ZoneSoaRecordArgs.builder
       builder.soaRecord(args(argsBuilder).build)
@@ -77,7 +77,7 @@ object privatedns_ext:
      * @param natIpConfigurations One or more (up to 8) `natIpConfiguration` block as defined below.
      * @return builder
      */
-    def natIpConfigurations(args: Endofunction[com.pulumi.azure.privatedns.inputs.LinkServiceNatIpConfigurationArgs.Builder]*):
+    inline def natIpConfigurations(args: Endofunction[com.pulumi.azure.privatedns.inputs.LinkServiceNatIpConfigurationArgs.Builder]*):
         com.pulumi.azure.privatedns.inputs.LinkServiceState.Builder =
       def argsBuilder = com.pulumi.azure.privatedns.inputs.LinkServiceNatIpConfigurationArgs.builder
       builder.natIpConfigurations(args.map(_(argsBuilder).build)*)
@@ -87,7 +87,7 @@ object privatedns_ext:
      * @param records One or more `record` blocks as defined below.
      * @return builder
      */
-    def records(args: Endofunction[com.pulumi.azure.privatedns.inputs.MxRecordRecordArgs.Builder]*):
+    inline def records(args: Endofunction[com.pulumi.azure.privatedns.inputs.MxRecordRecordArgs.Builder]*):
         com.pulumi.azure.privatedns.inputs.MxRecordState.Builder =
       def argsBuilder = com.pulumi.azure.privatedns.inputs.MxRecordRecordArgs.builder
       builder.records(args.map(_(argsBuilder).build)*)
@@ -97,7 +97,7 @@ object privatedns_ext:
      * @param targetDnsServers Can be specified multiple times to define multiple target DNS servers. Each `targetDnsServers` block as defined below.
      * @return builder
      */
-    def targetDnsServers(args: Endofunction[com.pulumi.azure.privatedns.inputs.ResolverForwardingRuleTargetDnsServerArgs.Builder]*):
+    inline def targetDnsServers(args: Endofunction[com.pulumi.azure.privatedns.inputs.ResolverForwardingRuleTargetDnsServerArgs.Builder]*):
         com.pulumi.azure.privatedns.inputs.ResolverForwardingRuleState.Builder =
       def argsBuilder = com.pulumi.azure.privatedns.inputs.ResolverForwardingRuleTargetDnsServerArgs.builder
       builder.targetDnsServers(args.map(_(argsBuilder).build)*)
@@ -107,7 +107,7 @@ object privatedns_ext:
      * @param ipConfigurations One `ipConfigurations` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def ipConfigurations(args: Endofunction[com.pulumi.azure.privatedns.inputs.ResolverInboundEndpointIpConfigurationsArgs.Builder]):
+    inline def ipConfigurations(args: Endofunction[com.pulumi.azure.privatedns.inputs.ResolverInboundEndpointIpConfigurationsArgs.Builder]):
         com.pulumi.azure.privatedns.inputs.ResolverInboundEndpointState.Builder =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.ResolverInboundEndpointIpConfigurationsArgs.builder
       builder.ipConfigurations(args(argsBuilder).build)
@@ -117,7 +117,7 @@ object privatedns_ext:
      * @param records One or more `record` blocks as defined below.
      * @return builder
      */
-    def records(args: Endofunction[com.pulumi.azure.privatedns.inputs.SRVRecordRecordArgs.Builder]*):
+    inline def records(args: Endofunction[com.pulumi.azure.privatedns.inputs.SRVRecordRecordArgs.Builder]*):
         com.pulumi.azure.privatedns.inputs.SRVRecordState.Builder =
       def argsBuilder = com.pulumi.azure.privatedns.inputs.SRVRecordRecordArgs.builder
       builder.records(args.map(_(argsBuilder).build)*)
@@ -127,7 +127,7 @@ object privatedns_ext:
      * @param records One or more `record` blocks as defined below.
      * @return builder
      */
-    def records(args: Endofunction[com.pulumi.azure.privatedns.inputs.TxtRecordRecordArgs.Builder]*):
+    inline def records(args: Endofunction[com.pulumi.azure.privatedns.inputs.TxtRecordRecordArgs.Builder]*):
         com.pulumi.azure.privatedns.inputs.TxtRecordState.Builder =
       def argsBuilder = com.pulumi.azure.privatedns.inputs.TxtRecordRecordArgs.builder
       builder.records(args.map(_(argsBuilder).build)*)
@@ -137,7 +137,7 @@ object privatedns_ext:
      * @param soaRecord An `soaRecord` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def soaRecord(args: Endofunction[com.pulumi.azure.privatedns.inputs.ZoneSoaRecordArgs.Builder]):
+    inline def soaRecord(args: Endofunction[com.pulumi.azure.privatedns.inputs.ZoneSoaRecordArgs.Builder]):
         com.pulumi.azure.privatedns.inputs.ZoneState.Builder =
       val argsBuilder = com.pulumi.azure.privatedns.inputs.ZoneSoaRecordArgs.builder
       builder.soaRecord(args(argsBuilder).build)

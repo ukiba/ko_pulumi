@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object fsx:
   /** Provides a FSx Backup resource. */
-  def Backup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Backup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.fsx.BackupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.fsx.BackupArgs.builder
     argsBuilder = args(argsBuilder)
@@ -26,7 +26,7 @@ object fsx:
    * 
    * &gt; **NOTE:** Data Repository Associations are only compatible with AWS FSx for Lustre File Systems and `PERSISTENT_2` deployment type.
    */
-  def DataRepositoryAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataRepositoryAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.fsx.DataRepositoryAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.fsx.DataRepositoryAssociationArgs.builder
     argsBuilder = args(argsBuilder)
@@ -44,7 +44,7 @@ object fsx:
    * Resource for managing an Amazon File Cache cache.
    * See the [Create File Cache](https://docs.aws.amazon.com/fsx/latest/APIReference/API_CreateFileCache.html) for more information.
    */
-  def FileCache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FileCache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.fsx.FileCacheArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.fsx.FileCacheArgs.builder
     argsBuilder = args(argsBuilder)
@@ -152,7 +152,7 @@ object fsx:
    * 
    * &gt; **NOTE:** `autoImportPolicy`, `exportPath`, `importPath` and `importedFileChunkSize` are not supported with the `PERSISTENT_2` deployment type. Use `aws.fsx.DataRepositoryAssociation` instead.
    */
-  def LustreFileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LustreFileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.fsx.LustreFileSystemArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.fsx.LustreFileSystemArgs.builder
     argsBuilder = args(argsBuilder)
@@ -170,7 +170,7 @@ object fsx:
    * Manages an Amazon FSx for NetApp ONTAP file system.
    * See the [FSx ONTAP User Guide](https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html) for more information.
    */
-  def OntapFileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OntapFileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.fsx.OntapFileSystemArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.fsx.OntapFileSystemArgs.builder
     argsBuilder = args(argsBuilder)
@@ -188,7 +188,7 @@ object fsx:
    * Manages a FSx Storage Virtual Machine.
    * See the [FSx ONTAP User Guide](https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html) for more information.
    */
-  def OntapStorageVirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OntapStorageVirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.fsx.OntapStorageVirtualMachineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.fsx.OntapStorageVirtualMachineArgs.builder
     conf.logicalName2physicalName(name) match
@@ -209,7 +209,7 @@ object fsx:
    * Manages a FSx ONTAP Volume.
    * See the [FSx ONTAP User Guide](https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html) for more information.
    */
-  def OntapVolume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OntapVolume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.fsx.OntapVolumeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.fsx.OntapVolumeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -230,7 +230,7 @@ object fsx:
    * Manages an Amazon FSx for OpenZFS file system.
    * See the [FSx OpenZFS User Guide](https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/what-is-fsx.html) for more information.
    */
-  def OpenZfsFileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OpenZfsFileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.fsx.OpenZfsFileSystemArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.fsx.OpenZfsFileSystemArgs.builder
     argsBuilder = args(argsBuilder)
@@ -248,7 +248,7 @@ object fsx:
    * Manages an Amazon FSx for OpenZFS volume.
    * See the [FSx OpenZFS User Guide](https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/what-is-fsx.html) for more information.
    */
-  def OpenZfsSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OpenZfsSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.fsx.OpenZfsSnapshotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.fsx.OpenZfsSnapshotArgs.builder
     conf.logicalName2physicalName(name) match
@@ -269,7 +269,7 @@ object fsx:
    * Manages an Amazon FSx for OpenZFS volume.
    * See the [FSx OpenZFS User Guide](https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/what-is-fsx.html) for more information.
    */
-  def OpenZfsVolume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OpenZfsVolume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.fsx.OpenZfsVolumeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.fsx.OpenZfsVolumeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -287,7 +287,7 @@ object fsx:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Amazon FSx S3 Access Point attachment. */
-  def S3AccessPointAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def S3AccessPointAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.fsx.S3AccessPointAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.fsx.S3AccessPointAttachmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -302,7 +302,7 @@ object fsx:
    * 
    * &gt; **NOTE:** Either the `activeDirectoryId` argument or `selfManagedActiveDirectory` configuration block must be specified.
    */
-  def WindowsFileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WindowsFileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.fsx.WindowsFileSystemArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.fsx.WindowsFileSystemArgs.builder
     argsBuilder = args(argsBuilder)

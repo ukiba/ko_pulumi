@@ -15,7 +15,7 @@ object ec2:
    * 
    * &gt; **NOTE:** There is only one allowed images settings configuration per AWS account and region. Creating this resource will configure the account-level settings.
    */
-  def AllowedImagesSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AllowedImagesSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.AllowedImagesSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.AllowedImagesSettingsArgs.builder
     com.pulumi.aws.ec2.AllowedImagesSettings(name,
@@ -32,7 +32,7 @@ object ec2:
    * If you just want to share an existing AMI with another AWS account,
    * it&#39;s better to use `aws.ec2.AmiLaunchPermission` instead.
    */
-  def Ami(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Ami(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.AmiArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.AmiArgs.builder
     conf.logicalName2physicalName(name) match
@@ -62,7 +62,7 @@ object ec2:
    * Copying an AMI can take several minutes. The creation of this resource will
    * block until the new AMI is available for use on new instances.
    */
-  def AmiCopy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AmiCopy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.AmiCopyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.AmiCopyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -98,7 +98,7 @@ object ec2:
    * the generated AMI. Users may taint or otherwise recreate the resource in order
    * to produce a fresh snapshot.
    */
-  def AmiFromInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AmiFromInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.AmiFromInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.AmiFromInstanceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -116,7 +116,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Adds a launch permission to an AMI. */
-  def AmiLaunchPermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AmiLaunchPermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.AmiLaunchPermissionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.AmiLaunchPermissionArgs.builder
     com.pulumi.aws.ec2.AmiLaunchPermission(name,
@@ -128,7 +128,7 @@ object ec2:
    * 
    * &gt; **NOTE:** This is an advanced resource. The provider will automatically assume management of the EC2 Availability Zone Group without import and perform no actions on removal from configuration.
    */
-  def AvailabilityZoneGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AvailabilityZoneGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.AvailabilityZoneGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.AvailabilityZoneGroupArgs.builder
     com.pulumi.aws.ec2.AvailabilityZoneGroup(name,
@@ -142,7 +142,7 @@ object ec2:
    * 
    * &gt; **NOTE:** Due to the expense of testing this resource, we provide it as best effort. If you find it useful, and have the ability to help test or notice issues, consider reaching out to us on GitHub.
    */
-  def CapacityBlockReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CapacityBlockReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.CapacityBlockReservationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.CapacityBlockReservationArgs.builder
     argsBuilder = args(argsBuilder)
@@ -157,7 +157,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an EC2 Capacity Reservation. This allows you to reserve capacity for your Amazon EC2 instances in a specific Availability Zone for any duration. */
-  def CapacityReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CapacityReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.CapacityReservationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.CapacityReservationArgs.builder
     argsBuilder = args(argsBuilder)
@@ -172,7 +172,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Carrier Gateway. See the AWS [documentation](https://docs.aws.amazon.com/vpc/latest/userguide/Carrier_Gateway.html) for more information. */
-  def CarrierGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CarrierGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.CarrierGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.CarrierGatewayArgs.builder
     argsBuilder = args(argsBuilder)
@@ -187,7 +187,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a customer gateway inside a VPC. These objects can be connected to VPN gateways via VPN connections, and allow you to establish tunnels between your network and the VPC. */
-  def CustomerGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomerGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.CustomerGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.CustomerGatewayArgs.builder
     argsBuilder = args(argsBuilder)
@@ -202,7 +202,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an EC2 Host resource. This allows Dedicated Hosts to be allocated, modified, and released. */
-  def DedicatedHost(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DedicatedHost(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.DedicatedHostArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.DedicatedHostArgs.builder
     argsBuilder = args(argsBuilder)
@@ -217,7 +217,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS EC2 Default Credit Specification. */
-  def DefaultCreditSpecification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DefaultCreditSpecification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.DefaultCreditSpecificationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.DefaultCreditSpecificationArgs.builder
     com.pulumi.aws.ec2.DefaultCreditSpecification(name,
@@ -235,7 +235,7 @@ object ec2:
    * 
    * For more information about Network ACLs, see the AWS Documentation on [Network ACLs](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html).
    */
-  def DefaultNetworkAcl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DefaultNetworkAcl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.DefaultNetworkAclArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.DefaultNetworkAclArgs.builder
     argsBuilder = args(argsBuilder)
@@ -258,7 +258,7 @@ object ec2:
    * 
    * For more information, see the Amazon VPC User Guide on [Route Tables](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html). For information about managing normal route tables in this provider, see `aws.ec2.RouteTable`.
    */
-  def DefaultRouteTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DefaultRouteTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.DefaultRouteTableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.DefaultRouteTableArgs.builder
     argsBuilder = args(argsBuilder)
@@ -283,7 +283,7 @@ object ec2:
    * 
    * For more information about default security groups, see the AWS documentation on [Default Security Groups](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html#default-security-group). To manage normal security groups, see the `aws.ec2.SecurityGroup` resource.
    */
-  def DefaultSecurityGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DefaultSecurityGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.DefaultSecurityGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.DefaultSecurityGroupArgs.builder
     argsBuilder = args(argsBuilder)
@@ -307,7 +307,7 @@ object ec2:
    * By default, `pulumi destroy` does not delete the default subnet but does remove the resource from the state.
    * Set the `forceDestroy` argument to `true` to delete the default subnet.
    */
-  def DefaultSubnet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DefaultSubnet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.DefaultSubnetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.DefaultSubnetArgs.builder
     argsBuilder = args(argsBuilder)
@@ -334,7 +334,7 @@ object ec2:
    * By default, `pulumi destroy` does not delete the default VPC but does remove the resource from the state.
    * Set the `forceDestroy` argument to `true` to delete the default VPC.
    */
-  def DefaultVpc(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DefaultVpc(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.DefaultVpcArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.DefaultVpcArgs.builder
     argsBuilder = args(argsBuilder)
@@ -360,7 +360,7 @@ object ec2:
    * this provider does not _create_ this resource, but instead &#34;adopts&#34; it
    * into management.
    */
-  def DefaultVpcDhcpOptions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DefaultVpcDhcpOptions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.DefaultVpcDhcpOptionsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.DefaultVpcDhcpOptionsArgs.builder
     argsBuilder = args(argsBuilder)
@@ -1695,7 +1695,7 @@ object ec2:
    * over IPv6 from instances in your VPC to the Internet, and prevents hosts
    * outside of your VPC from initiating an IPv6 connection with your instance.
    */
-  def EgressOnlyInternetGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EgressOnlyInternetGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.EgressOnlyInternetGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.EgressOnlyInternetGatewayArgs.builder
     argsBuilder = args(argsBuilder)
@@ -1716,7 +1716,7 @@ object ec2:
    * 
    * &gt; **Note:** Do not use `networkInterface` to associate the EIP to `aws.lb.LoadBalancer` or `aws.ec2.NatGateway` resources. Instead use the `allocationId` available in those resources to allow AWS to manage the association, otherwise you will see `AuthFailure` errors.
    */
-  def Eip(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Eip(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.EipArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.EipArgs.builder
     argsBuilder = args(argsBuilder)
@@ -1737,7 +1737,7 @@ object ec2:
    * 
    * &gt; **NOTE:** `aws.ec2.EipAssociation` is useful in scenarios where EIPs are either pre-existing or distributed to customers or users and therefore cannot be changed.
    */
-  def EipAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EipAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.EipAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.EipAssociationArgs.builder
     com.pulumi.aws.ec2.EipAssociation(name,
@@ -1745,7 +1745,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Assigns a static reverse DNS record to an Elastic IP addresses. See [Using reverse DNS for email applications](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS). */
-  def EipDomainName(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EipDomainName(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.EipDomainNameArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.EipDomainNameArgs.builder
     com.pulumi.aws.ec2.EipDomainName(name,
@@ -1753,7 +1753,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a VPC Encryption Control. */
-  @deprecated("aws.ec2/encryptioncontrol.EncryptionControl has been deprecated in favor of aws.ec2/vpcencryptioncontrol.VpcEncryptionControl") def EncryptionControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("aws.ec2/encryptioncontrol.EncryptionControl has been deprecated in favor of aws.ec2/vpcencryptioncontrol.VpcEncryptionControl") inline def EncryptionControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.EncryptionControlArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.EncryptionControlArgs.builder
     argsBuilder = args(argsBuilder)
@@ -1768,7 +1768,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage EC2 Fleets. */
-  def Fleet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Fleet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.FleetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.FleetArgs.builder
     argsBuilder = args(argsBuilder)
@@ -1786,7 +1786,7 @@ object ec2:
    * Provides a VPC/Subnet/ENI/Transit Gateway/Transit Gateway Attachment Flow Log to capture IP traffic for a specific network
    * interface, subnet, or VPC. Logs are sent to a CloudWatch Log Group, a S3 Bucket, or Amazon Data Firehose
    */
-  def FlowLog(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FlowLog(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.FlowLogArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.FlowLogArgs.builder
     argsBuilder = args(argsBuilder)
@@ -1806,7 +1806,7 @@ object ec2:
    * 
    * &gt; **NOTE:** Deleting this resource does not change the block public access value, the resource in simply removed from state instead.
    */
-  def ImageBlockPublicAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ImageBlockPublicAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.ImageBlockPublicAccessArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.ImageBlockPublicAccessArgs.builder
     com.pulumi.aws.ec2.ImageBlockPublicAccess(name,
@@ -1814,7 +1814,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an EC2 instance resource. This allows instances to be created, updated, and deleted. */
-  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.InstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.InstanceArgs.builder
     argsBuilder = args(argsBuilder)
@@ -1832,7 +1832,7 @@ object ec2:
    * Manages regional EC2 instance metadata default settings.
    * More information can be found in the [Configure instance metadata options for new instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html) user guide.
    */
-  def InstanceMetadataDefaults(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceMetadataDefaults(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.InstanceMetadataDefaultsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.InstanceMetadataDefaultsArgs.builder
     com.pulumi.aws.ec2.InstanceMetadataDefaults(name,
@@ -1840,7 +1840,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to create a VPC Internet Gateway. */
-  def InternetGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InternetGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.InternetGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.InternetGatewayArgs.builder
     argsBuilder = args(argsBuilder)
@@ -1855,7 +1855,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to create a VPC Internet Gateway Attachment. */
-  def InternetGatewayAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InternetGatewayAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.InternetGatewayAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.InternetGatewayAttachmentArgs.builder
     com.pulumi.aws.ec2.InternetGatewayAttachment(name,
@@ -1873,7 +1873,7 @@ object ec2:
    * * Base64 encoded DER format
    * * SSH public key file format as specified in RFC4716
    */
-  def KeyPair(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def KeyPair(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.KeyPairArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.KeyPairArgs.builder
     argsBuilder = args(argsBuilder)
@@ -1894,7 +1894,7 @@ object ec2:
    * 
    * &gt; **Note** When using `aws.ec2.LaunchConfiguration` with `aws.autoscaling.Group`, it is recommended to use the `namePrefix` (Optional) instead of the `name` (Optional) attribute. This will allow Pulumi lifecycles to detect changes to the launch configuration and update the Auto Scaling group correctly.
    */
-  def LaunchConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LaunchConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.LaunchConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.LaunchConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1918,7 +1918,7 @@ object ec2:
    * \$ pulumi import aws:ec2/launchTemplate:LaunchTemplate web lt-12345678
    * ```
    */
-  def LaunchTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LaunchTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.LaunchTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.LaunchTemplateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1936,7 +1936,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Local Gateway Route. More information can be found in the [Outposts User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#routing). */
-  def LocalGatewayRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LocalGatewayRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.LocalGatewayRouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.LocalGatewayRouteArgs.builder
     com.pulumi.aws.ec2.LocalGatewayRoute(name,
@@ -1944,7 +1944,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Local Gateway Route Table. More information can be found in the [Outposts User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/outposts-local-gateways.html#route-tables). */
-  def LocalGatewayRouteTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LocalGatewayRouteTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.LocalGatewayRouteTableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.LocalGatewayRouteTableArgs.builder
     argsBuilder = args(argsBuilder)
@@ -1959,7 +1959,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Local Gateway Route Table Virtual Interface Group Association. More information can be found in the [Outposts User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/outposts-local-gateways.html). */
-  def LocalGatewayRouteTableVirtualInterfaceGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LocalGatewayRouteTableVirtualInterfaceGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.LocalGatewayRouteTableVirtualInterfaceGroupAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.LocalGatewayRouteTableVirtualInterfaceGroupAssociationArgs.builder
     argsBuilder = args(argsBuilder)
@@ -1974,7 +1974,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Local Gateway Route Table VPC Association. More information can be found in the [Outposts User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/outposts-local-gateways.html#vpc-associations). */
-  def LocalGatewayRouteTableVpcAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LocalGatewayRouteTableVpcAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.LocalGatewayRouteTableVpcAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.LocalGatewayRouteTableVpcAssociationArgs.builder
     argsBuilder = args(argsBuilder)
@@ -1994,7 +1994,7 @@ object ec2:
    * &gt; **NOTE:** **Do not** use both `aws.ec2.DefaultRouteTable` to manage a default route table **and** `aws.ec2.MainRouteTableAssociation` with the same VPC due to possible route conflicts. See aws.ec2.DefaultRouteTable documentation for more details.
    * For more information, see the Amazon VPC User Guide on [Route Tables](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html#Route_Replacing_Main_Table). For information about managing normal route tables in Pulumi, see `aws.ec2.RouteTable`.
    */
-  def MainRouteTableAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MainRouteTableAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.MainRouteTableAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.MainRouteTableAssociationArgs.builder
     com.pulumi.aws.ec2.MainRouteTableAssociation(name,
@@ -2016,7 +2016,7 @@ object ec2:
    * of 20 entries and you reference that prefix list in a security group rule, this counts
    * as 20 rules for the security group.
    */
-  def ManagedPrefixList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedPrefixList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.ManagedPrefixListArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.ManagedPrefixListArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2040,7 +2040,7 @@ object ec2:
    * 
    * &gt; **NOTE:** To improve execution times on larger updates, it is recommended to use the inline `entry` block as part of the Managed Prefix List resource when creating a prefix list with more than 100 entries. You can find more information about the resource here.
    */
-  def ManagedPrefixListEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedPrefixListEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.ManagedPrefixListEntryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.ManagedPrefixListEntryArgs.builder
     com.pulumi.aws.ec2.ManagedPrefixListEntry(name,
@@ -2052,7 +2052,7 @@ object ec2:
    * 
    * &gt; **WARNING:** You should not use the `aws.ec2.NatGateway` resource that has `secondaryAllocationIds` in conjunction with an `aws.ec2.NatGatewayEipAssociation` resource. Doing so may cause perpetual differences, and result in associations being overwritten.
    */
-  def NatGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NatGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.NatGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.NatGatewayArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2071,7 +2071,7 @@ object ec2:
    * 
    * &gt; **WARNING:** You should not use the `aws.ec2.NatGatewayEipAssociation` resource in conjunction with an `aws.ec2.NatGateway` resource that has `secondaryAllocationIds` configured. Doing so may cause perpetual differences, and result in associations being overwritten.
    */
-  def NatGatewayEipAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NatGatewayEipAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.NatGatewayEipAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.NatGatewayEipAssociationArgs.builder
     com.pulumi.aws.ec2.NatGatewayEipAssociation(name,
@@ -2092,7 +2092,7 @@ object ec2:
    * resource and a network ACL resource with a `subnetIds` attribute. Do not use the same subnet ID in both a network ACL
    * resource and a network ACL association resource. Doing so will cause a conflict of associations and will overwrite the association.
    */
-  def NetworkAcl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkAcl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.NetworkAclArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.NetworkAclArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2113,7 +2113,7 @@ object ec2:
    * and a network ACL resource with a `subnetIds` attribute. Do not use the same subnet ID in both a network ACL
    * resource and a network ACL association resource. Doing so will cause a conflict of associations and will overwrite the association.
    */
-  def NetworkAclAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkAclAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.NetworkAclAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.NetworkAclAssociationArgs.builder
     com.pulumi.aws.ec2.NetworkAclAssociation(name,
@@ -2129,7 +2129,7 @@ object ec2:
    * in conjunction with any Network ACL Rule resources. Doing so will cause
    * a conflict of rule settings and will overwrite rules.
    */
-  def NetworkAclRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkAclRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.NetworkAclRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.NetworkAclRuleArgs.builder
     com.pulumi.aws.ec2.NetworkAclRule(name,
@@ -2140,7 +2140,7 @@ object ec2:
    * Provides a Network Insights Access Scope resource.
    * Part of the &#34;Network Access Analyzer&#34; service in the AWS VPC console.
    */
-  def NetworkInsightsAccessScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkInsightsAccessScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.NetworkInsightsAccessScopeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.NetworkInsightsAccessScopeArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2155,7 +2155,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Network Insights Analysis resource. Part of the &#34;Reachability Analyzer&#34; service in the AWS VPC console. */
-  def NetworkInsightsAnalysis(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkInsightsAnalysis(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.NetworkInsightsAnalysisArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.NetworkInsightsAnalysisArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2170,7 +2170,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Network Insights Path resource. Part of the &#34;Reachability Analyzer&#34; service in the AWS VPC console. */
-  def NetworkInsightsPath(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkInsightsPath(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.NetworkInsightsPathArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.NetworkInsightsPathArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2185,7 +2185,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Elastic network interface (ENI) resource. */
-  def NetworkInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.NetworkInterfaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.NetworkInterfaceArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2200,7 +2200,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Attach an Elastic network interface (ENI) resource with EC2 instance. */
-  def NetworkInterfaceAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkInterfaceAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.NetworkInterfaceAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.NetworkInterfaceAttachmentArgs.builder
     com.pulumi.aws.ec2.NetworkInterfaceAttachment(name,
@@ -2208,7 +2208,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Grant cross-account access to an Elastic network interface (ENI). */
-  def NetworkInterfacePermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkInterfacePermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.NetworkInterfacePermissionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.NetworkInterfacePermissionArgs.builder
     com.pulumi.aws.ec2.NetworkInterfacePermission(name,
@@ -2227,7 +2227,7 @@ object ec2:
    * conflicts, and will lead to spurious diffs and undefined behavior - please use
    * one or the other.
    */
-  def NetworkInterfaceSecurityGroupAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkInterfaceSecurityGroupAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.NetworkInterfaceSecurityGroupAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.NetworkInterfaceSecurityGroupAttachmentArgs.builder
     com.pulumi.aws.ec2.NetworkInterfaceSecurityGroupAttachment(name,
@@ -2246,7 +2246,7 @@ object ec2:
    * management of the VPC Peering Connection and allows options to be set correctly in cross-region and
    * cross-account scenarios.
    */
-  def PeeringConnectionOptions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PeeringConnectionOptions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.PeeringConnectionOptionsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.PeeringConnectionOptionsArgs.builder
     com.pulumi.aws.ec2.PeeringConnectionOptions(name,
@@ -2257,7 +2257,7 @@ object ec2:
    * Provides an EC2 placement group. Read more about placement groups
    * in [AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html).
    */
-  def PlacementGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PlacementGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.PlacementGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.PlacementGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2275,7 +2275,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a proxy protocol policy, which allows an ELB to carry a client connection information to a backend. */
-  def ProxyProtocolPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProxyProtocolPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.ProxyProtocolPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.ProxyProtocolPolicyArgs.builder
     com.pulumi.aws.ec2.ProxyProtocolPolicy(name,
@@ -2289,7 +2289,7 @@ object ec2:
    * 
    * &gt; **NOTE on combining `vpcEndpointId` and `destinationPrefixListId` attributes:** To associate a Gateway VPC Endpoint (such as S3) with destination prefix list, use the `aws.ec2.VpcEndpointRouteTableAssociation` resource instead.
    */
-  def Route(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Route(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.RouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.RouteArgs.builder
     com.pulumi.aws.ec2.Route(name,
@@ -2312,7 +2312,7 @@ object ec2:
    * `propagatingVgws`. Omit this argument when defining route propagation using
    * the separate resource.
    */
-  def RouteTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RouteTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.RouteTableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.RouteTableArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2330,7 +2330,7 @@ object ec2:
    * Provides a resource to create an association between a route table and a subnet or a route table and an
    * internet gateway or virtual private gateway.
    */
-  def RouteTableAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RouteTableAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.RouteTableAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.RouteTableAssociationArgs.builder
     com.pulumi.aws.ec2.RouteTableAssociation(name,
@@ -2343,7 +2343,7 @@ object ec2:
    * Secondary networks are specialized network resources that enable high-performance RDMA (Remote Direct Memory Access) networking for compute-intensive workloads.
    * They provide dedicated network infrastructure with low latency and high bandwidth capabilities.
    */
-  def SecondaryNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecondaryNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.SecondaryNetworkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.SecondaryNetworkArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2362,7 +2362,7 @@ object ec2:
    * 
    * A secondary subnet is a subnet within a secondary network that provides high-performance networking capabilities for specialized workloads such as RDMA (Remote Direct Memory Access) applications.
    */
-  def SecondarySubnet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecondarySubnet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.SecondarySubnetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.SecondarySubnetArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2389,7 +2389,7 @@ object ec2:
    * 
    * &gt; **NOTE:** The `cidrBlocks` and `ipv6CidrBlocks` parameters are optional in the `ingress` and `egress` blocks. If nothing is specified, traffic will be blocked as described in _NOTE on Egress rules_ later.
    */
-  def SecurityGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecurityGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.SecurityGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.SecurityGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2415,7 +2415,7 @@ object ec2:
    * attribute. Do not use the same security group ID in both a VPC Endpoint resource and a VPC Endpoint Security
    * Group Association resource. Doing so will cause a conflict of associations and will overwrite the association.
    */
-  def SecurityGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecurityGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.SecurityGroupAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.SecurityGroupAssociationArgs.builder
     com.pulumi.aws.ec2.SecurityGroupAssociation(name,
@@ -2433,7 +2433,7 @@ object ec2:
    * 
    * &gt; **NOTE:** Referencing Security Groups across VPC peering has certain restrictions. More information is available in the [VPC Peering User Guide](https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-security-groups.html).
    */
-  def SecurityGroupRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecurityGroupRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.SecurityGroupRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.SecurityGroupRuleArgs.builder
     com.pulumi.aws.ec2.SecurityGroupRule(name,
@@ -2445,7 +2445,7 @@ object ec2:
    * 
    * &gt; **NOTE:** Removing this resource disables serial console access.
    */
-  def SerialConsoleAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SerialConsoleAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.SerialConsoleAccessArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.SerialConsoleAccessArgs.builder
     com.pulumi.aws.ec2.SerialConsoleAccess(name,
@@ -2453,7 +2453,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Adds permission to create volumes off of a given EBS Snapshot. */
-  def SnapshotCreateVolumePermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SnapshotCreateVolumePermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.SnapshotCreateVolumePermissionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.SnapshotCreateVolumePermissionArgs.builder
     com.pulumi.aws.ec2.SnapshotCreateVolumePermission(name,
@@ -2466,7 +2466,7 @@ object ec2:
    * To help you understand the charges for your Spot instances, Amazon EC2 provides a data feed that describes your Spot instance usage and pricing.
    * This data feed is sent to an Amazon S3 bucket that you specify when you subscribe to the data feed.
    */
-  def SpotDatafeedSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SpotDatafeedSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.SpotDatafeedSubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.SpotDatafeedSubscriptionArgs.builder
     com.pulumi.aws.ec2.SpotDatafeedSubscription(name,
@@ -2480,7 +2480,7 @@ object ec2:
    * &gt; **NOTE [AWS strongly discourages](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use) the use of the legacy APIs called by this resource.
    * We recommend using the EC2 Fleet or Auto Scaling group resources instead.
    */
-  def SpotFleetRequest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SpotFleetRequest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.SpotFleetRequestArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.SpotFleetRequestArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2521,7 +2521,7 @@ object ec2:
    * &gt; **NOTE [AWS strongly discourages](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use) the use of the legacy APIs called by this resource.
    * We recommend using the EC2 Instance resource with `instanceMarketOptions` instead.
    */
-  def SpotInstanceRequest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SpotInstanceRequest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.SpotInstanceRequestArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.SpotInstanceRequestArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2542,7 +2542,7 @@ object ec2:
    * 
    * &gt; **NOTE:** When AWS GuardDuty is enabled in your account, it automatically creates VPC endpoints in your VPCs to monitor network traffic. During subnet deletion, the provider automatically detects and dissociates the subnet from these GuardDuty-managed VPC endpoints if they are blocking the deletion, preserving GuardDuty protection for other subnets in the VPC. This cleanup only targets resources tagged with `GuardDutyManaged=true` and happens automatically during destroy operations with no manual intervention required. For optimal functionality, the IAM role used by Terraform should have the optional permissions listed below. If these permissions are not available, the provider will continue with the deletion attempt and surface warnings only if the deletion ultimately fails.
    */
-  def Subnet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Subnet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.SubnetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.SubnetArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2557,7 +2557,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a subnet CIDR reservation resource. */
-  def SubnetCidrReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SubnetCidrReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.SubnetCidrReservationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.SubnetCidrReservationArgs.builder
     com.pulumi.aws.ec2.SubnetCidrReservation(name,
@@ -2569,7 +2569,7 @@ object ec2:
    * 
    * &gt; **NOTE:** This tagging resource should not be combined with the providers resource for managing the parent resource. For example, using `aws.ec2.Vpc` and `aws.ec2.Tag` to manage tags of the same VPC will cause a perpetual difference where the `aws.ec2.Vpc` resource will try to remove the tag being added by the `aws.ec2.Tag` resource.
    */
-  def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.TagArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.TagArgs.builder
     com.pulumi.aws.ec2.Tag(name,
@@ -2580,7 +2580,7 @@ object ec2:
    * Provides an Traffic mirror filter.\
    * Read [limits and considerations](https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html) for traffic mirroring
    */
-  def TrafficMirrorFilter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TrafficMirrorFilter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.TrafficMirrorFilterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.TrafficMirrorFilterArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2598,7 +2598,7 @@ object ec2:
    * Provides an Traffic mirror filter rule.\
    * Read [limits and considerations](https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html) for traffic mirroring
    */
-  def TrafficMirrorFilterRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TrafficMirrorFilterRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.TrafficMirrorFilterRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.TrafficMirrorFilterRuleArgs.builder
     com.pulumi.aws.ec2.TrafficMirrorFilterRule(name,
@@ -2609,7 +2609,7 @@ object ec2:
    * Provides an Traffic mirror session.\
    * Read [limits and considerations](https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html) for traffic mirroring
    */
-  def TrafficMirrorSession(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TrafficMirrorSession(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.TrafficMirrorSessionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.TrafficMirrorSessionArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2627,7 +2627,7 @@ object ec2:
    * Provides a Traffic mirror target.\
    * Read [limits and considerations](https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html) for traffic mirroring
    */
-  def TrafficMirrorTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TrafficMirrorTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.TrafficMirrorTargetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.TrafficMirrorTargetArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2647,7 +2647,7 @@ object ec2:
    * 
    * &gt; **NOTE on EBS block devices:** If you use `ebsBlockDevice` on an `aws.ec2.Instance`, this provider will assume management over the full set of non-root EBS block devices for the instance, and treats additional block devices as drift. For this reason, `ebsBlockDevice` cannot be mixed with external `aws.ebs.Volume` + `aws.ec2.VolumeAttachment` resources for a given instance.
    */
-  def VolumeAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VolumeAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VolumeAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.VolumeAttachmentArgs.builder
     com.pulumi.aws.ec2.VolumeAttachment(name,
@@ -2659,7 +2659,7 @@ object ec2:
    * 
    * &gt; **NOTE:** When AWS GuardDuty is enabled in your account, it automatically creates VPC endpoints and security groups in your VPCs to monitor network traffic. During VPC deletion, the provider automatically detects and removes these GuardDuty-managed VPC endpoints and security groups if they are blocking the deletion. This cleanup only targets resources tagged with `GuardDutyManaged=true` and happens automatically during destroy operations with no manual intervention required. For optimal functionality, the IAM role used by Terraform should have the optional permissions listed below. If these permissions are not available, the provider will continue with the deletion attempt and surface warnings only if the deletion ultimately fails.
    */
-  def Vpc(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Vpc(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.VpcArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2674,7 +2674,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS EC2 VPC Block Public Access Exclusion. */
-  def VpcBlockPublicAccessExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcBlockPublicAccessExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcBlockPublicAccessExclusionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.VpcBlockPublicAccessExclusionArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2689,7 +2689,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Block Public Access Options. */
-  def VpcBlockPublicAccessOptions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcBlockPublicAccessOptions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcBlockPublicAccessOptionsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.VpcBlockPublicAccessOptionsArgs.builder
     com.pulumi.aws.ec2.VpcBlockPublicAccessOptions(name,
@@ -2701,7 +2701,7 @@ object ec2:
    * 
    * You can find more technical documentation about DHCP Options Set in the official [AWS User Guide](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html).
    */
-  def VpcDhcpOptions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcDhcpOptions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcDhcpOptionsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.VpcDhcpOptionsArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2716,7 +2716,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a VPC DHCP Options Association resource. */
-  def VpcDhcpOptionsAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcDhcpOptionsAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcDhcpOptionsAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.VpcDhcpOptionsAssociationArgs.builder
     com.pulumi.aws.ec2.VpcDhcpOptionsAssociation(name,
@@ -2724,7 +2724,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a VPC Encryption Control. */
-  def VpcEncryptionControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcEncryptionControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcEncryptionControlArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.VpcEncryptionControlArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2749,7 +2749,7 @@ object ec2:
    * Do not use the same resource ID in both a VPC Endpoint resource and a VPC Endpoint Association resource.
    * Doing so will cause a conflict of associations and will overwrite the association.
    */
-  def VpcEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.VpcEndpointArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2764,7 +2764,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to accept a pending VPC Endpoint Connection accept request to VPC Endpoint Service. */
-  def VpcEndpointConnectionAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcEndpointConnectionAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcEndpointConnectionAccepterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.VpcEndpointConnectionAccepterArgs.builder
     com.pulumi.aws.ec2.VpcEndpointConnectionAccepter(name,
@@ -2775,7 +2775,7 @@ object ec2:
    * Provides a VPC Endpoint connection notification resource.
    * Connection notifications notify subscribers of VPC Endpoint events.
    */
-  def VpcEndpointConnectionNotification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcEndpointConnectionNotification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcEndpointConnectionNotificationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.VpcEndpointConnectionNotificationArgs.builder
     com.pulumi.aws.ec2.VpcEndpointConnectionNotification(name,
@@ -2783,7 +2783,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a VPC Endpoint Policy resource. */
-  def VpcEndpointPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcEndpointPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcEndpointPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.VpcEndpointPolicyArgs.builder
     com.pulumi.aws.ec2.VpcEndpointPolicy(name,
@@ -2791,7 +2791,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a VPC Endpoint Route Table Association */
-  def VpcEndpointRouteTableAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcEndpointRouteTableAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcEndpointRouteTableAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.VpcEndpointRouteTableAssociationArgs.builder
     com.pulumi.aws.ec2.VpcEndpointRouteTableAssociation(name,
@@ -2808,7 +2808,7 @@ object ec2:
    * a VPC Endpoint Service resource and a VPC Endpoint Service Allowed Principal resource. Doing so will cause a conflict
    * and will overwrite the association.
    */
-  def VpcEndpointService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcEndpointService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcEndpointServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.VpcEndpointServiceArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2831,7 +2831,7 @@ object ec2:
    * a VPC Endpoint Service resource and a VPC Endpoint Service Allowed Principal resource. Doing so will cause a conflict
    * and will overwrite the association.
    */
-  def VpcEndpointServiceAllowedPrinciple(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcEndpointServiceAllowedPrinciple(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcEndpointServiceAllowedPrincipleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.VpcEndpointServiceAllowedPrincipleArgs.builder
     com.pulumi.aws.ec2.VpcEndpointServiceAllowedPrinciple(name,
@@ -2847,7 +2847,7 @@ object ec2:
    * attribute. Do not use the same subnet ID in both a VPC Endpoint resource and a VPC Endpoint Subnet
    * Association resource. Doing so will cause a conflict of associations and will overwrite the association.
    */
-  def VpcEndpointSubnetAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcEndpointSubnetAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcEndpointSubnetAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.VpcEndpointSubnetAssociationArgs.builder
     com.pulumi.aws.ec2.VpcEndpointSubnetAssociation(name,
@@ -2855,7 +2855,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an IPAM resource. */
-  def VpcIpam(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcIpam(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcIpamArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.VpcIpamArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2870,7 +2870,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enables the IPAM Service and promotes a delegated administrator. */
-  def VpcIpamOrganizationAdminAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcIpamOrganizationAdminAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcIpamOrganizationAdminAccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.VpcIpamOrganizationAdminAccountArgs.builder
     com.pulumi.aws.ec2.VpcIpamOrganizationAdminAccount(name,
@@ -2882,7 +2882,7 @@ object ec2:
    * 
    * &gt; **NOTE:** When provisioning resource planning IPAM pools, it can take upto 30 minutes for the CIDR to be managed by IPAM.
    */
-  def VpcIpamPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcIpamPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcIpamPoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.VpcIpamPoolArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2904,7 +2904,7 @@ object ec2:
    * &gt; **NOTE:** In order to deprovision CIDRs all Allocations must be released. Allocations created by a VPC take up to 30 minutes to be released. However, for IPAM to properly manage the removal of allocation records created by VPCs and other resources, you must [grant it permissions](https://docs.aws.amazon.com/vpc/latest/ipam/choose-single-user-or-orgs-ipam.html) in
    * either a single account or organizationally. If you are unable to deprovision a CIDR after waiting over 30 minutes, you may be missing the Service Linked Role.
    */
-  def VpcIpamPoolCidr(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcIpamPoolCidr(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcIpamPoolCidrArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.VpcIpamPoolCidrArgs.builder
     com.pulumi.aws.ec2.VpcIpamPoolCidr(name,
@@ -2912,7 +2912,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Allocates (reserves) a CIDR from an IPAM address pool, preventing usage by IPAM. Only works for private IPv4. */
-  def VpcIpamPoolCidrAllocation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcIpamPoolCidrAllocation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcIpamPoolCidrAllocationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.VpcIpamPoolCidrAllocationArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2927,7 +2927,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Previews a CIDR from an IPAM address pool. Only works for private IPv4. */
-  def VpcIpamPreviewNextCidr(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcIpamPreviewNextCidr(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcIpamPreviewNextCidrArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.VpcIpamPreviewNextCidrArgs.builder
     com.pulumi.aws.ec2.VpcIpamPreviewNextCidr(name,
@@ -2935,7 +2935,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an IPAM Resource Discovery resource. IPAM Resource Discoveries are resources meant for multi-organization customers. If you wish to use a single IPAM across multiple orgs, a resource discovery can be created and shared from a subordinate organization to the management organizations IPAM delegated admin account. For a full deployment example, see `aws.ec2.VpcIpamResourceDiscoveryAssociation` resource. */
-  def VpcIpamResourceDiscovery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcIpamResourceDiscovery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcIpamResourceDiscoveryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.VpcIpamResourceDiscoveryArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2954,7 +2954,7 @@ object ec2:
    * 
    * Once an association is created between two organizations via IPAM &amp; a IPAM Resource Discovery, IPAM Pools can be shared via Resource Access Manager (RAM) to accounts in the subordinate organization; these RAM shares must be accepted by the end user account. Pools can then also discover and monitor IPAM resources in the subordinate organization.
    */
-  def VpcIpamResourceDiscoveryAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcIpamResourceDiscoveryAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcIpamResourceDiscoveryAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.VpcIpamResourceDiscoveryAssociationArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2969,7 +2969,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a scope for AWS IPAM. */
-  def VpcIpamScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcIpamScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcIpamScopeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.VpcIpamScopeArgs.builder
     argsBuilder = args(argsBuilder)
@@ -2989,7 +2989,7 @@ object ec2:
    * When a VPC is created, a primary IPv4 CIDR block for the VPC must be specified.
    * The `aws.ec2.VpcIpv4CidrBlockAssociation` resource allows further IPv4 CIDR blocks to be added to the VPC.
    */
-  def VpcIpv4CidrBlockAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcIpv4CidrBlockAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcIpv4CidrBlockAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.VpcIpv4CidrBlockAssociationArgs.builder
     com.pulumi.aws.ec2.VpcIpv4CidrBlockAssociation(name,
@@ -3001,7 +3001,7 @@ object ec2:
    * 
    * The `aws.ec2.VpcIpv6CidrBlockAssociation` resource allows IPv6 CIDR blocks to be added to the VPC.
    */
-  def VpcIpv6CidrBlockAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcIpv6CidrBlockAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcIpv6CidrBlockAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.VpcIpv6CidrBlockAssociationArgs.builder
     com.pulumi.aws.ec2.VpcIpv6CidrBlockAssociation(name,
@@ -3009,7 +3009,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage an Infrastructure Performance subscription. */
-  def VpcNetworkPerformanceMetricSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcNetworkPerformanceMetricSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcNetworkPerformanceMetricSubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.VpcNetworkPerformanceMetricSubscriptionArgs.builder
     com.pulumi.aws.ec2.VpcNetworkPerformanceMetricSubscription(name,
@@ -3038,7 +3038,7 @@ object ec2:
    * 
    * &gt; **Note:** Creating multiple `aws.ec2.VpcPeeringConnection` resources with the same `peerVpcId` and `vpcId` will not produce an error. Instead, AWS will return the connection `id` that already exists, resulting in multiple `aws.ec2.VpcPeeringConnection` resources with the same `id`.
    */
-  def VpcPeeringConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcPeeringConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcPeeringConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.VpcPeeringConnectionArgs.builder
     argsBuilder = args(argsBuilder)
@@ -3064,7 +3064,7 @@ object ec2:
    * 
    * &gt; **Note:** AWS allows a cross-account VPC Peering Connection to be deleted from either the requester&#39;s or accepter&#39;s side. However, this provider only allows the VPC Peering Connection to be deleted from the requester&#39;s side by removing the corresponding `aws.ec2.VpcPeeringConnection` resource from your configuration. Removing a `aws.ec2.VpcPeeringConnectionAccepter` resource from your configuration will remove it from your statefile and management, **but will not destroy the VPC Peering Connection.**
    */
-  def VpcPeeringConnectionAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcPeeringConnectionAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcPeeringConnectionAccepterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.VpcPeeringConnectionAccepterArgs.builder
     argsBuilder = args(argsBuilder)
@@ -3089,7 +3089,7 @@ object ec2:
    * 
    * &gt; When this resource detects a configured rule ID which must be created, a warning diagnostic is emitted. This is due to a limitation in the [`AuthorizeSecurityGroupEgress`](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AuthorizeSecurityGroupEgress.html) and [`AuthorizeSecurityGroupIngress`](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AuthorizeSecurityGroupIngress.html) APIs, which require the full rule definition to be provided rather than a reference to an existing rule ID.
    */
-  def VpcSecurityGroupRulesExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpcSecurityGroupRulesExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpcSecurityGroupRulesExclusiveArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.VpcSecurityGroupRulesExclusiveArgs.builder
     com.pulumi.aws.ec2.VpcSecurityGroupRulesExclusive(name,
@@ -3097,7 +3097,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to create a VPN Concentrator that aggregates multiple VPN connections to a transit gateway. */
-  def VpnConcentrator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpnConcentrator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpnConcentratorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.VpnConcentratorArgs.builder
     argsBuilder = args(argsBuilder)
@@ -3118,7 +3118,7 @@ object ec2:
    * &gt; **Note:** The CIDR blocks in the arguments `tunnel1InsideCidr` and `tunnel2InsideCidr` must have a prefix of /30 and be a part of a specific range.
    * [Read more about this in the AWS documentation](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnTunnelOptionsSpecification.html).
    */
-  def VpnConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpnConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpnConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.VpnConnectionArgs.builder
     argsBuilder = args(argsBuilder)
@@ -3133,7 +3133,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a static route between a VPN connection and a customer gateway. */
-  def VpnConnectionRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpnConnectionRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpnConnectionRouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.VpnConnectionRouteArgs.builder
     com.pulumi.aws.ec2.VpnConnectionRoute(name,
@@ -3141,7 +3141,7 @@ object ec2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to create a VPC VPN Gateway. */
-  def VpnGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpnGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpnGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ec2.VpnGatewayArgs.builder
     argsBuilder = args(argsBuilder)
@@ -3163,7 +3163,7 @@ object ec2:
    * resource can also automatically attach the Virtual Private Gateway it creates
    * to an existing VPC by setting the `vpcId` attribute accordingly.
    */
-  def VpnGatewayAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpnGatewayAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpnGatewayAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.VpnGatewayAttachmentArgs.builder
     com.pulumi.aws.ec2.VpnGatewayAttachment(name,
@@ -3177,7 +3177,7 @@ object ec2:
    * the `propagatingVgws` argument set. If that argument is set, any route
    * propagation not explicitly listed in its value will be removed.
    */
-  def VpnGatewayRoutePropagation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VpnGatewayRoutePropagation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ec2.VpnGatewayRoutePropagationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ec2.VpnGatewayRoutePropagationArgs.builder
     com.pulumi.aws.ec2.VpnGatewayRoutePropagation(name,

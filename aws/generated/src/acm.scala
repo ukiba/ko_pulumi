@@ -44,7 +44,7 @@ object acm:
    * 
    * Private certificates are issued by an ACM Private Certificate Authority, which can be created using `aws.acmpca.CertificateAuthority`. Private certificates created using this resource are eligible for managed renewal if they have been exported or associated with another AWS service. See [managed renewal documentation](https://docs.aws.amazon.com/acm/latest/userguide/managed-renewal.html) for more information. By default, a certificate is valid for 395 days and the managed renewal process will start 60 days before expiration. To renew the certificate earlier than 60 days before expiration, configure `earlyRenewalDuration`.
    */
-  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.acm.CertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.acm.CertificateArgs.builder
     argsBuilder = args(argsBuilder)
@@ -68,7 +68,7 @@ object acm:
    * 
    * &gt; **WARNING:** This resource implements a part of the validation workflow. It does not represent a real-world entity in AWS, therefore changing or deleting this resource on its own has no immediate effect.
    */
-  def CertificateValidation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CertificateValidation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.acm.CertificateValidationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.acm.CertificateValidationArgs.builder
     com.pulumi.aws.acm.CertificateValidation(name,

@@ -8,7 +8,7 @@ object ssmincidents_ext:
      * @return builder
      * @deprecated region is deprecated. Use regions instead.
      */
-    @deprecated("region is deprecated. Use regions instead.") def region(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ReplicationSetRegionArgs.Builder]*):
+    @deprecated("region is deprecated. Use regions instead.") inline def region(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ReplicationSetRegionArgs.Builder]*):
         com.pulumi.aws.ssmincidents.ReplicationSetArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssmincidents.inputs.ReplicationSetRegionArgs.builder
       builder.region(args.map(_(argsBuilder).build)*)
@@ -17,7 +17,7 @@ object ssmincidents_ext:
      * @param regions The replication set&#39;s Regions.
      * @return builder
      */
-    def regions(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ReplicationSetRegionArgs.Builder]*):
+    inline def regions(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ReplicationSetRegionArgs.Builder]*):
         com.pulumi.aws.ssmincidents.ReplicationSetArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssmincidents.inputs.ReplicationSetRegionArgs.builder
       builder.regions(args.map(_(argsBuilder).build)*)
@@ -27,7 +27,7 @@ object ssmincidents_ext:
      * @param action The actions that the response plan starts at the beginning of an incident.
      * @return builder
      */
-    def action(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ResponsePlanActionArgs.Builder]):
+    inline def action(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ResponsePlanActionArgs.Builder]):
         com.pulumi.aws.ssmincidents.ResponsePlanArgs.Builder =
       val argsBuilder = com.pulumi.aws.ssmincidents.inputs.ResponsePlanActionArgs.builder
       builder.action(args(argsBuilder).build)
@@ -36,7 +36,7 @@ object ssmincidents_ext:
      * @param incidentTemplate The `incidentTemplate` configuration block is required and supports the following arguments:
      * @return builder
      */
-    def incidentTemplate(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ResponsePlanIncidentTemplateArgs.Builder]):
+    inline def incidentTemplate(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ResponsePlanIncidentTemplateArgs.Builder]):
         com.pulumi.aws.ssmincidents.ResponsePlanArgs.Builder =
       val argsBuilder = com.pulumi.aws.ssmincidents.inputs.ResponsePlanIncidentTemplateArgs.builder
       builder.incidentTemplate(args(argsBuilder).build)
@@ -45,7 +45,7 @@ object ssmincidents_ext:
      * @param integration Information about third-party services integrated into the response plan. The following values are supported:
      * @return builder
      */
-    def integration(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ResponsePlanIntegrationArgs.Builder]):
+    inline def integration(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ResponsePlanIntegrationArgs.Builder]):
         com.pulumi.aws.ssmincidents.ResponsePlanArgs.Builder =
       val argsBuilder = com.pulumi.aws.ssmincidents.inputs.ResponsePlanIntegrationArgs.builder
       builder.integration(args(argsBuilder).build)
@@ -56,7 +56,7 @@ object ssmincidents_ext:
      * @return builder
      * @deprecated region is deprecated. Use regions instead.
      */
-    @deprecated("region is deprecated. Use regions instead.") def region(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ReplicationSetRegionArgs.Builder]*):
+    @deprecated("region is deprecated. Use regions instead.") inline def region(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ReplicationSetRegionArgs.Builder]*):
         com.pulumi.aws.ssmincidents.inputs.ReplicationSetState.Builder =
       def argsBuilder = com.pulumi.aws.ssmincidents.inputs.ReplicationSetRegionArgs.builder
       builder.region(args.map(_(argsBuilder).build)*)
@@ -65,7 +65,7 @@ object ssmincidents_ext:
      * @param regions The replication set&#39;s Regions.
      * @return builder
      */
-    def regions(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ReplicationSetRegionArgs.Builder]*):
+    inline def regions(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ReplicationSetRegionArgs.Builder]*):
         com.pulumi.aws.ssmincidents.inputs.ReplicationSetState.Builder =
       def argsBuilder = com.pulumi.aws.ssmincidents.inputs.ReplicationSetRegionArgs.builder
       builder.regions(args.map(_(argsBuilder).build)*)
@@ -75,7 +75,7 @@ object ssmincidents_ext:
      * @param ssmAutomations The Systems Manager automation document to start as the runbook at the beginning of the incident. The following values are supported:
      * @return builder
      */
-    def ssmAutomations(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ResponsePlanActionSsmAutomationArgs.Builder]*):
+    inline def ssmAutomations(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ResponsePlanActionSsmAutomationArgs.Builder]*):
         com.pulumi.aws.ssmincidents.inputs.ResponsePlanActionArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssmincidents.inputs.ResponsePlanActionSsmAutomationArgs.builder
       builder.ssmAutomations(args.map(_(argsBuilder).build)*)
@@ -85,7 +85,7 @@ object ssmincidents_ext:
      * @param parameters The key-value pair parameters to use when the automation document runs. The following values are supported:
      * @return builder
      */
-    def parameters(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ResponsePlanActionSsmAutomationParameterArgs.Builder]*):
+    inline def parameters(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ResponsePlanActionSsmAutomationParameterArgs.Builder]*):
         com.pulumi.aws.ssmincidents.inputs.ResponsePlanActionSsmAutomationArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssmincidents.inputs.ResponsePlanActionSsmAutomationParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
@@ -95,7 +95,7 @@ object ssmincidents_ext:
      * @param notificationTargets The Amazon Simple Notification Service (Amazon SNS) targets that this incident notifies when it is updated. The `notificationTarget` configuration block supports the following argument:
      * @return builder
      */
-    def notificationTargets(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ResponsePlanIncidentTemplateNotificationTargetArgs.Builder]*):
+    inline def notificationTargets(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ResponsePlanIncidentTemplateNotificationTargetArgs.Builder]*):
         com.pulumi.aws.ssmincidents.inputs.ResponsePlanIncidentTemplateArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssmincidents.inputs.ResponsePlanIncidentTemplateNotificationTargetArgs.builder
       builder.notificationTargets(args.map(_(argsBuilder).build)*)
@@ -105,7 +105,7 @@ object ssmincidents_ext:
      * @param pagerduties Details about the PagerDuty configuration for a response plan. The following values are supported:
      * @return builder
      */
-    def pagerduties(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ResponsePlanIntegrationPagerdutyArgs.Builder]*):
+    inline def pagerduties(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ResponsePlanIntegrationPagerdutyArgs.Builder]*):
         com.pulumi.aws.ssmincidents.inputs.ResponsePlanIntegrationArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssmincidents.inputs.ResponsePlanIntegrationPagerdutyArgs.builder
       builder.pagerduties(args.map(_(argsBuilder).build)*)
@@ -115,7 +115,7 @@ object ssmincidents_ext:
      * @param action The actions that the response plan starts at the beginning of an incident.
      * @return builder
      */
-    def action(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ResponsePlanActionArgs.Builder]):
+    inline def action(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ResponsePlanActionArgs.Builder]):
         com.pulumi.aws.ssmincidents.inputs.ResponsePlanState.Builder =
       val argsBuilder = com.pulumi.aws.ssmincidents.inputs.ResponsePlanActionArgs.builder
       builder.action(args(argsBuilder).build)
@@ -124,7 +124,7 @@ object ssmincidents_ext:
      * @param incidentTemplate The `incidentTemplate` configuration block is required and supports the following arguments:
      * @return builder
      */
-    def incidentTemplate(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ResponsePlanIncidentTemplateArgs.Builder]):
+    inline def incidentTemplate(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ResponsePlanIncidentTemplateArgs.Builder]):
         com.pulumi.aws.ssmincidents.inputs.ResponsePlanState.Builder =
       val argsBuilder = com.pulumi.aws.ssmincidents.inputs.ResponsePlanIncidentTemplateArgs.builder
       builder.incidentTemplate(args(argsBuilder).build)
@@ -133,7 +133,7 @@ object ssmincidents_ext:
      * @param integration Information about third-party services integrated into the response plan. The following values are supported:
      * @return builder
      */
-    def integration(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ResponsePlanIntegrationArgs.Builder]):
+    inline def integration(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.ResponsePlanIntegrationArgs.Builder]):
         com.pulumi.aws.ssmincidents.inputs.ResponsePlanState.Builder =
       val argsBuilder = com.pulumi.aws.ssmincidents.inputs.ResponsePlanIntegrationArgs.builder
       builder.integration(args(argsBuilder).build)

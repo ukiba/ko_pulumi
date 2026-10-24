@@ -15,7 +15,7 @@ object memcache:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/memcache/docs/creating-instances)
    */
-  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.memcache.InstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.memcache.InstanceArgs.builder
     conf.logicalName2physicalName(name) match

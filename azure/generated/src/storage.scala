@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object storage:
   /** Manages an Azure Storage Account. */
-  def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.AccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.storage.AccountArgs.builder
     conf.logicalName2physicalName(name) match
@@ -33,7 +33,7 @@ object storage:
    * 
    * &gt; **Note:** Deleting this resource updates the storage account back to the default values it had when the storage account was created.
    */
-  def AccountNetworkRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccountNetworkRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.AccountNetworkRulesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.storage.AccountNetworkRulesArgs.builder
     com.pulumi.azure.storage.AccountNetworkRules(name,
@@ -41,7 +41,7 @@ object storage:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Queue Properties of an Azure Storage Account. */
-  def AccountQueueProperties(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccountQueueProperties(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.AccountQueuePropertiesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.storage.AccountQueuePropertiesArgs.builder
     com.pulumi.azure.storage.AccountQueueProperties(name,
@@ -49,7 +49,7 @@ object storage:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Static Website of an Azure Storage Account. */
-  def AccountStaticWebsite(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccountStaticWebsite(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.AccountStaticWebsiteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.storage.AccountStaticWebsiteArgs.builder
     com.pulumi.azure.storage.AccountStaticWebsite(name,
@@ -57,7 +57,7 @@ object storage:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Table Properties of an Azure Storage Account. */
-  def AccountTableProperties(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccountTableProperties(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.AccountTablePropertiesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.storage.AccountTablePropertiesArgs.builder
     com.pulumi.azure.storage.AccountTableProperties(name,
@@ -65,7 +65,7 @@ object storage:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Blob within a Storage Container. */
-  def Blob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Blob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.BlobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.storage.BlobArgs.builder
     conf.logicalName2physicalName(name) match
@@ -76,7 +76,7 @@ object storage:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Storage Blob Inventory Policy. */
-  def BlobInventoryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BlobInventoryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.BlobInventoryPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.storage.BlobInventoryPolicyArgs.builder
     com.pulumi.azure.storage.BlobInventoryPolicy(name,
@@ -84,7 +84,7 @@ object storage:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Container within an Azure Storage Account. */
-  def Container(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Container(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.ContainerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.storage.ContainerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -95,7 +95,7 @@ object storage:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Immutability Policy for a Container within an Azure Storage Account. */
-  def ContainerImmutabilityPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ContainerImmutabilityPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.ContainerImmutabilityPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.storage.ContainerImmutabilityPolicyArgs.builder
     com.pulumi.azure.storage.ContainerImmutabilityPolicy(name,
@@ -107,7 +107,7 @@ object storage:
    * 
    * &gt; **Note:** It&#39;s possible to define a Customer Managed Key both within the `azure.storage.Account` resource via the `customerManagedKey` block and by using the `azure.storage.CustomerManagedKey` resource. However it&#39;s not possible to use both methods to manage a Customer Managed Key for a Storage Account, since there&#39;ll be conflicts.
    */
-  def CustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.CustomerManagedKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.storage.CustomerManagedKeyArgs.builder
     com.pulumi.azure.storage.CustomerManagedKey(name,
@@ -119,7 +119,7 @@ object storage:
    * 
    * &gt; **Note:** This resource requires some `Storage` specific roles which are not granted by default. Some of the built-ins roles that can be attributed are [`Storage Account Contributor`](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-account-contributor), [`Storage Blob Data Owner`](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner), [`Storage Blob Data Contributor`](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor), [`Storage Blob Data Reader`](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-reader).
    */
-  def DataLakeGen2Filesystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataLakeGen2Filesystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.DataLakeGen2FilesystemArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.storage.DataLakeGen2FilesystemArgs.builder
     conf.logicalName2physicalName(name) match
@@ -134,7 +134,7 @@ object storage:
    * 
    * &gt; **Note:** This resource requires some `Storage` specific roles which are not granted by default. Some of the built-ins roles that can be attributed are [`Storage Account Contributor`](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-account-contributor), [`Storage Blob Data Owner`](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-owner), [`Storage Blob Data Contributor`](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor), [`Storage Blob Data Reader`](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-reader).
    */
-  def DataLakeGen2Path(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataLakeGen2Path(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.DataLakeGen2PathArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.storage.DataLakeGen2PathArgs.builder
     com.pulumi.azure.storage.DataLakeGen2Path(name,
@@ -146,7 +146,7 @@ object storage:
    * 
    * &gt; **Note:** Storage Encryption Scopes are in Preview [more information can be found here](https://docs.microsoft.com/azure/storage/blobs/encryption-scope-manage).
    */
-  def EncryptionScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EncryptionScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.EncryptionScopeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.storage.EncryptionScopeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -157,7 +157,7 @@ object storage:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Storage Account Local User. */
-  def LocalUser(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LocalUser(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.LocalUserArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.storage.LocalUserArgs.builder
     conf.logicalName2physicalName(name) match
@@ -168,7 +168,7 @@ object storage:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Storage Account Management Policy. */
-  def ManagementPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagementPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.ManagementPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.storage.ManagementPolicyArgs.builder
     com.pulumi.azure.storage.ManagementPolicy(name,
@@ -176,7 +176,7 @@ object storage:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Storage Mover. */
-  def Mover(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Mover(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.MoverArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.storage.MoverArgs.builder
     conf.logicalName2physicalName(name) match
@@ -194,7 +194,7 @@ object storage:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Storage Mover Agent. */
-  def MoverAgent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MoverAgent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.MoverAgentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.storage.MoverAgentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -205,7 +205,7 @@ object storage:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Storage Mover Job Definition. */
-  def MoverJobDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MoverJobDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.MoverJobDefinitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.storage.MoverJobDefinitionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -216,7 +216,7 @@ object storage:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Storage Mover Project. */
-  def MoverProject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MoverProject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.MoverProjectArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.storage.MoverProjectArgs.builder
     conf.logicalName2physicalName(name) match
@@ -227,7 +227,7 @@ object storage:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Storage Mover Source Endpoint. */
-  def MoverSourceEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MoverSourceEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.MoverSourceEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.storage.MoverSourceEndpointArgs.builder
     conf.logicalName2physicalName(name) match
@@ -238,7 +238,7 @@ object storage:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Storage Mover Target Endpoint. */
-  def MoverTargetEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MoverTargetEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.MoverTargetEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.storage.MoverTargetEndpointArgs.builder
     conf.logicalName2physicalName(name) match
@@ -249,7 +249,7 @@ object storage:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Storage Object Replication. */
-  def ObjectReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ObjectReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.ObjectReplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.storage.ObjectReplicationArgs.builder
     com.pulumi.azure.storage.ObjectReplication(name,
@@ -257,7 +257,7 @@ object storage:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Queue within an Azure Storage Account. */
-  def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.QueueArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.storage.QueueArgs.builder
     conf.logicalName2physicalName(name) match
@@ -274,7 +274,7 @@ object storage:
    * 
    * &gt; **Note:** Shared Key authentication will always be used for this resource, as AzureAD authentication is not supported by the Storage API for files.
    */
-  def Share(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Share(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.ShareArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.storage.ShareArgs.builder
     conf.logicalName2physicalName(name) match
@@ -289,7 +289,7 @@ object storage:
    * 
    * &gt; **Note:** When using Azure Active Directory Authentication (i.e. setting the provider property `storageUseAzuread = true`), the principal running Terraform must have the *Storage File Data Privileged Contributor* IAM role assigned. The *Storage File Data SMB Share Contributor* does not have sufficient permissions to create directories. Refer to [official documentation](https://learn.microsoft.com/en-us/rest/api/storageservices/authorize-with-azure-active-directory#permissions-for-file-service-operations) for more details.
    */
-  def ShareDirectory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ShareDirectory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.ShareDirectoryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.storage.ShareDirectoryArgs.builder
     conf.logicalName2physicalName(name) match
@@ -304,7 +304,7 @@ object storage:
    * 
    * &gt; **Note:** When using Azure Active Directory Authentication (i.e. setting the provider property `storageUseAzuread = true`), the principal running Terraform must have the *Storage File Data Privileged Contributor* IAM role assigned. The *Storage File Data SMB Share Contributor* does not have sufficient permissions to create files. Refer to [official documentation](https://learn.microsoft.com/en-us/rest/api/storageservices/authorize-with-azure-active-directory#permissions-for-file-service-operations) for more details.
    */
-  def ShareFile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ShareFile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.ShareFileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.storage.ShareFileArgs.builder
     conf.logicalName2physicalName(name) match
@@ -586,7 +586,7 @@ object storage:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Storage Sync. */
-  def Sync(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Sync(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.SyncArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.storage.SyncArgs.builder
     conf.logicalName2physicalName(name) match
@@ -608,7 +608,7 @@ object storage:
    * 
    * &gt; **Note:** Please ensure Azure File Sync has access to the storage account in your subscription, which indicates that `Microsoft.StorageSync` is assigned role `Reader and Data Access` ( refer to details [here](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#common-troubleshooting-steps)).
    */
-  def SyncCloudEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SyncCloudEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.SyncCloudEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.storage.SyncCloudEndpointArgs.builder
     conf.logicalName2physicalName(name) match
@@ -619,7 +619,7 @@ object storage:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Storage Sync Group. */
-  def SyncGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SyncGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.SyncGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.storage.SyncGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -634,7 +634,7 @@ object storage:
    * 
    * &gt; **Note:** The parent `azure.storage.SyncGroup` must have an `azure.storage.SyncCloudEndpoint` available before an `azure.storage.SyncServerEndpoint` resource can be created.
    */
-  def SyncServerEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SyncServerEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.SyncServerEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.storage.SyncServerEndpointArgs.builder
     conf.logicalName2physicalName(name) match
@@ -649,7 +649,7 @@ object storage:
    * 
    * &gt; **Note:** Shared Key authentication will always be used for this resource, as AzureAD authentication is not supported when setting or retrieving ACLs for Tables.
    */
-  def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.TableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.storage.TableArgs.builder
     conf.logicalName2physicalName(name) match
@@ -660,7 +660,7 @@ object storage:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Entity within a Table in an Azure Storage Account. */
-  def TableEntity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TableEntity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.TableEntityArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.storage.TableEntityArgs.builder
     com.pulumi.azure.storage.TableEntity(name,
@@ -668,7 +668,7 @@ object storage:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** @deprecated ZipBlob resource is deprecated in the 2.0 version of the provider. Use Blob resource instead. */
-  @deprecated("ZipBlob resource is deprecated in the 2.0 version of the provider. Use Blob resource instead.") def ZipBlob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("ZipBlob resource is deprecated in the 2.0 version of the provider. Use Blob resource instead.") inline def ZipBlob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.storage.ZipBlobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.storage.ZipBlobArgs.builder
     conf.logicalName2physicalName(name) match

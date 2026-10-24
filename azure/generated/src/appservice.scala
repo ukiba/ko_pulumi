@@ -13,7 +13,7 @@ object appservice:
    * 
    * &gt; **Note:** When using Slots - the `appSettings`, `connectionString` and `siteConfig` blocks on the `azure.appservice.AppService` resource will be overwritten when promoting a Slot using the `azure.appservice.ActiveSlot` resource.
    */
-  def ActiveSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ActiveSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.ActiveSlotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.appservice.ActiveSlotArgs.builder
     com.pulumi.azure.appservice.ActiveSlot(name,
@@ -21,7 +21,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a service connector for function app. */
-  def AppConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AppConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.AppConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appservice.AppConnectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -32,7 +32,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Function App Running on a Flex Consumption Plan. */
-  def AppFlexConsumption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AppFlexConsumption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.AppFlexConsumptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appservice.AppFlexConsumptionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -56,7 +56,7 @@ object appservice:
    * 
    * &gt; **Note:** When using Slots - the `appSettings`, `connectionString` and `siteConfig` blocks on the `azure.appservice.AppService` resource will be overwritten when promoting a Slot using the `azure.appservice.ActiveSlot` resource.
    */
-  def AppService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AppService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.AppServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appservice.AppServiceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -331,7 +331,7 @@ object appservice:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an App Service certificate. */
-  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.CertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appservice.CertificateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -349,7 +349,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an App Service Certificate Binding. */
-  def CertificateBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CertificateBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.CertificateBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.appservice.CertificateBindingArgs.builder
     com.pulumi.azure.appservice.CertificateBinding(name,
@@ -357,7 +357,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an App Service Certificate Order. */
-  def CertificateOrder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CertificateOrder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.CertificateOrderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appservice.CertificateOrderArgs.builder
     conf.logicalName2physicalName(name) match
@@ -375,7 +375,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a service connector for app service. */
-  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.ConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appservice.ConnectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -386,7 +386,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Hostname Binding within an App Service (or Function App). */
-  def CustomHostnameBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomHostnameBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.CustomHostnameBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.appservice.CustomHostnameBindingArgs.builder
     com.pulumi.azure.appservice.CustomHostnameBinding(name,
@@ -394,7 +394,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a 3rd Generation (v3) App Service Environment. */
-  def EnvironmentV3(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EnvironmentV3(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.EnvironmentV3Args.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appservice.EnvironmentV3Args.builder
     conf.logicalName2physicalName(name) match
@@ -419,7 +419,7 @@ object appservice:
    * &gt; **Note:** To connect an Azure Function App and a subnet within the same region `azure.appservice.VirtualNetworkSwiftConnection` can be used.
    * For an example, check the `azure.appservice.VirtualNetworkSwiftConnection` documentation.
    */
-  def FunctionApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FunctionApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.FunctionAppArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appservice.FunctionAppArgs.builder
     conf.logicalName2physicalName(name) match
@@ -437,7 +437,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Function App Active Slot. */
-  def FunctionAppActiveSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FunctionAppActiveSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.FunctionAppActiveSlotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.appservice.FunctionAppActiveSlotArgs.builder
     com.pulumi.azure.appservice.FunctionAppActiveSlot(name,
@@ -445,7 +445,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Function App Function. */
-  def FunctionAppFunction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FunctionAppFunction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.FunctionAppFunctionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appservice.FunctionAppFunctionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -456,7 +456,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Function App Hybrid Connection. */
-  def FunctionAppHybridConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FunctionAppHybridConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.FunctionAppHybridConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.appservice.FunctionAppHybridConnectionArgs.builder
     com.pulumi.azure.appservice.FunctionAppHybridConnection(name,
@@ -468,7 +468,7 @@ object appservice:
    * 
    * &gt; **NOTE:** This resource has been deprecated and will be removed in version 6.0 of the provider. Please use `azure.appservice.LinuxFunctionAppSlot` and `azure.appservice.WindowsFunctionAppSlot` resources instead.
    */
-  def FunctionAppSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FunctionAppSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.FunctionAppSlotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appservice.FunctionAppSlotArgs.builder
     conf.logicalName2physicalName(name) match
@@ -490,7 +490,7 @@ object appservice:
    * 
    * &gt; **NOTE:** This resource has been deprecated and will be removed in version 6.0 of the provider. Please use `azure.appservice.FunctionAppHybridConnection` and `azure.appservice.WebAppHybridConnection` resources instead.
    */
-  def HybridConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HybridConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.HybridConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.appservice.HybridConnectionArgs.builder
     com.pulumi.azure.appservice.HybridConnection(name,
@@ -502,7 +502,7 @@ object appservice:
    * 
    * &gt; **Note:** This Terraform resource is specifically designed to provision the infrastructure for a Function App, which can host one or more individual functions. To package and deploy application code to the Function App, tools like [Azure Functions Core Tools](https://learn.microsoft.com/azure/azure-functions/functions-run-local) or Azure CLI can be utilized, however application code deployment must typically be performed individually for each Function App.
    */
-  def LinuxFunctionApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LinuxFunctionApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.LinuxFunctionAppArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appservice.LinuxFunctionAppArgs.builder
     conf.logicalName2physicalName(name) match
@@ -520,7 +520,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linux Function App Slot. */
-  def LinuxFunctionAppSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LinuxFunctionAppSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.LinuxFunctionAppSlotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appservice.LinuxFunctionAppSlotArgs.builder
     conf.logicalName2physicalName(name) match
@@ -538,7 +538,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linux Web App. */
-  def LinuxWebApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LinuxWebApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.LinuxWebAppArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appservice.LinuxWebAppArgs.builder
     conf.logicalName2physicalName(name) match
@@ -556,7 +556,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linux Web App Slot. */
-  def LinuxWebAppSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LinuxWebAppSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.LinuxWebAppSlotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appservice.LinuxWebAppSlotArgs.builder
     conf.logicalName2physicalName(name) match
@@ -578,7 +578,7 @@ object appservice:
    * 
    * &gt; **Note:** A certificate is valid for six months, and about a month before the certificate\u2019s expiration date, App Services renews/rotates the certificate. This is managed by Azure and doesn&#39;t require this resource to be changed or reprovisioned. It will change the `thumbprint` computed attribute the next time the resource is refreshed after rotation occurs, so keep that in mind if you have any dependencies on this attribute directly.
    */
-  def ManagedCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.ManagedCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appservice.ManagedCertificateArgs.builder
     argsBuilder = args(argsBuilder)
@@ -597,7 +597,7 @@ object appservice:
    * 
    * &gt; **NOTE:** This resource has been deprecated and will be removed in version 6.0 of the provider. Please use `azure.appservice.ServicePlan` resource instead.
    */
-  def Plan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Plan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.PlanArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appservice.PlanArgs.builder
     conf.logicalName2physicalName(name) match
@@ -615,7 +615,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an App Service Public Certificate. */
-  def PublicCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PublicCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.PublicCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.appservice.PublicCertificateArgs.builder
     com.pulumi.azure.appservice.PublicCertificate(name,
@@ -623,7 +623,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an App Service: Service Plan. */
-  def ServicePlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServicePlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.ServicePlanArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appservice.ServicePlanArgs.builder
     conf.logicalName2physicalName(name) match
@@ -647,7 +647,7 @@ object appservice:
    * 
    * &gt; **Note:** When using Slots - the `appSettings`, `connectionString` and `siteConfig` blocks on the `azure.appservice.AppService` resource will be overwritten when promoting a Slot using the `azure.appservice.ActiveSlot` resource.
    */
-  def Slot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Slot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.SlotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appservice.SlotArgs.builder
     conf.logicalName2physicalName(name) match
@@ -665,7 +665,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Hostname Binding within an App Service Slot. */
-  def SlotCustomHostnameBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SlotCustomHostnameBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.SlotCustomHostnameBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.appservice.SlotCustomHostnameBindingArgs.builder
     com.pulumi.azure.appservice.SlotCustomHostnameBinding(name,
@@ -673,7 +673,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an App Service Slot&#39;s Virtual Network Association (this is for the [Regional VNet Integration](https://docs.microsoft.com/azure/app-service/web-sites-integrate-with-vnet#regional-vnet-integration) which is still in preview). */
-  def SlotVirtualNetworkSwiftConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SlotVirtualNetworkSwiftConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.SlotVirtualNetworkSwiftConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.appservice.SlotVirtualNetworkSwiftConnectionArgs.builder
     com.pulumi.azure.appservice.SlotVirtualNetworkSwiftConnection(name,
@@ -687,7 +687,7 @@ object appservice:
    * 
    * &gt; **NOTE:** Source Control Tokens are configured at the subscription level, not on each App Service - as such this can only be configured Subscription-wide
    */
-  def SourceCodeToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SourceCodeToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.SourceCodeTokenArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.appservice.SourceCodeTokenArgs.builder
     com.pulumi.azure.appservice.SourceCodeToken(name,
@@ -695,7 +695,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an App Service Web App or Function App Source Control Configuration. */
-  def SourceControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SourceControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.SourceControlArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.appservice.SourceControlArgs.builder
     com.pulumi.azure.appservice.SourceControl(name,
@@ -703,7 +703,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an App Service Source Control Slot. */
-  def SourceControlSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SourceControlSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.SourceControlSlotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.appservice.SourceControlSlotArgs.builder
     com.pulumi.azure.appservice.SourceControlSlot(name,
@@ -715,7 +715,7 @@ object appservice:
    * 
    * &gt; **Note:** This resource can only manage the token for the user currently running Terraform. Managing tokens for another user is not supported by the service.
    */
-  def SourceControlToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SourceControlToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.SourceControlTokenArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.appservice.SourceControlTokenArgs.builder
     com.pulumi.azure.appservice.SourceControlToken(name,
@@ -729,7 +729,7 @@ object appservice:
    * 
    * &gt; **Note:** After the Static Site is provisioned, you&#39;ll need to associate your target repository, which contains your web app, to the Static Site, by following the [Azure Static Site document](https://docs.microsoft.com/azure/static-web-apps/github-actions-workflow).
    */
-  def StaticSite(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StaticSite(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.StaticSiteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appservice.StaticSiteArgs.builder
     conf.logicalName2physicalName(name) match
@@ -753,7 +753,7 @@ object appservice:
    * 
    * &gt; **Note:** DNS validation polling is only done for CNAME records, terraform will not validate TXT validation records are complete.
    */
-  def StaticSiteCustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StaticSiteCustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.StaticSiteCustomDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.appservice.StaticSiteCustomDomainArgs.builder
     com.pulumi.azure.appservice.StaticSiteCustomDomain(name,
@@ -761,7 +761,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an App Service Static Web App. */
-  def StaticWebApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StaticWebApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.StaticWebAppArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appservice.StaticWebAppArgs.builder
     conf.logicalName2physicalName(name) match
@@ -783,7 +783,7 @@ object appservice:
    * 
    * &gt; **Note:** DNS validation polling is only done for CNAME records, terraform will not validate TXT validation records are complete.
    */
-  def StaticWebAppCustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StaticWebAppCustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.StaticWebAppCustomDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.appservice.StaticWebAppCustomDomainArgs.builder
     com.pulumi.azure.appservice.StaticWebAppCustomDomain(name,
@@ -795,7 +795,7 @@ object appservice:
    * 
    * &gt; **Note:** This resource registers the specified Function App to the `Production` build of the Static Web App.
    */
-  def StaticWebAppFunctionAppRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StaticWebAppFunctionAppRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.StaticWebAppFunctionAppRegistrationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.appservice.StaticWebAppFunctionAppRegistrationArgs.builder
     com.pulumi.azure.appservice.StaticWebAppFunctionAppRegistration(name,
@@ -826,7 +826,7 @@ object appservice:
    * There is a hard limit of [one VNet integration per App Service Plan](https://docs.microsoft.com/azure/app-service/web-sites-integrate-with-vnet#regional-vnet-integration).
    * Multiple apps in the same App Service plan can use the same VNet.
    */
-  def VirtualNetworkSwiftConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VirtualNetworkSwiftConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.VirtualNetworkSwiftConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.appservice.VirtualNetworkSwiftConnectionArgs.builder
     com.pulumi.azure.appservice.VirtualNetworkSwiftConnection(name,
@@ -834,7 +834,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Web App Active Slot. */
-  def WebAppActiveSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WebAppActiveSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.WebAppActiveSlotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.appservice.WebAppActiveSlotArgs.builder
     com.pulumi.azure.appservice.WebAppActiveSlot(name,
@@ -842,7 +842,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Web App Hybrid Connection. */
-  def WebAppHybridConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WebAppHybridConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.WebAppHybridConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.appservice.WebAppHybridConnectionArgs.builder
     com.pulumi.azure.appservice.WebAppHybridConnection(name,
@@ -850,7 +850,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Windows Function App. */
-  def WindowsFunctionApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WindowsFunctionApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.WindowsFunctionAppArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appservice.WindowsFunctionAppArgs.builder
     conf.logicalName2physicalName(name) match
@@ -868,7 +868,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Windows Function App Slot. */
-  def WindowsFunctionAppSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WindowsFunctionAppSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.WindowsFunctionAppSlotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appservice.WindowsFunctionAppSlotArgs.builder
     conf.logicalName2physicalName(name) match
@@ -886,7 +886,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Windows Web App. */
-  def WindowsWebApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WindowsWebApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.WindowsWebAppArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appservice.WindowsWebAppArgs.builder
     conf.logicalName2physicalName(name) match
@@ -904,7 +904,7 @@ object appservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Windows Web App Slot. */
-  def WindowsWebAppSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WindowsWebAppSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.appservice.WindowsWebAppSlotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appservice.WindowsWebAppSlotArgs.builder
     conf.logicalName2physicalName(name) match

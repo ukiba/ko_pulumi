@@ -24,7 +24,7 @@ object arc:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an Azure Arc Private Link Scope. */
-  def PrivateLinkScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PrivateLinkScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.arc.PrivateLinkScopeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.arc.PrivateLinkScopeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -42,7 +42,7 @@ object arc:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Arc Resource Bridge Appliance. */
-  def ResourceBridgeAppliance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourceBridgeAppliance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.arc.ResourceBridgeApplianceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.arc.ResourceBridgeApplianceArgs.builder
     conf.logicalName2physicalName(name) match

@@ -11,7 +11,7 @@ object qldb:
    * 
    * &gt; **NOTE:** Deletion protection is enabled by default. To successfully delete this resource via this provider, `deletionProtection = false` must be applied before attempting deletion.
    */
-  def Ledger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Ledger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.qldb.LedgerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.qldb.LedgerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -46,7 +46,7 @@ object qldb:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides an AWS Quantum Ledger Database (QLDB) Stream resource */
-  def Stream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Stream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.qldb.StreamArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.qldb.StreamArgs.builder
     argsBuilder = args(argsBuilder)

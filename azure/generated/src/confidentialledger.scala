@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object confidentialledger:
   /** Manages a Confidential Ledger. */
-  def Ledger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Ledger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.confidentialledger.LedgerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.confidentialledger.LedgerArgs.builder
     conf.logicalName2physicalName(name) match

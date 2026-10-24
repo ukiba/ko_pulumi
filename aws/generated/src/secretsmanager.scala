@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object secretsmanager:
   /** Provides a resource to manage AWS Secrets Manager secret metadata. To manage secret rotation, see the `aws.secretsmanager.SecretRotation` resource. To manage a secret value, see the `aws.secretsmanager.SecretVersion` resource. */
-  def Secret(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Secret(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.secretsmanager.SecretArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.secretsmanager.SecretArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25,7 +25,7 @@ object secretsmanager:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage AWS Secrets Manager secret policy. */
-  def SecretPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecretPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.secretsmanager.SecretPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.secretsmanager.SecretPolicyArgs.builder
     com.pulumi.aws.secretsmanager.SecretPolicy(name,
@@ -33,7 +33,7 @@ object secretsmanager:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage AWS Secrets Manager secret rotation. To manage a secret, see the `aws.secretsmanager.Secret` resource. To manage a secret value, see the `aws.secretsmanager.SecretVersion` resource. */
-  def SecretRotation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecretRotation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.secretsmanager.SecretRotationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.secretsmanager.SecretRotationArgs.builder
     com.pulumi.aws.secretsmanager.SecretRotation(name,
@@ -45,7 +45,7 @@ object secretsmanager:
    * 
    * &gt; **NOTE:** If the `AWSCURRENT` staging label is present on this version during resource deletion, that label cannot be removed and will be skipped to prevent errors when fully deleting the secret. That label will leave this secret version active even after the resource is deleted from this provider unless the secret itself is deleted. Move the `AWSCURRENT` staging label before or after deleting this resource from this provider to fully trigger version deprecation if necessary.
    */
-  def SecretVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecretVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.secretsmanager.SecretVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.secretsmanager.SecretVersionArgs.builder
     com.pulumi.aws.secretsmanager.SecretVersion(name,
@@ -156,7 +156,7 @@ object secretsmanager:
    * 
    * &gt; **NOTE:** This tagging resource does not use the provider `ignoreTags` configuration.
    */
-  def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.secretsmanager.TagArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.secretsmanager.TagArgs.builder
     com.pulumi.aws.secretsmanager.Tag(name,

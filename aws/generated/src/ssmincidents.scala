@@ -11,7 +11,7 @@ object ssmincidents:
    * 
    * &gt; **NOTE:** Deleting a replication set also deletes all Incident Manager related data including response plans, incident records, contacts and escalation plans.
    */
-  def ReplicationSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ReplicationSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssmincidents.ReplicationSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssmincidents.ReplicationSetArgs.builder
     argsBuilder = args(argsBuilder)
@@ -30,7 +30,7 @@ object ssmincidents:
    * 
    * &gt; NOTE: A response plan implicitly depends on a replication set. If you configured your replication set in Pulumi, we recommend you add it to the `dependsOn` argument for the ResponsePlan Resource.
    */
-  def ResponsePlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResponsePlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssmincidents.ResponsePlanArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssmincidents.ResponsePlanArgs.builder
     conf.logicalName2physicalName(name) match

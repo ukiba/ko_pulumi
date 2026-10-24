@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object timestreamwrite:
   /** Provides a Timestream database resource. */
-  def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.timestreamwrite.DatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.timestreamwrite.DatabaseArgs.builder
     argsBuilder = args(argsBuilder)
@@ -22,7 +22,7 @@ object timestreamwrite:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Timestream table resource. */
-  def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.timestreamwrite.TableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.timestreamwrite.TableArgs.builder
     argsBuilder = args(argsBuilder)

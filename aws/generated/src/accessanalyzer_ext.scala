@@ -7,7 +7,7 @@ object accessanalyzer_ext:
      * @param configuration A block that specifies the configuration of the analyzer. See `configuration` Block for details.
      * @return builder
      */
-    def configuration(args: Endofunction[com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationArgs.Builder]):
+    inline def configuration(args: Endofunction[com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationArgs.Builder]):
         com.pulumi.aws.accessanalyzer.AnalyzerArgs.Builder =
       val argsBuilder = com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object accessanalyzer_ext:
      * @param filters Filter criteria for the archive rule. See Filter for more details.
      * @return builder
      */
-    def filters(args: Endofunction[com.pulumi.aws.accessanalyzer.inputs.ArchiveRuleFilterArgs.Builder]*):
+    inline def filters(args: Endofunction[com.pulumi.aws.accessanalyzer.inputs.ArchiveRuleFilterArgs.Builder]*):
         com.pulumi.aws.accessanalyzer.ArchiveRuleArgs.Builder =
       def argsBuilder = com.pulumi.aws.accessanalyzer.inputs.ArchiveRuleFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
@@ -27,7 +27,7 @@ object accessanalyzer_ext:
      * @param internalAccess Specifies the configuration of an internal access analyzer for an AWS organization or account. This configuration determines how the analyzer evaluates access within your AWS environment. See `internalAccess` Block for details.
      * @return builder
      */
-    def internalAccess(args: Endofunction[com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationInternalAccessArgs.Builder]):
+    inline def internalAccess(args: Endofunction[com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationInternalAccessArgs.Builder]):
         com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationInternalAccessArgs.builder
       builder.internalAccess(args(argsBuilder).build)
@@ -36,7 +36,7 @@ object accessanalyzer_ext:
      * @param unusedAccess Specifies the configuration of an unused access analyzer for an AWS organization or account. See `unusedAccess` Block for details.
      * @return builder
      */
-    def unusedAccess(args: Endofunction[com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationUnusedAccessArgs.Builder]):
+    inline def unusedAccess(args: Endofunction[com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationUnusedAccessArgs.Builder]):
         com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationUnusedAccessArgs.builder
       builder.unusedAccess(args(argsBuilder).build)
@@ -46,7 +46,7 @@ object accessanalyzer_ext:
      * @param inclusions List of rules for the internal access analyzer containing criteria to include in analysis. Only resources that meet the rule criteria will generate findings. See `inclusion` Block for details.
      * @return builder
      */
-    def inclusions(args: Endofunction[com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationInternalAccessAnalysisRuleInclusionArgs.Builder]*):
+    inline def inclusions(args: Endofunction[com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationInternalAccessAnalysisRuleInclusionArgs.Builder]*):
         com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationInternalAccessAnalysisRuleArgs.Builder =
       def argsBuilder = com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationInternalAccessAnalysisRuleInclusionArgs.builder
       builder.inclusions(args.map(_(argsBuilder).build)*)
@@ -56,7 +56,7 @@ object accessanalyzer_ext:
      * @param analysisRule Information about analysis rules for the internal access analyzer. These rules determine which resources and access patterns will be analyzed. See `analysisRule` Block for Internal Access Analyzer for details.
      * @return builder
      */
-    def analysisRule(args: Endofunction[com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationInternalAccessAnalysisRuleArgs.Builder]):
+    inline def analysisRule(args: Endofunction[com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationInternalAccessAnalysisRuleArgs.Builder]):
         com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationInternalAccessArgs.Builder =
       val argsBuilder = com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationInternalAccessAnalysisRuleArgs.builder
       builder.analysisRule(args(argsBuilder).build)
@@ -66,7 +66,7 @@ object accessanalyzer_ext:
      * @param exclusions List of rules for the analyzer containing criteria to exclude from analysis. Entities that meet the rule criteria will not generate findings. See `exclusion` Block for details.
      * @return builder
      */
-    def exclusions(args: Endofunction[com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationUnusedAccessAnalysisRuleExclusionArgs.Builder]*):
+    inline def exclusions(args: Endofunction[com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationUnusedAccessAnalysisRuleExclusionArgs.Builder]*):
         com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationUnusedAccessAnalysisRuleArgs.Builder =
       def argsBuilder = com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationUnusedAccessAnalysisRuleExclusionArgs.builder
       builder.exclusions(args.map(_(argsBuilder).build)*)
@@ -76,7 +76,7 @@ object accessanalyzer_ext:
      * @param analysisRule Information about analysis rules for the analyzer. Analysis rules determine which entities will generate findings based on the criteria you define when you create the rule. See `analysisRule` Block for Unused Access Analyzer for details.
      * @return builder
      */
-    def analysisRule(args: Endofunction[com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationUnusedAccessAnalysisRuleArgs.Builder]):
+    inline def analysisRule(args: Endofunction[com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationUnusedAccessAnalysisRuleArgs.Builder]):
         com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationUnusedAccessArgs.Builder =
       val argsBuilder = com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationUnusedAccessAnalysisRuleArgs.builder
       builder.analysisRule(args(argsBuilder).build)
@@ -86,7 +86,7 @@ object accessanalyzer_ext:
      * @param configuration A block that specifies the configuration of the analyzer. See `configuration` Block for details.
      * @return builder
      */
-    def configuration(args: Endofunction[com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationArgs.Builder]):
+    inline def configuration(args: Endofunction[com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationArgs.Builder]):
         com.pulumi.aws.accessanalyzer.inputs.AnalyzerState.Builder =
       val argsBuilder = com.pulumi.aws.accessanalyzer.inputs.AnalyzerConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
@@ -96,7 +96,7 @@ object accessanalyzer_ext:
      * @param filters Filter criteria for the archive rule. See Filter for more details.
      * @return builder
      */
-    def filters(args: Endofunction[com.pulumi.aws.accessanalyzer.inputs.ArchiveRuleFilterArgs.Builder]*):
+    inline def filters(args: Endofunction[com.pulumi.aws.accessanalyzer.inputs.ArchiveRuleFilterArgs.Builder]*):
         com.pulumi.aws.accessanalyzer.inputs.ArchiveRuleState.Builder =
       def argsBuilder = com.pulumi.aws.accessanalyzer.inputs.ArchiveRuleFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)

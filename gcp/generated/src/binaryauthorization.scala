@@ -15,7 +15,7 @@ object binaryauthorization:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/binary-authorization/)
    */
-  def Attestor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Attestor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.binaryauthorization.AttestorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.binaryauthorization.AttestorArgs.builder
     conf.logicalName2physicalName(name) match
@@ -324,7 +324,7 @@ object binaryauthorization:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AttestorIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AttestorIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.binaryauthorization.AttestorIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.binaryauthorization.AttestorIamBindingArgs.builder
     com.pulumi.gcp.binaryauthorization.AttestorIamBinding(name,
@@ -630,7 +630,7 @@ object binaryauthorization:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AttestorIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AttestorIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.binaryauthorization.AttestorIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.binaryauthorization.AttestorIamMemberArgs.builder
     com.pulumi.gcp.binaryauthorization.AttestorIamMember(name,
@@ -936,7 +936,7 @@ object binaryauthorization:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AttestorIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AttestorIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.binaryauthorization.AttestorIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.binaryauthorization.AttestorIamPolicyArgs.builder
     com.pulumi.gcp.binaryauthorization.AttestorIamPolicy(name,
@@ -969,7 +969,7 @@ object binaryauthorization:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/binary-authorization/)
    */
-  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.binaryauthorization.PolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.binaryauthorization.PolicyArgs.builder
     com.pulumi.gcp.binaryauthorization.Policy(name,

@@ -7,7 +7,7 @@ object logging_ext:
      * @param cmekSettings The CMEK settings of the log bucket. If present, new log entries written to this log bucket are encrypted using the CMEK key provided in this configuration. If a log bucket has CMEK settings, the CMEK settings cannot be disabled later by updating the log bucket. Changing the KMS key is allowed.
      * @return builder
      */
-    def cmekSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.BillingAccountBucketConfigCmekSettingsArgs.Builder]):
+    inline def cmekSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.BillingAccountBucketConfigCmekSettingsArgs.Builder]):
         com.pulumi.gcp.logging.BillingAccountBucketConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.BillingAccountBucketConfigCmekSettingsArgs.builder
       builder.cmekSettings(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object logging_ext:
      * @param indexConfigs A list of indexed fields and related configuration data. Structure is documented below.
      * @return builder
      */
-    def indexConfigs(args: Endofunction[com.pulumi.gcp.logging.inputs.BillingAccountBucketConfigIndexConfigArgs.Builder]*):
+    inline def indexConfigs(args: Endofunction[com.pulumi.gcp.logging.inputs.BillingAccountBucketConfigIndexConfigArgs.Builder]*):
         com.pulumi.gcp.logging.BillingAccountBucketConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.logging.inputs.BillingAccountBucketConfigIndexConfigArgs.builder
       builder.indexConfigs(args.map(_(argsBuilder).build)*)
@@ -26,7 +26,7 @@ object logging_ext:
      * @param bigqueryOptions Options that affect sinks exporting data to BigQuery. Structure documented below.
      * @return builder
      */
-    def bigqueryOptions(args: Endofunction[com.pulumi.gcp.logging.inputs.BillingAccountSinkBigqueryOptionsArgs.Builder]):
+    inline def bigqueryOptions(args: Endofunction[com.pulumi.gcp.logging.inputs.BillingAccountSinkBigqueryOptionsArgs.Builder]):
         com.pulumi.gcp.logging.BillingAccountSinkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.BillingAccountSinkBigqueryOptionsArgs.builder
       builder.bigqueryOptions(args(argsBuilder).build)
@@ -35,7 +35,7 @@ object logging_ext:
      * @param exclusions Log entries that match any of the exclusion filters will not be exported. If a log entry is matched by both `filter` and one of `exclusions.filter`, it will not be exported.  Can be repeated multiple times for multiple exclusions. Structure is documented below.
      * @return builder
      */
-    def exclusions(args: Endofunction[com.pulumi.gcp.logging.inputs.BillingAccountSinkExclusionArgs.Builder]*):
+    inline def exclusions(args: Endofunction[com.pulumi.gcp.logging.inputs.BillingAccountSinkExclusionArgs.Builder]*):
         com.pulumi.gcp.logging.BillingAccountSinkArgs.Builder =
       def argsBuilder = com.pulumi.gcp.logging.inputs.BillingAccountSinkExclusionArgs.builder
       builder.exclusions(args.map(_(argsBuilder).build)*)
@@ -45,7 +45,7 @@ object logging_ext:
      * @param cmekSettings The CMEK settings of the log bucket. If present, new log entries written to this log bucket are encrypted using the CMEK key provided in this configuration. If a log bucket has CMEK settings, the CMEK settings cannot be disabled later by updating the log bucket. Changing the KMS key is allowed.
      * @return builder
      */
-    def cmekSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.FolderBucketConfigCmekSettingsArgs.Builder]):
+    inline def cmekSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.FolderBucketConfigCmekSettingsArgs.Builder]):
         com.pulumi.gcp.logging.FolderBucketConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.FolderBucketConfigCmekSettingsArgs.builder
       builder.cmekSettings(args(argsBuilder).build)
@@ -54,7 +54,7 @@ object logging_ext:
      * @param indexConfigs A list of indexed fields and related configuration data. Structure is documented below.
      * @return builder
      */
-    def indexConfigs(args: Endofunction[com.pulumi.gcp.logging.inputs.FolderBucketConfigIndexConfigArgs.Builder]*):
+    inline def indexConfigs(args: Endofunction[com.pulumi.gcp.logging.inputs.FolderBucketConfigIndexConfigArgs.Builder]*):
         com.pulumi.gcp.logging.FolderBucketConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.logging.inputs.FolderBucketConfigIndexConfigArgs.builder
       builder.indexConfigs(args.map(_(argsBuilder).build)*)
@@ -64,7 +64,7 @@ object logging_ext:
      * @param bigqueryOptions Options that affect sinks exporting data to BigQuery. Structure documented below.
      * @return builder
      */
-    def bigqueryOptions(args: Endofunction[com.pulumi.gcp.logging.inputs.FolderSinkBigqueryOptionsArgs.Builder]):
+    inline def bigqueryOptions(args: Endofunction[com.pulumi.gcp.logging.inputs.FolderSinkBigqueryOptionsArgs.Builder]):
         com.pulumi.gcp.logging.FolderSinkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.FolderSinkBigqueryOptionsArgs.builder
       builder.bigqueryOptions(args(argsBuilder).build)
@@ -73,7 +73,7 @@ object logging_ext:
      * @param exclusions Log entries that match any of the exclusion filters will not be exported. If a log entry is matched by both `filter` and one of `exclusions.filter`, it will not be exported.  Can be repeated multiple times for multiple exclusions. Structure is documented below.
      * @return builder
      */
-    def exclusions(args: Endofunction[com.pulumi.gcp.logging.inputs.FolderSinkExclusionArgs.Builder]*):
+    inline def exclusions(args: Endofunction[com.pulumi.gcp.logging.inputs.FolderSinkExclusionArgs.Builder]*):
         com.pulumi.gcp.logging.FolderSinkArgs.Builder =
       def argsBuilder = com.pulumi.gcp.logging.inputs.FolderSinkExclusionArgs.builder
       builder.exclusions(args.map(_(argsBuilder).build)*)
@@ -86,7 +86,7 @@ object logging_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigqueryDatasets(args: Endofunction[com.pulumi.gcp.logging.inputs.LinkedDatasetBigqueryDatasetArgs.Builder]*):
+    inline def bigqueryDatasets(args: Endofunction[com.pulumi.gcp.logging.inputs.LinkedDatasetBigqueryDatasetArgs.Builder]*):
         com.pulumi.gcp.logging.LinkedDatasetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.logging.inputs.LinkedDatasetBigqueryDatasetArgs.builder
       builder.bigqueryDatasets(args.map(_(argsBuilder).build)*)
@@ -97,7 +97,7 @@ object logging_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.logging.inputs.LogViewIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.logging.inputs.LogViewIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.logging.LogViewIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.LogViewIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -108,7 +108,7 @@ object logging_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.logging.inputs.LogViewIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.logging.inputs.LogViewIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.logging.LogViewIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.LogViewIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -120,7 +120,7 @@ object logging_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bucketOptions(args: Endofunction[com.pulumi.gcp.logging.inputs.MetricBucketOptionsArgs.Builder]):
+    inline def bucketOptions(args: Endofunction[com.pulumi.gcp.logging.inputs.MetricBucketOptionsArgs.Builder]):
         com.pulumi.gcp.logging.MetricArgs.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.MetricBucketOptionsArgs.builder
       builder.bucketOptions(args(argsBuilder).build)
@@ -133,7 +133,7 @@ object logging_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metricDescriptor(args: Endofunction[com.pulumi.gcp.logging.inputs.MetricMetricDescriptorArgs.Builder]):
+    inline def metricDescriptor(args: Endofunction[com.pulumi.gcp.logging.inputs.MetricMetricDescriptorArgs.Builder]):
         com.pulumi.gcp.logging.MetricArgs.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.MetricMetricDescriptorArgs.builder
       builder.metricDescriptor(args(argsBuilder).build)
@@ -143,7 +143,7 @@ object logging_ext:
      * @param cmekSettings The CMEK settings of the log bucket. If present, new log entries written to this log bucket are encrypted using the CMEK key provided in this configuration. If a log bucket has CMEK settings, the CMEK settings cannot be disabled later by updating the log bucket. Changing the KMS key is allowed.
      * @return builder
      */
-    def cmekSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.OrganizationBucketConfigCmekSettingsArgs.Builder]):
+    inline def cmekSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.OrganizationBucketConfigCmekSettingsArgs.Builder]):
         com.pulumi.gcp.logging.OrganizationBucketConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.OrganizationBucketConfigCmekSettingsArgs.builder
       builder.cmekSettings(args(argsBuilder).build)
@@ -152,7 +152,7 @@ object logging_ext:
      * @param indexConfigs A list of indexed fields and related configuration data. Structure is documented below.
      * @return builder
      */
-    def indexConfigs(args: Endofunction[com.pulumi.gcp.logging.inputs.OrganizationBucketConfigIndexConfigArgs.Builder]*):
+    inline def indexConfigs(args: Endofunction[com.pulumi.gcp.logging.inputs.OrganizationBucketConfigIndexConfigArgs.Builder]*):
         com.pulumi.gcp.logging.OrganizationBucketConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.logging.inputs.OrganizationBucketConfigIndexConfigArgs.builder
       builder.indexConfigs(args.map(_(argsBuilder).build)*)
@@ -162,7 +162,7 @@ object logging_ext:
      * @param bigqueryOptions Options that affect sinks exporting data to BigQuery. Structure documented below.
      * @return builder
      */
-    def bigqueryOptions(args: Endofunction[com.pulumi.gcp.logging.inputs.OrganizationSinkBigqueryOptionsArgs.Builder]):
+    inline def bigqueryOptions(args: Endofunction[com.pulumi.gcp.logging.inputs.OrganizationSinkBigqueryOptionsArgs.Builder]):
         com.pulumi.gcp.logging.OrganizationSinkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.OrganizationSinkBigqueryOptionsArgs.builder
       builder.bigqueryOptions(args(argsBuilder).build)
@@ -171,7 +171,7 @@ object logging_ext:
      * @param exclusions Log entries that match any of the exclusion filters will not be exported. If a log entry is matched by both `filter` and one of `exclusions.filter`, it will not be exported.  Can be repeated multiple times for multiple exclusions. Structure is documented below.
      * @return builder
      */
-    def exclusions(args: Endofunction[com.pulumi.gcp.logging.inputs.OrganizationSinkExclusionArgs.Builder]*):
+    inline def exclusions(args: Endofunction[com.pulumi.gcp.logging.inputs.OrganizationSinkExclusionArgs.Builder]*):
         com.pulumi.gcp.logging.OrganizationSinkArgs.Builder =
       def argsBuilder = com.pulumi.gcp.logging.inputs.OrganizationSinkExclusionArgs.builder
       builder.exclusions(args.map(_(argsBuilder).build)*)
@@ -181,7 +181,7 @@ object logging_ext:
      * @param cmekSettings The CMEK settings of the log bucket. If present, new log entries written to this log bucket are encrypted using the CMEK key provided in this configuration. If a log bucket has CMEK settings, the CMEK settings cannot be disabled later by updating the log bucket. Changing the KMS key is allowed. Structure is documented below.
      * @return builder
      */
-    def cmekSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.ProjectBucketConfigCmekSettingsArgs.Builder]):
+    inline def cmekSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.ProjectBucketConfigCmekSettingsArgs.Builder]):
         com.pulumi.gcp.logging.ProjectBucketConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.ProjectBucketConfigCmekSettingsArgs.builder
       builder.cmekSettings(args(argsBuilder).build)
@@ -190,7 +190,7 @@ object logging_ext:
      * @param indexConfigs A list of indexed fields and related configuration data. Structure is documented below.
      * @return builder
      */
-    def indexConfigs(args: Endofunction[com.pulumi.gcp.logging.inputs.ProjectBucketConfigIndexConfigArgs.Builder]*):
+    inline def indexConfigs(args: Endofunction[com.pulumi.gcp.logging.inputs.ProjectBucketConfigIndexConfigArgs.Builder]*):
         com.pulumi.gcp.logging.ProjectBucketConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.logging.inputs.ProjectBucketConfigIndexConfigArgs.builder
       builder.indexConfigs(args.map(_(argsBuilder).build)*)
@@ -200,7 +200,7 @@ object logging_ext:
      * @param bigqueryOptions Options that affect sinks exporting data to BigQuery. Structure documented below.
      * @return builder
      */
-    def bigqueryOptions(args: Endofunction[com.pulumi.gcp.logging.inputs.ProjectSinkBigqueryOptionsArgs.Builder]):
+    inline def bigqueryOptions(args: Endofunction[com.pulumi.gcp.logging.inputs.ProjectSinkBigqueryOptionsArgs.Builder]):
         com.pulumi.gcp.logging.ProjectSinkArgs.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.ProjectSinkBigqueryOptionsArgs.builder
       builder.bigqueryOptions(args(argsBuilder).build)
@@ -209,7 +209,7 @@ object logging_ext:
      * @param exclusions Log entries that match any of the exclusion filters will not be exported. If a log entry is matched by both `filter` and one of `exclusions.filter`, it will not be exported.  Can be repeated multiple times for multiple exclusions. Structure is documented below.
      * @return builder
      */
-    def exclusions(args: Endofunction[com.pulumi.gcp.logging.inputs.ProjectSinkExclusionArgs.Builder]*):
+    inline def exclusions(args: Endofunction[com.pulumi.gcp.logging.inputs.ProjectSinkExclusionArgs.Builder]*):
         com.pulumi.gcp.logging.ProjectSinkArgs.Builder =
       def argsBuilder = com.pulumi.gcp.logging.inputs.ProjectSinkExclusionArgs.builder
       builder.exclusions(args.map(_(argsBuilder).build)*)
@@ -220,7 +220,7 @@ object logging_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loggingQuery(args: Endofunction[com.pulumi.gcp.logging.inputs.SavedQueryLoggingQueryArgs.Builder]):
+    inline def loggingQuery(args: Endofunction[com.pulumi.gcp.logging.inputs.SavedQueryLoggingQueryArgs.Builder]):
         com.pulumi.gcp.logging.SavedQueryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.SavedQueryLoggingQueryArgs.builder
       builder.loggingQuery(args(argsBuilder).build)
@@ -230,7 +230,7 @@ object logging_ext:
      * Structure is documented below.
      * @return builder
      */
-    def opsAnalyticsQuery(args: Endofunction[com.pulumi.gcp.logging.inputs.SavedQueryOpsAnalyticsQueryArgs.Builder]):
+    inline def opsAnalyticsQuery(args: Endofunction[com.pulumi.gcp.logging.inputs.SavedQueryOpsAnalyticsQueryArgs.Builder]):
         com.pulumi.gcp.logging.SavedQueryArgs.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.SavedQueryOpsAnalyticsQueryArgs.builder
       builder.opsAnalyticsQuery(args(argsBuilder).build)
@@ -240,7 +240,7 @@ object logging_ext:
      * @param cmekSettings The CMEK settings of the log bucket. If present, new log entries written to this log bucket are encrypted using the CMEK key provided in this configuration. If a log bucket has CMEK settings, the CMEK settings cannot be disabled later by updating the log bucket. Changing the KMS key is allowed.
      * @return builder
      */
-    def cmekSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.BillingAccountBucketConfigCmekSettingsArgs.Builder]):
+    inline def cmekSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.BillingAccountBucketConfigCmekSettingsArgs.Builder]):
         com.pulumi.gcp.logging.inputs.BillingAccountBucketConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.BillingAccountBucketConfigCmekSettingsArgs.builder
       builder.cmekSettings(args(argsBuilder).build)
@@ -249,7 +249,7 @@ object logging_ext:
      * @param indexConfigs A list of indexed fields and related configuration data. Structure is documented below.
      * @return builder
      */
-    def indexConfigs(args: Endofunction[com.pulumi.gcp.logging.inputs.BillingAccountBucketConfigIndexConfigArgs.Builder]*):
+    inline def indexConfigs(args: Endofunction[com.pulumi.gcp.logging.inputs.BillingAccountBucketConfigIndexConfigArgs.Builder]*):
         com.pulumi.gcp.logging.inputs.BillingAccountBucketConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.logging.inputs.BillingAccountBucketConfigIndexConfigArgs.builder
       builder.indexConfigs(args.map(_(argsBuilder).build)*)
@@ -259,7 +259,7 @@ object logging_ext:
      * @param bigqueryOptions Options that affect sinks exporting data to BigQuery. Structure documented below.
      * @return builder
      */
-    def bigqueryOptions(args: Endofunction[com.pulumi.gcp.logging.inputs.BillingAccountSinkBigqueryOptionsArgs.Builder]):
+    inline def bigqueryOptions(args: Endofunction[com.pulumi.gcp.logging.inputs.BillingAccountSinkBigqueryOptionsArgs.Builder]):
         com.pulumi.gcp.logging.inputs.BillingAccountSinkState.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.BillingAccountSinkBigqueryOptionsArgs.builder
       builder.bigqueryOptions(args(argsBuilder).build)
@@ -268,7 +268,7 @@ object logging_ext:
      * @param exclusions Log entries that match any of the exclusion filters will not be exported. If a log entry is matched by both `filter` and one of `exclusions.filter`, it will not be exported.  Can be repeated multiple times for multiple exclusions. Structure is documented below.
      * @return builder
      */
-    def exclusions(args: Endofunction[com.pulumi.gcp.logging.inputs.BillingAccountSinkExclusionArgs.Builder]*):
+    inline def exclusions(args: Endofunction[com.pulumi.gcp.logging.inputs.BillingAccountSinkExclusionArgs.Builder]*):
         com.pulumi.gcp.logging.inputs.BillingAccountSinkState.Builder =
       def argsBuilder = com.pulumi.gcp.logging.inputs.BillingAccountSinkExclusionArgs.builder
       builder.exclusions(args.map(_(argsBuilder).build)*)
@@ -278,7 +278,7 @@ object logging_ext:
      * @param cmekSettings The CMEK settings of the log bucket. If present, new log entries written to this log bucket are encrypted using the CMEK key provided in this configuration. If a log bucket has CMEK settings, the CMEK settings cannot be disabled later by updating the log bucket. Changing the KMS key is allowed.
      * @return builder
      */
-    def cmekSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.FolderBucketConfigCmekSettingsArgs.Builder]):
+    inline def cmekSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.FolderBucketConfigCmekSettingsArgs.Builder]):
         com.pulumi.gcp.logging.inputs.FolderBucketConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.FolderBucketConfigCmekSettingsArgs.builder
       builder.cmekSettings(args(argsBuilder).build)
@@ -287,7 +287,7 @@ object logging_ext:
      * @param indexConfigs A list of indexed fields and related configuration data. Structure is documented below.
      * @return builder
      */
-    def indexConfigs(args: Endofunction[com.pulumi.gcp.logging.inputs.FolderBucketConfigIndexConfigArgs.Builder]*):
+    inline def indexConfigs(args: Endofunction[com.pulumi.gcp.logging.inputs.FolderBucketConfigIndexConfigArgs.Builder]*):
         com.pulumi.gcp.logging.inputs.FolderBucketConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.logging.inputs.FolderBucketConfigIndexConfigArgs.builder
       builder.indexConfigs(args.map(_(argsBuilder).build)*)
@@ -297,7 +297,7 @@ object logging_ext:
      * @param bigqueryOptions Options that affect sinks exporting data to BigQuery. Structure documented below.
      * @return builder
      */
-    def bigqueryOptions(args: Endofunction[com.pulumi.gcp.logging.inputs.FolderSinkBigqueryOptionsArgs.Builder]):
+    inline def bigqueryOptions(args: Endofunction[com.pulumi.gcp.logging.inputs.FolderSinkBigqueryOptionsArgs.Builder]):
         com.pulumi.gcp.logging.inputs.FolderSinkState.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.FolderSinkBigqueryOptionsArgs.builder
       builder.bigqueryOptions(args(argsBuilder).build)
@@ -306,7 +306,7 @@ object logging_ext:
      * @param exclusions Log entries that match any of the exclusion filters will not be exported. If a log entry is matched by both `filter` and one of `exclusions.filter`, it will not be exported.  Can be repeated multiple times for multiple exclusions. Structure is documented below.
      * @return builder
      */
-    def exclusions(args: Endofunction[com.pulumi.gcp.logging.inputs.FolderSinkExclusionArgs.Builder]*):
+    inline def exclusions(args: Endofunction[com.pulumi.gcp.logging.inputs.FolderSinkExclusionArgs.Builder]*):
         com.pulumi.gcp.logging.inputs.FolderSinkState.Builder =
       def argsBuilder = com.pulumi.gcp.logging.inputs.FolderSinkExclusionArgs.builder
       builder.exclusions(args.map(_(argsBuilder).build)*)
@@ -319,7 +319,7 @@ object logging_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigqueryDatasets(args: Endofunction[com.pulumi.gcp.logging.inputs.LinkedDatasetBigqueryDatasetArgs.Builder]*):
+    inline def bigqueryDatasets(args: Endofunction[com.pulumi.gcp.logging.inputs.LinkedDatasetBigqueryDatasetArgs.Builder]*):
         com.pulumi.gcp.logging.inputs.LinkedDatasetState.Builder =
       def argsBuilder = com.pulumi.gcp.logging.inputs.LinkedDatasetBigqueryDatasetArgs.builder
       builder.bigqueryDatasets(args.map(_(argsBuilder).build)*)
@@ -330,7 +330,7 @@ object logging_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.logging.inputs.LogViewIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.logging.inputs.LogViewIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.logging.inputs.LogViewIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.LogViewIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -341,7 +341,7 @@ object logging_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.logging.inputs.LogViewIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.logging.inputs.LogViewIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.logging.inputs.LogViewIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.LogViewIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -352,7 +352,7 @@ object logging_ext:
      * Structure is documented below.
      * @return builder
      */
-    def explicitBuckets(args: Endofunction[com.pulumi.gcp.logging.inputs.MetricBucketOptionsExplicitBucketsArgs.Builder]):
+    inline def explicitBuckets(args: Endofunction[com.pulumi.gcp.logging.inputs.MetricBucketOptionsExplicitBucketsArgs.Builder]):
         com.pulumi.gcp.logging.inputs.MetricBucketOptionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.MetricBucketOptionsExplicitBucketsArgs.builder
       builder.explicitBuckets(args(argsBuilder).build)
@@ -363,7 +363,7 @@ object logging_ext:
      * Structure is documented below.
      * @return builder
      */
-    def exponentialBuckets(args: Endofunction[com.pulumi.gcp.logging.inputs.MetricBucketOptionsExponentialBucketsArgs.Builder]):
+    inline def exponentialBuckets(args: Endofunction[com.pulumi.gcp.logging.inputs.MetricBucketOptionsExponentialBucketsArgs.Builder]):
         com.pulumi.gcp.logging.inputs.MetricBucketOptionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.MetricBucketOptionsExponentialBucketsArgs.builder
       builder.exponentialBuckets(args(argsBuilder).build)
@@ -374,7 +374,7 @@ object logging_ext:
      * Structure is documented below.
      * @return builder
      */
-    def linearBuckets(args: Endofunction[com.pulumi.gcp.logging.inputs.MetricBucketOptionsLinearBucketsArgs.Builder]):
+    inline def linearBuckets(args: Endofunction[com.pulumi.gcp.logging.inputs.MetricBucketOptionsLinearBucketsArgs.Builder]):
         com.pulumi.gcp.logging.inputs.MetricBucketOptionsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.MetricBucketOptionsLinearBucketsArgs.builder
       builder.linearBuckets(args(argsBuilder).build)
@@ -388,7 +388,7 @@ object logging_ext:
      * Structure is documented below.
      * @return builder
      */
-    def labels(args: Endofunction[com.pulumi.gcp.logging.inputs.MetricMetricDescriptorLabelArgs.Builder]*):
+    inline def labels(args: Endofunction[com.pulumi.gcp.logging.inputs.MetricMetricDescriptorLabelArgs.Builder]*):
         com.pulumi.gcp.logging.inputs.MetricMetricDescriptorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.logging.inputs.MetricMetricDescriptorLabelArgs.builder
       builder.labels(args.map(_(argsBuilder).build)*)
@@ -400,7 +400,7 @@ object logging_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bucketOptions(args: Endofunction[com.pulumi.gcp.logging.inputs.MetricBucketOptionsArgs.Builder]):
+    inline def bucketOptions(args: Endofunction[com.pulumi.gcp.logging.inputs.MetricBucketOptionsArgs.Builder]):
         com.pulumi.gcp.logging.inputs.MetricState.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.MetricBucketOptionsArgs.builder
       builder.bucketOptions(args(argsBuilder).build)
@@ -413,7 +413,7 @@ object logging_ext:
      * Structure is documented below.
      * @return builder
      */
-    def metricDescriptor(args: Endofunction[com.pulumi.gcp.logging.inputs.MetricMetricDescriptorArgs.Builder]):
+    inline def metricDescriptor(args: Endofunction[com.pulumi.gcp.logging.inputs.MetricMetricDescriptorArgs.Builder]):
         com.pulumi.gcp.logging.inputs.MetricState.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.MetricMetricDescriptorArgs.builder
       builder.metricDescriptor(args(argsBuilder).build)
@@ -423,7 +423,7 @@ object logging_ext:
      * @param cmekSettings The CMEK settings of the log bucket. If present, new log entries written to this log bucket are encrypted using the CMEK key provided in this configuration. If a log bucket has CMEK settings, the CMEK settings cannot be disabled later by updating the log bucket. Changing the KMS key is allowed.
      * @return builder
      */
-    def cmekSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.OrganizationBucketConfigCmekSettingsArgs.Builder]):
+    inline def cmekSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.OrganizationBucketConfigCmekSettingsArgs.Builder]):
         com.pulumi.gcp.logging.inputs.OrganizationBucketConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.OrganizationBucketConfigCmekSettingsArgs.builder
       builder.cmekSettings(args(argsBuilder).build)
@@ -432,7 +432,7 @@ object logging_ext:
      * @param indexConfigs A list of indexed fields and related configuration data. Structure is documented below.
      * @return builder
      */
-    def indexConfigs(args: Endofunction[com.pulumi.gcp.logging.inputs.OrganizationBucketConfigIndexConfigArgs.Builder]*):
+    inline def indexConfigs(args: Endofunction[com.pulumi.gcp.logging.inputs.OrganizationBucketConfigIndexConfigArgs.Builder]*):
         com.pulumi.gcp.logging.inputs.OrganizationBucketConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.logging.inputs.OrganizationBucketConfigIndexConfigArgs.builder
       builder.indexConfigs(args.map(_(argsBuilder).build)*)
@@ -442,7 +442,7 @@ object logging_ext:
      * @param bigqueryOptions Options that affect sinks exporting data to BigQuery. Structure documented below.
      * @return builder
      */
-    def bigqueryOptions(args: Endofunction[com.pulumi.gcp.logging.inputs.OrganizationSinkBigqueryOptionsArgs.Builder]):
+    inline def bigqueryOptions(args: Endofunction[com.pulumi.gcp.logging.inputs.OrganizationSinkBigqueryOptionsArgs.Builder]):
         com.pulumi.gcp.logging.inputs.OrganizationSinkState.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.OrganizationSinkBigqueryOptionsArgs.builder
       builder.bigqueryOptions(args(argsBuilder).build)
@@ -451,7 +451,7 @@ object logging_ext:
      * @param exclusions Log entries that match any of the exclusion filters will not be exported. If a log entry is matched by both `filter` and one of `exclusions.filter`, it will not be exported.  Can be repeated multiple times for multiple exclusions. Structure is documented below.
      * @return builder
      */
-    def exclusions(args: Endofunction[com.pulumi.gcp.logging.inputs.OrganizationSinkExclusionArgs.Builder]*):
+    inline def exclusions(args: Endofunction[com.pulumi.gcp.logging.inputs.OrganizationSinkExclusionArgs.Builder]*):
         com.pulumi.gcp.logging.inputs.OrganizationSinkState.Builder =
       def argsBuilder = com.pulumi.gcp.logging.inputs.OrganizationSinkExclusionArgs.builder
       builder.exclusions(args.map(_(argsBuilder).build)*)
@@ -461,7 +461,7 @@ object logging_ext:
      * @param cmekSettings The CMEK settings of the log bucket. If present, new log entries written to this log bucket are encrypted using the CMEK key provided in this configuration. If a log bucket has CMEK settings, the CMEK settings cannot be disabled later by updating the log bucket. Changing the KMS key is allowed. Structure is documented below.
      * @return builder
      */
-    def cmekSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.ProjectBucketConfigCmekSettingsArgs.Builder]):
+    inline def cmekSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.ProjectBucketConfigCmekSettingsArgs.Builder]):
         com.pulumi.gcp.logging.inputs.ProjectBucketConfigState.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.ProjectBucketConfigCmekSettingsArgs.builder
       builder.cmekSettings(args(argsBuilder).build)
@@ -470,7 +470,7 @@ object logging_ext:
      * @param indexConfigs A list of indexed fields and related configuration data. Structure is documented below.
      * @return builder
      */
-    def indexConfigs(args: Endofunction[com.pulumi.gcp.logging.inputs.ProjectBucketConfigIndexConfigArgs.Builder]*):
+    inline def indexConfigs(args: Endofunction[com.pulumi.gcp.logging.inputs.ProjectBucketConfigIndexConfigArgs.Builder]*):
         com.pulumi.gcp.logging.inputs.ProjectBucketConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.logging.inputs.ProjectBucketConfigIndexConfigArgs.builder
       builder.indexConfigs(args.map(_(argsBuilder).build)*)
@@ -480,7 +480,7 @@ object logging_ext:
      * @param bigqueryOptions Options that affect sinks exporting data to BigQuery. Structure documented below.
      * @return builder
      */
-    def bigqueryOptions(args: Endofunction[com.pulumi.gcp.logging.inputs.ProjectSinkBigqueryOptionsArgs.Builder]):
+    inline def bigqueryOptions(args: Endofunction[com.pulumi.gcp.logging.inputs.ProjectSinkBigqueryOptionsArgs.Builder]):
         com.pulumi.gcp.logging.inputs.ProjectSinkState.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.ProjectSinkBigqueryOptionsArgs.builder
       builder.bigqueryOptions(args(argsBuilder).build)
@@ -489,7 +489,7 @@ object logging_ext:
      * @param exclusions Log entries that match any of the exclusion filters will not be exported. If a log entry is matched by both `filter` and one of `exclusions.filter`, it will not be exported.  Can be repeated multiple times for multiple exclusions. Structure is documented below.
      * @return builder
      */
-    def exclusions(args: Endofunction[com.pulumi.gcp.logging.inputs.ProjectSinkExclusionArgs.Builder]*):
+    inline def exclusions(args: Endofunction[com.pulumi.gcp.logging.inputs.ProjectSinkExclusionArgs.Builder]*):
         com.pulumi.gcp.logging.inputs.ProjectSinkState.Builder =
       def argsBuilder = com.pulumi.gcp.logging.inputs.ProjectSinkExclusionArgs.builder
       builder.exclusions(args.map(_(argsBuilder).build)*)
@@ -500,7 +500,7 @@ object logging_ext:
      * Structure is documented below.
      * @return builder
      */
-    def summaryFields(args: Endofunction[com.pulumi.gcp.logging.inputs.SavedQueryLoggingQuerySummaryFieldArgs.Builder]*):
+    inline def summaryFields(args: Endofunction[com.pulumi.gcp.logging.inputs.SavedQueryLoggingQuerySummaryFieldArgs.Builder]*):
         com.pulumi.gcp.logging.inputs.SavedQueryLoggingQueryArgs.Builder =
       def argsBuilder = com.pulumi.gcp.logging.inputs.SavedQueryLoggingQuerySummaryFieldArgs.builder
       builder.summaryFields(args.map(_(argsBuilder).build)*)
@@ -511,7 +511,7 @@ object logging_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loggingQuery(args: Endofunction[com.pulumi.gcp.logging.inputs.SavedQueryLoggingQueryArgs.Builder]):
+    inline def loggingQuery(args: Endofunction[com.pulumi.gcp.logging.inputs.SavedQueryLoggingQueryArgs.Builder]):
         com.pulumi.gcp.logging.inputs.SavedQueryState.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.SavedQueryLoggingQueryArgs.builder
       builder.loggingQuery(args(argsBuilder).build)
@@ -521,7 +521,7 @@ object logging_ext:
      * Structure is documented below.
      * @return builder
      */
-    def opsAnalyticsQuery(args: Endofunction[com.pulumi.gcp.logging.inputs.SavedQueryOpsAnalyticsQueryArgs.Builder]):
+    inline def opsAnalyticsQuery(args: Endofunction[com.pulumi.gcp.logging.inputs.SavedQueryOpsAnalyticsQueryArgs.Builder]):
         com.pulumi.gcp.logging.inputs.SavedQueryState.Builder =
       val argsBuilder = com.pulumi.gcp.logging.inputs.SavedQueryOpsAnalyticsQueryArgs.builder
       builder.opsAnalyticsQuery(args(argsBuilder).build)

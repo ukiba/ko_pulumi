@@ -7,7 +7,7 @@ object transcribe_ext:
      * @param inputDataConfig Input data configuration for the LanguageModel. See `inputDataConfig` Block for details.
      * @return builder
      */
-    def inputDataConfig(args: Endofunction[com.pulumi.aws.transcribe.inputs.LanguageModelInputDataConfigArgs.Builder]):
+    inline def inputDataConfig(args: Endofunction[com.pulumi.aws.transcribe.inputs.LanguageModelInputDataConfigArgs.Builder]):
         com.pulumi.aws.transcribe.LanguageModelArgs.Builder =
       val argsBuilder = com.pulumi.aws.transcribe.inputs.LanguageModelInputDataConfigArgs.builder
       builder.inputDataConfig(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object transcribe_ext:
      * @param inputDataConfig Input data configuration for the LanguageModel. See `inputDataConfig` Block for details.
      * @return builder
      */
-    def inputDataConfig(args: Endofunction[com.pulumi.aws.transcribe.inputs.LanguageModelInputDataConfigArgs.Builder]):
+    inline def inputDataConfig(args: Endofunction[com.pulumi.aws.transcribe.inputs.LanguageModelInputDataConfigArgs.Builder]):
         com.pulumi.aws.transcribe.inputs.LanguageModelState.Builder =
       val argsBuilder = com.pulumi.aws.transcribe.inputs.LanguageModelInputDataConfigArgs.builder
       builder.inputDataConfig(args(argsBuilder).build)

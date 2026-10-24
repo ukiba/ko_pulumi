@@ -13,7 +13,7 @@ object savingsplans:
    * 
    * &gt; Importing an active Savings Plan will add it to your Terraform state, but destroying it will only remove it from state - the actual Savings Plan will continue until its term ends.
    */
-  def SavingsPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SavingsPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.savingsplans.SavingsPlanArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.savingsplans.SavingsPlanArgs.builder
     argsBuilder = args(argsBuilder)

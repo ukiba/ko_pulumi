@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object authorization:
   /** Assigns a given Principal (User or Group) to a given Role. */
-  def Assignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Assignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.authorization.AssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.authorization.AssignmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -51,7 +51,7 @@ object authorization:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a custom Role Definition, used to assign Roles to Users/Principals. See [&#39;Understand role definitions&#39;](https://docs.microsoft.com/azure/role-based-access-control/role-definitions) in the Azure documentation for more details. */
-  def RoleDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RoleDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.authorization.RoleDefinitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.authorization.RoleDefinitionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -66,7 +66,7 @@ object authorization:
    * 
    * Manages a User Assigned Identity.
    */
-  def UserAssignedIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UserAssignedIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.authorization.UserAssignedIdentityArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.authorization.UserAssignedIdentityArgs.builder
     conf.logicalName2physicalName(name) match

@@ -40,7 +40,7 @@ object datapipeline:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides a DataPipeline Pipeline resource. */
-  def Pipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Pipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.datapipeline.PipelineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.datapipeline.PipelineArgs.builder
     conf.logicalName2physicalName(name) match
@@ -58,7 +58,7 @@ object datapipeline:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a DataPipeline Pipeline Definition resource. */
-  def PipelineDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PipelineDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.datapipeline.PipelineDefinitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.datapipeline.PipelineDefinitionArgs.builder
     com.pulumi.aws.datapipeline.PipelineDefinition(name,

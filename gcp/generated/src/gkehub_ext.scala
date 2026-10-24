@@ -8,7 +8,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fleetDefaultMemberConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigArgs.Builder]):
+    inline def fleetDefaultMemberConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigArgs.Builder]):
         com.pulumi.gcp.gkehub.FeatureArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigArgs.builder
       builder.fleetDefaultMemberConfig(args(argsBuilder).build)
@@ -18,19 +18,19 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def spec(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecArgs.Builder]):
+    inline def spec(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecArgs.Builder]):
         com.pulumi.gcp.gkehub.FeatureArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureSpecArgs.builder
       builder.spec(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gkehub.FeatureIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.gkehub.FeatureIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gkehub.FeatureIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.gkehub.FeatureIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -40,7 +40,7 @@ object gkehub_ext:
      * @param configmanagement Config Management-specific spec. Structure is documented below.
      * @return builder
      */
-    def configmanagement(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementArgs.Builder]):
+    inline def configmanagement(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementArgs.Builder]):
         com.pulumi.gcp.gkehub.FeatureMembershipArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementArgs.builder
       builder.configmanagement(args(argsBuilder).build)
@@ -49,7 +49,7 @@ object gkehub_ext:
      * @param mesh Service mesh specific spec. Structure is documented below.
      * @return builder
      */
-    def mesh(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipMeshArgs.Builder]):
+    inline def mesh(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipMeshArgs.Builder]):
         com.pulumi.gcp.gkehub.FeatureMembershipArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureMembershipMeshArgs.builder
       builder.mesh(args(argsBuilder).build)
@@ -58,7 +58,7 @@ object gkehub_ext:
      * @param policycontroller Policy Controller-specific spec. Structure is documented below.
      * @return builder
      */
-    def policycontroller(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerArgs.Builder]):
+    inline def policycontroller(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerArgs.Builder]):
         com.pulumi.gcp.gkehub.FeatureMembershipArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerArgs.builder
       builder.policycontroller(args(argsBuilder).build)
@@ -69,7 +69,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultClusterConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigArgs.Builder]):
+    inline def defaultClusterConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigArgs.Builder]):
         com.pulumi.gcp.gkehub.FleetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigArgs.builder
       builder.defaultClusterConfig(args(argsBuilder).build)
@@ -82,7 +82,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authority(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipAuthorityArgs.Builder]):
+    inline def authority(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipAuthorityArgs.Builder]):
         com.pulumi.gcp.gkehub.MembershipArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.MembershipAuthorityArgs.builder
       builder.authority(args(argsBuilder).build)
@@ -92,19 +92,19 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endpoint(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipEndpointArgs.Builder]):
+    inline def endpoint(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipEndpointArgs.Builder]):
         com.pulumi.gcp.gkehub.MembershipArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.MembershipEndpointArgs.builder
       builder.endpoint(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gkehub.MembershipIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.gkehub.MembershipIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.MembershipIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gkehub.MembershipIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.gkehub.MembershipIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.MembershipIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -115,7 +115,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def role(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipRbacRoleBindingRoleArgs.Builder]):
+    inline def role(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipRbacRoleBindingRoleArgs.Builder]):
         com.pulumi.gcp.gkehub.MembershipRbacRoleBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.MembershipRbacRoleBindingRoleArgs.builder
       builder.role(args(argsBuilder).build)
@@ -127,7 +127,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoUpgradeConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.RolloutSequenceAutoUpgradeConfigArgs.Builder]):
+    inline def autoUpgradeConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.RolloutSequenceAutoUpgradeConfigArgs.Builder]):
         com.pulumi.gcp.gkehub.RolloutSequenceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.RolloutSequenceAutoUpgradeConfigArgs.builder
       builder.autoUpgradeConfig(args(argsBuilder).build)
@@ -137,7 +137,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ignoredClustersSelector(args: Endofunction[com.pulumi.gcp.gkehub.inputs.RolloutSequenceIgnoredClustersSelectorArgs.Builder]):
+    inline def ignoredClustersSelector(args: Endofunction[com.pulumi.gcp.gkehub.inputs.RolloutSequenceIgnoredClustersSelectorArgs.Builder]):
         com.pulumi.gcp.gkehub.RolloutSequenceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.RolloutSequenceIgnoredClustersSelectorArgs.builder
       builder.ignoredClustersSelector(args(argsBuilder).build)
@@ -147,19 +147,19 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stages(args: Endofunction[com.pulumi.gcp.gkehub.inputs.RolloutSequenceStageArgs.Builder]*):
+    inline def stages(args: Endofunction[com.pulumi.gcp.gkehub.inputs.RolloutSequenceStageArgs.Builder]*):
         com.pulumi.gcp.gkehub.RolloutSequenceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkehub.inputs.RolloutSequenceStageArgs.builder
       builder.stages(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.gkehub.ScopeIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gkehub.inputs.ScopeIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gkehub.inputs.ScopeIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.gkehub.ScopeIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.ScopeIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gkehub.ScopeIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gkehub.inputs.ScopeIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gkehub.inputs.ScopeIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.gkehub.ScopeIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.ScopeIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -170,7 +170,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def role(args: Endofunction[com.pulumi.gcp.gkehub.inputs.ScopeRbacRoleBindingRoleArgs.Builder]):
+    inline def role(args: Endofunction[com.pulumi.gcp.gkehub.inputs.ScopeRbacRoleBindingRoleArgs.Builder]):
         com.pulumi.gcp.gkehub.ScopeRbacRoleBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.ScopeRbacRoleBindingRoleArgs.builder
       builder.role(args(argsBuilder).build)
@@ -181,7 +181,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def configmanagement(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigConfigmanagementArgs.Builder]):
+    inline def configmanagement(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigConfigmanagementArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigConfigmanagementArgs.builder
       builder.configmanagement(args(argsBuilder).build)
@@ -191,7 +191,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mesh(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigMeshArgs.Builder]):
+    inline def mesh(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigMeshArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigMeshArgs.builder
       builder.mesh(args(argsBuilder).build)
@@ -201,7 +201,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def policycontroller(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerArgs.Builder]):
+    inline def policycontroller(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerArgs.builder
       builder.policycontroller(args(argsBuilder).build)
@@ -212,7 +212,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def configSync(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncArgs.Builder]):
+    inline def configSync(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigConfigmanagementArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncArgs.builder
       builder.configSync(args(argsBuilder).build)
@@ -223,7 +223,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def git(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncGitArgs.Builder]):
+    inline def git(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncGitArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncGitArgs.builder
       builder.git(args(argsBuilder).build)
@@ -233,7 +233,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oci(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncOciArgs.Builder]):
+    inline def oci(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncOciArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigConfigmanagementConfigSyncOciArgs.builder
       builder.oci(args(argsBuilder).build)
@@ -244,7 +244,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def policyControllerHubConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigArgs.Builder]):
+    inline def policyControllerHubConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigArgs.builder
       builder.policyControllerHubConfig(args(argsBuilder).build)
@@ -255,7 +255,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deploymentConfigs(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigArgs.Builder]*):
+    inline def deploymentConfigs(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigArgs.Builder]*):
         com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigArgs.builder
       builder.deploymentConfigs(args.map(_(argsBuilder).build)*)
@@ -265,7 +265,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def monitoring(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigMonitoringArgs.Builder]):
+    inline def monitoring(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigMonitoringArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigMonitoringArgs.builder
       builder.monitoring(args(argsBuilder).build)
@@ -275,7 +275,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def policyContent(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentArgs.Builder]):
+    inline def policyContent(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentArgs.builder
       builder.policyContent(args(argsBuilder).build)
@@ -286,7 +286,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def containerResources(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesArgs.Builder]):
+    inline def containerResources(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesArgs.builder
       builder.containerResources(args(argsBuilder).build)
@@ -296,7 +296,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def podTolerations(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigPodTolerationArgs.Builder]*):
+    inline def podTolerations(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigPodTolerationArgs.Builder]*):
         com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigPodTolerationArgs.builder
       builder.podTolerations(args.map(_(argsBuilder).build)*)
@@ -307,7 +307,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def limits(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesLimitsArgs.Builder]):
+    inline def limits(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesLimitsArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesLimitsArgs.builder
       builder.limits(args(argsBuilder).build)
@@ -317,7 +317,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def requests(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesRequestsArgs.Builder]):
+    inline def requests(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesRequestsArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesRequestsArgs.builder
       builder.requests(args(argsBuilder).build)
@@ -328,7 +328,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bundles(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentBundleArgs.Builder]*):
+    inline def bundles(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentBundleArgs.Builder]*):
         com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentBundleArgs.builder
       builder.bundles(args.map(_(argsBuilder).build)*)
@@ -338,19 +338,19 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def templateLibrary(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentTemplateLibraryArgs.Builder]):
+    inline def templateLibrary(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentTemplateLibraryArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigPolicycontrollerPolicyControllerHubConfigPolicyContentTemplateLibraryArgs.builder
       builder.templateLibrary(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gkehub.inputs.FeatureIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gkehub.inputs.FeatureIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -360,7 +360,7 @@ object gkehub_ext:
      * @param configSync Config Sync configuration for the cluster. Structure is documented below.
      * @return builder
      */
-    def configSync(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementConfigSyncArgs.Builder]):
+    inline def configSync(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementConfigSyncArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementConfigSyncArgs.builder
       builder.configSync(args(argsBuilder).build)
@@ -373,7 +373,7 @@ object gkehub_ext:
      * to migrate from Hierarchy Controller to HNC.
      * @return builder
      */
-    def hierarchyController(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementHierarchyControllerArgs.Builder]):
+    inline def hierarchyController(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementHierarchyControllerArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementHierarchyControllerArgs.builder
       builder.hierarchyController(args(argsBuilder).build)
@@ -384,7 +384,7 @@ object gkehub_ext:
      * Use the policycontroller feature instead.
      * @return builder
      */
-    def policyController(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementPolicyControllerArgs.Builder]):
+    inline def policyController(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementPolicyControllerArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementPolicyControllerArgs.builder
       builder.policyController(args(argsBuilder).build)
@@ -394,7 +394,7 @@ object gkehub_ext:
      * @param deploymentOverrides The override configurations for the Config Sync Deployments. Structure is documented below. The field is only available on Config Sync version 1.20.1 or later.
      * @return builder
      */
-    def deploymentOverrides(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementConfigSyncDeploymentOverrideArgs.Builder]*):
+    inline def deploymentOverrides(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementConfigSyncDeploymentOverrideArgs.Builder]*):
         com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementConfigSyncArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementConfigSyncDeploymentOverrideArgs.builder
       builder.deploymentOverrides(args.map(_(argsBuilder).build)*)
@@ -403,7 +403,7 @@ object gkehub_ext:
      * @param git (Optional) Structure is documented below.
      * @return builder
      */
-    def git(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementConfigSyncGitArgs.Builder]):
+    inline def git(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementConfigSyncGitArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementConfigSyncArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementConfigSyncGitArgs.builder
       builder.git(args(argsBuilder).build)
@@ -414,7 +414,7 @@ object gkehub_ext:
      * Use either `git` or `oci` config option.
      * @return builder
      */
-    def oci(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementConfigSyncOciArgs.Builder]):
+    inline def oci(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementConfigSyncOciArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementConfigSyncArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementConfigSyncOciArgs.builder
       builder.oci(args(argsBuilder).build)
@@ -424,7 +424,7 @@ object gkehub_ext:
      * @param containers The override configurations for the containers in the Deployment. Structure is documented below.
      * @return builder
      */
-    def containers(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementConfigSyncDeploymentOverrideContainerArgs.Builder]*):
+    inline def containers(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementConfigSyncDeploymentOverrideContainerArgs.Builder]*):
         com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementConfigSyncDeploymentOverrideArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementConfigSyncDeploymentOverrideContainerArgs.builder
       builder.containers(args.map(_(argsBuilder).build)*)
@@ -434,7 +434,7 @@ object gkehub_ext:
      * @param monitoring Specifies the backends Policy Controller should export metrics to. For example, to specify metrics should be exported to Cloud Monitoring and Prometheus, specify backends: [&#34;cloudmonitoring&#34;, &#34;prometheus&#34;]. Default: [&#34;cloudmonitoring&#34;, &#34;prometheus&#34;]
      * @return builder
      */
-    def monitoring(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementPolicyControllerMonitoringArgs.Builder]):
+    inline def monitoring(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementPolicyControllerMonitoringArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementPolicyControllerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementPolicyControllerMonitoringArgs.builder
       builder.monitoring(args(argsBuilder).build)
@@ -444,7 +444,7 @@ object gkehub_ext:
      * @param policyControllerHubConfig Policy Controller configuration for the cluster. Structure is documented below.
      * @return builder
      */
-    def policyControllerHubConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigArgs.Builder]):
+    inline def policyControllerHubConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigArgs.builder
       builder.policyControllerHubConfig(args(argsBuilder).build)
@@ -454,7 +454,7 @@ object gkehub_ext:
      * @param deploymentConfigs Map of deployment configs to deployments (&#34;admission&#34;, &#34;audit&#34;, &#34;mutation&#34;).
      * @return builder
      */
-    def deploymentConfigs(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigArgs.Builder]*):
+    inline def deploymentConfigs(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigArgs.Builder]*):
         com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigArgs.builder
       builder.deploymentConfigs(args.map(_(argsBuilder).build)*)
@@ -463,7 +463,7 @@ object gkehub_ext:
      * @param monitoring Specifies the backends Policy Controller should export metrics to. Structure is documented below.
      * @return builder
      */
-    def monitoring(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigMonitoringArgs.Builder]):
+    inline def monitoring(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigMonitoringArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigMonitoringArgs.builder
       builder.monitoring(args(argsBuilder).build)
@@ -472,7 +472,7 @@ object gkehub_ext:
      * @param policyContent Specifies the desired policy content on the cluster. Structure is documented below.
      * @return builder
      */
-    def policyContent(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContentArgs.Builder]):
+    inline def policyContent(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContentArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContentArgs.builder
       builder.policyContent(args(argsBuilder).build)
@@ -482,7 +482,7 @@ object gkehub_ext:
      * @param containerResources Container resource requirements.
      * @return builder
      */
-    def containerResources(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesArgs.Builder]):
+    inline def containerResources(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesArgs.builder
       builder.containerResources(args(argsBuilder).build)
@@ -491,7 +491,7 @@ object gkehub_ext:
      * @param podTolerations Pod tolerations of node taints.
      * @return builder
      */
-    def podTolerations(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigPodTolerationArgs.Builder]*):
+    inline def podTolerations(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigPodTolerationArgs.Builder]*):
         com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigPodTolerationArgs.builder
       builder.podTolerations(args.map(_(argsBuilder).build)*)
@@ -501,7 +501,7 @@ object gkehub_ext:
      * @param limits Limits describes the maximum amount of compute resources allowed for use by the running container.
      * @return builder
      */
-    def limits(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesLimitsArgs.Builder]):
+    inline def limits(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesLimitsArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesLimitsArgs.builder
       builder.limits(args(argsBuilder).build)
@@ -510,7 +510,7 @@ object gkehub_ext:
      * @param requests Requests describes the amount of compute resources reserved for the container by the kube-scheduler.
      * @return builder
      */
-    def requests(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesRequestsArgs.Builder]):
+    inline def requests(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesRequestsArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigDeploymentConfigContainerResourcesRequestsArgs.builder
       builder.requests(args(argsBuilder).build)
@@ -520,7 +520,7 @@ object gkehub_ext:
      * @param bundles map of bundle name to BundleInstallSpec. The bundle name maps to the `bundleName` key in the `policycontroller.gke.io/constraintData` annotation on a constraint.
      * @return builder
      */
-    def bundles(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContentBundleArgs.Builder]*):
+    inline def bundles(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContentBundleArgs.Builder]*):
         com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContentArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContentBundleArgs.builder
       builder.bundles(args.map(_(argsBuilder).build)*)
@@ -529,7 +529,7 @@ object gkehub_ext:
      * @param templateLibrary Configures the installation of the Template Library. Structure is documented below.
      * @return builder
      */
-    def templateLibrary(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContentTemplateLibraryArgs.Builder]):
+    inline def templateLibrary(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContentTemplateLibraryArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerPolicyControllerHubConfigPolicyContentTemplateLibraryArgs.builder
       builder.templateLibrary(args(argsBuilder).build)
@@ -539,7 +539,7 @@ object gkehub_ext:
      * @param configmanagement Config Management-specific spec. Structure is documented below.
      * @return builder
      */
-    def configmanagement(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementArgs.Builder]):
+    inline def configmanagement(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureMembershipState.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureMembershipConfigmanagementArgs.builder
       builder.configmanagement(args(argsBuilder).build)
@@ -548,7 +548,7 @@ object gkehub_ext:
      * @param mesh Service mesh specific spec. Structure is documented below.
      * @return builder
      */
-    def mesh(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipMeshArgs.Builder]):
+    inline def mesh(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipMeshArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureMembershipState.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureMembershipMeshArgs.builder
       builder.mesh(args(argsBuilder).build)
@@ -557,7 +557,7 @@ object gkehub_ext:
      * @param policycontroller Policy Controller-specific spec. Structure is documented below.
      * @return builder
      */
-    def policycontroller(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerArgs.Builder]):
+    inline def policycontroller(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureMembershipState.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureMembershipPolicycontrollerArgs.builder
       builder.policycontroller(args(argsBuilder).build)
@@ -568,7 +568,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clusterupgrade(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecClusterupgradeArgs.Builder]):
+    inline def clusterupgrade(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecClusterupgradeArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureSpecClusterupgradeArgs.builder
       builder.clusterupgrade(args(argsBuilder).build)
@@ -578,7 +578,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fleetobservability(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecFleetobservabilityArgs.Builder]):
+    inline def fleetobservability(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecFleetobservabilityArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureSpecFleetobservabilityArgs.builder
       builder.fleetobservability(args(argsBuilder).build)
@@ -588,7 +588,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def multiclusteringress(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecMulticlusteringressArgs.Builder]):
+    inline def multiclusteringress(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecMulticlusteringressArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureSpecMulticlusteringressArgs.builder
       builder.multiclusteringress(args(argsBuilder).build)
@@ -598,7 +598,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rbacrolebindingactuation(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecRbacrolebindingactuationArgs.Builder]):
+    inline def rbacrolebindingactuation(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecRbacrolebindingactuationArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureSpecRbacrolebindingactuationArgs.builder
       builder.rbacrolebindingactuation(args(argsBuilder).build)
@@ -608,7 +608,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def workloadidentity(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecWorkloadidentityArgs.Builder]):
+    inline def workloadidentity(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecWorkloadidentityArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureSpecArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureSpecWorkloadidentityArgs.builder
       builder.workloadidentity(args(argsBuilder).build)
@@ -619,7 +619,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gkeUpgradeOverrides(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecClusterupgradeGkeUpgradeOverrideArgs.Builder]*):
+    inline def gkeUpgradeOverrides(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecClusterupgradeGkeUpgradeOverrideArgs.Builder]*):
         com.pulumi.gcp.gkehub.inputs.FeatureSpecClusterupgradeArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureSpecClusterupgradeGkeUpgradeOverrideArgs.builder
       builder.gkeUpgradeOverrides(args.map(_(argsBuilder).build)*)
@@ -629,7 +629,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def postConditions(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecClusterupgradePostConditionsArgs.Builder]):
+    inline def postConditions(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecClusterupgradePostConditionsArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureSpecClusterupgradeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureSpecClusterupgradePostConditionsArgs.builder
       builder.postConditions(args(argsBuilder).build)
@@ -640,7 +640,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def postConditions(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecClusterupgradeGkeUpgradeOverridePostConditionsArgs.Builder]):
+    inline def postConditions(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecClusterupgradeGkeUpgradeOverridePostConditionsArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureSpecClusterupgradeGkeUpgradeOverrideArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureSpecClusterupgradeGkeUpgradeOverridePostConditionsArgs.builder
       builder.postConditions(args(argsBuilder).build)
@@ -650,7 +650,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def upgrade(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecClusterupgradeGkeUpgradeOverrideUpgradeArgs.Builder]):
+    inline def upgrade(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecClusterupgradeGkeUpgradeOverrideUpgradeArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureSpecClusterupgradeGkeUpgradeOverrideArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureSpecClusterupgradeGkeUpgradeOverrideUpgradeArgs.builder
       builder.upgrade(args(argsBuilder).build)
@@ -661,7 +661,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loggingConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecFleetobservabilityLoggingConfigArgs.Builder]):
+    inline def loggingConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecFleetobservabilityLoggingConfigArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureSpecFleetobservabilityArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureSpecFleetobservabilityLoggingConfigArgs.builder
       builder.loggingConfig(args(argsBuilder).build)
@@ -672,7 +672,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecFleetobservabilityLoggingConfigDefaultConfigArgs.Builder]):
+    inline def defaultConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecFleetobservabilityLoggingConfigDefaultConfigArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureSpecFleetobservabilityLoggingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureSpecFleetobservabilityLoggingConfigDefaultConfigArgs.builder
       builder.defaultConfig(args(argsBuilder).build)
@@ -682,7 +682,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fleetScopeLogsConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecFleetobservabilityLoggingConfigFleetScopeLogsConfigArgs.Builder]):
+    inline def fleetScopeLogsConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecFleetobservabilityLoggingConfigFleetScopeLogsConfigArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureSpecFleetobservabilityLoggingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureSpecFleetobservabilityLoggingConfigFleetScopeLogsConfigArgs.builder
       builder.fleetScopeLogsConfig(args(argsBuilder).build)
@@ -693,7 +693,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fleetDefaultMemberConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigArgs.Builder]):
+    inline def fleetDefaultMemberConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureState.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureFleetDefaultMemberConfigArgs.builder
       builder.fleetDefaultMemberConfig(args(argsBuilder).build)
@@ -703,7 +703,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resourceStates(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureResourceStateArgs.Builder]*):
+    inline def resourceStates(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureResourceStateArgs.Builder]*):
         com.pulumi.gcp.gkehub.inputs.FeatureState.Builder =
       def argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureResourceStateArgs.builder
       builder.resourceStates(args.map(_(argsBuilder).build)*)
@@ -713,7 +713,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def spec(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecArgs.Builder]):
+    inline def spec(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureSpecArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FeatureState.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureSpecArgs.builder
       builder.spec(args(argsBuilder).build)
@@ -724,7 +724,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def states(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureStateArgs.Builder]*):
+    inline def states(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureStateArgs.Builder]*):
         com.pulumi.gcp.gkehub.inputs.FeatureState.Builder =
       def argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureStateArgs.builder
       builder.states(args.map(_(argsBuilder).build)*)
@@ -736,7 +736,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def states(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureStateStateArgs.Builder]*):
+    inline def states(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FeatureStateStateArgs.Builder]*):
         com.pulumi.gcp.gkehub.inputs.FeatureStateArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkehub.inputs.FeatureStateStateArgs.builder
       builder.states(args.map(_(argsBuilder).build)*)
@@ -747,7 +747,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def binaryAuthorizationConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigBinaryAuthorizationConfigArgs.Builder]):
+    inline def binaryAuthorizationConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigBinaryAuthorizationConfigArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigBinaryAuthorizationConfigArgs.builder
       builder.binaryAuthorizationConfig(args(argsBuilder).build)
@@ -757,7 +757,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def compliancePostureConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigCompliancePostureConfigArgs.Builder]):
+    inline def compliancePostureConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigCompliancePostureConfigArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigCompliancePostureConfigArgs.builder
       builder.compliancePostureConfig(args(argsBuilder).build)
@@ -767,7 +767,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def securityPostureConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigSecurityPostureConfigArgs.Builder]):
+    inline def securityPostureConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigSecurityPostureConfigArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigSecurityPostureConfigArgs.builder
       builder.securityPostureConfig(args(argsBuilder).build)
@@ -778,7 +778,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def policyBindings(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigBinaryAuthorizationConfigPolicyBindingArgs.Builder]*):
+    inline def policyBindings(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigBinaryAuthorizationConfigPolicyBindingArgs.Builder]*):
         com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigBinaryAuthorizationConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigBinaryAuthorizationConfigPolicyBindingArgs.builder
       builder.policyBindings(args.map(_(argsBuilder).build)*)
@@ -789,7 +789,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def complianceStandards(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigCompliancePostureConfigComplianceStandardArgs.Builder]*):
+    inline def complianceStandards(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigCompliancePostureConfigComplianceStandardArgs.Builder]*):
         com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigCompliancePostureConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigCompliancePostureConfigComplianceStandardArgs.builder
       builder.complianceStandards(args.map(_(argsBuilder).build)*)
@@ -800,7 +800,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultClusterConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigArgs.Builder]):
+    inline def defaultClusterConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.FleetState.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.FleetDefaultClusterConfigArgs.builder
       builder.defaultClusterConfig(args(argsBuilder).build)
@@ -810,7 +810,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def states(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FleetStateArgs.Builder]*):
+    inline def states(args: Endofunction[com.pulumi.gcp.gkehub.inputs.FleetStateArgs.Builder]*):
         com.pulumi.gcp.gkehub.inputs.FleetState.Builder =
       def argsBuilder = com.pulumi.gcp.gkehub.inputs.FleetStateArgs.builder
       builder.states(args.map(_(argsBuilder).build)*)
@@ -821,7 +821,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def states(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipBindingStateArgs.Builder]*):
+    inline def states(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipBindingStateArgs.Builder]*):
         com.pulumi.gcp.gkehub.inputs.MembershipBindingState.Builder =
       def argsBuilder = com.pulumi.gcp.gkehub.inputs.MembershipBindingStateArgs.builder
       builder.states(args.map(_(argsBuilder).build)*)
@@ -832,19 +832,19 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gkeCluster(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipEndpointGkeClusterArgs.Builder]):
+    inline def gkeCluster(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipEndpointGkeClusterArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.MembershipEndpointArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.MembershipEndpointGkeClusterArgs.builder
       builder.gkeCluster(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gkehub.inputs.MembershipIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.MembershipIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.MembershipIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gkehub.inputs.MembershipIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.MembershipIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.MembershipIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -855,7 +855,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def role(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipRbacRoleBindingRoleArgs.Builder]):
+    inline def role(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipRbacRoleBindingRoleArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.MembershipRbacRoleBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.MembershipRbacRoleBindingRoleArgs.builder
       builder.role(args(argsBuilder).build)
@@ -865,7 +865,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def states(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipRbacRoleBindingStateArgs.Builder]*):
+    inline def states(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipRbacRoleBindingStateArgs.Builder]*):
         com.pulumi.gcp.gkehub.inputs.MembershipRbacRoleBindingState.Builder =
       def argsBuilder = com.pulumi.gcp.gkehub.inputs.MembershipRbacRoleBindingStateArgs.builder
       builder.states(args.map(_(argsBuilder).build)*)
@@ -878,7 +878,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authority(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipAuthorityArgs.Builder]):
+    inline def authority(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipAuthorityArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.MembershipState.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.MembershipAuthorityArgs.builder
       builder.authority(args(argsBuilder).build)
@@ -888,7 +888,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endpoint(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipEndpointArgs.Builder]):
+    inline def endpoint(args: Endofunction[com.pulumi.gcp.gkehub.inputs.MembershipEndpointArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.MembershipState.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.MembershipEndpointArgs.builder
       builder.endpoint(args(argsBuilder).build)
@@ -899,7 +899,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def states(args: Endofunction[com.pulumi.gcp.gkehub.inputs.NamespaceStateArgs.Builder]*):
+    inline def states(args: Endofunction[com.pulumi.gcp.gkehub.inputs.NamespaceStateArgs.Builder]*):
         com.pulumi.gcp.gkehub.inputs.NamespaceState.Builder =
       def argsBuilder = com.pulumi.gcp.gkehub.inputs.NamespaceStateArgs.builder
       builder.states(args.map(_(argsBuilder).build)*)
@@ -918,7 +918,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rolloutCreationScope(args: Endofunction[com.pulumi.gcp.gkehub.inputs.RolloutSequenceAutoUpgradeConfigRolloutCreationScopeArgs.Builder]):
+    inline def rolloutCreationScope(args: Endofunction[com.pulumi.gcp.gkehub.inputs.RolloutSequenceAutoUpgradeConfigRolloutCreationScopeArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.RolloutSequenceAutoUpgradeConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.RolloutSequenceAutoUpgradeConfigRolloutCreationScopeArgs.builder
       builder.rolloutCreationScope(args(argsBuilder).build)
@@ -930,7 +930,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clusterSelector(args: Endofunction[com.pulumi.gcp.gkehub.inputs.RolloutSequenceStageClusterSelectorArgs.Builder]):
+    inline def clusterSelector(args: Endofunction[com.pulumi.gcp.gkehub.inputs.RolloutSequenceStageClusterSelectorArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.RolloutSequenceStageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.RolloutSequenceStageClusterSelectorArgs.builder
       builder.clusterSelector(args(argsBuilder).build)
@@ -942,7 +942,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def autoUpgradeConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.RolloutSequenceAutoUpgradeConfigArgs.Builder]):
+    inline def autoUpgradeConfig(args: Endofunction[com.pulumi.gcp.gkehub.inputs.RolloutSequenceAutoUpgradeConfigArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.RolloutSequenceState.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.RolloutSequenceAutoUpgradeConfigArgs.builder
       builder.autoUpgradeConfig(args(argsBuilder).build)
@@ -952,7 +952,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ignoredClustersSelector(args: Endofunction[com.pulumi.gcp.gkehub.inputs.RolloutSequenceIgnoredClustersSelectorArgs.Builder]):
+    inline def ignoredClustersSelector(args: Endofunction[com.pulumi.gcp.gkehub.inputs.RolloutSequenceIgnoredClustersSelectorArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.RolloutSequenceState.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.RolloutSequenceIgnoredClustersSelectorArgs.builder
       builder.ignoredClustersSelector(args(argsBuilder).build)
@@ -962,7 +962,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operationalStates(args: Endofunction[com.pulumi.gcp.gkehub.inputs.RolloutSequenceOperationalStateArgs.Builder]*):
+    inline def operationalStates(args: Endofunction[com.pulumi.gcp.gkehub.inputs.RolloutSequenceOperationalStateArgs.Builder]*):
         com.pulumi.gcp.gkehub.inputs.RolloutSequenceState.Builder =
       def argsBuilder = com.pulumi.gcp.gkehub.inputs.RolloutSequenceOperationalStateArgs.builder
       builder.operationalStates(args.map(_(argsBuilder).build)*)
@@ -972,19 +972,19 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def stages(args: Endofunction[com.pulumi.gcp.gkehub.inputs.RolloutSequenceStageArgs.Builder]*):
+    inline def stages(args: Endofunction[com.pulumi.gcp.gkehub.inputs.RolloutSequenceStageArgs.Builder]*):
         com.pulumi.gcp.gkehub.inputs.RolloutSequenceState.Builder =
       def argsBuilder = com.pulumi.gcp.gkehub.inputs.RolloutSequenceStageArgs.builder
       builder.stages(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.gkehub.inputs.ScopeIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gkehub.inputs.ScopeIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gkehub.inputs.ScopeIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.ScopeIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.ScopeIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gkehub.inputs.ScopeIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gkehub.inputs.ScopeIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gkehub.inputs.ScopeIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.ScopeIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.ScopeIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -995,7 +995,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def role(args: Endofunction[com.pulumi.gcp.gkehub.inputs.ScopeRbacRoleBindingRoleArgs.Builder]):
+    inline def role(args: Endofunction[com.pulumi.gcp.gkehub.inputs.ScopeRbacRoleBindingRoleArgs.Builder]):
         com.pulumi.gcp.gkehub.inputs.ScopeRbacRoleBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.ScopeRbacRoleBindingRoleArgs.builder
       builder.role(args(argsBuilder).build)
@@ -1005,7 +1005,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def states(args: Endofunction[com.pulumi.gcp.gkehub.inputs.ScopeRbacRoleBindingStateArgs.Builder]*):
+    inline def states(args: Endofunction[com.pulumi.gcp.gkehub.inputs.ScopeRbacRoleBindingStateArgs.Builder]*):
         com.pulumi.gcp.gkehub.inputs.ScopeRbacRoleBindingState.Builder =
       def argsBuilder = com.pulumi.gcp.gkehub.inputs.ScopeRbacRoleBindingStateArgs.builder
       builder.states(args.map(_(argsBuilder).build)*)
@@ -1016,7 +1016,7 @@ object gkehub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def states(args: Endofunction[com.pulumi.gcp.gkehub.inputs.ScopeStateArgs.Builder]*):
+    inline def states(args: Endofunction[com.pulumi.gcp.gkehub.inputs.ScopeStateArgs.Builder]*):
         com.pulumi.gcp.gkehub.inputs.ScopeState.Builder =
       def argsBuilder = com.pulumi.gcp.gkehub.inputs.ScopeStateArgs.builder
       builder.states(args.map(_(argsBuilder).build)*)

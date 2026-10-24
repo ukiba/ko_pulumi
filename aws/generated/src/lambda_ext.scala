@@ -7,7 +7,7 @@ object lambda_ext:
      * @param routingConfig Lambda alias&#39; route configuration settings. See below.
      * @return builder
      */
-    def routingConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.AliasRoutingConfigArgs.Builder]):
+    inline def routingConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.AliasRoutingConfigArgs.Builder]):
         com.pulumi.aws.lambda.AliasArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.AliasRoutingConfigArgs.builder
       builder.routingConfig(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object lambda_ext:
      * @param capacityProviderScalingConfigs Configuration block for scaling policy settings. See Capacity Provider Scaling Config below.
      * @return builder
      */
-    def capacityProviderScalingConfigs(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderCapacityProviderScalingConfigArgs.Builder]*):
+    inline def capacityProviderScalingConfigs(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderCapacityProviderScalingConfigArgs.Builder]*):
         com.pulumi.aws.lambda.CapacityProviderArgs.Builder =
       def argsBuilder = com.pulumi.aws.lambda.inputs.CapacityProviderCapacityProviderScalingConfigArgs.builder
       builder.capacityProviderScalingConfigs(args.map(_(argsBuilder).build)*)
@@ -26,7 +26,7 @@ object lambda_ext:
      * @param instanceRequirements Configuration block for instance requirements settings. See Instance Requirements below.
      * @return builder
      */
-    def instanceRequirements(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderInstanceRequirementArgs.Builder]*):
+    inline def instanceRequirements(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderInstanceRequirementArgs.Builder]*):
         com.pulumi.aws.lambda.CapacityProviderArgs.Builder =
       def argsBuilder = com.pulumi.aws.lambda.inputs.CapacityProviderInstanceRequirementArgs.builder
       builder.instanceRequirements(args.map(_(argsBuilder).build)*)
@@ -35,12 +35,12 @@ object lambda_ext:
      * @param permissionsConfig Configuration block for permissions settings. See Permissions Config below.
      * @return builder
      */
-    def permissionsConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderPermissionsConfigArgs.Builder]):
+    inline def permissionsConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderPermissionsConfigArgs.Builder]):
         com.pulumi.aws.lambda.CapacityProviderArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.CapacityProviderPermissionsConfigArgs.builder
       builder.permissionsConfig(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderTimeoutsArgs.Builder]):
         com.pulumi.aws.lambda.CapacityProviderArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.CapacityProviderTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -51,7 +51,7 @@ object lambda_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def vpcConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderVpcConfigArgs.Builder]):
+    inline def vpcConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderVpcConfigArgs.Builder]):
         com.pulumi.aws.lambda.CapacityProviderArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.CapacityProviderVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
@@ -63,7 +63,7 @@ object lambda_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def allowedPublishers(args: Endofunction[com.pulumi.aws.lambda.inputs.CodeSigningConfigAllowedPublishersArgs.Builder]):
+    inline def allowedPublishers(args: Endofunction[com.pulumi.aws.lambda.inputs.CodeSigningConfigAllowedPublishersArgs.Builder]):
         com.pulumi.aws.lambda.CodeSigningConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.CodeSigningConfigAllowedPublishersArgs.builder
       builder.allowedPublishers(args(argsBuilder).build)
@@ -72,7 +72,7 @@ object lambda_ext:
      * @param policies Configuration block of code signing policies that define the actions to take if the validation checks fail. See below.
      * @return builder
      */
-    def policies(args: Endofunction[com.pulumi.aws.lambda.inputs.CodeSigningConfigPoliciesArgs.Builder]):
+    inline def policies(args: Endofunction[com.pulumi.aws.lambda.inputs.CodeSigningConfigPoliciesArgs.Builder]):
         com.pulumi.aws.lambda.CodeSigningConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.CodeSigningConfigPoliciesArgs.builder
       builder.policies(args(argsBuilder).build)
@@ -82,12 +82,12 @@ object lambda_ext:
      * @param configuration Network configuration of the connector. See `configuration` Block below.
      * @return builder
      */
-    def configuration(args: Endofunction[com.pulumi.aws.lambda.inputs.CoreNetworkConnectorConfigurationArgs.Builder]):
+    inline def configuration(args: Endofunction[com.pulumi.aws.lambda.inputs.CoreNetworkConnectorConfigurationArgs.Builder]):
         com.pulumi.aws.lambda.CoreNetworkConnectorArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.CoreNetworkConnectorConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.lambda.inputs.CoreNetworkConnectorTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.lambda.inputs.CoreNetworkConnectorTimeoutsArgs.Builder]):
         com.pulumi.aws.lambda.CoreNetworkConnectorArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.CoreNetworkConnectorTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -97,7 +97,7 @@ object lambda_ext:
      * @param amazonManagedKafkaEventSourceConfig Additional configuration block for Amazon Managed Kafka sources. Incompatible with `selfManagedEventSource` and `selfManagedKafkaEventSourceConfig`. See below.
      * @return builder
      */
-    def amazonManagedKafkaEventSourceConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigArgs.Builder]):
+    inline def amazonManagedKafkaEventSourceConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigArgs.Builder]):
         com.pulumi.aws.lambda.EventSourceMappingArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigArgs.builder
       builder.amazonManagedKafkaEventSourceConfig(args(argsBuilder).build)
@@ -106,7 +106,7 @@ object lambda_ext:
      * @param destinationConfig Amazon SQS queue, Amazon SNS topic or Amazon S3 bucket (only available for Kafka sources) destination for failed records. Only available for stream sources (DynamoDB and Kinesis) and Kafka sources (Amazon MSK and Self-managed Apache Kafka). See below.
      * @return builder
      */
-    def destinationConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingDestinationConfigArgs.Builder]):
+    inline def destinationConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingDestinationConfigArgs.Builder]):
         com.pulumi.aws.lambda.EventSourceMappingArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingDestinationConfigArgs.builder
       builder.destinationConfig(args(argsBuilder).build)
@@ -115,7 +115,7 @@ object lambda_ext:
      * @param documentDbEventSourceConfig Configuration settings for a DocumentDB event source. See below.
      * @return builder
      */
-    def documentDbEventSourceConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingDocumentDbEventSourceConfigArgs.Builder]):
+    inline def documentDbEventSourceConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingDocumentDbEventSourceConfigArgs.Builder]):
         com.pulumi.aws.lambda.EventSourceMappingArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingDocumentDbEventSourceConfigArgs.builder
       builder.documentDbEventSourceConfig(args(argsBuilder).build)
@@ -124,7 +124,7 @@ object lambda_ext:
      * @param filterCriteria Criteria to use for [event filtering](https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html) Kinesis stream, DynamoDB stream, SQS queue event sources. See below.
      * @return builder
      */
-    def filterCriteria(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingFilterCriteriaArgs.Builder]):
+    inline def filterCriteria(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingFilterCriteriaArgs.Builder]):
         com.pulumi.aws.lambda.EventSourceMappingArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingFilterCriteriaArgs.builder
       builder.filterCriteria(args(argsBuilder).build)
@@ -133,7 +133,7 @@ object lambda_ext:
      * @param metricsConfig CloudWatch metrics configuration of the event source. Only available for stream sources (DynamoDB and Kinesis) and SQS queues. See below.
      * @return builder
      */
-    def metricsConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingMetricsConfigArgs.Builder]):
+    inline def metricsConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingMetricsConfigArgs.Builder]):
         com.pulumi.aws.lambda.EventSourceMappingArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingMetricsConfigArgs.builder
       builder.metricsConfig(args(argsBuilder).build)
@@ -142,7 +142,7 @@ object lambda_ext:
      * @param provisionedPollerConfig Event poller configuration for the event source. Only valid for Amazon MSK or self-managed Apache Kafka sources. See below.
      * @return builder
      */
-    def provisionedPollerConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingProvisionedPollerConfigArgs.Builder]):
+    inline def provisionedPollerConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingProvisionedPollerConfigArgs.Builder]):
         com.pulumi.aws.lambda.EventSourceMappingArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingProvisionedPollerConfigArgs.builder
       builder.provisionedPollerConfig(args(argsBuilder).build)
@@ -151,7 +151,7 @@ object lambda_ext:
      * @param scalingConfig Scaling configuration of the event source. Only available for SQS queues. See below.
      * @return builder
      */
-    def scalingConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingScalingConfigArgs.Builder]):
+    inline def scalingConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingScalingConfigArgs.Builder]):
         com.pulumi.aws.lambda.EventSourceMappingArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingScalingConfigArgs.builder
       builder.scalingConfig(args(argsBuilder).build)
@@ -160,7 +160,7 @@ object lambda_ext:
      * @param selfManagedEventSource For Self Managed Kafka sources, the location of the self managed cluster. If set, configuration must also include `sourceAccessConfiguration`. See below.
      * @return builder
      */
-    def selfManagedEventSource(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedEventSourceArgs.Builder]):
+    inline def selfManagedEventSource(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedEventSourceArgs.Builder]):
         com.pulumi.aws.lambda.EventSourceMappingArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedEventSourceArgs.builder
       builder.selfManagedEventSource(args(argsBuilder).build)
@@ -169,7 +169,7 @@ object lambda_ext:
      * @param selfManagedKafkaEventSourceConfig Additional configuration block for Self Managed Kafka sources. Incompatible with `eventSourceArn` and `amazonManagedKafkaEventSourceConfig`. See below.
      * @return builder
      */
-    def selfManagedKafkaEventSourceConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedKafkaEventSourceConfigArgs.Builder]):
+    inline def selfManagedKafkaEventSourceConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedKafkaEventSourceConfigArgs.Builder]):
         com.pulumi.aws.lambda.EventSourceMappingArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedKafkaEventSourceConfigArgs.builder
       builder.selfManagedKafkaEventSourceConfig(args(argsBuilder).build)
@@ -178,7 +178,7 @@ object lambda_ext:
      * @param sourceAccessConfigurations For Self Managed Kafka sources, the access configuration for the source. If set, configuration must also include `selfManagedEventSource`. See below.
      * @return builder
      */
-    def sourceAccessConfigurations(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingSourceAccessConfigurationArgs.Builder]*):
+    inline def sourceAccessConfigurations(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingSourceAccessConfigurationArgs.Builder]*):
         com.pulumi.aws.lambda.EventSourceMappingArgs.Builder =
       def argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingSourceAccessConfigurationArgs.builder
       builder.sourceAccessConfigurations(args.map(_(argsBuilder).build)*)
@@ -188,7 +188,7 @@ object lambda_ext:
      * @param capacityProviderConfig Configuration block for Lambda Capacity Provider. See below.
      * @return builder
      */
-    def capacityProviderConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionCapacityProviderConfigArgs.Builder]):
+    inline def capacityProviderConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionCapacityProviderConfigArgs.Builder]):
         com.pulumi.aws.lambda.FunctionArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionCapacityProviderConfigArgs.builder
       builder.capacityProviderConfig(args(argsBuilder).build)
@@ -197,7 +197,7 @@ object lambda_ext:
      * @param deadLetterConfig Configuration block for dead letter queue. See below.
      * @return builder
      */
-    def deadLetterConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionDeadLetterConfigArgs.Builder]):
+    inline def deadLetterConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionDeadLetterConfigArgs.Builder]):
         com.pulumi.aws.lambda.FunctionArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionDeadLetterConfigArgs.builder
       builder.deadLetterConfig(args(argsBuilder).build)
@@ -206,7 +206,7 @@ object lambda_ext:
      * @param durableConfig Configuration block for durable function settings. See below. `durableConfig` may only be available in [limited regions](https://builder.aws.com/build/capabilities), including `us-east-2`.
      * @return builder
      */
-    def durableConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionDurableConfigArgs.Builder]):
+    inline def durableConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionDurableConfigArgs.Builder]):
         com.pulumi.aws.lambda.FunctionArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionDurableConfigArgs.builder
       builder.durableConfig(args(argsBuilder).build)
@@ -215,7 +215,7 @@ object lambda_ext:
      * @param environment Configuration block for environment variables. See below.
      * @return builder
      */
-    def environment(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionEnvironmentArgs.Builder]):
+    inline def environment(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionEnvironmentArgs.Builder]):
         com.pulumi.aws.lambda.FunctionArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionEnvironmentArgs.builder
       builder.environment(args(argsBuilder).build)
@@ -224,7 +224,7 @@ object lambda_ext:
      * @param ephemeralStorage Amount of ephemeral storage (`/tmp`) to allocate for the Lambda Function. See below.
      * @return builder
      */
-    def ephemeralStorage(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionEphemeralStorageArgs.Builder]):
+    inline def ephemeralStorage(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionEphemeralStorageArgs.Builder]):
         com.pulumi.aws.lambda.FunctionArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionEphemeralStorageArgs.builder
       builder.ephemeralStorage(args(argsBuilder).build)
@@ -233,7 +233,7 @@ object lambda_ext:
      * @param fileSystemConfig Configuration block for EFS or S3 Files file system. See below.
      * @return builder
      */
-    def fileSystemConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionFileSystemConfigArgs.Builder]):
+    inline def fileSystemConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionFileSystemConfigArgs.Builder]):
         com.pulumi.aws.lambda.FunctionArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionFileSystemConfigArgs.builder
       builder.fileSystemConfig(args(argsBuilder).build)
@@ -242,7 +242,7 @@ object lambda_ext:
      * @param imageConfig Container image configuration values. See below.
      * @return builder
      */
-    def imageConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionImageConfigArgs.Builder]):
+    inline def imageConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionImageConfigArgs.Builder]):
         com.pulumi.aws.lambda.FunctionArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionImageConfigArgs.builder
       builder.imageConfig(args(argsBuilder).build)
@@ -251,7 +251,7 @@ object lambda_ext:
      * @param loggingConfig Configuration block for advanced logging settings. See below.
      * @return builder
      */
-    def loggingConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionLoggingConfigArgs.Builder]):
+    inline def loggingConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionLoggingConfigArgs.Builder]):
         com.pulumi.aws.lambda.FunctionArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionLoggingConfigArgs.builder
       builder.loggingConfig(args(argsBuilder).build)
@@ -260,7 +260,7 @@ object lambda_ext:
      * @param snapStart Configuration block for snap start settings. See below.
      * @return builder
      */
-    def snapStart(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionSnapStartArgs.Builder]):
+    inline def snapStart(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionSnapStartArgs.Builder]):
         com.pulumi.aws.lambda.FunctionArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionSnapStartArgs.builder
       builder.snapStart(args(argsBuilder).build)
@@ -269,7 +269,7 @@ object lambda_ext:
      * @param tenancyConfig Configuration block for Tenancy. See below.
      * @return builder
      */
-    def tenancyConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionTenancyConfigArgs.Builder]):
+    inline def tenancyConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionTenancyConfigArgs.Builder]):
         com.pulumi.aws.lambda.FunctionArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionTenancyConfigArgs.builder
       builder.tenancyConfig(args(argsBuilder).build)
@@ -278,7 +278,7 @@ object lambda_ext:
      * @param tracingConfig Configuration block for X-Ray tracing. See below.
      * @return builder
      */
-    def tracingConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionTracingConfigArgs.Builder]):
+    inline def tracingConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionTracingConfigArgs.Builder]):
         com.pulumi.aws.lambda.FunctionArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionTracingConfigArgs.builder
       builder.tracingConfig(args(argsBuilder).build)
@@ -287,7 +287,7 @@ object lambda_ext:
      * @param vpcConfig Configuration block for VPC. See below.
      * @return builder
      */
-    def vpcConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionVpcConfigArgs.Builder]):
+    inline def vpcConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionVpcConfigArgs.Builder]):
         com.pulumi.aws.lambda.FunctionArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
@@ -297,7 +297,7 @@ object lambda_ext:
      * @param destinationConfig Configuration block with destination configuration. See below.
      * @return builder
      */
-    def destinationConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionEventInvokeConfigDestinationConfigArgs.Builder]):
+    inline def destinationConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionEventInvokeConfigDestinationConfigArgs.Builder]):
         com.pulumi.aws.lambda.FunctionEventInvokeConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionEventInvokeConfigDestinationConfigArgs.builder
       builder.destinationConfig(args(argsBuilder).build)
@@ -307,12 +307,12 @@ object lambda_ext:
      * @param functionScalingConfig Scaling configuration block. See `functionScalingConfig` Block below.
      * @return builder
      */
-    def functionScalingConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionScalingConfigFunctionScalingConfigArgs.Builder]):
+    inline def functionScalingConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionScalingConfigFunctionScalingConfigArgs.Builder]):
         com.pulumi.aws.lambda.FunctionScalingConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionScalingConfigFunctionScalingConfigArgs.builder
       builder.functionScalingConfig(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionScalingConfigTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionScalingConfigTimeoutsArgs.Builder]):
         com.pulumi.aws.lambda.FunctionScalingConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionScalingConfigTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -322,7 +322,7 @@ object lambda_ext:
      * @param cors Cross-origin resource sharing (CORS) settings for the function URL. See below.
      * @return builder
      */
-    def cors(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionUrlCorsArgs.Builder]):
+    inline def cors(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionUrlCorsArgs.Builder]):
         com.pulumi.aws.lambda.FunctionUrlArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionUrlCorsArgs.builder
       builder.cors(args(argsBuilder).build)
@@ -332,7 +332,7 @@ object lambda_ext:
      * @param codeArtifact Code artifact containing the application code and metadata for the image. See below.
      * @return builder
      */
-    def codeArtifact(args: Endofunction[com.pulumi.aws.lambda.inputs.MicrovmsImageCodeArtifactArgs.Builder]):
+    inline def codeArtifact(args: Endofunction[com.pulumi.aws.lambda.inputs.MicrovmsImageCodeArtifactArgs.Builder]):
         com.pulumi.aws.lambda.MicrovmsImageArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.MicrovmsImageCodeArtifactArgs.builder
       builder.codeArtifact(args(argsBuilder).build)
@@ -341,12 +341,12 @@ object lambda_ext:
      * @param cpuConfigurations CPU configuration for the MicroVM. See `cpuConfiguration` Block below.
      * @return builder
      */
-    def cpuConfigurations(args: Endofunction[com.pulumi.aws.lambda.inputs.MicrovmsImageCpuConfigurationArgs.Builder]*):
+    inline def cpuConfigurations(args: Endofunction[com.pulumi.aws.lambda.inputs.MicrovmsImageCpuConfigurationArgs.Builder]*):
         com.pulumi.aws.lambda.MicrovmsImageArgs.Builder =
       def argsBuilder = com.pulumi.aws.lambda.inputs.MicrovmsImageCpuConfigurationArgs.builder
       builder.cpuConfigurations(args.map(_(argsBuilder).build)*)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.lambda.inputs.MicrovmsImageTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.lambda.inputs.MicrovmsImageTimeoutsArgs.Builder]):
         com.pulumi.aws.lambda.MicrovmsImageArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.MicrovmsImageTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -356,7 +356,7 @@ object lambda_ext:
      * @param routingConfig Lambda alias&#39; route configuration settings. See below.
      * @return builder
      */
-    def routingConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.AliasRoutingConfigArgs.Builder]):
+    inline def routingConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.AliasRoutingConfigArgs.Builder]):
         com.pulumi.aws.lambda.inputs.AliasState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.AliasRoutingConfigArgs.builder
       builder.routingConfig(args(argsBuilder).build)
@@ -366,7 +366,7 @@ object lambda_ext:
      * @param scalingPolicies List of scaling policies. Only required if `scalingMode` is set to `&#34;Manual&#34;`. See Scaling Policies below.
      * @return builder
      */
-    def scalingPolicies(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderCapacityProviderScalingConfigScalingPolicyArgs.Builder]*):
+    inline def scalingPolicies(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderCapacityProviderScalingConfigScalingPolicyArgs.Builder]*):
         com.pulumi.aws.lambda.inputs.CapacityProviderCapacityProviderScalingConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.lambda.inputs.CapacityProviderCapacityProviderScalingConfigScalingPolicyArgs.builder
       builder.scalingPolicies(args.map(_(argsBuilder).build)*)
@@ -376,7 +376,7 @@ object lambda_ext:
      * @param capacityProviderScalingConfigs Configuration block for scaling policy settings. See Capacity Provider Scaling Config below.
      * @return builder
      */
-    def capacityProviderScalingConfigs(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderCapacityProviderScalingConfigArgs.Builder]*):
+    inline def capacityProviderScalingConfigs(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderCapacityProviderScalingConfigArgs.Builder]*):
         com.pulumi.aws.lambda.inputs.CapacityProviderState.Builder =
       def argsBuilder = com.pulumi.aws.lambda.inputs.CapacityProviderCapacityProviderScalingConfigArgs.builder
       builder.capacityProviderScalingConfigs(args.map(_(argsBuilder).build)*)
@@ -385,7 +385,7 @@ object lambda_ext:
      * @param instanceRequirements Configuration block for instance requirements settings. See Instance Requirements below.
      * @return builder
      */
-    def instanceRequirements(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderInstanceRequirementArgs.Builder]*):
+    inline def instanceRequirements(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderInstanceRequirementArgs.Builder]*):
         com.pulumi.aws.lambda.inputs.CapacityProviderState.Builder =
       def argsBuilder = com.pulumi.aws.lambda.inputs.CapacityProviderInstanceRequirementArgs.builder
       builder.instanceRequirements(args.map(_(argsBuilder).build)*)
@@ -394,12 +394,12 @@ object lambda_ext:
      * @param permissionsConfig Configuration block for permissions settings. See Permissions Config below.
      * @return builder
      */
-    def permissionsConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderPermissionsConfigArgs.Builder]):
+    inline def permissionsConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderPermissionsConfigArgs.Builder]):
         com.pulumi.aws.lambda.inputs.CapacityProviderState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.CapacityProviderPermissionsConfigArgs.builder
       builder.permissionsConfig(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderTimeoutsArgs.Builder]):
         com.pulumi.aws.lambda.inputs.CapacityProviderState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.CapacityProviderTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -410,7 +410,7 @@ object lambda_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def vpcConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderVpcConfigArgs.Builder]):
+    inline def vpcConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.CapacityProviderVpcConfigArgs.Builder]):
         com.pulumi.aws.lambda.inputs.CapacityProviderState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.CapacityProviderVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
@@ -422,7 +422,7 @@ object lambda_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def allowedPublishers(args: Endofunction[com.pulumi.aws.lambda.inputs.CodeSigningConfigAllowedPublishersArgs.Builder]):
+    inline def allowedPublishers(args: Endofunction[com.pulumi.aws.lambda.inputs.CodeSigningConfigAllowedPublishersArgs.Builder]):
         com.pulumi.aws.lambda.inputs.CodeSigningConfigState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.CodeSigningConfigAllowedPublishersArgs.builder
       builder.allowedPublishers(args(argsBuilder).build)
@@ -431,7 +431,7 @@ object lambda_ext:
      * @param policies Configuration block of code signing policies that define the actions to take if the validation checks fail. See below.
      * @return builder
      */
-    def policies(args: Endofunction[com.pulumi.aws.lambda.inputs.CodeSigningConfigPoliciesArgs.Builder]):
+    inline def policies(args: Endofunction[com.pulumi.aws.lambda.inputs.CodeSigningConfigPoliciesArgs.Builder]):
         com.pulumi.aws.lambda.inputs.CodeSigningConfigState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.CodeSigningConfigPoliciesArgs.builder
       builder.policies(args(argsBuilder).build)
@@ -441,7 +441,7 @@ object lambda_ext:
      * @param vpcEgressConfiguration Configuration for routing egress traffic through a VPC. See `vpcEgressConfiguration` Block below.
      * @return builder
      */
-    def vpcEgressConfiguration(args: Endofunction[com.pulumi.aws.lambda.inputs.CoreNetworkConnectorConfigurationVpcEgressConfigurationArgs.Builder]):
+    inline def vpcEgressConfiguration(args: Endofunction[com.pulumi.aws.lambda.inputs.CoreNetworkConnectorConfigurationVpcEgressConfigurationArgs.Builder]):
         com.pulumi.aws.lambda.inputs.CoreNetworkConnectorConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.CoreNetworkConnectorConfigurationVpcEgressConfigurationArgs.builder
       builder.vpcEgressConfiguration(args(argsBuilder).build)
@@ -451,12 +451,12 @@ object lambda_ext:
      * @param configuration Network configuration of the connector. See `configuration` Block below.
      * @return builder
      */
-    def configuration(args: Endofunction[com.pulumi.aws.lambda.inputs.CoreNetworkConnectorConfigurationArgs.Builder]):
+    inline def configuration(args: Endofunction[com.pulumi.aws.lambda.inputs.CoreNetworkConnectorConfigurationArgs.Builder]):
         com.pulumi.aws.lambda.inputs.CoreNetworkConnectorState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.CoreNetworkConnectorConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.lambda.inputs.CoreNetworkConnectorTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.lambda.inputs.CoreNetworkConnectorTimeoutsArgs.Builder]):
         com.pulumi.aws.lambda.inputs.CoreNetworkConnectorState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.CoreNetworkConnectorTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -466,7 +466,7 @@ object lambda_ext:
      * @param schemaRegistryConfig Block for a Kafka schema registry setting. See below.
      * @return builder
      */
-    def schemaRegistryConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigSchemaRegistryConfigArgs.Builder]):
+    inline def schemaRegistryConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigSchemaRegistryConfigArgs.Builder]):
         com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigSchemaRegistryConfigArgs.builder
       builder.schemaRegistryConfig(args(argsBuilder).build)
@@ -476,7 +476,7 @@ object lambda_ext:
      * @param accessConfigs Configuration block for authentication Lambda uses to access the schema registry. See below.
      * @return builder
      */
-    def accessConfigs(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigSchemaRegistryConfigAccessConfigArgs.Builder]*):
+    inline def accessConfigs(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigSchemaRegistryConfigAccessConfigArgs.Builder]*):
         com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigSchemaRegistryConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigSchemaRegistryConfigAccessConfigArgs.builder
       builder.accessConfigs(args.map(_(argsBuilder).build)*)
@@ -485,7 +485,7 @@ object lambda_ext:
      * @param schemaValidationConfigs Repeatable block that defines schema validation settings. These specify the message attributes that Lambda should validate and filter using the schema registry. See below.
      * @return builder
      */
-    def schemaValidationConfigs(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigSchemaRegistryConfigSchemaValidationConfigArgs.Builder]*):
+    inline def schemaValidationConfigs(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigSchemaRegistryConfigSchemaValidationConfigArgs.Builder]*):
         com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigSchemaRegistryConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigSchemaRegistryConfigSchemaValidationConfigArgs.builder
       builder.schemaValidationConfigs(args.map(_(argsBuilder).build)*)
@@ -495,7 +495,7 @@ object lambda_ext:
      * @param onFailure Destination configuration for failed invocations. See below.
      * @return builder
      */
-    def onFailure(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingDestinationConfigOnFailureArgs.Builder]):
+    inline def onFailure(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingDestinationConfigOnFailureArgs.Builder]):
         com.pulumi.aws.lambda.inputs.EventSourceMappingDestinationConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingDestinationConfigOnFailureArgs.builder
       builder.onFailure(args(argsBuilder).build)
@@ -505,7 +505,7 @@ object lambda_ext:
      * @param filters Set of up to 5 filter. If an event satisfies at least one, Lambda sends the event to the function or adds it to the next batch. See below.
      * @return builder
      */
-    def filters(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingFilterCriteriaFilterArgs.Builder]*):
+    inline def filters(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingFilterCriteriaFilterArgs.Builder]*):
         com.pulumi.aws.lambda.inputs.EventSourceMappingFilterCriteriaArgs.Builder =
       def argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingFilterCriteriaFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
@@ -515,7 +515,7 @@ object lambda_ext:
      * @param schemaRegistryConfig Block for a Kafka schema registry setting. See below.
      * @return builder
      */
-    def schemaRegistryConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedKafkaEventSourceConfigSchemaRegistryConfigArgs.Builder]):
+    inline def schemaRegistryConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedKafkaEventSourceConfigSchemaRegistryConfigArgs.Builder]):
         com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedKafkaEventSourceConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedKafkaEventSourceConfigSchemaRegistryConfigArgs.builder
       builder.schemaRegistryConfig(args(argsBuilder).build)
@@ -525,7 +525,7 @@ object lambda_ext:
      * @param accessConfigs Configuration block for authentication Lambda uses to access the schema registry. See below.
      * @return builder
      */
-    def accessConfigs(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedKafkaEventSourceConfigSchemaRegistryConfigAccessConfigArgs.Builder]*):
+    inline def accessConfigs(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedKafkaEventSourceConfigSchemaRegistryConfigAccessConfigArgs.Builder]*):
         com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedKafkaEventSourceConfigSchemaRegistryConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedKafkaEventSourceConfigSchemaRegistryConfigAccessConfigArgs.builder
       builder.accessConfigs(args.map(_(argsBuilder).build)*)
@@ -534,7 +534,7 @@ object lambda_ext:
      * @param schemaValidationConfigs Repeatable block that defines schema validation settings. These specify the message attributes that Lambda should validate and filter using the schema registry. See below.
      * @return builder
      */
-    def schemaValidationConfigs(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedKafkaEventSourceConfigSchemaRegistryConfigSchemaValidationConfigArgs.Builder]*):
+    inline def schemaValidationConfigs(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedKafkaEventSourceConfigSchemaRegistryConfigSchemaValidationConfigArgs.Builder]*):
         com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedKafkaEventSourceConfigSchemaRegistryConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedKafkaEventSourceConfigSchemaRegistryConfigSchemaValidationConfigArgs.builder
       builder.schemaValidationConfigs(args.map(_(argsBuilder).build)*)
@@ -544,7 +544,7 @@ object lambda_ext:
      * @param amazonManagedKafkaEventSourceConfig Additional configuration block for Amazon Managed Kafka sources. Incompatible with `selfManagedEventSource` and `selfManagedKafkaEventSourceConfig`. See below.
      * @return builder
      */
-    def amazonManagedKafkaEventSourceConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigArgs.Builder]):
+    inline def amazonManagedKafkaEventSourceConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigArgs.Builder]):
         com.pulumi.aws.lambda.inputs.EventSourceMappingState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingAmazonManagedKafkaEventSourceConfigArgs.builder
       builder.amazonManagedKafkaEventSourceConfig(args(argsBuilder).build)
@@ -553,7 +553,7 @@ object lambda_ext:
      * @param destinationConfig Amazon SQS queue, Amazon SNS topic or Amazon S3 bucket (only available for Kafka sources) destination for failed records. Only available for stream sources (DynamoDB and Kinesis) and Kafka sources (Amazon MSK and Self-managed Apache Kafka). See below.
      * @return builder
      */
-    def destinationConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingDestinationConfigArgs.Builder]):
+    inline def destinationConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingDestinationConfigArgs.Builder]):
         com.pulumi.aws.lambda.inputs.EventSourceMappingState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingDestinationConfigArgs.builder
       builder.destinationConfig(args(argsBuilder).build)
@@ -562,7 +562,7 @@ object lambda_ext:
      * @param documentDbEventSourceConfig Configuration settings for a DocumentDB event source. See below.
      * @return builder
      */
-    def documentDbEventSourceConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingDocumentDbEventSourceConfigArgs.Builder]):
+    inline def documentDbEventSourceConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingDocumentDbEventSourceConfigArgs.Builder]):
         com.pulumi.aws.lambda.inputs.EventSourceMappingState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingDocumentDbEventSourceConfigArgs.builder
       builder.documentDbEventSourceConfig(args(argsBuilder).build)
@@ -571,7 +571,7 @@ object lambda_ext:
      * @param filterCriteria Criteria to use for [event filtering](https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html) Kinesis stream, DynamoDB stream, SQS queue event sources. See below.
      * @return builder
      */
-    def filterCriteria(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingFilterCriteriaArgs.Builder]):
+    inline def filterCriteria(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingFilterCriteriaArgs.Builder]):
         com.pulumi.aws.lambda.inputs.EventSourceMappingState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingFilterCriteriaArgs.builder
       builder.filterCriteria(args(argsBuilder).build)
@@ -580,7 +580,7 @@ object lambda_ext:
      * @param metricsConfig CloudWatch metrics configuration of the event source. Only available for stream sources (DynamoDB and Kinesis) and SQS queues. See below.
      * @return builder
      */
-    def metricsConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingMetricsConfigArgs.Builder]):
+    inline def metricsConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingMetricsConfigArgs.Builder]):
         com.pulumi.aws.lambda.inputs.EventSourceMappingState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingMetricsConfigArgs.builder
       builder.metricsConfig(args(argsBuilder).build)
@@ -589,7 +589,7 @@ object lambda_ext:
      * @param provisionedPollerConfig Event poller configuration for the event source. Only valid for Amazon MSK or self-managed Apache Kafka sources. See below.
      * @return builder
      */
-    def provisionedPollerConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingProvisionedPollerConfigArgs.Builder]):
+    inline def provisionedPollerConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingProvisionedPollerConfigArgs.Builder]):
         com.pulumi.aws.lambda.inputs.EventSourceMappingState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingProvisionedPollerConfigArgs.builder
       builder.provisionedPollerConfig(args(argsBuilder).build)
@@ -598,7 +598,7 @@ object lambda_ext:
      * @param scalingConfig Scaling configuration of the event source. Only available for SQS queues. See below.
      * @return builder
      */
-    def scalingConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingScalingConfigArgs.Builder]):
+    inline def scalingConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingScalingConfigArgs.Builder]):
         com.pulumi.aws.lambda.inputs.EventSourceMappingState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingScalingConfigArgs.builder
       builder.scalingConfig(args(argsBuilder).build)
@@ -607,7 +607,7 @@ object lambda_ext:
      * @param selfManagedEventSource For Self Managed Kafka sources, the location of the self managed cluster. If set, configuration must also include `sourceAccessConfiguration`. See below.
      * @return builder
      */
-    def selfManagedEventSource(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedEventSourceArgs.Builder]):
+    inline def selfManagedEventSource(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedEventSourceArgs.Builder]):
         com.pulumi.aws.lambda.inputs.EventSourceMappingState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedEventSourceArgs.builder
       builder.selfManagedEventSource(args(argsBuilder).build)
@@ -616,7 +616,7 @@ object lambda_ext:
      * @param selfManagedKafkaEventSourceConfig Additional configuration block for Self Managed Kafka sources. Incompatible with `eventSourceArn` and `amazonManagedKafkaEventSourceConfig`. See below.
      * @return builder
      */
-    def selfManagedKafkaEventSourceConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedKafkaEventSourceConfigArgs.Builder]):
+    inline def selfManagedKafkaEventSourceConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedKafkaEventSourceConfigArgs.Builder]):
         com.pulumi.aws.lambda.inputs.EventSourceMappingState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingSelfManagedKafkaEventSourceConfigArgs.builder
       builder.selfManagedKafkaEventSourceConfig(args(argsBuilder).build)
@@ -625,7 +625,7 @@ object lambda_ext:
      * @param sourceAccessConfigurations For Self Managed Kafka sources, the access configuration for the source. If set, configuration must also include `selfManagedEventSource`. See below.
      * @return builder
      */
-    def sourceAccessConfigurations(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingSourceAccessConfigurationArgs.Builder]*):
+    inline def sourceAccessConfigurations(args: Endofunction[com.pulumi.aws.lambda.inputs.EventSourceMappingSourceAccessConfigurationArgs.Builder]*):
         com.pulumi.aws.lambda.inputs.EventSourceMappingState.Builder =
       def argsBuilder = com.pulumi.aws.lambda.inputs.EventSourceMappingSourceAccessConfigurationArgs.builder
       builder.sourceAccessConfigurations(args.map(_(argsBuilder).build)*)
@@ -635,7 +635,7 @@ object lambda_ext:
      * @param lambdaManagedInstancesCapacityProviderConfig Configuration block for Lambda Managed Instances Capacity Provider. See below.
      * @return builder
      */
-    def lambdaManagedInstancesCapacityProviderConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionCapacityProviderConfigLambdaManagedInstancesCapacityProviderConfigArgs.Builder]):
+    inline def lambdaManagedInstancesCapacityProviderConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionCapacityProviderConfigLambdaManagedInstancesCapacityProviderConfigArgs.Builder]):
         com.pulumi.aws.lambda.inputs.FunctionCapacityProviderConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionCapacityProviderConfigLambdaManagedInstancesCapacityProviderConfigArgs.builder
       builder.lambdaManagedInstancesCapacityProviderConfig(args(argsBuilder).build)
@@ -645,7 +645,7 @@ object lambda_ext:
      * @param onFailure Configuration block with destination configuration for failed asynchronous invocations. See below.
      * @return builder
      */
-    def onFailure(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionEventInvokeConfigDestinationConfigOnFailureArgs.Builder]):
+    inline def onFailure(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionEventInvokeConfigDestinationConfigOnFailureArgs.Builder]):
         com.pulumi.aws.lambda.inputs.FunctionEventInvokeConfigDestinationConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionEventInvokeConfigDestinationConfigOnFailureArgs.builder
       builder.onFailure(args(argsBuilder).build)
@@ -654,7 +654,7 @@ object lambda_ext:
      * @param onSuccess Configuration block with destination configuration for successful asynchronous invocations. See below.
      * @return builder
      */
-    def onSuccess(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionEventInvokeConfigDestinationConfigOnSuccessArgs.Builder]):
+    inline def onSuccess(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionEventInvokeConfigDestinationConfigOnSuccessArgs.Builder]):
         com.pulumi.aws.lambda.inputs.FunctionEventInvokeConfigDestinationConfigArgs.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionEventInvokeConfigDestinationConfigOnSuccessArgs.builder
       builder.onSuccess(args(argsBuilder).build)
@@ -664,7 +664,7 @@ object lambda_ext:
      * @param destinationConfig Configuration block with destination configuration. See below.
      * @return builder
      */
-    def destinationConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionEventInvokeConfigDestinationConfigArgs.Builder]):
+    inline def destinationConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionEventInvokeConfigDestinationConfigArgs.Builder]):
         com.pulumi.aws.lambda.inputs.FunctionEventInvokeConfigState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionEventInvokeConfigDestinationConfigArgs.builder
       builder.destinationConfig(args(argsBuilder).build)
@@ -674,12 +674,12 @@ object lambda_ext:
      * @param functionScalingConfig Scaling configuration block. See `functionScalingConfig` Block below.
      * @return builder
      */
-    def functionScalingConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionScalingConfigFunctionScalingConfigArgs.Builder]):
+    inline def functionScalingConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionScalingConfigFunctionScalingConfigArgs.Builder]):
         com.pulumi.aws.lambda.inputs.FunctionScalingConfigState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionScalingConfigFunctionScalingConfigArgs.builder
       builder.functionScalingConfig(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionScalingConfigTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionScalingConfigTimeoutsArgs.Builder]):
         com.pulumi.aws.lambda.inputs.FunctionScalingConfigState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionScalingConfigTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -689,7 +689,7 @@ object lambda_ext:
      * @param capacityProviderConfig Configuration block for Lambda Capacity Provider. See below.
      * @return builder
      */
-    def capacityProviderConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionCapacityProviderConfigArgs.Builder]):
+    inline def capacityProviderConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionCapacityProviderConfigArgs.Builder]):
         com.pulumi.aws.lambda.inputs.FunctionState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionCapacityProviderConfigArgs.builder
       builder.capacityProviderConfig(args(argsBuilder).build)
@@ -698,7 +698,7 @@ object lambda_ext:
      * @param deadLetterConfig Configuration block for dead letter queue. See below.
      * @return builder
      */
-    def deadLetterConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionDeadLetterConfigArgs.Builder]):
+    inline def deadLetterConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionDeadLetterConfigArgs.Builder]):
         com.pulumi.aws.lambda.inputs.FunctionState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionDeadLetterConfigArgs.builder
       builder.deadLetterConfig(args(argsBuilder).build)
@@ -707,7 +707,7 @@ object lambda_ext:
      * @param durableConfig Configuration block for durable function settings. See below. `durableConfig` may only be available in [limited regions](https://builder.aws.com/build/capabilities), including `us-east-2`.
      * @return builder
      */
-    def durableConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionDurableConfigArgs.Builder]):
+    inline def durableConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionDurableConfigArgs.Builder]):
         com.pulumi.aws.lambda.inputs.FunctionState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionDurableConfigArgs.builder
       builder.durableConfig(args(argsBuilder).build)
@@ -716,7 +716,7 @@ object lambda_ext:
      * @param environment Configuration block for environment variables. See below.
      * @return builder
      */
-    def environment(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionEnvironmentArgs.Builder]):
+    inline def environment(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionEnvironmentArgs.Builder]):
         com.pulumi.aws.lambda.inputs.FunctionState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionEnvironmentArgs.builder
       builder.environment(args(argsBuilder).build)
@@ -725,7 +725,7 @@ object lambda_ext:
      * @param ephemeralStorage Amount of ephemeral storage (`/tmp`) to allocate for the Lambda Function. See below.
      * @return builder
      */
-    def ephemeralStorage(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionEphemeralStorageArgs.Builder]):
+    inline def ephemeralStorage(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionEphemeralStorageArgs.Builder]):
         com.pulumi.aws.lambda.inputs.FunctionState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionEphemeralStorageArgs.builder
       builder.ephemeralStorage(args(argsBuilder).build)
@@ -734,7 +734,7 @@ object lambda_ext:
      * @param fileSystemConfig Configuration block for EFS or S3 Files file system. See below.
      * @return builder
      */
-    def fileSystemConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionFileSystemConfigArgs.Builder]):
+    inline def fileSystemConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionFileSystemConfigArgs.Builder]):
         com.pulumi.aws.lambda.inputs.FunctionState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionFileSystemConfigArgs.builder
       builder.fileSystemConfig(args(argsBuilder).build)
@@ -743,7 +743,7 @@ object lambda_ext:
      * @param imageConfig Container image configuration values. See below.
      * @return builder
      */
-    def imageConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionImageConfigArgs.Builder]):
+    inline def imageConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionImageConfigArgs.Builder]):
         com.pulumi.aws.lambda.inputs.FunctionState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionImageConfigArgs.builder
       builder.imageConfig(args(argsBuilder).build)
@@ -752,7 +752,7 @@ object lambda_ext:
      * @param loggingConfig Configuration block for advanced logging settings. See below.
      * @return builder
      */
-    def loggingConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionLoggingConfigArgs.Builder]):
+    inline def loggingConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionLoggingConfigArgs.Builder]):
         com.pulumi.aws.lambda.inputs.FunctionState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionLoggingConfigArgs.builder
       builder.loggingConfig(args(argsBuilder).build)
@@ -761,7 +761,7 @@ object lambda_ext:
      * @param snapStart Configuration block for snap start settings. See below.
      * @return builder
      */
-    def snapStart(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionSnapStartArgs.Builder]):
+    inline def snapStart(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionSnapStartArgs.Builder]):
         com.pulumi.aws.lambda.inputs.FunctionState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionSnapStartArgs.builder
       builder.snapStart(args(argsBuilder).build)
@@ -770,7 +770,7 @@ object lambda_ext:
      * @param tenancyConfig Configuration block for Tenancy. See below.
      * @return builder
      */
-    def tenancyConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionTenancyConfigArgs.Builder]):
+    inline def tenancyConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionTenancyConfigArgs.Builder]):
         com.pulumi.aws.lambda.inputs.FunctionState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionTenancyConfigArgs.builder
       builder.tenancyConfig(args(argsBuilder).build)
@@ -779,7 +779,7 @@ object lambda_ext:
      * @param tracingConfig Configuration block for X-Ray tracing. See below.
      * @return builder
      */
-    def tracingConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionTracingConfigArgs.Builder]):
+    inline def tracingConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionTracingConfigArgs.Builder]):
         com.pulumi.aws.lambda.inputs.FunctionState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionTracingConfigArgs.builder
       builder.tracingConfig(args(argsBuilder).build)
@@ -788,7 +788,7 @@ object lambda_ext:
      * @param vpcConfig Configuration block for VPC. See below.
      * @return builder
      */
-    def vpcConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionVpcConfigArgs.Builder]):
+    inline def vpcConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionVpcConfigArgs.Builder]):
         com.pulumi.aws.lambda.inputs.FunctionState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
@@ -798,7 +798,7 @@ object lambda_ext:
      * @param cors Cross-origin resource sharing (CORS) settings for the function URL. See below.
      * @return builder
      */
-    def cors(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionUrlCorsArgs.Builder]):
+    inline def cors(args: Endofunction[com.pulumi.aws.lambda.inputs.FunctionUrlCorsArgs.Builder]):
         com.pulumi.aws.lambda.inputs.FunctionUrlState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.FunctionUrlCorsArgs.builder
       builder.cors(args(argsBuilder).build)
@@ -808,7 +808,7 @@ object lambda_ext:
      * @param codeArtifact Code artifact containing the application code and metadata for the image. See below.
      * @return builder
      */
-    def codeArtifact(args: Endofunction[com.pulumi.aws.lambda.inputs.MicrovmsImageCodeArtifactArgs.Builder]):
+    inline def codeArtifact(args: Endofunction[com.pulumi.aws.lambda.inputs.MicrovmsImageCodeArtifactArgs.Builder]):
         com.pulumi.aws.lambda.inputs.MicrovmsImageState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.MicrovmsImageCodeArtifactArgs.builder
       builder.codeArtifact(args(argsBuilder).build)
@@ -817,12 +817,12 @@ object lambda_ext:
      * @param cpuConfigurations CPU configuration for the MicroVM. See `cpuConfiguration` Block below.
      * @return builder
      */
-    def cpuConfigurations(args: Endofunction[com.pulumi.aws.lambda.inputs.MicrovmsImageCpuConfigurationArgs.Builder]*):
+    inline def cpuConfigurations(args: Endofunction[com.pulumi.aws.lambda.inputs.MicrovmsImageCpuConfigurationArgs.Builder]*):
         com.pulumi.aws.lambda.inputs.MicrovmsImageState.Builder =
       def argsBuilder = com.pulumi.aws.lambda.inputs.MicrovmsImageCpuConfigurationArgs.builder
       builder.cpuConfigurations(args.map(_(argsBuilder).build)*)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.lambda.inputs.MicrovmsImageTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.lambda.inputs.MicrovmsImageTimeoutsArgs.Builder]):
         com.pulumi.aws.lambda.inputs.MicrovmsImageState.Builder =
       val argsBuilder = com.pulumi.aws.lambda.inputs.MicrovmsImageTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)

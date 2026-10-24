@@ -40,7 +40,7 @@ object backup:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages registration of a storage account with Azure Backup. Storage accounts must be registered with an Azure Recovery Vault in order to backup file shares within the storage account. Registering a storage account with a vault creates what is known as a protection container within Azure Recovery Services. Once the container is created, Azure file shares within the storage account can be backed up using the `azure.backup.ProtectedFileShare` resource. */
-  def ContainerStorageAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ContainerStorageAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.backup.ContainerStorageAccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.backup.ContainerStorageAccountArgs.builder
     com.pulumi.azure.backup.ContainerStorageAccount(name,
@@ -48,7 +48,7 @@ object backup:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure File Share Backup Policy within a Recovery Services vault. */
-  def PolicyFileShare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PolicyFileShare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.backup.PolicyFileShareArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.backup.PolicyFileShareArgs.builder
     conf.logicalName2physicalName(name) match
@@ -59,7 +59,7 @@ object backup:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Backup VM Backup Policy. */
-  def PolicyVM(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PolicyVM(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.backup.PolicyVMArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.backup.PolicyVMArgs.builder
     conf.logicalName2physicalName(name) match
@@ -70,7 +70,7 @@ object backup:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure VM Workload Backup Policy within a Recovery Services vault. */
-  def PolicyVMWorkload(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PolicyVMWorkload(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.backup.PolicyVMWorkloadArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.backup.PolicyVMWorkloadArgs.builder
     conf.logicalName2physicalName(name) match
@@ -81,7 +81,7 @@ object backup:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Backup Protected File Share to enable backups for file shares within an Azure Storage Account */
-  def ProtectedFileShare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProtectedFileShare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.backup.ProtectedFileShareArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.backup.ProtectedFileShareArgs.builder
     com.pulumi.azure.backup.ProtectedFileShare(name,
@@ -89,7 +89,7 @@ object backup:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Backup Protected Virtual Machine. */
-  def ProtectedVM(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProtectedVM(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.backup.ProtectedVMArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.backup.ProtectedVMArgs.builder
     com.pulumi.azure.backup.ProtectedVM(name,

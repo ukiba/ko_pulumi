@@ -22,7 +22,7 @@ object spanner:
    * This resource is owned by the database it is backing up, and is deleted along
    * with the database. The actual backups are not though.
    */
-  def BackupSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackupSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.spanner.BackupScheduleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.spanner.BackupScheduleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -47,7 +47,7 @@ object spanner:
    * On older versions, it is strongly recommended to set `lifecycle { preventDestroy = true }`
    * on databases in order to prevent accidental data loss.
    */
-  def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.spanner.DatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.spanner.DatabaseArgs.builder
     conf.logicalName2physicalName(name) match
@@ -604,7 +604,7 @@ object spanner:
    * * {{project}}/{{instance}}/{{database}}
    * * {{instance}}/{{database}} (project is taken from provider project)
    */
-  def DatabaseIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DatabaseIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.spanner.DatabaseIAMBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.spanner.DatabaseIAMBindingArgs.builder
     com.pulumi.gcp.spanner.DatabaseIAMBinding(name,
@@ -1158,7 +1158,7 @@ object spanner:
    * * {{project}}/{{instance}}/{{database}}
    * * {{instance}}/{{database}} (project is taken from provider project)
    */
-  def DatabaseIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DatabaseIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.spanner.DatabaseIAMMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.spanner.DatabaseIAMMemberArgs.builder
     com.pulumi.gcp.spanner.DatabaseIAMMember(name,
@@ -1712,7 +1712,7 @@ object spanner:
    * * {{project}}/{{instance}}/{{database}}
    * * {{instance}}/{{database}} (project is taken from provider project)
    */
-  def DatabaseIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DatabaseIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.spanner.DatabaseIAMPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.spanner.DatabaseIAMPolicyArgs.builder
     com.pulumi.gcp.spanner.DatabaseIAMPolicy(name,
@@ -1729,7 +1729,7 @@ object spanner:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/spanner/)
    */
-  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.spanner.InstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.spanner.InstanceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1749,7 +1749,7 @@ object spanner:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/spanner/)
    */
-  def InstanceConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.spanner.InstanceConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.spanner.InstanceConfigArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2025,7 +2025,7 @@ object spanner:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def InstanceIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.spanner.InstanceIAMBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.spanner.InstanceIAMBindingArgs.builder
     com.pulumi.gcp.spanner.InstanceIAMBinding(name,
@@ -2298,7 +2298,7 @@ object spanner:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def InstanceIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.spanner.InstanceIAMMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.spanner.InstanceIAMMemberArgs.builder
     com.pulumi.gcp.spanner.InstanceIAMMember(name,
@@ -2571,7 +2571,7 @@ object spanner:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def InstanceIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.spanner.InstanceIAMPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.spanner.InstanceIAMPolicyArgs.builder
     com.pulumi.gcp.spanner.InstanceIAMPolicy(name,
@@ -2588,7 +2588,7 @@ object spanner:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/spanner/docs/geo-partitioning)
    */
-  def InstancePartition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstancePartition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.spanner.InstancePartitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.spanner.InstancePartitionArgs.builder
     conf.logicalName2physicalName(name) match

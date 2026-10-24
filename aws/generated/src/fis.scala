@@ -13,7 +13,7 @@ object fis:
    * See [Amazon Fault Injection Simulator](https://docs.aws.amazon.com/fis/index.html)
    * for more information.
    */
-  def ExperimentTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ExperimentTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.fis.ExperimentTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.fis.ExperimentTemplateArgs.builder
     argsBuilder = args(argsBuilder)
@@ -51,7 +51,7 @@ object fis:
    * 
    * &gt; **Note:** AWS rejects a `reason` change unless `status` is also actually transitioning (for example, `engaged` to `disengaged`). Creating or updating this resource with a `status` that already matches the live safety lever succeeds only if the configured `reason` also matches the live `reason`; otherwise it fails at apply time. Pair a `reason` change with an actual `status` change.
    */
-  def SafetyLeverState(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SafetyLeverState(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.fis.SafetyLeverStateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.fis.SafetyLeverStateArgs.builder
     com.pulumi.aws.fis.SafetyLeverState(name,
@@ -59,7 +59,7 @@ object fis:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS FIS (Fault Injection Simulator) Target Account Configuration. */
-  def TargetAccountConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TargetAccountConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.fis.TargetAccountConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.fis.TargetAccountConfigurationArgs.builder
     com.pulumi.aws.fis.TargetAccountConfiguration(name,

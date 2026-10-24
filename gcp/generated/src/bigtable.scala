@@ -13,7 +13,7 @@ object bigtable:
    * 
    * * [API documentation](https://cloud.google.com/bigtable/docs/reference/admin/rest/v2/projects.instances.appProfiles)
    */
-  def AppProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AppProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigtable.AppProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigtable.AppProfileArgs.builder
     com.pulumi.gcp.bigtable.AppProfile(name,
@@ -30,7 +30,7 @@ object bigtable:
    * Terraform docs
    * for more information on lifecycle parameters.
    */
-  def AuthorizedView(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AuthorizedView(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigtable.AuthorizedViewArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.bigtable.AuthorizedViewArgs.builder
     conf.logicalName2physicalName(name) match
@@ -229,7 +229,7 @@ object bigtable:
    * The workaround is unreplicating the instance first by updating the instance to have one
    * cluster.
    */
-  def GCPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GCPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigtable.GCPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigtable.GCPolicyArgs.builder
     com.pulumi.gcp.bigtable.GCPolicy(name,
@@ -243,7 +243,7 @@ object bigtable:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/bigtable/docs)
    */
-  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigtable.InstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.bigtable.InstanceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -499,7 +499,7 @@ object bigtable:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def InstanceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigtable.InstanceIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigtable.InstanceIamBindingArgs.builder
     com.pulumi.gcp.bigtable.InstanceIamBinding(name,
@@ -752,7 +752,7 @@ object bigtable:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def InstanceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigtable.InstanceIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigtable.InstanceIamMemberArgs.builder
     com.pulumi.gcp.bigtable.InstanceIamMember(name,
@@ -1005,7 +1005,7 @@ object bigtable:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def InstanceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigtable.InstanceIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigtable.InstanceIamPolicyArgs.builder
     com.pulumi.gcp.bigtable.InstanceIamPolicy(name,
@@ -1019,7 +1019,7 @@ object bigtable:
    * 
    * * [API documentation](https://cloud.google.com/bigtable/docs/reference/admin/rest/v2/projects.instances.logicalViews)
    */
-  def LogicalView(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LogicalView(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigtable.LogicalViewArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigtable.LogicalViewArgs.builder
     com.pulumi.gcp.bigtable.LogicalView(name,
@@ -1033,7 +1033,7 @@ object bigtable:
    * 
    * * [API documentation](https://cloud.google.com/bigtable/docs/reference/admin/rest/v2/projects.instances.materializedViews)
    */
-  def MaterializedView(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MaterializedView(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigtable.MaterializedViewArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigtable.MaterializedViewArgs.builder
     com.pulumi.gcp.bigtable.MaterializedView(name,
@@ -1047,7 +1047,7 @@ object bigtable:
    * 
    * * [API documentation](https://cloud.google.com/bigtable/docs/reference/admin/rest/v2/projects.instances.tables.schemaBundles)
    */
-  def SchemaBundle(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SchemaBundle(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigtable.SchemaBundleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigtable.SchemaBundleArgs.builder
     com.pulumi.gcp.bigtable.SchemaBundle(name,
@@ -1059,7 +1059,7 @@ object bigtable:
    * [the official documentation](https://cloud.google.com/bigtable/) and
    * [API](https://cloud.google.com/bigtable/docs/go/reference).
    */
-  def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigtable.TableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.bigtable.TableArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1321,7 +1321,7 @@ object bigtable:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TableIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TableIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigtable.TableIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigtable.TableIamBindingArgs.builder
     com.pulumi.gcp.bigtable.TableIamBinding(name,
@@ -1580,7 +1580,7 @@ object bigtable:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TableIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TableIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigtable.TableIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigtable.TableIamMemberArgs.builder
     com.pulumi.gcp.bigtable.TableIamMember(name,
@@ -1839,7 +1839,7 @@ object bigtable:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TableIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TableIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.bigtable.TableIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigtable.TableIamPolicyArgs.builder
     com.pulumi.gcp.bigtable.TableIamPolicy(name,

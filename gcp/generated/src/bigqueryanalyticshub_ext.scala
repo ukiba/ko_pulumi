@@ -9,19 +9,19 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sharingEnvironmentConfig(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSharingEnvironmentConfigArgs.Builder]):
+    inline def sharingEnvironmentConfig(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSharingEnvironmentConfigArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.DataExchangeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSharingEnvironmentConfigArgs.builder
       builder.sharingEnvironmentConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -32,7 +32,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinationDataset(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSubscriptionDestinationDatasetArgs.Builder]):
+    inline def destinationDataset(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSubscriptionDestinationDatasetArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.DataExchangeSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSubscriptionDestinationDatasetArgs.builder
       builder.destinationDataset(args(argsBuilder).build)
@@ -43,7 +43,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigqueryDataset(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingBigqueryDatasetArgs.Builder]):
+    inline def bigqueryDataset(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingBigqueryDatasetArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.ListingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingBigqueryDatasetArgs.builder
       builder.bigqueryDataset(args(argsBuilder).build)
@@ -53,7 +53,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataProvider(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingDataProviderArgs.Builder]):
+    inline def dataProvider(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingDataProviderArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.ListingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingDataProviderArgs.builder
       builder.dataProvider(args(argsBuilder).build)
@@ -63,7 +63,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def publisher(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingPublisherArgs.Builder]):
+    inline def publisher(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingPublisherArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.ListingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingPublisherArgs.builder
       builder.publisher(args(argsBuilder).build)
@@ -73,7 +73,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pubsubTopic(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingPubsubTopicArgs.Builder]):
+    inline def pubsubTopic(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingPubsubTopicArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.ListingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingPubsubTopicArgs.builder
       builder.pubsubTopic(args(argsBuilder).build)
@@ -83,19 +83,19 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def restrictedExportConfig(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingRestrictedExportConfigArgs.Builder]):
+    inline def restrictedExportConfig(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingRestrictedExportConfigArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.ListingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingRestrictedExportConfigArgs.builder
       builder.restrictedExportConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.bigqueryanalyticshub.ListingIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.ListingIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.bigqueryanalyticshub.ListingIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.ListingIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -106,7 +106,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinationDataset(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationDatasetArgs.Builder]):
+    inline def destinationDataset(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationDatasetArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.ListingSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationDatasetArgs.builder
       builder.destinationDataset(args(argsBuilder).build)
@@ -116,7 +116,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinationPubsubSubscription(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionArgs.Builder]):
+    inline def destinationPubsubSubscription(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.ListingSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionArgs.builder
       builder.destinationPubsubSubscription(args(argsBuilder).build)
@@ -129,7 +129,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionConfiguration(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateEncryptionConfigurationArgs.Builder]):
+    inline def encryptionConfiguration(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateEncryptionConfigurationArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.QueryTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateEncryptionConfigurationArgs.builder
       builder.encryptionConfiguration(args(argsBuilder).build)
@@ -139,19 +139,19 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def routine(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateRoutineArgs.Builder]):
+    inline def routine(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateRoutineArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.QueryTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateRoutineArgs.builder
       builder.routine(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -161,7 +161,7 @@ object bigqueryanalyticshub_ext:
      * @param dcrExchangeConfig Data Clean Room (DCR), used for privacy-safe and secured data sharing.
      * @return builder
      */
-    def dcrExchangeConfig(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSharingEnvironmentConfigDcrExchangeConfigArgs.Builder]):
+    inline def dcrExchangeConfig(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSharingEnvironmentConfigDcrExchangeConfigArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSharingEnvironmentConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSharingEnvironmentConfigDcrExchangeConfigArgs.builder
       builder.dcrExchangeConfig(args(argsBuilder).build)
@@ -170,7 +170,7 @@ object bigqueryanalyticshub_ext:
      * @param defaultExchangeConfig Default Analytics Hub data exchange, used for secured data sharing.
      * @return builder
      */
-    def defaultExchangeConfig(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSharingEnvironmentConfigDefaultExchangeConfigArgs.Builder]):
+    inline def defaultExchangeConfig(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSharingEnvironmentConfigDefaultExchangeConfigArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSharingEnvironmentConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSharingEnvironmentConfigDefaultExchangeConfigArgs.builder
       builder.defaultExchangeConfig(args(argsBuilder).build)
@@ -182,7 +182,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sharingEnvironmentConfig(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSharingEnvironmentConfigArgs.Builder]):
+    inline def sharingEnvironmentConfig(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSharingEnvironmentConfigArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeState.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSharingEnvironmentConfigArgs.builder
       builder.sharingEnvironmentConfig(args(argsBuilder).build)
@@ -193,7 +193,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def datasetReference(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSubscriptionDestinationDatasetDatasetReferenceArgs.Builder]):
+    inline def datasetReference(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSubscriptionDestinationDatasetDatasetReferenceArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSubscriptionDestinationDatasetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSubscriptionDestinationDatasetDatasetReferenceArgs.builder
       builder.datasetReference(args(argsBuilder).build)
@@ -204,7 +204,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinationDataset(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSubscriptionDestinationDatasetArgs.Builder]):
+    inline def destinationDataset(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSubscriptionDestinationDatasetArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSubscriptionState.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSubscriptionDestinationDatasetArgs.builder
       builder.destinationDataset(args(argsBuilder).build)
@@ -216,7 +216,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def linkedDatasetMaps(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSubscriptionLinkedDatasetMapArgs.Builder]*):
+    inline def linkedDatasetMaps(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSubscriptionLinkedDatasetMapArgs.Builder]*):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSubscriptionState.Builder =
       def argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSubscriptionLinkedDatasetMapArgs.builder
       builder.linkedDatasetMaps(args.map(_(argsBuilder).build)*)
@@ -226,7 +226,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def linkedResources(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSubscriptionLinkedResourceArgs.Builder]*):
+    inline def linkedResources(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSubscriptionLinkedResourceArgs.Builder]*):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSubscriptionState.Builder =
       def argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.DataExchangeSubscriptionLinkedResourceArgs.builder
       builder.linkedResources(args.map(_(argsBuilder).build)*)
@@ -239,7 +239,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def effectiveReplicas(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingBigqueryDatasetEffectiveReplicaArgs.Builder]*):
+    inline def effectiveReplicas(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingBigqueryDatasetEffectiveReplicaArgs.Builder]*):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingBigqueryDatasetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingBigqueryDatasetEffectiveReplicaArgs.builder
       builder.effectiveReplicas(args.map(_(argsBuilder).build)*)
@@ -249,7 +249,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def selectedResources(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingBigqueryDatasetSelectedResourceArgs.Builder]*):
+    inline def selectedResources(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingBigqueryDatasetSelectedResourceArgs.Builder]*):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingBigqueryDatasetArgs.Builder =
       def argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingBigqueryDatasetSelectedResourceArgs.builder
       builder.selectedResources(args.map(_(argsBuilder).build)*)
@@ -261,19 +261,19 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudMarketplaces(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingCommercialInfoCloudMarketplaceArgs.Builder]*):
+    inline def cloudMarketplaces(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingCommercialInfoCloudMarketplaceArgs.Builder]*):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingCommercialInfoArgs.Builder =
       def argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingCommercialInfoCloudMarketplaceArgs.builder
       builder.cloudMarketplaces(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -284,7 +284,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigqueryDataset(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingBigqueryDatasetArgs.Builder]):
+    inline def bigqueryDataset(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingBigqueryDatasetArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingState.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingBigqueryDatasetArgs.builder
       builder.bigqueryDataset(args(argsBuilder).build)
@@ -294,7 +294,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def commercialInfos(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingCommercialInfoArgs.Builder]*):
+    inline def commercialInfos(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingCommercialInfoArgs.Builder]*):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingState.Builder =
       def argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingCommercialInfoArgs.builder
       builder.commercialInfos(args.map(_(argsBuilder).build)*)
@@ -304,7 +304,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataProvider(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingDataProviderArgs.Builder]):
+    inline def dataProvider(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingDataProviderArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingState.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingDataProviderArgs.builder
       builder.dataProvider(args(argsBuilder).build)
@@ -314,7 +314,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def publisher(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingPublisherArgs.Builder]):
+    inline def publisher(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingPublisherArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingState.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingPublisherArgs.builder
       builder.publisher(args(argsBuilder).build)
@@ -324,7 +324,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pubsubTopic(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingPubsubTopicArgs.Builder]):
+    inline def pubsubTopic(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingPubsubTopicArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingState.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingPubsubTopicArgs.builder
       builder.pubsubTopic(args(argsBuilder).build)
@@ -334,7 +334,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def restrictedExportConfig(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingRestrictedExportConfigArgs.Builder]):
+    inline def restrictedExportConfig(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingRestrictedExportConfigArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingState.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingRestrictedExportConfigArgs.builder
       builder.restrictedExportConfig(args(argsBuilder).build)
@@ -346,7 +346,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudMarketplaces(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionCommercialInfoCloudMarketplaceArgs.Builder]*):
+    inline def cloudMarketplaces(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionCommercialInfoCloudMarketplaceArgs.Builder]*):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionCommercialInfoArgs.Builder =
       def argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionCommercialInfoCloudMarketplaceArgs.builder
       builder.cloudMarketplaces(args.map(_(argsBuilder).build)*)
@@ -357,7 +357,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def datasetReference(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationDatasetDatasetReferenceArgs.Builder]):
+    inline def datasetReference(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationDatasetDatasetReferenceArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationDatasetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationDatasetDatasetReferenceArgs.builder
       builder.datasetReference(args(argsBuilder).build)
@@ -368,7 +368,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pubsubSubscription(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionArgs.Builder]):
+    inline def pubsubSubscription(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionArgs.builder
       builder.pubsubSubscription(args(argsBuilder).build)
@@ -379,7 +379,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigqueryConfig(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionBigqueryConfigArgs.Builder]):
+    inline def bigqueryConfig(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionBigqueryConfigArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionBigqueryConfigArgs.builder
       builder.bigqueryConfig(args(argsBuilder).build)
@@ -389,7 +389,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudStorageConfig(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionCloudStorageConfigArgs.Builder]):
+    inline def cloudStorageConfig(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionCloudStorageConfigArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionCloudStorageConfigArgs.builder
       builder.cloudStorageConfig(args(argsBuilder).build)
@@ -403,7 +403,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deadLetterPolicy(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionDeadLetterPolicyArgs.Builder]):
+    inline def deadLetterPolicy(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionDeadLetterPolicyArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionDeadLetterPolicyArgs.builder
       builder.deadLetterPolicy(args(argsBuilder).build)
@@ -418,7 +418,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def expirationPolicy(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionExpirationPolicyArgs.Builder]):
+    inline def expirationPolicy(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionExpirationPolicyArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionExpirationPolicyArgs.builder
       builder.expirationPolicy(args(argsBuilder).build)
@@ -428,7 +428,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pushConfig(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionPushConfigArgs.Builder]):
+    inline def pushConfig(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionPushConfigArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionPushConfigArgs.builder
       builder.pushConfig(args(argsBuilder).build)
@@ -441,7 +441,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def retryPolicy(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionRetryPolicyArgs.Builder]):
+    inline def retryPolicy(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionRetryPolicyArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
@@ -452,7 +452,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def avroConfig(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionCloudStorageConfigAvroConfigArgs.Builder]):
+    inline def avroConfig(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionCloudStorageConfigAvroConfigArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionCloudStorageConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionCloudStorageConfigAvroConfigArgs.builder
       builder.avroConfig(args(argsBuilder).build)
@@ -463,7 +463,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def noWrapper(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionPushConfigNoWrapperArgs.Builder]):
+    inline def noWrapper(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionPushConfigNoWrapperArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionPushConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionPushConfigNoWrapperArgs.builder
       builder.noWrapper(args(argsBuilder).build)
@@ -474,7 +474,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oidcToken(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionPushConfigOidcTokenArgs.Builder]):
+    inline def oidcToken(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionPushConfigOidcTokenArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionPushConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionPubsubSubscriptionPushConfigOidcTokenArgs.builder
       builder.oidcToken(args(argsBuilder).build)
@@ -485,7 +485,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def commercialInfos(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionCommercialInfoArgs.Builder]*):
+    inline def commercialInfos(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionCommercialInfoArgs.Builder]*):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionState.Builder =
       def argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionCommercialInfoArgs.builder
       builder.commercialInfos(args.map(_(argsBuilder).build)*)
@@ -495,7 +495,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinationDataset(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationDatasetArgs.Builder]):
+    inline def destinationDataset(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationDatasetArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionState.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationDatasetArgs.builder
       builder.destinationDataset(args(argsBuilder).build)
@@ -505,7 +505,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinationPubsubSubscription(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionArgs.Builder]):
+    inline def destinationPubsubSubscription(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionState.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionDestinationPubsubSubscriptionArgs.builder
       builder.destinationPubsubSubscription(args(argsBuilder).build)
@@ -516,7 +516,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def linkedDatasetMaps(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionLinkedDatasetMapArgs.Builder]*):
+    inline def linkedDatasetMaps(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionLinkedDatasetMapArgs.Builder]*):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionState.Builder =
       def argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionLinkedDatasetMapArgs.builder
       builder.linkedDatasetMaps(args.map(_(argsBuilder).build)*)
@@ -526,7 +526,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def linkedResources(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionLinkedResourceArgs.Builder]*):
+    inline def linkedResources(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionLinkedResourceArgs.Builder]*):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionState.Builder =
       def argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.ListingSubscriptionLinkedResourceArgs.builder
       builder.linkedResources(args.map(_(argsBuilder).build)*)
@@ -539,7 +539,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionConfiguration(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateEncryptionConfigurationArgs.Builder]):
+    inline def encryptionConfiguration(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateEncryptionConfigurationArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateEncryptionConfigurationArgs.builder
       builder.encryptionConfiguration(args(argsBuilder).build)
@@ -549,7 +549,7 @@ object bigqueryanalyticshub_ext:
      * Structure is documented below.
      * @return builder
      */
-    def routine(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateRoutineArgs.Builder]):
+    inline def routine(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateRoutineArgs.Builder]):
         com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.QueryTemplateRoutineArgs.builder
       builder.routine(args(argsBuilder).build)

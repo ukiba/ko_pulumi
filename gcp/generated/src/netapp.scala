@@ -13,7 +13,7 @@ object netapp:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/netapp/volumes/docs/configure-and-use/active-directory/about-ad)
    */
-  def ActiveDirectory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ActiveDirectory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.netapp.ActiveDirectoryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.netapp.ActiveDirectoryArgs.builder
     conf.logicalName2physicalName(name) match
@@ -45,7 +45,7 @@ object netapp:
    * * How-to Guides
    *     * [Documentation](https://cloud.google.com/netapp/volumes/docs/protect-data/about-volume-backups)
    */
-  def Backup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Backup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.netapp.BackupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.netapp.BackupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -66,7 +66,7 @@ object netapp:
    * * How-to Guides
    *     * [Documentation](https://cloud.google.com/netapp/volumes/docs/protect-data/about-volume-backups#about_backup_policies)
    */
-  def BackupPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackupPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.netapp.BackupPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.netapp.BackupPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -86,7 +86,7 @@ object netapp:
    * * How-to Guides
    *     * [Documentation](https://cloud.google.com/netapp/volumes/docs/protect-data/about-volume-backups)
    */
-  def BackupVault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackupVault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.netapp.BackupVaultArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.netapp.BackupVaultArgs.builder
     conf.logicalName2physicalName(name) match
@@ -106,7 +106,7 @@ object netapp:
    * * How-to Guides
    *     * [Documentation](https://docs.cloud.google.com/netapp/volumes/docs/configure-and-use/host-groups/overview)
    */
-  def HostGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HostGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.netapp.HostGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.netapp.HostGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -127,7 +127,7 @@ object netapp:
    * * How-to Guides
    *     * [Documentation](https://cloud.google.com/netapp/volumes/docs/configure-and-use/cmek/cmek-overview)
    */
-  def Kmsconfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Kmsconfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.netapp.KmsconfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.netapp.KmsconfigArgs.builder
     conf.logicalName2physicalName(name) match
@@ -167,7 +167,7 @@ object netapp:
    *     * [Quickstart documentation](https://cloud.google.com/netapp/volumes/docs/get-started/quickstarts/create-storage-pool)
    *     * [Regional Flex zone switch](https://cloud.google.com/netapp/volumes/docs/configure-and-use/storage-pools/edit-or-delete-storage-pool#switch_active_and_replica_zones)
    */
-  def StoragePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StoragePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.netapp.StoragePoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.netapp.StoragePoolArgs.builder
     conf.logicalName2physicalName(name) match
@@ -191,7 +191,7 @@ object netapp:
    *     * [Documentation](https://cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/overview)
    *     * [Quickstart](https://cloud.google.com/netapp/volumes/docs/get-started/quickstarts/create-volume)
    */
-  def Volume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Volume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.netapp.VolumeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.netapp.VolumeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -210,7 +210,7 @@ object netapp:
    * * How-to Guides
    *     * [Documentation](https://cloud.google.com/netapp/volumes/docs/configure-and-use/volumes/overview#volume_user_and_group_quotas)
    */
-  def VolumeQuotaRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VolumeQuotaRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.netapp.VolumeQuotaRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.netapp.VolumeQuotaRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -241,7 +241,7 @@ object netapp:
    * * How-to Guides
    *     * [Documentation](https://cloud.google.com/netapp/volumes/docs/protect-data/about-volume-replication)
    */
-  def VolumeReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VolumeReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.netapp.VolumeReplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.netapp.VolumeReplicationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -265,7 +265,7 @@ object netapp:
    * * How-to Guides
    *     * [Documentation](https://cloud.google.com/netapp/volumes/docs/configure-and-use/volume-snapshots/overview)
    */
-  def VolumeSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VolumeSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.netapp.VolumeSnapshotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.netapp.VolumeSnapshotArgs.builder
     conf.logicalName2physicalName(name) match

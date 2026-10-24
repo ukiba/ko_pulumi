@@ -8,7 +8,7 @@ object blockchainnodeengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ethereumDetails(args: Endofunction[com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesEthereumDetailsArgs.Builder]):
+    inline def ethereumDetails(args: Endofunction[com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesEthereumDetailsArgs.Builder]):
         com.pulumi.gcp.blockchainnodeengine.BlockchainNodesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesEthereumDetailsArgs.builder
       builder.ethereumDetails(args(argsBuilder).build)
@@ -20,7 +20,7 @@ object blockchainnodeengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def endpointInfos(args: Endofunction[com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesConnectionInfoEndpointInfoArgs.Builder]*):
+    inline def endpointInfos(args: Endofunction[com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesConnectionInfoEndpointInfoArgs.Builder]*):
         com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesConnectionInfoArgs.Builder =
       def argsBuilder = com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesConnectionInfoEndpointInfoArgs.builder
       builder.endpointInfos(args.map(_(argsBuilder).build)*)
@@ -32,7 +32,7 @@ object blockchainnodeengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def additionalEndpoints(args: Endofunction[com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesEthereumDetailsAdditionalEndpointArgs.Builder]*):
+    inline def additionalEndpoints(args: Endofunction[com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesEthereumDetailsAdditionalEndpointArgs.Builder]*):
         com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesEthereumDetailsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesEthereumDetailsAdditionalEndpointArgs.builder
       builder.additionalEndpoints(args.map(_(argsBuilder).build)*)
@@ -42,7 +42,7 @@ object blockchainnodeengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gethDetails(args: Endofunction[com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesEthereumDetailsGethDetailsArgs.Builder]):
+    inline def gethDetails(args: Endofunction[com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesEthereumDetailsGethDetailsArgs.Builder]):
         com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesEthereumDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesEthereumDetailsGethDetailsArgs.builder
       builder.gethDetails(args(argsBuilder).build)
@@ -52,7 +52,7 @@ object blockchainnodeengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def validatorConfig(args: Endofunction[com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesEthereumDetailsValidatorConfigArgs.Builder]):
+    inline def validatorConfig(args: Endofunction[com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesEthereumDetailsValidatorConfigArgs.Builder]):
         com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesEthereumDetailsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesEthereumDetailsValidatorConfigArgs.builder
       builder.validatorConfig(args(argsBuilder).build)
@@ -63,7 +63,7 @@ object blockchainnodeengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectionInfos(args: Endofunction[com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesConnectionInfoArgs.Builder]*):
+    inline def connectionInfos(args: Endofunction[com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesConnectionInfoArgs.Builder]*):
         com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesState.Builder =
       def argsBuilder = com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesConnectionInfoArgs.builder
       builder.connectionInfos(args.map(_(argsBuilder).build)*)
@@ -73,7 +73,7 @@ object blockchainnodeengine_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ethereumDetails(args: Endofunction[com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesEthereumDetailsArgs.Builder]):
+    inline def ethereumDetails(args: Endofunction[com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesEthereumDetailsArgs.Builder]):
         com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesState.Builder =
       val argsBuilder = com.pulumi.gcp.blockchainnodeengine.inputs.BlockchainNodesEthereumDetailsArgs.builder
       builder.ethereumDetails(args(argsBuilder).build)

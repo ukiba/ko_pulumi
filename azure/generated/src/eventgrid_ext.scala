@@ -7,7 +7,7 @@ object eventgrid_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.DomainIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.DomainIdentityArgs.Builder]):
         com.pulumi.azure.eventgrid.DomainArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.DomainIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object eventgrid_ext:
      * @param inboundIpRules One or more `inboundIpRule` blocks as defined below.
      * @return builder
      */
-    def inboundIpRules(args: Endofunction[com.pulumi.azure.eventgrid.inputs.DomainInboundIpRuleArgs.Builder]*):
+    inline def inboundIpRules(args: Endofunction[com.pulumi.azure.eventgrid.inputs.DomainInboundIpRuleArgs.Builder]*):
         com.pulumi.azure.eventgrid.DomainArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.DomainInboundIpRuleArgs.builder
       builder.inboundIpRules(args.map(_(argsBuilder).build)*)
@@ -25,7 +25,7 @@ object eventgrid_ext:
      * @param inputMappingDefaultValues A `inputMappingDefaultValues` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def inputMappingDefaultValues(args: Endofunction[com.pulumi.azure.eventgrid.inputs.DomainInputMappingDefaultValuesArgs.Builder]):
+    inline def inputMappingDefaultValues(args: Endofunction[com.pulumi.azure.eventgrid.inputs.DomainInputMappingDefaultValuesArgs.Builder]):
         com.pulumi.azure.eventgrid.DomainArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.DomainInputMappingDefaultValuesArgs.builder
       builder.inputMappingDefaultValues(args(argsBuilder).build)
@@ -34,7 +34,7 @@ object eventgrid_ext:
      * @param inputMappingFields A `inputMappingFields` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def inputMappingFields(args: Endofunction[com.pulumi.azure.eventgrid.inputs.DomainInputMappingFieldsArgs.Builder]):
+    inline def inputMappingFields(args: Endofunction[com.pulumi.azure.eventgrid.inputs.DomainInputMappingFieldsArgs.Builder]):
         com.pulumi.azure.eventgrid.DomainArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.DomainInputMappingFieldsArgs.builder
       builder.inputMappingFields(args(argsBuilder).build)
@@ -44,7 +44,7 @@ object eventgrid_ext:
      * @param advancedFilter A `advancedFilter` block as defined below.
      * @return builder
      */
-    def advancedFilter(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterArgs.Builder]):
+    inline def advancedFilter(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterArgs.Builder]):
         com.pulumi.azure.eventgrid.EventSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterArgs.builder
       builder.advancedFilter(args(argsBuilder).build)
@@ -53,7 +53,7 @@ object eventgrid_ext:
      * @param azureFunctionEndpoint An `azureFunctionEndpoint` block as defined below.
      * @return builder
      */
-    def azureFunctionEndpoint(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAzureFunctionEndpointArgs.Builder]):
+    inline def azureFunctionEndpoint(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAzureFunctionEndpointArgs.Builder]):
         com.pulumi.azure.eventgrid.EventSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionAzureFunctionEndpointArgs.builder
       builder.azureFunctionEndpoint(args(argsBuilder).build)
@@ -64,7 +64,7 @@ object eventgrid_ext:
      * &gt; **Note:** `storageBlobDeadLetterDestination` must be specified when a `deadLetterIdentity` is specified
      * @return builder
      */
-    def deadLetterIdentity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionDeadLetterIdentityArgs.Builder]):
+    inline def deadLetterIdentity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionDeadLetterIdentityArgs.Builder]):
         com.pulumi.azure.eventgrid.EventSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionDeadLetterIdentityArgs.builder
       builder.deadLetterIdentity(args(argsBuilder).build)
@@ -73,7 +73,7 @@ object eventgrid_ext:
      * @param deliveryIdentity A `deliveryIdentity` block as defined below.
      * @return builder
      */
-    def deliveryIdentity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionDeliveryIdentityArgs.Builder]):
+    inline def deliveryIdentity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionDeliveryIdentityArgs.Builder]):
         com.pulumi.azure.eventgrid.EventSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionDeliveryIdentityArgs.builder
       builder.deliveryIdentity(args(argsBuilder).build)
@@ -82,7 +82,7 @@ object eventgrid_ext:
      * @param deliveryProperties One or more `deliveryProperty` blocks as defined below.
      * @return builder
      */
-    def deliveryProperties(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionDeliveryPropertyArgs.Builder]*):
+    inline def deliveryProperties(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionDeliveryPropertyArgs.Builder]*):
         com.pulumi.azure.eventgrid.EventSubscriptionArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionDeliveryPropertyArgs.builder
       builder.deliveryProperties(args.map(_(argsBuilder).build)*)
@@ -91,7 +91,7 @@ object eventgrid_ext:
      * @param retryPolicy A `retryPolicy` block as defined below.
      * @return builder
      */
-    def retryPolicy(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionRetryPolicyArgs.Builder]):
+    inline def retryPolicy(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionRetryPolicyArgs.Builder]):
         com.pulumi.azure.eventgrid.EventSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
@@ -100,7 +100,7 @@ object eventgrid_ext:
      * @param storageBlobDeadLetterDestination A `storageBlobDeadLetterDestination` block as defined below.
      * @return builder
      */
-    def storageBlobDeadLetterDestination(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionStorageBlobDeadLetterDestinationArgs.Builder]):
+    inline def storageBlobDeadLetterDestination(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionStorageBlobDeadLetterDestinationArgs.Builder]):
         com.pulumi.azure.eventgrid.EventSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionStorageBlobDeadLetterDestinationArgs.builder
       builder.storageBlobDeadLetterDestination(args(argsBuilder).build)
@@ -109,7 +109,7 @@ object eventgrid_ext:
      * @param storageQueueEndpoint A `storageQueueEndpoint` block as defined below.
      * @return builder
      */
-    def storageQueueEndpoint(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionStorageQueueEndpointArgs.Builder]):
+    inline def storageQueueEndpoint(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionStorageQueueEndpointArgs.Builder]):
         com.pulumi.azure.eventgrid.EventSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionStorageQueueEndpointArgs.builder
       builder.storageQueueEndpoint(args(argsBuilder).build)
@@ -118,7 +118,7 @@ object eventgrid_ext:
      * @param subjectFilter A `subjectFilter` block as defined below.
      * @return builder
      */
-    def subjectFilter(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionSubjectFilterArgs.Builder]):
+    inline def subjectFilter(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionSubjectFilterArgs.Builder]):
         com.pulumi.azure.eventgrid.EventSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionSubjectFilterArgs.builder
       builder.subjectFilter(args(argsBuilder).build)
@@ -129,7 +129,7 @@ object eventgrid_ext:
      * &gt; **Note:** One of `eventhubEndpointId`, `hybridConnectionEndpointId`, `serviceBusQueueEndpointId`, `serviceBusTopicEndpointId`, `storageQueueEndpoint`, `webhookEndpoint` or `azureFunctionEndpoint` must be specified.
      * @return builder
      */
-    def webhookEndpoint(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionWebhookEndpointArgs.Builder]):
+    inline def webhookEndpoint(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionWebhookEndpointArgs.Builder]):
         com.pulumi.azure.eventgrid.EventSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionWebhookEndpointArgs.builder
       builder.webhookEndpoint(args(argsBuilder).build)
@@ -139,7 +139,7 @@ object eventgrid_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.NamespaceIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.NamespaceIdentityArgs.Builder]):
         com.pulumi.azure.eventgrid.NamespaceArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.NamespaceIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -148,7 +148,7 @@ object eventgrid_ext:
      * @param inboundIpRules One or more `inboundIpRule` blocks as defined below.
      * @return builder
      */
-    def inboundIpRules(args: Endofunction[com.pulumi.azure.eventgrid.inputs.NamespaceInboundIpRuleArgs.Builder]*):
+    inline def inboundIpRules(args: Endofunction[com.pulumi.azure.eventgrid.inputs.NamespaceInboundIpRuleArgs.Builder]*):
         com.pulumi.azure.eventgrid.NamespaceArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.NamespaceInboundIpRuleArgs.builder
       builder.inboundIpRules(args.map(_(argsBuilder).build)*)
@@ -157,7 +157,7 @@ object eventgrid_ext:
      * @param topicSpacesConfigurations A `topicSpacesConfiguration` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def topicSpacesConfigurations(args: Endofunction[com.pulumi.azure.eventgrid.inputs.NamespaceTopicSpacesConfigurationArgs.Builder]*):
+    inline def topicSpacesConfigurations(args: Endofunction[com.pulumi.azure.eventgrid.inputs.NamespaceTopicSpacesConfigurationArgs.Builder]*):
         com.pulumi.azure.eventgrid.NamespaceArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.NamespaceTopicSpacesConfigurationArgs.builder
       builder.topicSpacesConfigurations(args.map(_(argsBuilder).build)*)
@@ -167,7 +167,7 @@ object eventgrid_ext:
      * @param partnerAuthorizations One or more `partnerAuthorization` blocks as defined below.
      * @return builder
      */
-    def partnerAuthorizations(args: Endofunction[com.pulumi.azure.eventgrid.inputs.PartnerConfigurationPartnerAuthorizationArgs.Builder]*):
+    inline def partnerAuthorizations(args: Endofunction[com.pulumi.azure.eventgrid.inputs.PartnerConfigurationPartnerAuthorizationArgs.Builder]*):
         com.pulumi.azure.eventgrid.PartnerConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.PartnerConfigurationPartnerAuthorizationArgs.builder
       builder.partnerAuthorizations(args.map(_(argsBuilder).build)*)
@@ -177,7 +177,7 @@ object eventgrid_ext:
      * @param inboundIpRules One or more `inboundIpRule` blocks as defined below.
      * @return builder
      */
-    def inboundIpRules(args: Endofunction[com.pulumi.azure.eventgrid.inputs.PartnerNamespaceInboundIpRuleArgs.Builder]*):
+    inline def inboundIpRules(args: Endofunction[com.pulumi.azure.eventgrid.inputs.PartnerNamespaceInboundIpRuleArgs.Builder]*):
         com.pulumi.azure.eventgrid.PartnerNamespaceArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.PartnerNamespaceInboundIpRuleArgs.builder
       builder.inboundIpRules(args.map(_(argsBuilder).build)*)
@@ -187,7 +187,7 @@ object eventgrid_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicIdentityArgs.Builder]):
         com.pulumi.azure.eventgrid.SystemTopicArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -197,7 +197,7 @@ object eventgrid_ext:
      * @param advancedFilter A `advancedFilter` block as defined below.
      * @return builder
      */
-    def advancedFilter(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterArgs.Builder]):
+    inline def advancedFilter(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterArgs.Builder]):
         com.pulumi.azure.eventgrid.SystemTopicEventSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterArgs.builder
       builder.advancedFilter(args(argsBuilder).build)
@@ -206,7 +206,7 @@ object eventgrid_ext:
      * @param azureFunctionEndpoint An `azureFunctionEndpoint` block as defined below.
      * @return builder
      */
-    def azureFunctionEndpoint(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAzureFunctionEndpointArgs.Builder]):
+    inline def azureFunctionEndpoint(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAzureFunctionEndpointArgs.Builder]):
         com.pulumi.azure.eventgrid.SystemTopicEventSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAzureFunctionEndpointArgs.builder
       builder.azureFunctionEndpoint(args(argsBuilder).build)
@@ -217,7 +217,7 @@ object eventgrid_ext:
      * &gt; **Note:** `storageBlobDeadLetterDestination` must be specified when a `deadLetterIdentity` is specified
      * @return builder
      */
-    def deadLetterIdentity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionDeadLetterIdentityArgs.Builder]):
+    inline def deadLetterIdentity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionDeadLetterIdentityArgs.Builder]):
         com.pulumi.azure.eventgrid.SystemTopicEventSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionDeadLetterIdentityArgs.builder
       builder.deadLetterIdentity(args(argsBuilder).build)
@@ -226,7 +226,7 @@ object eventgrid_ext:
      * @param deliveryIdentity A `deliveryIdentity` block as defined below.
      * @return builder
      */
-    def deliveryIdentity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionDeliveryIdentityArgs.Builder]):
+    inline def deliveryIdentity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionDeliveryIdentityArgs.Builder]):
         com.pulumi.azure.eventgrid.SystemTopicEventSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionDeliveryIdentityArgs.builder
       builder.deliveryIdentity(args(argsBuilder).build)
@@ -235,7 +235,7 @@ object eventgrid_ext:
      * @param deliveryProperties One or more `deliveryProperty` blocks as defined below.
      * @return builder
      */
-    def deliveryProperties(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionDeliveryPropertyArgs.Builder]*):
+    inline def deliveryProperties(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionDeliveryPropertyArgs.Builder]*):
         com.pulumi.azure.eventgrid.SystemTopicEventSubscriptionArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionDeliveryPropertyArgs.builder
       builder.deliveryProperties(args.map(_(argsBuilder).build)*)
@@ -244,7 +244,7 @@ object eventgrid_ext:
      * @param retryPolicy A `retryPolicy` block as defined below.
      * @return builder
      */
-    def retryPolicy(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionRetryPolicyArgs.Builder]):
+    inline def retryPolicy(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionRetryPolicyArgs.Builder]):
         com.pulumi.azure.eventgrid.SystemTopicEventSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
@@ -253,7 +253,7 @@ object eventgrid_ext:
      * @param storageBlobDeadLetterDestination A `storageBlobDeadLetterDestination` block as defined below.
      * @return builder
      */
-    def storageBlobDeadLetterDestination(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionStorageBlobDeadLetterDestinationArgs.Builder]):
+    inline def storageBlobDeadLetterDestination(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionStorageBlobDeadLetterDestinationArgs.Builder]):
         com.pulumi.azure.eventgrid.SystemTopicEventSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionStorageBlobDeadLetterDestinationArgs.builder
       builder.storageBlobDeadLetterDestination(args(argsBuilder).build)
@@ -262,7 +262,7 @@ object eventgrid_ext:
      * @param storageQueueEndpoint A `storageQueueEndpoint` block as defined below.
      * @return builder
      */
-    def storageQueueEndpoint(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionStorageQueueEndpointArgs.Builder]):
+    inline def storageQueueEndpoint(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionStorageQueueEndpointArgs.Builder]):
         com.pulumi.azure.eventgrid.SystemTopicEventSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionStorageQueueEndpointArgs.builder
       builder.storageQueueEndpoint(args(argsBuilder).build)
@@ -271,7 +271,7 @@ object eventgrid_ext:
      * @param subjectFilter A `subjectFilter` block as defined below.
      * @return builder
      */
-    def subjectFilter(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionSubjectFilterArgs.Builder]):
+    inline def subjectFilter(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionSubjectFilterArgs.Builder]):
         com.pulumi.azure.eventgrid.SystemTopicEventSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionSubjectFilterArgs.builder
       builder.subjectFilter(args(argsBuilder).build)
@@ -282,7 +282,7 @@ object eventgrid_ext:
      * &gt; **Note:** One of `azureFunctionEndpoint`, `eventhubEndpointId`, `hybridConnectionEndpoint`, `hybridConnectionEndpointId`, `serviceBusQueueEndpointId`, `serviceBusTopicEndpointId`, `storageQueueEndpoint` or `webhookEndpoint` must be specified.
      * @return builder
      */
-    def webhookEndpoint(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionWebhookEndpointArgs.Builder]):
+    inline def webhookEndpoint(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionWebhookEndpointArgs.Builder]):
         com.pulumi.azure.eventgrid.SystemTopicEventSubscriptionArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionWebhookEndpointArgs.builder
       builder.webhookEndpoint(args(argsBuilder).build)
@@ -292,7 +292,7 @@ object eventgrid_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.TopicIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.TopicIdentityArgs.Builder]):
         com.pulumi.azure.eventgrid.TopicArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.TopicIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -301,7 +301,7 @@ object eventgrid_ext:
      * @param inboundIpRules One or more `inboundIpRule` blocks as defined below.
      * @return builder
      */
-    def inboundIpRules(args: Endofunction[com.pulumi.azure.eventgrid.inputs.TopicInboundIpRuleArgs.Builder]*):
+    inline def inboundIpRules(args: Endofunction[com.pulumi.azure.eventgrid.inputs.TopicInboundIpRuleArgs.Builder]*):
         com.pulumi.azure.eventgrid.TopicArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.TopicInboundIpRuleArgs.builder
       builder.inboundIpRules(args.map(_(argsBuilder).build)*)
@@ -310,7 +310,7 @@ object eventgrid_ext:
      * @param inputMappingDefaultValues A `inputMappingDefaultValues` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def inputMappingDefaultValues(args: Endofunction[com.pulumi.azure.eventgrid.inputs.TopicInputMappingDefaultValuesArgs.Builder]):
+    inline def inputMappingDefaultValues(args: Endofunction[com.pulumi.azure.eventgrid.inputs.TopicInputMappingDefaultValuesArgs.Builder]):
         com.pulumi.azure.eventgrid.TopicArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.TopicInputMappingDefaultValuesArgs.builder
       builder.inputMappingDefaultValues(args(argsBuilder).build)
@@ -319,7 +319,7 @@ object eventgrid_ext:
      * @param inputMappingFields A `inputMappingFields` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def inputMappingFields(args: Endofunction[com.pulumi.azure.eventgrid.inputs.TopicInputMappingFieldsArgs.Builder]):
+    inline def inputMappingFields(args: Endofunction[com.pulumi.azure.eventgrid.inputs.TopicInputMappingFieldsArgs.Builder]):
         com.pulumi.azure.eventgrid.TopicArgs.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.TopicInputMappingFieldsArgs.builder
       builder.inputMappingFields(args(argsBuilder).build)
@@ -329,7 +329,7 @@ object eventgrid_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.DomainIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.DomainIdentityArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.DomainIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -338,7 +338,7 @@ object eventgrid_ext:
      * @param inboundIpRules One or more `inboundIpRule` blocks as defined below.
      * @return builder
      */
-    def inboundIpRules(args: Endofunction[com.pulumi.azure.eventgrid.inputs.DomainInboundIpRuleArgs.Builder]*):
+    inline def inboundIpRules(args: Endofunction[com.pulumi.azure.eventgrid.inputs.DomainInboundIpRuleArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.DomainState.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.DomainInboundIpRuleArgs.builder
       builder.inboundIpRules(args.map(_(argsBuilder).build)*)
@@ -347,7 +347,7 @@ object eventgrid_ext:
      * @param inputMappingDefaultValues A `inputMappingDefaultValues` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def inputMappingDefaultValues(args: Endofunction[com.pulumi.azure.eventgrid.inputs.DomainInputMappingDefaultValuesArgs.Builder]):
+    inline def inputMappingDefaultValues(args: Endofunction[com.pulumi.azure.eventgrid.inputs.DomainInputMappingDefaultValuesArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.DomainInputMappingDefaultValuesArgs.builder
       builder.inputMappingDefaultValues(args(argsBuilder).build)
@@ -356,7 +356,7 @@ object eventgrid_ext:
      * @param inputMappingFields A `inputMappingFields` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def inputMappingFields(args: Endofunction[com.pulumi.azure.eventgrid.inputs.DomainInputMappingFieldsArgs.Builder]):
+    inline def inputMappingFields(args: Endofunction[com.pulumi.azure.eventgrid.inputs.DomainInputMappingFieldsArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.DomainState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.DomainInputMappingFieldsArgs.builder
       builder.inputMappingFields(args(argsBuilder).build)
@@ -366,7 +366,7 @@ object eventgrid_ext:
      * @param boolEquals Compares a value of an event using a single boolean value.
      * @return builder
      */
-    def boolEquals(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterBoolEqualArgs.Builder]*):
+    inline def boolEquals(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterBoolEqualArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterBoolEqualArgs.builder
       builder.boolEquals(args.map(_(argsBuilder).build)*)
@@ -375,7 +375,7 @@ object eventgrid_ext:
      * @param isNotNulls Evaluates if a value of an event isn&#39;t NULL or undefined.
      * @return builder
      */
-    def isNotNulls(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterIsNotNullArgs.Builder]*):
+    inline def isNotNulls(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterIsNotNullArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterIsNotNullArgs.builder
       builder.isNotNulls(args.map(_(argsBuilder).build)*)
@@ -386,7 +386,7 @@ object eventgrid_ext:
      * Each nested block consists of a key and a value(s) element.
      * @return builder
      */
-    def isNullOrUndefineds(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterIsNullOrUndefinedArgs.Builder]*):
+    inline def isNullOrUndefineds(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterIsNullOrUndefinedArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterIsNullOrUndefinedArgs.builder
       builder.isNullOrUndefineds(args.map(_(argsBuilder).build)*)
@@ -395,7 +395,7 @@ object eventgrid_ext:
      * @param numberGreaterThanOrEquals Compares a value of an event using a single floating point number.
      * @return builder
      */
-    def numberGreaterThanOrEquals(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterNumberGreaterThanOrEqualArgs.Builder]*):
+    inline def numberGreaterThanOrEquals(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterNumberGreaterThanOrEqualArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterNumberGreaterThanOrEqualArgs.builder
       builder.numberGreaterThanOrEquals(args.map(_(argsBuilder).build)*)
@@ -404,7 +404,7 @@ object eventgrid_ext:
      * @param numberGreaterThans Compares a value of an event using a single floating point number.
      * @return builder
      */
-    def numberGreaterThans(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterNumberGreaterThanArgs.Builder]*):
+    inline def numberGreaterThans(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterNumberGreaterThanArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterNumberGreaterThanArgs.builder
       builder.numberGreaterThans(args.map(_(argsBuilder).build)*)
@@ -413,7 +413,7 @@ object eventgrid_ext:
      * @param numberInRanges Compares a value of an event using multiple floating point number ranges.
      * @return builder
      */
-    def numberInRanges(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterNumberInRangeArgs.Builder]*):
+    inline def numberInRanges(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterNumberInRangeArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterNumberInRangeArgs.builder
       builder.numberInRanges(args.map(_(argsBuilder).build)*)
@@ -422,7 +422,7 @@ object eventgrid_ext:
      * @param numberIns Compares a value of an event using multiple floating point numbers.
      * @return builder
      */
-    def numberIns(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterNumberInArgs.Builder]*):
+    inline def numberIns(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterNumberInArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterNumberInArgs.builder
       builder.numberIns(args.map(_(argsBuilder).build)*)
@@ -431,7 +431,7 @@ object eventgrid_ext:
      * @param numberLessThanOrEquals Compares a value of an event using a single floating point number.
      * @return builder
      */
-    def numberLessThanOrEquals(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterNumberLessThanOrEqualArgs.Builder]*):
+    inline def numberLessThanOrEquals(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterNumberLessThanOrEqualArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterNumberLessThanOrEqualArgs.builder
       builder.numberLessThanOrEquals(args.map(_(argsBuilder).build)*)
@@ -440,7 +440,7 @@ object eventgrid_ext:
      * @param numberLessThans Compares a value of an event using a single floating point number.
      * @return builder
      */
-    def numberLessThans(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterNumberLessThanArgs.Builder]*):
+    inline def numberLessThans(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterNumberLessThanArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterNumberLessThanArgs.builder
       builder.numberLessThans(args.map(_(argsBuilder).build)*)
@@ -449,7 +449,7 @@ object eventgrid_ext:
      * @param numberNotInRanges Compares a value of an event using multiple floating point number ranges.
      * @return builder
      */
-    def numberNotInRanges(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterNumberNotInRangeArgs.Builder]*):
+    inline def numberNotInRanges(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterNumberNotInRangeArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterNumberNotInRangeArgs.builder
       builder.numberNotInRanges(args.map(_(argsBuilder).build)*)
@@ -458,7 +458,7 @@ object eventgrid_ext:
      * @param numberNotIns Compares a value of an event using multiple floating point numbers.
      * @return builder
      */
-    def numberNotIns(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterNumberNotInArgs.Builder]*):
+    inline def numberNotIns(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterNumberNotInArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterNumberNotInArgs.builder
       builder.numberNotIns(args.map(_(argsBuilder).build)*)
@@ -467,7 +467,7 @@ object eventgrid_ext:
      * @param stringBeginsWiths Compares a value of an event using multiple string values.
      * @return builder
      */
-    def stringBeginsWiths(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterStringBeginsWithArgs.Builder]*):
+    inline def stringBeginsWiths(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterStringBeginsWithArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterStringBeginsWithArgs.builder
       builder.stringBeginsWiths(args.map(_(argsBuilder).build)*)
@@ -476,7 +476,7 @@ object eventgrid_ext:
      * @param stringContains Compares a value of an event using multiple string values.
      * @return builder
      */
-    def stringContains(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterStringContainArgs.Builder]*):
+    inline def stringContains(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterStringContainArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterStringContainArgs.builder
       builder.stringContains(args.map(_(argsBuilder).build)*)
@@ -485,7 +485,7 @@ object eventgrid_ext:
      * @param stringEndsWiths Compares a value of an event using multiple string values.
      * @return builder
      */
-    def stringEndsWiths(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterStringEndsWithArgs.Builder]*):
+    inline def stringEndsWiths(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterStringEndsWithArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterStringEndsWithArgs.builder
       builder.stringEndsWiths(args.map(_(argsBuilder).build)*)
@@ -494,7 +494,7 @@ object eventgrid_ext:
      * @param stringIns Compares a value of an event using multiple string values.
      * @return builder
      */
-    def stringIns(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterStringInArgs.Builder]*):
+    inline def stringIns(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterStringInArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterStringInArgs.builder
       builder.stringIns(args.map(_(argsBuilder).build)*)
@@ -503,7 +503,7 @@ object eventgrid_ext:
      * @param stringNotBeginsWiths Compares a value of an event using multiple string values.
      * @return builder
      */
-    def stringNotBeginsWiths(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterStringNotBeginsWithArgs.Builder]*):
+    inline def stringNotBeginsWiths(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterStringNotBeginsWithArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterStringNotBeginsWithArgs.builder
       builder.stringNotBeginsWiths(args.map(_(argsBuilder).build)*)
@@ -512,7 +512,7 @@ object eventgrid_ext:
      * @param stringNotContains Compares a value of an event using multiple string values.
      * @return builder
      */
-    def stringNotContains(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterStringNotContainArgs.Builder]*):
+    inline def stringNotContains(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterStringNotContainArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterStringNotContainArgs.builder
       builder.stringNotContains(args.map(_(argsBuilder).build)*)
@@ -521,7 +521,7 @@ object eventgrid_ext:
      * @param stringNotEndsWiths Compares a value of an event using multiple string values.
      * @return builder
      */
-    def stringNotEndsWiths(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterStringNotEndsWithArgs.Builder]*):
+    inline def stringNotEndsWiths(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterStringNotEndsWithArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterStringNotEndsWithArgs.builder
       builder.stringNotEndsWiths(args.map(_(argsBuilder).build)*)
@@ -530,7 +530,7 @@ object eventgrid_ext:
      * @param stringNotIns Compares a value of an event using multiple string values.
      * @return builder
      */
-    def stringNotIns(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterStringNotInArgs.Builder]*):
+    inline def stringNotIns(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterStringNotInArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterStringNotInArgs.builder
       builder.stringNotIns(args.map(_(argsBuilder).build)*)
@@ -540,7 +540,7 @@ object eventgrid_ext:
      * @param advancedFilter A `advancedFilter` block as defined below.
      * @return builder
      */
-    def advancedFilter(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterArgs.Builder]):
+    inline def advancedFilter(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionAdvancedFilterArgs.builder
       builder.advancedFilter(args(argsBuilder).build)
@@ -549,7 +549,7 @@ object eventgrid_ext:
      * @param azureFunctionEndpoint An `azureFunctionEndpoint` block as defined below.
      * @return builder
      */
-    def azureFunctionEndpoint(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAzureFunctionEndpointArgs.Builder]):
+    inline def azureFunctionEndpoint(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionAzureFunctionEndpointArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionAzureFunctionEndpointArgs.builder
       builder.azureFunctionEndpoint(args(argsBuilder).build)
@@ -560,7 +560,7 @@ object eventgrid_ext:
      * &gt; **Note:** `storageBlobDeadLetterDestination` must be specified when a `deadLetterIdentity` is specified
      * @return builder
      */
-    def deadLetterIdentity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionDeadLetterIdentityArgs.Builder]):
+    inline def deadLetterIdentity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionDeadLetterIdentityArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionDeadLetterIdentityArgs.builder
       builder.deadLetterIdentity(args(argsBuilder).build)
@@ -569,7 +569,7 @@ object eventgrid_ext:
      * @param deliveryIdentity A `deliveryIdentity` block as defined below.
      * @return builder
      */
-    def deliveryIdentity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionDeliveryIdentityArgs.Builder]):
+    inline def deliveryIdentity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionDeliveryIdentityArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionDeliveryIdentityArgs.builder
       builder.deliveryIdentity(args(argsBuilder).build)
@@ -578,7 +578,7 @@ object eventgrid_ext:
      * @param deliveryProperties One or more `deliveryProperty` blocks as defined below.
      * @return builder
      */
-    def deliveryProperties(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionDeliveryPropertyArgs.Builder]*):
+    inline def deliveryProperties(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionDeliveryPropertyArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionState.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionDeliveryPropertyArgs.builder
       builder.deliveryProperties(args.map(_(argsBuilder).build)*)
@@ -587,7 +587,7 @@ object eventgrid_ext:
      * @param retryPolicy A `retryPolicy` block as defined below.
      * @return builder
      */
-    def retryPolicy(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionRetryPolicyArgs.Builder]):
+    inline def retryPolicy(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionRetryPolicyArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
@@ -596,7 +596,7 @@ object eventgrid_ext:
      * @param storageBlobDeadLetterDestination A `storageBlobDeadLetterDestination` block as defined below.
      * @return builder
      */
-    def storageBlobDeadLetterDestination(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionStorageBlobDeadLetterDestinationArgs.Builder]):
+    inline def storageBlobDeadLetterDestination(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionStorageBlobDeadLetterDestinationArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionStorageBlobDeadLetterDestinationArgs.builder
       builder.storageBlobDeadLetterDestination(args(argsBuilder).build)
@@ -605,7 +605,7 @@ object eventgrid_ext:
      * @param storageQueueEndpoint A `storageQueueEndpoint` block as defined below.
      * @return builder
      */
-    def storageQueueEndpoint(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionStorageQueueEndpointArgs.Builder]):
+    inline def storageQueueEndpoint(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionStorageQueueEndpointArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionStorageQueueEndpointArgs.builder
       builder.storageQueueEndpoint(args(argsBuilder).build)
@@ -614,7 +614,7 @@ object eventgrid_ext:
      * @param subjectFilter A `subjectFilter` block as defined below.
      * @return builder
      */
-    def subjectFilter(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionSubjectFilterArgs.Builder]):
+    inline def subjectFilter(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionSubjectFilterArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionSubjectFilterArgs.builder
       builder.subjectFilter(args(argsBuilder).build)
@@ -625,7 +625,7 @@ object eventgrid_ext:
      * &gt; **Note:** One of `eventhubEndpointId`, `hybridConnectionEndpointId`, `serviceBusQueueEndpointId`, `serviceBusTopicEndpointId`, `storageQueueEndpoint`, `webhookEndpoint` or `azureFunctionEndpoint` must be specified.
      * @return builder
      */
-    def webhookEndpoint(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionWebhookEndpointArgs.Builder]):
+    inline def webhookEndpoint(args: Endofunction[com.pulumi.azure.eventgrid.inputs.EventSubscriptionWebhookEndpointArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.EventSubscriptionState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.EventSubscriptionWebhookEndpointArgs.builder
       builder.webhookEndpoint(args(argsBuilder).build)
@@ -635,7 +635,7 @@ object eventgrid_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.NamespaceIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.NamespaceIdentityArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.NamespaceState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.NamespaceIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -644,7 +644,7 @@ object eventgrid_ext:
      * @param inboundIpRules One or more `inboundIpRule` blocks as defined below.
      * @return builder
      */
-    def inboundIpRules(args: Endofunction[com.pulumi.azure.eventgrid.inputs.NamespaceInboundIpRuleArgs.Builder]*):
+    inline def inboundIpRules(args: Endofunction[com.pulumi.azure.eventgrid.inputs.NamespaceInboundIpRuleArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.NamespaceState.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.NamespaceInboundIpRuleArgs.builder
       builder.inboundIpRules(args.map(_(argsBuilder).build)*)
@@ -653,7 +653,7 @@ object eventgrid_ext:
      * @param topicSpacesConfigurations A `topicSpacesConfiguration` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def topicSpacesConfigurations(args: Endofunction[com.pulumi.azure.eventgrid.inputs.NamespaceTopicSpacesConfigurationArgs.Builder]*):
+    inline def topicSpacesConfigurations(args: Endofunction[com.pulumi.azure.eventgrid.inputs.NamespaceTopicSpacesConfigurationArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.NamespaceState.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.NamespaceTopicSpacesConfigurationArgs.builder
       builder.topicSpacesConfigurations(args.map(_(argsBuilder).build)*)
@@ -663,7 +663,7 @@ object eventgrid_ext:
      * @param dynamicRoutingEnrichments One or more `dynamicRoutingEnrichment` blocks as defined below.
      * @return builder
      */
-    def dynamicRoutingEnrichments(args: Endofunction[com.pulumi.azure.eventgrid.inputs.NamespaceTopicSpacesConfigurationDynamicRoutingEnrichmentArgs.Builder]*):
+    inline def dynamicRoutingEnrichments(args: Endofunction[com.pulumi.azure.eventgrid.inputs.NamespaceTopicSpacesConfigurationDynamicRoutingEnrichmentArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.NamespaceTopicSpacesConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.NamespaceTopicSpacesConfigurationDynamicRoutingEnrichmentArgs.builder
       builder.dynamicRoutingEnrichments(args.map(_(argsBuilder).build)*)
@@ -672,7 +672,7 @@ object eventgrid_ext:
      * @param staticRoutingEnrichments One or more `staticRoutingEnrichment` blocks as defined below.
      * @return builder
      */
-    def staticRoutingEnrichments(args: Endofunction[com.pulumi.azure.eventgrid.inputs.NamespaceTopicSpacesConfigurationStaticRoutingEnrichmentArgs.Builder]*):
+    inline def staticRoutingEnrichments(args: Endofunction[com.pulumi.azure.eventgrid.inputs.NamespaceTopicSpacesConfigurationStaticRoutingEnrichmentArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.NamespaceTopicSpacesConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.NamespaceTopicSpacesConfigurationStaticRoutingEnrichmentArgs.builder
       builder.staticRoutingEnrichments(args.map(_(argsBuilder).build)*)
@@ -682,7 +682,7 @@ object eventgrid_ext:
      * @param partnerAuthorizations One or more `partnerAuthorization` blocks as defined below.
      * @return builder
      */
-    def partnerAuthorizations(args: Endofunction[com.pulumi.azure.eventgrid.inputs.PartnerConfigurationPartnerAuthorizationArgs.Builder]*):
+    inline def partnerAuthorizations(args: Endofunction[com.pulumi.azure.eventgrid.inputs.PartnerConfigurationPartnerAuthorizationArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.PartnerConfigurationState.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.PartnerConfigurationPartnerAuthorizationArgs.builder
       builder.partnerAuthorizations(args.map(_(argsBuilder).build)*)
@@ -692,7 +692,7 @@ object eventgrid_ext:
      * @param inboundIpRules One or more `inboundIpRule` blocks as defined below.
      * @return builder
      */
-    def inboundIpRules(args: Endofunction[com.pulumi.azure.eventgrid.inputs.PartnerNamespaceInboundIpRuleArgs.Builder]*):
+    inline def inboundIpRules(args: Endofunction[com.pulumi.azure.eventgrid.inputs.PartnerNamespaceInboundIpRuleArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.PartnerNamespaceState.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.PartnerNamespaceInboundIpRuleArgs.builder
       builder.inboundIpRules(args.map(_(argsBuilder).build)*)
@@ -702,7 +702,7 @@ object eventgrid_ext:
      * @param boolEquals Compares a value of an event using a single boolean value.
      * @return builder
      */
-    def boolEquals(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterBoolEqualArgs.Builder]*):
+    inline def boolEquals(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterBoolEqualArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterBoolEqualArgs.builder
       builder.boolEquals(args.map(_(argsBuilder).build)*)
@@ -711,7 +711,7 @@ object eventgrid_ext:
      * @param isNotNulls Evaluates if a value of an event isn&#39;t NULL or undefined.
      * @return builder
      */
-    def isNotNulls(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterIsNotNullArgs.Builder]*):
+    inline def isNotNulls(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterIsNotNullArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterIsNotNullArgs.builder
       builder.isNotNulls(args.map(_(argsBuilder).build)*)
@@ -722,7 +722,7 @@ object eventgrid_ext:
      * Each nested block consists of a key and a value(s) element.
      * @return builder
      */
-    def isNullOrUndefineds(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterIsNullOrUndefinedArgs.Builder]*):
+    inline def isNullOrUndefineds(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterIsNullOrUndefinedArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterIsNullOrUndefinedArgs.builder
       builder.isNullOrUndefineds(args.map(_(argsBuilder).build)*)
@@ -731,7 +731,7 @@ object eventgrid_ext:
      * @param numberGreaterThanOrEquals Compares a value of an event using a single floating point number.
      * @return builder
      */
-    def numberGreaterThanOrEquals(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterNumberGreaterThanOrEqualArgs.Builder]*):
+    inline def numberGreaterThanOrEquals(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterNumberGreaterThanOrEqualArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterNumberGreaterThanOrEqualArgs.builder
       builder.numberGreaterThanOrEquals(args.map(_(argsBuilder).build)*)
@@ -740,7 +740,7 @@ object eventgrid_ext:
      * @param numberGreaterThans Compares a value of an event using a single floating point number.
      * @return builder
      */
-    def numberGreaterThans(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterNumberGreaterThanArgs.Builder]*):
+    inline def numberGreaterThans(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterNumberGreaterThanArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterNumberGreaterThanArgs.builder
       builder.numberGreaterThans(args.map(_(argsBuilder).build)*)
@@ -749,7 +749,7 @@ object eventgrid_ext:
      * @param numberInRanges Compares a value of an event using multiple floating point number ranges.
      * @return builder
      */
-    def numberInRanges(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterNumberInRangeArgs.Builder]*):
+    inline def numberInRanges(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterNumberInRangeArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterNumberInRangeArgs.builder
       builder.numberInRanges(args.map(_(argsBuilder).build)*)
@@ -758,7 +758,7 @@ object eventgrid_ext:
      * @param numberIns Compares a value of an event using multiple floating point numbers.
      * @return builder
      */
-    def numberIns(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterNumberInArgs.Builder]*):
+    inline def numberIns(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterNumberInArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterNumberInArgs.builder
       builder.numberIns(args.map(_(argsBuilder).build)*)
@@ -767,7 +767,7 @@ object eventgrid_ext:
      * @param numberLessThanOrEquals Compares a value of an event using a single floating point number.
      * @return builder
      */
-    def numberLessThanOrEquals(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterNumberLessThanOrEqualArgs.Builder]*):
+    inline def numberLessThanOrEquals(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterNumberLessThanOrEqualArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterNumberLessThanOrEqualArgs.builder
       builder.numberLessThanOrEquals(args.map(_(argsBuilder).build)*)
@@ -776,7 +776,7 @@ object eventgrid_ext:
      * @param numberLessThans Compares a value of an event using a single floating point number.
      * @return builder
      */
-    def numberLessThans(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterNumberLessThanArgs.Builder]*):
+    inline def numberLessThans(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterNumberLessThanArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterNumberLessThanArgs.builder
       builder.numberLessThans(args.map(_(argsBuilder).build)*)
@@ -785,7 +785,7 @@ object eventgrid_ext:
      * @param numberNotInRanges Compares a value of an event using multiple floating point number ranges.
      * @return builder
      */
-    def numberNotInRanges(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterNumberNotInRangeArgs.Builder]*):
+    inline def numberNotInRanges(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterNumberNotInRangeArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterNumberNotInRangeArgs.builder
       builder.numberNotInRanges(args.map(_(argsBuilder).build)*)
@@ -794,7 +794,7 @@ object eventgrid_ext:
      * @param numberNotIns Compares a value of an event using multiple floating point numbers.
      * @return builder
      */
-    def numberNotIns(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterNumberNotInArgs.Builder]*):
+    inline def numberNotIns(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterNumberNotInArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterNumberNotInArgs.builder
       builder.numberNotIns(args.map(_(argsBuilder).build)*)
@@ -803,7 +803,7 @@ object eventgrid_ext:
      * @param stringBeginsWiths Compares a value of an event using multiple string values.
      * @return builder
      */
-    def stringBeginsWiths(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterStringBeginsWithArgs.Builder]*):
+    inline def stringBeginsWiths(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterStringBeginsWithArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterStringBeginsWithArgs.builder
       builder.stringBeginsWiths(args.map(_(argsBuilder).build)*)
@@ -812,7 +812,7 @@ object eventgrid_ext:
      * @param stringContains Compares a value of an event using multiple string values.
      * @return builder
      */
-    def stringContains(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterStringContainArgs.Builder]*):
+    inline def stringContains(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterStringContainArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterStringContainArgs.builder
       builder.stringContains(args.map(_(argsBuilder).build)*)
@@ -821,7 +821,7 @@ object eventgrid_ext:
      * @param stringEndsWiths Compares a value of an event using multiple string values.
      * @return builder
      */
-    def stringEndsWiths(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterStringEndsWithArgs.Builder]*):
+    inline def stringEndsWiths(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterStringEndsWithArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterStringEndsWithArgs.builder
       builder.stringEndsWiths(args.map(_(argsBuilder).build)*)
@@ -830,7 +830,7 @@ object eventgrid_ext:
      * @param stringIns Compares a value of an event using multiple string values.
      * @return builder
      */
-    def stringIns(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterStringInArgs.Builder]*):
+    inline def stringIns(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterStringInArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterStringInArgs.builder
       builder.stringIns(args.map(_(argsBuilder).build)*)
@@ -839,7 +839,7 @@ object eventgrid_ext:
      * @param stringNotBeginsWiths Compares a value of an event using multiple string values.
      * @return builder
      */
-    def stringNotBeginsWiths(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterStringNotBeginsWithArgs.Builder]*):
+    inline def stringNotBeginsWiths(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterStringNotBeginsWithArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterStringNotBeginsWithArgs.builder
       builder.stringNotBeginsWiths(args.map(_(argsBuilder).build)*)
@@ -848,7 +848,7 @@ object eventgrid_ext:
      * @param stringNotContains Compares a value of an event using multiple string values.
      * @return builder
      */
-    def stringNotContains(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterStringNotContainArgs.Builder]*):
+    inline def stringNotContains(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterStringNotContainArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterStringNotContainArgs.builder
       builder.stringNotContains(args.map(_(argsBuilder).build)*)
@@ -857,7 +857,7 @@ object eventgrid_ext:
      * @param stringNotEndsWiths Compares a value of an event using multiple string values.
      * @return builder
      */
-    def stringNotEndsWiths(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterStringNotEndsWithArgs.Builder]*):
+    inline def stringNotEndsWiths(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterStringNotEndsWithArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterStringNotEndsWithArgs.builder
       builder.stringNotEndsWiths(args.map(_(argsBuilder).build)*)
@@ -866,7 +866,7 @@ object eventgrid_ext:
      * @param stringNotIns Compares a value of an event using multiple string values.
      * @return builder
      */
-    def stringNotIns(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterStringNotInArgs.Builder]*):
+    inline def stringNotIns(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterStringNotInArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterArgs.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterStringNotInArgs.builder
       builder.stringNotIns(args.map(_(argsBuilder).build)*)
@@ -876,7 +876,7 @@ object eventgrid_ext:
      * @param advancedFilter A `advancedFilter` block as defined below.
      * @return builder
      */
-    def advancedFilter(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterArgs.Builder]):
+    inline def advancedFilter(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAdvancedFilterArgs.builder
       builder.advancedFilter(args(argsBuilder).build)
@@ -885,7 +885,7 @@ object eventgrid_ext:
      * @param azureFunctionEndpoint An `azureFunctionEndpoint` block as defined below.
      * @return builder
      */
-    def azureFunctionEndpoint(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAzureFunctionEndpointArgs.Builder]):
+    inline def azureFunctionEndpoint(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAzureFunctionEndpointArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionAzureFunctionEndpointArgs.builder
       builder.azureFunctionEndpoint(args(argsBuilder).build)
@@ -896,7 +896,7 @@ object eventgrid_ext:
      * &gt; **Note:** `storageBlobDeadLetterDestination` must be specified when a `deadLetterIdentity` is specified
      * @return builder
      */
-    def deadLetterIdentity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionDeadLetterIdentityArgs.Builder]):
+    inline def deadLetterIdentity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionDeadLetterIdentityArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionDeadLetterIdentityArgs.builder
       builder.deadLetterIdentity(args(argsBuilder).build)
@@ -905,7 +905,7 @@ object eventgrid_ext:
      * @param deliveryIdentity A `deliveryIdentity` block as defined below.
      * @return builder
      */
-    def deliveryIdentity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionDeliveryIdentityArgs.Builder]):
+    inline def deliveryIdentity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionDeliveryIdentityArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionDeliveryIdentityArgs.builder
       builder.deliveryIdentity(args(argsBuilder).build)
@@ -914,7 +914,7 @@ object eventgrid_ext:
      * @param deliveryProperties One or more `deliveryProperty` blocks as defined below.
      * @return builder
      */
-    def deliveryProperties(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionDeliveryPropertyArgs.Builder]*):
+    inline def deliveryProperties(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionDeliveryPropertyArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionState.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionDeliveryPropertyArgs.builder
       builder.deliveryProperties(args.map(_(argsBuilder).build)*)
@@ -923,7 +923,7 @@ object eventgrid_ext:
      * @param retryPolicy A `retryPolicy` block as defined below.
      * @return builder
      */
-    def retryPolicy(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionRetryPolicyArgs.Builder]):
+    inline def retryPolicy(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionRetryPolicyArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
@@ -932,7 +932,7 @@ object eventgrid_ext:
      * @param storageBlobDeadLetterDestination A `storageBlobDeadLetterDestination` block as defined below.
      * @return builder
      */
-    def storageBlobDeadLetterDestination(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionStorageBlobDeadLetterDestinationArgs.Builder]):
+    inline def storageBlobDeadLetterDestination(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionStorageBlobDeadLetterDestinationArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionStorageBlobDeadLetterDestinationArgs.builder
       builder.storageBlobDeadLetterDestination(args(argsBuilder).build)
@@ -941,7 +941,7 @@ object eventgrid_ext:
      * @param storageQueueEndpoint A `storageQueueEndpoint` block as defined below.
      * @return builder
      */
-    def storageQueueEndpoint(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionStorageQueueEndpointArgs.Builder]):
+    inline def storageQueueEndpoint(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionStorageQueueEndpointArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionStorageQueueEndpointArgs.builder
       builder.storageQueueEndpoint(args(argsBuilder).build)
@@ -950,7 +950,7 @@ object eventgrid_ext:
      * @param subjectFilter A `subjectFilter` block as defined below.
      * @return builder
      */
-    def subjectFilter(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionSubjectFilterArgs.Builder]):
+    inline def subjectFilter(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionSubjectFilterArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionSubjectFilterArgs.builder
       builder.subjectFilter(args(argsBuilder).build)
@@ -961,7 +961,7 @@ object eventgrid_ext:
      * &gt; **Note:** One of `azureFunctionEndpoint`, `eventhubEndpointId`, `hybridConnectionEndpoint`, `hybridConnectionEndpointId`, `serviceBusQueueEndpointId`, `serviceBusTopicEndpointId`, `storageQueueEndpoint` or `webhookEndpoint` must be specified.
      * @return builder
      */
-    def webhookEndpoint(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionWebhookEndpointArgs.Builder]):
+    inline def webhookEndpoint(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionWebhookEndpointArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicEventSubscriptionWebhookEndpointArgs.builder
       builder.webhookEndpoint(args(argsBuilder).build)
@@ -971,7 +971,7 @@ object eventgrid_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.SystemTopicIdentityArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.SystemTopicState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.SystemTopicIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -981,7 +981,7 @@ object eventgrid_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.TopicIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.eventgrid.inputs.TopicIdentityArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.TopicState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.TopicIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -990,7 +990,7 @@ object eventgrid_ext:
      * @param inboundIpRules One or more `inboundIpRule` blocks as defined below.
      * @return builder
      */
-    def inboundIpRules(args: Endofunction[com.pulumi.azure.eventgrid.inputs.TopicInboundIpRuleArgs.Builder]*):
+    inline def inboundIpRules(args: Endofunction[com.pulumi.azure.eventgrid.inputs.TopicInboundIpRuleArgs.Builder]*):
         com.pulumi.azure.eventgrid.inputs.TopicState.Builder =
       def argsBuilder = com.pulumi.azure.eventgrid.inputs.TopicInboundIpRuleArgs.builder
       builder.inboundIpRules(args.map(_(argsBuilder).build)*)
@@ -999,7 +999,7 @@ object eventgrid_ext:
      * @param inputMappingDefaultValues A `inputMappingDefaultValues` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def inputMappingDefaultValues(args: Endofunction[com.pulumi.azure.eventgrid.inputs.TopicInputMappingDefaultValuesArgs.Builder]):
+    inline def inputMappingDefaultValues(args: Endofunction[com.pulumi.azure.eventgrid.inputs.TopicInputMappingDefaultValuesArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.TopicState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.TopicInputMappingDefaultValuesArgs.builder
       builder.inputMappingDefaultValues(args(argsBuilder).build)
@@ -1008,7 +1008,7 @@ object eventgrid_ext:
      * @param inputMappingFields A `inputMappingFields` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def inputMappingFields(args: Endofunction[com.pulumi.azure.eventgrid.inputs.TopicInputMappingFieldsArgs.Builder]):
+    inline def inputMappingFields(args: Endofunction[com.pulumi.azure.eventgrid.inputs.TopicInputMappingFieldsArgs.Builder]):
         com.pulumi.azure.eventgrid.inputs.TopicState.Builder =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.TopicInputMappingFieldsArgs.builder
       builder.inputMappingFields(args(argsBuilder).build)

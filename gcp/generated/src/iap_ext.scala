@@ -8,7 +8,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.AgentRegistryAgentIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -19,7 +19,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.AgentRegistryAgentIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -30,7 +30,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.AgentRegistryEndpointIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -41,7 +41,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.AgentRegistryEndpointIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -52,7 +52,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.AgentRegistryIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -63,7 +63,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.AgentRegistryIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -74,7 +74,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.AgentRegistryMcpServerIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -85,7 +85,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.AgentRegistryMcpServerIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -96,7 +96,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AppEngineServiceIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AppEngineServiceIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.AppEngineServiceIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.AppEngineServiceIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -107,7 +107,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AppEngineServiceIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AppEngineServiceIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.AppEngineServiceIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.AppEngineServiceIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -118,7 +118,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AppEngineVersionIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AppEngineVersionIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.AppEngineVersionIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.AppEngineVersionIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -129,7 +129,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AppEngineVersionIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AppEngineVersionIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.AppEngineVersionIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.AppEngineVersionIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -140,7 +140,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.LocationWebIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.LocationWebIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.LocationWebIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.LocationWebIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -151,7 +151,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.LocationWebIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.LocationWebIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.LocationWebIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.LocationWebIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -162,7 +162,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accessSettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsAccessSettingsArgs.Builder]):
+    inline def accessSettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsAccessSettingsArgs.Builder]):
         com.pulumi.gcp.iap.SettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.SettingsAccessSettingsArgs.builder
       builder.accessSettings(args(argsBuilder).build)
@@ -172,7 +172,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def applicationSettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsApplicationSettingsArgs.Builder]):
+    inline def applicationSettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsApplicationSettingsArgs.Builder]):
         com.pulumi.gcp.iap.SettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.SettingsApplicationSettingsArgs.builder
       builder.applicationSettings(args(argsBuilder).build)
@@ -183,7 +183,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.TunnelDestGroupIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.TunnelDestGroupIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.TunnelDestGroupIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.TunnelDestGroupIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -194,7 +194,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.TunnelDestGroupIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.TunnelDestGroupIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.TunnelDestGroupIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.TunnelDestGroupIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -205,7 +205,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.TunnelIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.TunnelIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.TunnelIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.TunnelIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -216,7 +216,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.TunnelIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.TunnelIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.TunnelIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.TunnelIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -227,7 +227,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.TunnelInstanceIAMBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.TunnelInstanceIAMBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.TunnelInstanceIAMBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.TunnelInstanceIAMBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -238,7 +238,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.TunnelInstanceIAMMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.TunnelInstanceIAMMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.TunnelInstanceIAMMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.TunnelInstanceIAMMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -249,7 +249,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebBackendServiceIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebBackendServiceIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.WebBackendServiceIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebBackendServiceIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -260,7 +260,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebBackendServiceIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebBackendServiceIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.WebBackendServiceIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebBackendServiceIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -271,7 +271,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebCloudRunServiceIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebCloudRunServiceIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.WebCloudRunServiceIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebCloudRunServiceIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -282,7 +282,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebCloudRunServiceIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebCloudRunServiceIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.WebCloudRunServiceIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebCloudRunServiceIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -293,7 +293,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebForwardingRuleServiceIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebForwardingRuleServiceIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.WebForwardingRuleServiceIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebForwardingRuleServiceIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -304,7 +304,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebForwardingRuleServiceIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebForwardingRuleServiceIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.WebForwardingRuleServiceIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebForwardingRuleServiceIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -315,7 +315,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.WebIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -326,7 +326,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.WebIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -337,7 +337,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebRegionBackendServiceIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebRegionBackendServiceIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.WebRegionBackendServiceIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebRegionBackendServiceIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -348,7 +348,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebRegionBackendServiceIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebRegionBackendServiceIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.WebRegionBackendServiceIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebRegionBackendServiceIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -359,7 +359,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebRegionForwardingRuleServiceIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebRegionForwardingRuleServiceIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.WebRegionForwardingRuleServiceIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebRegionForwardingRuleServiceIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -370,7 +370,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebRegionForwardingRuleServiceIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebRegionForwardingRuleServiceIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.WebRegionForwardingRuleServiceIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebRegionForwardingRuleServiceIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -381,7 +381,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebTypeAppEngingIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebTypeAppEngingIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.WebTypeAppEngingIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebTypeAppEngingIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -392,7 +392,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebTypeAppEngingIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebTypeAppEngingIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.WebTypeAppEngingIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebTypeAppEngingIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -403,7 +403,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebTypeComputeIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebTypeComputeIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.WebTypeComputeIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebTypeComputeIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -414,7 +414,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebTypeComputeIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebTypeComputeIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.WebTypeComputeIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebTypeComputeIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -425,7 +425,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -436,7 +436,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryAgentIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -447,7 +447,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -458,7 +458,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryEndpointIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -469,7 +469,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.AgentRegistryIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -480,7 +480,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.AgentRegistryIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -491,7 +491,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -502,7 +502,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.AgentRegistryMcpServerIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -513,7 +513,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AppEngineServiceIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AppEngineServiceIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.AppEngineServiceIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.AppEngineServiceIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -524,7 +524,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AppEngineServiceIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AppEngineServiceIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.AppEngineServiceIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.AppEngineServiceIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -535,7 +535,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AppEngineVersionIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AppEngineVersionIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.AppEngineVersionIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.AppEngineVersionIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -546,7 +546,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AppEngineVersionIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.AppEngineVersionIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.AppEngineVersionIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.AppEngineVersionIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -557,7 +557,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.LocationWebIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.LocationWebIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.LocationWebIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.LocationWebIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -568,7 +568,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.LocationWebIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.LocationWebIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.LocationWebIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.LocationWebIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -579,7 +579,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allowedDomainsSettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsAccessSettingsAllowedDomainsSettingsArgs.Builder]):
+    inline def allowedDomainsSettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsAccessSettingsAllowedDomainsSettingsArgs.Builder]):
         com.pulumi.gcp.iap.inputs.SettingsAccessSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.SettingsAccessSettingsAllowedDomainsSettingsArgs.builder
       builder.allowedDomainsSettings(args(argsBuilder).build)
@@ -589,7 +589,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def corsSettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsAccessSettingsCorsSettingsArgs.Builder]):
+    inline def corsSettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsAccessSettingsCorsSettingsArgs.Builder]):
         com.pulumi.gcp.iap.inputs.SettingsAccessSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.SettingsAccessSettingsCorsSettingsArgs.builder
       builder.corsSettings(args(argsBuilder).build)
@@ -600,7 +600,7 @@ object iap_ext:
      *   Structure is documented below.
      * @return builder
      */
-    def gcipSettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsAccessSettingsGcipSettingsArgs.Builder]):
+    inline def gcipSettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsAccessSettingsGcipSettingsArgs.Builder]):
         com.pulumi.gcp.iap.inputs.SettingsAccessSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.SettingsAccessSettingsGcipSettingsArgs.builder
       builder.gcipSettings(args(argsBuilder).build)
@@ -610,7 +610,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauthSettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsAccessSettingsOauthSettingsArgs.Builder]):
+    inline def oauthSettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsAccessSettingsOauthSettingsArgs.Builder]):
         com.pulumi.gcp.iap.inputs.SettingsAccessSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.SettingsAccessSettingsOauthSettingsArgs.builder
       builder.oauthSettings(args(argsBuilder).build)
@@ -620,7 +620,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def reauthSettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsAccessSettingsReauthSettingsArgs.Builder]):
+    inline def reauthSettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsAccessSettingsReauthSettingsArgs.Builder]):
         com.pulumi.gcp.iap.inputs.SettingsAccessSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.SettingsAccessSettingsReauthSettingsArgs.builder
       builder.reauthSettings(args(argsBuilder).build)
@@ -631,7 +631,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def workforceIdentitySettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsAccessSettingsWorkforceIdentitySettingsArgs.Builder]):
+    inline def workforceIdentitySettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsAccessSettingsWorkforceIdentitySettingsArgs.Builder]):
         com.pulumi.gcp.iap.inputs.SettingsAccessSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.SettingsAccessSettingsWorkforceIdentitySettingsArgs.builder
       builder.workforceIdentitySettings(args(argsBuilder).build)
@@ -645,7 +645,7 @@ object iap_ext:
      * &lt;a name=&#34;nestedAccessSettingsWorkforceIdentitySettingsOauth2&#34;&gt;&lt;/a&gt;The `oauth2` block supports:
      * @return builder
      */
-    def oauth2(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsAccessSettingsWorkforceIdentitySettingsOauth2Args.Builder]):
+    inline def oauth2(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsAccessSettingsWorkforceIdentitySettingsOauth2Args.Builder]):
         com.pulumi.gcp.iap.inputs.SettingsAccessSettingsWorkforceIdentitySettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.SettingsAccessSettingsWorkforceIdentitySettingsOauth2Args.builder
       builder.oauth2(args(argsBuilder).build)
@@ -658,7 +658,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accessDeniedPageSettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsApplicationSettingsAccessDeniedPageSettingsArgs.Builder]):
+    inline def accessDeniedPageSettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsApplicationSettingsAccessDeniedPageSettingsArgs.Builder]):
         com.pulumi.gcp.iap.inputs.SettingsApplicationSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.SettingsApplicationSettingsAccessDeniedPageSettingsArgs.builder
       builder.accessDeniedPageSettings(args(argsBuilder).build)
@@ -668,7 +668,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attributePropagationSettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsApplicationSettingsAttributePropagationSettingsArgs.Builder]):
+    inline def attributePropagationSettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsApplicationSettingsAttributePropagationSettingsArgs.Builder]):
         com.pulumi.gcp.iap.inputs.SettingsApplicationSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.SettingsApplicationSettingsAttributePropagationSettingsArgs.builder
       builder.attributePropagationSettings(args(argsBuilder).build)
@@ -678,7 +678,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def csmSettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsApplicationSettingsCsmSettingsArgs.Builder]):
+    inline def csmSettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsApplicationSettingsCsmSettingsArgs.Builder]):
         com.pulumi.gcp.iap.inputs.SettingsApplicationSettingsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.SettingsApplicationSettingsCsmSettingsArgs.builder
       builder.csmSettings(args(argsBuilder).build)
@@ -689,7 +689,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accessSettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsAccessSettingsArgs.Builder]):
+    inline def accessSettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsAccessSettingsArgs.Builder]):
         com.pulumi.gcp.iap.inputs.SettingsState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.SettingsAccessSettingsArgs.builder
       builder.accessSettings(args(argsBuilder).build)
@@ -699,7 +699,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def applicationSettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsApplicationSettingsArgs.Builder]):
+    inline def applicationSettings(args: Endofunction[com.pulumi.gcp.iap.inputs.SettingsApplicationSettingsArgs.Builder]):
         com.pulumi.gcp.iap.inputs.SettingsState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.SettingsApplicationSettingsArgs.builder
       builder.applicationSettings(args(argsBuilder).build)
@@ -710,7 +710,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.TunnelDestGroupIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.TunnelDestGroupIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.TunnelDestGroupIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.TunnelDestGroupIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -721,7 +721,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.TunnelDestGroupIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.TunnelDestGroupIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.TunnelDestGroupIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.TunnelDestGroupIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -732,7 +732,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.TunnelIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.TunnelIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.TunnelIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.TunnelIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -743,7 +743,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.TunnelIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.TunnelIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.TunnelIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.TunnelIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -754,7 +754,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.TunnelInstanceIAMBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.TunnelInstanceIAMBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.TunnelInstanceIAMBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.TunnelInstanceIAMBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -765,7 +765,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.TunnelInstanceIAMMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.TunnelInstanceIAMMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.TunnelInstanceIAMMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.TunnelInstanceIAMMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -776,7 +776,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebBackendServiceIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebBackendServiceIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.WebBackendServiceIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebBackendServiceIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -787,7 +787,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebBackendServiceIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebBackendServiceIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.WebBackendServiceIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebBackendServiceIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -798,7 +798,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebCloudRunServiceIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebCloudRunServiceIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.WebCloudRunServiceIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebCloudRunServiceIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -809,7 +809,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebCloudRunServiceIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebCloudRunServiceIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.WebCloudRunServiceIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebCloudRunServiceIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -820,7 +820,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebForwardingRuleServiceIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebForwardingRuleServiceIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.WebForwardingRuleServiceIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebForwardingRuleServiceIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -831,7 +831,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebForwardingRuleServiceIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebForwardingRuleServiceIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.WebForwardingRuleServiceIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebForwardingRuleServiceIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -842,7 +842,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.WebIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -853,7 +853,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.WebIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -864,7 +864,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebRegionBackendServiceIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebRegionBackendServiceIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.WebRegionBackendServiceIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebRegionBackendServiceIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -875,7 +875,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebRegionBackendServiceIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebRegionBackendServiceIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.WebRegionBackendServiceIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebRegionBackendServiceIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -886,7 +886,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebRegionForwardingRuleServiceIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebRegionForwardingRuleServiceIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.WebRegionForwardingRuleServiceIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebRegionForwardingRuleServiceIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -897,7 +897,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebRegionForwardingRuleServiceIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebRegionForwardingRuleServiceIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.WebRegionForwardingRuleServiceIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebRegionForwardingRuleServiceIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -908,7 +908,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebTypeAppEngingIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebTypeAppEngingIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.WebTypeAppEngingIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebTypeAppEngingIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -919,7 +919,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebTypeAppEngingIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebTypeAppEngingIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.WebTypeAppEngingIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebTypeAppEngingIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -930,7 +930,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebTypeComputeIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebTypeComputeIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.WebTypeComputeIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebTypeComputeIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -941,7 +941,7 @@ object iap_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebTypeComputeIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.iap.inputs.WebTypeComputeIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.iap.inputs.WebTypeComputeIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.iap.inputs.WebTypeComputeIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)

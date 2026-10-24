@@ -11,7 +11,7 @@ object hsm:
    * 
    * &gt; **Note:** If the quota is not enough in some region, please submit the quota request to service team.
    */
-  def Module(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Module(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.hsm.ModuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.hsm.ModuleArgs.builder
     conf.logicalName2physicalName(name) match

@@ -13,7 +13,7 @@ object dataflow:
    * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
    * See Provider Versions for more details on beta resources.
    */
-  def FlexTemplateJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FlexTemplateJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataflow.FlexTemplateJobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.dataflow.FlexTemplateJobArgs.builder
     conf.logicalName2physicalName(name) match
@@ -28,7 +28,7 @@ object dataflow:
    * the official documentation for
    * [Beam](https://beam.apache.org) and [Dataflow](https://cloud.google.com/dataflow/).
    */
-  def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataflow.JobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.dataflow.JobArgs.builder
     conf.logicalName2physicalName(name) match
@@ -47,7 +47,7 @@ object dataflow:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dataflow)
    */
-  def Pipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Pipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.dataflow.PipelineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.dataflow.PipelineArgs.builder
     conf.logicalName2physicalName(name) match

@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object eventhub:
   /** Manages a Event Hubs authorization Rule within an Event Hub. */
-  def AuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventhub.AuthorizationRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.AuthorizationRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18,7 +18,7 @@ object eventhub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EventHub Cluster */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventhub.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.ClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -36,7 +36,7 @@ object eventhub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Event Hubs Consumer Group as a nested resource within an Event Hub. */
-  def ConsumerGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConsumerGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventhub.ConsumerGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.ConsumerGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -47,7 +47,7 @@ object eventhub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EventGrid Domain */
-  @deprecated("azure.eventhub.Domain has been deprecated in favor of azure.eventgrid.Domain") def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("azure.eventhub.Domain has been deprecated in favor of azure.eventgrid.Domain") inline def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventhub.DomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.DomainArgs.builder
     conf.logicalName2physicalName(name) match
@@ -69,7 +69,7 @@ object eventhub:
    * 
    * &gt; **Note:** at this time EventGrid Topics are only available in a limited number of regions.
    */
-  @deprecated("azure.eventhub.EventGridTopic has been deprecated in favor of azure.eventgrid.Topic") def EventGridTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("azure.eventhub.EventGridTopic has been deprecated in favor of azure.eventgrid.Topic") inline def EventGridTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventhub.EventGridTopicArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.EventGridTopicArgs.builder
     conf.logicalName2physicalName(name) match
@@ -87,7 +87,7 @@ object eventhub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Event Hubs as a nested resource within a Event Hubs namespace. */
-  def EventHub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EventHub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventhub.EventHubArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.EventHubArgs.builder
     conf.logicalName2physicalName(name) match
@@ -98,7 +98,7 @@ object eventhub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Event Hubs authorization Rule within an Event Hub. */
-  @deprecated("azure.eventhub.EventHubAuthorizationRule has been deprecated in favor of azure.eventhub.AuthorizationRule") def EventHubAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("azure.eventhub.EventHubAuthorizationRule has been deprecated in favor of azure.eventhub.AuthorizationRule") inline def EventHubAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventhub.EventHubAuthorizationRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.EventHubAuthorizationRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -109,7 +109,7 @@ object eventhub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Event Hubs Consumer Group as a nested resource within an Event Hub. */
-  @deprecated("azure.eventhub.EventHubConsumerGroup has been deprecated in favor of azure.eventhub.ConsumerGroup") def EventHubConsumerGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("azure.eventhub.EventHubConsumerGroup has been deprecated in favor of azure.eventhub.ConsumerGroup") inline def EventHubConsumerGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventhub.EventHubConsumerGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.EventHubConsumerGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -120,7 +120,7 @@ object eventhub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EventHub Namespace. */
-  def EventHubNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EventHubNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventhub.EventHubNamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.EventHubNamespaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -138,7 +138,7 @@ object eventhub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Authorization Rule for an Event Hub Namespace. */
-  def EventHubNamespaceAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EventHubNamespaceAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventhub.EventHubNamespaceAuthorizationRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.EventHubNamespaceAuthorizationRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -149,7 +149,7 @@ object eventhub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EventGrid Event Subscription */
-  @deprecated("azure.eventhub.EventSubscription has been deprecated in favor of azure.eventgrid.EventSubscription") def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("azure.eventhub.EventSubscription has been deprecated in favor of azure.eventgrid.EventSubscription") inline def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventhub.EventSubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.EventSubscriptionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -305,7 +305,7 @@ object eventhub:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an Disaster Recovery Config for an Event Hub Namespace. */
-  def EventhubNamespaceDisasterRecoveryConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EventhubNamespaceDisasterRecoveryConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventhub.EventhubNamespaceDisasterRecoveryConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.EventhubNamespaceDisasterRecoveryConfigArgs.builder
     conf.logicalName2physicalName(name) match
@@ -316,7 +316,7 @@ object eventhub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a ServiceBus Namespace. */
-  @deprecated("azure.eventhub.Namespace has been deprecated in favor of azure.servicebus.Namespace") def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("azure.eventhub.Namespace has been deprecated in favor of azure.servicebus.Namespace") inline def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventhub.NamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.NamespaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -334,7 +334,7 @@ object eventhub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a ServiceBus Namespace authorization Rule within a ServiceBus. */
-  @deprecated("azure.eventhub.NamespaceAuthorizationRule has been deprecated in favor of azure.servicebus.NamespaceAuthorizationRule") def NamespaceAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("azure.eventhub.NamespaceAuthorizationRule has been deprecated in favor of azure.servicebus.NamespaceAuthorizationRule") inline def NamespaceAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventhub.NamespaceAuthorizationRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.NamespaceAuthorizationRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -349,14 +349,14 @@ object eventhub:
    * 
    * &gt; **Note:** In 2.x versions of the Azure Provider during deletion this resource will **delete and recreate the parent EventHub Namespace which may involve data loss** as it&#39;s not possible to remove the Customer Managed Key from the EventHub Namespace once it&#39;s been added. Version 3.0 of the Azure Provider will change this so that the Delete operation is a noop, requiring the parent EventHub Namespace is deleted/recreated to remove the Customer Managed Key.
    */
-  def NamespaceCustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NamespaceCustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventhub.NamespaceCustomerManagedKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.eventhub.NamespaceCustomerManagedKeyArgs.builder
     com.pulumi.azure.eventhub.NamespaceCustomerManagedKey(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def NamespaceSchemaGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NamespaceSchemaGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventhub.NamespaceSchemaGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.NamespaceSchemaGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -367,7 +367,7 @@ object eventhub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a ServiceBus Queue. */
-  @deprecated("azure.eventhub.Queue has been deprecated in favor of azure.servicebus.Queue") def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("azure.eventhub.Queue has been deprecated in favor of azure.servicebus.Queue") inline def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventhub.QueueArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.QueueArgs.builder
     conf.logicalName2physicalName(name) match
@@ -378,7 +378,7 @@ object eventhub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Authorization Rule for a ServiceBus Queue. */
-  @deprecated("azure.eventhub.QueueAuthorizationRule has been deprecated in favor of azure.servicebus.QueueAuthorizationRule") def QueueAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("azure.eventhub.QueueAuthorizationRule has been deprecated in favor of azure.servicebus.QueueAuthorizationRule") inline def QueueAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventhub.QueueAuthorizationRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.QueueAuthorizationRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -389,7 +389,7 @@ object eventhub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a ServiceBus Subscription. */
-  @deprecated("azure.eventhub.Subscription has been deprecated in favor of azure.servicebus.Subscription") def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("azure.eventhub.Subscription has been deprecated in favor of azure.servicebus.Subscription") inline def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventhub.SubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.SubscriptionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -400,7 +400,7 @@ object eventhub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a ServiceBus Subscription Rule. */
-  @deprecated("azure.eventhub.SubscriptionRule has been deprecated in favor of azure.servicebus.SubscriptionRule") def SubscriptionRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("azure.eventhub.SubscriptionRule has been deprecated in favor of azure.servicebus.SubscriptionRule") inline def SubscriptionRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventhub.SubscriptionRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.SubscriptionRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -415,7 +415,7 @@ object eventhub:
    * 
    * &gt; **Note:** Topics can only be created in Namespaces with an SKU of `Standard` or higher.
    */
-  @deprecated("azure.eventhub.Topic has been deprecated in favor of azure.servicebus.Topic") def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("azure.eventhub.Topic has been deprecated in favor of azure.servicebus.Topic") inline def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventhub.TopicArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.TopicArgs.builder
     conf.logicalName2physicalName(name) match
@@ -426,7 +426,7 @@ object eventhub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a ServiceBus Topic authorization Rule within a ServiceBus Topic. */
-  @deprecated("azure.eventhub.TopicAuthorizationRule has been deprecated in favor of azure.servicebus.TopicAuthorizationRule") def TopicAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("azure.eventhub.TopicAuthorizationRule has been deprecated in favor of azure.servicebus.TopicAuthorizationRule") inline def TopicAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventhub.TopicAuthorizationRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventhub.TopicAuthorizationRuleArgs.builder
     conf.logicalName2physicalName(name) match

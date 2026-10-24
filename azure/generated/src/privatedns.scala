@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object privatedns:
   /** Enables you to manage DNS AAAA Records within Azure Private DNS. */
-  def AAAARecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AAAARecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.privatedns.AAAARecordArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.privatedns.AAAARecordArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25,7 +25,7 @@ object privatedns:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enables you to manage DNS A Records within Azure Private DNS. */
-  def ARecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ARecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.privatedns.ARecordArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.privatedns.ARecordArgs.builder
     conf.logicalName2physicalName(name) match
@@ -43,7 +43,7 @@ object privatedns:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enables you to manage DNS CNAME Records within Azure Private DNS. */
-  def CnameRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CnameRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.privatedns.CnameRecordArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.privatedns.CnameRecordArgs.builder
     conf.logicalName2physicalName(name) match
@@ -65,7 +65,7 @@ object privatedns:
    * 
    * &gt; **Note:** Private Link is now in [GA](https://docs.microsoft.com/en-gb/azure/private-link/).
    */
-  def LinkService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LinkService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.privatedns.LinkServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.privatedns.LinkServiceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -83,7 +83,7 @@ object privatedns:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enables you to manage DNS MX Records within Azure Private DNS. */
-  def MxRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MxRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.privatedns.MxRecordArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.privatedns.MxRecordArgs.builder
     conf.logicalName2physicalName(name) match
@@ -101,7 +101,7 @@ object privatedns:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enables you to manage DNS PTR Records within Azure Private DNS. */
-  def PTRRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PTRRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.privatedns.PTRRecordArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.privatedns.PTRRecordArgs.builder
     conf.logicalName2physicalName(name) match
@@ -440,7 +440,7 @@ object privatedns:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Private DNS Resolver. */
-  def Resolver(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Resolver(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.privatedns.ResolverArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.privatedns.ResolverArgs.builder
     conf.logicalName2physicalName(name) match
@@ -458,7 +458,7 @@ object privatedns:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Private DNS Resolver Dns Forwarding Ruleset. */
-  def ResolverDnsForwardingRuleset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResolverDnsForwardingRuleset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.privatedns.ResolverDnsForwardingRulesetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.privatedns.ResolverDnsForwardingRulesetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -476,7 +476,7 @@ object privatedns:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Private DNS Resolver Forwarding Rule. */
-  def ResolverForwardingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResolverForwardingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.privatedns.ResolverForwardingRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.privatedns.ResolverForwardingRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -487,7 +487,7 @@ object privatedns:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Private DNS Resolver Inbound Endpoint. */
-  def ResolverInboundEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResolverInboundEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.privatedns.ResolverInboundEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.privatedns.ResolverInboundEndpointArgs.builder
     conf.logicalName2physicalName(name) match
@@ -505,7 +505,7 @@ object privatedns:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Private DNS Resolver Outbound Endpoint. */
-  def ResolverOutboundEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResolverOutboundEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.privatedns.ResolverOutboundEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.privatedns.ResolverOutboundEndpointArgs.builder
     conf.logicalName2physicalName(name) match
@@ -523,7 +523,7 @@ object privatedns:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Private DNS Resolver Virtual Network Link. */
-  def ResolverVirtualNetworkLink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResolverVirtualNetworkLink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.privatedns.ResolverVirtualNetworkLinkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.privatedns.ResolverVirtualNetworkLinkArgs.builder
     conf.logicalName2physicalName(name) match
@@ -534,7 +534,7 @@ object privatedns:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enables you to manage DNS SRV Records within Azure Private DNS. */
-  def SRVRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SRVRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.privatedns.SRVRecordArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.privatedns.SRVRecordArgs.builder
     conf.logicalName2physicalName(name) match
@@ -552,7 +552,7 @@ object privatedns:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enables you to manage DNS TXT Records within Azure Private DNS. */
-  def TxtRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TxtRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.privatedns.TxtRecordArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.privatedns.TxtRecordArgs.builder
     conf.logicalName2physicalName(name) match
@@ -570,7 +570,7 @@ object privatedns:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enables you to manage Private DNS zones within Azure DNS. These zones are hosted on Azure&#39;s name servers. */
-  def Zone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Zone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.privatedns.ZoneArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.privatedns.ZoneArgs.builder
     conf.logicalName2physicalName(name) match
@@ -588,7 +588,7 @@ object privatedns:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enables you to manage Private DNS zone Virtual Network Links. These Links enable DNS resolution and registration inside Azure Virtual Networks using Azure Private DNS. */
-  def ZoneVirtualNetworkLink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZoneVirtualNetworkLink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.privatedns.ZoneVirtualNetworkLinkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.privatedns.ZoneVirtualNetworkLinkArgs.builder
     conf.logicalName2physicalName(name) match

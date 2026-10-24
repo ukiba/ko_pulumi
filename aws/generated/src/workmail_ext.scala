@@ -3,7 +3,7 @@ package aws
 
 object workmail_ext:
   extension (builder: com.pulumi.aws.workmail.OrganizationArgs.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.workmail.inputs.OrganizationTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.workmail.inputs.OrganizationTimeoutsArgs.Builder]):
         com.pulumi.aws.workmail.OrganizationArgs.Builder =
       val argsBuilder = com.pulumi.aws.workmail.inputs.OrganizationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -13,13 +13,13 @@ object workmail_ext:
      * @param records List of DNS records required for domain verification. See `records` Block below.
      * @return builder
      */
-    def records(args: Endofunction[com.pulumi.aws.workmail.inputs.DomainRecordArgs.Builder]*):
+    inline def records(args: Endofunction[com.pulumi.aws.workmail.inputs.DomainRecordArgs.Builder]*):
         com.pulumi.aws.workmail.inputs.DomainState.Builder =
       def argsBuilder = com.pulumi.aws.workmail.inputs.DomainRecordArgs.builder
       builder.records(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.workmail.inputs.OrganizationState.Builder)
-    def timeouts(args: Endofunction[com.pulumi.aws.workmail.inputs.OrganizationTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.workmail.inputs.OrganizationTimeoutsArgs.Builder]):
         com.pulumi.aws.workmail.inputs.OrganizationState.Builder =
       val argsBuilder = com.pulumi.aws.workmail.inputs.OrganizationTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)

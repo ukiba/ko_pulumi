@@ -13,7 +13,7 @@ object odb:
    * 
    * The AWS API defines all create parameters as optional because the valid combination depends on `source`. For a new database (`source = &#34;NONE&#34;`), configure the ODB network, database identity, workload, compute, storage, license, and ADMIN password values required by your Oracle Database{@literal @}AWS tenancy.
    */
-  def AutonomousDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AutonomousDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.odb.AutonomousDatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.odb.AutonomousDatabaseArgs.builder
     argsBuilder = args(argsBuilder)
@@ -36,7 +36,7 @@ object odb:
    * 
    * Create the customer-managed IAM role separately. Its trust policy must allow the exported `roleArn` to assume it, and its permissions must grant access to the selected secret. See the [AWS Secrets Manager documentation](https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html) for IAM permission guidance.
    */
-  def AutonomousDatabaseSecretsManagerIntegration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AutonomousDatabaseSecretsManagerIntegration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.odb.AutonomousDatabaseSecretsManagerIntegrationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.odb.AutonomousDatabaseSecretsManagerIntegrationArgs.builder
     com.pulumi.aws.odb.AutonomousDatabaseSecretsManagerIntegration(name,
@@ -48,7 +48,7 @@ object odb:
    * 
    * You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
    */
-  def CloudAutonomousVmCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CloudAutonomousVmCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.odb.CloudAutonomousVmClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.odb.CloudAutonomousVmClusterArgs.builder
     argsBuilder = args(argsBuilder)
@@ -63,7 +63,7 @@ object odb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing exadata infrastructure resource in AWS for Oracle Database{@literal @}AWS. */
-  def CloudExadataInfrastructure(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CloudExadataInfrastructure(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.odb.CloudExadataInfrastructureArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.odb.CloudExadataInfrastructureArgs.builder
     argsBuilder = args(argsBuilder)
@@ -82,7 +82,7 @@ object odb:
    * 
    * You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
    */
-  def CloudVmCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CloudVmCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.odb.CloudVmClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.odb.CloudVmClusterArgs.builder
     argsBuilder = args(argsBuilder)
@@ -101,7 +101,7 @@ object odb:
    * 
    * Currently supported `resourceArn` targets are Cloud VM Clusters and Cloud Autonomous VM Clusters.
    */
-  def IamRoleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IamRoleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.odb.IamRoleAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.odb.IamRoleAssociationArgs.builder
     com.pulumi.aws.odb.IamRoleAssociation(name,
@@ -109,7 +109,7 @@ object odb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing odb Network resource in AWS for Oracle Database{@literal @}AWS. */
-  def Network(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Network(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.odb.NetworkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.odb.NetworkArgs.builder
     argsBuilder = args(argsBuilder)
@@ -128,7 +128,7 @@ object odb:
    * 
    * You can find out more about Oracle Database{@literal @}AWS from [User Guide](https://docs.aws.amazon.com/odb/latest/UserGuide/what-is-odb.html).
    */
-  def NetworkPeeringConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkPeeringConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.odb.NetworkPeeringConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.odb.NetworkPeeringConnectionArgs.builder
     argsBuilder = args(argsBuilder)

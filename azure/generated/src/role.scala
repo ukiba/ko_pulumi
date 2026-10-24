@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object role:
   /** Assigns a given Principal (User or Group) to a given Role. */
-  @deprecated("azure.role.Assignment has been deprecated in favor of azure.authorization.Assignment") def Assignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("azure.role.Assignment has been deprecated in favor of azure.authorization.Assignment") inline def Assignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.role.AssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.role.AssignmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18,7 +18,7 @@ object role:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a custom Role Definition, used to assign Roles to Users/Principals. See [&#39;Understand role definitions&#39;](https://docs.microsoft.com/azure/role-based-access-control/role-definitions) in the Azure documentation for more details. */
-  @deprecated("azure.role.Definition has been deprecated in favor of azure.authorization.RoleDefinition") def Definition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("azure.role.Definition has been deprecated in favor of azure.authorization.RoleDefinition") inline def Definition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.role.DefinitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.role.DefinitionArgs.builder
     conf.logicalName2physicalName(name) match

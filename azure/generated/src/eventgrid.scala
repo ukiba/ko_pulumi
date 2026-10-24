@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object eventgrid:
   /** Manages an EventGrid Domain */
-  def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventgrid.DomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventgrid.DomainArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25,7 +25,7 @@ object eventgrid:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EventGrid Domain Topic */
-  def DomainTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DomainTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventgrid.DomainTopicArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventgrid.DomainTopicArgs.builder
     conf.logicalName2physicalName(name) match
@@ -36,7 +36,7 @@ object eventgrid:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EventGrid Event Subscription */
-  def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventgrid.EventSubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventgrid.EventSubscriptionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -144,7 +144,7 @@ object eventgrid:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an EventGrid Namespace */
-  def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventgrid.NamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventgrid.NamespaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -162,7 +162,7 @@ object eventgrid:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Event Grid Namespace Topic. */
-  def NamespaceTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NamespaceTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventgrid.NamespaceTopicArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventgrid.NamespaceTopicArgs.builder
     conf.logicalName2physicalName(name) match
@@ -173,7 +173,7 @@ object eventgrid:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Event Grid Partner Configuration. */
-  def PartnerConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PartnerConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventgrid.PartnerConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventgrid.PartnerConfigurationArgs.builder
     argsBuilder = args(argsBuilder)
@@ -188,7 +188,7 @@ object eventgrid:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Event Grid Partner Namespace. */
-  def PartnerNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PartnerNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventgrid.PartnerNamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventgrid.PartnerNamespaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -206,7 +206,7 @@ object eventgrid:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EventGrid Partner Registration. */
-  def PartnerRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PartnerRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventgrid.PartnerRegistrationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventgrid.PartnerRegistrationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -224,7 +224,7 @@ object eventgrid:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Event Grid System Topic. */
-  def SystemTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SystemTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventgrid.SystemTopicArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventgrid.SystemTopicArgs.builder
     conf.logicalName2physicalName(name) match
@@ -242,7 +242,7 @@ object eventgrid:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EventGrid System Topic Event Subscription. */
-  def SystemTopicEventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SystemTopicEventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventgrid.SystemTopicEventSubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventgrid.SystemTopicEventSubscriptionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -257,7 +257,7 @@ object eventgrid:
    * 
    * &gt; **Note:** at this time EventGrid Topics are only available in a limited number of regions.
    */
-  def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.eventgrid.TopicArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventgrid.TopicArgs.builder
     conf.logicalName2physicalName(name) match

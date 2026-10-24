@@ -8,7 +8,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesArgs.Builder]):
+    inline def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.AutonomousDatabaseArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sourceConfig(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabaseSourceConfigArgs.Builder]):
+    inline def sourceConfig(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabaseSourceConfigArgs.Builder]):
         com.pulumi.gcp.oracledatabase.AutonomousDatabaseArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabaseSourceConfigArgs.builder
       builder.sourceConfig(args(argsBuilder).build)
@@ -29,7 +29,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.CloudExadataInfrastructurePropertiesArgs.Builder]):
+    inline def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.CloudExadataInfrastructurePropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.CloudExadataInfrastructureArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.CloudExadataInfrastructurePropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
@@ -40,7 +40,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.CloudVmClusterPropertiesArgs.Builder]):
+    inline def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.CloudVmClusterPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.CloudVmClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.CloudVmClusterPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
@@ -51,7 +51,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesArgs.Builder]):
+    inline def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.DbSystemArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
@@ -62,7 +62,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterPropertiesArgs.Builder]):
+    inline def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.ExadbVmClusterArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
@@ -74,7 +74,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.ExascaleDbStorageVaultPropertiesArgs.Builder]):
+    inline def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.ExascaleDbStorageVaultPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.ExascaleDbStorageVaultArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.ExascaleDbStorageVaultPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
@@ -85,7 +85,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder]):
+    inline def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.GoldengateConnectionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
@@ -96,7 +96,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionAssignmentPropertiesArgs.Builder]):
+    inline def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionAssignmentPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.GoldengateConnectionAssignmentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionAssignmentPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
@@ -107,7 +107,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.Builder]):
+    inline def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.GoldengateDeploymentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
@@ -120,7 +120,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def apexDetails(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesApexDetailArgs.Builder]*):
+    inline def apexDetails(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesApexDetailArgs.Builder]*):
         com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesApexDetailArgs.builder
       builder.apexDetails(args.map(_(argsBuilder).build)*)
@@ -132,7 +132,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectionStrings(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesConnectionStringArgs.Builder]*):
+    inline def connectionStrings(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesConnectionStringArgs.Builder]*):
         com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesConnectionStringArgs.builder
       builder.connectionStrings(args.map(_(argsBuilder).build)*)
@@ -145,7 +145,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def connectionUrls(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesConnectionUrlArgs.Builder]*):
+    inline def connectionUrls(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesConnectionUrlArgs.Builder]*):
         com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesConnectionUrlArgs.builder
       builder.connectionUrls(args.map(_(argsBuilder).build)*)
@@ -155,7 +155,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customerContacts(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesCustomerContactArgs.Builder]*):
+    inline def customerContacts(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesCustomerContactArgs.Builder]*):
         com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesCustomerContactArgs.builder
       builder.customerContacts(args.map(_(argsBuilder).build)*)
@@ -167,7 +167,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def localStandbyDbs(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesLocalStandbyDbArgs.Builder]*):
+    inline def localStandbyDbs(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesLocalStandbyDbArgs.Builder]*):
         com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesLocalStandbyDbArgs.builder
       builder.localStandbyDbs(args.map(_(argsBuilder).build)*)
@@ -179,7 +179,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def scheduledOperationDetails(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesScheduledOperationDetailArgs.Builder]*):
+    inline def scheduledOperationDetails(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesScheduledOperationDetailArgs.Builder]*):
         com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesScheduledOperationDetailArgs.builder
       builder.scheduledOperationDetails(args.map(_(argsBuilder).build)*)
@@ -190,7 +190,7 @@ object oracledatabase_ext:
      * Autonomous Database.
      * @return builder
      */
-    def allConnectionStrings(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesConnectionStringAllConnectionStringArgs.Builder]*):
+    inline def allConnectionStrings(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesConnectionStringAllConnectionStringArgs.Builder]*):
         com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesConnectionStringArgs.Builder =
       def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesConnectionStringAllConnectionStringArgs.builder
       builder.allConnectionStrings(args.map(_(argsBuilder).build)*)
@@ -200,7 +200,7 @@ object oracledatabase_ext:
      * select values based on the structured metadata.
      * @return builder
      */
-    def profiles(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesConnectionStringProfileArgs.Builder]*):
+    inline def profiles(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesConnectionStringProfileArgs.Builder]*):
         com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesConnectionStringArgs.Builder =
       def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesConnectionStringProfileArgs.builder
       builder.profiles(args.map(_(argsBuilder).build)*)
@@ -212,7 +212,7 @@ object oracledatabase_ext:
      * types are google.type.Date and &#39;google.protobuf.Timestamp&#39;.
      * @return builder
      */
-    def startTimes(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesScheduledOperationDetailStartTimeArgs.Builder]*):
+    inline def startTimes(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesScheduledOperationDetailStartTimeArgs.Builder]*):
         com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesScheduledOperationDetailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesScheduledOperationDetailStartTimeArgs.builder
       builder.startTimes(args.map(_(argsBuilder).build)*)
@@ -223,7 +223,7 @@ object oracledatabase_ext:
      * types are google.type.Date and &#39;google.protobuf.Timestamp&#39;.
      * @return builder
      */
-    def stopTimes(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesScheduledOperationDetailStopTimeArgs.Builder]*):
+    inline def stopTimes(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesScheduledOperationDetailStopTimeArgs.Builder]*):
         com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesScheduledOperationDetailArgs.Builder =
       def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesScheduledOperationDetailStopTimeArgs.builder
       builder.stopTimes(args.map(_(argsBuilder).build)*)
@@ -234,7 +234,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesArgs.Builder]):
+    inline def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabaseState.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabasePropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
@@ -244,7 +244,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def sourceConfig(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabaseSourceConfigArgs.Builder]):
+    inline def sourceConfig(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabaseSourceConfigArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabaseState.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.AutonomousDatabaseSourceConfigArgs.builder
       builder.sourceConfig(args(argsBuilder).build)
@@ -255,7 +255,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customerContacts(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.CloudExadataInfrastructurePropertiesCustomerContactArgs.Builder]*):
+    inline def customerContacts(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.CloudExadataInfrastructurePropertiesCustomerContactArgs.Builder]*):
         com.pulumi.gcp.oracledatabase.inputs.CloudExadataInfrastructurePropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.CloudExadataInfrastructurePropertiesCustomerContactArgs.builder
       builder.customerContacts(args.map(_(argsBuilder).build)*)
@@ -266,7 +266,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def exascaleConfigs(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.CloudExadataInfrastructurePropertiesExascaleConfigArgs.Builder]*):
+    inline def exascaleConfigs(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.CloudExadataInfrastructurePropertiesExascaleConfigArgs.Builder]*):
         com.pulumi.gcp.oracledatabase.inputs.CloudExadataInfrastructurePropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.CloudExadataInfrastructurePropertiesExascaleConfigArgs.builder
       builder.exascaleConfigs(args.map(_(argsBuilder).build)*)
@@ -277,7 +277,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenanceWindow(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.CloudExadataInfrastructurePropertiesMaintenanceWindowArgs.Builder]):
+    inline def maintenanceWindow(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.CloudExadataInfrastructurePropertiesMaintenanceWindowArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.CloudExadataInfrastructurePropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.CloudExadataInfrastructurePropertiesMaintenanceWindowArgs.builder
       builder.maintenanceWindow(args(argsBuilder).build)
@@ -288,7 +288,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.CloudExadataInfrastructurePropertiesArgs.Builder]):
+    inline def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.CloudExadataInfrastructurePropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.CloudExadataInfrastructureState.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.CloudExadataInfrastructurePropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
@@ -299,7 +299,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def diagnosticsDataCollectionOptions(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.CloudVmClusterPropertiesDiagnosticsDataCollectionOptionsArgs.Builder]):
+    inline def diagnosticsDataCollectionOptions(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.CloudVmClusterPropertiesDiagnosticsDataCollectionOptionsArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.CloudVmClusterPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.CloudVmClusterPropertiesDiagnosticsDataCollectionOptionsArgs.builder
       builder.diagnosticsDataCollectionOptions(args(argsBuilder).build)
@@ -310,7 +310,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeZone(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.CloudVmClusterPropertiesTimeZoneArgs.Builder]):
+    inline def timeZone(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.CloudVmClusterPropertiesTimeZoneArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.CloudVmClusterPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.CloudVmClusterPropertiesTimeZoneArgs.builder
       builder.timeZone(args(argsBuilder).build)
@@ -322,7 +322,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def identityConnectors(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.CloudVmClusterIdentityConnectorArgs.Builder]*):
+    inline def identityConnectors(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.CloudVmClusterIdentityConnectorArgs.Builder]*):
         com.pulumi.gcp.oracledatabase.inputs.CloudVmClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.CloudVmClusterIdentityConnectorArgs.builder
       builder.identityConnectors(args.map(_(argsBuilder).build)*)
@@ -332,7 +332,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.CloudVmClusterPropertiesArgs.Builder]):
+    inline def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.CloudVmClusterPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.CloudVmClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.CloudVmClusterPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
@@ -343,7 +343,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataCollectionOptions(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDataCollectionOptionsArgs.Builder]):
+    inline def dataCollectionOptions(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDataCollectionOptionsArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDataCollectionOptionsArgs.builder
       builder.dataCollectionOptions(args(argsBuilder).build)
@@ -353,7 +353,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dbHome(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbHomeArgs.Builder]):
+    inline def dbHome(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbHomeArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbHomeArgs.builder
       builder.dbHome(args(argsBuilder).build)
@@ -363,7 +363,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dbSystemOptions(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbSystemOptionsArgs.Builder]):
+    inline def dbSystemOptions(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbSystemOptionsArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbSystemOptionsArgs.builder
       builder.dbSystemOptions(args(argsBuilder).build)
@@ -374,7 +374,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeZone(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesTimeZoneArgs.Builder]):
+    inline def timeZone(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesTimeZoneArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesTimeZoneArgs.builder
       builder.timeZone(args(argsBuilder).build)
@@ -386,7 +386,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def database(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbHomeDatabaseArgs.Builder]):
+    inline def database(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbHomeDatabaseArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbHomeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbHomeDatabaseArgs.builder
       builder.database(args(argsBuilder).build)
@@ -397,7 +397,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbHomeDatabasePropertiesArgs.Builder]):
+    inline def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbHomeDatabasePropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbHomeDatabaseArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbHomeDatabasePropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
@@ -408,7 +408,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def databaseManagementConfig(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbHomeDatabasePropertiesDatabaseManagementConfigArgs.Builder]):
+    inline def databaseManagementConfig(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbHomeDatabasePropertiesDatabaseManagementConfigArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbHomeDatabasePropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbHomeDatabasePropertiesDatabaseManagementConfigArgs.builder
       builder.databaseManagementConfig(args(argsBuilder).build)
@@ -418,7 +418,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dbBackupConfig(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbHomeDatabasePropertiesDbBackupConfigArgs.Builder]):
+    inline def dbBackupConfig(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbHomeDatabasePropertiesDbBackupConfigArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbHomeDatabasePropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbHomeDatabasePropertiesDbBackupConfigArgs.builder
       builder.dbBackupConfig(args(argsBuilder).build)
@@ -429,7 +429,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def backupDestinationDetails(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbHomeDatabasePropertiesDbBackupConfigBackupDestinationDetailArgs.Builder]*):
+    inline def backupDestinationDetails(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbHomeDatabasePropertiesDbBackupConfigBackupDestinationDetailArgs.Builder]*):
         com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbHomeDatabasePropertiesDbBackupConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesDbHomeDatabasePropertiesDbBackupConfigBackupDestinationDetailArgs.builder
       builder.backupDestinationDetails(args.map(_(argsBuilder).build)*)
@@ -440,7 +440,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesArgs.Builder]):
+    inline def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.DbSystemState.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.DbSystemPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
@@ -452,7 +452,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataCollectionOptions(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterPropertiesDataCollectionOptionsArgs.Builder]):
+    inline def dataCollectionOptions(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterPropertiesDataCollectionOptionsArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterPropertiesDataCollectionOptionsArgs.builder
       builder.dataCollectionOptions(args(argsBuilder).build)
@@ -463,7 +463,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeZone(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterPropertiesTimeZoneArgs.Builder]):
+    inline def timeZone(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterPropertiesTimeZoneArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterPropertiesTimeZoneArgs.builder
       builder.timeZone(args(argsBuilder).build)
@@ -473,7 +473,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vmFileSystemStorage(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterPropertiesVmFileSystemStorageArgs.Builder]):
+    inline def vmFileSystemStorage(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterPropertiesVmFileSystemStorageArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterPropertiesVmFileSystemStorageArgs.builder
       builder.vmFileSystemStorage(args(argsBuilder).build)
@@ -485,7 +485,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def identityConnectors(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterIdentityConnectorArgs.Builder]*):
+    inline def identityConnectors(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterIdentityConnectorArgs.Builder]*):
         com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterState.Builder =
       def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterIdentityConnectorArgs.builder
       builder.identityConnectors(args.map(_(argsBuilder).build)*)
@@ -495,7 +495,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterPropertiesArgs.Builder]):
+    inline def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterState.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.ExadbVmClusterPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
@@ -506,7 +506,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def exascaleDbStorageDetails(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.ExascaleDbStorageVaultPropertiesExascaleDbStorageDetailsArgs.Builder]):
+    inline def exascaleDbStorageDetails(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.ExascaleDbStorageVaultPropertiesExascaleDbStorageDetailsArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.ExascaleDbStorageVaultPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.ExascaleDbStorageVaultPropertiesExascaleDbStorageDetailsArgs.builder
       builder.exascaleDbStorageDetails(args(argsBuilder).build)
@@ -517,7 +517,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def timeZone(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.ExascaleDbStorageVaultPropertiesTimeZoneArgs.Builder]):
+    inline def timeZone(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.ExascaleDbStorageVaultPropertiesTimeZoneArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.ExascaleDbStorageVaultPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.ExascaleDbStorageVaultPropertiesTimeZoneArgs.builder
       builder.timeZone(args(argsBuilder).build)
@@ -529,7 +529,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.ExascaleDbStorageVaultPropertiesArgs.Builder]):
+    inline def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.ExascaleDbStorageVaultPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.ExascaleDbStorageVaultState.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.ExascaleDbStorageVaultPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
@@ -540,7 +540,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionAssignmentPropertiesArgs.Builder]):
+    inline def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionAssignmentPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionAssignmentState.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionAssignmentPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
@@ -551,7 +551,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def amazonKinesisConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesAmazonKinesisConnectionPropertiesArgs.Builder]):
+    inline def amazonKinesisConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesAmazonKinesisConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesAmazonKinesisConnectionPropertiesArgs.builder
       builder.amazonKinesisConnectionProperties(args(argsBuilder).build)
@@ -561,7 +561,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def amazonRedshiftConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesAmazonRedshiftConnectionPropertiesArgs.Builder]):
+    inline def amazonRedshiftConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesAmazonRedshiftConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesAmazonRedshiftConnectionPropertiesArgs.builder
       builder.amazonRedshiftConnectionProperties(args(argsBuilder).build)
@@ -571,7 +571,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def amazonS3ConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesAmazonS3ConnectionPropertiesArgs.Builder]):
+    inline def amazonS3ConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesAmazonS3ConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesAmazonS3ConnectionPropertiesArgs.builder
       builder.amazonS3ConnectionProperties(args(argsBuilder).build)
@@ -581,7 +581,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def azureDataLakeStorageConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesAzureDataLakeStorageConnectionPropertiesArgs.Builder]):
+    inline def azureDataLakeStorageConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesAzureDataLakeStorageConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesAzureDataLakeStorageConnectionPropertiesArgs.builder
       builder.azureDataLakeStorageConnectionProperties(args(argsBuilder).build)
@@ -591,7 +591,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def azureSynapseAnalyticsConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesAzureSynapseAnalyticsConnectionPropertiesArgs.Builder]):
+    inline def azureSynapseAnalyticsConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesAzureSynapseAnalyticsConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesAzureSynapseAnalyticsConnectionPropertiesArgs.builder
       builder.azureSynapseAnalyticsConnectionProperties(args(argsBuilder).build)
@@ -601,7 +601,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def databricksConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesDatabricksConnectionPropertiesArgs.Builder]):
+    inline def databricksConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesDatabricksConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesDatabricksConnectionPropertiesArgs.builder
       builder.databricksConnectionProperties(args(argsBuilder).build)
@@ -611,7 +611,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def db2ConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesDb2ConnectionPropertiesArgs.Builder]):
+    inline def db2ConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesDb2ConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesDb2ConnectionPropertiesArgs.builder
       builder.db2ConnectionProperties(args(argsBuilder).build)
@@ -621,7 +621,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def elasticsearchConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesElasticsearchConnectionPropertiesArgs.Builder]):
+    inline def elasticsearchConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesElasticsearchConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesElasticsearchConnectionPropertiesArgs.builder
       builder.elasticsearchConnectionProperties(args(argsBuilder).build)
@@ -631,7 +631,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def genericConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesGenericConnectionPropertiesArgs.Builder]):
+    inline def genericConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesGenericConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesGenericConnectionPropertiesArgs.builder
       builder.genericConnectionProperties(args(argsBuilder).build)
@@ -641,7 +641,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def goldengateConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesGoldengateConnectionPropertiesArgs.Builder]):
+    inline def goldengateConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesGoldengateConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesGoldengateConnectionPropertiesArgs.builder
       builder.goldengateConnectionProperties(args(argsBuilder).build)
@@ -651,7 +651,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleBigQueryConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesGoogleBigQueryConnectionPropertiesArgs.Builder]):
+    inline def googleBigQueryConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesGoogleBigQueryConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesGoogleBigQueryConnectionPropertiesArgs.builder
       builder.googleBigQueryConnectionProperties(args(argsBuilder).build)
@@ -661,7 +661,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleCloudStorageConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesGoogleCloudStorageConnectionPropertiesArgs.Builder]):
+    inline def googleCloudStorageConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesGoogleCloudStorageConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesGoogleCloudStorageConnectionPropertiesArgs.builder
       builder.googleCloudStorageConnectionProperties(args(argsBuilder).build)
@@ -671,7 +671,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googlePubsubConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesGooglePubsubConnectionPropertiesArgs.Builder]):
+    inline def googlePubsubConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesGooglePubsubConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesGooglePubsubConnectionPropertiesArgs.builder
       builder.googlePubsubConnectionProperties(args(argsBuilder).build)
@@ -681,7 +681,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def hdfsConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesHdfsConnectionPropertiesArgs.Builder]):
+    inline def hdfsConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesHdfsConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesHdfsConnectionPropertiesArgs.builder
       builder.hdfsConnectionProperties(args(argsBuilder).build)
@@ -691,7 +691,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def icebergConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesArgs.Builder]):
+    inline def icebergConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesArgs.builder
       builder.icebergConnectionProperties(args(argsBuilder).build)
@@ -701,7 +701,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def javaMessageServiceConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesJavaMessageServiceConnectionPropertiesArgs.Builder]):
+    inline def javaMessageServiceConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesJavaMessageServiceConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesJavaMessageServiceConnectionPropertiesArgs.builder
       builder.javaMessageServiceConnectionProperties(args(argsBuilder).build)
@@ -711,7 +711,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def kafkaConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesKafkaConnectionPropertiesArgs.Builder]):
+    inline def kafkaConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesKafkaConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesKafkaConnectionPropertiesArgs.builder
       builder.kafkaConnectionProperties(args(argsBuilder).build)
@@ -721,7 +721,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def kafkaSchemaRegistryConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesKafkaSchemaRegistryConnectionPropertiesArgs.Builder]):
+    inline def kafkaSchemaRegistryConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesKafkaSchemaRegistryConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesKafkaSchemaRegistryConnectionPropertiesArgs.builder
       builder.kafkaSchemaRegistryConnectionProperties(args(argsBuilder).build)
@@ -731,7 +731,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def microsoftFabricConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMicrosoftFabricConnectionPropertiesArgs.Builder]):
+    inline def microsoftFabricConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMicrosoftFabricConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMicrosoftFabricConnectionPropertiesArgs.builder
       builder.microsoftFabricConnectionProperties(args(argsBuilder).build)
@@ -741,7 +741,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def microsoftSqlserverConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMicrosoftSqlserverConnectionPropertiesArgs.Builder]):
+    inline def microsoftSqlserverConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMicrosoftSqlserverConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMicrosoftSqlserverConnectionPropertiesArgs.builder
       builder.microsoftSqlserverConnectionProperties(args(argsBuilder).build)
@@ -751,7 +751,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mongodbConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMongodbConnectionPropertiesArgs.Builder]):
+    inline def mongodbConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMongodbConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMongodbConnectionPropertiesArgs.builder
       builder.mongodbConnectionProperties(args(argsBuilder).build)
@@ -761,7 +761,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mysqlConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMysqlConnectionPropertiesArgs.Builder]):
+    inline def mysqlConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMysqlConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMysqlConnectionPropertiesArgs.builder
       builder.mysqlConnectionProperties(args(argsBuilder).build)
@@ -771,7 +771,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ociObjectStorageConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesOciObjectStorageConnectionPropertiesArgs.Builder]):
+    inline def ociObjectStorageConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesOciObjectStorageConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesOciObjectStorageConnectionPropertiesArgs.builder
       builder.ociObjectStorageConnectionProperties(args(argsBuilder).build)
@@ -781,7 +781,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oracleAiDataPlatformConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesOracleAiDataPlatformConnectionPropertiesArgs.Builder]):
+    inline def oracleAiDataPlatformConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesOracleAiDataPlatformConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesOracleAiDataPlatformConnectionPropertiesArgs.builder
       builder.oracleAiDataPlatformConnectionProperties(args(argsBuilder).build)
@@ -791,7 +791,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oracleConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesOracleConnectionPropertiesArgs.Builder]):
+    inline def oracleConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesOracleConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesOracleConnectionPropertiesArgs.builder
       builder.oracleConnectionProperties(args(argsBuilder).build)
@@ -801,7 +801,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oracleNosqlConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesOracleNosqlConnectionPropertiesArgs.Builder]):
+    inline def oracleNosqlConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesOracleNosqlConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesOracleNosqlConnectionPropertiesArgs.builder
       builder.oracleNosqlConnectionProperties(args(argsBuilder).build)
@@ -811,7 +811,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def postgresqlConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesPostgresqlConnectionPropertiesArgs.Builder]):
+    inline def postgresqlConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesPostgresqlConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesPostgresqlConnectionPropertiesArgs.builder
       builder.postgresqlConnectionProperties(args(argsBuilder).build)
@@ -821,7 +821,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def redisConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesRedisConnectionPropertiesArgs.Builder]):
+    inline def redisConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesRedisConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesRedisConnectionPropertiesArgs.builder
       builder.redisConnectionProperties(args(argsBuilder).build)
@@ -831,7 +831,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def snowflakeConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesSnowflakeConnectionPropertiesArgs.Builder]):
+    inline def snowflakeConnectionProperties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesSnowflakeConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesSnowflakeConnectionPropertiesArgs.builder
       builder.snowflakeConnectionProperties(args(argsBuilder).build)
@@ -842,7 +842,7 @@ object oracledatabase_ext:
      * Used as additional parameters in connection string.
      * @return builder
      */
-    def additionalAttributes(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesDb2ConnectionPropertiesAdditionalAttributeArgs.Builder]*):
+    inline def additionalAttributes(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesDb2ConnectionPropertiesAdditionalAttributeArgs.Builder]*):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesDb2ConnectionPropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesDb2ConnectionPropertiesAdditionalAttributeArgs.builder
       builder.additionalAttributes(args.map(_(argsBuilder).build)*)
@@ -853,7 +853,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def catalog(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogArgs.Builder]):
+    inline def catalog(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogArgs.builder
       builder.catalog(args(argsBuilder).build)
@@ -863,7 +863,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def storage(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageArgs.Builder]):
+    inline def storage(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageArgs.builder
       builder.storage(args(argsBuilder).build)
@@ -874,7 +874,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def glueIcebergCatalog(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogGlueIcebergCatalogArgs.Builder]):
+    inline def glueIcebergCatalog(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogGlueIcebergCatalogArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogGlueIcebergCatalogArgs.builder
       builder.glueIcebergCatalog(args(argsBuilder).build)
@@ -884,7 +884,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nessieIcebergCatalog(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogNessieIcebergCatalogArgs.Builder]):
+    inline def nessieIcebergCatalog(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogNessieIcebergCatalogArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogNessieIcebergCatalogArgs.builder
       builder.nessieIcebergCatalog(args(argsBuilder).build)
@@ -894,7 +894,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def polarisIcebergCatalog(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogPolarisIcebergCatalogArgs.Builder]):
+    inline def polarisIcebergCatalog(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogPolarisIcebergCatalogArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogPolarisIcebergCatalogArgs.builder
       builder.polarisIcebergCatalog(args(argsBuilder).build)
@@ -904,7 +904,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def restIcebergCatalog(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogRestIcebergCatalogArgs.Builder]):
+    inline def restIcebergCatalog(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogRestIcebergCatalogArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesCatalogRestIcebergCatalogArgs.builder
       builder.restIcebergCatalog(args(argsBuilder).build)
@@ -915,7 +915,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def amazonS3IcebergStorage(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageAmazonS3IcebergStorageArgs.Builder]):
+    inline def amazonS3IcebergStorage(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageAmazonS3IcebergStorageArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageAmazonS3IcebergStorageArgs.builder
       builder.amazonS3IcebergStorage(args(argsBuilder).build)
@@ -925,7 +925,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def azureDataLakeStorageIcebergStorage(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageAzureDataLakeStorageIcebergStorageArgs.Builder]):
+    inline def azureDataLakeStorageIcebergStorage(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageAzureDataLakeStorageIcebergStorageArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageAzureDataLakeStorageIcebergStorageArgs.builder
       builder.azureDataLakeStorageIcebergStorage(args(argsBuilder).build)
@@ -935,7 +935,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleCloudStorageIcebergStorage(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageGoogleCloudStorageIcebergStorageArgs.Builder]):
+    inline def googleCloudStorageIcebergStorage(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageGoogleCloudStorageIcebergStorageArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesIcebergConnectionPropertiesStorageGoogleCloudStorageIcebergStorageArgs.builder
       builder.googleCloudStorageIcebergStorage(args(argsBuilder).build)
@@ -949,7 +949,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bootstrapServers(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesKafkaConnectionPropertiesBootstrapServerArgs.Builder]*):
+    inline def bootstrapServers(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesKafkaConnectionPropertiesBootstrapServerArgs.Builder]*):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesKafkaConnectionPropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesKafkaConnectionPropertiesBootstrapServerArgs.builder
       builder.bootstrapServers(args.map(_(argsBuilder).build)*)
@@ -961,7 +961,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def additionalAttributes(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMicrosoftSqlserverConnectionPropertiesAdditionalAttributeArgs.Builder]*):
+    inline def additionalAttributes(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMicrosoftSqlserverConnectionPropertiesAdditionalAttributeArgs.Builder]*):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMicrosoftSqlserverConnectionPropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMicrosoftSqlserverConnectionPropertiesAdditionalAttributeArgs.builder
       builder.additionalAttributes(args.map(_(argsBuilder).build)*)
@@ -973,7 +973,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def additionalAttributes(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMysqlConnectionPropertiesAdditionalAttributeArgs.Builder]*):
+    inline def additionalAttributes(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMysqlConnectionPropertiesAdditionalAttributeArgs.Builder]*):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMysqlConnectionPropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesMysqlConnectionPropertiesAdditionalAttributeArgs.builder
       builder.additionalAttributes(args.map(_(argsBuilder).build)*)
@@ -985,7 +985,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def additionalAttributes(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesPostgresqlConnectionPropertiesAdditionalAttributeArgs.Builder]*):
+    inline def additionalAttributes(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesPostgresqlConnectionPropertiesAdditionalAttributeArgs.Builder]*):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesPostgresqlConnectionPropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesPostgresqlConnectionPropertiesAdditionalAttributeArgs.builder
       builder.additionalAttributes(args.map(_(argsBuilder).build)*)
@@ -996,7 +996,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder]):
+    inline def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionState.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateConnectionPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)
@@ -1007,7 +1007,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def backupSchedule(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesBackupScheduleArgs.Builder]):
+    inline def backupSchedule(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesBackupScheduleArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesBackupScheduleArgs.builder
       builder.backupSchedule(args(argsBuilder).build)
@@ -1017,7 +1017,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def deploymentDiagnosticData(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesDeploymentDiagnosticDataArgs.Builder]):
+    inline def deploymentDiagnosticData(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesDeploymentDiagnosticDataArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesDeploymentDiagnosticDataArgs.builder
       builder.deploymentDiagnosticData(args(argsBuilder).build)
@@ -1028,7 +1028,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ingressIps(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesIngressIpArgs.Builder]*):
+    inline def ingressIps(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesIngressIpArgs.Builder]*):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesIngressIpArgs.builder
       builder.ingressIps(args.map(_(argsBuilder).build)*)
@@ -1039,7 +1039,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def locks(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesLockArgs.Builder]*):
+    inline def locks(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesLockArgs.Builder]*):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesLockArgs.builder
       builder.locks(args.map(_(argsBuilder).build)*)
@@ -1049,7 +1049,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenanceConfig(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesMaintenanceConfigArgs.Builder]):
+    inline def maintenanceConfig(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesMaintenanceConfigArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesMaintenanceConfigArgs.builder
       builder.maintenanceConfig(args(argsBuilder).build)
@@ -1059,7 +1059,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenanceWindow(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesMaintenanceWindowArgs.Builder]):
+    inline def maintenanceWindow(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesMaintenanceWindowArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesMaintenanceWindowArgs.builder
       builder.maintenanceWindow(args(argsBuilder).build)
@@ -1069,7 +1069,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oggData(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesOggDataArgs.Builder]):
+    inline def oggData(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesOggDataArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesOggDataArgs.builder
       builder.oggData(args(argsBuilder).build)
@@ -1080,7 +1080,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def placements(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesPlacementArgs.Builder]*):
+    inline def placements(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesPlacementArgs.Builder]*):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesPlacementArgs.builder
       builder.placements(args.map(_(argsBuilder).build)*)
@@ -1091,7 +1091,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def groupRolesMapping(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesOggDataGroupRolesMappingArgs.Builder]):
+    inline def groupRolesMapping(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesOggDataGroupRolesMappingArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesOggDataArgs.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesOggDataGroupRolesMappingArgs.builder
       builder.groupRolesMapping(args(argsBuilder).build)
@@ -1102,7 +1102,7 @@ object oracledatabase_ext:
      * Structure is documented below.
      * @return builder
      */
-    def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.Builder]):
+    inline def properties(args: Endofunction[com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.Builder]):
         com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentState.Builder =
       val argsBuilder = com.pulumi.gcp.oracledatabase.inputs.GoldengateDeploymentPropertiesArgs.builder
       builder.properties(args(argsBuilder).build)

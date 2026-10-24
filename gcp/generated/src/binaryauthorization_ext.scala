@@ -8,19 +8,19 @@ object binaryauthorization_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attestationAuthorityNote(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.AttestorAttestationAuthorityNoteArgs.Builder]):
+    inline def attestationAuthorityNote(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.AttestorAttestationAuthorityNoteArgs.Builder]):
         com.pulumi.gcp.binaryauthorization.AttestorArgs.Builder =
       val argsBuilder = com.pulumi.gcp.binaryauthorization.inputs.AttestorAttestationAuthorityNoteArgs.builder
       builder.attestationAuthorityNote(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.binaryauthorization.AttestorIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.AttestorIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.AttestorIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.binaryauthorization.AttestorIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.binaryauthorization.inputs.AttestorIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.binaryauthorization.AttestorIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.AttestorIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.AttestorIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.binaryauthorization.AttestorIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.binaryauthorization.inputs.AttestorIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -33,7 +33,7 @@ object binaryauthorization_ext:
      * Structure is documented below.
      * @return builder
      */
-    def admissionWhitelistPatterns(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.PolicyAdmissionWhitelistPatternArgs.Builder]*):
+    inline def admissionWhitelistPatterns(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.PolicyAdmissionWhitelistPatternArgs.Builder]*):
         com.pulumi.gcp.binaryauthorization.PolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.binaryauthorization.inputs.PolicyAdmissionWhitelistPatternArgs.builder
       builder.admissionWhitelistPatterns(args.map(_(argsBuilder).build)*)
@@ -50,7 +50,7 @@ object binaryauthorization_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clusterAdmissionRules(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.PolicyClusterAdmissionRuleArgs.Builder]*):
+    inline def clusterAdmissionRules(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.PolicyClusterAdmissionRuleArgs.Builder]*):
         com.pulumi.gcp.binaryauthorization.PolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.binaryauthorization.inputs.PolicyClusterAdmissionRuleArgs.builder
       builder.clusterAdmissionRules(args.map(_(argsBuilder).build)*)
@@ -61,7 +61,7 @@ object binaryauthorization_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultAdmissionRule(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.PolicyDefaultAdmissionRuleArgs.Builder]):
+    inline def defaultAdmissionRule(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.PolicyDefaultAdmissionRuleArgs.Builder]):
         com.pulumi.gcp.binaryauthorization.PolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.binaryauthorization.inputs.PolicyDefaultAdmissionRuleArgs.builder
       builder.defaultAdmissionRule(args(argsBuilder).build)
@@ -78,7 +78,7 @@ object binaryauthorization_ext:
      * Structure is documented below.
      * @return builder
      */
-    def publicKeys(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.AttestorAttestationAuthorityNotePublicKeyArgs.Builder]*):
+    inline def publicKeys(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.AttestorAttestationAuthorityNotePublicKeyArgs.Builder]*):
         com.pulumi.gcp.binaryauthorization.inputs.AttestorAttestationAuthorityNoteArgs.Builder =
       def argsBuilder = com.pulumi.gcp.binaryauthorization.inputs.AttestorAttestationAuthorityNotePublicKeyArgs.builder
       builder.publicKeys(args.map(_(argsBuilder).build)*)
@@ -93,19 +93,19 @@ object binaryauthorization_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pkixPublicKey(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.AttestorAttestationAuthorityNotePublicKeyPkixPublicKeyArgs.Builder]):
+    inline def pkixPublicKey(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.AttestorAttestationAuthorityNotePublicKeyPkixPublicKeyArgs.Builder]):
         com.pulumi.gcp.binaryauthorization.inputs.AttestorAttestationAuthorityNotePublicKeyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.binaryauthorization.inputs.AttestorAttestationAuthorityNotePublicKeyPkixPublicKeyArgs.builder
       builder.pkixPublicKey(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.binaryauthorization.inputs.AttestorIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.AttestorIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.AttestorIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.binaryauthorization.inputs.AttestorIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.binaryauthorization.inputs.AttestorIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.binaryauthorization.inputs.AttestorIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.AttestorIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.AttestorIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.binaryauthorization.inputs.AttestorIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.binaryauthorization.inputs.AttestorIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -116,7 +116,7 @@ object binaryauthorization_ext:
      * Structure is documented below.
      * @return builder
      */
-    def attestationAuthorityNote(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.AttestorAttestationAuthorityNoteArgs.Builder]):
+    inline def attestationAuthorityNote(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.AttestorAttestationAuthorityNoteArgs.Builder]):
         com.pulumi.gcp.binaryauthorization.inputs.AttestorState.Builder =
       val argsBuilder = com.pulumi.gcp.binaryauthorization.inputs.AttestorAttestationAuthorityNoteArgs.builder
       builder.attestationAuthorityNote(args(argsBuilder).build)
@@ -129,7 +129,7 @@ object binaryauthorization_ext:
      * Structure is documented below.
      * @return builder
      */
-    def admissionWhitelistPatterns(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.PolicyAdmissionWhitelistPatternArgs.Builder]*):
+    inline def admissionWhitelistPatterns(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.PolicyAdmissionWhitelistPatternArgs.Builder]*):
         com.pulumi.gcp.binaryauthorization.inputs.PolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.binaryauthorization.inputs.PolicyAdmissionWhitelistPatternArgs.builder
       builder.admissionWhitelistPatterns(args.map(_(argsBuilder).build)*)
@@ -146,7 +146,7 @@ object binaryauthorization_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clusterAdmissionRules(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.PolicyClusterAdmissionRuleArgs.Builder]*):
+    inline def clusterAdmissionRules(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.PolicyClusterAdmissionRuleArgs.Builder]*):
         com.pulumi.gcp.binaryauthorization.inputs.PolicyState.Builder =
       def argsBuilder = com.pulumi.gcp.binaryauthorization.inputs.PolicyClusterAdmissionRuleArgs.builder
       builder.clusterAdmissionRules(args.map(_(argsBuilder).build)*)
@@ -157,7 +157,7 @@ object binaryauthorization_ext:
      * Structure is documented below.
      * @return builder
      */
-    def defaultAdmissionRule(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.PolicyDefaultAdmissionRuleArgs.Builder]):
+    inline def defaultAdmissionRule(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.PolicyDefaultAdmissionRuleArgs.Builder]):
         com.pulumi.gcp.binaryauthorization.inputs.PolicyState.Builder =
       val argsBuilder = com.pulumi.gcp.binaryauthorization.inputs.PolicyDefaultAdmissionRuleArgs.builder
       builder.defaultAdmissionRule(args(argsBuilder).build)

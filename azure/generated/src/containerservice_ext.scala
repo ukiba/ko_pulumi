@@ -7,7 +7,7 @@ object containerservice_ext:
      * @param apiServerAccess An `apiServerAccess` block as defined below.
      * @return builder
      */
-    def apiServerAccess(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterApiServerAccessArgs.Builder]):
+    inline def apiServerAccess(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterApiServerAccessArgs.Builder]):
         com.pulumi.azure.containerservice.AutomaticClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterApiServerAccessArgs.builder
       builder.apiServerAccess(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object containerservice_ext:
      * @param hostedSystem A `hostedSystem` block as defined below.
      * @return builder
      */
-    def hostedSystem(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterHostedSystemArgs.Builder]):
+    inline def hostedSystem(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterHostedSystemArgs.Builder]):
         com.pulumi.azure.containerservice.AutomaticClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterHostedSystemArgs.builder
       builder.hostedSystem(args(argsBuilder).build)
@@ -25,7 +25,7 @@ object containerservice_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterIdentityArgs.Builder]):
         com.pulumi.azure.containerservice.AutomaticClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -34,7 +34,7 @@ object containerservice_ext:
      * @param privateCluster A `privateCluster` block as defined below.
      * @return builder
      */
-    def privateCluster(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterPrivateClusterArgs.Builder]):
+    inline def privateCluster(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterPrivateClusterArgs.Builder]):
         com.pulumi.azure.containerservice.AutomaticClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterPrivateClusterArgs.builder
       builder.privateCluster(args(argsBuilder).build)
@@ -43,7 +43,7 @@ object containerservice_ext:
      * @param serviceMesh A `serviceMesh` block as defined below.
      * @return builder
      */
-    def serviceMesh(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterServiceMeshArgs.Builder]):
+    inline def serviceMesh(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterServiceMeshArgs.Builder]):
         com.pulumi.azure.containerservice.AutomaticClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterServiceMeshArgs.builder
       builder.serviceMesh(args(argsBuilder).build)
@@ -52,7 +52,7 @@ object containerservice_ext:
      * @param webAppRoutingIngress A `webAppRoutingIngress` block as defined below.
      * @return builder
      */
-    def webAppRoutingIngress(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterWebAppRoutingIngressArgs.Builder]):
+    inline def webAppRoutingIngress(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterWebAppRoutingIngressArgs.Builder]):
         com.pulumi.azure.containerservice.AutomaticClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterWebAppRoutingIngressArgs.builder
       builder.webAppRoutingIngress(args(argsBuilder).build)
@@ -62,7 +62,7 @@ object containerservice_ext:
      * @param notifications One or more `notification` blocks as defined below.
      * @return builder
      */
-    def notifications(args: Endofunction[com.pulumi.azure.containerservice.inputs.ConnectedRegistryNotificationArgs.Builder]*):
+    inline def notifications(args: Endofunction[com.pulumi.azure.containerservice.inputs.ConnectedRegistryNotificationArgs.Builder]*):
         com.pulumi.azure.containerservice.ConnectedRegistryArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.ConnectedRegistryNotificationArgs.builder
       builder.notifications(args.map(_(argsBuilder).build)*)
@@ -72,7 +72,7 @@ object containerservice_ext:
      * @param managedClusterUpdate A `managedClusterUpdate` block as defined below.
      * @return builder
      */
-    def managedClusterUpdate(args: Endofunction[com.pulumi.azure.containerservice.inputs.FleetUpdateRunManagedClusterUpdateArgs.Builder]):
+    inline def managedClusterUpdate(args: Endofunction[com.pulumi.azure.containerservice.inputs.FleetUpdateRunManagedClusterUpdateArgs.Builder]):
         com.pulumi.azure.containerservice.FleetUpdateRunArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.FleetUpdateRunManagedClusterUpdateArgs.builder
       builder.managedClusterUpdate(args(argsBuilder).build)
@@ -81,7 +81,7 @@ object containerservice_ext:
      * @param stages One or more `stage` blocks as defined below. Only one of `stage` or `fleetUpdateStrategyId` can be specified.
      * @return builder
      */
-    def stages(args: Endofunction[com.pulumi.azure.containerservice.inputs.FleetUpdateRunStageArgs.Builder]*):
+    inline def stages(args: Endofunction[com.pulumi.azure.containerservice.inputs.FleetUpdateRunStageArgs.Builder]*):
         com.pulumi.azure.containerservice.FleetUpdateRunArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.FleetUpdateRunStageArgs.builder
       builder.stages(args.map(_(argsBuilder).build)*)
@@ -91,7 +91,7 @@ object containerservice_ext:
      * @param stages One or more `stage` blocks as defined below.
      * @return builder
      */
-    def stages(args: Endofunction[com.pulumi.azure.containerservice.inputs.FleetUpdateStrategyStageArgs.Builder]*):
+    inline def stages(args: Endofunction[com.pulumi.azure.containerservice.inputs.FleetUpdateStrategyStageArgs.Builder]*):
         com.pulumi.azure.containerservice.FleetUpdateStrategyArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.FleetUpdateStrategyStageArgs.builder
       builder.stages(args.map(_(argsBuilder).build)*)
@@ -101,7 +101,7 @@ object containerservice_ext:
      * @param blobStorage An `blobStorage` block as defined below.
      * @return builder
      */
-    def blobStorage(args: Endofunction[com.pulumi.azure.containerservice.inputs.FluxConfigurationBlobStorageArgs.Builder]):
+    inline def blobStorage(args: Endofunction[com.pulumi.azure.containerservice.inputs.FluxConfigurationBlobStorageArgs.Builder]):
         com.pulumi.azure.containerservice.FluxConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.FluxConfigurationBlobStorageArgs.builder
       builder.blobStorage(args(argsBuilder).build)
@@ -110,7 +110,7 @@ object containerservice_ext:
      * @param bucket A `bucket` block as defined below.
      * @return builder
      */
-    def bucket(args: Endofunction[com.pulumi.azure.containerservice.inputs.FluxConfigurationBucketArgs.Builder]):
+    inline def bucket(args: Endofunction[com.pulumi.azure.containerservice.inputs.FluxConfigurationBucketArgs.Builder]):
         com.pulumi.azure.containerservice.FluxConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.FluxConfigurationBucketArgs.builder
       builder.bucket(args(argsBuilder).build)
@@ -119,7 +119,7 @@ object containerservice_ext:
      * @param gitRepository A `gitRepository` block as defined below.
      * @return builder
      */
-    def gitRepository(args: Endofunction[com.pulumi.azure.containerservice.inputs.FluxConfigurationGitRepositoryArgs.Builder]):
+    inline def gitRepository(args: Endofunction[com.pulumi.azure.containerservice.inputs.FluxConfigurationGitRepositoryArgs.Builder]):
         com.pulumi.azure.containerservice.FluxConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.FluxConfigurationGitRepositoryArgs.builder
       builder.gitRepository(args(argsBuilder).build)
@@ -128,7 +128,7 @@ object containerservice_ext:
      * @param kustomizations A `kustomizations` block as defined below.
      * @return builder
      */
-    def kustomizations(args: Endofunction[com.pulumi.azure.containerservice.inputs.FluxConfigurationKustomizationArgs.Builder]*):
+    inline def kustomizations(args: Endofunction[com.pulumi.azure.containerservice.inputs.FluxConfigurationKustomizationArgs.Builder]*):
         com.pulumi.azure.containerservice.FluxConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.FluxConfigurationKustomizationArgs.builder
       builder.kustomizations(args.map(_(argsBuilder).build)*)
@@ -138,7 +138,7 @@ object containerservice_ext:
      * @param containers The definition of a container that is part of the group as documented in the `container` block below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def containers(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupContainerArgs.Builder]*):
+    inline def containers(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupContainerArgs.Builder]*):
         com.pulumi.azure.containerservice.GroupArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.GroupContainerArgs.builder
       builder.containers(args.map(_(argsBuilder).build)*)
@@ -147,7 +147,7 @@ object containerservice_ext:
      * @param diagnostics A `diagnostics` block as documented below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def diagnostics(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupDiagnosticsArgs.Builder]):
+    inline def diagnostics(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupDiagnosticsArgs.Builder]):
         com.pulumi.azure.containerservice.GroupArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GroupDiagnosticsArgs.builder
       builder.diagnostics(args(argsBuilder).build)
@@ -156,7 +156,7 @@ object containerservice_ext:
      * @param dnsConfig A `dnsConfig` block as documented below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def dnsConfig(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupDnsConfigArgs.Builder]):
+    inline def dnsConfig(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupDnsConfigArgs.Builder]):
         com.pulumi.azure.containerservice.GroupArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GroupDnsConfigArgs.builder
       builder.dnsConfig(args(argsBuilder).build)
@@ -167,7 +167,7 @@ object containerservice_ext:
      * &gt; **Note:** The `exposedPort` can only contain ports that are also exposed on one or more containers in the group.
      * @return builder
      */
-    def exposedPorts(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupExposedPortArgs.Builder]*):
+    inline def exposedPorts(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupExposedPortArgs.Builder]*):
         com.pulumi.azure.containerservice.GroupArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.GroupExposedPortArgs.builder
       builder.exposedPorts(args.map(_(argsBuilder).build)*)
@@ -176,7 +176,7 @@ object containerservice_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupIdentityArgs.Builder]):
         com.pulumi.azure.containerservice.GroupArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GroupIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -185,7 +185,7 @@ object containerservice_ext:
      * @param imageRegistryCredentials An `imageRegistryCredential` block as documented below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def imageRegistryCredentials(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupImageRegistryCredentialArgs.Builder]*):
+    inline def imageRegistryCredentials(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupImageRegistryCredentialArgs.Builder]*):
         com.pulumi.azure.containerservice.GroupArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.GroupImageRegistryCredentialArgs.builder
       builder.imageRegistryCredentials(args.map(_(argsBuilder).build)*)
@@ -194,7 +194,7 @@ object containerservice_ext:
      * @param initContainers The definition of an init container that is part of the group as documented in the `initContainer` block below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def initContainers(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupInitContainerArgs.Builder]*):
+    inline def initContainers(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupInitContainerArgs.Builder]*):
         com.pulumi.azure.containerservice.GroupArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.GroupInitContainerArgs.builder
       builder.initContainers(args.map(_(argsBuilder).build)*)
@@ -204,7 +204,7 @@ object containerservice_ext:
      * @param aciConnectorLinux A `aciConnectorLinux` block as defined below. For more details, please visit [Create and configure an AKS cluster to use virtual nodes](https://docs.microsoft.com/azure/aks/virtual-nodes-portal).
      * @return builder
      */
-    def aciConnectorLinux(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterAciConnectorLinuxArgs.Builder]):
+    inline def aciConnectorLinux(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterAciConnectorLinuxArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterAciConnectorLinuxArgs.builder
       builder.aciConnectorLinux(args(argsBuilder).build)
@@ -213,7 +213,7 @@ object containerservice_ext:
      * @param apiServerAccessProfile An `apiServerAccessProfile` block as defined below.
      * @return builder
      */
-    def apiServerAccessProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterApiServerAccessProfileArgs.Builder]):
+    inline def apiServerAccessProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterApiServerAccessProfileArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterApiServerAccessProfileArgs.builder
       builder.apiServerAccessProfile(args(argsBuilder).build)
@@ -222,7 +222,7 @@ object containerservice_ext:
      * @param autoScalerProfile A `autoScalerProfile` block as defined below.
      * @return builder
      */
-    def autoScalerProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterAutoScalerProfileArgs.Builder]):
+    inline def autoScalerProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterAutoScalerProfileArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterAutoScalerProfileArgs.builder
       builder.autoScalerProfile(args(argsBuilder).build)
@@ -231,7 +231,7 @@ object containerservice_ext:
      * @param azureActiveDirectoryRoleBasedAccessControl A `azureActiveDirectoryRoleBasedAccessControl` block as defined below.
      * @return builder
      */
-    def azureActiveDirectoryRoleBasedAccessControl(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterAzureActiveDirectoryRoleBasedAccessControlArgs.Builder]):
+    inline def azureActiveDirectoryRoleBasedAccessControl(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterAzureActiveDirectoryRoleBasedAccessControlArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterAzureActiveDirectoryRoleBasedAccessControlArgs.builder
       builder.azureActiveDirectoryRoleBasedAccessControl(args(argsBuilder).build)
@@ -240,7 +240,7 @@ object containerservice_ext:
      * @param bootstrapProfile A `bootstrapProfile` block as defined below.
      * @return builder
      */
-    def bootstrapProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterBootstrapProfileArgs.Builder]):
+    inline def bootstrapProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterBootstrapProfileArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterBootstrapProfileArgs.builder
       builder.bootstrapProfile(args(argsBuilder).build)
@@ -249,7 +249,7 @@ object containerservice_ext:
      * @param confidentialComputing A `confidentialComputing` block as defined below. For more details please [the documentation](https://learn.microsoft.com/en-us/azure/confidential-computing/confidential-nodes-aks-overview)
      * @return builder
      */
-    def confidentialComputing(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterConfidentialComputingArgs.Builder]):
+    inline def confidentialComputing(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterConfidentialComputingArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterConfidentialComputingArgs.builder
       builder.confidentialComputing(args(argsBuilder).build)
@@ -258,7 +258,7 @@ object containerservice_ext:
      * @param defaultNodePool Specifies configuration for &#34;System&#34; mode node pool. A `defaultNodePool` block as defined below.
      * @return builder
      */
-    def defaultNodePool(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolArgs.Builder]):
+    inline def defaultNodePool(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolArgs.builder
       builder.defaultNodePool(args(argsBuilder).build)
@@ -267,7 +267,7 @@ object containerservice_ext:
      * @param httpProxyConfig A `httpProxyConfig` block as defined below.
      * @return builder
      */
-    def httpProxyConfig(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterHttpProxyConfigArgs.Builder]):
+    inline def httpProxyConfig(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterHttpProxyConfigArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterHttpProxyConfigArgs.builder
       builder.httpProxyConfig(args(argsBuilder).build)
@@ -278,7 +278,7 @@ object containerservice_ext:
      * &gt; **Note:** A migration scenario from `servicePrincipal` to `identity` is supported. When upgrading `servicePrincipal` to `identity`, your cluster&#39;s control plane and addon pods will switch to use managed identity, but the kubelets will keep using your configured `servicePrincipal` until you upgrade your Node Pool.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterIdentityArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -289,7 +289,7 @@ object containerservice_ext:
      * &gt; **Note:** Since the Application Gateway is deployed inside a Virtual Network, users (and Service Principals) that are operating the Application Gateway must have the `Microsoft.Network/virtualNetworks/subnets/join/action` permission on the Virtual Network or Subnet. For more details, please visit [Virtual Network Permission](https://learn.microsoft.com/en-us/azure/application-gateway/configuration-infrastructure#virtual-network-permission).
      * @return builder
      */
-    def ingressApplicationGateway(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterIngressApplicationGatewayArgs.Builder]):
+    inline def ingressApplicationGateway(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterIngressApplicationGatewayArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterIngressApplicationGatewayArgs.builder
       builder.ingressApplicationGateway(args(argsBuilder).build)
@@ -298,7 +298,7 @@ object containerservice_ext:
      * @param keyManagementService A `keyManagementService` block as defined below. For more details, please visit [Key Management Service (KMS) etcd encryption to an AKS cluster](https://learn.microsoft.com/en-us/azure/aks/use-kms-etcd-encryption).
      * @return builder
      */
-    def keyManagementService(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterKeyManagementServiceArgs.Builder]):
+    inline def keyManagementService(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterKeyManagementServiceArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterKeyManagementServiceArgs.builder
       builder.keyManagementService(args(argsBuilder).build)
@@ -307,7 +307,7 @@ object containerservice_ext:
      * @param keyVaultSecretsProvider A `keyVaultSecretsProvider` block as defined below. For more details, please visit [Azure Keyvault Secrets Provider for AKS](https://docs.microsoft.com/azure/aks/csi-secrets-store-driver).
      * @return builder
      */
-    def keyVaultSecretsProvider(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterKeyVaultSecretsProviderArgs.Builder]):
+    inline def keyVaultSecretsProvider(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterKeyVaultSecretsProviderArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterKeyVaultSecretsProviderArgs.builder
       builder.keyVaultSecretsProvider(args(argsBuilder).build)
@@ -316,7 +316,7 @@ object containerservice_ext:
      * @param kubeletIdentity A `kubeletIdentity` block as defined below.
      * @return builder
      */
-    def kubeletIdentity(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterKubeletIdentityArgs.Builder]):
+    inline def kubeletIdentity(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterKubeletIdentityArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterKubeletIdentityArgs.builder
       builder.kubeletIdentity(args(argsBuilder).build)
@@ -325,7 +325,7 @@ object containerservice_ext:
      * @param linuxProfile A `linuxProfile` block as defined below.
      * @return builder
      */
-    def linuxProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterLinuxProfileArgs.Builder]):
+    inline def linuxProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterLinuxProfileArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterLinuxProfileArgs.builder
       builder.linuxProfile(args(argsBuilder).build)
@@ -334,7 +334,7 @@ object containerservice_ext:
      * @param maintenanceWindow A `maintenanceWindow` block as defined below.
      * @return builder
      */
-    def maintenanceWindow(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowArgs.Builder]):
+    inline def maintenanceWindow(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowArgs.builder
       builder.maintenanceWindow(args(argsBuilder).build)
@@ -343,7 +343,7 @@ object containerservice_ext:
      * @param maintenanceWindowAutoUpgrade A `maintenanceWindowAutoUpgrade` block as defined below.
      * @return builder
      */
-    def maintenanceWindowAutoUpgrade(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowAutoUpgradeArgs.Builder]):
+    inline def maintenanceWindowAutoUpgrade(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowAutoUpgradeArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowAutoUpgradeArgs.builder
       builder.maintenanceWindowAutoUpgrade(args(argsBuilder).build)
@@ -352,7 +352,7 @@ object containerservice_ext:
      * @param maintenanceWindowNodeOs A `maintenanceWindowNodeOs` block as defined below.
      * @return builder
      */
-    def maintenanceWindowNodeOs(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowNodeOsArgs.Builder]):
+    inline def maintenanceWindowNodeOs(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowNodeOsArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowNodeOsArgs.builder
       builder.maintenanceWindowNodeOs(args(argsBuilder).build)
@@ -361,7 +361,7 @@ object containerservice_ext:
      * @param microsoftDefender A `microsoftDefender` block as defined below.
      * @return builder
      */
-    def microsoftDefender(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMicrosoftDefenderArgs.Builder]):
+    inline def microsoftDefender(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMicrosoftDefenderArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterMicrosoftDefenderArgs.builder
       builder.microsoftDefender(args(argsBuilder).build)
@@ -372,7 +372,7 @@ object containerservice_ext:
      * &gt; **Note:** If deploying Managed Prometheus, the `monitorMetrics` properties are required to configure the cluster for metrics collection. If no value is needed, set properties to `null`.
      * @return builder
      */
-    def monitorMetrics(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMonitorMetricsArgs.Builder]):
+    inline def monitorMetrics(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMonitorMetricsArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterMonitorMetricsArgs.builder
       builder.monitorMetrics(args(argsBuilder).build)
@@ -383,7 +383,7 @@ object containerservice_ext:
      * &gt; **Note:** If `networkProfile` is not defined, `kubenet` profile will be used by default.
      * @return builder
      */
-    def networkProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNetworkProfileArgs.Builder]):
+    inline def networkProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNetworkProfileArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterNetworkProfileArgs.builder
       builder.networkProfile(args(argsBuilder).build)
@@ -392,7 +392,7 @@ object containerservice_ext:
      * @param nodeProvisioningProfile A `nodeProvisioningProfile` block as defined below.
      * @return builder
      */
-    def nodeProvisioningProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodeProvisioningProfileArgs.Builder]):
+    inline def nodeProvisioningProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodeProvisioningProfileArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterNodeProvisioningProfileArgs.builder
       builder.nodeProvisioningProfile(args(argsBuilder).build)
@@ -401,7 +401,7 @@ object containerservice_ext:
      * @param omsAgent A `omsAgent` block as defined below.
      * @return builder
      */
-    def omsAgent(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterOmsAgentArgs.Builder]):
+    inline def omsAgent(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterOmsAgentArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterOmsAgentArgs.builder
       builder.omsAgent(args(argsBuilder).build)
@@ -410,7 +410,7 @@ object containerservice_ext:
      * @param serviceMeshProfile A `serviceMeshProfile` block as defined below.
      * @return builder
      */
-    def serviceMeshProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterServiceMeshProfileArgs.Builder]):
+    inline def serviceMeshProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterServiceMeshProfileArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterServiceMeshProfileArgs.builder
       builder.serviceMeshProfile(args(argsBuilder).build)
@@ -421,7 +421,7 @@ object containerservice_ext:
      * &gt; **Note:** A migration scenario from `servicePrincipal` to `identity` is supported. When upgrading `servicePrincipal` to `identity`, your cluster&#39;s control plane and addon pods will switch to use managed identity, but the kubelets will keep using your configured `servicePrincipal` until you upgrade your Node Pool.
      * @return builder
      */
-    def servicePrincipal(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterServicePrincipalArgs.Builder]):
+    inline def servicePrincipal(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterServicePrincipalArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterServicePrincipalArgs.builder
       builder.servicePrincipal(args(argsBuilder).build)
@@ -430,7 +430,7 @@ object containerservice_ext:
      * @param storageProfile A `storageProfile` block as defined below.
      * @return builder
      */
-    def storageProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterStorageProfileArgs.Builder]):
+    inline def storageProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterStorageProfileArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterStorageProfileArgs.builder
       builder.storageProfile(args(argsBuilder).build)
@@ -439,7 +439,7 @@ object containerservice_ext:
      * @param upgradeOverride A `upgradeOverride` block as defined below.
      * @return builder
      */
-    def upgradeOverride(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterUpgradeOverrideArgs.Builder]):
+    inline def upgradeOverride(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterUpgradeOverrideArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterUpgradeOverrideArgs.builder
       builder.upgradeOverride(args(argsBuilder).build)
@@ -448,7 +448,7 @@ object containerservice_ext:
      * @param webAppRouting A `webAppRouting` block as defined below.
      * @return builder
      */
-    def webAppRouting(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterWebAppRoutingArgs.Builder]):
+    inline def webAppRouting(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterWebAppRoutingArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterWebAppRoutingArgs.builder
       builder.webAppRouting(args(argsBuilder).build)
@@ -457,7 +457,7 @@ object containerservice_ext:
      * @param windowsProfile A `windowsProfile` block as defined below.
      * @return builder
      */
-    def windowsProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterWindowsProfileArgs.Builder]):
+    inline def windowsProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterWindowsProfileArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterWindowsProfileArgs.builder
       builder.windowsProfile(args(argsBuilder).build)
@@ -466,7 +466,7 @@ object containerservice_ext:
      * @param workloadAutoscalerProfile A `workloadAutoscalerProfile` block defined below.
      * @return builder
      */
-    def workloadAutoscalerProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterWorkloadAutoscalerProfileArgs.Builder]):
+    inline def workloadAutoscalerProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterWorkloadAutoscalerProfileArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterWorkloadAutoscalerProfileArgs.builder
       builder.workloadAutoscalerProfile(args(argsBuilder).build)
@@ -476,7 +476,7 @@ object containerservice_ext:
      * @param plan A `plan` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def plan(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterExtensionPlanArgs.Builder]):
+    inline def plan(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterExtensionPlanArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterExtensionArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterExtensionPlanArgs.builder
       builder.plan(args(argsBuilder).build)
@@ -486,7 +486,7 @@ object containerservice_ext:
      * @param kubeletConfig A `kubeletConfig` block as defined below. Changing this requires specifying `temporaryNameForRotation`.
      * @return builder
      */
-    def kubeletConfig(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolKubeletConfigArgs.Builder]):
+    inline def kubeletConfig(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolKubeletConfigArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterNodePoolArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolKubeletConfigArgs.builder
       builder.kubeletConfig(args(argsBuilder).build)
@@ -495,7 +495,7 @@ object containerservice_ext:
      * @param linuxOsConfig A `linuxOsConfig` block as defined below. Changing this requires specifying `temporaryNameForRotation`.
      * @return builder
      */
-    def linuxOsConfig(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolLinuxOsConfigArgs.Builder]):
+    inline def linuxOsConfig(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolLinuxOsConfigArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterNodePoolArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolLinuxOsConfigArgs.builder
       builder.linuxOsConfig(args(argsBuilder).build)
@@ -504,7 +504,7 @@ object containerservice_ext:
      * @param nodeNetworkProfile A `nodeNetworkProfile` block as documented below.
      * @return builder
      */
-    def nodeNetworkProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolNodeNetworkProfileArgs.Builder]):
+    inline def nodeNetworkProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolNodeNetworkProfileArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterNodePoolArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolNodeNetworkProfileArgs.builder
       builder.nodeNetworkProfile(args(argsBuilder).build)
@@ -513,7 +513,7 @@ object containerservice_ext:
      * @param upgradeSettings A `upgradeSettings` block as documented below.
      * @return builder
      */
-    def upgradeSettings(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolUpgradeSettingsArgs.Builder]):
+    inline def upgradeSettings(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolUpgradeSettingsArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterNodePoolArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolUpgradeSettingsArgs.builder
       builder.upgradeSettings(args(argsBuilder).build)
@@ -522,7 +522,7 @@ object containerservice_ext:
      * @param windowsProfile A `windowsProfile` block as documented below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def windowsProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolWindowsProfileArgs.Builder]):
+    inline def windowsProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolWindowsProfileArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesClusterNodePoolArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolWindowsProfileArgs.builder
       builder.windowsProfile(args(argsBuilder).build)
@@ -532,7 +532,7 @@ object containerservice_ext:
      * @return builder
      * @deprecated The service team has indicated this field is now deprecated and not to be used, as such we are marking it as such and no longer sending it to the API, please see url: https://learn.microsoft.com/en-us/azure/kubernetes-fleet/architectural-overview
      */
-    @deprecated("The service team has indicated this field is now deprecated and not to be used, as such we are marking it as such and no longer sending it to the API, please see url: https://learn.microsoft.com/en-us/azure/kubernetes-fleet/architectural-overview") def hubProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesFleetManagerHubProfileArgs.Builder]):
+    @deprecated("The service team has indicated this field is now deprecated and not to be used, as such we are marking it as such and no longer sending it to the API, please see url: https://learn.microsoft.com/en-us/azure/kubernetes-fleet/architectural-overview") inline def hubProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesFleetManagerHubProfileArgs.Builder]):
         com.pulumi.azure.containerservice.KubernetesFleetManagerArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesFleetManagerHubProfileArgs.builder
       builder.hubProfile(args(argsBuilder).build)
@@ -542,7 +542,7 @@ object containerservice_ext:
      * @param encryption An `encryption` block as documented below.
      * @return builder
      */
-    def encryption(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryEncryptionArgs.Builder]):
+    inline def encryption(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryEncryptionArgs.Builder]):
         com.pulumi.azure.containerservice.RegistryArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryEncryptionArgs.builder
       builder.encryption(args(argsBuilder).build)
@@ -557,7 +557,7 @@ object containerservice_ext:
      * &gt; **Note:** If more than one `georeplications` block is specified, they are expected to follow the alphabetic order on the `location` property.
      * @return builder
      */
-    def georeplications(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryGeoreplicationArgs.Builder]*):
+    inline def georeplications(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryGeoreplicationArgs.Builder]*):
         com.pulumi.azure.containerservice.RegistryArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryGeoreplicationArgs.builder
       builder.georeplications(args.map(_(argsBuilder).build)*)
@@ -566,7 +566,7 @@ object containerservice_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryIdentityArgs.Builder]):
         com.pulumi.azure.containerservice.RegistryArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -575,7 +575,7 @@ object containerservice_ext:
      * @param networkRuleSet A `networkRuleSet` block as documented below.
      * @return builder
      */
-    def networkRuleSet(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryNetworkRuleSetArgs.Builder]):
+    inline def networkRuleSet(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryNetworkRuleSetArgs.Builder]):
         com.pulumi.azure.containerservice.RegistryArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryNetworkRuleSetArgs.builder
       builder.networkRuleSet(args(argsBuilder).build)
@@ -585,7 +585,7 @@ object containerservice_ext:
      * @param authenticationCredentials A `authenticationCredentials` block as defined below.
      * @return builder
      */
-    def authenticationCredentials(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryCredentialSetAuthenticationCredentialsArgs.Builder]):
+    inline def authenticationCredentials(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryCredentialSetAuthenticationCredentialsArgs.Builder]):
         com.pulumi.azure.containerservice.RegistryCredentialSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryCredentialSetAuthenticationCredentialsArgs.builder
       builder.authenticationCredentials(args(argsBuilder).build)
@@ -594,7 +594,7 @@ object containerservice_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryCredentialSetIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryCredentialSetIdentityArgs.Builder]):
         com.pulumi.azure.containerservice.RegistryCredentialSetArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryCredentialSetIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -606,7 +606,7 @@ object containerservice_ext:
      * &gt; **Note:** Only one of `agentPoolName` and `agentSetting` can be specified.
      * @return builder
      */
-    def agentSetting(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskAgentSettingArgs.Builder]):
+    inline def agentSetting(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskAgentSettingArgs.Builder]):
         com.pulumi.azure.containerservice.RegistryTaskArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryTaskAgentSettingArgs.builder
       builder.agentSetting(args(argsBuilder).build)
@@ -615,7 +615,7 @@ object containerservice_ext:
      * @param baseImageTrigger A `baseImageTrigger` block as defined below.
      * @return builder
      */
-    def baseImageTrigger(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskBaseImageTriggerArgs.Builder]):
+    inline def baseImageTrigger(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskBaseImageTriggerArgs.Builder]):
         com.pulumi.azure.containerservice.RegistryTaskArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryTaskBaseImageTriggerArgs.builder
       builder.baseImageTrigger(args(argsBuilder).build)
@@ -624,7 +624,7 @@ object containerservice_ext:
      * @param dockerStep A `dockerStep` block as defined below.
      * @return builder
      */
-    def dockerStep(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskDockerStepArgs.Builder]):
+    inline def dockerStep(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskDockerStepArgs.Builder]):
         com.pulumi.azure.containerservice.RegistryTaskArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryTaskDockerStepArgs.builder
       builder.dockerStep(args(argsBuilder).build)
@@ -633,7 +633,7 @@ object containerservice_ext:
      * @param encodedStep A `encodedStep` block as defined below.
      * @return builder
      */
-    def encodedStep(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskEncodedStepArgs.Builder]):
+    inline def encodedStep(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskEncodedStepArgs.Builder]):
         com.pulumi.azure.containerservice.RegistryTaskArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryTaskEncodedStepArgs.builder
       builder.encodedStep(args(argsBuilder).build)
@@ -644,7 +644,7 @@ object containerservice_ext:
      * &gt; **Note:** For non-system task (when `isSystemTask` is set to `false`), one and only one of the `dockerStep`, `encodedStep` and `fileStep` should be specified.
      * @return builder
      */
-    def fileStep(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskFileStepArgs.Builder]):
+    inline def fileStep(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskFileStepArgs.Builder]):
         com.pulumi.azure.containerservice.RegistryTaskArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryTaskFileStepArgs.builder
       builder.fileStep(args(argsBuilder).build)
@@ -653,7 +653,7 @@ object containerservice_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskIdentityArgs.Builder]):
         com.pulumi.azure.containerservice.RegistryTaskArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryTaskIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -664,12 +664,12 @@ object containerservice_ext:
      * &gt; **Note:** The `platform` is required for non-system task (when `isSystemTask` is set to `false`).
      * @return builder
      */
-    def platform(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskPlatformArgs.Builder]):
+    inline def platform(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskPlatformArgs.Builder]):
         com.pulumi.azure.containerservice.RegistryTaskArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryTaskPlatformArgs.builder
       builder.platform(args(argsBuilder).build)
 
-    def registryCredential(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskRegistryCredentialArgs.Builder]):
+    inline def registryCredential(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskRegistryCredentialArgs.Builder]):
         com.pulumi.azure.containerservice.RegistryTaskArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryTaskRegistryCredentialArgs.builder
       builder.registryCredential(args(argsBuilder).build)
@@ -678,7 +678,7 @@ object containerservice_ext:
      * @param sourceTriggers One or more `sourceTrigger` blocks as defined below.
      * @return builder
      */
-    def sourceTriggers(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskSourceTriggerArgs.Builder]*):
+    inline def sourceTriggers(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskSourceTriggerArgs.Builder]*):
         com.pulumi.azure.containerservice.RegistryTaskArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryTaskSourceTriggerArgs.builder
       builder.sourceTriggers(args.map(_(argsBuilder).build)*)
@@ -687,7 +687,7 @@ object containerservice_ext:
      * @param timerTriggers One or more `timerTrigger` blocks as defined below.
      * @return builder
      */
-    def timerTriggers(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskTimerTriggerArgs.Builder]*):
+    inline def timerTriggers(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskTimerTriggerArgs.Builder]*):
         com.pulumi.azure.containerservice.RegistryTaskArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryTaskTimerTriggerArgs.builder
       builder.timerTriggers(args.map(_(argsBuilder).build)*)
@@ -697,7 +697,7 @@ object containerservice_ext:
      * @param password1 One `password` block as defined below.
      * @return builder
      */
-    def password1(args: Endofunction[com.pulumi.azure.containerservice.inputs.TokenPasswordPassword1Args.Builder]):
+    inline def password1(args: Endofunction[com.pulumi.azure.containerservice.inputs.TokenPasswordPassword1Args.Builder]):
         com.pulumi.azure.containerservice.TokenPasswordArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.TokenPasswordPassword1Args.builder
       builder.password1(args(argsBuilder).build)
@@ -706,7 +706,7 @@ object containerservice_ext:
      * @param password2 One `password` block as defined below.
      * @return builder
      */
-    def password2(args: Endofunction[com.pulumi.azure.containerservice.inputs.TokenPasswordPassword2Args.Builder]):
+    inline def password2(args: Endofunction[com.pulumi.azure.containerservice.inputs.TokenPasswordPassword2Args.Builder]):
         com.pulumi.azure.containerservice.TokenPasswordArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.TokenPasswordPassword2Args.builder
       builder.password2(args(argsBuilder).build)
@@ -716,7 +716,7 @@ object containerservice_ext:
      * @param certificateAuthority A `certificateAuthority` block as defined below. This configuration allows you to bring your own root certificate and keys for Istio CA in the Istio-based service mesh add-on for Azure Kubernetes Service.
      * @return builder
      */
-    def certificateAuthority(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterServiceMeshCertificateAuthorityArgs.Builder]):
+    inline def certificateAuthority(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterServiceMeshCertificateAuthorityArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.AutomaticClusterServiceMeshArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterServiceMeshCertificateAuthorityArgs.builder
       builder.certificateAuthority(args(argsBuilder).build)
@@ -726,7 +726,7 @@ object containerservice_ext:
      * @param apiServerAccess An `apiServerAccess` block as defined below.
      * @return builder
      */
-    def apiServerAccess(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterApiServerAccessArgs.Builder]):
+    inline def apiServerAccess(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterApiServerAccessArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.AutomaticClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterApiServerAccessArgs.builder
       builder.apiServerAccess(args(argsBuilder).build)
@@ -735,7 +735,7 @@ object containerservice_ext:
      * @param hostedSystem A `hostedSystem` block as defined below.
      * @return builder
      */
-    def hostedSystem(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterHostedSystemArgs.Builder]):
+    inline def hostedSystem(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterHostedSystemArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.AutomaticClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterHostedSystemArgs.builder
       builder.hostedSystem(args(argsBuilder).build)
@@ -744,7 +744,7 @@ object containerservice_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterIdentityArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.AutomaticClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -753,7 +753,7 @@ object containerservice_ext:
      * @param kubeConfigs A `kubeConfig` block as defined below.
      * @return builder
      */
-    def kubeConfigs(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterKubeConfigArgs.Builder]*):
+    inline def kubeConfigs(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterKubeConfigArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.AutomaticClusterState.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterKubeConfigArgs.builder
       builder.kubeConfigs(args.map(_(argsBuilder).build)*)
@@ -762,7 +762,7 @@ object containerservice_ext:
      * @param privateCluster A `privateCluster` block as defined below.
      * @return builder
      */
-    def privateCluster(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterPrivateClusterArgs.Builder]):
+    inline def privateCluster(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterPrivateClusterArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.AutomaticClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterPrivateClusterArgs.builder
       builder.privateCluster(args(argsBuilder).build)
@@ -771,7 +771,7 @@ object containerservice_ext:
      * @param serviceMesh A `serviceMesh` block as defined below.
      * @return builder
      */
-    def serviceMesh(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterServiceMeshArgs.Builder]):
+    inline def serviceMesh(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterServiceMeshArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.AutomaticClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterServiceMeshArgs.builder
       builder.serviceMesh(args(argsBuilder).build)
@@ -780,13 +780,13 @@ object containerservice_ext:
      * @param webAppRoutingIngress A `webAppRoutingIngress` block as defined below.
      * @return builder
      */
-    def webAppRoutingIngress(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterWebAppRoutingIngressArgs.Builder]):
+    inline def webAppRoutingIngress(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterWebAppRoutingIngressArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.AutomaticClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterWebAppRoutingIngressArgs.builder
       builder.webAppRoutingIngress(args(argsBuilder).build)
 
   extension (builder: com.pulumi.azure.containerservice.inputs.AutomaticClusterWebAppRoutingIngressArgs.Builder)
-    def webAppRoutingIdentities(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterWebAppRoutingIngressWebAppRoutingIdentityArgs.Builder]*):
+    inline def webAppRoutingIdentities(args: Endofunction[com.pulumi.azure.containerservice.inputs.AutomaticClusterWebAppRoutingIngressWebAppRoutingIdentityArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.AutomaticClusterWebAppRoutingIngressArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.AutomaticClusterWebAppRoutingIngressWebAppRoutingIdentityArgs.builder
       builder.webAppRoutingIdentities(args.map(_(argsBuilder).build)*)
@@ -796,7 +796,7 @@ object containerservice_ext:
      * @param notifications One or more `notification` blocks as defined below.
      * @return builder
      */
-    def notifications(args: Endofunction[com.pulumi.azure.containerservice.inputs.ConnectedRegistryNotificationArgs.Builder]*):
+    inline def notifications(args: Endofunction[com.pulumi.azure.containerservice.inputs.ConnectedRegistryNotificationArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.ConnectedRegistryState.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.ConnectedRegistryNotificationArgs.builder
       builder.notifications(args.map(_(argsBuilder).build)*)
@@ -806,7 +806,7 @@ object containerservice_ext:
      * @param nodeImageSelection A `nodeImageSelection` block as defined below.
      * @return builder
      */
-    def nodeImageSelection(args: Endofunction[com.pulumi.azure.containerservice.inputs.FleetUpdateRunManagedClusterUpdateNodeImageSelectionArgs.Builder]):
+    inline def nodeImageSelection(args: Endofunction[com.pulumi.azure.containerservice.inputs.FleetUpdateRunManagedClusterUpdateNodeImageSelectionArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.FleetUpdateRunManagedClusterUpdateArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.FleetUpdateRunManagedClusterUpdateNodeImageSelectionArgs.builder
       builder.nodeImageSelection(args(argsBuilder).build)
@@ -815,7 +815,7 @@ object containerservice_ext:
      * @param upgrade A `upgrade` block as defined below.
      * @return builder
      */
-    def upgrade(args: Endofunction[com.pulumi.azure.containerservice.inputs.FleetUpdateRunManagedClusterUpdateUpgradeArgs.Builder]):
+    inline def upgrade(args: Endofunction[com.pulumi.azure.containerservice.inputs.FleetUpdateRunManagedClusterUpdateUpgradeArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.FleetUpdateRunManagedClusterUpdateArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.FleetUpdateRunManagedClusterUpdateUpgradeArgs.builder
       builder.upgrade(args(argsBuilder).build)
@@ -825,7 +825,7 @@ object containerservice_ext:
      * @param groups One or more `group` blocks as defined below.
      * @return builder
      */
-    def groups(args: Endofunction[com.pulumi.azure.containerservice.inputs.FleetUpdateRunStageGroupArgs.Builder]*):
+    inline def groups(args: Endofunction[com.pulumi.azure.containerservice.inputs.FleetUpdateRunStageGroupArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.FleetUpdateRunStageArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.FleetUpdateRunStageGroupArgs.builder
       builder.groups(args.map(_(argsBuilder).build)*)
@@ -835,7 +835,7 @@ object containerservice_ext:
      * @param managedClusterUpdate A `managedClusterUpdate` block as defined below.
      * @return builder
      */
-    def managedClusterUpdate(args: Endofunction[com.pulumi.azure.containerservice.inputs.FleetUpdateRunManagedClusterUpdateArgs.Builder]):
+    inline def managedClusterUpdate(args: Endofunction[com.pulumi.azure.containerservice.inputs.FleetUpdateRunManagedClusterUpdateArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.FleetUpdateRunState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.FleetUpdateRunManagedClusterUpdateArgs.builder
       builder.managedClusterUpdate(args(argsBuilder).build)
@@ -844,7 +844,7 @@ object containerservice_ext:
      * @param stages One or more `stage` blocks as defined below. Only one of `stage` or `fleetUpdateStrategyId` can be specified.
      * @return builder
      */
-    def stages(args: Endofunction[com.pulumi.azure.containerservice.inputs.FleetUpdateRunStageArgs.Builder]*):
+    inline def stages(args: Endofunction[com.pulumi.azure.containerservice.inputs.FleetUpdateRunStageArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.FleetUpdateRunState.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.FleetUpdateRunStageArgs.builder
       builder.stages(args.map(_(argsBuilder).build)*)
@@ -854,7 +854,7 @@ object containerservice_ext:
      * @param groups One or more `group` blocks as defined below.
      * @return builder
      */
-    def groups(args: Endofunction[com.pulumi.azure.containerservice.inputs.FleetUpdateStrategyStageGroupArgs.Builder]*):
+    inline def groups(args: Endofunction[com.pulumi.azure.containerservice.inputs.FleetUpdateStrategyStageGroupArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.FleetUpdateStrategyStageArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.FleetUpdateStrategyStageGroupArgs.builder
       builder.groups(args.map(_(argsBuilder).build)*)
@@ -864,7 +864,7 @@ object containerservice_ext:
      * @param stages One or more `stage` blocks as defined below.
      * @return builder
      */
-    def stages(args: Endofunction[com.pulumi.azure.containerservice.inputs.FleetUpdateStrategyStageArgs.Builder]*):
+    inline def stages(args: Endofunction[com.pulumi.azure.containerservice.inputs.FleetUpdateStrategyStageArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.FleetUpdateStrategyState.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.FleetUpdateStrategyStageArgs.builder
       builder.stages(args.map(_(argsBuilder).build)*)
@@ -874,7 +874,7 @@ object containerservice_ext:
      * @param managedIdentity A `managedIdentity` block as defined below.
      * @return builder
      */
-    def managedIdentity(args: Endofunction[com.pulumi.azure.containerservice.inputs.FluxConfigurationBlobStorageManagedIdentityArgs.Builder]):
+    inline def managedIdentity(args: Endofunction[com.pulumi.azure.containerservice.inputs.FluxConfigurationBlobStorageManagedIdentityArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.FluxConfigurationBlobStorageArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.FluxConfigurationBlobStorageManagedIdentityArgs.builder
       builder.managedIdentity(args(argsBuilder).build)
@@ -883,7 +883,7 @@ object containerservice_ext:
      * @param servicePrincipal A `servicePrincipal` block as defined below.
      * @return builder
      */
-    def servicePrincipal(args: Endofunction[com.pulumi.azure.containerservice.inputs.FluxConfigurationBlobStorageServicePrincipalArgs.Builder]):
+    inline def servicePrincipal(args: Endofunction[com.pulumi.azure.containerservice.inputs.FluxConfigurationBlobStorageServicePrincipalArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.FluxConfigurationBlobStorageArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.FluxConfigurationBlobStorageServicePrincipalArgs.builder
       builder.servicePrincipal(args(argsBuilder).build)
@@ -893,7 +893,7 @@ object containerservice_ext:
      * @param postBuild A `postBuild` block as defined below.
      * @return builder
      */
-    def postBuild(args: Endofunction[com.pulumi.azure.containerservice.inputs.FluxConfigurationKustomizationPostBuildArgs.Builder]):
+    inline def postBuild(args: Endofunction[com.pulumi.azure.containerservice.inputs.FluxConfigurationKustomizationPostBuildArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.FluxConfigurationKustomizationArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.FluxConfigurationKustomizationPostBuildArgs.builder
       builder.postBuild(args(argsBuilder).build)
@@ -903,7 +903,7 @@ object containerservice_ext:
      * @param substituteFroms A `substituteFrom` block as defined below.
      * @return builder
      */
-    def substituteFroms(args: Endofunction[com.pulumi.azure.containerservice.inputs.FluxConfigurationKustomizationPostBuildSubstituteFromArgs.Builder]*):
+    inline def substituteFroms(args: Endofunction[com.pulumi.azure.containerservice.inputs.FluxConfigurationKustomizationPostBuildSubstituteFromArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.FluxConfigurationKustomizationPostBuildArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.FluxConfigurationKustomizationPostBuildSubstituteFromArgs.builder
       builder.substituteFroms(args.map(_(argsBuilder).build)*)
@@ -913,7 +913,7 @@ object containerservice_ext:
      * @param blobStorage An `blobStorage` block as defined below.
      * @return builder
      */
-    def blobStorage(args: Endofunction[com.pulumi.azure.containerservice.inputs.FluxConfigurationBlobStorageArgs.Builder]):
+    inline def blobStorage(args: Endofunction[com.pulumi.azure.containerservice.inputs.FluxConfigurationBlobStorageArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.FluxConfigurationState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.FluxConfigurationBlobStorageArgs.builder
       builder.blobStorage(args(argsBuilder).build)
@@ -922,7 +922,7 @@ object containerservice_ext:
      * @param bucket A `bucket` block as defined below.
      * @return builder
      */
-    def bucket(args: Endofunction[com.pulumi.azure.containerservice.inputs.FluxConfigurationBucketArgs.Builder]):
+    inline def bucket(args: Endofunction[com.pulumi.azure.containerservice.inputs.FluxConfigurationBucketArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.FluxConfigurationState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.FluxConfigurationBucketArgs.builder
       builder.bucket(args(argsBuilder).build)
@@ -931,7 +931,7 @@ object containerservice_ext:
      * @param gitRepository A `gitRepository` block as defined below.
      * @return builder
      */
-    def gitRepository(args: Endofunction[com.pulumi.azure.containerservice.inputs.FluxConfigurationGitRepositoryArgs.Builder]):
+    inline def gitRepository(args: Endofunction[com.pulumi.azure.containerservice.inputs.FluxConfigurationGitRepositoryArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.FluxConfigurationState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.FluxConfigurationGitRepositoryArgs.builder
       builder.gitRepository(args(argsBuilder).build)
@@ -940,7 +940,7 @@ object containerservice_ext:
      * @param kustomizations A `kustomizations` block as defined below.
      * @return builder
      */
-    def kustomizations(args: Endofunction[com.pulumi.azure.containerservice.inputs.FluxConfigurationKustomizationArgs.Builder]*):
+    inline def kustomizations(args: Endofunction[com.pulumi.azure.containerservice.inputs.FluxConfigurationKustomizationArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.FluxConfigurationState.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.FluxConfigurationKustomizationArgs.builder
       builder.kustomizations(args.map(_(argsBuilder).build)*)
@@ -950,7 +950,7 @@ object containerservice_ext:
      * @param livenessProbe The definition of a readiness probe for this container as documented in the `livenessProbe` block below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def livenessProbe(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupContainerLivenessProbeArgs.Builder]):
+    inline def livenessProbe(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupContainerLivenessProbeArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.GroupContainerArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GroupContainerLivenessProbeArgs.builder
       builder.livenessProbe(args(argsBuilder).build)
@@ -959,7 +959,7 @@ object containerservice_ext:
      * @param ports A set of public ports for the container. Changing this forces a new resource to be created. Set as documented in the `ports` block below.
      * @return builder
      */
-    def ports(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupContainerPortArgs.Builder]*):
+    inline def ports(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupContainerPortArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.GroupContainerArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.GroupContainerPortArgs.builder
       builder.ports(args.map(_(argsBuilder).build)*)
@@ -968,7 +968,7 @@ object containerservice_ext:
      * @param readinessProbe The definition of a readiness probe for this container as documented in the `readinessProbe` block below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def readinessProbe(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupContainerReadinessProbeArgs.Builder]):
+    inline def readinessProbe(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupContainerReadinessProbeArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.GroupContainerArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GroupContainerReadinessProbeArgs.builder
       builder.readinessProbe(args(argsBuilder).build)
@@ -977,7 +977,7 @@ object containerservice_ext:
      * @param securities The definition of the security context for this container as documented in the `security` block below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def securities(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupContainerSecurityArgs.Builder]*):
+    inline def securities(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupContainerSecurityArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.GroupContainerArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.GroupContainerSecurityArgs.builder
       builder.securities(args.map(_(argsBuilder).build)*)
@@ -986,7 +986,7 @@ object containerservice_ext:
      * @param volumes The definition of a volume mount for this container as documented in the `volume` block below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def volumes(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupContainerVolumeArgs.Builder]*):
+    inline def volumes(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupContainerVolumeArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.GroupContainerArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.GroupContainerVolumeArgs.builder
       builder.volumes(args.map(_(argsBuilder).build)*)
@@ -996,7 +996,7 @@ object containerservice_ext:
      * @param httpGets The definition of the httpGet for this container as documented in the `httpGet` block below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def httpGets(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupContainerLivenessProbeHttpGetArgs.Builder]*):
+    inline def httpGets(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupContainerLivenessProbeHttpGetArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.GroupContainerLivenessProbeArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.GroupContainerLivenessProbeHttpGetArgs.builder
       builder.httpGets(args.map(_(argsBuilder).build)*)
@@ -1006,7 +1006,7 @@ object containerservice_ext:
      * @param httpGets The definition of the httpGet for this container as documented in the `httpGet` block below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def httpGets(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupContainerReadinessProbeHttpGetArgs.Builder]*):
+    inline def httpGets(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupContainerReadinessProbeHttpGetArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.GroupContainerReadinessProbeArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.GroupContainerReadinessProbeHttpGetArgs.builder
       builder.httpGets(args.map(_(argsBuilder).build)*)
@@ -1016,7 +1016,7 @@ object containerservice_ext:
      * @param gitRepo A `gitRepo` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def gitRepo(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupContainerVolumeGitRepoArgs.Builder]):
+    inline def gitRepo(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupContainerVolumeGitRepoArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.GroupContainerVolumeArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GroupContainerVolumeGitRepoArgs.builder
       builder.gitRepo(args(argsBuilder).build)
@@ -1026,7 +1026,7 @@ object containerservice_ext:
      * @param logAnalytics A `logAnalytics` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def logAnalytics(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupDiagnosticsLogAnalyticsArgs.Builder]):
+    inline def logAnalytics(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupDiagnosticsLogAnalyticsArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.GroupDiagnosticsArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GroupDiagnosticsLogAnalyticsArgs.builder
       builder.logAnalytics(args(argsBuilder).build)
@@ -1036,7 +1036,7 @@ object containerservice_ext:
      * @param securities The definition of the security context for this container as documented in the `security` block below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def securities(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupInitContainerSecurityArgs.Builder]*):
+    inline def securities(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupInitContainerSecurityArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.GroupInitContainerArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.GroupInitContainerSecurityArgs.builder
       builder.securities(args.map(_(argsBuilder).build)*)
@@ -1045,7 +1045,7 @@ object containerservice_ext:
      * @param volumes The definition of a volume mount for this container as documented in the `volume` block below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def volumes(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupInitContainerVolumeArgs.Builder]*):
+    inline def volumes(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupInitContainerVolumeArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.GroupInitContainerArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.GroupInitContainerVolumeArgs.builder
       builder.volumes(args.map(_(argsBuilder).build)*)
@@ -1055,7 +1055,7 @@ object containerservice_ext:
      * @param gitRepo A `gitRepo` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def gitRepo(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupInitContainerVolumeGitRepoArgs.Builder]):
+    inline def gitRepo(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupInitContainerVolumeGitRepoArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.GroupInitContainerVolumeArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GroupInitContainerVolumeGitRepoArgs.builder
       builder.gitRepo(args(argsBuilder).build)
@@ -1065,7 +1065,7 @@ object containerservice_ext:
      * @param containers The definition of a container that is part of the group as documented in the `container` block below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def containers(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupContainerArgs.Builder]*):
+    inline def containers(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupContainerArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.GroupState.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.GroupContainerArgs.builder
       builder.containers(args.map(_(argsBuilder).build)*)
@@ -1074,7 +1074,7 @@ object containerservice_ext:
      * @param diagnostics A `diagnostics` block as documented below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def diagnostics(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupDiagnosticsArgs.Builder]):
+    inline def diagnostics(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupDiagnosticsArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.GroupState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GroupDiagnosticsArgs.builder
       builder.diagnostics(args(argsBuilder).build)
@@ -1083,7 +1083,7 @@ object containerservice_ext:
      * @param dnsConfig A `dnsConfig` block as documented below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def dnsConfig(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupDnsConfigArgs.Builder]):
+    inline def dnsConfig(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupDnsConfigArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.GroupState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GroupDnsConfigArgs.builder
       builder.dnsConfig(args(argsBuilder).build)
@@ -1094,7 +1094,7 @@ object containerservice_ext:
      * &gt; **Note:** The `exposedPort` can only contain ports that are also exposed on one or more containers in the group.
      * @return builder
      */
-    def exposedPorts(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupExposedPortArgs.Builder]*):
+    inline def exposedPorts(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupExposedPortArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.GroupState.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.GroupExposedPortArgs.builder
       builder.exposedPorts(args.map(_(argsBuilder).build)*)
@@ -1103,7 +1103,7 @@ object containerservice_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupIdentityArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.GroupState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GroupIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -1112,7 +1112,7 @@ object containerservice_ext:
      * @param imageRegistryCredentials An `imageRegistryCredential` block as documented below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def imageRegistryCredentials(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupImageRegistryCredentialArgs.Builder]*):
+    inline def imageRegistryCredentials(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupImageRegistryCredentialArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.GroupState.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.GroupImageRegistryCredentialArgs.builder
       builder.imageRegistryCredentials(args.map(_(argsBuilder).build)*)
@@ -1121,7 +1121,7 @@ object containerservice_ext:
      * @param initContainers The definition of an init container that is part of the group as documented in the `initContainer` block below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def initContainers(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupInitContainerArgs.Builder]*):
+    inline def initContainers(args: Endofunction[com.pulumi.azure.containerservice.inputs.GroupInitContainerArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.GroupState.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.GroupInitContainerArgs.builder
       builder.initContainers(args.map(_(argsBuilder).build)*)
@@ -1131,7 +1131,7 @@ object containerservice_ext:
      * @param connectorIdentities A `connectorIdentity` block is exported. The exported attributes are defined below.
      * @return builder
      */
-    def connectorIdentities(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterAciConnectorLinuxConnectorIdentityArgs.Builder]*):
+    inline def connectorIdentities(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterAciConnectorLinuxConnectorIdentityArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterAciConnectorLinuxArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterAciConnectorLinuxConnectorIdentityArgs.builder
       builder.connectorIdentities(args.map(_(argsBuilder).build)*)
@@ -1141,7 +1141,7 @@ object containerservice_ext:
      * @param kubeletConfig A `kubeletConfig` block as defined below. `temporaryNameForRotation` must be specified when changing this block.
      * @return builder
      */
-    def kubeletConfig(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolKubeletConfigArgs.Builder]):
+    inline def kubeletConfig(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolKubeletConfigArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolKubeletConfigArgs.builder
       builder.kubeletConfig(args(argsBuilder).build)
@@ -1150,7 +1150,7 @@ object containerservice_ext:
      * @param linuxOsConfig A `linuxOsConfig` block as defined below. `temporaryNameForRotation` must be specified when changing this block.
      * @return builder
      */
-    def linuxOsConfig(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolLinuxOsConfigArgs.Builder]):
+    inline def linuxOsConfig(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolLinuxOsConfigArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolLinuxOsConfigArgs.builder
       builder.linuxOsConfig(args(argsBuilder).build)
@@ -1159,7 +1159,7 @@ object containerservice_ext:
      * @param nodeNetworkProfile A `nodeNetworkProfile` block as documented below.
      * @return builder
      */
-    def nodeNetworkProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolNodeNetworkProfileArgs.Builder]):
+    inline def nodeNetworkProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolNodeNetworkProfileArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolNodeNetworkProfileArgs.builder
       builder.nodeNetworkProfile(args(argsBuilder).build)
@@ -1168,7 +1168,7 @@ object containerservice_ext:
      * @param upgradeSettings A `upgradeSettings` block as documented below.
      * @return builder
      */
-    def upgradeSettings(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolUpgradeSettingsArgs.Builder]):
+    inline def upgradeSettings(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolUpgradeSettingsArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolUpgradeSettingsArgs.builder
       builder.upgradeSettings(args(argsBuilder).build)
@@ -1178,7 +1178,7 @@ object containerservice_ext:
      * @param sysctlConfig A `sysctlConfig` block as defined below.
      * @return builder
      */
-    def sysctlConfig(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolLinuxOsConfigSysctlConfigArgs.Builder]):
+    inline def sysctlConfig(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolLinuxOsConfigSysctlConfigArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolLinuxOsConfigArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolLinuxOsConfigSysctlConfigArgs.builder
       builder.sysctlConfig(args(argsBuilder).build)
@@ -1188,7 +1188,7 @@ object containerservice_ext:
      * @param allowedHostPorts One or more `allowedHostPorts` blocks as defined below.
      * @return builder
      */
-    def allowedHostPorts(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolNodeNetworkProfileAllowedHostPortArgs.Builder]*):
+    inline def allowedHostPorts(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolNodeNetworkProfileAllowedHostPortArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolNodeNetworkProfileArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolNodeNetworkProfileAllowedHostPortArgs.builder
       builder.allowedHostPorts(args.map(_(argsBuilder).build)*)
@@ -1198,7 +1198,7 @@ object containerservice_ext:
      * @param aksAssignedIdentities An `aksAssignedIdentity` block as defined below.
      * @return builder
      */
-    def aksAssignedIdentities(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterExtensionAksAssignedIdentityArgs.Builder]*):
+    inline def aksAssignedIdentities(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterExtensionAksAssignedIdentityArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterExtensionState.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterExtensionAksAssignedIdentityArgs.builder
       builder.aksAssignedIdentities(args.map(_(argsBuilder).build)*)
@@ -1207,7 +1207,7 @@ object containerservice_ext:
      * @param plan A `plan` block as defined below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def plan(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterExtensionPlanArgs.Builder]):
+    inline def plan(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterExtensionPlanArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterExtensionState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterExtensionPlanArgs.builder
       builder.plan(args(argsBuilder).build)
@@ -1217,7 +1217,7 @@ object containerservice_ext:
      * @param ingressApplicationGatewayIdentities An `ingressApplicationGatewayIdentity` block is exported. The exported attributes are defined below.
      * @return builder
      */
-    def ingressApplicationGatewayIdentities(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterIngressApplicationGatewayIngressApplicationGatewayIdentityArgs.Builder]*):
+    inline def ingressApplicationGatewayIdentities(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterIngressApplicationGatewayIngressApplicationGatewayIdentityArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterIngressApplicationGatewayArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterIngressApplicationGatewayIngressApplicationGatewayIdentityArgs.builder
       builder.ingressApplicationGatewayIdentities(args.map(_(argsBuilder).build)*)
@@ -1227,7 +1227,7 @@ object containerservice_ext:
      * @param secretIdentities An `secretIdentity` block is exported. The exported attributes are defined below.
      * @return builder
      */
-    def secretIdentities(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterKeyVaultSecretsProviderSecretIdentityArgs.Builder]*):
+    inline def secretIdentities(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterKeyVaultSecretsProviderSecretIdentityArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterKeyVaultSecretsProviderArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterKeyVaultSecretsProviderSecretIdentityArgs.builder
       builder.secretIdentities(args.map(_(argsBuilder).build)*)
@@ -1237,7 +1237,7 @@ object containerservice_ext:
      * @param sshKey An `sshKey` block as defined below.
      * @return builder
      */
-    def sshKey(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterLinuxProfileSshKeyArgs.Builder]):
+    inline def sshKey(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterLinuxProfileSshKeyArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterLinuxProfileArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterLinuxProfileSshKeyArgs.builder
       builder.sshKey(args(argsBuilder).build)
@@ -1247,7 +1247,7 @@ object containerservice_ext:
      * @param alloweds One or more `allowed` blocks as defined below.
      * @return builder
      */
-    def alloweds(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowAllowedArgs.Builder]*):
+    inline def alloweds(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowAllowedArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowAllowedArgs.builder
       builder.alloweds(args.map(_(argsBuilder).build)*)
@@ -1256,7 +1256,7 @@ object containerservice_ext:
      * @param notAlloweds One or more `notAllowed` block as defined below.
      * @return builder
      */
-    def notAlloweds(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowNotAllowedArgs.Builder]*):
+    inline def notAlloweds(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowNotAllowedArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowNotAllowedArgs.builder
       builder.notAlloweds(args.map(_(argsBuilder).build)*)
@@ -1266,7 +1266,7 @@ object containerservice_ext:
      * @param notAlloweds One or more `notAllowed` block as defined below.
      * @return builder
      */
-    def notAlloweds(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowAutoUpgradeNotAllowedArgs.Builder]*):
+    inline def notAlloweds(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowAutoUpgradeNotAllowedArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowAutoUpgradeArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowAutoUpgradeNotAllowedArgs.builder
       builder.notAlloweds(args.map(_(argsBuilder).build)*)
@@ -1276,7 +1276,7 @@ object containerservice_ext:
      * @param notAlloweds One or more `notAllowed` block as defined below.
      * @return builder
      */
-    def notAlloweds(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowNodeOsNotAllowedArgs.Builder]*):
+    inline def notAlloweds(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowNodeOsNotAllowedArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowNodeOsArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowNodeOsNotAllowedArgs.builder
       builder.notAlloweds(args.map(_(argsBuilder).build)*)
@@ -1286,7 +1286,7 @@ object containerservice_ext:
      * @param advancedNetworking An `advancedNetworking` block as defined below.
      * @return builder
      */
-    def advancedNetworking(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNetworkProfileAdvancedNetworkingArgs.Builder]):
+    inline def advancedNetworking(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNetworkProfileAdvancedNetworkingArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterNetworkProfileArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterNetworkProfileAdvancedNetworkingArgs.builder
       builder.advancedNetworking(args(argsBuilder).build)
@@ -1295,7 +1295,7 @@ object containerservice_ext:
      * @param loadBalancerProfile A `loadBalancerProfile` block as defined below. This can only be specified when `loadBalancerSku` is set to `standard`. Changing this forces a new resource to be created.
      * @return builder
      */
-    def loadBalancerProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNetworkProfileLoadBalancerProfileArgs.Builder]):
+    inline def loadBalancerProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNetworkProfileLoadBalancerProfileArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterNetworkProfileArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterNetworkProfileLoadBalancerProfileArgs.builder
       builder.loadBalancerProfile(args(argsBuilder).build)
@@ -1304,7 +1304,7 @@ object containerservice_ext:
      * @param natGatewayProfile A `natGatewayProfile` block as defined below. This can only be specified when `loadBalancerSku` is set to `standard` and `outboundType` is set to `managedNATGateway` or `userAssignedNATGateway`. Changing this forces a new resource to be created.
      * @return builder
      */
-    def natGatewayProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNetworkProfileNatGatewayProfileArgs.Builder]):
+    inline def natGatewayProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNetworkProfileNatGatewayProfileArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterNetworkProfileArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterNetworkProfileNatGatewayProfileArgs.builder
       builder.natGatewayProfile(args(argsBuilder).build)
@@ -1314,7 +1314,7 @@ object containerservice_ext:
      * @param sysctlConfig A `sysctlConfig` block as defined below.
      * @return builder
      */
-    def sysctlConfig(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolLinuxOsConfigSysctlConfigArgs.Builder]):
+    inline def sysctlConfig(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolLinuxOsConfigSysctlConfigArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolLinuxOsConfigArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolLinuxOsConfigSysctlConfigArgs.builder
       builder.sysctlConfig(args(argsBuilder).build)
@@ -1324,7 +1324,7 @@ object containerservice_ext:
      * @param allowedHostPorts One or more `allowedHostPorts` blocks as defined below.
      * @return builder
      */
-    def allowedHostPorts(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolNodeNetworkProfileAllowedHostPortArgs.Builder]*):
+    inline def allowedHostPorts(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolNodeNetworkProfileAllowedHostPortArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolNodeNetworkProfileArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolNodeNetworkProfileAllowedHostPortArgs.builder
       builder.allowedHostPorts(args.map(_(argsBuilder).build)*)
@@ -1334,7 +1334,7 @@ object containerservice_ext:
      * @param kubeletConfig A `kubeletConfig` block as defined below. Changing this requires specifying `temporaryNameForRotation`.
      * @return builder
      */
-    def kubeletConfig(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolKubeletConfigArgs.Builder]):
+    inline def kubeletConfig(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolKubeletConfigArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolKubeletConfigArgs.builder
       builder.kubeletConfig(args(argsBuilder).build)
@@ -1343,7 +1343,7 @@ object containerservice_ext:
      * @param linuxOsConfig A `linuxOsConfig` block as defined below. Changing this requires specifying `temporaryNameForRotation`.
      * @return builder
      */
-    def linuxOsConfig(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolLinuxOsConfigArgs.Builder]):
+    inline def linuxOsConfig(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolLinuxOsConfigArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolLinuxOsConfigArgs.builder
       builder.linuxOsConfig(args(argsBuilder).build)
@@ -1352,7 +1352,7 @@ object containerservice_ext:
      * @param nodeNetworkProfile A `nodeNetworkProfile` block as documented below.
      * @return builder
      */
-    def nodeNetworkProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolNodeNetworkProfileArgs.Builder]):
+    inline def nodeNetworkProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolNodeNetworkProfileArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolNodeNetworkProfileArgs.builder
       builder.nodeNetworkProfile(args(argsBuilder).build)
@@ -1361,7 +1361,7 @@ object containerservice_ext:
      * @param upgradeSettings A `upgradeSettings` block as documented below.
      * @return builder
      */
-    def upgradeSettings(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolUpgradeSettingsArgs.Builder]):
+    inline def upgradeSettings(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolUpgradeSettingsArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolUpgradeSettingsArgs.builder
       builder.upgradeSettings(args(argsBuilder).build)
@@ -1370,7 +1370,7 @@ object containerservice_ext:
      * @param windowsProfile A `windowsProfile` block as documented below. Changing this forces a new resource to be created.
      * @return builder
      */
-    def windowsProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolWindowsProfileArgs.Builder]):
+    inline def windowsProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolWindowsProfileArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterNodePoolWindowsProfileArgs.builder
       builder.windowsProfile(args(argsBuilder).build)
@@ -1380,7 +1380,7 @@ object containerservice_ext:
      * @param omsAgentIdentities An `omsAgentIdentity` block is exported. The exported attributes are defined below.
      * @return builder
      */
-    def omsAgentIdentities(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterOmsAgentOmsAgentIdentityArgs.Builder]*):
+    inline def omsAgentIdentities(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterOmsAgentOmsAgentIdentityArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterOmsAgentArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterOmsAgentOmsAgentIdentityArgs.builder
       builder.omsAgentIdentities(args.map(_(argsBuilder).build)*)
@@ -1390,7 +1390,7 @@ object containerservice_ext:
      * @param certificateAuthority A `certificateAuthority` block as defined below. When this property is specified, `keyVaultSecretsProvider` is also required to be set. This configuration allows you to bring your own root certificate and keys for Istio CA in the Istio-based service mesh add-on for Azure Kubernetes Service.
      * @return builder
      */
-    def certificateAuthority(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterServiceMeshProfileCertificateAuthorityArgs.Builder]):
+    inline def certificateAuthority(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterServiceMeshProfileCertificateAuthorityArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterServiceMeshProfileArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterServiceMeshProfileCertificateAuthorityArgs.builder
       builder.certificateAuthority(args(argsBuilder).build)
@@ -1400,7 +1400,7 @@ object containerservice_ext:
      * @param aciConnectorLinux A `aciConnectorLinux` block as defined below. For more details, please visit [Create and configure an AKS cluster to use virtual nodes](https://docs.microsoft.com/azure/aks/virtual-nodes-portal).
      * @return builder
      */
-    def aciConnectorLinux(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterAciConnectorLinuxArgs.Builder]):
+    inline def aciConnectorLinux(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterAciConnectorLinuxArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterAciConnectorLinuxArgs.builder
       builder.aciConnectorLinux(args(argsBuilder).build)
@@ -1409,7 +1409,7 @@ object containerservice_ext:
      * @param apiServerAccessProfile An `apiServerAccessProfile` block as defined below.
      * @return builder
      */
-    def apiServerAccessProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterApiServerAccessProfileArgs.Builder]):
+    inline def apiServerAccessProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterApiServerAccessProfileArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterApiServerAccessProfileArgs.builder
       builder.apiServerAccessProfile(args(argsBuilder).build)
@@ -1418,7 +1418,7 @@ object containerservice_ext:
      * @param autoScalerProfile A `autoScalerProfile` block as defined below.
      * @return builder
      */
-    def autoScalerProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterAutoScalerProfileArgs.Builder]):
+    inline def autoScalerProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterAutoScalerProfileArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterAutoScalerProfileArgs.builder
       builder.autoScalerProfile(args(argsBuilder).build)
@@ -1427,7 +1427,7 @@ object containerservice_ext:
      * @param azureActiveDirectoryRoleBasedAccessControl A `azureActiveDirectoryRoleBasedAccessControl` block as defined below.
      * @return builder
      */
-    def azureActiveDirectoryRoleBasedAccessControl(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterAzureActiveDirectoryRoleBasedAccessControlArgs.Builder]):
+    inline def azureActiveDirectoryRoleBasedAccessControl(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterAzureActiveDirectoryRoleBasedAccessControlArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterAzureActiveDirectoryRoleBasedAccessControlArgs.builder
       builder.azureActiveDirectoryRoleBasedAccessControl(args(argsBuilder).build)
@@ -1436,7 +1436,7 @@ object containerservice_ext:
      * @param bootstrapProfile A `bootstrapProfile` block as defined below.
      * @return builder
      */
-    def bootstrapProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterBootstrapProfileArgs.Builder]):
+    inline def bootstrapProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterBootstrapProfileArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterBootstrapProfileArgs.builder
       builder.bootstrapProfile(args(argsBuilder).build)
@@ -1445,7 +1445,7 @@ object containerservice_ext:
      * @param confidentialComputing A `confidentialComputing` block as defined below. For more details please [the documentation](https://learn.microsoft.com/en-us/azure/confidential-computing/confidential-nodes-aks-overview)
      * @return builder
      */
-    def confidentialComputing(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterConfidentialComputingArgs.Builder]):
+    inline def confidentialComputing(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterConfidentialComputingArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterConfidentialComputingArgs.builder
       builder.confidentialComputing(args(argsBuilder).build)
@@ -1454,7 +1454,7 @@ object containerservice_ext:
      * @param defaultNodePool Specifies configuration for &#34;System&#34; mode node pool. A `defaultNodePool` block as defined below.
      * @return builder
      */
-    def defaultNodePool(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolArgs.Builder]):
+    inline def defaultNodePool(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterDefaultNodePoolArgs.builder
       builder.defaultNodePool(args(argsBuilder).build)
@@ -1463,7 +1463,7 @@ object containerservice_ext:
      * @param httpProxyConfig A `httpProxyConfig` block as defined below.
      * @return builder
      */
-    def httpProxyConfig(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterHttpProxyConfigArgs.Builder]):
+    inline def httpProxyConfig(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterHttpProxyConfigArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterHttpProxyConfigArgs.builder
       builder.httpProxyConfig(args(argsBuilder).build)
@@ -1474,7 +1474,7 @@ object containerservice_ext:
      * &gt; **Note:** A migration scenario from `servicePrincipal` to `identity` is supported. When upgrading `servicePrincipal` to `identity`, your cluster&#39;s control plane and addon pods will switch to use managed identity, but the kubelets will keep using your configured `servicePrincipal` until you upgrade your Node Pool.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterIdentityArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -1485,7 +1485,7 @@ object containerservice_ext:
      * &gt; **Note:** Since the Application Gateway is deployed inside a Virtual Network, users (and Service Principals) that are operating the Application Gateway must have the `Microsoft.Network/virtualNetworks/subnets/join/action` permission on the Virtual Network or Subnet. For more details, please visit [Virtual Network Permission](https://learn.microsoft.com/en-us/azure/application-gateway/configuration-infrastructure#virtual-network-permission).
      * @return builder
      */
-    def ingressApplicationGateway(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterIngressApplicationGatewayArgs.Builder]):
+    inline def ingressApplicationGateway(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterIngressApplicationGatewayArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterIngressApplicationGatewayArgs.builder
       builder.ingressApplicationGateway(args(argsBuilder).build)
@@ -1494,7 +1494,7 @@ object containerservice_ext:
      * @param keyManagementService A `keyManagementService` block as defined below. For more details, please visit [Key Management Service (KMS) etcd encryption to an AKS cluster](https://learn.microsoft.com/en-us/azure/aks/use-kms-etcd-encryption).
      * @return builder
      */
-    def keyManagementService(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterKeyManagementServiceArgs.Builder]):
+    inline def keyManagementService(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterKeyManagementServiceArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterKeyManagementServiceArgs.builder
       builder.keyManagementService(args(argsBuilder).build)
@@ -1503,7 +1503,7 @@ object containerservice_ext:
      * @param keyVaultSecretsProvider A `keyVaultSecretsProvider` block as defined below. For more details, please visit [Azure Keyvault Secrets Provider for AKS](https://docs.microsoft.com/azure/aks/csi-secrets-store-driver).
      * @return builder
      */
-    def keyVaultSecretsProvider(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterKeyVaultSecretsProviderArgs.Builder]):
+    inline def keyVaultSecretsProvider(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterKeyVaultSecretsProviderArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterKeyVaultSecretsProviderArgs.builder
       builder.keyVaultSecretsProvider(args(argsBuilder).build)
@@ -1512,7 +1512,7 @@ object containerservice_ext:
      * @param kubeAdminConfigs A `kubeAdminConfig` block as defined below. This is only available when Role Based Access Control with Azure Active Directory is enabled and local accounts enabled.
      * @return builder
      */
-    def kubeAdminConfigs(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterKubeAdminConfigArgs.Builder]*):
+    inline def kubeAdminConfigs(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterKubeAdminConfigArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterKubeAdminConfigArgs.builder
       builder.kubeAdminConfigs(args.map(_(argsBuilder).build)*)
@@ -1521,7 +1521,7 @@ object containerservice_ext:
      * @param kubeConfigs A `kubeConfig` block as defined below.
      * @return builder
      */
-    def kubeConfigs(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterKubeConfigArgs.Builder]*):
+    inline def kubeConfigs(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterKubeConfigArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterKubeConfigArgs.builder
       builder.kubeConfigs(args.map(_(argsBuilder).build)*)
@@ -1530,7 +1530,7 @@ object containerservice_ext:
      * @param kubeletIdentity A `kubeletIdentity` block as defined below.
      * @return builder
      */
-    def kubeletIdentity(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterKubeletIdentityArgs.Builder]):
+    inline def kubeletIdentity(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterKubeletIdentityArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterKubeletIdentityArgs.builder
       builder.kubeletIdentity(args(argsBuilder).build)
@@ -1539,7 +1539,7 @@ object containerservice_ext:
      * @param linuxProfile A `linuxProfile` block as defined below.
      * @return builder
      */
-    def linuxProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterLinuxProfileArgs.Builder]):
+    inline def linuxProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterLinuxProfileArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterLinuxProfileArgs.builder
       builder.linuxProfile(args(argsBuilder).build)
@@ -1548,7 +1548,7 @@ object containerservice_ext:
      * @param maintenanceWindow A `maintenanceWindow` block as defined below.
      * @return builder
      */
-    def maintenanceWindow(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowArgs.Builder]):
+    inline def maintenanceWindow(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowArgs.builder
       builder.maintenanceWindow(args(argsBuilder).build)
@@ -1557,7 +1557,7 @@ object containerservice_ext:
      * @param maintenanceWindowAutoUpgrade A `maintenanceWindowAutoUpgrade` block as defined below.
      * @return builder
      */
-    def maintenanceWindowAutoUpgrade(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowAutoUpgradeArgs.Builder]):
+    inline def maintenanceWindowAutoUpgrade(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowAutoUpgradeArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowAutoUpgradeArgs.builder
       builder.maintenanceWindowAutoUpgrade(args(argsBuilder).build)
@@ -1566,7 +1566,7 @@ object containerservice_ext:
      * @param maintenanceWindowNodeOs A `maintenanceWindowNodeOs` block as defined below.
      * @return builder
      */
-    def maintenanceWindowNodeOs(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowNodeOsArgs.Builder]):
+    inline def maintenanceWindowNodeOs(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowNodeOsArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterMaintenanceWindowNodeOsArgs.builder
       builder.maintenanceWindowNodeOs(args(argsBuilder).build)
@@ -1575,7 +1575,7 @@ object containerservice_ext:
      * @param microsoftDefender A `microsoftDefender` block as defined below.
      * @return builder
      */
-    def microsoftDefender(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMicrosoftDefenderArgs.Builder]):
+    inline def microsoftDefender(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMicrosoftDefenderArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterMicrosoftDefenderArgs.builder
       builder.microsoftDefender(args(argsBuilder).build)
@@ -1586,7 +1586,7 @@ object containerservice_ext:
      * &gt; **Note:** If deploying Managed Prometheus, the `monitorMetrics` properties are required to configure the cluster for metrics collection. If no value is needed, set properties to `null`.
      * @return builder
      */
-    def monitorMetrics(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMonitorMetricsArgs.Builder]):
+    inline def monitorMetrics(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterMonitorMetricsArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterMonitorMetricsArgs.builder
       builder.monitorMetrics(args(argsBuilder).build)
@@ -1597,7 +1597,7 @@ object containerservice_ext:
      * &gt; **Note:** If `networkProfile` is not defined, `kubenet` profile will be used by default.
      * @return builder
      */
-    def networkProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNetworkProfileArgs.Builder]):
+    inline def networkProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNetworkProfileArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterNetworkProfileArgs.builder
       builder.networkProfile(args(argsBuilder).build)
@@ -1606,7 +1606,7 @@ object containerservice_ext:
      * @param nodeProvisioningProfile A `nodeProvisioningProfile` block as defined below.
      * @return builder
      */
-    def nodeProvisioningProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodeProvisioningProfileArgs.Builder]):
+    inline def nodeProvisioningProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterNodeProvisioningProfileArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterNodeProvisioningProfileArgs.builder
       builder.nodeProvisioningProfile(args(argsBuilder).build)
@@ -1615,7 +1615,7 @@ object containerservice_ext:
      * @param omsAgent A `omsAgent` block as defined below.
      * @return builder
      */
-    def omsAgent(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterOmsAgentArgs.Builder]):
+    inline def omsAgent(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterOmsAgentArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterOmsAgentArgs.builder
       builder.omsAgent(args(argsBuilder).build)
@@ -1624,7 +1624,7 @@ object containerservice_ext:
      * @param serviceMeshProfile A `serviceMeshProfile` block as defined below.
      * @return builder
      */
-    def serviceMeshProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterServiceMeshProfileArgs.Builder]):
+    inline def serviceMeshProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterServiceMeshProfileArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterServiceMeshProfileArgs.builder
       builder.serviceMeshProfile(args(argsBuilder).build)
@@ -1635,7 +1635,7 @@ object containerservice_ext:
      * &gt; **Note:** A migration scenario from `servicePrincipal` to `identity` is supported. When upgrading `servicePrincipal` to `identity`, your cluster&#39;s control plane and addon pods will switch to use managed identity, but the kubelets will keep using your configured `servicePrincipal` until you upgrade your Node Pool.
      * @return builder
      */
-    def servicePrincipal(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterServicePrincipalArgs.Builder]):
+    inline def servicePrincipal(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterServicePrincipalArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterServicePrincipalArgs.builder
       builder.servicePrincipal(args(argsBuilder).build)
@@ -1644,7 +1644,7 @@ object containerservice_ext:
      * @param storageProfile A `storageProfile` block as defined below.
      * @return builder
      */
-    def storageProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterStorageProfileArgs.Builder]):
+    inline def storageProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterStorageProfileArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterStorageProfileArgs.builder
       builder.storageProfile(args(argsBuilder).build)
@@ -1653,7 +1653,7 @@ object containerservice_ext:
      * @param upgradeOverride A `upgradeOverride` block as defined below.
      * @return builder
      */
-    def upgradeOverride(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterUpgradeOverrideArgs.Builder]):
+    inline def upgradeOverride(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterUpgradeOverrideArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterUpgradeOverrideArgs.builder
       builder.upgradeOverride(args(argsBuilder).build)
@@ -1662,7 +1662,7 @@ object containerservice_ext:
      * @param webAppRouting A `webAppRouting` block as defined below.
      * @return builder
      */
-    def webAppRouting(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterWebAppRoutingArgs.Builder]):
+    inline def webAppRouting(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterWebAppRoutingArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterWebAppRoutingArgs.builder
       builder.webAppRouting(args(argsBuilder).build)
@@ -1671,7 +1671,7 @@ object containerservice_ext:
      * @param windowsProfile A `windowsProfile` block as defined below.
      * @return builder
      */
-    def windowsProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterWindowsProfileArgs.Builder]):
+    inline def windowsProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterWindowsProfileArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterWindowsProfileArgs.builder
       builder.windowsProfile(args(argsBuilder).build)
@@ -1680,7 +1680,7 @@ object containerservice_ext:
      * @param workloadAutoscalerProfile A `workloadAutoscalerProfile` block defined below.
      * @return builder
      */
-    def workloadAutoscalerProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterWorkloadAutoscalerProfileArgs.Builder]):
+    inline def workloadAutoscalerProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterWorkloadAutoscalerProfileArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterWorkloadAutoscalerProfileArgs.builder
       builder.workloadAutoscalerProfile(args(argsBuilder).build)
@@ -1690,7 +1690,7 @@ object containerservice_ext:
      * @param webAppRoutingIdentities A `webAppRoutingIdentity` block is exported. The exported attributes are defined below.
      * @return builder
      */
-    def webAppRoutingIdentities(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterWebAppRoutingWebAppRoutingIdentityArgs.Builder]*):
+    inline def webAppRoutingIdentities(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterWebAppRoutingWebAppRoutingIdentityArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterWebAppRoutingArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterWebAppRoutingWebAppRoutingIdentityArgs.builder
       builder.webAppRoutingIdentities(args.map(_(argsBuilder).build)*)
@@ -1700,7 +1700,7 @@ object containerservice_ext:
      * @param gmsa A `gmsa` block as defined below.
      * @return builder
      */
-    def gmsa(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterWindowsProfileGmsaArgs.Builder]):
+    inline def gmsa(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesClusterWindowsProfileGmsaArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesClusterWindowsProfileArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesClusterWindowsProfileGmsaArgs.builder
       builder.gmsa(args(argsBuilder).build)
@@ -1710,7 +1710,7 @@ object containerservice_ext:
      * @return builder
      * @deprecated The service team has indicated this field is now deprecated and not to be used, as such we are marking it as such and no longer sending it to the API, please see url: https://learn.microsoft.com/en-us/azure/kubernetes-fleet/architectural-overview
      */
-    @deprecated("The service team has indicated this field is now deprecated and not to be used, as such we are marking it as such and no longer sending it to the API, please see url: https://learn.microsoft.com/en-us/azure/kubernetes-fleet/architectural-overview") def hubProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesFleetManagerHubProfileArgs.Builder]):
+    @deprecated("The service team has indicated this field is now deprecated and not to be used, as such we are marking it as such and no longer sending it to the API, please see url: https://learn.microsoft.com/en-us/azure/kubernetes-fleet/architectural-overview") inline def hubProfile(args: Endofunction[com.pulumi.azure.containerservice.inputs.KubernetesFleetManagerHubProfileArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.KubernetesFleetManagerState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.KubernetesFleetManagerHubProfileArgs.builder
       builder.hubProfile(args(argsBuilder).build)
@@ -1720,7 +1720,7 @@ object containerservice_ext:
      * @param authenticationCredentials A `authenticationCredentials` block as defined below.
      * @return builder
      */
-    def authenticationCredentials(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryCredentialSetAuthenticationCredentialsArgs.Builder]):
+    inline def authenticationCredentials(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryCredentialSetAuthenticationCredentialsArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.RegistryCredentialSetState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryCredentialSetAuthenticationCredentialsArgs.builder
       builder.authenticationCredentials(args(argsBuilder).build)
@@ -1729,7 +1729,7 @@ object containerservice_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryCredentialSetIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryCredentialSetIdentityArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.RegistryCredentialSetState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryCredentialSetIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -1743,7 +1743,7 @@ object containerservice_ext:
      * &gt; **Note:** Azure automatically configures Network Rules - to remove these, you&#39;ll need to specify an `networkRuleSet` block with `defaultAction` set to `Deny`.
      * @return builder
      */
-    def ipRules(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryNetworkRuleSetIpRuleArgs.Builder]*):
+    inline def ipRules(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryNetworkRuleSetIpRuleArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.RegistryNetworkRuleSetArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryNetworkRuleSetIpRuleArgs.builder
       builder.ipRules(args.map(_(argsBuilder).build)*)
@@ -1753,7 +1753,7 @@ object containerservice_ext:
      * @param encryption An `encryption` block as documented below.
      * @return builder
      */
-    def encryption(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryEncryptionArgs.Builder]):
+    inline def encryption(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryEncryptionArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.RegistryState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryEncryptionArgs.builder
       builder.encryption(args(argsBuilder).build)
@@ -1768,7 +1768,7 @@ object containerservice_ext:
      * &gt; **Note:** If more than one `georeplications` block is specified, they are expected to follow the alphabetic order on the `location` property.
      * @return builder
      */
-    def georeplications(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryGeoreplicationArgs.Builder]*):
+    inline def georeplications(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryGeoreplicationArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.RegistryState.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryGeoreplicationArgs.builder
       builder.georeplications(args.map(_(argsBuilder).build)*)
@@ -1777,7 +1777,7 @@ object containerservice_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryIdentityArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.RegistryState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -1786,7 +1786,7 @@ object containerservice_ext:
      * @param networkRuleSet A `networkRuleSet` block as documented below.
      * @return builder
      */
-    def networkRuleSet(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryNetworkRuleSetArgs.Builder]):
+    inline def networkRuleSet(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryNetworkRuleSetArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.RegistryState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryNetworkRuleSetArgs.builder
       builder.networkRuleSet(args(argsBuilder).build)
@@ -1796,7 +1796,7 @@ object containerservice_ext:
      * @param customs One or more `custom` blocks as defined above.
      * @return builder
      */
-    def customs(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskRegistryCredentialCustomArgs.Builder]*):
+    inline def customs(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskRegistryCredentialCustomArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.RegistryTaskRegistryCredentialArgs.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryTaskRegistryCredentialCustomArgs.builder
       builder.customs(args.map(_(argsBuilder).build)*)
@@ -1805,7 +1805,7 @@ object containerservice_ext:
      * @param source One `source` block as defined below.
      * @return builder
      */
-    def source(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskRegistryCredentialSourceArgs.Builder]):
+    inline def source(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskRegistryCredentialSourceArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.RegistryTaskRegistryCredentialArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryTaskRegistryCredentialSourceArgs.builder
       builder.source(args(argsBuilder).build)
@@ -1815,7 +1815,7 @@ object containerservice_ext:
      * @param authentication A `authentication` block as defined above.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskSourceTriggerAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskSourceTriggerAuthenticationArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.RegistryTaskSourceTriggerArgs.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryTaskSourceTriggerAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -1827,7 +1827,7 @@ object containerservice_ext:
      * &gt; **Note:** Only one of `agentPoolName` and `agentSetting` can be specified.
      * @return builder
      */
-    def agentSetting(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskAgentSettingArgs.Builder]):
+    inline def agentSetting(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskAgentSettingArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.RegistryTaskState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryTaskAgentSettingArgs.builder
       builder.agentSetting(args(argsBuilder).build)
@@ -1836,7 +1836,7 @@ object containerservice_ext:
      * @param baseImageTrigger A `baseImageTrigger` block as defined below.
      * @return builder
      */
-    def baseImageTrigger(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskBaseImageTriggerArgs.Builder]):
+    inline def baseImageTrigger(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskBaseImageTriggerArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.RegistryTaskState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryTaskBaseImageTriggerArgs.builder
       builder.baseImageTrigger(args(argsBuilder).build)
@@ -1845,7 +1845,7 @@ object containerservice_ext:
      * @param dockerStep A `dockerStep` block as defined below.
      * @return builder
      */
-    def dockerStep(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskDockerStepArgs.Builder]):
+    inline def dockerStep(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskDockerStepArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.RegistryTaskState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryTaskDockerStepArgs.builder
       builder.dockerStep(args(argsBuilder).build)
@@ -1854,7 +1854,7 @@ object containerservice_ext:
      * @param encodedStep A `encodedStep` block as defined below.
      * @return builder
      */
-    def encodedStep(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskEncodedStepArgs.Builder]):
+    inline def encodedStep(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskEncodedStepArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.RegistryTaskState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryTaskEncodedStepArgs.builder
       builder.encodedStep(args(argsBuilder).build)
@@ -1865,7 +1865,7 @@ object containerservice_ext:
      * &gt; **Note:** For non-system task (when `isSystemTask` is set to `false`), one and only one of the `dockerStep`, `encodedStep` and `fileStep` should be specified.
      * @return builder
      */
-    def fileStep(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskFileStepArgs.Builder]):
+    inline def fileStep(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskFileStepArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.RegistryTaskState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryTaskFileStepArgs.builder
       builder.fileStep(args(argsBuilder).build)
@@ -1874,7 +1874,7 @@ object containerservice_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskIdentityArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.RegistryTaskState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryTaskIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -1885,12 +1885,12 @@ object containerservice_ext:
      * &gt; **Note:** The `platform` is required for non-system task (when `isSystemTask` is set to `false`).
      * @return builder
      */
-    def platform(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskPlatformArgs.Builder]):
+    inline def platform(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskPlatformArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.RegistryTaskState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryTaskPlatformArgs.builder
       builder.platform(args(argsBuilder).build)
 
-    def registryCredential(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskRegistryCredentialArgs.Builder]):
+    inline def registryCredential(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskRegistryCredentialArgs.Builder]):
         com.pulumi.azure.containerservice.inputs.RegistryTaskState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryTaskRegistryCredentialArgs.builder
       builder.registryCredential(args(argsBuilder).build)
@@ -1899,7 +1899,7 @@ object containerservice_ext:
      * @param sourceTriggers One or more `sourceTrigger` blocks as defined below.
      * @return builder
      */
-    def sourceTriggers(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskSourceTriggerArgs.Builder]*):
+    inline def sourceTriggers(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskSourceTriggerArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.RegistryTaskState.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryTaskSourceTriggerArgs.builder
       builder.sourceTriggers(args.map(_(argsBuilder).build)*)
@@ -1908,7 +1908,7 @@ object containerservice_ext:
      * @param timerTriggers One or more `timerTrigger` blocks as defined below.
      * @return builder
      */
-    def timerTriggers(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskTimerTriggerArgs.Builder]*):
+    inline def timerTriggers(args: Endofunction[com.pulumi.azure.containerservice.inputs.RegistryTaskTimerTriggerArgs.Builder]*):
         com.pulumi.azure.containerservice.inputs.RegistryTaskState.Builder =
       def argsBuilder = com.pulumi.azure.containerservice.inputs.RegistryTaskTimerTriggerArgs.builder
       builder.timerTriggers(args.map(_(argsBuilder).build)*)
@@ -1918,7 +1918,7 @@ object containerservice_ext:
      * @param password1 One `password` block as defined below.
      * @return builder
      */
-    def password1(args: Endofunction[com.pulumi.azure.containerservice.inputs.TokenPasswordPassword1Args.Builder]):
+    inline def password1(args: Endofunction[com.pulumi.azure.containerservice.inputs.TokenPasswordPassword1Args.Builder]):
         com.pulumi.azure.containerservice.inputs.TokenPasswordState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.TokenPasswordPassword1Args.builder
       builder.password1(args(argsBuilder).build)
@@ -1927,7 +1927,7 @@ object containerservice_ext:
      * @param password2 One `password` block as defined below.
      * @return builder
      */
-    def password2(args: Endofunction[com.pulumi.azure.containerservice.inputs.TokenPasswordPassword2Args.Builder]):
+    inline def password2(args: Endofunction[com.pulumi.azure.containerservice.inputs.TokenPasswordPassword2Args.Builder]):
         com.pulumi.azure.containerservice.inputs.TokenPasswordState.Builder =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.TokenPasswordPassword2Args.builder
       builder.password2(args(argsBuilder).build)

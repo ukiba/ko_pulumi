@@ -7,7 +7,7 @@ object policy_ext:
      * @param policyDefinitionGroups One or more `policyDefinitionGroup` blocks as defined below.
      * @return builder
      */
-    def policyDefinitionGroups(args: Endofunction[com.pulumi.azure.policy.inputs.PolicySetDefinitionPolicyDefinitionGroupArgs.Builder]*):
+    inline def policyDefinitionGroups(args: Endofunction[com.pulumi.azure.policy.inputs.PolicySetDefinitionPolicyDefinitionGroupArgs.Builder]*):
         com.pulumi.azure.policy.PolicySetDefinitionArgs.Builder =
       def argsBuilder = com.pulumi.azure.policy.inputs.PolicySetDefinitionPolicyDefinitionGroupArgs.builder
       builder.policyDefinitionGroups(args.map(_(argsBuilder).build)*)
@@ -16,7 +16,7 @@ object policy_ext:
      * @param policyDefinitionReferences One or more `policyDefinitionReference` blocks as defined below.
      * @return builder
      */
-    def policyDefinitionReferences(args: Endofunction[com.pulumi.azure.policy.inputs.PolicySetDefinitionPolicyDefinitionReferenceArgs.Builder]*):
+    inline def policyDefinitionReferences(args: Endofunction[com.pulumi.azure.policy.inputs.PolicySetDefinitionPolicyDefinitionReferenceArgs.Builder]*):
         com.pulumi.azure.policy.PolicySetDefinitionArgs.Builder =
       def argsBuilder = com.pulumi.azure.policy.inputs.PolicySetDefinitionPolicyDefinitionReferenceArgs.builder
       builder.policyDefinitionReferences(args.map(_(argsBuilder).build)*)
@@ -26,7 +26,7 @@ object policy_ext:
      * @param configuration A `configuration` block as defined below.
      * @return builder
      */
-    def configuration(args: Endofunction[com.pulumi.azure.policy.inputs.VirtualMachineConfigurationAssignmentConfigurationArgs.Builder]):
+    inline def configuration(args: Endofunction[com.pulumi.azure.policy.inputs.VirtualMachineConfigurationAssignmentConfigurationArgs.Builder]):
         com.pulumi.azure.policy.VirtualMachineConfigurationAssignmentArgs.Builder =
       val argsBuilder = com.pulumi.azure.policy.inputs.VirtualMachineConfigurationAssignmentConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
@@ -36,7 +36,7 @@ object policy_ext:
      * @param policyDefinitionGroups One or more `policyDefinitionGroup` blocks as defined below.
      * @return builder
      */
-    def policyDefinitionGroups(args: Endofunction[com.pulumi.azure.policy.inputs.PolicySetDefinitionPolicyDefinitionGroupArgs.Builder]*):
+    inline def policyDefinitionGroups(args: Endofunction[com.pulumi.azure.policy.inputs.PolicySetDefinitionPolicyDefinitionGroupArgs.Builder]*):
         com.pulumi.azure.policy.inputs.PolicySetDefinitionState.Builder =
       def argsBuilder = com.pulumi.azure.policy.inputs.PolicySetDefinitionPolicyDefinitionGroupArgs.builder
       builder.policyDefinitionGroups(args.map(_(argsBuilder).build)*)
@@ -45,7 +45,7 @@ object policy_ext:
      * @param policyDefinitionReferences One or more `policyDefinitionReference` blocks as defined below.
      * @return builder
      */
-    def policyDefinitionReferences(args: Endofunction[com.pulumi.azure.policy.inputs.PolicySetDefinitionPolicyDefinitionReferenceArgs.Builder]*):
+    inline def policyDefinitionReferences(args: Endofunction[com.pulumi.azure.policy.inputs.PolicySetDefinitionPolicyDefinitionReferenceArgs.Builder]*):
         com.pulumi.azure.policy.inputs.PolicySetDefinitionState.Builder =
       def argsBuilder = com.pulumi.azure.policy.inputs.PolicySetDefinitionPolicyDefinitionReferenceArgs.builder
       builder.policyDefinitionReferences(args.map(_(argsBuilder).build)*)
@@ -55,7 +55,7 @@ object policy_ext:
      * @param parameters One or more `parameter` blocks as defined below which define what configuration parameters and values against.
      * @return builder
      */
-    def parameters(args: Endofunction[com.pulumi.azure.policy.inputs.VirtualMachineConfigurationAssignmentConfigurationParameterArgs.Builder]*):
+    inline def parameters(args: Endofunction[com.pulumi.azure.policy.inputs.VirtualMachineConfigurationAssignmentConfigurationParameterArgs.Builder]*):
         com.pulumi.azure.policy.inputs.VirtualMachineConfigurationAssignmentConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.azure.policy.inputs.VirtualMachineConfigurationAssignmentConfigurationParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
@@ -65,7 +65,7 @@ object policy_ext:
      * @param configuration A `configuration` block as defined below.
      * @return builder
      */
-    def configuration(args: Endofunction[com.pulumi.azure.policy.inputs.VirtualMachineConfigurationAssignmentConfigurationArgs.Builder]):
+    inline def configuration(args: Endofunction[com.pulumi.azure.policy.inputs.VirtualMachineConfigurationAssignmentConfigurationArgs.Builder]):
         com.pulumi.azure.policy.inputs.VirtualMachineConfigurationAssignmentState.Builder =
       val argsBuilder = com.pulumi.azure.policy.inputs.VirtualMachineConfigurationAssignmentConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)

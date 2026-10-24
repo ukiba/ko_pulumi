@@ -8,7 +8,7 @@ object memcache_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenancePolicy(args: Endofunction[com.pulumi.gcp.memcache.inputs.InstanceMaintenancePolicyArgs.Builder]):
+    inline def maintenancePolicy(args: Endofunction[com.pulumi.gcp.memcache.inputs.InstanceMaintenancePolicyArgs.Builder]):
         com.pulumi.gcp.memcache.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.memcache.inputs.InstanceMaintenancePolicyArgs.builder
       builder.maintenancePolicy(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object memcache_ext:
      * Structure is documented below.
      * @return builder
      */
-    def memcacheParameters(args: Endofunction[com.pulumi.gcp.memcache.inputs.InstanceMemcacheParametersArgs.Builder]):
+    inline def memcacheParameters(args: Endofunction[com.pulumi.gcp.memcache.inputs.InstanceMemcacheParametersArgs.Builder]):
         com.pulumi.gcp.memcache.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.memcache.inputs.InstanceMemcacheParametersArgs.builder
       builder.memcacheParameters(args(argsBuilder).build)
@@ -28,7 +28,7 @@ object memcache_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeConfig(args: Endofunction[com.pulumi.gcp.memcache.inputs.InstanceNodeConfigArgs.Builder]):
+    inline def nodeConfig(args: Endofunction[com.pulumi.gcp.memcache.inputs.InstanceNodeConfigArgs.Builder]):
         com.pulumi.gcp.memcache.InstanceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.memcache.inputs.InstanceNodeConfigArgs.builder
       builder.nodeConfig(args(argsBuilder).build)
@@ -41,7 +41,7 @@ object memcache_ext:
      * Structure is documented below.
      * @return builder
      */
-    def weeklyMaintenanceWindows(args: Endofunction[com.pulumi.gcp.memcache.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowArgs.Builder]*):
+    inline def weeklyMaintenanceWindows(args: Endofunction[com.pulumi.gcp.memcache.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowArgs.Builder]*):
         com.pulumi.gcp.memcache.inputs.InstanceMaintenancePolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.memcache.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowArgs.builder
       builder.weeklyMaintenanceWindows(args.map(_(argsBuilder).build)*)
@@ -52,7 +52,7 @@ object memcache_ext:
      * Structure is documented below.
      * @return builder
      */
-    def startTime(args: Endofunction[com.pulumi.gcp.memcache.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowStartTimeArgs.Builder]):
+    inline def startTime(args: Endofunction[com.pulumi.gcp.memcache.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowStartTimeArgs.Builder]):
         com.pulumi.gcp.memcache.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.memcache.inputs.InstanceMaintenancePolicyWeeklyMaintenanceWindowStartTimeArgs.builder
       builder.startTime(args(argsBuilder).build)
@@ -63,7 +63,7 @@ object memcache_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenancePolicy(args: Endofunction[com.pulumi.gcp.memcache.inputs.InstanceMaintenancePolicyArgs.Builder]):
+    inline def maintenancePolicy(args: Endofunction[com.pulumi.gcp.memcache.inputs.InstanceMaintenancePolicyArgs.Builder]):
         com.pulumi.gcp.memcache.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.memcache.inputs.InstanceMaintenancePolicyArgs.builder
       builder.maintenancePolicy(args(argsBuilder).build)
@@ -73,7 +73,7 @@ object memcache_ext:
      * Structure is documented below.
      * @return builder
      */
-    def maintenanceSchedules(args: Endofunction[com.pulumi.gcp.memcache.inputs.InstanceMaintenanceScheduleArgs.Builder]*):
+    inline def maintenanceSchedules(args: Endofunction[com.pulumi.gcp.memcache.inputs.InstanceMaintenanceScheduleArgs.Builder]*):
         com.pulumi.gcp.memcache.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.memcache.inputs.InstanceMaintenanceScheduleArgs.builder
       builder.maintenanceSchedules(args.map(_(argsBuilder).build)*)
@@ -83,7 +83,7 @@ object memcache_ext:
      * Structure is documented below.
      * @return builder
      */
-    def memcacheNodes(args: Endofunction[com.pulumi.gcp.memcache.inputs.InstanceMemcacheNodeArgs.Builder]*):
+    inline def memcacheNodes(args: Endofunction[com.pulumi.gcp.memcache.inputs.InstanceMemcacheNodeArgs.Builder]*):
         com.pulumi.gcp.memcache.inputs.InstanceState.Builder =
       def argsBuilder = com.pulumi.gcp.memcache.inputs.InstanceMemcacheNodeArgs.builder
       builder.memcacheNodes(args.map(_(argsBuilder).build)*)
@@ -93,7 +93,7 @@ object memcache_ext:
      * Structure is documented below.
      * @return builder
      */
-    def memcacheParameters(args: Endofunction[com.pulumi.gcp.memcache.inputs.InstanceMemcacheParametersArgs.Builder]):
+    inline def memcacheParameters(args: Endofunction[com.pulumi.gcp.memcache.inputs.InstanceMemcacheParametersArgs.Builder]):
         com.pulumi.gcp.memcache.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.memcache.inputs.InstanceMemcacheParametersArgs.builder
       builder.memcacheParameters(args(argsBuilder).build)
@@ -103,7 +103,7 @@ object memcache_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeConfig(args: Endofunction[com.pulumi.gcp.memcache.inputs.InstanceNodeConfigArgs.Builder]):
+    inline def nodeConfig(args: Endofunction[com.pulumi.gcp.memcache.inputs.InstanceNodeConfigArgs.Builder]):
         com.pulumi.gcp.memcache.inputs.InstanceState.Builder =
       val argsBuilder = com.pulumi.gcp.memcache.inputs.InstanceNodeConfigArgs.builder
       builder.nodeConfig(args(argsBuilder).build)

@@ -7,7 +7,7 @@ object ssm_ext:
      * @param outputLocation An output location block. Output Location is documented below.
      * @return builder
      */
-    def outputLocation(args: Endofunction[com.pulumi.aws.ssm.inputs.AssociationOutputLocationArgs.Builder]):
+    inline def outputLocation(args: Endofunction[com.pulumi.aws.ssm.inputs.AssociationOutputLocationArgs.Builder]):
         com.pulumi.aws.ssm.AssociationArgs.Builder =
       val argsBuilder = com.pulumi.aws.ssm.inputs.AssociationOutputLocationArgs.builder
       builder.outputLocation(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object ssm_ext:
      * @param targets A block containing the targets of the SSM association. Targets are documented below. AWS currently supports a maximum of 5 targets.
      * @return builder
      */
-    def targets(args: Endofunction[com.pulumi.aws.ssm.inputs.AssociationTargetArgs.Builder]*):
+    inline def targets(args: Endofunction[com.pulumi.aws.ssm.inputs.AssociationTargetArgs.Builder]*):
         com.pulumi.aws.ssm.AssociationArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.AssociationTargetArgs.builder
       builder.targets(args.map(_(argsBuilder).build)*)
@@ -28,7 +28,7 @@ object ssm_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def recurrence(args: Endofunction[com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceArgs.Builder]):
+    inline def recurrence(args: Endofunction[com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceArgs.Builder]):
         com.pulumi.aws.ssm.ContactsRotationArgs.Builder =
       val argsBuilder = com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceArgs.builder
       builder.recurrence(args(argsBuilder).build)
@@ -38,7 +38,7 @@ object ssm_ext:
      * @param attachmentsSources One or more configuration blocks describing attachments sources to a version of a document. See `attachmentsSource` block below for details.
      * @return builder
      */
-    def attachmentsSources(args: Endofunction[com.pulumi.aws.ssm.inputs.DocumentAttachmentsSourceArgs.Builder]*):
+    inline def attachmentsSources(args: Endofunction[com.pulumi.aws.ssm.inputs.DocumentAttachmentsSourceArgs.Builder]*):
         com.pulumi.aws.ssm.DocumentArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.DocumentAttachmentsSourceArgs.builder
       builder.attachmentsSources(args.map(_(argsBuilder).build)*)
@@ -49,7 +49,7 @@ object ssm_ext:
      * (https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html)
      * @return builder
      */
-    def targets(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTargetTargetArgs.Builder]*):
+    inline def targets(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTargetTargetArgs.Builder]*):
         com.pulumi.aws.ssm.MaintenanceWindowTargetArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.MaintenanceWindowTargetTargetArgs.builder
       builder.targets(args.map(_(argsBuilder).build)*)
@@ -59,7 +59,7 @@ object ssm_ext:
      * @param targets The targets (either instances or window target IDs). Instances are specified using Key=InstanceIds,Values=instanceid1,instanceid2. Window target IDs are specified using Key=WindowTargetIds,Values=window target id1, window target id2.
      * @return builder
      */
-    def targets(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTargetArgs.Builder]*):
+    inline def targets(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTargetArgs.Builder]*):
         com.pulumi.aws.ssm.MaintenanceWindowTaskArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTargetArgs.builder
       builder.targets(args.map(_(argsBuilder).build)*)
@@ -68,7 +68,7 @@ object ssm_ext:
      * @param taskInvocationParameters Configuration block with parameters for task execution.
      * @return builder
      */
-    def taskInvocationParameters(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersArgs.Builder]):
+    inline def taskInvocationParameters(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersArgs.Builder]):
         com.pulumi.aws.ssm.MaintenanceWindowTaskArgs.Builder =
       val argsBuilder = com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersArgs.builder
       builder.taskInvocationParameters(args(argsBuilder).build)
@@ -78,7 +78,7 @@ object ssm_ext:
      * @param approvalRules Set of rules used to include patches in the baseline. Up to 10 approval rules can be specified. See `approvalRule` below.
      * @return builder
      */
-    def approvalRules(args: Endofunction[com.pulumi.aws.ssm.inputs.PatchBaselineApprovalRuleArgs.Builder]*):
+    inline def approvalRules(args: Endofunction[com.pulumi.aws.ssm.inputs.PatchBaselineApprovalRuleArgs.Builder]*):
         com.pulumi.aws.ssm.PatchBaselineArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.PatchBaselineApprovalRuleArgs.builder
       builder.approvalRules(args.map(_(argsBuilder).build)*)
@@ -87,7 +87,7 @@ object ssm_ext:
      * @param globalFilters Set of global filters used to exclude patches from the baseline. Up to 4 global filters can be specified using Key/Value pairs. Valid Keys are `PRODUCT`, `CLASSIFICATION`, `MSRC_SEVERITY`, and `PATCH_ID`.
      * @return builder
      */
-    def globalFilters(args: Endofunction[com.pulumi.aws.ssm.inputs.PatchBaselineGlobalFilterArgs.Builder]*):
+    inline def globalFilters(args: Endofunction[com.pulumi.aws.ssm.inputs.PatchBaselineGlobalFilterArgs.Builder]*):
         com.pulumi.aws.ssm.PatchBaselineArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.PatchBaselineGlobalFilterArgs.builder
       builder.globalFilters(args.map(_(argsBuilder).build)*)
@@ -96,7 +96,7 @@ object ssm_ext:
      * @param sources Configuration block with alternate sources for patches. Applies to Linux instances only. See `source` below.
      * @return builder
      */
-    def sources(args: Endofunction[com.pulumi.aws.ssm.inputs.PatchBaselineSourceArgs.Builder]*):
+    inline def sources(args: Endofunction[com.pulumi.aws.ssm.inputs.PatchBaselineSourceArgs.Builder]*):
         com.pulumi.aws.ssm.PatchBaselineArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.PatchBaselineSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
@@ -106,12 +106,12 @@ object ssm_ext:
      * @param configurationDefinition Definition of the Quick Setup configuration that the configuration manager deploys. See `configurationDefinition` below.
      * @return builder
      */
-    def configurationDefinition(args: Endofunction[com.pulumi.aws.ssm.inputs.QuicksetupConfigurationManagerConfigurationDefinitionArgs.Builder]):
+    inline def configurationDefinition(args: Endofunction[com.pulumi.aws.ssm.inputs.QuicksetupConfigurationManagerConfigurationDefinitionArgs.Builder]):
         com.pulumi.aws.ssm.QuicksetupConfigurationManagerArgs.Builder =
       val argsBuilder = com.pulumi.aws.ssm.inputs.QuicksetupConfigurationManagerConfigurationDefinitionArgs.builder
       builder.configurationDefinition(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.ssm.inputs.QuicksetupConfigurationManagerTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.ssm.inputs.QuicksetupConfigurationManagerTimeoutsArgs.Builder]):
         com.pulumi.aws.ssm.QuicksetupConfigurationManagerArgs.Builder =
       val argsBuilder = com.pulumi.aws.ssm.inputs.QuicksetupConfigurationManagerTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -121,7 +121,7 @@ object ssm_ext:
      * @param s3Destination Amazon S3 configuration details for the sync.
      * @return builder
      */
-    def s3Destination(args: Endofunction[com.pulumi.aws.ssm.inputs.ResourceDataSyncS3DestinationArgs.Builder]):
+    inline def s3Destination(args: Endofunction[com.pulumi.aws.ssm.inputs.ResourceDataSyncS3DestinationArgs.Builder]):
         com.pulumi.aws.ssm.ResourceDataSyncArgs.Builder =
       val argsBuilder = com.pulumi.aws.ssm.inputs.ResourceDataSyncS3DestinationArgs.builder
       builder.s3Destination(args(argsBuilder).build)
@@ -131,7 +131,7 @@ object ssm_ext:
      * @param outputLocation An output location block. Output Location is documented below.
      * @return builder
      */
-    def outputLocation(args: Endofunction[com.pulumi.aws.ssm.inputs.AssociationOutputLocationArgs.Builder]):
+    inline def outputLocation(args: Endofunction[com.pulumi.aws.ssm.inputs.AssociationOutputLocationArgs.Builder]):
         com.pulumi.aws.ssm.inputs.AssociationState.Builder =
       val argsBuilder = com.pulumi.aws.ssm.inputs.AssociationOutputLocationArgs.builder
       builder.outputLocation(args(argsBuilder).build)
@@ -140,13 +140,13 @@ object ssm_ext:
      * @param targets A block containing the targets of the SSM association. Targets are documented below. AWS currently supports a maximum of 5 targets.
      * @return builder
      */
-    def targets(args: Endofunction[com.pulumi.aws.ssm.inputs.AssociationTargetArgs.Builder]*):
+    inline def targets(args: Endofunction[com.pulumi.aws.ssm.inputs.AssociationTargetArgs.Builder]*):
         com.pulumi.aws.ssm.inputs.AssociationState.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.AssociationTargetArgs.builder
       builder.targets(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceArgs.Builder)
-    def dailySettings(args: Endofunction[com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceDailySettingArgs.Builder]*):
+    inline def dailySettings(args: Endofunction[com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceDailySettingArgs.Builder]*):
         com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceDailySettingArgs.builder
       builder.dailySettings(args.map(_(argsBuilder).build)*)
@@ -155,7 +155,7 @@ object ssm_ext:
      * @param monthlySettings (Optional) Information about on-call rotations that recur monthly. See Monthly Settings for more details.
      * @return builder
      */
-    def monthlySettings(args: Endofunction[com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceMonthlySettingArgs.Builder]*):
+    inline def monthlySettings(args: Endofunction[com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceMonthlySettingArgs.Builder]*):
         com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceMonthlySettingArgs.builder
       builder.monthlySettings(args.map(_(argsBuilder).build)*)
@@ -164,7 +164,7 @@ object ssm_ext:
      * @param shiftCoverages (Optional) Information about the days of the week that the on-call rotation coverage includes. See Shift Coverages for more details.
      * @return builder
      */
-    def shiftCoverages(args: Endofunction[com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceShiftCoverageArgs.Builder]*):
+    inline def shiftCoverages(args: Endofunction[com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceShiftCoverageArgs.Builder]*):
         com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceShiftCoverageArgs.builder
       builder.shiftCoverages(args.map(_(argsBuilder).build)*)
@@ -173,7 +173,7 @@ object ssm_ext:
      * @param weeklySettings (Optional) Information about on-call rotations that recur weekly. See Weekly Settings for more details.
      * @return builder
      */
-    def weeklySettings(args: Endofunction[com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceWeeklySettingArgs.Builder]*):
+    inline def weeklySettings(args: Endofunction[com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceWeeklySettingArgs.Builder]*):
         com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceWeeklySettingArgs.builder
       builder.weeklySettings(args.map(_(argsBuilder).build)*)
@@ -183,7 +183,7 @@ object ssm_ext:
      * @param handOffTime (Required) The hand off time. See Hand Off Time for more details.
      * @return builder
      */
-    def handOffTime(args: Endofunction[com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceMonthlySettingHandOffTimeArgs.Builder]):
+    inline def handOffTime(args: Endofunction[com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceMonthlySettingHandOffTimeArgs.Builder]):
         com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceMonthlySettingArgs.Builder =
       val argsBuilder = com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceMonthlySettingHandOffTimeArgs.builder
       builder.handOffTime(args(argsBuilder).build)
@@ -193,7 +193,7 @@ object ssm_ext:
      * @param coverageTimes (Required) Information about when an on-call shift begins and ends. See Coverage Times for more details.
      * @return builder
      */
-    def coverageTimes(args: Endofunction[com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceShiftCoverageCoverageTimeArgs.Builder]*):
+    inline def coverageTimes(args: Endofunction[com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceShiftCoverageCoverageTimeArgs.Builder]*):
         com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceShiftCoverageArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceShiftCoverageCoverageTimeArgs.builder
       builder.coverageTimes(args.map(_(argsBuilder).build)*)
@@ -203,7 +203,7 @@ object ssm_ext:
      * @param end (Required) The end time of the on-call shift. See Hand Off Time for more details.
      * @return builder
      */
-    def end(args: Endofunction[com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceShiftCoverageCoverageTimeEndArgs.Builder]):
+    inline def end(args: Endofunction[com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceShiftCoverageCoverageTimeEndArgs.Builder]):
         com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceShiftCoverageCoverageTimeArgs.Builder =
       val argsBuilder = com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceShiftCoverageCoverageTimeEndArgs.builder
       builder.end(args(argsBuilder).build)
@@ -212,7 +212,7 @@ object ssm_ext:
      * @param start (Required) The start time of the on-call shift. See Hand Off Time for more details.
      * @return builder
      */
-    def start(args: Endofunction[com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceShiftCoverageCoverageTimeStartArgs.Builder]):
+    inline def start(args: Endofunction[com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceShiftCoverageCoverageTimeStartArgs.Builder]):
         com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceShiftCoverageCoverageTimeArgs.Builder =
       val argsBuilder = com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceShiftCoverageCoverageTimeStartArgs.builder
       builder.start(args(argsBuilder).build)
@@ -222,7 +222,7 @@ object ssm_ext:
      * @param handOffTime (Required) The hand off time. See Hand Off Time for more details.
      * @return builder
      */
-    def handOffTime(args: Endofunction[com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceWeeklySettingHandOffTimeArgs.Builder]):
+    inline def handOffTime(args: Endofunction[com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceWeeklySettingHandOffTimeArgs.Builder]):
         com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceWeeklySettingArgs.Builder =
       val argsBuilder = com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceWeeklySettingHandOffTimeArgs.builder
       builder.handOffTime(args(argsBuilder).build)
@@ -234,7 +234,7 @@ object ssm_ext:
      * The following arguments are optional:
      * @return builder
      */
-    def recurrence(args: Endofunction[com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceArgs.Builder]):
+    inline def recurrence(args: Endofunction[com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceArgs.Builder]):
         com.pulumi.aws.ssm.inputs.ContactsRotationState.Builder =
       val argsBuilder = com.pulumi.aws.ssm.inputs.ContactsRotationRecurrenceArgs.builder
       builder.recurrence(args(argsBuilder).build)
@@ -244,7 +244,7 @@ object ssm_ext:
      * @param attachmentsSources One or more configuration blocks describing attachments sources to a version of a document. See `attachmentsSource` block below for details.
      * @return builder
      */
-    def attachmentsSources(args: Endofunction[com.pulumi.aws.ssm.inputs.DocumentAttachmentsSourceArgs.Builder]*):
+    inline def attachmentsSources(args: Endofunction[com.pulumi.aws.ssm.inputs.DocumentAttachmentsSourceArgs.Builder]*):
         com.pulumi.aws.ssm.inputs.DocumentState.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.DocumentAttachmentsSourceArgs.builder
       builder.attachmentsSources(args.map(_(argsBuilder).build)*)
@@ -253,7 +253,7 @@ object ssm_ext:
      * @param parameters One or more configuration blocks describing the parameters for the document. See `parameter` block below for details.
      * @return builder
      */
-    def parameters(args: Endofunction[com.pulumi.aws.ssm.inputs.DocumentParameterArgs.Builder]*):
+    inline def parameters(args: Endofunction[com.pulumi.aws.ssm.inputs.DocumentParameterArgs.Builder]*):
         com.pulumi.aws.ssm.inputs.DocumentState.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.DocumentParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
@@ -263,7 +263,7 @@ object ssm_ext:
      * @param filters Configuration block(s) for filtering. Detailed below.
      * @return builder
      */
-    def filters(args: Endofunction[com.pulumi.aws.ssm.inputs.GetInstancesFilterArgs.Builder]*):
+    inline def filters(args: Endofunction[com.pulumi.aws.ssm.inputs.GetInstancesFilterArgs.Builder]*):
         com.pulumi.aws.ssm.inputs.GetInstancesArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.GetInstancesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
@@ -273,7 +273,7 @@ object ssm_ext:
      * @param filters Configuration block(s) for filtering. Detailed below.
      * @return builder
      */
-    def filters(args: Endofunction[com.pulumi.aws.ssm.inputs.GetInstancesFilter.Builder]*):
+    inline def filters(args: Endofunction[com.pulumi.aws.ssm.inputs.GetInstancesFilter.Builder]*):
         com.pulumi.aws.ssm.inputs.GetInstancesPlainArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.GetInstancesFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
@@ -283,7 +283,7 @@ object ssm_ext:
      * @param filters Configuration block(s) for filtering. Detailed below.
      * @return builder
      */
-    def filters(args: Endofunction[com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsFilterArgs.Builder]*):
+    inline def filters(args: Endofunction[com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsFilterArgs.Builder]*):
         com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
@@ -293,7 +293,7 @@ object ssm_ext:
      * @param filters Configuration block(s) for filtering. Detailed below.
      * @return builder
      */
-    def filters(args: Endofunction[com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsFilter.Builder]*):
+    inline def filters(args: Endofunction[com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsFilter.Builder]*):
         com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsPlainArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.GetMaintenanceWindowsFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
@@ -303,7 +303,7 @@ object ssm_ext:
      * @param filters Key-value pairs used to filter the results. See `filter` below.
      * @return builder
      */
-    def filters(args: Endofunction[com.pulumi.aws.ssm.inputs.GetPatchBaselinesFilterArgs.Builder]*):
+    inline def filters(args: Endofunction[com.pulumi.aws.ssm.inputs.GetPatchBaselinesFilterArgs.Builder]*):
         com.pulumi.aws.ssm.inputs.GetPatchBaselinesArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.GetPatchBaselinesFilterArgs.builder
       builder.filters(args.map(_(argsBuilder).build)*)
@@ -313,7 +313,7 @@ object ssm_ext:
      * @param filters Key-value pairs used to filter the results. See `filter` below.
      * @return builder
      */
-    def filters(args: Endofunction[com.pulumi.aws.ssm.inputs.GetPatchBaselinesFilter.Builder]*):
+    inline def filters(args: Endofunction[com.pulumi.aws.ssm.inputs.GetPatchBaselinesFilter.Builder]*):
         com.pulumi.aws.ssm.inputs.GetPatchBaselinesPlainArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.GetPatchBaselinesFilter.builder
       builder.filters(args.map(_(argsBuilder).build)*)
@@ -324,7 +324,7 @@ object ssm_ext:
      * (https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html)
      * @return builder
      */
-    def targets(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTargetTargetArgs.Builder]*):
+    inline def targets(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTargetTargetArgs.Builder]*):
         com.pulumi.aws.ssm.inputs.MaintenanceWindowTargetState.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.MaintenanceWindowTargetTargetArgs.builder
       builder.targets(args.map(_(argsBuilder).build)*)
@@ -334,7 +334,7 @@ object ssm_ext:
      * @param targets The targets (either instances or window target IDs). Instances are specified using Key=InstanceIds,Values=instanceid1,instanceid2. Window target IDs are specified using Key=WindowTargetIds,Values=window target id1, window target id2.
      * @return builder
      */
-    def targets(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTargetArgs.Builder]*):
+    inline def targets(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTargetArgs.Builder]*):
         com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskState.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTargetArgs.builder
       builder.targets(args.map(_(argsBuilder).build)*)
@@ -343,7 +343,7 @@ object ssm_ext:
      * @param taskInvocationParameters Configuration block with parameters for task execution.
      * @return builder
      */
-    def taskInvocationParameters(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersArgs.Builder]):
+    inline def taskInvocationParameters(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersArgs.Builder]):
         com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskState.Builder =
       val argsBuilder = com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersArgs.builder
       builder.taskInvocationParameters(args(argsBuilder).build)
@@ -353,7 +353,7 @@ object ssm_ext:
      * @param automationParameters The parameters for an AUTOMATION task type. Documented below.
      * @return builder
      */
-    def automationParameters(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersAutomationParametersArgs.Builder]):
+    inline def automationParameters(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersAutomationParametersArgs.Builder]):
         com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersArgs.Builder =
       val argsBuilder = com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersAutomationParametersArgs.builder
       builder.automationParameters(args(argsBuilder).build)
@@ -362,7 +362,7 @@ object ssm_ext:
      * @param lambdaParameters The parameters for a LAMBDA task type. Documented below.
      * @return builder
      */
-    def lambdaParameters(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersLambdaParametersArgs.Builder]):
+    inline def lambdaParameters(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersLambdaParametersArgs.Builder]):
         com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersArgs.Builder =
       val argsBuilder = com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersLambdaParametersArgs.builder
       builder.lambdaParameters(args(argsBuilder).build)
@@ -371,7 +371,7 @@ object ssm_ext:
      * @param runCommandParameters The parameters for a RUN_COMMAND task type. Documented below.
      * @return builder
      */
-    def runCommandParameters(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersRunCommandParametersArgs.Builder]):
+    inline def runCommandParameters(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersRunCommandParametersArgs.Builder]):
         com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersArgs.Builder =
       val argsBuilder = com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersRunCommandParametersArgs.builder
       builder.runCommandParameters(args(argsBuilder).build)
@@ -380,7 +380,7 @@ object ssm_ext:
      * @param stepFunctionsParameters The parameters for a STEP_FUNCTIONS task type. Documented below.
      * @return builder
      */
-    def stepFunctionsParameters(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersStepFunctionsParametersArgs.Builder]):
+    inline def stepFunctionsParameters(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersStepFunctionsParametersArgs.Builder]):
         com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersArgs.Builder =
       val argsBuilder = com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersStepFunctionsParametersArgs.builder
       builder.stepFunctionsParameters(args(argsBuilder).build)
@@ -390,7 +390,7 @@ object ssm_ext:
      * @param parameters The parameters for the RUN_COMMAND task execution. Documented below.
      * @return builder
      */
-    def parameters(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersAutomationParametersParameterArgs.Builder]*):
+    inline def parameters(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersAutomationParametersParameterArgs.Builder]*):
         com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersAutomationParametersArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersAutomationParametersParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
@@ -400,7 +400,7 @@ object ssm_ext:
      * @param cloudwatchConfig Configuration options for sending command output to CloudWatch Logs. Documented below.
      * @return builder
      */
-    def cloudwatchConfig(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersRunCommandParametersCloudwatchConfigArgs.Builder]):
+    inline def cloudwatchConfig(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersRunCommandParametersCloudwatchConfigArgs.Builder]):
         com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersRunCommandParametersArgs.Builder =
       val argsBuilder = com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersRunCommandParametersCloudwatchConfigArgs.builder
       builder.cloudwatchConfig(args(argsBuilder).build)
@@ -409,7 +409,7 @@ object ssm_ext:
      * @param notificationConfig Configurations for sending notifications about command status changes on a per-instance basis. Documented below.
      * @return builder
      */
-    def notificationConfig(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfigArgs.Builder]):
+    inline def notificationConfig(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfigArgs.Builder]):
         com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersRunCommandParametersArgs.Builder =
       val argsBuilder = com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersRunCommandParametersNotificationConfigArgs.builder
       builder.notificationConfig(args(argsBuilder).build)
@@ -418,7 +418,7 @@ object ssm_ext:
      * @param parameters The parameters for the RUN_COMMAND task execution. Documented below.
      * @return builder
      */
-    def parameters(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersRunCommandParametersParameterArgs.Builder]*):
+    inline def parameters(args: Endofunction[com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersRunCommandParametersParameterArgs.Builder]*):
         com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersRunCommandParametersArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.MaintenanceWindowTaskTaskInvocationParametersRunCommandParametersParameterArgs.builder
       builder.parameters(args.map(_(argsBuilder).build)*)
@@ -428,7 +428,7 @@ object ssm_ext:
      * @param patchFilters Patch filter group that defines the criteria for the rule. Up to 5 patch filters can be specified per approval rule using Key/Value pairs. Valid combinations of these Keys and the `operatingSystem` value can be found in the [SSM DescribePatchProperties API Reference](https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribePatchProperties.html). Valid Values are exact values for the patch property given as the key, or a wildcard `*`, which matches all values. `PATCH_SET` defaults to `OS` if unspecified
      * @return builder
      */
-    def patchFilters(args: Endofunction[com.pulumi.aws.ssm.inputs.PatchBaselineApprovalRulePatchFilterArgs.Builder]*):
+    inline def patchFilters(args: Endofunction[com.pulumi.aws.ssm.inputs.PatchBaselineApprovalRulePatchFilterArgs.Builder]*):
         com.pulumi.aws.ssm.inputs.PatchBaselineApprovalRuleArgs.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.PatchBaselineApprovalRulePatchFilterArgs.builder
       builder.patchFilters(args.map(_(argsBuilder).build)*)
@@ -438,7 +438,7 @@ object ssm_ext:
      * @param approvalRules Set of rules used to include patches in the baseline. Up to 10 approval rules can be specified. See `approvalRule` below.
      * @return builder
      */
-    def approvalRules(args: Endofunction[com.pulumi.aws.ssm.inputs.PatchBaselineApprovalRuleArgs.Builder]*):
+    inline def approvalRules(args: Endofunction[com.pulumi.aws.ssm.inputs.PatchBaselineApprovalRuleArgs.Builder]*):
         com.pulumi.aws.ssm.inputs.PatchBaselineState.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.PatchBaselineApprovalRuleArgs.builder
       builder.approvalRules(args.map(_(argsBuilder).build)*)
@@ -447,7 +447,7 @@ object ssm_ext:
      * @param globalFilters Set of global filters used to exclude patches from the baseline. Up to 4 global filters can be specified using Key/Value pairs. Valid Keys are `PRODUCT`, `CLASSIFICATION`, `MSRC_SEVERITY`, and `PATCH_ID`.
      * @return builder
      */
-    def globalFilters(args: Endofunction[com.pulumi.aws.ssm.inputs.PatchBaselineGlobalFilterArgs.Builder]*):
+    inline def globalFilters(args: Endofunction[com.pulumi.aws.ssm.inputs.PatchBaselineGlobalFilterArgs.Builder]*):
         com.pulumi.aws.ssm.inputs.PatchBaselineState.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.PatchBaselineGlobalFilterArgs.builder
       builder.globalFilters(args.map(_(argsBuilder).build)*)
@@ -456,7 +456,7 @@ object ssm_ext:
      * @param sources Configuration block with alternate sources for patches. Applies to Linux instances only. See `source` below.
      * @return builder
      */
-    def sources(args: Endofunction[com.pulumi.aws.ssm.inputs.PatchBaselineSourceArgs.Builder]*):
+    inline def sources(args: Endofunction[com.pulumi.aws.ssm.inputs.PatchBaselineSourceArgs.Builder]*):
         com.pulumi.aws.ssm.inputs.PatchBaselineState.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.PatchBaselineSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
@@ -466,7 +466,7 @@ object ssm_ext:
      * @param configurationDefinition Definition of the Quick Setup configuration that the configuration manager deploys. See `configurationDefinition` below.
      * @return builder
      */
-    def configurationDefinition(args: Endofunction[com.pulumi.aws.ssm.inputs.QuicksetupConfigurationManagerConfigurationDefinitionArgs.Builder]):
+    inline def configurationDefinition(args: Endofunction[com.pulumi.aws.ssm.inputs.QuicksetupConfigurationManagerConfigurationDefinitionArgs.Builder]):
         com.pulumi.aws.ssm.inputs.QuicksetupConfigurationManagerState.Builder =
       val argsBuilder = com.pulumi.aws.ssm.inputs.QuicksetupConfigurationManagerConfigurationDefinitionArgs.builder
       builder.configurationDefinition(args(argsBuilder).build)
@@ -475,12 +475,12 @@ object ssm_ext:
      * @param statusSummaries A summary of the state of the configuration manager. This includes deployment statuses, association statuses, drift statuses, health checks, and more. See `statusSummaries` below.
      * @return builder
      */
-    def statusSummaries(args: Endofunction[com.pulumi.aws.ssm.inputs.QuicksetupConfigurationManagerStatusSummaryArgs.Builder]*):
+    inline def statusSummaries(args: Endofunction[com.pulumi.aws.ssm.inputs.QuicksetupConfigurationManagerStatusSummaryArgs.Builder]*):
         com.pulumi.aws.ssm.inputs.QuicksetupConfigurationManagerState.Builder =
       def argsBuilder = com.pulumi.aws.ssm.inputs.QuicksetupConfigurationManagerStatusSummaryArgs.builder
       builder.statusSummaries(args.map(_(argsBuilder).build)*)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.ssm.inputs.QuicksetupConfigurationManagerTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.ssm.inputs.QuicksetupConfigurationManagerTimeoutsArgs.Builder]):
         com.pulumi.aws.ssm.inputs.QuicksetupConfigurationManagerState.Builder =
       val argsBuilder = com.pulumi.aws.ssm.inputs.QuicksetupConfigurationManagerTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -491,7 +491,7 @@ object ssm_ext:
      * See `destinationDataSharing` below.
      * @return builder
      */
-    def destinationDataSharing(args: Endofunction[com.pulumi.aws.ssm.inputs.ResourceDataSyncS3DestinationDestinationDataSharingArgs.Builder]):
+    inline def destinationDataSharing(args: Endofunction[com.pulumi.aws.ssm.inputs.ResourceDataSyncS3DestinationDestinationDataSharingArgs.Builder]):
         com.pulumi.aws.ssm.inputs.ResourceDataSyncS3DestinationArgs.Builder =
       val argsBuilder = com.pulumi.aws.ssm.inputs.ResourceDataSyncS3DestinationDestinationDataSharingArgs.builder
       builder.destinationDataSharing(args(argsBuilder).build)
@@ -501,7 +501,7 @@ object ssm_ext:
      * @param s3Destination Amazon S3 configuration details for the sync.
      * @return builder
      */
-    def s3Destination(args: Endofunction[com.pulumi.aws.ssm.inputs.ResourceDataSyncS3DestinationArgs.Builder]):
+    inline def s3Destination(args: Endofunction[com.pulumi.aws.ssm.inputs.ResourceDataSyncS3DestinationArgs.Builder]):
         com.pulumi.aws.ssm.inputs.ResourceDataSyncState.Builder =
       val argsBuilder = com.pulumi.aws.ssm.inputs.ResourceDataSyncS3DestinationArgs.builder
       builder.s3Destination(args(argsBuilder).build)

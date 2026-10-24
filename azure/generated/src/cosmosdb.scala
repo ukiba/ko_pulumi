@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object cosmosdb:
   /** Manages a CosmosDB (formally DocumentDB) Account. */
-  def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.AccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cosmosdb.AccountArgs.builder
     conf.logicalName2physicalName(name) match
@@ -37,7 +37,7 @@ object cosmosdb:
    * \$ pulumi import azure:cosmosdb/cassandraCluster:CassandraCluster example /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.DocumentDB/cassandraClusters/cluster1
    * ```
    */
-  def CassandraCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CassandraCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.CassandraClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cosmosdb.CassandraClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -67,7 +67,7 @@ object cosmosdb:
    * \$ pulumi import azure:cosmosdb/cassandraDatacenter:CassandraDatacenter example /subscriptions/12345678-1234-9876-4563-123456789012/resourceGroups/resGroup1/providers/Microsoft.DocumentDB/cassandraClusters/cluster1/dataCenters/dc1
    * ```
    */
-  def CassandraDatacenter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CassandraDatacenter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.CassandraDatacenterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cosmosdb.CassandraDatacenterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -78,7 +78,7 @@ object cosmosdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Cassandra KeySpace within a Cosmos DB Account. */
-  def CassandraKeyspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CassandraKeyspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.CassandraKeyspaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cosmosdb.CassandraKeyspaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -89,7 +89,7 @@ object cosmosdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Cassandra Table within a Cosmos DB Cassandra Keyspace. */
-  def CassandraTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CassandraTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.CassandraTableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cosmosdb.CassandraTableArgs.builder
     conf.logicalName2physicalName(name) match
@@ -181,7 +181,7 @@ object cosmosdb:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Gremlin Database within a Cosmos DB Account. */
-  def GremlinDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GremlinDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.GremlinDatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cosmosdb.GremlinDatabaseArgs.builder
     conf.logicalName2physicalName(name) match
@@ -192,7 +192,7 @@ object cosmosdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Gremlin Graph within a Cosmos DB Account. */
-  def GremlinGraph(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GremlinGraph(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.GremlinGraphArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cosmosdb.GremlinGraphArgs.builder
     conf.logicalName2physicalName(name) match
@@ -203,7 +203,7 @@ object cosmosdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a MongoDB Cluster using vCore Architecture. */
-  @deprecated("azure.cosmosdb/mongocluster.MongoCluster has been deprecated in favor of azure.mongocluster/mongocluster.MongoCluster") def MongoCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("azure.cosmosdb/mongocluster.MongoCluster has been deprecated in favor of azure.mongocluster/mongocluster.MongoCluster") inline def MongoCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.MongoClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cosmosdb.MongoClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -221,7 +221,7 @@ object cosmosdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Mongo Collection within a Cosmos DB Account. */
-  def MongoCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MongoCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.MongoCollectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cosmosdb.MongoCollectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -232,7 +232,7 @@ object cosmosdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Mongo Database within a Cosmos DB Account. */
-  def MongoDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MongoDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.MongoDatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cosmosdb.MongoDatabaseArgs.builder
     conf.logicalName2physicalName(name) match
@@ -243,7 +243,7 @@ object cosmosdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Cosmos DB Mongo Role Definition. */
-  def MongoRoleDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MongoRoleDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.MongoRoleDefinitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.cosmosdb.MongoRoleDefinitionArgs.builder
     com.pulumi.azure.cosmosdb.MongoRoleDefinition(name,
@@ -251,7 +251,7 @@ object cosmosdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Cosmos DB Mongo User Definition. */
-  def MongoUserDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MongoUserDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.MongoUserDefinitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.cosmosdb.MongoUserDefinitionArgs.builder
     com.pulumi.azure.cosmosdb.MongoUserDefinition(name,
@@ -259,7 +259,7 @@ object cosmosdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Cosmos DB for PostgreSQL Cluster. */
-  def PostgresqlCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PostgresqlCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.PostgresqlClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cosmosdb.PostgresqlClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -277,7 +277,7 @@ object cosmosdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Sets a Coordinator Configuration value on Azure Cosmos DB for PostgreSQL Cluster. */
-  def PostgresqlCoordinatorConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PostgresqlCoordinatorConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.PostgresqlCoordinatorConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cosmosdb.PostgresqlCoordinatorConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -288,7 +288,7 @@ object cosmosdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Cosmos DB for PostgreSQL Firewall Rule. */
-  def PostgresqlFirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PostgresqlFirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.PostgresqlFirewallRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cosmosdb.PostgresqlFirewallRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -299,7 +299,7 @@ object cosmosdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Sets a Node Configuration value on Azure Cosmos DB for PostgreSQL Cluster. */
-  def PostgresqlNodeConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PostgresqlNodeConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.PostgresqlNodeConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cosmosdb.PostgresqlNodeConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -310,7 +310,7 @@ object cosmosdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Cosmos DB for PostgreSQL Role. */
-  def PostgresqlRole(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PostgresqlRole(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.PostgresqlRoleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cosmosdb.PostgresqlRoleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -321,7 +321,7 @@ object cosmosdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a SQL Container within a Cosmos DB Account. */
-  def SqlContainer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SqlContainer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.SqlContainerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cosmosdb.SqlContainerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -332,7 +332,7 @@ object cosmosdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a SQL Database within a Cosmos DB Account. */
-  def SqlDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SqlDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.SqlDatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cosmosdb.SqlDatabaseArgs.builder
     conf.logicalName2physicalName(name) match
@@ -343,7 +343,7 @@ object cosmosdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a SQL Dedicated Gateway within a Cosmos DB Account. */
-  def SqlDedicatedGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SqlDedicatedGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.SqlDedicatedGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.cosmosdb.SqlDedicatedGatewayArgs.builder
     com.pulumi.azure.cosmosdb.SqlDedicatedGateway(name,
@@ -351,7 +351,7 @@ object cosmosdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an SQL User Defined Function. */
-  def SqlFunction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SqlFunction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.SqlFunctionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cosmosdb.SqlFunctionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -362,7 +362,7 @@ object cosmosdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Cosmos DB SQL Role Assignment. */
-  def SqlRoleAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SqlRoleAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.SqlRoleAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cosmosdb.SqlRoleAssignmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -373,7 +373,7 @@ object cosmosdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Cosmos DB SQL Role Definition. */
-  def SqlRoleDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SqlRoleDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.SqlRoleDefinitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cosmosdb.SqlRoleDefinitionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -384,7 +384,7 @@ object cosmosdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a SQL Stored Procedure within a Cosmos DB Account SQL Database. */
-  def SqlStoredProcedure(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SqlStoredProcedure(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.SqlStoredProcedureArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cosmosdb.SqlStoredProcedureArgs.builder
     conf.logicalName2physicalName(name) match
@@ -395,7 +395,7 @@ object cosmosdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an SQL Trigger. */
-  def SqlTrigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SqlTrigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.SqlTriggerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cosmosdb.SqlTriggerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -406,7 +406,7 @@ object cosmosdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Table within a Cosmos DB Account. */
-  def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.cosmosdb.TableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.cosmosdb.TableArgs.builder
     conf.logicalName2physicalName(name) match

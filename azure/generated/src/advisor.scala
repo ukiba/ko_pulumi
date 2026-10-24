@@ -24,7 +24,7 @@ object advisor:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Specifies a suppression for an Azure Advisor recommendation. */
-  def Suppression(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Suppression(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.advisor.SuppressionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.advisor.SuppressionArgs.builder
     conf.logicalName2physicalName(name) match

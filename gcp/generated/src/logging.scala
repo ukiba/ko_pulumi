@@ -13,7 +13,7 @@ object logging:
    * 
    * &gt; **Note:** Logging buckets are automatically created for a given folder, project, organization, billingAccount and cannot be deleted. Creating a resource of this type will acquire and update the resource that already exists at the desired location. These buckets cannot be removed so deleting this resource will remove the bucket config from your state but will leave the logging bucket unchanged. The buckets that are currently automatically created are &#34;_Default&#34; and &#34;_Required&#34;.
    */
-  def BillingAccountBucketConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BillingAccountBucketConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.logging.BillingAccountBucketConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.logging.BillingAccountBucketConfigArgs.builder
     com.pulumi.gcp.logging.BillingAccountBucketConfig(name,
@@ -29,7 +29,7 @@ object logging:
    * 
    * &gt; You can specify exclusions for log sinks created by terraform by using the exclusions field of `gcp.logging.BillingAccountSink`
    */
-  def BillingAccountExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BillingAccountExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.logging.BillingAccountExclusionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.BillingAccountExclusionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -49,7 +49,7 @@ object logging:
    * the credentials used with this provider. [IAM roles granted on a billing account](https://cloud.google.com/billing/docs/how-to/billing-access) are separate from the
    * typical IAM roles granted on a project.
    */
-  def BillingAccountSink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BillingAccountSink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.logging.BillingAccountSinkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.BillingAccountSinkArgs.builder
     conf.logicalName2physicalName(name) match
@@ -66,7 +66,7 @@ object logging:
    * 
    * &gt; **Note:** Logging buckets are automatically created for a given folder, project, organization, billingAccount and cannot be deleted. Creating a resource of this type will acquire and update the resource that already exists at the desired location. These buckets cannot be removed so deleting this resource will remove the bucket config from your state but will leave the logging bucket unchanged. The buckets that are currently automatically created are &#34;_Default&#34; and &#34;_Required&#34;.
    */
-  def FolderBucketConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FolderBucketConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.logging.FolderBucketConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.logging.FolderBucketConfigArgs.builder
     com.pulumi.gcp.logging.FolderBucketConfig(name,
@@ -82,7 +82,7 @@ object logging:
    * 
    * &gt; You can specify exclusions for log sinks created by the provider by using the exclusions field of `gcp.logging.FolderSink`
    */
-  def FolderExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FolderExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.logging.FolderExclusionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.FolderExclusionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -101,7 +101,7 @@ object logging:
    * * How-to Guides
    *     * [Configure default settings for organizations and folders](https://cloud.google.com/logging/docs/default-settings)
    */
-  def FolderSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FolderSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.logging.FolderSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.logging.FolderSettingsArgs.builder
     com.pulumi.gcp.logging.FolderSettings(name,
@@ -114,7 +114,7 @@ object logging:
    * * How-to Guides
    *     * [Exporting Logs](https://cloud.google.com/logging/docs/export)
    */
-  def FolderSink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FolderSink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.logging.FolderSinkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.FolderSinkArgs.builder
     conf.logicalName2physicalName(name) match
@@ -133,7 +133,7 @@ object logging:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/logging/docs/apis)
    */
-  def LinkedDataset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LinkedDataset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.logging.LinkedDatasetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.logging.LinkedDatasetArgs.builder
     com.pulumi.gcp.logging.LinkedDataset(name,
@@ -149,7 +149,7 @@ object logging:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/logging/docs/apis)
    */
-  def LogScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LogScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.logging.LogScopeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.LogScopeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -168,7 +168,7 @@ object logging:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/logging/docs/apis)
    */
-  def LogView(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LogView(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.logging.LogViewArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.LogViewArgs.builder
     conf.logicalName2physicalName(name) match
@@ -771,7 +771,7 @@ object logging:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def LogViewIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LogViewIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.logging.LogViewIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.LogViewIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1374,7 +1374,7 @@ object logging:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def LogViewIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LogViewIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.logging.LogViewIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.LogViewIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
@@ -1977,7 +1977,7 @@ object logging:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def LogViewIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LogViewIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.logging.LogViewIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.LogViewIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2185,7 +2185,7 @@ object logging:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/logging/docs/apis)
    */
-  def Metric(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Metric(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.logging.MetricArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.MetricArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2202,7 +2202,7 @@ object logging:
    * 
    * &gt; **Note:** Logging buckets are automatically created for a given folder, project, organization, billingAccount and cannot be deleted. Creating a resource of this type will acquire and update the resource that already exists at the desired location. These buckets cannot be removed so deleting this resource will remove the bucket config from your state but will leave the logging bucket unchanged. The buckets that are currently automatically created are &#34;_Default&#34; and &#34;_Required&#34;.
    */
-  def OrganizationBucketConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationBucketConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.logging.OrganizationBucketConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.logging.OrganizationBucketConfigArgs.builder
     com.pulumi.gcp.logging.OrganizationBucketConfig(name,
@@ -2218,7 +2218,7 @@ object logging:
    * 
    * &gt; You can specify exclusions for log sinks created by the provider by using the exclusions field of `gcp.logging.OrganizationSink`
    */
-  def OrganizationExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.logging.OrganizationExclusionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.OrganizationExclusionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2237,7 +2237,7 @@ object logging:
    * * How-to Guides
    *     * [Configure default settings for organizations and folders](https://cloud.google.com/logging/docs/default-settings)
    */
-  def OrganizationSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.logging.OrganizationSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.logging.OrganizationSettingsArgs.builder
     com.pulumi.gcp.logging.OrganizationSettings(name,
@@ -2250,7 +2250,7 @@ object logging:
    * * How-to Guides
    *     * [Exporting Logs](https://cloud.google.com/logging/docs/export)
    */
-  def OrganizationSink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationSink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.logging.OrganizationSinkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.OrganizationSinkArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2267,7 +2267,7 @@ object logging:
    * 
    * &gt; **Note:** Logging buckets are automatically created for a given folder, project, organization, billingAccount and cannot be deleted. Creating a resource of this type will acquire and update the resource that already exists at the desired location. These buckets cannot be removed so deleting this resource will remove the bucket config from your state but will leave the logging bucket unchanged. The buckets that are currently automatically created are &#34;_Default&#34; and &#34;_Required&#34;.
    */
-  def ProjectBucketConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProjectBucketConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.logging.ProjectBucketConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.logging.ProjectBucketConfigArgs.builder
     com.pulumi.gcp.logging.ProjectBucketConfig(name,
@@ -2283,7 +2283,7 @@ object logging:
    * 
    * &gt; You can specify exclusions for log sinks created by the provider by using the exclusions field of `gcp.logging.ProjectSink`
    */
-  def ProjectExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProjectExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.logging.ProjectExclusionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.ProjectExclusionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2308,7 +2308,7 @@ object logging:
    * 
    * &gt; **Note:** The `_Default` and `_Required` logging sinks are automatically created for a given project and cannot be deleted. Creating a resource of this type will acquire and update the resource that already exists at the desired location. These sinks cannot be removed so deleting this resource will remove the sink config from your terraform state but will leave the logging sink unchanged. The sinks that are currently automatically created are &#34;_Default&#34; and &#34;_Required&#34;.
    */
-  def ProjectSink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProjectSink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.logging.ProjectSinkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.ProjectSinkArgs.builder
     conf.logicalName2physicalName(name) match
@@ -2329,7 +2329,7 @@ object logging:
    *     * [Save and share SQL queries](https://docs.cloud.google.com/logging/docs/analyze/save-share-query)
    *     * [Save and share queries](https://docs.cloud.google.com/logging/docs/view/building-queries#saved-queries)
    */
-  def SavedQuery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SavedQuery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.logging.SavedQueryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.SavedQueryArgs.builder
     conf.logicalName2physicalName(name) match

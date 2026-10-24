@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object efs:
   /** Provides an Elastic File System (EFS) access point. */
-  def AccessPoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccessPoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.efs.AccessPointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.efs.AccessPointArgs.builder
     argsBuilder = args(argsBuilder)
@@ -25,7 +25,7 @@ object efs:
    * Provides an Elastic File System (EFS) Backup Policy resource.
    * Backup policies turn automatic backups on or off for an existing file system.
    */
-  def BackupPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BackupPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.efs.BackupPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.efs.BackupPolicyArgs.builder
     com.pulumi.aws.efs.BackupPolicy(name,
@@ -98,7 +98,7 @@ object efs:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides an Elastic File System (EFS) File System resource. */
-  def FileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.efs.FileSystemArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.efs.FileSystemArgs.builder
     argsBuilder = args(argsBuilder)
@@ -113,7 +113,7 @@ object efs:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Elastic File System (EFS) File System Policy resource. */
-  def FileSystemPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FileSystemPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.efs.FileSystemPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.efs.FileSystemPolicyArgs.builder
     com.pulumi.aws.efs.FileSystemPolicy(name,
@@ -121,7 +121,7 @@ object efs:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Elastic File System (EFS) mount target. */
-  def MountTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MountTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.efs.MountTargetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.efs.MountTargetArgs.builder
     com.pulumi.aws.efs.MountTarget(name,
@@ -133,7 +133,7 @@ object efs:
    * 
    * &gt; **NOTE:** Deleting this resource does **not** delete the destination file system that was created.
    */
-  def ReplicationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ReplicationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.efs.ReplicationConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.efs.ReplicationConfigurationArgs.builder
     com.pulumi.aws.efs.ReplicationConfiguration(name,

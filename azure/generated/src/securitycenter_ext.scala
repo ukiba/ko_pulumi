@@ -7,7 +7,7 @@ object securitycenter_ext:
      * @param status A `status` block as defined below.
      * @return builder
      */
-    def status(args: Endofunction[com.pulumi.azure.securitycenter.inputs.AssessmentStatusArgs.Builder]):
+    inline def status(args: Endofunction[com.pulumi.azure.securitycenter.inputs.AssessmentStatusArgs.Builder]):
         com.pulumi.azure.securitycenter.AssessmentArgs.Builder =
       val argsBuilder = com.pulumi.azure.securitycenter.inputs.AssessmentStatusArgs.builder
       builder.status(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object securitycenter_ext:
      * @param actions One or more `action` blocks as defined below. An `action` tells this automation where the data is to be sent to upon being evaluated by the rules in the `source`.
      * @return builder
      */
-    def actions(args: Endofunction[com.pulumi.azure.securitycenter.inputs.AutomationActionArgs.Builder]*):
+    inline def actions(args: Endofunction[com.pulumi.azure.securitycenter.inputs.AutomationActionArgs.Builder]*):
         com.pulumi.azure.securitycenter.AutomationArgs.Builder =
       def argsBuilder = com.pulumi.azure.securitycenter.inputs.AutomationActionArgs.builder
       builder.actions(args.map(_(argsBuilder).build)*)
@@ -26,7 +26,7 @@ object securitycenter_ext:
      * @param sources One or more `source` blocks as defined below. A `source` defines what data types will be processed and a set of rules to filter that data.
      * @return builder
      */
-    def sources(args: Endofunction[com.pulumi.azure.securitycenter.inputs.AutomationSourceArgs.Builder]*):
+    inline def sources(args: Endofunction[com.pulumi.azure.securitycenter.inputs.AutomationSourceArgs.Builder]*):
         com.pulumi.azure.securitycenter.AutomationArgs.Builder =
       def argsBuilder = com.pulumi.azure.securitycenter.inputs.AutomationSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
@@ -36,7 +36,7 @@ object securitycenter_ext:
      * @param extensions One or more `extension` blocks as defined below.
      * @return builder
      */
-    def extensions(args: Endofunction[com.pulumi.azure.securitycenter.inputs.SubscriptionPricingExtensionArgs.Builder]*):
+    inline def extensions(args: Endofunction[com.pulumi.azure.securitycenter.inputs.SubscriptionPricingExtensionArgs.Builder]*):
         com.pulumi.azure.securitycenter.SubscriptionPricingArgs.Builder =
       def argsBuilder = com.pulumi.azure.securitycenter.inputs.SubscriptionPricingExtensionArgs.builder
       builder.extensions(args.map(_(argsBuilder).build)*)
@@ -46,7 +46,7 @@ object securitycenter_ext:
      * @param status A `status` block as defined below.
      * @return builder
      */
-    def status(args: Endofunction[com.pulumi.azure.securitycenter.inputs.AssessmentStatusArgs.Builder]):
+    inline def status(args: Endofunction[com.pulumi.azure.securitycenter.inputs.AssessmentStatusArgs.Builder]):
         com.pulumi.azure.securitycenter.inputs.AssessmentState.Builder =
       val argsBuilder = com.pulumi.azure.securitycenter.inputs.AssessmentStatusArgs.builder
       builder.status(args(argsBuilder).build)
@@ -58,7 +58,7 @@ object securitycenter_ext:
      * &gt; **Note:** When multiple `ruleSet` block are provided, a logical &#39;OR&#39; is applied to the evaluation of them.
      * @return builder
      */
-    def ruleSets(args: Endofunction[com.pulumi.azure.securitycenter.inputs.AutomationSourceRuleSetArgs.Builder]*):
+    inline def ruleSets(args: Endofunction[com.pulumi.azure.securitycenter.inputs.AutomationSourceRuleSetArgs.Builder]*):
         com.pulumi.azure.securitycenter.inputs.AutomationSourceArgs.Builder =
       def argsBuilder = com.pulumi.azure.securitycenter.inputs.AutomationSourceRuleSetArgs.builder
       builder.ruleSets(args.map(_(argsBuilder).build)*)
@@ -70,7 +70,7 @@ object securitycenter_ext:
      * &gt; **Note:** This automation will trigger when all of the `rule`s in this `ruleSet` are evaluated as &#39;true&#39;. This is equivalent to a logical &#39;AND&#39;.
      * @return builder
      */
-    def rules(args: Endofunction[com.pulumi.azure.securitycenter.inputs.AutomationSourceRuleSetRuleArgs.Builder]*):
+    inline def rules(args: Endofunction[com.pulumi.azure.securitycenter.inputs.AutomationSourceRuleSetRuleArgs.Builder]*):
         com.pulumi.azure.securitycenter.inputs.AutomationSourceRuleSetArgs.Builder =
       def argsBuilder = com.pulumi.azure.securitycenter.inputs.AutomationSourceRuleSetRuleArgs.builder
       builder.rules(args.map(_(argsBuilder).build)*)
@@ -80,7 +80,7 @@ object securitycenter_ext:
      * @param actions One or more `action` blocks as defined below. An `action` tells this automation where the data is to be sent to upon being evaluated by the rules in the `source`.
      * @return builder
      */
-    def actions(args: Endofunction[com.pulumi.azure.securitycenter.inputs.AutomationActionArgs.Builder]*):
+    inline def actions(args: Endofunction[com.pulumi.azure.securitycenter.inputs.AutomationActionArgs.Builder]*):
         com.pulumi.azure.securitycenter.inputs.AutomationState.Builder =
       def argsBuilder = com.pulumi.azure.securitycenter.inputs.AutomationActionArgs.builder
       builder.actions(args.map(_(argsBuilder).build)*)
@@ -89,7 +89,7 @@ object securitycenter_ext:
      * @param sources One or more `source` blocks as defined below. A `source` defines what data types will be processed and a set of rules to filter that data.
      * @return builder
      */
-    def sources(args: Endofunction[com.pulumi.azure.securitycenter.inputs.AutomationSourceArgs.Builder]*):
+    inline def sources(args: Endofunction[com.pulumi.azure.securitycenter.inputs.AutomationSourceArgs.Builder]*):
         com.pulumi.azure.securitycenter.inputs.AutomationState.Builder =
       def argsBuilder = com.pulumi.azure.securitycenter.inputs.AutomationSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
@@ -99,7 +99,7 @@ object securitycenter_ext:
      * @param extensions One or more `extension` blocks as defined below.
      * @return builder
      */
-    def extensions(args: Endofunction[com.pulumi.azure.securitycenter.inputs.SubscriptionPricingExtensionArgs.Builder]*):
+    inline def extensions(args: Endofunction[com.pulumi.azure.securitycenter.inputs.SubscriptionPricingExtensionArgs.Builder]*):
         com.pulumi.azure.securitycenter.inputs.SubscriptionPricingState.Builder =
       def argsBuilder = com.pulumi.azure.securitycenter.inputs.SubscriptionPricingExtensionArgs.builder
       builder.extensions(args.map(_(argsBuilder).build)*)

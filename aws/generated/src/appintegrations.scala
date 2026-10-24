@@ -24,7 +24,7 @@ object appintegrations:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides an Amazon AppIntegrations Data Integration resource. */
-  def DataIntegration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataIntegration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.appintegrations.DataIntegrationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appintegrations.DataIntegrationArgs.builder
     conf.logicalName2physicalName(name) match

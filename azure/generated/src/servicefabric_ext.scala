@@ -7,7 +7,7 @@ object servicefabric_ext:
      * @param azureActiveDirectory An `azureActiveDirectory` block as defined below.
      * @return builder
      */
-    def azureActiveDirectory(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterAzureActiveDirectoryArgs.Builder]):
+    inline def azureActiveDirectory(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterAzureActiveDirectoryArgs.Builder]):
         com.pulumi.azure.servicefabric.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterAzureActiveDirectoryArgs.builder
       builder.azureActiveDirectory(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object servicefabric_ext:
      * @param certificate A `certificate` block as defined below. Conflicts with `certificateCommonNames`.
      * @return builder
      */
-    def certificate(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterCertificateArgs.Builder]):
+    inline def certificate(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterCertificateArgs.Builder]):
         com.pulumi.azure.servicefabric.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterCertificateArgs.builder
       builder.certificate(args(argsBuilder).build)
@@ -25,7 +25,7 @@ object servicefabric_ext:
      * @param certificateCommonNames A `certificateCommonNames` block as defined below. Conflicts with `certificate`.
      * @return builder
      */
-    def certificateCommonNames(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterCertificateCommonNamesArgs.Builder]):
+    inline def certificateCommonNames(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterCertificateCommonNamesArgs.Builder]):
         com.pulumi.azure.servicefabric.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterCertificateCommonNamesArgs.builder
       builder.certificateCommonNames(args(argsBuilder).build)
@@ -36,7 +36,7 @@ object servicefabric_ext:
      * &gt; **Note:** If Client Certificates are enabled then at a Certificate must be configured on the cluster.
      * @return builder
      */
-    def clientCertificateCommonNames(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterClientCertificateCommonNameArgs.Builder]*):
+    inline def clientCertificateCommonNames(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterClientCertificateCommonNameArgs.Builder]*):
         com.pulumi.azure.servicefabric.ClusterArgs.Builder =
       def argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterClientCertificateCommonNameArgs.builder
       builder.clientCertificateCommonNames(args.map(_(argsBuilder).build)*)
@@ -45,7 +45,7 @@ object servicefabric_ext:
      * @param clientCertificateThumbprints One or more `clientCertificateThumbprint` blocks as defined below.
      * @return builder
      */
-    def clientCertificateThumbprints(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterClientCertificateThumbprintArgs.Builder]*):
+    inline def clientCertificateThumbprints(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterClientCertificateThumbprintArgs.Builder]*):
         com.pulumi.azure.servicefabric.ClusterArgs.Builder =
       def argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterClientCertificateThumbprintArgs.builder
       builder.clientCertificateThumbprints(args.map(_(argsBuilder).build)*)
@@ -54,7 +54,7 @@ object servicefabric_ext:
      * @param diagnosticsConfig A `diagnosticsConfig` block as defined below.
      * @return builder
      */
-    def diagnosticsConfig(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterDiagnosticsConfigArgs.Builder]):
+    inline def diagnosticsConfig(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterDiagnosticsConfigArgs.Builder]):
         com.pulumi.azure.servicefabric.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterDiagnosticsConfigArgs.builder
       builder.diagnosticsConfig(args(argsBuilder).build)
@@ -63,7 +63,7 @@ object servicefabric_ext:
      * @param fabricSettings One or more `fabricSettings` blocks as defined below.
      * @return builder
      */
-    def fabricSettings(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterFabricSettingArgs.Builder]*):
+    inline def fabricSettings(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterFabricSettingArgs.Builder]*):
         com.pulumi.azure.servicefabric.ClusterArgs.Builder =
       def argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterFabricSettingArgs.builder
       builder.fabricSettings(args.map(_(argsBuilder).build)*)
@@ -72,7 +72,7 @@ object servicefabric_ext:
      * @param nodeTypes One or more `nodeType` blocks as defined below.
      * @return builder
      */
-    def nodeTypes(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterNodeTypeArgs.Builder]*):
+    inline def nodeTypes(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterNodeTypeArgs.Builder]*):
         com.pulumi.azure.servicefabric.ClusterArgs.Builder =
       def argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterNodeTypeArgs.builder
       builder.nodeTypes(args.map(_(argsBuilder).build)*)
@@ -81,7 +81,7 @@ object servicefabric_ext:
      * @param reverseProxyCertificate A `reverseProxyCertificate` block as defined below. Conflicts with `reverseProxyCertificateCommonNames`.
      * @return builder
      */
-    def reverseProxyCertificate(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterReverseProxyCertificateArgs.Builder]):
+    inline def reverseProxyCertificate(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterReverseProxyCertificateArgs.Builder]):
         com.pulumi.azure.servicefabric.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterReverseProxyCertificateArgs.builder
       builder.reverseProxyCertificate(args(argsBuilder).build)
@@ -90,7 +90,7 @@ object servicefabric_ext:
      * @param reverseProxyCertificateCommonNames A `reverseProxyCertificateCommonNames` block as defined below. Conflicts with `reverseProxyCertificate`.
      * @return builder
      */
-    def reverseProxyCertificateCommonNames(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterReverseProxyCertificateCommonNamesArgs.Builder]):
+    inline def reverseProxyCertificateCommonNames(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterReverseProxyCertificateCommonNamesArgs.Builder]):
         com.pulumi.azure.servicefabric.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterReverseProxyCertificateCommonNamesArgs.builder
       builder.reverseProxyCertificateCommonNames(args(argsBuilder).build)
@@ -99,7 +99,7 @@ object servicefabric_ext:
      * @param upgradePolicy A `upgradePolicy` block as defined below.
      * @return builder
      */
-    def upgradePolicy(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterUpgradePolicyArgs.Builder]):
+    inline def upgradePolicy(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterUpgradePolicyArgs.Builder]):
         com.pulumi.azure.servicefabric.ClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterUpgradePolicyArgs.builder
       builder.upgradePolicy(args(argsBuilder).build)
@@ -109,7 +109,7 @@ object servicefabric_ext:
      * @param authentication Controls how connections to the cluster are authenticated. A `authentication` block as defined below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ManagedClusterAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ManagedClusterAuthenticationArgs.Builder]):
         com.pulumi.azure.servicefabric.ManagedClusterArgs.Builder =
       val argsBuilder = com.pulumi.azure.servicefabric.inputs.ManagedClusterAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -118,7 +118,7 @@ object servicefabric_ext:
      * @param customFabricSettings One or more `customFabricSetting` blocks as defined below.
      * @return builder
      */
-    def customFabricSettings(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ManagedClusterCustomFabricSettingArgs.Builder]*):
+    inline def customFabricSettings(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ManagedClusterCustomFabricSettingArgs.Builder]*):
         com.pulumi.azure.servicefabric.ManagedClusterArgs.Builder =
       def argsBuilder = com.pulumi.azure.servicefabric.inputs.ManagedClusterCustomFabricSettingArgs.builder
       builder.customFabricSettings(args.map(_(argsBuilder).build)*)
@@ -127,7 +127,7 @@ object servicefabric_ext:
      * @param lbRules One or more `lbRule` blocks as defined below.
      * @return builder
      */
-    def lbRules(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ManagedClusterLbRuleArgs.Builder]*):
+    inline def lbRules(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ManagedClusterLbRuleArgs.Builder]*):
         com.pulumi.azure.servicefabric.ManagedClusterArgs.Builder =
       def argsBuilder = com.pulumi.azure.servicefabric.inputs.ManagedClusterLbRuleArgs.builder
       builder.lbRules(args.map(_(argsBuilder).build)*)
@@ -136,7 +136,7 @@ object servicefabric_ext:
      * @param nodeTypes One or more `nodeType` blocks as defined below.
      * @return builder
      */
-    def nodeTypes(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ManagedClusterNodeTypeArgs.Builder]*):
+    inline def nodeTypes(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ManagedClusterNodeTypeArgs.Builder]*):
         com.pulumi.azure.servicefabric.ManagedClusterArgs.Builder =
       def argsBuilder = com.pulumi.azure.servicefabric.inputs.ManagedClusterNodeTypeArgs.builder
       builder.nodeTypes(args.map(_(argsBuilder).build)*)
@@ -146,7 +146,7 @@ object servicefabric_ext:
      * @param commonNames A `commonNames` block as defined below.
      * @return builder
      */
-    def commonNames(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterCertificateCommonNamesCommonNameArgs.Builder]*):
+    inline def commonNames(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterCertificateCommonNamesCommonNameArgs.Builder]*):
         com.pulumi.azure.servicefabric.inputs.ClusterCertificateCommonNamesArgs.Builder =
       def argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterCertificateCommonNamesCommonNameArgs.builder
       builder.commonNames(args.map(_(argsBuilder).build)*)
@@ -156,7 +156,7 @@ object servicefabric_ext:
      * @param applicationPorts A `applicationPorts` block as defined below.
      * @return builder
      */
-    def applicationPorts(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterNodeTypeApplicationPortsArgs.Builder]):
+    inline def applicationPorts(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterNodeTypeApplicationPortsArgs.Builder]):
         com.pulumi.azure.servicefabric.inputs.ClusterNodeTypeArgs.Builder =
       val argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterNodeTypeApplicationPortsArgs.builder
       builder.applicationPorts(args(argsBuilder).build)
@@ -165,7 +165,7 @@ object servicefabric_ext:
      * @param ephemeralPorts A `ephemeralPorts` block as defined below.
      * @return builder
      */
-    def ephemeralPorts(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterNodeTypeEphemeralPortsArgs.Builder]):
+    inline def ephemeralPorts(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterNodeTypeEphemeralPortsArgs.Builder]):
         com.pulumi.azure.servicefabric.inputs.ClusterNodeTypeArgs.Builder =
       val argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterNodeTypeEphemeralPortsArgs.builder
       builder.ephemeralPorts(args(argsBuilder).build)
@@ -175,7 +175,7 @@ object servicefabric_ext:
      * @param commonNames A `commonNames` block as defined below.
      * @return builder
      */
-    def commonNames(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterReverseProxyCertificateCommonNamesCommonNameArgs.Builder]*):
+    inline def commonNames(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterReverseProxyCertificateCommonNamesCommonNameArgs.Builder]*):
         com.pulumi.azure.servicefabric.inputs.ClusterReverseProxyCertificateCommonNamesArgs.Builder =
       def argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterReverseProxyCertificateCommonNamesCommonNameArgs.builder
       builder.commonNames(args.map(_(argsBuilder).build)*)
@@ -185,7 +185,7 @@ object servicefabric_ext:
      * @param azureActiveDirectory An `azureActiveDirectory` block as defined below.
      * @return builder
      */
-    def azureActiveDirectory(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterAzureActiveDirectoryArgs.Builder]):
+    inline def azureActiveDirectory(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterAzureActiveDirectoryArgs.Builder]):
         com.pulumi.azure.servicefabric.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterAzureActiveDirectoryArgs.builder
       builder.azureActiveDirectory(args(argsBuilder).build)
@@ -194,7 +194,7 @@ object servicefabric_ext:
      * @param certificate A `certificate` block as defined below. Conflicts with `certificateCommonNames`.
      * @return builder
      */
-    def certificate(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterCertificateArgs.Builder]):
+    inline def certificate(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterCertificateArgs.Builder]):
         com.pulumi.azure.servicefabric.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterCertificateArgs.builder
       builder.certificate(args(argsBuilder).build)
@@ -203,7 +203,7 @@ object servicefabric_ext:
      * @param certificateCommonNames A `certificateCommonNames` block as defined below. Conflicts with `certificate`.
      * @return builder
      */
-    def certificateCommonNames(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterCertificateCommonNamesArgs.Builder]):
+    inline def certificateCommonNames(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterCertificateCommonNamesArgs.Builder]):
         com.pulumi.azure.servicefabric.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterCertificateCommonNamesArgs.builder
       builder.certificateCommonNames(args(argsBuilder).build)
@@ -214,7 +214,7 @@ object servicefabric_ext:
      * &gt; **Note:** If Client Certificates are enabled then at a Certificate must be configured on the cluster.
      * @return builder
      */
-    def clientCertificateCommonNames(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterClientCertificateCommonNameArgs.Builder]*):
+    inline def clientCertificateCommonNames(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterClientCertificateCommonNameArgs.Builder]*):
         com.pulumi.azure.servicefabric.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterClientCertificateCommonNameArgs.builder
       builder.clientCertificateCommonNames(args.map(_(argsBuilder).build)*)
@@ -223,7 +223,7 @@ object servicefabric_ext:
      * @param clientCertificateThumbprints One or more `clientCertificateThumbprint` blocks as defined below.
      * @return builder
      */
-    def clientCertificateThumbprints(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterClientCertificateThumbprintArgs.Builder]*):
+    inline def clientCertificateThumbprints(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterClientCertificateThumbprintArgs.Builder]*):
         com.pulumi.azure.servicefabric.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterClientCertificateThumbprintArgs.builder
       builder.clientCertificateThumbprints(args.map(_(argsBuilder).build)*)
@@ -232,7 +232,7 @@ object servicefabric_ext:
      * @param diagnosticsConfig A `diagnosticsConfig` block as defined below.
      * @return builder
      */
-    def diagnosticsConfig(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterDiagnosticsConfigArgs.Builder]):
+    inline def diagnosticsConfig(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterDiagnosticsConfigArgs.Builder]):
         com.pulumi.azure.servicefabric.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterDiagnosticsConfigArgs.builder
       builder.diagnosticsConfig(args(argsBuilder).build)
@@ -241,7 +241,7 @@ object servicefabric_ext:
      * @param fabricSettings One or more `fabricSettings` blocks as defined below.
      * @return builder
      */
-    def fabricSettings(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterFabricSettingArgs.Builder]*):
+    inline def fabricSettings(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterFabricSettingArgs.Builder]*):
         com.pulumi.azure.servicefabric.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterFabricSettingArgs.builder
       builder.fabricSettings(args.map(_(argsBuilder).build)*)
@@ -250,7 +250,7 @@ object servicefabric_ext:
      * @param nodeTypes One or more `nodeType` blocks as defined below.
      * @return builder
      */
-    def nodeTypes(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterNodeTypeArgs.Builder]*):
+    inline def nodeTypes(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterNodeTypeArgs.Builder]*):
         com.pulumi.azure.servicefabric.inputs.ClusterState.Builder =
       def argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterNodeTypeArgs.builder
       builder.nodeTypes(args.map(_(argsBuilder).build)*)
@@ -259,7 +259,7 @@ object servicefabric_ext:
      * @param reverseProxyCertificate A `reverseProxyCertificate` block as defined below. Conflicts with `reverseProxyCertificateCommonNames`.
      * @return builder
      */
-    def reverseProxyCertificate(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterReverseProxyCertificateArgs.Builder]):
+    inline def reverseProxyCertificate(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterReverseProxyCertificateArgs.Builder]):
         com.pulumi.azure.servicefabric.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterReverseProxyCertificateArgs.builder
       builder.reverseProxyCertificate(args(argsBuilder).build)
@@ -268,7 +268,7 @@ object servicefabric_ext:
      * @param reverseProxyCertificateCommonNames A `reverseProxyCertificateCommonNames` block as defined below. Conflicts with `reverseProxyCertificate`.
      * @return builder
      */
-    def reverseProxyCertificateCommonNames(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterReverseProxyCertificateCommonNamesArgs.Builder]):
+    inline def reverseProxyCertificateCommonNames(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterReverseProxyCertificateCommonNamesArgs.Builder]):
         com.pulumi.azure.servicefabric.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterReverseProxyCertificateCommonNamesArgs.builder
       builder.reverseProxyCertificateCommonNames(args(argsBuilder).build)
@@ -277,7 +277,7 @@ object servicefabric_ext:
      * @param upgradePolicy A `upgradePolicy` block as defined below.
      * @return builder
      */
-    def upgradePolicy(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterUpgradePolicyArgs.Builder]):
+    inline def upgradePolicy(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterUpgradePolicyArgs.Builder]):
         com.pulumi.azure.servicefabric.inputs.ClusterState.Builder =
       val argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterUpgradePolicyArgs.builder
       builder.upgradePolicy(args(argsBuilder).build)
@@ -287,7 +287,7 @@ object servicefabric_ext:
      * @param deltaHealthPolicy A `deltaHealthPolicy` block as defined below
      * @return builder
      */
-    def deltaHealthPolicy(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterUpgradePolicyDeltaHealthPolicyArgs.Builder]):
+    inline def deltaHealthPolicy(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterUpgradePolicyDeltaHealthPolicyArgs.Builder]):
         com.pulumi.azure.servicefabric.inputs.ClusterUpgradePolicyArgs.Builder =
       val argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterUpgradePolicyDeltaHealthPolicyArgs.builder
       builder.deltaHealthPolicy(args(argsBuilder).build)
@@ -296,7 +296,7 @@ object servicefabric_ext:
      * @param healthPolicy A `healthPolicy` block as defined below
      * @return builder
      */
-    def healthPolicy(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterUpgradePolicyHealthPolicyArgs.Builder]):
+    inline def healthPolicy(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ClusterUpgradePolicyHealthPolicyArgs.Builder]):
         com.pulumi.azure.servicefabric.inputs.ClusterUpgradePolicyArgs.Builder =
       val argsBuilder = com.pulumi.azure.servicefabric.inputs.ClusterUpgradePolicyHealthPolicyArgs.builder
       builder.healthPolicy(args(argsBuilder).build)
@@ -306,7 +306,7 @@ object servicefabric_ext:
      * @param activeDirectory A `activeDirectory` block as defined above.
      * @return builder
      */
-    def activeDirectory(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ManagedClusterAuthenticationActiveDirectoryArgs.Builder]):
+    inline def activeDirectory(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ManagedClusterAuthenticationActiveDirectoryArgs.Builder]):
         com.pulumi.azure.servicefabric.inputs.ManagedClusterAuthenticationArgs.Builder =
       val argsBuilder = com.pulumi.azure.servicefabric.inputs.ManagedClusterAuthenticationActiveDirectoryArgs.builder
       builder.activeDirectory(args(argsBuilder).build)
@@ -315,7 +315,7 @@ object servicefabric_ext:
      * @param certificates One or more `certificate` blocks as defined below.
      * @return builder
      */
-    def certificates(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ManagedClusterAuthenticationCertificateArgs.Builder]*):
+    inline def certificates(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ManagedClusterAuthenticationCertificateArgs.Builder]*):
         com.pulumi.azure.servicefabric.inputs.ManagedClusterAuthenticationArgs.Builder =
       def argsBuilder = com.pulumi.azure.servicefabric.inputs.ManagedClusterAuthenticationCertificateArgs.builder
       builder.certificates(args.map(_(argsBuilder).build)*)
@@ -325,7 +325,7 @@ object servicefabric_ext:
      * @param vmSecrets One or more `vmSecrets` blocks as defined below.
      * @return builder
      */
-    def vmSecrets(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ManagedClusterNodeTypeVmSecretArgs.Builder]*):
+    inline def vmSecrets(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ManagedClusterNodeTypeVmSecretArgs.Builder]*):
         com.pulumi.azure.servicefabric.inputs.ManagedClusterNodeTypeArgs.Builder =
       def argsBuilder = com.pulumi.azure.servicefabric.inputs.ManagedClusterNodeTypeVmSecretArgs.builder
       builder.vmSecrets(args.map(_(argsBuilder).build)*)
@@ -335,7 +335,7 @@ object servicefabric_ext:
      * @param certificates One or more `certificates` blocks as defined above.
      * @return builder
      */
-    def certificates(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ManagedClusterNodeTypeVmSecretCertificateArgs.Builder]*):
+    inline def certificates(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ManagedClusterNodeTypeVmSecretCertificateArgs.Builder]*):
         com.pulumi.azure.servicefabric.inputs.ManagedClusterNodeTypeVmSecretArgs.Builder =
       def argsBuilder = com.pulumi.azure.servicefabric.inputs.ManagedClusterNodeTypeVmSecretCertificateArgs.builder
       builder.certificates(args.map(_(argsBuilder).build)*)
@@ -345,7 +345,7 @@ object servicefabric_ext:
      * @param authentication Controls how connections to the cluster are authenticated. A `authentication` block as defined below.
      * @return builder
      */
-    def authentication(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ManagedClusterAuthenticationArgs.Builder]):
+    inline def authentication(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ManagedClusterAuthenticationArgs.Builder]):
         com.pulumi.azure.servicefabric.inputs.ManagedClusterState.Builder =
       val argsBuilder = com.pulumi.azure.servicefabric.inputs.ManagedClusterAuthenticationArgs.builder
       builder.authentication(args(argsBuilder).build)
@@ -354,7 +354,7 @@ object servicefabric_ext:
      * @param customFabricSettings One or more `customFabricSetting` blocks as defined below.
      * @return builder
      */
-    def customFabricSettings(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ManagedClusterCustomFabricSettingArgs.Builder]*):
+    inline def customFabricSettings(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ManagedClusterCustomFabricSettingArgs.Builder]*):
         com.pulumi.azure.servicefabric.inputs.ManagedClusterState.Builder =
       def argsBuilder = com.pulumi.azure.servicefabric.inputs.ManagedClusterCustomFabricSettingArgs.builder
       builder.customFabricSettings(args.map(_(argsBuilder).build)*)
@@ -363,7 +363,7 @@ object servicefabric_ext:
      * @param lbRules One or more `lbRule` blocks as defined below.
      * @return builder
      */
-    def lbRules(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ManagedClusterLbRuleArgs.Builder]*):
+    inline def lbRules(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ManagedClusterLbRuleArgs.Builder]*):
         com.pulumi.azure.servicefabric.inputs.ManagedClusterState.Builder =
       def argsBuilder = com.pulumi.azure.servicefabric.inputs.ManagedClusterLbRuleArgs.builder
       builder.lbRules(args.map(_(argsBuilder).build)*)
@@ -372,7 +372,7 @@ object servicefabric_ext:
      * @param nodeTypes One or more `nodeType` blocks as defined below.
      * @return builder
      */
-    def nodeTypes(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ManagedClusterNodeTypeArgs.Builder]*):
+    inline def nodeTypes(args: Endofunction[com.pulumi.azure.servicefabric.inputs.ManagedClusterNodeTypeArgs.Builder]*):
         com.pulumi.azure.servicefabric.inputs.ManagedClusterState.Builder =
       def argsBuilder = com.pulumi.azure.servicefabric.inputs.ManagedClusterNodeTypeArgs.builder
       builder.nodeTypes(args.map(_(argsBuilder).build)*)

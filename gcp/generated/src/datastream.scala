@@ -15,7 +15,7 @@ object datastream:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/datastream/docs/create-connection-profiles)
    */
-  def ConnectionProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConnectionProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.datastream.ConnectionProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datastream.ConnectionProfileArgs.builder
     com.pulumi.gcp.datastream.ConnectionProfile(name,
@@ -54,7 +54,7 @@ object datastream:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/datastream/docs/create-a-private-connectivity-configuration)
    */
-  def PrivateConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PrivateConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.datastream.PrivateConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datastream.PrivateConnectionArgs.builder
     com.pulumi.gcp.datastream.PrivateConnection(name,
@@ -70,7 +70,7 @@ object datastream:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/datastream/docs/create-a-stream)
    */
-  def Stream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Stream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.datastream.StreamArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datastream.StreamArgs.builder
     com.pulumi.gcp.datastream.Stream(name,

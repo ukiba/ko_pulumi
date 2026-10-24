@@ -7,7 +7,7 @@ object iotcentral_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.iotcentral.inputs.ApplicationIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.iotcentral.inputs.ApplicationIdentityArgs.Builder]):
         com.pulumi.azure.iotcentral.ApplicationArgs.Builder =
       val argsBuilder = com.pulumi.azure.iotcentral.inputs.ApplicationIdentityArgs.builder
       builder.identity(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object iotcentral_ext:
      * @param ipRules One or more `ipRule` blocks as defined below.
      * @return builder
      */
-    def ipRules(args: Endofunction[com.pulumi.azure.iotcentral.inputs.ApplicationNetworkRuleSetIpRuleArgs.Builder]*):
+    inline def ipRules(args: Endofunction[com.pulumi.azure.iotcentral.inputs.ApplicationNetworkRuleSetIpRuleArgs.Builder]*):
         com.pulumi.azure.iotcentral.ApplicationNetworkRuleSetArgs.Builder =
       def argsBuilder = com.pulumi.azure.iotcentral.inputs.ApplicationNetworkRuleSetIpRuleArgs.builder
       builder.ipRules(args.map(_(argsBuilder).build)*)
@@ -27,7 +27,7 @@ object iotcentral_ext:
      * @param ipRules One or more `ipRule` blocks as defined below.
      * @return builder
      */
-    def ipRules(args: Endofunction[com.pulumi.azure.iotcentral.inputs.ApplicationNetworkRuleSetIpRuleArgs.Builder]*):
+    inline def ipRules(args: Endofunction[com.pulumi.azure.iotcentral.inputs.ApplicationNetworkRuleSetIpRuleArgs.Builder]*):
         com.pulumi.azure.iotcentral.inputs.ApplicationNetworkRuleSetState.Builder =
       def argsBuilder = com.pulumi.azure.iotcentral.inputs.ApplicationNetworkRuleSetIpRuleArgs.builder
       builder.ipRules(args.map(_(argsBuilder).build)*)
@@ -37,7 +37,7 @@ object iotcentral_ext:
      * @param identity An `identity` block as defined below.
      * @return builder
      */
-    def identity(args: Endofunction[com.pulumi.azure.iotcentral.inputs.ApplicationIdentityArgs.Builder]):
+    inline def identity(args: Endofunction[com.pulumi.azure.iotcentral.inputs.ApplicationIdentityArgs.Builder]):
         com.pulumi.azure.iotcentral.inputs.ApplicationState.Builder =
       val argsBuilder = com.pulumi.azure.iotcentral.inputs.ApplicationIdentityArgs.builder
       builder.identity(args(argsBuilder).build)

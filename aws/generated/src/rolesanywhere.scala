@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object rolesanywhere:
   /** Resource for managing a Roles Anywhere Profile. */
-  def Profile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Profile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rolesanywhere.ProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rolesanywhere.ProfileArgs.builder
     conf.logicalName2physicalName(name) match
@@ -23,7 +23,7 @@ object rolesanywhere:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing a Roles Anywhere Trust Anchor. */
-  def TrustAnchor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TrustAnchor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.rolesanywhere.TrustAnchorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rolesanywhere.TrustAnchorArgs.builder
     conf.logicalName2physicalName(name) match

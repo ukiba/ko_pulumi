@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object verifiedpermissions:
   /** Resource for managing an AWS Verified Permissions Identity Source. */
-  def IdentitySource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IdentitySource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.verifiedpermissions.IdentitySourceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.verifiedpermissions.IdentitySourceArgs.builder
     com.pulumi.aws.verifiedpermissions.IdentitySource(name,
@@ -15,7 +15,7 @@ object verifiedpermissions:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Verified Permissions Policy. */
-  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.verifiedpermissions.PolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.verifiedpermissions.PolicyArgs.builder
     com.pulumi.aws.verifiedpermissions.Policy(name,
@@ -23,7 +23,7 @@ object verifiedpermissions:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** This is a Terraform resource for managing an AWS Verified Permissions Policy Store. */
-  def PolicyStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PolicyStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.verifiedpermissions.PolicyStoreArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.verifiedpermissions.PolicyStoreArgs.builder
     argsBuilder = args(argsBuilder)
@@ -38,7 +38,7 @@ object verifiedpermissions:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Verified Permissions Policy Template. */
-  def PolicyTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PolicyTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.verifiedpermissions.PolicyTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.verifiedpermissions.PolicyTemplateArgs.builder
     com.pulumi.aws.verifiedpermissions.PolicyTemplate(name,
@@ -46,7 +46,7 @@ object verifiedpermissions:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** This is a Terraform resource for managing an AWS Verified Permissions Policy Store Schema. */
-  def Schema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Schema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.verifiedpermissions.SchemaArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.verifiedpermissions.SchemaArgs.builder
     com.pulumi.aws.verifiedpermissions.Schema(name,

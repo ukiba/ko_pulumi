@@ -14,7 +14,7 @@ object applicationintegration:
    *     * [Manage authentication profiles](https://cloud.google.com/application-integration/docs/configure-authentication-profiles)
    *     * [Official Documentation](https://cloud.google.com/application-integration/docs/overview)
    */
-  def AuthConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AuthConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.applicationintegration.AuthConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.applicationintegration.AuthConfigArgs.builder
     com.pulumi.gcp.applicationintegration.AuthConfig(name,
@@ -31,7 +31,7 @@ object applicationintegration:
    *     * [Official Documentation](https://cloud.google.com/application-integration/docs/overview)
    *     * [Set up Application Integration](https://cloud.google.com/application-integration/docs/setup-application-integration)
    */
-  def Client(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Client(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.applicationintegration.ClientArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.applicationintegration.ClientArgs.builder
     com.pulumi.gcp.applicationintegration.Client(name,

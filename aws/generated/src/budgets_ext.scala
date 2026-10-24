@@ -7,7 +7,7 @@ object budgets_ext:
      * @param actionThreshold Trigger threshold of the action. See `actionThreshold` Block.
      * @return builder
      */
-    def actionThreshold(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionActionThresholdArgs.Builder]):
+    inline def actionThreshold(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionActionThresholdArgs.Builder]):
         com.pulumi.aws.budgets.BudgetActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetActionActionThresholdArgs.builder
       builder.actionThreshold(args(argsBuilder).build)
@@ -16,7 +16,7 @@ object budgets_ext:
      * @param definition Type-specific parameters. See `definition` Block.
      * @return builder
      */
-    def definition(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionDefinitionArgs.Builder]):
+    inline def definition(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionDefinitionArgs.Builder]):
         com.pulumi.aws.budgets.BudgetActionArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetActionDefinitionArgs.builder
       builder.definition(args(argsBuilder).build)
@@ -25,7 +25,7 @@ object budgets_ext:
      * @param subscribers Set of subscribers. See `subscriber` Block.
      * @return builder
      */
-    def subscribers(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionSubscriberArgs.Builder]*):
+    inline def subscribers(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionSubscriberArgs.Builder]*):
         com.pulumi.aws.budgets.BudgetActionArgs.Builder =
       def argsBuilder = com.pulumi.aws.budgets.inputs.BudgetActionSubscriberArgs.builder
       builder.subscribers(args.map(_(argsBuilder).build)*)
@@ -35,7 +35,7 @@ object budgets_ext:
      * @param autoAdjustData Object containing AutoAdjustData which determines the budget amount for an auto-adjusting budget.
      * @return builder
      */
-    def autoAdjustData(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetAutoAdjustDataArgs.Builder]):
+    inline def autoAdjustData(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetAutoAdjustDataArgs.Builder]):
         com.pulumi.aws.budgets.BudgetArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetAutoAdjustDataArgs.builder
       builder.autoAdjustData(args(argsBuilder).build)
@@ -44,7 +44,7 @@ object budgets_ext:
      * @param costFilters List of CostFilter name/values pair to apply to budget. Conflicts with `filterExpression`.
      * @return builder
      */
-    def costFilters(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetCostFilterArgs.Builder]*):
+    inline def costFilters(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetCostFilterArgs.Builder]*):
         com.pulumi.aws.budgets.BudgetArgs.Builder =
       def argsBuilder = com.pulumi.aws.budgets.inputs.BudgetCostFilterArgs.builder
       builder.costFilters(args.map(_(argsBuilder).build)*)
@@ -53,7 +53,7 @@ object budgets_ext:
      * @param costTypes Object containing CostTypes that defines the types of cost included in a budget, such as tax and subscriptions.
      * @return builder
      */
-    def costTypes(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetCostTypesArgs.Builder]):
+    inline def costTypes(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetCostTypesArgs.Builder]):
         com.pulumi.aws.budgets.BudgetArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetCostTypesArgs.builder
       builder.costTypes(args(argsBuilder).build)
@@ -62,7 +62,7 @@ object budgets_ext:
      * @param filterExpression Object containing Filter Expression to apply to budget. Conflicts with `costFilter` and requires `metrics`.
      * @return builder
      */
-    def filterExpression(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionArgs.Builder]):
+    inline def filterExpression(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionArgs.Builder]):
         com.pulumi.aws.budgets.BudgetArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionArgs.builder
       builder.filterExpression(args(argsBuilder).build)
@@ -71,7 +71,7 @@ object budgets_ext:
      * @param notifications Object containing Budget Notifications. Can be used multiple times to define more than one budget notification.
      * @return builder
      */
-    def notifications(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetNotificationArgs.Builder]*):
+    inline def notifications(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetNotificationArgs.Builder]*):
         com.pulumi.aws.budgets.BudgetArgs.Builder =
       def argsBuilder = com.pulumi.aws.budgets.inputs.BudgetNotificationArgs.builder
       builder.notifications(args.map(_(argsBuilder).build)*)
@@ -80,7 +80,7 @@ object budgets_ext:
      * @param plannedLimits Object containing Planned Budget Limits. Can be used multiple times to plan more than one budget limit. See [PlannedBudgetLimits](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_Budget.html#awscostmanagement-Type-budgets_Budget-PlannedBudgetLimits) documentation.
      * @return builder
      */
-    def plannedLimits(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetPlannedLimitArgs.Builder]*):
+    inline def plannedLimits(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetPlannedLimitArgs.Builder]*):
         com.pulumi.aws.budgets.BudgetArgs.Builder =
       def argsBuilder = com.pulumi.aws.budgets.inputs.BudgetPlannedLimitArgs.builder
       builder.plannedLimits(args.map(_(argsBuilder).build)*)
@@ -90,7 +90,7 @@ object budgets_ext:
      * @param iamActionDefinition AWS Identity and Access Management (IAM) action definition details. See `iamActionDefinition` Block.
      * @return builder
      */
-    def iamActionDefinition(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionDefinitionIamActionDefinitionArgs.Builder]):
+    inline def iamActionDefinition(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionDefinitionIamActionDefinitionArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetActionDefinitionArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetActionDefinitionIamActionDefinitionArgs.builder
       builder.iamActionDefinition(args(argsBuilder).build)
@@ -99,7 +99,7 @@ object budgets_ext:
      * @param scpActionDefinition Service control policies (SCPs) action definition details. See `scpActionDefinition` Block.
      * @return builder
      */
-    def scpActionDefinition(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionDefinitionScpActionDefinitionArgs.Builder]):
+    inline def scpActionDefinition(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionDefinitionScpActionDefinitionArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetActionDefinitionArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetActionDefinitionScpActionDefinitionArgs.builder
       builder.scpActionDefinition(args(argsBuilder).build)
@@ -108,7 +108,7 @@ object budgets_ext:
      * @param ssmActionDefinition AWS Systems Manager (SSM) action definition details. See `ssmActionDefinition` Block.
      * @return builder
      */
-    def ssmActionDefinition(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionDefinitionSsmActionDefinitionArgs.Builder]):
+    inline def ssmActionDefinition(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionDefinitionSsmActionDefinitionArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetActionDefinitionArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetActionDefinitionSsmActionDefinitionArgs.builder
       builder.ssmActionDefinition(args(argsBuilder).build)
@@ -118,7 +118,7 @@ object budgets_ext:
      * @param actionThreshold Trigger threshold of the action. See `actionThreshold` Block.
      * @return builder
      */
-    def actionThreshold(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionActionThresholdArgs.Builder]):
+    inline def actionThreshold(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionActionThresholdArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetActionState.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetActionActionThresholdArgs.builder
       builder.actionThreshold(args(argsBuilder).build)
@@ -127,7 +127,7 @@ object budgets_ext:
      * @param definition Type-specific parameters. See `definition` Block.
      * @return builder
      */
-    def definition(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionDefinitionArgs.Builder]):
+    inline def definition(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionDefinitionArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetActionState.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetActionDefinitionArgs.builder
       builder.definition(args(argsBuilder).build)
@@ -136,7 +136,7 @@ object budgets_ext:
      * @param subscribers Set of subscribers. See `subscriber` Block.
      * @return builder
      */
-    def subscribers(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionSubscriberArgs.Builder]*):
+    inline def subscribers(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetActionSubscriberArgs.Builder]*):
         com.pulumi.aws.budgets.inputs.BudgetActionState.Builder =
       def argsBuilder = com.pulumi.aws.budgets.inputs.BudgetActionSubscriberArgs.builder
       builder.subscribers(args.map(_(argsBuilder).build)*)
@@ -146,7 +146,7 @@ object budgets_ext:
      * @param historicalOptions Configuration block of Historical Options. Required for `autoAdjustType` of `HISTORICAL`. Defines the historical data that your auto-adjusting budget is based on.
      * @return builder
      */
-    def historicalOptions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetAutoAdjustDataHistoricalOptionsArgs.Builder]):
+    inline def historicalOptions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetAutoAdjustDataHistoricalOptionsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetAutoAdjustDataArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetAutoAdjustDataHistoricalOptionsArgs.builder
       builder.historicalOptions(args(argsBuilder).build)
@@ -156,7 +156,7 @@ object budgets_ext:
      * @param costCategories Cost Categories block.
      * @return builder
      */
-    def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndAndCostCategoriesArgs.Builder]):
+    inline def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndAndCostCategoriesArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndAndArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndAndCostCategoriesArgs.builder
       builder.costCategories(args(argsBuilder).build)
@@ -165,7 +165,7 @@ object budgets_ext:
      * @param dimensions Dimensions block.
      * @return builder
      */
-    def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndAndDimensionsArgs.Builder]):
+    inline def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndAndDimensionsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndAndArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndAndDimensionsArgs.builder
       builder.dimensions(args(argsBuilder).build)
@@ -174,7 +174,7 @@ object budgets_ext:
      * @param tags Map of tags assigned to the resource. If configured with a provider `defaultTags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
      * @return builder
      */
-    def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndAndTagsArgs.Builder]):
+    inline def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndAndTagsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndAndArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndAndTagsArgs.builder
       builder.tags(args(argsBuilder).build)
@@ -184,7 +184,7 @@ object budgets_ext:
      * @param ands List of filter expressions to combine with AND logic. Each `and` block is one operand and must itself contain exactly one root.
      * @return builder
      */
-    def ands(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndAndArgs.Builder]*):
+    inline def ands(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndAndArgs.Builder]*):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndArgs.Builder =
       def argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndAndArgs.builder
       builder.ands(args.map(_(argsBuilder).build)*)
@@ -193,7 +193,7 @@ object budgets_ext:
      * @param costCategories Cost Categories block.
      * @return builder
      */
-    def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndCostCategoriesArgs.Builder]):
+    inline def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndCostCategoriesArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndCostCategoriesArgs.builder
       builder.costCategories(args(argsBuilder).build)
@@ -202,7 +202,7 @@ object budgets_ext:
      * @param dimensions Dimensions block.
      * @return builder
      */
-    def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndDimensionsArgs.Builder]):
+    inline def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndDimensionsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndDimensionsArgs.builder
       builder.dimensions(args(argsBuilder).build)
@@ -211,7 +211,7 @@ object budgets_ext:
      * @param not Single filter expression to negate. Must contain exactly one root.
      * @return builder
      */
-    def not(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndNotArgs.Builder]):
+    inline def not(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndNotArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndNotArgs.builder
       builder.not(args(argsBuilder).build)
@@ -220,7 +220,7 @@ object budgets_ext:
      * @param ors List of filter expressions to combine with OR logic. Each `or` block is one operand and must itself contain exactly one root.
      * @return builder
      */
-    def ors(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndOrArgs.Builder]*):
+    inline def ors(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndOrArgs.Builder]*):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndArgs.Builder =
       def argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndOrArgs.builder
       builder.ors(args.map(_(argsBuilder).build)*)
@@ -229,7 +229,7 @@ object budgets_ext:
      * @param tags Map of tags assigned to the resource. If configured with a provider `defaultTags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
      * @return builder
      */
-    def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndTagsArgs.Builder]):
+    inline def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndTagsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndTagsArgs.builder
       builder.tags(args(argsBuilder).build)
@@ -239,7 +239,7 @@ object budgets_ext:
      * @param costCategories Cost Categories block.
      * @return builder
      */
-    def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndNotCostCategoriesArgs.Builder]):
+    inline def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndNotCostCategoriesArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndNotArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndNotCostCategoriesArgs.builder
       builder.costCategories(args(argsBuilder).build)
@@ -248,7 +248,7 @@ object budgets_ext:
      * @param dimensions Dimensions block.
      * @return builder
      */
-    def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndNotDimensionsArgs.Builder]):
+    inline def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndNotDimensionsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndNotArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndNotDimensionsArgs.builder
       builder.dimensions(args(argsBuilder).build)
@@ -257,7 +257,7 @@ object budgets_ext:
      * @param tags Map of tags assigned to the resource. If configured with a provider `defaultTags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
      * @return builder
      */
-    def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndNotTagsArgs.Builder]):
+    inline def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndNotTagsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndNotArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndNotTagsArgs.builder
       builder.tags(args(argsBuilder).build)
@@ -267,7 +267,7 @@ object budgets_ext:
      * @param costCategories Cost Categories block.
      * @return builder
      */
-    def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndOrCostCategoriesArgs.Builder]):
+    inline def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndOrCostCategoriesArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndOrArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndOrCostCategoriesArgs.builder
       builder.costCategories(args(argsBuilder).build)
@@ -276,7 +276,7 @@ object budgets_ext:
      * @param dimensions Dimensions block.
      * @return builder
      */
-    def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndOrDimensionsArgs.Builder]):
+    inline def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndOrDimensionsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndOrArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndOrDimensionsArgs.builder
       builder.dimensions(args(argsBuilder).build)
@@ -285,7 +285,7 @@ object budgets_ext:
      * @param tags Map of tags assigned to the resource. If configured with a provider `defaultTags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
      * @return builder
      */
-    def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndOrTagsArgs.Builder]):
+    inline def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndOrTagsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndOrArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndOrTagsArgs.builder
       builder.tags(args(argsBuilder).build)
@@ -295,7 +295,7 @@ object budgets_ext:
      * @param ands List of filter expressions to combine with AND logic. Each `and` block is one operand and must itself contain exactly one root.
      * @return builder
      */
-    def ands(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndArgs.Builder]*):
+    inline def ands(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndArgs.Builder]*):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionArgs.Builder =
       def argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionAndArgs.builder
       builder.ands(args.map(_(argsBuilder).build)*)
@@ -304,7 +304,7 @@ object budgets_ext:
      * @param costCategories Cost Categories block.
      * @return builder
      */
-    def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionCostCategoriesArgs.Builder]):
+    inline def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionCostCategoriesArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionCostCategoriesArgs.builder
       builder.costCategories(args(argsBuilder).build)
@@ -313,7 +313,7 @@ object budgets_ext:
      * @param dimensions Dimensions block.
      * @return builder
      */
-    def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionDimensionsArgs.Builder]):
+    inline def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionDimensionsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionDimensionsArgs.builder
       builder.dimensions(args(argsBuilder).build)
@@ -322,7 +322,7 @@ object budgets_ext:
      * @param not Single filter expression to negate. Must contain exactly one root.
      * @return builder
      */
-    def not(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotArgs.Builder]):
+    inline def not(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotArgs.builder
       builder.not(args(argsBuilder).build)
@@ -331,7 +331,7 @@ object budgets_ext:
      * @param ors List of filter expressions to combine with OR logic. Each `or` block is one operand and must itself contain exactly one root.
      * @return builder
      */
-    def ors(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrArgs.Builder]*):
+    inline def ors(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrArgs.Builder]*):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionArgs.Builder =
       def argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrArgs.builder
       builder.ors(args.map(_(argsBuilder).build)*)
@@ -340,7 +340,7 @@ object budgets_ext:
      * @param tags Tags block.
      * @return builder
      */
-    def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionTagsArgs.Builder]):
+    inline def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionTagsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionTagsArgs.builder
       builder.tags(args(argsBuilder).build)
@@ -350,7 +350,7 @@ object budgets_ext:
      * @param costCategories Cost Categories block.
      * @return builder
      */
-    def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotAndCostCategoriesArgs.Builder]):
+    inline def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotAndCostCategoriesArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotAndArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotAndCostCategoriesArgs.builder
       builder.costCategories(args(argsBuilder).build)
@@ -359,7 +359,7 @@ object budgets_ext:
      * @param dimensions Dimensions block.
      * @return builder
      */
-    def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotAndDimensionsArgs.Builder]):
+    inline def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotAndDimensionsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotAndArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotAndDimensionsArgs.builder
       builder.dimensions(args(argsBuilder).build)
@@ -368,7 +368,7 @@ object budgets_ext:
      * @param tags Map of tags assigned to the resource. If configured with a provider `defaultTags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
      * @return builder
      */
-    def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotAndTagsArgs.Builder]):
+    inline def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotAndTagsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotAndArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotAndTagsArgs.builder
       builder.tags(args(argsBuilder).build)
@@ -378,7 +378,7 @@ object budgets_ext:
      * @param ands List of filter expressions to combine with AND logic. Each `and` block is one operand and must itself contain exactly one root.
      * @return builder
      */
-    def ands(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotAndArgs.Builder]*):
+    inline def ands(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotAndArgs.Builder]*):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotArgs.Builder =
       def argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotAndArgs.builder
       builder.ands(args.map(_(argsBuilder).build)*)
@@ -387,7 +387,7 @@ object budgets_ext:
      * @param costCategories Cost Categories block.
      * @return builder
      */
-    def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotCostCategoriesArgs.Builder]):
+    inline def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotCostCategoriesArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotCostCategoriesArgs.builder
       builder.costCategories(args(argsBuilder).build)
@@ -396,7 +396,7 @@ object budgets_ext:
      * @param dimensions Dimensions block.
      * @return builder
      */
-    def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotDimensionsArgs.Builder]):
+    inline def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotDimensionsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotDimensionsArgs.builder
       builder.dimensions(args(argsBuilder).build)
@@ -405,7 +405,7 @@ object budgets_ext:
      * @param not Single filter expression to negate. Must contain exactly one root.
      * @return builder
      */
-    def not(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotNotArgs.Builder]):
+    inline def not(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotNotArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotNotArgs.builder
       builder.not(args(argsBuilder).build)
@@ -414,7 +414,7 @@ object budgets_ext:
      * @param ors List of filter expressions to combine with OR logic. Each `or` block is one operand and must itself contain exactly one root.
      * @return builder
      */
-    def ors(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotOrArgs.Builder]*):
+    inline def ors(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotOrArgs.Builder]*):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotArgs.Builder =
       def argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotOrArgs.builder
       builder.ors(args.map(_(argsBuilder).build)*)
@@ -423,7 +423,7 @@ object budgets_ext:
      * @param tags Map of tags assigned to the resource. If configured with a provider `defaultTags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
      * @return builder
      */
-    def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotTagsArgs.Builder]):
+    inline def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotTagsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotTagsArgs.builder
       builder.tags(args(argsBuilder).build)
@@ -433,7 +433,7 @@ object budgets_ext:
      * @param costCategories Cost Categories block.
      * @return builder
      */
-    def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotNotCostCategoriesArgs.Builder]):
+    inline def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotNotCostCategoriesArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotNotArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotNotCostCategoriesArgs.builder
       builder.costCategories(args(argsBuilder).build)
@@ -442,7 +442,7 @@ object budgets_ext:
      * @param dimensions Dimensions block.
      * @return builder
      */
-    def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotNotDimensionsArgs.Builder]):
+    inline def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotNotDimensionsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotNotArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotNotDimensionsArgs.builder
       builder.dimensions(args(argsBuilder).build)
@@ -451,7 +451,7 @@ object budgets_ext:
      * @param tags Map of tags assigned to the resource. If configured with a provider `defaultTags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
      * @return builder
      */
-    def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotNotTagsArgs.Builder]):
+    inline def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotNotTagsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotNotArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotNotTagsArgs.builder
       builder.tags(args(argsBuilder).build)
@@ -461,7 +461,7 @@ object budgets_ext:
      * @param costCategories Cost Categories block.
      * @return builder
      */
-    def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotOrCostCategoriesArgs.Builder]):
+    inline def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotOrCostCategoriesArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotOrArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotOrCostCategoriesArgs.builder
       builder.costCategories(args(argsBuilder).build)
@@ -470,7 +470,7 @@ object budgets_ext:
      * @param dimensions Dimensions block.
      * @return builder
      */
-    def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotOrDimensionsArgs.Builder]):
+    inline def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotOrDimensionsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotOrArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotOrDimensionsArgs.builder
       builder.dimensions(args(argsBuilder).build)
@@ -479,7 +479,7 @@ object budgets_ext:
      * @param tags Map of tags assigned to the resource. If configured with a provider `defaultTags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
      * @return builder
      */
-    def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotOrTagsArgs.Builder]):
+    inline def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotOrTagsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotOrArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionNotOrTagsArgs.builder
       builder.tags(args(argsBuilder).build)
@@ -489,7 +489,7 @@ object budgets_ext:
      * @param costCategories Cost Categories block.
      * @return builder
      */
-    def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrAndCostCategoriesArgs.Builder]):
+    inline def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrAndCostCategoriesArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrAndArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrAndCostCategoriesArgs.builder
       builder.costCategories(args(argsBuilder).build)
@@ -498,7 +498,7 @@ object budgets_ext:
      * @param dimensions Dimensions block.
      * @return builder
      */
-    def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrAndDimensionsArgs.Builder]):
+    inline def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrAndDimensionsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrAndArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrAndDimensionsArgs.builder
       builder.dimensions(args(argsBuilder).build)
@@ -507,7 +507,7 @@ object budgets_ext:
      * @param tags Map of tags assigned to the resource. If configured with a provider `defaultTags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
      * @return builder
      */
-    def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrAndTagsArgs.Builder]):
+    inline def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrAndTagsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrAndArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrAndTagsArgs.builder
       builder.tags(args(argsBuilder).build)
@@ -517,7 +517,7 @@ object budgets_ext:
      * @param ands List of filter expressions to combine with AND logic. Each `and` block is one operand and must itself contain exactly one root.
      * @return builder
      */
-    def ands(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrAndArgs.Builder]*):
+    inline def ands(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrAndArgs.Builder]*):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrArgs.Builder =
       def argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrAndArgs.builder
       builder.ands(args.map(_(argsBuilder).build)*)
@@ -526,7 +526,7 @@ object budgets_ext:
      * @param costCategories Cost Categories block.
      * @return builder
      */
-    def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrCostCategoriesArgs.Builder]):
+    inline def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrCostCategoriesArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrCostCategoriesArgs.builder
       builder.costCategories(args(argsBuilder).build)
@@ -535,7 +535,7 @@ object budgets_ext:
      * @param dimensions Dimensions block.
      * @return builder
      */
-    def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrDimensionsArgs.Builder]):
+    inline def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrDimensionsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrDimensionsArgs.builder
       builder.dimensions(args(argsBuilder).build)
@@ -544,7 +544,7 @@ object budgets_ext:
      * @param not Single filter expression to negate. Must contain exactly one root.
      * @return builder
      */
-    def not(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrNotArgs.Builder]):
+    inline def not(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrNotArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrNotArgs.builder
       builder.not(args(argsBuilder).build)
@@ -553,7 +553,7 @@ object budgets_ext:
      * @param ors List of filter expressions to combine with OR logic. Each `or` block is one operand and must itself contain exactly one root.
      * @return builder
      */
-    def ors(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrOrArgs.Builder]*):
+    inline def ors(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrOrArgs.Builder]*):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrArgs.Builder =
       def argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrOrArgs.builder
       builder.ors(args.map(_(argsBuilder).build)*)
@@ -562,7 +562,7 @@ object budgets_ext:
      * @param tags Map of tags assigned to the resource. If configured with a provider `defaultTags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
      * @return builder
      */
-    def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrTagsArgs.Builder]):
+    inline def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrTagsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrTagsArgs.builder
       builder.tags(args(argsBuilder).build)
@@ -572,7 +572,7 @@ object budgets_ext:
      * @param costCategories Cost Categories block.
      * @return builder
      */
-    def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrNotCostCategoriesArgs.Builder]):
+    inline def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrNotCostCategoriesArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrNotArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrNotCostCategoriesArgs.builder
       builder.costCategories(args(argsBuilder).build)
@@ -581,7 +581,7 @@ object budgets_ext:
      * @param dimensions Dimensions block.
      * @return builder
      */
-    def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrNotDimensionsArgs.Builder]):
+    inline def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrNotDimensionsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrNotArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrNotDimensionsArgs.builder
       builder.dimensions(args(argsBuilder).build)
@@ -590,7 +590,7 @@ object budgets_ext:
      * @param tags Map of tags assigned to the resource. If configured with a provider `defaultTags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
      * @return builder
      */
-    def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrNotTagsArgs.Builder]):
+    inline def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrNotTagsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrNotArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrNotTagsArgs.builder
       builder.tags(args(argsBuilder).build)
@@ -600,7 +600,7 @@ object budgets_ext:
      * @param costCategories Cost Categories block.
      * @return builder
      */
-    def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrOrCostCategoriesArgs.Builder]):
+    inline def costCategories(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrOrCostCategoriesArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrOrArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrOrCostCategoriesArgs.builder
       builder.costCategories(args(argsBuilder).build)
@@ -609,7 +609,7 @@ object budgets_ext:
      * @param dimensions Dimensions block.
      * @return builder
      */
-    def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrOrDimensionsArgs.Builder]):
+    inline def dimensions(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrOrDimensionsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrOrArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrOrDimensionsArgs.builder
       builder.dimensions(args(argsBuilder).build)
@@ -618,7 +618,7 @@ object budgets_ext:
      * @param tags Map of tags assigned to the resource. If configured with a provider `defaultTags` configuration block present, tags with matching keys will overwrite those defined at the provider-level.
      * @return builder
      */
-    def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrOrTagsArgs.Builder]):
+    inline def tags(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrOrTagsArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrOrArgs.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionOrOrTagsArgs.builder
       builder.tags(args(argsBuilder).build)
@@ -628,7 +628,7 @@ object budgets_ext:
      * @param autoAdjustData Object containing AutoAdjustData which determines the budget amount for an auto-adjusting budget.
      * @return builder
      */
-    def autoAdjustData(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetAutoAdjustDataArgs.Builder]):
+    inline def autoAdjustData(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetAutoAdjustDataArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetState.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetAutoAdjustDataArgs.builder
       builder.autoAdjustData(args(argsBuilder).build)
@@ -637,7 +637,7 @@ object budgets_ext:
      * @param costFilters List of CostFilter name/values pair to apply to budget. Conflicts with `filterExpression`.
      * @return builder
      */
-    def costFilters(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetCostFilterArgs.Builder]*):
+    inline def costFilters(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetCostFilterArgs.Builder]*):
         com.pulumi.aws.budgets.inputs.BudgetState.Builder =
       def argsBuilder = com.pulumi.aws.budgets.inputs.BudgetCostFilterArgs.builder
       builder.costFilters(args.map(_(argsBuilder).build)*)
@@ -646,7 +646,7 @@ object budgets_ext:
      * @param costTypes Object containing CostTypes that defines the types of cost included in a budget, such as tax and subscriptions.
      * @return builder
      */
-    def costTypes(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetCostTypesArgs.Builder]):
+    inline def costTypes(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetCostTypesArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetState.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetCostTypesArgs.builder
       builder.costTypes(args(argsBuilder).build)
@@ -655,7 +655,7 @@ object budgets_ext:
      * @param filterExpression Object containing Filter Expression to apply to budget. Conflicts with `costFilter` and requires `metrics`.
      * @return builder
      */
-    def filterExpression(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionArgs.Builder]):
+    inline def filterExpression(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetFilterExpressionArgs.Builder]):
         com.pulumi.aws.budgets.inputs.BudgetState.Builder =
       val argsBuilder = com.pulumi.aws.budgets.inputs.BudgetFilterExpressionArgs.builder
       builder.filterExpression(args(argsBuilder).build)
@@ -664,7 +664,7 @@ object budgets_ext:
      * @param notifications Object containing Budget Notifications. Can be used multiple times to define more than one budget notification.
      * @return builder
      */
-    def notifications(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetNotificationArgs.Builder]*):
+    inline def notifications(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetNotificationArgs.Builder]*):
         com.pulumi.aws.budgets.inputs.BudgetState.Builder =
       def argsBuilder = com.pulumi.aws.budgets.inputs.BudgetNotificationArgs.builder
       builder.notifications(args.map(_(argsBuilder).build)*)
@@ -673,7 +673,7 @@ object budgets_ext:
      * @param plannedLimits Object containing Planned Budget Limits. Can be used multiple times to plan more than one budget limit. See [PlannedBudgetLimits](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_Budget.html#awscostmanagement-Type-budgets_Budget-PlannedBudgetLimits) documentation.
      * @return builder
      */
-    def plannedLimits(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetPlannedLimitArgs.Builder]*):
+    inline def plannedLimits(args: Endofunction[com.pulumi.aws.budgets.inputs.BudgetPlannedLimitArgs.Builder]*):
         com.pulumi.aws.budgets.inputs.BudgetState.Builder =
       def argsBuilder = com.pulumi.aws.budgets.inputs.BudgetPlannedLimitArgs.builder
       builder.plannedLimits(args.map(_(argsBuilder).build)*)

@@ -8,7 +8,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def backupConfig(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigArgs.Builder]):
+    inline def backupConfig(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigArgs.Builder]):
         com.pulumi.gcp.gkebackup.BackupPlanArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigArgs.builder
       builder.backupConfig(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def backupSchedule(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleArgs.Builder]):
+    inline def backupSchedule(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleArgs.Builder]):
         com.pulumi.gcp.gkebackup.BackupPlanArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleArgs.builder
       builder.backupSchedule(args(argsBuilder).build)
@@ -28,19 +28,19 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def retentionPolicy(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanRetentionPolicyArgs.Builder]):
+    inline def retentionPolicy(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanRetentionPolicyArgs.Builder]):
         com.pulumi.gcp.gkebackup.BackupPlanArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.BackupPlanRetentionPolicyArgs.builder
       builder.retentionPolicy(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gkebackup.BackupPlanIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.gkebackup.BackupPlanIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.BackupPlanIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gkebackup.BackupPlanIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.gkebackup.BackupPlanIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.BackupPlanIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -51,19 +51,19 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def restoreConfig(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigArgs.Builder]):
+    inline def restoreConfig(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigArgs.Builder]):
         com.pulumi.gcp.gkebackup.RestorePlanArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigArgs.builder
       builder.restoreConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gkebackup.RestorePlanIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.gkebackup.RestorePlanIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.RestorePlanIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gkebackup.RestorePlanIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.gkebackup.RestorePlanIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.RestorePlanIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -75,7 +75,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionKey(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigEncryptionKeyArgs.Builder]):
+    inline def encryptionKey(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigEncryptionKeyArgs.Builder]):
         com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigEncryptionKeyArgs.builder
       builder.encryptionKey(args(argsBuilder).build)
@@ -85,7 +85,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def selectedApplications(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigSelectedApplicationsArgs.Builder]):
+    inline def selectedApplications(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigSelectedApplicationsArgs.Builder]):
         com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigSelectedApplicationsArgs.builder
       builder.selectedApplications(args(argsBuilder).build)
@@ -95,7 +95,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def selectedNamespaceLabels(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigSelectedNamespaceLabelsArgs.Builder]):
+    inline def selectedNamespaceLabels(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigSelectedNamespaceLabelsArgs.Builder]):
         com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigSelectedNamespaceLabelsArgs.builder
       builder.selectedNamespaceLabels(args(argsBuilder).build)
@@ -105,7 +105,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def selectedNamespaces(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigSelectedNamespacesArgs.Builder]):
+    inline def selectedNamespaces(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigSelectedNamespacesArgs.Builder]):
         com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigSelectedNamespacesArgs.builder
       builder.selectedNamespaces(args(argsBuilder).build)
@@ -116,7 +116,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def namespacedNames(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigSelectedApplicationsNamespacedNameArgs.Builder]*):
+    inline def namespacedNames(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigSelectedApplicationsNamespacedNameArgs.Builder]*):
         com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigSelectedApplicationsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigSelectedApplicationsNamespacedNameArgs.builder
       builder.namespacedNames(args.map(_(argsBuilder).build)*)
@@ -127,7 +127,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resourceLabels(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigSelectedNamespaceLabelsResourceLabelArgs.Builder]*):
+    inline def resourceLabels(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigSelectedNamespaceLabelsResourceLabelArgs.Builder]*):
         com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigSelectedNamespaceLabelsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigSelectedNamespaceLabelsResourceLabelArgs.builder
       builder.resourceLabels(args.map(_(argsBuilder).build)*)
@@ -140,7 +140,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rpoConfig(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleRpoConfigArgs.Builder]):
+    inline def rpoConfig(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleRpoConfigArgs.Builder]):
         com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleRpoConfigArgs.builder
       builder.rpoConfig(args(argsBuilder).build)
@@ -157,7 +157,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def exclusionWindows(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleRpoConfigExclusionWindowArgs.Builder]*):
+    inline def exclusionWindows(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleRpoConfigExclusionWindowArgs.Builder]*):
         com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleRpoConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleRpoConfigExclusionWindowArgs.builder
       builder.exclusionWindows(args.map(_(argsBuilder).build)*)
@@ -169,7 +169,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def daysOfWeek(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleRpoConfigExclusionWindowDaysOfWeekArgs.Builder]):
+    inline def daysOfWeek(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleRpoConfigExclusionWindowDaysOfWeekArgs.Builder]):
         com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleRpoConfigExclusionWindowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleRpoConfigExclusionWindowDaysOfWeekArgs.builder
       builder.daysOfWeek(args(argsBuilder).build)
@@ -180,7 +180,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def singleOccurrenceDate(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleRpoConfigExclusionWindowSingleOccurrenceDateArgs.Builder]):
+    inline def singleOccurrenceDate(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleRpoConfigExclusionWindowSingleOccurrenceDateArgs.Builder]):
         com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleRpoConfigExclusionWindowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleRpoConfigExclusionWindowSingleOccurrenceDateArgs.builder
       builder.singleOccurrenceDate(args(argsBuilder).build)
@@ -190,19 +190,19 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def startTime(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleRpoConfigExclusionWindowStartTimeArgs.Builder]):
+    inline def startTime(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleRpoConfigExclusionWindowStartTimeArgs.Builder]):
         com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleRpoConfigExclusionWindowArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleRpoConfigExclusionWindowStartTimeArgs.builder
       builder.startTime(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gkebackup.inputs.BackupPlanIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.gkebackup.inputs.BackupPlanIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.BackupPlanIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gkebackup.inputs.BackupPlanIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.gkebackup.inputs.BackupPlanIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.BackupPlanIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -213,7 +213,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def backupConfig(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigArgs.Builder]):
+    inline def backupConfig(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigArgs.Builder]):
         com.pulumi.gcp.gkebackup.inputs.BackupPlanState.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupConfigArgs.builder
       builder.backupConfig(args(argsBuilder).build)
@@ -223,7 +223,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def backupSchedule(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleArgs.Builder]):
+    inline def backupSchedule(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleArgs.Builder]):
         com.pulumi.gcp.gkebackup.inputs.BackupPlanState.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.BackupPlanBackupScheduleArgs.builder
       builder.backupSchedule(args(argsBuilder).build)
@@ -233,19 +233,19 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def retentionPolicy(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanRetentionPolicyArgs.Builder]):
+    inline def retentionPolicy(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.BackupPlanRetentionPolicyArgs.Builder]):
         com.pulumi.gcp.gkebackup.inputs.BackupPlanState.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.BackupPlanRetentionPolicyArgs.builder
       builder.retentionPolicy(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gkebackup.inputs.RestorePlanIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.gkebackup.inputs.RestorePlanIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.RestorePlanIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.gkebackup.inputs.RestorePlanIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.gkebackup.inputs.RestorePlanIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.RestorePlanIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -256,7 +256,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def clusterResourceRestoreScope(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigClusterResourceRestoreScopeArgs.Builder]):
+    inline def clusterResourceRestoreScope(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigClusterResourceRestoreScopeArgs.Builder]):
         com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigClusterResourceRestoreScopeArgs.builder
       builder.clusterResourceRestoreScope(args(argsBuilder).build)
@@ -267,7 +267,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def excludedNamespaces(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigExcludedNamespacesArgs.Builder]):
+    inline def excludedNamespaces(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigExcludedNamespacesArgs.Builder]):
         com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigExcludedNamespacesArgs.builder
       builder.excludedNamespaces(args(argsBuilder).build)
@@ -277,7 +277,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def restoreOrder(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigRestoreOrderArgs.Builder]):
+    inline def restoreOrder(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigRestoreOrderArgs.Builder]):
         com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigRestoreOrderArgs.builder
       builder.restoreOrder(args(argsBuilder).build)
@@ -289,7 +289,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def selectedApplications(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigSelectedApplicationsArgs.Builder]):
+    inline def selectedApplications(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigSelectedApplicationsArgs.Builder]):
         com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigSelectedApplicationsArgs.builder
       builder.selectedApplications(args(argsBuilder).build)
@@ -300,7 +300,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def selectedNamespaces(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigSelectedNamespacesArgs.Builder]):
+    inline def selectedNamespaces(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigSelectedNamespacesArgs.Builder]):
         com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigSelectedNamespacesArgs.builder
       builder.selectedNamespaces(args(argsBuilder).build)
@@ -314,7 +314,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transformationRules(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigTransformationRuleArgs.Builder]*):
+    inline def transformationRules(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigTransformationRuleArgs.Builder]*):
         com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigTransformationRuleArgs.builder
       builder.transformationRules(args.map(_(argsBuilder).build)*)
@@ -326,7 +326,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def volumeDataRestorePolicyBindings(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigVolumeDataRestorePolicyBindingArgs.Builder]*):
+    inline def volumeDataRestorePolicyBindings(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigVolumeDataRestorePolicyBindingArgs.Builder]*):
         com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigVolumeDataRestorePolicyBindingArgs.builder
       builder.volumeDataRestorePolicyBindings(args.map(_(argsBuilder).build)*)
@@ -340,7 +340,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def excludedGroupKinds(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigClusterResourceRestoreScopeExcludedGroupKindArgs.Builder]*):
+    inline def excludedGroupKinds(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigClusterResourceRestoreScopeExcludedGroupKindArgs.Builder]*):
         com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigClusterResourceRestoreScopeArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigClusterResourceRestoreScopeExcludedGroupKindArgs.builder
       builder.excludedGroupKinds(args.map(_(argsBuilder).build)*)
@@ -352,7 +352,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def selectedGroupKinds(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigClusterResourceRestoreScopeSelectedGroupKindArgs.Builder]*):
+    inline def selectedGroupKinds(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigClusterResourceRestoreScopeSelectedGroupKindArgs.Builder]*):
         com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigClusterResourceRestoreScopeArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigClusterResourceRestoreScopeSelectedGroupKindArgs.builder
       builder.selectedGroupKinds(args.map(_(argsBuilder).build)*)
@@ -365,7 +365,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def groupKindDependencies(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigRestoreOrderGroupKindDependencyArgs.Builder]*):
+    inline def groupKindDependencies(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigRestoreOrderGroupKindDependencyArgs.Builder]*):
         com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigRestoreOrderArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigRestoreOrderGroupKindDependencyArgs.builder
       builder.groupKindDependencies(args.map(_(argsBuilder).build)*)
@@ -377,7 +377,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def requiring(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigRestoreOrderGroupKindDependencyRequiringArgs.Builder]):
+    inline def requiring(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigRestoreOrderGroupKindDependencyRequiringArgs.Builder]):
         com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigRestoreOrderGroupKindDependencyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigRestoreOrderGroupKindDependencyRequiringArgs.builder
       builder.requiring(args(argsBuilder).build)
@@ -388,7 +388,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def satisfying(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigRestoreOrderGroupKindDependencySatisfyingArgs.Builder]):
+    inline def satisfying(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigRestoreOrderGroupKindDependencySatisfyingArgs.Builder]):
         com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigRestoreOrderGroupKindDependencyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigRestoreOrderGroupKindDependencySatisfyingArgs.builder
       builder.satisfying(args(argsBuilder).build)
@@ -399,7 +399,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def namespacedNames(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigSelectedApplicationsNamespacedNameArgs.Builder]*):
+    inline def namespacedNames(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigSelectedApplicationsNamespacedNameArgs.Builder]*):
         com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigSelectedApplicationsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigSelectedApplicationsNamespacedNameArgs.builder
       builder.namespacedNames(args.map(_(argsBuilder).build)*)
@@ -413,7 +413,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fieldActions(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigTransformationRuleFieldActionArgs.Builder]*):
+    inline def fieldActions(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigTransformationRuleFieldActionArgs.Builder]*):
         com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigTransformationRuleArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigTransformationRuleFieldActionArgs.builder
       builder.fieldActions(args.map(_(argsBuilder).build)*)
@@ -426,7 +426,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resourceFilter(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigTransformationRuleResourceFilterArgs.Builder]):
+    inline def resourceFilter(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigTransformationRuleResourceFilterArgs.Builder]):
         com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigTransformationRuleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigTransformationRuleResourceFilterArgs.builder
       builder.resourceFilter(args(argsBuilder).build)
@@ -441,7 +441,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def groupKinds(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigTransformationRuleResourceFilterGroupKindArgs.Builder]*):
+    inline def groupKinds(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigTransformationRuleResourceFilterGroupKindArgs.Builder]*):
         com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigTransformationRuleResourceFilterArgs.Builder =
       def argsBuilder = com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigTransformationRuleResourceFilterGroupKindArgs.builder
       builder.groupKinds(args.map(_(argsBuilder).build)*)
@@ -452,7 +452,7 @@ object gkebackup_ext:
      * Structure is documented below.
      * @return builder
      */
-    def restoreConfig(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigArgs.Builder]):
+    inline def restoreConfig(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigArgs.Builder]):
         com.pulumi.gcp.gkebackup.inputs.RestorePlanState.Builder =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.RestorePlanRestoreConfigArgs.builder
       builder.restoreConfig(args(argsBuilder).build)

@@ -5,7 +5,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object purview:
   /** Manages a Purview Account. */
-  def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.purview.AccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.purview.AccountArgs.builder
     conf.logicalName2physicalName(name) match

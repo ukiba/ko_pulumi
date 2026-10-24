@@ -8,7 +8,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobConditionArgs.Builder]):
         com.pulumi.gcp.migrationcenter.AssetsExportJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -18,7 +18,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def performanceData(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobPerformanceDataArgs.Builder]):
+    inline def performanceData(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobPerformanceDataArgs.Builder]):
         com.pulumi.gcp.migrationcenter.AssetsExportJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobPerformanceDataArgs.builder
       builder.performanceData(args(argsBuilder).build)
@@ -28,7 +28,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def signedUriDestination(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobSignedUriDestinationArgs.Builder]):
+    inline def signedUriDestination(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobSignedUriDestinationArgs.Builder]):
         com.pulumi.gcp.migrationcenter.AssetsExportJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobSignedUriDestinationArgs.builder
       builder.signedUriDestination(args(argsBuilder).build)
@@ -39,7 +39,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def virtualMachinePreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesArgs.Builder]):
+    inline def virtualMachinePreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesArgs.Builder]):
         com.pulumi.gcp.migrationcenter.PreferenceSetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesArgs.builder
       builder.virtualMachinePreferences(args(argsBuilder).build)
@@ -50,7 +50,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def groupPreferencesetAssignments(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportConfigGroupPreferencesetAssignmentArgs.Builder]*):
+    inline def groupPreferencesetAssignments(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportConfigGroupPreferencesetAssignmentArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.ReportConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportConfigGroupPreferencesetAssignmentArgs.builder
       builder.groupPreferencesetAssignments(args.map(_(argsBuilder).build)*)
@@ -62,7 +62,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def results(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultArgs.Builder]*):
+    inline def results(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultArgs.builder
       builder.results(args.map(_(argsBuilder).build)*)
@@ -79,7 +79,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultErrorArgs.Builder]*):
+    inline def errors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultErrorArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
@@ -90,7 +90,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def outputFiles(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultOutputFileArgs.Builder]*):
+    inline def outputFiles(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultOutputFileArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultOutputFileArgs.builder
       builder.outputFiles(args.map(_(argsBuilder).build)*)
@@ -101,7 +101,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def signedUris(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultSignedUriArgs.Builder]*):
+    inline def signedUris(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultSignedUriArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultSignedUriArgs.builder
       builder.signedUris(args.map(_(argsBuilder).build)*)
@@ -113,7 +113,7 @@ object migrationcenter_ext:
      * message types for APIs to use.
      * @return builder
      */
-    def details(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultErrorDetailArgs.Builder]*):
+    inline def details(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultErrorDetailArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultErrorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultErrorDetailArgs.builder
       builder.details(args.map(_(argsBuilder).build)*)
@@ -125,7 +125,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def entries(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultOutputFileEntryArgs.Builder]*):
+    inline def entries(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultOutputFileEntryArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultOutputFileArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultOutputFileEntryArgs.builder
       builder.entries(args.map(_(argsBuilder).build)*)
@@ -137,7 +137,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def csvOutputFiles(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultOutputFileEntryCsvOutputFileArgs.Builder]*):
+    inline def csvOutputFiles(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultOutputFileEntryCsvOutputFileArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultOutputFileEntryArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultOutputFileEntryCsvOutputFileArgs.builder
       builder.csvOutputFiles(args.map(_(argsBuilder).build)*)
@@ -148,7 +148,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def xlsxOutputFiles(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultOutputFileEntryXlsxOutputFileArgs.Builder]*):
+    inline def xlsxOutputFiles(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultOutputFileEntryXlsxOutputFileArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultOutputFileEntryArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultOutputFileEntryXlsxOutputFileArgs.builder
       builder.xlsxOutputFiles(args.map(_(argsBuilder).build)*)
@@ -160,7 +160,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def signedUris(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultOutputFileEntryCsvOutputFileSignedUriArgs.Builder]*):
+    inline def signedUris(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultOutputFileEntryCsvOutputFileSignedUriArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultOutputFileEntryCsvOutputFileArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultOutputFileEntryCsvOutputFileSignedUriArgs.builder
       builder.signedUris(args.map(_(argsBuilder).build)*)
@@ -172,7 +172,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def signedUris(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultOutputFileEntryXlsxOutputFileSignedUriArgs.Builder]*):
+    inline def signedUris(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultOutputFileEntryXlsxOutputFileSignedUriArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultOutputFileEntryXlsxOutputFileArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultOutputFileEntryXlsxOutputFileSignedUriArgs.builder
       builder.signedUris(args.map(_(argsBuilder).build)*)
@@ -184,7 +184,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def signedUris(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultSignedUriSignedUriArgs.Builder]*):
+    inline def signedUris(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultSignedUriSignedUriArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultSignedUriArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionResultSignedUriSignedUriArgs.builder
       builder.signedUris(args.map(_(argsBuilder).build)*)
@@ -195,7 +195,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobConditionArgs.Builder]):
         com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobState.Builder =
       val argsBuilder = com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -204,7 +204,7 @@ object migrationcenter_ext:
      * @param inventories Configuration for asset inventory details exports.
      * @return builder
      */
-    def inventories(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobInventoryArgs.Builder]*):
+    inline def inventories(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobInventoryArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobState.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobInventoryArgs.builder
       builder.inventories(args.map(_(argsBuilder).build)*)
@@ -213,7 +213,7 @@ object migrationcenter_ext:
      * @param networkDependencies Configuration for network dependencies exports.
      * @return builder
      */
-    def networkDependencies(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobNetworkDependencyArgs.Builder]*):
+    inline def networkDependencies(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobNetworkDependencyArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobState.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobNetworkDependencyArgs.builder
       builder.networkDependencies(args.map(_(argsBuilder).build)*)
@@ -223,7 +223,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def performanceData(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobPerformanceDataArgs.Builder]):
+    inline def performanceData(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobPerformanceDataArgs.Builder]):
         com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobState.Builder =
       val argsBuilder = com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobPerformanceDataArgs.builder
       builder.performanceData(args(argsBuilder).build)
@@ -233,7 +233,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def recentExecutions(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionArgs.Builder]*):
+    inline def recentExecutions(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobState.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobRecentExecutionArgs.builder
       builder.recentExecutions(args.map(_(argsBuilder).build)*)
@@ -243,7 +243,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def signedUriDestination(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobSignedUriDestinationArgs.Builder]):
+    inline def signedUriDestination(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobSignedUriDestinationArgs.Builder]):
         com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobState.Builder =
       val argsBuilder = com.pulumi.gcp.migrationcenter.inputs.AssetsExportJobSignedUriDestinationArgs.builder
       builder.signedUriDestination(args(argsBuilder).build)
@@ -255,7 +255,7 @@ object migrationcenter_ext:
      * message types for APIs to use.
      * @return builder
      */
-    def details(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.DiscoveryClientErrorDetailArgs.Builder]*):
+    inline def details(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.DiscoveryClientErrorDetailArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.DiscoveryClientErrorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.DiscoveryClientErrorDetailArgs.builder
       builder.details(args.map(_(argsBuilder).build)*)
@@ -266,7 +266,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.DiscoveryClientErrorArgs.Builder]*):
+    inline def errors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.DiscoveryClientErrorArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.DiscoveryClientState.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.DiscoveryClientErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
@@ -277,7 +277,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def uploadFileInfos(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportDataFileUploadFileInfoArgs.Builder]*):
+    inline def uploadFileInfos(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportDataFileUploadFileInfoArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ImportDataFileState.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportDataFileUploadFileInfoArgs.builder
       builder.uploadFileInfos(args.map(_(argsBuilder).build)*)
@@ -289,7 +289,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def executionErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorArgs.Builder]*):
+    inline def executionErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorArgs.builder
       builder.executionErrors(args.map(_(argsBuilder).build)*)
@@ -301,7 +301,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fileValidations(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationArgs.Builder]*):
+    inline def fileValidations(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationArgs.builder
       builder.fileValidations(args.map(_(argsBuilder).build)*)
@@ -312,7 +312,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def jobErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorJobErrorArgs.Builder]*):
+    inline def jobErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorJobErrorArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorJobErrorArgs.builder
       builder.jobErrors(args.map(_(argsBuilder).build)*)
@@ -324,7 +324,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fileErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationFileErrorArgs.Builder]*):
+    inline def fileErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationFileErrorArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationFileErrorArgs.builder
       builder.fileErrors(args.map(_(argsBuilder).build)*)
@@ -335,7 +335,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rowErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArgs.Builder]*):
+    inline def rowErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArgs.builder
       builder.rowErrors(args.map(_(argsBuilder).build)*)
@@ -347,7 +347,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def csvErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArchiveErrorCsvErrorArgs.Builder]*):
+    inline def csvErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArchiveErrorCsvErrorArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArchiveErrorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArchiveErrorCsvErrorArgs.builder
       builder.csvErrors(args.map(_(argsBuilder).build)*)
@@ -359,7 +359,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def archiveErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArchiveErrorArgs.Builder]*):
+    inline def archiveErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArchiveErrorArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArchiveErrorArgs.builder
       builder.archiveErrors(args.map(_(argsBuilder).build)*)
@@ -370,7 +370,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def csvErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorCsvErrorArgs.Builder]*):
+    inline def csvErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorCsvErrorArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorCsvErrorArgs.builder
       builder.csvErrors(args.map(_(argsBuilder).build)*)
@@ -381,7 +381,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorErrorArgs.Builder]*):
+    inline def errors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorErrorArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
@@ -392,7 +392,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def xlsxErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorXlsxErrorArgs.Builder]*):
+    inline def xlsxErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorXlsxErrorArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportExecutionErrorFileValidationRowErrorXlsxErrorArgs.builder
       builder.xlsxErrors(args.map(_(argsBuilder).build)*)
@@ -403,7 +403,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def executionReports(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportArgs.Builder]*):
+    inline def executionReports(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ImportJobState.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobExecutionReportArgs.builder
       builder.executionReports(args.map(_(argsBuilder).build)*)
@@ -413,7 +413,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def validationReports(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportArgs.Builder]*):
+    inline def validationReports(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ImportJobState.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportArgs.builder
       builder.validationReports(args.map(_(argsBuilder).build)*)
@@ -425,7 +425,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fileValidations(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationArgs.Builder]*):
+    inline def fileValidations(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationArgs.builder
       builder.fileValidations(args.map(_(argsBuilder).build)*)
@@ -436,7 +436,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def jobErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportJobErrorArgs.Builder]*):
+    inline def jobErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportJobErrorArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportJobErrorArgs.builder
       builder.jobErrors(args.map(_(argsBuilder).build)*)
@@ -448,7 +448,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fileErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationFileErrorArgs.Builder]*):
+    inline def fileErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationFileErrorArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationFileErrorArgs.builder
       builder.fileErrors(args.map(_(argsBuilder).build)*)
@@ -459,7 +459,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rowErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArgs.Builder]*):
+    inline def rowErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArgs.builder
       builder.rowErrors(args.map(_(argsBuilder).build)*)
@@ -471,7 +471,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def csvErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArchiveErrorCsvErrorArgs.Builder]*):
+    inline def csvErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArchiveErrorCsvErrorArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArchiveErrorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArchiveErrorCsvErrorArgs.builder
       builder.csvErrors(args.map(_(argsBuilder).build)*)
@@ -483,7 +483,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def archiveErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArchiveErrorArgs.Builder]*):
+    inline def archiveErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArchiveErrorArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArchiveErrorArgs.builder
       builder.archiveErrors(args.map(_(argsBuilder).build)*)
@@ -494,7 +494,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def csvErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorCsvErrorArgs.Builder]*):
+    inline def csvErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorCsvErrorArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorCsvErrorArgs.builder
       builder.csvErrors(args.map(_(argsBuilder).build)*)
@@ -505,7 +505,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def errors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorErrorArgs.Builder]*):
+    inline def errors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorErrorArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorErrorArgs.builder
       builder.errors(args.map(_(argsBuilder).build)*)
@@ -516,7 +516,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def xlsxErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorXlsxErrorArgs.Builder]*):
+    inline def xlsxErrors(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorXlsxErrorArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ImportJobValidationReportFileValidationRowErrorXlsxErrorArgs.builder
       builder.xlsxErrors(args.map(_(argsBuilder).build)*)
@@ -527,7 +527,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def virtualMachinePreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesArgs.Builder]):
+    inline def virtualMachinePreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesArgs.Builder]):
         com.pulumi.gcp.migrationcenter.inputs.PreferenceSetState.Builder =
       val argsBuilder = com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesArgs.builder
       builder.virtualMachinePreferences(args(argsBuilder).build)
@@ -538,7 +538,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def computeEnginePreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesComputeEnginePreferencesArgs.Builder]):
+    inline def computeEnginePreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesComputeEnginePreferencesArgs.Builder]):
         com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesComputeEnginePreferencesArgs.builder
       builder.computeEnginePreferences(args(argsBuilder).build)
@@ -548,7 +548,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def regionPreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesRegionPreferencesArgs.Builder]):
+    inline def regionPreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesRegionPreferencesArgs.Builder]):
         com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesRegionPreferencesArgs.builder
       builder.regionPreferences(args(argsBuilder).build)
@@ -558,7 +558,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def soleTenancyPreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesSoleTenancyPreferencesArgs.Builder]):
+    inline def soleTenancyPreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesSoleTenancyPreferencesArgs.Builder]):
         com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesSoleTenancyPreferencesArgs.builder
       builder.soleTenancyPreferences(args(argsBuilder).build)
@@ -568,7 +568,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vmwareEnginePreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesVmwareEnginePreferencesArgs.Builder]):
+    inline def vmwareEnginePreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesVmwareEnginePreferencesArgs.Builder]):
         com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesVmwareEnginePreferencesArgs.builder
       builder.vmwareEnginePreferences(args(argsBuilder).build)
@@ -579,7 +579,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def machinePreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesComputeEnginePreferencesMachinePreferencesArgs.Builder]):
+    inline def machinePreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesComputeEnginePreferencesMachinePreferencesArgs.Builder]):
         com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesComputeEnginePreferencesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesComputeEnginePreferencesMachinePreferencesArgs.builder
       builder.machinePreferences(args(argsBuilder).build)
@@ -590,7 +590,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allowedMachineSeries(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesComputeEnginePreferencesMachinePreferencesAllowedMachineSeriesArgs.Builder]*):
+    inline def allowedMachineSeries(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesComputeEnginePreferencesMachinePreferencesAllowedMachineSeriesArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesComputeEnginePreferencesMachinePreferencesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesComputeEnginePreferencesMachinePreferencesAllowedMachineSeriesArgs.builder
       builder.allowedMachineSeries(args.map(_(argsBuilder).build)*)
@@ -601,7 +601,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeTypes(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesSoleTenancyPreferencesNodeTypeArgs.Builder]*):
+    inline def nodeTypes(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesSoleTenancyPreferencesNodeTypeArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesSoleTenancyPreferencesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.PreferenceSetVirtualMachinePreferencesSoleTenancyPreferencesNodeTypeArgs.builder
       builder.nodeTypes(args.map(_(argsBuilder).build)*)
@@ -612,7 +612,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def groupPreferencesetAssignments(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportConfigGroupPreferencesetAssignmentArgs.Builder]*):
+    inline def groupPreferencesetAssignments(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportConfigGroupPreferencesetAssignmentArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportConfigState.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportConfigGroupPreferencesetAssignmentArgs.builder
       builder.groupPreferencesetAssignments(args.map(_(argsBuilder).build)*)
@@ -624,7 +624,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def summaries(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryArgs.Builder]*):
+    inline def summaries(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportState.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryArgs.builder
       builder.summaries(args.map(_(argsBuilder).build)*)
@@ -637,7 +637,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def coreCountHistograms(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatCoreCountHistogramArgs.Builder]*):
+    inline def coreCountHistograms(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatCoreCountHistogramArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatCoreCountHistogramArgs.builder
       builder.coreCountHistograms(args.map(_(argsBuilder).build)*)
@@ -649,7 +649,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def memoryBytesHistograms(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatMemoryBytesHistogramArgs.Builder]*):
+    inline def memoryBytesHistograms(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatMemoryBytesHistogramArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatMemoryBytesHistogramArgs.builder
       builder.memoryBytesHistograms(args.map(_(argsBuilder).build)*)
@@ -661,7 +661,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def memoryUtilizationCharts(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatMemoryUtilizationChartArgs.Builder]*):
+    inline def memoryUtilizationCharts(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatMemoryUtilizationChartArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatMemoryUtilizationChartArgs.builder
       builder.memoryUtilizationCharts(args.map(_(argsBuilder).build)*)
@@ -672,7 +672,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operatingSystems(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatOperatingSystemArgs.Builder]*):
+    inline def operatingSystems(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatOperatingSystemArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatOperatingSystemArgs.builder
       builder.operatingSystems(args.map(_(argsBuilder).build)*)
@@ -683,7 +683,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def softwareInstances(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatSoftwareInstanceArgs.Builder]*):
+    inline def softwareInstances(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatSoftwareInstanceArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatSoftwareInstanceArgs.builder
       builder.softwareInstances(args.map(_(argsBuilder).build)*)
@@ -695,7 +695,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def storageBytesHistograms(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatStorageBytesHistogramArgs.Builder]*):
+    inline def storageBytesHistograms(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatStorageBytesHistogramArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatStorageBytesHistogramArgs.builder
       builder.storageBytesHistograms(args.map(_(argsBuilder).build)*)
@@ -707,7 +707,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def storageUtilizationCharts(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatStorageUtilizationChartArgs.Builder]*):
+    inline def storageUtilizationCharts(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatStorageUtilizationChartArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatStorageUtilizationChartArgs.builder
       builder.storageUtilizationCharts(args.map(_(argsBuilder).build)*)
@@ -723,7 +723,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def buckets(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatCoreCountHistogramBucketArgs.Builder]*):
+    inline def buckets(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatCoreCountHistogramBucketArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatCoreCountHistogramArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatCoreCountHistogramBucketArgs.builder
       builder.buckets(args.map(_(argsBuilder).build)*)
@@ -739,7 +739,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def buckets(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatMemoryBytesHistogramBucketArgs.Builder]*):
+    inline def buckets(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatMemoryBytesHistogramBucketArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatMemoryBytesHistogramArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatMemoryBytesHistogramBucketArgs.builder
       builder.buckets(args.map(_(argsBuilder).build)*)
@@ -753,7 +753,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataPoints(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatOperatingSystemDataPointArgs.Builder]*):
+    inline def dataPoints(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatOperatingSystemDataPointArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatOperatingSystemArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatOperatingSystemDataPointArgs.builder
       builder.dataPoints(args.map(_(argsBuilder).build)*)
@@ -767,7 +767,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataPoints(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatSoftwareInstanceDataPointArgs.Builder]*):
+    inline def dataPoints(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatSoftwareInstanceDataPointArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatSoftwareInstanceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatSoftwareInstanceDataPointArgs.builder
       builder.dataPoints(args.map(_(argsBuilder).build)*)
@@ -783,7 +783,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def buckets(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatStorageBytesHistogramBucketArgs.Builder]*):
+    inline def buckets(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatStorageBytesHistogramBucketArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatStorageBytesHistogramArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatStorageBytesHistogramBucketArgs.builder
       builder.buckets(args.map(_(argsBuilder).build)*)
@@ -795,7 +795,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allAssetsStats(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatArgs.Builder]*):
+    inline def allAssetsStats(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryAllAssetsStatArgs.builder
       builder.allAssetsStats(args.map(_(argsBuilder).build)*)
@@ -806,7 +806,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def groupFindings(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingArgs.Builder]*):
+    inline def groupFindings(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingArgs.builder
       builder.groupFindings(args.map(_(argsBuilder).build)*)
@@ -818,7 +818,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def assetAggregateStats(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatArgs.Builder]*):
+    inline def assetAggregateStats(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatArgs.builder
       builder.assetAggregateStats(args.map(_(argsBuilder).build)*)
@@ -829,7 +829,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def preferenceSetFindings(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingArgs.Builder]*):
+    inline def preferenceSetFindings(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingArgs.builder
       builder.preferenceSetFindings(args.map(_(argsBuilder).build)*)
@@ -842,7 +842,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def coreCountHistograms(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatCoreCountHistogramArgs.Builder]*):
+    inline def coreCountHistograms(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatCoreCountHistogramArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatCoreCountHistogramArgs.builder
       builder.coreCountHistograms(args.map(_(argsBuilder).build)*)
@@ -854,7 +854,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def memoryBytesHistograms(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatMemoryBytesHistogramArgs.Builder]*):
+    inline def memoryBytesHistograms(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatMemoryBytesHistogramArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatMemoryBytesHistogramArgs.builder
       builder.memoryBytesHistograms(args.map(_(argsBuilder).build)*)
@@ -866,7 +866,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def memoryUtilizationCharts(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatMemoryUtilizationChartArgs.Builder]*):
+    inline def memoryUtilizationCharts(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatMemoryUtilizationChartArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatMemoryUtilizationChartArgs.builder
       builder.memoryUtilizationCharts(args.map(_(argsBuilder).build)*)
@@ -877,7 +877,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def operatingSystems(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatOperatingSystemArgs.Builder]*):
+    inline def operatingSystems(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatOperatingSystemArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatOperatingSystemArgs.builder
       builder.operatingSystems(args.map(_(argsBuilder).build)*)
@@ -888,7 +888,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def softwareInstances(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatSoftwareInstanceArgs.Builder]*):
+    inline def softwareInstances(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatSoftwareInstanceArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatSoftwareInstanceArgs.builder
       builder.softwareInstances(args.map(_(argsBuilder).build)*)
@@ -900,7 +900,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def storageBytesHistograms(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatStorageBytesHistogramArgs.Builder]*):
+    inline def storageBytesHistograms(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatStorageBytesHistogramArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatStorageBytesHistogramArgs.builder
       builder.storageBytesHistograms(args.map(_(argsBuilder).build)*)
@@ -912,7 +912,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def storageUtilizationCharts(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatStorageUtilizationChartArgs.Builder]*):
+    inline def storageUtilizationCharts(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatStorageUtilizationChartArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatStorageUtilizationChartArgs.builder
       builder.storageUtilizationCharts(args.map(_(argsBuilder).build)*)
@@ -928,7 +928,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def buckets(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatCoreCountHistogramBucketArgs.Builder]*):
+    inline def buckets(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatCoreCountHistogramBucketArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatCoreCountHistogramArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatCoreCountHistogramBucketArgs.builder
       builder.buckets(args.map(_(argsBuilder).build)*)
@@ -944,7 +944,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def buckets(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatMemoryBytesHistogramBucketArgs.Builder]*):
+    inline def buckets(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatMemoryBytesHistogramBucketArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatMemoryBytesHistogramArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatMemoryBytesHistogramBucketArgs.builder
       builder.buckets(args.map(_(argsBuilder).build)*)
@@ -958,7 +958,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataPoints(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatOperatingSystemDataPointArgs.Builder]*):
+    inline def dataPoints(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatOperatingSystemDataPointArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatOperatingSystemArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatOperatingSystemDataPointArgs.builder
       builder.dataPoints(args.map(_(argsBuilder).build)*)
@@ -972,7 +972,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def dataPoints(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatSoftwareInstanceDataPointArgs.Builder]*):
+    inline def dataPoints(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatSoftwareInstanceDataPointArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatSoftwareInstanceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatSoftwareInstanceDataPointArgs.builder
       builder.dataPoints(args.map(_(argsBuilder).build)*)
@@ -988,7 +988,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def buckets(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatStorageBytesHistogramBucketArgs.Builder]*):
+    inline def buckets(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatStorageBytesHistogramBucketArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatStorageBytesHistogramArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingAssetAggregateStatStorageBytesHistogramBucketArgs.builder
       builder.buckets(args.map(_(argsBuilder).build)*)
@@ -1000,7 +1000,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def computeEngineFindings(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingComputeEngineFindingArgs.Builder]*):
+    inline def computeEngineFindings(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingComputeEngineFindingArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingComputeEngineFindingArgs.builder
       builder.computeEngineFindings(args.map(_(argsBuilder).build)*)
@@ -1013,7 +1013,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def machinePreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceArgs.Builder]*):
+    inline def machinePreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceArgs.builder
       builder.machinePreferences(args.map(_(argsBuilder).build)*)
@@ -1024,7 +1024,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def monthlyCostComputes(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMonthlyCostComputeArgs.Builder]*):
+    inline def monthlyCostComputes(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMonthlyCostComputeArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMonthlyCostComputeArgs.builder
       builder.monthlyCostComputes(args.map(_(argsBuilder).build)*)
@@ -1035,7 +1035,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def monthlyCostNetworkEgresses(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMonthlyCostNetworkEgressArgs.Builder]*):
+    inline def monthlyCostNetworkEgresses(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMonthlyCostNetworkEgressArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMonthlyCostNetworkEgressArgs.builder
       builder.monthlyCostNetworkEgresses(args.map(_(argsBuilder).build)*)
@@ -1046,7 +1046,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def monthlyCostOsLicenses(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMonthlyCostOsLicenseArgs.Builder]*):
+    inline def monthlyCostOsLicenses(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMonthlyCostOsLicenseArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMonthlyCostOsLicenseArgs.builder
       builder.monthlyCostOsLicenses(args.map(_(argsBuilder).build)*)
@@ -1057,7 +1057,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def monthlyCostOthers(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMonthlyCostOtherArgs.Builder]*):
+    inline def monthlyCostOthers(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMonthlyCostOtherArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMonthlyCostOtherArgs.builder
       builder.monthlyCostOthers(args.map(_(argsBuilder).build)*)
@@ -1068,7 +1068,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def monthlyCostStorages(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMonthlyCostStorageArgs.Builder]*):
+    inline def monthlyCostStorages(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMonthlyCostStorageArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMonthlyCostStorageArgs.builder
       builder.monthlyCostStorages(args.map(_(argsBuilder).build)*)
@@ -1079,7 +1079,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def monthlyCostTotals(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMonthlyCostTotalArgs.Builder]*):
+    inline def monthlyCostTotals(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMonthlyCostTotalArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMonthlyCostTotalArgs.builder
       builder.monthlyCostTotals(args.map(_(argsBuilder).build)*)
@@ -1090,7 +1090,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def soleTenantFindings(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingSoleTenantFindingArgs.Builder]*):
+    inline def soleTenantFindings(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingSoleTenantFindingArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingSoleTenantFindingArgs.builder
       builder.soleTenantFindings(args.map(_(argsBuilder).build)*)
@@ -1101,7 +1101,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vmwareEngineFindings(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingVmwareEngineFindingArgs.Builder]*):
+    inline def vmwareEngineFindings(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingVmwareEngineFindingArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingVmwareEngineFindingArgs.builder
       builder.vmwareEngineFindings(args.map(_(argsBuilder).build)*)
@@ -1113,7 +1113,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def machineSeriesAllocations(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingComputeEngineFindingMachineSeriesAllocationArgs.Builder]*):
+    inline def machineSeriesAllocations(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingComputeEngineFindingMachineSeriesAllocationArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingComputeEngineFindingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingComputeEngineFindingMachineSeriesAllocationArgs.builder
       builder.machineSeriesAllocations(args.map(_(argsBuilder).build)*)
@@ -1126,7 +1126,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def machineSeries(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingComputeEngineFindingMachineSeriesAllocationMachineSeriesArgs.Builder]*):
+    inline def machineSeries(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingComputeEngineFindingMachineSeriesAllocationMachineSeriesArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingComputeEngineFindingMachineSeriesAllocationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingComputeEngineFindingMachineSeriesAllocationMachineSeriesArgs.builder
       builder.machineSeries(args.map(_(argsBuilder).build)*)
@@ -1138,7 +1138,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def computeEnginePreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceComputeEnginePreferenceArgs.Builder]*):
+    inline def computeEnginePreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceComputeEnginePreferenceArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceComputeEnginePreferenceArgs.builder
       builder.computeEnginePreferences(args.map(_(argsBuilder).build)*)
@@ -1149,7 +1149,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def regionPreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceRegionPreferenceArgs.Builder]*):
+    inline def regionPreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceRegionPreferenceArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceRegionPreferenceArgs.builder
       builder.regionPreferences(args.map(_(argsBuilder).build)*)
@@ -1160,7 +1160,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def soleTenancyPreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceSoleTenancyPreferenceArgs.Builder]*):
+    inline def soleTenancyPreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceSoleTenancyPreferenceArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceSoleTenancyPreferenceArgs.builder
       builder.soleTenancyPreferences(args.map(_(argsBuilder).build)*)
@@ -1171,7 +1171,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vmwareEnginePreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceVmwareEnginePreferenceArgs.Builder]*):
+    inline def vmwareEnginePreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceVmwareEnginePreferenceArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceVmwareEnginePreferenceArgs.builder
       builder.vmwareEnginePreferences(args.map(_(argsBuilder).build)*)
@@ -1185,7 +1185,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def machinePreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceComputeEnginePreferenceMachinePreferenceArgs.Builder]*):
+    inline def machinePreferences(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceComputeEnginePreferenceMachinePreferenceArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceComputeEnginePreferenceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceComputeEnginePreferenceMachinePreferenceArgs.builder
       builder.machinePreferences(args.map(_(argsBuilder).build)*)
@@ -1198,7 +1198,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allowedMachineSeries(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceComputeEnginePreferenceMachinePreferenceAllowedMachineSeriesArgs.Builder]*):
+    inline def allowedMachineSeries(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceComputeEnginePreferenceMachinePreferenceAllowedMachineSeriesArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceComputeEnginePreferenceMachinePreferenceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceComputeEnginePreferenceMachinePreferenceAllowedMachineSeriesArgs.builder
       builder.allowedMachineSeries(args.map(_(argsBuilder).build)*)
@@ -1211,7 +1211,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeTypes(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceSoleTenancyPreferenceNodeTypeArgs.Builder]*):
+    inline def nodeTypes(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceSoleTenancyPreferenceNodeTypeArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceSoleTenancyPreferenceArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingMachinePreferenceSoleTenancyPreferenceNodeTypeArgs.builder
       builder.nodeTypes(args.map(_(argsBuilder).build)*)
@@ -1223,7 +1223,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeAllocations(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingSoleTenantFindingNodeAllocationArgs.Builder]*):
+    inline def nodeAllocations(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingSoleTenantFindingNodeAllocationArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingSoleTenantFindingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingSoleTenantFindingNodeAllocationArgs.builder
       builder.nodeAllocations(args.map(_(argsBuilder).build)*)
@@ -1235,7 +1235,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodes(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingSoleTenantFindingNodeAllocationNodeArgs.Builder]*):
+    inline def nodes(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingSoleTenantFindingNodeAllocationNodeArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingSoleTenantFindingNodeAllocationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingSoleTenantFindingNodeAllocationNodeArgs.builder
       builder.nodes(args.map(_(argsBuilder).build)*)
@@ -1247,7 +1247,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nodeAllocations(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingVmwareEngineFindingNodeAllocationArgs.Builder]*):
+    inline def nodeAllocations(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingVmwareEngineFindingNodeAllocationArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingVmwareEngineFindingArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingVmwareEngineFindingNodeAllocationArgs.builder
       builder.nodeAllocations(args.map(_(argsBuilder).build)*)
@@ -1259,7 +1259,7 @@ object migrationcenter_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vmwareNodes(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingVmwareEngineFindingNodeAllocationVmwareNodeArgs.Builder]*):
+    inline def vmwareNodes(args: Endofunction[com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingVmwareEngineFindingNodeAllocationVmwareNodeArgs.Builder]*):
         com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingVmwareEngineFindingNodeAllocationArgs.Builder =
       def argsBuilder = com.pulumi.gcp.migrationcenter.inputs.ReportSummaryGroupFindingPreferenceSetFindingVmwareEngineFindingNodeAllocationVmwareNodeArgs.builder
       builder.vmwareNodes(args.map(_(argsBuilder).build)*)

@@ -9,7 +9,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loggingConfig(args: Endofunction[com.pulumi.gcp.eventarc.inputs.GoogleApiSourceLoggingConfigArgs.Builder]):
+    inline def loggingConfig(args: Endofunction[com.pulumi.gcp.eventarc.inputs.GoogleApiSourceLoggingConfigArgs.Builder]):
         com.pulumi.gcp.eventarc.GoogleApiSourceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.GoogleApiSourceLoggingConfigArgs.builder
       builder.loggingConfig(args(argsBuilder).build)
@@ -21,7 +21,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loggingConfig(args: Endofunction[com.pulumi.gcp.eventarc.inputs.MessageBusLoggingConfigArgs.Builder]):
+    inline def loggingConfig(args: Endofunction[com.pulumi.gcp.eventarc.inputs.MessageBusLoggingConfigArgs.Builder]):
         com.pulumi.gcp.eventarc.MessageBusArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.MessageBusLoggingConfigArgs.builder
       builder.loggingConfig(args(argsBuilder).build)
@@ -33,7 +33,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinations(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineDestinationArgs.Builder]*):
+    inline def destinations(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineDestinationArgs.Builder]*):
         com.pulumi.gcp.eventarc.PipelineArgs.Builder =
       def argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineDestinationArgs.builder
       builder.destinations(args.map(_(argsBuilder).build)*)
@@ -43,7 +43,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inputPayloadFormat(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineInputPayloadFormatArgs.Builder]):
+    inline def inputPayloadFormat(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineInputPayloadFormatArgs.Builder]):
         com.pulumi.gcp.eventarc.PipelineArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineInputPayloadFormatArgs.builder
       builder.inputPayloadFormat(args(argsBuilder).build)
@@ -54,7 +54,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loggingConfig(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineLoggingConfigArgs.Builder]):
+    inline def loggingConfig(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineLoggingConfigArgs.Builder]):
         com.pulumi.gcp.eventarc.PipelineArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineLoggingConfigArgs.builder
       builder.loggingConfig(args(argsBuilder).build)
@@ -65,7 +65,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mediations(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineMediationArgs.Builder]*):
+    inline def mediations(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineMediationArgs.Builder]*):
         com.pulumi.gcp.eventarc.PipelineArgs.Builder =
       def argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineMediationArgs.builder
       builder.mediations(args.map(_(argsBuilder).build)*)
@@ -82,19 +82,19 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def retryPolicy(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineRetryPolicyArgs.Builder]):
+    inline def retryPolicy(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineRetryPolicyArgs.Builder]):
         com.pulumi.gcp.eventarc.PipelineArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.eventarc.PipelineIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.eventarc.PipelineIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.eventarc.PipelineIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.eventarc.PipelineIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -105,7 +105,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destination(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerDestinationArgs.Builder]):
+    inline def destination(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerDestinationArgs.Builder]):
         com.pulumi.gcp.eventarc.TriggerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.TriggerDestinationArgs.builder
       builder.destination(args(argsBuilder).build)
@@ -115,7 +115,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def matchingCriterias(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerMatchingCriteriaArgs.Builder]*):
+    inline def matchingCriterias(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerMatchingCriteriaArgs.Builder]*):
         com.pulumi.gcp.eventarc.TriggerArgs.Builder =
       def argsBuilder = com.pulumi.gcp.eventarc.inputs.TriggerMatchingCriteriaArgs.builder
       builder.matchingCriterias(args.map(_(argsBuilder).build)*)
@@ -126,7 +126,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def retryPolicy(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerRetryPolicyArgs.Builder]):
+    inline def retryPolicy(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerRetryPolicyArgs.Builder]):
         com.pulumi.gcp.eventarc.TriggerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.TriggerRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
@@ -136,7 +136,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transport(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerTransportArgs.Builder]):
+    inline def transport(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerTransportArgs.Builder]):
         com.pulumi.gcp.eventarc.TriggerArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.TriggerTransportArgs.builder
       builder.transport(args(argsBuilder).build)
@@ -148,7 +148,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loggingConfig(args: Endofunction[com.pulumi.gcp.eventarc.inputs.GoogleApiSourceLoggingConfigArgs.Builder]):
+    inline def loggingConfig(args: Endofunction[com.pulumi.gcp.eventarc.inputs.GoogleApiSourceLoggingConfigArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.GoogleApiSourceState.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.GoogleApiSourceLoggingConfigArgs.builder
       builder.loggingConfig(args(argsBuilder).build)
@@ -160,7 +160,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loggingConfig(args: Endofunction[com.pulumi.gcp.eventarc.inputs.MessageBusLoggingConfigArgs.Builder]):
+    inline def loggingConfig(args: Endofunction[com.pulumi.gcp.eventarc.inputs.MessageBusLoggingConfigArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.MessageBusState.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.MessageBusLoggingConfigArgs.builder
       builder.loggingConfig(args(argsBuilder).build)
@@ -171,7 +171,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authenticationConfig(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineDestinationAuthenticationConfigArgs.Builder]):
+    inline def authenticationConfig(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineDestinationAuthenticationConfigArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.PipelineDestinationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineDestinationAuthenticationConfigArgs.builder
       builder.authenticationConfig(args(argsBuilder).build)
@@ -181,7 +181,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpEndpoint(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineDestinationHttpEndpointArgs.Builder]):
+    inline def httpEndpoint(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineDestinationHttpEndpointArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.PipelineDestinationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineDestinationHttpEndpointArgs.builder
       builder.httpEndpoint(args(argsBuilder).build)
@@ -192,7 +192,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfig(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineDestinationNetworkConfigArgs.Builder]):
+    inline def networkConfig(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineDestinationNetworkConfigArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.PipelineDestinationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineDestinationNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)
@@ -202,7 +202,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def outputPayloadFormat(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineDestinationOutputPayloadFormatArgs.Builder]):
+    inline def outputPayloadFormat(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineDestinationOutputPayloadFormatArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.PipelineDestinationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineDestinationOutputPayloadFormatArgs.builder
       builder.outputPayloadFormat(args(argsBuilder).build)
@@ -216,7 +216,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def googleOidc(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineDestinationAuthenticationConfigGoogleOidcArgs.Builder]):
+    inline def googleOidc(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineDestinationAuthenticationConfigGoogleOidcArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.PipelineDestinationAuthenticationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineDestinationAuthenticationConfigGoogleOidcArgs.builder
       builder.googleOidc(args(argsBuilder).build)
@@ -229,7 +229,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def oauthToken(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineDestinationAuthenticationConfigOauthTokenArgs.Builder]):
+    inline def oauthToken(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineDestinationAuthenticationConfigOauthTokenArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.PipelineDestinationAuthenticationConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineDestinationAuthenticationConfigOauthTokenArgs.builder
       builder.oauthToken(args(argsBuilder).build)
@@ -240,7 +240,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def avro(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineDestinationOutputPayloadFormatAvroArgs.Builder]):
+    inline def avro(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineDestinationOutputPayloadFormatAvroArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.PipelineDestinationOutputPayloadFormatArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineDestinationOutputPayloadFormatAvroArgs.builder
       builder.avro(args(argsBuilder).build)
@@ -249,7 +249,7 @@ object eventarc_ext:
      * @param json The format of a JSON message payload.
      * @return builder
      */
-    def json(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineDestinationOutputPayloadFormatJsonArgs.Builder]):
+    inline def json(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineDestinationOutputPayloadFormatJsonArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.PipelineDestinationOutputPayloadFormatArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineDestinationOutputPayloadFormatJsonArgs.builder
       builder.json(args(argsBuilder).build)
@@ -259,19 +259,19 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def protobuf(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineDestinationOutputPayloadFormatProtobufArgs.Builder]):
+    inline def protobuf(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineDestinationOutputPayloadFormatProtobufArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.PipelineDestinationOutputPayloadFormatArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineDestinationOutputPayloadFormatProtobufArgs.builder
       builder.protobuf(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.eventarc.inputs.PipelineIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.PipelineIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.eventarc.inputs.PipelineIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.PipelineIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -282,7 +282,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def avro(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineInputPayloadFormatAvroArgs.Builder]):
+    inline def avro(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineInputPayloadFormatAvroArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.PipelineInputPayloadFormatArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineInputPayloadFormatAvroArgs.builder
       builder.avro(args(argsBuilder).build)
@@ -291,7 +291,7 @@ object eventarc_ext:
      * @param json The format of a JSON message payload.
      * @return builder
      */
-    def json(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineInputPayloadFormatJsonArgs.Builder]):
+    inline def json(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineInputPayloadFormatJsonArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.PipelineInputPayloadFormatArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineInputPayloadFormatJsonArgs.builder
       builder.json(args(argsBuilder).build)
@@ -301,7 +301,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def protobuf(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineInputPayloadFormatProtobufArgs.Builder]):
+    inline def protobuf(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineInputPayloadFormatProtobufArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.PipelineInputPayloadFormatArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineInputPayloadFormatProtobufArgs.builder
       builder.protobuf(args(argsBuilder).build)
@@ -312,7 +312,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transformation(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineMediationTransformationArgs.Builder]):
+    inline def transformation(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineMediationTransformationArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.PipelineMediationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineMediationTransformationArgs.builder
       builder.transformation(args(argsBuilder).build)
@@ -324,7 +324,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destinations(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineDestinationArgs.Builder]*):
+    inline def destinations(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineDestinationArgs.Builder]*):
         com.pulumi.gcp.eventarc.inputs.PipelineState.Builder =
       def argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineDestinationArgs.builder
       builder.destinations(args.map(_(argsBuilder).build)*)
@@ -334,7 +334,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inputPayloadFormat(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineInputPayloadFormatArgs.Builder]):
+    inline def inputPayloadFormat(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineInputPayloadFormatArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.PipelineState.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineInputPayloadFormatArgs.builder
       builder.inputPayloadFormat(args(argsBuilder).build)
@@ -345,7 +345,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def loggingConfig(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineLoggingConfigArgs.Builder]):
+    inline def loggingConfig(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineLoggingConfigArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.PipelineState.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineLoggingConfigArgs.builder
       builder.loggingConfig(args(argsBuilder).build)
@@ -356,7 +356,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mediations(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineMediationArgs.Builder]*):
+    inline def mediations(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineMediationArgs.Builder]*):
         com.pulumi.gcp.eventarc.inputs.PipelineState.Builder =
       def argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineMediationArgs.builder
       builder.mediations(args.map(_(argsBuilder).build)*)
@@ -373,7 +373,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def retryPolicy(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineRetryPolicyArgs.Builder]):
+    inline def retryPolicy(args: Endofunction[com.pulumi.gcp.eventarc.inputs.PipelineRetryPolicyArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.PipelineState.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.PipelineRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
@@ -384,7 +384,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cloudRunService(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerDestinationCloudRunServiceArgs.Builder]):
+    inline def cloudRunService(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerDestinationCloudRunServiceArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.TriggerDestinationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.TriggerDestinationCloudRunServiceArgs.builder
       builder.cloudRunService(args(argsBuilder).build)
@@ -394,7 +394,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gke(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerDestinationGkeArgs.Builder]):
+    inline def gke(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerDestinationGkeArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.TriggerDestinationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.TriggerDestinationGkeArgs.builder
       builder.gke(args(argsBuilder).build)
@@ -404,7 +404,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def httpEndpoint(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerDestinationHttpEndpointArgs.Builder]):
+    inline def httpEndpoint(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerDestinationHttpEndpointArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.TriggerDestinationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.TriggerDestinationHttpEndpointArgs.builder
       builder.httpEndpoint(args(argsBuilder).build)
@@ -414,7 +414,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def networkConfig(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerDestinationNetworkConfigArgs.Builder]):
+    inline def networkConfig(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerDestinationNetworkConfigArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.TriggerDestinationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.TriggerDestinationNetworkConfigArgs.builder
       builder.networkConfig(args(argsBuilder).build)
@@ -425,7 +425,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def destination(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerDestinationArgs.Builder]):
+    inline def destination(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerDestinationArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.TriggerState.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.TriggerDestinationArgs.builder
       builder.destination(args(argsBuilder).build)
@@ -435,7 +435,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def matchingCriterias(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerMatchingCriteriaArgs.Builder]*):
+    inline def matchingCriterias(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerMatchingCriteriaArgs.Builder]*):
         com.pulumi.gcp.eventarc.inputs.TriggerState.Builder =
       def argsBuilder = com.pulumi.gcp.eventarc.inputs.TriggerMatchingCriteriaArgs.builder
       builder.matchingCriterias(args.map(_(argsBuilder).build)*)
@@ -446,7 +446,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def retryPolicy(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerRetryPolicyArgs.Builder]):
+    inline def retryPolicy(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerRetryPolicyArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.TriggerState.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.TriggerRetryPolicyArgs.builder
       builder.retryPolicy(args(argsBuilder).build)
@@ -456,7 +456,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def transport(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerTransportArgs.Builder]):
+    inline def transport(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerTransportArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.TriggerState.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.TriggerTransportArgs.builder
       builder.transport(args(argsBuilder).build)
@@ -467,7 +467,7 @@ object eventarc_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pubsub(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerTransportPubsubArgs.Builder]):
+    inline def pubsub(args: Endofunction[com.pulumi.gcp.eventarc.inputs.TriggerTransportPubsubArgs.Builder]):
         com.pulumi.gcp.eventarc.inputs.TriggerTransportArgs.Builder =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.TriggerTransportPubsubArgs.builder
       builder.pubsub(args(argsBuilder).build)

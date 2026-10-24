@@ -7,7 +7,7 @@ object firestore_ext:
      * @param dailyRecurrence For a schedule that runs daily.
      * @return builder
      */
-    def dailyRecurrence(args: Endofunction[com.pulumi.gcp.firestore.inputs.BackupScheduleDailyRecurrenceArgs.Builder]):
+    inline def dailyRecurrence(args: Endofunction[com.pulumi.gcp.firestore.inputs.BackupScheduleDailyRecurrenceArgs.Builder]):
         com.pulumi.gcp.firestore.BackupScheduleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firestore.inputs.BackupScheduleDailyRecurrenceArgs.builder
       builder.dailyRecurrence(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object firestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def weeklyRecurrence(args: Endofunction[com.pulumi.gcp.firestore.inputs.BackupScheduleWeeklyRecurrenceArgs.Builder]):
+    inline def weeklyRecurrence(args: Endofunction[com.pulumi.gcp.firestore.inputs.BackupScheduleWeeklyRecurrenceArgs.Builder]):
         com.pulumi.gcp.firestore.BackupScheduleArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firestore.inputs.BackupScheduleWeeklyRecurrenceArgs.builder
       builder.weeklyRecurrence(args(argsBuilder).build)
@@ -28,7 +28,7 @@ object firestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def collectionGroupScope(args: Endofunction[com.pulumi.gcp.firestore.inputs.ChangeStreamCollectionGroupScopeArgs.Builder]):
+    inline def collectionGroupScope(args: Endofunction[com.pulumi.gcp.firestore.inputs.ChangeStreamCollectionGroupScopeArgs.Builder]):
         com.pulumi.gcp.firestore.ChangeStreamArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firestore.inputs.ChangeStreamCollectionGroupScopeArgs.builder
       builder.collectionGroupScope(args(argsBuilder).build)
@@ -37,7 +37,7 @@ object firestore_ext:
      * @param databaseScope Tracks changes across all collections in the database.
      * @return builder
      */
-    def databaseScope(args: Endofunction[com.pulumi.gcp.firestore.inputs.ChangeStreamDatabaseScopeArgs.Builder]):
+    inline def databaseScope(args: Endofunction[com.pulumi.gcp.firestore.inputs.ChangeStreamDatabaseScopeArgs.Builder]):
         com.pulumi.gcp.firestore.ChangeStreamArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firestore.inputs.ChangeStreamDatabaseScopeArgs.builder
       builder.databaseScope(args(argsBuilder).build)
@@ -50,7 +50,7 @@ object firestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cmekConfig(args: Endofunction[com.pulumi.gcp.firestore.inputs.DatabaseCmekConfigArgs.Builder]):
+    inline def cmekConfig(args: Endofunction[com.pulumi.gcp.firestore.inputs.DatabaseCmekConfigArgs.Builder]):
         com.pulumi.gcp.firestore.DatabaseArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firestore.inputs.DatabaseCmekConfigArgs.builder
       builder.cmekConfig(args(argsBuilder).build)
@@ -64,7 +64,7 @@ object firestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def indexConfig(args: Endofunction[com.pulumi.gcp.firestore.inputs.FieldIndexConfigArgs.Builder]):
+    inline def indexConfig(args: Endofunction[com.pulumi.gcp.firestore.inputs.FieldIndexConfigArgs.Builder]):
         com.pulumi.gcp.firestore.FieldArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firestore.inputs.FieldIndexConfigArgs.builder
       builder.indexConfig(args(argsBuilder).build)
@@ -74,7 +74,7 @@ object firestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ttlConfig(args: Endofunction[com.pulumi.gcp.firestore.inputs.FieldTtlConfigArgs.Builder]):
+    inline def ttlConfig(args: Endofunction[com.pulumi.gcp.firestore.inputs.FieldTtlConfigArgs.Builder]):
         com.pulumi.gcp.firestore.FieldArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firestore.inputs.FieldTtlConfigArgs.builder
       builder.ttlConfig(args(argsBuilder).build)
@@ -91,7 +91,7 @@ object firestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fields(args: Endofunction[com.pulumi.gcp.firestore.inputs.IndexFieldArgs.Builder]*):
+    inline def fields(args: Endofunction[com.pulumi.gcp.firestore.inputs.IndexFieldArgs.Builder]*):
         com.pulumi.gcp.firestore.IndexArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firestore.inputs.IndexFieldArgs.builder
       builder.fields(args.map(_(argsBuilder).build)*)
@@ -101,7 +101,7 @@ object firestore_ext:
      * @param dailyRecurrence For a schedule that runs daily.
      * @return builder
      */
-    def dailyRecurrence(args: Endofunction[com.pulumi.gcp.firestore.inputs.BackupScheduleDailyRecurrenceArgs.Builder]):
+    inline def dailyRecurrence(args: Endofunction[com.pulumi.gcp.firestore.inputs.BackupScheduleDailyRecurrenceArgs.Builder]):
         com.pulumi.gcp.firestore.inputs.BackupScheduleState.Builder =
       val argsBuilder = com.pulumi.gcp.firestore.inputs.BackupScheduleDailyRecurrenceArgs.builder
       builder.dailyRecurrence(args(argsBuilder).build)
@@ -111,7 +111,7 @@ object firestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def weeklyRecurrence(args: Endofunction[com.pulumi.gcp.firestore.inputs.BackupScheduleWeeklyRecurrenceArgs.Builder]):
+    inline def weeklyRecurrence(args: Endofunction[com.pulumi.gcp.firestore.inputs.BackupScheduleWeeklyRecurrenceArgs.Builder]):
         com.pulumi.gcp.firestore.inputs.BackupScheduleState.Builder =
       val argsBuilder = com.pulumi.gcp.firestore.inputs.BackupScheduleWeeklyRecurrenceArgs.builder
       builder.weeklyRecurrence(args(argsBuilder).build)
@@ -122,7 +122,7 @@ object firestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def collectionGroupScope(args: Endofunction[com.pulumi.gcp.firestore.inputs.ChangeStreamCollectionGroupScopeArgs.Builder]):
+    inline def collectionGroupScope(args: Endofunction[com.pulumi.gcp.firestore.inputs.ChangeStreamCollectionGroupScopeArgs.Builder]):
         com.pulumi.gcp.firestore.inputs.ChangeStreamState.Builder =
       val argsBuilder = com.pulumi.gcp.firestore.inputs.ChangeStreamCollectionGroupScopeArgs.builder
       builder.collectionGroupScope(args(argsBuilder).build)
@@ -131,7 +131,7 @@ object firestore_ext:
      * @param databaseScope Tracks changes across all collections in the database.
      * @return builder
      */
-    def databaseScope(args: Endofunction[com.pulumi.gcp.firestore.inputs.ChangeStreamDatabaseScopeArgs.Builder]):
+    inline def databaseScope(args: Endofunction[com.pulumi.gcp.firestore.inputs.ChangeStreamDatabaseScopeArgs.Builder]):
         com.pulumi.gcp.firestore.inputs.ChangeStreamState.Builder =
       val argsBuilder = com.pulumi.gcp.firestore.inputs.ChangeStreamDatabaseScopeArgs.builder
       builder.databaseScope(args(argsBuilder).build)
@@ -144,7 +144,7 @@ object firestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def cmekConfig(args: Endofunction[com.pulumi.gcp.firestore.inputs.DatabaseCmekConfigArgs.Builder]):
+    inline def cmekConfig(args: Endofunction[com.pulumi.gcp.firestore.inputs.DatabaseCmekConfigArgs.Builder]):
         com.pulumi.gcp.firestore.inputs.DatabaseState.Builder =
       val argsBuilder = com.pulumi.gcp.firestore.inputs.DatabaseCmekConfigArgs.builder
       builder.cmekConfig(args(argsBuilder).build)
@@ -155,7 +155,7 @@ object firestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def indexes(args: Endofunction[com.pulumi.gcp.firestore.inputs.FieldIndexConfigIndexArgs.Builder]*):
+    inline def indexes(args: Endofunction[com.pulumi.gcp.firestore.inputs.FieldIndexConfigIndexArgs.Builder]*):
         com.pulumi.gcp.firestore.inputs.FieldIndexConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firestore.inputs.FieldIndexConfigIndexArgs.builder
       builder.indexes(args.map(_(argsBuilder).build)*)
@@ -169,7 +169,7 @@ object firestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def indexConfig(args: Endofunction[com.pulumi.gcp.firestore.inputs.FieldIndexConfigArgs.Builder]):
+    inline def indexConfig(args: Endofunction[com.pulumi.gcp.firestore.inputs.FieldIndexConfigArgs.Builder]):
         com.pulumi.gcp.firestore.inputs.FieldState.Builder =
       val argsBuilder = com.pulumi.gcp.firestore.inputs.FieldIndexConfigArgs.builder
       builder.indexConfig(args(argsBuilder).build)
@@ -179,7 +179,7 @@ object firestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ttlConfig(args: Endofunction[com.pulumi.gcp.firestore.inputs.FieldTtlConfigArgs.Builder]):
+    inline def ttlConfig(args: Endofunction[com.pulumi.gcp.firestore.inputs.FieldTtlConfigArgs.Builder]):
         com.pulumi.gcp.firestore.inputs.FieldState.Builder =
       val argsBuilder = com.pulumi.gcp.firestore.inputs.FieldTtlConfigArgs.builder
       builder.ttlConfig(args(argsBuilder).build)
@@ -191,7 +191,7 @@ object firestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def searchConfig(args: Endofunction[com.pulumi.gcp.firestore.inputs.IndexFieldSearchConfigArgs.Builder]):
+    inline def searchConfig(args: Endofunction[com.pulumi.gcp.firestore.inputs.IndexFieldSearchConfigArgs.Builder]):
         com.pulumi.gcp.firestore.inputs.IndexFieldArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firestore.inputs.IndexFieldSearchConfigArgs.builder
       builder.searchConfig(args(argsBuilder).build)
@@ -202,7 +202,7 @@ object firestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def vectorConfig(args: Endofunction[com.pulumi.gcp.firestore.inputs.IndexFieldVectorConfigArgs.Builder]):
+    inline def vectorConfig(args: Endofunction[com.pulumi.gcp.firestore.inputs.IndexFieldVectorConfigArgs.Builder]):
         com.pulumi.gcp.firestore.inputs.IndexFieldArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firestore.inputs.IndexFieldVectorConfigArgs.builder
       builder.vectorConfig(args(argsBuilder).build)
@@ -213,7 +213,7 @@ object firestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def geoSpec(args: Endofunction[com.pulumi.gcp.firestore.inputs.IndexFieldSearchConfigGeoSpecArgs.Builder]):
+    inline def geoSpec(args: Endofunction[com.pulumi.gcp.firestore.inputs.IndexFieldSearchConfigGeoSpecArgs.Builder]):
         com.pulumi.gcp.firestore.inputs.IndexFieldSearchConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firestore.inputs.IndexFieldSearchConfigGeoSpecArgs.builder
       builder.geoSpec(args(argsBuilder).build)
@@ -223,7 +223,7 @@ object firestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def textSpec(args: Endofunction[com.pulumi.gcp.firestore.inputs.IndexFieldSearchConfigTextSpecArgs.Builder]):
+    inline def textSpec(args: Endofunction[com.pulumi.gcp.firestore.inputs.IndexFieldSearchConfigTextSpecArgs.Builder]):
         com.pulumi.gcp.firestore.inputs.IndexFieldSearchConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firestore.inputs.IndexFieldSearchConfigTextSpecArgs.builder
       builder.textSpec(args(argsBuilder).build)
@@ -234,7 +234,7 @@ object firestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def indexSpecs(args: Endofunction[com.pulumi.gcp.firestore.inputs.IndexFieldSearchConfigTextSpecIndexSpecArgs.Builder]*):
+    inline def indexSpecs(args: Endofunction[com.pulumi.gcp.firestore.inputs.IndexFieldSearchConfigTextSpecIndexSpecArgs.Builder]*):
         com.pulumi.gcp.firestore.inputs.IndexFieldSearchConfigTextSpecArgs.Builder =
       def argsBuilder = com.pulumi.gcp.firestore.inputs.IndexFieldSearchConfigTextSpecIndexSpecArgs.builder
       builder.indexSpecs(args.map(_(argsBuilder).build)*)
@@ -244,7 +244,7 @@ object firestore_ext:
      * @param flat Indicates the vector index is a flat index.
      * @return builder
      */
-    def flat(args: Endofunction[com.pulumi.gcp.firestore.inputs.IndexFieldVectorConfigFlatArgs.Builder]):
+    inline def flat(args: Endofunction[com.pulumi.gcp.firestore.inputs.IndexFieldVectorConfigFlatArgs.Builder]):
         com.pulumi.gcp.firestore.inputs.IndexFieldVectorConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.firestore.inputs.IndexFieldVectorConfigFlatArgs.builder
       builder.flat(args(argsBuilder).build)
@@ -261,7 +261,7 @@ object firestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fields(args: Endofunction[com.pulumi.gcp.firestore.inputs.IndexFieldArgs.Builder]*):
+    inline def fields(args: Endofunction[com.pulumi.gcp.firestore.inputs.IndexFieldArgs.Builder]*):
         com.pulumi.gcp.firestore.inputs.IndexState.Builder =
       def argsBuilder = com.pulumi.gcp.firestore.inputs.IndexFieldArgs.builder
       builder.fields(args.map(_(argsBuilder).build)*)
@@ -272,7 +272,7 @@ object firestore_ext:
      * Structure is documented below.
      * @return builder
      */
-    def resourceIdentities(args: Endofunction[com.pulumi.gcp.firestore.inputs.UserCredsResourceIdentityArgs.Builder]*):
+    inline def resourceIdentities(args: Endofunction[com.pulumi.gcp.firestore.inputs.UserCredsResourceIdentityArgs.Builder]*):
         com.pulumi.gcp.firestore.inputs.UserCredsState.Builder =
       def argsBuilder = com.pulumi.gcp.firestore.inputs.UserCredsResourceIdentityArgs.builder
       builder.resourceIdentities(args.map(_(argsBuilder).build)*)

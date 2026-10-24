@@ -7,7 +7,7 @@ object s3outposts_ext:
      * @param networkInterfaces Set of nested attributes for associated Elastic Network Interfaces (ENIs).
      * @return builder
      */
-    def networkInterfaces(args: Endofunction[com.pulumi.aws.s3outposts.inputs.EndpointNetworkInterfaceArgs.Builder]*):
+    inline def networkInterfaces(args: Endofunction[com.pulumi.aws.s3outposts.inputs.EndpointNetworkInterfaceArgs.Builder]*):
         com.pulumi.aws.s3outposts.inputs.EndpointState.Builder =
       def argsBuilder = com.pulumi.aws.s3outposts.inputs.EndpointNetworkInterfaceArgs.builder
       builder.networkInterfaces(args.map(_(argsBuilder).build)*)

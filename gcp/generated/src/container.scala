@@ -16,7 +16,7 @@ object container:
    *     * [API reference](https://cloud.google.com/anthos/clusters/docs/multi-cloud/reference/rest/v1/projects.locations.attachedClusters)
    *     * [Multicloud overview](https://cloud.google.com/anthos/clusters/docs/multi-cloud)
    */
-  def AttachedCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AttachedCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.container.AttachedClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.container.AttachedClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -32,7 +32,7 @@ object container:
    * For more information, see:
    * * [Multicloud overview](https://cloud.google.com/kubernetes-engine/multi-cloud/docs)
    */
-  def AwsCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AwsCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.container.AwsClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.container.AwsClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -48,7 +48,7 @@ object container:
    * For more information, see:
    * * [Multicloud overview](https://cloud.google.com/kubernetes-engine/multi-cloud/docs)
    */
-  def AwsNodePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AwsNodePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.container.AwsNodePoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.container.AwsNodePoolArgs.builder
     conf.logicalName2physicalName(name) match
@@ -64,7 +64,7 @@ object container:
    * For more information, see:
    * * [Multicloud overview](https://cloud.google.com/kubernetes-engine/multi-cloud/docs)
    */
-  def AzureClient(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AzureClient(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.container.AzureClientArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.container.AzureClientArgs.builder
     conf.logicalName2physicalName(name) match
@@ -80,7 +80,7 @@ object container:
    * For more information, see:
    * * [Multicloud overview](https://cloud.google.com/kubernetes-engine/multi-cloud/docs)
    */
-  def AzureCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AzureCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.container.AzureClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.container.AzureClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -96,7 +96,7 @@ object container:
    * For more information, see:
    * * [Multicloud overview](https://cloud.google.com/kubernetes-engine/multi-cloud/docs)
    */
-  def AzureNodePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AzureNodePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.container.AzureNodePoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.container.AzureNodePoolArgs.builder
     conf.logicalName2physicalName(name) match
@@ -121,7 +121,7 @@ object container:
    * &gt; All arguments and attributes (including certificate outputs) will be stored in the raw state as
    * plaintext. Read more about sensitive data in state.
    */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.container.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.container.ClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -311,7 +311,7 @@ object container:
    * the cluster control plane. For more information see [the official documentation](https://cloud.google.com/container-engine/docs/node-pools)
    * and [the API reference](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1beta1/projects.locations.clusters.nodePools).
    */
-  def NodePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NodePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.container.NodePoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.container.NodePoolArgs.builder
     conf.logicalName2physicalName(name) match
@@ -328,7 +328,7 @@ object container:
    * 
    * This resource can be used to ensure that the GCS bucket exists prior to assigning permissions. For more information see the [access control page](https://cloud.google.com/container-registry/docs/access-control) for GCR.
    */
-  def Registry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Registry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.container.RegistryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.container.RegistryArgs.builder
     com.pulumi.gcp.container.Registry(name,

@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object directconnect:
   /** Provides a Direct Connect BGP peer resource. */
-  def BgpPeer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BgpPeer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directconnect.BgpPeerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.directconnect.BgpPeerArgs.builder
     com.pulumi.aws.directconnect.BgpPeer(name,
@@ -15,7 +15,7 @@ object directconnect:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Connection of Direct Connect. */
-  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directconnect.ConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.ConnectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -33,7 +33,7 @@ object directconnect:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Associates a Direct Connect Connection with a LAG. */
-  def ConnectionAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConnectionAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directconnect.ConnectionAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.directconnect.ConnectionAssociationArgs.builder
     com.pulumi.aws.directconnect.ConnectionAssociation(name,
@@ -41,7 +41,7 @@ object directconnect:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a confirmation of the creation of the specified hosted connection on an interconnect. */
-  def ConnectionConfirmation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConnectionConfirmation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directconnect.ConnectionConfirmationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.directconnect.ConnectionConfirmationArgs.builder
     com.pulumi.aws.directconnect.ConnectionConfirmation(name,
@@ -150,7 +150,7 @@ object directconnect:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides a Direct Connect Gateway. */
-  def Gateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Gateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directconnect.GatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.GatewayArgs.builder
     conf.logicalName2physicalName(name) match
@@ -174,7 +174,7 @@ object directconnect:
    * in the AWS account that owns the VGW or transit gateway and then accept the proposal in the AWS account that owns the Direct Connect Gateway
    * by creating an `aws.directconnect.GatewayAssociation` resource with the `proposalId` and `associatedGatewayOwnerAccountId` attributes set.
    */
-  def GatewayAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GatewayAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directconnect.GatewayAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.directconnect.GatewayAssociationArgs.builder
     com.pulumi.aws.directconnect.GatewayAssociation(name,
@@ -182,7 +182,7 @@ object directconnect:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Direct Connect Gateway Association Proposal, typically for enabling cross-account associations. For single account associations, see the `aws.directconnect.GatewayAssociation` resource. */
-  def GatewayAssociationProposal(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GatewayAssociationProposal(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directconnect.GatewayAssociationProposalArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.directconnect.GatewayAssociationProposalArgs.builder
     com.pulumi.aws.directconnect.GatewayAssociationProposal(name,
@@ -190,7 +190,7 @@ object directconnect:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a hosted connection on the specified interconnect or a link aggregation group (LAG) of interconnects. Intended for use by AWS Direct Connect Partners only. */
-  def HostedConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HostedConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directconnect.HostedConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.HostedConnectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -204,7 +204,7 @@ object directconnect:
    * Provides a Direct Connect hosted private virtual interface resource. This resource represents the allocator&#39;s side of the hosted virtual interface.
    * A hosted virtual interface is a virtual interface that is owned by another AWS account.
    */
-  def HostedPrivateVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HostedPrivateVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directconnect.HostedPrivateVirtualInterfaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.HostedPrivateVirtualInterfaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -218,7 +218,7 @@ object directconnect:
    * Provides a resource to manage the accepter&#39;s side of a Direct Connect hosted private virtual interface.
    * This resource accepts ownership of a private virtual interface created by another AWS account.
    */
-  def HostedPrivateVirtualInterfaceAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HostedPrivateVirtualInterfaceAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directconnect.HostedPrivateVirtualInterfaceAccepterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.HostedPrivateVirtualInterfaceAccepterArgs.builder
     argsBuilder = args(argsBuilder)
@@ -236,7 +236,7 @@ object directconnect:
    * Provides a Direct Connect hosted public virtual interface resource. This resource represents the allocator&#39;s side of the hosted virtual interface.
    * A hosted virtual interface is a virtual interface that is owned by another AWS account.
    */
-  def HostedPublicVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HostedPublicVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directconnect.HostedPublicVirtualInterfaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.HostedPublicVirtualInterfaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -250,7 +250,7 @@ object directconnect:
    * Provides a resource to manage the accepter&#39;s side of a Direct Connect hosted public virtual interface.
    * This resource accepts ownership of a public virtual interface created by another AWS account.
    */
-  def HostedPublicVirtualInterfaceAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HostedPublicVirtualInterfaceAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directconnect.HostedPublicVirtualInterfaceAccepterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.HostedPublicVirtualInterfaceAccepterArgs.builder
     argsBuilder = args(argsBuilder)
@@ -269,7 +269,7 @@ object directconnect:
    * This resource represents the allocator&#39;s side of the hosted virtual interface.
    * A hosted virtual interface is a virtual interface that is owned by another AWS account.
    */
-  def HostedTransitVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HostedTransitVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directconnect.HostedTransitVirtualInterfaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.HostedTransitVirtualInterfaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -285,7 +285,7 @@ object directconnect:
    * 
    * &gt; **NOTE:** AWS allows a Direct Connect hosted transit virtual interface to be deleted from either the allocator&#39;s or accepter&#39;s side. However, this provider only allows the Direct Connect hosted transit virtual interface to be deleted from the allocator&#39;s side by removing the corresponding `aws.directconnect.HostedTransitVirtualInterface` resource from your configuration. Removing a `aws.directconnect.HostedTransitVirtualInterfaceAcceptor` resource from your configuration will remove it from your statefile and management, **but will not delete the Direct Connect virtual interface.**
    */
-  def HostedTransitVirtualInterfaceAcceptor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HostedTransitVirtualInterfaceAcceptor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directconnect.HostedTransitVirtualInterfaceAcceptorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.HostedTransitVirtualInterfaceAcceptorArgs.builder
     argsBuilder = args(argsBuilder)
@@ -304,7 +304,7 @@ object directconnect:
    * 
    * &gt; *NOTE:* When creating a LAG, if no existing connection is specified, Direct Connect will create a connection and this provider will remove this unmanaged connection during resource creation.
    */
-  def LinkAggregationGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LinkAggregationGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directconnect.LinkAggregationGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.LinkAggregationGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -329,7 +329,7 @@ object directconnect:
    * &gt; **Note:** All arguments including `ckn` and `cak` will be stored in the raw state as plain-text.
    * **Note:** The `secretArn` argument can only be used to reference a previously created MACSec key. You cannot associate a Secrets Manager secret created outside of the `aws.directconnect.MacsecKeyAssociation` resource.
    */
-  def MacsecKeyAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MacsecKeyAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directconnect.MacsecKeyAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.directconnect.MacsecKeyAssociationArgs.builder
     com.pulumi.aws.directconnect.MacsecKeyAssociation(name,
@@ -337,7 +337,7 @@ object directconnect:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Direct Connect private virtual interface resource. */
-  def PrivateVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PrivateVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directconnect.PrivateVirtualInterfaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.PrivateVirtualInterfaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -355,7 +355,7 @@ object directconnect:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Direct Connect public virtual interface resource. */
-  def PublicVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PublicVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directconnect.PublicVirtualInterfaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.PublicVirtualInterfaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -376,7 +376,7 @@ object directconnect:
    * Provides a Direct Connect transit virtual interface resource.
    * A transit virtual interface is a VLAN that transports traffic from a Direct Connect gateway to one or more transit gateways.
    */
-  def TransitVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TransitVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.directconnect.TransitVirtualInterfaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.TransitVirtualInterfaceArgs.builder
     conf.logicalName2physicalName(name) match

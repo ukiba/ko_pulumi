@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object devcenter:
   /** Manages a Dev Center Attached Network. */
-  def AttachedNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AttachedNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.devcenter.AttachedNetworkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.devcenter.AttachedNetworkArgs.builder
     conf.logicalName2physicalName(name) match
@@ -18,7 +18,7 @@ object devcenter:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Dev Center Catalog. */
-  def Catalog(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Catalog(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.devcenter.CatalogArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.devcenter.CatalogArgs.builder
     conf.logicalName2physicalName(name) match
@@ -29,7 +29,7 @@ object devcenter:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Dev Center Dev Box Definition. */
-  def DevBoxDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DevBoxDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.devcenter.DevBoxDefinitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.devcenter.DevBoxDefinitionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -47,7 +47,7 @@ object devcenter:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Dev Center. */
-  def DevCenter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DevCenter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.devcenter.DevCenterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.devcenter.DevCenterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -242,7 +242,7 @@ object devcenter:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Dev Center Environment Type. */
-  def EnvironmentType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EnvironmentType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.devcenter.EnvironmentTypeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.devcenter.EnvironmentTypeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -260,7 +260,7 @@ object devcenter:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Dev Center Gallery. */
-  def Gallery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Gallery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.devcenter.GalleryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.devcenter.GalleryArgs.builder
     conf.logicalName2physicalName(name) match
@@ -271,7 +271,7 @@ object devcenter:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Managed DevOps Pool. */
-  def ManagedDevOpsPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedDevOpsPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.devcenter.ManagedDevOpsPoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.devcenter.ManagedDevOpsPoolArgs.builder
     conf.logicalName2physicalName(name) match
@@ -289,7 +289,7 @@ object devcenter:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Dev Center Network Connection. */
-  def NetworkConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NetworkConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.devcenter.NetworkConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.devcenter.NetworkConnectionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -307,7 +307,7 @@ object devcenter:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Dev Center Project. */
-  def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.devcenter.ProjectArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.devcenter.ProjectArgs.builder
     conf.logicalName2physicalName(name) match
@@ -325,7 +325,7 @@ object devcenter:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Dev Center Project Environment Type. */
-  def ProjectEnvironmentType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProjectEnvironmentType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.devcenter.ProjectEnvironmentTypeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.devcenter.ProjectEnvironmentTypeArgs.builder
     conf.logicalName2physicalName(name) match
@@ -343,7 +343,7 @@ object devcenter:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Dev Center Project Pool. */
-  def ProjectPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ProjectPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.devcenter.ProjectPoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.devcenter.ProjectPoolArgs.builder
     conf.logicalName2physicalName(name) match

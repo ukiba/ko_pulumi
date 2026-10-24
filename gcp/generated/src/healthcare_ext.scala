@@ -3,13 +3,13 @@ package gcp
 
 object healthcare_ext:
   extension (builder: com.pulumi.gcp.healthcare.ConsentStoreIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.ConsentStoreIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.ConsentStoreIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.healthcare.ConsentStoreIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.ConsentStoreIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.healthcare.ConsentStoreIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.ConsentStoreIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.ConsentStoreIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.healthcare.ConsentStoreIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.ConsentStoreIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -20,19 +20,19 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DatasetEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DatasetEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.healthcare.DatasetArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.DatasetEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.healthcare.DatasetIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DatasetIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DatasetIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.healthcare.DatasetIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.DatasetIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.healthcare.DatasetIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DatasetIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DatasetIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.healthcare.DatasetIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.DatasetIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -43,7 +43,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def notificationConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DicomStoreNotificationConfigArgs.Builder]):
+    inline def notificationConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DicomStoreNotificationConfigArgs.Builder]):
         com.pulumi.gcp.healthcare.DicomStoreArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.DicomStoreNotificationConfigArgs.builder
       builder.notificationConfig(args(argsBuilder).build)
@@ -55,19 +55,19 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def streamConfigs(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DicomStoreStreamConfigArgs.Builder]*):
+    inline def streamConfigs(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DicomStoreStreamConfigArgs.Builder]*):
         com.pulumi.gcp.healthcare.DicomStoreArgs.Builder =
       def argsBuilder = com.pulumi.gcp.healthcare.inputs.DicomStoreStreamConfigArgs.builder
       builder.streamConfigs(args.map(_(argsBuilder).build)*)
 
   extension (builder: com.pulumi.gcp.healthcare.DicomStoreIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DicomStoreIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DicomStoreIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.healthcare.DicomStoreIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.DicomStoreIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.healthcare.DicomStoreIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DicomStoreIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DicomStoreIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.healthcare.DicomStoreIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.DicomStoreIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -79,7 +79,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def consentConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreConsentConfigArgs.Builder]):
+    inline def consentConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreConsentConfigArgs.Builder]):
         com.pulumi.gcp.healthcare.FhirStoreArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.FhirStoreConsentConfigArgs.builder
       builder.consentConfig(args(argsBuilder).build)
@@ -93,7 +93,7 @@ object healthcare_ext:
      * @return builder
      * @deprecated `notificationConfig` is deprecated and will be removed in a future major release. Use `notificationConfigs` instead.
      */
-    @deprecated("`notificationConfig` is deprecated and will be removed in a future major release. Use `notificationConfigs` instead.") def notificationConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreNotificationConfigArgs.Builder]):
+    @deprecated("`notificationConfig` is deprecated and will be removed in a future major release. Use `notificationConfigs` instead.") inline def notificationConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreNotificationConfigArgs.Builder]):
         com.pulumi.gcp.healthcare.FhirStoreArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.FhirStoreNotificationConfigArgs.builder
       builder.notificationConfig(args(argsBuilder).build)
@@ -103,7 +103,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def notificationConfigs(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreNotificationConfigArgs.Builder]*):
+    inline def notificationConfigs(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreNotificationConfigArgs.Builder]*):
         com.pulumi.gcp.healthcare.FhirStoreArgs.Builder =
       def argsBuilder = com.pulumi.gcp.healthcare.inputs.FhirStoreNotificationConfigArgs.builder
       builder.notificationConfigs(args.map(_(argsBuilder).build)*)
@@ -118,7 +118,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def streamConfigs(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreStreamConfigArgs.Builder]*):
+    inline def streamConfigs(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreStreamConfigArgs.Builder]*):
         com.pulumi.gcp.healthcare.FhirStoreArgs.Builder =
       def argsBuilder = com.pulumi.gcp.healthcare.inputs.FhirStoreStreamConfigArgs.builder
       builder.streamConfigs(args.map(_(argsBuilder).build)*)
@@ -128,19 +128,19 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def validationConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreValidationConfigArgs.Builder]):
+    inline def validationConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreValidationConfigArgs.Builder]):
         com.pulumi.gcp.healthcare.FhirStoreArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.FhirStoreValidationConfigArgs.builder
       builder.validationConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.healthcare.FhirStoreIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.healthcare.FhirStoreIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.FhirStoreIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.healthcare.FhirStoreIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.healthcare.FhirStoreIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.FhirStoreIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -155,7 +155,7 @@ object healthcare_ext:
      * @return builder
      * @deprecated `notificationConfig` is deprecated and will be removed in a future major release. Use `notificationConfigs` instead.
      */
-    @deprecated("`notificationConfig` is deprecated and will be removed in a future major release. Use `notificationConfigs` instead.") def notificationConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.Hl7StoreNotificationConfigArgs.Builder]):
+    @deprecated("`notificationConfig` is deprecated and will be removed in a future major release. Use `notificationConfigs` instead.") inline def notificationConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.Hl7StoreNotificationConfigArgs.Builder]):
         com.pulumi.gcp.healthcare.Hl7StoreArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.Hl7StoreNotificationConfigArgs.builder
       builder.notificationConfig(args(argsBuilder).build)
@@ -167,7 +167,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def notificationConfigs(args: Endofunction[com.pulumi.gcp.healthcare.inputs.Hl7StoreNotificationConfigsArgs.Builder]*):
+    inline def notificationConfigs(args: Endofunction[com.pulumi.gcp.healthcare.inputs.Hl7StoreNotificationConfigsArgs.Builder]*):
         com.pulumi.gcp.healthcare.Hl7StoreArgs.Builder =
       def argsBuilder = com.pulumi.gcp.healthcare.inputs.Hl7StoreNotificationConfigsArgs.builder
       builder.notificationConfigs(args.map(_(argsBuilder).build)*)
@@ -177,19 +177,19 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parserConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.Hl7StoreParserConfigArgs.Builder]):
+    inline def parserConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.Hl7StoreParserConfigArgs.Builder]):
         com.pulumi.gcp.healthcare.Hl7StoreArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.Hl7StoreParserConfigArgs.builder
       builder.parserConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.healthcare.Hl7StoreIamBindingArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.Hl7StoreIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.Hl7StoreIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.healthcare.Hl7StoreIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.Hl7StoreIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.healthcare.Hl7StoreIamMemberArgs.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.Hl7StoreIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.Hl7StoreIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.healthcare.Hl7StoreIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.Hl7StoreIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -200,7 +200,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def backfillPipelineJob(args: Endofunction[com.pulumi.gcp.healthcare.inputs.PipelineJobBackfillPipelineJobArgs.Builder]):
+    inline def backfillPipelineJob(args: Endofunction[com.pulumi.gcp.healthcare.inputs.PipelineJobBackfillPipelineJobArgs.Builder]):
         com.pulumi.gcp.healthcare.PipelineJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.PipelineJobBackfillPipelineJobArgs.builder
       builder.backfillPipelineJob(args(argsBuilder).build)
@@ -210,7 +210,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mappingPipelineJob(args: Endofunction[com.pulumi.gcp.healthcare.inputs.PipelineJobMappingPipelineJobArgs.Builder]):
+    inline def mappingPipelineJob(args: Endofunction[com.pulumi.gcp.healthcare.inputs.PipelineJobMappingPipelineJobArgs.Builder]):
         com.pulumi.gcp.healthcare.PipelineJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.PipelineJobMappingPipelineJobArgs.builder
       builder.mappingPipelineJob(args(argsBuilder).build)
@@ -220,7 +220,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def reconciliationPipelineJob(args: Endofunction[com.pulumi.gcp.healthcare.inputs.PipelineJobReconciliationPipelineJobArgs.Builder]):
+    inline def reconciliationPipelineJob(args: Endofunction[com.pulumi.gcp.healthcare.inputs.PipelineJobReconciliationPipelineJobArgs.Builder]):
         com.pulumi.gcp.healthcare.PipelineJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.PipelineJobReconciliationPipelineJobArgs.builder
       builder.reconciliationPipelineJob(args(argsBuilder).build)
@@ -231,31 +231,31 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def settings(args: Endofunction[com.pulumi.gcp.healthcare.inputs.WorkspaceSettingsArgs.Builder]):
+    inline def settings(args: Endofunction[com.pulumi.gcp.healthcare.inputs.WorkspaceSettingsArgs.Builder]):
         com.pulumi.gcp.healthcare.WorkspaceArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.WorkspaceSettingsArgs.builder
       builder.settings(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.healthcare.inputs.ConsentStoreIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.ConsentStoreIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.ConsentStoreIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.ConsentStoreIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.ConsentStoreIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.healthcare.inputs.ConsentStoreIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.ConsentStoreIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.ConsentStoreIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.ConsentStoreIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.ConsentStoreIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.healthcare.inputs.DatasetIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DatasetIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DatasetIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.DatasetIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.DatasetIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.healthcare.inputs.DatasetIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DatasetIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DatasetIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.DatasetIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.DatasetIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -266,19 +266,19 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DatasetEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DatasetEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.DatasetState.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.DatasetEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.healthcare.inputs.DicomStoreIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DicomStoreIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DicomStoreIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.DicomStoreIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.DicomStoreIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.healthcare.inputs.DicomStoreIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DicomStoreIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DicomStoreIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.DicomStoreIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.DicomStoreIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -289,7 +289,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def notificationConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DicomStoreNotificationConfigArgs.Builder]):
+    inline def notificationConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DicomStoreNotificationConfigArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.DicomStoreState.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.DicomStoreNotificationConfigArgs.builder
       builder.notificationConfig(args(argsBuilder).build)
@@ -301,7 +301,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def streamConfigs(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DicomStoreStreamConfigArgs.Builder]*):
+    inline def streamConfigs(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DicomStoreStreamConfigArgs.Builder]*):
         com.pulumi.gcp.healthcare.inputs.DicomStoreState.Builder =
       def argsBuilder = com.pulumi.gcp.healthcare.inputs.DicomStoreStreamConfigArgs.builder
       builder.streamConfigs(args.map(_(argsBuilder).build)*)
@@ -312,7 +312,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigqueryDestination(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DicomStoreStreamConfigBigqueryDestinationArgs.Builder]):
+    inline def bigqueryDestination(args: Endofunction[com.pulumi.gcp.healthcare.inputs.DicomStoreStreamConfigBigqueryDestinationArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.DicomStoreStreamConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.DicomStoreStreamConfigBigqueryDestinationArgs.builder
       builder.bigqueryDestination(args(argsBuilder).build)
@@ -323,7 +323,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accessDeterminationLogConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreConsentConfigAccessDeterminationLogConfigArgs.Builder]):
+    inline def accessDeterminationLogConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreConsentConfigAccessDeterminationLogConfigArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.FhirStoreConsentConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.FhirStoreConsentConfigAccessDeterminationLogConfigArgs.builder
       builder.accessDeterminationLogConfig(args(argsBuilder).build)
@@ -333,19 +333,19 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def consentHeaderHandling(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreConsentConfigConsentHeaderHandlingArgs.Builder]):
+    inline def consentHeaderHandling(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreConsentConfigConsentHeaderHandlingArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.FhirStoreConsentConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.FhirStoreConsentConfigConsentHeaderHandlingArgs.builder
       builder.consentHeaderHandling(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.healthcare.inputs.FhirStoreIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.FhirStoreIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.FhirStoreIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.healthcare.inputs.FhirStoreIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.FhirStoreIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.FhirStoreIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -357,7 +357,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def consentConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreConsentConfigArgs.Builder]):
+    inline def consentConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreConsentConfigArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.FhirStoreState.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.FhirStoreConsentConfigArgs.builder
       builder.consentConfig(args(argsBuilder).build)
@@ -371,7 +371,7 @@ object healthcare_ext:
      * @return builder
      * @deprecated `notificationConfig` is deprecated and will be removed in a future major release. Use `notificationConfigs` instead.
      */
-    @deprecated("`notificationConfig` is deprecated and will be removed in a future major release. Use `notificationConfigs` instead.") def notificationConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreNotificationConfigArgs.Builder]):
+    @deprecated("`notificationConfig` is deprecated and will be removed in a future major release. Use `notificationConfigs` instead.") inline def notificationConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreNotificationConfigArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.FhirStoreState.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.FhirStoreNotificationConfigArgs.builder
       builder.notificationConfig(args(argsBuilder).build)
@@ -381,7 +381,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def notificationConfigs(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreNotificationConfigArgs.Builder]*):
+    inline def notificationConfigs(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreNotificationConfigArgs.Builder]*):
         com.pulumi.gcp.healthcare.inputs.FhirStoreState.Builder =
       def argsBuilder = com.pulumi.gcp.healthcare.inputs.FhirStoreNotificationConfigArgs.builder
       builder.notificationConfigs(args.map(_(argsBuilder).build)*)
@@ -396,7 +396,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def streamConfigs(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreStreamConfigArgs.Builder]*):
+    inline def streamConfigs(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreStreamConfigArgs.Builder]*):
         com.pulumi.gcp.healthcare.inputs.FhirStoreState.Builder =
       def argsBuilder = com.pulumi.gcp.healthcare.inputs.FhirStoreStreamConfigArgs.builder
       builder.streamConfigs(args.map(_(argsBuilder).build)*)
@@ -406,7 +406,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def validationConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreValidationConfigArgs.Builder]):
+    inline def validationConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreValidationConfigArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.FhirStoreState.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.FhirStoreValidationConfigArgs.builder
       builder.validationConfig(args(argsBuilder).build)
@@ -421,7 +421,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def bigqueryDestination(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreStreamConfigBigqueryDestinationArgs.Builder]):
+    inline def bigqueryDestination(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreStreamConfigBigqueryDestinationArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.FhirStoreStreamConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.FhirStoreStreamConfigBigqueryDestinationArgs.builder
       builder.bigqueryDestination(args(argsBuilder).build)
@@ -432,7 +432,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def schemaConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreStreamConfigBigqueryDestinationSchemaConfigArgs.Builder]):
+    inline def schemaConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreStreamConfigBigqueryDestinationSchemaConfigArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.FhirStoreStreamConfigBigqueryDestinationArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.FhirStoreStreamConfigBigqueryDestinationSchemaConfigArgs.builder
       builder.schemaConfig(args(argsBuilder).build)
@@ -443,19 +443,19 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def lastUpdatedPartitionConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreStreamConfigBigqueryDestinationSchemaConfigLastUpdatedPartitionConfigArgs.Builder]):
+    inline def lastUpdatedPartitionConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.FhirStoreStreamConfigBigqueryDestinationSchemaConfigLastUpdatedPartitionConfigArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.FhirStoreStreamConfigBigqueryDestinationSchemaConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.FhirStoreStreamConfigBigqueryDestinationSchemaConfigLastUpdatedPartitionConfigArgs.builder
       builder.lastUpdatedPartitionConfig(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.healthcare.inputs.Hl7StoreIamBindingState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.Hl7StoreIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.Hl7StoreIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.Hl7StoreIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.Hl7StoreIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
 
   extension (builder: com.pulumi.gcp.healthcare.inputs.Hl7StoreIamMemberState.Builder)
-    def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.Hl7StoreIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.healthcare.inputs.Hl7StoreIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.Hl7StoreIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.Hl7StoreIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -470,7 +470,7 @@ object healthcare_ext:
      * @return builder
      * @deprecated `notificationConfig` is deprecated and will be removed in a future major release. Use `notificationConfigs` instead.
      */
-    @deprecated("`notificationConfig` is deprecated and will be removed in a future major release. Use `notificationConfigs` instead.") def notificationConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.Hl7StoreNotificationConfigArgs.Builder]):
+    @deprecated("`notificationConfig` is deprecated and will be removed in a future major release. Use `notificationConfigs` instead.") inline def notificationConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.Hl7StoreNotificationConfigArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.Hl7StoreState.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.Hl7StoreNotificationConfigArgs.builder
       builder.notificationConfig(args(argsBuilder).build)
@@ -482,7 +482,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def notificationConfigs(args: Endofunction[com.pulumi.gcp.healthcare.inputs.Hl7StoreNotificationConfigsArgs.Builder]*):
+    inline def notificationConfigs(args: Endofunction[com.pulumi.gcp.healthcare.inputs.Hl7StoreNotificationConfigsArgs.Builder]*):
         com.pulumi.gcp.healthcare.inputs.Hl7StoreState.Builder =
       def argsBuilder = com.pulumi.gcp.healthcare.inputs.Hl7StoreNotificationConfigsArgs.builder
       builder.notificationConfigs(args.map(_(argsBuilder).build)*)
@@ -492,7 +492,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def parserConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.Hl7StoreParserConfigArgs.Builder]):
+    inline def parserConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.Hl7StoreParserConfigArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.Hl7StoreState.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.Hl7StoreParserConfigArgs.builder
       builder.parserConfig(args(argsBuilder).build)
@@ -503,7 +503,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def fhirStreamingSource(args: Endofunction[com.pulumi.gcp.healthcare.inputs.PipelineJobMappingPipelineJobFhirStreamingSourceArgs.Builder]):
+    inline def fhirStreamingSource(args: Endofunction[com.pulumi.gcp.healthcare.inputs.PipelineJobMappingPipelineJobFhirStreamingSourceArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.PipelineJobMappingPipelineJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.PipelineJobMappingPipelineJobFhirStreamingSourceArgs.builder
       builder.fhirStreamingSource(args(argsBuilder).build)
@@ -513,7 +513,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mappingConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.PipelineJobMappingPipelineJobMappingConfigArgs.Builder]):
+    inline def mappingConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.PipelineJobMappingPipelineJobMappingConfigArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.PipelineJobMappingPipelineJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.PipelineJobMappingPipelineJobMappingConfigArgs.builder
       builder.mappingConfig(args(argsBuilder).build)
@@ -524,7 +524,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def whistleConfigSource(args: Endofunction[com.pulumi.gcp.healthcare.inputs.PipelineJobMappingPipelineJobMappingConfigWhistleConfigSourceArgs.Builder]):
+    inline def whistleConfigSource(args: Endofunction[com.pulumi.gcp.healthcare.inputs.PipelineJobMappingPipelineJobMappingConfigWhistleConfigSourceArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.PipelineJobMappingPipelineJobMappingConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.PipelineJobMappingPipelineJobMappingConfigWhistleConfigSourceArgs.builder
       builder.whistleConfigSource(args(argsBuilder).build)
@@ -535,7 +535,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mergeConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.PipelineJobReconciliationPipelineJobMergeConfigArgs.Builder]):
+    inline def mergeConfig(args: Endofunction[com.pulumi.gcp.healthcare.inputs.PipelineJobReconciliationPipelineJobMergeConfigArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.PipelineJobReconciliationPipelineJobArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.PipelineJobReconciliationPipelineJobMergeConfigArgs.builder
       builder.mergeConfig(args(argsBuilder).build)
@@ -546,7 +546,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def whistleConfigSource(args: Endofunction[com.pulumi.gcp.healthcare.inputs.PipelineJobReconciliationPipelineJobMergeConfigWhistleConfigSourceArgs.Builder]):
+    inline def whistleConfigSource(args: Endofunction[com.pulumi.gcp.healthcare.inputs.PipelineJobReconciliationPipelineJobMergeConfigWhistleConfigSourceArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.PipelineJobReconciliationPipelineJobMergeConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.PipelineJobReconciliationPipelineJobMergeConfigWhistleConfigSourceArgs.builder
       builder.whistleConfigSource(args(argsBuilder).build)
@@ -557,7 +557,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def backfillPipelineJob(args: Endofunction[com.pulumi.gcp.healthcare.inputs.PipelineJobBackfillPipelineJobArgs.Builder]):
+    inline def backfillPipelineJob(args: Endofunction[com.pulumi.gcp.healthcare.inputs.PipelineJobBackfillPipelineJobArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.PipelineJobState.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.PipelineJobBackfillPipelineJobArgs.builder
       builder.backfillPipelineJob(args(argsBuilder).build)
@@ -567,7 +567,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def mappingPipelineJob(args: Endofunction[com.pulumi.gcp.healthcare.inputs.PipelineJobMappingPipelineJobArgs.Builder]):
+    inline def mappingPipelineJob(args: Endofunction[com.pulumi.gcp.healthcare.inputs.PipelineJobMappingPipelineJobArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.PipelineJobState.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.PipelineJobMappingPipelineJobArgs.builder
       builder.mappingPipelineJob(args(argsBuilder).build)
@@ -577,7 +577,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def reconciliationPipelineJob(args: Endofunction[com.pulumi.gcp.healthcare.inputs.PipelineJobReconciliationPipelineJobArgs.Builder]):
+    inline def reconciliationPipelineJob(args: Endofunction[com.pulumi.gcp.healthcare.inputs.PipelineJobReconciliationPipelineJobArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.PipelineJobState.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.PipelineJobReconciliationPipelineJobArgs.builder
       builder.reconciliationPipelineJob(args(argsBuilder).build)
@@ -588,7 +588,7 @@ object healthcare_ext:
      * Structure is documented below.
      * @return builder
      */
-    def settings(args: Endofunction[com.pulumi.gcp.healthcare.inputs.WorkspaceSettingsArgs.Builder]):
+    inline def settings(args: Endofunction[com.pulumi.gcp.healthcare.inputs.WorkspaceSettingsArgs.Builder]):
         com.pulumi.gcp.healthcare.inputs.WorkspaceState.Builder =
       val argsBuilder = com.pulumi.gcp.healthcare.inputs.WorkspaceSettingsArgs.builder
       builder.settings(args(argsBuilder).build)

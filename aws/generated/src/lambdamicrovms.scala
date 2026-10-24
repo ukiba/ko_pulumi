@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object lambdamicrovms:
   /** Manages an AWS Lambda MicroVMs Image. Use this resource to define the base image, application code, and runtime configuration from which MicroVMs are launched. */
-  def Image(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Image(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lambdamicrovms.ImageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lambdamicrovms.ImageArgs.builder
     conf.logicalName2physicalName(name) match
@@ -46,7 +46,7 @@ object lambdamicrovms:
    * 
    * &gt; MicroVMs are immutable. Because the service has no update operation, changing any argument terminates the MicroVM and runs a new one.
    */
-  def Microvm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Microvm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.lambdamicrovms.MicrovmArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.lambdamicrovms.MicrovmArgs.builder
     com.pulumi.aws.lambdamicrovms.Microvm(name,

@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object workspaces:
   /** Resource for managing an AWS WorkSpaces Connection Alias. */
-  def ConnectionAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConnectionAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.workspaces.ConnectionAliasArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.workspaces.ConnectionAliasArgs.builder
     argsBuilder = args(argsBuilder)
@@ -26,7 +26,7 @@ object workspaces:
    * 
    * &gt; **NOTE:** AWS WorkSpaces service requires [`workspaces_DefaultRole`](https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role) IAM role to operate normally.
    */
-  def Directory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Directory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.workspaces.DirectoryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.workspaces.DirectoryArgs.builder
     argsBuilder = args(argsBuilder)
@@ -41,7 +41,7 @@ object workspaces:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an IP access control group in AWS WorkSpaces Service */
-  def IpGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def IpGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.workspaces.IpGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.workspaces.IpGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -59,7 +59,7 @@ object workspaces:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a WorkSpaces Pool in the AWS WorkSpaces service. */
-  def Pool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Pool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.workspaces.PoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.workspaces.PoolArgs.builder
     argsBuilder = args(argsBuilder)
@@ -78,7 +78,7 @@ object workspaces:
    * 
    * &gt; **NOTE:** AWS WorkSpaces service requires [`workspaces_DefaultRole`](https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role) IAM role to operate normally.
    */
-  def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.workspaces.WorkspaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.workspaces.WorkspaceArgs.builder
     argsBuilder = args(argsBuilder)

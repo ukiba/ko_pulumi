@@ -19,7 +19,7 @@ object frontdoor:
    * 
    * &gt; **Note:** The creation of new Azure Front Door (classic) resources is no longer supported following its deprecation on `April 1, 2025`. However, modifications to existing Azure Front Door (classic) resources will continue to be supported until the API reaches full retirement on `March 31, 2027`.
    */
-  def CustomHttpsConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomHttpsConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.frontdoor.CustomHttpsConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.frontdoor.CustomHttpsConfigurationArgs.builder
     com.pulumi.azure.frontdoor.CustomHttpsConfiguration(name,
@@ -35,7 +35,7 @@ object frontdoor:
    * 
    * &gt; **Note:** The creation of new Azure Front Door (classic) resources is no longer supported following its deprecation on `April 1, 2025`. However, modifications to existing Azure Front Door (classic) resources will continue to be supported until the API reaches full retirement on `March 31, 2027`.
    */
-  def FirewallPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FirewallPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.frontdoor.FirewallPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.frontdoor.FirewallPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -71,7 +71,7 @@ object frontdoor:
    * 
    * &gt; **Note:** The creation of new Azure Front Door (classic) resources is no longer supported following its deprecation on `April 1, 2025`. However, modifications to existing Azure Front Door (classic) resources will continue to be supported until the API reaches full retirement on `March 31, 2027`.
    */
-  def Frontdoor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Frontdoor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.frontdoor.FrontdoorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.frontdoor.FrontdoorArgs.builder
     conf.logicalName2physicalName(name) match
@@ -95,7 +95,7 @@ object frontdoor:
    * 
    * Manages an Azure Front Door (classic) Rules Engine configuration and rules.
    */
-  def RulesEngine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RulesEngine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.frontdoor.RulesEngineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.frontdoor.RulesEngineArgs.builder
     conf.logicalName2physicalName(name) match

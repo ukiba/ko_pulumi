@@ -8,7 +8,7 @@ object configdeployment_ext:
      * Structure is documented below.
      * @return builder
      */
-    def terraformBlueprint(args: Endofunction[com.pulumi.gcp.configdeployment.inputs.DeploymentTerraformBlueprintArgs.Builder]):
+    inline def terraformBlueprint(args: Endofunction[com.pulumi.gcp.configdeployment.inputs.DeploymentTerraformBlueprintArgs.Builder]):
         com.pulumi.gcp.configdeployment.DeploymentArgs.Builder =
       val argsBuilder = com.pulumi.gcp.configdeployment.inputs.DeploymentTerraformBlueprintArgs.builder
       builder.terraformBlueprint(args(argsBuilder).build)
@@ -19,7 +19,7 @@ object configdeployment_ext:
      * Structure is documented below.
      * @return builder
      */
-    def terraformBlueprint(args: Endofunction[com.pulumi.gcp.configdeployment.inputs.DeploymentTerraformBlueprintArgs.Builder]):
+    inline def terraformBlueprint(args: Endofunction[com.pulumi.gcp.configdeployment.inputs.DeploymentTerraformBlueprintArgs.Builder]):
         com.pulumi.gcp.configdeployment.inputs.DeploymentState.Builder =
       val argsBuilder = com.pulumi.gcp.configdeployment.inputs.DeploymentTerraformBlueprintArgs.builder
       builder.terraformBlueprint(args(argsBuilder).build)
@@ -30,7 +30,7 @@ object configdeployment_ext:
      * Structure is documented below.
      * @return builder
      */
-    def gitSource(args: Endofunction[com.pulumi.gcp.configdeployment.inputs.DeploymentTerraformBlueprintGitSourceArgs.Builder]):
+    inline def gitSource(args: Endofunction[com.pulumi.gcp.configdeployment.inputs.DeploymentTerraformBlueprintGitSourceArgs.Builder]):
         com.pulumi.gcp.configdeployment.inputs.DeploymentTerraformBlueprintArgs.Builder =
       val argsBuilder = com.pulumi.gcp.configdeployment.inputs.DeploymentTerraformBlueprintGitSourceArgs.builder
       builder.gitSource(args(argsBuilder).build)
@@ -40,7 +40,7 @@ object configdeployment_ext:
      * Structure is documented below.
      * @return builder
      */
-    def inputValues(args: Endofunction[com.pulumi.gcp.configdeployment.inputs.DeploymentTerraformBlueprintInputValueArgs.Builder]*):
+    inline def inputValues(args: Endofunction[com.pulumi.gcp.configdeployment.inputs.DeploymentTerraformBlueprintInputValueArgs.Builder]*):
         com.pulumi.gcp.configdeployment.inputs.DeploymentTerraformBlueprintArgs.Builder =
       def argsBuilder = com.pulumi.gcp.configdeployment.inputs.DeploymentTerraformBlueprintInputValueArgs.builder
       builder.inputValues(args.map(_(argsBuilder).build)*)

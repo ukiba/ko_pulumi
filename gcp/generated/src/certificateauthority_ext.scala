@@ -8,7 +8,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigArgs.Builder]):
         com.pulumi.gcp.certificateauthority.AuthorityArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -20,7 +20,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def keySpec(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityKeySpecArgs.Builder]):
+    inline def keySpec(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityKeySpecArgs.Builder]):
         com.pulumi.gcp.certificateauthority.AuthorityArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.AuthorityKeySpecArgs.builder
       builder.keySpec(args(argsBuilder).build)
@@ -31,7 +31,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def subordinateConfig(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthoritySubordinateConfigArgs.Builder]):
+    inline def subordinateConfig(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthoritySubordinateConfigArgs.Builder]):
         com.pulumi.gcp.certificateauthority.AuthorityArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.AuthoritySubordinateConfigArgs.builder
       builder.subordinateConfig(args(argsBuilder).build)
@@ -42,7 +42,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def userDefinedAccessUrls(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityUserDefinedAccessUrlsArgs.Builder]):
+    inline def userDefinedAccessUrls(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityUserDefinedAccessUrlsArgs.Builder]):
         com.pulumi.gcp.certificateauthority.AuthorityArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.AuthorityUserDefinedAccessUrlsArgs.builder
       builder.userDefinedAccessUrls(args(argsBuilder).build)
@@ -55,7 +55,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.certificateauthority.CaPoolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -65,7 +65,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def issuancePolicy(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyArgs.Builder]):
+    inline def issuancePolicy(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyArgs.Builder]):
         com.pulumi.gcp.certificateauthority.CaPoolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyArgs.builder
       builder.issuancePolicy(args(argsBuilder).build)
@@ -75,7 +75,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def publishingOptions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolPublishingOptionsArgs.Builder]):
+    inline def publishingOptions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolPublishingOptionsArgs.Builder]):
         com.pulumi.gcp.certificateauthority.CaPoolArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolPublishingOptionsArgs.builder
       builder.publishingOptions(args(argsBuilder).build)
@@ -86,7 +86,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.certificateauthority.CaPoolIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -97,7 +97,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.certificateauthority.CaPoolIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -108,7 +108,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigArgs.Builder]):
         com.pulumi.gcp.certificateauthority.CertificateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -119,7 +119,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def identityConstraints(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateIdentityConstraintsArgs.Builder]):
+    inline def identityConstraints(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateIdentityConstraintsArgs.Builder]):
         com.pulumi.gcp.certificateauthority.CertificateTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateIdentityConstraintsArgs.builder
       builder.identityConstraints(args(argsBuilder).build)
@@ -129,7 +129,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def passthroughExtensions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePassthroughExtensionsArgs.Builder]):
+    inline def passthroughExtensions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePassthroughExtensionsArgs.Builder]):
         com.pulumi.gcp.certificateauthority.CertificateTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePassthroughExtensionsArgs.builder
       builder.passthroughExtensions(args(argsBuilder).build)
@@ -139,7 +139,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def predefinedValues(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesArgs.Builder]):
+    inline def predefinedValues(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesArgs.Builder]):
         com.pulumi.gcp.certificateauthority.CertificateTemplateArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesArgs.builder
       builder.predefinedValues(args(argsBuilder).build)
@@ -150,7 +150,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.certificateauthority.CertificateTemplateIamBindingArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -161,7 +161,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.certificateauthority.CertificateTemplateIamMemberArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -172,7 +172,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def subjectConfig(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigSubjectConfigArgs.Builder]):
+    inline def subjectConfig(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigSubjectConfigArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigSubjectConfigArgs.builder
       builder.subjectConfig(args(argsBuilder).build)
@@ -182,7 +182,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def subjectKeyId(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigSubjectKeyIdArgs.Builder]):
+    inline def subjectKeyId(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigSubjectKeyIdArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigSubjectKeyIdArgs.builder
       builder.subjectKeyId(args(argsBuilder).build)
@@ -192,7 +192,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def x509Config(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigArgs.Builder]):
+    inline def x509Config(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigArgs.builder
       builder.x509Config(args(argsBuilder).build)
@@ -203,7 +203,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def subject(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigSubjectConfigSubjectArgs.Builder]):
+    inline def subject(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigSubjectConfigSubjectArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigSubjectConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigSubjectConfigSubjectArgs.builder
       builder.subject(args(argsBuilder).build)
@@ -213,7 +213,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def subjectAltName(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigSubjectConfigSubjectAltNameArgs.Builder]):
+    inline def subjectAltName(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigSubjectConfigSubjectAltNameArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigSubjectConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigSubjectConfigSubjectAltNameArgs.builder
       builder.subjectAltName(args(argsBuilder).build)
@@ -224,7 +224,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def objectId(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigAdditionalExtensionObjectIdArgs.Builder]):
+    inline def objectId(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigAdditionalExtensionObjectIdArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigAdditionalExtensionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigAdditionalExtensionObjectIdArgs.builder
       builder.objectId(args(argsBuilder).build)
@@ -234,7 +234,7 @@ object certificateauthority_ext:
      * @param additionalExtensions Specifies an X.509 extension, which may be used in different parts of X.509 objects like certificates, CSRs, and CRLs.
      * @return builder
      */
-    def additionalExtensions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigAdditionalExtensionArgs.Builder]*):
+    inline def additionalExtensions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigAdditionalExtensionArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigAdditionalExtensionArgs.builder
       builder.additionalExtensions(args.map(_(argsBuilder).build)*)
@@ -243,7 +243,7 @@ object certificateauthority_ext:
      * @param caOptions Describes values that are relevant in a CA certificate.
      * @return builder
      */
-    def caOptions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigCaOptionsArgs.Builder]):
+    inline def caOptions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigCaOptionsArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigCaOptionsArgs.builder
       builder.caOptions(args(argsBuilder).build)
@@ -252,7 +252,7 @@ object certificateauthority_ext:
      * @param keyUsage Indicates the intended use for keys that correspond to a certificate.
      * @return builder
      */
-    def keyUsage(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigKeyUsageArgs.Builder]):
+    inline def keyUsage(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigKeyUsageArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigKeyUsageArgs.builder
       builder.keyUsage(args(argsBuilder).build)
@@ -261,7 +261,7 @@ object certificateauthority_ext:
      * @param nameConstraints Describes the X.509 name constraints extension.
      * @return builder
      */
-    def nameConstraints(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigNameConstraintsArgs.Builder]):
+    inline def nameConstraints(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigNameConstraintsArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigNameConstraintsArgs.builder
       builder.nameConstraints(args(argsBuilder).build)
@@ -270,7 +270,7 @@ object certificateauthority_ext:
      * @param policyIds Describes the X.509 certificate policy object identifiers, per https://tools.ietf.org/html/rfc5280#section-4.2.1.4.
      * @return builder
      */
-    def policyIds(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigPolicyIdArgs.Builder]*):
+    inline def policyIds(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigPolicyIdArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigPolicyIdArgs.builder
       builder.policyIds(args.map(_(argsBuilder).build)*)
@@ -281,7 +281,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def baseKeyUsage(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigKeyUsageBaseKeyUsageArgs.Builder]):
+    inline def baseKeyUsage(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigKeyUsageBaseKeyUsageArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigKeyUsageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigKeyUsageBaseKeyUsageArgs.builder
       builder.baseKeyUsage(args(argsBuilder).build)
@@ -291,7 +291,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def extendedKeyUsage(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigKeyUsageExtendedKeyUsageArgs.Builder]):
+    inline def extendedKeyUsage(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigKeyUsageExtendedKeyUsageArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigKeyUsageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigKeyUsageExtendedKeyUsageArgs.builder
       builder.extendedKeyUsage(args(argsBuilder).build)
@@ -301,7 +301,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def unknownExtendedKeyUsages(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigKeyUsageUnknownExtendedKeyUsageArgs.Builder]*):
+    inline def unknownExtendedKeyUsages(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigKeyUsageUnknownExtendedKeyUsageArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigKeyUsageArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigX509ConfigKeyUsageUnknownExtendedKeyUsageArgs.builder
       builder.unknownExtendedKeyUsages(args.map(_(argsBuilder).build)*)
@@ -312,7 +312,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def accessUrls(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityAccessUrlArgs.Builder]*):
+    inline def accessUrls(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityAccessUrlArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.AuthorityState.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.AuthorityAccessUrlArgs.builder
       builder.accessUrls(args.map(_(argsBuilder).build)*)
@@ -322,7 +322,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.AuthorityState.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.AuthorityConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -334,7 +334,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def keySpec(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityKeySpecArgs.Builder]):
+    inline def keySpec(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityKeySpecArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.AuthorityState.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.AuthorityKeySpecArgs.builder
       builder.keySpec(args(argsBuilder).build)
@@ -345,7 +345,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def subordinateConfig(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthoritySubordinateConfigArgs.Builder]):
+    inline def subordinateConfig(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthoritySubordinateConfigArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.AuthorityState.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.AuthoritySubordinateConfigArgs.builder
       builder.subordinateConfig(args(argsBuilder).build)
@@ -356,7 +356,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def userDefinedAccessUrls(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityUserDefinedAccessUrlsArgs.Builder]):
+    inline def userDefinedAccessUrls(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthorityUserDefinedAccessUrlsArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.AuthorityState.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.AuthorityUserDefinedAccessUrlsArgs.builder
       builder.userDefinedAccessUrls(args(argsBuilder).build)
@@ -368,7 +368,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def pemIssuerChain(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthoritySubordinateConfigPemIssuerChainArgs.Builder]):
+    inline def pemIssuerChain(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.AuthoritySubordinateConfigPemIssuerChainArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.AuthoritySubordinateConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.AuthoritySubordinateConfigPemIssuerChainArgs.builder
       builder.pemIssuerChain(args(argsBuilder).build)
@@ -379,7 +379,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CaPoolIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -390,7 +390,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CaPoolIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -401,7 +401,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def ellipticCurve(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyAllowedKeyTypeEllipticCurveArgs.Builder]):
+    inline def ellipticCurve(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyAllowedKeyTypeEllipticCurveArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyAllowedKeyTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyAllowedKeyTypeEllipticCurveArgs.builder
       builder.ellipticCurve(args(argsBuilder).build)
@@ -411,7 +411,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def rsa(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyAllowedKeyTypeRsaArgs.Builder]):
+    inline def rsa(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyAllowedKeyTypeRsaArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyAllowedKeyTypeArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyAllowedKeyTypeRsaArgs.builder
       builder.rsa(args(argsBuilder).build)
@@ -422,7 +422,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allowedIssuanceModes(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyAllowedIssuanceModesArgs.Builder]):
+    inline def allowedIssuanceModes(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyAllowedIssuanceModesArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyAllowedIssuanceModesArgs.builder
       builder.allowedIssuanceModes(args(argsBuilder).build)
@@ -433,7 +433,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def allowedKeyTypes(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyAllowedKeyTypeArgs.Builder]*):
+    inline def allowedKeyTypes(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyAllowedKeyTypeArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyAllowedKeyTypeArgs.builder
       builder.allowedKeyTypes(args.map(_(argsBuilder).build)*)
@@ -446,7 +446,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def baselineValues(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesArgs.Builder]):
+    inline def baselineValues(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesArgs.builder
       builder.baselineValues(args(argsBuilder).build)
@@ -457,7 +457,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def identityConstraints(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyIdentityConstraintsArgs.Builder]):
+    inline def identityConstraints(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyIdentityConstraintsArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyIdentityConstraintsArgs.builder
       builder.identityConstraints(args(argsBuilder).build)
@@ -468,7 +468,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def objectId(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesAdditionalExtensionObjectIdArgs.Builder]):
+    inline def objectId(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesAdditionalExtensionObjectIdArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesAdditionalExtensionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesAdditionalExtensionObjectIdArgs.builder
       builder.objectId(args(argsBuilder).build)
@@ -479,7 +479,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def additionalExtensions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesAdditionalExtensionArgs.Builder]*):
+    inline def additionalExtensions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesAdditionalExtensionArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesAdditionalExtensionArgs.builder
       builder.additionalExtensions(args.map(_(argsBuilder).build)*)
@@ -489,7 +489,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def caOptions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesCaOptionsArgs.Builder]):
+    inline def caOptions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesCaOptionsArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesCaOptionsArgs.builder
       builder.caOptions(args(argsBuilder).build)
@@ -499,7 +499,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def keyUsage(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesKeyUsageArgs.Builder]):
+    inline def keyUsage(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesKeyUsageArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesKeyUsageArgs.builder
       builder.keyUsage(args(argsBuilder).build)
@@ -509,7 +509,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nameConstraints(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesNameConstraintsArgs.Builder]):
+    inline def nameConstraints(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesNameConstraintsArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesNameConstraintsArgs.builder
       builder.nameConstraints(args(argsBuilder).build)
@@ -519,7 +519,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def policyIds(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesPolicyIdArgs.Builder]*):
+    inline def policyIds(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesPolicyIdArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesPolicyIdArgs.builder
       builder.policyIds(args.map(_(argsBuilder).build)*)
@@ -530,7 +530,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def baseKeyUsage(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesKeyUsageBaseKeyUsageArgs.Builder]):
+    inline def baseKeyUsage(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesKeyUsageBaseKeyUsageArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesKeyUsageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesKeyUsageBaseKeyUsageArgs.builder
       builder.baseKeyUsage(args(argsBuilder).build)
@@ -540,7 +540,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def extendedKeyUsage(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesKeyUsageExtendedKeyUsageArgs.Builder]):
+    inline def extendedKeyUsage(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesKeyUsageExtendedKeyUsageArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesKeyUsageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesKeyUsageExtendedKeyUsageArgs.builder
       builder.extendedKeyUsage(args(argsBuilder).build)
@@ -550,7 +550,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def unknownExtendedKeyUsages(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesKeyUsageUnknownExtendedKeyUsageArgs.Builder]*):
+    inline def unknownExtendedKeyUsages(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesKeyUsageUnknownExtendedKeyUsageArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesKeyUsageArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyBaselineValuesKeyUsageUnknownExtendedKeyUsageArgs.builder
       builder.unknownExtendedKeyUsages(args.map(_(argsBuilder).build)*)
@@ -563,7 +563,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def celExpression(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyIdentityConstraintsCelExpressionArgs.Builder]):
+    inline def celExpression(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyIdentityConstraintsCelExpressionArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyIdentityConstraintsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyIdentityConstraintsCelExpressionArgs.builder
       builder.celExpression(args(argsBuilder).build)
@@ -576,7 +576,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def encryptionSpec(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolEncryptionSpecArgs.Builder]):
+    inline def encryptionSpec(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolEncryptionSpecArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CaPoolState.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolEncryptionSpecArgs.builder
       builder.encryptionSpec(args(argsBuilder).build)
@@ -586,7 +586,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def issuancePolicy(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyArgs.Builder]):
+    inline def issuancePolicy(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CaPoolState.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolIssuancePolicyArgs.builder
       builder.issuancePolicy(args(argsBuilder).build)
@@ -596,7 +596,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def publishingOptions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolPublishingOptionsArgs.Builder]):
+    inline def publishingOptions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CaPoolPublishingOptionsArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CaPoolState.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CaPoolPublishingOptionsArgs.builder
       builder.publishingOptions(args(argsBuilder).build)
@@ -608,7 +608,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def authorityKeyIds(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionAuthorityKeyIdArgs.Builder]*):
+    inline def authorityKeyIds(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionAuthorityKeyIdArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionAuthorityKeyIdArgs.builder
       builder.authorityKeyIds(args.map(_(argsBuilder).build)*)
@@ -619,7 +619,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def certFingerprints(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionCertFingerprintArgs.Builder]*):
+    inline def certFingerprints(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionCertFingerprintArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionCertFingerprintArgs.builder
       builder.certFingerprints(args.map(_(argsBuilder).build)*)
@@ -630,7 +630,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def publicKeys(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionPublicKeyArgs.Builder]*):
+    inline def publicKeys(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionPublicKeyArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionPublicKeyArgs.builder
       builder.publicKeys(args.map(_(argsBuilder).build)*)
@@ -641,7 +641,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def subjectDescriptions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionSubjectDescriptionArgs.Builder]*):
+    inline def subjectDescriptions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionSubjectDescriptionArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionSubjectDescriptionArgs.builder
       builder.subjectDescriptions(args.map(_(argsBuilder).build)*)
@@ -652,7 +652,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def subjectKeyIds(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionSubjectKeyIdArgs.Builder]*):
+    inline def subjectKeyIds(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionSubjectKeyIdArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionSubjectKeyIdArgs.builder
       builder.subjectKeyIds(args.map(_(argsBuilder).build)*)
@@ -663,7 +663,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def x509Descriptions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionArgs.Builder]*):
+    inline def x509Descriptions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionArgs.builder
       builder.x509Descriptions(args.map(_(argsBuilder).build)*)
@@ -675,7 +675,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def subjectAltNames(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameArgs.Builder]*):
+    inline def subjectAltNames(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionSubjectDescriptionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameArgs.builder
       builder.subjectAltNames(args.map(_(argsBuilder).build)*)
@@ -686,7 +686,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def subjects(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionSubjectDescriptionSubjectArgs.Builder]*):
+    inline def subjects(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionSubjectDescriptionSubjectArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionSubjectDescriptionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionSubjectDescriptionSubjectArgs.builder
       builder.subjects(args.map(_(argsBuilder).build)*)
@@ -698,7 +698,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def customSans(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSanArgs.Builder]*):
+    inline def customSans(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSanArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSanArgs.builder
       builder.customSans(args.map(_(argsBuilder).build)*)
@@ -710,7 +710,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def obectIds(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSanObectIdArgs.Builder]*):
+    inline def obectIds(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSanObectIdArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSanArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionSubjectDescriptionSubjectAltNameCustomSanObectIdArgs.builder
       builder.obectIds(args.map(_(argsBuilder).build)*)
@@ -721,7 +721,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def objectIds(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionAdditionalExtensionObjectIdArgs.Builder]*):
+    inline def objectIds(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionAdditionalExtensionObjectIdArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionAdditionalExtensionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionAdditionalExtensionObjectIdArgs.builder
       builder.objectIds(args.map(_(argsBuilder).build)*)
@@ -733,7 +733,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def additionalExtensions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionAdditionalExtensionArgs.Builder]*):
+    inline def additionalExtensions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionAdditionalExtensionArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionAdditionalExtensionArgs.builder
       builder.additionalExtensions(args.map(_(argsBuilder).build)*)
@@ -744,7 +744,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def caOptions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionCaOptionArgs.Builder]*):
+    inline def caOptions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionCaOptionArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionCaOptionArgs.builder
       builder.caOptions(args.map(_(argsBuilder).build)*)
@@ -755,7 +755,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def keyUsages(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionKeyUsageArgs.Builder]*):
+    inline def keyUsages(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionKeyUsageArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionKeyUsageArgs.builder
       builder.keyUsages(args.map(_(argsBuilder).build)*)
@@ -766,7 +766,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nameConstraints(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionNameConstraintArgs.Builder]*):
+    inline def nameConstraints(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionNameConstraintArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionNameConstraintArgs.builder
       builder.nameConstraints(args.map(_(argsBuilder).build)*)
@@ -777,7 +777,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def policyIds(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionPolicyIdArgs.Builder]*):
+    inline def policyIds(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionPolicyIdArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionPolicyIdArgs.builder
       builder.policyIds(args.map(_(argsBuilder).build)*)
@@ -788,7 +788,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def baseKeyUsages(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionKeyUsageBaseKeyUsageArgs.Builder]*):
+    inline def baseKeyUsages(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionKeyUsageBaseKeyUsageArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionKeyUsageArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionKeyUsageBaseKeyUsageArgs.builder
       builder.baseKeyUsages(args.map(_(argsBuilder).build)*)
@@ -798,7 +798,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def extendedKeyUsages(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionKeyUsageExtendedKeyUsageArgs.Builder]*):
+    inline def extendedKeyUsages(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionKeyUsageExtendedKeyUsageArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionKeyUsageArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionKeyUsageExtendedKeyUsageArgs.builder
       builder.extendedKeyUsages(args.map(_(argsBuilder).build)*)
@@ -808,7 +808,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def unknownExtendedKeyUsages(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionKeyUsageUnknownExtendedKeyUsageArgs.Builder]*):
+    inline def unknownExtendedKeyUsages(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionKeyUsageUnknownExtendedKeyUsageArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionKeyUsageArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionX509DescriptionKeyUsageUnknownExtendedKeyUsageArgs.builder
       builder.unknownExtendedKeyUsages(args.map(_(argsBuilder).build)*)
@@ -821,7 +821,7 @@ object certificateauthority_ext:
      * &lt;a name=&#34;nestedConfigX509Config&#34;&gt;&lt;/a&gt;The `x509Config` block supports:
      * @return builder
      */
-    def publicKey(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigPublicKeyArgs.Builder]):
+    inline def publicKey(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigPublicKeyArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CertificateConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateConfigPublicKeyArgs.builder
       builder.publicKey(args(argsBuilder).build)
@@ -831,7 +831,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def subjectConfig(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigSubjectConfigArgs.Builder]):
+    inline def subjectConfig(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigSubjectConfigArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CertificateConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateConfigSubjectConfigArgs.builder
       builder.subjectConfig(args(argsBuilder).build)
@@ -841,7 +841,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def subjectKeyId(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigSubjectKeyIdArgs.Builder]):
+    inline def subjectKeyId(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigSubjectKeyIdArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CertificateConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateConfigSubjectKeyIdArgs.builder
       builder.subjectKeyId(args(argsBuilder).build)
@@ -851,7 +851,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def x509Config(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigArgs.Builder]):
+    inline def x509Config(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CertificateConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigArgs.builder
       builder.x509Config(args(argsBuilder).build)
@@ -862,7 +862,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def subject(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigSubjectConfigSubjectArgs.Builder]):
+    inline def subject(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigSubjectConfigSubjectArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CertificateConfigSubjectConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateConfigSubjectConfigSubjectArgs.builder
       builder.subject(args(argsBuilder).build)
@@ -872,7 +872,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def subjectAltName(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigSubjectConfigSubjectAltNameArgs.Builder]):
+    inline def subjectAltName(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigSubjectConfigSubjectAltNameArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CertificateConfigSubjectConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateConfigSubjectConfigSubjectAltNameArgs.builder
       builder.subjectAltName(args(argsBuilder).build)
@@ -883,7 +883,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def objectId(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigAdditionalExtensionObjectIdArgs.Builder]):
+    inline def objectId(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigAdditionalExtensionObjectIdArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigAdditionalExtensionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigAdditionalExtensionObjectIdArgs.builder
       builder.objectId(args(argsBuilder).build)
@@ -895,7 +895,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def additionalExtensions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigAdditionalExtensionArgs.Builder]*):
+    inline def additionalExtensions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigAdditionalExtensionArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigAdditionalExtensionArgs.builder
       builder.additionalExtensions(args.map(_(argsBuilder).build)*)
@@ -906,7 +906,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def caOptions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigCaOptionsArgs.Builder]):
+    inline def caOptions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigCaOptionsArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigCaOptionsArgs.builder
       builder.caOptions(args(argsBuilder).build)
@@ -917,7 +917,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def keyUsage(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigKeyUsageArgs.Builder]):
+    inline def keyUsage(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigKeyUsageArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigKeyUsageArgs.builder
       builder.keyUsage(args(argsBuilder).build)
@@ -928,7 +928,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nameConstraints(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigNameConstraintsArgs.Builder]):
+    inline def nameConstraints(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigNameConstraintsArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigNameConstraintsArgs.builder
       builder.nameConstraints(args(argsBuilder).build)
@@ -939,7 +939,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def policyIds(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigPolicyIdArgs.Builder]*):
+    inline def policyIds(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigPolicyIdArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigPolicyIdArgs.builder
       builder.policyIds(args.map(_(argsBuilder).build)*)
@@ -950,7 +950,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def baseKeyUsage(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigKeyUsageBaseKeyUsageArgs.Builder]):
+    inline def baseKeyUsage(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigKeyUsageBaseKeyUsageArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigKeyUsageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigKeyUsageBaseKeyUsageArgs.builder
       builder.baseKeyUsage(args(argsBuilder).build)
@@ -960,7 +960,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def extendedKeyUsage(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigKeyUsageExtendedKeyUsageArgs.Builder]):
+    inline def extendedKeyUsage(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigKeyUsageExtendedKeyUsageArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigKeyUsageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigKeyUsageExtendedKeyUsageArgs.builder
       builder.extendedKeyUsage(args(argsBuilder).build)
@@ -970,7 +970,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def unknownExtendedKeyUsages(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigKeyUsageUnknownExtendedKeyUsageArgs.Builder]*):
+    inline def unknownExtendedKeyUsages(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigKeyUsageUnknownExtendedKeyUsageArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigKeyUsageArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateConfigX509ConfigKeyUsageUnknownExtendedKeyUsageArgs.builder
       builder.unknownExtendedKeyUsages(args.map(_(argsBuilder).build)*)
@@ -981,7 +981,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def certificateDescriptions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionArgs.Builder]*):
+    inline def certificateDescriptions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateState.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateCertificateDescriptionArgs.builder
       builder.certificateDescriptions(args.map(_(argsBuilder).build)*)
@@ -991,7 +991,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def config(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigArgs.Builder]):
+    inline def config(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateConfigArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CertificateState.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateConfigArgs.builder
       builder.config(args(argsBuilder).build)
@@ -1002,7 +1002,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def revocationDetails(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateRevocationDetailArgs.Builder]*):
+    inline def revocationDetails(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateRevocationDetailArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateState.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateRevocationDetailArgs.builder
       builder.revocationDetails(args.map(_(argsBuilder).build)*)
@@ -1013,7 +1013,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateIamBindingConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateIamBindingConditionArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateIamBindingState.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateIamBindingConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1024,7 +1024,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def condition(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateIamMemberConditionArgs.Builder]):
+    inline def condition(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateIamMemberConditionArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateIamMemberState.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateIamMemberConditionArgs.builder
       builder.condition(args(argsBuilder).build)
@@ -1035,7 +1035,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def celExpression(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateIdentityConstraintsCelExpressionArgs.Builder]):
+    inline def celExpression(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateIdentityConstraintsCelExpressionArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateIdentityConstraintsArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateIdentityConstraintsCelExpressionArgs.builder
       builder.celExpression(args(argsBuilder).build)
@@ -1046,7 +1046,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def additionalExtensions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePassthroughExtensionsAdditionalExtensionArgs.Builder]*):
+    inline def additionalExtensions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePassthroughExtensionsAdditionalExtensionArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePassthroughExtensionsArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePassthroughExtensionsAdditionalExtensionArgs.builder
       builder.additionalExtensions(args.map(_(argsBuilder).build)*)
@@ -1057,7 +1057,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def objectId(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesAdditionalExtensionObjectIdArgs.Builder]):
+    inline def objectId(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesAdditionalExtensionObjectIdArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesAdditionalExtensionArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesAdditionalExtensionObjectIdArgs.builder
       builder.objectId(args(argsBuilder).build)
@@ -1068,7 +1068,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def additionalExtensions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesAdditionalExtensionArgs.Builder]*):
+    inline def additionalExtensions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesAdditionalExtensionArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesAdditionalExtensionArgs.builder
       builder.additionalExtensions(args.map(_(argsBuilder).build)*)
@@ -1078,7 +1078,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def caOptions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesCaOptionsArgs.Builder]):
+    inline def caOptions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesCaOptionsArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesCaOptionsArgs.builder
       builder.caOptions(args(argsBuilder).build)
@@ -1088,7 +1088,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def keyUsage(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesKeyUsageArgs.Builder]):
+    inline def keyUsage(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesKeyUsageArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesKeyUsageArgs.builder
       builder.keyUsage(args(argsBuilder).build)
@@ -1098,7 +1098,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def nameConstraints(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesNameConstraintsArgs.Builder]):
+    inline def nameConstraints(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesNameConstraintsArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesNameConstraintsArgs.builder
       builder.nameConstraints(args(argsBuilder).build)
@@ -1108,7 +1108,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def policyIds(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesPolicyIdArgs.Builder]*):
+    inline def policyIds(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesPolicyIdArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesPolicyIdArgs.builder
       builder.policyIds(args.map(_(argsBuilder).build)*)
@@ -1119,7 +1119,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def baseKeyUsage(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesKeyUsageBaseKeyUsageArgs.Builder]):
+    inline def baseKeyUsage(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesKeyUsageBaseKeyUsageArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesKeyUsageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesKeyUsageBaseKeyUsageArgs.builder
       builder.baseKeyUsage(args(argsBuilder).build)
@@ -1129,7 +1129,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def extendedKeyUsage(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesKeyUsageExtendedKeyUsageArgs.Builder]):
+    inline def extendedKeyUsage(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesKeyUsageExtendedKeyUsageArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesKeyUsageArgs.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesKeyUsageExtendedKeyUsageArgs.builder
       builder.extendedKeyUsage(args(argsBuilder).build)
@@ -1139,7 +1139,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def unknownExtendedKeyUsages(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesKeyUsageUnknownExtendedKeyUsageArgs.Builder]*):
+    inline def unknownExtendedKeyUsages(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesKeyUsageUnknownExtendedKeyUsageArgs.Builder]*):
         com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesKeyUsageArgs.Builder =
       def argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesKeyUsageUnknownExtendedKeyUsageArgs.builder
       builder.unknownExtendedKeyUsages(args.map(_(argsBuilder).build)*)
@@ -1150,7 +1150,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def identityConstraints(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateIdentityConstraintsArgs.Builder]):
+    inline def identityConstraints(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateIdentityConstraintsArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateIdentityConstraintsArgs.builder
       builder.identityConstraints(args(argsBuilder).build)
@@ -1160,7 +1160,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def passthroughExtensions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePassthroughExtensionsArgs.Builder]):
+    inline def passthroughExtensions(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePassthroughExtensionsArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePassthroughExtensionsArgs.builder
       builder.passthroughExtensions(args(argsBuilder).build)
@@ -1170,7 +1170,7 @@ object certificateauthority_ext:
      * Structure is documented below.
      * @return builder
      */
-    def predefinedValues(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesArgs.Builder]):
+    inline def predefinedValues(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesArgs.Builder]):
         com.pulumi.gcp.certificateauthority.inputs.CertificateTemplateState.Builder =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.CertificateTemplatePredefinedValuesArgs.builder
       builder.predefinedValues(args(argsBuilder).build)

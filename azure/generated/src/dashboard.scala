@@ -40,7 +40,7 @@ object dashboard:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Dashboard Grafana. */
-  def Grafana(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Grafana(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.dashboard.GrafanaArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.dashboard.GrafanaArgs.builder
     conf.logicalName2physicalName(name) match
@@ -62,7 +62,7 @@ object dashboard:
    * 
    * &gt; **Note:** This resource will _not_ approve the managed private endpoint connection on the linked resource. This will need to be done manually via Azure CLI, PowerShell, or AzAPI resources. See here for an example that uses AzAPI.
    */
-  def GrafanaManagedPrivateEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GrafanaManagedPrivateEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.dashboard.GrafanaManagedPrivateEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.dashboard.GrafanaManagedPrivateEndpointArgs.builder
     conf.logicalName2physicalName(name) match

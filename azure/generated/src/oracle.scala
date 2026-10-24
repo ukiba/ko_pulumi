@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object oracle:
   /** Manages an Autonomous Database. */
-  def AutonomousDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AutonomousDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.oracle.AutonomousDatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.oracle.AutonomousDatabaseArgs.builder
     conf.logicalName2physicalName(name) match
@@ -25,7 +25,7 @@ object oracle:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Oracle Autonomous Database Backup in Azure. */
-  def AutonomousDatabaseBackup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AutonomousDatabaseBackup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.oracle.AutonomousDatabaseBackupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.oracle.AutonomousDatabaseBackupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -36,7 +36,7 @@ object oracle:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manage an autonomous database clone from backup. */
-  def AutonomousDatabaseCloneFromBackup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AutonomousDatabaseCloneFromBackup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.oracle.AutonomousDatabaseCloneFromBackupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.oracle.AutonomousDatabaseCloneFromBackupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -54,7 +54,7 @@ object oracle:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an autonomous database clone from database. */
-  def AutonomousDatabaseCloneFromDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AutonomousDatabaseCloneFromDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.oracle.AutonomousDatabaseCloneFromDatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.oracle.AutonomousDatabaseCloneFromDatabaseArgs.builder
     conf.logicalName2physicalName(name) match
@@ -72,7 +72,7 @@ object oracle:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Cloud VM Cluster. */
-  def CloudVmCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CloudVmCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.oracle.CloudVmClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.oracle.CloudVmClusterArgs.builder
     conf.logicalName2physicalName(name) match
@@ -90,7 +90,7 @@ object oracle:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Cloud Exadata Infrastructure. */
-  def ExadataInfrastructure(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ExadataInfrastructure(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.oracle.ExadataInfrastructureArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.oracle.ExadataInfrastructureArgs.builder
     conf.logicalName2physicalName(name) match
@@ -108,7 +108,7 @@ object oracle:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Exadata Database Storage Vault. */
-  def ExascaleDatabaseStorageVault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ExascaleDatabaseStorageVault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.oracle.ExascaleDatabaseStorageVaultArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.oracle.ExascaleDatabaseStorageVaultArgs.builder
     conf.logicalName2physicalName(name) match
@@ -399,7 +399,7 @@ object oracle:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an Oracle Resource Anchor. */
-  def ResourceAnchor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourceAnchor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.oracle.ResourceAnchorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.oracle.ResourceAnchorArgs.builder
     conf.logicalName2physicalName(name) match

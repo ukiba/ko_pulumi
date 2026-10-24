@@ -7,7 +7,7 @@ object securitylake_ext:
      * @param source Specify the natively-supported AWS service to add as a source in Security Lake.
      * @return builder
      */
-    def source(args: Endofunction[com.pulumi.aws.securitylake.inputs.AwsLogSourceSourceArgs.Builder]):
+    inline def source(args: Endofunction[com.pulumi.aws.securitylake.inputs.AwsLogSourceSourceArgs.Builder]):
         com.pulumi.aws.securitylake.AwsLogSourceArgs.Builder =
       val argsBuilder = com.pulumi.aws.securitylake.inputs.AwsLogSourceSourceArgs.builder
       builder.source(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object securitylake_ext:
      * @param configuration The configuration for the third-party custom source.
      * @return builder
      */
-    def configuration(args: Endofunction[com.pulumi.aws.securitylake.inputs.CustomLogSourceConfigurationArgs.Builder]):
+    inline def configuration(args: Endofunction[com.pulumi.aws.securitylake.inputs.CustomLogSourceConfigurationArgs.Builder]):
         com.pulumi.aws.securitylake.CustomLogSourceArgs.Builder =
       val argsBuilder = com.pulumi.aws.securitylake.inputs.CustomLogSourceConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
@@ -27,12 +27,12 @@ object securitylake_ext:
      * @param configuration Specify the Region or Regions that will contribute data to the rollup region.
      * @return builder
      */
-    def configuration(args: Endofunction[com.pulumi.aws.securitylake.inputs.DataLakeConfigurationArgs.Builder]):
+    inline def configuration(args: Endofunction[com.pulumi.aws.securitylake.inputs.DataLakeConfigurationArgs.Builder]):
         com.pulumi.aws.securitylake.DataLakeArgs.Builder =
       val argsBuilder = com.pulumi.aws.securitylake.inputs.DataLakeConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.securitylake.inputs.DataLakeTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.securitylake.inputs.DataLakeTimeoutsArgs.Builder]):
         com.pulumi.aws.securitylake.DataLakeArgs.Builder =
       val argsBuilder = com.pulumi.aws.securitylake.inputs.DataLakeTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -42,7 +42,7 @@ object securitylake_ext:
      * @param sources The supported AWS services from which logs and events are collected. Security Lake supports log and event collection for natively supported AWS services. See `source` Blocks below.
      * @return builder
      */
-    def sources(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberSourceArgs.Builder]*):
+    inline def sources(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberSourceArgs.Builder]*):
         com.pulumi.aws.securitylake.SubscriberArgs.Builder =
       def argsBuilder = com.pulumi.aws.securitylake.inputs.SubscriberSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
@@ -51,12 +51,12 @@ object securitylake_ext:
      * @param subscriberIdentity The AWS identity used to access your data. See `subscriberIdentity` Block below.
      * @return builder
      */
-    def subscriberIdentity(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberSubscriberIdentityArgs.Builder]):
+    inline def subscriberIdentity(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberSubscriberIdentityArgs.Builder]):
         com.pulumi.aws.securitylake.SubscriberArgs.Builder =
       val argsBuilder = com.pulumi.aws.securitylake.inputs.SubscriberSubscriberIdentityArgs.builder
       builder.subscriberIdentity(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberTimeoutsArgs.Builder]):
         com.pulumi.aws.securitylake.SubscriberArgs.Builder =
       val argsBuilder = com.pulumi.aws.securitylake.inputs.SubscriberTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -66,7 +66,7 @@ object securitylake_ext:
      * @param configuration Specify the configuration using which you want to create the subscriber notification..
      * @return builder
      */
-    def configuration(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberNotificationConfigurationArgs.Builder]):
+    inline def configuration(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberNotificationConfigurationArgs.Builder]):
         com.pulumi.aws.securitylake.SubscriberNotificationArgs.Builder =
       val argsBuilder = com.pulumi.aws.securitylake.inputs.SubscriberNotificationConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
@@ -76,7 +76,7 @@ object securitylake_ext:
      * @param source Specify the natively-supported AWS service to add as a source in Security Lake.
      * @return builder
      */
-    def source(args: Endofunction[com.pulumi.aws.securitylake.inputs.AwsLogSourceSourceArgs.Builder]):
+    inline def source(args: Endofunction[com.pulumi.aws.securitylake.inputs.AwsLogSourceSourceArgs.Builder]):
         com.pulumi.aws.securitylake.inputs.AwsLogSourceState.Builder =
       val argsBuilder = com.pulumi.aws.securitylake.inputs.AwsLogSourceSourceArgs.builder
       builder.source(args(argsBuilder).build)
@@ -86,7 +86,7 @@ object securitylake_ext:
      * @param crawlerConfiguration The configuration for the Glue Crawler for the third-party custom source.
      * @return builder
      */
-    def crawlerConfiguration(args: Endofunction[com.pulumi.aws.securitylake.inputs.CustomLogSourceConfigurationCrawlerConfigurationArgs.Builder]):
+    inline def crawlerConfiguration(args: Endofunction[com.pulumi.aws.securitylake.inputs.CustomLogSourceConfigurationCrawlerConfigurationArgs.Builder]):
         com.pulumi.aws.securitylake.inputs.CustomLogSourceConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.securitylake.inputs.CustomLogSourceConfigurationCrawlerConfigurationArgs.builder
       builder.crawlerConfiguration(args(argsBuilder).build)
@@ -95,7 +95,7 @@ object securitylake_ext:
      * @param providerIdentity The identity of the log provider for the third-party custom source.
      * @return builder
      */
-    def providerIdentity(args: Endofunction[com.pulumi.aws.securitylake.inputs.CustomLogSourceConfigurationProviderIdentityArgs.Builder]):
+    inline def providerIdentity(args: Endofunction[com.pulumi.aws.securitylake.inputs.CustomLogSourceConfigurationProviderIdentityArgs.Builder]):
         com.pulumi.aws.securitylake.inputs.CustomLogSourceConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.securitylake.inputs.CustomLogSourceConfigurationProviderIdentityArgs.builder
       builder.providerIdentity(args(argsBuilder).build)
@@ -105,7 +105,7 @@ object securitylake_ext:
      * @param attributes The attributes of a third-party custom source.
      * @return builder
      */
-    def attributes(args: Endofunction[com.pulumi.aws.securitylake.inputs.CustomLogSourceAttributeArgs.Builder]*):
+    inline def attributes(args: Endofunction[com.pulumi.aws.securitylake.inputs.CustomLogSourceAttributeArgs.Builder]*):
         com.pulumi.aws.securitylake.inputs.CustomLogSourceState.Builder =
       def argsBuilder = com.pulumi.aws.securitylake.inputs.CustomLogSourceAttributeArgs.builder
       builder.attributes(args.map(_(argsBuilder).build)*)
@@ -114,7 +114,7 @@ object securitylake_ext:
      * @param configuration The configuration for the third-party custom source.
      * @return builder
      */
-    def configuration(args: Endofunction[com.pulumi.aws.securitylake.inputs.CustomLogSourceConfigurationArgs.Builder]):
+    inline def configuration(args: Endofunction[com.pulumi.aws.securitylake.inputs.CustomLogSourceConfigurationArgs.Builder]):
         com.pulumi.aws.securitylake.inputs.CustomLogSourceState.Builder =
       val argsBuilder = com.pulumi.aws.securitylake.inputs.CustomLogSourceConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
@@ -123,7 +123,7 @@ object securitylake_ext:
      * @param providerDetails The details of the log provider for a third-party custom source.
      * @return builder
      */
-    def providerDetails(args: Endofunction[com.pulumi.aws.securitylake.inputs.CustomLogSourceProviderDetailArgs.Builder]*):
+    inline def providerDetails(args: Endofunction[com.pulumi.aws.securitylake.inputs.CustomLogSourceProviderDetailArgs.Builder]*):
         com.pulumi.aws.securitylake.inputs.CustomLogSourceState.Builder =
       def argsBuilder = com.pulumi.aws.securitylake.inputs.CustomLogSourceProviderDetailArgs.builder
       builder.providerDetails(args.map(_(argsBuilder).build)*)
@@ -133,7 +133,7 @@ object securitylake_ext:
      * @param encryptionConfigurations Provides encryption details of Amazon Security Lake object.
      * @return builder
      */
-    def encryptionConfigurations(args: Endofunction[com.pulumi.aws.securitylake.inputs.DataLakeConfigurationEncryptionConfigurationArgs.Builder]*):
+    inline def encryptionConfigurations(args: Endofunction[com.pulumi.aws.securitylake.inputs.DataLakeConfigurationEncryptionConfigurationArgs.Builder]*):
         com.pulumi.aws.securitylake.inputs.DataLakeConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.aws.securitylake.inputs.DataLakeConfigurationEncryptionConfigurationArgs.builder
       builder.encryptionConfigurations(args.map(_(argsBuilder).build)*)
@@ -142,7 +142,7 @@ object securitylake_ext:
      * @param lifecycleConfiguration Provides lifecycle details of Amazon Security Lake object.
      * @return builder
      */
-    def lifecycleConfiguration(args: Endofunction[com.pulumi.aws.securitylake.inputs.DataLakeConfigurationLifecycleConfigurationArgs.Builder]):
+    inline def lifecycleConfiguration(args: Endofunction[com.pulumi.aws.securitylake.inputs.DataLakeConfigurationLifecycleConfigurationArgs.Builder]):
         com.pulumi.aws.securitylake.inputs.DataLakeConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.securitylake.inputs.DataLakeConfigurationLifecycleConfigurationArgs.builder
       builder.lifecycleConfiguration(args(argsBuilder).build)
@@ -151,7 +151,7 @@ object securitylake_ext:
      * @param replicationConfiguration Provides replication details of Amazon Security Lake object.
      * @return builder
      */
-    def replicationConfiguration(args: Endofunction[com.pulumi.aws.securitylake.inputs.DataLakeConfigurationReplicationConfigurationArgs.Builder]):
+    inline def replicationConfiguration(args: Endofunction[com.pulumi.aws.securitylake.inputs.DataLakeConfigurationReplicationConfigurationArgs.Builder]):
         com.pulumi.aws.securitylake.inputs.DataLakeConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.securitylake.inputs.DataLakeConfigurationReplicationConfigurationArgs.builder
       builder.replicationConfiguration(args(argsBuilder).build)
@@ -161,7 +161,7 @@ object securitylake_ext:
      * @param expiration Provides data expiration details of Amazon Security Lake object.
      * @return builder
      */
-    def expiration(args: Endofunction[com.pulumi.aws.securitylake.inputs.DataLakeConfigurationLifecycleConfigurationExpirationArgs.Builder]):
+    inline def expiration(args: Endofunction[com.pulumi.aws.securitylake.inputs.DataLakeConfigurationLifecycleConfigurationExpirationArgs.Builder]):
         com.pulumi.aws.securitylake.inputs.DataLakeConfigurationLifecycleConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.securitylake.inputs.DataLakeConfigurationLifecycleConfigurationExpirationArgs.builder
       builder.expiration(args(argsBuilder).build)
@@ -170,7 +170,7 @@ object securitylake_ext:
      * @param transitions Provides data storage transition details of Amazon Security Lake object.
      * @return builder
      */
-    def transitions(args: Endofunction[com.pulumi.aws.securitylake.inputs.DataLakeConfigurationLifecycleConfigurationTransitionArgs.Builder]*):
+    inline def transitions(args: Endofunction[com.pulumi.aws.securitylake.inputs.DataLakeConfigurationLifecycleConfigurationTransitionArgs.Builder]*):
         com.pulumi.aws.securitylake.inputs.DataLakeConfigurationLifecycleConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.aws.securitylake.inputs.DataLakeConfigurationLifecycleConfigurationTransitionArgs.builder
       builder.transitions(args.map(_(argsBuilder).build)*)
@@ -180,12 +180,12 @@ object securitylake_ext:
      * @param configuration Specify the Region or Regions that will contribute data to the rollup region.
      * @return builder
      */
-    def configuration(args: Endofunction[com.pulumi.aws.securitylake.inputs.DataLakeConfigurationArgs.Builder]):
+    inline def configuration(args: Endofunction[com.pulumi.aws.securitylake.inputs.DataLakeConfigurationArgs.Builder]):
         com.pulumi.aws.securitylake.inputs.DataLakeState.Builder =
       val argsBuilder = com.pulumi.aws.securitylake.inputs.DataLakeConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.securitylake.inputs.DataLakeTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.securitylake.inputs.DataLakeTimeoutsArgs.Builder]):
         com.pulumi.aws.securitylake.inputs.DataLakeState.Builder =
       val argsBuilder = com.pulumi.aws.securitylake.inputs.DataLakeTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)
@@ -195,7 +195,7 @@ object securitylake_ext:
      * @param httpsNotificationConfiguration The configurations for HTTPS subscriber notification.
      * @return builder
      */
-    def httpsNotificationConfiguration(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberNotificationConfigurationHttpsNotificationConfigurationArgs.Builder]):
+    inline def httpsNotificationConfiguration(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberNotificationConfigurationHttpsNotificationConfigurationArgs.Builder]):
         com.pulumi.aws.securitylake.inputs.SubscriberNotificationConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.securitylake.inputs.SubscriberNotificationConfigurationHttpsNotificationConfigurationArgs.builder
       builder.httpsNotificationConfiguration(args(argsBuilder).build)
@@ -205,7 +205,7 @@ object securitylake_ext:
      * There are no parameters within `sqsNotificationConfiguration`.
      * @return builder
      */
-    def sqsNotificationConfiguration(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberNotificationConfigurationSqsNotificationConfigurationArgs.Builder]):
+    inline def sqsNotificationConfiguration(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberNotificationConfigurationSqsNotificationConfigurationArgs.Builder]):
         com.pulumi.aws.securitylake.inputs.SubscriberNotificationConfigurationArgs.Builder =
       val argsBuilder = com.pulumi.aws.securitylake.inputs.SubscriberNotificationConfigurationSqsNotificationConfigurationArgs.builder
       builder.sqsNotificationConfiguration(args(argsBuilder).build)
@@ -215,7 +215,7 @@ object securitylake_ext:
      * @param configuration Specify the configuration using which you want to create the subscriber notification..
      * @return builder
      */
-    def configuration(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberNotificationConfigurationArgs.Builder]):
+    inline def configuration(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberNotificationConfigurationArgs.Builder]):
         com.pulumi.aws.securitylake.inputs.SubscriberNotificationState.Builder =
       val argsBuilder = com.pulumi.aws.securitylake.inputs.SubscriberNotificationConfigurationArgs.builder
       builder.configuration(args(argsBuilder).build)
@@ -225,7 +225,7 @@ object securitylake_ext:
      * @param awsLogSourceResource Amazon Security Lake supports log and event collection for natively supported AWS services. See `awsLogSourceResource` Block below.
      * @return builder
      */
-    def awsLogSourceResource(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberSourceAwsLogSourceResourceArgs.Builder]):
+    inline def awsLogSourceResource(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberSourceAwsLogSourceResourceArgs.Builder]):
         com.pulumi.aws.securitylake.inputs.SubscriberSourceArgs.Builder =
       val argsBuilder = com.pulumi.aws.securitylake.inputs.SubscriberSourceAwsLogSourceResourceArgs.builder
       builder.awsLogSourceResource(args(argsBuilder).build)
@@ -234,7 +234,7 @@ object securitylake_ext:
      * @param customLogSourceResource Amazon Security Lake supports custom source types. See `customLogSourceResource` Block below.
      * @return builder
      */
-    def customLogSourceResource(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberSourceCustomLogSourceResourceArgs.Builder]):
+    inline def customLogSourceResource(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberSourceCustomLogSourceResourceArgs.Builder]):
         com.pulumi.aws.securitylake.inputs.SubscriberSourceArgs.Builder =
       val argsBuilder = com.pulumi.aws.securitylake.inputs.SubscriberSourceCustomLogSourceResourceArgs.builder
       builder.customLogSourceResource(args(argsBuilder).build)
@@ -244,7 +244,7 @@ object securitylake_ext:
      * @param attributes The attributes of the third-party custom source. See `attributes` Block below.
      * @return builder
      */
-    def attributes(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberSourceCustomLogSourceResourceAttributeArgs.Builder]*):
+    inline def attributes(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberSourceCustomLogSourceResourceAttributeArgs.Builder]*):
         com.pulumi.aws.securitylake.inputs.SubscriberSourceCustomLogSourceResourceArgs.Builder =
       def argsBuilder = com.pulumi.aws.securitylake.inputs.SubscriberSourceCustomLogSourceResourceAttributeArgs.builder
       builder.attributes(args.map(_(argsBuilder).build)*)
@@ -253,7 +253,7 @@ object securitylake_ext:
      * @param providers The details of the log provider for the third-party custom source. See `provider` Block below.
      * @return builder
      */
-    def providers(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberSourceCustomLogSourceResourceProviderArgs.Builder]*):
+    inline def providers(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberSourceCustomLogSourceResourceProviderArgs.Builder]*):
         com.pulumi.aws.securitylake.inputs.SubscriberSourceCustomLogSourceResourceArgs.Builder =
       def argsBuilder = com.pulumi.aws.securitylake.inputs.SubscriberSourceCustomLogSourceResourceProviderArgs.builder
       builder.providers(args.map(_(argsBuilder).build)*)
@@ -263,7 +263,7 @@ object securitylake_ext:
      * @param sources The supported AWS services from which logs and events are collected. Security Lake supports log and event collection for natively supported AWS services. See `source` Blocks below.
      * @return builder
      */
-    def sources(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberSourceArgs.Builder]*):
+    inline def sources(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberSourceArgs.Builder]*):
         com.pulumi.aws.securitylake.inputs.SubscriberState.Builder =
       def argsBuilder = com.pulumi.aws.securitylake.inputs.SubscriberSourceArgs.builder
       builder.sources(args.map(_(argsBuilder).build)*)
@@ -272,12 +272,12 @@ object securitylake_ext:
      * @param subscriberIdentity The AWS identity used to access your data. See `subscriberIdentity` Block below.
      * @return builder
      */
-    def subscriberIdentity(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberSubscriberIdentityArgs.Builder]):
+    inline def subscriberIdentity(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberSubscriberIdentityArgs.Builder]):
         com.pulumi.aws.securitylake.inputs.SubscriberState.Builder =
       val argsBuilder = com.pulumi.aws.securitylake.inputs.SubscriberSubscriberIdentityArgs.builder
       builder.subscriberIdentity(args(argsBuilder).build)
 
-    def timeouts(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberTimeoutsArgs.Builder]):
+    inline def timeouts(args: Endofunction[com.pulumi.aws.securitylake.inputs.SubscriberTimeoutsArgs.Builder]):
         com.pulumi.aws.securitylake.inputs.SubscriberState.Builder =
       val argsBuilder = com.pulumi.aws.securitylake.inputs.SubscriberTimeoutsArgs.builder
       builder.timeouts(args(argsBuilder).build)

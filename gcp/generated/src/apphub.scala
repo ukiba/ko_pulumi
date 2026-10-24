@@ -56,7 +56,7 @@ object apphub:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Application is a functional grouping of Services and Workloads that helps achieve a desired end-to-end business functionality. Services and Workloads are owned by the Application. */
-  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.apphub.ApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apphub.ApplicationArgs.builder
     com.pulumi.gcp.apphub.Application(name,
@@ -72,7 +72,7 @@ object apphub:
    * * How-to Guides
    *     * [AppHub](https://docs.cloud.google.com/app-hub/docs/)
    */
-  def Boundary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Boundary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.apphub.BoundaryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apphub.BoundaryArgs.builder
     com.pulumi.gcp.apphub.Boundary(name,
@@ -80,7 +80,7 @@ object apphub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Service is a network/api interface that exposes some functionality to clients for consumption over the network. Service typically has one or more Workloads behind it. It registers identified service to the Application. */
-  def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.apphub.ServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apphub.ServiceArgs.builder
     com.pulumi.gcp.apphub.Service(name,
@@ -88,7 +88,7 @@ object apphub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Represents a Service project attachment to the Host Project. */
-  def ServiceProjectAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServiceProjectAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.apphub.ServiceProjectAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apphub.ServiceProjectAttachmentArgs.builder
     com.pulumi.gcp.apphub.ServiceProjectAttachment(name,
@@ -96,7 +96,7 @@ object apphub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Workload represents a binary deployment (such as Managed Instance Groups (MIGs), GKE deployments, etc.) that performs the smallest logical subset of business functionality. It registers identified workload to the Application. */
-  def Workload(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Workload(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.apphub.WorkloadArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apphub.WorkloadArgs.builder
     com.pulumi.gcp.apphub.Workload(name,

@@ -7,7 +7,7 @@ object arczonalshift_ext:
      * @param blockingAlarms List of CloudWatch alarms that can block practice runs when in alarm state. See `blockingAlarms` below.
      * @return builder
      */
-    def blockingAlarms(args: Endofunction[com.pulumi.aws.arczonalshift.inputs.ZonalAutoshiftConfigurationBlockingAlarmArgs.Builder]*):
+    inline def blockingAlarms(args: Endofunction[com.pulumi.aws.arczonalshift.inputs.ZonalAutoshiftConfigurationBlockingAlarmArgs.Builder]*):
         com.pulumi.aws.arczonalshift.ZonalAutoshiftConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.aws.arczonalshift.inputs.ZonalAutoshiftConfigurationBlockingAlarmArgs.builder
       builder.blockingAlarms(args.map(_(argsBuilder).build)*)
@@ -16,7 +16,7 @@ object arczonalshift_ext:
      * @param outcomeAlarms List of CloudWatch alarms monitored during practice runs. See `outcomeAlarms` below.
      * @return builder
      */
-    def outcomeAlarms(args: Endofunction[com.pulumi.aws.arczonalshift.inputs.ZonalAutoshiftConfigurationOutcomeAlarmArgs.Builder]*):
+    inline def outcomeAlarms(args: Endofunction[com.pulumi.aws.arczonalshift.inputs.ZonalAutoshiftConfigurationOutcomeAlarmArgs.Builder]*):
         com.pulumi.aws.arczonalshift.ZonalAutoshiftConfigurationArgs.Builder =
       def argsBuilder = com.pulumi.aws.arczonalshift.inputs.ZonalAutoshiftConfigurationOutcomeAlarmArgs.builder
       builder.outcomeAlarms(args.map(_(argsBuilder).build)*)
@@ -26,7 +26,7 @@ object arczonalshift_ext:
      * @param blockingAlarms List of CloudWatch alarms that can block practice runs when in alarm state. See `blockingAlarms` below.
      * @return builder
      */
-    def blockingAlarms(args: Endofunction[com.pulumi.aws.arczonalshift.inputs.ZonalAutoshiftConfigurationBlockingAlarmArgs.Builder]*):
+    inline def blockingAlarms(args: Endofunction[com.pulumi.aws.arczonalshift.inputs.ZonalAutoshiftConfigurationBlockingAlarmArgs.Builder]*):
         com.pulumi.aws.arczonalshift.inputs.ZonalAutoshiftConfigurationState.Builder =
       def argsBuilder = com.pulumi.aws.arczonalshift.inputs.ZonalAutoshiftConfigurationBlockingAlarmArgs.builder
       builder.blockingAlarms(args.map(_(argsBuilder).build)*)
@@ -35,7 +35,7 @@ object arczonalshift_ext:
      * @param outcomeAlarms List of CloudWatch alarms monitored during practice runs. See `outcomeAlarms` below.
      * @return builder
      */
-    def outcomeAlarms(args: Endofunction[com.pulumi.aws.arczonalshift.inputs.ZonalAutoshiftConfigurationOutcomeAlarmArgs.Builder]*):
+    inline def outcomeAlarms(args: Endofunction[com.pulumi.aws.arczonalshift.inputs.ZonalAutoshiftConfigurationOutcomeAlarmArgs.Builder]*):
         com.pulumi.aws.arczonalshift.inputs.ZonalAutoshiftConfigurationState.Builder =
       def argsBuilder = com.pulumi.aws.arczonalshift.inputs.ZonalAutoshiftConfigurationOutcomeAlarmArgs.builder
       builder.outcomeAlarms(args.map(_(argsBuilder).build)*)

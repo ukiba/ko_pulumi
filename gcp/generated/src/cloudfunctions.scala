@@ -60,7 +60,7 @@ object cloudfunctions:
    * or view the [Cloud Functions IAM resources](https://www.terraform.io/docs/providers/google/r/cloudfunctions_cloud_function_iam.html)
    * for Cloud Functions.
    */
-  def Function(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Function(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudfunctions.FunctionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudfunctions.FunctionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -376,7 +376,7 @@ object cloudfunctions:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def FunctionIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FunctionIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudfunctions.FunctionIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.cloudfunctions.FunctionIamBindingArgs.builder
     com.pulumi.gcp.cloudfunctions.FunctionIamBinding(name,
@@ -689,7 +689,7 @@ object cloudfunctions:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def FunctionIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FunctionIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudfunctions.FunctionIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.cloudfunctions.FunctionIamMemberArgs.builder
     com.pulumi.gcp.cloudfunctions.FunctionIamMember(name,
@@ -1002,7 +1002,7 @@ object cloudfunctions:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def FunctionIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FunctionIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.cloudfunctions.FunctionIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.cloudfunctions.FunctionIamPolicyArgs.builder
     com.pulumi.gcp.cloudfunctions.FunctionIamPolicy(name,

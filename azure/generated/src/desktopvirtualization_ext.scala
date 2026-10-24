@@ -7,7 +7,7 @@ object desktopvirtualization_ext:
      * @param scheduledAgentUpdates A `scheduledAgentUpdates` block as defined below. This enables control of when Agent Updates will be applied to Session Hosts.
      * @return builder
      */
-    def scheduledAgentUpdates(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.HostPoolScheduledAgentUpdatesArgs.Builder]):
+    inline def scheduledAgentUpdates(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.HostPoolScheduledAgentUpdatesArgs.Builder]):
         com.pulumi.azure.desktopvirtualization.HostPoolArgs.Builder =
       val argsBuilder = com.pulumi.azure.desktopvirtualization.inputs.HostPoolScheduledAgentUpdatesArgs.builder
       builder.scheduledAgentUpdates(args(argsBuilder).build)
@@ -17,7 +17,7 @@ object desktopvirtualization_ext:
      * @param hostPools One or more `hostPool` blocks as defined below.
      * @return builder
      */
-    def hostPools(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.ScalingPlanHostPoolArgs.Builder]*):
+    inline def hostPools(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.ScalingPlanHostPoolArgs.Builder]*):
         com.pulumi.azure.desktopvirtualization.ScalingPlanArgs.Builder =
       def argsBuilder = com.pulumi.azure.desktopvirtualization.inputs.ScalingPlanHostPoolArgs.builder
       builder.hostPools(args.map(_(argsBuilder).build)*)
@@ -26,7 +26,7 @@ object desktopvirtualization_ext:
      * @param schedules One or more `schedule` blocks as defined below.
      * @return builder
      */
-    def schedules(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.ScalingPlanScheduleArgs.Builder]*):
+    inline def schedules(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.ScalingPlanScheduleArgs.Builder]*):
         com.pulumi.azure.desktopvirtualization.ScalingPlanArgs.Builder =
       def argsBuilder = com.pulumi.azure.desktopvirtualization.inputs.ScalingPlanScheduleArgs.builder
       builder.schedules(args.map(_(argsBuilder).build)*)
@@ -36,7 +36,7 @@ object desktopvirtualization_ext:
      * @param schedules A `schedule` block as defined below. A maximum of two blocks can be added.
      * @return builder
      */
-    def schedules(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.HostPoolScheduledAgentUpdatesScheduleArgs.Builder]*):
+    inline def schedules(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.HostPoolScheduledAgentUpdatesScheduleArgs.Builder]*):
         com.pulumi.azure.desktopvirtualization.inputs.HostPoolScheduledAgentUpdatesArgs.Builder =
       def argsBuilder = com.pulumi.azure.desktopvirtualization.inputs.HostPoolScheduledAgentUpdatesScheduleArgs.builder
       builder.schedules(args.map(_(argsBuilder).build)*)
@@ -46,7 +46,7 @@ object desktopvirtualization_ext:
      * @param scheduledAgentUpdates A `scheduledAgentUpdates` block as defined below. This enables control of when Agent Updates will be applied to Session Hosts.
      * @return builder
      */
-    def scheduledAgentUpdates(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.HostPoolScheduledAgentUpdatesArgs.Builder]):
+    inline def scheduledAgentUpdates(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.HostPoolScheduledAgentUpdatesArgs.Builder]):
         com.pulumi.azure.desktopvirtualization.inputs.HostPoolState.Builder =
       val argsBuilder = com.pulumi.azure.desktopvirtualization.inputs.HostPoolScheduledAgentUpdatesArgs.builder
       builder.scheduledAgentUpdates(args(argsBuilder).build)
@@ -56,7 +56,7 @@ object desktopvirtualization_ext:
      * @param hostPools One or more `hostPool` blocks as defined below.
      * @return builder
      */
-    def hostPools(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.ScalingPlanHostPoolArgs.Builder]*):
+    inline def hostPools(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.ScalingPlanHostPoolArgs.Builder]*):
         com.pulumi.azure.desktopvirtualization.inputs.ScalingPlanState.Builder =
       def argsBuilder = com.pulumi.azure.desktopvirtualization.inputs.ScalingPlanHostPoolArgs.builder
       builder.hostPools(args.map(_(argsBuilder).build)*)
@@ -65,7 +65,7 @@ object desktopvirtualization_ext:
      * @param schedules One or more `schedule` blocks as defined below.
      * @return builder
      */
-    def schedules(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.ScalingPlanScheduleArgs.Builder]*):
+    inline def schedules(args: Endofunction[com.pulumi.azure.desktopvirtualization.inputs.ScalingPlanScheduleArgs.Builder]*):
         com.pulumi.azure.desktopvirtualization.inputs.ScalingPlanState.Builder =
       def argsBuilder = com.pulumi.azure.desktopvirtualization.inputs.ScalingPlanScheduleArgs.builder
       builder.schedules(args.map(_(argsBuilder).build)*)

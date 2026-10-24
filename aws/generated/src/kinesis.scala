@@ -11,7 +11,7 @@ object kinesis:
    * 
    * &gt; Deletion of this resource will not modify any settings, only remove the resource from state.
    */
-  def AccountSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccountSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kinesis.AccountSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.kinesis.AccountSettingsArgs.builder
     com.pulumi.aws.kinesis.AccountSettings(name,
@@ -28,7 +28,7 @@ object kinesis:
    * 
    * &gt; **Note:** To manage Amazon Kinesis Data Analytics for Apache Flink applications, use the `aws.kinesisanalyticsv2.Application` resource.
    */
-  def AnalyticsApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AnalyticsApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kinesis.AnalyticsApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.kinesis.AnalyticsApplicationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -50,7 +50,7 @@ object kinesis:
    * 
    * For more details, see the [Amazon Kinesis Firehose Documentation](https://aws.amazon.com/documentation/firehose/).
    */
-  def FirehoseDeliveryStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FirehoseDeliveryStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kinesis.FirehoseDeliveryStreamArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.kinesis.FirehoseDeliveryStreamArgs.builder
     conf.logicalName2physicalName(name) match
@@ -146,7 +146,7 @@ object kinesis:
    * Provides a resource to manage an Amazon Kinesis Streams resource policy.
    * Use a resource policy to manage cross-account access to your data streams or consumers.
    */
-  def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kinesis.ResourcePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.kinesis.ResourcePolicyArgs.builder
     com.pulumi.aws.kinesis.ResourcePolicy(name,
@@ -159,7 +159,7 @@ object kinesis:
    * 
    * For more details, see the [Amazon Kinesis Documentation](https://aws.amazon.com/documentation/kinesis/).
    */
-  def Stream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Stream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kinesis.StreamArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.kinesis.StreamArgs.builder
     conf.logicalName2physicalName(name) match
@@ -183,7 +183,7 @@ object kinesis:
    * 
    * For more details, see the [Amazon Kinesis Stream Consumer Documentation](https://docs.aws.amazon.com/streams/latest/dev/enhanced-consumers.html).
    */
-  def StreamConsumer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StreamConsumer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kinesis.StreamConsumerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.kinesis.StreamConsumerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -205,7 +205,7 @@ object kinesis:
    * 
    * For more details, see the [Amazon Kinesis Documentation](https://aws.amazon.com/documentation/kinesis/).
    */
-  def VideoStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VideoStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.kinesis.VideoStreamArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.kinesis.VideoStreamArgs.builder
     conf.logicalName2physicalName(name) match

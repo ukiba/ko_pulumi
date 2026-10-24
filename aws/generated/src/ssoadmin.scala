@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object ssoadmin:
   /** Provides a Single Sign-On (SSO) Account Assignment resource */
-  def AccountAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccountAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.AccountAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ssoadmin.AccountAssignmentArgs.builder
     com.pulumi.aws.ssoadmin.AccountAssignment(name,
@@ -21,7 +21,7 @@ object ssoadmin:
    * Creation of 3rd party SAML or OAuth 2.0 applications require setup to be done through the associated app service or AWS console.
    * See this issue for additional context.
    */
-  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.ApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssoadmin.ApplicationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -39,7 +39,7 @@ object ssoadmin:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS SSO Admin Application Access Scope. */
-  def ApplicationAccessScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApplicationAccessScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.ApplicationAccessScopeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ssoadmin.ApplicationAccessScopeArgs.builder
     com.pulumi.aws.ssoadmin.ApplicationAccessScope(name,
@@ -47,7 +47,7 @@ object ssoadmin:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS SSO Admin Application Assignment. */
-  def ApplicationAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApplicationAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.ApplicationAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ssoadmin.ApplicationAssignmentArgs.builder
     com.pulumi.aws.ssoadmin.ApplicationAssignment(name,
@@ -62,7 +62,7 @@ object ssoadmin:
    * 
    * &gt; Deleting this resource will return the assignment configuration for the application to the default AWS behavior (ie. `assignmentRequired = true`).
    */
-  def ApplicationAssignmentConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApplicationAssignmentConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.ApplicationAssignmentConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ssoadmin.ApplicationAssignmentConfigurationArgs.builder
     com.pulumi.aws.ssoadmin.ApplicationAssignmentConfiguration(name,
@@ -76,7 +76,7 @@ object ssoadmin:
    * 
    * &gt; **NOTE:** Creating this resource will automatically [Provision the Permission Set](https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ProvisionPermissionSet.html) to apply the corresponding updates to all assigned accounts.
    */
-  def CustomerManagedPolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomerManagedPolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.CustomerManagedPolicyAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ssoadmin.CustomerManagedPolicyAttachmentArgs.builder
     com.pulumi.aws.ssoadmin.CustomerManagedPolicyAttachment(name,
@@ -92,7 +92,7 @@ object ssoadmin:
    * 
    * &gt; Destruction of this resource means Terraform will no longer manage the customer managed policy attachments, **but will not detach any policies**. The permission set will retain all customer managed policies that were attached at the time of destruction.
    */
-  def CustomerManagedPolicyAttachmentsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomerManagedPolicyAttachmentsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.CustomerManagedPolicyAttachmentsExclusiveArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ssoadmin.CustomerManagedPolicyAttachmentsExclusiveArgs.builder
     com.pulumi.aws.ssoadmin.CustomerManagedPolicyAttachmentsExclusive(name,
@@ -100,7 +100,7 @@ object ssoadmin:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Single Sign-On (SSO) ABAC Resource: https://docs.aws.amazon.com/singlesignon/latest/userguide/abac.html */
-  def InstanceAccessControlAttributes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def InstanceAccessControlAttributes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.InstanceAccessControlAttributesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ssoadmin.InstanceAccessControlAttributesArgs.builder
     com.pulumi.aws.ssoadmin.InstanceAccessControlAttributes(name,
@@ -114,7 +114,7 @@ object ssoadmin:
    * 
    * &gt; **WARNING:** Do not use this resource together with the `aws.ssoadmin.ManagedPolicyAttachmentsExclusive` resource for the same permission set. Doing so will cause a conflict and will lead to managed policies being removed.
    */
-  def ManagedPolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedPolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.ManagedPolicyAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ssoadmin.ManagedPolicyAttachmentArgs.builder
     com.pulumi.aws.ssoadmin.ManagedPolicyAttachment(name,
@@ -130,7 +130,7 @@ object ssoadmin:
    * 
    * &gt; Destruction of this resource means Terraform will no longer manage the managed policy attachments, **but will not detach any policies**. The permission set will retain all managed policies that were attached at the time of destruction.
    */
-  def ManagedPolicyAttachmentsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedPolicyAttachmentsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.ManagedPolicyAttachmentsExclusiveArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ssoadmin.ManagedPolicyAttachmentsExclusiveArgs.builder
     com.pulumi.aws.ssoadmin.ManagedPolicyAttachmentsExclusive(name,
@@ -142,7 +142,7 @@ object ssoadmin:
    * 
    * &gt; **NOTE:** Updating this resource will automatically [Provision the Permission Set](https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_ProvisionPermissionSet.html) to apply the corresponding updates to all assigned accounts.
    */
-  def PermissionSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PermissionSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.PermissionSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssoadmin.PermissionSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -167,7 +167,7 @@ object ssoadmin:
    * 
    * &gt; **NOTE:** We suggest using `jsonencode()` or `aws.iam.getPolicyDocument` when assigning a value to `inlinePolicy`. They seamlessly translate Terraform language into JSON, enabling you to maintain consistency within your configuration without the need for context switches. Also, you can sidestep potential complications arising from formatting discrepancies, whitespace inconsistencies, and other nuances inherent to JSON.
    */
-  def PermissionSetInlinePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PermissionSetInlinePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.PermissionSetInlinePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ssoadmin.PermissionSetInlinePolicyArgs.builder
     com.pulumi.aws.ssoadmin.PermissionSetInlinePolicy(name,
@@ -179,7 +179,7 @@ object ssoadmin:
    * 
    * &gt; **NOTE:** A permission set can have at most one permissions boundary attached; using more than one `aws.ssoadmin.PermissionsBoundaryAttachment` references the same permission set will show a permanent difference.
    */
-  def PermissionsBoundaryAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PermissionsBoundaryAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.PermissionsBoundaryAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ssoadmin.PermissionsBoundaryAttachmentArgs.builder
     com.pulumi.aws.ssoadmin.PermissionsBoundaryAttachment(name,
@@ -195,7 +195,7 @@ object ssoadmin:
    * 
    * &gt; The primary Region of an IAM Identity Center instance cannot be removed.
    */
-  def Region(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Region(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.RegionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ssoadmin.RegionArgs.builder
     com.pulumi.aws.ssoadmin.Region(name,
@@ -316,7 +316,7 @@ object ssoadmin:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Resource for managing an AWS SSO Admin Trusted Token Issuer. */
-  def TrustedTokenIssuer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TrustedTokenIssuer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.ssoadmin.TrustedTokenIssuerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ssoadmin.TrustedTokenIssuerArgs.builder
     conf.logicalName2physicalName(name) match

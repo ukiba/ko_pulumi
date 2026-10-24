@@ -11,7 +11,7 @@ object management:
    * 
    * &gt; **Note:** Configuring `subscriptionIds` is not supported when using the `azure.management.GroupSubscriptionAssociation` resource, results will be unpredictable.
    */
-  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.management.GroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.management.GroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -22,7 +22,7 @@ object management:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Policy Assignment to a Management Group. */
-  def GroupPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GroupPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.management.GroupPolicyAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.management.GroupPolicyAssignmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -33,7 +33,7 @@ object management:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Management Group Policy Exemption. */
-  def GroupPolicyExemption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GroupPolicyExemption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.management.GroupPolicyExemptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.management.GroupPolicyExemptionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -44,7 +44,7 @@ object management:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Management Group Policy Remediation. */
-  def GroupPolicyRemediation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GroupPolicyRemediation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.management.GroupPolicyRemediationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.management.GroupPolicyRemediationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -55,7 +55,7 @@ object management:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Policy Set Definition for a Management Group. */
-  def GroupPolicySetDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GroupPolicySetDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.management.GroupPolicySetDefinitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.management.GroupPolicySetDefinitionArgs.builder
     conf.logicalName2physicalName(name) match
@@ -70,7 +70,7 @@ object management:
    * 
    * &gt; **Note:** When using this resource, configuring `subscriptionIds` on the `azure.management.Group` resource is not supported.
    */
-  def GroupSubscriptionAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GroupSubscriptionAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.management.GroupSubscriptionAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.management.GroupSubscriptionAssociationArgs.builder
     com.pulumi.azure.management.GroupSubscriptionAssociation(name,
@@ -84,7 +84,7 @@ object management:
    * 
    * &gt; **Note:** Deployments to a Management Group are always Incrementally applied. Existing resources that are not part of the template will not be removed.
    */
-  def GroupTemplateDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GroupTemplateDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.management.GroupTemplateDeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.management.GroupTemplateDeploymentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -102,7 +102,7 @@ object management:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Management Lock which is scoped to a Subscription, Resource Group or Resource. */
-  def Lock(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Lock(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.management.LockArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.management.LockArgs.builder
     conf.logicalName2physicalName(name) match
@@ -146,7 +146,7 @@ object management:
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Resource Management Private Link to restrict access for managing resources in the tenant. */
-  def PrivateLink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PrivateLink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.management.PrivateLinkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.management.PrivateLinkArgs.builder
     conf.logicalName2physicalName(name) match
@@ -157,7 +157,7 @@ object management:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Resource Management Private Link Association. */
-  def PrivateLinkAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PrivateLinkAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.management.PrivateLinkAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.management.PrivateLinkAssociationArgs.builder
     conf.logicalName2physicalName(name) match

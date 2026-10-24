@@ -7,7 +7,7 @@ import com.pulumi.resources.CustomResourceOptions
 
 object connections:
   /** Manages an API Connection. */
-  def ApiConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApiConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.azure.connections.ApiConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.connections.ApiConnectionArgs.builder
     conf.logicalName2physicalName(name) match

@@ -13,7 +13,7 @@ object discoveryengine:
    * 
    * * [API documentation](https://cloud.google.com/generative-ai-app-builder/docs/reference/rpc/google.cloud.discoveryengine.v1alpha#aclconfigservice)
    */
-  def AclConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AclConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.discoveryengine.AclConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.AclConfigArgs.builder
     com.pulumi.gcp.discoveryengine.AclConfig(name,
@@ -27,7 +27,7 @@ object discoveryengine:
    * 
    * * [API documentation](https://cloud.google.com/generative-ai-app-builder/docs/reference/rpc/google.cloud.discoveryengine.v1#assistantservice)
    */
-  def Assistant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Assistant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.discoveryengine.AssistantArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.AssistantArgs.builder
     com.pulumi.gcp.discoveryengine.Assistant(name,
@@ -43,7 +43,7 @@ object discoveryengine:
    * * How-to Guides
    *     * [Vertex AI Conversation](https://cloud.google.com/dialogflow/cx/docs/concept/generative)
    */
-  def ChatEngine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ChatEngine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.discoveryengine.ChatEngineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.ChatEngineArgs.builder
     com.pulumi.gcp.discoveryengine.ChatEngine(name,
@@ -58,7 +58,7 @@ object discoveryengine:
    * 
    * * [API documentation](https://cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1/projects.locations.cmekConfigs)
    */
-  def CmekConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CmekConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.discoveryengine.CmekConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.CmekConfigArgs.builder
     com.pulumi.gcp.discoveryengine.CmekConfig(name,
@@ -74,7 +74,7 @@ object discoveryengine:
    * * How-to Guides
    *     * [Configure serving controls](https://cloud.google.com/gemini/enterprise/docs/configure-serving-controls)
    */
-  def Control(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Control(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.discoveryengine.ControlArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.ControlArgs.builder
     com.pulumi.gcp.discoveryengine.Control(name,
@@ -93,7 +93,7 @@ object discoveryengine:
    * * How-to Guides
    *     * [Introduction](https://cloud.google.com/agentspace/docs/introduction-to-connectors-and-data-stores)
    */
-  def DataConnector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataConnector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.discoveryengine.DataConnectorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.DataConnectorArgs.builder
     com.pulumi.gcp.discoveryengine.DataConnector(name,
@@ -111,7 +111,7 @@ object discoveryengine:
    * * How-to Guides
    *     * [Create a search data store](https://cloud.google.com/generative-ai-app-builder/docs/create-data-store-es)
    */
-  def DataStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DataStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.discoveryengine.DataStoreArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.DataStoreArgs.builder
     com.pulumi.gcp.discoveryengine.DataStore(name,
@@ -190,7 +190,7 @@ object discoveryengine:
    * 
    * * [API documentation](https://cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1/projects.locations.licenseConfigs)
    */
-  def LicenseConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LicenseConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.discoveryengine.LicenseConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.LicenseConfigArgs.builder
     com.pulumi.gcp.discoveryengine.LicenseConfig(name,
@@ -206,7 +206,7 @@ object discoveryengine:
    * * How-to Guides
    *     * [Create a Recommendation Engine](https://cloud.google.com/generative-ai-app-builder/docs/create-generic-recommendations-app)
    */
-  def RecommendationEngine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RecommendationEngine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.discoveryengine.RecommendationEngineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.RecommendationEngineArgs.builder
     com.pulumi.gcp.discoveryengine.RecommendationEngine(name,
@@ -222,7 +222,7 @@ object discoveryengine:
    * * How-to Guides
    *     * [Provide a schema for your data store](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema)
    */
-  def Schema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Schema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.discoveryengine.SchemaArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.SchemaArgs.builder
     com.pulumi.gcp.discoveryengine.Schema(name,
@@ -238,7 +238,7 @@ object discoveryengine:
    * * How-to Guides
    *     * [Create a Search Engine](https://cloud.google.com/generative-ai-app-builder/docs/create-engine-es)
    */
-  def SearchEngine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SearchEngine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.discoveryengine.SearchEngineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.SearchEngineArgs.builder
     com.pulumi.gcp.discoveryengine.SearchEngine(name,
@@ -557,7 +557,7 @@ object discoveryengine:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SearchEngineIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SearchEngineIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.discoveryengine.SearchEngineIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.SearchEngineIamBindingArgs.builder
     com.pulumi.gcp.discoveryengine.SearchEngineIamBinding(name,
@@ -876,7 +876,7 @@ object discoveryengine:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SearchEngineIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SearchEngineIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.discoveryengine.SearchEngineIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.SearchEngineIamMemberArgs.builder
     com.pulumi.gcp.discoveryengine.SearchEngineIamMember(name,
@@ -1195,7 +1195,7 @@ object discoveryengine:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SearchEngineIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SearchEngineIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.discoveryengine.SearchEngineIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.SearchEngineIamPolicyArgs.builder
     com.pulumi.gcp.discoveryengine.SearchEngineIamPolicy(name,
@@ -1226,7 +1226,7 @@ object discoveryengine:
    * \$ pulumi import gcp:discoveryengine/servingConfig:ServingConfig default {{location}}/{{collection_id}}/{{engine_id}}/{{serving_config_id}}
    * ```
    */
-  def ServingConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ServingConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.discoveryengine.ServingConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.ServingConfigArgs.builder
     com.pulumi.gcp.discoveryengine.ServingConfig(name,
@@ -1241,7 +1241,7 @@ object discoveryengine:
    * 
    * * [API documentation](https://cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1/projects.locations.collections.dataStores.siteSearchEngine.sitemaps)
    */
-  def Sitemap(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Sitemap(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.discoveryengine.SitemapArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.SitemapArgs.builder
     com.pulumi.gcp.discoveryengine.Sitemap(name,
@@ -1256,7 +1256,7 @@ object discoveryengine:
    * 
    * * [API documentation](https://cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1/projects.locations.collections.dataStores.siteSearchEngine.targetSites)
    */
-  def TargetSite(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TargetSite(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.discoveryengine.TargetSiteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.TargetSiteArgs.builder
     com.pulumi.gcp.discoveryengine.TargetSite(name,
@@ -1270,7 +1270,7 @@ object discoveryengine:
    * 
    * * [API documentation](https://cloud.google.com/gemini/enterprise/docs/reference/rest/v1/projects.locations.userStores)
    */
-  def UserStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UserStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.discoveryengine.UserStoreArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.UserStoreArgs.builder
     com.pulumi.gcp.discoveryengine.UserStore(name,
@@ -1284,7 +1284,7 @@ object discoveryengine:
    * 
    * * [API documentation](https://cloud.google.com/gemini/enterprise/docs/reference/rest/v1alpha/projects.locations.collections.engines.widgetConfigs)
    */
-  def WidgetConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WidgetConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.gcp.discoveryengine.WidgetConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.WidgetConfigArgs.builder
     com.pulumi.gcp.discoveryengine.WidgetConfig(name,

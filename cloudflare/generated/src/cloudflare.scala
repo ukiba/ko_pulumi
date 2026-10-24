@@ -6,7 +6,7 @@ import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object cloudflare:
-  @deprecated("cloudflare.index/accessapplication.AccessApplication has been deprecated in favor of cloudflare.index/zerotrustaccessapplication.ZeroTrustAccessApplication") def AccessApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/accessapplication.AccessApplication has been deprecated in favor of cloudflare.index/zerotrustaccessapplication.ZeroTrustAccessApplication") inline def AccessApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AccessApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.AccessApplicationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -22,7 +22,7 @@ object cloudflare:
    * - `Access: Apps and Policies Read`
    * - `Access: Apps and Policies Write`
    */
-  @deprecated("cloudflare.index/accesscacertificate.AccessCaCertificate has been deprecated in favor of cloudflare.index/zerotrustaccessshortlivedcertificate.ZeroTrustAccessShortLivedCertificate") def AccessCaCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/accesscacertificate.AccessCaCertificate has been deprecated in favor of cloudflare.index/zerotrustaccessshortlivedcertificate.ZeroTrustAccessShortLivedCertificate") inline def AccessCaCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AccessCaCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.AccessCaCertificateArgs.builder
     com.pulumi.cloudflare.AccessCaCertificate(name,
@@ -35,7 +35,7 @@ object cloudflare:
    * - `Access: Custom Pages Read`
    * - `Access: Custom Pages Write`
    */
-  @deprecated("cloudflare.index/accesscustompage.AccessCustomPage has been deprecated in favor of cloudflare.index/zerotrustaccesscustompage.ZeroTrustAccessCustomPage") def AccessCustomPage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/accesscustompage.AccessCustomPage has been deprecated in favor of cloudflare.index/zerotrustaccesscustompage.ZeroTrustAccessCustomPage") inline def AccessCustomPage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AccessCustomPageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.AccessCustomPageArgs.builder
     conf.logicalName2physicalName(name) match
@@ -51,7 +51,7 @@ object cloudflare:
    * - `Access: Organizations, Identity Providers, and Groups Read`
    * - `Access: Organizations, Identity Providers, and Groups Write`
    */
-  @deprecated("cloudflare.index/accessgroup.AccessGroup has been deprecated in favor of cloudflare.index/zerotrustaccessgroup.ZeroTrustAccessGroup") def AccessGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/accessgroup.AccessGroup has been deprecated in favor of cloudflare.index/zerotrustaccessgroup.ZeroTrustAccessGroup") inline def AccessGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AccessGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.AccessGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -67,7 +67,7 @@ object cloudflare:
    * - `Access: Organizations, Identity Providers, and Groups Read`
    * - `Access: Organizations, Identity Providers, and Groups Write`
    */
-  @deprecated("cloudflare.index/accessidentityprovider.AccessIdentityProvider has been deprecated in favor of cloudflare.index/zerotrustaccessidentityprovider.ZeroTrustAccessIdentityProvider") def AccessIdentityProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/accessidentityprovider.AccessIdentityProvider has been deprecated in favor of cloudflare.index/zerotrustaccessidentityprovider.ZeroTrustAccessIdentityProvider") inline def AccessIdentityProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AccessIdentityProviderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.AccessIdentityProviderArgs.builder
     conf.logicalName2physicalName(name) match
@@ -83,7 +83,7 @@ object cloudflare:
    * - `Access: Organizations, Identity Providers, and Groups Read`
    * - `Access: Organizations, Identity Providers, and Groups Write`
    */
-  @deprecated("cloudflare.index/accesskeysconfiguration.AccessKeysConfiguration has been deprecated in favor of cloudflare.index/zerotrustaccesskeyconfiguration.ZeroTrustAccessKeyConfiguration") def AccessKeysConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/accesskeysconfiguration.AccessKeysConfiguration has been deprecated in favor of cloudflare.index/zerotrustaccesskeyconfiguration.ZeroTrustAccessKeyConfiguration") inline def AccessKeysConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AccessKeysConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.AccessKeysConfigurationArgs.builder
     com.pulumi.cloudflare.AccessKeysConfiguration(name,
@@ -96,7 +96,7 @@ object cloudflare:
    * - `Access: Mutual TLS Certificates Read`
    * - `Access: Mutual TLS Certificates Write`
    */
-  @deprecated("cloudflare.index/accessmutualtlscertificate.AccessMutualTlsCertificate has been deprecated in favor of cloudflare.index/zerotrustaccessmtlscertificate.ZeroTrustAccessMtlsCertificate") def AccessMutualTlsCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/accessmutualtlscertificate.AccessMutualTlsCertificate has been deprecated in favor of cloudflare.index/zerotrustaccessmtlscertificate.ZeroTrustAccessMtlsCertificate") inline def AccessMutualTlsCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AccessMutualTlsCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.AccessMutualTlsCertificateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -112,7 +112,7 @@ object cloudflare:
    * - `Access: Mutual TLS Certificates Read`
    * - `Access: Mutual TLS Certificates Write`
    */
-  @deprecated("cloudflare.index/accessmutualtlshostnamesettings.AccessMutualTlsHostnameSettings has been deprecated in favor of cloudflare.index/zerotrustaccessmtlshostnamesettings.ZeroTrustAccessMtlsHostnameSettings") def AccessMutualTlsHostnameSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/accessmutualtlshostnamesettings.AccessMutualTlsHostnameSettings has been deprecated in favor of cloudflare.index/zerotrustaccessmtlshostnamesettings.ZeroTrustAccessMtlsHostnameSettings") inline def AccessMutualTlsHostnameSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AccessMutualTlsHostnameSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.AccessMutualTlsHostnameSettingsArgs.builder
     com.pulumi.cloudflare.AccessMutualTlsHostnameSettings(name,
@@ -126,7 +126,7 @@ object cloudflare:
    * - `Access: Organizations, Identity Providers, and Groups Revoke`
    * - `Access: Organizations, Identity Providers, and Groups Write`
    */
-  @deprecated("cloudflare.index/accessorganization.AccessOrganization has been deprecated in favor of cloudflare.index/zerotrustorganization.ZeroTrustOrganization") def AccessOrganization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/accessorganization.AccessOrganization has been deprecated in favor of cloudflare.index/zerotrustorganization.ZeroTrustOrganization") inline def AccessOrganization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AccessOrganizationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.AccessOrganizationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -142,7 +142,7 @@ object cloudflare:
    * - `Access: Apps and Policies Read`
    * - `Access: Apps and Policies Write`
    */
-  @deprecated("cloudflare.index/accesspolicy.AccessPolicy has been deprecated in favor of cloudflare.index/zerotrustaccesspolicy.ZeroTrustAccessPolicy") def AccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/accesspolicy.AccessPolicy has been deprecated in favor of cloudflare.index/zerotrustaccesspolicy.ZeroTrustAccessPolicy") inline def AccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AccessPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.AccessPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -158,7 +158,7 @@ object cloudflare:
    * - `Account Firewall Access Rules Read`
    * - `Account Firewall Access Rules Write`
    */
-  def AccessRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccessRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AccessRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.AccessRuleArgs.builder
     com.pulumi.cloudflare.AccessRule(name,
@@ -171,7 +171,7 @@ object cloudflare:
    * - `Access: Service Tokens Read`
    * - `Access: Service Tokens Write`
    */
-  @deprecated("cloudflare.index/accessservicetoken.AccessServiceToken has been deprecated in favor of cloudflare.index/zerotrustaccessservicetoken.ZeroTrustAccessServiceToken") def AccessServiceToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/accessservicetoken.AccessServiceToken has been deprecated in favor of cloudflare.index/zerotrustaccessservicetoken.ZeroTrustAccessServiceToken") inline def AccessServiceToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AccessServiceTokenArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.AccessServiceTokenArgs.builder
     conf.logicalName2physicalName(name) match
@@ -181,7 +181,7 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  @deprecated("cloudflare.index/accesstag.AccessTag has been deprecated in favor of cloudflare.index/zerotrustaccesstag.ZeroTrustAccessTag") def AccessTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/accesstag.AccessTag has been deprecated in favor of cloudflare.index/zerotrustaccesstag.ZeroTrustAccessTag") inline def AccessTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AccessTagArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.AccessTagArgs.builder
     conf.logicalName2physicalName(name) match
@@ -224,7 +224,7 @@ object cloudflare:
    * - `Workers Tail Read`
    * - `Zero Trust: PII Read`
    */
-  def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.AccountArgs.builder
     conf.logicalName2physicalName(name) match
@@ -240,7 +240,7 @@ object cloudflare:
    * - `Account DNS Settings Read`
    * - `Account DNS Settings Write`
    */
-  def AccountDnsSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccountDnsSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AccountDnsSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.AccountDnsSettingsArgs.builder
     com.pulumi.cloudflare.AccountDnsSettings(name,
@@ -253,7 +253,7 @@ object cloudflare:
    * - `DNS View Read`
    * - `DNS View Write`
    */
-  def AccountDnsSettingsInternalView(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccountDnsSettingsInternalView(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AccountDnsSettingsInternalViewArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.AccountDnsSettingsInternalViewArgs.builder
     conf.logicalName2physicalName(name) match
@@ -270,7 +270,7 @@ object cloudflare:
    * - `Account Settings Write`
    * - `SCIM Provisioning`
    */
-  def AccountMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccountMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AccountMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.AccountMemberArgs.builder
     com.pulumi.cloudflare.AccountMember(name,
@@ -283,7 +283,7 @@ object cloudflare:
    * - `Billing Read`
    * - `Billing Write`
    */
-  def AccountSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccountSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AccountSubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.AccountSubscriptionArgs.builder
     com.pulumi.cloudflare.AccountSubscription(name,
@@ -296,7 +296,7 @@ object cloudflare:
    * - `Account API Tokens Read`
    * - `Account API Tokens Write`
    */
-  def AccountToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AccountToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AccountTokenArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.AccountTokenArgs.builder
     conf.logicalName2physicalName(name) match
@@ -312,7 +312,7 @@ object cloudflare:
    * - `Address Maps Read`
    * - `Address Maps Write`
    */
-  def AddressMap(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AddressMap(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AddressMapArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.AddressMapArgs.builder
     com.pulumi.cloudflare.AddressMap(name,
@@ -325,7 +325,7 @@ object cloudflare:
    * - `AI Gateway Read`
    * - `AI Gateway Write`
    */
-  def AiGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AiGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.AiGatewayArgs.builder
     com.pulumi.cloudflare.AiGateway(name,
@@ -338,7 +338,7 @@ object cloudflare:
    * - `AI Gateway Read`
    * - `AI Gateway Write`
    */
-  def AiGatewayDynamicRouting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiGatewayDynamicRouting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AiGatewayDynamicRoutingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.AiGatewayDynamicRoutingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -355,7 +355,7 @@ object cloudflare:
    * \$ pulumi import cloudflare:index/aiSearchInstance:AiSearchInstance example &#39;&lt;account_id&gt;/&lt;id&gt;&#39;
    * ```
    */
-  def AiSearchInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiSearchInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AiSearchInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.AiSearchInstanceArgs.builder
     com.pulumi.cloudflare.AiSearchInstance(name,
@@ -367,7 +367,7 @@ object cloudflare:
    * 
    * &gt; This resource does not currently support `pulumi import`.
    */
-  def AiSearchNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiSearchNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AiSearchNamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.AiSearchNamespaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -384,7 +384,7 @@ object cloudflare:
    * \$ pulumi import cloudflare:index/aiSearchToken:AiSearchToken example &#39;&lt;account_id&gt;/&lt;id&gt;&#39;
    * ```
    */
-  def AiSearchToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AiSearchToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AiSearchTokenArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.AiSearchTokenArgs.builder
     conf.logicalName2physicalName(name) match
@@ -408,7 +408,7 @@ object cloudflare:
    * 
    * The JSONPath expression may be in dot or bracket notation and may only specify literal keys or array indexes.
    */
-  def ApiShield(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApiShield(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ApiShieldArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ApiShieldArgs.builder
     com.pulumi.cloudflare.ApiShield(name,
@@ -421,7 +421,7 @@ object cloudflare:
    * - `Account API Gateway`
    * - `Domain API Gateway`
    */
-  def ApiShieldDiscoveryOperation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApiShieldDiscoveryOperation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ApiShieldDiscoveryOperationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ApiShieldDiscoveryOperationArgs.builder
     com.pulumi.cloudflare.ApiShieldDiscoveryOperation(name,
@@ -436,7 +436,7 @@ object cloudflare:
    * - `Domain API Gateway`
    * - `Domain API Gateway Read`
    */
-  def ApiShieldOperation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApiShieldOperation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ApiShieldOperationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ApiShieldOperationArgs.builder
     com.pulumi.cloudflare.ApiShieldOperation(name,
@@ -454,7 +454,7 @@ object cloudflare:
    * &gt; `cloudflare.ApiShieldOperationSchemaValidationSettings` is in a deprecation phase and will be removed in the future.
    *   Instead, please utilize the cloudflare.SchemaValidationOperationSettings resource instead.
    */
-  def ApiShieldOperationSchemaValidationSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApiShieldOperationSchemaValidationSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ApiShieldOperationSchemaValidationSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ApiShieldOperationSchemaValidationSettingsArgs.builder
     com.pulumi.cloudflare.ApiShieldOperationSchemaValidationSettings(name,
@@ -472,7 +472,7 @@ object cloudflare:
    * &gt; `cloudflare.ApiShieldSchema` is in a deprecation phase and will be removed in the future.
    *   Instead, please utilize the cloudflare.SchemaValidationSchemas resource instead.
    */
-  def ApiShieldSchema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApiShieldSchema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ApiShieldSchemaArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ApiShieldSchemaArgs.builder
     conf.logicalName2physicalName(name) match
@@ -493,7 +493,7 @@ object cloudflare:
    * &gt; `cloudflare.ApiShieldSchemaValidationSettings` is in a deprecation phase and will be removed in the future.
    *   Instead, please utilize the cloudflare.SchemaValidationSettings resource instead.
    */
-  def ApiShieldSchemaValidationSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApiShieldSchemaValidationSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ApiShieldSchemaValidationSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ApiShieldSchemaValidationSettingsArgs.builder
     com.pulumi.cloudflare.ApiShieldSchemaValidationSettings(name,
@@ -506,7 +506,7 @@ object cloudflare:
    * - `API Tokens Read`
    * - `API Tokens Write`
    */
-  def ApiToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ApiToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ApiTokenArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ApiTokenArgs.builder
     conf.logicalName2physicalName(name) match
@@ -522,35 +522,35 @@ object cloudflare:
    * - `Zone Settings Read`
    * - `Zone Settings Write`
    */
-  def ArgoSmartRouting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ArgoSmartRouting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ArgoSmartRoutingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ArgoSmartRoutingArgs.builder
     com.pulumi.cloudflare.ArgoSmartRouting(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def ArgoTieredCaching(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ArgoTieredCaching(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ArgoTieredCachingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ArgoTieredCachingArgs.builder
     com.pulumi.cloudflare.ArgoTieredCaching(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def AuthenticatedOriginPulls(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AuthenticatedOriginPulls(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AuthenticatedOriginPullsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.AuthenticatedOriginPullsArgs.builder
     com.pulumi.cloudflare.AuthenticatedOriginPulls(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def AuthenticatedOriginPullsCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AuthenticatedOriginPullsCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AuthenticatedOriginPullsCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.AuthenticatedOriginPullsCertificateArgs.builder
     com.pulumi.cloudflare.AuthenticatedOriginPullsCertificate(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def AuthenticatedOriginPullsHostnameCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AuthenticatedOriginPullsHostnameCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AuthenticatedOriginPullsHostnameCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.AuthenticatedOriginPullsHostnameCertificateArgs.builder
     com.pulumi.cloudflare.AuthenticatedOriginPullsHostnameCertificate(name,
@@ -563,7 +563,7 @@ object cloudflare:
    * - `SSL and Certificates Read`
    * - `SSL and Certificates Write`
    */
-  def AuthenticatedOriginPullsSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def AuthenticatedOriginPullsSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.AuthenticatedOriginPullsSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.AuthenticatedOriginPullsSettingsArgs.builder
     com.pulumi.cloudflare.AuthenticatedOriginPullsSettings(name,
@@ -576,7 +576,7 @@ object cloudflare:
    * - `Bot Management Read`
    * - `Bot Management Write`
    */
-  def BotManagement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def BotManagement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.BotManagementArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.BotManagementArgs.builder
     com.pulumi.cloudflare.BotManagement(name,
@@ -593,7 +593,7 @@ object cloudflare:
    * - `Magic Transit Read`
    * - `Magic Transit Write`
    */
-  def ByoIpPrefix(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ByoIpPrefix(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ByoIpPrefixArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ByoIpPrefixArgs.builder
     com.pulumi.cloudflare.ByoIpPrefix(name,
@@ -606,7 +606,7 @@ object cloudflare:
    * - `Calls Read`
    * - `Calls Write`
    */
-  def CallsSfuApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CallsSfuApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.CallsSfuAppArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.CallsSfuAppArgs.builder
     conf.logicalName2physicalName(name) match
@@ -622,7 +622,7 @@ object cloudflare:
    * - `Calls Read`
    * - `Calls Write`
    */
-  def CallsTurnApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CallsTurnApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.CallsTurnAppArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.CallsTurnAppArgs.builder
     conf.logicalName2physicalName(name) match
@@ -638,7 +638,7 @@ object cloudflare:
    * - `SSL and Certificates Read`
    * - `SSL and Certificates Write`
    */
-  def CertificateAuthoritiesHostnameAssociations(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CertificateAuthoritiesHostnameAssociations(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.CertificateAuthoritiesHostnameAssociationsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.CertificateAuthoritiesHostnameAssociationsArgs.builder
     com.pulumi.cloudflare.CertificateAuthoritiesHostnameAssociations(name,
@@ -657,7 +657,7 @@ object cloudflare:
    * live at once and you remove the old one once you&#39;ve confirmed
    * the certificate is available.
    */
-  def CertificatePack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CertificatePack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.CertificatePackArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.CertificatePackArgs.builder
     com.pulumi.cloudflare.CertificatePack(name,
@@ -670,7 +670,7 @@ object cloudflare:
    * - `SSL and Certificates Read`
    * - `SSL and Certificates Write`
    */
-  def ClientCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ClientCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ClientCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ClientCertificateArgs.builder
     com.pulumi.cloudflare.ClientCertificate(name,
@@ -683,7 +683,7 @@ object cloudflare:
    * - `Cloud Connector Read`
    * - `Cloud Connector Write`
    */
-  def CloudConnectorRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CloudConnectorRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.CloudConnectorRulesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.CloudConnectorRulesArgs.builder
     com.pulumi.cloudflare.CloudConnectorRules(name,
@@ -12791,7 +12791,7 @@ object cloudflare:
    * - `Cloudforce One Read`
    * - `Cloudforce One Write`
    */
-  def CloudforceOneRequest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CloudforceOneRequest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.CloudforceOneRequestArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.CloudforceOneRequestArgs.builder
     com.pulumi.cloudflare.CloudforceOneRequest(name,
@@ -12804,7 +12804,7 @@ object cloudflare:
    * - `Cloudforce One Read`
    * - `Cloudforce One Write`
    */
-  def CloudforceOneRequestAsset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CloudforceOneRequestAsset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.CloudforceOneRequestAssetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.CloudforceOneRequestAssetArgs.builder
     com.pulumi.cloudflare.CloudforceOneRequestAsset(name,
@@ -12816,7 +12816,7 @@ object cloudflare:
    * 
    * - `Cloudforce One Write`
    */
-  def CloudforceOneRequestMessage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CloudforceOneRequestMessage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.CloudforceOneRequestMessageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.CloudforceOneRequestMessageArgs.builder
     com.pulumi.cloudflare.CloudforceOneRequestMessage(name,
@@ -12829,14 +12829,14 @@ object cloudflare:
    * - `Cloudforce One Read`
    * - `Cloudforce One Write`
    */
-  def CloudforceOneRequestPriority(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CloudforceOneRequestPriority(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.CloudforceOneRequestPriorityArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.CloudforceOneRequestPriorityArgs.builder
     com.pulumi.cloudflare.CloudforceOneRequestPriority(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def ConnectivityDirectoryService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ConnectivityDirectoryService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ConnectivityDirectoryServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ConnectivityDirectoryServiceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -12854,7 +12854,7 @@ object cloudflare:
    * - `Zone WAF Read`
    * - `Zone WAF Write`
    */
-  def ContentScanning(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ContentScanning(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ContentScanningArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ContentScanningArgs.builder
     com.pulumi.cloudflare.ContentScanning(name,
@@ -12867,7 +12867,7 @@ object cloudflare:
    * - `Account WAF Write`
    * - `Zone WAF Write`
    */
-  def ContentScanningExpression(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ContentScanningExpression(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ContentScanningExpressionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ContentScanningExpressionArgs.builder
     com.pulumi.cloudflare.ContentScanningExpression(name,
@@ -12880,7 +12880,7 @@ object cloudflare:
    * - `SSL and Certificates Read`
    * - `SSL and Certificates Write`
    */
-  def CtAlerting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CtAlerting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.CtAlertingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.CtAlertingArgs.builder
     com.pulumi.cloudflare.CtAlerting(name,
@@ -12893,7 +12893,7 @@ object cloudflare:
    * - `Account: SSL and Certificates Read`
    * - `Account: SSL and Certificates Write`
    */
-  def CustomCsr(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomCsr(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.CustomCsrArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.CustomCsrArgs.builder
     conf.logicalName2physicalName(name) match
@@ -12909,7 +12909,7 @@ object cloudflare:
    * - `SSL and Certificates Read`
    * - `SSL and Certificates Write`
    */
-  def CustomHostname(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomHostname(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.CustomHostnameArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.CustomHostnameArgs.builder
     com.pulumi.cloudflare.CustomHostname(name,
@@ -12922,7 +12922,7 @@ object cloudflare:
    * - `SSL and Certificates Read`
    * - `SSL and Certificates Write`
    */
-  def CustomHostnameFallbackOrigin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomHostnameFallbackOrigin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.CustomHostnameFallbackOriginArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.CustomHostnameFallbackOriginArgs.builder
     com.pulumi.cloudflare.CustomHostnameFallbackOrigin(name,
@@ -12935,14 +12935,14 @@ object cloudflare:
    * - `SSL and Certificates Read`
    * - `SSL and Certificates Write`
    */
-  def CustomOriginTrustStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomOriginTrustStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.CustomOriginTrustStoreArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.CustomOriginTrustStoreArgs.builder
     com.pulumi.cloudflare.CustomOriginTrustStore(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def CustomPageAsset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomPageAsset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.CustomPageAssetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.CustomPageAssetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -12961,7 +12961,7 @@ object cloudflare:
    * - `Account Settings Write`
    * - `Zero Trust: PII Read`
    */
-  def CustomPages(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomPages(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.CustomPagesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.CustomPagesArgs.builder
     com.pulumi.cloudflare.CustomPages(name,
@@ -12976,7 +12976,7 @@ object cloudflare:
    * - `SSL and Certificates Read`
    * - `SSL and Certificates Write`
    */
-  def CustomSsl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def CustomSsl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.CustomSslArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.CustomSslArgs.builder
     com.pulumi.cloudflare.CustomSsl(name,
@@ -12992,7 +12992,7 @@ object cloudflare:
    * &gt; When a D1 Database is replaced all the data is lost. Please ensure you have a
    *    backup of your data before replacing a D1 Database.
    */
-  def D1Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def D1Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.D1DatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.D1DatabaseArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13007,7 +13007,7 @@ object cloudflare:
    * 
    * - `Zero Trust Write`
    */
-  @deprecated("cloudflare.index/devicemanagednetworks.DeviceManagedNetworks has been deprecated in favor of cloudflare.index/zerotrustdevicemanagednetworks.ZeroTrustDeviceManagedNetworks") def DeviceManagedNetworks(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/devicemanagednetworks.DeviceManagedNetworks has been deprecated in favor of cloudflare.index/zerotrustdevicemanagednetworks.ZeroTrustDeviceManagedNetworks") inline def DeviceManagedNetworks(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.DeviceManagedNetworksArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.DeviceManagedNetworksArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13022,7 +13022,7 @@ object cloudflare:
    * 
    * - `Zero Trust Write`
    */
-  @deprecated("cloudflare.index/devicepostureintegration.DevicePostureIntegration has been deprecated in favor of cloudflare.index/zerotrustdevicepostureintegration.ZeroTrustDevicePostureIntegration") def DevicePostureIntegration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/devicepostureintegration.DevicePostureIntegration has been deprecated in favor of cloudflare.index/zerotrustdevicepostureintegration.ZeroTrustDevicePostureIntegration") inline def DevicePostureIntegration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.DevicePostureIntegrationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.DevicePostureIntegrationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13037,7 +13037,7 @@ object cloudflare:
    * 
    * - `Zero Trust Write`
    */
-  @deprecated("cloudflare.index/deviceposturerule.DevicePostureRule has been deprecated in favor of cloudflare.index/zerotrustdeviceposturerule.ZeroTrustDevicePostureRule") def DevicePostureRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/deviceposturerule.DevicePostureRule has been deprecated in favor of cloudflare.index/zerotrustdeviceposturerule.ZeroTrustDevicePostureRule") inline def DevicePostureRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.DevicePostureRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.DevicePostureRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13053,7 +13053,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Write`
    */
-  @deprecated("cloudflare.index/dlpcustomprofile.DlpCustomProfile has been deprecated in favor of cloudflare.index/zerotrustdlpcustomprofile.ZeroTrustDlpCustomProfile") def DlpCustomProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/dlpcustomprofile.DlpCustomProfile has been deprecated in favor of cloudflare.index/zerotrustdlpcustomprofile.ZeroTrustDlpCustomProfile") inline def DlpCustomProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.DlpCustomProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.DlpCustomProfileArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13069,7 +13069,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Write`
    */
-  @deprecated("cloudflare.index/dlppredefinedprofile.DlpPredefinedProfile has been deprecated in favor of cloudflare.index/zerotrustdlppredefinedprofile.ZeroTrustDlpPredefinedProfile") def DlpPredefinedProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/dlppredefinedprofile.DlpPredefinedProfile has been deprecated in favor of cloudflare.index/zerotrustdlppredefinedprofile.ZeroTrustDlpPredefinedProfile") inline def DlpPredefinedProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.DlpPredefinedProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.DlpPredefinedProfileArgs.builder
     com.pulumi.cloudflare.DlpPredefinedProfile(name,
@@ -13083,7 +13083,7 @@ object cloudflare:
    * - `DLS: Write`
    * - `IP Prefixes: Write`
    */
-  def DlsPrefixBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DlsPrefixBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.DlsPrefixBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.DlsPrefixBindingArgs.builder
     com.pulumi.cloudflare.DlsPrefixBinding(name,
@@ -13096,7 +13096,7 @@ object cloudflare:
    * - `DNS Firewall Read`
    * - `DNS Firewall Write`
    */
-  def DnsFirewall(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DnsFirewall(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.DnsFirewallArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.DnsFirewallArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13112,7 +13112,7 @@ object cloudflare:
    * - `DNS Read`
    * - `DNS Write`
    */
-  def DnsRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DnsRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.DnsRecordArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.DnsRecordArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13128,7 +13128,7 @@ object cloudflare:
    * - `Account Settings Read`
    * - `Account Settings Write`
    */
-  def DnsZoneTransfersAcl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DnsZoneTransfersAcl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.DnsZoneTransfersAclArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.DnsZoneTransfersAclArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13147,7 +13147,7 @@ object cloudflare:
    * - `Zone Settings Write`
    * - `Zone Write`
    */
-  def DnsZoneTransfersIncoming(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DnsZoneTransfersIncoming(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.DnsZoneTransfersIncomingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.DnsZoneTransfersIncomingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13166,7 +13166,7 @@ object cloudflare:
    * - `Zone Settings Write`
    * - `Zone Write`
    */
-  def DnsZoneTransfersOutgoing(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DnsZoneTransfersOutgoing(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.DnsZoneTransfersOutgoingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.DnsZoneTransfersOutgoingArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13182,7 +13182,7 @@ object cloudflare:
    * - `Account Settings Read`
    * - `Account Settings Write`
    */
-  def DnsZoneTransfersPeer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DnsZoneTransfersPeer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.DnsZoneTransfersPeerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.DnsZoneTransfersPeerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13198,7 +13198,7 @@ object cloudflare:
    * - `Account Settings Read`
    * - `Account Settings Write`
    */
-  def DnsZoneTransfersTsig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def DnsZoneTransfersTsig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.DnsZoneTransfersTsigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.DnsZoneTransfersTsigArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13214,7 +13214,7 @@ object cloudflare:
    * - `Email Routing Addresses Read`
    * - `Email Routing Addresses Write`
    */
-  def EmailRoutingAddress(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EmailRoutingAddress(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.EmailRoutingAddressArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.EmailRoutingAddressArgs.builder
     com.pulumi.cloudflare.EmailRoutingAddress(name,
@@ -13227,7 +13227,7 @@ object cloudflare:
    * - `Email Routing Rules Read`
    * - `Email Routing Rules Write`
    */
-  def EmailRoutingCatchAll(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EmailRoutingCatchAll(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.EmailRoutingCatchAllArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.EmailRoutingCatchAllArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13243,7 +13243,7 @@ object cloudflare:
    * - `Zone Settings Read`
    * - `Zone Settings Write`
    */
-  def EmailRoutingDns(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EmailRoutingDns(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.EmailRoutingDnsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.EmailRoutingDnsArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13259,7 +13259,7 @@ object cloudflare:
    * - `Email Routing Rules Read`
    * - `Email Routing Rules Write`
    */
-  def EmailRoutingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EmailRoutingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.EmailRoutingRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.EmailRoutingRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13275,7 +13275,7 @@ object cloudflare:
    * - `Zone Settings Read`
    * - `Zone Settings Write`
    */
-  def EmailRoutingSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EmailRoutingSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.EmailRoutingSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.EmailRoutingSettingsArgs.builder
     com.pulumi.cloudflare.EmailRoutingSettings(name,
@@ -13288,7 +13288,7 @@ object cloudflare:
    * - `Cloud Email Security: Read`
    * - `Cloud Email Security: Write`
    */
-  def EmailSecurityAllowPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EmailSecurityAllowPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.EmailSecurityAllowPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.EmailSecurityAllowPolicyArgs.builder
     com.pulumi.cloudflare.EmailSecurityAllowPolicy(name,
@@ -13301,7 +13301,7 @@ object cloudflare:
    * - `Cloud Email Security: Read`
    * - `Cloud Email Security: Write`
    */
-  def EmailSecurityBlockSender(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EmailSecurityBlockSender(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.EmailSecurityBlockSenderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.EmailSecurityBlockSenderArgs.builder
     com.pulumi.cloudflare.EmailSecurityBlockSender(name,
@@ -13314,7 +13314,7 @@ object cloudflare:
    * - `Cloud Email Security: Read`
    * - `Cloud Email Security: Write`
    */
-  def EmailSecurityDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EmailSecurityDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.EmailSecurityDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.EmailSecurityDomainArgs.builder
     com.pulumi.cloudflare.EmailSecurityDomain(name,
@@ -13327,7 +13327,7 @@ object cloudflare:
    * - `Cloud Email Security: Read`
    * - `Cloud Email Security: Write`
    */
-  def EmailSecurityImpersonationRegistry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EmailSecurityImpersonationRegistry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.EmailSecurityImpersonationRegistryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.EmailSecurityImpersonationRegistryArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13343,14 +13343,14 @@ object cloudflare:
    * - `Cloud Email Security: Read`
    * - `Cloud Email Security: Write`
    */
-  def EmailSecurityTrustedDomains(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EmailSecurityTrustedDomains(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.EmailSecurityTrustedDomainsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.EmailSecurityTrustedDomainsArgs.builder
     com.pulumi.cloudflare.EmailSecurityTrustedDomains(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def EmailSendingSubdomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def EmailSendingSubdomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.EmailSendingSubdomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.EmailSendingSubdomainArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13360,7 +13360,7 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def FieldExtractor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FieldExtractor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.FieldExtractorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.FieldExtractorArgs.builder
     com.pulumi.cloudflare.FieldExtractor(name,
@@ -13379,7 +13379,7 @@ object cloudflare:
    *   `cloudflare.Ruleset` resource. Full details can be found in the
    *   developer documentation.
    */
-  def Filter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Filter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.FilterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.FilterArgs.builder
     com.pulumi.cloudflare.Filter(name,
@@ -13398,7 +13398,7 @@ object cloudflare:
    *   `cloudflare.Ruleset` resource. Full details can be found in the
    *   developer documentation.
    */
-  def FirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.FirewallRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.FirewallRuleArgs.builder
     com.pulumi.cloudflare.FirewallRule(name,
@@ -13411,7 +13411,7 @@ object cloudflare:
    * - `Flagship Read`
    * - `Flagship Write`
    */
-  def FlagshipApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FlagshipApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.FlagshipAppArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.FlagshipAppArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13427,7 +13427,7 @@ object cloudflare:
    * - `Flagship Read`
    * - `Flagship Write`
    */
-  def FlagshipFlag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def FlagshipFlag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.FlagshipFlagArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.FlagshipFlagArgs.builder
     com.pulumi.cloudflare.FlagshipFlag(name,
@@ -13441,7 +13441,7 @@ object cloudflare:
    * - `Zaraz Edit`
    * - `Zaraz Read`
    */
-  def GoogleTagGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def GoogleTagGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.GoogleTagGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.GoogleTagGatewayArgs.builder
     com.pulumi.cloudflare.GoogleTagGateway(name,
@@ -13454,7 +13454,7 @@ object cloudflare:
    * - `Health Checks Read`
    * - `Health Checks Write`
    */
-  def Healthcheck(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Healthcheck(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.HealthcheckArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.HealthcheckArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13469,7 +13469,7 @@ object cloudflare:
    * 
    * - `SSL and Certificates Write`
    */
-  def HostnameTlsSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HostnameTlsSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.HostnameTlsSettingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.HostnameTlsSettingArgs.builder
     com.pulumi.cloudflare.HostnameTlsSetting(name,
@@ -13482,7 +13482,7 @@ object cloudflare:
    * - `Hyperdrive Read`
    * - `Hyperdrive Write`
    */
-  def HyperdriveConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def HyperdriveConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.HyperdriveConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.HyperdriveConfigArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13511,7 +13511,7 @@ object cloudflare:
    * \$ pulumi import cloudflare:index/image:Image example &#39;&lt;account_id&gt;/&lt;image_id&gt;&#39;
    * ```
    */
-  def Image(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Image(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ImageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ImageArgs.builder
     com.pulumi.cloudflare.Image(name,
@@ -13524,7 +13524,7 @@ object cloudflare:
    * - `Images Read`
    * - `Images Write`
    */
-  def ImageVariant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ImageVariant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ImageVariantArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ImageVariantArgs.builder
     com.pulumi.cloudflare.ImageVariant(name,
@@ -13571,7 +13571,7 @@ object cloudflare:
    * - `Zone Settings Write`
    * - `Zone Write`
    */
-  def KeylessCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def KeylessCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.KeylessCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.KeylessCertificateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13589,7 +13589,7 @@ object cloudflare:
    * - `Zone WAF Read`
    * - `Zone WAF Write`
    */
-  def LeakedCredentialCheck(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LeakedCredentialCheck(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.LeakedCredentialCheckArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.LeakedCredentialCheckArgs.builder
     com.pulumi.cloudflare.LeakedCredentialCheck(name,
@@ -13604,7 +13604,7 @@ object cloudflare:
    * - `Zone WAF Read`
    * - `Zone WAF Write`
    */
-  def LeakedCredentialCheckRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LeakedCredentialCheckRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.LeakedCredentialCheckRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.LeakedCredentialCheckRuleArgs.builder
     com.pulumi.cloudflare.LeakedCredentialCheckRule(name,
@@ -13623,7 +13623,7 @@ object cloudflare:
    *   _and_ `cloudflare.getListItems` on the same list is not supported and will cause
    *   Terraform into an irreconcilable state.
    */
-  def List(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def List(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ListArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ListArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13639,7 +13639,7 @@ object cloudflare:
    * - `Account Filter Lists Edit`
    * - `Account Filter Lists Read`
    */
-  def ListItem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ListItem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ListItemArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ListItemArgs.builder
     com.pulumi.cloudflare.ListItem(name,
@@ -13652,7 +13652,7 @@ object cloudflare:
    * - `Load Balancers Read`
    * - `Load Balancers Write`
    */
-  def LoadBalancer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LoadBalancer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.LoadBalancerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.LoadBalancerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13668,14 +13668,14 @@ object cloudflare:
    * - `Load Balancing: Monitors and Pools Read`
    * - `Load Balancing: Monitors and Pools Write`
    */
-  def LoadBalancerMonitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LoadBalancerMonitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.LoadBalancerMonitorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.LoadBalancerMonitorArgs.builder
     com.pulumi.cloudflare.LoadBalancerMonitor(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def LoadBalancerMonitorGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LoadBalancerMonitorGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.LoadBalancerMonitorGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.LoadBalancerMonitorGroupArgs.builder
     com.pulumi.cloudflare.LoadBalancerMonitorGroup(name,
@@ -13688,7 +13688,7 @@ object cloudflare:
    * - `Load Balancing: Monitors and Pools Read`
    * - `Load Balancing: Monitors and Pools Write`
    */
-  def LoadBalancerPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LoadBalancerPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.LoadBalancerPoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.LoadBalancerPoolArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13704,7 +13704,7 @@ object cloudflare:
    * - `Logs Read`
    * - `Logs Write`
    */
-  def LogpullRetention(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LogpullRetention(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.LogpullRetentionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.LogpullRetentionArgs.builder
     com.pulumi.cloudflare.LogpullRetention(name,
@@ -13716,7 +13716,7 @@ object cloudflare:
    * 
    * - `Logs Write`
    */
-  def LogpushJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LogpushJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.LogpushJobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.LogpushJobArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13731,7 +13731,7 @@ object cloudflare:
    * 
    * - `Logs Write`
    */
-  def LogpushOwnershipChallenge(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def LogpushOwnershipChallenge(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.LogpushOwnershipChallengeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.LogpushOwnershipChallengeArgs.builder
     com.pulumi.cloudflare.LogpushOwnershipChallenge(name,
@@ -13745,7 +13745,7 @@ object cloudflare:
    * - `Magic Network Monitoring Config Read`
    * - `Magic Network Monitoring Config Write`
    */
-  def MagicNetworkMonitoringConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MagicNetworkMonitoringConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.MagicNetworkMonitoringConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.MagicNetworkMonitoringConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13762,7 +13762,7 @@ object cloudflare:
    * - `Magic Network Monitoring Config Read`
    * - `Magic Network Monitoring Config Write`
    */
-  def MagicNetworkMonitoringRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MagicNetworkMonitoringRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.MagicNetworkMonitoringRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.MagicNetworkMonitoringRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13780,7 +13780,7 @@ object cloudflare:
    * - `Magic WAN Read`
    * - `Magic WAN Write`
    */
-  def MagicTransitCf1Site(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MagicTransitCf1Site(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.MagicTransitCf1SiteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.MagicTransitCf1SiteArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13790,7 +13790,7 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def MagicTransitConnector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MagicTransitConnector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.MagicTransitConnectorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.MagicTransitConnectorArgs.builder
     com.pulumi.cloudflare.MagicTransitConnector(name,
@@ -13805,7 +13805,7 @@ object cloudflare:
    * - `Magic WAN Read`
    * - `Magic WAN Write`
    */
-  def MagicTransitSite(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MagicTransitSite(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.MagicTransitSiteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.MagicTransitSiteArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13823,7 +13823,7 @@ object cloudflare:
    * - `Magic WAN Read`
    * - `Magic WAN Write`
    */
-  def MagicTransitSiteAcl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MagicTransitSiteAcl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.MagicTransitSiteAclArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.MagicTransitSiteAclArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13841,7 +13841,7 @@ object cloudflare:
    * - `Magic WAN Read`
    * - `Magic WAN Write`
    */
-  def MagicTransitSiteLan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MagicTransitSiteLan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.MagicTransitSiteLanArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.MagicTransitSiteLanArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13859,7 +13859,7 @@ object cloudflare:
    * - `Magic WAN Read`
    * - `Magic WAN Write`
    */
-  def MagicTransitSiteWan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MagicTransitSiteWan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.MagicTransitSiteWanArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.MagicTransitSiteWanArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13869,7 +13869,7 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def MagicWanBgpFilterProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MagicWanBgpFilterProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.MagicWanBgpFilterProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.MagicWanBgpFilterProfileArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13879,7 +13879,7 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def MagicWanGreTunnel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MagicWanGreTunnel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.MagicWanGreTunnelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.MagicWanGreTunnelArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13889,7 +13889,7 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def MagicWanIpsecTunnel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MagicWanIpsecTunnel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.MagicWanIpsecTunnelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.MagicWanIpsecTunnelArgs.builder
     conf.logicalName2physicalName(name) match
@@ -13899,7 +13899,7 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def MagicWanStaticRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MagicWanStaticRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.MagicWanStaticRouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.MagicWanStaticRouteArgs.builder
     com.pulumi.cloudflare.MagicWanStaticRoute(name,
@@ -13950,7 +13950,7 @@ object cloudflare:
    * - `Zone WAF Read`
    * - `Zone WAF Write`
    */
-  @deprecated("cloudflare.index/managedheaders.ManagedHeaders has been deprecated in favor of cloudflare.index/managedtransforms.ManagedTransforms") def ManagedHeaders(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/managedheaders.ManagedHeaders has been deprecated in favor of cloudflare.index/managedtransforms.ManagedTransforms") inline def ManagedHeaders(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ManagedHeadersArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ManagedHeadersArgs.builder
     com.pulumi.cloudflare.ManagedHeaders(name,
@@ -14001,21 +14001,21 @@ object cloudflare:
    * - `Zone WAF Read`
    * - `Zone WAF Write`
    */
-  def ManagedTransforms(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ManagedTransforms(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ManagedTransformsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ManagedTransformsArgs.builder
     com.pulumi.cloudflare.ManagedTransforms(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def MonetizationRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MonetizationRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.MonetizationRulesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.MonetizationRulesArgs.builder
     com.pulumi.cloudflare.MonetizationRules(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def MoqRelay(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MoqRelay(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.MoqRelayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.MoqRelayArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14025,7 +14025,7 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def MtlsCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def MtlsCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.MtlsCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.MtlsCertificateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14041,7 +14041,7 @@ object cloudflare:
    * - `Zone Settings Read`
    * - `Zone Settings Write`
    */
-  def NelSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NelSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.NelSettingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.NelSettingArgs.builder
     com.pulumi.cloudflare.NelSetting(name,
@@ -14057,7 +14057,7 @@ object cloudflare:
    * - `Notifications Write`
    * - `Zero Trust: PII Read`
    */
-  def NotificationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NotificationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.NotificationPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.NotificationPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14076,7 +14076,7 @@ object cloudflare:
    * - `Notifications Write`
    * - `Zero Trust: PII Read`
    */
-  def NotificationPolicyWebhooks(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def NotificationPolicyWebhooks(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.NotificationPolicyWebhooksArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.NotificationPolicyWebhooksArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14092,7 +14092,7 @@ object cloudflare:
    * - `OAuth Client Read`
    * - `OAuth Client Write`
    */
-  def OauthClient(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OauthClient(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.OauthClientArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.OauthClientArgs.builder
     com.pulumi.cloudflare.OauthClient(name,
@@ -14105,7 +14105,7 @@ object cloudflare:
    * - `Zone Settings Read`
    * - `Zone Settings Write`
    */
-  def ObservatoryScheduledTest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ObservatoryScheduledTest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ObservatoryScheduledTestArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ObservatoryScheduledTestArgs.builder
     com.pulumi.cloudflare.ObservatoryScheduledTest(name,
@@ -14117,7 +14117,7 @@ object cloudflare:
    * 
    * - `User Details Write`
    */
-  def Organization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Organization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.OrganizationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.OrganizationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14127,28 +14127,28 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def OrganizationProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OrganizationProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.OrganizationProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.OrganizationProfileArgs.builder
     com.pulumi.cloudflare.OrganizationProfile(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def OriginCaCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OriginCaCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.OriginCaCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.OriginCaCertificateArgs.builder
     com.pulumi.cloudflare.OriginCaCertificate(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def OriginCloudRegion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OriginCloudRegion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.OriginCloudRegionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.OriginCloudRegionArgs.builder
     com.pulumi.cloudflare.OriginCloudRegion(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def OriginTlsComplianceModes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def OriginTlsComplianceModes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.OriginTlsComplianceModesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.OriginTlsComplianceModesArgs.builder
     com.pulumi.cloudflare.OriginTlsComplianceModes(name,
@@ -14195,7 +14195,7 @@ object cloudflare:
    * - `Zone Settings Write`
    * - `Zone Write`
    */
-  def PageRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PageRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.PageRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.PageRuleArgs.builder
     com.pulumi.cloudflare.PageRule(name,
@@ -14218,7 +14218,7 @@ object cloudflare:
    * \$ pulumi import cloudflare:index/pageShieldPolicy:PageShieldPolicy example &#39;&lt;zone_id&gt;/&lt;policy_id&gt;&#39;
    * ```
    */
-  def PageShieldPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PageShieldPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.PageShieldPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.PageShieldPolicyArgs.builder
     com.pulumi.cloudflare.PageShieldPolicy(name,
@@ -14234,7 +14234,7 @@ object cloudflare:
    * &gt; A DNS record for the domain is not automatically created. You need to create
    *    a `cloudflareRecord` resource for the domain you want to use.
    */
-  def PagesDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PagesDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.PagesDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.PagesDomainArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14255,7 +14255,7 @@ object cloudflare:
    *    [Getting Started with Pages](https://developers.cloudflare.com/pages/get-started/git-integration/)
    *    documentation on how to link your accounts.
    */
-  def PagesProject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PagesProject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.PagesProjectArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.PagesProjectArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14271,7 +14271,7 @@ object cloudflare:
    * - `Pipelines Read`
    * - `Pipelines Write`
    */
-  def Pipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Pipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.PipelineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.PipelineArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14287,7 +14287,7 @@ object cloudflare:
    * - `Pipelines Read`
    * - `Pipelines Write`
    */
-  def PipelineSink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PipelineSink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.PipelineSinkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.PipelineSinkArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14303,7 +14303,7 @@ object cloudflare:
    * - `Pipelines Read`
    * - `Pipelines Write`
    */
-  def PipelineStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def PipelineStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.PipelineStreamArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.PipelineStreamArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14313,7 +14313,7 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def Precursor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Precursor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.PrecursorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.PrecursorArgs.builder
     com.pulumi.cloudflare.Precursor(name,
@@ -14326,7 +14326,7 @@ object cloudflare:
    * construction to achieve fine-grained programmatic control over provider settings. See the
    * [documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.
    */
-  def Provider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Provider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ProviderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ProviderArgs.builder
     com.pulumi.cloudflare.Provider(name,
@@ -14341,7 +14341,7 @@ object cloudflare:
    * - `Workers Scripts Read`
    * - `Workers Scripts Write`
    */
-  def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.QueueArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.QueueArgs.builder
     com.pulumi.cloudflare.Queue(name,
@@ -14356,7 +14356,7 @@ object cloudflare:
    * - `Workers Scripts Read`
    * - `Workers Scripts Write`
    */
-  def QueueConsumer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def QueueConsumer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.QueueConsumerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.QueueConsumerArgs.builder
     com.pulumi.cloudflare.QueueConsumer(name,
@@ -14368,7 +14368,7 @@ object cloudflare:
    * 
    * - `Workers R2 Storage Write`
    */
-  def R2Bucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def R2Bucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.R2BucketArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.R2BucketArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14378,7 +14378,7 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def R2BucketCors(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def R2BucketCors(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.R2BucketCorsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.R2BucketCorsArgs.builder
     com.pulumi.cloudflare.R2BucketCors(name,
@@ -14391,21 +14391,21 @@ object cloudflare:
    * - `Workers R2 Storage Read`
    * - `Workers R2 Storage Write`
    */
-  def R2BucketEventNotification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def R2BucketEventNotification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.R2BucketEventNotificationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.R2BucketEventNotificationArgs.builder
     com.pulumi.cloudflare.R2BucketEventNotification(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def R2BucketLifecycle(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def R2BucketLifecycle(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.R2BucketLifecycleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.R2BucketLifecycleArgs.builder
     com.pulumi.cloudflare.R2BucketLifecycle(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def R2BucketLock(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def R2BucketLock(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.R2BucketLockArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.R2BucketLockArgs.builder
     com.pulumi.cloudflare.R2BucketLock(name,
@@ -14417,7 +14417,7 @@ object cloudflare:
    * 
    * - `Workers R2 Storage Write`
    */
-  def R2BucketSippy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def R2BucketSippy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.R2BucketSippyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.R2BucketSippyArgs.builder
     com.pulumi.cloudflare.R2BucketSippy(name,
@@ -14430,7 +14430,7 @@ object cloudflare:
    * - `Workers R2 Storage Read`
    * - `Workers R2 Storage Write`
    */
-  def R2CustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def R2CustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.R2CustomDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.R2CustomDomainArgs.builder
     com.pulumi.cloudflare.R2CustomDomain(name,
@@ -14443,14 +14443,14 @@ object cloudflare:
    * - `Workers R2 Data Catalog Read`
    * - `Workers R2 Data Catalog Write`
    */
-  def R2DataCatalog(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def R2DataCatalog(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.R2DataCatalogArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.R2DataCatalogArgs.builder
     com.pulumi.cloudflare.R2DataCatalog(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def R2ManagedDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def R2ManagedDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.R2ManagedDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.R2ManagedDomainArgs.builder
     com.pulumi.cloudflare.R2ManagedDomain(name,
@@ -14469,7 +14469,7 @@ object cloudflare:
    *   `cloudflare.Ruleset` resource. Full details can be found in the
    *   developer documentation.
    */
-  def RateLimit(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RateLimit(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.RateLimitArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.RateLimitArgs.builder
     com.pulumi.cloudflare.RateLimit(name,
@@ -14482,7 +14482,7 @@ object cloudflare:
    * - `DNS Read`
    * - `DNS Write`
    */
-  @deprecated("cloudflare.index/record.Record has been deprecated in favor of cloudflare.index/dnsrecord.DnsRecord") def Record(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/record.Record has been deprecated in favor of cloudflare.index/dnsrecord.DnsRecord") inline def Record(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.RecordArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.RecordArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14498,7 +14498,7 @@ object cloudflare:
    * - `DNS Read`
    * - `DNS Write`
    */
-  def RegionalHostname(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionalHostname(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.RegionalHostnameArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.RegionalHostnameArgs.builder
     com.pulumi.cloudflare.RegionalHostname(name,
@@ -14513,7 +14513,7 @@ object cloudflare:
    * - `Zone Settings Write`
    * - `Zone Write`
    */
-  def RegionalTieredCache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def RegionalTieredCache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.RegionalTieredCacheArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.RegionalTieredCacheArgs.builder
     com.pulumi.cloudflare.RegionalTieredCache(name,
@@ -14526,14 +14526,14 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Write`
    */
-  @deprecated("cloudflare.index/riskbehavior.RiskBehavior has been deprecated in favor of cloudflare.index/zerotrustriskbehavior.ZeroTrustRiskBehavior") def RiskBehavior(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/riskbehavior.RiskBehavior has been deprecated in favor of cloudflare.index/zerotrustriskbehavior.ZeroTrustRiskBehavior") inline def RiskBehavior(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.RiskBehaviorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.RiskBehaviorArgs.builder
     com.pulumi.cloudflare.RiskBehavior(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def Ruleset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Ruleset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.RulesetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.RulesetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14551,7 +14551,7 @@ object cloudflare:
    * - `Domain API Gateway`
    * - `Domain API Gateway Read`
    */
-  def SchemaValidationOperationSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SchemaValidationOperationSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.SchemaValidationOperationSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.SchemaValidationOperationSettingsArgs.builder
     com.pulumi.cloudflare.SchemaValidationOperationSettings(name,
@@ -14566,7 +14566,7 @@ object cloudflare:
    * - `Domain API Gateway`
    * - `Domain API Gateway Read`
    */
-  def SchemaValidationSchemas(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SchemaValidationSchemas(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.SchemaValidationSchemasArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.SchemaValidationSchemasArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14584,7 +14584,7 @@ object cloudflare:
    * - `Domain API Gateway`
    * - `Domain API Gateway Read`
    */
-  def SchemaValidationSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SchemaValidationSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.SchemaValidationSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.SchemaValidationSettingsArgs.builder
     com.pulumi.cloudflare.SchemaValidationSettings(name,
@@ -14597,7 +14597,7 @@ object cloudflare:
    * - `Secrets Store Read`
    * - `Secrets Store Write`
    */
-  def SecretsStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecretsStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.SecretsStoreArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.SecretsStoreArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14613,7 +14613,7 @@ object cloudflare:
    * - `Secrets Store Read`
    * - `Secrets Store Write`
    */
-  def SecretsStoreSecret(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SecretsStoreSecret(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.SecretsStoreSecretArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.SecretsStoreSecretArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14623,7 +14623,7 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def Share(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Share(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ShareArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ShareArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14633,14 +14633,14 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def ShareRecipient(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ShareRecipient(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ShareRecipientArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ShareRecipientArgs.builder
     com.pulumi.cloudflare.ShareRecipient(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def ShareResource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ShareResource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ShareResourceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ShareResourceArgs.builder
     com.pulumi.cloudflare.ShareResource(name,
@@ -14653,7 +14653,7 @@ object cloudflare:
    * - `Snippets Read`
    * - `Snippets Write`
    */
-  def Snippet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Snippet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.SnippetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.SnippetArgs.builder
     com.pulumi.cloudflare.Snippet(name,
@@ -14666,7 +14666,7 @@ object cloudflare:
    * - `Snippets Read`
    * - `Snippets Write`
    */
-  def SnippetRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SnippetRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.SnippetRulesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.SnippetRulesArgs.builder
     com.pulumi.cloudflare.SnippetRules(name,
@@ -14678,7 +14678,7 @@ object cloudflare:
    * 
    * &gt; This resource does not currently support `pulumi import`.
    */
-  def Snippets(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Snippets(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.SnippetsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.SnippetsArgs.builder
     com.pulumi.cloudflare.Snippets(name,
@@ -14691,7 +14691,7 @@ object cloudflare:
    * - `Zone Settings Read`
    * - `Zone Settings Write`
    */
-  def SpectrumApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SpectrumApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.SpectrumApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.SpectrumApplicationArgs.builder
     com.pulumi.cloudflare.SpectrumApplication(name,
@@ -14704,14 +14704,14 @@ object cloudflare:
    * - `SSO Connector Read`
    * - `SSO Connector Write`
    */
-  def SsoConnector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def SsoConnector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.SsoConnectorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.SsoConnectorArgs.builder
     com.pulumi.cloudflare.SsoConnector(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  @deprecated("cloudflare.index/staticroute.StaticRoute has been deprecated in favor of cloudflare.index/magicwanstaticroute.MagicWanStaticRoute") def StaticRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/staticroute.StaticRoute has been deprecated in favor of cloudflare.index/magicwanstaticroute.MagicWanStaticRoute") inline def StaticRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.StaticRouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.StaticRouteArgs.builder
     com.pulumi.cloudflare.StaticRoute(name,
@@ -14724,7 +14724,7 @@ object cloudflare:
    * - `Stream Read`
    * - `Stream Write`
    */
-  def Stream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Stream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.StreamArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.StreamArgs.builder
     com.pulumi.cloudflare.Stream(name,
@@ -14737,7 +14737,7 @@ object cloudflare:
    * - `Stream Read`
    * - `Stream Write`
    */
-  def StreamAudioTrack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StreamAudioTrack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.StreamAudioTrackArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.StreamAudioTrackArgs.builder
     com.pulumi.cloudflare.StreamAudioTrack(name,
@@ -14750,7 +14750,7 @@ object cloudflare:
    * - `Stream Read`
    * - `Stream Write`
    */
-  def StreamCaptionLanguage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StreamCaptionLanguage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.StreamCaptionLanguageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.StreamCaptionLanguageArgs.builder
     com.pulumi.cloudflare.StreamCaptionLanguage(name,
@@ -14763,7 +14763,7 @@ object cloudflare:
    * - `Stream Read`
    * - `Stream Write`
    */
-  def StreamDownload(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StreamDownload(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.StreamDownloadArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.StreamDownloadArgs.builder
     com.pulumi.cloudflare.StreamDownload(name,
@@ -14776,7 +14776,7 @@ object cloudflare:
    * - `Stream Read`
    * - `Stream Write`
    */
-  def StreamKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StreamKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.StreamKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.StreamKeyArgs.builder
     com.pulumi.cloudflare.StreamKey(name,
@@ -14789,7 +14789,7 @@ object cloudflare:
    * - `Stream Read`
    * - `Stream Write`
    */
-  def StreamLiveInput(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StreamLiveInput(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.StreamLiveInputArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.StreamLiveInputArgs.builder
     com.pulumi.cloudflare.StreamLiveInput(name,
@@ -14802,7 +14802,7 @@ object cloudflare:
    * - `Stream Read`
    * - `Stream Write`
    */
-  def StreamWatermark(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StreamWatermark(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.StreamWatermarkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.StreamWatermarkArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14818,21 +14818,21 @@ object cloudflare:
    * - `Stream Read`
    * - `Stream Write`
    */
-  def StreamWebhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def StreamWebhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.StreamWebhookArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.StreamWebhookArgs.builder
     com.pulumi.cloudflare.StreamWebhook(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  @deprecated("cloudflare.index/teamsaccount.TeamsAccount has been deprecated in favor of cloudflare.index/zerotrustgatewaysettings.ZeroTrustGatewaySettings") def TeamsAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/teamsaccount.TeamsAccount has been deprecated in favor of cloudflare.index/zerotrustgatewaysettings.ZeroTrustGatewaySettings") inline def TeamsAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.TeamsAccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.TeamsAccountArgs.builder
     com.pulumi.cloudflare.TeamsAccount(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  @deprecated("cloudflare.index/teamslist.TeamsList has been deprecated in favor of cloudflare.index/zerotrustlist.ZeroTrustList") def TeamsList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/teamslist.TeamsList has been deprecated in favor of cloudflare.index/zerotrustlist.ZeroTrustList") inline def TeamsList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.TeamsListArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.TeamsListArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14849,7 +14849,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Write`
    */
-  @deprecated("cloudflare.index/teamslocation.TeamsLocation has been deprecated in favor of cloudflare.index/zerotrustdnslocation.ZeroTrustDnsLocation") def TeamsLocation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/teamslocation.TeamsLocation has been deprecated in favor of cloudflare.index/zerotrustdnslocation.ZeroTrustDnsLocation") inline def TeamsLocation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.TeamsLocationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.TeamsLocationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14859,7 +14859,7 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  @deprecated("cloudflare.index/teamsproxyendpoint.TeamsProxyEndpoint has been deprecated in favor of cloudflare.index/zerotrustgatewayproxyendpoint.ZeroTrustGatewayProxyEndpoint") def TeamsProxyEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/teamsproxyendpoint.TeamsProxyEndpoint has been deprecated in favor of cloudflare.index/zerotrustgatewayproxyendpoint.ZeroTrustGatewayProxyEndpoint") inline def TeamsProxyEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.TeamsProxyEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.TeamsProxyEndpointArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14869,7 +14869,7 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  @deprecated("cloudflare.index/teamsrule.TeamsRule has been deprecated in favor of cloudflare.index/zerotrustgatewaypolicy.ZeroTrustGatewayPolicy") def TeamsRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/teamsrule.TeamsRule has been deprecated in favor of cloudflare.index/zerotrustgatewaypolicy.ZeroTrustGatewayPolicy") inline def TeamsRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.TeamsRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.TeamsRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14887,7 +14887,7 @@ object cloudflare:
    * - `Zone Settings Write`
    * - `Zone Write`
    */
-  def TieredCache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TieredCache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.TieredCacheArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.TieredCacheArgs.builder
     com.pulumi.cloudflare.TieredCache(name,
@@ -14902,7 +14902,7 @@ object cloudflare:
    * - `Domain API Gateway`
    * - `Domain API Gateway Read`
    */
-  def TokenValidationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TokenValidationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.TokenValidationConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.TokenValidationConfigArgs.builder
     com.pulumi.cloudflare.TokenValidationConfig(name,
@@ -14917,7 +14917,7 @@ object cloudflare:
    * - `Domain API Gateway`
    * - `Domain API Gateway Read`
    */
-  def TokenValidationRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TokenValidationRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.TokenValidationRulesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.TokenValidationRulesArgs.builder
     com.pulumi.cloudflare.TokenValidationRules(name,
@@ -14930,7 +14930,7 @@ object cloudflare:
    * - `SSL and Certificates Read`
    * - `SSL and Certificates Write`
    */
-  def TotalTls(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TotalTls(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.TotalTlsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.TotalTlsArgs.builder
     com.pulumi.cloudflare.TotalTls(name,
@@ -14947,7 +14947,7 @@ object cloudflare:
    * - `Cloudflare Tunnel Read`
    * - `Cloudflare Tunnel Write`
    */
-  @deprecated("cloudflare.index/tunnel.Tunnel has been deprecated in favor of cloudflare.index/zerotrusttunnelcloudflared.ZeroTrustTunnelCloudflared") def Tunnel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/tunnel.Tunnel has been deprecated in favor of cloudflare.index/zerotrusttunnelcloudflared.ZeroTrustTunnelCloudflared") inline def Tunnel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.TunnelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.TunnelArgs.builder
     conf.logicalName2physicalName(name) match
@@ -14967,7 +14967,7 @@ object cloudflare:
    * - `Cloudflare Tunnel Read`
    * - `Cloudflare Tunnel Write`
    */
-  @deprecated("cloudflare.index/tunnelconfig.TunnelConfig has been deprecated in favor of cloudflare.index/zerotrusttunnelcloudflaredconfig.ZeroTrustTunnelCloudflaredConfig") def TunnelConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/tunnelconfig.TunnelConfig has been deprecated in favor of cloudflare.index/zerotrusttunnelcloudflaredconfig.ZeroTrustTunnelCloudflaredConfig") inline def TunnelConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.TunnelConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.TunnelConfigArgs.builder
     com.pulumi.cloudflare.TunnelConfig(name,
@@ -14980,7 +14980,7 @@ object cloudflare:
    * - `Cloudflare One Networks Write`
    * - `Cloudflare Tunnel Write`
    */
-  @deprecated("cloudflare.index/tunnelroute.TunnelRoute has been deprecated in favor of cloudflare.index/zerotrusttunnelcloudflaredroute.ZeroTrustTunnelCloudflaredRoute") def TunnelRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/tunnelroute.TunnelRoute has been deprecated in favor of cloudflare.index/zerotrusttunnelcloudflaredroute.ZeroTrustTunnelCloudflaredRoute") inline def TunnelRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.TunnelRouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.TunnelRouteArgs.builder
     com.pulumi.cloudflare.TunnelRoute(name,
@@ -14993,7 +14993,7 @@ object cloudflare:
    * - `Cloudflare One Networks Write`
    * - `Cloudflare Tunnel Write`
    */
-  @deprecated("cloudflare.index/tunnelvirtualnetwork.TunnelVirtualNetwork has been deprecated in favor of cloudflare.index/zerotrusttunnelcloudflaredvirtualnetwork.ZeroTrustTunnelCloudflaredVirtualNetwork") def TunnelVirtualNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/tunnelvirtualnetwork.TunnelVirtualNetwork has been deprecated in favor of cloudflare.index/zerotrusttunnelcloudflaredvirtualnetwork.ZeroTrustTunnelCloudflaredVirtualNetwork") inline def TunnelVirtualNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.TunnelVirtualNetworkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.TunnelVirtualNetworkArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15011,7 +15011,7 @@ object cloudflare:
    * - `Turnstile Sites Read`
    * - `Turnstile Sites Write`
    */
-  def TurnstileWidget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def TurnstileWidget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.TurnstileWidgetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.TurnstileWidgetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15027,7 +15027,7 @@ object cloudflare:
    * - `SSL and Certificates Read`
    * - `SSL and Certificates Write`
    */
-  def UniversalSslSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UniversalSslSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.UniversalSslSettingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.UniversalSslSettingArgs.builder
     com.pulumi.cloudflare.UniversalSslSetting(name,
@@ -15078,7 +15078,7 @@ object cloudflare:
    * - `Zone WAF Read`
    * - `Zone WAF Write`
    */
-  def UrlNormalizationSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UrlNormalizationSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.UrlNormalizationSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.UrlNormalizationSettingsArgs.builder
     com.pulumi.cloudflare.UrlNormalizationSettings(name,
@@ -15091,7 +15091,7 @@ object cloudflare:
    * - `User Details Read`
    * - `User Details Write`
    */
-  def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.UserArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.UserArgs.builder
     com.pulumi.cloudflare.User(name,
@@ -15104,7 +15104,7 @@ object cloudflare:
    * - `Firewall Services Read`
    * - `Firewall Services Write`
    */
-  def UserAgentBlockingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UserAgentBlockingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.UserAgentBlockingRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.UserAgentBlockingRuleArgs.builder
     com.pulumi.cloudflare.UserAgentBlockingRule(name,
@@ -15118,7 +15118,7 @@ object cloudflare:
    * - `Account Settings Write`
    * - `SCIM Provisioning`
    */
-  def UserGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UserGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.UserGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.UserGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15135,14 +15135,14 @@ object cloudflare:
    * - `Account Settings Write`
    * - `SCIM Provisioning`
    */
-  def UserGroupMembers(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def UserGroupMembers(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.UserGroupMembersArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.UserGroupMembersArgs.builder
     com.pulumi.cloudflare.UserGroupMembers(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def VulnerabilityScannerCredential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VulnerabilityScannerCredential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.VulnerabilityScannerCredentialArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.VulnerabilityScannerCredentialArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15152,7 +15152,7 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def VulnerabilityScannerCredentialSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VulnerabilityScannerCredentialSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.VulnerabilityScannerCredentialSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.VulnerabilityScannerCredentialSetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15162,7 +15162,7 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def VulnerabilityScannerTargetEnvironment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def VulnerabilityScannerTargetEnvironment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.VulnerabilityScannerTargetEnvironmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.VulnerabilityScannerTargetEnvironmentArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15178,7 +15178,7 @@ object cloudflare:
    * - `Waiting Rooms Read`
    * - `Waiting Rooms Write`
    */
-  def WaitingRoom(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WaitingRoom(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.WaitingRoomArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.WaitingRoomArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15194,7 +15194,7 @@ object cloudflare:
    * - `Waiting Rooms Read`
    * - `Waiting Rooms Write`
    */
-  def WaitingRoomEvent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WaitingRoomEvent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.WaitingRoomEventArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.WaitingRoomEventArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15210,7 +15210,7 @@ object cloudflare:
    * - `Waiting Rooms Read`
    * - `Waiting Rooms Write`
    */
-  def WaitingRoomRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WaitingRoomRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.WaitingRoomRulesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.WaitingRoomRulesArgs.builder
     com.pulumi.cloudflare.WaitingRoomRules(name,
@@ -15223,7 +15223,7 @@ object cloudflare:
    * - `Waiting Rooms Read`
    * - `Waiting Rooms Write`
    */
-  def WaitingRoomSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WaitingRoomSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.WaitingRoomSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.WaitingRoomSettingsArgs.builder
     com.pulumi.cloudflare.WaitingRoomSettings(name,
@@ -15236,7 +15236,7 @@ object cloudflare:
    * - `Web3 Hostnames Read`
    * - `Web3 Hostnames Write`
    */
-  def Web3Hostname(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Web3Hostname(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.Web3HostnameArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.Web3HostnameArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15246,7 +15246,7 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def WebAnalyticsRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WebAnalyticsRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.WebAnalyticsRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.WebAnalyticsRuleArgs.builder
     com.pulumi.cloudflare.WebAnalyticsRule(name,
@@ -15259,7 +15259,7 @@ object cloudflare:
    * - `Account Settings Read`
    * - `Account Settings Write`
    */
-  def WebAnalyticsSite(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WebAnalyticsSite(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.WebAnalyticsSiteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.WebAnalyticsSiteArgs.builder
     com.pulumi.cloudflare.WebAnalyticsSite(name,
@@ -15273,7 +15273,7 @@ object cloudflare:
    * - `Workers Scripts Write`
    * - `Workers Tail Read`
    */
-  def Worker(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Worker(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.WorkerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.WorkerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15289,7 +15289,7 @@ object cloudflare:
    * - `Workers Scripts Read`
    * - `Workers Scripts Write`
    */
-  @deprecated("cloudflare.index/workercrontrigger.WorkerCronTrigger has been deprecated in favor of cloudflare.index/workerscrontrigger.WorkersCronTrigger") def WorkerCronTrigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/workercrontrigger.WorkerCronTrigger has been deprecated in favor of cloudflare.index/workerscrontrigger.WorkersCronTrigger") inline def WorkerCronTrigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.WorkerCronTriggerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.WorkerCronTriggerArgs.builder
     com.pulumi.cloudflare.WorkerCronTrigger(name,
@@ -15302,7 +15302,7 @@ object cloudflare:
    * - `Workers Scripts Read`
    * - `Workers Scripts Write`
    */
-  @deprecated("cloudflare.index/workerdomain.WorkerDomain has been deprecated in favor of cloudflare.index/workerscustomdomain.WorkersCustomDomain") def WorkerDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/workerdomain.WorkerDomain has been deprecated in favor of cloudflare.index/workerscustomdomain.WorkersCustomDomain") inline def WorkerDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.WorkerDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.WorkerDomainArgs.builder
     com.pulumi.cloudflare.WorkerDomain(name,
@@ -15318,7 +15318,7 @@ object cloudflare:
    * 
    * &gt; For more direct control over Workers resources, we recommend the beta `cloudflare.Worker`, `cloudflare.WorkerVersion`, and `cloudflare.WorkersDeployment` resources. See how to use them in the [developer documentation](https://developers.cloudflare.com/workers/platform/infrastructure-as-code/).
    */
-  @deprecated("cloudflare.index/workerscript.WorkerScript has been deprecated in favor of cloudflare.index/workersscript.WorkersScript") def WorkerScript(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/workerscript.WorkerScript has been deprecated in favor of cloudflare.index/workersscript.WorkersScript") inline def WorkerScript(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.WorkerScriptArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.WorkerScriptArgs.builder
     com.pulumi.cloudflare.WorkerScript(name,
@@ -15332,7 +15332,7 @@ object cloudflare:
    * - `Workers Scripts Write`
    * - `Workers Tail Read`
    */
-  def WorkerVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkerVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.WorkerVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.WorkerVersionArgs.builder
     com.pulumi.cloudflare.WorkerVersion(name,
@@ -15345,7 +15345,7 @@ object cloudflare:
    * - `Workers Scripts Read`
    * - `Workers Scripts Write`
    */
-  def WorkersCronTrigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkersCronTrigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.WorkersCronTriggerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.WorkersCronTriggerArgs.builder
     com.pulumi.cloudflare.WorkersCronTrigger(name,
@@ -15358,7 +15358,7 @@ object cloudflare:
    * - `Workers Scripts Read`
    * - `Workers Scripts Write`
    */
-  def WorkersCustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkersCustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.WorkersCustomDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.WorkersCustomDomainArgs.builder
     com.pulumi.cloudflare.WorkersCustomDomain(name,
@@ -15372,7 +15372,7 @@ object cloudflare:
    * - `Workers Scripts Write`
    * - `Workers Tail Read`
    */
-  def WorkersDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkersDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.WorkersDeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.WorkersDeploymentArgs.builder
     com.pulumi.cloudflare.WorkersDeployment(name,
@@ -15386,7 +15386,7 @@ object cloudflare:
    * - `Workers Scripts Write`
    * - `Workers Tail Read`
    */
-  def WorkersForPlatformsDispatchNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkersForPlatformsDispatchNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.WorkersForPlatformsDispatchNamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.WorkersForPlatformsDispatchNamespaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15403,7 +15403,7 @@ object cloudflare:
    * - `Workers Scripts Write`
    * - `Workers Tail Read`
    */
-  @deprecated("cloudflare.index/workersforplatformsnamespace.WorkersForPlatformsNamespace has been deprecated in favor of cloudflare.index/workersforplatformsdispatchnamespace.WorkersForPlatformsDispatchNamespace") def WorkersForPlatformsNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/workersforplatformsnamespace.WorkersForPlatformsNamespace has been deprecated in favor of cloudflare.index/workersforplatformsdispatchnamespace.WorkersForPlatformsDispatchNamespace") inline def WorkersForPlatformsNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.WorkersForPlatformsNamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.WorkersForPlatformsNamespaceArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15419,7 +15419,7 @@ object cloudflare:
    * - `Workers KV Storage Read`
    * - `Workers KV Storage Write`
    */
-  def WorkersKv(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkersKv(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.WorkersKvArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.WorkersKvArgs.builder
     com.pulumi.cloudflare.WorkersKv(name,
@@ -15432,7 +15432,7 @@ object cloudflare:
    * - `Workers KV Storage Read`
    * - `Workers KV Storage Write`
    */
-  def WorkersKvNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkersKvNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.WorkersKvNamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.WorkersKvNamespaceArgs.builder
     com.pulumi.cloudflare.WorkersKvNamespace(name,
@@ -15445,7 +15445,7 @@ object cloudflare:
    * - `Workers Routes Read`
    * - `Workers Routes Write`
    */
-  def WorkersRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkersRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.WorkersRouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.WorkersRouteArgs.builder
     com.pulumi.cloudflare.WorkersRoute(name,
@@ -15461,7 +15461,7 @@ object cloudflare:
    * 
    * &gt; For more direct control over Workers resources, we recommend the beta `cloudflare.Worker`, `cloudflare.WorkerVersion`, and `cloudflare.WorkersDeployment` resources. See how to use them in the [developer documentation](https://developers.cloudflare.com/workers/platform/infrastructure-as-code/).
    */
-  def WorkersScript(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkersScript(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.WorkersScriptArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.WorkersScriptArgs.builder
     com.pulumi.cloudflare.WorkersScript(name,
@@ -15477,7 +15477,7 @@ object cloudflare:
    * 
    * &gt; This resource is redundant with `cloudflare.Worker` and should not be used together. When using the `cloudflare.Worker` resource, use the nested `subdomain` attribute to control subdomain settings instead.
    */
-  def WorkersScriptSubdomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def WorkersScriptSubdomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.WorkersScriptSubdomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.WorkersScriptSubdomainArgs.builder
     com.pulumi.cloudflare.WorkersScriptSubdomain(name,
@@ -15491,7 +15491,7 @@ object cloudflare:
    * - `Workers Scripts Write`
    * - `Workers Tail Read`
    */
-  def Workflow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Workflow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.WorkflowArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.WorkflowArgs.builder
     com.pulumi.cloudflare.Workflow(name,
@@ -15504,7 +15504,7 @@ object cloudflare:
    * - `MCP Portals Read`
    * - `MCP Portals Write`
    */
-  def ZeroTrustAccessAiControlsMcpPortal(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustAccessAiControlsMcpPortal(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustAccessAiControlsMcpPortalArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustAccessAiControlsMcpPortalArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15520,7 +15520,7 @@ object cloudflare:
    * - `MCP Portals Read`
    * - `MCP Portals Write`
    */
-  def ZeroTrustAccessAiControlsMcpServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustAccessAiControlsMcpServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustAccessAiControlsMcpServerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustAccessAiControlsMcpServerArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15530,7 +15530,7 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def ZeroTrustAccessApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustAccessApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustAccessApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustAccessApplicationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15546,7 +15546,7 @@ object cloudflare:
    * - `Access: Custom Pages Read`
    * - `Access: Custom Pages Write`
    */
-  def ZeroTrustAccessCustomPage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustAccessCustomPage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustAccessCustomPageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustAccessCustomPageArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15562,7 +15562,7 @@ object cloudflare:
    * - `Access: Organizations, Identity Providers, and Groups Read`
    * - `Access: Organizations, Identity Providers, and Groups Write`
    */
-  def ZeroTrustAccessGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustAccessGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustAccessGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustAccessGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15578,7 +15578,7 @@ object cloudflare:
    * - `Access: Organizations, Identity Providers, and Groups Read`
    * - `Access: Organizations, Identity Providers, and Groups Write`
    */
-  def ZeroTrustAccessIdentityProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustAccessIdentityProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustAccessIdentityProviderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustAccessIdentityProviderArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15588,7 +15588,7 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def ZeroTrustAccessInfrastructureTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustAccessInfrastructureTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustAccessInfrastructureTargetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustAccessInfrastructureTargetArgs.builder
     argsBuilder = args(argsBuilder)
@@ -15608,7 +15608,7 @@ object cloudflare:
    * - `Access: Organizations, Identity Providers, and Groups Read`
    * - `Access: Organizations, Identity Providers, and Groups Write`
    */
-  def ZeroTrustAccessKeyConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustAccessKeyConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustAccessKeyConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustAccessKeyConfigurationArgs.builder
     com.pulumi.cloudflare.ZeroTrustAccessKeyConfiguration(name,
@@ -15621,7 +15621,7 @@ object cloudflare:
    * - `Access: Mutual TLS Certificates Read`
    * - `Access: Mutual TLS Certificates Write`
    */
-  def ZeroTrustAccessMtlsCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustAccessMtlsCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustAccessMtlsCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustAccessMtlsCertificateArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15637,7 +15637,7 @@ object cloudflare:
    * - `Access: Mutual TLS Certificates Read`
    * - `Access: Mutual TLS Certificates Write`
    */
-  def ZeroTrustAccessMtlsHostnameSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustAccessMtlsHostnameSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustAccessMtlsHostnameSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustAccessMtlsHostnameSettingsArgs.builder
     com.pulumi.cloudflare.ZeroTrustAccessMtlsHostnameSettings(name,
@@ -15650,7 +15650,7 @@ object cloudflare:
    * - `Access: Apps and Policies Read`
    * - `Access: Apps and Policies Write`
    */
-  def ZeroTrustAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustAccessPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustAccessPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15666,7 +15666,7 @@ object cloudflare:
    * - `Access: Service Tokens Read`
    * - `Access: Service Tokens Write`
    */
-  def ZeroTrustAccessServiceToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustAccessServiceToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustAccessServiceTokenArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustAccessServiceTokenArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15682,14 +15682,14 @@ object cloudflare:
    * - `Access: Apps and Policies Read`
    * - `Access: Apps and Policies Write`
    */
-  def ZeroTrustAccessShortLivedCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustAccessShortLivedCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustAccessShortLivedCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustAccessShortLivedCertificateArgs.builder
     com.pulumi.cloudflare.ZeroTrustAccessShortLivedCertificate(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def ZeroTrustAccessTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustAccessTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustAccessTagArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustAccessTagArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15700,7 +15700,7 @@ object cloudflare:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates and manages a CASB integration. Exactly one vendor and exactly one authentication method must be configured. */
-  def ZeroTrustCasbIntegration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustCasbIntegration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustCasbIntegrationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustCasbIntegrationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15716,7 +15716,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Write`
    */
-  def ZeroTrustCasbPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustCasbPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustCasbPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustCasbPolicyArgs.builder
     com.pulumi.cloudflare.ZeroTrustCasbPolicy(name,
@@ -15729,7 +15729,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Write`
    */
-  def ZeroTrustCasbWebhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustCasbWebhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustCasbWebhookArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustCasbWebhookArgs.builder
     com.pulumi.cloudflare.ZeroTrustCasbWebhook(name,
@@ -15743,7 +15743,7 @@ object cloudflare:
    * - `Zero Trust Report`
    * - `Zero Trust Write`
    */
-  def ZeroTrustConnectivitySettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustConnectivitySettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustConnectivitySettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustConnectivitySettingsArgs.builder
     com.pulumi.cloudflare.ZeroTrustConnectivitySettings(name,
@@ -15755,7 +15755,7 @@ object cloudflare:
    * 
    * - `Zero Trust Write`
    */
-  def ZeroTrustDeviceCustomProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDeviceCustomProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDeviceCustomProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustDeviceCustomProfileArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15770,7 +15770,7 @@ object cloudflare:
    * 
    * - `Zero Trust Write`
    */
-  def ZeroTrustDeviceCustomProfileLocalDomainFallback(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDeviceCustomProfileLocalDomainFallback(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDeviceCustomProfileLocalDomainFallbackArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustDeviceCustomProfileLocalDomainFallbackArgs.builder
     com.pulumi.cloudflare.ZeroTrustDeviceCustomProfileLocalDomainFallback(name,
@@ -15782,7 +15782,7 @@ object cloudflare:
    * 
    * - `Zero Trust Write`
    */
-  def ZeroTrustDeviceDefaultProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDeviceDefaultProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDeviceDefaultProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustDeviceDefaultProfileArgs.builder
     com.pulumi.cloudflare.ZeroTrustDeviceDefaultProfile(name,
@@ -15795,7 +15795,7 @@ object cloudflare:
    * - `SSL and Certificates Read`
    * - `SSL and Certificates Write`
    */
-  def ZeroTrustDeviceDefaultProfileCertificates(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDeviceDefaultProfileCertificates(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDeviceDefaultProfileCertificatesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustDeviceDefaultProfileCertificatesArgs.builder
     com.pulumi.cloudflare.ZeroTrustDeviceDefaultProfileCertificates(name,
@@ -15807,14 +15807,14 @@ object cloudflare:
    * 
    * - `Zero Trust Write`
    */
-  def ZeroTrustDeviceDefaultProfileLocalDomainFallback(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDeviceDefaultProfileLocalDomainFallback(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDeviceDefaultProfileLocalDomainFallbackArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustDeviceDefaultProfileLocalDomainFallbackArgs.builder
     com.pulumi.cloudflare.ZeroTrustDeviceDefaultProfileLocalDomainFallback(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def ZeroTrustDeviceDeploymentGroups(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDeviceDeploymentGroups(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDeviceDeploymentGroupsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustDeviceDeploymentGroupsArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15830,7 +15830,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Write`
    */
-  def ZeroTrustDeviceIpProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDeviceIpProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDeviceIpProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustDeviceIpProfileArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15845,7 +15845,7 @@ object cloudflare:
    * 
    * - `Zero Trust Write`
    */
-  def ZeroTrustDeviceManagedNetworks(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDeviceManagedNetworks(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDeviceManagedNetworksArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustDeviceManagedNetworksArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15860,7 +15860,7 @@ object cloudflare:
    * 
    * - `Zero Trust Write`
    */
-  def ZeroTrustDevicePostureIntegration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDevicePostureIntegration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDevicePostureIntegrationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustDevicePostureIntegrationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15875,7 +15875,7 @@ object cloudflare:
    * 
    * - `Zero Trust Write`
    */
-  def ZeroTrustDevicePostureRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDevicePostureRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDevicePostureRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustDevicePostureRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15890,7 +15890,7 @@ object cloudflare:
    * 
    * - `Zero Trust Write`
    */
-  def ZeroTrustDeviceSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDeviceSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDeviceSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustDeviceSettingsArgs.builder
     com.pulumi.cloudflare.ZeroTrustDeviceSettings(name,
@@ -15903,7 +15903,7 @@ object cloudflare:
    * - `Cloudflare One Networks Read`
    * - `Cloudflare One Networks Write`
    */
-  def ZeroTrustDeviceSubnet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDeviceSubnet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDeviceSubnetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustDeviceSubnetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15921,7 +15921,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Report`
    */
-  def ZeroTrustDexRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDexRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDexRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustDexRuleArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15939,7 +15939,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Report`
    */
-  def ZeroTrustDexTest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDexTest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDexTestArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustDexTestArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15955,7 +15955,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Write`
    */
-  def ZeroTrustDlpCustomEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDlpCustomEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDlpCustomEntryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustDlpCustomEntryArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15971,7 +15971,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Write`
    */
-  def ZeroTrustDlpCustomProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDlpCustomProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDlpCustomProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustDlpCustomProfileArgs.builder
     conf.logicalName2physicalName(name) match
@@ -15987,7 +15987,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Write`
    */
-  def ZeroTrustDlpDataClass(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDlpDataClass(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDlpDataClassArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustDlpDataClassArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16003,7 +16003,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Write`
    */
-  def ZeroTrustDlpDataTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDlpDataTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDlpDataTagArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustDlpDataTagArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16019,7 +16019,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Write`
    */
-  def ZeroTrustDlpDataTagCategory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDlpDataTagCategory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDlpDataTagCategoryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustDlpDataTagCategoryArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16035,7 +16035,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Write`
    */
-  def ZeroTrustDlpDataset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDlpDataset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDlpDatasetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustDlpDatasetArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16051,7 +16051,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Write`
    */
-  def ZeroTrustDlpEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDlpEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDlpEntryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustDlpEntryArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16067,7 +16067,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Write`
    */
-  def ZeroTrustDlpIntegrationEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDlpIntegrationEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDlpIntegrationEntryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustDlpIntegrationEntryArgs.builder
     com.pulumi.cloudflare.ZeroTrustDlpIntegrationEntry(name,
@@ -16080,7 +16080,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Write`
    */
-  def ZeroTrustDlpPredefinedEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDlpPredefinedEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDlpPredefinedEntryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustDlpPredefinedEntryArgs.builder
     com.pulumi.cloudflare.ZeroTrustDlpPredefinedEntry(name,
@@ -16093,7 +16093,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Write`
    */
-  def ZeroTrustDlpPredefinedProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDlpPredefinedProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDlpPredefinedProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustDlpPredefinedProfileArgs.builder
     com.pulumi.cloudflare.ZeroTrustDlpPredefinedProfile(name,
@@ -16106,7 +16106,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Write`
    */
-  def ZeroTrustDlpSensitivityGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDlpSensitivityGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDlpSensitivityGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustDlpSensitivityGroupArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16122,7 +16122,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Write`
    */
-  def ZeroTrustDlpSensitivityLevel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDlpSensitivityLevel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDlpSensitivityLevelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustDlpSensitivityLevelArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16138,7 +16138,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Write`
    */
-  def ZeroTrustDlpSensitivityLevelOrder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDlpSensitivityLevelOrder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDlpSensitivityLevelOrderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustDlpSensitivityLevelOrderArgs.builder
     com.pulumi.cloudflare.ZeroTrustDlpSensitivityLevelOrder(name,
@@ -16151,7 +16151,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Write`
    */
-  def ZeroTrustDlpSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDlpSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDlpSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustDlpSettingsArgs.builder
     com.pulumi.cloudflare.ZeroTrustDlpSettings(name,
@@ -16165,7 +16165,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Write`
    */
-  def ZeroTrustDnsLocation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustDnsLocation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDnsLocationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustDnsLocationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16175,14 +16175,14 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def ZeroTrustGatewayCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustGatewayCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustGatewayCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustGatewayCertificateArgs.builder
     com.pulumi.cloudflare.ZeroTrustGatewayCertificate(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def ZeroTrustGatewayLogging(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustGatewayLogging(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustGatewayLoggingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustGatewayLoggingArgs.builder
     com.pulumi.cloudflare.ZeroTrustGatewayLogging(name,
@@ -16195,7 +16195,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Write`
    */
-  def ZeroTrustGatewayPacfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustGatewayPacfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustGatewayPacfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustGatewayPacfileArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16205,7 +16205,7 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def ZeroTrustGatewayPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustGatewayPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustGatewayPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustGatewayPolicyArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16215,7 +16215,7 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def ZeroTrustGatewayProxyEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustGatewayProxyEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustGatewayProxyEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustGatewayProxyEndpointArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16225,14 +16225,14 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def ZeroTrustGatewaySettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustGatewaySettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustGatewaySettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustGatewaySettingsArgs.builder
     com.pulumi.cloudflare.ZeroTrustGatewaySettings(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def ZeroTrustList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustListArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustListArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16247,7 +16247,7 @@ object cloudflare:
    * 
    * - `Zero Trust Write`
    */
-  @deprecated("cloudflare.index/zerotrustlocalfallbackdomain.ZeroTrustLocalFallbackDomain has been deprecated in favor of cloudflare.index/zerotrustdevicecustomprofilelocaldomainfallback.ZeroTrustDeviceCustomProfileLocalDomainFallback") def ZeroTrustLocalFallbackDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  @deprecated("cloudflare.index/zerotrustlocalfallbackdomain.ZeroTrustLocalFallbackDomain has been deprecated in favor of cloudflare.index/zerotrustdevicecustomprofilelocaldomainfallback.ZeroTrustDeviceCustomProfileLocalDomainFallback") inline def ZeroTrustLocalFallbackDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustLocalFallbackDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustLocalFallbackDomainArgs.builder
     com.pulumi.cloudflare.ZeroTrustLocalFallbackDomain(name,
@@ -16262,7 +16262,7 @@ object cloudflare:
    * - `Cloudflare Tunnel Read`
    * - `Cloudflare Tunnel Write`
    */
-  def ZeroTrustNetworkHostnameRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustNetworkHostnameRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustNetworkHostnameRouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustNetworkHostnameRouteArgs.builder
     com.pulumi.cloudflare.ZeroTrustNetworkHostnameRoute(name,
@@ -16276,7 +16276,7 @@ object cloudflare:
    * - `Access: Organizations, Identity Providers, and Groups Revoke`
    * - `Access: Organizations, Identity Providers, and Groups Write`
    */
-  def ZeroTrustOrganization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustOrganization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustOrganizationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustOrganizationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16286,7 +16286,7 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def ZeroTrustResourceLibraryApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustResourceLibraryApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustResourceLibraryApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustResourceLibraryApplicationArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16302,7 +16302,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Write`
    */
-  def ZeroTrustRiskBehavior(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustRiskBehavior(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustRiskBehaviorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustRiskBehaviorArgs.builder
     com.pulumi.cloudflare.ZeroTrustRiskBehavior(name,
@@ -16315,7 +16315,7 @@ object cloudflare:
    * - `Zero Trust Read`
    * - `Zero Trust Write`
    */
-  def ZeroTrustRiskScoringIntegration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustRiskScoringIntegration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustRiskScoringIntegrationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustRiskScoringIntegrationArgs.builder
     com.pulumi.cloudflare.ZeroTrustRiskScoringIntegration(name,
@@ -16332,7 +16332,7 @@ object cloudflare:
    * - `Cloudflare Tunnel Read`
    * - `Cloudflare Tunnel Write`
    */
-  def ZeroTrustTunnelCloudflared(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustTunnelCloudflared(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustTunnelCloudflaredArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustTunnelCloudflaredArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16352,7 +16352,7 @@ object cloudflare:
    * - `Cloudflare Tunnel Read`
    * - `Cloudflare Tunnel Write`
    */
-  def ZeroTrustTunnelCloudflaredConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustTunnelCloudflaredConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustTunnelCloudflaredConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustTunnelCloudflaredConfigArgs.builder
     com.pulumi.cloudflare.ZeroTrustTunnelCloudflaredConfig(name,
@@ -16365,7 +16365,7 @@ object cloudflare:
    * - `Cloudflare One Networks Write`
    * - `Cloudflare Tunnel Write`
    */
-  def ZeroTrustTunnelCloudflaredRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustTunnelCloudflaredRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustTunnelCloudflaredRouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustTunnelCloudflaredRouteArgs.builder
     com.pulumi.cloudflare.ZeroTrustTunnelCloudflaredRoute(name,
@@ -16378,7 +16378,7 @@ object cloudflare:
    * - `Cloudflare One Networks Write`
    * - `Cloudflare Tunnel Write`
    */
-  def ZeroTrustTunnelCloudflaredVirtualNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustTunnelCloudflaredVirtualNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustTunnelCloudflaredVirtualNetworkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustTunnelCloudflaredVirtualNetworkArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16396,7 +16396,7 @@ object cloudflare:
    * - `Cloudflare One Connectors Read`
    * - `Cloudflare One Connectors Write`
    */
-  def ZeroTrustTunnelWarpConnector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustTunnelWarpConnector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustTunnelWarpConnectorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZeroTrustTunnelWarpConnectorArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16414,7 +16414,7 @@ object cloudflare:
    * - `Cloudflare One Connectors Read`
    * - `Cloudflare One Connectors Write`
    */
-  def ZeroTrustTunnelWarpConnectorConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZeroTrustTunnelWarpConnectorConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustTunnelWarpConnectorConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustTunnelWarpConnectorConfigArgs.builder
     com.pulumi.cloudflare.ZeroTrustTunnelWarpConnectorConfig(name,
@@ -16465,7 +16465,7 @@ object cloudflare:
    * 
    * &gt; If you are attempting to sign up a subdomain of a zone you must first have Subdomain Support entitlement for your account.
    */
-  def Zone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def Zone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZoneArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.cloudflare.ZoneArgs.builder
     conf.logicalName2physicalName(name) match
@@ -16475,7 +16475,7 @@ object cloudflare:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def ZoneAutoOriginTlsKex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZoneAutoOriginTlsKex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZoneAutoOriginTlsKexArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZoneAutoOriginTlsKexArgs.builder
     com.pulumi.cloudflare.ZoneAutoOriginTlsKex(name,
@@ -16490,7 +16490,7 @@ object cloudflare:
    * - `Zone Settings Write`
    * - `Zone Write`
    */
-  def ZoneCacheReserve(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZoneCacheReserve(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZoneCacheReserveArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZoneCacheReserveArgs.builder
     com.pulumi.cloudflare.ZoneCacheReserve(name,
@@ -16505,7 +16505,7 @@ object cloudflare:
    * - `Zone Settings Write`
    * - `Zone Write`
    */
-  def ZoneCacheVariants(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZoneCacheVariants(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZoneCacheVariantsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZoneCacheVariantsArgs.builder
     com.pulumi.cloudflare.ZoneCacheVariants(name,
@@ -16520,7 +16520,7 @@ object cloudflare:
    * - `Zone DNS Settings Read`
    * - `Zone DNS Settings Write`
    */
-  def ZoneDnsSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZoneDnsSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZoneDnsSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZoneDnsSettingsArgs.builder
     com.pulumi.cloudflare.ZoneDnsSettings(name,
@@ -16533,7 +16533,7 @@ object cloudflare:
    * - `DNS Read`
    * - `DNS Write`
    */
-  def ZoneDnssec(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZoneDnssec(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZoneDnssecArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZoneDnssecArgs.builder
     com.pulumi.cloudflare.ZoneDnssec(name,
@@ -16580,7 +16580,7 @@ object cloudflare:
    * - `Zone Settings Write`
    * - `Zone Write`
    */
-  def ZoneHold(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZoneHold(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZoneHoldArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZoneHoldArgs.builder
     com.pulumi.cloudflare.ZoneHold(name,
@@ -16593,7 +16593,7 @@ object cloudflare:
    * - `Firewall Services Read`
    * - `Firewall Services Write`
    */
-  def ZoneLockdown(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZoneLockdown(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZoneLockdownArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZoneLockdownArgs.builder
     com.pulumi.cloudflare.ZoneLockdown(name,
@@ -16686,7 +16686,7 @@ object cloudflare:
    * 
    * &lt;!-- END_ZONE_SETTING_IDS --&gt;
    */
-  def ZoneSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZoneSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZoneSettingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZoneSettingArgs.builder
     com.pulumi.cloudflare.ZoneSetting(name,
@@ -16699,21 +16699,21 @@ object cloudflare:
    * - `Billing Read`
    * - `Billing Write`
    */
-  def ZoneSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZoneSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZoneSubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZoneSubscriptionArgs.builder
     com.pulumi.cloudflare.ZoneSubscription(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def ZoneTracing(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZoneTracing(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZoneTracingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZoneTracingArgs.builder
     com.pulumi.cloudflare.ZoneTracing(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def ZoneTracingRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+  inline def ZoneTracingRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.cloudflare.ZoneTracingRulesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZoneTracingRulesArgs.builder
     com.pulumi.cloudflare.ZoneTracingRules(name,
